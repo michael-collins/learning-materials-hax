@@ -62,6 +62,22 @@
         "locked": false,
         "readtime": 1
       }
+    },
+    {
+      "id": "item-cbfc6006-4b80-4af9-bfbc-db949b620459",
+      "indent": 0,
+      "location": "pages/item-cbfc6006-4b80-4af9-bfbc-db949b620459/index.html",
+      "slug": "animation-principles",
+      "order": 0,
+      "parent": null,
+      "title": "Animation Principles",
+      "description": "",
+      "metadata": {
+        "created": 1790802009,
+        "updated": 1790802009,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
