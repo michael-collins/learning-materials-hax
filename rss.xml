@@ -47,10 +47,10 @@
     </item>
     <item>
       <title>Animated textures</title>
-      <link>https://localhost:3000/learning-materials/animated-textures</link>
+      <link>https://localhost:3000/learning-materials/exercises/animated-textures</link>
       <description>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264. &amp;lt;video-player source=&quot;https://youtube.com/embed/videoseries?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH&quot; title=&quot;Animated textures Tutorial&quot;&amp;gt;&amp;lt;/video-player&amp;gt; Learning Objectives Become familiarized with adding animation sequences as moving textur...</description>
       <category>Blender,AfterEffects,Adobe Media Encoder</category>
-      <guid>https://localhost:3000/learning-materials/animated-textures</guid>
+      <guid>https://localhost:3000/learning-materials/exercises/animated-textures</guid>
       <pubDate>Wed, 30 Sep 2026 21:01:25 GMT</pubDate>
     </item>
   </channel>
