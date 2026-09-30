@@ -7,14 +7,21 @@
 <order>0</order>
 <parent></parent>
 <title>Animation Principles</title>
-<description></description>
+<description>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th</description>
 <metadata>
 <created>1790802191</created>
-<updated>1790802191</updated>
+<updated>1790802192</updated>
 <images>
 </images>
 <videos>
 </videos>
+<overridePathauto>false</overridePathauto>
+<published>true</published>
+<pageType>lesson</pageType>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[<p class="lead">Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.</p><p>Master the fundamental principles of animation that bring characters and objects to life through believable movement and performance.</p>
+]]></content>
 </item>
