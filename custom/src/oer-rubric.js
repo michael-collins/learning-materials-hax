@@ -83,23 +83,28 @@ export class OerRubric extends DDD {
           letter-spacing: 0.02em;
         }
         .desc {
+          text-align: start;
           margin: 0.5rem 1rem 1.5rem;
           color: var(--muted-foreground, var(--ddd-theme-default-coalyGray));
         }
         .table-wrap {
           overflow-x: auto;
         }
+        /* DDD ships a bordered-grid table style; reset to shadcn's rows */
         table {
           width: 100%;
+          border: 0;
           border-collapse: collapse;
           font-size: 0.875rem;
         }
         th,
         td {
-          text-align: left;
+          text-align: start;
           vertical-align: top;
           padding: 0.75rem 1rem;
+          border: 0;
           border-bottom: 1px solid var(--border, var(--ddd-theme-default-limestoneLight));
+          background: transparent;
         }
         tr:last-child td {
           border-bottom: 0;

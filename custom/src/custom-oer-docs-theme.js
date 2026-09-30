@@ -62,8 +62,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.siteTitle = "";
     this.__mq = globalThis.matchMedia(MOBILE_QUERY);
     this.__keyHandler = this._onKeydown.bind(this);
-    // the HAX editor bar is appended to <body> after login, in normal flow
-    // above the theme; track its height so the sticky sidebar still fits
+    // the HAX editor bar is appended to <body> after login: a 64px in-flow
+    // spacer whose visible bar is position:fixed. Track its height so the
+    // sticky sidebar/top bar stick below it and the sidebar still fits
     this.__editorBarObserver = new ResizeObserver(() => this._measureEditorBar());
     this.__bodyObserver = new MutationObserver(() => this._watchEditorBar());
     this.__disposer.push(
@@ -156,7 +157,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           scroll-margin-top: calc(var(--topbar-height) + 1rem);
         }
         custom-oer-docs-theme a:any-link {
-          color: var(--primary);
+          color: var(--link);
           text-underline-offset: 3px;
         }
         custom-oer-docs-theme :not(pre) > code {
@@ -204,7 +205,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         .sidebar {
           position: sticky;
-          top: 0;
+          top: var(--editor-bar-height, 0px);
           z-index: 30;
           height: calc(100vh - var(--editor-bar-height, 0px));
           height: calc(100dvh - var(--editor-bar-height, 0px));
@@ -294,7 +295,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         .topbar {
           position: sticky;
-          top: 0;
+          top: var(--editor-bar-height, 0px);
           z-index: 20;
           height: var(--topbar-height);
           display: flex;

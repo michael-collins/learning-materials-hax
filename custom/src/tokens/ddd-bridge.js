@@ -19,8 +19,8 @@ export const dddBridge = css`
     /* semantic colour */
     --ddd-theme-primary: var(--primary);
     --ddd-theme-accent: var(--accent);
-    --ddd-theme-default-link: var(--primary);
-    --ddd-theme-default-link80: var(--primary);
+    --ddd-theme-default-link: var(--link);
+    --ddd-theme-default-link80: var(--link);
     --ddd-theme-default-background: var(--background);
     --ddd-theme-default-error: var(--destructive);
     --ddd-theme-header-border-color: var(--border);
