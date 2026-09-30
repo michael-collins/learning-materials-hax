@@ -90,4 +90,16 @@ bottom-text="...probably"
       <![CDATA[ <p>Formative practice focused on a narrow set of competencies.</p> ]]>
     </content>
   </entry>
+  <entry>
+    <title>Animating a bouncing ball</title>
+    <id>item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98</id>
+    <updated>2026-09-30T21:00:09.000Z</updated>
+    <published>2026-09-30T21:00:09.000Z</published>
+    <summary>[object Object]</summary>
+    <link href="https://localhost:3000/learning-materials/animating-a-bouncing-ball"/>
+    <category term="Blender,Animation" label="Blender,Animation" />
+    <content type="html">
+      <![CDATA[ [object Object] ]]>
+    </content>
+  </entry>
 </feed>

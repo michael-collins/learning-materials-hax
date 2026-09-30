@@ -5,10 +5,17 @@ slug: animating-a-bouncing-ball
 order: 0
 parent: null
 title: Animating a bouncing ball
-description: ''
+description: '[object Object]'
 metadata:
   created: 1790802009
   updated: 1790802009
   images: []
   videos: []
-content: <p></p>
+  overridePathauto: false
+  published: false
+  pageType: exercise
+  hideInMenu: false
+  tags: Blender,Animation
+  locked: false
+  readtime: 1
+content: '[object Object]'

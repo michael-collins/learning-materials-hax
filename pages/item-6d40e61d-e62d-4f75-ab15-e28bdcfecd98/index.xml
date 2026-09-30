@@ -7,7 +7,7 @@
 <order>0</order>
 <parent></parent>
 <title>Animating a bouncing ball</title>
-<description></description>
+<description>[object Object]</description>
 <metadata>
 <created>1790802009</created>
 <updated>1790802009</updated>
@@ -15,6 +15,13 @@
 </images>
 <videos>
 </videos>
+<overridePathauto>false</overridePathauto>
+<published>false</published>
+<pageType>exercise</pageType>
+<hideInMenu>false</hideInMenu>
+<tags>Blender,Animation</tags>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[[object Object]]]></content>
 </item>

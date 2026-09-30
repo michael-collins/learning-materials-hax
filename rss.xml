@@ -37,5 +37,13 @@
       <guid>https://localhost:3000/learning-materials/exercises</guid>
       <pubDate>Wed, 30 Sep 2026 21:00:09 GMT</pubDate>
     </item>
+    <item>
+      <title>Animating a bouncing ball</title>
+      <link>https://localhost:3000/learning-materials/animating-a-bouncing-ball</link>
+      <description>[object Object]</description>
+      <category>Blender,Animation</category>
+      <guid>https://localhost:3000/learning-materials/animating-a-bouncing-ball</guid>
+      <pubDate>Wed, 30 Sep 2026 21:00:09 GMT</pubDate>
+    </item>
   </channel>
 </rss>
