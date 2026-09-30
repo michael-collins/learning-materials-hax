@@ -40,6 +40,22 @@
         "created": 1790801562,
         "updated": 1790801562
       }
+    },
+    {
+      "id": "item-ca23b187-a856-4f91-b230-c980ca2b7864",
+      "indent": 0,
+      "location": "pages/item-ca23b187-a856-4f91-b230-c980ca2b7864/index.html",
+      "slug": "lessons",
+      "order": 0,
+      "parent": null,
+      "title": "Lessons",
+      "description": "",
+      "metadata": {
+        "created": 1790802084,
+        "updated": 1790802084,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
