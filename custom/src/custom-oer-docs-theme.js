@@ -819,6 +819,47 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           visibility: hidden;
         }
 
+        /* shadcn sidebar-08 "inset" variant: the page takes the sidebar's
+           colour and the content sits in a rounded card that scrolls on its
+           own, so the sticky header keeps its rounded top */
+        @media (min-width: 768px) {
+          :host {
+            background: var(--card);
+          }
+          .shell {
+            height: 100vh;
+            height: 100dvh;
+          }
+          .sidebar {
+            border-right: 0;
+            background: transparent;
+          }
+          .sidebar-header {
+            border-bottom: 0;
+          }
+          .main-col {
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            height: calc(100vh - 1rem);
+            height: calc(100dvh - 1rem);
+            overflow-y: auto;
+            border-radius: 0.75rem;
+            background: var(--background);
+            /* shadow-sm plus a faint outline, so the card edge stays
+               perceivable on the near-white page background */
+            box-shadow:
+              0 1px 2px rgb(0 0 0 / 0.06),
+              0 0 0 1px color-mix(in oklch, var(--foreground) 9%, transparent);
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+          }
+          :host([collapsed]) .main-col {
+            margin-left: 0.5rem;
+          }
+          .topbar {
+            top: 0;
+          }
+        }
+
         /* mobile: sidebar becomes an overlay drawer */
         .scrim {
           display: none;

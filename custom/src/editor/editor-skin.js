@@ -403,13 +403,15 @@ export const editorSkin = {
       max-width: none !important;
       transform: none !important;
     }
+    /* inset variant: the panel sits on the page background like the
+       sidebar it replaces, beside the rounded content card */
     .detail {
       display: flex !important;
       flex-direction: column !important;
       overflow: hidden !important;
       background: var(--card) !important;
       color: var(--foreground) !important;
-      border-right: 1px solid var(--border) !important;
+      border-right: 0 !important;
       box-shadow: none !important;
     }
     #tray-detail {
@@ -432,11 +434,10 @@ export const editorSkin = {
       flex: none;
       display: flex;
       align-items: center;
-      /* the editor header is --topbar-height plus its 1px bottom border */
-      height: calc(var(--topbar-height) + 1px);
-      padding: 0 0.75rem;
+      /* level with the content card's header (card has a 0.5rem inset) */
+      height: calc(var(--topbar-height) + 0.5rem);
+      padding: 0.5rem 0.75rem 0;
       box-sizing: border-box;
-      border-bottom: 1px solid var(--border);
     }
     .oer-tabs {
       flex: 1;
