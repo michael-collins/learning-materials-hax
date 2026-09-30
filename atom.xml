@@ -3,7 +3,7 @@
   <title>learning-materials</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-30T20:55:16.000Z</updated>
+  <updated>2026-09-30T20:59:59.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -52,18 +52,6 @@ bottom-text="...probably"
     <li><a href="https://discord.gg/EKYJAjqGhf" target="_blank">Join the HAX community</a></li>
     <li><a href="https://github.com/elmsln/issues/issues/new?assignees=&labels=POP&template=issue-report.md&title=User%20report%20from%20HAX%20welcome%20page" target="_blank">Post an issue in our issue queue</a></li>
 </ul> ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Lessons</title>
-    <id>item-5ccbf3f0-a228-425e-90ec-d7d7a4bae3b9</id>
-    <updated>2026-09-30T20:59:59.000Z</updated>
-    <published>2026-09-30T20:59:58.000Z</published>
-    <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Lessons group lectures, tutorials and exercises around a set of learning objectives.</p> ]]>
     </content>
   </entry>
 </feed>
