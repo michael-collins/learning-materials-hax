@@ -14,7 +14,8 @@
 import { css } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
 export const dddBridge = css`
-  :root {
+  /* :root:root out-ranks DDD's own :root declarations, which load after ours */
+  :root:root {
     /* semantic colour */
     --ddd-theme-primary: var(--primary);
     --ddd-theme-accent: var(--accent);

@@ -62,6 +62,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.siteTitle = "";
     this.__mq = globalThis.matchMedia(MOBILE_QUERY);
     this.__keyHandler = this._onKeydown.bind(this);
+    // the HAX editor bar is appended to <body> after login, in normal flow
+    // above the theme; track its height so the sticky sidebar still fits
+    this.__editorBarObserver = new ResizeObserver(() => this._measureEditorBar());
+    this.__bodyObserver = new MutationObserver(() => this._watchEditorBar());
     this.__disposer.push(
       autorun(() => {
         const dark = toJS(store.darkMode);
@@ -92,9 +96,37 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
   connectedCallback() {
     super.connectedCallback();
     globalThis.addEventListener("keydown", this.__keyHandler);
+    this.__bodyObserver.observe(globalThis.document.body, { childList: true });
+    this._watchEditorBar();
+    // fonts can't be @import-ed from constructable stylesheets
+    if (!globalThis.document.getElementById("oer-docs-fonts")) {
+      const link = globalThis.document.createElement("link");
+      link.id = "oer-docs-fonts";
+      link.rel = "stylesheet";
+      link.href =
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";
+      globalThis.document.head.appendChild(link);
+    }
+  }
+
+  _watchEditorBar() {
+    const bar = globalThis.document.querySelector("haxcms-site-editor-ui");
+    if (bar === this.__editorBar) return;
+    this.__editorBar = bar;
+    this.__editorBarObserver.disconnect();
+    if (bar) this.__editorBarObserver.observe(bar);
+    this._measureEditorBar();
+  }
+
+  _measureEditorBar() {
+    const bar = globalThis.document.querySelector("haxcms-site-editor-ui");
+    const h = bar ? bar.getBoundingClientRect().height : 0;
+    this.style.setProperty("--editor-bar-height", `${Math.round(h)}px`);
   }
 
   disconnectedCallback() {
+    this.__editorBarObserver.disconnect();
+    this.__bodyObserver.disconnect();
     globalThis.removeEventListener("keydown", this.__keyHandler);
     super.disconnectedCallback();
   }
@@ -111,6 +143,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       css`
         custom-oer-docs-theme {
           line-height: 1.7;
+        }
+        custom-oer-docs-theme :is(p, li) {
+          text-align: start;
+        }
+        custom-oer-docs-theme .lead {
+          font-size: 1.125rem;
+          color: var(--muted-foreground);
         }
         custom-oer-docs-theme :is(h2, h3, h4) {
           letter-spacing: -0.015em;
@@ -167,8 +206,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           position: sticky;
           top: 0;
           z-index: 30;
-          height: 100vh;
-          height: 100dvh;
+          height: calc(100vh - var(--editor-bar-height, 0px));
+          height: calc(100dvh - var(--editor-bar-height, 0px));
           width: var(--sidebar-width);
           display: flex;
           flex-direction: column;
@@ -310,11 +349,19 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         site-active-title {
           display: block;
-          --site-active-title-margin: 0 0 1.5rem;
+          margin: 0 0 1.5rem;
+        }
+        site-active-title h1 {
+          font-family: var(--font-sans);
           font-size: 2.25rem;
           font-weight: 700;
           letter-spacing: -0.025em;
           line-height: 1.2;
+        }
+        site-active-title h1 .site-active-title-icon {
+          --simple-icon-height: 1.5rem;
+          --simple-icon-width: 1.5rem;
+          color: var(--muted-foreground);
         }
         :host([edit-mode]) #slot {
           display: none;
@@ -362,7 +409,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           main {
             padding: 1.5rem 1rem 3rem;
           }
-          site-active-title {
+          site-active-title h1 {
             font-size: 1.75rem;
           }
         }
