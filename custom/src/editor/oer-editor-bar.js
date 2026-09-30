@@ -243,9 +243,51 @@ class OerEditorBar extends LitElement {
       }
 
       .status {
-        color: var(--muted-foreground);
-        font-size: 0.8125rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        height: 1.5rem;
+        padding: 0 0.5rem;
         margin-right: 0.25rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--foreground);
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+      .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 999px;
+        background: var(--primary);
+      }
+
+      /* segmented control (shadcn TabsList) */
+      .segmented {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.125rem;
+        height: 2.25rem;
+        padding: 0.1875rem;
+        border-radius: var(--radius-md);
+        background: var(--muted);
+      }
+      button.seg {
+        height: 1.875rem;
+        padding: 0 0.625rem;
+        gap: 0.375rem;
+        border-radius: calc(var(--radius-md) - 2px);
+        color: var(--muted-foreground);
+        font-weight: 500;
+      }
+      button.seg:hover {
+        background: transparent;
+        color: var(--foreground);
+      }
+      button.seg[aria-selected="true"] {
+        background: var(--background);
+        color: var(--foreground);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.12), 0 0 0 1px var(--border);
       }
 
       /* user menu (shadcn DropdownMenu) */
@@ -293,6 +335,15 @@ class OerEditorBar extends LitElement {
         font-weight: 400;
       }
 
+      @media (max-width: 1100px) {
+        .seg-label {
+          display: none;
+        }
+        button.seg {
+          width: 2rem;
+          padding: 0;
+        }
+      }
       @media (max-width: 900px) {
         .label-md {
           display: none;
@@ -330,7 +381,7 @@ class OerEditorBar extends LitElement {
         <div class="group">
           ${this.editMode
             ? html`
-                <span class="status">Editing</span>
+                <span class="status" role="status"><span class="dot" aria-hidden="true"></span>Editing</span>
                 <button class="outline" @click="${() => this._callStock("_cancelButtonTap", "#cancelbutton")}" title="Discard changes (${MOD}⇧/)">
                   Cancel
                 </button>
@@ -407,30 +458,34 @@ class OerEditorBar extends LitElement {
   }
 
   renderEditTools() {
-    const tray = (name, iconName, label, feature) =>
+    // Right-panel modes as a labelled segmented control (shadcn Tabs look),
+    // so the open panel is always visible as text, not just a tinted icon.
+    const seg = (name, iconName, label, shortcut, feature) =>
       !feature || store.platformAllows(feature)
         ? html`<button
-            class="icon-only"
-            aria-pressed="${this._trayActive(name)}"
+            role="tab"
+            class="seg"
+            aria-selected="${this._trayActive(name)}"
             @click="${() => this._op(name)}"
-            title="${label}"
-            aria-label="${label}"
+            title="${label} panel (${shortcut})"
           >
-            ${icon(iconName)}
+            ${icon(iconName)}<span class="seg-label">${label}</span>
           </button>`
         : "";
     return html`
-      ${tray("content-add", "hax:add-brick", `Add block (${MOD}⇧3)`, "addBlock")}
-      ${tray("content-edit", "image:tune", `Configure block (${MOD}⇧4)`)}
-      ${tray("content-map", "editor:format-line-spacing", `Page outline (${MOD}⇧2)`, "contentMap")}
-      ${tray("view-source", "hax:html-code", `View source (${MOD}⇧1)`, "viewSource")}
-      <div class="sep" aria-hidden="true"></div>
       <button class="icon-only" @click="${() => this._op("undo")}" title="Undo (${MOD}Z)" aria-label="Undo">
         ${icon("icons:undo")}
       </button>
       <button class="icon-only" @click="${() => this._op("redo")}" title="Redo (${MOD}⇧Z)" aria-label="Redo">
         ${icon("icons:redo")}
       </button>
+      <div class="sep" aria-hidden="true"></div>
+      <div class="segmented" role="tablist" aria-label="Editor panel">
+        ${seg("content-add", "hax:add-brick", "Insert", `${MOD}⇧3`, "addBlock")}
+        ${seg("content-edit", "image:tune", "Block", `${MOD}⇧4`)}
+        ${seg("content-map", "icons:toc", "Outline", `${MOD}⇧2`, "contentMap")}
+        ${seg("view-source", "hax:html-code", "Source", `${MOD}⇧1`, "viewSource")}
+      </div>
     `;
   }
 

@@ -9,13 +9,17 @@ import { installQuietMode } from "./quiet-mode.js";
 import { installShadowStyles, registerShadowStyles } from "./shadow-styles.js";
 import { editorSkin } from "./editor-skin.js";
 import { installCommandPalette } from "./command-palette.js";
+import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
 import "./oer-editor-bar.js";
+import "./oer-block-label.js";
 
 installLucideIcons();
 installQuietMode();
 installShadowStyles();
 registerShadowStyles(editorSkin);
 installCommandPalette();
+installUxTweaks();
+installTrayEnhancer();
 
 // Swap the stock top bar for oer-editor-bar. The stock element stays mounted
 // (it owns shortcuts, Merlin programs and save logic) but becomes an
@@ -45,8 +49,12 @@ function adoptStockBar() {
       bar = doc.createElement("oer-editor-bar");
       doc.body.prepend(bar);
     }
+    if (!doc.querySelector("oer-block-label")) {
+      doc.body.append(doc.createElement("oer-block-label"));
+    }
   } else if (bar) {
     bar.remove();
+    doc.querySelector("oer-block-label")?.remove();
   }
 }
 new MutationObserver(adoptStockBar).observe(globalThis.document.body, { childList: true });

@@ -91,6 +91,7 @@
   "icons:view-module": "layout-grid",
   "icons:toc": "list-tree",
   "icons:swap-vert": "arrow-up-down",
+  "icons:swap-horiz": "arrow-left-right",
   "icons:style": "paintbrush",
   "icons:restore": "rotate-ccw",
   "icons:record-voice-over": "mic",

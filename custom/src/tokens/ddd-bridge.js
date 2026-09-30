@@ -73,7 +73,7 @@ export const dddBridge = css`
     --hax-ui-color-faded: var(--muted-foreground);
     --hax-ui-color-accent: var(--primary);
     --hax-ui-color-accent-secondary: var(--accent-foreground);
-    --hax-ui-color-focus: var(--ring);
+    --hax-ui-color-focus: var(--primary);
     --hax-ui-color-hover: color-mix(in oklch, var(--ring) 45%, transparent);
     --hax-ui-color-danger: var(--destructive);
     --hax-ui-color-danger-secondary: var(--destructive-foreground);

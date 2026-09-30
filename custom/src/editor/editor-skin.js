@@ -59,6 +59,7 @@ const EDITOR_TAGS = [
   "hax-stax-browser",
   "hax-map",
   "hax-view-source",
+  "hax-gizmo-browser",
   "hax-picker",
   "hax-app-picker",
   "hax-cancel-dialog",
@@ -92,6 +93,10 @@ const EDITOR_TAGS = [
   "simple-fields-container",
   "page-break",
   "simple-context-menu",
+  "simple-tooltip",
+  "hax-map",
+  "hax-view-source",
+  "hax-gizmo-browser",
   "hax-tray-upload",
   "hax-upload-field",
   "simple-file-upload",
@@ -366,6 +371,61 @@ export const editorSkin = {
       flex: 1;
       text-align: start !important;
     }
+    /* stock "move panel" arrow read as a close button; replaced by the
+       labelled actions injected in ux-tweaks.js */
+    #haxMenuAlign {
+      display: none !important;
+    }
+    .tray-detail-titlebar-actions {
+      display: flex !important;
+      gap: 0.125rem !important;
+    }
+    .oer-tray-action {
+      all: unset;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--radius-md);
+      color: var(--muted-foreground);
+      cursor: pointer;
+    }
+    .oer-tray-action:hover {
+      background: var(--accent);
+      color: var(--foreground);
+    }
+    .oer-tray-action:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+    .oer-icon {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background: currentColor;
+      -webkit-mask: var(--src) center / contain no-repeat;
+      mask: var(--src) center / contain no-repeat;
+    }
+    /* Insert panel: finding a block comes first, uploading media last */
+    .block-add-wrapper {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+      padding: 0.75rem 1rem 1rem !important;
+    }
+    #gizmobrowser {
+      order: 1;
+    }
+    #staxbrowser {
+      order: 2;
+    }
+    #pagesbrowser {
+      order: 3;
+    }
+    hax-tray-upload {
+      order: 4;
+    }
     #settingsform,
     simple-fields {
       padding: 0.75rem 1rem 1rem !important;
@@ -397,6 +457,16 @@ export const editorSkin = {
     }
     #content {
       font-size: 0.875rem;
+    }
+  `,
+
+  "hax-gizmo-browser": css`
+    .toolbar-inner {
+      padding: 0 0 0.5rem !important;
+      margin: 0 !important;
+    }
+    #inputfilter {
+      margin: 0 !important;
     }
   `,
 
@@ -436,6 +506,19 @@ export const editorSkin = {
       font-size: 0.75rem !important;
       font-weight: 500 !important;
       line-height: 1rem !important;
+    }
+    /* labelled action buttons (Source panel) read as shadcn Buttons */
+    :host([data-oer-labelled]) button {
+      flex-direction: row !important;
+      height: 2rem !important;
+      padding: 0 0.75rem !important;
+      gap: 0.375rem !important;
+      background: var(--simple-toolbar-button-bg, var(--background)) !important;
+      color: var(--simple-toolbar-button-color, var(--foreground)) !important;
+      border-color: var(--input-border) !important;
+    }
+    :host([data-oer-labelled]) #label {
+      font-size: 0.8125rem !important;
     }
   `,
 
@@ -499,21 +582,37 @@ export const editorSkin = {
   `,
 
   /* ---------- floating block + text toolbars (shadcn Toolbar) ---------- */
+  /* block toolbar: one continuous toolbar with dividers between groups,
+     instead of three separate floating boxes */
   "hax-toolbar": css`
     :host {
-      gap: 0.25rem !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0 !important;
+      padding: 0.1875rem !important;
+      background: var(--popover) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-md) !important;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1) !important;
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
+      --simple-icon-color: var(--foreground);
     }
     .group {
       display: flex !important;
       align-items: center !important;
       gap: 0.125rem !important;
-      padding: 0.125rem !important;
-      background: var(--popover) !important;
-      border: 1px solid var(--border) !important;
-      border-radius: var(--radius-md) !important;
-      box-shadow: 0 1px 3px rgb(0 0 0 / 0.08) !important;
+      padding: 0 0.125rem !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+    .group + .group,
+    .group + #buttons {
+      border-left: 1px solid var(--border) !important;
+      margin-left: 0.125rem !important;
+      padding-left: 0.25rem !important;
     }
   `,
   "hax-text-editor-toolbar, rich-text-editor-toolbar": css`
@@ -573,16 +672,27 @@ export const editorSkin = {
       border-color: var(--border) !important;
       border-radius: var(--radius-md) !important;
     }
+    /* "Select to edit Page details" is a button: make it look like one */
     .text {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      height: 2rem !important;
       font-family: var(--font-sans) !important;
-      font-size: 0.75rem !important;
+      font-size: 0.8125rem !important;
       font-weight: 500 !important;
-      color: var(--muted-foreground) !important;
-      background: var(--muted) !important;
-      border: 1px solid var(--border) !important;
+      color: var(--foreground) !important;
+      background: var(--background) !important;
+      border: 1px solid var(--input-border) !important;
       border-radius: var(--radius-md) !important;
-      box-shadow: none !important;
-      padding: 0.375rem 0.75rem !important;
+      box-shadow: 0 1px 2px rgb(0 0 0 / 0.05) !important;
+      padding: 0 0.75rem !important;
+      cursor: pointer !important;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+    }
+    .text:hover {
+      background: var(--accent) !important;
     }
     .menu-button,
     .save-button,
@@ -623,6 +733,156 @@ export const editorSkin = {
     }
   `,
 
+  /* page outline panel: a layers list, full-width rows, clear current row */
+  "hax-map": css`
+    :host {
+      font-family: var(--font-sans) !important;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    ul {
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0.5rem !important;
+    }
+    li {
+      position: relative;
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.125rem !important;
+      min-height: 2rem !important;
+      margin: 0 0 1px !important;
+      padding: 0 !important;
+      border-radius: var(--radius-md) !important;
+    }
+    li:hover {
+      background: var(--accent);
+    }
+    li:has(hax-toolbar-item[data-active-item]) {
+      background: var(--accent);
+      box-shadow: inset 2px 0 0 var(--primary);
+    }
+    hax-toolbar-item {
+      flex: 1;
+      min-width: 0;
+      --simple-toolbar-button-border-width: 0 !important;
+      --simple-toolbar-button-bg: transparent !important;
+      --simple-toolbar-button-hover-bg: transparent !important;
+      --simple-toolbar-button-height: 2rem !important;
+    }
+    hax-toolbar-item::part(button) {
+      width: 100%;
+      justify-content: flex-start;
+      padding: 0 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    hax-toolbar-item[data-active-item]::part(button) {
+      font-weight: 600;
+    }
+    hax-toolbar-item::part(label) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: start;
+    }
+    /* nested blocks (list items etc.) indent with a guide line */
+    li.is-child {
+      margin-left: 0.875rem !important;
+      padding-left: 0.375rem !important;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+      box-shadow: inset 1px 0 0 var(--border);
+    }
+    li.is-child:has(hax-toolbar-item[data-active-item]) {
+      box-shadow: inset 2px 0 0 var(--primary);
+    }
+    /* row actions: shown on the current row and on the hovered/focused
+       row, hidden elsewhere so labels keep their width */
+    simple-icon-button-lite {
+      flex: none;
+      display: none !important;
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      margin: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: var(--radius-sm);
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+      color: var(--muted-foreground);
+    }
+    li:hover simple-icon-button-lite,
+    li:focus-within simple-icon-button-lite,
+    li:has(hax-toolbar-item[data-active-item]) simple-icon-button-lite {
+      display: inline-flex !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    simple-icon-button-lite:hover {
+      background: var(--background) !important;
+      color: var(--foreground);
+    }
+    simple-icon-button-lite.del:hover {
+      color: var(--destructive);
+    }
+  `,
+
+  /* Source panel: labelled actions, Update HTML as the primary one */
+  "hax-view-source": css`
+    :host {
+      font-family: var(--font-sans) !important;
+    }
+    hax-toolbar {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      margin: 0.75rem 1rem !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      gap: 0.375rem !important;
+    }
+    hax-tray-button.updatecontent {
+      --simple-toolbar-button-bg: var(--primary);
+      --simple-toolbar-button-color: var(--primary-foreground);
+      --simple-icon-color: var(--primary-foreground);
+    }
+    textarea,
+    code-editor,
+    #textarea {
+      font-family: var(--font-mono) !important;
+      font-size: 0.8125rem !important;
+      line-height: 1.6 !important;
+      border: 1px solid var(--input-border) !important;
+      border-radius: var(--radius-md) !important;
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+    }
+  `,
+
+  /* shadcn Tooltip: high-contrast inverse chip */
+  "simple-tooltip": css`
+    #tooltip {
+      font-family: var(--font-sans) !important;
+      font-size: 0.75rem !important;
+      font-weight: 500 !important;
+      line-height: 1rem !important;
+      color: var(--background) !important;
+      background: var(--foreground) !important;
+      border: 0 !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 0.3125rem 0.625rem !important;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15) !important;
+      opacity: 1 !important;
+      white-space: nowrap;
+    }
+  `,
+
   /* ---------- editor canvas ---------- */
   "hax-body": css`
     ::slotted(p),
@@ -631,13 +891,16 @@ export const editorSkin = {
     ::slotted(ol) {
       text-align: start !important;
     }
+    /* hover = dashed hint, selected = solid ring (labelled by
+       oer-block-label); distinct in shape, not just in colour */
+    ::slotted(*:hover:not([data-hax-active])) {
+      outline: 1px dashed var(--muted-foreground) !important;
+      outline-offset: 4px !important;
+    }
     ::slotted([data-hax-active]) {
-      outline: 2px solid var(--ring) !important;
+      outline: 2px solid var(--primary) !important;
       outline-offset: 4px !important;
       border-radius: var(--radius-sm);
-    }
-    ::slotted(*:hover) {
-      outline-color: color-mix(in oklch, var(--ring) 45%, transparent) !important;
     }
   `,
 
