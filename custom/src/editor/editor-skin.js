@@ -91,9 +91,12 @@ const EDITOR_TAGS = [
   "haxcms-toast",
   "a11y-collapse",
   "simple-fields-container",
+  "simple-fields-url-combo",
+  "simple-fields-tag-list",
   "page-break",
   "simple-context-menu",
   "simple-tooltip",
+  "d-d-d-sample",
   "hax-map",
   "hax-view-source",
   "hax-gizmo-browser",
@@ -140,7 +143,7 @@ export const editorSkin = {
 
   /* ---------- form fields: shadcn Input / Textarea / Select ---------- */
   // simple-fields-field extends the container and shares its shadow root
-  "simple-fields-container, simple-fields-field": css`
+  "simple-fields-container, simple-fields-field, simple-fields-url-combo, simple-fields-tag-list": css`
     :host {
       --simple-fields-font-family: var(--font-sans);
       --simple-fields-font-size: 0.875rem;
@@ -154,6 +157,8 @@ export const editorSkin = {
       --simple-fields-background-color: var(--background);
       margin: 0 0 1rem !important;
       font-family: var(--font-sans);
+      /* only the input box is filled; the field row sits on the panel */
+      background: transparent !important;
     }
     /* material underline -> none; the field itself gets the box */
     .border-bottom {
@@ -181,7 +186,7 @@ export const editorSkin = {
       color: var(--destructive) !important;
     }
   `,
-  "simple-fields-field": css`
+  "simple-fields-field, simple-fields-url-combo, simple-fields-tag-list": css`
     :host {
       --simple-fields-font-family: var(--font-sans);
       --simple-fields-font-size: 0.875rem;
@@ -267,6 +272,46 @@ export const editorSkin = {
     }
     [part="option-label"] {
       font-size: 0.875rem !important;
+    }
+    /* radio groups (incl. colour pickers): shadcn RadioGroup rows in a
+       responsive grid, control on the left, selected row ringed */
+    :host([type="radio"]) [part="fieldset-options"] {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)) !important;
+      gap: 0.25rem !important;
+      margin-top: 0.25rem !important;
+    }
+    :host([type="radio"]) [part="option"] {
+      display: flex !important;
+      flex-direction: row-reverse !important;
+      justify-content: flex-end !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      min-height: 2rem !important;
+      margin: 0 !important;
+      padding: 0.25rem 0.5rem !important;
+      border-radius: var(--radius-md) !important;
+      cursor: pointer;
+    }
+    :host([type="radio"]) [part="option"]:hover {
+      background: var(--accent) !important;
+    }
+    :host([type="radio"]) [part="option"]:has(input:checked) {
+      background: var(--accent) !important;
+      box-shadow: inset 0 0 0 1px var(--primary) !important;
+    }
+    :host([type="radio"]) [part="option-label"] {
+      flex: 1;
+      min-width: 0;
+      margin: 0 !important;
+      font-size: 0.8125rem !important;
+      line-height: 1.25 !important;
+      cursor: pointer;
+    }
+    :host([type="radio"]) [part="option-inner"] {
+      flex: none;
+      display: inline-flex !important;
+      margin: 0 !important;
     }
   `,
 
@@ -446,13 +491,20 @@ export const editorSkin = {
       display: none !important;
     }
     .tray-detail-titlebar {
+      position: sticky !important;
+      /* #tray-detail has 0.75rem top padding; stick flush under the header */
+      top: -0.75rem !important;
+      margin-top: -0.75rem !important;
+      z-index: 2 !important;
       display: flex !important;
       align-items: center !important;
       gap: 0.5rem !important;
       height: auto !important;
-      margin: 0 !important;
-      padding: 0.5rem 1rem !important;
-      background: transparent !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 0.5rem !important;
+      padding: 0.625rem 1rem !important;
+      background: var(--card) !important;
       color: var(--foreground) !important;
       border-bottom: 1px solid var(--border) !important;
       font-family: var(--font-sans) !important;
@@ -634,8 +686,77 @@ export const editorSkin = {
     }
   `,
 
-  /* media upload: shadcn dropzone */
-  "hax-tray-upload, hax-upload-field": css`
+  /* media field inside block settings: label, URL input, compact upload
+     row, muted help; no dashed box around the whole field */
+  "hax-upload-field": css`
+    :host {
+      background: transparent !important;
+    }
+    #upload-options,
+    simple-file-upload {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    fieldset {
+      border: 0 !important;
+      padding: 0 !important;
+      margin: 0 0 1rem !important;
+      min-width: 0;
+    }
+    legend {
+      padding: 0 !important;
+      margin: 0 0 0.375rem !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.875rem !important;
+      font-weight: 500 !important;
+      color: var(--foreground) !important;
+    }
+    #upload {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 0.375rem !important;
+      margin-top: 0.5rem !important;
+      padding: 0 !important;
+      text-align: start !important;
+    }
+    [part="drop-area-text"] {
+      font-family: var(--font-sans) !important;
+      font-size: 0.8125rem !important;
+      font-weight: 400 !important;
+      color: var(--muted-foreground) !important;
+      margin: 0 0.25rem 0 0 !important;
+    }
+    [part="sources"] {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.25rem !important;
+    }
+    [part="sources"] simple-toolbar-button {
+      width: 2rem !important;
+      height: 2rem !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      --simple-toolbar-button-height: 2rem;
+      --simple-toolbar-button-min-width: 2rem;
+      --simple-toolbar-button-border-width: 1px;
+      --simple-toolbar-button-border-color: var(--input-border);
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+    }
+    [part="description"],
+    #description {
+      margin-top: 0.375rem !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.8125rem !important;
+      line-height: 1.4 !important;
+      color: var(--muted-foreground) !important;
+    }
+  `,
+
+  /* media upload in the Insert panel: shadcn dropzone */
+  "hax-tray-upload": css`
     fieldset {
       border: 1px dashed var(--input-border) !important;
       border-radius: var(--radius-lg) !important;
@@ -679,17 +800,59 @@ export const editorSkin = {
   `,
   "simple-file-upload": css`
     :host {
+      display: block;
+      background: transparent !important;
       font-family: var(--font-sans) !important;
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
     }
+    [part="browse-area"] {
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+    }
+    #upload {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 0.375rem !important;
+      margin-top: 0.5rem !important;
+      padding: 0 !important;
+      text-align: start !important;
+      background: transparent !important;
+      border: 0 !important;
+    }
     [part="drop-area-text"] {
-      font-size: 0.875rem !important;
+      font-size: 0.8125rem !important;
       color: var(--muted-foreground) !important;
       font-weight: 400 !important;
+      margin: 0 0.25rem 0 0 !important;
     }
     [part="sources"] {
-      gap: 0.375rem !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.25rem !important;
+    }
+    [part="sources"] simple-toolbar-button {
+      width: 2rem !important;
+      height: 2rem !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      --simple-toolbar-button-height: 2rem;
+      --simple-toolbar-button-min-width: 2rem;
+      --simple-toolbar-button-border-width: 1px;
+      --simple-toolbar-button-border-color: var(--input-border);
+    }
+    [part="description"] {
+      margin-top: 0.375rem !important;
+      font-size: 0.8125rem !important;
+      line-height: 1.4 !important;
+      color: var(--muted-foreground) !important;
+    }
+    /* the URL sub-field repeats the field's own label */
+    simple-fields-url-combo {
+      margin: 0 !important;
     }
   `,
 
@@ -803,12 +966,26 @@ export const editorSkin = {
     #menu {
       display: none !important;
     }
+    /* edit mode: no full-width bar, just a compact "Page details" button;
+       its save / cancel buttons duplicate the editor header's */
     :host([data-hax-ray]),
     :host([edit-mode]),
     :host {
-      border-width: 1px !important;
-      border-color: var(--border) !important;
-      border-radius: var(--radius-md) !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      outline: 0 !important;
+    }
+    /* stock edit-mode spacing is 16px padding + an 80px bottom margin */
+    :host([data-hax-ray]) {
+      display: block !important;
+      min-height: 2.25rem !important;
+      margin: 0 0 1rem !important;
+      padding: 0 !important;
+    }
+    .save-button,
+    .cancel-button {
+      display: none !important;
     }
     /* "Select to edit Page details" is a button: make it look like one.
        Only while HAX shows it (data-hax-ray); otherwise it stays hidden */
@@ -827,10 +1004,17 @@ export const editorSkin = {
       border: 1px solid var(--input-border) !important;
       border-radius: var(--radius-md) !important;
       box-shadow: 0 1px 2px rgb(0 0 0 / 0.05) !important;
-      padding: 0 0.75rem !important;
+      padding: 0 0.625rem !important;
+      margin: 0 !important;
       cursor: pointer !important;
+      color: var(--muted-foreground) !important;
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    :host([data-hax-active]) .text {
+      border-color: var(--primary) !important;
+      color: var(--foreground) !important;
     }
     .text:hover {
       background: var(--accent) !important;
@@ -1101,6 +1285,48 @@ export const editorSkin = {
     }
   `,
 
+  /* colour / style swatch labels in radio groups: one line, swatch first */
+  "d-d-d-sample": css`
+    .wrapper {
+      display: flex !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+      gap: 0.5rem !important;
+      min-width: 0;
+    }
+    .sample {
+      flex: none !important;
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      margin: 0 !important;
+      border-radius: var(--radius-sm) !important;
+      box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 15%, transparent) !important;
+    }
+    .label {
+      font-family: var(--font-sans) !important;
+      font-size: 0.8125rem !important;
+      font-weight: 400 !important;
+      white-space: nowrap !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    /* size samples (padding, margin, radius...): width encodes the size,
+       so put the label first and right-align a quiet sample bar */
+    :host(:not([type="accent"]):not([type="primary"])) .wrapper {
+      flex-direction: row-reverse !important;
+      justify-content: space-between !important;
+      width: 100%;
+    }
+    :host(:not([type="accent"]):not([type="primary"])) .sample {
+      height: 0.75rem !important;
+      background-color: color-mix(in oklch, var(--foreground) 30%, transparent) !important;
+      box-shadow: none !important;
+    }
+    :host(:not([type="accent"]):not([type="primary"])) {
+      flex: 1;
+    }
+  `,
+
   /* shadcn Tooltip: high-contrast inverse chip */
   "simple-tooltip": css`
     #tooltip {
@@ -1137,6 +1363,12 @@ export const editorSkin = {
       outline: 2px solid var(--primary) !important;
       outline-offset: 4px !important;
       border-radius: var(--radius-sm);
+    }
+    /* page-break is shown as a compact button that marks its own state */
+    ::slotted(page-break),
+    ::slotted(page-break:hover),
+    ::slotted(page-break[data-hax-active]) {
+      outline: 0 !important;
     }
   `,
 

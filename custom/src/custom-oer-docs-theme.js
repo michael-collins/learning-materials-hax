@@ -87,7 +87,6 @@ const icon = {
   lockOpen: lucide("icons:lock-open"),
   trash: lucide("icons:delete"),
   book: lucide("lrn:book"),
-  chevronsUpDown: lucide("icons:swap-vert"),
   chevronLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`,
   chevronRight: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`,
 };
@@ -112,7 +111,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _locked: { state: true },
       _published: { state: true },
       _pageMenuOpen: { state: true },
-      _userMenuOpen: { state: true },
       _siteDescription: { state: true },
     };
   }
@@ -128,14 +126,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__keyHandler = this._onKeydown.bind(this);
     this._loggedIn = false;
     this._pageMenuOpen = false;
-    this._userMenuOpen = false;
     this.__outsideMenu = (e) => {
       const path = e.composedPath();
       if (this._pageMenuOpen && !path.includes(this.shadowRoot.querySelector(".page-header .menu-wrap"))) {
         this._pageMenuOpen = false;
-      }
-      if (this._userMenuOpen && !path.includes(this.shadowRoot.querySelector(".user-wrap"))) {
-        this._userMenuOpen = false;
       }
     };
     this.__disposer.push(
@@ -616,8 +610,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         .sidebar-footer {
           display: flex;
           flex-direction: column;
-          gap: 0.25rem;
-          padding: 0.5rem !important;
+          gap: 0.5rem;
         }
         .nav-group[hidden] {
           display: none;
@@ -660,71 +653,55 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           outline: 2px solid var(--ring);
           outline-offset: -2px;
         }
-        /* shadcn NavUser */
-        .user-wrap {
-          margin-top: 0;
+        /* footer: Site group + compact user row */
+        .sidebar-footer .nav-group {
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid var(--border);
+          margin-bottom: 0.25rem;
         }
-        .nav-user {
-          all: unset;
-          box-sizing: border-box;
+        .sidebar-footer .nav-group-label {
+          height: auto;
+          padding: 0.25rem 0.75rem;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+        .sidebar-footer .nav-item {
+          height: auto;
+          padding: 0.375rem 0.75rem;
+        }
+        .user-row {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          width: 100%;
-          height: 3rem;
-          padding: 0 0.5rem;
-          border-radius: var(--radius-md);
-          cursor: pointer;
-        }
-        .nav-user:hover,
-        .nav-user[aria-expanded="true"] {
-          background: var(--accent);
-        }
-        .nav-user:focus-visible {
-          outline: 2px solid var(--ring);
-          outline-offset: -2px;
-        }
-        .nav-user .lucide {
-          color: var(--muted-foreground);
+          padding: 0.25rem 0.25rem 0 0.5rem;
         }
         .avatar {
           display: inline-flex;
           align-items: center;
           justify-content: center;
           flex: none;
-          width: 2rem;
-          height: 2rem;
-          border-radius: var(--radius-lg);
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 999px;
           background: var(--muted);
           color: var(--foreground);
-          font-size: 0.75rem;
+          font-size: 0.6875rem;
           font-weight: 600;
           text-transform: uppercase;
         }
-        .nav-user-text {
+        .avatar .lucide {
+          width: 0.875rem;
+          height: 0.875rem;
+        }
+        .user-name {
           flex: 1;
           min-width: 0;
-          display: flex;
-          flex-direction: column;
-          line-height: 1.25;
-        }
-        .nav-user-name {
-          font-size: 0.875rem;
-          font-weight: 600;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-        }
-        .nav-user-role {
           font-size: 0.75rem;
-          color: var(--muted-foreground);
-        }
-        .menu.up {
-          top: auto;
-          bottom: calc(100% + 0.25rem);
-          left: 0;
-          right: 0;
-          min-width: 0;
+          font-weight: 500;
         }
         /* page header: title + page options menu */
         .page-header {
@@ -1074,31 +1051,18 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     `;
   }
 
-  // shadcn NavUser: avatar + name/role, opens a menu upwards
   renderUser() {
     const name = this._userName || "Signed in";
     return html`
-      <div class="menu-wrap user-wrap">
-        <button
-          class="nav-user"
-          aria-haspopup="menu"
-          aria-expanded="${this._userMenuOpen}"
-          @click="${() => (this._userMenuOpen = !this._userMenuOpen)}"
-        >
-          <span class="avatar" aria-hidden="true">${this._userName ? name.slice(0, 2) : icon.user}</span>
-          <span class="nav-user-text">
-            <span class="nav-user-name">${name}</span>
-            <span class="nav-user-role">Site editor</span>
-          </span>
-          ${icon.chevronsUpDown}
+      <div class="user-row">
+        <span class="avatar" aria-hidden="true">${this._userName ? name.slice(0, 2) : icon.user}</span>
+        <span class="user-name">${name}</span>
+        <a class="icon-btn sm" href="${stockUI()?.backLink ?? "/"}" title="Site dashboard" aria-label="Site dashboard">
+          ${icon.layoutDashboard}
+        </a>
+        <button class="icon-btn sm danger" @click="${logout}" title="Log out" aria-label="Log out">
+          ${icon.logOut}
         </button>
-        ${this._userMenuOpen
-          ? html`<div class="menu up" role="menu" @keydown="${this._menuKeys}">
-              <a role="menuitem" href="${stockUI()?.backLink ?? "/"}">${icon.layoutDashboard}Site dashboard</a>
-              <div class="menu-sep" role="separator"></div>
-              <button role="menuitem" class="danger" @click="${logout}">${icon.logOut}Log out</button>
-            </div>`
-          : ""}
       </div>
     `;
   }
@@ -1119,7 +1083,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     const i = items.indexOf(this.shadowRoot.activeElement);
     if (e.key === "Escape") {
       this._pageMenuOpen = false;
-      this._userMenuOpen = false;
     } else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
       e.preventDefault();
       items[(i + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length]?.focus();
