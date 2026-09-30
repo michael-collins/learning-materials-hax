@@ -5,10 +5,17 @@ slug: animated-textures
 order: 0
 parent: null
 title: Animated textures
-description: ''
+description: '[object Object]'
 metadata:
   created: 1790802009
   updated: 1790802009
   images: []
   videos: []
-content: <p></p>
+  overridePathauto: false
+  published: false
+  pageType: exercise
+  hideInMenu: false
+  tags: Blender,AfterEffects,Adobe Media Encoder
+  locked: false
+  readtime: 1
+content: '[object Object]'
