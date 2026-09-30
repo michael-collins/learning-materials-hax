@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-33ad8afa-e73c-4ff7-943c-fa43ae66e625</id>
+<indent>0</indent>
+<location>pages/item-33ad8afa-e73c-4ff7-943c-fa43ae66e625/index.xml</location>
+<slug>api-smoke-test-page</slug>
+<order>0</order>
+<parent></parent>
+<title>API smoke test page</title>
+<description></description>
+<metadata>
+<created>1790801716</created>
+<updated>1790801716</updated>
+<images>
+</images>
+<videos>
+</videos>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

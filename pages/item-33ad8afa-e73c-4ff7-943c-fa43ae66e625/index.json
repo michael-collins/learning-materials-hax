@@ -1,0 +1,17 @@
+{
+  "id": "item-33ad8afa-e73c-4ff7-943c-fa43ae66e625",
+  "indent": 0,
+  "location": "pages/item-33ad8afa-e73c-4ff7-943c-fa43ae66e625/index.json",
+  "slug": "api-smoke-test-page",
+  "order": 0,
+  "parent": null,
+  "title": "API smoke test page",
+  "description": "",
+  "metadata": {
+    "created": 1790801716,
+    "updated": 1790801716,
+    "images": [],
+    "videos": []
+  },
+  "content": "<p></p>"
+}
