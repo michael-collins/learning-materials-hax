@@ -84,6 +84,22 @@
         "locked": false,
         "readtime": 1
       }
+    },
+    {
+      "id": "item-b58246ce-0d49-46ce-8b67-b6d6804954dd",
+      "indent": 0,
+      "location": "pages/item-b58246ce-0d49-46ce-8b67-b6d6804954dd/index.html",
+      "slug": "exercises",
+      "order": 0,
+      "parent": null,
+      "title": "Exercises",
+      "description": "",
+      "metadata": {
+        "created": 1790802084,
+        "updated": 1790802084,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
