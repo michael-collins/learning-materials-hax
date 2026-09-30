@@ -36,6 +36,7 @@ class OerEditorBar extends LitElement {
       trayOpen: { type: Boolean },
       userName: { type: String },
       menuOpen: { type: Boolean },
+      searchOpen: { type: Boolean, reflect: true, attribute: "search-open" },
     };
   }
 
@@ -48,6 +49,7 @@ class OerEditorBar extends LitElement {
     this.trayOpen = false;
     this.userName = "";
     this.menuOpen = false;
+    this.searchOpen = false;
     this.__disposers = [
       autorun(() => {
         const edit = toJS(store.editMode);
@@ -62,7 +64,11 @@ class OerEditorBar extends LitElement {
       }),
     ];
     this.__outside = (e) => {
-      if (this.menuOpen && !e.composedPath().includes(this)) this.menuOpen = false;
+      const path = e.composedPath();
+      if (this.menuOpen && !path.includes(this)) this.menuOpen = false;
+      if (this.searchOpen && !path.includes(this.shadowRoot.querySelector(".search"))) {
+        this.searchOpen = false;
+      }
     };
     this.__trayPoll = null;
   }
@@ -217,20 +223,58 @@ class OerEditorBar extends LitElement {
         background: var(--accent);
       }
 
-      /* command button, shadcn "Search..." input look */
-      button.command {
-        width: min(20rem, 30vw);
-        justify-content: flex-start;
-        gap: 0.5rem;
-        border: 1px solid var(--input-border);
-        background: var(--background);
-        color: var(--muted-foreground);
-        font-weight: 400;
-      }
-      button.command span.label {
-        flex: 1;
+      /* collapsible search: an icon that expands into a field */
+      .search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid transparent;
+        border-radius: var(--radius-md);
         overflow: hidden;
-        text-overflow: ellipsis;
+        transition: width 180ms ease-out, border-color 180ms ease-out;
+      }
+      :host([search-open]) .search {
+        width: min(18rem, 40vw);
+        border-color: var(--input-border);
+        background: var(--background);
+      }
+      .search-toggle {
+        flex: none;
+      }
+      :host([search-open]) .search-toggle {
+        color: var(--muted-foreground);
+        background: transparent;
+      }
+      .search input {
+        flex: 1;
+        min-width: 0;
+        height: 100%;
+        padding: 0 0.5rem 0 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: var(--foreground);
+        font: inherit;
+        font-size: 0.875rem;
+        opacity: 0;
+      }
+      :host([search-open]) .search input {
+        opacity: 1;
+      }
+      .search input::placeholder {
+        color: var(--muted-foreground);
+      }
+      .search:focus-within {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      /* honour the OS "reduce motion" setting */
+      @media (prefers-reduced-motion: reduce) {
+        .search {
+          transition: none;
+        }
       }
       kbd {
         font-family: var(--font-mono, monospace);
@@ -348,15 +392,6 @@ class OerEditorBar extends LitElement {
         .label-md {
           display: none;
         }
-        button.command {
-          width: 2rem;
-          padding: 0;
-          justify-content: center;
-        }
-        button.command .label,
-        button.command kbd {
-          display: none;
-        }
       }
     `;
   }
@@ -373,12 +408,30 @@ class OerEditorBar extends LitElement {
         </div>
 
         <div class="spacer"></div>
-        <button class="command" @click="${() => this._op("super-daemon-modal")}" title="Search or run a command">
-          ${icon("icons:search")}<span class="label">Search or run a command…</span><kbd>${DAEMON}</kbd>
-        </button>
-        <div class="spacer"></div>
 
         <div class="group">
+          <div class="search" role="search">
+            <button
+              class="icon-only search-toggle"
+              aria-expanded="${this.searchOpen}"
+              aria-controls="search-input"
+              title="Search or run a command (${DAEMON})"
+              aria-label="Search or run a command"
+              @click="${this._toggleSearch}"
+            >
+              ${icon("icons:search")}
+            </button>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search or run a command…"
+              aria-label="Search or run a command"
+              tabindex="${this.searchOpen ? 0 : -1}"
+              @input="${this._searchInput}"
+              @keydown="${this._searchKeydown}"
+            />
+          </div>
+          <div class="sep" aria-hidden="true"></div>
           ${this.editMode
             ? html`
                 <span class="status" role="status"><span class="dot" aria-hidden="true"></span>Editing</span>
@@ -489,6 +542,41 @@ class OerEditorBar extends LitElement {
     `;
   }
 
+  _toggleSearch() {
+    this.searchOpen = !this.searchOpen;
+  }
+
+  // hand the typed text to Merlin, which opens as the command dialog with
+  // the query filled in; the inline field collapses back to its icon
+  _searchInput(e) {
+    const value = e.target.value;
+    if (!value) return;
+    const daemon = globalThis.SuperDaemonManager?.requestAvailability?.();
+    if (daemon) {
+      // runProgram + open() rather than waveWand(): waveWand renders the
+      // mini popup first, and switching it to the dialog mid-filter leaves
+      // the results list stuck on "Loading"
+      daemon.runProgram(value, "*");
+      daemon.mini = false;
+      daemon.wand = false;
+      daemon.open();
+    }
+    e.target.value = "";
+    this.searchOpen = false;
+  }
+
+  _searchKeydown(e) {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      this.searchOpen = false;
+      this.shadowRoot.querySelector(".search-toggle")?.focus();
+    } else if (e.key === "Enter" && !e.target.value) {
+      e.preventDefault();
+      this.searchOpen = false;
+      this._op("super-daemon-modal");
+    }
+  }
+
   _menuKeys(e) {
     const items = [...this.shadowRoot.querySelectorAll('[role="menuitem"]')];
     const i = items.indexOf(this.shadowRoot.activeElement);
@@ -503,6 +591,9 @@ class OerEditorBar extends LitElement {
   }
 
   updated(changed) {
+    if (changed.has("searchOpen") && this.searchOpen) {
+      this.shadowRoot.querySelector("#search-input")?.focus();
+    }
     if (changed.has("menuOpen") && this.menuOpen) {
       this.shadowRoot.querySelector('[role="menuitem"]')?.focus();
     }

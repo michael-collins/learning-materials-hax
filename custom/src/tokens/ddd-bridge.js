@@ -55,9 +55,11 @@ export const dddBridge = css`
     --site-breadcrumb-last-color: var(--foreground);
   }
 
-  /* HAX editor UI tokens. hax-body appends its own body{} block at the end
-     of <body>, so these need the extra specificity of html body */
-  html body {
+  /* HAX editor UI tokens. hax-body appends its own body{} and
+     body[hax-ui-theme=...]{} blocks at the end of <body>, so these need
+     at least that specificity */
+  html body,
+  html body[hax-ui-theme] {
     --hax-ui-font-family: var(--font-sans);
     --hax-ui-font-size-xs: 0.6875rem;
     --hax-ui-font-size-sm: 0.75rem;
@@ -85,6 +87,10 @@ export const dddBridge = css`
     --hax-ui-border-color: var(--border);
     --hax-ui-border-radius: var(--radius-md);
     --hax-ui-disabled-color: var(--muted-foreground);
+
+    /* toolbar chrome defaults to a hard-coded #ddd border */
+    --simple-toolbar-border-color: var(--border);
+    --simple-toolbar-button-border-color: transparent;
 
     /* a11y-collapse as shadcn Accordion (editor panels and content) */
     --a11y-collapse-border: 0;

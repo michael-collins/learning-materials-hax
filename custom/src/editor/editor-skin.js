@@ -620,6 +620,10 @@ export const editorSkin = {
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
       font-family: var(--font-sans) !important;
+      /* #buttons draws the container; avoid a second border */
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
     }
     #buttons {
       gap: 0.125rem !important;
@@ -672,9 +676,12 @@ export const editorSkin = {
       border-color: var(--border) !important;
       border-radius: var(--radius-md) !important;
     }
-    /* "Select to edit Page details" is a button: make it look like one */
-    .text {
+    /* "Select to edit Page details" is a button: make it look like one.
+       Only while HAX shows it (data-hax-ray); otherwise it stays hidden */
+    :host([data-hax-ray]) .text {
       display: inline-flex !important;
+    }
+    .text {
       align-items: center !important;
       gap: 0.5rem !important;
       height: 2rem !important;
@@ -777,9 +784,10 @@ export const editorSkin = {
       padding: 0 0.5rem;
       font-size: 0.875rem;
       font-weight: 400;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
+      background: transparent !important;
+      color: var(--foreground) !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
     hax-toolbar-item[data-active-item]::part(button) {
       font-weight: 600;
@@ -814,7 +822,8 @@ export const editorSkin = {
       border-radius: var(--radius-sm);
       --simple-icon-height: 1rem !important;
       --simple-icon-width: 1rem !important;
-      color: var(--muted-foreground);
+      --simple-icon-color: var(--muted-foreground) !important;
+      color: var(--muted-foreground) !important;
     }
     li:hover simple-icon-button-lite,
     li:focus-within simple-icon-button-lite,
