@@ -109,11 +109,11 @@
     },
     {
       "id": "item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98/index.html",
-      "slug": "animating-a-bouncing-ball",
+      "slug": "exercises/animating-a-bouncing-ball",
       "order": 0,
-      "parent": null,
+      "parent": "item-c7dc2be9-d558-4395-ac0b-794d400acc24",
       "title": "Animating a bouncing ball",
       "description": "[object Object]",
       "metadata": {
