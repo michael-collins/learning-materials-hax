@@ -132,11 +132,11 @@
     },
     {
       "id": "item-0d47615b-f339-4e99-9325-29f1aceb9502",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-0d47615b-f339-4e99-9325-29f1aceb9502/index.html",
-      "slug": "animated-textures",
+      "slug": "exercises/animated-textures",
       "order": 0,
-      "parent": null,
+      "parent": "item-c7dc2be9-d558-4395-ac0b-794d400acc24",
       "title": "Animated textures",
       "description": "[object Object]",
       "metadata": {
