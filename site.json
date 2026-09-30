@@ -42,34 +42,12 @@
       }
     },
     {
-      "id": "item-543ed8ee-b984-49d2-b6da-7706d0cdea80",
-      "indent": 0,
-      "location": "pages/item-543ed8ee-b984-49d2-b6da-7706d0cdea80/index.html",
-      "slug": "exercises",
-      "order": 0,
-      "parent": null,
-      "title": "Exercises",
-      "description": "Formative practice focused on a narrow set of competencies.",
-      "metadata": {
-        "created": 1790802106,
-        "updated": 1790802106,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "section",
-        "hideInMenu": false,
-        "locked": false,
-        "readtime": 1
-      }
-    },
-    {
       "id": "item-d171c7c2-82c0-42d7-b95b-82ee71a46eff",
       "indent": 1,
       "location": "pages/item-d171c7c2-82c0-42d7-b95b-82ee71a46eff/index.html",
       "slug": "exercises/animating-a-bouncing-ball",
-      "order": 0,
-      "parent": "item-543ed8ee-b984-49d2-b6da-7706d0cdea80",
+      "order": 2,
+      "parent": null,
       "title": "Animating a bouncing ball",
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
@@ -91,8 +69,8 @@
       "indent": 1,
       "location": "pages/item-aea3ce87-85c3-4b7c-9d5a-45acab88fcfd/index.html",
       "slug": "exercises/animated-textures",
-      "order": 0,
-      "parent": "item-543ed8ee-b984-49d2-b6da-7706d0cdea80",
+      "order": 2,
+      "parent": null,
       "title": "Animated textures",
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
