@@ -161,6 +161,7 @@ export const editorSkin = {
     }
     [part="label"],
     .label-main {
+      background: transparent !important;
       font-family: var(--font-sans) !important;
       font-size: 0.875rem !important;
       font-weight: 500 !important;
@@ -344,6 +345,11 @@ export const editorSkin = {
     :host([collapsed]) {
       display: none !important;
     }
+    /* stock reserves 64px above the panel for its own top bar */
+    .wrapper {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
     .wrapper,
     .detail {
       position: static !important;
@@ -365,7 +371,7 @@ export const editorSkin = {
       flex: 1;
       min-height: 0;
       overflow-y: auto;
-      padding-top: 0.25rem;
+      padding-top: 0.75rem;
       scrollbar-width: thin;
       scrollbar-color: var(--border) transparent;
     }
@@ -375,13 +381,23 @@ export const editorSkin = {
       display: none !important;
     }
 
-    /* tab strip: shadcn TabsList spanning the panel */
-    .oer-tabs {
+    /* panel header: aligned with the editor header (same height and
+       bottom rule), holding a shadcn TabsList */
+    .oer-panel-header {
       flex: none;
+      display: flex;
+      align-items: center;
+      /* the editor header is --topbar-height plus its 1px bottom border */
+      height: calc(var(--topbar-height) + 1px);
+      padding: 0 0.75rem;
+      box-sizing: border-box;
+      border-bottom: 1px solid var(--border);
+    }
+    .oer-tabs {
+      flex: 1;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0.125rem;
-      margin: 0.75rem 1rem;
       padding: 0.1875rem;
       border-radius: var(--radius-md);
       background: var(--muted);

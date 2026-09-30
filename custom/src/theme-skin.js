@@ -55,8 +55,30 @@ export const themeSkin = {
       outline: 2px solid var(--ring) !important;
       outline-offset: -2px !important;
     }
-    .no-icon {
+    /* shadcn SidebarMenuSub rows: h-7, no icons; the sub-menu's own rule
+       replaces HAX's per-item left border */
+    :host([is-nested]) {
+      border-left: 0 !important;
+      margin-left: 0 !important;
+    }
+    :host([is-nested]) button {
+      min-height: 1.75rem !important;
+      padding: 0.25rem 0.5rem !important;
+    }
+    :host([is-nested]) simple-icon-lite,
+    :host([is-nested]) .no-icon {
       display: none !important;
+    }
+    /* top-level rows without an icon keep the label column aligned */
+    :host(:not([is-nested])) .no-icon {
+      display: inline-block !important;
+      flex: none;
+      width: 1rem;
+      height: 1rem;
+    }
+    /* section rows leave room for the collapse chevron */
+    :host([slot="heading"]) button {
+      padding-right: 2rem !important;
     }
     /* per-row page-operations pencil; the page options menu covers it */
     .ops {
@@ -77,21 +99,82 @@ export const themeSkin = {
       white-space: nowrap;
     }
   `,
-  // nested pages get the shadcn sub-menu rule on the left
+  // nested pages get the shadcn sub-menu rule on the left (mx-3.5 px-2.5)
   "map-menu-submenu": css`
-    #container,
-    .container,
-    #content,
-    slot:not([name]) {
-      border-left: 0 !important;
-    }
     :host {
       --map-menu-item-height: 2rem;
     }
-    ::slotted(*) {
-      margin-left: 0.875rem !important;
-      padding-left: 0.5rem !important;
-      border-left: 1px solid var(--border) !important;
+    ::slotted(map-menu-builder) {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.125rem !important;
+      margin: 0.125rem 0 0.25rem 0.875rem !important;
+      padding: 0 0 0 0.625rem !important;
+      /* --border is ~1.1:1 on the sidebar's card background; use a
+         perceivable mid tone for the nesting rule */
+      border-left: 1px solid color-mix(in oklch, var(--foreground) 22%, transparent) !important;
+    }
+  `,
+  // HAX's sliding active-page bar; the active row's accent replaces it
+  "map-menu-container": css`
+    #activeindicator {
+      display: none !important;
+    }
+  `,
+  "map-menu-builder": css`
+    /* HAX tree-connector ticks; the sub-menu rule replaces them */
+    :host::after,
+    :host::before {
+      display: none !important;
+    }
+    .wrapper {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.125rem !important;
+    }
+  `,
+  // sidebar sections are a11y-collapse#container inside map-menu-submenu:
+  // no accordion rules, chevron on the right that points right when closed
+  "a11y-collapse": css`
+    :host(#container) {
+      border: 0 !important;
+      margin: 0 !important;
+    }
+    :host(#container)::before,
+    :host(#container)::after {
+      display: none !important;
+    }
+    :host(#container) #heading {
+      position: relative !important;
+      align-items: center !important;
+    }
+    :host(#container) #text {
+      flex: 1 !important;
+      min-width: 0 !important;
+    }
+    :host(#container) #expand {
+      position: absolute !important;
+      right: 0.375rem !important;
+      top: 50% !important;
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      transform: translateY(-50%) !important;
+      color: var(--muted-foreground) !important;
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+      --simple-icon-color: var(--muted-foreground);
+      border-radius: var(--radius-sm);
+    }
+    /* stock fades the chevron in on hover only; keep it visible */
+    :host(#container) #expand {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    :host(#container:not([expanded])) #expand {
+      transform: translateY(-50%) rotate(-90deg) !important;
+    }
+    :host(#container) #expand:hover {
+      background: var(--accent) !important;
     }
   `,
   "site-breadcrumb": css`

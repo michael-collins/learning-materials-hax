@@ -129,7 +129,11 @@ function buildTabs() {
     next.focus();
     next.click();
   });
-  return list;
+  // header strip at the same height as the editor header beside it
+  const header = globalThis.document.createElement("div");
+  header.className = "oer-panel-header";
+  header.append(list);
+  return header;
 }
 
 function whenElement(tag, fn) {
@@ -166,7 +170,7 @@ export function installTrayEnhancer() {
     const enhance = () => {
       const root = tray.shadowRoot;
       const detail = root.querySelector(".detail");
-      if (detail && !detail.querySelector(".oer-tabs")) {
+      if (detail && !detail.querySelector(".oer-panel-header")) {
         detail.prepend(buildTabs());
         syncTabs();
       }
