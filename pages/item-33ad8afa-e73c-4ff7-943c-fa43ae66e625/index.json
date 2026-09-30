@@ -6,12 +6,19 @@
   "order": 0,
   "parent": null,
   "title": "API smoke test page",
-  "description": "",
+  "description": "Edited via APIHello from the smoke test.",
   "metadata": {
     "created": 1790801716,
     "updated": 1790801716,
     "images": [],
-    "videos": []
+    "videos": [],
+    "overridePathauto": false,
+    "published": false,
+    "pageType": "rubric",
+    "hideInMenu": false,
+    "tags": "api,test",
+    "locked": false,
+    "readtime": 1
   },
-  "content": "<p></p>"
+  "content": "<h2>Edited via API</h2><p>Hello from the smoke test.</p>"
 }

@@ -11,6 +11,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 
 ## Pages
 - [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
+- [API smoke test page](https://localhost:3000/learning-materials/pages/item-33ad8afa-e73c-4ff7-943c-fa43ae66e625/index.md): Edited via APIHello from the smoke test.
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

@@ -54,4 +54,16 @@ bottom-text="...probably"
 </ul> ]]>
     </content>
   </entry>
+  <entry>
+    <title>API smoke test page</title>
+    <id>item-33ad8afa-e73c-4ff7-943c-fa43ae66e625</id>
+    <updated>2026-09-30T20:55:16.000Z</updated>
+    <published>2026-09-30T20:55:16.000Z</published>
+    <summary>Edited via APIHello from the smoke test.</summary>
+    <link href="https://localhost:3000/learning-materials/api-smoke-test-page"/>
+    <category term="api,test" label="api,test" />
+    <content type="html">
+      <![CDATA[ <h2>Edited via API</h2><p>Hello from the smoke test.</p> ]]>
+    </content>
+  </entry>
 </feed>

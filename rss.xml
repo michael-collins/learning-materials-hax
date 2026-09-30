@@ -16,5 +16,13 @@
       <guid>https://localhost:3000/learning-materials/welcome</guid>
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>
+    <item>
+      <title>API smoke test page</title>
+      <link>https://localhost:3000/learning-materials/api-smoke-test-page</link>
+      <description>Edited via API Hello from the smoke test.</description>
+      <category>api,test</category>
+      <guid>https://localhost:3000/learning-materials/api-smoke-test-page</guid>
+      <pubDate>Wed, 30 Sep 2026 20:55:16 GMT</pubDate>
+    </item>
   </channel>
 </rss>

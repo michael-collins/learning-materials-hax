@@ -7,7 +7,7 @@
 <order>0</order>
 <parent></parent>
 <title>API smoke test page</title>
-<description></description>
+<description>Edited via APIHello from the smoke test.</description>
 <metadata>
 <created>1790801716</created>
 <updated>1790801716</updated>
@@ -15,6 +15,13 @@
 </images>
 <videos>
 </videos>
+<overridePathauto>false</overridePathauto>
+<published>false</published>
+<pageType>rubric</pageType>
+<hideInMenu>false</hideInMenu>
+<tags>api,test</tags>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[<h2>Edited via API</h2><p>Hello from the smoke test.</p>]]></content>
 </item>
