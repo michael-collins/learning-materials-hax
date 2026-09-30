@@ -14,7 +14,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Exercises](https://localhost:3000/learning-materials/pages/item-c7dc2be9-d558-4395-ac0b-794d400acc24/index.md): Formative practice focused on a narrow set of competencies.
 - [Animating a bouncing ball](https://localhost:3000/learning-materials/pages/item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98/index.md): [object Object]
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-0d47615b-f339-4e99-9325-29f1aceb9502/index.md): [object Object]
-- [Animation Principles](https://localhost:3000/learning-materials/pages/item-cbfc6006-4b80-4af9-bfbc-db949b620459/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.[object Object]
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

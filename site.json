@@ -42,28 +42,6 @@
       }
     },
     {
-      "id": "item-cbfc6006-4b80-4af9-bfbc-db949b620459",
-      "indent": 1,
-      "location": "pages/item-cbfc6006-4b80-4af9-bfbc-db949b620459/index.html",
-      "slug": "lessons/animation-principles",
-      "order": 4,
-      "parent": null,
-      "title": "Animation Principles",
-      "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.[object Object]",
-      "metadata": {
-        "created": 1790802009,
-        "updated": 1790802009,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "lesson",
-        "hideInMenu": false,
-        "locked": false,
-        "readtime": 1
-      }
-    },
-    {
       "id": "item-c7dc2be9-d558-4395-ac0b-794d400acc24",
       "indent": 0,
       "location": "pages/item-c7dc2be9-d558-4395-ac0b-794d400acc24/index.html",
