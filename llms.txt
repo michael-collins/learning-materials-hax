@@ -11,7 +11,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 
 ## Pages
 - [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
-- [Animating a bouncing ball](https://localhost:3000/learning-materials/pages/item-3c44ef1e-7f84-4a09-af86-fa96c502b0da/index.md): In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball<video-player source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M" titl
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-5e2ab039-d5e4-4870-9225-5f4135c1233f/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 
 ## Optional

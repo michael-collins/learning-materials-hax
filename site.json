@@ -42,29 +42,6 @@
       }
     },
     {
-      "id": "item-3c44ef1e-7f84-4a09-af86-fa96c502b0da",
-      "indent": 1,
-      "location": "pages/item-3c44ef1e-7f84-4a09-af86-fa96c502b0da/index.html",
-      "slug": "exercises/animating-a-bouncing-ball",
-      "order": 2,
-      "parent": null,
-      "title": "Animating a bouncing ball",
-      "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball<video-player source=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M\" titl",
-      "metadata": {
-        "created": 1790802084,
-        "updated": 1790802084,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "exercise",
-        "hideInMenu": false,
-        "tags": "Blender,Animation",
-        "locked": false,
-        "readtime": 1
-      }
-    },
-    {
       "id": "item-5e2ab039-d5e4-4870-9225-5f4135c1233f",
       "indent": 1,
       "location": "pages/item-5e2ab039-d5e4-4870-9225-5f4135c1233f/index.html",

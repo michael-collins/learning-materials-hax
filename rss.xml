@@ -17,14 +17,6 @@
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>
     <item>
-      <title>Animating a bouncing ball</title>
-      <link>https://localhost:3000/learning-materials/exercises/animating-a-bouncing-ball</link>
-      <description>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball &amp;lt;video-player source=&quot;https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M&quot; title=&quot;Animating a bouncing ball Tutorial&quot;&amp;gt;&amp;lt;/video-player&amp;gt; Learning Objectives Practice keyframe animation of translation, rotation, and scale properties. Become familiarized with keyframe animation. Apply principles of animation Instructions Watch linked tutorials in Learning Resources t...</description>
-      <category>Blender,Animation</category>
-      <guid>https://localhost:3000/learning-materials/exercises/animating-a-bouncing-ball</guid>
-      <pubDate>Wed, 30 Sep 2026 21:01:24 GMT</pubDate>
-    </item>
-    <item>
       <title>Animated textures</title>
       <link>https://localhost:3000/learning-materials/exercises/animated-textures</link>
       <description>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264. &amp;lt;video-player source=&quot;https://youtube.com/embed/videoseries?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH&quot; title=&quot;Animated textures Tutorial&quot;&amp;gt;&amp;lt;/video-player&amp;gt; Learning Objectives Become familiarized with adding animation sequences as moving textur...</description>
