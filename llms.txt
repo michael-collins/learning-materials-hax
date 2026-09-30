@@ -15,6 +15,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Animation Principles](https://localhost:3000/learning-materials/pages/item-5ecce3d0-dc33-4448-b465-2c6e70f7d80d/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th
 - [Exercises](https://localhost:3000/learning-materials/pages/item-b58246ce-0d49-46ce-8b67-b6d6804954dd/index.md): Formative practice focused on a narrow set of competencies.
 - [Animating a bouncing ball](https://localhost:3000/learning-materials/pages/item-3c44ef1e-7f84-4a09-af86-fa96c502b0da/index.md): In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball<video-player source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M" titl
+- [Animated textures](https://localhost:3000/learning-materials/pages/item-5e2ab039-d5e4-4870-9225-5f4135c1233f/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
