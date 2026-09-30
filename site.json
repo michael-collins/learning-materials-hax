@@ -40,29 +40,6 @@
         "created": 1790801562,
         "updated": 1790801562
       }
-    },
-    {
-      "id": "item-5e2ab039-d5e4-4870-9225-5f4135c1233f",
-      "indent": 1,
-      "location": "pages/item-5e2ab039-d5e4-4870-9225-5f4135c1233f/index.html",
-      "slug": "exercises/animated-textures",
-      "order": 2,
-      "parent": null,
-      "title": "Animated textures",
-      "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
-      "metadata": {
-        "created": 1790802085,
-        "updated": 1790802085,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "exercise",
-        "hideInMenu": false,
-        "tags": "Blender,AfterEffects,Adobe Media Encoder",
-        "locked": false,
-        "readtime": 1
-      }
     }
   ]
 }
