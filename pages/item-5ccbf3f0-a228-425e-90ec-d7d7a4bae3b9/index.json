@@ -6,12 +6,18 @@
   "order": 0,
   "parent": null,
   "title": "Lessons",
-  "description": "",
+  "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
   "metadata": {
     "created": 1790801998,
-    "updated": 1790801998,
+    "updated": 1790801999,
     "images": [],
-    "videos": []
+    "videos": [],
+    "overridePathauto": false,
+    "published": false,
+    "pageType": "section",
+    "hideInMenu": false,
+    "locked": false,
+    "readtime": 1
   },
-  "content": "<p></p>"
+  "content": "<p>Lessons group lectures, tutorials and exercises around a set of learning objectives.</p>"
 }
