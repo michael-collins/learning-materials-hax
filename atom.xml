@@ -79,4 +79,16 @@ bottom-text="...probably"
  ]]>
     </content>
   </entry>
+  <entry>
+    <title>Exercises</title>
+    <id>item-b58246ce-0d49-46ce-8b67-b6d6804954dd</id>
+    <updated>2026-09-30T21:01:24.000Z</updated>
+    <published>2026-09-30T21:01:24.000Z</published>
+    <summary>Formative practice focused on a narrow set of competencies.</summary>
+    <link href="https://localhost:3000/learning-materials/exercises"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Formative practice focused on a narrow set of competencies.</p> ]]>
+    </content>
+  </entry>
 </feed>

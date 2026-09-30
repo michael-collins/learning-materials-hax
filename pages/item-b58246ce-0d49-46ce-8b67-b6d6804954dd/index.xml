@@ -7,7 +7,7 @@
 <order>0</order>
 <parent></parent>
 <title>Exercises</title>
-<description></description>
+<description>Formative practice focused on a narrow set of competencies.</description>
 <metadata>
 <created>1790802084</created>
 <updated>1790802084</updated>
@@ -15,6 +15,12 @@
 </images>
 <videos>
 </videos>
+<overridePathauto>false</overridePathauto>
+<published>false</published>
+<pageType>section</pageType>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[<p>Formative practice focused on a narrow set of competencies.</p>]]></content>
 </item>

@@ -93,12 +93,18 @@
       "order": 0,
       "parent": null,
       "title": "Exercises",
-      "description": "",
+      "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802084,
         "updated": 1790802084,
         "images": [],
-        "videos": []
+        "videos": [],
+        "overridePathauto": false,
+        "published": false,
+        "pageType": "section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
       }
     }
   ]

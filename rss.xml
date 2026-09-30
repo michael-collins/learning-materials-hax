@@ -30,5 +30,12 @@
       <guid>https://localhost:3000/learning-materials/lessons/animation-principles</guid>
       <pubDate>Wed, 30 Sep 2026 21:01:24 GMT</pubDate>
     </item>
+    <item>
+      <title>Exercises</title>
+      <link>https://localhost:3000/learning-materials/exercises</link>
+      <description>Formative practice focused on a narrow set of competencies.</description>
+      <guid>https://localhost:3000/learning-materials/exercises</guid>
+      <pubDate>Wed, 30 Sep 2026 21:01:24 GMT</pubDate>
+    </item>
   </channel>
 </rss>
