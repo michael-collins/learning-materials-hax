@@ -5,10 +5,93 @@ slug: animated-textures
 order: 0
 parent: null
 title: Animated textures
-description: ''
+description: >-
+  In this exercise, you will apply an image sequence as texture object in
+  Blender, render a final Blender animation as an image sequence, and import it
+  into after effects. You will create a compressed v
 metadata:
   created: 1790802106
   updated: 1790802106
   images: []
   videos: []
-content: <p></p>
+  overridePathauto: false
+  published: false
+  pageType: exercise
+  hideInMenu: false
+  tags: Blender,AfterEffects,Adobe Media Encoder
+  locked: false
+  readtime: 1
+content: >
+  <p>In this exercise, you will apply an image sequence as texture object in
+  Blender, render a final Blender animation as an image sequence, and import it
+  into after effects. You will create a compressed video in a web streaming
+  format called H.264.</p>
+
+  <video-player
+  source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH"
+  title="Animated textures Tutorial"></video-player>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Become familiarized with adding animation sequences as moving textures on
+  3D geometry.</li>
+
+  <li>Practice rendering image sequences and producing video files capable to be
+  streamed online.</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Watch the tutorials.</li>
+
+  <li>Create and set a project folder called
+  <code>LASTNAME-animated-textures</code> save your .blend file in the project
+  folder.</li>
+
+  <li>Download the image sequence ZIP file.</li>
+
+  <li>Create an animation with the following:
+
+  <ul>
+
+  <li>EEVEE render engine (Cycles is fine, but it may require too much time to
+  render for this exercise)</li>
+
+  <li>A polygonal model of a television set to use with the animated screen
+  texture image sequence.</li>
+
+  <li>3 seconds (72 frames of animation)</li>
+
+  </ul>
+
+  </li>
+
+  <li>Render your animation as an image sequence (not a video file) to a
+  folder.</li>
+
+  <li>Following the video importing and exporting tutorials. Import your image
+  sequence to After Effects. The sequence defaults at 30 FPS, which is
+  incorrect. Right click on the image sequence footage and choose
+  <strong>Interpret Footage</strong> → <strong>Main</strong>. Change the frame
+  rate to 24FPS.</li>
+
+  <li>Export an H.264 MP4 movie file with the Vimeo preset. (It should be well
+  under 1MB in total file size). (See tutorials).</li>
+
+  <li>Save your animation file as <code>LASTNAME-animated-textures.mp4</code>
+  and upload to the submission dropbox. Do not upload your blend file and image
+  sequence, the files are too large in size.</li>
+
+  <li>Double check that you’ve included all files and that your files can be
+  downloaded and opened.</li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>
