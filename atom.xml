@@ -55,18 +55,6 @@ bottom-text="...probably"
     </content>
   </entry>
   <entry>
-    <title>Exercises</title>
-    <id>item-c7dc2be9-d558-4395-ac0b-794d400acc24</id>
-    <updated>2026-09-30T21:00:09.000Z</updated>
-    <published>2026-09-30T21:00:09.000Z</published>
-    <summary>Formative practice focused on a narrow set of competencies.</summary>
-    <link href="https://localhost:3000/learning-materials/exercises"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Formative practice focused on a narrow set of competencies.</p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Animating a bouncing ball</title>
     <id>item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98</id>
     <updated>2026-09-30T21:00:09.000Z</updated>
