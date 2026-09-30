@@ -40,29 +40,6 @@
         "created": 1790801562,
         "updated": 1790801562
       }
-    },
-    {
-      "id": "item-0d47615b-f339-4e99-9325-29f1aceb9502",
-      "indent": 1,
-      "location": "pages/item-0d47615b-f339-4e99-9325-29f1aceb9502/index.html",
-      "slug": "exercises/animated-textures",
-      "order": 2,
-      "parent": null,
-      "title": "Animated textures",
-      "description": "[object Object]",
-      "metadata": {
-        "created": 1790802009,
-        "updated": 1790802009,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "exercise",
-        "hideInMenu": false,
-        "tags": "Blender,AfterEffects,Adobe Media Encoder",
-        "locked": false,
-        "readtime": 1
-      }
     }
   ]
 }

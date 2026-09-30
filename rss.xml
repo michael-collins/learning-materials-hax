@@ -16,13 +16,5 @@
       <guid>https://localhost:3000/learning-materials/welcome</guid>
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>
-    <item>
-      <title>Animated textures</title>
-      <link>https://localhost:3000/learning-materials/exercises/animated-textures</link>
-      <description>[object Object]</description>
-      <category>Blender,AfterEffects,Adobe Media Encoder</category>
-      <guid>https://localhost:3000/learning-materials/exercises/animated-textures</guid>
-      <pubDate>Wed, 30 Sep 2026 21:00:09 GMT</pubDate>
-    </item>
   </channel>
 </rss>
