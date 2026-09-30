@@ -7,7 +7,7 @@
 <order>0</order>
 <parent></parent>
 <title>Animation Principles</title>
-<description></description>
+<description>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.[object Object]</description>
 <metadata>
 <created>1790802009</created>
 <updated>1790802009</updated>
@@ -15,6 +15,12 @@
 </images>
 <videos>
 </videos>
+<overridePathauto>false</overridePathauto>
+<published>false</published>
+<pageType>lesson</pageType>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[<p class="lead">Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.</p>[object Object]]]></content>
 </item>

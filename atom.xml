@@ -3,7 +3,7 @@
   <title>learning-materials</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-30T20:59:59.000Z</updated>
+  <updated>2026-09-30T21:00:08.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -64,6 +64,18 @@ bottom-text="...probably"
     
     <content type="html">
       <![CDATA[ <p>Lessons group lectures, tutorials and exercises around a set of learning objectives.</p> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Animation Principles</title>
+    <id>item-cbfc6006-4b80-4af9-bfbc-db949b620459</id>
+    <updated>2026-09-30T21:00:09.000Z</updated>
+    <published>2026-09-30T21:00:09.000Z</published>
+    <summary>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.[object Object]</summary>
+    <link href="https://localhost:3000/learning-materials/animation-principles"/>
+    
+    <content type="html">
+      <![CDATA[ <p class="lead">Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.</p>[object Object] ]]>
     </content>
   </entry>
 </feed>
