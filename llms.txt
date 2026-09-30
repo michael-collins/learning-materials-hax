@@ -14,6 +14,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Lessons](https://localhost:3000/learning-materials/pages/item-2c1a46e1-5334-4f60-8fe9-4b51d1cfdd76/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [Animation Principles](https://localhost:3000/learning-materials/pages/item-33e0affe-2162-4355-b8d4-30d0a44bbedf/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th
 - [Exercises](https://localhost:3000/learning-materials/pages/item-543ed8ee-b984-49d2-b6da-7706d0cdea80/index.md): Formative practice focused on a narrow set of competencies.
+- [Animating a bouncing ball](https://localhost:3000/learning-materials/pages/item-d171c7c2-82c0-42d7-b95b-82ee71a46eff/index.md): In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball Learning Objectives Practice keyframe animation of translation, rotation, and scale properties. Become
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

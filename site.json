@@ -115,12 +115,19 @@
       "order": 0,
       "parent": null,
       "title": "Animating a bouncing ball",
-      "description": "",
+      "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802106,
         "updated": 1790802106,
         "images": [],
-        "videos": []
+        "videos": [],
+        "overridePathauto": false,
+        "published": false,
+        "pageType": "exercise",
+        "hideInMenu": false,
+        "tags": "Blender,Animation",
+        "locked": false,
+        "readtime": 1
       }
     }
   ]
