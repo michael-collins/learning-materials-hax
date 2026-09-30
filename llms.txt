@@ -13,6 +13,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
 - [Lessons](https://localhost:3000/learning-materials/pages/item-feb8ff9c-1368-4baf-b09c-6bb28d13d26c/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [Animation Principles](https://localhost:3000/learning-materials/pages/item-cbfc6006-4b80-4af9-bfbc-db949b620459/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.[object Object]
+- [Exercises](https://localhost:3000/learning-materials/pages/item-c7dc2be9-d558-4395-ac0b-794d400acc24/index.md): Formative practice focused on a narrow set of competencies.
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

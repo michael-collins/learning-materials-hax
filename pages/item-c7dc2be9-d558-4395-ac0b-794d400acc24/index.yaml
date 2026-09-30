@@ -5,10 +5,16 @@ slug: exercises
 order: 0
 parent: null
 title: Exercises
-description: ''
+description: Formative practice focused on a narrow set of competencies.
 metadata:
   created: 1790802009
   updated: 1790802009
   images: []
   videos: []
-content: <p></p>
+  overridePathauto: false
+  published: false
+  pageType: section
+  hideInMenu: false
+  locked: false
+  readtime: 1
+content: <p>Formative practice focused on a narrow set of competencies.</p>
