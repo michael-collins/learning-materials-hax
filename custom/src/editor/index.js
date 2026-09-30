@@ -10,7 +10,6 @@ import { installShadowStyles, registerShadowStyles } from "./shadow-styles.js";
 import { editorSkin } from "./editor-skin.js";
 import { installCommandPalette } from "./command-palette.js";
 import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
-import "./oer-editor-bar.js";
 import "./oer-block-label.js";
 
 installLucideIcons();
@@ -21,14 +20,13 @@ installCommandPalette();
 installUxTweaks();
 installTrayEnhancer();
 
-// Swap the stock top bar for oer-editor-bar. The stock element stays mounted
-// (it owns shortcuts, Merlin programs and save logic) but becomes an
-// invisible, inert spacer the same height as our bar, which is what the
-// theme measures to offset its sticky sidebar.
+// The stock top bar is replaced by controls in the theme itself (page
+// options menu, sidebar Site group, editor header). The stock element stays
+// mounted, since it owns shortcuts, Merlin programs and save logic, but is
+// collapsed to an invisible, inert, zero-height element.
 function adoptStockBar() {
   const doc = globalThis.document;
   const stock = doc.querySelector("haxcms-site-editor-ui");
-  let bar = doc.querySelector("oer-editor-bar");
   if (stock) {
     if (!stock.hasAttribute("data-oer-hidden")) {
       stock.setAttribute("data-oer-hidden", "");
@@ -36,7 +34,7 @@ function adoptStockBar() {
       stock.inert = true;
       // inline so it beats the element's outer styles; matches our bar height
       for (const [prop, value] of [
-        ["height", "3.5rem"],
+        ["height", "0"],
         ["min-height", "0"],
         ["overflow", "hidden"],
         ["opacity", "0"],
@@ -45,15 +43,10 @@ function adoptStockBar() {
         stock.style.setProperty(prop, value, "important");
       }
     }
-    if (!bar) {
-      bar = doc.createElement("oer-editor-bar");
-      doc.body.prepend(bar);
-    }
     if (!doc.querySelector("oer-block-label")) {
       doc.body.append(doc.createElement("oer-block-label"));
     }
-  } else if (bar) {
-    bar.remove();
+  } else {
     doc.querySelector("oer-block-label")?.remove();
   }
 }

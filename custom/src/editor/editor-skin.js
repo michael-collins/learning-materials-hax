@@ -97,6 +97,10 @@ const EDITOR_TAGS = [
   "hax-map",
   "hax-view-source",
   "hax-gizmo-browser",
+  "hax-stax-browser",
+  "simple-popover",
+  "simple-popover-manager",
+  "hax-element-demo",
   "hax-tray-upload",
   "hax-upload-field",
   "simple-file-upload",
@@ -322,35 +326,117 @@ export const editorSkin = {
   `,
 
   /* ---------- block tray: shadcn Sheet side panel ---------- */
+  /* editor side panel, docked into the site sidebar's slot while editing */
   "hax-tray": css`
     :host {
+      position: fixed !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: auto !important;
+      width: var(--editor-panel-width) !important;
+      z-index: 35 !important;
       font-family: var(--font-sans) !important;
       color: var(--foreground);
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
     }
+    :host([collapsed]) {
+      display: none !important;
+    }
+    .wrapper,
     .detail {
-      background: var(--background) !important;
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      transform: none !important;
+    }
+    .detail {
+      display: flex !important;
+      flex-direction: column !important;
+      overflow: hidden !important;
+      background: var(--card) !important;
       color: var(--foreground) !important;
       border-right: 1px solid var(--border) !important;
       box-shadow: none !important;
     }
-    .resize-visual {
-      width: 1px !important;
-      background: var(--border) !important;
+    #tray-detail {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding-top: 0.25rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
     }
-    .resize:hover .resize-visual {
-      width: 2px !important;
-      background: var(--ring) !important;
+    .resize,
+    #haxMenuAlign,
+    .tray-detail-titlebar-actions {
+      display: none !important;
+    }
+
+    /* tab strip: shadcn TabsList spanning the panel */
+    .oer-tabs {
+      flex: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.125rem;
+      margin: 0.75rem 1rem;
+      padding: 0.1875rem;
+      border-radius: var(--radius-md);
+      background: var(--muted);
+    }
+    /* text-only tabs, as in the learning-materials editor */
+    .oer-tab .oer-icon {
+      display: none;
+    }
+    .oer-tab {
+      all: unset;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.375rem;
+      height: 1.875rem;
+      border-radius: calc(var(--radius-md) - 2px);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      cursor: pointer;
+    }
+    .oer-tab:hover {
+      color: var(--foreground);
+    }
+    .oer-tab[aria-selected="true"] {
+      background: var(--background);
+      color: var(--foreground);
+      box-shadow: 0 1px 2px rgb(0 0 0 / 0.12), 0 0 0 1px var(--border);
+    }
+    .oer-tab:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 1px;
+    }
+    .oer-icon {
+      display: inline-block;
+      flex: none;
+      width: 0.875rem;
+      height: 0.875rem;
+      background: currentColor;
+      -webkit-mask: var(--src) center / contain no-repeat;
+      mask: var(--src) center / contain no-repeat;
+    }
+
+    /* panel sub-header: only the Block tab needs it (names the block) */
+    :host(:not([tray-detail="content-edit"])) .tray-detail-titlebar {
+      display: none !important;
     }
     .tray-detail-titlebar {
       display: flex !important;
       align-items: center !important;
       gap: 0.5rem !important;
-      height: 3rem !important;
+      height: auto !important;
       margin: 0 !important;
-      padding: 0 0.5rem 0 1rem !important;
-      background: var(--background) !important;
+      padding: 0.5rem 1rem !important;
+      background: transparent !important;
       color: var(--foreground) !important;
       border-bottom: 1px solid var(--border) !important;
       font-family: var(--font-sans) !important;
@@ -365,54 +451,18 @@ export const editorSkin = {
       --simple-icon-width: 1rem !important;
       width: 1rem !important;
       height: 1rem !important;
-      color: var(--muted-foreground) !important;
     }
     .tray-detail-titlebar-label {
       flex: 1;
       text-align: start !important;
     }
-    /* stock "move panel" arrow read as a close button; replaced by the
-       labelled actions injected in ux-tweaks.js */
-    #haxMenuAlign {
-      display: none !important;
-    }
-    .tray-detail-titlebar-actions {
-      display: flex !important;
-      gap: 0.125rem !important;
-    }
-    .oer-tray-action {
-      all: unset;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: var(--radius-md);
-      color: var(--muted-foreground);
-      cursor: pointer;
-    }
-    .oer-tray-action:hover {
-      background: var(--accent);
-      color: var(--foreground);
-    }
-    .oer-tray-action:focus-visible {
-      outline: 2px solid var(--ring);
-      outline-offset: 2px;
-    }
-    .oer-icon {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      background: currentColor;
-      -webkit-mask: var(--src) center / contain no-repeat;
-      mask: var(--src) center / contain no-repeat;
-    }
+
     /* Insert panel: finding a block comes first, uploading media last */
     .block-add-wrapper {
       display: flex !important;
       flex-direction: column !important;
       gap: 0.75rem !important;
-      padding: 0.75rem 1rem 1rem !important;
+      padding: 0.25rem 1rem 1rem !important;
     }
     #gizmobrowser {
       order: 1;
@@ -428,7 +478,7 @@ export const editorSkin = {
     }
     #settingsform,
     simple-fields {
-      padding: 0.75rem 1rem 1rem !important;
+      padding: 0.25rem 1rem 1rem !important;
       background: transparent !important;
       font-size: 0.875rem !important;
     }
@@ -452,6 +502,12 @@ export const editorSkin = {
       text-decoration: underline;
       text-underline-offset: 4px;
     }
+    /* nested style groups inside Configure read lighter than sections */
+    :host([id*="ddd-styles"]) #heading,
+    :host([id*="ddd-styles"]) button {
+      font-weight: 400 !important;
+      color: var(--muted-foreground) !important;
+    }
     button:focus-visible {
       ${focusRing}
     }
@@ -460,10 +516,16 @@ export const editorSkin = {
     }
   `,
 
-  "hax-gizmo-browser": css`
+  "hax-gizmo-browser, hax-stax-browser": css`
+    /* block list, not a grid of big squares */
+    simple-button-grid {
+      --simple-button-grid-cols: 100%;
+      --simple-button-grid-margin: 0;
+    }
     .toolbar-inner {
       padding: 0 0 0.5rem !important;
       margin: 0 !important;
+      background: transparent !important;
     }
     #inputfilter {
       margin: 0 !important;
@@ -507,8 +569,42 @@ export const editorSkin = {
       font-weight: 500 !important;
       line-height: 1rem !important;
     }
+    /* Insert panel entries: list rows (icon + label), like a command menu */
+    :host([part="grid-button"]) {
+      display: block;
+      width: 100%;
+    }
+    :host([part="grid-button"]) button {
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      width: 100% !important;
+      height: 2.25rem !important;
+      min-height: 0 !important;
+      gap: 0.625rem !important;
+      padding: 0 0.625rem !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: var(--radius-md) !important;
+      text-align: start !important;
+    }
+    :host([part="grid-button"]) button:hover,
+    :host([part="grid-button"]) button:focus-visible {
+      background: var(--accent) !important;
+      color: var(--accent-foreground) !important;
+    }
+    :host([part="grid-button"]) #label {
+      font-size: 0.875rem !important;
+      font-weight: 400 !important;
+      line-height: 1.25rem !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     /* labelled action buttons (Source panel) read as shadcn Buttons */
     :host([data-oer-labelled]) button {
+      width: 100% !important;
+      justify-content: center !important;
       flex-direction: row !important;
       height: 2rem !important;
       padding: 0 0.75rem !important;
@@ -608,6 +704,23 @@ export const editorSkin = {
       border-radius: 0 !important;
       box-shadow: none !important;
     }
+    /* Source panel toolbar (marked by ux-tweaks.js): Update HTML full
+       width, then the three secondary actions in one row */
+    :host([data-oer-source]) {
+      display: block !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+    :host([data-oer-source]) #buttons {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 0.375rem !important;
+    }
+    :host([data-oer-source]) ::slotted(.updatecontent) {
+      grid-column: 1 / -1;
+    }
     .group + .group,
     .group + #buttons {
       border-left: 1px solid var(--border) !important;
@@ -669,6 +782,11 @@ export const editorSkin = {
 
   /* page-break's edit-mode strip ("Select to edit Page details") */
   "page-break": css`
+    /* view-mode pencil menu; its actions live in the theme's page menu */
+    #pageactionsbtn,
+    #menu {
+      display: none !important;
+    }
     :host([data-hax-ray]),
     :host([edit-mode]),
     :host {
@@ -846,15 +964,22 @@ export const editorSkin = {
     :host {
       font-family: var(--font-sans) !important;
     }
+    /* Update HTML across the top, then Clean / Prettify / Copy in a row */
     hax-toolbar {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      margin: 0.75rem 1rem !important;
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      margin: 0 1rem 0.75rem !important;
       padding: 0 !important;
       background: transparent !important;
       border: 0 !important;
       box-shadow: none !important;
       gap: 0.375rem !important;
+    }
+    hax-toolbar hax-tray-button {
+      width: 100%;
+    }
+    hax-toolbar hax-tray-button.updatecontent {
+      grid-column: 1 / -1;
     }
     hax-tray-button.updatecontent {
       --simple-toolbar-button-bg: var(--primary);
@@ -871,6 +996,92 @@ export const editorSkin = {
       border-radius: var(--radius-md) !important;
       background: var(--background) !important;
       color: var(--foreground) !important;
+    }
+  `,
+
+  /* block preview on hover (Insert panel): a card beside the panel */
+  "simple-popover-manager": css`
+    /* stock anchors it to the right of the hovered tile, covering the
+       neighbouring tiles; pin block previews just outside the panel.
+       data-oer-preview is set by ux-tweaks.js (:host(:has()) is invalid) */
+    :host([data-oer-preview]) simple-popover {
+      left: calc(var(--editor-panel-width) + 0.5rem) !important;
+    }
+    /* wrappers around the heading/body/nav slots carry stock padding */
+    :host([data-oer-preview]) simple-popover > div {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  `,
+  "simple-popover": css`
+    #content {
+      padding: 0 !important;
+      max-height: none !important;
+      height: auto !important;
+      width: 18rem !important;
+      max-width: calc(100vw - var(--editor-panel-width) - 1.5rem) !important;
+      background: var(--popover) !important;
+      color: var(--popover-foreground) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-lg) !important;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.14) !important;
+      overflow: hidden !important;
+    }
+    #pointer-outer,
+    #pointer {
+      display: none !important;
+    }
+    ::slotted(div:empty) {
+      display: none !important;
+    }
+  `,
+  "hax-element-demo": css`
+    :host {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box;
+      font-family: var(--font-sans) !important;
+    }
+    .preview-wrap {
+      display: grid !important;
+      place-items: center !important;
+      min-height: 4.5rem !important;
+      max-height: 9rem !important;
+      padding: 1rem !important;
+      overflow: hidden !important;
+      background: var(--muted) !important;
+      border-bottom: 1px solid var(--border) !important;
+    }
+    /* stock shrinks previews to 50% with a transform, which makes text
+       blocks unreadable; render at the card's width instead */
+    ::slotted(*) {
+      transform: none !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      font-size: 0.875rem !important;
+      pointer-events: none;
+    }
+    .info {
+      padding: 0.75rem 1rem !important;
+    }
+    .title {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      font-size: 0.875rem !important;
+      font-weight: 600 !important;
+      color: var(--foreground) !important;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    .description {
+      margin-top: 0.25rem !important;
+      font-size: 0.8125rem !important;
+      line-height: 1.45 !important;
+      color: var(--muted-foreground) !important;
     }
   `,
 
@@ -1586,11 +1797,11 @@ export const editorSkin = {
     }
   `,
 
-  // stock top bar is hidden behind oer-editor-bar; shrink its spacer to match
+  // stock top bar is replaced by theme controls; collapse it entirely
   "haxcms-site-editor-ui": css`
     :host {
-      --top-bar-height: 3.5rem !important;
-      height: 3.5rem !important;
+      --top-bar-height: 0px !important;
+      height: 0 !important;
       min-height: 0 !important;
       overflow: hidden !important;
       opacity: 0 !important;

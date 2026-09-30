@@ -4,10 +4,19 @@
  * default. Each tweak patches one element class once it is defined.
  */
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
+import { showPanel, PANELS } from "./stock.js";
+import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
 function onDefined(tag, fn) {
   customElements.whenDefined(tag).then(() => fn(customElements.get(tag)));
 }
+
+const SOURCE_LABELS = {
+  "editor:format-clear": "Clean",
+  "hax:format-textblock": "Prettify",
+  "icons:content-copy": "Copy",
+};
 
 export function installUxTweaks() {
   // Text formatting toolbar: stock collapses every formatting control into a
@@ -44,28 +53,50 @@ export function installUxTweaks() {
     };
   });
 
+  // Block hover previews render in simple-popover-manager; flag it while it
+  // holds one so the skin can move the card outside the editor panel.
+  whenElement("simple-popover-manager", (mgr) => {
+    const flag = () =>
+      mgr.toggleAttribute("data-oer-preview", !!mgr.querySelector("hax-element-demo"));
+    new MutationObserver(flag).observe(mgr, { childList: true, subtree: true });
+    flag();
+  });
+
   // Source panel: its actions are icon-only; show their text labels.
   onDefined("hax-view-source", (Cls) => {
     const proto = Cls.prototype;
     const updated = proto.updated;
     proto.updated = function (changed) {
       updated?.call(this, changed);
+      this.shadowRoot?.querySelector("hax-toolbar")?.setAttribute("data-oer-source", "");
       for (const b of this.shadowRoot?.querySelectorAll("hax-tray-button") ?? []) {
         if (!b.showTextLabel) b.showTextLabel = true;
         b.setAttribute("data-oer-labelled", "");
+        // short labels so the secondary actions fit one row in the panel
+        const short = SOURCE_LABELS[b.icon];
+        if (short && b.label !== short) b.label = short;
       }
     };
   });
 }
 
 /**
- * Tray (the editor side panel) enhancements:
- * - Stock header has no close control, only an arrow that moves the panel to
- *   the other side of the screen. Add explicit "Switch side" and "Close
- *   panel" buttons (the stock arrow is hidden by the skin).
- * - Block settings open with every section collapsed; expand "Configure",
- *   which holds the block's main options, whenever a new block's form renders.
+ * The editor side panel (hax-tray), docked where the site sidebar sits:
+ * - A tab strip (Insert / Block / Outline / Source) is injected at the top.
+ *   Tabs always *show* their panel; stock toggled it closed when the active
+ *   button was pressed again, which is why Insert and Block both appeared
+ *   to switch the pane off.
+ * - The panel stays open for the whole editing session.
+ * - Block settings open with "Configure" expanded.
  */
+
+const TABS = [
+  ["content-add", "hax:add-brick", "Insert"],
+  ["content-edit", "image:tune", "Block"],
+  ["content-map", "icons:toc", "Outline"],
+  ["view-source", "hax:html-code", "Source"],
+];
+
 function iconSpan(name) {
   const span = globalThis.document.createElement("span");
   span.className = "oer-icon";
@@ -74,15 +105,31 @@ function iconSpan(name) {
   return span;
 }
 
-function headerButton(name, label, onClick) {
-  const b = globalThis.document.createElement("button");
-  b.type = "button";
-  b.className = "oer-tray-action";
-  b.title = label;
-  b.setAttribute("aria-label", label);
-  b.append(iconSpan(name));
-  b.addEventListener("click", onClick);
-  return b;
+function buildTabs() {
+  const list = globalThis.document.createElement("div");
+  list.className = "oer-tabs";
+  list.setAttribute("role", "tablist");
+  list.setAttribute("aria-label", "Editor panel");
+  for (const [name, iconName, label] of TABS) {
+    const b = globalThis.document.createElement("button");
+    b.type = "button";
+    b.className = "oer-tab";
+    b.dataset.panel = name;
+    b.setAttribute("role", "tab");
+    b.append(iconSpan(iconName), globalThis.document.createTextNode(label));
+    b.addEventListener("click", () => showPanel(name));
+    list.append(b);
+  }
+  // arrow keys move between tabs, as in any tablist
+  list.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const tabs = [...list.querySelectorAll(".oer-tab")];
+    const i = tabs.indexOf(e.target);
+    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
+    next.focus();
+    next.click();
+  });
+  return list;
 }
 
 function whenElement(tag, fn) {
@@ -106,19 +153,22 @@ export function installTrayEnhancer() {
     if (!tray.shadowRoot || tray.__oerEnhanced) return;
     tray.__oerEnhanced = true;
     let lastConfigure = null;
+
+    const syncTabs = () => {
+      const current = tray.getAttribute("tray-detail");
+      for (const tab of tray.shadowRoot.querySelectorAll(".oer-tab")) {
+        const on = tab.dataset.panel === current;
+        tab.setAttribute("aria-selected", String(on));
+        tab.tabIndex = on ? 0 : -1;
+      }
+    };
+
     const enhance = () => {
       const root = tray.shadowRoot;
-      const actions = root.querySelector(".tray-detail-titlebar-actions");
-      if (actions && !actions.querySelector(".oer-tray-action")) {
-        actions.append(
-          headerButton("icons:swap-horiz", "Switch panel side", () =>
-            root.querySelector("#haxMenuAlign")?.click(),
-          ),
-          headerButton("icons:close", "Close panel", () => {
-            tray.collapsed = true;
-            tray.trayDetail = "no-active-tray";
-          }),
-        );
+      const detail = root.querySelector(".detail");
+      if (detail && !detail.querySelector(".oer-tabs")) {
+        detail.prepend(buildTabs());
+        syncTabs();
       }
       // HAX re-renders the section elements after the form itself, so key
       // off the Configure section's identity rather than the form's
@@ -131,6 +181,16 @@ export function installTrayEnhancer() {
       }
     };
     new MutationObserver(enhance).observe(tray.shadowRoot, { childList: true, subtree: true });
+    new MutationObserver(syncTabs).observe(tray, { attributes: true, attributeFilter: ["tray-detail"] });
     enhance();
+
+    // keep the panel open while editing, defaulting to Insert
+    autorun(() => {
+      if (!toJS(store.editMode)) return;
+      requestAnimationFrame(() => {
+        const current = tray.getAttribute("tray-detail");
+        showPanel(PANELS.includes(current) ? current : "content-add");
+      });
+    });
   });
 }

@@ -58,6 +58,10 @@ export const themeSkin = {
     .no-icon {
       display: none !important;
     }
+    /* per-row page-operations pencil; the page options menu covers it */
+    .ops {
+      display: none !important;
+    }
     simple-icon-lite,
     simple-icon {
       flex: none;

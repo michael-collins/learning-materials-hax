@@ -3,7 +3,7 @@
  *
  * Stock HAX opens Merlin in "mini" mode: a small popup anchored to the
  * #merlin button in its own top bar. That bar is now an invisible spacer
- * behind oer-editor-bar, so a popup anchored there floats over our controls.
+ * collapsed out of view, so a popup anchored there would float in a corner.
  * We keep every Merlin program but always present it as the centred modal.
  */
 export async function installCommandPalette() {

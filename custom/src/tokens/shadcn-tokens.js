@@ -46,6 +46,7 @@ export const shadcnTokens = css`
     --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
     --sidebar-width: 16rem;
+    --editor-panel-width: 20rem;
     --topbar-height: 3.5rem;
   }
 `;
