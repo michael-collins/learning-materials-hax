@@ -40,29 +40,6 @@
         "created": 1790801562,
         "updated": 1790801562
       }
-    },
-    {
-      "id": "item-33ad8afa-e73c-4ff7-943c-fa43ae66e625",
-      "indent": 0,
-      "location": "pages/item-33ad8afa-e73c-4ff7-943c-fa43ae66e625/index.html",
-      "slug": "api-smoke-test-renamed-",
-      "order": 0,
-      "parent": null,
-      "title": "API smoke test (renamed)",
-      "description": "Edited via APIHello from the smoke test.",
-      "metadata": {
-        "created": 1790801716,
-        "updated": 1790801716,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "rubric",
-        "hideInMenu": false,
-        "tags": "api,test",
-        "locked": false,
-        "readtime": 1
-      }
     }
   ]
 }
