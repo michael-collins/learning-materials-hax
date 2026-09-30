@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/custom-oer-docs-theme.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`CustomOerDocsTheme`\n`CustomOerDocsTheme based on modern flex design system`\n`This theme is an example of extending an existing theme component`",
+          "name": "CustomOerDocsTheme",
+          "members": [
+            {
+              "kind": "method",
+              "name": "renderHeaderSlot",
+              "description": "Overload methods for customization of slots from the base class"
+            },
+            {
+              "kind": "method",
+              "name": "renderSideBar"
+            },
+            {
+              "kind": "method",
+              "name": "renderFooterContactInformation"
+            },
+            {
+              "kind": "method",
+              "name": "renderFooterSecondarySlot"
+            },
+            {
+              "kind": "method",
+              "name": "renderFooterPrimarySlot"
+            },
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "description": "Store the tag name to make it easier to obtain directly.",
+              "readonly": true
+            }
+          ],
+          "superclass": {
+            "name": "PolarisFlexTheme",
+            "package": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js"
+          },
+          "tagName": "custom-oer-docs-theme",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "CustomOerDocsTheme",
+            "module": "src/custom-oer-docs-theme.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomOerDocsTheme",
+          "declaration": {
+            "name": "CustomOerDocsTheme",
+            "module": "src/custom-oer-docs-theme.js"
+          }
+        }
+      ]
+    }
+  ]
+}
