@@ -42,29 +42,6 @@
       }
     },
     {
-      "id": "item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98",
-      "indent": 1,
-      "location": "pages/item-6d40e61d-e62d-4f75-ab15-e28bdcfecd98/index.html",
-      "slug": "exercises/animating-a-bouncing-ball",
-      "order": 2,
-      "parent": null,
-      "title": "Animating a bouncing ball",
-      "description": "[object Object]",
-      "metadata": {
-        "created": 1790802009,
-        "updated": 1790802009,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": false,
-        "pageType": "exercise",
-        "hideInMenu": false,
-        "tags": "Blender,Animation",
-        "locked": false,
-        "readtime": 1
-      }
-    },
-    {
       "id": "item-0d47615b-f339-4e99-9325-29f1aceb9502",
       "indent": 1,
       "location": "pages/item-0d47615b-f339-4e99-9325-29f1aceb9502/index.html",
