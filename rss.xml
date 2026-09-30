@@ -17,13 +17,6 @@
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>
     <item>
-      <title>Lessons</title>
-      <link>https://localhost:3000/learning-materials/lessons</link>
-      <description>Lessons group lectures, tutorials and exercises around a set of learning objectives.</description>
-      <guid>https://localhost:3000/learning-materials/lessons</guid>
-      <pubDate>Wed, 30 Sep 2026 21:01:46 GMT</pubDate>
-    </item>
-    <item>
       <title>Animation Principles</title>
       <link>https://localhost:3000/learning-materials/lessons/animation-principles</link>
       <description>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation. Master the fundamental principles of animation that bring characters and objects to life through believable movement and performance.</description>

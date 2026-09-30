@@ -4,7 +4,7 @@
  *
  * `custom-oer-docs-theme`
  * A shadcn-style docs layout for HAXcms, modelled on the learning-materials
- * Nuxt site (layouts/docs.vue): fixed collapsible sidebar with the site
+ * Nuxt site (layouts/docs.vue): sticky collapsible sidebar with the site
  * outline, sticky blurred top bar with breadcrumbs, a ⌘K search button,
  * sun/moon dark-mode toggle, and prev/next pager.
  *
@@ -152,14 +152,27 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           stroke-linejoin: round;
         }
 
-        /* sidebar */
+        /* grid shell; the sidebar is sticky rather than fixed so the HAX
+           editor bar (in normal flow above the theme when logged in) pushes
+           it down instead of covering it */
+        .shell {
+          display: grid;
+          grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+          transition: grid-template-columns 200ms ease;
+        }
+        :host([collapsed]) .shell {
+          grid-template-columns: 0 minmax(0, 1fr);
+        }
         .sidebar {
-          position: fixed;
-          inset: 0 auto 0 0;
+          position: sticky;
+          top: 0;
           z-index: 30;
+          height: 100vh;
+          height: 100dvh;
           width: var(--sidebar-width);
           display: flex;
           flex-direction: column;
+          overflow: hidden;
           background: var(--card);
           border-right: 1px solid var(--border);
           transition: transform 200ms ease;
@@ -238,11 +251,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
         /* main column */
         .main-col {
-          margin-left: var(--sidebar-width);
-          transition: margin-left 200ms ease;
-        }
-        :host([collapsed]) .main-col {
-          margin-left: 0;
+          min-width: 0;
         }
         .topbar {
           position: sticky;
@@ -329,7 +338,14 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           display: none;
         }
         @media (max-width: 767px) {
+          .shell,
+          :host([collapsed]) .shell {
+            grid-template-columns: minmax(0, 1fr);
+          }
           .sidebar {
+            position: fixed;
+            inset: 0 auto 0 0;
+            height: auto;
             transform: translateX(-100%);
             box-shadow: 0 10px 30px rgb(0 0 0 / 0.2);
           }
@@ -342,10 +358,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             inset: 0;
             z-index: 25;
             background: rgb(0 0 0 / 0.4);
-          }
-          .main-col,
-          :host([collapsed]) .main-col {
-            margin-left: 0;
           }
           main {
             padding: 1.5rem 1rem 3rem;
@@ -360,7 +372,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         @media (prefers-reduced-motion: reduce) {
           .sidebar,
-          .main-col {
+          .shell {
             transition: none;
           }
         }
@@ -372,6 +384,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     const drawerOpen = this.__mq.matches ? this.mobileOpen : !this.collapsed;
     return html`
       <a class="skip-link" href="#main">Skip to content</a>
+      <div class="shell">
       <aside
         id="sidebar"
         class="sidebar"
@@ -434,6 +447,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             </nav>
           </article>
         </main>
+      </div>
       </div>
     `;
   }
