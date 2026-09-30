@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/learning-materials</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 20:54:44 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 20:55:16 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/learning-materials/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -17,11 +17,11 @@
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>
     <item>
-      <title>API smoke test page</title>
-      <link>https://localhost:3000/learning-materials/api-smoke-test-page</link>
+      <title>API smoke test (renamed)</title>
+      <link>https://localhost:3000/learning-materials/api-smoke-test-renamed-</link>
       <description>Edited via API Hello from the smoke test.</description>
       <category>api,test</category>
-      <guid>https://localhost:3000/learning-materials/api-smoke-test-page</guid>
+      <guid>https://localhost:3000/learning-materials/api-smoke-test-renamed-</guid>
       <pubDate>Wed, 30 Sep 2026 20:55:16 GMT</pubDate>
     </item>
   </channel>
