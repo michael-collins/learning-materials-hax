@@ -11,6 +11,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 
 ## Pages
 - [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
+- [Lessons](https://localhost:3000/learning-materials/pages/item-ca23b187-a856-4f91-b230-c980ca2b7864/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790802009
+      "updated": 1790802084
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -49,12 +49,18 @@
       "order": 0,
       "parent": null,
       "title": "Lessons",
-      "description": "",
+      "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802084,
         "updated": 1790802084,
         "images": [],
-        "videos": []
+        "videos": [],
+        "overridePathauto": false,
+        "published": false,
+        "pageType": "section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
       }
     }
   ]
