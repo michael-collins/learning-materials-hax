@@ -1,9 +1,6 @@
-// Write whatever additional code you want to be included
-// This could be webcomponents added directly here or using import statements
-// to pull in and reference other web components / ES module compliant libraries.
-// utilize bare imports like import "@things/stuff/stuff.js"; and ensure you reference the js file directly
-// to make a custom theme see the following for a well documented fully working example
-// https://github.com/haxtheweb/webcomponents/blob/master/elements/example-haxcms-theme/example-haxcms-theme.js
-// don't import that directory, we'd recommend copy and pasting it in here or
-// creating your own theme based on it
- import "./custom-oer-docs-theme.js";import "./oer-rubric.js";
+// Entry for the site's custom bundle (built to custom/build/custom.es6.js).
+// The editor chrome goes first so its icon override and shadow-style patch
+// are installed before any HAX element renders.
+import "./editor/index.js";
+import "./custom-oer-docs-theme.js";
+import "./oer-rubric.js";

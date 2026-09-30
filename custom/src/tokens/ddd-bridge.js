@@ -25,7 +25,10 @@ export const dddBridge = css`
     --ddd-theme-default-error: var(--destructive);
     --ddd-theme-header-border-color: var(--border);
 
-    /* type */
+    /* type. DDD sets :root { font-size: var(--ddd-theme-body-font-size) },
+       which is 20px by default and makes every rem 25% larger than the
+       16px scale shadcn sizes assume */
+    --ddd-theme-body-font-size: 16px;
     --ddd-font-primary: var(--font-sans);
     --ddd-font-secondary: var(--font-sans);
     --ddd-font-navigation: var(--font-sans);
@@ -52,10 +55,56 @@ export const dddBridge = css`
     --site-breadcrumb-last-color: var(--foreground);
   }
 
+  /* HAX editor UI tokens. hax-body appends its own body{} block at the end
+     of <body>, so these need the extra specificity of html body */
+  html body {
+    --hax-ui-font-family: var(--font-sans);
+    --hax-ui-font-size-xs: 0.6875rem;
+    --hax-ui-font-size-sm: 0.75rem;
+    --hax-ui-font-size: 0.875rem;
+    --hax-ui-font-size-lg: 1rem;
+    --hax-ui-font-size-xl: 1.125rem;
+    --hax-ui-spacing-xs: 0.25rem;
+    --hax-ui-spacing-sm: 0.5rem;
+    --hax-ui-spacing: 0.75rem;
+    --hax-ui-spacing-lg: 1rem;
+    --hax-ui-spacing-xl: 1.5rem;
+    --hax-ui-color: var(--foreground);
+    --hax-ui-color-faded: var(--muted-foreground);
+    --hax-ui-color-accent: var(--primary);
+    --hax-ui-color-accent-secondary: var(--accent-foreground);
+    --hax-ui-color-focus: var(--ring);
+    --hax-ui-color-hover: color-mix(in oklch, var(--ring) 45%, transparent);
+    --hax-ui-color-danger: var(--destructive);
+    --hax-ui-color-danger-secondary: var(--destructive-foreground);
+    --hax-ui-background-color: var(--background);
+    --hax-ui-background-color-secondary: var(--muted);
+    --hax-ui-background-color-accent: var(--accent);
+    --hax-ui-background-color-faded: var(--muted);
+    --hax-ui-background-color-danger: color-mix(in oklch, var(--destructive) 12%, var(--background));
+    --hax-ui-border-color: var(--border);
+    --hax-ui-border-radius: var(--radius-md);
+    --hax-ui-disabled-color: var(--muted-foreground);
+
+    /* a11y-collapse as shadcn Accordion (editor panels and content) */
+    --a11y-collapse-border: 0;
+    --a11y-collapse-border-between: 1px solid var(--border);
+    --a11y-collapse-border-color: var(--border);
+    --a11y-collapse-heading-background-color: transparent;
+    --a11y-collapse-heading-color: var(--foreground);
+    --a11y-collapse-heading-font-weight: 500;
+    --a11y-collapse-horizontal-padding: 0;
+    --a11y-collapse-vertical-padding: 1rem;
+    --a11y-collapse-margin: 0;
+  }
+
   /* tier 2: editor chrome only */
   haxcms-site-editor-ui,
   hax-tray,
-  super-daemon {
+  super-daemon,
+  page-break,
+  hax-body,
+  simple-modal {
     --ddd-theme-default-skyBlue: var(--primary);
     --ddd-theme-default-coalyGray: var(--foreground);
     --ddd-theme-default-limestoneGray: var(--muted);
