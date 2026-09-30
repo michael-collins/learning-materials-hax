@@ -11,7 +11,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 
 ## Pages
 - [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
-- [Animating a bouncing ball](https://localhost:3000/learning-materials/pages/item-d171c7c2-82c0-42d7-b95b-82ee71a46eff/index.md): In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball Learning Objectives Practice keyframe animation of translation, rotation, and scale properties. Become
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-aea3ce87-85c3-4b7c-9d5a-45acab88fcfd/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 
 ## Optional
