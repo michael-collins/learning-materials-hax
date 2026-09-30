@@ -6,7 +6,7 @@
  * decorative animation, and several of these elements ignore
  * prefers-reduced-motion.
  */
-import { css } from "../lit.js";
+import { css, unsafeCSS } from "../lit.js";
 
 const noMotion = css`
   *,
@@ -17,6 +17,28 @@ const noMotion = css`
     scroll-behavior: auto !important;
   }
 `;
+
+// every HAXcms admin dialog / dashboard rendered inside simple-modal
+const DIALOG_TAGS = [
+  "haxcms-appearance-admin-dialog",
+  "haxcms-content-admin-dialog",
+  "haxcms-files-admin-dialog",
+  "haxcms-outline-editor-dialog",
+  "haxcms-page-revisions-dialog",
+  "haxcms-seo-admin-dialog",
+  "haxcms-site-dashboard",
+  "haxcms-site-details-dialog",
+  "haxcms-site-import-export-dashboard",
+  "haxcms-site-settings-dashboard",
+  "haxcms-views-admin-dialog",
+  "hax-confirm-dialog",
+  "haxcms-about-dialog-ui",
+  "haxcms-allowed-blocks-ui",
+  "haxcms-editor-settings-dialog-ui",
+  "haxcms-site-platform-ui",
+  "haxcms-theme-preview-panel",
+  "haxcms-page-get-started",
+].join(",");
 
 // tags that make up the logged-in editing UI
 const EDITOR_TAGS = [
@@ -70,7 +92,33 @@ const EDITOR_TAGS = [
   "simple-fields-container",
   "page-break",
   "simple-context-menu",
-].join(",");
+  "hax-tray-upload",
+  "hax-upload-field",
+  "simple-file-upload",
+  "simple-button-grid",
+  "simple-popover-selection",
+  "outline-designer",
+].join(",") + "," + DIALOG_TAGS;
+
+// shadcn Button variants, shared by dialog sheets and the light-DOM rule
+export const buttonVariants = `
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.25rem;
+  padding: 0 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  cursor: pointer;
+`;
 
 // shared shadcn primitives
 const focusRing = css`
@@ -173,11 +221,11 @@ export const editorSkin = {
       font-style: normal !important;
     }
     /* Merlin's filter field sits bare in the Command header */
-    :host([part="filter"]) {
+    :host([part="filter"][role="combobox"]) {
       background: transparent !important;
       padding: 0 !important;
     }
-    :host([part="filter"])
+    :host([part="filter"][role="combobox"])
       input.field.box-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
         [type="color"]
       ) {
@@ -187,8 +235,14 @@ export const editorSkin = {
       padding-left: 0 !important;
       height: 2.75rem !important;
     }
-    :host([part="filter"]) input.field:focus-visible {
+    :host([part="filter"][role="combobox"]) input.field:focus-visible {
       outline: none !important;
+    }
+    simple-icon-lite,
+    [part="option-icon"] {
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+      color: var(--muted-foreground);
     }
     input[type="checkbox"],
     input[type="radio"] {
@@ -346,6 +400,104 @@ export const editorSkin = {
     }
   `,
 
+  /* block tiles in the Add-block browser */
+  "hax-tray-button": css`
+    :host {
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      font-family: var(--font-sans);
+    }
+    button {
+      font-family: var(--font-sans) !important;
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-md) !important;
+      box-shadow: none !important;
+      gap: 0.375rem !important;
+      padding: 0.5rem 0.25rem !important;
+    }
+    button:hover,
+    :host([toggled]) button,
+    :host([active]) button {
+      background: var(--accent) !important;
+      color: var(--accent-foreground) !important;
+      border-color: var(--accent) !important;
+    }
+    button:focus-visible {
+      ${focusRing}
+    }
+    #icon {
+      width: 1rem !important;
+      height: 1rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    #label {
+      font-size: 0.75rem !important;
+      font-weight: 500 !important;
+      line-height: 1rem !important;
+    }
+  `,
+
+  /* media upload: shadcn dropzone */
+  "hax-tray-upload, hax-upload-field": css`
+    fieldset {
+      border: 1px dashed var(--input-border) !important;
+      border-radius: var(--radius-lg) !important;
+      padding: 0.75rem !important;
+      margin: 0 0 1rem !important;
+      background: transparent !important;
+    }
+    legend {
+      font-family: var(--font-sans) !important;
+      font-size: 0.75rem !important;
+      font-weight: 500 !important;
+      color: var(--muted-foreground) !important;
+      padding: 0 0.25rem !important;
+    }
+    [part="drop-area-text"] {
+      display: block;
+      font-family: var(--font-sans) !important;
+      font-size: 0.875rem !important;
+      font-weight: 400 !important;
+      color: var(--muted-foreground) !important;
+      margin-bottom: 0.5rem !important;
+    }
+    [part="sources"] {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 0.375rem !important;
+    }
+    [part="sources"] simple-toolbar-button {
+      width: 2.25rem !important;
+      height: 2.25rem !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      --simple-toolbar-button-height: 2.25rem;
+      --simple-toolbar-button-min-width: 2.25rem;
+      --simple-toolbar-button-border-width: 1px;
+      --simple-toolbar-button-border-color: var(--input-border);
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+    }
+  `,
+  "simple-file-upload": css`
+    :host {
+      font-family: var(--font-sans) !important;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+    }
+    [part="drop-area-text"] {
+      font-size: 0.875rem !important;
+      color: var(--muted-foreground) !important;
+      font-weight: 400 !important;
+    }
+    [part="sources"] {
+      gap: 0.375rem !important;
+    }
+  `,
+
   /* ---------- floating block + text toolbars (shadcn Toolbar) ---------- */
   "hax-toolbar": css`
     :host {
@@ -482,6 +634,470 @@ export const editorSkin = {
     }
   `,
 
+  /* ---------- every HAX dialog: shadcn Dialog ---------- */
+  // callers pass titlebar colours as inline custom properties on the host;
+  // :host !important outranks an inline (outer, normal) declaration
+  "simple-modal": css`
+    :host {
+      --simple-modal-titlebar-background: var(--background) !important;
+      --simple-modal-titlebar-color: var(--foreground) !important;
+      --simple-modal-titlebar-height: auto !important;
+      --simple-modal-titlebar-line-height: 1.4 !important;
+      --simple-modal-titlebar-padding: 0 !important;
+      --simple-modal-header-background: var(--background) !important;
+      --simple-modal-header-color: var(--foreground) !important;
+      --simple-modal-content-container-background: var(--background) !important;
+      --simple-modal-content-container-color: var(--foreground) !important;
+      --simple-modal-buttons-background: var(--background) !important;
+      --simple-modal-buttons-color: var(--foreground) !important;
+      --simple-modal-button-background: var(--primary) !important;
+      --simple-modal-button-color: var(--primary-foreground) !important;
+      --simple-modal-backdrop-background: rgb(0 0 0 / 0.5) !important;
+      --simple-modal-title-icon-size: 1rem !important;
+      --simple-modal-titlebar-icon-height: 1rem !important;
+      --simple-modal-titlebar-icon-width: 1rem !important;
+      --dialog-border-radius: var(--radius-lg);
+      /* size to content like shadcn Dialog, not a fixed 80vw x 80vh */
+      --simple-modal-width: min(56rem, calc(100vw - 2rem)) !important;
+      --simple-modal-max-width: calc(100vw - 2rem) !important;
+      --simple-modal-height: auto !important;
+      --simple-modal-min-height: 0 !important;
+      --simple-modal-max-height: 85vh !important;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      font-family: var(--font-sans) !important;
+    }
+    /* [part=dialog] is the full-screen web-dialog host; the box itself is
+       inside its shadow root and only reachable through its variables */
+    web-dialog {
+      --dialog-bg: var(--background);
+      --dialog-color: var(--foreground);
+      --dialog-border-radius: var(--radius-lg);
+      --dialog-box-shadow: 0 0 0 1px var(--border), 0 16px 40px rgb(0 0 0 / 0.18);
+      --dialog-backdrop-bg: transparent;
+      --dialog-animation-duration: 0s;
+      --dialog-padding: 0;
+      /* the host is the full-screen fixed layer; dim with it directly (its
+         own z-index:-1 #backdrop does not reliably paint over the page) */
+      background: rgb(0 0 0 / 0.5) !important;
+    }
+    #titlebar {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      min-height: 0 !important;
+      padding: 1.25rem 1.5rem 0.75rem !important;
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      border: 0 !important;
+    }
+    #simple-modal-title,
+    [part="title"] {
+      flex: 1;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-family: var(--font-sans) !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      line-height: 1.4 !important;
+      letter-spacing: -0.01em !important;
+      color: var(--foreground) !important;
+      border: 0 !important;
+    }
+    #simple-modal-title *,
+    .breadcrumbs {
+      font-size: inherit !important;
+      color: inherit !important;
+    }
+    .breadcrumbs simple-icon-lite,
+    #simple-modal-title simple-icon-lite {
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+      width: 1rem !important;
+      height: 1rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    #close {
+      width: 2rem !important;
+      height: 2rem !important;
+      padding: 0 !important;
+      border-radius: var(--radius-sm) !important;
+      color: var(--muted-foreground) !important;
+      --simple-icon-color: var(--muted-foreground);
+      --simple-icon-width: 1rem !important;
+      --simple-icon-height: 1rem !important;
+    }
+    #close:hover {
+      background: var(--accent) !important;
+    }
+    #close:focus-visible,
+    #close:focus-within {
+      outline: 2px solid var(--ring) !important;
+      outline-offset: 2px !important;
+    }
+    #headerbar {
+      padding: 0 1.5rem !important;
+    }
+    #simple-modal-content,
+    [part="content"] {
+      margin: 0 !important;
+      padding: 0.5rem 1.5rem 1.5rem !important;
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      font-size: 0.875rem !important;
+      line-height: 1.5 !important;
+    }
+    /* dialogs render their own footer; keep the modal's slot neutral */
+    .buttons,
+    [part="buttons"] {
+      display: flex !important;
+      justify-content: flex-end !important;
+      gap: 0.5rem !important;
+      padding: 0 1.5rem !important;
+      background: var(--background) !important;
+      border: 0 !important;
+    }
+  `,
+
+  [DIALOG_TAGS]: css`
+    :host {
+      font-family: var(--font-sans) !important;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--foreground);
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--font-sans) !important;
+      color: var(--foreground) !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.01em !important;
+      line-height: 1.3 !important;
+      text-transform: none !important;
+    }
+    h1 {
+      font-size: 1.25rem !important;
+    }
+    h2 {
+      font-size: 1.125rem !important;
+    }
+    h3 {
+      font-size: 1rem !important;
+    }
+    h4,
+    h5 {
+      font-size: 0.875rem !important;
+    }
+    p,
+    li,
+    label,
+    td,
+    th {
+      font-size: 0.875rem !important;
+    }
+    p {
+      color: var(--muted-foreground);
+    }
+    .buttons {
+      display: flex !important;
+      justify-content: flex-end !important;
+      gap: 0.5rem !important;
+      margin-top: 1rem !important;
+      padding: 1rem 0 0 !important;
+      background: transparent !important;
+      border-top: 1px solid var(--border) !important;
+    }
+    /* collapsible settings groups -> shadcn Card with header */
+    details.group {
+      margin: 0 0 0.75rem !important;
+      padding: 0 !important;
+      background: var(--background) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-lg) !important;
+      box-shadow: none !important;
+      overflow: hidden;
+    }
+    summary.group-summary {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      min-height: 0 !important;
+      padding: 0.75rem 1rem !important;
+      background: transparent !important;
+      color: var(--foreground) !important;
+      font-size: 0.875rem !important;
+      cursor: pointer;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    summary.group-summary simple-icon-lite {
+      width: 1rem !important;
+      height: 1rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    summary.group-summary h3,
+    summary.group-summary h4 {
+      flex: 1;
+      margin: 0 !important;
+      font-size: 0.875rem !important;
+      font-weight: 600 !important;
+    }
+    summary.group-summary::after,
+    summary.group-summary::marker {
+      color: var(--muted-foreground) !important;
+      font-size: 1rem !important;
+      font-weight: 400 !important;
+    }
+    details.group[open] > summary.group-summary {
+      border-bottom: 1px solid var(--border) !important;
+    }
+    .group-body {
+      padding: 1rem !important;
+    }
+    .actions {
+      display: flex !important;
+      justify-content: flex-end !important;
+      gap: 0.5rem !important;
+      padding: 1rem 0 0 !important;
+      background: transparent !important;
+      border-top: 1px solid var(--border) !important;
+    }
+    button.action,
+    .actions button {
+      ${unsafeCSS(buttonVariants)}
+      height: 2.25rem !important;
+      padding: 0 1rem !important;
+      font-size: 0.875rem !important;
+      background: var(--primary) !important;
+      color: var(--primary-foreground) !important;
+      border: 0 !important;
+      border-radius: var(--radius-md) !important;
+    }
+    button.action.secondary,
+    button.action.cancel,
+    .actions button.secondary,
+    .actions button.cancel {
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      border: 1px solid var(--input-border) !important;
+    }
+    .hax-modal-btn,
+    button.hax-modal-btn {
+      ${unsafeCSS(buttonVariants)}
+      background: var(--primary) !important;
+      color: var(--primary-foreground) !important;
+      font-size: 0.875rem !important;
+      height: 2.25rem !important;
+      padding: 0 1rem !important;
+      border-radius: var(--radius-md) !important;
+      border: 0 !important;
+    }
+    .hax-modal-btn:hover {
+      background: color-mix(in oklch, var(--primary) 90%, black) !important;
+    }
+    .hax-modal-btn.import,
+    .hax-modal-btn.cancel,
+    .hax-modal-btn.secondary,
+    .hax-modal-btn[data-variant="outline"] {
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      border: 1px solid var(--input-border) !important;
+    }
+    .hax-modal-btn.import:hover,
+    .hax-modal-btn.cancel:hover,
+    .hax-modal-btn.secondary:hover {
+      background: var(--accent) !important;
+      color: var(--accent-foreground) !important;
+    }
+    .hax-modal-btn.danger,
+    .hax-modal-btn.delete {
+      background: var(--destructive) !important;
+      color: var(--destructive-foreground) !important;
+    }
+    button:focus-visible,
+    a:focus-visible {
+      ${focusRing}
+    }
+  `,
+
+  /* site settings launcher: shadcn Card grid */
+  "haxcms-site-settings-dashboard": css`
+    .dashboard-shell {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1.25rem !important;
+    }
+    .primary-grid,
+    .advanced-grid {
+      gap: 0.75rem !important;
+    }
+    .dashboard-item {
+      height: auto !important;
+      min-height: 0 !important;
+    }
+    .dashboard-action {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-end !important;
+      gap: 0.75rem !important;
+      width: 100% !important;
+      height: 6rem !important;
+      min-height: 0 !important;
+      padding: 1rem !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.875rem !important;
+      font-weight: 500 !important;
+      text-align: start !important;
+      color: var(--card-foreground) !important;
+      background: var(--card) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-lg) !important;
+      box-shadow: none !important;
+      --simple-icon-height: 1.25rem !important;
+      --simple-icon-width: 1.25rem !important;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    .dashboard-action.advanced {
+      height: 4.5rem !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+    }
+    .dashboard-action simple-icon-lite,
+    .dashboard-action simple-icon {
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    .dashboard-action.advanced simple-icon-lite,
+    .dashboard-action.advanced simple-icon {
+      width: 1rem !important;
+      height: 1rem !important;
+    }
+    .dashboard-action:hover {
+      background: var(--accent) !important;
+      color: var(--accent-foreground) !important;
+      border-color: var(--accent) !important;
+    }
+    .dashboard-action:focus-visible {
+      ${focusRing}
+    }
+    .advanced-heading {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+    }
+    .advanced-title {
+      margin: 0 !important;
+      font-size: 0.75rem !important;
+      font-weight: 500 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.06em !important;
+      color: var(--muted-foreground) !important;
+    }
+    .advanced-rule {
+      flex: 1;
+      border: 0 !important;
+      border-top: 1px solid var(--border) !important;
+      height: 0 !important;
+    }
+  `,
+
+  /* ---------- outline designer (site structure) ---------- */
+  "outline-designer": css`
+    :host {
+      font-family: var(--font-sans) !important;
+      font-size: 0.875rem !important;
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    .controls {
+      display: flex !important;
+      gap: 0.25rem !important;
+      padding: 0 0 0.75rem !important;
+      background: transparent !important;
+    }
+    .controls .control {
+      height: 2rem !important;
+      min-width: 2rem !important;
+      background: transparent !important;
+      --simple-toolbar-button-height: 2rem;
+      --simple-toolbar-button-min-width: 2rem;
+      --simple-toolbar-button-border-width: 1px;
+      --simple-toolbar-button-border-color: var(--input-border);
+    }
+    #list {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-md) !important;
+      overflow: hidden;
+    }
+    li.item {
+      display: flex !important;
+      align-items: center !important;
+      min-height: 2.5rem !important;
+      margin: 0 !important;
+      padding: 0 0.5rem !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--border) !important;
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      box-shadow: none !important;
+    }
+    li.item:last-child {
+      border-bottom: 0 !important;
+    }
+    li.item:hover,
+    li.item:focus-within {
+      background: var(--accent) !important;
+    }
+    .item-leading-operations {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.125rem !important;
+      height: 2.5rem !important;
+    }
+    .drag-handle,
+    .actions-menu-button,
+    .collapse-slot simple-icon-button-lite,
+    .controls .control {
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+    }
+    .drag-handle,
+    .actions-menu-button,
+    .collapse-slot simple-icon-button-lite {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      background: transparent !important;
+      border-radius: var(--radius-sm) !important;
+      --simple-toolbar-button-height: 1.75rem;
+      --simple-toolbar-button-min-width: 1.75rem;
+    }
+    .drag-handle {
+      cursor: grab;
+    }
+    .label {
+      font-size: 0.875rem !important;
+      font-weight: 400 !important;
+      color: var(--foreground) !important;
+    }
+    .actions-menu {
+      font-size: 0.875rem !important;
+    }
+  `,
+
   /* ---------- Merlin: shadcn Command dialog ---------- */
   "super-daemon": css`
     web-dialog {
@@ -494,11 +1110,14 @@ export const editorSkin = {
       --dialog-backdrop-bg: rgb(0 0 0 / 0.5);
       --dialog-box-shadow: 0 16px 40px rgb(0 0 0 / 0.18);
     }
-    web-dialog::part(dialog),
-    web-dialog::part(content) {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 0;
+    web-dialog {
+      --dialog-box-shadow: 0 0 0 1px var(--border), 0 16px 40px rgb(0 0 0 / 0.18);
+      --dialog-bg: var(--popover);
+      --dialog-color: var(--popover-foreground);
+      --dialog-animation-duration: 0s;
+    }
+    web-dialog[open] {
+      background: rgb(0 0 0 / 0.5) !important;
     }
     /* shadcn Dialog close: small ghost X in the corner */
     #cancel {
