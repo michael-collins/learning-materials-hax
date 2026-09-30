@@ -17,13 +17,6 @@
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>
     <item>
-      <title>Exercises</title>
-      <link>https://localhost:3000/learning-materials/exercises</link>
-      <description>Formative practice focused on a narrow set of competencies.</description>
-      <guid>https://localhost:3000/learning-materials/exercises</guid>
-      <pubDate>Wed, 30 Sep 2026 21:01:24 GMT</pubDate>
-    </item>
-    <item>
       <title>Animating a bouncing ball</title>
       <link>https://localhost:3000/learning-materials/exercises/animating-a-bouncing-ball</link>
       <description>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball &amp;lt;video-player source=&quot;https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M&quot; title=&quot;Animating a bouncing ball Tutorial&quot;&amp;gt;&amp;lt;/video-player&amp;gt; Learning Objectives Practice keyframe animation of translation, rotation, and scale properties. Become familiarized with keyframe animation. Apply principles of animation Instructions Watch linked tutorials in Learning Resources t...</description>
