@@ -13,9 +13,9 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/animation-principles</loc>
+    <loc>https://localhost:3000/learning-materials/lessons/animation-principles</loc>
     <lastmod>2026-09-30T21:01:46.000Z</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>
