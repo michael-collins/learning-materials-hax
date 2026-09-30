@@ -101,7 +101,7 @@ Learning Objectives
 
 Practice keyframe animation of translation, rotation, and scale properties.
 Become </summary>
-    <link href="https://localhost:3000/learning-materials/animating-a-bouncing-ball"/>
+    <link href="https://localhost:3000/learning-materials/exercises/animating-a-bouncing-ball"/>
     <category term="Blender,Animation" label="Blender,Animation" />
     <content type="html">
       <![CDATA[ <p>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball</p>

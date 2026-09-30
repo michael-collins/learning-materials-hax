@@ -109,11 +109,11 @@
     },
     {
       "id": "item-21d4a4b1-6588-4417-a049-a7a1a9d69626",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.html",
-      "slug": "animating-a-bouncing-ball",
+      "slug": "exercises/animating-a-bouncing-ball",
       "order": 0,
-      "parent": null,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Animating a bouncing ball",
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
