@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://localhost/_sites/learning-materials/welcome</loc>
+    <loc>https://localhost:3000/learning-materials/welcome</loc>
     <lastmod>2026-09-30T20:52:42.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/api-smoke-test-renamed-</loc>
+    <lastmod>2026-09-30T20:54:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

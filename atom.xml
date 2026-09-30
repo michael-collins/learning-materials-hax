@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>learning-materials</title>
-  <link href="https://localhost/_sites/learning-materials/" rel="self" />
+  <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-30T20:52:42.000Z</updated>
+  <updated>2026-09-30T20:54:44.000Z</updated>
   <author>
       <name></name>
   </author>
-  <id>https://localhost/_sites/learning-materials/</id>
+  <id>https://localhost:3000/learning-materials/</id>
   
   <entry>
     <title>Welcome to learning-materials</title>
@@ -15,7 +15,7 @@
     <updated>2026-09-30T20:52:42.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary></summary>
-    <link href="https://localhost/_sites/learning-materials/welcome"/>
+    <link href="https://localhost:3000/learning-materials/welcome"/>
     
     <content type="html">
       <![CDATA[ <p>Welcome to your new HAX site! Click edit on the top bar to get started</p>
@@ -52,6 +52,18 @@ bottom-text="...probably"
     <li><a href="https://discord.gg/EKYJAjqGhf" target="_blank">Join the HAX community</a></li>
     <li><a href="https://github.com/elmsln/issues/issues/new?assignees=&labels=POP&template=issue-report.md&title=User%20report%20from%20HAX%20welcome%20page" target="_blank">Post an issue in our issue queue</a></li>
 </ul> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>API smoke test (renamed)</title>
+    <id>item-313cf282-41c4-4427-9e88-bcb27f5ac6b1</id>
+    <updated>2026-09-30T20:54:44.000Z</updated>
+    <published>2026-09-30T20:54:44.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/api-smoke-test-renamed-"/>
+    
+    <content type="html">
+      <![CDATA[ <p></p> ]]>
     </content>
   </entry>
 </feed>
