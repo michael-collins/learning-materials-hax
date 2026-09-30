@@ -933,6 +933,37 @@ export const editorSkin = {
     }
   `,
 
+  /* confirm prompts: shadcn AlertDialog (outline cancel + destructive) */
+  "hax-confirm-dialog": css`
+    .confirm-shell {
+      background: transparent !important;
+      background-image: none !important;
+      border: 0 !important;
+      padding: 0 !important;
+    }
+    .message {
+      margin: 0 0 1rem !important;
+      font-size: 0.875rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    .actions {
+      border-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    .actions button:not(.destructive) {
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      border: 1px solid var(--input-border) !important;
+    }
+    .actions button:not(.destructive):hover {
+      background: var(--accent) !important;
+    }
+    .actions button.destructive {
+      background: var(--destructive) !important;
+      color: var(--destructive-foreground) !important;
+    }
+  `,
+
   /* site settings launcher: shadcn Card grid */
   "haxcms-site-settings-dashboard": css`
     .dashboard-shell {
