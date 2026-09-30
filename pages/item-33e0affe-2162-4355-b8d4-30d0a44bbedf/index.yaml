@@ -5,10 +5,23 @@ slug: animation-principles
 order: 0
 parent: null
 title: Animation Principles
-description: ''
+description: >-
+  Learn the twelve principles of animation and how to apply them to create
+  believable movement in 3D animation.Master the fundamental principles of
+  animation that bring characters and objects to life th
 metadata:
   created: 1790802106
   updated: 1790802106
   images: []
   videos: []
-content: <p></p>
+  overridePathauto: false
+  published: false
+  pageType: lesson
+  hideInMenu: false
+  locked: false
+  readtime: 1
+content: >
+  <p class="lead">Learn the twelve principles of animation and how to apply them
+  to create believable movement in 3D animation.</p><p>Master the fundamental
+  principles of animation that bring characters and objects to life through
+  believable movement and performance.</p>
