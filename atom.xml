@@ -55,18 +55,6 @@ bottom-text="...probably"
     </content>
   </entry>
   <entry>
-    <title>Lessons</title>
-    <id>item-ca23b187-a856-4f91-b230-c980ca2b7864</id>
-    <updated>2026-09-30T21:01:24.000Z</updated>
-    <published>2026-09-30T21:01:24.000Z</published>
-    <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Lessons group lectures, tutorials and exercises around a set of learning objectives.</p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Animation Principles</title>
     <id>item-5ecce3d0-dc33-4448-b465-2c6e70f7d80d</id>
     <updated>2026-09-30T21:01:24.000Z</updated>
