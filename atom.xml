@@ -54,4 +54,16 @@ bottom-text="...probably"
 </ul> ]]>
     </content>
   </entry>
+  <entry>
+    <title>Lessons</title>
+    <id>item-2c1a46e1-5334-4f60-8fe9-4b51d1cfdd76</id>
+    <updated>2026-09-30T21:01:46.000Z</updated>
+    <published>2026-09-30T21:01:46.000Z</published>
+    <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
+    <link href="https://localhost:3000/learning-materials/lessons"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Lessons group lectures, tutorials and exercises around a set of learning objectives.</p> ]]>
+    </content>
+  </entry>
 </feed>
