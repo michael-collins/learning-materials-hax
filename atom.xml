@@ -3,7 +3,7 @@
   <title>learning-materials</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-30T21:01:46.000Z</updated>
+  <updated>2026-09-30T21:01:47.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -148,7 +148,7 @@ Become </summary>
     <updated>2026-09-30T21:01:46.000Z</updated>
     <published>2026-09-30T21:01:46.000Z</published>
     <summary>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</summary>
-    <link href="https://localhost:3000/learning-materials/animated-textures"/>
+    <link href="https://localhost:3000/learning-materials/exercises/animated-textures"/>
     <category term="Blender,AfterEffects,Adobe Media Encoder" label="Blender,AfterEffects,Adobe Media Encoder" />
     <content type="html">
       <![CDATA[ <p>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264.</p>
