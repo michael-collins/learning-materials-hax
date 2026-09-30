@@ -54,16 +54,4 @@ bottom-text="...probably"
 </ul> ]]>
     </content>
   </entry>
-  <entry>
-    <title>API smoke test (renamed)</title>
-    <id>item-313cf282-41c4-4427-9e88-bcb27f5ac6b1</id>
-    <updated>2026-09-30T20:54:44.000Z</updated>
-    <published>2026-09-30T20:54:44.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/api-smoke-test-renamed-"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
 </feed>
