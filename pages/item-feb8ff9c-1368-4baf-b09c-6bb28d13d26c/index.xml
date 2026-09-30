@@ -7,7 +7,7 @@
 <order>0</order>
 <parent></parent>
 <title>Lessons</title>
-<description></description>
+<description>Lessons group lectures, tutorials and exercises around a set of learning objectives.</description>
 <metadata>
 <created>1790802008</created>
 <updated>1790802008</updated>
@@ -15,6 +15,12 @@
 </images>
 <videos>
 </videos>
+<overridePathauto>false</overridePathauto>
+<published>false</published>
+<pageType>section</pageType>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[<p>Lessons group lectures, tutorials and exercises around a set of learning objectives.</p>]]></content>
 </item>
