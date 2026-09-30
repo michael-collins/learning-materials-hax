@@ -566,6 +566,13 @@ export const editorSkin = {
 
   /* page-break's edit-mode strip ("Select to edit Page details") */
   "page-break": css`
+    :host([data-hax-ray]),
+    :host([edit-mode]),
+    :host {
+      border-width: 1px !important;
+      border-color: var(--border) !important;
+      border-radius: var(--radius-md) !important;
+    }
     .text {
       font-family: var(--font-sans) !important;
       font-size: 0.75rem !important;

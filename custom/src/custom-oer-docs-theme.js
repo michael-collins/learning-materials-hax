@@ -22,11 +22,14 @@ import {
 } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/navigation/site-menu.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/navigation/site-breadcrumb.js";
-import "@haxtheweb/haxcms-elements/lib/ui-components/navigation/site-menu-button.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/active-item/site-active-title.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/layout/site-modal.js";
 import { shadcnTokens } from "./tokens/shadcn-tokens.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
+import { registerShadowStyles } from "./editor/shadow-styles.js";
+import { themeSkin } from "./theme-skin.js";
+
+registerShadowStyles(themeSkin);
 
 const MOBILE_QUERY = "(max-width: 767px)";
 
@@ -36,6 +39,8 @@ const icon = {
   search: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   sun: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></svg>`,
   moon: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+  chevronLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`,
+  chevronRight: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`,
 };
 
 class CustomOerDocsTheme extends HAXCMSLitElementTheme {
@@ -50,6 +55,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       mobileOpen: { type: Boolean, reflect: true, attribute: "mobile-open" },
       dark: { type: Boolean, reflect: true },
       siteTitle: { type: String },
+      _prev: { state: true },
+      _next: { state: true },
     };
   }
 
@@ -83,12 +90,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         });
       }),
     );
-    // close the mobile drawer whenever the route changes
+    // on every route change: close the mobile drawer, recompute prev/next
     this.__disposer.push(
       autorun(() => {
         toJS(store.activeId);
+        const items = toJS(store.routerManifest?.items) || [];
+        const idx = toJS(store.activeManifestIndex);
         Promise.resolve().then(() => {
           this.mobileOpen = false;
+          this._prev = idx > 0 ? items[idx - 1] : null;
+          this._next = idx >= 0 && idx < items.length - 1 ? items[idx + 1] : null;
         });
       }),
     );
@@ -375,10 +386,48 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           padding-top: 1.5rem;
           border-top: 1px solid var(--border);
         }
-        site-menu-button {
-          --site-menu-button-link-color: var(--foreground);
-          --site-menu-button-button-hover-color: var(--accent);
-          --site-menu-button-button-border-radius: var(--radius-md);
+        /* shadcn-style prev/next cards */
+        .pager[hidden] {
+          display: none;
+        }
+        .pager-link {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          min-width: 0;
+          max-width: 50%;
+          padding: 0.75rem 1rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          color: var(--foreground);
+          text-decoration: none;
+        }
+        .pager-link.next {
+          margin-left: auto;
+          align-items: flex-end;
+          text-align: end;
+        }
+        .pager-link:hover {
+          background: var(--accent);
+        }
+        .pager-link:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 2px;
+        }
+        .pager-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          font-size: 0.8125rem;
+          color: var(--muted-foreground);
+        }
+        .pager-title {
+          font-size: 0.875rem;
+          font-weight: 500;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 100%;
         }
 
         /* mobile: sidebar becomes an overlay drawer */
@@ -489,9 +538,19 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           <article id="contentcontainer">
             <site-active-title part="page-title"></site-active-title>
             <section id="slot"><slot></slot></section>
-            <nav class="pager" aria-label="Previous and next page">
-              <site-menu-button type="prev" position="right"></site-menu-button>
-              <site-menu-button type="next" position="left"></site-menu-button>
+            <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
+              ${this._prev
+                ? html`<a class="pager-link prev" href="${this._prev.slug}">
+                    <span class="pager-label">${icon.chevronLeft} Previous</span>
+                    <span class="pager-title">${this._prev.title}</span>
+                  </a>`
+                : html`<span></span>`}
+              ${this._next
+                ? html`<a class="pager-link next" href="${this._next.slug}">
+                    <span class="pager-label">Next ${icon.chevronRight}</span>
+                    <span class="pager-title">${this._next.title}</span>
+                  </a>`
+                : ""}
             </nav>
           </article>
         </main>

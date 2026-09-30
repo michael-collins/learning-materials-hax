@@ -90,10 +90,20 @@ export class OerRubric extends DDD {
         .table-wrap {
           overflow-x: auto;
         }
-        /* DDD ships a bordered-grid table style; reset to shadcn's rows */
+        /* DDD ships a bordered-grid table style with enough weight that the
+           reset needs !important; shadcn tables only rule between rows */
+        table,
+        table thead,
+        table tbody,
+        table tr,
+        table th,
+        table td {
+          border: 0 !important;
+          outline: 0 !important;
+          background: transparent !important;
+        }
         table {
           width: 100%;
-          border: 0;
           border-collapse: collapse;
           font-size: 0.875rem;
         }
@@ -101,16 +111,17 @@ export class OerRubric extends DDD {
         td {
           text-align: start;
           vertical-align: top;
-          padding: 0.75rem 1rem;
-          border: 0;
-          border-bottom: 1px solid var(--border, var(--ddd-theme-default-limestoneLight));
-          background: transparent;
+          padding: 0.75rem 1rem !important;
         }
-        tr:last-child td {
-          border-bottom: 0;
+        table thead th,
+        table tbody tr:not(:last-child) td {
+          border-bottom: 1px solid var(--border, var(--ddd-theme-default-limestoneLight)) !important;
         }
         th {
-          font-weight: 600;
+          color: var(--muted-foreground, inherit);
+        }
+        th {
+          font-weight: 500;
         }
         td:first-child {
           font-weight: 500;
