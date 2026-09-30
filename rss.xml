@@ -37,5 +37,13 @@
       <guid>https://localhost:3000/learning-materials/exercises</guid>
       <pubDate>Wed, 30 Sep 2026 21:03:12 GMT</pubDate>
     </item>
+    <item>
+      <title>Animating a bouncing ball</title>
+      <link>https://localhost:3000/learning-materials/animating-a-bouncing-ball</link>
+      <description>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball Learning Objectives Practice keyframe animation of translation, rotation, and scale properties. Become familiarized with keyframe animation. Apply principles of animation Instructions Watch linked tutorials in Learning Resources to get acquainted with animation tools. Create a project folder on your computer and save a new .blend file called LASTNAME-ball-bounce.blend . Follow the video demonstratio...</description>
+      <category>Blender,Animation</category>
+      <guid>https://localhost:3000/learning-materials/animating-a-bouncing-ball</guid>
+      <pubDate>Wed, 30 Sep 2026 21:03:12 GMT</pubDate>
+    </item>
   </channel>
 </rss>
