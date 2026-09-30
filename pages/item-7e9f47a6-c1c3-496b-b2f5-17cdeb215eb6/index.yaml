@@ -5,10 +5,20 @@ slug: lessons
 order: 0
 parent: null
 title: Lessons
-description: ''
+description: >-
+  Lessons group lectures, tutorials and exercises around a set of learning
+  objectives.
 metadata:
   created: 1790802191
   updated: 1790802191
   images: []
   videos: []
-content: <p></p>
+  overridePathauto: false
+  published: true
+  pageType: section
+  hideInMenu: false
+  locked: false
+  readtime: 1
+content: >-
+  <p>Lessons group lectures, tutorials and exercises around a set of learning
+  objectives.</p>
