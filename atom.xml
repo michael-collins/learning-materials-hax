@@ -3,7 +3,7 @@
   <title>learning-materials</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-30T21:01:24.000Z</updated>
+  <updated>2026-09-30T21:01:25.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -97,7 +97,7 @@ bottom-text="...probably"
     <updated>2026-09-30T21:01:24.000Z</updated>
     <published>2026-09-30T21:01:24.000Z</published>
     <summary>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball&lt;video-player source=&quot;https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M&quot; titl</summary>
-    <link href="https://localhost:3000/learning-materials/animating-a-bouncing-ball"/>
+    <link href="https://localhost:3000/learning-materials/exercises/animating-a-bouncing-ball"/>
     <category term="Blender,Animation" label="Blender,Animation" />
     <content type="html">
       <![CDATA[ <p>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball</p>

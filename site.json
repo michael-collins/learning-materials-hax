@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790802084
+      "updated": 1790802085
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -109,11 +109,11 @@
     },
     {
       "id": "item-3c44ef1e-7f84-4a09-af86-fa96c502b0da",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-3c44ef1e-7f84-4a09-af86-fa96c502b0da/index.html",
-      "slug": "animating-a-bouncing-ball",
+      "slug": "exercises/animating-a-bouncing-ball",
       "order": 0,
-      "parent": null,
+      "parent": "item-b58246ce-0d49-46ce-8b67-b6d6804954dd",
       "title": "Animating a bouncing ball",
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball<video-player source=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M\" titl",
       "metadata": {
