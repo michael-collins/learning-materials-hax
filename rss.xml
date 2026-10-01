@@ -142,13 +142,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Realtime Game Environment</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/realtime-game-environment</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/realtime-game-environment</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Texturing and UV Mapping</title>
       <link>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</link>
       <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</description>
@@ -191,6 +184,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/baking-normal-maps</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/baking-normal-maps</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lighting Principles</title>
+      <link>https://localhost:3000/learning-materials/lessons/lighting-principles</link>
+      <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/lighting-principles</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
