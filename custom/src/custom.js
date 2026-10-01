@@ -6,3 +6,4 @@ import "./layout-breakpoints.js";
 import "./custom-oer-docs-theme.js";
 import "./oer-rubric.js";
 import "./blocks/oer-embed-blocks.js";
+import "./blocks/oer-content-blocks.js";
