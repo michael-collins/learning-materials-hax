@@ -8087,11 +8087,36 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         .nav-group-label {
           display: flex;
           align-items: center;
+          gap: 0.25rem;
           height: 2rem;
           padding: 0 0.5rem;
           font-size: 0.75rem;
           font-weight: 500;
           color: var(--muted-foreground);
+        }
+        .label-action {
+          all: unset;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-left: auto;
+          border-radius: var(--radius-sm);
+          color: var(--muted-foreground);
+          cursor: pointer;
+        }
+        .label-action:hover {
+          background: var(--accent);
+          color: var(--foreground);
+        }
+        .label-action:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .label-action svg {
+          width: 0.875rem;
+          height: 0.875rem;
         }
         /* account menu (shadcn NavUser) */
         .user-wrap {
@@ -8534,7 +8559,12 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           aria-labelledby="${this._loggedIn?"tab-nav":""}"
           ?hidden="${this._loggedIn&&this._sidebarTab==="site"}"
         >
-          ${this._book?"":s`<div class="nav-group-label">Contents</div>`}
+          ${this._book?"":s`<div class="nav-group-label">
+                <span>Outline</span>
+                ${this._loggedIn&&!this.editMode?s`<button class="label-action" title="Edit outline" aria-label="Edit outline" @click="${()=>st().show()}">
+                      ${b.pencil}
+                    </button>`:""}
+              </div>`}
           <oer-site-nav
             part="site-menu"
             ?editable="${this._loggedIn&&!this.editMode}"
@@ -8544,7 +8574,6 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         </nav>
         ${this._loggedIn&&this._sidebarTab==="site"?s`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
               <div class="nav-group-label">Site</div>
-              <button class="site-action" @click="${()=>st().show()}">${b.siteMap}Outline</button>
               <button class="site-action" @click="${()=>ki().show()}">${b.types}Content types</button>
               <button class="site-action" @click="${pr}">${b.settings}Settings</button>
             </div>`:""}
