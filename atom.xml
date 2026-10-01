@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Orientation</title>
-    <id>item-a956b483-da4c-46d8-aa1e-6ddf9436bafe</id>
-    <updated>2026-10-01T04:46:25.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>History of CGI</title>
     <id>item-a104377b-5c7f-4969-9be4-d38872eab461</id>
     <updated>2026-10-01T04:46:25.000Z</updated>
@@ -614,6 +602,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <p></p> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Introduction to Modeling</title>
+    <id>item-6b93d85c-03da-4ab7-9598-f75b997e8549</id>
+    <updated>2026-10-01T04:46:25.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-177b787f-5763-4012-874f-7eeb57cb622a"></oer-include> ]]>
     </content>
   </entry>
 </feed>

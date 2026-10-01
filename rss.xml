@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Orientation</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>History of CGI</title>
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation/history-of-cgi</link>
       <description></description>
@@ -185,6 +178,13 @@
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Introduction to Modeling</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
