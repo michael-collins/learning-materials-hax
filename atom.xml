@@ -545,18 +545,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Camera and Composition</title>
-    <id>item-54915127-e9fa-4bd3-9209-026bb7fd2962</id>
-    <updated>2026-10-01T04:46:25.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-a0bdd09d-063f-4a94-8c59-959500faec76"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>You don&apos;t see that everyday object posters</title>
     <id>item-7acb81ac-0e9b-495e-8b03-febeafd81ac0</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -752,6 +740,39 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" title="Project Tutorial"></oer-iframe>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Compositor Pathway</title>
+    <id>item-c0e97fb6-a9b5-4e00-b219-e77ced1e2587</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/compositor-pathway"/>
+    <category term="Compositing,Post-production,VFX,Color Grading,Nuke,After Effects" label="Compositing,Post-production,VFX,Color Grading,Nuke,After Effects" />
+    <content type="html">
+      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
+<p>This streamlined pathway focuses specifically on digital compositing skills, providing students with the technical and artistic abilities needed to work in post-production facilities. Students will learn to combine multiple elements into final, polished images for film, television, and digital media.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is ideal for students interested in:</p>
+<ul>
+<li>Post-production and finishing</li>
+<li>Visual effects compositing</li>
+<li>Color grading and correction</li>
+<li>Motion graphics integration</li>
+<li>Commercial production</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>Digital Compositor</li>
+<li>Compositing Artist</li>
+<li>VFX Compositor</li>
+<li>Finishing Artist</li>
+<li>Color Grading Technician</li>
+<li>Junior Compositor</li>
+</ul>
  ]]>
     </content>
   </entry>

@@ -146,13 +146,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Camera and Composition</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>You don&apos;t see that everyday object posters</title>
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters</link>
       <description></description>
@@ -186,6 +179,14 @@
       <description>For this project, you will produce 3D rendered poster series of objects that you encounter every day, but augmented in such a way changing their nature including material qualities, operation or use, or the system or environmental context. To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. Ontology , the study of being, invites us to question not just what objects are...</description>
       <category>Blender</category>
       <guid>https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Compositor Pathway</title>
+      <link>https://localhost:3000/learning-materials/pathways/compositor-pathway</link>
+      <description>This streamlined pathway focuses specifically on digital compositing skills, providing students with the technical and artistic abilities needed to work in post-production facilities. Students will learn to combine multiple elements into final, polished images for film, television, and digital media. Who This Is For This pathway is ideal for students interested in: Post-production and finishing Visual effects compositing Color grading and correction Motion graphics integration Commercial prod...</description>
+      <category>Compositing,Post-production,VFX,Color Grading,Nuke,After Effects</category>
+      <guid>https://localhost:3000/learning-materials/pathways/compositor-pathway</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
