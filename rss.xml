@@ -60,5 +60,12 @@
       <guid>https://localhost:3000/learning-materials/content-types</guid>
       <pubDate>Thu, 01 Oct 2026 02:43:07 GMT</pubDate>
     </item>
+    <item>
+      <title>Pathways</title>
+      <link>https://localhost:3000/learning-materials/pathways</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways</guid>
+      <pubDate>Thu, 01 Oct 2026 04:12:43 GMT</pubDate>
+    </item>
   </channel>
 </rss>
