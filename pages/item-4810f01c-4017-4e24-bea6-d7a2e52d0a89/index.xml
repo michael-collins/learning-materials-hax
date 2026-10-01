@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4810f01c-4017-4e24-bea6-d7a2e52d0a89</id>
+<indent>2</indent>
+<location>pages/item-4810f01c-4017-4e24-bea6-d7a2e52d0a89/index.xml</location>
+<slug>pathways/game-artist-pathway-1/into-the-engine</slug>
+<order>4</order>
+<parent>item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097</parent>
+<title>Into the engine</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

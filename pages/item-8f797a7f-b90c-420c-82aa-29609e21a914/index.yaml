@@ -1,0 +1,30 @@
+id: item-8f797a7f-b90c-420c-82aa-29609e21a914
+indent: 1
+location: pages/item-8f797a7f-b90c-420c-82aa-29609e21a914/index.yaml
+slug: pathways/product-design-1
+order: 8
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Product design
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/product-design
+  oerFields:
+    prerequisites:
+      - page: item-0099e8e7-f92d-46c8-90a6-027fde23e59d
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829988
+  images: []
+  videos: []
+  updated: 1790829988
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Designs consumer products in 3D for manufacturing or visualization
+  purposes.</p>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0372bb48-894e-4b07-bd3a-ea66bc752f7a</id>
+<indent>3</indent>
+<location>pages/item-0372bb48-894e-4b07-bd3a-ea66bc752f7a/index.xml</location>
+<slug>pathways/game-artist-pathway-1/texturing-for-real-time/baking-normal-maps</slug>
+<order>3</order>
+<parent>item-56855913-6bf5-4cbc-90cc-1615be549a4c</parent>
+<title>Baking Normal Maps</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Advanced</oerLevel>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-858f23fb-b6b5-442a-ac36-94d4afe1718f</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-858f23fb-b6b5-442a-ac36-94d4afe1718f"></oer-include>]]></content>
+</item>

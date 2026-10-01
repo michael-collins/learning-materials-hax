@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-50761876-d2fc-4e11-a460-fc8c4487abe0</id>
+<indent>3</indent>
+<location>pages/item-50761876-d2fc-4e11-a460-fc8c4487abe0/index.xml</location>
+<slug>pathways/cgi-foundations-1/modeling/introduction-to-modeling</slug>
+<order>1</order>
+<parent>item-fd2a8921-39e9-4674-91cf-97e8c6777ac4</parent>
+<title>Introduction to Modeling</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lecture</pageType>
+<oerRef>
+<page>item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866"></oer-include>]]></content>
+</item>

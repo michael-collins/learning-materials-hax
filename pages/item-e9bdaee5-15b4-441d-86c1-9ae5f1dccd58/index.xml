@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58</id>
+<indent>3</indent>
+<location>pages/item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58/index.xml</location>
+<slug>pathways/cgi-foundations-1/texturing/texturing-the-airline-chair</slug>
+<order>2</order>
+<parent>item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15</parent>
+<title>Texturing the Airline Chair</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-1ac14915-a348-47d3-9ecc-a88e800d4bb9</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-1ac14915-a348-47d3-9ecc-a88e800d4bb9"></oer-include>]]></content>
+</item>

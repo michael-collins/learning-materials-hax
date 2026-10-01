@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1f23c00e-327e-4c43-b4e9-01c93d33fe99</id>
+<indent>1</indent>
+<location>pages/item-1f23c00e-327e-4c43-b4e9-01c93d33fe99/index.xml</location>
+<slug>pathways/motion-graphics-1</slug>
+<order>7</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Motion graphics</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/motion-graphics</oerSource>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-0099e8e7-f92d-46c8-90a6-027fde23e59d</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Creates animated graphics for multimedia projects, often involving typography and visual effects.</p>
+]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f43001e4-ff6e-4c61-8251-c3a7d686856f</id>
+<indent>3</indent>
+<location>pages/item-f43001e4-ff6e-4c61-8251-c3a7d686856f/index.xml</location>
+<slug>pathways/game-artist-pathway-1/concept-blockout/creating-blockouts-for-games</slug>
+<order>1</order>
+<parent>item-2d17b512-9f6b-447f-ab5d-db359f3a0f70</parent>
+<title>Creating Blockouts for Games</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>tutorial</pageType>
+<oerRef>
+<page>item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f"></oer-include>]]></content>
+</item>

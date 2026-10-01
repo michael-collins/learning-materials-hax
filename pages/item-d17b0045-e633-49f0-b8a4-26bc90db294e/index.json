@@ -1,0 +1,25 @@
+{
+  "id": "item-d17b0045-e633-49f0-b8a4-26bc90db294e",
+  "indent": 3,
+  "location": "pages/item-d17b0045-e633-49f0-b8a4-26bc90db294e/index.json",
+  "slug": "pathways/game-artist-pathway-1/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture",
+  "order": 0,
+  "parent": "item-56855913-6bf5-4cbc-90cc-1615be549a4c",
+  "title": "Texturing Low-poly Assets with a Palette Texture",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "oerLevel": "Beginner",
+    "pageType": "exercise",
+    "oerRef": {
+      "page": "item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b",
+      "version": ""
+    },
+    "created": 1790829988,
+    "images": [],
+    "videos": [],
+    "updated": 1790829988
+  },
+  "content": "<oer-include page=\"item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b\"></oer-include>"
+}

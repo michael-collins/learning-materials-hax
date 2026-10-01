@@ -1,0 +1,20 @@
+id: item-3c8b1bf0-6157-4224-8844-e11f1745e9ab
+indent: 3
+location: pages/item-3c8b1bf0-6157-4224-8844-e11f1745e9ab/index.yaml
+slug: pathways/cgi-foundations-1/lighting-camera-rendering/rendering-techniques
+order: 2
+parent: item-94b5861e-b488-429f-956d-30a56545a026
+title: Rendering Techniques
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: lesson
+  oerRef:
+    page: item-685e56cc-c545-4d08-81c8-c724fe5cc33d
+    version: ''
+  created: 1790829988
+  images: []
+  videos: []
+  updated: 1790829988
+content: <oer-include page="item-685e56cc-c545-4d08-81c8-c724fe5cc33d"></oer-include>

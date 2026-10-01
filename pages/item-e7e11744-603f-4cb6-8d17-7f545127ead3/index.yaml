@@ -1,0 +1,21 @@
+id: item-e7e11744-603f-4cb6-8d17-7f545127ead3
+indent: 3
+location: pages/item-e7e11744-603f-4cb6-8d17-7f545127ead3/index.yaml
+slug: pathways/game-artist-pathway-1/modeling-game-assets/hard-surface-modeling
+order: 2
+parent: item-6c6a275f-1698-4393-a5b3-efedc3109116
+title: Hard Surface Modeling
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  oerLevel: Intermediate
+  pageType: lesson
+  oerRef:
+    page: item-2388c81a-f80d-44c8-be9c-57c64c8b29ab
+    version: ''
+  created: 1790829988
+  images: []
+  videos: []
+  updated: 1790829988
+content: <oer-include page="item-2388c81a-f80d-44c8-be9c-57c64c8b29ab"></oer-include>

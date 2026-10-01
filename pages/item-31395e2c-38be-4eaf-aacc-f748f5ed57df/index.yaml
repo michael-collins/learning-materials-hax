@@ -1,0 +1,21 @@
+id: item-31395e2c-38be-4eaf-aacc-f748f5ed57df
+indent: 3
+location: pages/item-31395e2c-38be-4eaf-aacc-f748f5ed57df/index.yaml
+slug: >-
+  pathways/game-artist-pathway-1/into-the-engine/importing-assets-into-playcanvas
+order: 0
+parent: item-4810f01c-4017-4e24-bea6-d7a2e52d0a89
+title: Importing Assets into PlayCanvas
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: exercise
+  oerRef:
+    page: item-a92f242a-b30b-4685-b277-c205bd49ca90
+    version: ''
+  created: 1790829988
+  images: []
+  videos: []
+  updated: 1790829988
+content: <oer-include page="item-a92f242a-b30b-4685-b277-c205bd49ca90"></oer-include>

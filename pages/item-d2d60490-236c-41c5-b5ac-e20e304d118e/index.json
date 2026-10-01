@@ -1,0 +1,33 @@
+{
+  "id": "item-d2d60490-236c-41c5-b5ac-e20e304d118e",
+  "indent": 1,
+  "location": "pages/item-d2d60490-236c-41c5-b5ac-e20e304d118e/index.json",
+  "slug": "pathways/visual-effects-vfx-1",
+  "order": 12,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Visual Effects (VFX)",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "pathway",
+    "oerImport": "decap-pathways",
+    "oerSource": "pathways/visual-effects-vfx",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790829988,
+    "images": [],
+    "videos": [],
+    "updated": 1790829988
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Integrates CGI elements into live-action footage and blends them seamlessly.</p>\n"
+}

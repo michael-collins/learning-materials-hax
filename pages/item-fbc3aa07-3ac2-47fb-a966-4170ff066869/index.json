@@ -1,0 +1,33 @@
+{
+  "id": "item-fbc3aa07-3ac2-47fb-a966-4170ff066869",
+  "indent": 1,
+  "location": "pages/item-fbc3aa07-3ac2-47fb-a966-4170ff066869/index.json",
+  "slug": "pathways/production-management-1",
+  "order": 9,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Production management",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "pathway",
+    "oerImport": "decap-pathways",
+    "oerSource": "pathways/production-management",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790829988,
+    "images": [],
+    "videos": [],
+    "updated": 1790829988
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Oversees the planning and execution of 3D projects, ensuring deadlines and budgets are met.</p>\n"
+}

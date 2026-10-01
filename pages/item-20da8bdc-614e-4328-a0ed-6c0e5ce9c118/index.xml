@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-20da8bdc-614e-4328-a0ed-6c0e5ce9c118</id>
+<indent>3</indent>
+<location>pages/item-20da8bdc-614e-4328-a0ed-6c0e5ce9c118/index.xml</location>
+<slug>pathways/game-artist-pathway-1/concept-blockout/blocking-out-a-game-space</slug>
+<order>2</order>
+<parent>item-2d17b512-9f6b-447f-ab5d-db359f3a0f70</parent>
+<title>Blocking Out a Game Space</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e"></oer-include>]]></content>
+</item>

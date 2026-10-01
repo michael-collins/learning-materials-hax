@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5d907b6d-450e-4da0-9d76-4cbeb99e9d61</id>
+<indent>3</indent>
+<location>pages/item-5d907b6d-450e-4da0-9d76-4cbeb99e9d61/index.xml</location>
+<slug>pathways/cgi-foundations-1/modeling/modeling-a-room</slug>
+<order>3</order>
+<parent>item-fd2a8921-39e9-4674-91cf-97e8c6777ac4</parent>
+<title>Modeling a room</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-dbf43915-8e34-4116-a6e7-67cd08a1316e</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-dbf43915-8e34-4116-a6e7-67cd08a1316e"></oer-include>]]></content>
+</item>

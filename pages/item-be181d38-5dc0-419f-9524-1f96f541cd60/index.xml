@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-be181d38-5dc0-419f-9524-1f96f541cd60</id>
+<indent>2</indent>
+<location>pages/item-be181d38-5dc0-419f-9524-1f96f541cd60/index.xml</location>
+<slug>pathways/cgi-foundations-1/orientation</slug>
+<order>0</order>
+<parent>item-2676f101-8732-4fde-991d-9733f9042ef9</parent>
+<title>Orientation</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

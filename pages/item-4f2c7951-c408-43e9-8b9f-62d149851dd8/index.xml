@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4f2c7951-c408-43e9-8b9f-62d149851dd8</id>
+<indent>3</indent>
+<location>pages/item-4f2c7951-c408-43e9-8b9f-62d149851dd8/index.xml</location>
+<slug>pathways/game-artist-pathway-1/modeling-game-assets/digital-sculpting</slug>
+<order>4</order>
+<parent>item-6c6a275f-1698-4393-a5b3-efedc3109116</parent>
+<title>Digital Sculpting</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Advanced</oerLevel>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-f783c8df-d3f9-4ec8-a056-501da8e75a61</page>
+<version></version>
+</oerRef>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f783c8df-d3f9-4ec8-a056-501da8e75a61"></oer-include>]]></content>
+</item>

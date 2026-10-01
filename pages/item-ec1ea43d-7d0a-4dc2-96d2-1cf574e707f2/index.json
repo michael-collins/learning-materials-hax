@@ -1,0 +1,20 @@
+{
+  "id": "item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2",
+  "indent": 2,
+  "location": "pages/item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2/index.json",
+  "slug": "pathways/cgi-foundations-1/project",
+  "order": 4,
+  "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
+  "title": "Project",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "section",
+    "created": 1790829988,
+    "images": [],
+    "videos": [],
+    "updated": 1790829988
+  },
+  "content": "<p></p>"
+}

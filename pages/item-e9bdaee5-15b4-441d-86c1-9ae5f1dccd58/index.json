@@ -1,0 +1,24 @@
+{
+  "id": "item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58",
+  "indent": 3,
+  "location": "pages/item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58/index.json",
+  "slug": "pathways/cgi-foundations-1/texturing/texturing-the-airline-chair",
+  "order": 2,
+  "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
+  "title": "Texturing the Airline Chair",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "exercise",
+    "oerRef": {
+      "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
+      "version": ""
+    },
+    "created": 1790829988,
+    "images": [],
+    "videos": [],
+    "updated": 1790829988
+  },
+  "content": "<oer-include page=\"item-1ac14915-a348-47d3-9ecc-a88e800d4bb9\"></oer-include>"
+}

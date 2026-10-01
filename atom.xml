@@ -3,7 +3,7 @@
   <title>learning-materials</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-10-01T04:45:09.000Z</updated>
+  <updated>2026-10-01T04:45:10.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>Welcome to learning-materials</title>
     <id>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/welcome-to-learning-materials"/>
@@ -57,7 +57,7 @@ bottom-text="...probably"
   <entry>
     <title>Animation Principles</title>
     <id>item-1903f5ba-d051-49cf-9836-073992c93548</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th</summary>
     <link href="https://localhost:3000/learning-materials/lessons/animation-principles"/>
@@ -70,7 +70,7 @@ bottom-text="...probably"
   <entry>
     <title>Lessons</title>
     <id>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:26.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
     <link href="https://localhost:3000/learning-materials/lessons"/>
@@ -85,7 +85,7 @@ bottom-text="...probably"
   <entry>
     <title>Animating a bouncing ball</title>
     <id>item-21d4a4b1-6588-4417-a049-a7a1a9d69626</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball
 Learning Objectives
@@ -147,7 +147,7 @@ Become </summary>
   <entry>
     <title>Animated textures</title>
     <id>item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:26.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</summary>
     <link href="https://localhost:3000/learning-materials/exercises/animated-textures"/>
@@ -186,7 +186,7 @@ Become </summary>
   <entry>
     <title>Exercises</title>
     <id>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:27.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>Formative practice focused on a narrow set of competencies.</summary>
     <link href="https://localhost:3000/learning-materials/exercises"/>
@@ -201,7 +201,7 @@ Become </summary>
   <entry>
     <title>Content types</title>
     <id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:27.000Z</updated>
     <published>2026-10-01T02:43:07.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/content-types"/>
@@ -213,7 +213,7 @@ Become </summary>
   <entry>
     <title>Pathways</title>
     <id>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</id>
-    <updated>2026-10-01T04:45:10.000Z</updated>
+    <updated>2026-10-01T04:46:28.000Z</updated>
     <published>2026-10-01T04:12:43.000Z</published>
     <summary>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r</summary>
     <link href="https://localhost:3000/learning-materials/pathways"/>
@@ -226,7 +226,7 @@ Become </summary>
   <entry>
     <title>Introduction to Modeling</title>
     <id>item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/lectures/introduction-to-modeling"/>
@@ -292,7 +292,7 @@ Become </summary>
   <entry>
     <title>You don&apos;t see that everyday objects</title>
     <id>item-48ad9f94-3f8b-44e5-8416-316cff49f4d2</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-objects"/>
@@ -436,7 +436,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Creating Blockouts for Games</title>
     <id>item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/tutorials/creating-blockouts-for-games"/>
@@ -449,25 +449,9 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>CGI Foundations</title>
-    <id>item-fb3f53ee-ba08-416e-b065-96d6681a932f</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations"/>
-    <category term="CGI,Foundations,Modeling,Texturing,Lighting,Rendering,Blender" label="CGI,Foundations,Modeling,Texturing,Lighting,Rendering,Blender" />
-    <content type="html">
-      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
-<p>CGI Foundations is where every DART pathway starts. You will learn how 3D images are made, from polygons to pixels, and practice each stage of the pipeline twice: once on an airline chair and once on a room. The pathway ends with a project that brings modeling, texturing, lighting and rendering together in work of your own.</p>
-<h2>After Foundations</h2>
-<p>Foundations is the prerequisite for every other pathway. On your next run of DART 303, choose a pathway that fits your interests, or explore them now to plan ahead.</p>
- ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Orientation</title>
     <id>item-a956b483-da4c-46d8-aa1e-6ddf9436bafe</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation"/>
@@ -479,7 +463,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>History of CGI</title>
     <id>item-a104377b-5c7f-4969-9be4-d38872eab461</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation/history-of-cgi"/>
@@ -489,21 +473,9 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Modeling</title>
-    <id>item-008f74f4-74d2-4309-a769-6f73be85b539</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>3D Modeling Fundamentals</title>
     <id>item-d02093f1-a96b-4603-905e-05a4e31c3e99</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/3d-modeling-fundamentals"/>
@@ -513,57 +485,9 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Introduction to Modeling</title>
-    <id>item-6b93d85c-03da-4ab7-9598-f75b997e8549</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-177b787f-5763-4012-874f-7eeb57cb622a"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Modeling the Airline Chair</title>
-    <id>item-da51a4de-a7af-4b8c-b7c3-6bba211a6331</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-the-airline-chair"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-f9d141d9-11c8-476a-9888-066842d6bf81"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Modeling a room</title>
-    <id>item-7102e058-d9df-4f15-9808-6fddb71585b9</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-a-room"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-ff3b43ff-a2f1-4370-89ae-f69601208332"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Texturing</title>
-    <id>item-f44880fc-6db7-4c7f-b6f8-c60f4ef193e2</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Texturing and UV Mapping</title>
     <id>item-2451e262-c558-4a78-b7e1-cf178282843c</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-and-uv-mapping"/>
@@ -573,48 +497,120 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Introduction to Texturing</title>
-    <id>item-47df2221-f2e9-48bd-b49c-f972cc9ba937</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <title>Lighting Principles</title>
+    <id>item-962dad7a-08ea-4666-94a5-358849a4f59f</id>
+    <updated>2026-10-01T04:46:25.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/introduction-to-texturing"/>
+    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/lighting-principles"/>
     
     <content type="html">
-      <![CDATA[ <oer-include page="item-cbd29762-82a1-4e7a-ab72-01fd8a5a4123"></oer-include> ]]>
+      <![CDATA[ <oer-include page="item-386131cb-357e-4d86-a8e1-60a087187690"></oer-include> ]]>
     </content>
   </entry>
   <entry>
-    <title>Texturing the Airline Chair</title>
-    <id>item-3df51220-5833-4831-b433-cc51f6680e02</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <title>You don&apos;t see that everyday objects</title>
+    <id>item-e036bbb3-b59d-448a-9232-36c91bbcfec0</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-the-airline-chair"/>
+    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects"/>
     
     <content type="html">
-      <![CDATA[ <oer-include page="item-565b06ea-9c68-418e-acc5-e4e0693241db"></oer-include> ]]>
+      <![CDATA[ <oer-include page="item-d93cbda0-74b3-4d05-83b8-e313d6c4bdb7"></oer-include> ]]>
     </content>
   </entry>
   <entry>
-    <title>Texturing a room</title>
-    <id>item-387b8293-7e25-403a-be07-97d151bf7884</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <title>Game art in real time</title>
+    <id>item-87c012e1-218b-4bad-8af3-59881e7f6707</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-a-room"/>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time"/>
     
     <content type="html">
-      <![CDATA[ <oer-include page="item-43351e50-0a49-43d5-bf38-4eaaca7c7123"></oer-include> ]]>
+      <![CDATA[ <p></p> ]]>
     </content>
   </entry>
   <entry>
-    <title>Lighting, camera &amp; rendering</title>
-    <id>item-c1960517-1ab7-4b88-ba31-d392368e45db</id>
-    <updated>2026-10-01T04:45:09.000Z</updated>
+    <title>Real-time Engines</title>
+    <id>item-a98fa6df-b90d-4336-9d47-e86a5dbfce78</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering"/>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/real-time-engines"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-f46be04c-9554-4176-9e13-977f2abb1181"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Drawing for 3D Design</title>
+    <id>item-ecd34213-666d-44f0-aa95-0225a82ee26a</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-dbfdd3ea-1ceb-4cbc-900a-1607a5589add"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Modeling a Low Poly Animal and Introduction to Particles</title>
+    <id>item-f3cd38ac-0f0c-4f4d-8b19-9c3656fb25dc</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-55d0b3fa-f1ad-42b6-a455-7890ca1bcea9"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Texturing Low-poly Assets with a Palette Texture</title>
+    <id>item-fe878051-6f3c-49ad-a7ea-d69d17a07a20</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-ea39d40c-d83e-4da9-82c8-1e1ee2a05996"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Importing Assets into PlayCanvas</title>
+    <id>item-f16495d6-2492-484f-9565-f79c27a1396c</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-344c9ff4-9a23-40bc-9c2f-c9f62eeb599d"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Stylized Prop Set</title>
+    <id>item-42c38856-a9b9-4b74-b333-dd17257b55d6</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-daf70320-e677-41e7-9643-048daf27fa8d"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Modeling</title>
+    <id>item-008f74f4-74d2-4309-a769-6f73be85b539</id>
+    <updated>2026-10-01T04:46:25.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling"/>
     
     <content type="html">
       <![CDATA[ <p></p> ]]>

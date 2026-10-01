@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8304d26e-d001-4439-b5d9-652e37d52508</id>
+<indent>1</indent>
+<location>pages/item-8304d26e-d001-4439-b5d9-652e37d52508/index.xml</location>
+<slug>pathways/illustration-and-visualization-1</slug>
+<order>5</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Illustration and visualization</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/illustration-and-visualization</oerSource>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-0099e8e7-f92d-46c8-90a6-027fde23e59d</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790829988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829988</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Creates realistic architectural visualizations for design, marketing, or presentations.</p>
+]]></content>
+</item>
