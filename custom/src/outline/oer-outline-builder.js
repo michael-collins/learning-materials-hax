@@ -10,7 +10,7 @@
  * Keyboard (row focused): Enter/F2 rename · Tab / Shift+Tab indent /
  * outdent · Alt+↑/↓ move with sub-pages · ↑/↓ previous/next row · ←/→
  * collapse/expand · Delete remove · T content type · L level (inside a
- * pathway with several levels). Drag a row: top third = before, middle =
+ * pathway with several levels) · V version a linked page shows. Drag a row: top third = before, middle =
  * make child, bottom third = after; drag left/right to change level. Hold a
  * parent for 2 s to collapse it before dragging.
  * @element oer-outline-builder
@@ -20,12 +20,14 @@ import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElemen
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { flatten, saveOutline, newItemId, starterContent, childrenMap } from "./outline-model.js";
 import { isSystemItem, systemItem, contentTypes, navIconsOn, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
-import { isSnapshot } from "../versions/versioning.js";
+import { isSnapshot, versionsOf } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { PATHWAY_TYPE, pathwayOf, pathwayLevels, levelChip, pathwayChipStyles } from "../pathways/pathway-model.js";
 
 const INDENT_PX = 20;
+
+const includeHtml = (ref) => `<oer-include page="${ref.page}"${ref.version ? ` version="${ref.version}"` : ""}></oer-include>`;
 const MAX_DEPTH = 6;
 const LONG_PRESS_MS = 2000;
 
@@ -161,7 +163,8 @@ class OerOutlineBuilder extends LitElement {
           o.title !== title ||
           (o.metadata?.icon || "") !== row.icon ||
           (o.metadata?.pageType || "") !== row.type ||
-          (o.metadata?.oerLevel || "") !== (row.level || "");
+          (o.metadata?.oerLevel || "") !== (row.level || "") ||
+          (o.metadata?.oerRef?.version || "") !== (row.ref?.version || "");
         Object.assign(item, { parent: parent || null, order, indent, title });
         item.metadata = { ...(o.metadata || {}) };
         // HAXcms merges metadata on outline saves: clear with "", not delete
@@ -170,6 +173,12 @@ class OerOutlineBuilder extends LitElement {
         if (row.type === HEADING_TYPE) item.metadata.hideInMenu = true;
         else if (o.metadata?.pageType === HEADING_TYPE) item.metadata.hideInMenu = false;
         if (row.level || o.metadata?.oerLevel) item.metadata.oerLevel = row.level || "";
+        // a linked page pinned to another version: the link and the page's
+        // oer-include both change (outline saves write contents when given)
+        if (row.ref && (o.metadata?.oerRef?.version || "") !== (row.ref.version || "")) {
+          item.metadata.oerRef = { page: row.ref.page, version: row.ref.version || "" };
+          item.contents = includeHtml(row.ref);
+        }
         if (changed) item.modified = true;
       } else {
         out.set(row.id, {
@@ -188,9 +197,7 @@ class OerOutlineBuilder extends LitElement {
             ...(row.type === HEADING_TYPE ? { hideInMenu: true } : {}),
           },
           // a linked page shows the original instead of starter content
-          contents: row.ref
-            ? `<oer-include page="${row.ref.page}"${row.ref.version ? ` version="${row.ref.version}"` : ""}></oer-include>`
-            : starterContent(row.type),
+          contents: row.ref ? includeHtml(row.ref) : starterContent(row.type),
           new: true,
         });
       }
@@ -550,10 +557,11 @@ class OerOutlineBuilder extends LitElement {
     else if (e.key === "ArrowRight" && this._hasChildren(index) && this._collapsed.has(row.id)) this._toggle(row.id);
     else if (e.key === "ArrowLeft" && this._hasChildren(index) && !this._collapsed.has(row.id)) this._toggle(row.id);
     else if (e.key === "Delete" || (e.key === "Backspace" && !row.title)) this._remove(row.id);
-    else if ((e.key === "t" || e.key === "l") && !e.metaKey && !e.ctrlKey && !e.altKey) {
-      const chip = e.currentTarget.querySelector(e.key === "t" ? ".type-chip:not(.level-chip)" : ".level-chip");
+    else if ((e.key === "t" || e.key === "l" || e.key === "v") && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      const sel = { t: ".type-chip:not(.level-chip)", l: ".level-chip", v: ".ref" }[e.key];
+      const chip = e.currentTarget.querySelector(sel);
       if (!chip) return;
-      this._openMenu(row, index, e.key === "t" ? "type" : "level", chip);
+      this._openMenu(row, index, { t: "type", l: "level", v: "version" }[e.key], chip);
     } else return;
     e.preventDefault();
   }
@@ -1162,6 +1170,9 @@ class OerOutlineBuilder extends LitElement {
 
       /* linked pages + "Add existing" */
       .ref {
+        all: unset;
+        box-sizing: border-box;
+        cursor: pointer;
         flex: none;
         display: inline-flex;
         align-items: center;
@@ -1177,6 +1188,27 @@ class OerOutlineBuilder extends LitElement {
         background: color-mix(in srgb, var(--primary) 8%, transparent);
         white-space: nowrap;
         text-overflow: ellipsis;
+      }
+      .ref:hover {
+        background: color-mix(in srgb, var(--primary) 16%, transparent);
+      }
+      .ref .ref-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ref b {
+        flex: none;
+        font-weight: 600;
+      }
+      /* a pinned link reads as fixed: solid outline around the chip */
+      .ref.pinned {
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 55%, transparent);
+      }
+      .menu-hint {
+        margin-left: auto;
+        padding-left: 1rem;
+        font-size: 0.6875rem;
+        color: var(--muted-foreground);
       }
       .ref b {
         font-family: var(--font-mono, ui-monospace, monospace);
@@ -1507,11 +1539,36 @@ class OerOutlineBuilder extends LitElement {
     return this._allowedUnder(parentType || null).none;
   }
 
-  _renderRef(row) {
+  // released versions a link can be pinned to (those with a frozen snapshot)
+  _pinnable(pageId) {
+    return versionsOf(pageId, this._items || []).filter((r) => r.snapshot);
+  }
+
+  _setVersion(id, version) {
+    this._typeMenu = null;
+    this._commit(this._rows.map((r) => (r.id === id ? { ...r, ref: { ...r.ref, version } } : r)));
+    this._focusRow(id);
+  }
+
+  _renderRef(row, index) {
     const target = this._byId?.get(row.ref.page);
-    return html`<span class="ref" title="${target ? `Shows “${target.title}”${row.ref.version ? ` v${row.ref.version}` : " (latest)"}` : "Linked page not found"}">
-      ${lucide("icons:link", "sm")}${target ? target.title : "missing"}${row.ref.version ? html`<b>v${row.ref.version}</b>` : ""}
-    </span>`;
+    const pinned = row.ref.version;
+    const label = target
+      ? `Shows “${target.title}”, ${pinned ? `pinned to v${pinned}` : "latest version"}. Change version (V)`
+      : "Linked page not found";
+    return html`<button
+      class="ref ${pinned ? "pinned" : ""}"
+      tabindex="-1"
+      title="${label}"
+      aria-label="${label}"
+      @mousedown="${(e) => e.preventDefault()}"
+      @click="${(e) => {
+        e.stopPropagation();
+        if (target) this._openMenu(row, index, "version", e.currentTarget);
+      }}"
+    >
+      ${lucide("icons:link", "sm")}<span class="ref-title">${target ? target.title : "missing"}</span><b>${pinned ? `v${pinned}` : "latest"}</b>
+    </button>`;
   }
 
   _renderTypeChip(row, index) {
@@ -1568,6 +1625,22 @@ class OerOutlineBuilder extends LitElement {
       e.preventDefault();
       e.stopPropagation();
     };
+    if (m.kind === "version") {
+      const target = this._byId?.get(row.ref?.page);
+      const releases = this._pinnable(row.ref?.page);
+      const current = target?.metadata?.version;
+      const opt = (value, label, hint = "") => html`<button role="menuitemradio" aria-checked="${(row.ref?.version || "") === value ? "true" : "false"}" @click="${() => this._setVersion(row.id, value)}">
+        <span class="check">${(row.ref?.version || "") === value ? lucide("oer:check", "sm") : ""}</span>${label}${hint ? html`<span class="menu-hint">${hint}</span>` : ""}
+      </button>`;
+      return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
+        <div class="type-menu" role="menu" aria-label="Version" style="left:${m.x}px;top:${m.y}px" @click="${(e) => e.stopPropagation()}" @keydown="${menuKeys}">
+          <div class="menu-label">Version shown</div>
+          ${opt("", "Latest", current ? `v${current}, follows changes` : "follows changes")}
+          ${releases.map((r) => opt(r.version, `v${r.version}`, "as released"))}
+          ${releases.length ? "" : html`<div class="menu-empty">No earlier versions released yet.</div>`}
+        </div>
+      </div>`;
+    }
     if (m.kind === "level") {
       const levels = this._levelsFor(idx);
       const opt = (value, label) => html`<button role="menuitemradio" aria-checked="${row.level === value ? "true" : "false"}" @click="${() => this._setLevel(row.id, value)}">
@@ -1754,7 +1827,7 @@ class OerOutlineBuilder extends LitElement {
       >
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
       </button>
-      ${row.ref ? this._renderRef(row) : ""}
+      ${row.ref ? this._renderRef(row, index) : ""}
       ${this._renderLevelChip(row, index)}
       ${this._renderTypeChip(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
@@ -1920,7 +1993,7 @@ class OerOutlineBuilder extends LitElement {
                   ? html`<span class="warn">${deleting} page${deleting === 1 ? "" : "s"} will be deleted when you save.</span>`
                   : html`<div class="hints" aria-hidden="true">
                       <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span>
-                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span><span><kbd>T</kbd> type</span><span><kbd>L</kbd> level</span>
+                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span><span><kbd>T</kbd> type</span><span><kbd>L</kbd> level</span><span><kbd>V</kbd> version</span>
                       <span>drag ↔ to change level</span>
                     </div>`}
                 <button class="btn outline" @click="${this._requestClose}">Cancel</button>

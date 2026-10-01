@@ -212,6 +212,11 @@ class OerPagePicker extends LitElement {
         height: 2rem;
         font-size: 0.8125rem;
       }
+      .ver {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        white-space: nowrap;
+      }
       .add {
         all: unset;
         display: inline-flex;
@@ -286,7 +291,9 @@ class OerPagePicker extends LitElement {
           ? html`<ul aria-label="Pages">
               ${results.map((i) => {
                 const type = types.find((t) => t.id === i.metadata?.pageType);
-                const releases = versionsOf(i.id, all);
+                // only versions with a frozen snapshot can be pinned; the
+                // current one is what "Latest" shows
+                const releases = versionsOf(i.id, all).filter((r) => r.snapshot);
                 const parent = byId.get(i.parent);
                 return html`<li>
                   ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : lucide("lrn:page")}
@@ -296,10 +303,12 @@ class OerPagePicker extends LitElement {
                   </div>
                   ${releases.length
                     ? html`<select aria-label="Version of ${i.title}" @change="${(e) => (this._versions = { ...this._versions, [i.id]: e.target.value })}">
-                        <option value="">Latest</option>
+                        <option value="">Latest${i.metadata?.version ? ` (v${i.metadata.version})` : ""}</option>
                         ${releases.map((r) => html`<option value="${r.version}">v${r.version}</option>`)}
                       </select>`
-                    : ""}
+                    : i.metadata?.version
+                      ? html`<span class="ver">v${i.metadata.version}</span>`
+                      : ""}
                   <button class="add" @click="${() => this._done({ page: i, version: this._versions[i.id] || "", withChildren: this._children })}">
                     ${lucide("oer:plus", "sm")}Add
                   </button>
