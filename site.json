@@ -4642,33 +4642,6 @@
       }
     },
     {
-      "id": "item-4f2c7951-c408-43e9-8b9f-62d149851dd8",
-      "indent": 3,
-      "location": "pages/item-4f2c7951-c408-43e9-8b9f-62d149851dd8/index.html",
-      "slug": "pathways/game-artist-pathway/modeling-game-assets/digital-sculpting",
-      "order": 4,
-      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
-      "title": "Digital Sculpting",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Advanced",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830074,
-        "locked": false,
-        "status": "",
-        "icon": "hax:lesson"
-      }
-    },
-    {
       "id": "item-4810f01c-4017-4e24-bea6-d7a2e52d0a89",
       "indent": 2,
       "location": "pages/item-4810f01c-4017-4e24-bea6-d7a2e52d0a89/index.html",

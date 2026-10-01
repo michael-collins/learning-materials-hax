@@ -319,12 +319,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/digital-sculpting</loc>
-    <lastmod>2026-10-01T04:47:54.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
