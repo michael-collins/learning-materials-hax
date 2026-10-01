@@ -1,14 +1,19 @@
 /**
  * `oer-page-footer` — the attribution block under a typed page, as at the
- * foot of every item in learning-materials-decapcms:
+ * foot of every item in learning-materials-decapcms. Two parts:
  *
- * - License line: “<Title> by <authors> is licensed under CC BY 4.0”,
- *   with the Creative Commons badge icons
- * - AI usage: the page's AIUL licence(s), named, linked and badged from the
- *   AIUL definitions HAX ships (@haxtheweb/ai-usage-license/lib/v1.json)
- * - Cite: APA, MLA, Chicago and BibTeX, copied to the clipboard
- * - OER Schema: the page as JSON-LD (oerschema.org + schema.org) in the
- *   document head for search engines and harvesters, viewable via a chip
+ * 1. A license line, “<Title> by <authors> is licensed under CC BY 4.0”
+ *    with the Creative Commons icons, beside the Cite and OER Schema actions
+ *    (citations in APA, MLA, Chicago and BibTeX; the page's JSON-LD)
+ * 2. A short labelled list:
+ *    - AI use: the page's AIUL licence(s) as pills, named and linked from
+ *      the AIUL definitions HAX ships (@haxtheweb/ai-usage-license/lib/v1.json)
+ *    - Version: the released version, last update and all versions
+ *    - Used in: pages that link here, grouped by how (Before you start,
+ *      Includes it…), the first few shown with the rest a click away
+ *
+ * The page's OER Schema JSON-LD is always written to the document head for
+ * search engines and harvesters.
  *
  * Values come from the page's type fields (license, aiLicense, authors /
  * author) and the site; ?hideAILicense=true leaves the AI block out (embed
@@ -20,6 +25,16 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
 import { usedIn } from "./relations.js";
+import { versionsDialog } from "../versions/oer-versions-dialog.js";
+
+// the OER Schema logo, as the Decap site's OERSchemaBadge uses it
+const OER_LOGO = {
+  light: "https://cdn.jsdelivr.net/gh/open-curriculum/oerschema@master/public/oerschema-logo-black.png",
+  dark: "https://cdn.jsdelivr.net/gh/open-curriculum/oerschema@master/public/oerschema-logo-white.png",
+};
+
+// "Used in" shows this many pages per group before "and N more"
+const USED_PREVIEW = 3;
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -70,7 +85,15 @@ class OerPageFooter extends LitElement {
   }
 
   static get properties() {
-    return { _item: { state: true }, _aiul: { state: true }, _cite: { state: true }, _copied: { state: true }, _schemaOpen: { state: true } };
+    return {
+      _item: { state: true },
+      _aiul: { state: true },
+      _cite: { state: true },
+      _copied: { state: true },
+      _schemaOpen: { state: true },
+      _usedAll: { state: true },
+      _dark: { state: true },
+    };
   }
 
   connectedCallback() {
@@ -79,7 +102,9 @@ class OerPageFooter extends LitElement {
       const active = toJS(store.activeItem);
       const items = toJS(store.manifest?.items) || [];
       const manifest = toJS(store.manifest);
+      const dark = !!toJS(store.darkMode);
       Promise.resolve().then(() => {
+        this._dark = dark;
         this._items = items;
         this._site = manifest;
         const fresh = active && items.find((i) => i.id === active.id);
@@ -88,6 +113,7 @@ class OerPageFooter extends LitElement {
         this._item = ref ? { ...fresh, metadata: { ...fresh.metadata, oerFields: ref.metadata?.oerFields || {} } } : fresh || active;
         this._cite = false;
         this._schemaOpen = false;
+        this._usedAll = false;
         this._writeJsonLd();
       });
     });
@@ -134,7 +160,7 @@ class OerPageFooter extends LitElement {
     const typeId = item.metadata?.pageType;
     const data = {
       "@context": { oer: "https://oerschema.org/", schema: "https://schema.org/" },
-      "@type": this._type?.schemaType || SCHEMA_TYPES[typeId] || "schema:CreativeWork",
+      "@type": this._type?.schemaType || SCHEMA_TYPES[String(typeId || "").replace(/^oer:/, "")] || "schema:CreativeWork",
       "@id": this._url(),
       "schema:name": item.title,
       "schema:url": this._url(),
@@ -232,65 +258,141 @@ class OerPageFooter extends LitElement {
         -webkit-mask: var(--src) center / contain no-repeat;
         mask: var(--src) center / contain no-repeat;
       }
-      .row {
+      /* 1. license line with the actions beside it */
+      .top {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 0.5rem 0.75rem;
+        justify-content: space-between;
+        gap: 0.75rem 1.5rem;
       }
-      .row + .row {
-        margin-top: 0.75rem;
+      .license {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        min-width: 0;
+        margin: 0;
+      }
+      .license b {
+        color: var(--foreground);
+        font-weight: 600;
       }
       .cc {
         display: inline-flex;
+        flex: none;
         gap: 0.125rem;
       }
       .cc img {
         width: 1.25rem;
         height: 1.25rem;
       }
-      .aiul img {
-        height: 1.5rem;
-        vertical-align: middle;
-      }
-      .label {
-        font-weight: 600;
-        color: var(--foreground);
-      }
-      .used .via {
-        margin-left: -0.375rem;
-        font-size: 0.75rem;
-      }
-      .used .via::before {
-        content: "(";
-      }
-      .used .via::after {
-        content: ")";
-      }
-      .chips {
+      .actions {
         display: inline-flex;
-        flex-wrap: wrap;
+        flex: none;
         gap: 0.375rem;
       }
-      .chip {
+      /* shadcn Button, variant outline, size sm */
+      .btn {
         all: unset;
+        box-sizing: border-box;
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
         height: 1.75rem;
         padding: 0 0.625rem;
-        border: 1px solid var(--border);
-        border-radius: 999px;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
         font-size: 0.75rem;
+        font-weight: 500;
         color: var(--foreground);
         cursor: pointer;
       }
-      .chip:hover {
+      .btn:hover {
         background: var(--accent);
       }
-      .chip[aria-expanded="true"] {
+      .btn.badge img {
+        display: block;
+        height: 1rem;
+        width: auto;
+      }
+      .btn[aria-expanded="true"] {
         border-color: var(--primary);
         color: var(--primary);
+      }
+
+      /* 2. labelled list */
+      dl {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 0.625rem 1.25rem;
+        margin: 1rem 0 0;
+      }
+      dt {
+        padding-top: 0.125rem;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+      }
+      dd {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.375rem 0.75rem;
+        margin: 0;
+        color: var(--foreground);
+      }
+      @media (max-width: 480px) {
+        dl {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 0.125rem;
+        }
+        dd + dt {
+          margin-top: 0.625rem;
+        }
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        height: 1.5rem;
+        padding: 0 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--foreground);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      a.pill:hover {
+        background: var(--accent);
+      }
+      .pill code {
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: 0.6875rem;
+        font-weight: 600;
+      }
+      .sep {
+        color: var(--muted-foreground);
+      }
+      .link {
+        all: unset;
+        color: var(--link, var(--primary));
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        cursor: pointer;
+      }
+      .used-group {
+        display: inline;
+      }
+      .used-group + .used-group::before {
+        content: "";
+        display: block;
+        height: 0.25rem;
+      }
+      .via {
+        margin-right: 0.375rem;
+        color: var(--muted-foreground);
       }
       .panel {
         margin-top: 0.75rem;
@@ -343,38 +445,69 @@ class OerPageFooter extends LitElement {
   }
 
   _renderAiul(codes) {
-    const data = this._aiul;
     if (!codes.length) return "";
-    return html`<div class="row aiul">
-      <span class="label">AI use</span>
-      ${codes.map((code) => {
-        const [, lic, mod] = String(code).match(/^AIUL-([A-Z]+)(?:-([A-Z0-9]+))?$/i) || [];
-        const license = data?.licenses?.find((l) => l.code === lic?.toUpperCase());
-        const modifier = mod && data?.modifiers?.find((m) => m.code === mod.toUpperCase());
-        if (!license) return html`<span>${code}</span>`;
-        const name = `${license.fullName}${modifier ? ` · ${modifier.title}` : ""}`;
-        return html`<a class="aiul-item" href="${license.url}" target="_blank" rel="noopener noreferrer" title="${code}">
-          ${license.image ? html`<img src="${license.image}" alt="${license.title}" loading="lazy" />` : ""} ${name}
-        </a>`;
-      })}
-    </div>`;
+    const data = this._aiul;
+    return html`<dt>AI use</dt>
+      <dd>
+        ${codes.map((code) => {
+          const [, lic, mod] = String(code).match(/^AIUL-([A-Z]+)(?:-([A-Z0-9]+))?$/i) || [];
+          const license = data?.licenses?.find((l) => l.code === lic?.toUpperCase());
+          const modifier = mod && data?.modifiers?.find((m) => m.code === mod.toUpperCase());
+          const name = license ? `${license.fullName || license.title}${modifier ? ` · ${modifier.title}` : ""}` : "";
+          const pill = html`<code>${code}</code>${name ? html`<span>${name}</span>` : ""}`;
+          return license?.url
+            ? html`<a class="pill" href="${license.url}" target="_blank" rel="noopener noreferrer" title="${license.description || name}">${pill}</a>`
+            : html`<span class="pill">${pill}</span>`;
+        })}
+      </dd>`;
   }
 
-  // pages that link here (Decap's "Part of"): via a relation field or by
-  // including this page as a chapter
+  _renderVersion() {
+    const item = this._item;
+    const version = item?.metadata?.version;
+    const updated = item?.metadata?.updated ? new Date(item.metadata.updated * 1000) : null;
+    if (!version && !updated) return "";
+    const date = updated ? updated.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
+    return html`<dt>${version ? "Version" : "Updated"}</dt>
+      <dd>
+        ${version ? html`<span>v${version}</span>` : ""}
+        ${version && date ? html`<span class="sep" aria-hidden="true">·</span>` : ""}
+        ${date ? html`<span>${version ? `Updated ${date}` : date}</span>` : ""}
+        ${version
+          ? html`<span class="sep" aria-hidden="true">·</span
+              ><button class="link" @click="${() => versionsDialog().show(item.metadata?.oerSnapshotOf || item.id)}">All versions</button>`
+          : ""}
+      </dd>`;
+  }
+
+  // pages that link here (Decap's "Part of"), grouped by how they link: a
+  // relation field (its label) or including this page as a chapter
   _renderUsedIn() {
     const id = this._item?.metadata?.oerRef?.page ? null : this._item?.id;
     if (!id) return "";
-    const types = contentTypes(this._items).types;
-    const refs = usedIn(id, types, this._items);
+    const refs = usedIn(id, contentTypes(this._items).types, this._items);
     if (!refs.length) return "";
-    return html`<div class="row used">
-      <span class="label">Used in</span>
-      ${refs.map((r, n) => {
-        const t = types.find((x) => x.id === r.item.metadata?.pageType);
-        return html`${n ? html`<span aria-hidden="true">·</span>` : ""}<a href="${r.item.slug}">${r.item.title}</a><span class="via">${t?.label ? `${t.label}, ` : ""}${r.via.toLowerCase()}</span>`;
-      })}
-    </div>`;
+    const groups = new Map();
+    for (const r of refs) groups.set(r.via, [...(groups.get(r.via) || []), r.item]);
+    const hidden = [...groups.values()].reduce((n, list) => n + Math.max(0, list.length - USED_PREVIEW), 0);
+    return html`<dt>Used in</dt>
+      <dd>
+        <span>
+          ${[...groups].map(([via, list]) => {
+            const shown = this._usedAll ? list : list.slice(0, USED_PREVIEW);
+            return html`<span class="used-group"
+              ><span class="via">${via}:</span>${shown.map((p, n) => html`${n ? ", " : ""}<a href="${p.slug}">${p.title}</a>`)}${!this._usedAll && list.length > USED_PREVIEW
+                ? html`, and ${list.length - USED_PREVIEW} more`
+                : ""}</span
+            >`;
+          })}
+          ${hidden
+            ? html` <button class="link" aria-expanded="${this._usedAll ? "true" : "false"}" @click="${() => (this._usedAll = !this._usedAll)}">
+                ${this._usedAll ? "Show fewer" : "Show all"}
+              </button>`
+            : ""}
+        </span>
+      </dd>`;
   }
 
   render() {
@@ -386,28 +519,33 @@ class OerPageFooter extends LitElement {
     const hideAi = new URLSearchParams(globalThis.location.search).get("hideAILicense") === "true";
     const aiCodes = hideAi ? [] : toList(f.aiLicense);
     return html`
-      <div class="row">
-        ${cc?.parts?.length
-          ? html`<a class="cc" href="${cc.url}" target="_blank" rel="license noopener noreferrer" aria-label="${cc.name}">
-              ${cc.parts.map((p) => html`<img src="${ccIcon(p)}" alt="" loading="lazy" />`)}
-            </a>`
-          : ""}
-        <span>
-          <b>${item.title}</b>${authors.length ? ` by ${authors.join(", ")}` : ""}
-          ${cc
-            ? html` is licensed under ${cc.url ? html`<a href="${cc.url}" target="_blank" rel="license noopener noreferrer">${cc.name}</a>` : cc.name}.`
-            : f.license
-              ? html` — ${f.license}.`
-              : ""}
-        </span>
-      </div>
-      ${this._renderAiul(aiCodes)}
-      ${this._renderUsedIn()}
-      <div class="row">
-        <span class="chips">
-          <button class="chip" aria-expanded="${!!this._cite}" @click="${() => ((this._cite = !this._cite), (this._schemaOpen = false))}">${lucide("editor:format-quote")}Cite</button>
-          <button class="chip" aria-expanded="${!!this._schemaOpen}" @click="${() => ((this._schemaOpen = !this._schemaOpen), (this._cite = false))}">
-            ${lucide("hax:code-json")}OER Schema
+      <div class="top">
+        <p class="license">
+          ${cc?.parts?.length
+            ? html`<a class="cc" href="${cc.url}" target="_blank" rel="license noopener noreferrer" aria-label="${cc.name}">
+                ${cc.parts.map((p) => html`<img src="${ccIcon(p)}" alt="" loading="lazy" />`)}
+              </a>`
+            : ""}
+          <span>
+            <b>${item.title}</b>${authors.length ? ` by ${authors.join(", ")}` : ""}${cc
+              ? html` is licensed under ${cc.url ? html`<a href="${cc.url}" target="_blank" rel="license noopener noreferrer">${cc.name}</a>` : cc.name}.`
+              : f.license
+                ? html` — ${f.license}.`
+                : ""}
+          </span>
+        </p>
+        <span class="actions">
+          <button class="btn" aria-expanded="${this._cite ? "true" : "false"}" @click="${() => ((this._cite = !this._cite), (this._schemaOpen = false))}">
+            ${lucide("editor:format-quote")}Cite
+          </button>
+          <button
+            class="btn badge"
+            aria-label="OER Schema: view this page's structured data"
+            title="OER Schema: view this page's structured data"
+            aria-expanded="${this._schemaOpen ? "true" : "false"}"
+            @click="${() => ((this._schemaOpen = !this._schemaOpen), (this._cite = false))}"
+          >
+            <img src="${this._dark ? OER_LOGO.dark : OER_LOGO.light}" alt="OER Schema" @error="${(e) => (e.target.replaceWith(globalThis.document.createTextNode("OER Schema")))}" />
           </button>
         </span>
       </div>
@@ -427,6 +565,7 @@ class OerPageFooter extends LitElement {
             <p style="margin:0.5rem 0 0">Published in the page as JSON-LD (<a href="https://oerschema.org/" target="_blank" rel="noopener noreferrer">OER Schema</a> and schema.org) for search engines and repositories.</p>
           </div>`
         : ""}
+      <dl>${this._renderAiul(aiCodes)}${this._renderVersion()}${this._renderUsedIn()}</dl>
     `;
   }
 }
