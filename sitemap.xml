@@ -199,12 +199,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-and-sculpting-a-sea-creature</loc>
-    <lastmod>2026-10-01T04:46:27.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
