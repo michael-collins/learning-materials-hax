@@ -1215,33 +1215,6 @@
       }
     },
     {
-      "id": "item-874cc091-6356-4a2c-a3bd-811833f01e0d",
-      "indent": 3,
-      "location": "pages/item-874cc091-6356-4a2c-a3bd-811833f01e0d/index.html",
-      "slug": "pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing",
-      "order": 2,
-      "parent": "item-56855913-6bf5-4cbc-90cc-1615be549a4c",
-      "title": "Sculpting, retopo, and texturing",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Advanced",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830074,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-6c5243ec-1f31-4b5b-8979-ae4c1a230716",
       "indent": 3,
       "location": "pages/item-6c5243ec-1f31-4b5b-8979-ae4c1a230716/index.html",
