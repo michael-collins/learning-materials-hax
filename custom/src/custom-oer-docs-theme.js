@@ -38,11 +38,11 @@ import {
   logout,
   undo,
   redo,
-  openOutline,
   openSiteSettings,
   MOD,
 } from "./editor/stock.js";
 import { settingsDialog } from "./editor/oer-settings-dialog.js";
+import { outlineBuilder } from "./outline/oer-outline-builder.js";
 import { themeSkin } from "./theme-skin.js";
 
 registerShadowStyles(themeSkin);
@@ -948,7 +948,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         </div>
         ${this._loggedIn && !this.editMode
           ? html`<div class="site-actions" role="group" aria-label="Site">
-              <button class="site-action" @click="${openOutline}">${icon.siteMap}Outline</button>
+              <button class="site-action" @click="${() => outlineBuilder().show()}">${icon.siteMap}Outline</button>
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`
           : ""}
@@ -1085,6 +1085,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ${item(pb("_editIcon"), icon.shapes, "Change icon")}
               ${item(pb("_editMedia"), icon.image, "Page media")}
               ${item(pb("_editTags"), icon.tag, "Tags")}
+              ${item(this._menuAction(() => outlineBuilder().show(store.activeId)), icon.siteMap, "Edit page outline")}
               <div class="menu-sep" role="separator"></div>
               ${item(pb("_openRevisions"), icon.history, "Revisions")}
               ${item(pb("_openPageReport"), icon.chart, "Page report")}

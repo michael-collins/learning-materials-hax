@@ -1,0 +1,1521 @@
+/**
+ * `oer-outline-builder` — edit the site's page tree (or one page's
+ * sub-pages, e.g. a lesson or book) in a dialog. A port of the interaction
+ * design of learning-materials-decapcms' CmsOutlineEditor: a tree with
+ * connector lines, "add" rows closing every level, native drag and drop with
+ * horizontal indent, full keyboard control, inline renaming and an icon
+ * picker. Nothing is written until "Save outline", which sends the whole
+ * outline to HAXcms in one request (new, changed and deleted pages).
+ *
+ * Keyboard (row focused): Enter/F2 rename · Tab / Shift+Tab indent /
+ * outdent · Alt+↑/↓ move with sub-pages · ↑/↓ previous/next row · ←/→
+ * collapse/expand · Delete remove. Drag a row: top third = before, middle =
+ * make child, bottom third = after; drag left/right to change level. Hold a
+ * parent for 2 s to collapse it before dragging.
+ * @element oer-outline-builder
+ */
+import { html, css, LitElement } from "../lit.js";
+import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
+import { flatten, saveOutline, newItemId } from "./outline-model.js";
+
+const INDENT_PX = 20;
+const MAX_DEPTH = 6;
+const LONG_PRESS_MS = 2000;
+
+const lucide = (name, cls = "") =>
+  html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
+
+// icons offered by the picker: the HAX icon names this site maps to Lucide
+const ICON_CHOICES = Object.keys(LUCIDE_ICONS).filter((k) => !k.startsWith("oer:"));
+
+class OerOutlineBuilder extends LitElement {
+  static get tag() {
+    return "oer-outline-builder";
+  }
+
+  static get properties() {
+    return {
+      open: { type: Boolean, reflect: true },
+      _rows: { state: true },
+      _collapsed: { state: true },
+      _editing: { state: true },
+      _showIcons: { state: true },
+      _hoverAdd: { state: true },
+      _drag: { state: true },
+      _longPress: { state: true },
+      _iconFor: { state: true },
+      _iconQuery: { state: true },
+      _confirmDiscard: { state: true },
+    };
+  }
+
+  constructor() {
+    super();
+    this.open = false;
+    this._rows = []; // [{ id, title, icon, depth, orig }]
+    this._deleted = new Map(); // id -> original item
+    this._collapsed = new Set();
+    this._editing = null;
+    this._showIcons = true;
+    this._hoverAdd = null; // { afterId, depth }
+    this._drag = null; // { id, overId, position, startX, x, origDepth, previewDepth, droppedOnOther }
+    this._longPress = null;
+    this._iconFor = null;
+    this._iconQuery = "";
+    this._confirmDiscard = false;
+    this.__keys = (e) => {
+      if (!this.open || e.key !== "Escape") return;
+      if (this._iconFor) this._iconFor = null;
+      else if (this._editing) this._editing = null;
+      else this._requestClose();
+      e.preventDefault();
+      e.stopPropagation();
+    };
+  }
+
+  /* ---------- open / close / save ---------- */
+
+  /** Open for the whole site, or for the sub-pages of page `rootId`. */
+  show(rootId = null) {
+    const items = toJS(store.manifest?.items) || [];
+    this._root = rootId;
+    this._rootItem = rootId ? items.find((i) => i.id === rootId) : null;
+    this._rows = flatten(items, rootId).map(({ item, depth }) => ({
+      id: item.id,
+      title: item.title,
+      icon: item.metadata?.icon || "",
+      depth,
+      orig: item,
+    }));
+    this._snapshot = this._signature();
+    this._deleted = new Map();
+    this._collapsed = new Set();
+    this._editing = null;
+    this._confirmDiscard = false;
+    this.open = true;
+    globalThis.addEventListener("keydown", this.__keys, true);
+    this.updateComplete.then(() => this.shadowRoot.querySelector("[role=treeitem], .empty button")?.focus());
+  }
+
+  _close() {
+    this.open = false;
+    this._iconFor = null;
+    globalThis.removeEventListener("keydown", this.__keys, true);
+  }
+
+  _signature() {
+    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.depth]));
+  }
+
+  get _dirty() {
+    return this._deleted.size > 0 || this._signature() !== this._snapshot;
+  }
+
+  _requestClose() {
+    if (this._dirty && !this._confirmDiscard) {
+      this._confirmDiscard = true;
+      return;
+    }
+    this._close();
+  }
+
+  _save() {
+    const all = toJS(store.manifest?.items) || [];
+    const rootDepth = this._rootItem ? (Number(this._rootItem.indent) || 0) + 1 : 0;
+    const out = new Map(all.map((i) => [i.id, { ...i }]));
+    const parents = []; // parent id per depth while walking
+    const counters = new Map(); // parent id -> next order
+    for (const row of this._rows) {
+      const parent = row.depth === 0 ? this._root : parents[row.depth - 1];
+      parents[row.depth] = row.id;
+      parents.length = row.depth + 1;
+      const key = parent ?? "__root";
+      const order = counters.get(key) ?? 0;
+      counters.set(key, order + 1);
+      const title = row.title.trim() || "Untitled page";
+      const indent = rootDepth + row.depth;
+      if (row.orig) {
+        const o = row.orig;
+        const item = out.get(row.id);
+        const changed =
+          (o.parent || null) !== (parent || null) ||
+          Number(o.order) !== order ||
+          Number(o.indent) !== indent ||
+          o.title !== title ||
+          (o.metadata?.icon || "") !== row.icon;
+        Object.assign(item, { parent: parent || null, order, indent, title });
+        item.metadata = { ...(o.metadata || {}) };
+        if (row.icon) item.metadata.icon = row.icon;
+        else delete item.metadata.icon;
+        if (changed) item.modified = true;
+      } else {
+        out.set(row.id, {
+          id: row.id,
+          title,
+          parent: parent || null,
+          order,
+          indent,
+          location: "",
+          description: "",
+          metadata: row.icon ? { icon: row.icon } : {},
+          contents: "<p></p>",
+          new: true,
+        });
+      }
+    }
+    for (const id of this._deleted.keys()) {
+      const item = out.get(id);
+      if (item) item.delete = true;
+    }
+    saveOutline([...out.values()]);
+    this._close();
+  }
+
+  /* ---------- tree helpers (flat list with depths) ---------- */
+
+  _index(id) {
+    return this._rows.findIndex((r) => r.id === id);
+  }
+
+  _subtree(idx) {
+    const depth = this._rows[idx].depth;
+    let end = idx + 1;
+    while (end < this._rows.length && this._rows[end].depth > depth) end++;
+    return { start: idx, end };
+  }
+
+  _hasChildren(idx) {
+    return idx + 1 < this._rows.length && this._rows[idx + 1].depth > this._rows[idx].depth;
+  }
+
+  _visible() {
+    const out = [];
+    let skip = -1;
+    this._rows.forEach((row, index) => {
+      if (skip >= 0) {
+        if (row.depth > skip) return;
+        skip = -1;
+      }
+      out.push({ row, index });
+      if (this._collapsed.has(row.id) && this._hasChildren(index)) skip = row.depth;
+    });
+    return out;
+  }
+
+  _nextSiblingAtDepth(idx, depth) {
+    const { end } = this._subtree(idx);
+    for (let i = end; i < this._rows.length; i++) {
+      if (this._rows[i].depth < depth) return false;
+      if (this._rows[i].depth === depth) return true;
+    }
+    return false;
+  }
+
+  // levels that close after visible row vIdx, deepest first: one add row each
+  _closingRows(vis, vIdx) {
+    const { row, index } = vis[vIdx];
+    const nextDepth = vIdx + 1 < vis.length ? vis[vIdx + 1].row.depth : -1;
+    if (nextDepth >= row.depth) return [];
+    const out = [];
+    for (let d = row.depth; d > nextDepth; d--) {
+      let afterId = row.id;
+      if (d < row.depth) {
+        for (let i = vIdx - 1; i >= 0; i--) {
+          if (vis[i].row.depth === d) {
+            afterId = vis[i].row.id;
+            break;
+          }
+          if (vis[i].row.depth < d) break;
+        }
+      }
+      out.push({ depth: d, afterId, index });
+    }
+    return out;
+  }
+
+  _hasClosingAddAtDepth(vis, vIdx, depth) {
+    for (let i = vIdx + 1; i < vis.length; i++) {
+      const d = vis[i].row.depth;
+      if (d < depth) return true;
+      if (d === depth) return false;
+    }
+    return true;
+  }
+
+  // the add row hovered, or the drop position of a drag, for highlighting
+  _highlight() {
+    if (this._hoverAdd) return this._hoverAdd;
+    const d = this._drag;
+    if (d?.overId && d.position !== "child" && d.previewDepth !== null) return { afterId: d.overId, depth: d.previewDepth };
+    return null;
+  }
+
+  _isSibling(id) {
+    const hl = this._highlight();
+    if (!hl) return false;
+    const rows = this._rows;
+    const row = rows.find((r) => r.id === id);
+    if (!row || row.depth !== hl.depth) return false;
+    if (hl.depth === 0) return true;
+    const afterIdx = this._index(hl.afterId);
+    if (afterIdx < 0) return false;
+    const scanStart = hl.afterId === this._drag?.id ? afterIdx - 1 : afterIdx;
+    let parentIdx = -1;
+    for (let i = scanStart; i >= 0; i--) {
+      if (rows[i].depth === hl.depth - 1) {
+        parentIdx = i;
+        break;
+      }
+      if (rows[i].depth < hl.depth - 1) break;
+    }
+    if (parentIdx < 0) return false;
+    for (let i = parentIdx + 1; i < rows.length; i++) {
+      if (rows[i].depth < hl.depth) break;
+      if (rows[i].depth === hl.depth && rows[i].id === id) return true;
+    }
+    return false;
+  }
+
+  _columnHighlighted(id, depth) {
+    const hl = this._highlight();
+    if (!hl || depth !== hl.depth) return false;
+    for (let i = this._index(id); i >= 0; i--) {
+      if (this._rows[i].depth === depth) return this._isSibling(this._rows[i].id);
+      if (this._rows[i].depth < depth) return false;
+    }
+    return false;
+  }
+
+  /* ---------- edits ---------- */
+
+  _commit(rows = [...this._rows]) {
+    this._rows = rows;
+    this._confirmDiscard = false;
+  }
+
+  _newRow(depth) {
+    return { id: newItemId(), title: "", icon: "", depth, orig: null };
+  }
+
+  _addAfter(afterId, depth) {
+    const rows = [...this._rows];
+    const idx = this._index(afterId);
+    const at = idx < 0 ? rows.length : this._subtree(idx).end;
+    const row = this._newRow(depth);
+    rows.splice(at, 0, row);
+    this._commit(rows);
+    this._startEdit(row.id);
+  }
+
+  _addChild(parentId) {
+    const idx = this._index(parentId);
+    if (idx < 0) return;
+    const rows = [...this._rows];
+    const row = this._newRow(Math.min(rows[idx].depth + 1, MAX_DEPTH));
+    rows.splice(this._subtree(idx).end, 0, row);
+    const c = new Set(this._collapsed);
+    c.delete(parentId);
+    this._collapsed = c;
+    this._commit(rows);
+    this._startEdit(row.id);
+  }
+
+  _addFirst() {
+    const row = this._newRow(0);
+    this._commit([...this._rows, row]);
+    this._startEdit(row.id);
+  }
+
+  _remove(id) {
+    const idx = this._index(id);
+    if (idx < 0) return;
+    const { start, end } = this._subtree(idx);
+    const rows = [...this._rows];
+    for (const r of rows.slice(start, end)) if (r.orig) this._deleted.set(r.id, r.orig);
+    const prev = idx > 0 ? rows[idx - 1].id : null;
+    rows.splice(start, end - start);
+    this._commit(rows);
+    if (prev) this._focusRow(prev);
+  }
+
+  _rename(id, title) {
+    const rows = this._rows.map((r) => (r.id === id ? { ...r, title } : r));
+    this._commit(rows);
+  }
+
+  // indent / outdent carry the page's sub-pages with it
+  _shiftSubtree(idx, delta) {
+    const { start, end } = this._subtree(idx);
+    this._commit(this._rows.map((r, i) => (i >= start && i < end ? { ...r, depth: r.depth + delta } : r)));
+  }
+
+  _indent(id) {
+    const idx = this._index(id);
+    if (idx <= 0) return;
+    const row = this._rows[idx];
+    if (row.depth > this._rows[idx - 1].depth) return;
+    const { start, end } = this._subtree(idx);
+    const deepest = Math.max(...this._rows.slice(start, end).map((r) => r.depth));
+    if (deepest >= MAX_DEPTH) return;
+    this._shiftSubtree(idx, 1);
+  }
+
+  _outdent(id) {
+    const idx = this._index(id);
+    if (idx < 0 || this._rows[idx].depth <= 0) return;
+    this._shiftSubtree(idx, -1);
+  }
+
+  // move past the previous / next sibling (with sub-pages); never out of the
+  // parent
+  _moveUp(id) {
+    const idx = this._index(id);
+    if (idx <= 0) return;
+    const rows = [...this._rows];
+    const depth = rows[idx].depth;
+    let prev = idx - 1;
+    while (prev >= 0 && rows[prev].depth > depth) prev--;
+    if (prev < 0 || rows[prev].depth < depth) return;
+    const { start, end } = this._subtree(idx);
+    const sub = rows.splice(start, end - start);
+    rows.splice(prev, 0, ...sub);
+    this._commit(rows);
+    this._focusRow(id);
+  }
+
+  _moveDown(id) {
+    const idx = this._index(id);
+    if (idx < 0) return;
+    const depth = this._rows[idx].depth;
+    const { start, end } = this._subtree(idx);
+    if (end >= this._rows.length || this._rows[end].depth !== depth) return;
+    const nextEnd = this._subtree(end).end;
+    const rows = [...this._rows];
+    const sub = rows.splice(start, end - start);
+    rows.splice(nextEnd - sub.length, 0, ...sub);
+    this._commit(rows);
+    this._focusRow(id);
+  }
+
+  _toggle(id) {
+    const c = new Set(this._collapsed);
+    if (c.has(id)) c.delete(id);
+    else c.add(id);
+    this._collapsed = c;
+  }
+
+  _collapseAll() {
+    this._collapsed = new Set(this._rows.filter((_, i) => this._hasChildren(i)).map((r) => r.id));
+  }
+
+  _startEdit(id) {
+    this._editing = id;
+    this.updateComplete.then(() => {
+      const input = this.shadowRoot.querySelector(`[data-edit="${id}"]`);
+      input?.focus();
+      if (input) input.selectionStart = input.selectionEnd = input.value.length;
+    });
+  }
+
+  _stopEdit(refocus = true) {
+    const id = this._editing;
+    this._editing = null;
+    if (refocus && id) this._focusRow(id);
+  }
+
+  _focusRow(id) {
+    this.updateComplete.then(() => this.shadowRoot.querySelector(`[role=treeitem][data-id="${id}"]`)?.focus());
+  }
+
+  /* ---------- keyboard ---------- */
+
+  _editKeys(e, row) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      this._stopEdit();
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      if (e.shiftKey) this._outdent(row.id);
+      else this._indent(row.id);
+    } else if (e.key === "Backspace" && !e.target.value) {
+      e.preventDefault();
+      this._editing = null;
+      this._remove(row.id);
+    } else if (e.altKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
+      e.preventDefault();
+      if (e.key === "ArrowUp") this._moveUp(row.id);
+      else this._moveDown(row.id);
+      this._startEdit(row.id);
+    }
+    e.stopPropagation();
+  }
+
+  _rowKeys(e, row, index, vis) {
+    if (this._editing === row.id) return;
+    const v = vis.findIndex((x) => x.row.id === row.id);
+    const go = (n) => vis[n] && this._focusRow(vis[n].row.id);
+    if (e.key === "Tab") {
+      if (e.shiftKey) this._outdent(row.id);
+      else this._indent(row.id);
+      this._focusRow(row.id);
+    } else if (e.key === "Enter" || e.key === "F2") this._startEdit(row.id);
+    else if (e.altKey && e.key === "ArrowUp") this._moveUp(row.id);
+    else if (e.altKey && e.key === "ArrowDown") this._moveDown(row.id);
+    else if (e.key === "ArrowUp") go(v - 1);
+    else if (e.key === "ArrowDown") go(v + 1);
+    else if (e.key === "ArrowRight" && this._hasChildren(index) && this._collapsed.has(row.id)) this._toggle(row.id);
+    else if (e.key === "ArrowLeft" && this._hasChildren(index) && !this._collapsed.has(row.id)) this._toggle(row.id);
+    else if (e.key === "Delete" || (e.key === "Backspace" && !row.title)) this._remove(row.id);
+    else return;
+    e.preventDefault();
+  }
+
+  /* ---------- drag and drop (native, with horizontal indent) ---------- */
+
+  _pointerDown(row, index) {
+    if (!this._hasChildren(index) || this._collapsed.has(row.id)) return;
+    this._longPress = row.id;
+    clearTimeout(this.__lpTimer);
+    this.__lpTimer = setTimeout(() => {
+      if (this._longPress === row.id) {
+        this._collapsed = new Set([...this._collapsed, row.id]);
+        this._longPress = null;
+      }
+    }, LONG_PRESS_MS);
+  }
+
+  _cancelLongPress() {
+    clearTimeout(this.__lpTimer);
+    this._longPress = null;
+  }
+
+  _previewDepth(d, targetId) {
+    const delta = Math.round((d.x - d.startX) / INDENT_PX);
+    let depth = Math.max(0, Math.min(MAX_DEPTH, d.origDepth + delta));
+    const ti = this._index(targetId);
+    if (targetId && targetId !== d.id && ti >= 0) {
+      if (d.position === "child") depth = Math.min(MAX_DEPTH, this._rows[ti].depth + 1);
+      else {
+        const ref = d.position === "before" ? Math.max(0, ti - 1) : ti;
+        depth = Math.min(depth, this._rows[ref].depth + 1);
+      }
+    } else if (targetId === d.id && ti > 0) {
+      depth = Math.min(depth, this._rows[ti - 1].depth + 1);
+    }
+    return depth;
+  }
+
+  _dragStart(e, row) {
+    this._cancelLongPress();
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", row.id);
+    this._drag = { id: row.id, overId: null, position: "after", startX: e.clientX, x: e.clientX, origDepth: row.depth, previewDepth: null, droppedOnOther: false };
+  }
+
+  _dragOver(e, row) {
+    const d = this._drag;
+    if (!d) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    const next = { ...d, x: e.clientX, overId: row.id };
+    if (row.id !== d.id) {
+      const r = e.currentTarget.getBoundingClientRect();
+      const pct = (e.clientY - r.top) / r.height;
+      next.position = pct < 0.3 ? "before" : pct > 0.7 ? "after" : row.depth < MAX_DEPTH ? "child" : "after";
+    }
+    next.previewDepth = this._previewDepth(next, row.id);
+    if (next.overId !== d.overId || next.position !== d.position || next.previewDepth !== d.previewDepth) this._drag = next;
+    else this._drag.x = next.x;
+  }
+
+  _dragLeave(e, row) {
+    if (!e.relatedTarget || !e.currentTarget.contains(e.relatedTarget)) {
+      if (this._drag?.overId === row.id) this._drag = { ...this._drag, overId: null };
+    }
+  }
+
+  _drop(e, target) {
+    e.preventDefault();
+    const d = this._drag;
+    if (!d || d.id === target.id) return;
+    const rows = [...this._rows];
+    const from = this._index(d.id);
+    if (from < 0) return;
+    const { start, end } = this._subtree(from);
+    let moved = rows.splice(start, end - start);
+    const shift = (delta) => (moved = moved.map((m) => ({ ...m, depth: Math.max(0, Math.min(MAX_DEPTH, m.depth + delta)) })));
+    if (d.position === "child") {
+      const ti = rows.findIndex((r) => r.id === target.id);
+      if (ti < 0) rows.push(...moved);
+      else {
+        shift(Math.min(rows[ti].depth + 1, MAX_DEPTH) - moved[0].depth);
+        let tEnd = ti + 1;
+        while (tEnd < rows.length && rows[tEnd].depth > rows[ti].depth) tEnd++;
+        rows.splice(tEnd, 0, ...moved);
+        const c = new Set(this._collapsed);
+        c.delete(target.id);
+        this._collapsed = c;
+      }
+    } else {
+      if (d.previewDepth !== null) shift(d.previewDepth - moved[0].depth);
+      let at = rows.findIndex((r) => r.id === target.id);
+      if (at < 0) at = rows.length;
+      if (d.position === "after") at++;
+      rows.splice(at, 0, ...moved);
+    }
+    this._drag = { ...d, droppedOnOther: true };
+    this._commit(rows);
+  }
+
+  _dragEnd() {
+    const d = this._drag;
+    // dropped on itself: a level change only
+    if (d && !d.droppedOnOther && d.previewDepth !== null) {
+      const idx = this._index(d.id);
+      if (idx >= 0 && this._rows[idx].depth !== d.previewDepth) {
+        this._commit(this._rows.map((r, i) => (i === idx ? { ...r, depth: d.previewDepth } : r)));
+      }
+    }
+    this._drag = null;
+  }
+
+  /* ---------- icons ---------- */
+
+  _setIcon(name) {
+    const id = this._iconFor;
+    this._iconFor = null;
+    this._commit(this._rows.map((r) => (r.id === id ? { ...r, icon: name } : r)));
+    this._focusRow(id);
+  }
+
+  /* ---------- render ---------- */
+
+  static get styles() {
+    return css`
+      :host {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: none;
+        font-family: var(--font-sans, system-ui, sans-serif);
+        color: var(--foreground);
+      }
+      :host([open]) {
+        display: grid;
+        place-items: center;
+      }
+      .backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgb(0 0 0 / 0.5);
+      }
+      .dialog {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: min(46rem, calc(100vw - 2rem));
+        height: min(44rem, calc(100dvh - 2rem));
+        background: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 16px 48px rgb(0 0 0 / 0.24);
+        overflow: hidden;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      .lucide {
+        flex: none;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        background: currentColor;
+        -webkit-mask: var(--src) center / contain no-repeat;
+        mask: var(--src) center / contain no-repeat;
+      }
+      .sm {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+      header {
+        flex: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 0.75rem 0.875rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .heading {
+        flex: 1;
+        min-width: 0;
+      }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      h2 .lucide {
+        color: var(--muted-foreground);
+      }
+      .sub {
+        margin: 0.125rem 0 0;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
+      .tools {
+        flex: none;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem 1rem 0;
+      }
+      .tool {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        height: 1.75rem;
+        padding: 0 0.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .tool:hover {
+        background: var(--accent);
+        color: var(--foreground);
+      }
+      .tool[aria-pressed="true"] {
+        color: var(--primary);
+        background: color-mix(in oklch, var(--primary) 10%, transparent);
+      }
+      .count {
+        margin-left: auto;
+        padding: 0 0.25rem 0 0.5rem;
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        white-space: nowrap;
+      }
+      .x {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: var(--radius-md);
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .x:hover {
+        background: var(--accent);
+        color: var(--foreground);
+      }
+      .body {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        padding: 0.5rem 1.25rem 1rem;
+      }
+      .tree {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: var(--background);
+        overflow: hidden;
+      }
+
+      /* rows */
+      .row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 2rem;
+        padding: 0 0.5rem;
+        outline: none;
+      }
+      .row:hover,
+      .row:focus-within {
+        background: color-mix(in oklch, var(--accent) 60%, transparent);
+      }
+      .row:focus-visible {
+        box-shadow: inset 0 0 0 2px var(--ring);
+      }
+      .row.dragging {
+        opacity: 0.4;
+      }
+      .row.child-target {
+        background: color-mix(in oklch, var(--primary) 10%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--primary) 40%, transparent);
+      }
+      .row.pressing {
+        box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--primary) 60%, transparent);
+      }
+      .dropline {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .dropline.before {
+        top: -1px;
+      }
+      .dropline.after {
+        bottom: -1px;
+      }
+      .dropline .bar {
+        height: 2px;
+        border-radius: 1px;
+        background: var(--primary);
+      }
+      .dropline .dot {
+        position: absolute;
+        top: -4px;
+        width: 10px;
+        height: 10px;
+        box-sizing: border-box;
+        border: 2px solid var(--primary);
+        border-radius: 999px;
+        background: var(--background);
+      }
+      .indent {
+        display: flex;
+        flex: none;
+        height: 100%;
+      }
+      .col {
+        position: relative;
+        flex: none;
+        width: ${INDENT_PX}px;
+        height: 100%;
+      }
+      .line {
+        position: absolute;
+        left: 8px;
+        width: 1px;
+        background: var(--border);
+      }
+      .line.full {
+        top: 0;
+        bottom: 0;
+      }
+      .line.top {
+        top: 0;
+        height: 50%;
+      }
+      .line.bottom {
+        top: 50%;
+        bottom: 0;
+      }
+      .hline {
+        position: absolute;
+        left: 8px;
+        right: -10px;
+        top: 50%;
+        height: 1px;
+        background: var(--border);
+      }
+      .hl {
+        background: var(--primary);
+      }
+      .toggle {
+        position: relative;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: ${INDENT_PX}px;
+        height: 100%;
+      }
+      .chev {
+        all: unset;
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 3px;
+        background: var(--card, var(--background));
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .chev:hover {
+        background: var(--accent);
+      }
+      .chev.hl-ring {
+        box-shadow: 0 0 0 1px var(--primary);
+        color: var(--primary);
+      }
+      .leaf {
+        position: relative;
+        z-index: 1;
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--border);
+      }
+      .leaf.hl {
+        background: var(--primary);
+      }
+      .icon-btn {
+        all: unset;
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 4px;
+        cursor: pointer;
+        color: var(--primary);
+        --simple-icon-height: 0.875rem;
+        --simple-icon-width: 0.875rem;
+      }
+      .icon-btn:hover {
+        background: var(--accent);
+      }
+      .icon-btn.unset {
+        color: var(--muted-foreground);
+        opacity: 0;
+      }
+      .row:hover .icon-btn.unset,
+      .row:focus-within .icon-btn.unset {
+        opacity: 0.6;
+      }
+      .title {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        cursor: grab;
+        user-select: none;
+      }
+      .title span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0 0.375rem;
+        font-size: 0.875rem;
+      }
+      .title .top {
+        font-weight: 500;
+      }
+      .title .nested {
+        color: var(--muted-foreground);
+      }
+      .title .placeholder {
+        color: var(--muted-foreground);
+        font-style: italic;
+        opacity: 0.7;
+      }
+      .title .new-badge {
+        flex: none;
+        padding: 0 0.375rem;
+        margin-left: 0.25rem;
+        font-size: 0.625rem;
+        font-weight: 600;
+        line-height: 1rem;
+        color: var(--primary);
+        border: 1px solid color-mix(in oklch, var(--primary) 40%, transparent);
+        border-radius: 999px;
+      }
+      .edit {
+        flex: 1;
+        min-width: 0;
+        height: 1.5rem;
+        box-sizing: border-box;
+        padding: 0 0.375rem;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-sm);
+        background: var(--background);
+        color: var(--foreground);
+        font: inherit;
+        font-size: 0.875rem;
+        outline: none;
+      }
+      .edit:focus {
+        box-shadow: 0 0 0 2px color-mix(in oklch, var(--ring) 40%, transparent);
+      }
+      .badge {
+        flex: none;
+        margin-right: 0.25rem;
+        padding: 0 0.375rem;
+        font-size: 0.625rem;
+        font-weight: 500;
+        line-height: 1rem;
+        color: var(--muted-foreground);
+        background: var(--muted);
+        border-radius: 999px;
+      }
+      .act {
+        all: unset;
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 4px;
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .act:hover {
+        background: var(--accent);
+        color: var(--foreground);
+      }
+      .act.danger:hover {
+        color: var(--destructive);
+      }
+      .hover-only {
+        display: flex;
+        opacity: 0;
+      }
+      .row:hover .hover-only,
+      .row:focus-within .hover-only,
+      .act.always {
+        opacity: 1;
+      }
+      .act:focus-visible,
+      .chev:focus-visible,
+      .icon-btn:focus-visible,
+      .add:focus-visible,
+      .tool:focus-visible,
+      .x:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+        opacity: 1;
+      }
+
+      /* add rows closing each level */
+      .add {
+        all: unset;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 1.75rem;
+        padding: 0 0.5rem;
+        cursor: pointer;
+      }
+      .add:hover,
+      .add:focus-visible {
+        background: color-mix(in oklch, var(--accent) 60%, transparent);
+      }
+      .add .plus {
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 3px;
+        background: var(--primary);
+        color: var(--primary-foreground);
+      }
+      .add:hover .plus,
+      .add:focus-visible .plus {
+        display: inline-flex;
+      }
+      .add:hover .leaf,
+      .add:focus-visible .leaf {
+        visibility: hidden;
+      }
+      .add:hover .line,
+      .add:hover .hline,
+      .add:focus-visible .line,
+      .add:focus-visible .hline {
+        background: var(--primary);
+      }
+      .add .label {
+        padding-left: 0.375rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+        opacity: 0;
+      }
+      .add:hover .label,
+      .add:focus-visible .label {
+        opacity: 1;
+        color: var(--foreground);
+      }
+
+      .empty {
+        padding: 2.5rem 1rem;
+        text-align: center;
+        border: 1px dashed var(--border);
+        border-radius: var(--radius-lg);
+        color: var(--muted-foreground);
+        font-size: 0.875rem;
+      }
+      .empty .lucide {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 auto 0.5rem;
+        display: block;
+        opacity: 0.5;
+      }
+
+      footer {
+        flex: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border-top: 1px solid var(--border);
+      }
+      .hints {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.125rem 0.75rem;
+        font-size: 0.6875rem;
+        color: var(--muted-foreground);
+      }
+      kbd {
+        font-family: var(--font-mono, ui-monospace, monospace);
+      }
+      .warn {
+        flex: 1;
+        font-size: 0.8125rem;
+        color: var(--destructive);
+      }
+      .btn {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        height: 2.25rem;
+        padding: 0 1rem;
+        border-radius: var(--radius-md);
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      .btn.outline {
+        border: 1px solid var(--input-border, var(--border));
+        background: var(--background);
+      }
+      .btn.outline:hover {
+        background: var(--accent);
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: var(--primary-foreground);
+      }
+      .btn.primary[aria-disabled="true"] {
+        opacity: 0.5;
+        cursor: default;
+      }
+      .btn.destructive {
+        background: var(--destructive);
+        color: var(--destructive-foreground, white);
+      }
+
+      /* icon picker */
+      .picker {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        display: grid;
+        place-items: center;
+        background: rgb(0 0 0 / 0.3);
+      }
+      .picker-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: min(30rem, calc(100% - 2rem));
+        max-height: 80%;
+        padding: 1.25rem;
+        box-sizing: border-box;
+        background: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
+      }
+      .picker-box h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        height: 2.25rem;
+        padding: 0 0.75rem;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        color: var(--muted-foreground);
+      }
+      .search input {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: var(--foreground);
+        font: inherit;
+        font-size: 0.875rem;
+      }
+      .grid {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.25rem;
+      }
+      .grid button {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem 0.25rem;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+      }
+      .grid button:hover,
+      .grid button:focus-visible {
+        background: var(--accent);
+      }
+      .grid .lucide {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      .grid small {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 0.5625rem;
+        color: var(--muted-foreground);
+      }
+      .picker-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border);
+      }
+      .link-danger {
+        all: unset;
+        font-size: 0.75rem;
+        color: var(--destructive);
+        cursor: pointer;
+      }
+      .link-danger:hover {
+        text-decoration: underline;
+      }
+    `;
+  }
+
+  _renderIndent(row, index, vis, vIdx) {
+    const cols = [];
+    const closing = this._closingRows(vis, vIdx);
+    for (let d = 1; d <= row.depth; d++) {
+      if (d < row.depth) {
+        const show = this._nextSiblingAtDepth(index, d) || this._hasClosingAddAtDepth(vis, vIdx, d);
+        cols.push(html`<div class="col">${show ? html`<div class="line full ${this._columnHighlighted(row.id, d) ? "hl" : ""}"></div>` : ""}</div>`);
+      } else {
+        const hl = this._isSibling(row.id) ? "hl" : "";
+        const below = this._nextSiblingAtDepth(index, d) || closing.some((c) => c.depth === d);
+        cols.push(html`<div class="col">
+          <div class="line top ${hl}"></div>
+          ${below ? html`<div class="line bottom ${hl}"></div>` : ""}
+          <div class="hline ${hl}"></div>
+        </div>`);
+      }
+    }
+    const d = this._drag;
+    const depth = d?.id === row.id && d.previewDepth !== null ? d.previewDepth : row.depth;
+    return html`<div class="indent" style="width:${depth * INDENT_PX}px">${cols}</div>`;
+  }
+
+  _renderRow(row, index, vis, vIdx) {
+    const d = this._drag;
+    const hasKids = this._hasChildren(index);
+    const collapsed = this._collapsed.has(row.id);
+    const sib = this._isSibling(row.id);
+    const editing = this._editing === row.id;
+    const kidsCount = collapsed ? this._subtree(index).end - index - 1 : 0;
+    const classes = [
+      "row",
+      d?.id === row.id ? "dragging" : "",
+      d?.overId === row.id && d.id !== row.id && d.position === "child" ? "child-target" : "",
+      this._longPress === row.id ? "pressing" : "",
+    ].join(" ");
+    return html`<div
+      class="${classes}"
+      role="treeitem"
+      tabindex="0"
+      data-id="${row.id}"
+      aria-level="${row.depth + 1}"
+      aria-expanded="${hasKids ? String(!collapsed) : ""}"
+      aria-label="${row.title || "Untitled page"}"
+      draggable="${editing ? "false" : "true"}"
+      @keydown="${(e) => this._rowKeys(e, row, index, vis)}"
+      @pointerdown="${() => this._pointerDown(row, index)}"
+      @pointerup="${this._cancelLongPress}"
+      @pointerleave="${this._cancelLongPress}"
+      @dragstart="${(e) => this._dragStart(e, row)}"
+      @dragend="${this._dragEnd}"
+      @dragover="${(e) => this._dragOver(e, row)}"
+      @dragleave="${(e) => this._dragLeave(e, row)}"
+      @drop="${(e) => this._drop(e, row)}"
+    >
+      ${d?.overId === row.id && d.id !== row.id && d.position !== "child"
+        ? html`<div class="dropline ${d.position}">
+            <div class="bar"></div>
+            <div class="dot" style="left:${13 + (d.previewDepth ?? 0) * INDENT_PX}px"></div>
+          </div>`
+        : ""}
+      ${this._renderIndent(row, index, vis, vIdx)}
+      <div class="toggle">
+        ${hasKids
+          ? html`<button
+              class="chev ${sib ? "hl-ring" : ""}"
+              tabindex="-1"
+              aria-label="${collapsed ? "Expand" : "Collapse"}"
+              @click="${(e) => {
+                e.stopPropagation();
+                this._toggle(row.id);
+              }}"
+            >
+              ${lucide(collapsed ? "oer:chevron-right" : "oer:chevron-down", "sm")}
+            </button>`
+          : html`<div class="leaf ${sib ? "hl" : ""}"></div>`}
+      </div>
+      ${this._showIcons
+        ? html`<button
+            class="icon-btn ${row.icon ? "" : "unset"}"
+            tabindex="-1"
+            title="${row.icon ? `Icon: ${row.icon} (click to change)` : "Set icon"}"
+            aria-label="${row.icon ? "Change icon" : "Set icon"}"
+            @click="${(e) => {
+              e.stopPropagation();
+              this._iconQuery = "";
+              this._iconFor = row.id;
+            }}"
+          >
+            ${row.icon ? html`<simple-icon-lite icon="${row.icon}"></simple-icon-lite>` : lucide("oer:smile-plus", "sm")}
+          </button>`
+        : ""}
+      ${editing
+        ? html`<input
+            class="edit"
+            data-edit="${row.id}"
+            .value="${row.title}"
+            placeholder="${row.depth === 0 ? "Page title…" : "Sub-page title…"}"
+            aria-label="Page title"
+            @input="${(e) => this._rename(row.id, e.target.value)}"
+            @keydown="${(e) => this._editKeys(e, row)}"
+            @blur="${() => this._editing === row.id && this._stopEdit(false)}"
+          />`
+        : html`<div class="title" @dblclick="${() => this._startEdit(row.id)}">
+            ${row.title
+              ? html`<span class="${row.depth === 0 ? "top" : "nested"}">${row.title}</span>`
+              : html`<span class="placeholder">${row.depth === 0 ? "Page title…" : "Sub-page title…"}</span>`}
+            ${row.orig ? "" : html`<span class="new-badge">New</span>`}
+          </div>`}
+      <button
+        class="act ${editing ? "always" : "hover-only"}"
+        tabindex="-1"
+        title="${editing ? "Done" : "Rename"}"
+        aria-label="${editing ? "Done renaming" : "Rename"}"
+        @mousedown="${(e) => e.preventDefault()}"
+        @click="${(e) => {
+          e.stopPropagation();
+          if (editing) this._stopEdit();
+          else this._startEdit(row.id);
+        }}"
+      >
+        ${lucide(editing ? "oer:check" : "icons:create", "sm")}
+      </button>
+      ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
+      <div class="hover-only">
+        ${row.depth < MAX_DEPTH
+          ? html`<button
+              class="act"
+              tabindex="-1"
+              title="Add sub-page"
+              aria-label="Add sub-page"
+              @click="${(e) => {
+                e.stopPropagation();
+                this._addChild(row.id);
+              }}"
+            >
+              ${lucide("oer:plus", "sm")}
+            </button>`
+          : ""}
+        <button
+          class="act danger"
+          tabindex="-1"
+          title="Delete"
+          aria-label="Delete"
+          @click="${(e) => {
+            e.stopPropagation();
+            this._remove(row.id);
+          }}"
+        >
+          ${lucide("oer:trash-2", "sm")}
+        </button>
+      </div>
+    </div>`;
+  }
+
+  _renderAddRow(add, vis, vIdx) {
+    const closing = this._closingRows(vis, vIdx);
+    const cols = [];
+    for (let d = 1; d <= add.depth; d++) {
+      if (d < add.depth) {
+        const show = this._nextSiblingAtDepth(add.index, d) || closing.some((c) => c.depth === d);
+        cols.push(html`<div class="col">${show ? html`<div class="line full ${this._columnHighlighted(add.afterId, d) ? "hl" : ""}"></div>` : ""}</div>`);
+      } else {
+        cols.push(html`<div class="col"><div class="line top"></div><div class="hline"></div></div>`);
+      }
+    }
+    return html`<button
+      class="add"
+      title="Add a page here"
+      @mouseenter="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
+      @mouseleave="${() => (this._hoverAdd = null)}"
+      @focus="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
+      @blur="${() => (this._hoverAdd = null)}"
+      @click="${() => {
+        this._hoverAdd = null;
+        this._addAfter(add.afterId, add.depth);
+      }}"
+    >
+      <div class="indent" style="width:${add.depth * INDENT_PX}px">${cols}</div>
+      <div class="toggle">
+        <div class="leaf"></div>
+        <span class="plus">${lucide("oer:plus", "sm")}</span>
+      </div>
+      <span class="label">Add page</span>
+    </button>`;
+  }
+
+  _renderPicker() {
+    const q = this._iconQuery.trim().toLowerCase();
+    const icons = (q ? ICON_CHOICES.filter((n) => n.toLowerCase().includes(q)) : ICON_CHOICES).slice(0, 96);
+    return html`<div class="picker" @click="${(e) => e.target === e.currentTarget && (this._iconFor = null)}">
+      <div class="picker-box" role="dialog" aria-label="Choose icon">
+        <h3>Choose icon</h3>
+        <div class="search">
+          ${lucide("icons:search")}
+          <input
+            type="text"
+            placeholder="Search icons…"
+            aria-label="Search icons"
+            .value="${this._iconQuery}"
+            @input="${(e) => (this._iconQuery = e.target.value)}"
+          />
+        </div>
+        <div class="grid">
+          ${icons.map(
+            (name) => html`<button title="${name}" @click="${() => this._setIcon(name)}">
+              ${lucide(name)}<small>${name.split(":").pop()}</small>
+            </button>`,
+          )}
+        </div>
+        <div class="picker-foot">
+          <button class="link-danger" @click="${() => this._setIcon("")}">Remove icon</button>
+          <button class="btn outline" @click="${() => (this._iconFor = null)}">Cancel</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  render() {
+    if (!this.open) return html``;
+    const vis = this._visible();
+    const top = this._rows.filter((r) => r.depth === 0).length;
+    const anyKids = this._rows.some((_, i) => this._hasChildren(i));
+    const dirty = this._dirty;
+    const deleting = this._deleted.size;
+    return html`
+      <div class="backdrop" @click="${this._requestClose}"></div>
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="t">
+        <header>
+          <div class="heading">
+            <h2 id="t">${lucide("hax:site-map")}${this._rootItem ? `${this._rootItem.title} outline` : "Site outline"}</h2>
+            <p class="sub">
+              ${this._rootItem ? "Sub-pages of this page." : "Every page in the site."} Changes apply when you save.
+            </p>
+          </div>
+          <button class="x" aria-label="Close" title="Close (Esc)" @click="${this._requestClose}">${lucide("oer:x")}</button>
+        </header>
+        <div class="tools">
+            ${anyKids
+              ? html`<button class="tool" @click="${this._collapseAll}">${lucide("oer:chevron-right", "sm")}Collapse all</button>
+                  <button class="tool" @click="${() => (this._collapsed = new Set())}">${lucide("oer:chevron-down", "sm")}Expand all</button>`
+              : ""}
+            <button class="tool" aria-pressed="${this._showIcons ? "true" : "false"}" @click="${() => (this._showIcons = !this._showIcons)}">
+              ${lucide(this._showIcons ? "icons:visibility" : "icons:visibility-off", "sm")}Icons
+            </button>
+            <span class="count">${top} top-level · ${this._rows.length} page${this._rows.length === 1 ? "" : "s"}</span>
+        </div>
+        <div class="body">
+          ${this._rows.length
+            ? html`<div class="tree" role="tree" aria-label="Pages">
+                ${vis.map(
+                  ({ row, index }, vIdx) => html`${this._renderRow(row, index, vis, vIdx)}
+                  ${this._closingRows(vis, vIdx).map((add) => this._renderAddRow(add, vis, vIdx))}`,
+                )}
+              </div>`
+            : html`<div class="empty">
+                ${lucide("hax:site-map")}
+                <p>No pages yet</p>
+                <button class="btn outline" @click="${this._addFirst}">${lucide("oer:plus", "sm")}Add page</button>
+              </div>`}
+        </div>
+        <footer>
+          ${this._confirmDiscard
+            ? html`<span class="warn">Discard your outline changes?</span>
+                <button class="btn outline" @click="${() => (this._confirmDiscard = false)}">Keep editing</button>
+                <button class="btn destructive" @click="${this._close}">Discard</button>`
+            : html`${deleting
+                  ? html`<span class="warn">${deleting} page${deleting === 1 ? "" : "s"} will be deleted when you save.</span>`
+                  : html`<div class="hints" aria-hidden="true">
+                      <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span>
+                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span>
+                      <span>drag ↔ to change level</span>
+                    </div>`}
+                <button class="btn outline" @click="${this._requestClose}">Cancel</button>
+                <button
+                  class="btn primary"
+                  aria-disabled="${dirty ? "false" : "true"}"
+                  @click="${() => dirty && this._save()}"
+                >
+                  Save outline
+                </button>`}
+        </footer>
+        ${this._iconFor ? this._renderPicker() : ""}
+      </div>
+    `;
+  }
+}
+customElements.define(OerOutlineBuilder.tag, OerOutlineBuilder);
+
+/** The page-wide outline builder, created on first use. */
+export function outlineBuilder() {
+  const doc = globalThis.document;
+  return doc.querySelector(OerOutlineBuilder.tag) || doc.body.appendChild(doc.createElement(OerOutlineBuilder.tag));
+}
