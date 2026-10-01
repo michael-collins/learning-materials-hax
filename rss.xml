@@ -180,18 +180,18 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Game design and development</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-design-and-development</link>
-      <description>Designs gameplay mechanics, levels, and user experiences for video games.</description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-design-and-development</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Realtime Game Environment</title>
       <link>https://localhost:3000/learning-materials/projects/realtime-game-environment</link>
       <description>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player...</description>
       <category>Blender,PlayCanvas,Github</category>
       <guid>https://localhost:3000/learning-materials/projects/realtime-game-environment</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Camera and Composition</title>
+      <link>https://localhost:3000/learning-materials/lessons/camera-and-composition</link>
+      <description>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/camera-and-composition</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>

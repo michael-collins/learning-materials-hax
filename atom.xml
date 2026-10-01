@@ -911,20 +911,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Game design and development</title>
-    <id>item-fdd170ba-c706-4823-b64d-86446a3d695b</id>
-    <updated>2026-10-01T04:46:28.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-design-and-development"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
-<p>Designs gameplay mechanics, levels, and user experiences for video games.</p>
- ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Realtime Game Environment</title>
     <id>item-55d4ea63-f507-4470-b2c8-e8b11b1c499b</id>
     <updated>2026-10-01T04:46:28.000Z</updated>
@@ -1104,6 +1090,19 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <oer-video src="https://youtube.com/playlist?list=PLn3ukorJv4vul0BmORcWYNOVi3nnna-M4" title="Grant Abbitt – Low Poly Game Modeling"></oer-video>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Camera and Composition</title>
+    <id>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/camera-and-composition"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</p>
  ]]>
     </content>
   </entry>
