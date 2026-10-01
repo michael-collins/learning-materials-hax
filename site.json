@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790880629
+      "updated": 1790880630
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -2070,7 +2070,7 @@
       "order": 1000,
       "parent": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
       "title": "v0.0.1",
-      "description": "",
+      "description": "Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
