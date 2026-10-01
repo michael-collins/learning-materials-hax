@@ -469,12 +469,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-a-room</loc>
-    <lastmod>2026-10-01T04:47:52.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-a-room</loc>
     <lastmod>2026-10-01T04:47:52.000Z</lastmod>
     <changefreq>daily</changefreq>
