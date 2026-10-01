@@ -158,6 +158,8 @@ export async function savePageDetails(id, { pageType, description, fields }) {
   });
   await saveOutline(out);
   if (current && typeof description === "string" && description !== (current.description || "")) {
-    siteEditor()?.saveNodeDetails?.({ detail: { id, operation: "setDescription", details: { description } } });
+    // the items API reads `description` at the top level (as HAX's own
+    // "edit description" program sends it), not inside `details`
+    await siteEditor()?.saveNodeDetails?.({ detail: { id, operation: "setDescription", description } });
   }
 }
