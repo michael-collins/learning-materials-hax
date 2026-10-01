@@ -1199,6 +1199,25 @@ class OerOutlineBuilder extends LitElement {
       .add-wrap:focus-within .add .label {
         opacity: 1;
       }
+      /* "Add page" gets the same pill hover as Add existing / Add heading;
+         the tree's plus and connector still light up */
+      .add-wrap .add:hover,
+      .add-wrap .add:focus-visible {
+        background: none;
+      }
+      .add-wrap .add .label {
+        display: inline-flex;
+        align-items: center;
+        height: 1.375rem;
+        margin-left: 0.25rem;
+        padding: 0 0.5rem;
+        border-radius: var(--radius-sm);
+      }
+      .add-wrap .add:hover .label,
+      .add-wrap .add:focus-visible .label {
+        background: var(--accent);
+        color: var(--foreground);
+      }
       .add-existing {
         all: unset;
         flex: none;
