@@ -112,13 +112,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Low poly non-photorealistic rendering</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Texturing random objects</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects</link>
       <description></description>
@@ -188,6 +181,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Realtime Game Environment</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/realtime-game-environment</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/realtime-game-environment</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
