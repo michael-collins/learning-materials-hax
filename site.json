@@ -4958,41 +4958,6 @@
       }
     },
     {
-      "id": "item-1ef33ac9-b2f5-4773-939d-b70f1fd8ec63",
-      "indent": 1,
-      "location": "pages/item-1ef33ac9-b2f5-4773-939d-b70f1fd8ec63/index.html",
-      "slug": "pathways/lighting-and-cinematography",
-      "order": 6,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Lighting and cinematography",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/lighting-and-cinematography",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
       "indent": 0,
       "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
