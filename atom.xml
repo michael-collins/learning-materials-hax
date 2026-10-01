@@ -624,39 +624,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Compositor Pathway</title>
-    <id>item-c0e97fb6-a9b5-4e00-b219-e77ced1e2587</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/compositor-pathway"/>
-    <category term="Compositing,Post-production,VFX,Color Grading,Nuke,After Effects" label="Compositing,Post-production,VFX,Color Grading,Nuke,After Effects" />
-    <content type="html">
-      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
-<p>This streamlined pathway focuses specifically on digital compositing skills, providing students with the technical and artistic abilities needed to work in post-production facilities. Students will learn to combine multiple elements into final, polished images for film, television, and digital media.</p>
-<h2>Who This Is For</h2>
-<p>This pathway is ideal for students interested in:</p>
-<ul>
-<li>Post-production and finishing</li>
-<li>Visual effects compositing</li>
-<li>Color grading and correction</li>
-<li>Motion graphics integration</li>
-<li>Commercial production</li>
-</ul>
-<h2>Career Outcomes</h2>
-<p>Graduates will be prepared for roles including:</p>
-<ul>
-<li>Digital Compositor</li>
-<li>Compositing Artist</li>
-<li>VFX Compositor</li>
-<li>Finishing Artist</li>
-<li>Color Grading Technician</li>
-<li>Junior Compositor</li>
-</ul>
- ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Concept &amp; blockout</title>
     <id>item-6241fb90-bb1c-4087-ad7a-10536473220e</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -882,6 +849,20 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <li>Texture the set with a shared palette</li>
 <li>Present the set in PlayCanvas</li>
 </ol>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Digital fabrication</title>
+    <id>item-d3c4942c-f165-435b-983b-9c0bee39dccd</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/digital-fabrication"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
+<p>Utilizes 3D printing or CNC machining to create physical objects from digital designs.</p>
  ]]>
     </content>
   </entry>

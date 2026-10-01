@@ -112,14 +112,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Compositor Pathway</title>
-      <link>https://localhost:3000/learning-materials/pathways/compositor-pathway</link>
-      <description>This streamlined pathway focuses specifically on digital compositing skills, providing students with the technical and artistic abilities needed to work in post-production facilities. Students will learn to combine multiple elements into final, polished images for film, television, and digital media. Who This Is For This pathway is ideal for students interested in: Post-production and finishing Visual effects compositing Color grading and correction Motion graphics integration Commercial prod...</description>
-      <category>Compositing,Post-production,VFX,Color Grading,Nuke,After Effects</category>
-      <guid>https://localhost:3000/learning-materials/pathways/compositor-pathway</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Concept &amp; blockout</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</link>
       <description></description>
@@ -189,6 +181,13 @@
       <description>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine. Learning Objectives Design a cohesive set of props Build each prop within a polygon budget Texture the set with a shared palette Present the set in PlayCanvas</description>
       <category>Blender,PlayCanvas</category>
       <guid>https://localhost:3000/learning-materials/projects/stylized-prop-set</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Digital fabrication</title>
+      <link>https://localhost:3000/learning-materials/pathways/digital-fabrication</link>
+      <description>Utilizes 3D printing or CNC machining to create physical objects from digital designs.</description>
+      <guid>https://localhost:3000/learning-materials/pathways/digital-fabrication</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
