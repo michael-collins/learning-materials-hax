@@ -5033,25 +5033,6 @@
       }
     },
     {
-      "id": "item-08ea1494-e8b9-432d-b65e-6c4004883c7e",
-      "indent": 2,
-      "location": "pages/item-08ea1494-e8b9-432d-b65e-6c4004883c7e/index.html",
-      "slug": "pathways/cgi-foundations/project",
-      "order": 4,
-      "parent": "item-fb3f53ee-ba08-416e-b065-96d6681a932f",
-      "title": "Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
       "id": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
       "indent": 1,
       "location": "pages/item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95/index.html",
