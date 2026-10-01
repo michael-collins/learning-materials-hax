@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-97230c01-060f-4b61-8111-6a038fe10dbc</id>
+<indent>2</indent>
+<location>pages/item-97230c01-060f-4b61-8111-6a038fe10dbc/index.xml</location>
+<slug>pathways/visual-effects-vfx/v0-9-0</slug>
+<order>1000</order>
+<parent>item-1dba3ce1-6791-4d78-860d-bf8d6f338579</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-1dba3ce1-6791-4d78-860d-bf8d6f338579</oerSnapshotOf>
+<oerSnapshotTitle>Visual Effects (VFX)</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Integrates CGI elements into live-action footage and blends them seamlessly.</p>
+<h2>Learning Objectives</h2>
+<p>objective example</p>
+<h2>Examples</h2>
+<ul>
+<li>Example artist or studio</li>
+</ul>
+<h2>Specializations</h2>
+<p>This pathway includes the following specializations:</p>
+]]></content>
+</item>

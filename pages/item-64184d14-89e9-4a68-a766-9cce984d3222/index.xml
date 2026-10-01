@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-64184d14-89e9-4a68-a766-9cce984d3222</id>
+<indent>2</indent>
+<location>pages/item-64184d14-89e9-4a68-a766-9cce984d3222/index.xml</location>
+<slug>lessons/lighting-principles/v0-9-0</slug>
+<order>1001</order>
+<parent>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand three-point lighting setup</item>
+<item>Apply different light types effectively</item>
+<item>Create mood and atmosphere with lighting</item>
+<item>Use HDRI and environmental lighting</item>
+<item>Balance light intensity and color</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</oerSnapshotOf>
+<oerSnapshotTitle>Lighting Principles</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</p>
+]]></content>
+</item>

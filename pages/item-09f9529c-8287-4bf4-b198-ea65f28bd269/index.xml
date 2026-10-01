@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-09f9529c-8287-4bf4-b198-ea65f28bd269</id>
+<indent>2</indent>
+<location>pages/item-09f9529c-8287-4bf4-b198-ea65f28bd269/index.xml</location>
+<slug>lessons/rendering-techniques/v0-0-1</slug>
+<order>1000</order>
+<parent>item-685e56cc-c545-4d08-81c8-c724fe5cc33d</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand rendering engines and their settings</item>
+<item>Configure render settings for quality output</item>
+<item>Optimize render times effectively</item>
+<item>Set up render layers and passes</item>
+<item>Export renders in appropriate formats</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-685e56cc-c545-4d08-81c8-c724fe5cc33d</oerSnapshotOf>
+<oerSnapshotTitle>Rendering Techniques</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Master the rendering process from setup to final output, learning how to configure render engines and optimize settings for professional results.</p>
+]]></content>
+</item>

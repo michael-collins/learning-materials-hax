@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ebf9ed4f-3a9c-4685-8ed2-d36fae325b07</id>
+<indent>2</indent>
+<location>pages/item-ebf9ed4f-3a9c-4685-8ed2-d36fae325b07/index.xml</location>
+<slug>exercises/sculpting-retopo-and-texturing/v0-9-0</slug>
+<order>1000</order>
+<parent>item-ab29af24-626a-4330-82b7-4f1d2fe0c558</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<image>files/rec9LnLexVEqnrZNs_image_sculpting-retopo-header-v2.png</image>
+<imageAlt>sculpting-retopo-header-v2.png</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-ab29af24-626a-4330-82b7-4f1d2fe0c558</oerSnapshotOf>
+<oerSnapshotTitle>Sculpting, retopo, and texturing</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, you continue working on your creature sculpt. You will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrU8K-0aHxzKVRQWLcJt7YAW" title="Sculpting, retopo, and texturing Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Become familiarized with 3D software interface and terminology.</li>
+<li>Use texturing workflows to add color and texture to your polygonal models.</li>
+<li>Perform fundamental UV unwrapping operations including UV unwrap, mark seams, and project from view.</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Watch the tutorials in Learning Resources.</li>
+<li>Continue working from your model.</li>
+<li>Duplicate the sculpting assignment folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>
+<li>If you have not done so, retopologize the mesh.</li>
+<li>Unwrap the chair’s parts’ UVs using the various methods and tools described in the tutorials.</li>
+<li>Export a UV map and name it <code>LASTNAME-uv-creature.png</code>. If you have more than one UV map per object, use a logical naming scheme.</li>
+<li>Import the UV maps into Photoshop and create the color map.</li>
+<li>Create two maps: A <strong>color map</strong> and a <strong>normal map</strong>.</li>
+<li>Follow the <strong>Normal Maps</strong> and <strong>Nodes</strong> tutorial to connect the textures to the creature’s shader.</li>
+<li>Save your diffuse map in the project folder as <code>LASTNAME-creature-color.png</code>.</li>
+<li>Save your normal map in the project folder as <code>LASTNAME-creature-normal.png</code>.</li>
+<li>In Blender, set up the textures so they are visible on the model.</li>
+<li>Save the 3D scene file as <code>LASTNAME-texturing-objects</code> in the project folder.</li>
+<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-texturing-objects.zip</code>.</li>
+<li>Upload the .zip file to the assignment dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

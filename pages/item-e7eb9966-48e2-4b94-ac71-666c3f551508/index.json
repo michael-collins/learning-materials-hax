@@ -1,0 +1,43 @@
+{
+  "id": "item-e7eb9966-48e2-4b94-ac71-666c3f551508",
+  "indent": 2,
+  "location": "pages/item-e7eb9966-48e2-4b94-ac71-666c3f551508/index.json",
+  "slug": "lessons/drawing-for-3d-design/v0-0-1",
+  "order": 1000,
+  "parent": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+  "title": "v0.0.1",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerFields": {
+      "estimatedDuration": "4 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Apply drawing fundamentals to 3D design",
+        "Create concept sketches for 3D models",
+        "Understand form, perspective, and proportion",
+        "Develop visual reference materials",
+        "Translate 2D concepts into 3D designs"
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "icon": "hax:lesson",
+    "oerSnapshotOf": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+    "oerSnapshotTitle": "Drawing for 3D Design",
+    "version": "0.0.1",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<p>Strengthen design skills through drawing exercises and concept development, learning how to translate ideas from 2D sketches into 3D models.</p>\n"
+}

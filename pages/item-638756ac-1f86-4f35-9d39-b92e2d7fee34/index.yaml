@@ -1,0 +1,41 @@
+id: item-638756ac-1f86-4f35-9d39-b92e2d7fee34
+indent: 2
+location: pages/item-638756ac-1f86-4f35-9d39-b92e2d7fee34/index.yaml
+slug: lessons/3d-modeling-fundamentals/v0-0-1
+order: 1000
+parent: item-d05396b9-88a6-4631-821f-40a2e9bd2d4f
+title: v0.0.1
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 4 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand polygon modeling concepts and workflows
+      - Create 3D geometry using basic modeling tools
+      - Apply proper topology principles to models
+      - Develop efficient modeling techniques
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+    aiLicense: AIUL-WA
+    publishEmbed: true
+  icon: hax:lesson
+  oerSnapshotOf: item-d05396b9-88a6-4631-821f-40a2e9bd2d4f
+  oerSnapshotTitle: 3D Modeling Fundamentals
+  version: 0.0.1
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <p>Learn the core principles and techniques of 3D modeling, focusing on
+  polygon modeling methods that form the foundation for all 3D content
+  creation.</p>

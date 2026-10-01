@@ -1,0 +1,1 @@
+Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.

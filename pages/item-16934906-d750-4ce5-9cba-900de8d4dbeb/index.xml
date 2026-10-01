@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-16934906-d750-4ce5-9cba-900de8d4dbeb</id>
+<indent>2</indent>
+<location>pages/item-16934906-d750-4ce5-9cba-900de8d4dbeb/index.xml</location>
+<slug>lessons/digital-sculpting/v0-0-1</slug>
+<order>1000</order>
+<parent>item-f783c8df-d3f9-4ec8-a056-501da8e75a61</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>5 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand sculpting tools and workflows</item>
+<item>Create organic forms using sculpting techniques</item>
+<item>Apply anatomy principles to character sculpts</item>
+<item>Manage subdivision levels and detail</item>
+<item>Retopologize sculpts for animation</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-f783c8df-d3f9-4ec8-a056-501da8e75a61</oerSnapshotOf>
+<oerSnapshotTitle>Digital Sculpting</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Learn digital sculpting techniques for creating highly detailed organic models, characters, and illustrations with natural forms.</p>
+]]></content>
+</item>

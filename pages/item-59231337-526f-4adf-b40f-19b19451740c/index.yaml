@@ -1,0 +1,39 @@
+id: item-59231337-526f-4adf-b40f-19b19451740c
+indent: 2
+location: pages/item-59231337-526f-4adf-b40f-19b19451740c/index.yaml
+slug: lessons/texturing-and-uv-mapping/v0-9-0
+order: 1001
+parent: item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 4 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand UV coordinate systems
+      - Create efficient UV layouts
+      - Apply textures to 3D models
+      - Create and configure PBR materials
+      - Minimize texture stretching and distortion
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  icon: hax:lesson
+  oerSnapshotOf: item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4
+  oerSnapshotTitle: Texturing and UV Mapping
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <p>Master the art of UV mapping and texturing, learning how to properly unwrap
+  3D models and apply high-quality textures and materials.</p>

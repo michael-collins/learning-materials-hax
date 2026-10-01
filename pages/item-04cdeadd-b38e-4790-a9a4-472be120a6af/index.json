@@ -1,0 +1,31 @@
+{
+  "id": "item-04cdeadd-b38e-4790-a9a4-472be120a6af",
+  "indent": 2,
+  "location": "pages/item-04cdeadd-b38e-4790-a9a4-472be120a6af/index.json",
+  "slug": "lectures/introduction-to-cameras-lighting-and-rendering/v0-9-0",
+  "order": 1000,
+  "parent": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lecture",
+    "oerFields": {
+      "author": "Michael Collins",
+      "license": "CC BY 4.0",
+      "allowEmbed": true
+    },
+    "icon": "courseicons:learning-objectives",
+    "oerSnapshotOf": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
+    "oerSnapshotTitle": "Introduction to Cameras, Lighting, and Rendering",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<h2>Presentation</h2>\n<h2>::google-slides-component</h2>\n<h2>id: 2PACX-1vR8tl1dcVeFuKlBa1s1uB-dyXCnqzq_4Mdswke1ppmpOj4Gtby5etm2_aKykcz33GYCLQ4xUyixe61D\ntitle: Introduction to Modeling</h2>\n<p>::</p>\n<h2>Topics Covered</h2>\n<ul>\n<li>\n<ol>\n<li><strong>Video Screening</strong></li>\n<li><a href=\"https://alanwarburton.co.uk/spectacle-speculation-spam\">“Spectacle, Speculation, Spam”</a> by Alan Warburton</li>\n<li><a href=\"https://www.youtube.com/playlist?list=PLjEaoINr3zgH9vCr47kSS5W8PEJBNIiwK\">Lighting Theory by Andrew Price</a></li>\n</ol>\n</li>\n</ul>\n<ol start=\"2\">\n<li><strong>Demo</strong>\n<ol>\n<li><a href=\"https://vimeo.com/456374066\">Lighting and Rendering Video (Unedited live demo)</a></li>\n</ol>\n</li>\n<li><strong>Technical Readings for 3D Rendering</strong>\n<ol>\n<li><a href=\"https://www.fxguide.com/featured/the-art-of-rendering/\">FX Guide: “Art of Rendering”</a></li>\n<li><a href=\"https://www.fxguide.com/fxfeatured/the-state-of-rendering/\">FX Guide: “State of Rendering”</a></li>\n</ol>\n</li>\n<li><strong>For your Bookshelf</strong>\n<ol>\n<li><a href=\"https://www.amazon.com/How-Render-fundamentals-shadow-reflectivity/dp/1933492961/\">How to Render by Scott Robertson</a></li>\n<li><a href=\"http://manovich.net/index.php/projects/software-takes-command\">Software Takes Command</a> by Lev Manovich</li>\n<li><a href=\"http://manovich.net/index.php/projects/language-of-new-media\">The Language of New Media</a> by Lev Manovich</li>\n</ol>\n</li>\n<li><strong>TerminologyLighting setups</strong>\n<ol>\n<li><a href=\"https://m5designstudio.com/2011/maya-3d-tutorials/studio-three-point-lighting/\">3 point lighting</a> (key, fill, rim)</li>\n<li>Light types: Area, Spot, Directional or Sun, Point, Volumetric</li>\n<li>Geometry-based lighting using Emission shader</li>\n<li>Geometry-based lighting using <a href=\"https://www.youtube.com/watch?v=AXjE-t6dFZ8\">Principled Volumetric shader</a></li>\n<li>Staging lights: Light box with side and top lights, curved color background and floor</li>\n<li>Image based lighting (IBL) <a href=\"https://area.autodesk.com/tutorials/studio-lighting/\">using HDR images</a></li>\n<li>Shadows: The larger the light source, the softer the shadows</li>\n<li>Create edge bevels to capture highlights on hard surfaces</li>\n</ol>\n</li>\n<li><strong>Camera</strong>\n<ol>\n<li>Perspective vs Orthographic</li>\n<li>Sensor size</li>\n<li>Depth of field using aperture F-Stop: Shallow depth of field is created with lower settings. (In Blender, very low settings may be needed such as 0.1)</li>\n<li>Blades add flat sides to the Bokeh</li>\n<li>You can create custom <a href=\"https://blender.stackexchange.com/questions/133191/custom-bokeh-shapes\">Bokeh shapes</a></li>\n<li>Safe area</li>\n<li>Composition guides for layouts (golden ratio, golden triangle, thirds, etc.)</li>\n</ol>\n</li>\n<li><strong>Render quality in Cycles</strong>\n<ol>\n<li>To reduce render times, keep material shaders simple. Use principled shader if working with photo-real renders.</li>\n<li>500 samples are usually needed to reduce noise.</li>\n<li>Use <a href=\"https://www.youtube.com/watch?v=Pw-OxOHHu5I\">advanced denoising workflow</a> in the compositor</li>\n<li>If using motion blur or depth of field, sample sizes must increase dramatically.</li>\n<li>You can get away with 120 samples if you use denoising in the Compositor</li>\n</ol>\n</li>\n<li><strong>Render quality in EEVEE</strong>\n<ol>\n<li><a href=\"https://www.youtube.com/watch?v=MFNurQ1AF2I\">EEVEE Lighting</a></li>\n<li>Enable render settings including: Ambient Occlusion, Depth of Field, and Screen Space Reflections</li>\n<li>Shadows: Increase the shadow map to 4K</li>\n</ol>\n</li>\n</ol>\n"
+}

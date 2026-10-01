@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a68cfa2d-9249-4910-a78e-0c85890118a3</id>
+<indent>2</indent>
+<location>pages/item-a68cfa2d-9249-4910-a78e-0c85890118a3/index.xml</location>
+<slug>pathways/compositor-pathway/v0-9-0</slug>
+<order>1000</order>
+<parent>item-b10cae23-396d-4b8a-92dd-7472ae68a302</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<difficulty>Intermediate</difficulty>
+<estimatedDuration>14 weeks</estimatedDuration>
+<learningObjectives>
+<item>Integrate CGI elements with live-action footage seamlessly</item>
+<item>Apply color correction and grading techniques</item>
+<item>Use keying and rotoscoping for element isolation</item>
+<item>Create realistic lighting and shadow integration</item>
+<item>Understand compositing workflows and node-based systems</item>
+<item>Deliver final outputs to professional specifications</item>
+</learningObjectives>
+<prerequisites>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-b10cae23-396d-4b8a-92dd-7472ae68a302</oerSnapshotOf>
+<oerSnapshotTitle>Compositor Pathway</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>This streamlined pathway focuses specifically on digital compositing skills, providing students with the technical and artistic abilities needed to work in post-production facilities. Students will learn to combine multiple elements into final, polished images for film, television, and digital media.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is ideal for students interested in:</p>
+<ul>
+<li>Post-production and finishing</li>
+<li>Visual effects compositing</li>
+<li>Color grading and correction</li>
+<li>Motion graphics integration</li>
+<li>Commercial production</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>Digital Compositor</li>
+<li>Compositing Artist</li>
+<li>VFX Compositor</li>
+<li>Finishing Artist</li>
+<li>Color Grading Technician</li>
+<li>Junior Compositor</li>
+</ul>
+]]></content>
+</item>

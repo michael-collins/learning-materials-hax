@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-29a6fa3b-9f68-4383-8b67-128cdd7dd0e9</id>
+<indent>2</indent>
+<location>pages/item-29a6fa3b-9f68-4383-8b67-128cdd7dd0e9/index.xml</location>
+<slug>exercises/modeling-the-airline-chair/v0-9-0</slug>
+<order>1000</order>
+<parent>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<image>files/recksNEMV7vl5SFG4_image_airline-chair-header-compressed.jpg</image>
+<imageAlt>airline-chair-header-compressed.jpg</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<allowEmbed>true</allowEmbed>
+<attachments>
+<item>
+<title>Airline Chair 3/4 view</title>
+<url>files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg</url>
+<description>Airline Chair designed by KEM Weber.</description>
+<alt>Airline Chair</alt>
+</item>
+<item>
+<title>Airline Chair side view</title>
+<url>files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg</url>
+<description>Airline Chair designed by KEM Weber.</description>
+<alt>Airline Chair</alt>
+</item>
+</attachments>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</oerSnapshotOf>
+<oerSnapshotTitle>Modeling the Airline Chair</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f" title="Modeling the Airline Chair Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice using 3D software interface and terminology.</li>
+<li>Use modeling workflows to create high quality topology and edge flow.</li>
+<li>Demonstrate understanding of fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide.</li>
+</ol>
+<h2>Instructions</h2>
+<p><strong>Note:</strong> You should have a basic understanding Blender's interface to complete this exercise.</p>
+<ol>
+<li>Create a folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>
+<li>Follow the six-part video demonstration to model the <a href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber Airline Chair</a>. Skills to practice include:
+<ul>
+<li>polygonal edge flow</li>
+<li>extruding polygon faces</li>
+<li>inserting edge loops</li>
+<li>moving, rotating, and scaling vertices, edges, and faces</li>
+<li>mirroring and duplicating geometry</li>
+</ul>
+</li>
+<li>Clean up your <a href="https://www.youtube.com/watch?v=Lip59doQQRk">edge flow</a>.</li>
+<li>Save the 3D scene file as ‘<strong><em>LASTNAME</em>-modeling-chair.blend’</strong> (I.E. – <em>collins</em>-modeling-b1.blend) in the project folder.</li>
+<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-modeling-chair.zip.</strong></li>
+<li>Upload the .zip file to the assignment dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

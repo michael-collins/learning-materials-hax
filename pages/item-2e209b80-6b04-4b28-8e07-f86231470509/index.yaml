@@ -1,0 +1,81 @@
+id: item-2e209b80-6b04-4b28-8e07-f86231470509
+indent: 2
+location: pages/item-2e209b80-6b04-4b28-8e07-f86231470509/index.yaml
+slug: exercises/low-poly-non-photorealistic-rendering/v0-9-0
+order: 1000
+parent: item-cbff549d-e8f9-4804-b2ec-059cf0863101
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerFields:
+    difficulty: Beginner
+    image: files/recc8Zz9a0zTOaRyE_image_t-pose-banner.jpg
+    imageAlt: t-pose-banner.jpg
+    license: CC BY 4.0
+    aiLicense: AIUL-WA, AIUL-NA-3D
+    author: Michael Collins
+    authorUrl: https://michaelcollins.xyz
+    allowEmbed: true
+  icon: courseicons:learning-objectives
+  oerSnapshotOf: item-cbff549d-e8f9-4804-b2ec-059cf0863101
+  oerSnapshotTitle: Low poly non-photorealistic rendering
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <p>In this exercise, you will practice modeling a character in a T-pose and
+  rendering using an NPR workflow.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX6h44IeMo7hTkjg9HtJgvb"
+  title="Low poly non-photorealistic rendering Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Become familiarized with the NPR workflow.</li>
+
+  <li>Learn the character modeling workflow</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Model a polygonal character in the <a
+  href="https://www.animatorisland.com/the-t-pose-all-about-the-mighty-blueprint/?v=7516fd43adaa">T
+  pose</a>. Choose a theme for the character (IE - fantasy, sci-fi, etc.).</li>
+
+  <li>Watch the tutorials.</li>
+
+  <li>Create greasepencil modifier, shaders, materials, and freestyle lines to
+  create a manga or comic book visual style.</li>
+
+  <li>Save a 1920x1080 render as <code>LASTNAME-npr-character.png</code> in the
+  project folder.</li>
+
+  <li>Save your file as <code>LASTNAME-npr-character.blend</code> in the project
+  folder.</li>
+
+  <li>Compress the project folder once you’ve completed the tutorial and rename
+  it <code>LASTNAME-npr-character.zip</code>.</li>
+
+  <li>Upload the .zip file to the assignment dropbox.</li>
+
+  <li>Double check that you’ve included all files and that your .zip file can be
+  downloaded and opened.</li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

@@ -1,0 +1,39 @@
+id: item-e106ecce-bdda-42d1-9c5b-cde343b86d7b
+indent: 2
+location: pages/item-e106ecce-bdda-42d1-9c5b-cde343b86d7b/index.yaml
+slug: lessons/digital-sculpting/v0-9-0
+order: 1001
+parent: item-f783c8df-d3f9-4ec8-a056-501da8e75a61
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 5 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand sculpting tools and workflows
+      - Create organic forms using sculpting techniques
+      - Apply anatomy principles to character sculpts
+      - Manage subdivision levels and detail
+      - Retopologize sculpts for animation
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  icon: hax:lesson
+  oerSnapshotOf: item-f783c8df-d3f9-4ec8-a056-501da8e75a61
+  oerSnapshotTitle: Digital Sculpting
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <p>Learn digital sculpting techniques for creating highly detailed organic
+  models, characters, and illustrations with natural forms.</p>

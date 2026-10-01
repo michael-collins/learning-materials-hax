@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ebf358a5-7e5e-4593-915c-99b763636e23</id>
+<indent>2</indent>
+<location>pages/item-ebf358a5-7e5e-4593-915c-99b763636e23/index.xml</location>
+<slug>pathways/short-film-and-vfx-pathway/v0-9-0</slug>
+<order>1000</order>
+<parent>item-5dabc762-d17b-4d08-80ac-3dae0557d0cb</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<estimatedDuration>32 weeks</estimatedDuration>
+<learningObjectives>
+<item>Create complete animated short films from concept to final render</item>
+<item>Integrate realistic visual effects with animated content</item>
+<item>Apply professional compositing workflows to enhance final output</item>
+<item>Collaborate in team-based production environments</item>
+<item>Understand the full pipeline from pre-production to post-production</item>
+</learningObjectives>
+<prerequisites>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-5dabc762-d17b-4d08-80ac-3dae0557d0cb</oerSnapshotOf>
+<oerSnapshotTitle>Short Film and VFX Pathway</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>This pathway is designed for aspiring animation and VFX artists who want to create high-quality animated short films with professional-grade visual effects. Students will progress from foundational CGI skills through advanced animation and simulation techniques, culminating in the ability to produce complete animated narratives with integrated VFX elements.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is ideal for students aiming to work in:</p>
+<ul>
+<li>Animation studios</li>
+<li>VFX houses</li>
+<li>Film production companies</li>
+<li>Independent animation projects</li>
+<li>Post-production facilities</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>Character Animator</li>
+<li>VFX Artist</li>
+<li>Compositor</li>
+<li>Technical Director</li>
+<li>Animation Generalist</li>
+</ul>
+]]></content>
+</item>

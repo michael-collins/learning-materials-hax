@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-363d8d69-0032-48eb-b1b8-49cb2d8b98bf</id>
+<indent>2</indent>
+<location>pages/item-363d8d69-0032-48eb-b1b8-49cb2d8b98bf/index.xml</location>
+<slug>pathways/short-film-pathway/v0-9-0</slug>
+<order>1000</order>
+<parent>item-160073d5-d962-4ed9-afcf-7b93ad2b4c77</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<difficulty>Intermediate</difficulty>
+<estimatedDuration>24 weeks</estimatedDuration>
+<learningObjectives>
+<item>Develop strong storytelling and narrative skills for animation</item>
+<item>Create character performances that convey emotion and personality</item>
+<item>Produce complete animated short films from concept to completion</item>
+<item>Apply professional compositing and finishing techniques</item>
+<item>Understand animation production pipelines and workflows</item>
+</learningObjectives>
+<prerequisites>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-160073d5-d962-4ed9-afcf-7b93ad2b4c77</oerSnapshotOf>
+<oerSnapshotTitle>Short Film Pathway</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>This pathway is designed for aspiring animators who want to create narrative-driven short films using 3D animation. Students will progress from foundational CGI skills through character animation and compositing, developing the complete skillset needed to produce professional-quality animated shorts.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is ideal for students aiming to work in:</p>
+<ul>
+<li>Animation studios</li>
+<li>Independent animation projects</li>
+<li>Film production companies</li>
+<li>Advertising and commercial animation</li>
+<li>Educational media production</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>Character Animator</li>
+<li>3D Animator</li>
+<li>Animation Director</li>
+<li>Storyboard Artist</li>
+<li>Animation Generalist</li>
+</ul>
+<h2>Examples</h2>
+<ul>
+<li>Example artist or studio</li>
+</ul>
+<h2>Specializations</h2>
+<p>This pathway includes the following specializations:</p>
+]]></content>
+</item>

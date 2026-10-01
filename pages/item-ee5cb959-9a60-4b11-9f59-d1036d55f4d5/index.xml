@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ee5cb959-9a60-4b11-9f59-d1036d55f4d5</id>
+<indent>2</indent>
+<location>pages/item-ee5cb959-9a60-4b11-9f59-d1036d55f4d5/index.xml</location>
+<slug>lessons/real-time-engines/v0-9-0</slug>
+<order>1001</order>
+<parent>item-3c14822b-53dd-4a66-aac7-f8ec740bbea5</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>6 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Navigate game engine interfaces</item>
+<item>Import and configure 3D assets</item>
+<item>Set up materials and shaders</item>
+<item>Implement real-time lighting</item>
+<item>Create basic interactive elements</item>
+<item>Optimize performance and build settings</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-3c14822b-53dd-4a66-aac7-f8ec740bbea5</oerSnapshotOf>
+<oerSnapshotTitle>Real-time Engines</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Gain proficiency in game engines, learning how to import assets, configure materials, and build interactive real-time experiences.</p>
+]]></content>
+</item>

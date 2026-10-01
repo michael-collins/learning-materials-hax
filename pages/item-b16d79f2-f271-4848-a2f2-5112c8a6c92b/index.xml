@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b16d79f2-f271-4848-a2f2-5112c8a6c92b</id>
+<indent>2</indent>
+<location>pages/item-b16d79f2-f271-4848-a2f2-5112c8a6c92b/index.xml</location>
+<slug>lessons/hard-surface-modeling/v0-9-0</slug>
+<order>1001</order>
+<parent>item-2388c81a-f80d-44c8-be9c-57c64c8b29ab</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>5 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Apply hard surface modeling techniques</item>
+<item>Create clean edge flow and topology</item>
+<item>Use modifiers for non-destructive workflows</item>
+<item>Model mechanical and manufactured objects</item>
+<item>Maintain precision and accuracy in models</item>
+</learningObjectives>
+<prerequisites>
+<item>
+<page>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-2388c81a-f80d-44c8-be9c-57c64c8b29ab</oerSnapshotOf>
+<oerSnapshotTitle>Hard Surface Modeling</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Develop proficiency in hard surface modeling for creating precise, clean geometric forms typical of products, vehicles, and architectural elements.</p>
+]]></content>
+</item>

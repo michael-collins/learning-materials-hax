@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-82889152-1aa6-4776-9d5d-fb725fa0ab87</id>
+<indent>2</indent>
+<location>pages/item-82889152-1aa6-4776-9d5d-fb725fa0ab87/index.xml</location>
+<slug>pathways/lighting-and-cinematography/v0-9-0</slug>
+<order>1000</order>
+<parent>item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a</oerSnapshotOf>
+<oerSnapshotTitle>Lighting and cinematography</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Sets up lighting and camera angles to create visually compelling 3D scenes.</p>
+<h2>Learning Objectives</h2>
+<p>objective example</p>
+<h2>Examples</h2>
+<ul>
+<li>Example artist or studio</li>
+</ul>
+<h2>Specializations</h2>
+<p>This pathway includes the following specializations:</p>
+]]></content>
+</item>

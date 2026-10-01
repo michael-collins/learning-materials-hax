@@ -1,0 +1,1 @@
+Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.

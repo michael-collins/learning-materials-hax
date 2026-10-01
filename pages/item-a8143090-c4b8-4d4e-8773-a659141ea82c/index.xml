@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a8143090-c4b8-4d4e-8773-a659141ea82c</id>
+<indent>2</indent>
+<location>pages/item-a8143090-c4b8-4d4e-8773-a659141ea82c/index.xml</location>
+<slug>lessons/texturing-and-uv-mapping/v0-0-1</slug>
+<order>1000</order>
+<parent>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>4 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand UV coordinate systems</item>
+<item>Create efficient UV layouts</item>
+<item>Apply textures to 3D models</item>
+<item>Create and configure PBR materials</item>
+<item>Minimize texture stretching and distortion</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</oerSnapshotOf>
+<oerSnapshotTitle>Texturing and UV Mapping</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</p>
+]]></content>
+</item>

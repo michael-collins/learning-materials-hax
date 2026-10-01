@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f65089ef-07dc-4c2c-8b7d-70c055a2d240</id>
+<indent>2</indent>
+<location>pages/item-f65089ef-07dc-4c2c-8b7d-70c055a2d240/index.xml</location>
+<slug>lessons/3d-modeling-fundamentals/v0-9-0</slug>
+<order>1001</order>
+<parent>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>4 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand polygon modeling concepts and workflows</item>
+<item>Create 3D geometry using basic modeling tools</item>
+<item>Apply proper topology principles to models</item>
+<item>Develop efficient modeling techniques</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+<aiLicense>AIUL-WA</aiLicense>
+<publishEmbed>true</publishEmbed>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</oerSnapshotOf>
+<oerSnapshotTitle>3D Modeling Fundamentals</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>
+]]></content>
+</item>

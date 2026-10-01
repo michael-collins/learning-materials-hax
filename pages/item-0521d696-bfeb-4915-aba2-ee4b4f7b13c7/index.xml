@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0521d696-bfeb-4915-aba2-ee4b4f7b13c7</id>
+<indent>2</indent>
+<location>pages/item-0521d696-bfeb-4915-aba2-ee4b4f7b13c7/index.xml</location>
+<slug>lessons/camera-and-composition/v0-0-1</slug>
+<order>1000</order>
+<parent>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>2 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand camera settings and properties</item>
+<item>Apply composition principles to 3D scenes</item>
+<item>Create effective camera angles and movements</item>
+<item>Use focal length and depth of field creatively</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>hax:lesson</icon>
+<oerSnapshotOf>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</oerSnapshotOf>
+<oerSnapshotTitle>Camera and Composition</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<p>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</p>
+]]></content>
+</item>

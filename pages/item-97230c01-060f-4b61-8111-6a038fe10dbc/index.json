@@ -1,0 +1,38 @@
+{
+  "id": "item-97230c01-060f-4b61-8111-6a038fe10dbc",
+  "indent": 2,
+  "location": "pages/item-97230c01-060f-4b61-8111-6a038fe10dbc/index.json",
+  "slug": "pathways/visual-effects-vfx/v0-9-0",
+  "order": 1000,
+  "parent": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:pathway",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "icon": "courseicons:learning-objectives",
+    "oerSnapshotOf": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
+    "oerSnapshotTitle": "Visual Effects (VFX)",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Integrates CGI elements into live-action footage and blends them seamlessly.</p>\n<h2>Learning Objectives</h2>\n<p>objective example</p>\n<h2>Examples</h2>\n<ul>\n<li>Example artist or studio</li>\n</ul>\n<h2>Specializations</h2>\n<p>This pathway includes the following specializations:</p>\n"
+}

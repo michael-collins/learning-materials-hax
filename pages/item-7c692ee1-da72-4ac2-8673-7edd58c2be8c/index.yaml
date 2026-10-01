@@ -1,0 +1,89 @@
+id: item-7c692ee1-da72-4ac2-8673-7edd58c2be8c
+indent: 2
+location: pages/item-7c692ee1-da72-4ac2-8673-7edd58c2be8c/index.yaml
+slug: pathways/game-artist-pathway/v0-9-0
+order: 1006
+parent: item-72db2076-5252-4246-af1d-685903483097
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:pathway
+  oerFields:
+    estimatedDuration: 26 weeks
+    courses:
+      - DART 303
+    learningObjectives:
+      - Create game-ready 3D assets with efficient topology
+      - Implement content in game engines like Unreal and Unity
+      - Optimize models and textures for real-time rendering
+      - Design interactive environments for games
+      - Understand technical constraints and performance budgets
+      - Collaborate with game development teams
+    levels:
+      - Beginner
+      - Intermediate
+      - Advanced
+    targetRole: Game Artist
+    prerequisites: []
+    author: Michael Collins
+    allowEmbed: true
+    license: CC BY 4.0
+    difficulty: Intermediate
+  icon: courseicons:learning-objectives
+  oerSnapshotOf: item-72db2076-5252-4246-af1d-685903483097
+  oerSnapshotTitle: Game Artist Pathway
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>This pathway prepares students for careers in the game industry, focusing
+  on the creation of 3D content for interactive and real-time applications.
+  Students will learn to balance artistic quality with technical performance
+  requirements, creating assets that work seamlessly in game engines and virtual
+  reality platforms.</p>
+
+  <h2>Who This Is For</h2>
+
+  <p>This pathway is perfect for students interested in:</p>
+
+  <ul>
+
+  <li>Video game development</li>
+
+  <li>Virtual reality experiences</li>
+
+  <li>Augmented reality applications</li>
+
+  <li>Interactive installations</li>
+
+  <li>Mobile game development</li>
+
+  </ul>
+
+  <h2>Career Outcomes</h2>
+
+  <p>Graduates will be prepared for roles including:</p>
+
+  <ul>
+
+  <li>3D Game Artist</li>
+
+  <li>Environment Artist</li>
+
+  <li>Character Artist</li>
+
+  <li>Technical Artist</li>
+
+  <li>VR/AR Developer</li>
+
+  <li>Props Artist</li>
+
+  </ul>

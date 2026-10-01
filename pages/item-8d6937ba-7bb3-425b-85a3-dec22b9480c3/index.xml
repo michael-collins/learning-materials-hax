@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8d6937ba-7bb3-425b-85a3-dec22b9480c3</id>
+<indent>2</indent>
+<location>pages/item-8d6937ba-7bb3-425b-85a3-dec22b9480c3/index.xml</location>
+<slug>pathways/production-management/v0-9-0</slug>
+<order>1000</order>
+<parent>item-50b4ae5c-4f84-43f3-9987-efb6b3428542</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-50b4ae5c-4f84-43f3-9987-efb6b3428542</oerSnapshotOf>
+<oerSnapshotTitle>Production management</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Oversees the planning and execution of 3D projects, ensuring deadlines and budgets are met.</p>
+<h2>Learning Objectives</h2>
+<p>objective example</p>
+<h2>Examples</h2>
+<ul>
+<li>Example artist or studio</li>
+</ul>
+<h2>Specializations</h2>
+<p>This pathway includes the following specializations:</p>
+]]></content>
+</item>

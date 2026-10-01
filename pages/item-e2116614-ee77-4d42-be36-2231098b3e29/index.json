@@ -1,0 +1,42 @@
+{
+  "id": "item-e2116614-ee77-4d42-be36-2231098b3e29",
+  "indent": 2,
+  "location": "pages/item-e2116614-ee77-4d42-be36-2231098b3e29/index.json",
+  "slug": "lessons/history-of-cgi/v0-9-0",
+  "order": 1001,
+  "parent": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerFields": {
+      "estimatedDuration": "2 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Trace the historical development of CGI technology",
+        "Identify key milestones and innovations in CGI history",
+        "Understand how CGI transformed various industries",
+        "Recognize pioneering artists and studios in CGI development"
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "icon": "hax:lesson",
+    "oerSnapshotOf": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
+    "oerSnapshotTitle": "History of CGI",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<p>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</p>\n"
+}

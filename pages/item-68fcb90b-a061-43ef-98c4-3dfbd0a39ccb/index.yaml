@@ -1,0 +1,51 @@
+id: item-68fcb90b-a061-43ef-98c4-3dfbd0a39ccb
+indent: 2
+location: pages/item-68fcb90b-a061-43ef-98c4-3dfbd0a39ccb/index.yaml
+slug: pathways/digital-fabrication/v0-9-0
+order: 1000
+parent: item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:pathway
+  oerFields:
+    prerequisites:
+      - page: item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  icon: courseicons:learning-objectives
+  oerSnapshotOf: item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4
+  oerSnapshotTitle: Digital fabrication
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Utilizes 3D printing or CNC machining to create physical objects from
+  digital designs.</p>
+
+  <h2>Learning Objectives</h2>
+
+  <p>objective example</p>
+
+  <h2>Examples</h2>
+
+  <ul>
+
+  <li>Example artist or studio</li>
+
+  </ul>
+
+  <h2>Specializations</h2>
+
+  <p>This pathway includes the following specializations:</p>

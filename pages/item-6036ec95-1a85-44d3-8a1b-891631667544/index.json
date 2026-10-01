@@ -1,0 +1,36 @@
+{
+  "id": "item-6036ec95-1a85-44d3-8a1b-891631667544",
+  "indent": 2,
+  "location": "pages/item-6036ec95-1a85-44d3-8a1b-891631667544/index.json",
+  "slug": "exercises/rendering-a-room/v0-9-0",
+  "order": 1000,
+  "parent": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerFields": {
+      "difficulty": "Intermediate",
+      "image": "files/rechLzLJpVGI50gnn_image_room-banner2.png",
+      "imageAlt": "room-banner2.png",
+      "license": "CC BY 4.0",
+      "aiLicense": "AIUL-WA, AIUL-NA-3D",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "allowEmbed": true
+    },
+    "icon": "courseicons:learning-objectives",
+    "oerSnapshotOf": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
+    "oerSnapshotTitle": "Rendering a room",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<p>In this exercise, you will continue working on your objects and create a lighting and background setup for final rendering.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrU-XvcElSlBW7dQn4n1yj54\" title=\"Rendering a room Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice configuring render settings to create a high quality render in Blender.</li>\n<li>Apply appropriate lighting strategies to light the room</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the tutorials in Learning Resources.</li>\n<li>Duplicate the modeling folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>\n<li>Configure materials and lights to achieve the desired lighting style.</li>\n<li>Enable and configure the camera's <strong>depth of field</strong> settings</li>\n<li>Render settings using <strong>Cycles</strong>\n<ol>\n<li>Hi-res image render: 3840×2160</li>\n<li>Render sample settings: 500</li>\n<li>Denoise enabled</li>\n</ol>\n</li>\n<li>Save the image as <code>room-render.png</code>, etc. in the project folder. One render of each object is all that is required.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-room-render.zip</code><strong>.</strong></li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your <code>.zip</code> file can be downloaded and opened.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

@@ -1,0 +1,1 @@
+Master the fundamental principles of animation that bring characters and objects to life through believable movement and performance.

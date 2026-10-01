@@ -1,0 +1,1 @@
+An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.

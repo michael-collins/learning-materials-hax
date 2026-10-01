@@ -1,0 +1,39 @@
+id: item-1ae50962-2019-477a-9ee1-72e2f1a7a6d1
+indent: 2
+location: pages/item-1ae50962-2019-477a-9ee1-72e2f1a7a6d1/index.yaml
+slug: lessons/rendering-techniques/v0-9-0
+order: 1001
+parent: item-685e56cc-c545-4d08-81c8-c724fe5cc33d
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 3 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand rendering engines and their settings
+      - Configure render settings for quality output
+      - Optimize render times effectively
+      - Set up render layers and passes
+      - Export renders in appropriate formats
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  icon: hax:lesson
+  oerSnapshotOf: item-685e56cc-c545-4d08-81c8-c724fe5cc33d
+  oerSnapshotTitle: Rendering Techniques
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <p>Master the rendering process from setup to final output, learning how to
+  configure render engines and optimize settings for professional results.</p>

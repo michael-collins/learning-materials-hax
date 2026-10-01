@@ -1,0 +1,39 @@
+{
+  "id": "item-941036b0-0b0d-4094-aea4-ff7802399ff3",
+  "indent": 2,
+  "location": "pages/item-941036b0-0b0d-4094-aea4-ff7802399ff3/index.json",
+  "slug": "lessons/animation-principles/v0-0-1",
+  "order": 1000,
+  "parent": "item-1903f5ba-d051-49cf-9836-073992c93548",
+  "title": "v0.0.1",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerFields": {
+      "estimatedDuration": "4 hours",
+      "learningObjectives": [
+        "Understand the twelve principles of animation",
+        "Apply timing and spacing to create believable motion",
+        "Use squash and stretch effectively",
+        "Create anticipation and follow-through in animations",
+        "Develop strong poses and silhouettes"
+      ],
+      "author": "Michael Collins",
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "icon": "hax:lesson",
+    "oerSnapshotOf": "item-1903f5ba-d051-49cf-9836-073992c93548",
+    "oerSnapshotTitle": "Animation Principles",
+    "version": "0.0.1",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<p>Master the fundamental principles of animation that bring characters and objects to life through believable movement and performance.</p>\n"
+}

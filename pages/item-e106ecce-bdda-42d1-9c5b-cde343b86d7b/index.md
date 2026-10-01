@@ -1,0 +1,1 @@
+Learn digital sculpting techniques for creating highly detailed organic models, characters, and illustrations with natural forms.

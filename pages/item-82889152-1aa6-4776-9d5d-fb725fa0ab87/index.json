@@ -1,0 +1,38 @@
+{
+  "id": "item-82889152-1aa6-4776-9d5d-fb725fa0ab87",
+  "indent": 2,
+  "location": "pages/item-82889152-1aa6-4776-9d5d-fb725fa0ab87/index.json",
+  "slug": "pathways/lighting-and-cinematography/v0-9-0",
+  "order": 1000,
+  "parent": "item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:pathway",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "icon": "courseicons:learning-objectives",
+    "oerSnapshotOf": "item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a",
+    "oerSnapshotTitle": "Lighting and cinematography",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Sets up lighting and camera angles to create visually compelling 3D scenes.</p>\n<h2>Learning Objectives</h2>\n<p>objective example</p>\n<h2>Examples</h2>\n<ul>\n<li>Example artist or studio</li>\n</ul>\n<h2>Specializations</h2>\n<p>This pathway includes the following specializations:</p>\n"
+}

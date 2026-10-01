@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f3a661a7-01b4-4553-b12d-9e5fd8f6d25b</id>
+<indent>2</indent>
+<location>pages/item-f3a661a7-01b4-4553-b12d-9e5fd8f6d25b/index.xml</location>
+<slug>pathways/illustration-and-visualization/v0-9-0</slug>
+<order>1000</order>
+<parent>item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<icon>courseicons:learning-objectives</icon>
+<oerSnapshotOf>item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9</oerSnapshotOf>
+<oerSnapshotTitle>Illustration and visualization</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1790880627</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790880627</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Creates realistic architectural visualizations for design, marketing, or presentations.</p>
+<h2>Learning Objectives</h2>
+<p>objective example</p>
+<h2>Examples</h2>
+<ul>
+<li>Example artist or studio</li>
+</ul>
+<h2>Specializations</h2>
+<p>This pathway includes the following specializations:</p>
+]]></content>
+</item>

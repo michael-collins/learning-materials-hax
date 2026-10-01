@@ -1,0 +1,51 @@
+{
+  "id": "item-7c692ee1-da72-4ac2-8673-7edd58c2be8c",
+  "indent": 2,
+  "location": "pages/item-7c692ee1-da72-4ac2-8673-7edd58c2be8c/index.json",
+  "slug": "pathways/game-artist-pathway/v0-9-0",
+  "order": 1006,
+  "parent": "item-72db2076-5252-4246-af1d-685903483097",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:pathway",
+    "oerFields": {
+      "estimatedDuration": "26 weeks",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Create game-ready 3D assets with efficient topology",
+        "Implement content in game engines like Unreal and Unity",
+        "Optimize models and textures for real-time rendering",
+        "Design interactive environments for games",
+        "Understand technical constraints and performance budgets",
+        "Collaborate with game development teams"
+      ],
+      "levels": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ],
+      "targetRole": "Game Artist",
+      "prerequisites": [],
+      "author": "Michael Collins",
+      "allowEmbed": true,
+      "license": "CC BY 4.0",
+      "difficulty": "Intermediate"
+    },
+    "icon": "courseicons:learning-objectives",
+    "oerSnapshotOf": "item-72db2076-5252-4246-af1d-685903483097",
+    "oerSnapshotTitle": "Game Artist Pathway",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1790880627,
+    "images": [],
+    "videos": [],
+    "updated": 1790880627
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>This pathway prepares students for careers in the game industry, focusing on the creation of 3D content for interactive and real-time applications. Students will learn to balance artistic quality with technical performance requirements, creating assets that work seamlessly in game engines and virtual reality platforms.</p>\n<h2>Who This Is For</h2>\n<p>This pathway is perfect for students interested in:</p>\n<ul>\n<li>Video game development</li>\n<li>Virtual reality experiences</li>\n<li>Augmented reality applications</li>\n<li>Interactive installations</li>\n<li>Mobile game development</li>\n</ul>\n<h2>Career Outcomes</h2>\n<p>Graduates will be prepared for roles including:</p>\n<ul>\n<li>3D Game Artist</li>\n<li>Environment Artist</li>\n<li>Character Artist</li>\n<li>Technical Artist</li>\n<li>VR/AR Developer</li>\n<li>Props Artist</li>\n</ul>\n"
+}

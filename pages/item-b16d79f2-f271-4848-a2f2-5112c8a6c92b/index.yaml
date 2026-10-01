@@ -1,0 +1,42 @@
+id: item-b16d79f2-f271-4848-a2f2-5112c8a6c92b
+indent: 2
+location: pages/item-b16d79f2-f271-4848-a2f2-5112c8a6c92b/index.yaml
+slug: lessons/hard-surface-modeling/v0-9-0
+order: 1001
+parent: item-2388c81a-f80d-44c8-be9c-57c64c8b29ab
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 5 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Apply hard surface modeling techniques
+      - Create clean edge flow and topology
+      - Use modifiers for non-destructive workflows
+      - Model mechanical and manufactured objects
+      - Maintain precision and accuracy in models
+    prerequisites:
+      - page: item-d05396b9-88a6-4631-821f-40a2e9bd2d4f
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  icon: hax:lesson
+  oerSnapshotOf: item-2388c81a-f80d-44c8-be9c-57c64c8b29ab
+  oerSnapshotTitle: Hard Surface Modeling
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790880627
+  images: []
+  videos: []
+  updated: 1790880627
+content: >
+  <p>Develop proficiency in hard surface modeling for creating precise, clean
+  geometric forms typical of products, vehicles, and architectural elements.</p>
