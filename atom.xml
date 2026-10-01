@@ -856,18 +856,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Texturing for real time</title>
-    <id>item-3265a8cd-a394-4c8e-93d4-d15e2311d891</id>
-    <updated>2026-10-01T04:46:27.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Baking Normal Maps</title>
     <id>item-1430c9da-d856-4b8f-b66e-4ca0c87d631a</id>
     <updated>2026-10-01T04:46:28.000Z</updated>
@@ -932,6 +920,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="exercise"></oer-rubric>
  ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Into the engine</title>
+    <id>item-94a4d6a7-cc46-4d82-a473-0f716b1e8c4a</id>
+    <updated>2026-10-01T04:46:28.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine"/>
+    
+    <content type="html">
+      <![CDATA[ <p></p> ]]>
     </content>
   </entry>
 </feed>

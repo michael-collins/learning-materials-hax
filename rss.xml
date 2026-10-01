@@ -165,13 +165,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Texturing for real time</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Baking Normal Maps</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/baking-normal-maps</link>
       <description></description>
@@ -191,6 +184,13 @@
       <description>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair. Learning Objectives Become familiarized with 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Perform fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions No...</description>
       <category>Blender,Texturing</category>
       <guid>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Into the engine</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
