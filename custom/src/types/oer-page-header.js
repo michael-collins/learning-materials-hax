@@ -10,9 +10,6 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
-import { pageDetails } from "./oer-page-details.js";
-import { embedDialog } from "../embed/oer-embed-dialog.js";
-import { isEmbedded } from "../embed/embed-mode.js";
 import { isSnapshot, latestOf } from "../versions/versioning.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { bookPrint } from "../books/oer-book-print.js";
@@ -32,7 +29,6 @@ class OerPageHeader extends LitElement {
 
   static get properties() {
     return {
-      editable: { type: Boolean },
       _item: { state: true },
       _types: { state: true },
       _exportOpen: { state: true },
@@ -42,7 +38,6 @@ class OerPageHeader extends LitElement {
 
   constructor() {
     super();
-    this.editable = false;
     this._item = null;
     this._types = [];
   }
@@ -408,8 +403,6 @@ class OerPageHeader extends LitElement {
     // images get their own card
     const pills = shown.filter((f) => ["text", "number", "select", "boolean", "date"].includes(f.kind));
     const blocks = shown.filter((f) => !pills.includes(f));
-    // embedding is on unless the page's "Allow embedding" field says no
-    const canEmbed = !isEmbedded() && values.allowEmbed !== false && item.metadata?.published !== false;
     const snapshot = isSnapshot(item);
     const latest = snapshot ? latestOf(item, this._allItems) : null;
     const version = item.metadata?.version;
@@ -417,7 +410,8 @@ class OerPageHeader extends LitElement {
     const firstChild = (this._allItems || [])
       .filter((i) => i.parent === item.id && !i.metadata?.oerSnapshotOf && !i.metadata?.hideInMenu)
       .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))[0];
-    if (!type && !this.editable && !canEmbed && !version) return html``;
+    // Embed and Page details live in the theme's page menu
+    if (!type && !version) return html``;
     const versionPill = version
       ? html`<button class="pill version" title="Versions" @click="${() => versionsDialog().show(snapshot ? latest?.id : item.id)}">
           ${lucide("icons:history")}v${version}${snapshot ? " · archived" : ""}
@@ -451,10 +445,6 @@ class OerPageHeader extends LitElement {
                       </div>`
                     : ""}
                 </span>`
-            : ""}
-          ${canEmbed ? html`<button class="edit" @click="${() => embedDialog().show(item)}">${lucide("icons:open-in-new")}Embed</button>` : ""}
-          ${this.editable
-            ? html`<button class="edit" @click="${() => pageDetails().show(item.id)}">${lucide("image:tune")}${type ? "Edit details" : "Set page type"}</button>`
             : ""}
         </span>
       </div>

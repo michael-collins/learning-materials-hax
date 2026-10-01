@@ -50,6 +50,7 @@ import { flatten } from "./outline/outline-model.js";
 import "./types/oer-page-header.js";
 import "./types/oer-page-footer.js";
 import { isEmbedded, startEmbedReporting } from "./embed/embed-mode.js";
+import { embedDialog } from "./embed/oer-embed-dialog.js";
 import { isSnapshot, versionsOf } from "./versions/versioning.js";
 import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
@@ -72,6 +73,7 @@ function lucide(name) {
 
 // Lucide icons (ISC), inlined so the theme has no icon-font dependency
 const icon = {
+  share: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
   panelLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`,
   search: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   sun: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></svg>`,
@@ -126,6 +128,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _locked: { state: true },
       _published: { state: true },
       _pageMenuOpen: { state: true },
+      _banner: { state: true },
+      _canEmbed: { state: true },
       _sidebarTab: { state: true },
       _userMenuOpen: { state: true },
       _book: { state: true },
@@ -181,6 +185,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           this._activeTitle = item?.title || "";
           this._locked = !!item?.metadata?.locked;
           this._published = item?.metadata?.published !== false;
+          // a linked chapter shows its source's fields (as oer-page-header does)
+          const refId = item?.metadata?.oerRef?.page;
+          const source = refId ? (manifest?.items || []).find((i) => i.id === refId) : null;
+          const fields = (source || item)?.metadata?.oerFields || {};
+          this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
+          this._embedItem = item;
+          this._canEmbed = !!item && !isEmbedded() && fields.allowEmbed !== false && item.metadata?.published !== false;
         });
       }),
     );
@@ -558,6 +569,14 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         article {
           max-width: 48rem;
           margin: 0 auto;
+        }
+        .page-banner {
+          display: block;
+          width: 100%;
+          max-height: 22rem;
+          margin: 0 0 1.5rem;
+          object-fit: cover;
+          border-radius: var(--radius-lg);
         }
         site-active-title {
           display: block;
@@ -1088,6 +1107,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([embed]) .page-header .menu-wrap,
         :host([embed]) .skip-link,
         :host([hide-header]) oer-page-header,
+        :host([hide-header]) .page-banner,
         :host([hide-title]) site-active-title {
           display: none !important;
         }
@@ -1173,11 +1193,12 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
         <main id="main">
           <article id="contentcontainer">
+            ${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
             <div class="page-header">
               <site-active-title part="page-title"></site-active-title>
-              ${this._loggedIn && !this.editMode ? this.renderPageMenu() : ""}
+              ${!this.editMode && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
             </div>
-            <oer-page-header ?editable="${this._loggedIn && !this.editMode}"></oer-page-header>
+            <oer-page-header></oer-page-header>
             <section id="slot"><slot></slot></section>
             ${this.editMode ? "" : html`<oer-page-footer></oer-page-footer>`}
             <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
@@ -1289,7 +1310,12 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         >
           ${icon.chevronDown}
         </button>
-        ${this._pageMenuOpen
+        ${this._pageMenuOpen && !this._loggedIn
+          ? html`<div class="menu" role="menu" @keydown="${this._menuKeys}">
+              ${item(this._menuAction(() => embedDialog().show(this._embedItem)), icon.share, "Embed…")}
+            </div>`
+          : ""}
+        ${this._pageMenuOpen && this._loggedIn
           ? html`<div class="menu" role="menu" @keydown="${this._menuKeys}">
               <button role="menuitem" ?disabled="${this._locked}" @click="${this._menuAction(editPage)}">
                 ${icon.pencil}Edit page<kbd>${MOD}⇧E</kbd>
@@ -1301,6 +1327,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ${item(this._menuAction(() => pageDetails().show(store.activeId)), icon.details, "Page details")}
               ${item(pb("_editTags"), icon.tag, "Tags")}
               ${item(this._menuAction(() => outlineBuilder().show(store.activeId)), icon.siteMap, "Edit page outline")}
+              ${this._canEmbed ? item(this._menuAction(() => embedDialog().show(this._embedItem)), icon.share, "Embed…") : ""}
               <div class="menu-sep" role="separator"></div>
               ${item(this._menuAction(() => versionsDialog().show(store.activeId, { publish: true })), icon.history, "Versions…")}
               ${item(pb("_openRevisions"), icon.history, "Revisions")}
