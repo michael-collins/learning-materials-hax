@@ -2,13 +2,13 @@ id: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
 indent: 0
 location: pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.yaml
 slug: exercises
-order: 0
+order: 2
 parent: null
 title: Exercises
 description: Formative practice focused on a narrow set of competencies.
 metadata:
   created: 1790802192
-  updated: 1790802192
+  updated: 1790824529
   images: []
   videos: []
   overridePathauto: false
@@ -16,5 +16,377 @@ metadata:
   pageType: section
   hideInMenu: false
   locked: false
-  readtime: 1
-content: <p>Formative practice focused on a narrow set of competencies.</p>
+  readtime: 4
+  status: ''
+  icon: courseicons:learning-objectives
+  linkTarget: _self
+content: >
+
+  <p>Formative practice focused on a narrow set of competencies.</p>
+
+  <oer-collection types="exercise" scope="descendants" view="table" sort="title"
+  per-page="20" controls="full"
+  _items="[{&quot;id&quot;:&quot;item-21d4a4b1-6588-4417-a049-a7a1a9d69626&quot;,&quot;indent&quot;:1,&quot;location&quot;:&quot;pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.html&quot;,&quot;slug&quot;:&quot;exercises/animating-a-bouncing-ball&quot;,&quot;order&quot;:0,&quot;parent&quot;:&quot;item-91e1ea23-4437-4dac-90cd-c8de6495e5a6&quot;,&quot;title&quot;:&quot;Animating
+  a bouncing ball&quot;,&quot;description&quot;:&quot;In this exercise, level 1
+  students will practice keyframe animation to animate a bouncing ball\nLearning
+  Objectives\n\nPractice keyframe animation of translation, rotation, and scale
+  properties.\nBecome
+  &quot;,&quot;metadata&quot;:{&quot;created&quot;:1790802192,&quot;updated&quot;:1790824489,&quot;images&quot;:[],&quot;videos&quot;:[],&quot;overridePathauto&quot;:false,&quot;published&quot;:true,&quot;pageType&quot;:&quot;exercise&quot;,&quot;hideInMenu&quot;:false,&quot;tags&quot;:&quot;Blender,Animation&quot;,&quot;locked&quot;:false,&quot;readtime&quot;:1,&quot;status&quot;:&quot;&quot;,&quot;icon&quot;:&quot;courseicons:learning-objectives&quot;}},{&quot;id&quot;:&quot;item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171&quot;,&quot;indent&quot;:1,&quot;location&quot;:&quot;pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.html&quot;,&quot;slug&quot;:&quot;exercises/animated-textures&quot;,&quot;order&quot;:1,&quot;parent&quot;:&quot;item-91e1ea23-4437-4dac-90cd-c8de6495e5a6&quot;,&quot;title&quot;:&quot;Animated
+  textures&quot;,&quot;description&quot;:&quot;In this exercise, you will apply
+  an image sequence as texture object in Blender, render a final Blender
+  animation as an image sequence, and import it into after effects. You will
+  create a compressed
+  v&quot;,&quot;metadata&quot;:{&quot;created&quot;:1790802192,&quot;updated&quot;:1790824489,&quot;images&quot;:[],&quot;videos&quot;:[],&quot;overridePathauto&quot;:false,&quot;published&quot;:true,&quot;pageType&quot;:&quot;exercise&quot;,&quot;hideInMenu&quot;:false,&quot;tags&quot;:&quot;Blender,AfterEffects,Adobe
+  Media
+  Encoder&quot;,&quot;locked&quot;:false,&quot;readtime&quot;:1,&quot;status&quot;:&quot;&quot;,&quot;icon&quot;:&quot;courseicons:learning-objectives&quot;}}]"
+  _defs="[{&quot;id&quot;:&quot;section&quot;,&quot;label&quot;:&quot;Section&quot;,&quot;icon&quot;:&quot;icons:folder&quot;,&quot;description&quot;:&quot;A
+  heading that groups other pages (e.g. Topics,
+  Readings).&quot;,&quot;children&quot;:null,&quot;fields&quot;:[],&quot;template&quot;:&quot;<p></p>\n<oer-collection
+  scope=\&quot;children\&quot; view=\&quot;table\&quot;
+  sort=\&quot;order\&quot;></oer-collection>&quot;},{&quot;id&quot;:&quot;article&quot;,&quot;label&quot;:&quot;Article&quot;,&quot;icon&quot;:&quot;hax:newspaper&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;date&quot;,&quot;label&quot;:&quot;Date&quot;,&quot;kind&quot;:&quot;date&quot;},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true}]},{&quot;id&quot;:&quot;tutorial&quot;,&quot;label&quot;:&quot;Tutorial&quot;,&quot;icon&quot;:&quot;courseicons:strategy&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;date&quot;,&quot;label&quot;:&quot;Date&quot;,&quot;kind&quot;:&quot;date&quot;},{&quot;name&quot;:&quot;difficulty&quot;,&quot;label&quot;:&quot;Difficulty&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;Beginner&quot;,&quot;label&quot;:&quot;Beginner&quot;},{&quot;value&quot;:&quot;Intermediate&quot;,&quot;label&quot;:&quot;Intermediate&quot;},{&quot;value&quot;:&quot;Advanced&quot;,&quot;label&quot;:&quot;Advanced&quot;}],&quot;header&quot;:true},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true}]},{&quot;id&quot;:&quot;exercise&quot;,&quot;label&quot;:&quot;Exercise&quot;,&quot;icon&quot;:&quot;hax:task&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[{&quot;name&quot;:&quot;difficulty&quot;,&quot;label&quot;:&quot;Difficulty&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;Beginner&quot;,&quot;label&quot;:&quot;Beginner&quot;},{&quot;value&quot;:&quot;Intermediate&quot;,&quot;label&quot;:&quot;Intermediate&quot;},{&quot;value&quot;:&quot;Advanced&quot;,&quot;label&quot;:&quot;Advanced&quot;}],&quot;header&quot;:true},{&quot;name&quot;:&quot;image&quot;,&quot;label&quot;:&quot;Featured
+  Image&quot;,&quot;kind&quot;:&quot;image&quot;},{&quot;name&quot;:&quot;imageAlt&quot;,&quot;label&quot;:&quot;Image
+  Alt
+  Text&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;aiLicense&quot;,&quot;label&quot;:&quot;AI
+  Usage
+  Licenses&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Select
+  one or more AI usage policies. Defaults: AIUL-WA (general approval required) +
+  AIUL-NA-3D (no AI for 3D
+  work)&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;AIUL-NA&quot;,&quot;label&quot;:&quot;AIUL-NA&quot;},{&quot;value&quot;:&quot;AIUL-NA-WR&quot;,&quot;label&quot;:&quot;AIUL-NA-WR&quot;},{&quot;value&quot;:&quot;AIUL-NA-IM&quot;,&quot;label&quot;:&quot;AIUL-NA-IM&quot;},{&quot;value&quot;:&quot;AIUL-NA-VD&quot;,&quot;label&quot;:&quot;AIUL-NA-VD&quot;},{&quot;value&quot;:&quot;AIUL-NA-AU&quot;,&quot;label&quot;:&quot;AIUL-NA-AU&quot;},{&quot;value&quot;:&quot;AIUL-NA-3D&quot;,&quot;label&quot;:&quot;AIUL-NA-3D&quot;},{&quot;value&quot;:&quot;AIUL-NA-TR&quot;,&quot;label&quot;:&quot;AIUL-NA-TR&quot;},{&quot;value&quot;:&quot;AIUL-NA-MX&quot;,&quot;label&quot;:&quot;AIUL-NA-MX&quot;},{&quot;value&quot;:&quot;AIUL-NA-CO&quot;,&quot;label&quot;:&quot;AIUL-NA-CO&quot;},{&quot;value&quot;:&quot;AIUL-WA&quot;,&quot;label&quot;:&quot;AIUL-WA&quot;},{&quot;value&quot;:&quot;AIUL-WA-WR&quot;,&quot;label&quot;:&quot;AIUL-WA-WR&quot;},{&quot;value&quot;:&quot;AIUL-WA-IM&quot;,&quot;label&quot;:&quot;AIUL-WA-IM&quot;},{&quot;value&quot;:&quot;AIUL-WA-VD&quot;,&quot;label&quot;:&quot;AIUL-WA-VD&quot;},{&quot;value&quot;:&quot;AIUL-WA-AU&quot;,&quot;label&quot;:&quot;AIUL-WA-AU&quot;},{&quot;value&quot;:&quot;AIUL-WA-3D&quot;,&quot;label&quot;:&quot;AIUL-WA-3D&quot;},{&quot;value&quot;:&quot;AIUL-WA-TR&quot;,&quot;label&quot;:&quot;AIUL-WA-TR&quot;},{&quot;value&quot;:&quot;AIUL-WA-MX&quot;,&quot;label&quot;:&quot;AIUL-WA-MX&quot;},{&quot;value&quot;:&quot;AIUL-WA-CO&quot;,&quot;label&quot;:&quot;AIUL-WA-CO&quot;},{&quot;value&quot;:&quot;AIUL-CD&quot;,&quot;label&quot;:&quot;AIUL-CD&quot;},{&quot;value&quot;:&quot;AIUL-CD-WR&quot;,&quot;label&quot;:&quot;AIUL-CD-WR&quot;},{&quot;value&quot;:&quot;AIUL-CD-IM&quot;,&quot;label&quot;:&quot;AIUL-CD-IM&quot;},{&quot;value&quot;:&quot;AIUL-CD-VD&quot;,&quot;label&quot;:&quot;AIUL-CD-VD&quot;},{&quot;value&quot;:&quot;AIUL-CD-AU&quot;,&quot;label&quot;:&quot;AIUL-CD-AU&quot;},{&quot;value&quot;:&quot;AIUL-CD-3D&quot;,&quot;label&quot;:&quot;AIUL-CD-3D&quot;},{&quot;value&quot;:&quot;AIUL-CD-TR&quot;,&quot;label&quot;:&quot;AIUL-CD-TR&quot;},{&quot;value&quot;:&quot;AIUL-CD-MX&quot;,&quot;label&quot;:&quot;AIUL-CD-MX&quot;},{&quot;value&quot;:&quot;AIUL-CD-CO&quot;,&quot;label&quot;:&quot;AIUL-CD-CO&quot;},{&quot;value&quot;:&quot;AIUL-TC&quot;,&quot;label&quot;:&quot;AIUL-TC&quot;},{&quot;value&quot;:&quot;AIUL-TC-WR&quot;,&quot;label&quot;:&quot;AIUL-TC-WR&quot;},{&quot;value&quot;:&quot;AIUL-TC-IM&quot;,&quot;label&quot;:&quot;AIUL-TC-IM&quot;},{&quot;value&quot;:&quot;AIUL-TC-VD&quot;,&quot;label&quot;:&quot;AIUL-TC-VD&quot;},{&quot;value&quot;:&quot;AIUL-TC-AU&quot;,&quot;label&quot;:&quot;AIUL-TC-AU&quot;},{&quot;value&quot;:&quot;AIUL-TC-3D&quot;,&quot;label&quot;:&quot;AIUL-TC-3D&quot;},{&quot;value&quot;:&quot;AIUL-TC-TR&quot;,&quot;label&quot;:&quot;AIUL-TC-TR&quot;},{&quot;value&quot;:&quot;AIUL-TC-MX&quot;,&quot;label&quot;:&quot;AIUL-TC-MX&quot;},{&quot;value&quot;:&quot;AIUL-TC-CO&quot;,&quot;label&quot;:&quot;AIUL-TC-CO&quot;},{&quot;value&quot;:&quot;AIUL-DP&quot;,&quot;label&quot;:&quot;AIUL-DP&quot;},{&quot;value&quot;:&quot;AIUL-DP-WR&quot;,&quot;label&quot;:&quot;AIUL-DP-WR&quot;},{&quot;value&quot;:&quot;AIUL-DP-IM&quot;,&quot;label&quot;:&quot;AIUL-DP-IM&quot;},{&quot;value&quot;:&quot;AIUL-DP-VD&quot;,&quot;label&quot;:&quot;AIUL-DP-VD&quot;},{&quot;value&quot;:&quot;AIUL-DP-AU&quot;,&quot;label&quot;:&quot;AIUL-DP-AU&quot;},{&quot;value&quot;:&quot;AIUL-DP-3D&quot;,&quot;label&quot;:&quot;AIUL-DP-3D&quot;},{&quot;value&quot;:&quot;AIUL-DP-TR&quot;,&quot;label&quot;:&quot;AIUL-DP-TR&quot;},{&quot;value&quot;:&quot;AIUL-DP-MX&quot;,&quot;label&quot;:&quot;AIUL-DP-MX&quot;},{&quot;value&quot;:&quot;AIUL-DP-CO&quot;,&quot;label&quot;:&quot;AIUL-DP-CO&quot;},{&quot;value&quot;:&quot;AIUL-IU&quot;,&quot;label&quot;:&quot;AIUL-IU&quot;},{&quot;value&quot;:&quot;AIUL-IU-WR&quot;,&quot;label&quot;:&quot;AIUL-IU-WR&quot;},{&quot;value&quot;:&quot;AIUL-IU-IM&quot;,&quot;label&quot;:&quot;AIUL-IU-IM&quot;},{&quot;value&quot;:&quot;AIUL-IU-VD&quot;,&quot;label&quot;:&quot;AIUL-IU-VD&quot;},{&quot;value&quot;:&quot;AIUL-IU-AU&quot;,&quot;label&quot;:&quot;AIUL-IU-AU&quot;},{&quot;value&quot;:&quot;AIUL-IU-3D&quot;,&quot;label&quot;:&quot;AIUL-IU-3D&quot;},{&quot;value&quot;:&quot;AIUL-IU-TR&quot;,&quot;label&quot;:&quot;AIUL-IU-TR&quot;},{&quot;value&quot;:&quot;AIUL-IU-MX&quot;,&quot;label&quot;:&quot;AIUL-IU-MX&quot;},{&quot;value&quot;:&quot;AIUL-IU-CO&quot;,&quot;label&quot;:&quot;AIUL-IU-CO&quot;}]},{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;authorUrl&quot;,&quot;label&quot;:&quot;Author
+  URL
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;Enable
+  iframe embedding for this
+  content&quot;},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true}]},{&quot;id&quot;:&quot;project&quot;,&quot;label&quot;:&quot;Project&quot;,&quot;icon&quot;:&quot;hax:bulletin-board&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[{&quot;name&quot;:&quot;difficulty&quot;,&quot;label&quot;:&quot;Difficulty&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;Beginner&quot;,&quot;label&quot;:&quot;Beginner&quot;},{&quot;value&quot;:&quot;Intermediate&quot;,&quot;label&quot;:&quot;Intermediate&quot;},{&quot;value&quot;:&quot;Advanced&quot;,&quot;label&quot;:&quot;Advanced&quot;}],&quot;header&quot;:true},{&quot;name&quot;:&quot;image&quot;,&quot;label&quot;:&quot;Featured
+  Image&quot;,&quot;kind&quot;:&quot;image&quot;},{&quot;name&quot;:&quot;imageAlt&quot;,&quot;label&quot;:&quot;Image
+  Alt
+  Text&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;aiLicense&quot;,&quot;label&quot;:&quot;AI
+  Usage
+  Licenses&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Select
+  one or more AI usage policies. Defaults: AIUL-WA (approval required) + AIUL-CD
+  (conceptual ok) + AIUL-NA-3D (no AI for
+  3D)&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;AIUL-NA&quot;,&quot;label&quot;:&quot;AIUL-NA&quot;},{&quot;value&quot;:&quot;AIUL-NA-WR&quot;,&quot;label&quot;:&quot;AIUL-NA-WR&quot;},{&quot;value&quot;:&quot;AIUL-NA-IM&quot;,&quot;label&quot;:&quot;AIUL-NA-IM&quot;},{&quot;value&quot;:&quot;AIUL-NA-VD&quot;,&quot;label&quot;:&quot;AIUL-NA-VD&quot;},{&quot;value&quot;:&quot;AIUL-NA-AU&quot;,&quot;label&quot;:&quot;AIUL-NA-AU&quot;},{&quot;value&quot;:&quot;AIUL-NA-3D&quot;,&quot;label&quot;:&quot;AIUL-NA-3D&quot;},{&quot;value&quot;:&quot;AIUL-NA-TR&quot;,&quot;label&quot;:&quot;AIUL-NA-TR&quot;},{&quot;value&quot;:&quot;AIUL-NA-MX&quot;,&quot;label&quot;:&quot;AIUL-NA-MX&quot;},{&quot;value&quot;:&quot;AIUL-NA-CO&quot;,&quot;label&quot;:&quot;AIUL-NA-CO&quot;},{&quot;value&quot;:&quot;AIUL-WA&quot;,&quot;label&quot;:&quot;AIUL-WA&quot;},{&quot;value&quot;:&quot;AIUL-WA-WR&quot;,&quot;label&quot;:&quot;AIUL-WA-WR&quot;},{&quot;value&quot;:&quot;AIUL-WA-IM&quot;,&quot;label&quot;:&quot;AIUL-WA-IM&quot;},{&quot;value&quot;:&quot;AIUL-WA-VD&quot;,&quot;label&quot;:&quot;AIUL-WA-VD&quot;},{&quot;value&quot;:&quot;AIUL-WA-AU&quot;,&quot;label&quot;:&quot;AIUL-WA-AU&quot;},{&quot;value&quot;:&quot;AIUL-WA-3D&quot;,&quot;label&quot;:&quot;AIUL-WA-3D&quot;},{&quot;value&quot;:&quot;AIUL-WA-TR&quot;,&quot;label&quot;:&quot;AIUL-WA-TR&quot;},{&quot;value&quot;:&quot;AIUL-WA-MX&quot;,&quot;label&quot;:&quot;AIUL-WA-MX&quot;},{&quot;value&quot;:&quot;AIUL-WA-CO&quot;,&quot;label&quot;:&quot;AIUL-WA-CO&quot;},{&quot;value&quot;:&quot;AIUL-CD&quot;,&quot;label&quot;:&quot;AIUL-CD&quot;},{&quot;value&quot;:&quot;AIUL-CD-WR&quot;,&quot;label&quot;:&quot;AIUL-CD-WR&quot;},{&quot;value&quot;:&quot;AIUL-CD-IM&quot;,&quot;label&quot;:&quot;AIUL-CD-IM&quot;},{&quot;value&quot;:&quot;AIUL-CD-VD&quot;,&quot;label&quot;:&quot;AIUL-CD-VD&quot;},{&quot;value&quot;:&quot;AIUL-CD-AU&quot;,&quot;label&quot;:&quot;AIUL-CD-AU&quot;},{&quot;value&quot;:&quot;AIUL-CD-3D&quot;,&quot;label&quot;:&quot;AIUL-CD-3D&quot;},{&quot;value&quot;:&quot;AIUL-CD-TR&quot;,&quot;label&quot;:&quot;AIUL-CD-TR&quot;},{&quot;value&quot;:&quot;AIUL-CD-MX&quot;,&quot;label&quot;:&quot;AIUL-CD-MX&quot;},{&quot;value&quot;:&quot;AIUL-CD-CO&quot;,&quot;label&quot;:&quot;AIUL-CD-CO&quot;},{&quot;value&quot;:&quot;AIUL-TC&quot;,&quot;label&quot;:&quot;AIUL-TC&quot;},{&quot;value&quot;:&quot;AIUL-TC-WR&quot;,&quot;label&quot;:&quot;AIUL-TC-WR&quot;},{&quot;value&quot;:&quot;AIUL-TC-IM&quot;,&quot;label&quot;:&quot;AIUL-TC-IM&quot;},{&quot;value&quot;:&quot;AIUL-TC-VD&quot;,&quot;label&quot;:&quot;AIUL-TC-VD&quot;},{&quot;value&quot;:&quot;AIUL-TC-AU&quot;,&quot;label&quot;:&quot;AIUL-TC-AU&quot;},{&quot;value&quot;:&quot;AIUL-TC-3D&quot;,&quot;label&quot;:&quot;AIUL-TC-3D&quot;},{&quot;value&quot;:&quot;AIUL-TC-TR&quot;,&quot;label&quot;:&quot;AIUL-TC-TR&quot;},{&quot;value&quot;:&quot;AIUL-TC-MX&quot;,&quot;label&quot;:&quot;AIUL-TC-MX&quot;},{&quot;value&quot;:&quot;AIUL-TC-CO&quot;,&quot;label&quot;:&quot;AIUL-TC-CO&quot;},{&quot;value&quot;:&quot;AIUL-DP&quot;,&quot;label&quot;:&quot;AIUL-DP&quot;},{&quot;value&quot;:&quot;AIUL-DP-WR&quot;,&quot;label&quot;:&quot;AIUL-DP-WR&quot;},{&quot;value&quot;:&quot;AIUL-DP-IM&quot;,&quot;label&quot;:&quot;AIUL-DP-IM&quot;},{&quot;value&quot;:&quot;AIUL-DP-VD&quot;,&quot;label&quot;:&quot;AIUL-DP-VD&quot;},{&quot;value&quot;:&quot;AIUL-DP-AU&quot;,&quot;label&quot;:&quot;AIUL-DP-AU&quot;},{&quot;value&quot;:&quot;AIUL-DP-3D&quot;,&quot;label&quot;:&quot;AIUL-DP-3D&quot;},{&quot;value&quot;:&quot;AIUL-DP-TR&quot;,&quot;label&quot;:&quot;AIUL-DP-TR&quot;},{&quot;value&quot;:&quot;AIUL-DP-MX&quot;,&quot;label&quot;:&quot;AIUL-DP-MX&quot;},{&quot;value&quot;:&quot;AIUL-DP-CO&quot;,&quot;label&quot;:&quot;AIUL-DP-CO&quot;},{&quot;value&quot;:&quot;AIUL-IU&quot;,&quot;label&quot;:&quot;AIUL-IU&quot;},{&quot;value&quot;:&quot;AIUL-IU-WR&quot;,&quot;label&quot;:&quot;AIUL-IU-WR&quot;},{&quot;value&quot;:&quot;AIUL-IU-IM&quot;,&quot;label&quot;:&quot;AIUL-IU-IM&quot;},{&quot;value&quot;:&quot;AIUL-IU-VD&quot;,&quot;label&quot;:&quot;AIUL-IU-VD&quot;},{&quot;value&quot;:&quot;AIUL-IU-AU&quot;,&quot;label&quot;:&quot;AIUL-IU-AU&quot;},{&quot;value&quot;:&quot;AIUL-IU-3D&quot;,&quot;label&quot;:&quot;AIUL-IU-3D&quot;},{&quot;value&quot;:&quot;AIUL-IU-TR&quot;,&quot;label&quot;:&quot;AIUL-IU-TR&quot;},{&quot;value&quot;:&quot;AIUL-IU-MX&quot;,&quot;label&quot;:&quot;AIUL-IU-MX&quot;},{&quot;value&quot;:&quot;AIUL-IU-CO&quot;,&quot;label&quot;:&quot;AIUL-IU-CO&quot;}]},{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;authorUrl&quot;,&quot;label&quot;:&quot;Author
+  URL
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;Enable
+  iframe embedding for this
+  content&quot;},{&quot;name&quot;:&quot;publishEmbed&quot;,&quot;label&quot;:&quot;Publish
+  for
+  Embed&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;Make
+  this version available for
+  embedding&quot;},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true}]},{&quot;id&quot;:&quot;specialization&quot;,&quot;label&quot;:&quot;Specialization&quot;,&quot;icon&quot;:&quot;lrn:teacher&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[&quot;lesson&quot;],&quot;fields&quot;:[{&quot;name&quot;:&quot;difficulty&quot;,&quot;label&quot;:&quot;Difficulty&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;Beginner&quot;,&quot;label&quot;:&quot;Beginner&quot;},{&quot;value&quot;:&quot;Intermediate&quot;,&quot;label&quot;:&quot;Intermediate&quot;},{&quot;value&quot;:&quot;Advanced&quot;,&quot;label&quot;:&quot;Advanced&quot;}],&quot;header&quot;:true},{&quot;name&quot;:&quot;estimatedDuration&quot;,&quot;label&quot;:&quot;Estimated
+  Duration&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;e.g.,
+  '8 weeks', '3
+  months'&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;whoItsFor&quot;,&quot;label&quot;:&quot;Who
+  It's
+  For&quot;,&quot;kind&quot;:&quot;longtext&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;targetRole&quot;,&quot;label&quot;:&quot;Target
+  Role&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;e.g., '3D
+  Modeler',
+  'Animator'&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;skills&quot;,&quot;label&quot;:&quot;Skills&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Key
+  skills students will
+  develop&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;tools&quot;,&quot;label&quot;:&quot;Tools&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Software
+  and hardware
+  used&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;learningObjectives&quot;,&quot;label&quot;:&quot;Learning
+  Objectives&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;image&quot;,&quot;label&quot;:&quot;Featured
+  Image&quot;,&quot;kind&quot;:&quot;image&quot;},{&quot;name&quot;:&quot;imageAlt&quot;,&quot;label&quot;:&quot;Image
+  Alt
+  Text&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;aiLicense&quot;,&quot;label&quot;:&quot;AI
+  Usage
+  Licenses&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Select
+  one or more AI usage
+  policies&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;AIUL-NA&quot;,&quot;label&quot;:&quot;AIUL-NA&quot;},{&quot;value&quot;:&quot;AIUL-NA-WR&quot;,&quot;label&quot;:&quot;AIUL-NA-WR&quot;},{&quot;value&quot;:&quot;AIUL-NA-IM&quot;,&quot;label&quot;:&quot;AIUL-NA-IM&quot;},{&quot;value&quot;:&quot;AIUL-NA-VD&quot;,&quot;label&quot;:&quot;AIUL-NA-VD&quot;},{&quot;value&quot;:&quot;AIUL-NA-AU&quot;,&quot;label&quot;:&quot;AIUL-NA-AU&quot;},{&quot;value&quot;:&quot;AIUL-NA-3D&quot;,&quot;label&quot;:&quot;AIUL-NA-3D&quot;},{&quot;value&quot;:&quot;AIUL-NA-TR&quot;,&quot;label&quot;:&quot;AIUL-NA-TR&quot;},{&quot;value&quot;:&quot;AIUL-NA-MX&quot;,&quot;label&quot;:&quot;AIUL-NA-MX&quot;},{&quot;value&quot;:&quot;AIUL-NA-CO&quot;,&quot;label&quot;:&quot;AIUL-NA-CO&quot;},{&quot;value&quot;:&quot;AIUL-WA&quot;,&quot;label&quot;:&quot;AIUL-WA&quot;},{&quot;value&quot;:&quot;AIUL-WA-WR&quot;,&quot;label&quot;:&quot;AIUL-WA-WR&quot;},{&quot;value&quot;:&quot;AIUL-WA-IM&quot;,&quot;label&quot;:&quot;AIUL-WA-IM&quot;},{&quot;value&quot;:&quot;AIUL-WA-VD&quot;,&quot;label&quot;:&quot;AIUL-WA-VD&quot;},{&quot;value&quot;:&quot;AIUL-WA-AU&quot;,&quot;label&quot;:&quot;AIUL-WA-AU&quot;},{&quot;value&quot;:&quot;AIUL-WA-3D&quot;,&quot;label&quot;:&quot;AIUL-WA-3D&quot;},{&quot;value&quot;:&quot;AIUL-WA-TR&quot;,&quot;label&quot;:&quot;AIUL-WA-TR&quot;},{&quot;value&quot;:&quot;AIUL-WA-MX&quot;,&quot;label&quot;:&quot;AIUL-WA-MX&quot;},{&quot;value&quot;:&quot;AIUL-WA-CO&quot;,&quot;label&quot;:&quot;AIUL-WA-CO&quot;},{&quot;value&quot;:&quot;AIUL-CD&quot;,&quot;label&quot;:&quot;AIUL-CD&quot;},{&quot;value&quot;:&quot;AIUL-CD-WR&quot;,&quot;label&quot;:&quot;AIUL-CD-WR&quot;},{&quot;value&quot;:&quot;AIUL-CD-IM&quot;,&quot;label&quot;:&quot;AIUL-CD-IM&quot;},{&quot;value&quot;:&quot;AIUL-CD-VD&quot;,&quot;label&quot;:&quot;AIUL-CD-VD&quot;},{&quot;value&quot;:&quot;AIUL-CD-AU&quot;,&quot;label&quot;:&quot;AIUL-CD-AU&quot;},{&quot;value&quot;:&quot;AIUL-CD-3D&quot;,&quot;label&quot;:&quot;AIUL-CD-3D&quot;},{&quot;value&quot;:&quot;AIUL-CD-TR&quot;,&quot;label&quot;:&quot;AIUL-CD-TR&quot;},{&quot;value&quot;:&quot;AIUL-CD-MX&quot;,&quot;label&quot;:&quot;AIUL-CD-MX&quot;},{&quot;value&quot;:&quot;AIUL-CD-CO&quot;,&quot;label&quot;:&quot;AIUL-CD-CO&quot;},{&quot;value&quot;:&quot;AIUL-TC&quot;,&quot;label&quot;:&quot;AIUL-TC&quot;},{&quot;value&quot;:&quot;AIUL-TC-WR&quot;,&quot;label&quot;:&quot;AIUL-TC-WR&quot;},{&quot;value&quot;:&quot;AIUL-TC-IM&quot;,&quot;label&quot;:&quot;AIUL-TC-IM&quot;},{&quot;value&quot;:&quot;AIUL-TC-VD&quot;,&quot;label&quot;:&quot;AIUL-TC-VD&quot;},{&quot;value&quot;:&quot;AIUL-TC-AU&quot;,&quot;label&quot;:&quot;AIUL-TC-AU&quot;},{&quot;value&quot;:&quot;AIUL-TC-3D&quot;,&quot;label&quot;:&quot;AIUL-TC-3D&quot;},{&quot;value&quot;:&quot;AIUL-TC-TR&quot;,&quot;label&quot;:&quot;AIUL-TC-TR&quot;},{&quot;value&quot;:&quot;AIUL-TC-MX&quot;,&quot;label&quot;:&quot;AIUL-TC-MX&quot;},{&quot;value&quot;:&quot;AIUL-TC-CO&quot;,&quot;label&quot;:&quot;AIUL-TC-CO&quot;},{&quot;value&quot;:&quot;AIUL-DP&quot;,&quot;label&quot;:&quot;AIUL-DP&quot;},{&quot;value&quot;:&quot;AIUL-DP-WR&quot;,&quot;label&quot;:&quot;AIUL-DP-WR&quot;},{&quot;value&quot;:&quot;AIUL-DP-IM&quot;,&quot;label&quot;:&quot;AIUL-DP-IM&quot;},{&quot;value&quot;:&quot;AIUL-DP-VD&quot;,&quot;label&quot;:&quot;AIUL-DP-VD&quot;},{&quot;value&quot;:&quot;AIUL-DP-AU&quot;,&quot;label&quot;:&quot;AIUL-DP-AU&quot;},{&quot;value&quot;:&quot;AIUL-DP-3D&quot;,&quot;label&quot;:&quot;AIUL-DP-3D&quot;},{&quot;value&quot;:&quot;AIUL-DP-TR&quot;,&quot;label&quot;:&quot;AIUL-DP-TR&quot;},{&quot;value&quot;:&quot;AIUL-DP-MX&quot;,&quot;label&quot;:&quot;AIUL-DP-MX&quot;},{&quot;value&quot;:&quot;AIUL-DP-CO&quot;,&quot;label&quot;:&quot;AIUL-DP-CO&quot;},{&quot;value&quot;:&quot;AIUL-IU&quot;,&quot;label&quot;:&quot;AIUL-IU&quot;},{&quot;value&quot;:&quot;AIUL-IU-WR&quot;,&quot;label&quot;:&quot;AIUL-IU-WR&quot;},{&quot;value&quot;:&quot;AIUL-IU-IM&quot;,&quot;label&quot;:&quot;AIUL-IU-IM&quot;},{&quot;value&quot;:&quot;AIUL-IU-VD&quot;,&quot;label&quot;:&quot;AIUL-IU-VD&quot;},{&quot;value&quot;:&quot;AIUL-IU-AU&quot;,&quot;label&quot;:&quot;AIUL-IU-AU&quot;},{&quot;value&quot;:&quot;AIUL-IU-3D&quot;,&quot;label&quot;:&quot;AIUL-IU-3D&quot;},{&quot;value&quot;:&quot;AIUL-IU-TR&quot;,&quot;label&quot;:&quot;AIUL-IU-TR&quot;},{&quot;value&quot;:&quot;AIUL-IU-MX&quot;,&quot;label&quot;:&quot;AIUL-IU-MX&quot;},{&quot;value&quot;:&quot;AIUL-IU-CO&quot;,&quot;label&quot;:&quot;AIUL-IU-CO&quot;}]}],&quot;template&quot;:&quot;<p></p>\n<h2>Lessons</h2>\n<oer-collection
+  scope=\&quot;children\&quot; types=\&quot;lesson\&quot;
+  view=\&quot;cards\&quot; sort=\&quot;order\&quot;
+  controls=\&quot;none\&quot;></oer-collection>&quot;},{&quot;id&quot;:&quot;pathway&quot;,&quot;label&quot;:&quot;Pathway&quot;,&quot;icon&quot;:&quot;hax:unit&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[&quot;section&quot;,&quot;specialization&quot;,&quot;lesson&quot;],&quot;fields&quot;:[{&quot;name&quot;:&quot;difficulty&quot;,&quot;label&quot;:&quot;Difficulty&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;For
+  single-level pathways. Multi-level pathways use Levels
+  below.&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;Beginner&quot;,&quot;label&quot;:&quot;Beginner&quot;},{&quot;value&quot;:&quot;Intermediate&quot;,&quot;label&quot;:&quot;Intermediate&quot;},{&quot;value&quot;:&quot;Advanced&quot;,&quot;label&quot;:&quot;Advanced&quot;}],&quot;header&quot;:true},{&quot;name&quot;:&quot;estimatedDuration&quot;,&quot;label&quot;:&quot;Estimated
+  Duration&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;e.g.,
+  '12 weeks', '6
+  months'&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;learningObjectives&quot;,&quot;label&quot;:&quot;Learning
+  Objectives&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;levels&quot;,&quot;label&quot;:&quot;Levels&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Levels
+  this pathway is offered at. Leave empty for a single-level pathway such as CGI
+  Foundations.&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;Beginner&quot;,&quot;label&quot;:&quot;Beginner&quot;},{&quot;value&quot;:&quot;Intermediate&quot;,&quot;label&quot;:&quot;Intermediate&quot;},{&quot;value&quot;:&quot;Advanced&quot;,&quot;label&quot;:&quot;Advanced&quot;}]},{&quot;name&quot;:&quot;testOutCriteria&quot;,&quot;label&quot;:&quot;Test-out
+  criteria&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;What a
+  student must show to test out of this pathway. Students request a test-out
+  from the
+  instructor.&quot;},{&quot;name&quot;:&quot;targetRole&quot;,&quot;label&quot;:&quot;Target
+  Role&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;whoItsFor&quot;,&quot;label&quot;:&quot;Who
+  It's
+  For&quot;,&quot;kind&quot;:&quot;longtext&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;skills&quot;,&quot;label&quot;:&quot;Skills&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;tools&quot;,&quot;label&quot;:&quot;Tools&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;image&quot;,&quot;label&quot;:&quot;Featured
+  Image&quot;,&quot;kind&quot;:&quot;image&quot;},{&quot;name&quot;:&quot;imageAlt&quot;,&quot;label&quot;:&quot;Image
+  Alt
+  Text&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;aiLicense&quot;,&quot;label&quot;:&quot;AI
+  Usage
+  Licenses&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Select
+  one or more AI usage
+  policies&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;AIUL-NA&quot;,&quot;label&quot;:&quot;AIUL-NA&quot;},{&quot;value&quot;:&quot;AIUL-NA-WR&quot;,&quot;label&quot;:&quot;AIUL-NA-WR&quot;},{&quot;value&quot;:&quot;AIUL-NA-IM&quot;,&quot;label&quot;:&quot;AIUL-NA-IM&quot;},{&quot;value&quot;:&quot;AIUL-NA-VD&quot;,&quot;label&quot;:&quot;AIUL-NA-VD&quot;},{&quot;value&quot;:&quot;AIUL-NA-AU&quot;,&quot;label&quot;:&quot;AIUL-NA-AU&quot;},{&quot;value&quot;:&quot;AIUL-NA-3D&quot;,&quot;label&quot;:&quot;AIUL-NA-3D&quot;},{&quot;value&quot;:&quot;AIUL-NA-TR&quot;,&quot;label&quot;:&quot;AIUL-NA-TR&quot;},{&quot;value&quot;:&quot;AIUL-NA-MX&quot;,&quot;label&quot;:&quot;AIUL-NA-MX&quot;},{&quot;value&quot;:&quot;AIUL-NA-CO&quot;,&quot;label&quot;:&quot;AIUL-NA-CO&quot;},{&quot;value&quot;:&quot;AIUL-WA&quot;,&quot;label&quot;:&quot;AIUL-WA&quot;},{&quot;value&quot;:&quot;AIUL-WA-WR&quot;,&quot;label&quot;:&quot;AIUL-WA-WR&quot;},{&quot;value&quot;:&quot;AIUL-WA-IM&quot;,&quot;label&quot;:&quot;AIUL-WA-IM&quot;},{&quot;value&quot;:&quot;AIUL-WA-VD&quot;,&quot;label&quot;:&quot;AIUL-WA-VD&quot;},{&quot;value&quot;:&quot;AIUL-WA-AU&quot;,&quot;label&quot;:&quot;AIUL-WA-AU&quot;},{&quot;value&quot;:&quot;AIUL-WA-3D&quot;,&quot;label&quot;:&quot;AIUL-WA-3D&quot;},{&quot;value&quot;:&quot;AIUL-WA-TR&quot;,&quot;label&quot;:&quot;AIUL-WA-TR&quot;},{&quot;value&quot;:&quot;AIUL-WA-MX&quot;,&quot;label&quot;:&quot;AIUL-WA-MX&quot;},{&quot;value&quot;:&quot;AIUL-WA-CO&quot;,&quot;label&quot;:&quot;AIUL-WA-CO&quot;},{&quot;value&quot;:&quot;AIUL-CD&quot;,&quot;label&quot;:&quot;AIUL-CD&quot;},{&quot;value&quot;:&quot;AIUL-CD-WR&quot;,&quot;label&quot;:&quot;AIUL-CD-WR&quot;},{&quot;value&quot;:&quot;AIUL-CD-IM&quot;,&quot;label&quot;:&quot;AIUL-CD-IM&quot;},{&quot;value&quot;:&quot;AIUL-CD-VD&quot;,&quot;label&quot;:&quot;AIUL-CD-VD&quot;},{&quot;value&quot;:&quot;AIUL-CD-AU&quot;,&quot;label&quot;:&quot;AIUL-CD-AU&quot;},{&quot;value&quot;:&quot;AIUL-CD-3D&quot;,&quot;label&quot;:&quot;AIUL-CD-3D&quot;},{&quot;value&quot;:&quot;AIUL-CD-TR&quot;,&quot;label&quot;:&quot;AIUL-CD-TR&quot;},{&quot;value&quot;:&quot;AIUL-CD-MX&quot;,&quot;label&quot;:&quot;AIUL-CD-MX&quot;},{&quot;value&quot;:&quot;AIUL-CD-CO&quot;,&quot;label&quot;:&quot;AIUL-CD-CO&quot;},{&quot;value&quot;:&quot;AIUL-TC&quot;,&quot;label&quot;:&quot;AIUL-TC&quot;},{&quot;value&quot;:&quot;AIUL-TC-WR&quot;,&quot;label&quot;:&quot;AIUL-TC-WR&quot;},{&quot;value&quot;:&quot;AIUL-TC-IM&quot;,&quot;label&quot;:&quot;AIUL-TC-IM&quot;},{&quot;value&quot;:&quot;AIUL-TC-VD&quot;,&quot;label&quot;:&quot;AIUL-TC-VD&quot;},{&quot;value&quot;:&quot;AIUL-TC-AU&quot;,&quot;label&quot;:&quot;AIUL-TC-AU&quot;},{&quot;value&quot;:&quot;AIUL-TC-3D&quot;,&quot;label&quot;:&quot;AIUL-TC-3D&quot;},{&quot;value&quot;:&quot;AIUL-TC-TR&quot;,&quot;label&quot;:&quot;AIUL-TC-TR&quot;},{&quot;value&quot;:&quot;AIUL-TC-MX&quot;,&quot;label&quot;:&quot;AIUL-TC-MX&quot;},{&quot;value&quot;:&quot;AIUL-TC-CO&quot;,&quot;label&quot;:&quot;AIUL-TC-CO&quot;},{&quot;value&quot;:&quot;AIUL-DP&quot;,&quot;label&quot;:&quot;AIUL-DP&quot;},{&quot;value&quot;:&quot;AIUL-DP-WR&quot;,&quot;label&quot;:&quot;AIUL-DP-WR&quot;},{&quot;value&quot;:&quot;AIUL-DP-IM&quot;,&quot;label&quot;:&quot;AIUL-DP-IM&quot;},{&quot;value&quot;:&quot;AIUL-DP-VD&quot;,&quot;label&quot;:&quot;AIUL-DP-VD&quot;},{&quot;value&quot;:&quot;AIUL-DP-AU&quot;,&quot;label&quot;:&quot;AIUL-DP-AU&quot;},{&quot;value&quot;:&quot;AIUL-DP-3D&quot;,&quot;label&quot;:&quot;AIUL-DP-3D&quot;},{&quot;value&quot;:&quot;AIUL-DP-TR&quot;,&quot;label&quot;:&quot;AIUL-DP-TR&quot;},{&quot;value&quot;:&quot;AIUL-DP-MX&quot;,&quot;label&quot;:&quot;AIUL-DP-MX&quot;},{&quot;value&quot;:&quot;AIUL-DP-CO&quot;,&quot;label&quot;:&quot;AIUL-DP-CO&quot;},{&quot;value&quot;:&quot;AIUL-IU&quot;,&quot;label&quot;:&quot;AIUL-IU&quot;},{&quot;value&quot;:&quot;AIUL-IU-WR&quot;,&quot;label&quot;:&quot;AIUL-IU-WR&quot;},{&quot;value&quot;:&quot;AIUL-IU-IM&quot;,&quot;label&quot;:&quot;AIUL-IU-IM&quot;},{&quot;value&quot;:&quot;AIUL-IU-VD&quot;,&quot;label&quot;:&quot;AIUL-IU-VD&quot;},{&quot;value&quot;:&quot;AIUL-IU-AU&quot;,&quot;label&quot;:&quot;AIUL-IU-AU&quot;},{&quot;value&quot;:&quot;AIUL-IU-3D&quot;,&quot;label&quot;:&quot;AIUL-IU-3D&quot;},{&quot;value&quot;:&quot;AIUL-IU-TR&quot;,&quot;label&quot;:&quot;AIUL-IU-TR&quot;},{&quot;value&quot;:&quot;AIUL-IU-MX&quot;,&quot;label&quot;:&quot;AIUL-IU-MX&quot;},{&quot;value&quot;:&quot;AIUL-IU-CO&quot;,&quot;label&quot;:&quot;AIUL-IU-CO&quot;}]}],&quot;template&quot;:&quot;<p></p>\n<h2>The
+  route</h2>\n<oer-collection scope=\&quot;children\&quot;
+  view=\&quot;outline\&quot;
+  sort=\&quot;order\&quot;></oer-collection>&quot;},{&quot;id&quot;:&quot;lecture&quot;,&quot;label&quot;:&quot;Lecture&quot;,&quot;icon&quot;:&quot;image:slideshow&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;image&quot;,&quot;label&quot;:&quot;Featured
+  Image&quot;,&quot;kind&quot;:&quot;image&quot;},{&quot;name&quot;:&quot;imageAlt&quot;,&quot;label&quot;:&quot;Image
+  Alt
+  Text&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;aiLicense&quot;,&quot;label&quot;:&quot;AI
+  Usage
+  Licenses&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;AIUL-NA&quot;,&quot;label&quot;:&quot;AIUL-NA&quot;},{&quot;value&quot;:&quot;AIUL-NA-WR&quot;,&quot;label&quot;:&quot;AIUL-NA-WR&quot;},{&quot;value&quot;:&quot;AIUL-NA-IM&quot;,&quot;label&quot;:&quot;AIUL-NA-IM&quot;},{&quot;value&quot;:&quot;AIUL-NA-VD&quot;,&quot;label&quot;:&quot;AIUL-NA-VD&quot;},{&quot;value&quot;:&quot;AIUL-NA-AU&quot;,&quot;label&quot;:&quot;AIUL-NA-AU&quot;},{&quot;value&quot;:&quot;AIUL-NA-3D&quot;,&quot;label&quot;:&quot;AIUL-NA-3D&quot;},{&quot;value&quot;:&quot;AIUL-NA-TR&quot;,&quot;label&quot;:&quot;AIUL-NA-TR&quot;},{&quot;value&quot;:&quot;AIUL-NA-MX&quot;,&quot;label&quot;:&quot;AIUL-NA-MX&quot;},{&quot;value&quot;:&quot;AIUL-NA-CO&quot;,&quot;label&quot;:&quot;AIUL-NA-CO&quot;},{&quot;value&quot;:&quot;AIUL-WA&quot;,&quot;label&quot;:&quot;AIUL-WA&quot;},{&quot;value&quot;:&quot;AIUL-WA-WR&quot;,&quot;label&quot;:&quot;AIUL-WA-WR&quot;},{&quot;value&quot;:&quot;AIUL-WA-IM&quot;,&quot;label&quot;:&quot;AIUL-WA-IM&quot;},{&quot;value&quot;:&quot;AIUL-WA-VD&quot;,&quot;label&quot;:&quot;AIUL-WA-VD&quot;},{&quot;value&quot;:&quot;AIUL-WA-AU&quot;,&quot;label&quot;:&quot;AIUL-WA-AU&quot;},{&quot;value&quot;:&quot;AIUL-WA-3D&quot;,&quot;label&quot;:&quot;AIUL-WA-3D&quot;},{&quot;value&quot;:&quot;AIUL-WA-TR&quot;,&quot;label&quot;:&quot;AIUL-WA-TR&quot;},{&quot;value&quot;:&quot;AIUL-WA-MX&quot;,&quot;label&quot;:&quot;AIUL-WA-MX&quot;},{&quot;value&quot;:&quot;AIUL-WA-CO&quot;,&quot;label&quot;:&quot;AIUL-WA-CO&quot;},{&quot;value&quot;:&quot;AIUL-CD&quot;,&quot;label&quot;:&quot;AIUL-CD&quot;},{&quot;value&quot;:&quot;AIUL-CD-WR&quot;,&quot;label&quot;:&quot;AIUL-CD-WR&quot;},{&quot;value&quot;:&quot;AIUL-CD-IM&quot;,&quot;label&quot;:&quot;AIUL-CD-IM&quot;},{&quot;value&quot;:&quot;AIUL-CD-VD&quot;,&quot;label&quot;:&quot;AIUL-CD-VD&quot;},{&quot;value&quot;:&quot;AIUL-CD-AU&quot;,&quot;label&quot;:&quot;AIUL-CD-AU&quot;},{&quot;value&quot;:&quot;AIUL-CD-3D&quot;,&quot;label&quot;:&quot;AIUL-CD-3D&quot;},{&quot;value&quot;:&quot;AIUL-CD-TR&quot;,&quot;label&quot;:&quot;AIUL-CD-TR&quot;},{&quot;value&quot;:&quot;AIUL-CD-MX&quot;,&quot;label&quot;:&quot;AIUL-CD-MX&quot;},{&quot;value&quot;:&quot;AIUL-CD-CO&quot;,&quot;label&quot;:&quot;AIUL-CD-CO&quot;},{&quot;value&quot;:&quot;AIUL-TC&quot;,&quot;label&quot;:&quot;AIUL-TC&quot;},{&quot;value&quot;:&quot;AIUL-TC-WR&quot;,&quot;label&quot;:&quot;AIUL-TC-WR&quot;},{&quot;value&quot;:&quot;AIUL-TC-IM&quot;,&quot;label&quot;:&quot;AIUL-TC-IM&quot;},{&quot;value&quot;:&quot;AIUL-TC-VD&quot;,&quot;label&quot;:&quot;AIUL-TC-VD&quot;},{&quot;value&quot;:&quot;AIUL-TC-AU&quot;,&quot;label&quot;:&quot;AIUL-TC-AU&quot;},{&quot;value&quot;:&quot;AIUL-TC-3D&quot;,&quot;label&quot;:&quot;AIUL-TC-3D&quot;},{&quot;value&quot;:&quot;AIUL-TC-TR&quot;,&quot;label&quot;:&quot;AIUL-TC-TR&quot;},{&quot;value&quot;:&quot;AIUL-TC-MX&quot;,&quot;label&quot;:&quot;AIUL-TC-MX&quot;},{&quot;value&quot;:&quot;AIUL-TC-CO&quot;,&quot;label&quot;:&quot;AIUL-TC-CO&quot;},{&quot;value&quot;:&quot;AIUL-DP&quot;,&quot;label&quot;:&quot;AIUL-DP&quot;},{&quot;value&quot;:&quot;AIUL-DP-WR&quot;,&quot;label&quot;:&quot;AIUL-DP-WR&quot;},{&quot;value&quot;:&quot;AIUL-DP-IM&quot;,&quot;label&quot;:&quot;AIUL-DP-IM&quot;},{&quot;value&quot;:&quot;AIUL-DP-VD&quot;,&quot;label&quot;:&quot;AIUL-DP-VD&quot;},{&quot;value&quot;:&quot;AIUL-DP-AU&quot;,&quot;label&quot;:&quot;AIUL-DP-AU&quot;},{&quot;value&quot;:&quot;AIUL-DP-3D&quot;,&quot;label&quot;:&quot;AIUL-DP-3D&quot;},{&quot;value&quot;:&quot;AIUL-DP-TR&quot;,&quot;label&quot;:&quot;AIUL-DP-TR&quot;},{&quot;value&quot;:&quot;AIUL-DP-MX&quot;,&quot;label&quot;:&quot;AIUL-DP-MX&quot;},{&quot;value&quot;:&quot;AIUL-DP-CO&quot;,&quot;label&quot;:&quot;AIUL-DP-CO&quot;},{&quot;value&quot;:&quot;AIUL-IU&quot;,&quot;label&quot;:&quot;AIUL-IU&quot;},{&quot;value&quot;:&quot;AIUL-IU-WR&quot;,&quot;label&quot;:&quot;AIUL-IU-WR&quot;},{&quot;value&quot;:&quot;AIUL-IU-IM&quot;,&quot;label&quot;:&quot;AIUL-IU-IM&quot;},{&quot;value&quot;:&quot;AIUL-IU-VD&quot;,&quot;label&quot;:&quot;AIUL-IU-VD&quot;},{&quot;value&quot;:&quot;AIUL-IU-AU&quot;,&quot;label&quot;:&quot;AIUL-IU-AU&quot;},{&quot;value&quot;:&quot;AIUL-IU-3D&quot;,&quot;label&quot;:&quot;AIUL-IU-3D&quot;},{&quot;value&quot;:&quot;AIUL-IU-TR&quot;,&quot;label&quot;:&quot;AIUL-IU-TR&quot;},{&quot;value&quot;:&quot;AIUL-IU-MX&quot;,&quot;label&quot;:&quot;AIUL-IU-MX&quot;},{&quot;value&quot;:&quot;AIUL-IU-CO&quot;,&quot;label&quot;:&quot;AIUL-IU-CO&quot;}]},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true}]},{&quot;id&quot;:&quot;lesson&quot;,&quot;label&quot;:&quot;Lesson&quot;,&quot;icon&quot;:&quot;hax:lesson&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[&quot;section&quot;,&quot;article&quot;,&quot;tutorial&quot;,&quot;lecture&quot;,&quot;exercise&quot;,&quot;project&quot;],&quot;fields&quot;:[{&quot;name&quot;:&quot;estimatedDuration&quot;,&quot;label&quot;:&quot;Estimated
+  Duration&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;e.g.,
+  '3 hours', '2
+  days'&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;courses&quot;,&quot;label&quot;:&quot;Courses&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Course
+  codes associated with this content (e.g., DART 303). Multiple courses are
+  supported.&quot;},{&quot;name&quot;:&quot;learningObjectives&quot;,&quot;label&quot;:&quot;Learning
+  Objectives&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;prerequisites&quot;,&quot;label&quot;:&quot;Prerequisites&quot;,&quot;kind&quot;:&quot;list&quot;,&quot;help&quot;:&quot;Add
+  prerequisite content that should be completed
+  first&quot;,&quot;header&quot;:true},{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single author. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;placeholder&quot;,&quot;label&quot;:&quot;In
+  development&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;A
+  stub that will be developed into the real item. Shown with an In development
+  badge on the
+  site.&quot;},{&quot;name&quot;:&quot;allowEmbed&quot;,&quot;label&quot;:&quot;Allow
+  Embedding&quot;,&quot;kind&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]},{&quot;name&quot;:&quot;aiLicense&quot;,&quot;label&quot;:&quot;AI
+  Usage
+  Licenses&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Select
+  one or more AI usage
+  policies&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;AIUL-NA&quot;,&quot;label&quot;:&quot;AIUL-NA&quot;},{&quot;value&quot;:&quot;AIUL-NA-WR&quot;,&quot;label&quot;:&quot;AIUL-NA-WR&quot;},{&quot;value&quot;:&quot;AIUL-NA-IM&quot;,&quot;label&quot;:&quot;AIUL-NA-IM&quot;},{&quot;value&quot;:&quot;AIUL-NA-VD&quot;,&quot;label&quot;:&quot;AIUL-NA-VD&quot;},{&quot;value&quot;:&quot;AIUL-NA-AU&quot;,&quot;label&quot;:&quot;AIUL-NA-AU&quot;},{&quot;value&quot;:&quot;AIUL-NA-3D&quot;,&quot;label&quot;:&quot;AIUL-NA-3D&quot;},{&quot;value&quot;:&quot;AIUL-NA-TR&quot;,&quot;label&quot;:&quot;AIUL-NA-TR&quot;},{&quot;value&quot;:&quot;AIUL-NA-MX&quot;,&quot;label&quot;:&quot;AIUL-NA-MX&quot;},{&quot;value&quot;:&quot;AIUL-NA-CO&quot;,&quot;label&quot;:&quot;AIUL-NA-CO&quot;},{&quot;value&quot;:&quot;AIUL-WA&quot;,&quot;label&quot;:&quot;AIUL-WA&quot;},{&quot;value&quot;:&quot;AIUL-WA-WR&quot;,&quot;label&quot;:&quot;AIUL-WA-WR&quot;},{&quot;value&quot;:&quot;AIUL-WA-IM&quot;,&quot;label&quot;:&quot;AIUL-WA-IM&quot;},{&quot;value&quot;:&quot;AIUL-WA-VD&quot;,&quot;label&quot;:&quot;AIUL-WA-VD&quot;},{&quot;value&quot;:&quot;AIUL-WA-AU&quot;,&quot;label&quot;:&quot;AIUL-WA-AU&quot;},{&quot;value&quot;:&quot;AIUL-WA-3D&quot;,&quot;label&quot;:&quot;AIUL-WA-3D&quot;},{&quot;value&quot;:&quot;AIUL-WA-TR&quot;,&quot;label&quot;:&quot;AIUL-WA-TR&quot;},{&quot;value&quot;:&quot;AIUL-WA-MX&quot;,&quot;label&quot;:&quot;AIUL-WA-MX&quot;},{&quot;value&quot;:&quot;AIUL-WA-CO&quot;,&quot;label&quot;:&quot;AIUL-WA-CO&quot;},{&quot;value&quot;:&quot;AIUL-CD&quot;,&quot;label&quot;:&quot;AIUL-CD&quot;},{&quot;value&quot;:&quot;AIUL-CD-WR&quot;,&quot;label&quot;:&quot;AIUL-CD-WR&quot;},{&quot;value&quot;:&quot;AIUL-CD-IM&quot;,&quot;label&quot;:&quot;AIUL-CD-IM&quot;},{&quot;value&quot;:&quot;AIUL-CD-VD&quot;,&quot;label&quot;:&quot;AIUL-CD-VD&quot;},{&quot;value&quot;:&quot;AIUL-CD-AU&quot;,&quot;label&quot;:&quot;AIUL-CD-AU&quot;},{&quot;value&quot;:&quot;AIUL-CD-3D&quot;,&quot;label&quot;:&quot;AIUL-CD-3D&quot;},{&quot;value&quot;:&quot;AIUL-CD-TR&quot;,&quot;label&quot;:&quot;AIUL-CD-TR&quot;},{&quot;value&quot;:&quot;AIUL-CD-MX&quot;,&quot;label&quot;:&quot;AIUL-CD-MX&quot;},{&quot;value&quot;:&quot;AIUL-CD-CO&quot;,&quot;label&quot;:&quot;AIUL-CD-CO&quot;},{&quot;value&quot;:&quot;AIUL-TC&quot;,&quot;label&quot;:&quot;AIUL-TC&quot;},{&quot;value&quot;:&quot;AIUL-TC-WR&quot;,&quot;label&quot;:&quot;AIUL-TC-WR&quot;},{&quot;value&quot;:&quot;AIUL-TC-IM&quot;,&quot;label&quot;:&quot;AIUL-TC-IM&quot;},{&quot;value&quot;:&quot;AIUL-TC-VD&quot;,&quot;label&quot;:&quot;AIUL-TC-VD&quot;},{&quot;value&quot;:&quot;AIUL-TC-AU&quot;,&quot;label&quot;:&quot;AIUL-TC-AU&quot;},{&quot;value&quot;:&quot;AIUL-TC-3D&quot;,&quot;label&quot;:&quot;AIUL-TC-3D&quot;},{&quot;value&quot;:&quot;AIUL-TC-TR&quot;,&quot;label&quot;:&quot;AIUL-TC-TR&quot;},{&quot;value&quot;:&quot;AIUL-TC-MX&quot;,&quot;label&quot;:&quot;AIUL-TC-MX&quot;},{&quot;value&quot;:&quot;AIUL-TC-CO&quot;,&quot;label&quot;:&quot;AIUL-TC-CO&quot;},{&quot;value&quot;:&quot;AIUL-DP&quot;,&quot;label&quot;:&quot;AIUL-DP&quot;},{&quot;value&quot;:&quot;AIUL-DP-WR&quot;,&quot;label&quot;:&quot;AIUL-DP-WR&quot;},{&quot;value&quot;:&quot;AIUL-DP-IM&quot;,&quot;label&quot;:&quot;AIUL-DP-IM&quot;},{&quot;value&quot;:&quot;AIUL-DP-VD&quot;,&quot;label&quot;:&quot;AIUL-DP-VD&quot;},{&quot;value&quot;:&quot;AIUL-DP-AU&quot;,&quot;label&quot;:&quot;AIUL-DP-AU&quot;},{&quot;value&quot;:&quot;AIUL-DP-3D&quot;,&quot;label&quot;:&quot;AIUL-DP-3D&quot;},{&quot;value&quot;:&quot;AIUL-DP-TR&quot;,&quot;label&quot;:&quot;AIUL-DP-TR&quot;},{&quot;value&quot;:&quot;AIUL-DP-MX&quot;,&quot;label&quot;:&quot;AIUL-DP-MX&quot;},{&quot;value&quot;:&quot;AIUL-DP-CO&quot;,&quot;label&quot;:&quot;AIUL-DP-CO&quot;},{&quot;value&quot;:&quot;AIUL-IU&quot;,&quot;label&quot;:&quot;AIUL-IU&quot;},{&quot;value&quot;:&quot;AIUL-IU-WR&quot;,&quot;label&quot;:&quot;AIUL-IU-WR&quot;},{&quot;value&quot;:&quot;AIUL-IU-IM&quot;,&quot;label&quot;:&quot;AIUL-IU-IM&quot;},{&quot;value&quot;:&quot;AIUL-IU-VD&quot;,&quot;label&quot;:&quot;AIUL-IU-VD&quot;},{&quot;value&quot;:&quot;AIUL-IU-AU&quot;,&quot;label&quot;:&quot;AIUL-IU-AU&quot;},{&quot;value&quot;:&quot;AIUL-IU-3D&quot;,&quot;label&quot;:&quot;AIUL-IU-3D&quot;},{&quot;value&quot;:&quot;AIUL-IU-TR&quot;,&quot;label&quot;:&quot;AIUL-IU-TR&quot;},{&quot;value&quot;:&quot;AIUL-IU-MX&quot;,&quot;label&quot;:&quot;AIUL-IU-MX&quot;},{&quot;value&quot;:&quot;AIUL-IU-CO&quot;,&quot;label&quot;:&quot;AIUL-IU-CO&quot;}]},{&quot;name&quot;:&quot;publishEmbed&quot;,&quot;label&quot;:&quot;Publish
+  for
+  Embed&quot;,&quot;kind&quot;:&quot;boolean&quot;,&quot;help&quot;:&quot;Make
+  this version available for
+  embedding&quot;}],&quot;template&quot;:&quot;<p></p>\n<h2>In this
+  lesson</h2>\n<oer-collection scope=\&quot;children\&quot;
+  view=\&quot;outline\&quot;
+  sort=\&quot;order\&quot;></oer-collection>&quot;},{&quot;id&quot;:&quot;rubric&quot;,&quot;label&quot;:&quot;Assessment
+  rubric&quot;,&quot;icon&quot;:&quot;lrn:assessment&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[{&quot;name&quot;:&quot;recordId&quot;,&quot;label&quot;:&quot;Record
+  ID&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Original
+  Airtable record ID (for
+  reference)&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;label&quot;:&quot;Name&quot;,&quot;kind&quot;:&quot;text&quot;}]},{&quot;id&quot;:&quot;resource&quot;,&quot;label&quot;:&quot;Resource&quot;,&quot;icon&quot;:&quot;editor:attach-file&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[],&quot;fields&quot;:[]},{&quot;id&quot;:&quot;book&quot;,&quot;label&quot;:&quot;Book&quot;,&quot;icon&quot;:&quot;lrn:book&quot;,&quot;description&quot;:&quot;&quot;,&quot;children&quot;:[&quot;section&quot;,&quot;lesson&quot;,&quot;article&quot;,&quot;tutorial&quot;,&quot;lecture&quot;,&quot;exercise&quot;,&quot;project&quot;],&quot;fields&quot;:[{&quot;name&quot;:&quot;author&quot;,&quot;label&quot;:&quot;Author
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Legacy
+  single-author name. Use the Authors list above for new
+  content.&quot;},{&quot;name&quot;:&quot;authorUrl&quot;,&quot;label&quot;:&quot;Author
+  URL
+  (legacy)&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;date&quot;,&quot;label&quot;:&quot;Date&quot;,&quot;kind&quot;:&quot;date&quot;},{&quot;name&quot;:&quot;coverImage&quot;,&quot;label&quot;:&quot;Cover
+  Image&quot;,&quot;kind&quot;:&quot;image&quot;},{&quot;name&quot;:&quot;coverImageAlt&quot;,&quot;label&quot;:&quot;Cover
+  Image
+  Alt&quot;,&quot;kind&quot;:&quot;text&quot;},{&quot;name&quot;:&quot;introductionTitle&quot;,&quot;label&quot;:&quot;Introduction
+  Page
+  Title&quot;,&quot;kind&quot;:&quot;text&quot;,&quot;help&quot;:&quot;Label for
+  the book's landing page in the sidebar navigation. Defaults to
+  'Introduction'.&quot;},{&quot;name&quot;:&quot;theme&quot;,&quot;label&quot;:&quot;Theme&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;help&quot;:&quot;Visual
+  theme for the book's public-facing
+  pages&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;default&quot;,&quot;label&quot;:&quot;Default&quot;},{&quot;value&quot;:&quot;lambda&quot;,&quot;label&quot;:&quot;Lambda
+  (Dark
+  Tech)&quot;},{&quot;value&quot;:&quot;minimal&quot;,&quot;label&quot;:&quot;Minimal&quot;}]},{&quot;name&quot;:&quot;license&quot;,&quot;label&quot;:&quot;License&quot;,&quot;kind&quot;:&quot;select&quot;,&quot;options&quot;:[{&quot;value&quot;:&quot;CC
+  BY 4.0&quot;,&quot;label&quot;:&quot;CC BY
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-SA
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-SA
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC BY-NC-ND
+  4.0&quot;,&quot;label&quot;:&quot;CC BY-NC-ND
+  4.0&quot;},{&quot;value&quot;:&quot;CC0 1.0&quot;,&quot;label&quot;:&quot;CC0
+  1.0&quot;},{&quot;value&quot;:&quot;All Rights
+  Reserved&quot;,&quot;label&quot;:&quot;All Rights
+  Reserved&quot;}]}],&quot;template&quot;:&quot;<p></p>\n<h2>Contents</h2>\n<oer-collection
+  scope=\&quot;children\&quot; view=\&quot;outline\&quot;
+  sort=\&quot;order\&quot;></oer-collection>&quot;}]"
+  _state="{&quot;q&quot;:&quot;&quot;,&quot;filters&quot;:{},&quot;tags&quot;:[],&quot;sortKey&quot;:null,&quot;sortDir&quot;:1,&quot;groupBy&quot;:&quot;&quot;,&quot;page&quot;:1,&quot;view&quot;:null,&quot;hidden&quot;:[]}"></oer-collection>

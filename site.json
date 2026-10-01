@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790824515
+      "updated": 1790824529
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -163,7 +163,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790824489,
+        "updated": 1790824529,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -171,9 +171,10 @@
         "pageType": "section",
         "hideInMenu": false,
         "locked": false,
-        "readtime": 1,
+        "readtime": 4,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": "courseicons:learning-objectives",
+        "linkTarget": "_self"
       }
     },
     {
