@@ -2818,7 +2818,7 @@
       "order": 1001,
       "parent": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
       "title": "v0.9.0",
-      "description": "",
+      "description": "Learn to work with game engines like Unity and Unreal Engine, implementing 3D assets and creating interactive experiences.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
