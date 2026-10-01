@@ -558,7 +558,10 @@ class OerOutlineBuilder extends LitElement {
     else if (e.key === "ArrowLeft" && this._hasChildren(index) && !this._collapsed.has(row.id)) this._toggle(row.id);
     else if (e.key === "Delete" || (e.key === "Backspace" && !row.title)) this._remove(row.id);
     else if ((e.key === "t" || e.key === "l" || e.key === "v") && !e.metaKey && !e.ctrlKey && !e.altKey) {
-      const sel = { t: ".type-chip:not(.level-chip)", l: ".level-chip", v: ".ref" }[e.key];
+      // levels have no chip on the row: L opens the menu at the title, and
+      // only inside a pathway with several levels (or on a tagged item)
+      if (e.key === "l" && this._levelsFor(index).length < 2 && !row.level) return;
+      const sel = { t: ".type-chip", l: ".title", v: ".ref" }[e.key];
       const chip = e.currentTarget.querySelector(sel);
       if (!chip) return;
       this._openMenu(row, index, { t: "type", l: "level", v: "version" }[e.key], chip);
@@ -1299,16 +1302,6 @@ class OerOutlineBuilder extends LitElement {
         color: var(--foreground);
         background: var(--accent);
       }
-      .level-chip {
-        padding: 0;
-        background: transparent;
-      }
-      .level-chip.untyped {
-        padding: 0 0.5rem;
-      }
-      .level-chip .level {
-        font-size: 0.6875rem;
-      }
       .type-menu .level {
         border: 0;
         padding: 0;
@@ -1590,23 +1583,7 @@ class OerOutlineBuilder extends LitElement {
     </button>`;
   }
 
-  _renderLevelChip(row, index) {
-    const levels = this._levelsFor(index);
-    if (levels.length < 2 && !row.level) return "";
-    return html`<button
-      class="type-chip level-chip ${row.level ? "" : "untyped"}"
-      tabindex="-1"
-      title="Level (click to change)"
-      aria-label="Level: ${row.level || "every level"}. Change"
-      @mousedown="${(e) => e.preventDefault()}"
-      @click="${(e) => {
-        e.stopPropagation();
-        this._openMenu(row, index, "level", e.currentTarget);
-      }}"
-    >
-      ${row.level ? levelChip(row.level) : "Level"}
-    </button>`;
-  }
+
 
   _renderTypeMenu() {
     const m = this._typeMenu;
@@ -1828,7 +1805,6 @@ class OerOutlineBuilder extends LitElement {
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
       </button>
       ${row.ref ? this._renderRef(row, index) : ""}
-      ${this._renderLevelChip(row, index)}
       ${this._renderTypeChip(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
       <div class="hover-only">
