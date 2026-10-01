@@ -1520,6 +1520,117 @@ export const editorSkin = {
   `,
 
   /* Site Settings sub-dialogs */
+  "editable-table-display": css`
+    :host {
+      font-family: var(--font-sans) !important;
+      border: 0 !important;
+      outline: 0 !important;
+    }
+    /* the outer container's border already frames the table */
+    [class*="table"],
+    .wrapper {
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+    table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      border: 0 !important;
+      font-size: 0.8125rem !important;
+    }
+    th,
+    thead td {
+      height: 2.5rem !important;
+      padding: 0 0.75rem !important;
+      text-align: start !important;
+      font-weight: 500 !important;
+      color: var(--muted-foreground) !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--border) !important;
+      white-space: nowrap !important;
+    }
+    td {
+      padding: 0.5rem 0.75rem !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--border) !important;
+      vertical-align: middle !important;
+      background: transparent !important;
+    }
+    tbody tr:hover td {
+      background: color-mix(in srgb, var(--muted) 50%, transparent) !important;
+    }
+    caption {
+      font-weight: 600 !important;
+      text-align: start !important;
+    }
+  `,
+  "haxcms-files-admin-dialog": css`
+    :host {
+      display: block !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+    .shell,
+    .panel {
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    /* the file table scrolls inside the dialog instead of spilling out */
+    .tw {
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-lg) !important;
+    }
+    .upload-row {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      padding: 0.75rem !important;
+      border: 1px dashed var(--input-border, var(--border)) !important;
+      border-radius: var(--radius-lg) !important;
+      background: color-mix(in srgb, var(--muted) 40%, transparent) !important;
+    }
+    .status {
+      margin: 0.5rem 0 !important;
+      font-size: 0.8125rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      border: 0 !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.8125rem !important;
+    }
+    th {
+      height: 2.5rem !important;
+      padding: 0 0.75rem !important;
+      text-align: start !important;
+      font-weight: 500 !important;
+      color: var(--muted-foreground) !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--border) !important;
+      white-space: nowrap !important;
+    }
+    td {
+      padding: 0.5rem 0.75rem !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--border) !important;
+      vertical-align: middle !important;
+      background: transparent !important;
+    }
+    tr:last-child td {
+      border-bottom: 0 !important;
+    }
+    a {
+      color: var(--link, var(--primary)) !important;
+    }
+  `,
   "haxcms-theme-picker": css`
     :host {
       font-family: var(--font-sans) !important;
