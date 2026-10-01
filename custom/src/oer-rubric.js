@@ -35,16 +35,16 @@ export class OerRubric extends DDD {
     return {
       ...super.properties,
       rubricId: { type: String, attribute: "rubric-id", reflect: true },
-      _rubric: { state: true },
-      _loaded: { state: true },
     };
   }
 
   constructor() {
     super();
     this.rubricId = "";
-    this._rubric = null;
-    this._loaded = false;
+    // Internal state is kept out of the declared properties on purpose:
+    // HAX serializes every declared property into the saved page HTML.
+    this.__rubric = null;
+    this.__loaded = false;
   }
 
   updated(changed) {
@@ -54,8 +54,9 @@ export class OerRubric extends DDD {
 
   async _load() {
     const rubrics = await loadRubrics();
-    this._rubric = rubrics.find((r) => r.slug === this.rubricId) ?? null;
-    this._loaded = true;
+    this.__rubric = rubrics.find((r) => r.slug === this.rubricId) ?? null;
+    this.__loaded = true;
+    this.requestUpdate();
   }
 
   get _hidden() {
@@ -142,8 +143,8 @@ export class OerRubric extends DDD {
   }
 
   render() {
-    if (this._hidden || !this._loaded) return html``;
-    const r = this._rubric;
+    if (this._hidden || !this.__loaded) return html``;
+    const r = this.__rubric;
     if (!r) {
       return html`<div class="missing">
         Rubric not found${this.rubricId ? html`: <code>${this.rubricId}</code>` : ""}
