@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>3D Modeling Fundamentals</title>
-    <id>item-d02093f1-a96b-4603-905e-05a4e31c3e99</id>
-    <updated>2026-10-01T04:46:25.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/3d-modeling-fundamentals"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-71d8f72c-1a31-4a3b-b75d-90f57f6fde5d"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Texturing and UV Mapping</title>
     <id>item-2451e262-c558-4a78-b7e1-cf178282843c</id>
     <updated>2026-10-01T04:46:25.000Z</updated>
@@ -614,6 +602,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-a0bdd09d-063f-4a94-8c59-959500faec76"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>You don&apos;t see that everyday object posters</title>
+    <id>item-7acb81ac-0e9b-495e-8b03-febeafd81ac0</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-7d740da0-5510-4b22-8fcb-34cdc28c5bd7"></oer-include> ]]>
     </content>
   </entry>
 </feed>

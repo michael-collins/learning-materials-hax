@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>3D Modeling Fundamentals</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/3d-modeling-fundamentals</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/3d-modeling-fundamentals</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Texturing and UV Mapping</title>
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-and-uv-mapping</link>
       <description></description>
@@ -185,6 +178,13 @@
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>You don&apos;t see that everyday object posters</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
