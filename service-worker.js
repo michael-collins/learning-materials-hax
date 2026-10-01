@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.html","IBDhoIsBFgzBr8ikGIomhfFDm0McFX2zzniSYXLs"],["index.html","IR6eQFQH0EChpF4ut11ZmAxo20oYnGt_NcFn8nOuA0"],["assets/icon-512x512.png","b9VZvCMQtr4nhMxkI3xGq_u3p_NbO0W8Pwdk4oMP56Q"],["assets/icon-256x256.png","Rv0icB_vJ_r4N63AzkxehyQJMLHUZ_2VRZXVjEwFvwI"],["assets/icon-192x192.png","DqIZbF08cr_bfoZP_vT5kAJ2UnmWTjzLadQgwpgq1A"],["assets/icon-144x144.png","ff0hMWpBttq99n4TD5zNBtgULPWKE34AUVl6bk_VZ9k"],["assets/icon-96x96.png","dp_hmi3RKbIh8mndJfbNVwT5lcm9LmlWVvrhZXXj2zY"],["assets/icon-72x72.png","FCYgCqOD8R8TspoMdYxoMkrNNW7aEIJySt5OmQI9g"],["assets/icon-48x48.png","P1MVqGw8_oZNJ3M2GXX9YByXTtyRDRAwADA4e5szxM"],["manifest.json","pEdbM8uWDROsMxOSDZ1wATSJxn4CS00ZG38wRlo9k9o"],["site.json","TxXYQNwKPedfVzEFDpDqCSqS1SvhagYpleNeygLAzdc"],["404.html","7OklQodsdhOo7wl5wbGFkJ1ABsR6P2j8Fyz07FZFZG8"]];
+var precacheConfig = {{ swhash|json_encode(constant('JSON_PRETTY_PRINT'))|raw }};
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 
@@ -285,3 +285,6 @@ self.addEventListener('fetch', function (event) {
 
 
 // Runtime cache configuration, using the sw-toolbox library.
+{% if cdnRegex %}
+toolbox.router.get(/{{ cdnRegex|raw }}/, toolbox.fastest, {});
+{% endif %}

@@ -6,22 +6,15 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/learning-materials</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 21:03:12 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 02:27:25 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/learning-materials/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Welcome to learning-materials</title>
-      <link>https://localhost:3000/learning-materials/welcome</link>
+      <link>https://localhost:3000/learning-materials/welcome-to-learning-materials</link>
       <description>Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We&apos;ve got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a little video exploring some of them! Here&apos;s a list of just a few things to get started, or if your a pro, delete this content and have fun! Edit this content by hitting &quot;Edit page&quot; above Hit enter in a paragraph of text to add another one Click &quot;Merlin&quot; to see a list of all the things you can do Tr...</description>
-      <guid>https://localhost:3000/learning-materials/welcome</guid>
+      <guid>https://localhost:3000/learning-materials/welcome-to-learning-materials</guid>
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>Lessons</title>
-      <link>https://localhost:3000/learning-materials/lessons</link>
-      <description>Lessons group lectures, tutorials and exercises around a set of learning objectives.</description>
-      <guid>https://localhost:3000/learning-materials/lessons</guid>
-      <pubDate>Wed, 30 Sep 2026 21:03:11 GMT</pubDate>
     </item>
     <item>
       <title>Animation Principles</title>
@@ -31,11 +24,11 @@
       <pubDate>Wed, 30 Sep 2026 21:03:11 GMT</pubDate>
     </item>
     <item>
-      <title>Exercises</title>
-      <link>https://localhost:3000/learning-materials/exercises</link>
-      <description>Formative practice focused on a narrow set of competencies.</description>
-      <guid>https://localhost:3000/learning-materials/exercises</guid>
-      <pubDate>Wed, 30 Sep 2026 21:03:12 GMT</pubDate>
+      <title>Lessons</title>
+      <link>https://localhost:3000/learning-materials/lessons</link>
+      <description>Lessons group lectures, tutorials and exercises around a set of learning objectives.</description>
+      <guid>https://localhost:3000/learning-materials/lessons</guid>
+      <pubDate>Wed, 30 Sep 2026 21:03:11 GMT</pubDate>
     </item>
     <item>
       <title>Animating a bouncing ball</title>
@@ -51,6 +44,13 @@
       <description>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264. Learning Objectives Become familiarized with adding animation sequences as moving textures on 3D geometry. Practice rendering image sequences and producing video files capable to be streamed online. Instructions Watch the tutorials. Create and set a pr...</description>
       <category>Blender,AfterEffects,Adobe Media Encoder</category>
       <guid>https://localhost:3000/learning-materials/exercises/animated-textures</guid>
+      <pubDate>Wed, 30 Sep 2026 21:03:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>Exercises</title>
+      <link>https://localhost:3000/learning-materials/exercises</link>
+      <description>Formative practice focused on a narrow set of competencies.</description>
+      <guid>https://localhost:3000/learning-materials/exercises</guid>
       <pubDate>Wed, 30 Sep 2026 21:03:12 GMT</pubDate>
     </item>
   </channel>

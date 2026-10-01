@@ -15,12 +15,20 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790802192
+      "updated": 1790821645
     },
     "theme": {
       "element": "custom-oer-docs-theme",
       "path": "./custom/build/custom.es6.js",
-      "name": "CustomOerDocsTheme"
+      "name": "CustomOerDocsTheme",
+      "variables": {
+        "image": "",
+        "imageAlt": "",
+        "imageLink": "",
+        "icon": "",
+        "hexCode": "#0071b6",
+        "cssVariable": ""
+      }
     },
     "node": {
       "fields": {}
@@ -31,36 +39,17 @@
       "id": "item-7cab202c-92ec-4555-a7a8-d6a1474198d7",
       "indent": 0,
       "location": "pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.html",
-      "slug": "welcome",
+      "slug": "welcome-to-learning-materials",
       "order": 0,
       "parent": null,
       "title": "Welcome to learning-materials",
       "description": "",
       "metadata": {
         "created": 1790801562,
-        "updated": 1790801562
-      }
-    },
-    {
-      "id": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "indent": 0,
-      "location": "pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.html",
-      "slug": "lessons",
-      "order": 0,
-      "parent": null,
-      "title": "Lessons",
-      "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
-      "metadata": {
-        "created": 1790802191,
-        "updated": 1790802191,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
+        "updated": 1790821733,
         "published": true,
-        "pageType": "section",
-        "hideInMenu": false,
         "locked": false,
-        "readtime": 1
+        "status": ""
       }
     },
     {
@@ -74,7 +63,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790802192,
+        "updated": 1790821733,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -82,29 +71,9 @@
         "pageType": "lesson",
         "hideInMenu": false,
         "locked": false,
-        "readtime": 1
-      }
-    },
-    {
-      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "indent": 0,
-      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
-      "slug": "exercises",
-      "order": 0,
-      "parent": null,
-      "title": "Exercises",
-      "description": "Formative practice focused on a narrow set of competencies.",
-      "metadata": {
-        "created": 1790802192,
-        "updated": 1790802192,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": true,
-        "pageType": "section",
-        "hideInMenu": false,
-        "locked": false,
-        "readtime": 1
+        "readtime": 1,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -118,7 +87,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790802192,
+        "updated": 1790821733,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -127,7 +96,9 @@
         "hideInMenu": false,
         "tags": "Blender,Animation",
         "locked": false,
-        "readtime": 1
+        "readtime": 1,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -135,13 +106,13 @@
       "indent": 1,
       "location": "pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.html",
       "slug": "exercises/animated-textures",
-      "order": 0,
+      "order": 1,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Animated textures",
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790802192,
+        "updated": 1790821733,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -150,23 +121,57 @@
         "hideInMenu": false,
         "tags": "Blender,AfterEffects,Adobe Media Encoder",
         "locked": false,
-        "readtime": 1
+        "readtime": 1,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
-      "id": "item-895266ce-3509-4abd-91f3-c243e570a36f",
+      "id": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "indent": 0,
-      "location": "pages/item-895266ce-3509-4abd-91f3-c243e570a36f/index.html",
-      "slug": "outline-test-page",
-      "order": 3,
+      "location": "pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.html",
+      "slug": "lessons",
+      "order": 1,
       "parent": null,
-      "title": "Outline test page",
-      "description": "",
+      "title": "Lessons",
+      "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
-        "created": 1790821625,
-        "updated": 1790821625,
+        "created": 1790802191,
+        "updated": 1790821733,
         "images": [],
-        "videos": []
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "indent": 0,
+      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
+      "slug": "exercises",
+      "order": 2,
+      "parent": null,
+      "title": "Exercises",
+      "description": "Formative practice focused on a narrow set of competencies.",
+      "metadata": {
+        "created": 1790802192,
+        "updated": 1790821733,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     }
   ]

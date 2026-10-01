@@ -1,8 +1,11 @@
 User-agent: *
+{% if privateSite %}
+Disallow: /
+{% else %}
 Crawl-delay: 10
 Allow: /
-Sitemap: https://localhost/_sites/learning-materials/sitemap.xml
-LLMS: https://localhost/_sites/learning-materials/llms.txt
+Sitemap: {{ domain }}sitemap.xml
+LLMS: {{ domain }}llms.txt
 # CSS, JS, Images
 Allow: /assets/*.css$
 Allow: /assets/*.css?
@@ -28,3 +31,4 @@ Disallow: /dist/
 Disallow: /node_modules/
 Disallow: /pages/
 Disallow: /theme/
+{% endif %}
