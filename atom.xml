@@ -184,13 +184,16 @@ Become </summary>
   <entry>
     <title>Type test</title>
     <id>item-e8fc3bba-6963-49c7-887d-998d5f8eef98</id>
-    <updated>2026-10-01T02:33:10.000Z</updated>
+    <updated>2026-10-01T02:33:26.000Z</updated>
     <published>2026-10-01T02:33:06.000Z</published>
-    <summary></summary>
+    <summary>hello edited
+</summary>
     <link href="https://localhost:3000/learning-materials/type-test"/>
     
     <content type="html">
-      <![CDATA[ <p>hello</p> ]]>
+      <![CDATA[ 
+<p>hello edited</p>
+ ]]>
     </content>
   </entry>
 </feed>

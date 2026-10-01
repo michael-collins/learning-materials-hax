@@ -3,15 +3,31 @@
   "indent": 0,
   "location": "pages/item-e8fc3bba-6963-49c7-887d-998d5f8eef98/index.json",
   "slug": "type-test",
-  "order": 99,
+  "order": 3,
   "parent": null,
   "title": "Type test",
-  "description": "",
+  "description": "hello edited\n",
   "metadata": {
     "created": 1790821986,
-    "updated": 1790821986,
+    "updated": 1790822006,
     "images": [],
-    "videos": []
+    "videos": [],
+    "published": true,
+    "locked": false,
+    "status": "",
+    "pageType": "lesson",
+    "oerFields": {
+      "estimatedDuration": "2h",
+      "learningObjectives": [
+        "A",
+        "B"
+      ]
+    },
+    "overridePathauto": false,
+    "hideInMenu": false,
+    "icon": "hax:lesson",
+    "linkTarget": "_self",
+    "readtime": 1
   },
-  "content": "<p>hello</p>"
+  "content": "\n<p>hello edited</p>\n"
 }
