@@ -67,10 +67,6 @@ export class OerCollection extends LitElement {
       sort: { type: String, reflect: true },
       perPage: { type: Number, attribute: "per-page", reflect: true },
       controls: { type: String, reflect: true }, // "full" | "none"
-      _items: { state: true },
-      _defs: { state: true },
-      _state: { state: true },
-      _columnsOpen: { state: true },
     };
   }
 
@@ -1081,6 +1077,20 @@ export class OerCollection extends LitElement {
       demoSchema: [{ tag: "oer-collection", properties: { types: "lesson", scope: "site", view: "table", sort: "title", perPage: 20, controls: "full" }, content: "" }],
     };
   }
+}
+
+// Internal state is kept out of `properties`: HAX writes every declared
+// property into the saved page, so these re-render via requestUpdate instead
+for (const name of ["_items", "_defs", "_state", "_columnsOpen"]) {
+  Object.defineProperty(OerCollection.prototype, name, {
+    get() {
+      return this[`__${name}`];
+    },
+    set(value) {
+      this[`__${name}`] = value;
+      this.requestUpdate();
+    },
+  });
 }
 
 if (!customElements.get(OerCollection.tag)) customElements.define(OerCollection.tag, OerCollection);
