@@ -15,6 +15,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { registerBlocks } from "../blocks/register.js";
 import { versionsOf } from "../versions/versioning.js";
+import { SYSTEM_TYPE } from "../types/content-types.js";
 
 const cache = new Map(); // location -> Promise<html>
 
@@ -210,7 +211,7 @@ export class OerInclude extends LitElement {
   static get haxProperties() {
     const pages = Object.fromEntries(
       (toJS(store.manifest?.items) || [])
-        .filter((i) => !i.metadata?.oerSnapshotOf && i.metadata?.pageType !== "oer-system")
+        .filter((i) => !i.metadata?.oerSnapshotOf && i.metadata?.pageType !== SYSTEM_TYPE)
         .map((i) => [i.id, i.title]),
     );
     return {

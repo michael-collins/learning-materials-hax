@@ -10,6 +10,7 @@
  */
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { versionsOf } from "../versions/versioning.js";
+import { SYSTEM_TYPE } from "./content-types.js";
 
 const items = () => toJS(store.manifest?.items) || [];
 
@@ -31,7 +32,7 @@ export function resolveLinks(value, list = items()) {
 export function usedIn(pageId, types, list = items()) {
   const out = [];
   for (const item of list) {
-    if (item.id === pageId || item.metadata?.oerSnapshotOf || item.metadata?.pageType === "oer-system") continue;
+    if (item.id === pageId || item.metadata?.oerSnapshotOf || item.metadata?.pageType === SYSTEM_TYPE) continue;
     if (item.metadata?.oerRef?.page === pageId) {
       // the chapter's parent (the book or lesson that includes it) is the useful link
       const parent = list.find((p) => p.id === item.parent);

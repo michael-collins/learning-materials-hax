@@ -14,6 +14,7 @@
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { flatten } from "../outline/outline-model.js";
 import { versionsOf, isSnapshot } from "../versions/versioning.js";
+import { SYSTEM_TYPE } from "../types/content-types.js";
 import { embedUrl } from "../embed/embed-mode.js";
 
 const items = () => toJS(store.manifest?.items) || [];
@@ -45,7 +46,7 @@ export async function bookChapters(bookId) {
   const all = items();
   const book = all.find((i) => i.id === bookId);
   const list = flatten(
-    all.filter((i) => !isSnapshot(i) && i.metadata?.pageType !== "oer-system" && i.metadata?.published !== false),
+    all.filter((i) => !isSnapshot(i) && i.metadata?.pageType !== SYSTEM_TYPE && i.metadata?.published !== false),
     bookId,
   );
   const out = [{ item: book, depth: -1, html: await resolvedHtml(book, all) }];
@@ -159,7 +160,7 @@ export async function exportHtmlZip(bookId) {
 export async function exportCommonCartridge(bookId) {
   const all = items();
   const book = all.find((i) => i.id === bookId);
-  const list = flatten(all.filter((i) => !isSnapshot(i) && i.metadata?.pageType !== "oer-system" && i.metadata?.published !== false), bookId);
+  const list = flatten(all.filter((i) => !isSnapshot(i) && i.metadata?.pageType !== SYSTEM_TYPE && i.metadata?.published !== false), bookId);
   const files = [];
   const resources = [];
   const link = (item, n) => {

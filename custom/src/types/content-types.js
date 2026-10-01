@@ -6,8 +6,10 @@
  * Storage (HAXcms has no content-type system and no free-form site
  * settings, but it keeps any metadata on outline items):
  * - Definitions live in `metadata.oerContentTypes` of one hidden system
- *   page (`pageType: "oer-system"`), edited by oer-type-editor.
- * - A page's type is its `metadata.pageType` (HAX's own page-type field);
+ *   page (`pageType: "oer:system"`), edited by oer-type-editor.
+ * - A page's type is its `metadata.pageType` (HAX's own page-type field),
+ *   always prefixed `oer:` so it can't collide with HAX's own values
+ *   (lesson, project…, which carry HAX icons and labels);
  *   its field values are `metadata.oerFields`.
  * All writes go through saveOutline, so each change is one git commit.
  *
@@ -20,7 +22,10 @@
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
 
-export const SYSTEM_TYPE = "oer-system";
+/** Every content type id carries this prefix (see the header comment). */
+export const TYPE_PREFIX = "oer:";
+export const SYSTEM_TYPE = "oer:system";
+export const SECTION_TYPE = "oer:section";
 
 export const FIELD_KINDS = [
   { kind: "text", label: "Text" },
@@ -82,12 +87,14 @@ export function typeUsage(list = items()) {
   return counts;
 }
 
-/** A machine id from a label: "Case study" → "case-study". */
+/** A machine id from a label: "Case study" → "oer:case-study". */
 export const typeIdFrom = (label) =>
-  String(label || "")
+  TYPE_PREFIX +
+  (String(label || "")
+    .replace(/^oer:/i, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "") || "type";
+    .replace(/^-+|-+$/g, "") || "type");
 
 /** Field key from a label: "Estimated duration" → "estimatedDuration". */
 export const fieldNameFrom = (label) => {

@@ -2,7 +2,7 @@
  * Pathways, after learning-materials-decapcms' pathway pages
  * (composables/usePathwayData + useOutlineResolver).
  *
- * In HAX a pathway is a page of type "pathway" whose sub-pages are its
+ * In HAX a pathway is a page of type "oer:pathway" whose sub-pages are its
  * modules; each module's sub-pages are its items. An item is usually a
  * linked chapter (`metadata.oerRef`, shown with oer-include), so it reads
  * its type, duration and status from the original page.
@@ -17,11 +17,12 @@
 import { html, css } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, isSystemItem } from "../types/content-types.js";
+import { contentTypes, isSystemItem, SECTION_TYPE } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
 import { resolveLinks } from "../types/relations.js";
 
-export const PATHWAY_TYPE = "pathway";
+export const PATHWAY_TYPE = "oer:pathway";
+export const SPECIALIZATION_TYPE = "oer:specialization";
 export const LEVELS = ["Beginner", "Intermediate", "Advanced"];
 
 const toList = (v) => (Array.isArray(v) ? v : typeof v === "string" && v ? v.split(",").map((s) => s.trim()).filter(Boolean) : []);
@@ -126,7 +127,7 @@ export function resolvePathway(pathway, list = items(), types = contentTypes(lis
   const kids = childrenMap(list.filter(visibleTo));
   const byId = new Map(list.map((i) => [i.id, i]));
   const typeOf = (i) => types.find((t) => t.id === i?.metadata?.pageType) || null;
-  const isContainer = (i) => !i.metadata?.oerRef?.page && (!i.metadata?.pageType || i.metadata.pageType === "section");
+  const isContainer = (i) => !i.metadata?.oerRef?.page && (!i.metadata?.pageType || i.metadata.pageType === SECTION_TYPE);
 
   const resolveItem = (page, inherited, group) => {
     const refId = page.metadata?.oerRef?.page;
@@ -149,7 +150,7 @@ export function resolvePathway(pathway, list = items(), types = contentTypes(lis
   };
 
   const modules = (kids.get(pathway.id) || [])
-    .filter((m) => m.metadata?.pageType !== "specialization")
+    .filter((m) => m.metadata?.pageType !== SPECIALIZATION_TYPE)
     .map((m) => {
       const level = m.metadata?.oerLevel || "";
       const rows = [];
@@ -178,7 +179,7 @@ export function resolvePathway(pathway, list = items(), types = contentTypes(lis
     prerequisites: resolveLinks(f.prerequisites, list),
     modules,
     // pathways planned before they had modules list their specializations
-    specializations: (kids.get(pathway.id) || []).filter((m) => m.metadata?.pageType === "specialization"),
+    specializations: (kids.get(pathway.id) || []).filter((m) => m.metadata?.pageType === SPECIALIZATION_TYPE),
   };
 }
 

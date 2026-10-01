@@ -27,7 +27,7 @@ import { registerBlocks } from "./register.js";
 import { contentTypes, isSystemItem } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
 import { resolveLinks } from "../types/relations.js";
-import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
+import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_TYPE } from "../pathways/pathway-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -156,7 +156,7 @@ export class OerCollection extends LitElement {
       }
     }
     if (wanted.size) pool = pool.filter((i) => wanted.has(i.metadata?.pageType));
-    else if (this.view === "pathways") pool = pool.filter((i) => i.metadata?.pageType === "pathway");
+    else if (this.view === "pathways") pool = pool.filter((i) => i.metadata?.pageType === PATHWAY_TYPE);
     else if (this.view !== "outline" && this.scope === "site") pool = pool.filter((i) => i.metadata?.pageType);
     return pool;
   }
@@ -1256,7 +1256,7 @@ export class OerCollection extends LitElement {
         ],
         advanced: [],
       },
-      demoSchema: [{ tag: "oer-collection", properties: { types: "lesson", scope: "site", view: "table", sort: "title", perPage: 20, controls: "full" }, content: "" }],
+      demoSchema: [{ tag: "oer-collection", properties: { types: "oer:lesson", scope: "site", view: "table", sort: "title", perPage: 20, controls: "full" }, content: "" }],
     };
   }
 }

@@ -53,7 +53,7 @@ function siteEditor() {
 
 /** A content type's starter content (its template), or an empty paragraph. */
 export function starterContent(pageType) {
-  const defs = store.manifest?.items?.find?.((i) => i.metadata?.pageType === "oer-system")?.metadata?.oerContentTypes;
+  const defs = store.manifest?.items?.find?.((i) => i.metadata?.pageType === "oer:system")?.metadata?.oerContentTypes;
   const type = defs?.types?.find?.((t) => t.id === pageType);
   return (type?.template || "").trim() || "<p></p>";
 }
