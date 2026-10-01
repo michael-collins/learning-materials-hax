@@ -93,9 +93,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-dda3178f-c205-4e8d-92e4-d25ccdf18444/index.md)
 - [Texturing random objects](https://localhost:3000/learning-materials/pages/item-4989e3f6-c083-4c34-8e14-c601ed5f7358/index.md)
 - [Modular Environment Kit](https://localhost:3000/learning-materials/pages/item-4288443d-8358-4b17-b92b-12331e9293fb/index.md)
-- [Texturing](https://localhost:3000/learning-materials/pages/item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15/index.md)
 - [Texturing the Airline Chair](https://localhost:3000/learning-materials/pages/item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58/index.md)
-- [Texturing a room](https://localhost:3000/learning-materials/pages/item-1d0f929c-4fd7-458e-b49c-cd5e82271549/index.md)
 - [Rendering Techniques](https://localhost:3000/learning-materials/pages/item-3c8b1bf0-6157-4224-8844-e11f1745e9ab/index.md)
 - [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
 - [Modeling the Airline Chair](https://localhost:3000/learning-materials/pages/item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7/index.md)
@@ -132,6 +130,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Modeling and sculpting a sea creature](https://localhost:3000/learning-materials/pages/item-21cc4009-8627-4071-b315-1a7e3dbb256b/index.md)
 - [Sculpting, retopo, and texturing](https://localhost:3000/learning-materials/pages/item-32fe8fba-fe85-48b9-bbb3-2f92271a2969/index.md)
 - [Realtime Game Environment](https://localhost:3000/learning-materials/pages/item-736dfac1-2506-450c-a0c0-4b48170057f3/index.md)
+- [Texturing a room](https://localhost:3000/learning-materials/pages/item-1d0f929c-4fd7-458e-b49c-cd5e82271549/index.md)
 - [Lighting, camera & rendering](https://localhost:3000/learning-materials/pages/item-94b5861e-b488-429f-956d-30a56545a026/index.md)
 - [Introduction to Cameras, Lighting, and Rendering](https://localhost:3000/learning-materials/pages/item-876ebb82-4e13-4bbb-8932-a6b4ac21044d/index.md)
 - [Lighting and Rendering the Airline Chair](https://localhost:3000/learning-materials/pages/item-564702ff-012a-4bf1-b7dc-dc5b32eed7b4/index.md)
