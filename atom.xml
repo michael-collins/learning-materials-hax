@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Drawing for 3D Design</title>
-    <id>item-ecd34213-666d-44f0-aa95-0225a82ee26a</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-dbfdd3ea-1ceb-4cbc-900a-1607a5589add"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Modeling a Low Poly Animal and Introduction to Particles</title>
     <id>item-f3cd38ac-0f0c-4f4d-8b19-9c3656fb25dc</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -774,6 +762,19 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-3a5f87f8-0e55-47f8-b4cf-34e719c73c1a"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>3D Modeling Fundamentals</title>
+    <id>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>
+ ]]>
     </content>
   </entry>
 </feed>

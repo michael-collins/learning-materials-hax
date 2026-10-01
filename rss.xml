@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Drawing for 3D Design</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Modeling a Low Poly Animal and Introduction to Particles</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles</link>
       <description></description>
@@ -187,6 +180,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/modular-environment-kit</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/modular-environment-kit</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>3D Modeling Fundamentals</title>
+      <link>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</link>
+      <description>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
