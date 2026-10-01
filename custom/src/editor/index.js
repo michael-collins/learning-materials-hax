@@ -14,13 +14,26 @@ import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
 
-installLucideIcons();
-installQuietMode();
-installShadowStyles();
-registerShadowStyles(editorSkin);
-installCommandPalette();
-installUxTweaks();
-installTrayEnhancer();
+/**
+ * Turn the editor chrome on. Called by custom-oer-docs-theme when it is the
+ * active theme: HAXcms loads this bundle (custom/build/custom.es6.js) for
+ * every theme, so nothing here may run under a stock theme, which keeps its
+ * own top bar and look. Safe to call more than once.
+ */
+let installed = false;
+export function installEditorChrome() {
+  if (installed) return;
+  installed = true;
+  installLucideIcons();
+  installQuietMode();
+  installShadowStyles();
+  registerShadowStyles(editorSkin);
+  installCommandPalette();
+  installUxTweaks();
+  installTrayEnhancer();
+  new MutationObserver(adoptStockBar).observe(globalThis.document.body, { childList: true });
+  adoptStockBar();
+}
 
 // The stock top bar is replaced by controls in the theme itself (page
 // options menu, sidebar Site group, editor header). The stock element stays
@@ -54,5 +67,3 @@ function adoptStockBar() {
     doc.querySelector("oer-block-inserter")?.remove();
   }
 }
-new MutationObserver(adoptStockBar).observe(globalThis.document.body, { childList: true });
-adoptStockBar();

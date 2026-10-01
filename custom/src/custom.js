@@ -1,6 +1,8 @@
 // Entry for the site's custom bundle (built to custom/build/custom.es6.js).
-// The editor chrome goes first so its icon override and shadow-style patch
-// are installed before any HAX element renders.
+// HAXcms loads this bundle whatever the active theme is. The editor chrome
+// and theme skins switch on only when custom-oer-docs-theme connects (see
+// installEditorChrome); blocks register everywhere, since content that uses
+// them must keep working under any theme.
 import "./editor/index.js";
 import "./layout-breakpoints.js";
 import "./custom-oer-docs-theme.js";

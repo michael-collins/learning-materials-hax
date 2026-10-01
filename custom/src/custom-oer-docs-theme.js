@@ -53,8 +53,12 @@ import { isEmbedded, startEmbedReporting } from "./embed/embed-mode.js";
 import { isSnapshot, versionsOf } from "./versions/versioning.js";
 import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
+import { installEditorChrome } from "./editor/index.js";
+import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 
-registerShadowStyles(themeSkin);
+// skins for shared site elements (menu, breadcrumb, collapse) apply only
+// while this theme is active: the bundle also loads under stock themes
+let themeSkinRegistered = false;
 
 const MOBILE_QUERY = "(max-width: 767px)";
 
@@ -229,6 +233,12 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
   connectedCallback() {
     super.connectedCallback();
+    installEditorChrome();
+    installLayoutBreakpoints();
+    if (!themeSkinRegistered) {
+      themeSkinRegistered = true;
+      registerShadowStyles(themeSkin);
+    }
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
     this.__bodyObserver.observe(globalThis.document.body, { childList: true });
