@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790830089
+      "updated": 1790833253
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "",
       "metadata": {
         "created": 1790801562,
-        "updated": 1790830083,
+        "updated": 1790833250,
         "published": true,
         "locked": false,
         "status": "",
@@ -64,7 +64,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790830083,
+        "updated": 1790833250,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -89,7 +89,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790830083,
+        "updated": 1790833250,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -142,7 +142,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830083,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -193,7 +193,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830083,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -224,7 +224,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830083,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -292,7 +292,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -311,7 +314,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -334,7 +340,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -353,7 +362,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -376,7 +388,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -399,7 +414,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -422,7 +440,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -445,7 +466,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -464,7 +488,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -487,7 +514,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -510,7 +540,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -533,7 +566,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -556,7 +592,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -575,7 +614,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -598,7 +640,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -621,7 +666,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -644,7 +692,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830083
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
@@ -667,7 +718,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -690,7 +744,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -713,7 +770,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -732,7 +792,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833251,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -755,7 +818,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:bulletin-board"
       }
     },
     {
@@ -778,14 +844,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:bulletin-board"
       }
     },
     {
       "id": "item-f48b08dd-d5ed-4c0a-9c04-061301788414",
       "indent": 2,
       "location": "pages/item-f48b08dd-d5ed-4c0a-9c04-061301788414/index.html",
-      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time",
+      "slug": "pathways/game-artist-pathway/game-art-in-real-time",
       "order": 0,
       "parent": "item-72db2076-5252-4246-af1d-685903483097",
       "title": "Game art in real time",
@@ -797,14 +866,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-5ecd7ee7-6dc4-4481-87b6-e14f6033ce73",
       "indent": 3,
       "location": "pages/item-5ecd7ee7-6dc4-4481-87b6-e14f6033ce73/index.html",
-      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/real-time-engines",
+      "slug": "pathways/game-artist-pathway/game-art-in-real-time/real-time-engines",
       "order": 0,
       "parent": "item-f48b08dd-d5ed-4c0a-9c04-061301788414",
       "title": "Real-time Engines",
@@ -820,14 +892,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
       "id": "item-f58229da-3665-4cd7-b5f2-b1b862660cf2",
       "indent": 3,
       "location": "pages/item-f58229da-3665-4cd7-b5f2-b1b862660cf2/index.html",
-      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time",
+      "slug": "pathways/game-artist-pathway/game-art-in-real-time/environment-design-for-real-time",
       "order": 1,
       "parent": "item-f48b08dd-d5ed-4c0a-9c04-061301788414",
       "title": "Environment Design for Real-time",
@@ -843,14 +918,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
       "id": "item-2b935aff-4a41-428d-935f-bf4f0ccf966c",
       "indent": 3,
       "location": "pages/item-2b935aff-4a41-428d-935f-bf4f0ccf966c/index.html",
-      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets",
+      "slug": "pathways/game-artist-pathway/game-art-in-real-time/real-time-asset-budgets",
       "order": 2,
       "parent": "item-f48b08dd-d5ed-4c0a-9c04-061301788414",
       "title": "Real-time Asset Budgets",
@@ -866,14 +944,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
       "id": "item-6b59614f-987f-4ff0-aef9-841a373f46ee",
       "indent": 3,
       "location": "pages/item-6b59614f-987f-4ff0-aef9-841a373f46ee/index.html",
-      "slug": "pathways/game-artist-pathway-1/concept-blockout/drawing-for-3d-design",
+      "slug": "pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design",
       "order": 0,
       "parent": "item-9023f478-1c92-4338-8aff-d094f339b5c3",
       "title": "Drawing for 3D Design",
@@ -889,14 +970,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
       "id": "item-8143c5fe-e038-4b23-8abe-9410a03e4f10",
       "indent": 3,
       "location": "pages/item-8143c5fe-e038-4b23-8abe-9410a03e4f10/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles",
       "order": 0,
       "parent": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "title": "Modeling a Low Poly Animal and Introduction to Particles",
@@ -913,14 +997,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-25240f21-af75-4edc-b30a-4b9e8b94d1ed",
       "indent": 3,
       "location": "pages/item-25240f21-af75-4edc-b30a-4b9e8b94d1ed/index.html",
-      "slug": "pathways/game-artist-pathway-1/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture",
+      "slug": "pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture",
       "order": 0,
       "parent": "item-e08297d2-1cb7-4244-9001-e85120939135",
       "title": "Texturing Low-poly Assets with a Palette Texture",
@@ -937,14 +1024,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-551064b6-4beb-4326-8d70-f723bd60010d",
       "indent": 3,
       "location": "pages/item-551064b6-4beb-4326-8d70-f723bd60010d/index.html",
-      "slug": "pathways/game-artist-pathway-1/into-the-engine/importing-assets-into-playcanvas",
+      "slug": "pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas",
       "order": 0,
       "parent": "item-946a6945-fd38-4d21-ae63-87c559db86b3",
       "title": "Importing Assets into PlayCanvas",
@@ -960,14 +1050,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-955f3a9a-72db-424a-a8e0-f195c322a57f",
       "indent": 3,
       "location": "pages/item-955f3a9a-72db-424a-a8e0-f195c322a57f/index.html",
-      "slug": "pathways/game-artist-pathway-1/project/stylized-prop-set",
+      "slug": "pathways/game-artist-pathway/project/stylized-prop-set",
       "order": 0,
       "parent": "item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2",
       "title": "Stylized Prop Set",
@@ -984,7 +1077,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:bulletin-board"
       }
     },
     {
@@ -998,7 +1094,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790830084,
+        "updated": 1790833250,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -1023,7 +1119,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790830084,
+        "updated": 1790833250,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -1069,7 +1165,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1110,7 +1206,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1149,7 +1245,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1188,7 +1284,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1226,7 +1322,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1265,7 +1361,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1305,7 +1401,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1344,7 +1440,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1382,7 +1478,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1421,7 +1517,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1466,7 +1562,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1505,7 +1601,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1532,7 +1628,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1577,7 +1673,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830084,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1623,14 +1719,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-9023f478-1c92-4338-8aff-d094f339b5c3",
       "indent": 2,
       "location": "pages/item-9023f478-1c92-4338-8aff-d094f339b5c3/index.html",
-      "slug": "pathways/game-artist-pathway-1/concept-blockout",
+      "slug": "pathways/game-artist-pathway/concept-blockout",
       "order": 1,
       "parent": "item-72db2076-5252-4246-af1d-685903483097",
       "title": "Concept & blockout",
@@ -1642,14 +1741,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566",
       "indent": 3,
       "location": "pages/item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566/index.html",
-      "slug": "pathways/game-artist-pathway-1/concept-blockout/creating-blockouts-for-games",
+      "slug": "pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games",
       "order": 1,
       "parent": "item-9023f478-1c92-4338-8aff-d094f339b5c3",
       "title": "Creating Blockouts for Games",
@@ -1665,14 +1767,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830084
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-9549bc35-927d-4fd8-b0b9-455709364870",
       "indent": 3,
       "location": "pages/item-9549bc35-927d-4fd8-b0b9-455709364870/index.html",
-      "slug": "pathways/game-artist-pathway-1/concept-blockout/blocking-out-a-game-space",
+      "slug": "pathways/game-artist-pathway/concept-blockout/blocking-out-a-game-space",
       "order": 2,
       "parent": "item-9023f478-1c92-4338-8aff-d094f339b5c3",
       "title": "Blocking Out a Game Space",
@@ -1688,14 +1793,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-dda3178f-c205-4e8d-92e4-d25ccdf18444",
       "indent": 3,
       "location": "pages/item-dda3178f-c205-4e8d-92e4-d25ccdf18444/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/low-poly-non-photorealistic-rendering",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering",
       "order": 1,
       "parent": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "title": "Low poly non-photorealistic rendering",
@@ -1712,14 +1820,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-4989e3f6-c083-4c34-8e14-c601ed5f7358",
       "indent": 3,
       "location": "pages/item-4989e3f6-c083-4c34-8e14-c601ed5f7358/index.html",
-      "slug": "pathways/game-artist-pathway-1/texturing-for-real-time/texturing-random-objects",
+      "slug": "pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects",
       "order": 1,
       "parent": "item-e08297d2-1cb7-4244-9001-e85120939135",
       "title": "Texturing random objects",
@@ -1736,14 +1847,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-4288443d-8358-4b17-b92b-12331e9293fb",
       "indent": 3,
       "location": "pages/item-4288443d-8358-4b17-b92b-12331e9293fb/index.html",
-      "slug": "pathways/game-artist-pathway-1/project/modular-environment-kit",
+      "slug": "pathways/game-artist-pathway/project/modular-environment-kit",
       "order": 1,
       "parent": "item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2",
       "title": "Modular Environment Kit",
@@ -1760,7 +1874,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:bulletin-board"
       }
     },
     {
@@ -1774,7 +1891,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790830085,
+        "updated": 1790833250,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -1829,7 +1946,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1862,7 +1979,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1909,7 +2026,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833250,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1942,7 +2059,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1995,7 +2112,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2028,7 +2145,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2062,7 +2179,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2094,7 +2211,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2127,7 +2244,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2160,7 +2277,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2193,7 +2310,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2227,7 +2344,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2260,7 +2377,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2293,7 +2410,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2327,7 +2444,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2361,7 +2478,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2388,7 +2505,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2422,7 +2539,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -2457,14 +2574,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "indent": 2,
       "location": "pages/item-9c47d5c1-c709-4860-91a2-eb7847d712c3/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets",
       "order": 2,
       "parent": "item-72db2076-5252-4246-af1d-685903483097",
       "title": "Modeling game assets",
@@ -2476,14 +2596,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-4bc1ec8a-85d7-4eb2-848d-87c1f408a033",
       "indent": 3,
       "location": "pages/item-4bc1ec8a-85d7-4eb2-848d-87c1f408a033/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/hard-surface-modeling",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling",
       "order": 2,
       "parent": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "title": "Hard Surface Modeling",
@@ -2500,14 +2623,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
       "id": "item-a141287b-ce0b-42a9-a169-67d53edd8442",
       "indent": 3,
       "location": "pages/item-a141287b-ce0b-42a9-a169-67d53edd8442/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects",
       "order": 3,
       "parent": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "title": "Modeling random objects",
@@ -2524,14 +2650,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-8a55ccc9-1433-467b-bcee-d6043fc3fe05",
       "indent": 3,
       "location": "pages/item-8a55ccc9-1433-467b-bcee-d6043fc3fe05/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/digital-sculpting",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets/digital-sculpting",
       "order": 4,
       "parent": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "title": "Digital Sculpting",
@@ -2548,14 +2677,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:lesson"
       }
     },
     {
       "id": "item-21cc4009-8627-4071-b315-1a7e3dbb256b",
       "indent": 3,
       "location": "pages/item-21cc4009-8627-4071-b315-1a7e3dbb256b/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-and-sculpting-a-sea-creature",
+      "slug": "pathways/game-artist-pathway/modeling-game-assets/modeling-and-sculpting-a-sea-creature",
       "order": 5,
       "parent": "item-9c47d5c1-c709-4860-91a2-eb7847d712c3",
       "title": "Modeling and sculpting a sea creature",
@@ -2572,14 +2704,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-32fe8fba-fe85-48b9-bbb3-2f92271a2969",
       "indent": 3,
       "location": "pages/item-32fe8fba-fe85-48b9-bbb3-2f92271a2969/index.html",
-      "slug": "pathways/game-artist-pathway-1/texturing-for-real-time/sculpting-retopo-and-texturing",
+      "slug": "pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing",
       "order": 2,
       "parent": "item-e08297d2-1cb7-4244-9001-e85120939135",
       "title": "Sculpting, retopo, and texturing",
@@ -2596,14 +2731,17 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
       "id": "item-736dfac1-2506-450c-a0c0-4b48170057f3",
       "indent": 3,
       "location": "pages/item-736dfac1-2506-450c-a0c0-4b48170057f3/index.html",
-      "slug": "pathways/game-artist-pathway-1/project/realtime-game-environment",
+      "slug": "pathways/game-artist-pathway/project/realtime-game-environment",
       "order": 2,
       "parent": "item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2",
       "title": "Realtime Game Environment",
@@ -2620,7 +2758,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830085
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "hax:bulletin-board"
       }
     },
     {
@@ -2646,7 +2787,8 @@
               "description": "A heading that groups other pages (e.g. Topics, Readings).",
               "children": null,
               "fields": [],
-              "template": "<p></p>\n<oer-collection scope=\"children\" view=\"table\" sort=\"order\"></oer-collection>"
+              "template": "<p></p>\n<oer-collection scope=\"children\" view=\"table\" sort=\"order\"></oer-collection>",
+              "nav": true
             },
             {
               "id": "article",
@@ -2748,7 +2890,8 @@
                   "header": true,
                   "help": "Downloadable files or external links"
                 }
-              ]
+              ],
+              "nav": false
             },
             {
               "id": "tutorial",
@@ -2870,7 +3013,8 @@
                   "header": true,
                   "help": "Downloadable files or external links"
                 }
-              ]
+              ],
+              "nav": false
             },
             {
               "id": "exercise",
@@ -3241,7 +3385,8 @@
                   "header": true,
                   "help": "Downloadable files or external links"
                 }
-              ]
+              ],
+              "nav": false
             },
             {
               "id": "project",
@@ -3618,7 +3763,8 @@
                   "header": true,
                   "help": "Downloadable files or external links"
                 }
-              ]
+              ],
+              "nav": false
             },
             {
               "id": "specialization",
@@ -4000,7 +4146,8 @@
                   "default": "AIUL-WA"
                 }
               ],
-              "template": "<p></p>\n<h2>Lessons</h2>\n<oer-collection scope=\"children\" types=\"lesson\" view=\"cards\" sort=\"order\" controls=\"none\"></oer-collection>"
+              "template": "<p></p>\n<h2>Lessons</h2>\n<oer-collection scope=\"children\" types=\"lesson\" view=\"cards\" sort=\"order\" controls=\"none\"></oer-collection>",
+              "nav": false
             },
             {
               "id": "pathway",
@@ -4415,7 +4562,8 @@
                   "default": "AIUL-WA"
                 }
               ],
-              "template": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p></p>"
+              "template": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p></p>",
+              "nav": false
             },
             {
               "id": "lecture",
@@ -4746,7 +4894,8 @@
                   "header": true,
                   "help": "Downloadable files or external links"
                 }
-              ]
+              ],
+              "nav": false
             },
             {
               "id": "lesson",
@@ -5088,7 +5237,8 @@
                   "help": "Make this version available for embedding"
                 }
               ],
-              "template": "<p></p>\n<h2>In this lesson</h2>\n<oer-collection scope=\"children\" view=\"outline\" sort=\"order\"></oer-collection>"
+              "template": "<p></p>\n<h2>In this lesson</h2>\n<oer-collection scope=\"children\" view=\"outline\" sort=\"order\"></oer-collection>",
+              "nav": false
             },
             {
               "id": "rubric",
@@ -5108,7 +5258,8 @@
                   "label": "Name",
                   "kind": "text"
                 }
-              ]
+              ],
+              "nav": false
             },
             {
               "id": "resource",
@@ -5116,7 +5267,8 @@
               "icon": "editor:attach-file",
               "description": "",
               "children": [],
-              "fields": []
+              "fields": [],
+              "nav": false
             },
             {
               "id": "book",
@@ -5227,14 +5379,15 @@
                 }
               ],
               "template": "<p></p>\n<h2>Contents</h2>\n<oer-collection scope=\"children\" view=\"outline\" sort=\"order\"></oer-collection>",
-              "reader": true
+              "reader": true,
+              "nav": false
             }
           ]
         },
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833251,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5268,7 +5421,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830085,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -5321,7 +5474,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5340,7 +5496,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5364,7 +5523,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5383,7 +5545,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5402,7 +5567,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5416,7 +5584,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1790830089,
+        "updated": 1790833251,
         "images": [],
         "videos": [],
         "published": true,
@@ -5456,7 +5624,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5488,7 +5659,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5520,7 +5694,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5552,7 +5729,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833252,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5584,7 +5764,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833253,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5616,7 +5799,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833253,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5658,7 +5844,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833253,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5700,7 +5889,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833253,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5732,7 +5924,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830086
+        "updated": 1790833253,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -5780,7 +5975,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830086,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -5801,7 +5996,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830086,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5822,7 +6017,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830086,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5843,7 +6038,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830086,
+        "updated": 1790833253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
