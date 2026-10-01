@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790833253
+      "updated": 1790874784
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "",
       "metadata": {
         "created": 1790801562,
-        "updated": 1790833250,
+        "updated": 1790874781,
         "published": true,
         "locked": false,
         "status": "",
@@ -64,12 +64,12 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790833250,
+        "updated": 1790874781,
         "images": [],
         "videos": [],
         "overridePathauto": false,
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -89,12 +89,12 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790833250,
+        "updated": 1790874781,
         "images": [],
         "videos": [],
         "overridePathauto": false,
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "hideInMenu": false,
         "tags": "Blender,Animation",
         "locked": false,
@@ -132,7 +132,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "lecture",
+        "pageType": "oer:lecture",
         "oerSource": "lectures/introduction-to-modeling",
         "oerFields": {
           "author": "Michael Collins",
@@ -142,7 +142,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -159,7 +159,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerSource": "projects/you-dont-see-that-everyday-objects",
         "tags": "Blender",
         "oerFields": {
@@ -193,7 +193,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -210,7 +210,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "tutorial",
+        "pageType": "oer:tutorial",
         "oerSource": "tutorials/creating-blockouts-for-games",
         "oerFields": {
           "date": "2026-04-08T04:00:00.000Z",
@@ -224,7 +224,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -241,7 +241,7 @@
       "description": "The shared starting point for every DART pathway: the concepts and workflows of computer-generated imagery, from modeling and texturing to lighting, camera and rendering, practiced on two subjects and brought together in a final project.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/cgi-foundations",
         "tags": "CGI,Foundations,Modeling,Texturing,Lighting,Rendering,Blender",
@@ -292,7 +292,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -310,11 +310,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -332,7 +332,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
           "version": ""
@@ -340,7 +340,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -358,11 +358,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -380,7 +380,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
           "version": ""
@@ -388,7 +388,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -406,7 +406,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lecture",
+        "pageType": "oer:lecture",
         "oerRef": {
           "page": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
           "version": ""
@@ -414,7 +414,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -432,7 +432,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
           "version": ""
@@ -440,7 +440,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -458,7 +458,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
           "version": ""
@@ -466,7 +466,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874781,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -484,11 +484,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -506,7 +506,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
           "version": ""
@@ -514,7 +514,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -532,7 +532,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lecture",
+        "pageType": "oer:lecture",
         "oerRef": {
           "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
           "version": ""
@@ -540,7 +540,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -558,7 +558,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
           "version": ""
@@ -566,7 +566,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -584,7 +584,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
           "version": ""
@@ -592,7 +592,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -610,11 +610,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -632,7 +632,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
           "version": ""
@@ -640,7 +640,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -658,7 +658,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
           "version": ""
@@ -666,7 +666,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -684,7 +684,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
           "version": ""
@@ -692,7 +692,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -710,7 +710,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lecture",
+        "pageType": "oer:lecture",
         "oerRef": {
           "page": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
           "version": ""
@@ -718,7 +718,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -736,7 +736,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
           "version": ""
@@ -744,7 +744,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -762,7 +762,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
           "version": ""
@@ -770,7 +770,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -788,11 +788,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -810,7 +810,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerRef": {
           "page": "item-48ad9f94-3f8b-44e5-8416-316cff49f4d2",
           "version": ""
@@ -818,7 +818,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -836,7 +836,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerRef": {
           "page": "item-930abc68-c77e-479c-b2ff-220e4714c712",
           "version": ""
@@ -844,7 +844,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -862,11 +862,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -884,7 +884,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
           "version": ""
@@ -892,7 +892,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -910,7 +910,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
           "version": ""
@@ -918,7 +918,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -936,7 +936,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
           "version": ""
@@ -944,7 +944,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -962,7 +962,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
           "version": ""
@@ -970,7 +970,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -989,7 +989,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Beginner",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
           "version": ""
@@ -997,7 +997,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1016,7 +1016,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Beginner",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b",
           "version": ""
@@ -1024,7 +1024,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1042,7 +1042,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-a92f242a-b30b-4685-b277-c205bd49ca90",
           "version": ""
@@ -1050,7 +1050,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1069,7 +1069,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Beginner",
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerRef": {
           "page": "item-0166883b-7fd8-465a-a98b-74f4f9b02cb0",
           "version": ""
@@ -1077,7 +1077,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1094,12 +1094,12 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790833250,
+        "updated": 1790874782,
         "images": [],
         "videos": [],
         "overridePathauto": false,
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "hideInMenu": false,
         "tags": "Blender,AfterEffects,Adobe Media Encoder",
         "locked": false,
@@ -1119,12 +1119,12 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790833250,
+        "updated": 1790874782,
         "images": [],
         "videos": [],
         "overridePathauto": false,
         "published": true,
-        "pageType": "section",
+        "pageType": "oer:section",
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -1144,7 +1144,7 @@
       "description": "Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/history-of-cgi",
         "oerFields": {
           "estimatedDuration": "2 hours",
@@ -1165,7 +1165,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1182,7 +1182,7 @@
       "description": "Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/3d-modeling-fundamentals",
         "tags": "",
         "oerFields": {
@@ -1206,7 +1206,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1223,7 +1223,7 @@
       "description": "Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/texturing-uv-mapping",
         "oerFields": {
           "estimatedDuration": "4 hours",
@@ -1245,7 +1245,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1262,7 +1262,7 @@
       "description": "Explore fundamental lighting principles and techniques for creating mood, atmosphere, and visual interest in 3D scenes.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/lighting-principles",
         "oerFields": {
           "estimatedDuration": "3 hours",
@@ -1284,7 +1284,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1301,7 +1301,7 @@
       "description": "Master camera settings, placement, and composition principles to create visually compelling rendered images and animations.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/camera-composition",
         "oerFields": {
           "estimatedDuration": "2 hours",
@@ -1322,7 +1322,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1339,7 +1339,7 @@
       "description": "Learn rendering workflows, engine settings, and optimization techniques to produce high-quality final images.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/rendering-techniques",
         "oerFields": {
           "estimatedDuration": "3 hours",
@@ -1361,7 +1361,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1378,7 +1378,7 @@
       "description": "Learn to work with game engines like Unity and Unreal Engine, implementing 3D assets and creating interactive experiences.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/realtime-engines",
         "oerFields": {
           "estimatedDuration": "6 hours",
@@ -1401,7 +1401,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1418,7 +1418,7 @@
       "description": "Learn to design and build optimized 3D environments for real-time applications, games, and interactive experiences.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/environment-design-realtime",
         "oerFields": {
           "estimatedDuration": "5 hours",
@@ -1440,7 +1440,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874782,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1457,7 +1457,7 @@
       "description": "How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/realtime-asset-budgets",
         "oerFields": {
           "estimatedDuration": "3 hours",
@@ -1478,7 +1478,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1495,7 +1495,7 @@
       "description": "Develop drawing and sketching skills to support 3D design work, including concept development and reference creation.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/drawing-for-3d-design",
         "oerFields": {
           "estimatedDuration": "4 hours",
@@ -1517,7 +1517,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1534,7 +1534,7 @@
       "description": "Master hard surface modeling techniques for creating mechanical objects, products, and architectural elements with clean geometry.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/hard-surface-modeling",
         "oerFields": {
           "estimatedDuration": "5 hours",
@@ -1562,7 +1562,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1579,7 +1579,7 @@
       "description": "Master organic modeling through digital sculpting techniques, creating detailed characters and organic forms.",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerSource": "lessons/digital-sculpting",
         "oerFields": {
           "estimatedDuration": "5 hours",
@@ -1601,7 +1601,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1618,7 +1618,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "lecture",
+        "pageType": "oer:lecture",
         "oerSource": "lectures/introduction-to-texturing",
         "oerFields": {
           "author": "Michael Collins",
@@ -1628,7 +1628,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1645,7 +1645,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerSource": "projects/you-dont-see-that-everyday-object-posters",
         "tags": "Blender",
         "oerFields": {
@@ -1673,7 +1673,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1690,7 +1690,7 @@
       "description": "Master the art and technique of digital compositing for film and video. This focused pathway provides the essential skills needed to combine CGI elements with live-action footage and create seamless final images for professional productions.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/compositor",
         "tags": "Compositing,Post-production,VFX,Color Grading,Nuke,After Effects",
@@ -1719,7 +1719,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1737,11 +1737,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1759,7 +1759,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "tutorial",
+        "pageType": "oer:tutorial",
         "oerRef": {
           "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
           "version": ""
@@ -1767,7 +1767,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1785,7 +1785,7 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
           "version": ""
@@ -1793,7 +1793,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1812,7 +1812,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Beginner",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
           "version": ""
@@ -1820,7 +1820,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1839,7 +1839,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Intermediate",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-a203e95e-0ddd-43af-9519-ee3df76a5b2d",
           "version": ""
@@ -1847,7 +1847,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1866,7 +1866,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Intermediate",
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerRef": {
           "page": "item-e09e22f7-6a97-4fed-bd10-2cde35349b24",
           "version": ""
@@ -1874,7 +1874,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1891,12 +1891,12 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790833250,
+        "updated": 1790874783,
         "images": [],
         "videos": [],
         "overridePathauto": false,
         "published": true,
-        "pageType": "section",
+        "pageType": "oer:section",
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -1916,7 +1916,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/modeling-the-airline-chair",
         "tags": "Blender,Modeling",
         "oerFields": {
@@ -1946,7 +1946,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1963,7 +1963,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/modeling-a-room",
         "tags": "Blender",
         "oerFields": {
@@ -1979,7 +1979,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1996,7 +1996,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/texturing-the-airline-chair",
         "tags": "Blender,Texturing",
         "oerFields": {
@@ -2026,7 +2026,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833250,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2043,7 +2043,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/texturing-a-room",
         "tags": "Blender",
         "oerFields": {
@@ -2059,7 +2059,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2076,7 +2076,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/lighting-and-rendering-the-airline-chair",
         "tags": "Blender,Lighting",
         "oerFields": {
@@ -2112,7 +2112,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2129,7 +2129,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/rendering-a-room",
         "tags": "Blender",
         "oerFields": {
@@ -2145,7 +2145,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2162,7 +2162,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/blocking-out-a-game-space",
         "tags": "Blender",
         "oerFields": {
@@ -2179,7 +2179,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2196,7 +2196,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
         "tags": "Blender",
         "oerFields": {
@@ -2211,7 +2211,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2228,7 +2228,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/low-poly-non-photorealistic-rendering",
         "tags": "Blender",
         "oerFields": {
@@ -2244,7 +2244,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2261,7 +2261,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/modeling-random-objects",
         "tags": "Blender",
         "oerFields": {
@@ -2277,7 +2277,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2294,7 +2294,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/modeling-and-sculpting-a-sea-creature",
         "tags": "Blender",
         "oerFields": {
@@ -2310,7 +2310,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2327,7 +2327,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/texturing-low-poly-assets-with-a-palette-texture",
         "tags": "Blender",
         "oerFields": {
@@ -2344,7 +2344,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2361,7 +2361,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/texturing-random-objects",
         "tags": "Blender",
         "oerFields": {
@@ -2377,7 +2377,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2394,7 +2394,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/sculpting-retopo-and-texturing",
         "tags": "Blender",
         "oerFields": {
@@ -2410,7 +2410,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2427,7 +2427,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/baking-normal-maps",
         "tags": "Blender",
         "oerFields": {
@@ -2444,7 +2444,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2461,7 +2461,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerSource": "exercises/importing-assets-into-playcanvas",
         "tags": "Blender,PlayCanvas",
         "oerFields": {
@@ -2478,7 +2478,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2495,7 +2495,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "lecture",
+        "pageType": "oer:lecture",
         "oerSource": "lectures/introduction-to-cameras-lighting-and-rendering",
         "oerFields": {
           "author": "Michael Collins",
@@ -2505,7 +2505,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2522,7 +2522,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerSource": "projects/stylized-prop-set",
         "tags": "Blender,PlayCanvas",
         "oerFields": {
@@ -2539,7 +2539,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -2556,7 +2556,7 @@
       "description": "Utilizes 3D printing or CNC machining to create physical objects from digital designs.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/digital-fabrication",
         "oerFields": {
@@ -2574,7 +2574,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2592,11 +2592,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874783,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2615,7 +2615,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Intermediate",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
           "version": ""
@@ -2623,7 +2623,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -2642,7 +2642,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Intermediate",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
           "version": ""
@@ -2650,7 +2650,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2669,7 +2669,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Advanced",
-        "pageType": "lesson",
+        "pageType": "oer:lesson",
         "oerRef": {
           "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
           "version": ""
@@ -2677,7 +2677,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -2696,7 +2696,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Advanced",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
           "version": ""
@@ -2704,7 +2704,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2723,7 +2723,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Advanced",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
           "version": ""
@@ -2731,7 +2731,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2750,7 +2750,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Advanced",
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerRef": {
           "page": "item-55d4ea63-f507-4470-b2c8-e8b11b1c499b",
           "version": ""
@@ -2758,7 +2758,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -2774,14 +2774,14 @@
       "title": "Content types",
       "description": "",
       "metadata": {
-        "pageType": "oer-system",
+        "pageType": "oer:system",
         "hideInMenu": true,
         "published": false,
         "oerContentTypes": {
           "version": 1,
           "types": [
             {
-              "id": "section",
+              "id": "oer:section",
               "label": "Section",
               "icon": "icons:folder",
               "description": "A heading that groups other pages (e.g. Topics, Readings).",
@@ -2791,7 +2791,7 @@
               "nav": true
             },
             {
-              "id": "article",
+              "id": "oer:article",
               "label": "Article",
               "icon": "hax:newspaper",
               "description": "",
@@ -2872,15 +2872,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -2894,7 +2894,7 @@
               "nav": false
             },
             {
-              "id": "tutorial",
+              "id": "oer:tutorial",
               "label": "Tutorial",
               "icon": "courseicons:strategy",
               "description": "",
@@ -2995,15 +2995,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -3017,7 +3017,7 @@
               "nav": false
             },
             {
-              "id": "exercise",
+              "id": "oer:exercise",
               "label": "Exercise",
               "icon": "hax:task",
               "description": "",
@@ -3354,15 +3354,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -3370,10 +3370,10 @@
                   "label": "Learning resources",
                   "kind": "relation",
                   "types": [
-                    "tutorial",
-                    "lecture",
-                    "article",
-                    "resource"
+                    "oer:tutorial",
+                    "oer:lecture",
+                    "oer:article",
+                    "oer:resource"
                   ],
                   "header": true,
                   "help": "Tutorials, lectures, readings and resources that support this"
@@ -3389,7 +3389,7 @@
               "nav": false
             },
             {
-              "id": "project",
+              "id": "oer:project",
               "label": "Project",
               "icon": "hax:bulletin-board",
               "description": "",
@@ -3732,15 +3732,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -3748,10 +3748,10 @@
                   "label": "Learning resources",
                   "kind": "relation",
                   "types": [
-                    "tutorial",
-                    "lecture",
-                    "article",
-                    "resource"
+                    "oer:tutorial",
+                    "oer:lecture",
+                    "oer:article",
+                    "oer:resource"
                   ],
                   "header": true,
                   "help": "Tutorials, lectures, readings and resources that support this"
@@ -3767,12 +3767,12 @@
               "nav": false
             },
             {
-              "id": "specialization",
+              "id": "oer:specialization",
               "label": "Specialization",
               "icon": "lrn:teacher",
               "description": "",
               "children": [
-                "lesson"
+                "oer:lesson"
               ],
               "fields": [
                 {
@@ -3848,15 +3848,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -4150,14 +4150,14 @@
               "nav": false
             },
             {
-              "id": "pathway",
+              "id": "oer:pathway",
               "label": "Pathway",
               "icon": "hax:unit",
               "description": "",
               "children": [
-                "section",
-                "specialization",
-                "lesson"
+                "oer:section",
+                "oer:specialization",
+                "oer:lesson"
               ],
               "fields": [
                 {
@@ -4258,15 +4258,15 @@
                   "help": "Content to complete first",
                   "header": false,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -4566,7 +4566,7 @@
               "nav": false
             },
             {
-              "id": "lecture",
+              "id": "oer:lecture",
               "label": "Lecture",
               "icon": "image:slideshow",
               "description": "",
@@ -4876,15 +4876,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -4898,17 +4898,17 @@
               "nav": false
             },
             {
-              "id": "lesson",
+              "id": "oer:lesson",
               "label": "Lesson",
               "icon": "hax:lesson",
               "description": "",
               "children": [
-                "section",
-                "article",
-                "tutorial",
-                "lecture",
-                "exercise",
-                "project"
+                "oer:section",
+                "oer:article",
+                "oer:tutorial",
+                "oer:lecture",
+                "oer:exercise",
+                "oer:project"
               ],
               "fields": [
                 {
@@ -4937,15 +4937,15 @@
                   "help": "Content to complete first",
                   "header": true,
                   "types": [
-                    "lesson",
-                    "lecture",
-                    "tutorial",
-                    "exercise",
-                    "article",
-                    "project",
-                    "specialization",
-                    "pathway",
-                    "resource"
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
                   ]
                 },
                 {
@@ -5241,7 +5241,7 @@
               "nav": false
             },
             {
-              "id": "rubric",
+              "id": "oer:rubric",
               "label": "Assessment rubric",
               "icon": "lrn:assessment",
               "description": "",
@@ -5262,7 +5262,7 @@
               "nav": false
             },
             {
-              "id": "resource",
+              "id": "oer:resource",
               "label": "Resource",
               "icon": "editor:attach-file",
               "description": "",
@@ -5271,18 +5271,18 @@
               "nav": false
             },
             {
-              "id": "book",
+              "id": "oer:book",
               "label": "Book",
               "icon": "lrn:book",
               "description": "",
               "children": [
-                "section",
-                "lesson",
-                "article",
-                "tutorial",
-                "lecture",
-                "exercise",
-                "project"
+                "oer:section",
+                "oer:lesson",
+                "oer:article",
+                "oer:tutorial",
+                "oer:lecture",
+                "oer:exercise",
+                "oer:project"
               ],
               "fields": [
                 {
@@ -5387,7 +5387,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1790833251,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5404,7 +5404,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerSource": "projects/modular-environment-kit",
         "tags": "Blender,PlayCanvas",
         "oerFields": {
@@ -5421,7 +5421,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -5438,7 +5438,7 @@
       "description": "Become a skilled game artist capable of creating optimized 3D assets for real-time environments. This pathway covers the complete skillset needed for game development, from foundational CGI to advanced real-time optimization and interactive design.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/game-artist",
         "tags": "Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR",
@@ -5474,7 +5474,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5492,11 +5492,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5515,7 +5515,7 @@
         "published": true,
         "oerImport": "decap-pathways",
         "oerLevel": "Advanced",
-        "pageType": "exercise",
+        "pageType": "oer:exercise",
         "oerRef": {
           "page": "item-858f23fb-b6b5-442a-ac36-94d4afe1718f",
           "version": ""
@@ -5523,7 +5523,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5541,11 +5541,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5563,11 +5563,11 @@
       "metadata": {
         "published": true,
         "oerImport": "decap-pathways",
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5584,7 +5584,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1790833251,
+        "updated": 1790874784,
         "images": [],
         "videos": [],
         "published": true,
@@ -5606,7 +5606,7 @@
       "description": "Designs gameplay mechanics, levels, and user experiences for video games.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/game-design-and-development",
         "oerFields": {
@@ -5624,7 +5624,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5641,7 +5641,7 @@
       "description": "Creates realistic architectural visualizations for design, marketing, or presentations.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/illustration-and-visualization",
         "oerFields": {
@@ -5659,7 +5659,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5676,7 +5676,7 @@
       "description": "Sets up lighting and camera angles to create visually compelling 3D scenes.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/lighting-and-cinematography",
         "oerFields": {
@@ -5694,7 +5694,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5711,7 +5711,7 @@
       "description": "Creates animated graphics for multimedia projects, often involving typography and visual effects.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/motion-graphics",
         "oerFields": {
@@ -5729,7 +5729,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833252,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5746,7 +5746,7 @@
       "description": "Designs consumer products in 3D for manufacturing or visualization purposes.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/product-design",
         "oerFields": {
@@ -5764,7 +5764,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5781,7 +5781,7 @@
       "description": "Oversees the planning and execution of 3D projects, ensuring deadlines and budgets are met.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/production-management",
         "oerFields": {
@@ -5799,7 +5799,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5816,7 +5816,7 @@
       "description": "A comprehensive pathway for creating animated short films with visual effects. This pathway combines traditional animation techniques with advanced simulation and compositing skills to produce cinematic CGI content with professional VFX elements.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/short-film-and-vfx",
         "tags": "Animation,VFX,Short Film,Compositing,Production Pipeline",
@@ -5844,7 +5844,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5861,7 +5861,7 @@
       "description": "Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/short-film",
         "tags": "Animation,Short Film,Storytelling,Production Pipeline",
@@ -5889,7 +5889,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5906,7 +5906,7 @@
       "description": "Integrates CGI elements into live-action footage and blends them seamlessly.",
       "metadata": {
         "published": true,
-        "pageType": "pathway",
+        "pageType": "oer:pathway",
         "oerImport": "decap-pathways",
         "oerSource": "pathways/visual-effects-vfx",
         "oerFields": {
@@ -5924,7 +5924,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5941,7 +5941,7 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "project",
+        "pageType": "oer:project",
         "oerSource": "projects/realtime-game-environment",
         "tags": "Blender,PlayCanvas,Github",
         "oerFields": {
@@ -5975,7 +5975,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -5992,11 +5992,11 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -6013,11 +6013,11 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -6034,11 +6034,11 @@
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "section",
+        "pageType": "oer:section",
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790833253,
+        "updated": 1790874784,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
