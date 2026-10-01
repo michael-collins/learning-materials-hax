@@ -58,7 +58,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Rendering Techniques](https://localhost:3000/learning-materials/pages/item-685e56cc-c545-4d08-81c8-c724fe5cc33d/index.md): Learn rendering workflows, engine settings, and optimization techniques to produce high-quality final images.
 - [Real-time Engines](https://localhost:3000/learning-materials/pages/item-3c14822b-53dd-4a66-aac7-f8ec740bbea5/index.md): Learn to work with game engines like Unity and Unreal Engine, implementing 3D assets and creating interactive experiences.
 - [Environment Design for Real-time](https://localhost:3000/learning-materials/pages/item-c9cb258f-d7f0-4668-a301-fff71e07b1d0/index.md): Learn to design and build optimized 3D environments for real-time applications, games, and interactive experiences.
-- [Real-time Asset Budgets](https://localhost:3000/learning-materials/pages/item-c43a83f7-2300-4e9c-bd16-bf418744f1d9/index.md)
+- [Real-time Asset Budgets](https://localhost:3000/learning-materials/pages/item-c43a83f7-2300-4e9c-bd16-bf418744f1d9/index.md): How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.
 - [Drawing for 3D Design](https://localhost:3000/learning-materials/pages/item-d22274ef-a811-4445-b5fa-132e70eab0f2/index.md)
 - [Hard Surface Modeling](https://localhost:3000/learning-materials/pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.md)
 - [Digital Sculpting](https://localhost:3000/learning-materials/pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.md)

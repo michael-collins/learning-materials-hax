@@ -1358,7 +1358,7 @@
       "order": 9,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Real-time Asset Budgets",
-      "description": "",
+      "description": "How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.",
       "metadata": {
         "published": true,
         "pageType": "lesson",

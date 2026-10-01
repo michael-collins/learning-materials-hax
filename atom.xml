@@ -557,7 +557,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     <id>item-c43a83f7-2300-4e9c-bd16-bf418744f1d9</id>
     <updated>2026-10-01T04:48:04.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
+    <summary>How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/real-time-asset-budgets"/>
     
     <content type="html">
