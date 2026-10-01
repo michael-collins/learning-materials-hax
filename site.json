@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790830087
+      "updated": 1790830088
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -5669,7 +5669,7 @@
       "order": 11,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Short Film Pathway",
-      "description": "",
+      "description": "Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.",
       "metadata": {
         "published": true,
         "pageType": "pathway",
