@@ -8669,15 +8669,15 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           aria-labelledby="${this._loggedIn?"tab-nav":""}"
           ?hidden="${this._loggedIn&&this._sidebarTab==="site"}"
         >
-          ${!this._book&&this._loggedIn&&!this.editMode?s`<div class="nav-actions">
-                <button class="label-action" @click="${()=>ct().show()}">${w.pencil}Edit outline</button>
-              </div>`:""}
           <oer-site-nav
             part="site-menu"
             ?editable="${this._loggedIn&&!this.editMode}"
             .root="${this._book?.id||null}"
             .filter="${this._book&&this._bookFilter||""}"
           ></oer-site-nav>
+          ${!this._book&&this._loggedIn&&!this.editMode?s`<div class="nav-actions">
+                <button class="label-action" @click="${()=>ct().show()}">${w.pencil}Edit outline</button>
+              </div>`:""}
         </nav>
         ${this._loggedIn&&this._sidebarTab==="site"?s`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
               <div class="nav-group-label">Site</div>

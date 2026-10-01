@@ -1200,17 +1200,17 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           aria-labelledby="${this._loggedIn ? "tab-nav" : ""}"
           ?hidden="${this._loggedIn && this._sidebarTab === "site"}"
         >
-          ${!this._book && this._loggedIn && !this.editMode
-            ? html`<div class="nav-actions">
-                <button class="label-action" @click="${() => outlineBuilder().show()}">${icon.pencil}Edit outline</button>
-              </div>`
-            : ""}
           <oer-site-nav
             part="site-menu"
             ?editable="${this._loggedIn && !this.editMode}"
             .root="${this._book?.id || null}"
             .filter="${this._book ? this._bookFilter || "" : ""}"
           ></oer-site-nav>
+          ${!this._book && this._loggedIn && !this.editMode
+            ? html`<div class="nav-actions">
+                <button class="label-action" @click="${() => outlineBuilder().show()}">${icon.pencil}Edit outline</button>
+              </div>`
+            : ""}
         </nav>
         ${this._loggedIn && this._sidebarTab === "site"
           ? html`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
