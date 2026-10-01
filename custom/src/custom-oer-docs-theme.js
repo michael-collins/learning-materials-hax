@@ -117,6 +117,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _locked: { state: true },
       _published: { state: true },
       _pageMenuOpen: { state: true },
+      _sidebarTab: { state: true },
       _siteDescription: { state: true },
     };
   }
@@ -132,6 +133,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__keyHandler = this._onKeydown.bind(this);
     this._loggedIn = false;
     this._pageMenuOpen = false;
+    try {
+      this._sidebarTab = globalThis.localStorage.getItem("oer-sidebar-tab") === "site" ? "site" : "nav";
+    } catch {
+      this._sidebarTab = "nav";
+    }
     this.__outsideMenu = (e) => {
       const path = e.composedPath();
       if (this._pageMenuOpen && !path.includes(this.shadowRoot.querySelector(".page-header .menu-wrap"))) {
@@ -381,8 +387,46 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           text-overflow: ellipsis;
           white-space: nowrap;
         }
-        .sidebar-search {
-          padding: 0.75rem 0.75rem 0.25rem;
+        /* Nav / Site tabs (shadcn TabsList), signed-in authors only */
+        .sidebar-tabs {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.125rem;
+          margin: 0.75rem 0.75rem 0.25rem;
+          padding: 0.1875rem;
+          border-radius: var(--radius-md);
+          background: var(--muted);
+        }
+        .sidebar-tabs button {
+          all: unset;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 1.75rem;
+          border-radius: calc(var(--radius-md) - 2px);
+          font-size: 0.8125rem;
+          font-weight: 500;
+          color: var(--muted-foreground);
+          cursor: pointer;
+        }
+        .sidebar-tabs button[aria-selected="true"] {
+          background: var(--background);
+          color: var(--foreground);
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+        }
+        .sidebar-tabs button:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .site-panel {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 0.125rem;
+          padding: 0.5rem;
+        }
+        nav[hidden] {
+          display: none;
         }
         .sidebar nav {
           flex: 1;
@@ -394,28 +438,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         .sidebar-footer {
           padding: 0.75rem;
           border-top: 1px solid var(--border);
-        }
-        .search-btn {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.5rem 0.75rem;
-          font: inherit;
-          font-size: 0.875rem;
-          color: var(--muted-foreground);
-          background: var(--background);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-md);
-          cursor: pointer;
-        }
-        .search-btn:hover {
-          background: var(--accent);
-          color: var(--accent-foreground);
-        }
-        .search-btn span {
-          flex: 1;
-          text-align: left;
         }
         kbd {
           font-family: var(--font-mono);
@@ -469,8 +491,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           background: var(--accent);
           color: var(--accent-foreground);
         }
-        .icon-btn:focus-visible,
-        .search-btn:focus-visible {
+        .icon-btn:focus-visible {
           outline: 2px solid var(--ring);
           outline-offset: 2px;
         }
@@ -786,14 +807,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           opacity: 0.6;
         }
 
-        /* site actions above the page list (signed in, not editing):
-           shadcn SidebarMenuButton rows */
-        .site-actions {
-          display: flex;
-          flex-direction: column;
-          gap: 0.125rem;
-          padding: 0 0.5rem 0.5rem;
-        }
+        /* Site tab rows: shadcn SidebarMenuButton */
         .site-action {
           all: unset;
           box-sizing: border-box;
@@ -940,30 +954,25 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             </span>
           </a>
         </div>
-        <div class="sidebar-search">
-          <button class="search-btn" @click="${this.openSearch}" ?disabled="${this.editMode}">
-            ${icon.search}<span>Search…</span><kbd>⌘K</kbd>
-          </button>
-          <site-modal
-            icon="icons:search"
-            title="Search site"
-            button-label="Search"
-            @site-modal-click="${this._loadSearch}"
-          >
-            <site-search></site-search>
-          </site-modal>
-        </div>
-        ${this._loggedIn && !this.editMode
-          ? html`<div class="site-actions" role="group" aria-label="Site">
+        ${this._loggedIn ? this.renderSidebarTabs() : ""}
+        <nav
+          aria-label="Course outline"
+          id="panel-nav"
+          role="${this._loggedIn ? "tabpanel" : "navigation"}"
+          aria-labelledby="${this._loggedIn ? "tab-nav" : ""}"
+          ?hidden="${this._loggedIn && this._sidebarTab === "site"}"
+        >
+          <div class="nav-group-label">Contents</div>
+          <oer-site-nav part="site-menu" ?editable="${this._loggedIn && !this.editMode}"></oer-site-nav>
+        </nav>
+        ${this._loggedIn && this._sidebarTab === "site"
+          ? html`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
+              <div class="nav-group-label">Site</div>
               <button class="site-action" @click="${() => outlineBuilder().show()}">${icon.siteMap}Outline</button>
               <button class="site-action" @click="${() => typeEditor().show()}">${icon.types}Content types</button>
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`
           : ""}
-        <nav aria-label="Course outline">
-          <div class="nav-group-label">Contents</div>
-          <oer-site-nav part="site-menu" ?editable="${this._loggedIn && !this.editMode}"></oer-site-nav>
-        </nav>
         ${this._loggedIn
           ? html`<div class="sidebar-footer">${this.renderUser()}</div>`
           : ""}
@@ -1016,6 +1025,12 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         </button>
         <div class="separator" aria-hidden="true"></div>
         <site-breadcrumb part="breadcrumb"></site-breadcrumb>
+        <button class="icon-btn" @click="${this.openSearch}" title="Search the site (⌘K)" aria-label="Search the site">
+          ${icon.search}
+        </button>
+        <site-modal icon="icons:search" title="Search site" button-label="Search" @site-modal-click="${this._loadSearch}">
+          <site-search></site-search>
+        </site-modal>
         ${this._loggedIn ? html`<oer-command-search></oer-command-search>` : ""}
         <button
           class="icon-btn"
@@ -1108,6 +1123,43 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           : ""}
       </div>
     `;
+  }
+
+  // Nav (page list) / Site (site-wide tools) tabs at the top of the sidebar
+  renderSidebarTabs() {
+    const tab = (id, label) => html`<button
+      role="tab"
+      id="tab-${id}"
+      aria-selected="${this._sidebarTab === id}"
+      aria-controls="panel-${id}"
+      tabindex="${this._sidebarTab === id ? 0 : -1}"
+      @click="${() => this._setSidebarTab(id)}"
+    >
+      ${label}
+    </button>`;
+    return html`<div
+      class="sidebar-tabs"
+      role="tablist"
+      aria-label="Sidebar"
+      @keydown="${(e) => {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault();
+        const next = this._sidebarTab === "nav" ? "site" : "nav";
+        this._setSidebarTab(next);
+        this.updateComplete.then(() => this.shadowRoot.getElementById(`tab-${next}`)?.focus());
+      }}"
+    >
+      ${tab("nav", "Nav")}${tab("site", "Site")}
+    </div>`;
+  }
+
+  _setSidebarTab(id) {
+    this._sidebarTab = id;
+    try {
+      globalThis.localStorage.setItem("oer-sidebar-tab", id);
+    } catch {
+      // not remembered without storage
+    }
   }
 
   renderUser() {

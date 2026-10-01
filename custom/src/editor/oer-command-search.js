@@ -1,5 +1,5 @@
 /**
- * `oer-command-search` — a search icon that expands into a field. Typing
+ * `oer-command-search` — a command icon (⌘) that expands into a field. Typing
  * hands the text to Merlin, which opens as the command dialog with the
  * query filled in; Enter on an empty field opens it directly; Escape or a
  * click elsewhere collapses back to the icon. The expansion is animated
@@ -148,21 +148,21 @@ class OerCommandSearch extends LitElement {
         <button
           aria-expanded="${this.open}"
           aria-controls="q"
-          title="Search or run a command (${DAEMON})"
-          aria-label="Search or run a command"
+          title="Run a command (${DAEMON})"
+          aria-label="Run a command"
           @click="${() => (this.open = !this.open)}"
         >
           <span
             class="icon"
             aria-hidden="true"
-            style="--src:url(&quot;${LUCIDE_ICONS["icons:search"]}&quot;)"
+            style="--src:url(&quot;${LUCIDE_ICONS["oer:command"]}&quot;)"
           ></span>
         </button>
         <input
           id="q"
           type="search"
-          placeholder="Search or run a command…"
-          aria-label="Search or run a command"
+          placeholder="Run a command…"
+          aria-label="Run a command"
           tabindex="${this.open ? 0 : -1}"
           @input="${this._input}"
           @keydown="${this._keydown}"

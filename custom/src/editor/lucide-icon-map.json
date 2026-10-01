@@ -262,5 +262,6 @@
   "oer:chevron-up": "chevron-up",
   "oer:chevron-down": "chevron-down",
   "oer:sliders-horizontal": "sliders-horizontal",
-  "oer:x": "x"
+  "oer:x": "x",
+  "oer:command": "command"
 }
