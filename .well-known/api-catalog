@@ -1,24 +1,24 @@
 {
   "linkset": [
     {
-      "anchor": "{{ domain }}",
+      "anchor": "https://localhost:3000/learning-materials/",
       "item": [
         {
-          "href": "{{ domain }}x/api",
+          "href": "https://localhost:3000/learning-materials/x/api",
           "rel": "service"
         }
       ],
       "service-desc": [
         {
-          "href": "{{ domain }}x/api/openapi",
+          "href": "https://localhost:3000/learning-materials/x/api/openapi",
           "type": "application/json"
         },
         {
-          "href": "{{ domain }}x/api/openapi.json",
+          "href": "https://localhost:3000/learning-materials/x/api/openapi.json",
           "type": "application/json"
         },
         {
-          "href": "{{ domain }}x/api/openapi.yaml",
+          "href": "https://localhost:3000/learning-materials/x/api/openapi.yaml",
           "type": "application/yaml"
         }
       ]

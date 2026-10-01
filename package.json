@@ -1,7 +1,7 @@
 {
-  "name": "{{ short }}",
-  "version": "{{ version }}",
-  "description": "{{ description }}",
+  "name": "learning-materials",
+  "version": "26.8.0",
+  "description": "",
   "main": "index.html",
   "author": {
     "name": "btopro"
