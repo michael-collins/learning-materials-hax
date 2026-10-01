@@ -1001,6 +1001,14 @@ class OerTypeEditor extends LitElement {
 
       <section>
         <label class="check" style="font-size:0.875rem">
+          <input type="checkbox" .checked="${t.nav !== false}" @change="${(e) => this._update((x) => (x.nav = e.target.checked))}" />
+          Show in the navigation
+        </label>
+        <p class="hint">Off: pages of this type (and everything under them) stay out of the sidebar, which then lists only the sections that hold them, as in Decap. Collections, search, links and the outline still find them.</p>
+      </section>
+
+      <section>
+        <label class="check" style="font-size:0.875rem">
           <input type="checkbox" .checked="${!!t.reader}" @change="${(e) => this._update((x) => (x.reader = e.target.checked || undefined))}" />
           Reader layout
         </label>

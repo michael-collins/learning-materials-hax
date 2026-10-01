@@ -199,7 +199,8 @@ class OerSiteNav extends LitElement {
         background: var(--accent);
         color: var(--foreground);
       }
-      a[aria-current="page"] {
+      a[aria-current="page"],
+      a[aria-current="location"] {
         background: var(--accent);
         color: var(--foreground);
         font-weight: 500;
@@ -378,7 +379,7 @@ class OerSiteNav extends LitElement {
             <a
               href="${item.slug}"
               class="${item.metadata?.published === false ? "draft" : ""}"
-              aria-current="${item.id === this._activeId ? "page" : "false"}"
+              aria-current="${item.id === this._activeId ? "page" : item.id === this.__location ? "location" : "false"}"
             >
               ${depth === 0
                 ? iconName
@@ -405,8 +406,22 @@ class OerSiteNav extends LitElement {
     </ul>`;
   }
 
+  // types whose pages stay out of the site nav (as Decap lists only its
+  // collections): their pages and everything under them
+  _navItems() {
+    if (this.root) return this._items;
+    const hidden = new Set(contentTypes(this._all).types.filter((t) => t.nav === false).map((t) => t.id));
+    return hidden.size ? this._items.filter((i) => !hidden.has(i.metadata?.pageType)) : this._items;
+  }
+
   render() {
-    let items = this._items;
+    let items = this._navItems();
+    // a hidden page's nearest listed ancestor marks where the reader is
+    const shown = new Set(items.map((i) => i.id));
+    const byId = new Map((this._all || []).map((i) => [i.id, i]));
+    let here = byId.get(this._activeId);
+    while (here && !shown.has(here.id)) here = byId.get(here.parent);
+    this.__location = here && here.id !== this._activeId ? here.id : null;
     const q = (this.filter || "").trim().toLowerCase();
     if (q) {
       // matches plus their ancestors, so the tree still reads
