@@ -289,12 +289,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/digital-fabrication</loc>
-    <lastmod>2026-10-01T04:47:54.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets</loc>
     <lastmod>2026-10-01T04:47:54.000Z</lastmod>
     <changefreq>daily</changefreq>
