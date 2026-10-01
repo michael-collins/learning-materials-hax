@@ -403,13 +403,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/compositor-pathway-1</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/compositor-pathway-1</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -469,12 +469,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/digital-fabrication-1</loc>
-    <lastmod>2026-10-01T04:46:28.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -482,6 +476,12 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/concept-blockout/blocking-out-a-game-space</loc>
+    <lastmod>2026-10-01T04:46:28.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/digital-fabrication-1</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -535,13 +535,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
