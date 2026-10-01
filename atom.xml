@@ -781,18 +781,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Hard Surface Modeling</title>
-    <id>item-4bb8978d-99a6-4b98-8373-a70600d6859a</id>
-    <updated>2026-10-01T04:46:27.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-f83868f0-e72d-43cd-b3b6-019b35bd4947"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Sculpting, retopo, and texturing</title>
     <id>item-f9e72d9c-c6f5-4a29-b8fd-9a9207bbb863</id>
     <updated>2026-10-01T04:46:27.000Z</updated>
@@ -900,6 +888,39 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <li>Model and texture reusable pieces</li>
 <li>Assemble a scene from the kit in a real-time engine</li>
 </ol>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Game Artist Pathway</title>
+    <id>item-39e4ffab-fa6f-4e51-8107-eb710ae38c56</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway"/>
+    <category term="Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR" label="Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR" />
+    <content type="html">
+      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
+<p>This pathway prepares students for careers in the game industry, focusing on the creation of 3D content for interactive and real-time applications. Students will learn to balance artistic quality with technical performance requirements, creating assets that work seamlessly in game engines and virtual reality platforms.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is perfect for students interested in:</p>
+<ul>
+<li>Video game development</li>
+<li>Virtual reality experiences</li>
+<li>Augmented reality applications</li>
+<li>Interactive installations</li>
+<li>Mobile game development</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>3D Game Artist</li>
+<li>Environment Artist</li>
+<li>Character Artist</li>
+<li>Technical Artist</li>
+<li>VR/AR Developer</li>
+<li>Props Artist</li>
+</ul>
  ]]>
     </content>
   </entry>

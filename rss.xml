@@ -142,13 +142,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Hard Surface Modeling</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Sculpting, retopo, and texturing</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing</link>
       <description></description>
@@ -190,6 +183,14 @@
       <description>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene. Learning Objectives Plan a modular grid and pivot conventions Model and texture reusable pieces Assemble a scene from the kit in a real-time engine</description>
       <category>Blender,PlayCanvas</category>
       <guid>https://localhost:3000/learning-materials/projects/modular-environment-kit</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Game Artist Pathway</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway</link>
+      <description>This pathway prepares students for careers in the game industry, focusing on the creation of 3D content for interactive and real-time applications. Students will learn to balance artistic quality with technical performance requirements, creating assets that work seamlessly in game engines and virtual reality platforms. Who This Is For This pathway is perfect for students interested in: Video game development Virtual reality experiences Augmented reality applications Interactive installations ...</description>
+      <category>Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR</category>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
