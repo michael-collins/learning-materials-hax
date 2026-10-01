@@ -15,6 +15,8 @@ import { embedDialog } from "../embed/oer-embed-dialog.js";
 import { isEmbedded } from "../embed/embed-mode.js";
 import { isSnapshot, latestOf } from "../versions/versioning.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
+import { bookPrint } from "../books/oer-book-print.js";
+import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -31,6 +33,8 @@ class OerPageHeader extends LitElement {
       editable: { type: Boolean },
       _item: { state: true },
       _types: { state: true },
+      _exportOpen: { state: true },
+      _exporting: { state: true },
     };
   }
 
@@ -152,6 +156,38 @@ class OerPageHeader extends LitElement {
         background: color-mix(in srgb, var(--primary) 88%, black);
         color: var(--primary-foreground);
       }
+      .menu-wrap {
+        position: relative;
+      }
+      .menu {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 0.25rem);
+        z-index: 5;
+        min-width: 14rem;
+        padding: 0.25rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--popover, var(--background));
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      }
+      .menu button {
+        all: unset;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        height: 2rem;
+        padding: 0 0.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        cursor: pointer;
+      }
+      .menu button:hover,
+      .menu button:focus-visible {
+        background: var(--accent);
+      }
       .actions {
         margin-left: auto;
         display: inline-flex;
@@ -232,6 +268,18 @@ class OerPageHeader extends LitElement {
     `;
   }
 
+  async _export(kind, item) {
+    this._exportOpen = false;
+    if (kind === "print") return bookPrint().show(item.id);
+    this._exporting = true;
+    try {
+      if (kind === "html") await exportHtmlZip(item.id);
+      else await exportCommonCartridge(item.id);
+    } finally {
+      this._exporting = false;
+    }
+  }
+
   _short(f, v) {
     if (f.kind === "boolean") return v ? "Yes" : "No";
     if (f.kind === "select") return (f.options || []).find((o) => o.value === v)?.label || v;
@@ -282,7 +330,19 @@ class OerPageHeader extends LitElement {
         ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
           ${type?.reader && firstChild
-            ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>`
+            ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>
+                <span class="menu-wrap">
+                  <button class="edit" aria-haspopup="menu" aria-expanded="${!!this._exportOpen}" @click="${() => (this._exportOpen = !this._exportOpen)}">
+                    ${lucide("icons:file-download")}${this._exporting ? "Exporting…" : "Export"}
+                  </button>
+                  ${this._exportOpen
+                    ? html`<div class="menu" role="menu" @keydown="${(e) => e.key === "Escape" && (this._exportOpen = false)}">
+                        <button role="menuitem" @click="${() => this._export("print", item)}">${lucide("icons:print")}Print / PDF</button>
+                        <button role="menuitem" @click="${() => this._export("html", item)}">${lucide("hax:file-html")}HTML (.zip)</button>
+                        <button role="menuitem" @click="${() => this._export("cc", item)}">${lucide("hax:module")}Common Cartridge (.imscc)</button>
+                      </div>`
+                    : ""}
+                </span>`
             : ""}
           ${canEmbed ? html`<button class="edit" @click="${() => embedDialog().show(item)}">${lucide("icons:open-in-new")}Embed</button>` : ""}
           ${this.editable
