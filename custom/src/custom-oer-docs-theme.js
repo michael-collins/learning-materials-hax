@@ -713,8 +713,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           gap: 0.25rem;
           height: 2rem;
           padding: 0 0.5rem;
-          font-size: 0.75rem;
+          font-size: 0.6875rem;
           font-weight: 500;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
           color: var(--muted-foreground);
         }
         .label-action {

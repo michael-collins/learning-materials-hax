@@ -291,17 +291,59 @@ class OerSiteNav extends LitElement {
       li.heading {
         list-style: none;
       }
+      /* group label, after the Decap sidebar's: small, uppercase, tracked.
+         Full muted colour (Decap's 60% opacity fails AA at this size) */
       li.heading:not(:first-child) {
-        margin-top: 0.75rem;
+        margin-top: 1rem;
       }
       .group-label {
         display: flex;
         align-items: center;
-        height: 2rem;
+        min-height: 1.5rem;
         padding: 0 0.5rem;
-        font-size: 0.75rem;
+        font-size: 0.6875rem;
         font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
         color: var(--muted-foreground);
+      }
+
+      /* icons off: the Decap sidebar's hierarchy, with text alone doing the
+         work. Roomier rows, medium-weight top level, regular sub-pages,
+         wider gaps between groups */
+      :host([no-icons]) ul {
+        gap: 0.25rem;
+      }
+      :host([no-icons]) a,
+      :host([no-icons]) .add {
+        height: auto;
+        min-height: 2.25rem;
+        padding: 0.5rem 0.75rem;
+      }
+      :host([no-icons]) > ul > li > .row > a {
+        font-weight: 500;
+      }
+      :host([no-icons]) ul ul {
+        margin: 0.125rem 0 0.25rem 1rem;
+        padding-left: 0.5rem;
+      }
+      :host([no-icons]) ul ul a,
+      :host([no-icons]) ul ul .add {
+        min-height: 2rem;
+        padding: 0.375rem 0.75rem;
+        font-weight: 400;
+      }
+      :host([no-icons]) ul ul a[aria-current="page"] {
+        font-weight: 500;
+      }
+      :host([no-icons]) .group-label {
+        padding: 0 0.75rem;
+      }
+      :host([no-icons]) li.heading:not(:first-child) {
+        margin-top: 1.5rem;
+      }
+      :host([no-icons]) .has-kids > .row > a {
+        padding-right: 2rem;
       }
       .none {
         margin: 0.5rem;
@@ -436,6 +478,8 @@ class OerSiteNav extends LitElement {
   }
 
   render() {
+    // the site's "Icons in navigation" setting switches the layout
+    this.toggleAttribute("no-icons", !navIconsOn(this._all));
     let items = this._navItems();
     // a hidden page's nearest listed ancestor marks where the reader is
     const shown = new Set(items.map((i) => i.id));
