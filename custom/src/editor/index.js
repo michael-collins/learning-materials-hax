@@ -12,6 +12,7 @@ import { installCommandPalette } from "./command-palette.js";
 import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
 import "./oer-block-label.js";
 import "./oer-block-rail.js";
+import "./oer-block-inserter.js";
 
 installLucideIcons();
 installQuietMode();
@@ -44,12 +45,13 @@ function adoptStockBar() {
         stock.style.setProperty(prop, value, "important");
       }
     }
-    for (const tag of ["oer-block-label", "oer-block-rail"]) {
+    for (const tag of ["oer-block-label", "oer-block-rail", "oer-block-inserter"]) {
       if (!doc.querySelector(tag)) doc.body.append(doc.createElement(tag));
     }
   } else {
     doc.querySelector("oer-block-label")?.remove();
     doc.querySelector("oer-block-rail")?.remove();
+    doc.querySelector("oer-block-inserter")?.remove();
   }
 }
 new MutationObserver(adoptStockBar).observe(globalThis.document.body, { childList: true });

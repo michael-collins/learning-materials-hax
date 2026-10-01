@@ -21,7 +21,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { MOD } from "./stock.js";
+import { MOD, contentViewport } from "./stock.js";
 
 const SEP = { sep: true };
 
@@ -65,8 +65,9 @@ const BLOCK = [
   { label: "Move up", icon: "arrow-up", find: byEvent("hax-plate-up") },
   { label: "Move down", icon: "arrow-down", find: byEvent("hax-plate-down") },
   SEP,
-  { label: "Insert block above", icon: "arrow-up-to-line", find: byEvent("insert-above-active") },
-  { label: "Insert block below", icon: "arrow-down-to-line", find: byEvent("insert-below-active") },
+  // these open oer-block-inserter's block list for that gap
+  { label: "Insert block above…", icon: "arrow-up-to-line", find: byEvent("insert-above-active"), insert: "above" },
+  { label: "Insert block below…", icon: "arrow-down-to-line", find: byEvent("insert-below-active"), insert: "below" },
   { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate") },
   SEP,
   { label: "Add column", icon: "columns-2", find: byEvent("hax-plate-create-right") },
@@ -142,7 +143,8 @@ const CATEGORIES = [
   { id: "block", label: "Block", icon: "box", source: "plate", items: BLOCK },
   { id: "text", label: "Text", icon: "pilcrow", source: "text", items: TEXT },
   { id: "format", label: "Format", icon: "type", source: "text", items: FORMAT },
-  { id: "insert", label: "Insert", icon: "plus", source: "text", items: INSERT },
+  // "Insert inline" so it is not mistaken for inserting a block
+  { id: "insert", label: "Insert inline", icon: "smile-plus", source: "text", items: INSERT },
 ];
 
 const icon = (name) =>
@@ -240,13 +242,13 @@ class OerBlockRail extends LitElement {
     }
     const rail = this.shadowRoot?.querySelector(".rail");
     const railH = rail?.offsetHeight || 0;
-    const scroller = node.closest("main") || null;
-    const top0 = scroller ? scroller.getBoundingClientRect().top + 8 : 8;
+    const view = contentViewport();
+    const top0 = view.top + 8;
     // stay level with the block's top, sticking inside the viewport while a
     // tall block scrolls, but never below the block's bottom edge
     let top = r.top;
     if (top < top0) top = Math.max(Math.min(top0, r.bottom - railH), r.top);
-    const offscreen = r.bottom < top0 || r.top > globalThis.innerHeight || r.width === 0;
+    const offscreen = r.bottom < top0 || r.top > view.bottom || r.width === 0;
     if (offscreen && !this._open) {
       this.hidden = true;
       return;
@@ -312,7 +314,9 @@ class OerBlockRail extends LitElement {
         disabled: !available,
         hint: !available ? needs : "",
         pressed: spec.toggle && available ? !!el.toggled : undefined,
-        run: () => nativeButton(el)?.click(),
+        run: spec.insert
+          ? () => globalThis.document.querySelector("oer-block-inserter")?.openFor(this._hax.activeNode, spec.insert)
+          : () => nativeButton(el)?.click(),
       });
     }
     while (out.length && out[out.length - 1].sep) out.pop();

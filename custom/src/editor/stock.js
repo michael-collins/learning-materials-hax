@@ -47,6 +47,13 @@ export function addPage() {
  * Show a panel in the editor side panel. Unlike stock haxButtonOp this
  * never toggles: selecting the current tab keeps it open.
  */
+/** The theme's scrolling content area, for clipping overlays below the header. */
+export function contentViewport() {
+  const main = globalThis.document.querySelector("custom-oer-docs-theme")?.shadowRoot?.querySelector("main");
+  const r = main?.getBoundingClientRect();
+  return r ? { top: r.top, bottom: r.bottom } : { top: 0, bottom: globalThis.innerHeight };
+}
+
 export function showPanel(name) {
   const tray = haxStore()?.haxTray;
   if (!tray || !PANELS.includes(name)) return;

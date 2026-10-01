@@ -102,7 +102,9 @@ export function installUxTweaks() {
 
 /**
  * The editor side panel (hax-tray), docked where the site sidebar sits:
- * - A tab strip (Insert / Block / Outline / Source) is injected at the top.
+ * - A tab strip (Block / Outline / Source) is injected at the top. The
+ *   Insert panel is replaced by oer-block-inserter; anything that still asks
+ *   for it (stock shortcuts, Merlin) lands on Block instead.
  *   Tabs always *show* their panel; stock toggled it closed when the active
  *   button was pressed again, which is why Insert and Block both appeared
  *   to switch the pane off.
@@ -110,8 +112,8 @@ export function installUxTweaks() {
  * - Block settings open with "Configure" expanded.
  */
 
+// no Insert tab: blocks are inserted in place with oer-block-inserter
 const TABS = [
-  ["content-add", "hax:add-brick", "Insert"],
   ["content-edit", "image:tune", "Block"],
   ["content-map", "icons:toc", "Outline"],
   ["view-source", "hax:html-code", "Source"],
@@ -236,6 +238,24 @@ export function installTrayEnhancer() {
 
     const syncTabs = () => {
       const current = tray.getAttribute("tray-detail");
+      // Insert has no tab; send requests for it to Block. HAX itself flips
+      // back to Insert when nothing is selected, so redirect at most once a
+      // frame and only while editing (otherwise the two observers ping-pong
+      // and lock up the page)
+      if (current === "content-add" && store.editMode && !tray.__oerRedirect) {
+        tray.__oerRedirect = true;
+        requestAnimationFrame(() => {
+          tray.__oerRedirect = false;
+          if (tray.getAttribute("tray-detail") !== "content-add") return;
+          // with nothing selected HAX would switch straight back to Insert
+          const hax = globalThis.HaxStore?.requestAvailability?.();
+          if (hax && !hax.activeNode) {
+            const first = [...(hax.activeHaxBody?.children || [])].find((el) => el.localName !== "page-break");
+            if (first) hax.activeNode = first;
+          }
+          showPanel("content-edit");
+        });
+      }
       for (const tab of tray.shadowRoot.querySelectorAll(".oer-tab")) {
         const on = tab.dataset.panel === current;
         tab.setAttribute("aria-selected", String(on));
@@ -267,12 +287,12 @@ export function installTrayEnhancer() {
     new MutationObserver(syncTabs).observe(tray, { attributes: true, attributeFilter: ["tray-detail"] });
     enhance();
 
-    // keep the panel open while editing, defaulting to Insert
+    // keep the panel open while editing, defaulting to Block
     autorun(() => {
       if (!toJS(store.editMode)) return;
       requestAnimationFrame(() => {
         const current = tray.getAttribute("tray-detail");
-        showPanel(PANELS.includes(current) ? current : "content-add");
+        showPanel(PANELS.includes(current) && current !== "content-add" ? current : "content-edit");
       });
     });
   });

@@ -256,5 +256,6 @@
   "oer:audio-lines": "audio-lines",
   "oer:message-square-quote": "message-square-quote",
   "oer:chevron-right": "chevron-right",
-  "oer:check": "check"
+  "oer:check": "check",
+  "oer:smile-plus": "smile-plus"
 }
