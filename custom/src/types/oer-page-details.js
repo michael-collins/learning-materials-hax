@@ -20,6 +20,8 @@ const lucide = (name, cls = "") =>
 
 const empty = (v) => v === undefined || v === null || v === "" || (Array.isArray(v) && !v.filter((x) => String(x).trim()).length);
 
+const toArray = (v) => (Array.isArray(v) ? v : v ? [v] : []);
+
 class OerPageDetails extends LitElement {
   static get tag() {
     return "oer-page-details";
@@ -64,7 +66,7 @@ class OerPageDetails extends LitElement {
     const def = contentTypes(items).types.find((t) => t.id === item.metadata?.pageType);
     for (const f of def?.fields || []) {
       if (f.default !== undefined && f.default !== "" && (this._values[f.name] === undefined || this._values[f.name] === "")) {
-        this._values[f.name] = f.kind === "list" ? String(f.default).split(",").map((s) => s.trim()) : f.default;
+        this._values[f.name] = f.kind === "list" || (f.kind === "select" && f.multiple) ? String(f.default).split(",").map((s) => s.trim()) : f.default;
       }
     }
     this._tried = false;
@@ -100,6 +102,7 @@ class OerPageDetails extends LitElement {
     for (const f of this._typeDef?.fields || []) {
       let v = this._values[f.name];
       if (f.kind === "list") v = (v || []).map((x) => String(x).trim()).filter(Boolean);
+      if (f.kind === "select" && f.multiple) v = (f.options || []).map((o) => o.value).filter((x) => toArray(v).includes(x));
       if (f.kind === "relation") v = (Array.isArray(v) ? v : []).filter((x) => x?.page).map((x) => ({ page: x.page, version: x.version || "" }));
       if (f.kind === "files") {
         v = (Array.isArray(v) ? v : [])
@@ -251,6 +254,12 @@ class OerPageDetails extends LitElement {
       }
       .invalid {
         border-color: var(--destructive);
+      }
+      .choices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.25rem;
+        margin-top: 0.25rem;
       }
       .check {
         display: inline-flex;
@@ -460,6 +469,24 @@ class OerPageDetails extends LitElement {
         control = html`<textarea id="${id}" class="${invalid ? "invalid" : ""}" .value="${v || ""}" @input="${(e) => this._set(f.name, e.target.value)}"></textarea>`;
         break;
       case "select":
+        if (f.multiple) {
+          const on = toArray(v);
+          return html`<div>
+            <span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req" aria-hidden="true">*</span>` : ""}</span>
+            <div class="choices" role="group" aria-labelledby="${id}-l">
+              ${(f.options || []).map(
+                (o) => html`<label class="check"
+                  ><input
+                    type="checkbox"
+                    .checked="${on.includes(o.value)}"
+                    @change="${(e) => this._set(f.name, e.target.checked ? [...on, o.value] : on.filter((x) => x !== o.value))}"
+                  />${o.label}</label
+                >`,
+              )}
+            </div>
+            ${help}${err}
+          </div>`;
+        }
         control = html`<select id="${id}" class="${invalid ? "invalid" : ""}" @change="${(e) => this._set(f.name, e.target.value)}">
           <option value="" ?selected="${!v}">—</option>
           ${(f.options || []).map((o) => html`<option value="${o.value}" ?selected="${o.value === v}">${o.label}</option>`)}

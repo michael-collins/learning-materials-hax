@@ -9,7 +9,8 @@
  *
  * Keyboard (row focused): Enter/F2 rename · Tab / Shift+Tab indent /
  * outdent · Alt+↑/↓ move with sub-pages · ↑/↓ previous/next row · ←/→
- * collapse/expand · Delete remove. Drag a row: top third = before, middle =
+ * collapse/expand · Delete remove · T content type · L level (inside a
+ * pathway with several levels). Drag a row: top third = before, middle =
  * make child, bottom third = after; drag left/right to change level. Hold a
  * parent for 2 s to collapse it before dragging.
  * @element oer-outline-builder
@@ -22,6 +23,7 @@ import { isSystemItem, contentTypes } from "../types/content-types.js";
 import { isSnapshot } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
+import { PATHWAY_TYPE, pathwayOf, pathwayLevels, levelChip, pathwayChipStyles } from "../pathways/pathway-model.js";
 
 const INDENT_PX = 20;
 const MAX_DEPTH = 6;
@@ -46,7 +48,7 @@ class OerOutlineBuilder extends LitElement {
       _hoverAdd: { state: true },
       _drag: { state: true },
       _longPress: { state: true },
-      _typeMenu: { state: true }, // { id, x, y } while choosing a row's type
+      _typeMenu: { state: true }, // { id, x, y, kind: "type" | "level" } while choosing a row's type or level
       _confirmDiscard: { state: true },
     };
   }
@@ -90,6 +92,7 @@ class OerOutlineBuilder extends LitElement {
       icon: item.metadata?.icon || "",
       type: item.metadata?.pageType || "",
       ref: item.metadata?.oerRef?.page ? item.metadata.oerRef : null,
+      level: item.metadata?.oerLevel || "",
       depth,
       orig: item,
     }));
@@ -111,7 +114,7 @@ class OerOutlineBuilder extends LitElement {
   }
 
   _signature() {
-    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.depth, r.ref?.page, r.ref?.version]));
+    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.level, r.depth, r.ref?.page, r.ref?.version]));
   }
 
   get _dirty() {
@@ -150,12 +153,14 @@ class OerOutlineBuilder extends LitElement {
           Number(o.indent) !== indent ||
           o.title !== title ||
           (o.metadata?.icon || "") !== row.icon ||
-          (o.metadata?.pageType || "") !== row.type;
+          (o.metadata?.pageType || "") !== row.type ||
+          (o.metadata?.oerLevel || "") !== (row.level || "");
         Object.assign(item, { parent: parent || null, order, indent, title });
         item.metadata = { ...(o.metadata || {}) };
         // HAXcms merges metadata on outline saves: clear with "", not delete
         item.metadata.icon = row.icon || "";
         item.metadata.pageType = row.type || "";
+        if (row.level || o.metadata?.oerLevel) item.metadata.oerLevel = row.level || "";
         if (changed) item.modified = true;
       } else {
         out.set(row.id, {
@@ -170,6 +175,7 @@ class OerOutlineBuilder extends LitElement {
             ...(row.icon ? { icon: row.icon } : {}),
             ...(row.type ? { pageType: row.type } : {}),
             ...(row.ref ? { oerRef: row.ref } : {}),
+            ...(row.level ? { oerLevel: row.level } : {}),
           },
           // a linked page shows the original instead of starter content
           contents: row.ref
@@ -517,7 +523,11 @@ class OerOutlineBuilder extends LitElement {
     else if (e.key === "ArrowRight" && this._hasChildren(index) && this._collapsed.has(row.id)) this._toggle(row.id);
     else if (e.key === "ArrowLeft" && this._hasChildren(index) && !this._collapsed.has(row.id)) this._toggle(row.id);
     else if (e.key === "Delete" || (e.key === "Backspace" && !row.title)) this._remove(row.id);
-    else return;
+    else if ((e.key === "t" || e.key === "l") && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      const chip = e.currentTarget.querySelector(e.key === "t" ? ".type-chip:not(.level-chip)" : ".level-chip");
+      if (!chip) return;
+      this._openMenu(row, index, e.key === "t" ? "type" : "level", chip);
+    } else return;
     e.preventDefault();
   }
 
@@ -677,6 +687,28 @@ class OerOutlineBuilder extends LitElement {
     return untyped ? "" : types[0]?.id || "";
   }
 
+  // levels offered for a row: those of the pathway it sits in (2+ only)
+  _levelsFor(idx) {
+    for (let i = idx, r = this._parentRow(idx); r; r = this._parentRow(i)) {
+      i = this._index(r.id);
+      if (r.type === PATHWAY_TYPE) return pathwayLevels(r.orig);
+    }
+    const root = this._root ? pathwayOf(this._root, toJS(store.manifest?.items) || []) : null;
+    return root ? pathwayLevels(root) : [];
+  }
+
+  _setLevel(id, level) {
+    this._typeMenu = null;
+    this._commit(this._rows.map((r) => (r.id === id ? { ...r, level } : r)));
+    this._focusRow(id);
+  }
+
+  _openMenu(row, index, kind, chip) {
+    const r = chip.getBoundingClientRect();
+    const box = this.shadowRoot.querySelector(".dialog").getBoundingClientRect();
+    this._typeMenu = { id: row.id, index, kind, x: r.right - box.left, y: r.bottom - box.top + 4 };
+  }
+
   _setType(id, type) {
     this._typeMenu = null;
     this._commit(this._rows.map((r) => (r.id === id ? { ...r, type } : r)));
@@ -686,7 +718,7 @@ class OerOutlineBuilder extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return css`
+    return [pathwayChipStyles, css`
       :host {
         position: fixed;
         inset: 0;
@@ -1165,6 +1197,22 @@ class OerOutlineBuilder extends LitElement {
         color: var(--foreground);
         background: var(--accent);
       }
+      .level-chip {
+        padding: 0;
+        background: transparent;
+      }
+      .level-chip.untyped {
+        padding: 0 0.5rem;
+      }
+      .level-chip .level {
+        font-size: 0.6875rem;
+      }
+      .type-menu .level {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        font-size: inherit;
+      }
       .type-chip.untyped {
         background: transparent;
         opacity: 0;
@@ -1370,7 +1418,7 @@ class OerOutlineBuilder extends LitElement {
         color: var(--destructive-foreground, white);
       }
 
-    `;
+    `];
   }
 
   // an add row's level is closed when its parent's type may contain nothing
@@ -1401,12 +1449,28 @@ class OerOutlineBuilder extends LitElement {
       @mousedown="${(e) => e.preventDefault()}"
       @click="${(e) => {
         e.stopPropagation();
-        const r = e.currentTarget.getBoundingClientRect();
-        const box = this.shadowRoot.querySelector(".dialog").getBoundingClientRect();
-        this._typeMenu = { id: row.id, index, x: r.right - box.left, y: r.bottom - box.top + 4 };
+        this._openMenu(row, index, "type", e.currentTarget);
       }}"
     >
       ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type ? type.label : "No type"}
+    </button>`;
+  }
+
+  _renderLevelChip(row, index) {
+    const levels = this._levelsFor(index);
+    if (levels.length < 2 && !row.level) return "";
+    return html`<button
+      class="type-chip level-chip ${row.level ? "" : "untyped"}"
+      tabindex="-1"
+      title="Level (click to change)"
+      aria-label="Level: ${row.level || "every level"}. Change"
+      @mousedown="${(e) => e.preventDefault()}"
+      @click="${(e) => {
+        e.stopPropagation();
+        this._openMenu(row, index, "level", e.currentTarget);
+      }}"
+    >
+      ${row.level ? levelChip(row.level) : "Level"}
     </button>`;
   }
 
@@ -1415,6 +1479,31 @@ class OerOutlineBuilder extends LitElement {
     const idx = this._index(m.id);
     if (idx < 0) return "";
     const row = this._rows[idx];
+    const menuKeys = (e) => {
+      const items = [...e.currentTarget.querySelectorAll("[role=menuitemradio]")];
+      const i = items.indexOf(this.shadowRoot.activeElement);
+      if (e.key === "ArrowDown") items[(i + 1) % items.length]?.focus();
+      else if (e.key === "ArrowUp") items[(i - 1 + items.length) % items.length]?.focus();
+      else if (e.key === "Escape") {
+        this._typeMenu = null;
+        this._focusRow(row.id);
+      } else return;
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    if (m.kind === "level") {
+      const levels = this._levelsFor(idx);
+      const opt = (value, label) => html`<button role="menuitemradio" aria-checked="${row.level === value ? "true" : "false"}" @click="${() => this._setLevel(row.id, value)}">
+        <span class="check">${row.level === value ? lucide("oer:check", "sm") : ""}</span>${label}
+      </button>`;
+      return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
+        <div class="type-menu" role="menu" aria-label="Level" style="left:${m.x}px;top:${m.y}px" @click="${(e) => e.stopPropagation()}" @keydown="${menuKeys}">
+          <div class="menu-label">Level</div>
+          ${opt("", "Every level")}
+          ${[...new Set([...levels, ...(row.level ? [row.level] : [])])].map((l) => opt(l, levelChip(l)))}
+        </div>
+      </div>`;
+    }
     const { types, untyped } = this._rowAllowed(idx);
     return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
       <div
@@ -1586,6 +1675,7 @@ class OerOutlineBuilder extends LitElement {
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
       </button>
       ${row.ref ? this._renderRef(row) : ""}
+      ${this._renderLevelChip(row, index)}
       ${this._renderTypeChip(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
       <div class="hover-only">

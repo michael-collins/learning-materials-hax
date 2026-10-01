@@ -935,6 +935,10 @@ class OerTypeEditor extends LitElement {
                       })}"
                   ></textarea>
                   <p class="hint">One per line. Use “value | Label” when the stored value differs from what people see.</p>
+                  <label class="check" style="margin-top:0.5rem">
+                    <input type="checkbox" .checked="${!!f.multiple}" @change="${(e) => this._setField(i, { multiple: e.target.checked || undefined })}" />
+                    Allow several choices
+                  </label>
                 </div>`
               : ""}
           </div>`

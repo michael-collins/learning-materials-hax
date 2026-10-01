@@ -26,11 +26,13 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { registerBlocks } from "./register.js";
 import { contentTypes, isSystemItem } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
+import { resolveLinks } from "../types/relations.js";
+import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
-const VIEWS = { table: "Table", cards: "Cards", outline: "Outline (modules)" };
+const VIEWS = { table: "Table", cards: "Cards", outline: "Outline (modules)", pathways: "Pathways (start here, next, in development)" };
 const SCOPES = { site: "Whole site", children: "This page's sub-pages", descendants: "Everything under this page" };
 const SORTS = { title: "Title", updated: "Recently updated", created: "Newest", order: "Outline order" };
 const DIFFICULTY_ORDER = ["beginner", "intermediate", "advanced"];
@@ -153,6 +155,7 @@ export class OerCollection extends LitElement {
       }
     }
     if (wanted.size) pool = pool.filter((i) => wanted.has(i.metadata?.pageType));
+    else if (this.view === "pathways") pool = pool.filter((i) => i.metadata?.pageType === "pathway");
     else if (this.view !== "outline" && this.scope === "site") pool = pool.filter((i) => i.metadata?.pageType);
     return pool;
   }
@@ -299,7 +302,7 @@ export class OerCollection extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return css`
+    return [pathwayChipStyles, css`
       :host {
         display: block;
         margin: 2rem 0;
@@ -788,7 +791,105 @@ export class OerCollection extends LitElement {
         font-size: 0.875rem;
         color: var(--muted-foreground, #555);
       }
-    `;
+
+      /* pathways index */
+      .pw-section + .pw-section {
+        margin-top: 2.5rem;
+      }
+      .pw-section h3 {
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted-foreground, #555);
+      }
+      .pw-section > p {
+        margin: 0.25rem 0 0;
+        font-size: 0.875rem;
+        color: var(--muted-foreground, #555);
+      }
+      .pw-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+        gap: 1rem;
+        margin-top: 0.75rem;
+      }
+      .pw-grid.featured {
+        grid-template-columns: 1fr;
+      }
+      .pw-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 1.25rem;
+        border: 1px solid var(--border, #e5e5e5);
+        border-radius: var(--radius-lg, 0.75rem);
+        background: var(--card, var(--background, #fff));
+        color: inherit;
+        text-decoration: none;
+      }
+      .featured .pw-card {
+        padding: 1.5rem 2rem;
+      }
+      .pw-card:hover {
+        border-color: color-mix(in srgb, var(--primary, #0071b6) 50%, var(--border, #e5e5e5));
+      }
+      .pw-title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .pw-title strong {
+        font-size: 1.125rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .featured .pw-title strong {
+        font-size: 1.5rem;
+      }
+      .pw-card:hover .pw-title strong {
+        color: var(--primary, #0071b6);
+      }
+      .pw-desc {
+        display: -webkit-box;
+        margin: 0.5rem 0 0;
+        overflow: hidden;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--muted-foreground, #555);
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+      .featured .pw-desc {
+        display: block;
+        max-width: 42rem;
+        font-size: 1rem;
+      }
+      .pw-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 1rem;
+        margin-top: auto;
+        padding-top: 1rem;
+        font-size: 0.75rem;
+        color: var(--muted-foreground, #555);
+      }
+      .pw-meta .chips {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+      }
+      .pw-meta .go {
+        margin-left: auto;
+      }
+      .pw-card:hover .go {
+        color: var(--primary, #0071b6);
+      }
+    `];
   }
 
   _typeIcon(item) {
@@ -884,6 +985,49 @@ export class OerCollection extends LitElement {
         </a>`;
       })}
     </div>`;
+  }
+
+  // pathways index, as learning-materials-decapcms' /pathways: where to
+  // start, what builds on it, and what is still being written
+  _renderPathways(items) {
+    if (!items.length) return html`<div class="empty">Nothing here yet.</div>`;
+    const sorted = [...items].sort((a, b) => a.title.localeCompare(b.title));
+    const f = (i) => i.metadata?.oerFields || {};
+    const prereqs = (i) => resolveLinks(f(i).prerequisites, this._all).filter((r) => !r.missing);
+    const inDev = sorted.filter((i) => f(i).placeholder);
+    const ready = sorted.filter((i) => !f(i).placeholder);
+    const start = ready.filter((i) => !prereqs(i).length);
+    const next = ready.filter((i) => prereqs(i).length);
+    // "After Foundations" when everything else builds on the same pathway
+    const firsts = new Set(next.map((i) => prereqs(i).map((r) => r.page).join()));
+    const only = firsts.size === 1 ? prereqs(next[0]) : [];
+    const nextLabel = only.length === 1 ? `After ${only[0].item.title.replace(/ pathway$/i, "")}` : "Next steps";
+    const card = (i) => {
+      const v = f(i);
+      const levels = sortLevels(v.levels);
+      const courses = toList(v.courses);
+      return html`<a class="pw-card" href="${i.slug}">
+        <span class="pw-title"><strong>${i.title}</strong>${v.placeholder ? inDevelopmentBadge() : ""}${i.metadata?.published === false ? html`<span class="draft">Draft</span>` : ""}</span>
+        ${i.description ? html`<p class="pw-desc">${i.description}</p>` : ""}
+        <span class="pw-meta">
+          ${courses.length ? html`<span>${courses.join(" or ")}</span>` : ""}
+          ${levels.length ? html`<span class="chips">${levels.map((l) => levelChip(l))}</span>` : v.placeholder ? "" : html`<span>One level</span>`}
+          ${v.targetRole ? html`<span>Leads toward ${v.targetRole}</span>` : ""}
+          ${lucide("oer:arrow-right", "go")}
+        </span>
+      </a>`;
+    };
+    const section = (title, list, { featured = false, intro = "" } = {}) =>
+      list.length
+        ? html`<section class="pw-section">
+            <h3>${title}</h3>
+            ${intro ? html`<p>${intro}</p>` : ""}
+            <div class="pw-grid ${featured ? "featured" : ""}">${list.map(card)}</div>
+          </section>`
+        : "";
+    return html`${section("Start here", start, { featured: true })}${section(nextLabel, next)}${section("In development", inDev, {
+      intro: "Planned pathways. Their modules are still being written, so they can't be taken yet.",
+    })}`;
   }
 
   // modules: each item is a module; its own sub-pages are the rows
@@ -1016,6 +1160,7 @@ export class OerCollection extends LitElement {
   render() {
     const heading = this.heading ? html`<h2 class="heading">${this.heading}</h2>` : "";
     if (this.view === "outline") return html`${heading}${this._renderOutline(this._items)}`;
+    if (this.view === "pathways") return html`${heading}${this._renderPathways(this._items)}`;
     const view = this.controls === "full" ? this._state.view || this.view : this.view;
     const filtered = this.controls === "full" ? this._filtered : this._items;
     const sorted = this._sorted(filtered);

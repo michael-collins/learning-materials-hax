@@ -18,6 +18,7 @@ import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { bookPrint } from "../books/oer-book-print.js";
 import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
 import { resolveLinks, isImage, fileLabel } from "./relations.js";
+import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -66,7 +67,7 @@ class OerPageHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [pathwayChipStyles, css`
       :host {
         display: block;
       }
@@ -331,7 +332,7 @@ class OerPageHeader extends LitElement {
       a {
         color: var(--link, var(--primary));
       }
-    `;
+    `];
   }
 
   // linked pages (prerequisites, resources…): type icon, title, type, version
@@ -381,6 +382,7 @@ class OerPageHeader extends LitElement {
   }
 
   _short(f, v) {
+    if (Array.isArray(v)) return v.map((x) => this._short(f, x)).join(", ");
     if (f.kind === "boolean") return v ? "Yes" : "No";
     if (f.kind === "select") return (f.options || []).find((o) => o.value === v)?.label || v;
     if (f.kind === "date") {
@@ -431,6 +433,7 @@ class OerPageHeader extends LitElement {
         : ""}
       <div class="meta">
         ${type ? html`<span class="type">${type.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type.label}</span>` : ""}
+        ${values.placeholder ? inDevelopmentBadge("md") : ""}
         ${versionPill}
         ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">

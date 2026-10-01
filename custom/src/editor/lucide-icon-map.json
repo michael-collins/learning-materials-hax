@@ -263,5 +263,10 @@
   "oer:chevron-down": "chevron-down",
   "oer:sliders-horizontal": "sliders-horizontal",
   "oer:x": "x",
-  "oer:command": "command"
+  "oer:command": "command",
+  "oer:circle-dashed": "circle-dashed",
+  "oer:circle-check": "circle-check",
+  "oer:clock": "clock",
+  "oer:arrow-right": "arrow-right",
+  "oer:circle-alert": "circle-alert"
 }

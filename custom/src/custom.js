@@ -9,3 +9,4 @@ import "./blocks/oer-embed-blocks.js";
 import "./blocks/oer-content-blocks.js";
 import "./blocks/oer-collection.js";
 import "./books/oer-include.js";
+import "./pathways/oer-pathway.js";
