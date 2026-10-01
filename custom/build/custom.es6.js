@@ -8704,7 +8704,7 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
       aria-label="Sidebar"
       @keydown="${t=>{if(t.key!=="ArrowLeft"&&t.key!=="ArrowRight")return;t.preventDefault();const r=this._sidebarTab==="nav"?"site":"nav";this._setSidebarTab(r),this.updateComplete.then(()=>this.shadowRoot.getElementById(`tab-${r}`)?.focus())}}"
     >
-      ${e("nav","Nav")}${e("site","Site")}
+      ${e("nav","Navigation")}${e("site","Site")}
     </div>`}_setSidebarTab(e){this._sidebarTab=e;try{globalThis.localStorage.setItem("oer-sidebar-tab",e)}catch{}}renderUser(){const e=this._userName||"Signed in";return s`
       <div class="user-wrap">
         <button

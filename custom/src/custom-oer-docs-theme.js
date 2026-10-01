@@ -1410,7 +1410,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         this.updateComplete.then(() => this.shadowRoot.getElementById(`tab-${next}`)?.focus());
       }}"
     >
-      ${tab("nav", "Nav")}${tab("site", "Site")}
+      ${tab("nav", "Navigation")}${tab("site", "Site")}
     </div>`;
   }
 
