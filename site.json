@@ -2630,6 +2630,23 @@
         "status": "",
         "icon": "courseicons:learning-objectives"
       }
+    },
+    {
+      "id": "item-db54ad23-ce19-428e-ad94-986c049e637d",
+      "indent": 0,
+      "location": "pages/item-db54ad23-ce19-428e-ad94-986c049e637d/index.html",
+      "slug": "test-book",
+      "order": 4,
+      "parent": null,
+      "title": "Test book",
+      "description": "",
+      "metadata": {
+        "pageType": "book",
+        "created": 1790825428,
+        "updated": 1790825428,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
