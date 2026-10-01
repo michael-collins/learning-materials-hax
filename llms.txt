@@ -49,8 +49,18 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-551064b6-4beb-4326-8d70-f723bd60010d/index.md)
 - [Stylized Prop Set](https://localhost:3000/learning-materials/pages/item-955f3a9a-72db-424a-a8e0-f195c322a57f/index.md)
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
-- [Lessons](https://localhost:3000/learning-materials/pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [History of CGI](https://localhost:3000/learning-materials/pages/item-d20b5a98-dc5e-4ce8-b734-32490288d27c/index.md): Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.
+- [Introduction to Texturing](https://localhost:3000/learning-materials/pages/item-be2fc5ef-ba1f-484b-be6a-2216a24314a2/index.md)
+- [You don't see that everyday object posters](https://localhost:3000/learning-materials/pages/item-930abc68-c77e-479c-b2ff-220e4714c712/index.md)
+- [Compositor Pathway](https://localhost:3000/learning-materials/pages/item-b10cae23-396d-4b8a-92dd-7472ae68a302/index.md): Master the art and technique of digital compositing for film and video. This focused pathway provides the essential skills needed to combine CGI elements with live-action footage and create seamless final images for professional productions.
+- [Concept & blockout](https://localhost:3000/learning-materials/pages/item-9023f478-1c92-4338-8aff-d094f339b5c3/index.md)
+- [Creating Blockouts for Games](https://localhost:3000/learning-materials/pages/item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566/index.md)
+- [Blocking Out a Game Space](https://localhost:3000/learning-materials/pages/item-9549bc35-927d-4fd8-b0b9-455709364870/index.md)
+- [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-dda3178f-c205-4e8d-92e4-d25ccdf18444/index.md)
+- [Texturing random objects](https://localhost:3000/learning-materials/pages/item-4989e3f6-c083-4c34-8e14-c601ed5f7358/index.md)
+- [Modular Environment Kit](https://localhost:3000/learning-materials/pages/item-4288443d-8358-4b17-b92b-12331e9293fb/index.md)
+- [Library](https://localhost:3000/learning-materials/pages/item-fae18bf7-28d5-4bf9-9afc-a2f05e98ec5f/index.md)
+- [Lessons](https://localhost:3000/learning-materials/pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [3D Modeling Fundamentals](https://localhost:3000/learning-materials/pages/item-d05396b9-88a6-4631-821f-40a2e9bd2d4f/index.md): Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.
 - [Texturing and UV Mapping](https://localhost:3000/learning-materials/pages/item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4/index.md): Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.
 - [Lighting Principles](https://localhost:3000/learning-materials/pages/item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95/index.md): Explore fundamental lighting principles and techniques for creating mood, atmosphere, and visual interest in 3D scenes.
@@ -62,32 +72,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Drawing for 3D Design](https://localhost:3000/learning-materials/pages/item-d22274ef-a811-4445-b5fa-132e70eab0f2/index.md): Develop drawing and sketching skills to support 3D design work, including concept development and reference creation.
 - [Hard Surface Modeling](https://localhost:3000/learning-materials/pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.md): Master hard surface modeling techniques for creating mechanical objects, products, and architectural elements with clean geometry.
 - [Digital Sculpting](https://localhost:3000/learning-materials/pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.md): Master organic modeling through digital sculpting techniques, creating detailed characters and organic forms.
-- [Introduction to Texturing](https://localhost:3000/learning-materials/pages/item-be2fc5ef-ba1f-484b-be6a-2216a24314a2/index.md)
-- [You don't see that everyday object posters](https://localhost:3000/learning-materials/pages/item-930abc68-c77e-479c-b2ff-220e4714c712/index.md)
-- [Compositor Pathway](https://localhost:3000/learning-materials/pages/item-b10cae23-396d-4b8a-92dd-7472ae68a302/index.md): Master the art and technique of digital compositing for film and video. This focused pathway provides the essential skills needed to combine CGI elements with live-action footage and create seamless final images for professional productions.
-- [Concept & blockout](https://localhost:3000/learning-materials/pages/item-9023f478-1c92-4338-8aff-d094f339b5c3/index.md)
-- [Creating Blockouts for Games](https://localhost:3000/learning-materials/pages/item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566/index.md)
-- [Blocking Out a Game Space](https://localhost:3000/learning-materials/pages/item-9549bc35-927d-4fd8-b0b9-455709364870/index.md)
-- [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-dda3178f-c205-4e8d-92e4-d25ccdf18444/index.md)
-- [Texturing random objects](https://localhost:3000/learning-materials/pages/item-4989e3f6-c083-4c34-8e14-c601ed5f7358/index.md)
-- [Modular Environment Kit](https://localhost:3000/learning-materials/pages/item-4288443d-8358-4b17-b92b-12331e9293fb/index.md)
-- [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
 - [Modeling the Airline Chair](https://localhost:3000/learning-materials/pages/item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7/index.md)
-- [Modeling a room](https://localhost:3000/learning-materials/pages/item-dbf43915-8e34-4116-a6e7-67cd08a1316e/index.md)
-- [Texturing the Airline Chair](https://localhost:3000/learning-materials/pages/item-1ac14915-a348-47d3-9ecc-a88e800d4bb9/index.md)
-- [Texturing a room](https://localhost:3000/learning-materials/pages/item-d069ea51-73ec-4db0-b27a-612dbfd77bcf/index.md)
-- [Lighting and Rendering the Airline Chair](https://localhost:3000/learning-materials/pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.md)
-- [Rendering a room](https://localhost:3000/learning-materials/pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.md)
-- [Blocking Out a Game Space](https://localhost:3000/learning-materials/pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.md)
-- [Modeling a Low Poly Animal and Introduction to Particles](https://localhost:3000/learning-materials/pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.md)
-- [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-cbff549d-e8f9-4804-b2ec-059cf0863101/index.md)
-- [Modeling random objects](https://localhost:3000/learning-materials/pages/item-b57b43a9-5427-445c-affe-80ce46848788/index.md)
-- [Modeling and sculpting a sea creature](https://localhost:3000/learning-materials/pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.md)
-- [Texturing Low-poly Assets with a Palette Texture](https://localhost:3000/learning-materials/pages/item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b/index.md)
-- [Texturing random objects](https://localhost:3000/learning-materials/pages/item-a203e95e-0ddd-43af-9519-ee3df76a5b2d/index.md)
-- [Sculpting, retopo, and texturing](https://localhost:3000/learning-materials/pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.md)
-- [Baking Normal Maps](https://localhost:3000/learning-materials/pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.md)
-- [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.md)
 - [Introduction to Cameras, Lighting, and Rendering](https://localhost:3000/learning-materials/pages/item-81dbd5a3-3e7f-447c-a522-630f6001a8f0/index.md)
 - [Stylized Prop Set](https://localhost:3000/learning-materials/pages/item-0166883b-7fd8-465a-a98b-74f4f9b02cb0/index.md)
 - [Digital fabrication](https://localhost:3000/learning-materials/pages/item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4/index.md): Utilizes 3D printing or CNC machining to create physical objects from digital designs.
@@ -98,6 +83,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Modeling and sculpting a sea creature](https://localhost:3000/learning-materials/pages/item-21cc4009-8627-4071-b315-1a7e3dbb256b/index.md)
 - [Sculpting, retopo, and texturing](https://localhost:3000/learning-materials/pages/item-32fe8fba-fe85-48b9-bbb3-2f92271a2969/index.md)
 - [Realtime Game Environment](https://localhost:3000/learning-materials/pages/item-736dfac1-2506-450c-a0c0-4b48170057f3/index.md)
+- [Modeling a room](https://localhost:3000/learning-materials/pages/item-dbf43915-8e34-4116-a6e7-67cd08a1316e/index.md)
 - [Content types](https://localhost:3000/learning-materials/pages/item-b4e121df-b071-4067-a68c-23f5a26d3841/index.md)
 - [Modular Environment Kit](https://localhost:3000/learning-materials/pages/item-e09e22f7-6a97-4fed-bd10-2cde35349b24/index.md)
 - [Game Artist Pathway](https://localhost:3000/learning-materials/pages/item-72db2076-5252-4246-af1d-685903483097/index.md): Become a skilled game artist capable of creating optimized 3D assets for real-time environments. This pathway covers the complete skillset needed for game development, from foundational CGI to advanced real-time optimization and interactive design.
@@ -105,9 +91,15 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Baking Normal Maps](https://localhost:3000/learning-materials/pages/item-bdb59e31-f426-4807-b68f-1d0a51c30311/index.md)
 - [Into the engine](https://localhost:3000/learning-materials/pages/item-946a6945-fd38-4d21-ae63-87c559db86b3/index.md)
 - [Project](https://localhost:3000/learning-materials/pages/item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2/index.md)
-- [Pathways](https://localhost:3000/learning-materials/pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.md): A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r
+- [Lectures](https://localhost:3000/learning-materials/pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.md)
+- [Texturing the Airline Chair](https://localhost:3000/learning-materials/pages/item-1ac14915-a348-47d3-9ecc-a88e800d4bb9/index.md)
 - [Game design and development](https://localhost:3000/learning-materials/pages/item-427f67e4-123e-4f70-b632-4e18a8001777/index.md): Designs gameplay mechanics, levels, and user experiences for video games.
+- [Realtime Game Environment](https://localhost:3000/learning-materials/pages/item-55d4ea63-f507-4470-b2c8-e8b11b1c499b/index.md)
+- [Tutorials](https://localhost:3000/learning-materials/pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.md)
+- [Texturing a room](https://localhost:3000/learning-materials/pages/item-d069ea51-73ec-4db0-b27a-612dbfd77bcf/index.md)
 - [Illustration and visualization](https://localhost:3000/learning-materials/pages/item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9/index.md): Creates realistic architectural visualizations for design, marketing, or presentations.
+- [Curriculum](https://localhost:3000/learning-materials/pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.md)
+- [Pathways](https://localhost:3000/learning-materials/pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.md): A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r
 - [Lighting and cinematography](https://localhost:3000/learning-materials/pages/item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a/index.md): Sets up lighting and camera angles to create visually compelling 3D scenes.
 - [Motion graphics](https://localhost:3000/learning-materials/pages/item-831e27e4-94e4-43dc-b7e1-7b5039f802d9/index.md): Creates animated graphics for multimedia projects, often involving typography and visual effects.
 - [Product design](https://localhost:3000/learning-materials/pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.md): Designs consumer products in 3D for manufacturing or visualization purposes.
@@ -115,10 +107,21 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Short Film and VFX Pathway](https://localhost:3000/learning-materials/pages/item-5dabc762-d17b-4d08-80ac-3dae0557d0cb/index.md): A comprehensive pathway for creating animated short films with visual effects. This pathway combines traditional animation techniques with advanced simulation and compositing skills to produce cinematic CGI content with professional VFX elements.
 - [Short Film Pathway](https://localhost:3000/learning-materials/pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.md): Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.
 - [Visual Effects (VFX)](https://localhost:3000/learning-materials/pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.md): Integrates CGI elements into live-action footage and blends them seamlessly.
-- [Realtime Game Environment](https://localhost:3000/learning-materials/pages/item-55d4ea63-f507-4470-b2c8-e8b11b1c499b/index.md)
-- [Lectures](https://localhost:3000/learning-materials/pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.md)
+- [Lighting and Rendering the Airline Chair](https://localhost:3000/learning-materials/pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.md)
+- [Rendering a room](https://localhost:3000/learning-materials/pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.md)
+- [Assessments](https://localhost:3000/learning-materials/pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.md)
+- [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
+- [Blocking Out a Game Space](https://localhost:3000/learning-materials/pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.md)
+- [Modeling a Low Poly Animal and Introduction to Particles](https://localhost:3000/learning-materials/pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.md)
+- [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-cbff549d-e8f9-4804-b2ec-059cf0863101/index.md)
+- [Modeling random objects](https://localhost:3000/learning-materials/pages/item-b57b43a9-5427-445c-affe-80ce46848788/index.md)
+- [Modeling and sculpting a sea creature](https://localhost:3000/learning-materials/pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.md)
+- [Texturing Low-poly Assets with a Palette Texture](https://localhost:3000/learning-materials/pages/item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b/index.md)
+- [Texturing random objects](https://localhost:3000/learning-materials/pages/item-a203e95e-0ddd-43af-9519-ee3df76a5b2d/index.md)
+- [Sculpting, retopo, and texturing](https://localhost:3000/learning-materials/pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.md)
+- [Baking Normal Maps](https://localhost:3000/learning-materials/pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.md)
+- [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.md)
 - [Projects](https://localhost:3000/learning-materials/pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.md)
-- [Tutorials](https://localhost:3000/learning-materials/pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
