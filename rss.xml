@@ -97,6 +97,83 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
+      <title>3D Modeling Fundamentals</title>
+      <link>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</link>
+      <description>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Texturing and UV Mapping</title>
+      <link>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</link>
+      <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lighting Principles</title>
+      <link>https://localhost:3000/learning-materials/lessons/lighting-principles</link>
+      <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/lighting-principles</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Camera and Composition</title>
+      <link>https://localhost:3000/learning-materials/lessons/camera-and-composition</link>
+      <description>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/camera-and-composition</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Rendering Techniques</title>
+      <link>https://localhost:3000/learning-materials/lessons/rendering-techniques</link>
+      <description>Master the rendering process from setup to final output, learning how to configure render engines and optimize settings for professional results.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/rendering-techniques</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Real-time Engines</title>
+      <link>https://localhost:3000/learning-materials/lessons/real-time-engines</link>
+      <description>Gain proficiency in game engines, learning how to import assets, configure materials, and build interactive real-time experiences.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/real-time-engines</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Environment Design for Real-time</title>
+      <link>https://localhost:3000/learning-materials/lessons/environment-design-for-real-time</link>
+      <description>Master environment design for real-time applications, learning to create engaging spaces while maintaining performance constraints.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/environment-design-for-real-time</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Real-time Asset Budgets</title>
+      <link>https://localhost:3000/learning-materials/lessons/real-time-asset-budgets</link>
+      <description>How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/real-time-asset-budgets</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Drawing for 3D Design</title>
+      <link>https://localhost:3000/learning-materials/lessons/drawing-for-3d-design</link>
+      <description>Strengthen design skills through drawing exercises and concept development, learning how to translate ideas from 2D sketches into 3D models.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/drawing-for-3d-design</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hard Surface Modeling</title>
+      <link>https://localhost:3000/learning-materials/lessons/hard-surface-modeling</link>
+      <description>Develop proficiency in hard surface modeling for creating precise, clean geometric forms typical of products, vehicles, and architectural elements.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/hard-surface-modeling</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Digital Sculpting</title>
+      <link>https://localhost:3000/learning-materials/lessons/digital-sculpting</link>
+      <description>Learn digital sculpting techniques for creating highly detailed organic models, characters, and illustrations with natural forms.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/digital-sculpting</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
       <title>Introduction to Texturing</title>
       <link>https://localhost:3000/learning-materials/lectures/introduction-to-texturing</link>
       <description>Presentation Topics Covered Video Screening Amino Assets by ZEITGUISED Bee 3D Animated Short Lighting Technical Director: Riccardo Zoccarato Student Reel: Cindy Jang Classroom scene - making of Oblivion GFX montage Substance painter trailer Books The Language of New Media By Lev Manovich Software Takes Command By Lev Manovich Terminology UV Mapping Non-manifold Geometry Unfolding tools UV “island” UV Export Prepping mesh for UV Mapping Reset scale to 1. Use ‘ Apply ’ in Blender. (Translation ...</description>
@@ -109,89 +186,6 @@
       <description>For this project, you will produce 3D rendered poster series of objects that you encounter every day, but augmented in such a way changing their nature including material qualities, operation or use, or the system or environmental context. To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. Ontology , the study of being, invites us to question not just what objects are...</description>
       <category>Blender</category>
       <guid>https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>3D Modeling Fundamentals</title>
-      <link>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</link>
-      <description>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Modeling the Airline Chair</title>
-      <link>https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair</link>
-      <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair. Learning Objectives Practice using 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Demonstrate understanding of fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions Note: You should have a basic understanding Blender&apos;s inter...</description>
-      <category>Blender,Modeling</category>
-      <guid>https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Introduction to Cameras, Lighting, and Rendering</title>
-      <link>https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering</link>
-      <description>Presentation Topics Covered Video Screening “Spectacle, Speculation, Spam” by Alan Warburton Lighting Theory by Andrew Price Demo Lighting and Rendering Video (Unedited live demo) Technical Readings for 3D Rendering FX Guide: “Art of Rendering” FX Guide: “State of Rendering” For your Bookshelf How to Render by Scott Robertson Software Takes Command by Lev Manovich The Language of New Media by Lev Manovich TerminologyLighting setups 3 point lighting (key, fill, rim) Light types: Area, Spot, Di...</description>
-      <guid>https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Stylized Prop Set</title>
-      <link>https://localhost:3000/learning-materials/projects/stylized-prop-set</link>
-      <description>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine. Learning Objectives Design a cohesive set of props Build each prop within a polygon budget Texture the set with a shared palette Present the set in PlayCanvas</description>
-      <category>Blender,PlayCanvas</category>
-      <guid>https://localhost:3000/learning-materials/projects/stylized-prop-set</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Texturing and UV Mapping</title>
-      <link>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</link>
-      <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Modeling a room</title>
-      <link>https://localhost:3000/learning-materials/exercises/modeling-a-room</link>
-      <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space. Learning Objectives Become familiarized with 3D software terminology Practice polygonal modeling workflows Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel. Instructions Note: There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction....</description>
-      <category>Blender</category>
-      <guid>https://localhost:3000/learning-materials/exercises/modeling-a-room</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Modular Environment Kit</title>
-      <link>https://localhost:3000/learning-materials/projects/modular-environment-kit</link>
-      <description>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene. Learning Objectives Plan a modular grid and pivot conventions Model and texture reusable pieces Assemble a scene from the kit in a real-time engine</description>
-      <category>Blender,PlayCanvas</category>
-      <guid>https://localhost:3000/learning-materials/projects/modular-environment-kit</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Lighting Principles</title>
-      <link>https://localhost:3000/learning-materials/lessons/lighting-principles</link>
-      <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/lighting-principles</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Texturing the Airline Chair</title>
-      <link>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</link>
-      <description>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair. Learning Objectives Become familiarized with 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Perform fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions No...</description>
-      <category>Blender,Texturing</category>
-      <guid>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Realtime Game Environment</title>
-      <link>https://localhost:3000/learning-materials/projects/realtime-game-environment</link>
-      <description>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player...</description>
-      <category>Blender,PlayCanvas,Github</category>
-      <guid>https://localhost:3000/learning-materials/projects/realtime-game-environment</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Camera and Composition</title>
-      <link>https://localhost:3000/learning-materials/lessons/camera-and-composition</link>
-      <description>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/camera-and-composition</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>

@@ -462,6 +462,149 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
+    <title>3D Modeling Fundamentals</title>
+    <id>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Texturing and UV Mapping</title>
+    <id>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Lighting Principles</title>
+    <id>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/lighting-principles"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Camera and Composition</title>
+    <id>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/camera-and-composition"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Rendering Techniques</title>
+    <id>item-685e56cc-c545-4d08-81c8-c724fe5cc33d</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/rendering-techniques"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Master the rendering process from setup to final output, learning how to configure render engines and optimize settings for professional results.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Real-time Engines</title>
+    <id>item-3c14822b-53dd-4a66-aac7-f8ec740bbea5</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/real-time-engines"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Gain proficiency in game engines, learning how to import assets, configure materials, and build interactive real-time experiences.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Environment Design for Real-time</title>
+    <id>item-c9cb258f-d7f0-4668-a301-fff71e07b1d0</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/environment-design-for-real-time"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Master environment design for real-time applications, learning to create engaging spaces while maintaining performance constraints.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Real-time Asset Budgets</title>
+    <id>item-c43a83f7-2300-4e9c-bd16-bf418744f1d9</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/real-time-asset-budgets"/>
+    
+    <content type="html">
+      <![CDATA[ <p>How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Drawing for 3D Design</title>
+    <id>item-d22274ef-a811-4445-b5fa-132e70eab0f2</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/drawing-for-3d-design"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Strengthen design skills through drawing exercises and concept development, learning how to translate ideas from 2D sketches into 3D models.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Hard Surface Modeling</title>
+    <id>item-2388c81a-f80d-44c8-be9c-57c64c8b29ab</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/hard-surface-modeling"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Develop proficiency in hard surface modeling for creating precise, clean geometric forms typical of products, vehicles, and architectural elements.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Digital Sculpting</title>
+    <id>item-f783c8df-d3f9-4ec8-a056-501da8e75a61</id>
+    <updated>2026-10-01T04:48:04.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/digital-sculpting"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Learn digital sculpting techniques for creating highly detailed organic models, characters, and illustrations with natural forms.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
     <title>Introduction to Texturing</title>
     <id>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</id>
     <updated>2026-10-01T04:48:04.000Z</updated>
@@ -620,489 +763,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" title="Project Tutorial"></oer-iframe>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>3D Modeling Fundamentals</title>
-    <id>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</id>
-    <updated>2026-10-01T04:48:04.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Modeling the Airline Chair</title>
-    <id>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</id>
-    <updated>2026-10-01T04:48:05.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair"/>
-    <category term="Blender,Modeling" label="Blender,Modeling" />
-    <content type="html">
-      <![CDATA[ <p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f" title="Modeling the Airline Chair Tutorial"></oer-iframe>
-<h2>Learning Objectives</h2>
-<ol>
-<li>Practice using 3D software interface and terminology.</li>
-<li>Use modeling workflows to create high quality topology and edge flow.</li>
-<li>Demonstrate understanding of fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide.</li>
-</ol>
-<h2>Instructions</h2>
-<p><strong>Note:</strong> You should have a basic understanding Blender's interface to complete this exercise.</p>
-<ol>
-<li>Create a folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>
-<li>Follow the six-part video demonstration to model the <a href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber Airline Chair</a>. Skills to practice include:
-<ul>
-<li>polygonal edge flow</li>
-<li>extruding polygon faces</li>
-<li>inserting edge loops</li>
-<li>moving, rotating, and scaling vertices, edges, and faces</li>
-<li>mirroring and duplicating geometry</li>
-</ul>
-</li>
-<li>Clean up your <a href="https://www.youtube.com/watch?v=Lip59doQQRk">edge flow</a>.</li>
-<li>Save the 3D scene file as ‘<strong><em>LASTNAME</em>-modeling-chair.blend’</strong> (I.E. – <em>collins</em>-modeling-b1.blend) in the project folder.</li>
-<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-modeling-chair.zip.</strong></li>
-<li>Upload the .zip file to the assignment dropbox.</li>
-<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
-</ol>
-<h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Introduction to Cameras, Lighting, and Rendering</title>
-    <id>item-81dbd5a3-3e7f-447c-a522-630f6001a8f0</id>
-    <updated>2026-10-01T04:48:05.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering"/>
-    
-    <content type="html">
-      <![CDATA[ <h2>Presentation</h2>
-<oer-google-slides slides="2PACX-1vR8tl1dcVeFuKlBa1s1uB-dyXCnqzq_4Mdswke1ppmpOj4Gtby5etm2_aKykcz33GYCLQ4xUyixe61D" title="Introduction to Modeling"></oer-google-slides>
-<h2>Topics Covered</h2>
-<ul>
-<li>
-<ol>
-<li><strong>Video Screening</strong></li>
-<li><a href="https://alanwarburton.co.uk/spectacle-speculation-spam">“Spectacle, Speculation, Spam”</a> by Alan Warburton</li>
-<li><a href="https://www.youtube.com/playlist?list=PLjEaoINr3zgH9vCr47kSS5W8PEJBNIiwK">Lighting Theory by Andrew Price</a></li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li><strong>Demo</strong>
-<ol>
-<li><a href="https://vimeo.com/456374066">Lighting and Rendering Video (Unedited live demo)</a></li>
-</ol>
-</li>
-<li><strong>Technical Readings for 3D Rendering</strong>
-<ol>
-<li><a href="https://www.fxguide.com/featured/the-art-of-rendering/">FX Guide: “Art of Rendering”</a></li>
-<li><a href="https://www.fxguide.com/fxfeatured/the-state-of-rendering/">FX Guide: “State of Rendering”</a></li>
-</ol>
-</li>
-<li><strong>For your Bookshelf</strong>
-<ol>
-<li><a href="https://www.amazon.com/How-Render-fundamentals-shadow-reflectivity/dp/1933492961/">How to Render by Scott Robertson</a></li>
-<li><a href="http://manovich.net/index.php/projects/software-takes-command">Software Takes Command</a> by Lev Manovich</li>
-<li><a href="http://manovich.net/index.php/projects/language-of-new-media">The Language of New Media</a> by Lev Manovich</li>
-</ol>
-</li>
-<li><strong>TerminologyLighting setups</strong>
-<ol>
-<li><a href="https://m5designstudio.com/2011/maya-3d-tutorials/studio-three-point-lighting/">3 point lighting</a> (key, fill, rim)</li>
-<li>Light types: Area, Spot, Directional or Sun, Point, Volumetric</li>
-<li>Geometry-based lighting using Emission shader</li>
-<li>Geometry-based lighting using <a href="https://www.youtube.com/watch?v=AXjE-t6dFZ8">Principled Volumetric shader</a></li>
-<li>Staging lights: Light box with side and top lights, curved color background and floor</li>
-<li>Image based lighting (IBL) <a href="https://area.autodesk.com/tutorials/studio-lighting/">using HDR images</a></li>
-<li>Shadows: The larger the light source, the softer the shadows</li>
-<li>Create edge bevels to capture highlights on hard surfaces</li>
-</ol>
-</li>
-<li><strong>Camera</strong>
-<ol>
-<li>Perspective vs Orthographic</li>
-<li>Sensor size</li>
-<li>Depth of field using aperture F-Stop: Shallow depth of field is created with lower settings. (In Blender, very low settings may be needed such as 0.1)</li>
-<li>Blades add flat sides to the Bokeh</li>
-<li>You can create custom <a href="https://blender.stackexchange.com/questions/133191/custom-bokeh-shapes">Bokeh shapes</a></li>
-<li>Safe area</li>
-<li>Composition guides for layouts (golden ratio, golden triangle, thirds, etc.)</li>
-</ol>
-</li>
-<li><strong>Render quality in Cycles</strong>
-<ol>
-<li>To reduce render times, keep material shaders simple. Use principled shader if working with photo-real renders.</li>
-<li>500 samples are usually needed to reduce noise.</li>
-<li>Use <a href="https://www.youtube.com/watch?v=Pw-OxOHHu5I">advanced denoising workflow</a> in the compositor</li>
-<li>If using motion blur or depth of field, sample sizes must increase dramatically.</li>
-<li>You can get away with 120 samples if you use denoising in the Compositor</li>
-</ol>
-</li>
-<li><strong>Render quality in EEVEE</strong>
-<ol>
-<li><a href="https://www.youtube.com/watch?v=MFNurQ1AF2I">EEVEE Lighting</a></li>
-<li>Enable render settings including: Ambient Occlusion, Depth of Field, and Screen Space Reflections</li>
-<li>Shadows: Increase the shadow map to 4K</li>
-</ol>
-</li>
-</ol>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Stylized Prop Set</title>
-    <id>item-0166883b-7fd8-465a-a98b-74f4f9b02cb0</id>
-    <updated>2026-10-01T04:48:05.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/stylized-prop-set"/>
-    <category term="Blender,PlayCanvas" label="Blender,PlayCanvas" />
-    <content type="html">
-      <![CDATA[ <p>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine.</p>
-<h2>Learning Objectives</h2>
-<ol>
-<li>Design a cohesive set of props</li>
-<li>Build each prop within a polygon budget</li>
-<li>Texture the set with a shared palette</li>
-<li>Present the set in PlayCanvas</li>
-</ol>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Texturing and UV Mapping</title>
-    <id>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</id>
-    <updated>2026-10-01T04:48:04.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</p>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Modeling a room</title>
-    <id>item-dbf43915-8e34-4116-a6e7-67cd08a1316e</id>
-    <updated>2026-10-01T04:48:05.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/exercises/modeling-a-room"/>
-    <category term="Blender" label="Blender" />
-    <content type="html">
-      <![CDATA[ <p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVP_vzYSEfaSkkPDhMdPfrK" title="Modeling a room Tutorial"></oer-iframe>
-<h2>Learning Objectives</h2>
-<ol>
-<li>Become familiarized with 3D software terminology</li>
-<li>Practice polygonal modeling workflows</li>
-<li>Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel.</li>
-</ol>
-<h2>Instructions</h2>
-<p><strong>Note:</strong> There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction.</p>
-<ol>
-<li>Watch the video playlist for relevant workflows and techniques to adapt for this exercise.</li>
-<li>Create a project folder. Save all assets to the project folder.</li>
-<li>Model a room in your home as a diorama.
-<ul>
-<li>The room should have only two walls to make it easier to render.</li>
-<li>Model a minimum of 5 unique objects or features in the room. The models can be simple and can have relatively low poly counts.</li>
-<li>Focus ONLY on modeling, you will add textures in a later exercise.</li>
-</ul>
-</li>
-<li>If you are unsure about how to proceed with modeling any of the objects, try searching tutorial resources. Reach out to your instructor with any workflow questions.
-<ul>
-<li>Focus on maintaining quads and good <a href="https://www.youtube.com/watch?v=Lip59doQQRk">edgeflow</a>.</li>
-</ul>
-</li>
-<li>Compress the project folder once you’ve completed the tutorial and rename it <code>YOURNAME-modeling-room.zip</code>.</li>
-<li>Upload the .zip file to the assignment dropbox.</li>
-<li>Ensure you’ve completed and included everything according to the instructions.</li>
-</ol>
-<h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Modular Environment Kit</title>
-    <id>item-e09e22f7-6a97-4fed-bd10-2cde35349b24</id>
-    <updated>2026-10-01T04:48:05.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/modular-environment-kit"/>
-    <category term="Blender,PlayCanvas" label="Blender,PlayCanvas" />
-    <content type="html">
-      <![CDATA[ <p>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene.</p>
-<h2>Learning Objectives</h2>
-<ol>
-<li>Plan a modular grid and pivot conventions</li>
-<li>Model and texture reusable pieces</li>
-<li>Assemble a scene from the kit in a real-time engine</li>
-</ol>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Lighting Principles</title>
-    <id>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</id>
-    <updated>2026-10-01T04:48:04.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lessons/lighting-principles"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</p>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Texturing the Airline Chair</title>
-    <id>item-1ac14915-a348-47d3-9ecc-a88e800d4bb9</id>
-    <updated>2026-10-01T04:48:05.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair"/>
-    <category term="Blender,Texturing" label="Blender,Texturing" />
-    <content type="html">
-      <![CDATA[ <p>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq" title="Texturing the Airline Chair Tutorial"></oer-iframe>
-<h2>Learning Objectives</h2>
-<ol>
-<li>Become familiarized with 3D software interface and terminology.</li>
-<li>Use modeling workflows to create high quality topology and edge flow.</li>
-<li>Perform fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide.</li>
-</ol>
-<h2>Instructions</h2>
-<p><strong>Note:</strong> You should have a basic understanding of Blender's interface before completing this exercise. You should also complete the exercise called <strong>Modeling the Airline Chair</strong> prior to completing this exercise.</p>
-<ol>
-<li>Duplicate the modeling folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.
-<ul>
-<li>If you were unable to produce a polygonal model, you can download the Airline Chair Model, and use it to complete the assignment.</li>
-</ul>
-</li>
-<li>Follow the video demonstration to create UV maps to texture the <a href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber Airline Chair</a>.</li>
-<li>Apply the scale transform to reset each polygonal object.</li>
-<li>Unwrap the chair’s parts’ UVs using the various methods and tools described in the tutorials.</li>
-<li>Export a UV map for each part and save it in the project folder as <strong><em>uv-arm.jpg</em></strong>, <strong><em>uv-cushion.jpg</em></strong><em>,</em> etc.</li>
-<li>Import the UV maps into Photoshop and create textures to match the Airline Chair as closely as possible.</li>
-<li>Save the textures as <strong><em>arm_color.jpg</em></strong>, <strong><em>cushion1_color.jpg</em></strong>, etc. in the project folder. Name the files in an organized in a logical way.</li>
-<li>In Blender, set up the chair’s textures so they are visible on the model.</li>
-<li>Save the 3D scene file as <strong><em>LASTNAME</em>-texturing-chair</strong> in the project folder.</li>
-<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-texturing-chair.zip.</strong></li>
-<li>Upload the .zip file to the assignment dropbox.</li>
-<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
-</ol>
-<h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Realtime Game Environment</title>
-    <id>item-55d4ea63-f507-4470-b2c8-e8b11b1c499b</id>
-    <updated>2026-10-01T04:48:06.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/realtime-game-environment"/>
-    <category term="Blender,PlayCanvas,Github" label="Blender,PlayCanvas,Github" />
-    <content type="html">
-      <![CDATA[ <p>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player understand where they are, what happened there, who belongs there, and what kinds of actions are possible?</p>
-<p>This project asks you to consider game design, architecture, and spatial theory. In game studies, environment design is often understood as a form of environmental storytelling, where space communicates narrative, mood, and player possibility through layout, objects, lighting, and atmosphere. In architecture and urban design, theorists such as Kevin Lynch, Juhani Pallasmaa, and Gaston Bachelard help us think about how spaces become legible, memorable, sensory, and emotionally meaningful. As you research and design your environment, consider not just what your space looks like, but how it guides, affects, and communicates with a player.</p>
-<ol>
-<li><a href="https://catalog.libraries.psu.edu/catalog/18365742"><strong>Gaston Bachelard – <em>The Poetics of Space</em></strong></a> <strong>(2014):</strong> Bachelard explores how intimate spaces like rooms, attics, drawers, corners, and nests can shape memory, imagination, and feeling. This reading focuses on emotional tone, symbolic space, or the psychology of interiors and environmental storytelling.</li>
-<li><a href="https://paas.org.pl/wp-content"><strong>Henry Jenkins – <em>Game Design as Narrative Architecture</em></strong></a> <strong>(2004):</strong> Jenkins argues for understanding games as spaces with narrative possibilities. This is a useful starting point for thinking about environments as active in the process of meaning-making rather than passive backgrounds.</li>
-<li><a href="https://www.cooldavis.org/wp-content"><strong>Kevin Lynch – <em>The Image of the City</em></strong></a> <strong>(1960):</strong> Lynch’s concept of imageability helps explain how spaces become vivid, memorable, and navigable, and discusses the importance of landmarks, paths, edges, districts, and nodes.</li>
-<li><a href="https://onlinelibrary-wiley-com.ezaccess.libraries.psu.edu/doi/book/10.1002/9781394200702"><strong>Juhani Pallasmaa – <em>The Eyes of the Skin: Architecture and the Senses</em></strong></a> <em><strong>(1996):</strong></em> Pallasmaa’s book is a classic of architectural theory and asks why design is so often treated as purely visual when human experience is multi-sensory. This is useful for thinking about atmosphere, embodiment, sound, surface, light, compression, scale, and mood.</li>
-</ol>
-<h2>Learning Objectives</h2>
-<ol>
-<li>Practice creative problem solving and visual storytelling skills.</li>
-<li>Demonstrate understanding of real-time 3D environment production through modeling, materials, lighting, scene assembly, optimization, and animation.</li>
-<li>Practice visual storytelling through the design of spatial atmosphere, layout, props, and environmental detail.</li>
-<li>Apply ideas from game design and spatial theory to create an explorable 3D environment using  modular/reusable 3D assets.</li>
-</ol>
-<h2>Instructions</h2>
-<ol>
-<li>
-<p>Read the project description and select at least <strong>one reading</strong> from the list above to support your research and design process.</p>
-</li>
-<li>
-<p>Based on the concept development worksheet you completed, identify whether the setting or scenario is realistic, stylized, speculative, historical, surreal, atmospheric, or genre-based.</p>
-</li>
-<li>
-<p>Consider the role of the environment as a designed space:</p>
-<ul>
-<li>
-<p>Who uses this place?</p>
-</li>
-<li>
-<p>What happened here?</p>
-</li>
-<li>
-<p>What mood should the player feel?</p>
-</li>
-<li>
-<p>How does the space guide exploration or interaction?</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Go through the production process:</p>
-<ol>
-<li>
-<p><strong>Pre-viz</strong> (references, sketches, mood boards, layout ideas, research)</p>
-</li>
-<li>
-<p><strong>Production</strong> (blockout, modeling, materials, lighting, real-time implementation, optimization)</p>
-<ol>
-<li>Use <a href="http://PlayCanvas.com">PlayCanvas.com</a> to build the game environment using assets you modeled and textured in Blender. See tutorials. <strong>Note:</strong> If you already have experience with other 3D game engines (Godot, Unity, Unreal), you may use those in place of PlayCanvas.</li>
-<li>Host the game environment for free on <a href="http://Github.com">Github.com. </a>See tutorials.</li>
-<li>Rather than building everything as a one-off asset, build <strong>low-poly modular assets</strong> that can be reused in the scene to construct the environment.</li>
-</ol>
-</li>
-<li>
-<p>Publishing: Make game available on Github</p>
-</li>
-<li>
-<p><strong>Reflection / work statement</strong></p>
-</li>
-</ol>
-</li>
-<li>
-<p>Share progress updates and participate in critique and feedback with peers.</p>
-</li>
-</ol>
-<h2>Requirements</h2>
-<h3>Pre-viz</h3>
-<ol>
-<li>
-<p><strong>Sketches / diagrams</strong> (<code>.jpg</code> or <code>.png</code>)</p>
-<ul>
-<li>
-<p>Produce <strong>3–5 pages</strong> of concept sketches, thumbnails, maps, or layout ideas. Please add notations and labels.</p>
-</li>
-<li>
-<p>These can include top-down level ideas, perspective sketches, focal-point studies, lighting studies, or prop concepts.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Reference sheet / mood board</strong> (<code>.jpg</code> or <code>.png</code>)</p>
-<ul>
-<li>
-<p>Compile references for architecture, landscape, lighting, materials, props, composition, and atmosphere.</p>
-</li>
-<li>
-<p>Save references as one organized image sheet.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Intent document</strong> (<code>.doc</code>)</p>
-<ul>
-<li>
-<p>Include your name and date.</p>
-</li>
-<li>
-<p>Write a short description of the environment you plan to create.</p>
-</li>
-<li>
-<p>Identify the key concept, mood, and player experience.</p>
-</li>
-<li>
-<p>Briefly note which reading or theory is helping shape your approach.</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3>Production updates</h3>
-<ol>
-<li>
-<p>Submit screenshots from Blender and PlayCanvas showing major progress stages:</p>
-<ul>
-<li>
-<p>blockout</p>
-</li>
-<li>
-<p>low poly asset development</p>
-</li>
-<li>
-<p>texturing/material setup</p>
-</li>
-<li>
-<p>lighting</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Write a brief reflection on your creative and technical process.</p>
-</li>
-<li>
-<p>If AI tools are used for brainstorming, reference gathering, or ideation, explain how they were used and how they affected the process. If they supported a technical production process, please explain what tools were used and how it impacted the production.</p>
-</li>
-</ol>
-<p><strong>Work Statement (.doc):</strong></p>
-<p>A work statement is a clear articulation about what you’ve made. This is not a journal entry, where you might feel compelled to complain about problems you’ve had with software, or that it didn’t turn out how you wanted. Instead, imagine this is being printed in a magazine, or put on the side of a gallery. What do you want your viewers to come away with?<br>
-<br>
-<strong>Upload work (.zip):</strong></p>
-<ol>
-<li>A recorded video of you doing a walkthrough of the game environment.</li>
-<li>One or more renders of your game assets
-<ol>
-<li>The renders should be 1920px x 1080px landscape orientation (wide).</li>
-</ol>
-</li>
-<li>A link to the live PlayCanvas scene.
-<ol>
-<li>Please follow the tutorials to host your game on <a href="http://Github.com">Github.com</a></li>
-</ol>
-</li>
-<li>Upload game .zip as a&nbsp;<code>LASTNAME-game-files.zip</code>&nbsp;file
-<ol>
-<li>Include final work statement
-<ul>
-<li>MS Word .doc format</li>
-<li>150 words minimum</li>
-<li>file name:&nbsp;<code>LASTNAME-game-statement.doc</code></li>
-</ul>
-</li>
-<li>Include the media you created</li>
-</ol>
-</li>
-<li>Post your render(s) to the&nbsp;<strong>Project discussion</strong>&nbsp;discussion thread.</li>
-<li>Participate in work critique with peers.</li>
-</ol>
-<h2>Tutorial</h2>
-<oer-video src="https://youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj" title="PlayCanvas Tutorials"></oer-video>
-<oer-video src="https://youtube.com/playlist?list=PLn3ukorJv4vul0BmORcWYNOVi3nnna-M4" title="Grant Abbitt – Low Poly Game Modeling"></oer-video>
-<h2>Grading Rubric</h2>
-<oer-rubric rubric-id="project"></oer-rubric>
- ]]>
-    </content>
-  </entry>
-  <entry>
-    <title>Camera and Composition</title>
-    <id>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</id>
-    <updated>2026-10-01T04:48:04.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lessons/camera-and-composition"/>
-    
-    <content type="html">
-      <![CDATA[ <p>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</p>
  ]]>
     </content>
   </entry>
