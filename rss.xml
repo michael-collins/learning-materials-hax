@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Lighting Principles</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/lighting-principles</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/lighting-principles</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>You don&apos;t see that everyday objects</title>
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects</link>
       <description></description>
@@ -185,6 +178,14 @@
       <link>https://localhost:3000/learning-materials/lectures/introduction-to-texturing</link>
       <description>Presentation Topics Covered Video Screening Amino Assets by ZEITGUISED Bee 3D Animated Short Lighting Technical Director: Riccardo Zoccarato Student Reel: Cindy Jang Classroom scene - making of Oblivion GFX montage Substance painter trailer Books The Language of New Media By Lev Manovich Software Takes Command By Lev Manovich Terminology UV Mapping Non-manifold Geometry Unfolding tools UV “island” UV Export Prepping mesh for UV Mapping Reset scale to 1. Use ‘ Apply ’ in Blender. (Translation ...</description>
       <guid>https://localhost:3000/learning-materials/lectures/introduction-to-texturing</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>You don&apos;t see that everyday object posters</title>
+      <link>https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters</link>
+      <description>For this project, you will produce 3D rendered poster series of objects that you encounter every day, but augmented in such a way changing their nature including material qualities, operation or use, or the system or environmental context. To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. Ontology , the study of being, invites us to question not just what objects are...</description>
+      <category>Blender</category>
+      <guid>https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
