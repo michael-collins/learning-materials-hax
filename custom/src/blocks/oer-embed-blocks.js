@@ -211,14 +211,15 @@ export class OerSketchfab extends OerMediaFigure {
 
 /* ---------- 3D viewer (model-viewer) ---------- */
 
-const MODEL_VIEWER = "https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js";
+// HAX ships Google's model-viewer (its own "3d Model" block uses it); load
+// the same file HAX's autoloader would, so the element is defined once
 function loadModelViewer() {
-  if (customElements.get("model-viewer") || globalThis.document.querySelector("script[data-oer-model-viewer]")) return;
-  const s = globalThis.document.createElement("script");
-  s.type = "module";
-  s.src = MODEL_VIEWER;
-  s.dataset.oerModelViewer = "";
-  globalThis.document.head.append(s);
+  if (customElements.get("model-viewer") || loadModelViewer.started) return;
+  loadModelViewer.started = true;
+  const base = globalThis.WCGlobalBasePath || new URL("build/es6/node_modules/", globalThis.document.baseURI).href;
+  import(`${base}@google/model-viewer/dist/model-viewer.js`).catch(() => {
+    loadModelViewer.started = false;
+  });
 }
 
 export class Oer3dViewer extends OerMediaFigure {
