@@ -4195,59 +4195,6 @@
       }
     },
     {
-      "id": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
-      "indent": 1,
-      "location": "pages/item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097/index.html",
-      "slug": "pathways/game-artist-pathway",
-      "order": 3,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Game Artist Pathway",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/game-artist",
-        "tags": "Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR",
-        "oerFields": {
-          "estimatedDuration": "One course run (6 or 15 weeks, same credits)",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Create game-ready 3D assets with efficient topology",
-            "Implement content in game engines like Unreal and Unity",
-            "Optimize models and textures for real-time rendering",
-            "Design interactive environments for games",
-            "Understand technical constraints and performance budgets",
-            "Collaborate with game development teams"
-          ],
-          "levels": [
-            "Beginner",
-            "Intermediate",
-            "Advanced"
-          ],
-          "targetRole": "Game Artist",
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-56855913-6bf5-4cbc-90cc-1615be549a4c",
       "indent": 2,
       "location": "pages/item-56855913-6bf5-4cbc-90cc-1615be549a4c/index.html",
