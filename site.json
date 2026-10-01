@@ -4747,41 +4747,6 @@
       }
     },
     {
-      "id": "item-8304d26e-d001-4439-b5d9-652e37d52508",
-      "indent": 1,
-      "location": "pages/item-8304d26e-d001-4439-b5d9-652e37d52508/index.html",
-      "slug": "pathways/illustration-and-visualization",
-      "order": 5,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Illustration and visualization",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/illustration-and-visualization",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
       "indent": 0,
       "location": "pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.html",
