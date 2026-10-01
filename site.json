@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790880631
+      "updated": 1790880632
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -2960,7 +2960,7 @@
       "order": 1001,
       "parent": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
       "title": "v0.9.0",
-      "description": "",
+      "description": "Learn to design and build optimized 3D environments for real-time applications, games, and interactive experiences.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
