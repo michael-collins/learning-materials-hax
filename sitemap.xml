@@ -133,12 +133,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling</loc>
-    <lastmod>2026-10-01T04:46:25.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling</loc>
     <lastmod>2026-10-01T04:46:25.000Z</lastmod>
     <changefreq>daily</changefreq>

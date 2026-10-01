@@ -581,18 +581,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Modeling</title>
-    <id>item-008f74f4-74d2-4309-a769-6f73be85b539</id>
-    <updated>2026-10-01T04:46:25.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Introduction to Modeling</title>
     <id>item-6b93d85c-03da-4ab7-9598-f75b997e8549</id>
     <updated>2026-10-01T04:46:25.000Z</updated>
@@ -614,6 +602,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-cbd29762-82a1-4e7a-ab72-01fd8a5a4123"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Camera and Composition</title>
+    <id>item-54915127-e9fa-4bd3-9209-026bb7fd2962</id>
+    <updated>2026-10-01T04:46:25.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-a0bdd09d-063f-4a94-8c59-959500faec76"></oer-include> ]]>
     </content>
   </entry>
 </feed>
