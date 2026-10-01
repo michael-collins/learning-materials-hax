@@ -479,7 +479,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     <id>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</id>
     <updated>2026-10-01T04:48:04.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
+    <summary>Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
     
     <content type="html">
