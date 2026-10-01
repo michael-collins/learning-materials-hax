@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790830083
+      "updated": 1790830086
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "",
       "metadata": {
         "created": 1790801562,
-        "updated": 1790830072,
+        "updated": 1790830083,
         "published": true,
         "locked": false,
         "status": "",
@@ -64,7 +64,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790830072,
+        "updated": 1790830083,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -89,7 +89,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790830072,
+        "updated": 1790830083,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -142,7 +142,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830072,
+        "updated": 1790830083,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -193,7 +193,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830072,
+        "updated": 1790830083,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -224,7 +224,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830072,
+        "updated": 1790830083,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -234,7 +234,7 @@
       "id": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
       "indent": 1,
       "location": "pages/item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e/index.html",
-      "slug": "pathways/cgi-foundations-1",
+      "slug": "pathways/cgi-foundations",
       "order": 0,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "CGI Foundations",
@@ -292,14 +292,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-81b76fe2-353b-42c0-a5ac-b41f442dd78b",
       "indent": 2,
       "location": "pages/item-81b76fe2-353b-42c0-a5ac-b41f442dd78b/index.html",
-      "slug": "pathways/cgi-foundations-1/orientation",
+      "slug": "pathways/cgi-foundations/orientation",
       "order": 0,
       "parent": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
       "title": "Orientation",
@@ -311,14 +311,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-4840d3e4-ba35-46f6-8bbe-4345edc00d6e",
       "indent": 3,
       "location": "pages/item-4840d3e4-ba35-46f6-8bbe-4345edc00d6e/index.html",
-      "slug": "pathways/cgi-foundations-1/orientation/history-of-cgi",
+      "slug": "pathways/cgi-foundations/orientation/history-of-cgi",
       "order": 0,
       "parent": "item-81b76fe2-353b-42c0-a5ac-b41f442dd78b",
       "title": "History of CGI",
@@ -334,14 +334,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
       "indent": 2,
       "location": "pages/item-c1c083f0-47c6-4706-8651-d63d65b46db1/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling",
+      "slug": "pathways/cgi-foundations/modeling",
       "order": 1,
       "parent": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
       "title": "Modeling",
@@ -353,14 +353,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-a9af1675-0346-4980-b62d-bed8aa8ad304",
       "indent": 3,
       "location": "pages/item-a9af1675-0346-4980-b62d-bed8aa8ad304/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/3d-modeling-fundamentals",
+      "slug": "pathways/cgi-foundations/modeling/3d-modeling-fundamentals",
       "order": 0,
       "parent": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
       "title": "3D Modeling Fundamentals",
@@ -376,14 +376,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-4e771916-1e8f-45d5-8d75-b77762284285",
       "indent": 3,
       "location": "pages/item-4e771916-1e8f-45d5-8d75-b77762284285/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/introduction-to-modeling",
+      "slug": "pathways/cgi-foundations/modeling/introduction-to-modeling",
       "order": 1,
       "parent": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
       "title": "Introduction to Modeling",
@@ -399,14 +399,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-a0ed15db-5993-4634-8a15-896edab9b4a2",
       "indent": 3,
       "location": "pages/item-a0ed15db-5993-4634-8a15-896edab9b4a2/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/modeling-the-airline-chair",
+      "slug": "pathways/cgi-foundations/modeling/modeling-the-airline-chair",
       "order": 2,
       "parent": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
       "title": "Modeling the Airline Chair",
@@ -422,14 +422,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-7ebcc5b7-026a-4158-94d1-5abc381575c2",
       "indent": 3,
       "location": "pages/item-7ebcc5b7-026a-4158-94d1-5abc381575c2/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/modeling-a-room",
+      "slug": "pathways/cgi-foundations/modeling/modeling-a-room",
       "order": 3,
       "parent": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
       "title": "Modeling a room",
@@ -445,14 +445,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
       "indent": 2,
       "location": "pages/item-260d48b5-92f7-4dac-9ab8-307e2859d680/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing",
+      "slug": "pathways/cgi-foundations/texturing",
       "order": 2,
       "parent": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
       "title": "Texturing",
@@ -464,14 +464,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-b57f381c-1b7c-4999-a04d-1ae46176ec6e",
       "indent": 3,
       "location": "pages/item-b57f381c-1b7c-4999-a04d-1ae46176ec6e/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/texturing-and-uv-mapping",
+      "slug": "pathways/cgi-foundations/texturing/texturing-and-uv-mapping",
       "order": 0,
       "parent": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
       "title": "Texturing and UV Mapping",
@@ -487,14 +487,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-73100c79-1959-4c1b-a897-a2cc4476a132",
       "indent": 3,
       "location": "pages/item-73100c79-1959-4c1b-a897-a2cc4476a132/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/introduction-to-texturing",
+      "slug": "pathways/cgi-foundations/texturing/introduction-to-texturing",
       "order": 1,
       "parent": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
       "title": "Introduction to Texturing",
@@ -510,14 +510,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-f3f8da57-a7a0-4ffb-a77b-c86f92ce751f",
       "indent": 3,
       "location": "pages/item-f3f8da57-a7a0-4ffb-a77b-c86f92ce751f/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/texturing-the-airline-chair",
+      "slug": "pathways/cgi-foundations/texturing/texturing-the-airline-chair",
       "order": 2,
       "parent": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
       "title": "Texturing the Airline Chair",
@@ -533,14 +533,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-af0dce51-7933-4e6c-ac7c-06302b84fd61",
       "indent": 3,
       "location": "pages/item-af0dce51-7933-4e6c-ac7c-06302b84fd61/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/texturing-a-room",
+      "slug": "pathways/cgi-foundations/texturing/texturing-a-room",
       "order": 3,
       "parent": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
       "title": "Texturing a room",
@@ -556,14 +556,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "indent": 2,
       "location": "pages/item-78cb5c5f-c643-4eaf-990f-33b1bc89f214/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering",
       "order": 3,
       "parent": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
       "title": "Lighting, camera & rendering",
@@ -575,14 +575,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-443819d4-896e-4f9b-8563-1da314603a0c",
       "indent": 3,
       "location": "pages/item-443819d4-896e-4f9b-8563-1da314603a0c/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/lighting-principles",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering/lighting-principles",
       "order": 0,
       "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "title": "Lighting Principles",
@@ -598,14 +598,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-27f7be08-d11c-494e-94ab-5b2f80a6e555",
       "indent": 3,
       "location": "pages/item-27f7be08-d11c-494e-94ab-5b2f80a6e555/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/camera-and-composition",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition",
       "order": 1,
       "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "title": "Camera and Composition",
@@ -621,14 +621,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-4762643b-b566-4e8f-8141-434835db738f",
       "indent": 3,
       "location": "pages/item-4762643b-b566-4e8f-8141-434835db738f/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/rendering-techniques",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering/rendering-techniques",
       "order": 2,
       "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "title": "Rendering Techniques",
@@ -644,14 +644,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830083
       }
     },
     {
       "id": "item-3e337536-0880-4be3-8baf-6a5d37db8443",
       "indent": 3,
       "location": "pages/item-3e337536-0880-4be3-8baf-6a5d37db8443/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering",
       "order": 3,
       "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "title": "Introduction to Cameras, Lighting, and Rendering",
@@ -667,14 +667,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
       "id": "item-8a1ef12a-0e47-451b-b37d-addb2da2e0cb",
       "indent": 3,
       "location": "pages/item-8a1ef12a-0e47-451b-b37d-addb2da2e0cb/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/lighting-and-rendering-the-airline-chair",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering/lighting-and-rendering-the-airline-chair",
       "order": 4,
       "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "title": "Lighting and Rendering the Airline Chair",
@@ -690,14 +690,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
       "id": "item-0de38b7c-691f-4177-9559-efb54871af7f",
       "indent": 3,
       "location": "pages/item-0de38b7c-691f-4177-9559-efb54871af7f/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room",
+      "slug": "pathways/cgi-foundations/lighting-camera-rendering/rendering-a-room",
       "order": 5,
       "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "title": "Rendering a room",
@@ -713,14 +713,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
       "id": "item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f",
       "indent": 2,
       "location": "pages/item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f/index.html",
-      "slug": "pathways/cgi-foundations-1/project",
+      "slug": "pathways/cgi-foundations/project",
       "order": 4,
       "parent": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
       "title": "Project",
@@ -732,14 +732,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
       "id": "item-f0ef87c0-d598-433c-99f6-1a66acff04fb",
       "indent": 3,
       "location": "pages/item-f0ef87c0-d598-433c-99f6-1a66acff04fb/index.html",
-      "slug": "pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-objects",
+      "slug": "pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects",
       "order": 0,
       "parent": "item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f",
       "title": "You don't see that everyday objects",
@@ -755,14 +755,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
       "id": "item-00dc025d-e8ed-4acd-80f1-db19accee571",
       "indent": 3,
       "location": "pages/item-00dc025d-e8ed-4acd-80f1-db19accee571/index.html",
-      "slug": "pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters",
+      "slug": "pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters",
       "order": 1,
       "parent": "item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f",
       "title": "You don't see that everyday object posters",
@@ -778,7 +778,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -797,7 +797,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -820,7 +820,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -843,7 +843,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -866,7 +866,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -889,7 +889,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -913,7 +913,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -937,7 +937,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -960,7 +960,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -984,7 +984,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -998,7 +998,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790830073,
+        "updated": 1790830084,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -1023,7 +1023,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790830073,
+        "updated": 1790830084,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -1069,7 +1069,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1110,7 +1110,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1149,7 +1149,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1188,7 +1188,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1226,7 +1226,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1265,7 +1265,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1305,7 +1305,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1344,7 +1344,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1382,7 +1382,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1421,7 +1421,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1466,7 +1466,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1505,7 +1505,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1532,7 +1532,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1577,7 +1577,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830073,
+        "updated": 1790830084,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1587,7 +1587,7 @@
       "id": "item-b10cae23-396d-4b8a-92dd-7472ae68a302",
       "indent": 1,
       "location": "pages/item-b10cae23-396d-4b8a-92dd-7472ae68a302/index.html",
-      "slug": "pathways/compositor-pathway-1",
+      "slug": "pathways/compositor-pathway",
       "order": 1,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Compositor Pathway",
@@ -1611,7 +1611,7 @@
           ],
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -1623,7 +1623,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -1642,7 +1642,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -1665,7 +1665,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830084
       }
     },
     {
@@ -1688,7 +1688,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -1712,7 +1712,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -1736,7 +1736,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -1760,7 +1760,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -1774,7 +1774,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790830074,
+        "updated": 1790830085,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -1829,7 +1829,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1862,7 +1862,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1909,7 +1909,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1942,7 +1942,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1995,7 +1995,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2028,7 +2028,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2062,7 +2062,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2094,7 +2094,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2127,7 +2127,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2160,7 +2160,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2193,7 +2193,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2227,7 +2227,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2260,7 +2260,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2293,7 +2293,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2327,7 +2327,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2361,7 +2361,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2388,7 +2388,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2422,7 +2422,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -2432,7 +2432,7 @@
       "id": "item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4",
       "indent": 1,
       "location": "pages/item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4/index.html",
-      "slug": "pathways/digital-fabrication-1",
+      "slug": "pathways/digital-fabrication",
       "order": 2,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Digital fabrication",
@@ -2445,7 +2445,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -2457,7 +2457,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2476,7 +2476,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2500,7 +2500,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2524,7 +2524,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2548,7 +2548,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2572,7 +2572,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2596,7 +2596,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -2620,7 +2620,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830085
       }
     },
     {
@@ -5234,7 +5234,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5268,7 +5268,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830074,
+        "updated": 1790830085,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -5278,7 +5278,7 @@
       "id": "item-72db2076-5252-4246-af1d-685903483097",
       "indent": 1,
       "location": "pages/item-72db2076-5252-4246-af1d-685903483097/index.html",
-      "slug": "pathways/game-artist-pathway-1",
+      "slug": "pathways/game-artist-pathway",
       "order": 3,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Game Artist Pathway",
@@ -5310,7 +5310,7 @@
           "targetRole": "Game Artist",
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5321,14 +5321,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-e08297d2-1cb7-4244-9001-e85120939135",
       "indent": 2,
       "location": "pages/item-e08297d2-1cb7-4244-9001-e85120939135/index.html",
-      "slug": "pathways/game-artist-pathway-1/texturing-for-real-time",
+      "slug": "pathways/game-artist-pathway/texturing-for-real-time",
       "order": 3,
       "parent": "item-72db2076-5252-4246-af1d-685903483097",
       "title": "Texturing for real time",
@@ -5340,14 +5340,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-bdb59e31-f426-4807-b68f-1d0a51c30311",
       "indent": 3,
       "location": "pages/item-bdb59e31-f426-4807-b68f-1d0a51c30311/index.html",
-      "slug": "pathways/game-artist-pathway-1/texturing-for-real-time/baking-normal-maps",
+      "slug": "pathways/game-artist-pathway/texturing-for-real-time/baking-normal-maps",
       "order": 3,
       "parent": "item-e08297d2-1cb7-4244-9001-e85120939135",
       "title": "Baking Normal Maps",
@@ -5364,14 +5364,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-946a6945-fd38-4d21-ae63-87c559db86b3",
       "indent": 2,
       "location": "pages/item-946a6945-fd38-4d21-ae63-87c559db86b3/index.html",
-      "slug": "pathways/game-artist-pathway-1/into-the-engine",
+      "slug": "pathways/game-artist-pathway/into-the-engine",
       "order": 4,
       "parent": "item-72db2076-5252-4246-af1d-685903483097",
       "title": "Into the engine",
@@ -5383,14 +5383,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2",
       "indent": 2,
       "location": "pages/item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2/index.html",
-      "slug": "pathways/game-artist-pathway-1/project",
+      "slug": "pathways/game-artist-pathway/project",
       "order": 5,
       "parent": "item-72db2076-5252-4246-af1d-685903483097",
       "title": "Project",
@@ -5402,7 +5402,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
@@ -5416,7 +5416,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1790830075,
+        "updated": 1790830086,
         "images": [],
         "videos": [],
         "published": true,
@@ -5431,7 +5431,7 @@
       "id": "item-427f67e4-123e-4f70-b632-4e18a8001777",
       "indent": 1,
       "location": "pages/item-427f67e4-123e-4f70-b632-4e18a8001777/index.html",
-      "slug": "pathways/game-design-and-development-1",
+      "slug": "pathways/game-design-and-development",
       "order": 4,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Game design and development",
@@ -5444,7 +5444,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5456,14 +5456,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9",
       "indent": 1,
       "location": "pages/item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9/index.html",
-      "slug": "pathways/illustration-and-visualization-1",
+      "slug": "pathways/illustration-and-visualization",
       "order": 5,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Illustration and visualization",
@@ -5476,7 +5476,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5488,14 +5488,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a",
       "indent": 1,
       "location": "pages/item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a/index.html",
-      "slug": "pathways/lighting-and-cinematography-1",
+      "slug": "pathways/lighting-and-cinematography",
       "order": 6,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Lighting and cinematography",
@@ -5508,7 +5508,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5520,14 +5520,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-831e27e4-94e4-43dc-b7e1-7b5039f802d9",
       "indent": 1,
       "location": "pages/item-831e27e4-94e4-43dc-b7e1-7b5039f802d9/index.html",
-      "slug": "pathways/motion-graphics-1",
+      "slug": "pathways/motion-graphics",
       "order": 7,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Motion graphics",
@@ -5540,7 +5540,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5552,14 +5552,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
       "indent": 1,
       "location": "pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.html",
-      "slug": "pathways/product-design-1",
+      "slug": "pathways/product-design",
       "order": 8,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Product design",
@@ -5572,7 +5572,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5584,14 +5584,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-50b4ae5c-4f84-43f3-9987-efb6b3428542",
       "indent": 1,
       "location": "pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.html",
-      "slug": "pathways/production-management-1",
+      "slug": "pathways/production-management",
       "order": 9,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Production management",
@@ -5604,7 +5604,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5616,14 +5616,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-5dabc762-d17b-4d08-80ac-3dae0557d0cb",
       "indent": 1,
       "location": "pages/item-5dabc762-d17b-4d08-80ac-3dae0557d0cb/index.html",
-      "slug": "pathways/short-film-and-vfx-pathway-1",
+      "slug": "pathways/short-film-and-vfx-pathway",
       "order": 10,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Short Film and VFX Pathway",
@@ -5646,7 +5646,7 @@
           ],
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5658,14 +5658,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
       "indent": 1,
       "location": "pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.html",
-      "slug": "pathways/short-film-pathway-1",
+      "slug": "pathways/short-film-pathway",
       "order": 11,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Short Film Pathway",
@@ -5688,7 +5688,7 @@
           ],
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5700,14 +5700,14 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
       "id": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
       "indent": 1,
       "location": "pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.html",
-      "slug": "pathways/visual-effects-vfx-1",
+      "slug": "pathways/visual-effects-vfx",
       "order": 12,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Visual Effects (VFX)",
@@ -5720,7 +5720,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
               "version": ""
             }
           ],
@@ -5732,7 +5732,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1790830075
+        "updated": 1790830086
       }
     },
     {
@@ -5780,7 +5780,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830075,
+        "updated": 1790830086,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -5801,7 +5801,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830075,
+        "updated": 1790830086,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5822,7 +5822,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830075,
+        "updated": 1790830086,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5843,7 +5843,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1790830075,
+        "updated": 1790830086,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
