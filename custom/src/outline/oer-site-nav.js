@@ -23,7 +23,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { childrenMap, ancestors, createPage } from "./outline-model.js";
-import { allowedChildTypes, contentTypes, isHeading } from "../types/content-types.js";
+import { allowedChildTypes, contentTypes, isHeading, navIconsOn } from "../types/content-types.js";
 
 const STORAGE_KEY = "oer-site-nav-open";
 
@@ -402,7 +402,7 @@ class OerSiteNav extends LitElement {
               class="${item.metadata?.published === false ? "draft" : ""}"
               aria-current="${item.id === this._activeId ? "page" : item.id === this.__location ? "location" : "false"}"
             >
-              ${depth === 0
+              ${depth === 0 && navIconsOn(this._all)
                 ? iconName
                   ? html`<simple-icon-lite icon="${iconName}"></simple-icon-lite>`
                   : html`<span class="no-icon"></span>`

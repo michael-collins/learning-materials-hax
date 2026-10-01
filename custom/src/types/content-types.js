@@ -64,6 +64,11 @@ export function contentTypes(list = items()) {
   return defs && Array.isArray(defs.types) ? defs : { version: 1, types: [] };
 }
 
+/** Site setting (on the system page): show page icons in the navigation. */
+export function navIconsOn(list = items()) {
+  return systemItem(list)?.metadata?.oerNavIcons !== false;
+}
+
 export function typeById(id, list = items()) {
   return contentTypes(list).types.find((t) => t.id === id) || null;
 }

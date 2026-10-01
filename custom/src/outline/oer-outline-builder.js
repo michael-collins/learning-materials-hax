@@ -19,7 +19,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { flatten, saveOutline, newItemId, starterContent, childrenMap } from "./outline-model.js";
-import { isSystemItem, contentTypes, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
+import { isSystemItem, systemItem, contentTypes, navIconsOn, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
 import { isSnapshot } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
@@ -45,6 +45,7 @@ class OerOutlineBuilder extends LitElement {
       _collapsed: { state: true },
       _editing: { state: true },
       _showIcons: { state: true },
+      _navIcons: { state: true }, // site setting: icons in the navigation
       _hoverAdd: { state: true },
       _drag: { state: true },
       _longPress: { state: true },
@@ -98,6 +99,7 @@ class OerOutlineBuilder extends LitElement {
     }));
     // headings are built in, not a content type of the site
     this._types = [...contentTypes(items).types, HEADING_DEF];
+    this._navIcons = navIconsOn(items);
     this._snapshot = this._signature();
     this._deleted = new Map();
     this._collapsed = new Set();
@@ -115,7 +117,7 @@ class OerOutlineBuilder extends LitElement {
   }
 
   _signature() {
-    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.level, r.depth, r.ref?.page, r.ref?.version]));
+    return JSON.stringify([this._navIcons, ...this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.level, r.depth, r.ref?.page, r.ref?.version])]);
   }
 
   get _dirty() {
@@ -192,6 +194,13 @@ class OerOutlineBuilder extends LitElement {
     for (const id of this._deleted.keys()) {
       const item = out.get(id);
       if (item) item.delete = true;
+    }
+    // the site-wide "Icons in navigation" setting lives on the system page
+    const sys = systemItem(all);
+    if (sys && (sys.metadata?.oerNavIcons !== false) !== this._navIcons) {
+      const item = out.get(sys.id);
+      item.metadata = { ...(item.metadata || {}), oerNavIcons: this._navIcons };
+      item.modified = true;
     }
     saveOutline([...out.values()]);
     this._close();
@@ -827,6 +836,17 @@ class OerOutlineBuilder extends LitElement {
         font-size: 0.75rem;
         color: var(--muted-foreground);
         cursor: pointer;
+      }
+      .tool.switch input {
+        width: 0.875rem;
+        height: 0.875rem;
+        margin: 0;
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      .tool.switch:focus-within {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
       }
       .tool:hover {
         background: var(--accent);
@@ -1822,9 +1842,20 @@ class OerOutlineBuilder extends LitElement {
               ? html`<button class="tool" @click="${this._collapseAll}">${lucide("oer:chevron-right", "sm")}Collapse all</button>
                   <button class="tool" @click="${() => (this._collapsed = new Set())}">${lucide("oer:chevron-down", "sm")}Expand all</button>`
               : ""}
-            <button class="tool" aria-pressed="${this._showIcons ? "true" : "false"}" @click="${() => (this._showIcons = !this._showIcons)}">
-              ${lucide(this._showIcons ? "icons:visibility" : "icons:visibility-off", "sm")}Icons
+            <button
+              class="tool"
+              aria-pressed="${this._showIcons ? "true" : "false"}"
+              title="Show the icon column here, to change or remove a page's icon"
+              @click="${() => (this._showIcons = !this._showIcons)}"
+            >
+              ${lucide(this._showIcons ? "icons:visibility" : "icons:visibility-off", "sm")}Edit icons
             </button>
+            ${this._root
+              ? ""
+              : html`<label class="tool switch" title="Site setting: show page icons in the sidebar (saved with the outline)">
+                  <input type="checkbox" role="switch" .checked="${this._navIcons}" @change="${(e) => (this._navIcons = e.target.checked)}" />
+                  Icons in navigation
+                </label>`}
             <span class="count">${top} top-level · ${this._rows.length} page${this._rows.length === 1 ? "" : "s"}</span>
         </div>
         <div class="body">
