@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790880630
+      "updated": 1790880631
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -2494,7 +2494,7 @@
       "order": 1000,
       "parent": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
       "title": "v0.0.1",
-      "description": "",
+      "description": "Master camera settings, placement, and composition principles to create visually compelling rendered images and animations.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
