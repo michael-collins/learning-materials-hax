@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790829910
+      "updated": 1790829995
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -329,6 +329,25 @@
       }
     },
     {
+      "id": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
+      "indent": 2,
+      "location": "pages/item-fd2a8921-39e9-4674-91cf-97e8c6777ac4/index.html",
+      "slug": "pathways/cgi-foundations-1/modeling",
+      "order": 1,
+      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
+      "title": "Modeling",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "section",
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
       "id": "item-b5e9903b-b146-4b1f-b62d-cd0e0ca33fa0",
       "indent": 3,
       "location": "pages/item-b5e9903b-b146-4b1f-b62d-cd0e0ca33fa0/index.html",
@@ -345,6 +364,94 @@
           "page": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
           "version": ""
         },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-50761876-d2fc-4e11-a460-fc8c4487abe0",
+      "indent": 3,
+      "location": "pages/item-50761876-d2fc-4e11-a460-fc8c4487abe0/index.html",
+      "slug": "pathways/cgi-foundations-1/modeling/introduction-to-modeling",
+      "order": 1,
+      "parent": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
+      "title": "Introduction to Modeling",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lecture",
+        "oerRef": {
+          "page": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-e4fd64be-3ee8-4f60-aea2-b0ef1919137f",
+      "indent": 3,
+      "location": "pages/item-e4fd64be-3ee8-4f60-aea2-b0ef1919137f/index.html",
+      "slug": "pathways/cgi-foundations-1/modeling/modeling-the-airline-chair",
+      "order": 2,
+      "parent": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
+      "title": "Modeling the Airline Chair",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-5d907b6d-450e-4da0-9d76-4cbeb99e9d61",
+      "indent": 3,
+      "location": "pages/item-5d907b6d-450e-4da0-9d76-4cbeb99e9d61/index.html",
+      "slug": "pathways/cgi-foundations-1/modeling/modeling-a-room",
+      "order": 3,
+      "parent": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
+      "title": "Modeling a room",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
+      "indent": 2,
+      "location": "pages/item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15/index.html",
+      "slug": "pathways/cgi-foundations-1/texturing",
+      "order": 2,
+      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
+      "title": "Texturing",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "section",
         "created": 1790829988,
         "images": [],
         "videos": [],
@@ -375,6 +482,94 @@
       }
     },
     {
+      "id": "item-da4dfd41-4d7d-44fe-9903-8aec0fcbe87e",
+      "indent": 3,
+      "location": "pages/item-da4dfd41-4d7d-44fe-9903-8aec0fcbe87e/index.html",
+      "slug": "pathways/cgi-foundations-1/texturing/introduction-to-texturing",
+      "order": 1,
+      "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
+      "title": "Introduction to Texturing",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lecture",
+        "oerRef": {
+          "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58",
+      "indent": 3,
+      "location": "pages/item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58/index.html",
+      "slug": "pathways/cgi-foundations-1/texturing/texturing-the-airline-chair",
+      "order": 2,
+      "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
+      "title": "Texturing the Airline Chair",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-1d0f929c-4fd7-458e-b49c-cd5e82271549",
+      "indent": 3,
+      "location": "pages/item-1d0f929c-4fd7-458e-b49c-cd5e82271549/index.html",
+      "slug": "pathways/cgi-foundations-1/texturing/texturing-a-room",
+      "order": 3,
+      "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
+      "title": "Texturing a room",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-94b5861e-b488-429f-956d-30a56545a026",
+      "indent": 2,
+      "location": "pages/item-94b5861e-b488-429f-956d-30a56545a026/index.html",
+      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering",
+      "order": 3,
+      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
+      "title": "Lighting, camera & rendering",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "section",
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
       "id": "item-dea7727d-5081-4ad6-9edd-56bd3dcd9ea5",
       "indent": 3,
       "location": "pages/item-dea7727d-5081-4ad6-9edd-56bd3dcd9ea5/index.html",
@@ -398,6 +593,140 @@
       }
     },
     {
+      "id": "item-d39335f9-5915-4ed5-abb7-00499d3936e1",
+      "indent": 3,
+      "location": "pages/item-d39335f9-5915-4ed5-abb7-00499d3936e1/index.html",
+      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/camera-and-composition",
+      "order": 1,
+      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
+      "title": "Camera and Composition",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lesson",
+        "oerRef": {
+          "page": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-3c8b1bf0-6157-4224-8844-e11f1745e9ab",
+      "indent": 3,
+      "location": "pages/item-3c8b1bf0-6157-4224-8844-e11f1745e9ab/index.html",
+      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/rendering-techniques",
+      "order": 2,
+      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
+      "title": "Rendering Techniques",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lesson",
+        "oerRef": {
+          "page": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-876ebb82-4e13-4bbb-8932-a6b4ac21044d",
+      "indent": 3,
+      "location": "pages/item-876ebb82-4e13-4bbb-8932-a6b4ac21044d/index.html",
+      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering",
+      "order": 3,
+      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
+      "title": "Introduction to Cameras, Lighting, and Rendering",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lecture",
+        "oerRef": {
+          "page": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-564702ff-012a-4bf1-b7dc-dc5b32eed7b4",
+      "indent": 3,
+      "location": "pages/item-564702ff-012a-4bf1-b7dc-dc5b32eed7b4/index.html",
+      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/lighting-and-rendering-the-airline-chair",
+      "order": 4,
+      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
+      "title": "Lighting and Rendering the Airline Chair",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-8bfb86d5-9cc8-495b-a8c3-38e289e2b872",
+      "indent": 3,
+      "location": "pages/item-8bfb86d5-9cc8-495b-a8c3-38e289e2b872/index.html",
+      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room",
+      "order": 5,
+      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
+      "title": "Rendering a room",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2",
+      "indent": 2,
+      "location": "pages/item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2/index.html",
+      "slug": "pathways/cgi-foundations-1/project",
+      "order": 4,
+      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
+      "title": "Project",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "section",
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
       "id": "item-fe46fe9e-6721-42d3-aece-162199dcbf0f",
       "indent": 3,
       "location": "pages/item-fe46fe9e-6721-42d3-aece-162199dcbf0f/index.html",
@@ -412,6 +741,29 @@
         "pageType": "project",
         "oerRef": {
           "page": "item-48ad9f94-3f8b-44e5-8416-316cff49f4d2",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-b21ed8b5-1aa0-422c-a0fb-aaf406f61d92",
+      "indent": 3,
+      "location": "pages/item-b21ed8b5-1aa0-422c-a0fb-aaf406f61d92/index.html",
+      "slug": "pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters",
+      "order": 1,
+      "parent": "item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2",
+      "title": "You don't see that everyday object posters",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "project",
+        "oerRef": {
+          "page": "item-930abc68-c77e-479c-b2ff-220e4714c712",
           "version": ""
         },
         "created": 1790829988,
@@ -454,6 +806,52 @@
         "pageType": "lesson",
         "oerRef": {
           "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-53222b15-394a-4c5f-b7ed-816cf37fa854",
+      "indent": 3,
+      "location": "pages/item-53222b15-394a-4c5f-b7ed-816cf37fa854/index.html",
+      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time",
+      "order": 1,
+      "parent": "item-4a7207fe-5b2f-4000-862e-fea9e7f0614d",
+      "title": "Environment Design for Real-time",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lesson",
+        "oerRef": {
+          "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-67def973-4ca7-412b-a25b-8a6a2fe5f2ea",
+      "indent": 3,
+      "location": "pages/item-67def973-4ca7-412b-a25b-8a6a2fe5f2ea/index.html",
+      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets",
+      "order": 2,
+      "parent": "item-4a7207fe-5b2f-4000-862e-fea9e7f0614d",
+      "title": "Real-time Asset Budgets",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "lesson",
+        "oerRef": {
+          "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
           "version": ""
         },
         "created": 1790829988,
@@ -666,6 +1064,409 @@
       }
     },
     {
+      "id": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+      "indent": 1,
+      "location": "pages/item-d05396b9-88a6-4631-821f-40a2e9bd2d4f/index.html",
+      "slug": "lessons/3d-modeling-fundamentals",
+      "order": 2,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "3D Modeling Fundamentals",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/3d-modeling-fundamentals",
+        "tags": "",
+        "oerFields": {
+          "estimatedDuration": "4 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Understand polygon modeling concepts and workflows",
+            "Create 3D geometry using basic modeling tools",
+            "Apply proper topology principles to models",
+            "Develop efficient modeling techniques"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA",
+          "publishEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
+      "indent": 1,
+      "location": "pages/item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4/index.html",
+      "slug": "lessons/texturing-and-uv-mapping",
+      "order": 3,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Texturing and UV Mapping",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/texturing-uv-mapping",
+        "oerFields": {
+          "estimatedDuration": "4 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Understand UV coordinate systems",
+            "Create efficient UV layouts",
+            "Apply textures to 3D models",
+            "Create and configure PBR materials",
+            "Minimize texture stretching and distortion"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
+      "indent": 1,
+      "location": "pages/item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95/index.html",
+      "slug": "lessons/lighting-principles",
+      "order": 4,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Lighting Principles",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/lighting-principles",
+        "oerFields": {
+          "estimatedDuration": "3 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Understand three-point lighting setup",
+            "Apply different light types effectively",
+            "Create mood and atmosphere with lighting",
+            "Use HDRI and environmental lighting",
+            "Balance light intensity and color"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
+      "indent": 1,
+      "location": "pages/item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41/index.html",
+      "slug": "lessons/camera-and-composition",
+      "order": 5,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Camera and Composition",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/camera-composition",
+        "oerFields": {
+          "estimatedDuration": "2 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Understand camera settings and properties",
+            "Apply composition principles to 3D scenes",
+            "Create effective camera angles and movements",
+            "Use focal length and depth of field creatively"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
+      "indent": 1,
+      "location": "pages/item-685e56cc-c545-4d08-81c8-c724fe5cc33d/index.html",
+      "slug": "lessons/rendering-techniques",
+      "order": 6,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Rendering Techniques",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/rendering-techniques",
+        "oerFields": {
+          "estimatedDuration": "3 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Understand rendering engines and their settings",
+            "Configure render settings for quality output",
+            "Optimize render times effectively",
+            "Set up render layers and passes",
+            "Export renders in appropriate formats"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+      "indent": 1,
+      "location": "pages/item-3c14822b-53dd-4a66-aac7-f8ec740bbea5/index.html",
+      "slug": "lessons/real-time-engines",
+      "order": 7,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Real-time Engines",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/realtime-engines",
+        "oerFields": {
+          "estimatedDuration": "6 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Navigate game engine interfaces",
+            "Import and configure 3D assets",
+            "Set up materials and shaders",
+            "Implement real-time lighting",
+            "Create basic interactive elements",
+            "Optimize performance and build settings"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
+      "indent": 1,
+      "location": "pages/item-c9cb258f-d7f0-4668-a301-fff71e07b1d0/index.html",
+      "slug": "lessons/environment-design-for-real-time",
+      "order": 8,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Environment Design for Real-time",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/environment-design-realtime",
+        "oerFields": {
+          "estimatedDuration": "5 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Design environments for real-time rendering",
+            "Create modular and reusable assets",
+            "Apply level design principles",
+            "Optimize environments for performance",
+            "Implement efficient lighting strategies"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
+      "indent": 1,
+      "location": "pages/item-c43a83f7-2300-4e9c-bd16-bf418744f1d9/index.html",
+      "slug": "lessons/real-time-asset-budgets",
+      "order": 9,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Real-time Asset Budgets",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/realtime-asset-budgets",
+        "oerFields": {
+          "estimatedDuration": "3 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Explain how real-time rendering differs from offline rendering",
+            "Estimate polygon and texture budgets for an asset",
+            "Apply consistent texel density across a set of assets",
+            "Reduce draw calls with shared materials and texture atlases"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+      "indent": 1,
+      "location": "pages/item-d22274ef-a811-4445-b5fa-132e70eab0f2/index.html",
+      "slug": "lessons/drawing-for-3d-design",
+      "order": 10,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Drawing for 3D Design",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/drawing-for-3d-design",
+        "oerFields": {
+          "estimatedDuration": "4 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Apply drawing fundamentals to 3D design",
+            "Create concept sketches for 3D models",
+            "Understand form, perspective, and proportion",
+            "Develop visual reference materials",
+            "Translate 2D concepts into 3D designs"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+      "indent": 1,
+      "location": "pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.html",
+      "slug": "lessons/hard-surface-modeling",
+      "order": 11,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Hard Surface Modeling",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/hard-surface-modeling",
+        "oerFields": {
+          "estimatedDuration": "5 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Apply hard surface modeling techniques",
+            "Create clean edge flow and topology",
+            "Use modifiers for non-destructive workflows",
+            "Model mechanical and manufactured objects",
+            "Maintain precision and accuracy in models"
+          ],
+          "prerequisites": [
+            {
+              "page": "item-71d8f72c-1a31-4a3b-b75d-90f57f6fde5d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
+      "id": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+      "indent": 1,
+      "location": "pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.html",
+      "slug": "lessons/digital-sculpting",
+      "order": 12,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Digital Sculpting",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "lesson",
+        "oerSource": "lessons/digital-sculpting",
+        "oerFields": {
+          "estimatedDuration": "5 hours",
+          "courses": [
+            "DART 303"
+          ],
+          "learningObjectives": [
+            "Understand sculpting tools and workflows",
+            "Create organic forms using sculpting techniques",
+            "Apply anatomy principles to character sculpts",
+            "Manage subdivision levels and detail",
+            "Retopologize sculpts for animation"
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829986
+      }
+    },
+    {
       "id": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
       "indent": 1,
       "location": "pages/item-be2fc5ef-ba1f-484b-be6a-2216a24314a2/index.html",
@@ -732,117 +1533,6 @@
       }
     },
     {
-      "id": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
-      "indent": 2,
-      "location": "pages/item-fd2a8921-39e9-4674-91cf-97e8c6777ac4/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling",
-      "order": 1,
-      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-      "title": "Modeling",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-50761876-d2fc-4e11-a460-fc8c4487abe0",
-      "indent": 3,
-      "location": "pages/item-50761876-d2fc-4e11-a460-fc8c4487abe0/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/introduction-to-modeling",
-      "order": 1,
-      "parent": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
-      "title": "Introduction to Modeling",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lecture",
-        "oerRef": {
-          "page": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-da4dfd41-4d7d-44fe-9903-8aec0fcbe87e",
-      "indent": 3,
-      "location": "pages/item-da4dfd41-4d7d-44fe-9903-8aec0fcbe87e/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/introduction-to-texturing",
-      "order": 1,
-      "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
-      "title": "Introduction to Texturing",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lecture",
-        "oerRef": {
-          "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-d39335f9-5915-4ed5-abb7-00499d3936e1",
-      "indent": 3,
-      "location": "pages/item-d39335f9-5915-4ed5-abb7-00499d3936e1/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/camera-and-composition",
-      "order": 1,
-      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "title": "Camera and Composition",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-b21ed8b5-1aa0-422c-a0fb-aaf406f61d92",
-      "indent": 3,
-      "location": "pages/item-b21ed8b5-1aa0-422c-a0fb-aaf406f61d92/index.html",
-      "slug": "pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters",
-      "order": 1,
-      "parent": "item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2",
-      "title": "You don't see that everyday object posters",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "project",
-        "oerRef": {
-          "page": "item-930abc68-c77e-479c-b2ff-220e4714c712",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
       "id": "item-9f8b1b26-1d87-4b97-8e41-bfc45bb14029",
       "indent": 1,
       "location": "pages/item-9f8b1b26-1d87-4b97-8e41-bfc45bb14029/index.html",
@@ -886,29 +1576,6 @@
       }
     },
     {
-      "id": "item-53222b15-394a-4c5f-b7ed-816cf37fa854",
-      "indent": 3,
-      "location": "pages/item-53222b15-394a-4c5f-b7ed-816cf37fa854/index.html",
-      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time",
-      "order": 1,
-      "parent": "item-4a7207fe-5b2f-4000-862e-fea9e7f0614d",
-      "title": "Environment Design for Real-time",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
       "id": "item-2d17b512-9f6b-447f-ab5d-db359f3a0f70",
       "indent": 2,
       "location": "pages/item-2d17b512-9f6b-447f-ab5d-db359f3a0f70/index.html",
@@ -942,6 +1609,29 @@
         "pageType": "tutorial",
         "oerRef": {
           "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-20da8bdc-614e-4328-a0ed-6c0e5ce9c118",
+      "indent": 3,
+      "location": "pages/item-20da8bdc-614e-4328-a0ed-6c0e5ce9c118/index.html",
+      "slug": "pathways/game-artist-pathway-1/concept-blockout/blocking-out-a-game-space",
+      "order": 2,
+      "parent": "item-2d17b512-9f6b-447f-ab5d-db359f3a0f70",
+      "title": "Blocking Out a Game Space",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
           "version": ""
         },
         "created": 1790829988,
@@ -1023,44 +1713,6 @@
       }
     },
     {
-      "id": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
-      "indent": 1,
-      "location": "pages/item-d05396b9-88a6-4631-821f-40a2e9bd2d4f/index.html",
-      "slug": "lessons/3d-modeling-fundamentals",
-      "order": 2,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "3D Modeling Fundamentals",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/3d-modeling-fundamentals",
-        "tags": "",
-        "oerFields": {
-          "estimatedDuration": "4 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Understand polygon modeling concepts and workflows",
-            "Create 3D geometry using basic modeling tools",
-            "Apply proper topology principles to models",
-            "Develop efficient modeling techniques"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA",
-          "publishEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
       "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "indent": 0,
       "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
@@ -1130,6 +1782,493 @@
       }
     },
     {
+      "id": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
+      "indent": 1,
+      "location": "pages/item-dbf43915-8e34-4116-a6e7-67cd08a1316e/index.html",
+      "slug": "exercises/modeling-a-room",
+      "order": 3,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Modeling a room",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/modeling-a-room",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "image": "files/rec6ebYsG1Dnf08qb_image_room-model.png",
+          "imageAlt": "room-model.png",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
+      "indent": 1,
+      "location": "pages/item-1ac14915-a348-47d3-9ecc-a88e800d4bb9/index.html",
+      "slug": "exercises/texturing-the-airline-chair",
+      "order": 4,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Texturing the Airline Chair",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/texturing-the-airline-chair",
+        "tags": "Blender,Texturing",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recF0xzVxfkZoJ63J_image_airline-chair-texturing-header.jpg",
+          "imageAlt": "airline-chair-texturing-header.jpg",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Airline Chair 3/4 view",
+              "url": "files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg",
+              "description": "Airline Chair designed by KEM Weber.",
+              "alt": "Airline Chair"
+            },
+            {
+              "title": "Airline Chair side view",
+              "url": "files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg",
+              "description": "Airline Chair designed by KEM Weber.",
+              "alt": "Airline Chair"
+            }
+          ]
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
+      "indent": 1,
+      "location": "pages/item-d069ea51-73ec-4db0-b27a-612dbfd77bcf/index.html",
+      "slug": "exercises/texturing-a-room",
+      "order": 5,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Texturing a room",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/texturing-a-room",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "image": "files/recJabaqMEyrxdB23_image_interior-texture-banner.png",
+          "imageAlt": "interior-texture-banner.png",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
+      "indent": 1,
+      "location": "pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.html",
+      "slug": "exercises/lighting-and-rendering-the-airline-chair",
+      "order": 6,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Lighting and Rendering the Airline Chair",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/lighting-and-rendering-the-airline-chair",
+        "tags": "Blender,Lighting",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recbAgArvnM20cFKL_image_rendering-banner.jpg",
+          "imageAlt": "rendering-banner.jpg",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Airline Chair 3/4 view",
+              "url": "files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg",
+              "description": "Airline Chair designed by KEM Weber.",
+              "alt": "Airline Chair"
+            },
+            {
+              "title": "Airline Chair side view",
+              "url": "files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg",
+              "description": "Airline Chair designed by KEM Weber.",
+              "alt": "Airline Chair"
+            },
+            {
+              "title": "Airline Chair Example render",
+              "url": "files/recjNVy0NcTvHBB5t_attachment_chair-render-compressed.jpg",
+              "description": "Airline Chair example render",
+              "alt": "An example rendering of the KEM Weber Airline Chair"
+            }
+          ]
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
+      "indent": 1,
+      "location": "pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.html",
+      "slug": "exercises/rendering-a-room",
+      "order": 7,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Rendering a room",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/rendering-a-room",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "image": "files/rechLzLJpVGI50gnn_image_room-banner2.png",
+          "imageAlt": "room-banner2.png",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
+      "indent": 1,
+      "location": "pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.html",
+      "slug": "exercises/blocking-out-a-game-space",
+      "order": 8,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Blocking Out a Game Space",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/blocking-out-a-game-space",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "courses": [
+            "DART 303"
+          ],
+          "license": "CC BY 4.0",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "placeholder": true,
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
+      "indent": 1,
+      "location": "pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.html",
+      "slug": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
+      "order": 9,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Modeling a Low Poly Animal and Introduction to Particles",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recvUlgEohhluSnhU_image_OSTRICH.png",
+          "imageAlt": "OSTRICH.png",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Kenneth Ian Brill",
+          "authorUrl": "https://www.ianbrill.com/",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
+      "indent": 1,
+      "location": "pages/item-cbff549d-e8f9-4804-b2ec-059cf0863101/index.html",
+      "slug": "exercises/low-poly-non-photorealistic-rendering",
+      "order": 10,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Low poly non-photorealistic rendering",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/low-poly-non-photorealistic-rendering",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recc8Zz9a0zTOaRyE_image_t-pose-banner.jpg",
+          "imageAlt": "t-pose-banner.jpg",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-b57b43a9-5427-445c-affe-80ce46848788",
+      "indent": 1,
+      "location": "pages/item-b57b43a9-5427-445c-affe-80ce46848788/index.html",
+      "slug": "exercises/modeling-random-objects",
+      "order": 11,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Modeling random objects",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/modeling-random-objects",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "image": "files/recLtYP0nJUL7RK8O_image_modeling-objects-header.jpg",
+          "imageAlt": "modeling-objects-header.jpg",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
+      "indent": 1,
+      "location": "pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.html",
+      "slug": "exercises/modeling-and-sculpting-a-sea-creature",
+      "order": 12,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Modeling and sculpting a sea creature",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/modeling-and-sculpting-a-sea-creature",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Advanced",
+          "image": "files/reckkzm19AZnEIkJE_image_sculpting-retopo-header-v1.jpg",
+          "imageAlt": "sculpting-retopo-header-v1.jpg",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b",
+      "indent": 1,
+      "location": "pages/item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b/index.html",
+      "slug": "exercises/texturing-low-poly-assets-with-a-palette-texture",
+      "order": 13,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Texturing Low-poly Assets with a Palette Texture",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/texturing-low-poly-assets-with-a-palette-texture",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "courses": [
+            "DART 303"
+          ],
+          "license": "CC BY 4.0",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "placeholder": true,
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-a203e95e-0ddd-43af-9519-ee3df76a5b2d",
+      "indent": 1,
+      "location": "pages/item-a203e95e-0ddd-43af-9519-ee3df76a5b2d/index.html",
+      "slug": "exercises/texturing-random-objects",
+      "order": 14,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Texturing random objects",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/texturing-random-objects",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "image": "files/reczUhTIOSSFk77BH_image_texturing-objects-header-v2.jpg",
+          "imageAlt": "texturing-objects-header-v2.jpg",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
+      "indent": 1,
+      "location": "pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.html",
+      "slug": "exercises/sculpting-retopo-and-texturing",
+      "order": 15,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Sculpting, retopo, and texturing",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/sculpting-retopo-and-texturing",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Advanced",
+          "image": "files/rec9LnLexVEqnrZNs_image_sculpting-retopo-header-v2.png",
+          "imageAlt": "sculpting-retopo-header-v2.png",
+          "license": "CC BY 4.0",
+          "aiLicense": "AIUL-WA, AIUL-NA-3D",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-858f23fb-b6b5-442a-ac36-94d4afe1718f",
+      "indent": 1,
+      "location": "pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.html",
+      "slug": "exercises/baking-normal-maps",
+      "order": 16,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Baking Normal Maps",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/baking-normal-maps",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Advanced",
+          "courses": [
+            "DART 303"
+          ],
+          "license": "CC BY 4.0",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "placeholder": true,
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
+      "id": "item-a92f242a-b30b-4685-b277-c205bd49ca90",
+      "indent": 1,
+      "location": "pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.html",
+      "slug": "exercises/importing-assets-into-playcanvas",
+      "order": 17,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Importing Assets into PlayCanvas",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "exercise",
+        "oerSource": "exercises/importing-assets-into-playcanvas",
+        "tags": "Blender,PlayCanvas",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "courses": [
+            "DART 303"
+          ],
+          "license": "CC BY 4.0",
+          "author": "Michael Collins",
+          "authorUrl": "https://michaelcollins.xyz",
+          "placeholder": true,
+          "allowEmbed": true
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1790829987
+      }
+    },
+    {
       "id": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
       "indent": 1,
       "location": "pages/item-81dbd5a3-3e7f-447c-a522-630f6001a8f0/index.html",
@@ -1185,94 +2324,6 @@
       }
     },
     {
-      "id": "item-e4fd64be-3ee8-4f60-aea2-b0ef1919137f",
-      "indent": 3,
-      "location": "pages/item-e4fd64be-3ee8-4f60-aea2-b0ef1919137f/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/modeling-the-airline-chair",
-      "order": 2,
-      "parent": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
-      "title": "Modeling the Airline Chair",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
-      "indent": 2,
-      "location": "pages/item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing",
-      "order": 2,
-      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-      "title": "Texturing",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58",
-      "indent": 3,
-      "location": "pages/item-e9bdaee5-15b4-441d-86c1-9ae5f1dccd58/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/texturing-the-airline-chair",
-      "order": 2,
-      "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
-      "title": "Texturing the Airline Chair",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-3c8b1bf0-6157-4224-8844-e11f1745e9ab",
-      "indent": 3,
-      "location": "pages/item-3c8b1bf0-6157-4224-8844-e11f1745e9ab/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/rendering-techniques",
-      "order": 2,
-      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "title": "Rendering Techniques",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
       "id": "item-37ea1bf3-73d6-46d6-885e-1b97a5a31461",
       "indent": 1,
       "location": "pages/item-37ea1bf3-73d6-46d6-885e-1b97a5a31461/index.html",
@@ -1297,52 +2348,6 @@
           "placeholder": true,
           "allowEmbed": true,
           "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-67def973-4ca7-412b-a25b-8a6a2fe5f2ea",
-      "indent": 3,
-      "location": "pages/item-67def973-4ca7-412b-a25b-8a6a2fe5f2ea/index.html",
-      "slug": "pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets",
-      "order": 2,
-      "parent": "item-4a7207fe-5b2f-4000-862e-fea9e7f0614d",
-      "title": "Real-time Asset Budgets",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-20da8bdc-614e-4328-a0ed-6c0e5ce9c118",
-      "indent": 3,
-      "location": "pages/item-20da8bdc-614e-4328-a0ed-6c0e5ce9c118/index.html",
-      "slug": "pathways/game-artist-pathway-1/concept-blockout/blocking-out-a-game-space",
-      "order": 2,
-      "parent": "item-2d17b512-9f6b-447f-ab5d-db359f3a0f70",
-      "title": "Blocking Out a Game Space",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
-          "version": ""
         },
         "created": 1790829988,
         "images": [],
@@ -1385,6 +2390,78 @@
         "pageType": "lesson",
         "oerRef": {
           "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-5a88637f-652e-4e41-aa93-ca8fd15bacd3",
+      "indent": 3,
+      "location": "pages/item-5a88637f-652e-4e41-aa93-ca8fd15bacd3/index.html",
+      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects",
+      "order": 3,
+      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
+      "title": "Modeling random objects",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "oerLevel": "Intermediate",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-4f2c7951-c408-43e9-8b9f-62d149851dd8",
+      "indent": 3,
+      "location": "pages/item-4f2c7951-c408-43e9-8b9f-62d149851dd8/index.html",
+      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/digital-sculpting",
+      "order": 4,
+      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
+      "title": "Digital Sculpting",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "oerLevel": "Advanced",
+        "pageType": "lesson",
+        "oerRef": {
+          "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+          "version": ""
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-6c4e0fef-a96c-4feb-a38f-d6f3645b0dfd",
+      "indent": 3,
+      "location": "pages/item-6c4e0fef-a96c-4feb-a38f-d6f3645b0dfd/index.html",
+      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-and-sculpting-a-sea-creature",
+      "order": 5,
+      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
+      "title": "Modeling and sculpting a sea creature",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "oerImport": "decap-pathways",
+        "oerLevel": "Advanced",
+        "pageType": "exercise",
+        "oerRef": {
+          "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
           "version": ""
         },
         "created": 1790829988,
@@ -1439,72 +2516,6 @@
         "images": [],
         "videos": [],
         "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
-      "indent": 1,
-      "location": "pages/item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4/index.html",
-      "slug": "lessons/texturing-and-uv-mapping",
-      "order": 3,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Texturing and UV Mapping",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/texturing-uv-mapping",
-        "oerFields": {
-          "estimatedDuration": "4 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Understand UV coordinate systems",
-            "Create efficient UV layouts",
-            "Apply textures to 3D models",
-            "Create and configure PBR materials",
-            "Minimize texture stretching and distortion"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
-      "indent": 1,
-      "location": "pages/item-dbf43915-8e34-4116-a6e7-67cd08a1316e/index.html",
-      "slug": "exercises/modeling-a-room",
-      "order": 3,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/modeling-a-room",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "image": "files/rec6ebYsG1Dnf08qb_image_room-model.png",
-          "imageAlt": "room-model.png",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
       }
     },
     {
@@ -4156,94 +5167,6 @@
       }
     },
     {
-      "id": "item-5d907b6d-450e-4da0-9d76-4cbeb99e9d61",
-      "indent": 3,
-      "location": "pages/item-5d907b6d-450e-4da0-9d76-4cbeb99e9d61/index.html",
-      "slug": "pathways/cgi-foundations-1/modeling/modeling-a-room",
-      "order": 3,
-      "parent": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
-      "title": "Modeling a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-1d0f929c-4fd7-458e-b49c-cd5e82271549",
-      "indent": 3,
-      "location": "pages/item-1d0f929c-4fd7-458e-b49c-cd5e82271549/index.html",
-      "slug": "pathways/cgi-foundations-1/texturing/texturing-a-room",
-      "order": 3,
-      "parent": "item-d864e1fa-e260-4092-a4b1-d7e6ddef2d15",
-      "title": "Texturing a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "indent": 2,
-      "location": "pages/item-94b5861e-b488-429f-956d-30a56545a026/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering",
-      "order": 3,
-      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-      "title": "Lighting, camera & rendering",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-876ebb82-4e13-4bbb-8932-a6b4ac21044d",
-      "indent": 3,
-      "location": "pages/item-876ebb82-4e13-4bbb-8932-a6b4ac21044d/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering",
-      "order": 3,
-      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "title": "Introduction to Cameras, Lighting, and Rendering",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lecture",
-        "oerRef": {
-          "page": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
       "id": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
       "indent": 1,
       "location": "pages/item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097/index.html",
@@ -4286,30 +5209,6 @@
           "author": "Michael Collins",
           "allowEmbed": true,
           "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-5a88637f-652e-4e41-aa93-ca8fd15bacd3",
-      "indent": 3,
-      "location": "pages/item-5a88637f-652e-4e41-aa93-ca8fd15bacd3/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects",
-      "order": 3,
-      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
-      "title": "Modeling random objects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Intermediate",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
-          "version": ""
         },
         "created": 1790829988,
         "images": [],
@@ -4361,83 +5260,41 @@
       }
     },
     {
-      "id": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
-      "indent": 1,
-      "location": "pages/item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95/index.html",
-      "slug": "lessons/lighting-principles",
+      "id": "item-4810f01c-4017-4e24-bea6-d7a2e52d0a89",
+      "indent": 2,
+      "location": "pages/item-4810f01c-4017-4e24-bea6-d7a2e52d0a89/index.html",
+      "slug": "pathways/game-artist-pathway-1/into-the-engine",
       "order": 4,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Lighting Principles",
+      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
+      "title": "Into the engine",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/lighting-principles",
-        "oerFields": {
-          "estimatedDuration": "3 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Understand three-point lighting setup",
-            "Apply different light types effectively",
-            "Create mood and atmosphere with lighting",
-            "Use HDRI and environmental lighting",
-            "Balance light intensity and color"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
+        "oerImport": "decap-pathways",
+        "pageType": "section",
+        "created": 1790829988,
         "images": [],
         "videos": [],
-        "updated": 1790829986
+        "updated": 1790829988
       }
     },
     {
-      "id": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
-      "indent": 1,
-      "location": "pages/item-1ac14915-a348-47d3-9ecc-a88e800d4bb9/index.html",
-      "slug": "exercises/texturing-the-airline-chair",
-      "order": 4,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Texturing the Airline Chair",
+      "id": "item-4c86e154-f625-4399-93c5-611f6a1768b1",
+      "indent": 2,
+      "location": "pages/item-4c86e154-f625-4399-93c5-611f6a1768b1/index.html",
+      "slug": "pathways/game-artist-pathway-1/project",
+      "order": 5,
+      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
+      "title": "Project",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/texturing-the-airline-chair",
-        "tags": "Blender,Texturing",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recF0xzVxfkZoJ63J_image_airline-chair-texturing-header.jpg",
-          "imageAlt": "airline-chair-texturing-header.jpg",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Airline Chair 3/4 view",
-              "url": "files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg",
-              "description": "Airline Chair designed by KEM Weber.",
-              "alt": "Airline Chair"
-            },
-            {
-              "title": "Airline Chair side view",
-              "url": "files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg",
-              "description": "Airline Chair designed by KEM Weber.",
-              "alt": "Airline Chair"
-            }
-          ]
-        },
-        "created": 1790829909,
+        "oerImport": "decap-pathways",
+        "pageType": "section",
+        "created": 1790829988,
         "images": [],
         "videos": [],
-        "updated": 1790829987
+        "updated": 1790829988
       }
     },
     {
@@ -4460,6 +5317,314 @@
         "overridePathauto": false,
         "hideInMenu": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-a0193c61-6a43-481f-9537-5e0def679374",
+      "indent": 1,
+      "location": "pages/item-a0193c61-6a43-481f-9537-5e0def679374/index.html",
+      "slug": "pathways/game-design-and-development-1",
+      "order": 4,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Game design and development",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/game-design-and-development",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-8304d26e-d001-4439-b5d9-652e37d52508",
+      "indent": 1,
+      "location": "pages/item-8304d26e-d001-4439-b5d9-652e37d52508/index.html",
+      "slug": "pathways/illustration-and-visualization-1",
+      "order": 5,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Illustration and visualization",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/illustration-and-visualization",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-1ef33ac9-b2f5-4773-939d-b70f1fd8ec63",
+      "indent": 1,
+      "location": "pages/item-1ef33ac9-b2f5-4773-939d-b70f1fd8ec63/index.html",
+      "slug": "pathways/lighting-and-cinematography-1",
+      "order": 6,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Lighting and cinematography",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/lighting-and-cinematography",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-1f23c00e-327e-4c43-b4e9-01c93d33fe99",
+      "indent": 1,
+      "location": "pages/item-1f23c00e-327e-4c43-b4e9-01c93d33fe99/index.html",
+      "slug": "pathways/motion-graphics-1",
+      "order": 7,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Motion graphics",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/motion-graphics",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-8f797a7f-b90c-420c-82aa-29609e21a914",
+      "indent": 1,
+      "location": "pages/item-8f797a7f-b90c-420c-82aa-29609e21a914/index.html",
+      "slug": "pathways/product-design-1",
+      "order": 8,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Product design",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/product-design",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-fbc3aa07-3ac2-47fb-a966-4170ff066869",
+      "indent": 1,
+      "location": "pages/item-fbc3aa07-3ac2-47fb-a966-4170ff066869/index.html",
+      "slug": "pathways/production-management-1",
+      "order": 9,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Production management",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/production-management",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-4722a907-f26c-4072-ba99-930558a46a7f",
+      "indent": 1,
+      "location": "pages/item-4722a907-f26c-4072-ba99-930558a46a7f/index.html",
+      "slug": "pathways/short-film-and-vfx-pathway-1",
+      "order": 10,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Short Film and VFX Pathway",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/short-film-and-vfx",
+        "tags": "Animation,VFX,Short Film,Compositing,Production Pipeline",
+        "oerFields": {
+          "difficulty": "Advanced",
+          "estimatedDuration": "32 weeks",
+          "learningObjectives": [
+            "Create complete animated short films from concept to final render",
+            "Integrate realistic visual effects with animated content",
+            "Apply professional compositing workflows to enhance final output",
+            "Collaborate in team-based production environments",
+            "Understand the full pipeline from pre-production to post-production"
+          ],
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-9d4fd3e6-6513-401e-a940-83314f4f35d3",
+      "indent": 1,
+      "location": "pages/item-9d4fd3e6-6513-401e-a940-83314f4f35d3/index.html",
+      "slug": "pathways/short-film-pathway-1",
+      "order": 11,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Short Film Pathway",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/short-film",
+        "tags": "Animation,Short Film,Storytelling,Production Pipeline",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "estimatedDuration": "24 weeks",
+          "learningObjectives": [
+            "Develop strong storytelling and narrative skills for animation",
+            "Create character performances that convey emotion and personality",
+            "Produce complete animated short films from concept to completion",
+            "Apply professional compositing and finishing techniques",
+            "Understand animation production pipelines and workflows"
+          ],
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
+      }
+    },
+    {
+      "id": "item-d2d60490-236c-41c5-b5ac-e20e304d118e",
+      "indent": 1,
+      "location": "pages/item-d2d60490-236c-41c5-b5ac-e20e304d118e/index.html",
+      "slug": "pathways/visual-effects-vfx-1",
+      "order": 12,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Visual Effects (VFX)",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/visual-effects-vfx",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
+              "version": ""
+            }
+          ],
+          "author": "Michael Collins",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1790829988,
+        "images": [],
+        "videos": [],
+        "updated": 1790829988
       }
     },
     {
@@ -4511,188 +5676,6 @@
       }
     },
     {
-      "id": "item-564702ff-012a-4bf1-b7dc-dc5b32eed7b4",
-      "indent": 3,
-      "location": "pages/item-564702ff-012a-4bf1-b7dc-dc5b32eed7b4/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/lighting-and-rendering-the-airline-chair",
-      "order": 4,
-      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "title": "Lighting and Rendering the Airline Chair",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2",
-      "indent": 2,
-      "location": "pages/item-ec1ea43d-7d0a-4dc2-96d2-1cf574e707f2/index.html",
-      "slug": "pathways/cgi-foundations-1/project",
-      "order": 4,
-      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-      "title": "Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-4f2c7951-c408-43e9-8b9f-62d149851dd8",
-      "indent": 3,
-      "location": "pages/item-4f2c7951-c408-43e9-8b9f-62d149851dd8/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/digital-sculpting",
-      "order": 4,
-      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
-      "title": "Digital Sculpting",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Advanced",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-4810f01c-4017-4e24-bea6-d7a2e52d0a89",
-      "indent": 2,
-      "location": "pages/item-4810f01c-4017-4e24-bea6-d7a2e52d0a89/index.html",
-      "slug": "pathways/game-artist-pathway-1/into-the-engine",
-      "order": 4,
-      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
-      "title": "Into the engine",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-a0193c61-6a43-481f-9537-5e0def679374",
-      "indent": 1,
-      "location": "pages/item-a0193c61-6a43-481f-9537-5e0def679374/index.html",
-      "slug": "pathways/game-design-and-development-1",
-      "order": 4,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Game design and development",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/game-design-and-development",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
-      "indent": 1,
-      "location": "pages/item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41/index.html",
-      "slug": "lessons/camera-and-composition",
-      "order": 5,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Camera and Composition",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/camera-composition",
-        "oerFields": {
-          "estimatedDuration": "2 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Understand camera settings and properties",
-            "Apply composition principles to 3D scenes",
-            "Create effective camera angles and movements",
-            "Use focal length and depth of field creatively"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
-      "indent": 1,
-      "location": "pages/item-d069ea51-73ec-4db0-b27a-612dbfd77bcf/index.html",
-      "slug": "exercises/texturing-a-room",
-      "order": 5,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Texturing a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/texturing-a-room",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "image": "files/recJabaqMEyrxdB23_image_interior-texture-banner.png",
-          "imageAlt": "interior-texture-banner.png",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
       "id": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
       "indent": 0,
       "location": "pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.html",
@@ -4708,190 +5691,6 @@
         "images": [],
         "videos": [],
         "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-8bfb86d5-9cc8-495b-a8c3-38e289e2b872",
-      "indent": 3,
-      "location": "pages/item-8bfb86d5-9cc8-495b-a8c3-38e289e2b872/index.html",
-      "slug": "pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room",
-      "order": 5,
-      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "title": "Rendering a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-6c4e0fef-a96c-4feb-a38f-d6f3645b0dfd",
-      "indent": 3,
-      "location": "pages/item-6c4e0fef-a96c-4feb-a38f-d6f3645b0dfd/index.html",
-      "slug": "pathways/game-artist-pathway-1/modeling-game-assets/modeling-and-sculpting-a-sea-creature",
-      "order": 5,
-      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
-      "title": "Modeling and sculpting a sea creature",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Advanced",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-4c86e154-f625-4399-93c5-611f6a1768b1",
-      "indent": 2,
-      "location": "pages/item-4c86e154-f625-4399-93c5-611f6a1768b1/index.html",
-      "slug": "pathways/game-artist-pathway-1/project",
-      "order": 5,
-      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
-      "title": "Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-8304d26e-d001-4439-b5d9-652e37d52508",
-      "indent": 1,
-      "location": "pages/item-8304d26e-d001-4439-b5d9-652e37d52508/index.html",
-      "slug": "pathways/illustration-and-visualization-1",
-      "order": 5,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Illustration and visualization",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/illustration-and-visualization",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
-      "indent": 1,
-      "location": "pages/item-685e56cc-c545-4d08-81c8-c724fe5cc33d/index.html",
-      "slug": "lessons/rendering-techniques",
-      "order": 6,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Rendering Techniques",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/rendering-techniques",
-        "oerFields": {
-          "estimatedDuration": "3 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Understand rendering engines and their settings",
-            "Configure render settings for quality output",
-            "Optimize render times effectively",
-            "Set up render layers and passes",
-            "Export renders in appropriate formats"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
-      "indent": 1,
-      "location": "pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.html",
-      "slug": "exercises/lighting-and-rendering-the-airline-chair",
-      "order": 6,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Lighting and Rendering the Airline Chair",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/lighting-and-rendering-the-airline-chair",
-        "tags": "Blender,Lighting",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recbAgArvnM20cFKL_image_rendering-banner.jpg",
-          "imageAlt": "rendering-banner.jpg",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Airline Chair 3/4 view",
-              "url": "files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg",
-              "description": "Airline Chair designed by KEM Weber.",
-              "alt": "Airline Chair"
-            },
-            {
-              "title": "Airline Chair side view",
-              "url": "files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg",
-              "description": "Airline Chair designed by KEM Weber.",
-              "alt": "Airline Chair"
-            },
-            {
-              "title": "Airline Chair Example render",
-              "url": "files/recjNVy0NcTvHBB5t_attachment_chair-render-compressed.jpg",
-              "description": "Airline Chair example render",
-              "alt": "An example rendering of the KEM Weber Airline Chair"
-            }
-          ]
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
       }
     },
     {
@@ -4913,105 +5712,6 @@
       }
     },
     {
-      "id": "item-1ef33ac9-b2f5-4773-939d-b70f1fd8ec63",
-      "indent": 1,
-      "location": "pages/item-1ef33ac9-b2f5-4773-939d-b70f1fd8ec63/index.html",
-      "slug": "pathways/lighting-and-cinematography-1",
-      "order": 6,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Lighting and cinematography",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/lighting-and-cinematography",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
-      "indent": 1,
-      "location": "pages/item-3c14822b-53dd-4a66-aac7-f8ec740bbea5/index.html",
-      "slug": "lessons/real-time-engines",
-      "order": 7,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Real-time Engines",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/realtime-engines",
-        "oerFields": {
-          "estimatedDuration": "6 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Navigate game engine interfaces",
-            "Import and configure 3D assets",
-            "Set up materials and shaders",
-            "Implement real-time lighting",
-            "Create basic interactive elements",
-            "Optimize performance and build settings"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
-      "indent": 1,
-      "location": "pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.html",
-      "slug": "exercises/rendering-a-room",
-      "order": 7,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Rendering a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/rendering-a-room",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "image": "files/rechLzLJpVGI50gnn_image_room-banner2.png",
-          "imageAlt": "room-banner2.png",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
       "id": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "indent": 0,
       "location": "pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.html",
@@ -5027,706 +5727,6 @@
         "images": [],
         "videos": [],
         "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-1f23c00e-327e-4c43-b4e9-01c93d33fe99",
-      "indent": 1,
-      "location": "pages/item-1f23c00e-327e-4c43-b4e9-01c93d33fe99/index.html",
-      "slug": "pathways/motion-graphics-1",
-      "order": 7,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Motion graphics",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/motion-graphics",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
-      "indent": 1,
-      "location": "pages/item-c9cb258f-d7f0-4668-a301-fff71e07b1d0/index.html",
-      "slug": "lessons/environment-design-for-real-time",
-      "order": 8,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Environment Design for Real-time",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/environment-design-realtime",
-        "oerFields": {
-          "estimatedDuration": "5 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Design environments for real-time rendering",
-            "Create modular and reusable assets",
-            "Apply level design principles",
-            "Optimize environments for performance",
-            "Implement efficient lighting strategies"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
-      "indent": 1,
-      "location": "pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.html",
-      "slug": "exercises/blocking-out-a-game-space",
-      "order": 8,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Blocking Out a Game Space",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/blocking-out-a-game-space",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "courses": [
-            "DART 303"
-          ],
-          "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "placeholder": true,
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-8f797a7f-b90c-420c-82aa-29609e21a914",
-      "indent": 1,
-      "location": "pages/item-8f797a7f-b90c-420c-82aa-29609e21a914/index.html",
-      "slug": "pathways/product-design-1",
-      "order": 8,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Product design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/product-design",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
-      "indent": 1,
-      "location": "pages/item-c43a83f7-2300-4e9c-bd16-bf418744f1d9/index.html",
-      "slug": "lessons/real-time-asset-budgets",
-      "order": 9,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Real-time Asset Budgets",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/realtime-asset-budgets",
-        "oerFields": {
-          "estimatedDuration": "3 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Explain how real-time rendering differs from offline rendering",
-            "Estimate polygon and texture budgets for an asset",
-            "Apply consistent texel density across a set of assets",
-            "Reduce draw calls with shared materials and texture atlases"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
-      "indent": 1,
-      "location": "pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.html",
-      "slug": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
-      "order": 9,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Low Poly Animal and Introduction to Particles",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recvUlgEohhluSnhU_image_OSTRICH.png",
-          "imageAlt": "OSTRICH.png",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Kenneth Ian Brill",
-          "authorUrl": "https://www.ianbrill.com/",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-fbc3aa07-3ac2-47fb-a966-4170ff066869",
-      "indent": 1,
-      "location": "pages/item-fbc3aa07-3ac2-47fb-a966-4170ff066869/index.html",
-      "slug": "pathways/production-management-1",
-      "order": 9,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Production management",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/production-management",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
-      "indent": 1,
-      "location": "pages/item-d22274ef-a811-4445-b5fa-132e70eab0f2/index.html",
-      "slug": "lessons/drawing-for-3d-design",
-      "order": 10,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Drawing for 3D Design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/drawing-for-3d-design",
-        "oerFields": {
-          "estimatedDuration": "4 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Apply drawing fundamentals to 3D design",
-            "Create concept sketches for 3D models",
-            "Understand form, perspective, and proportion",
-            "Develop visual reference materials",
-            "Translate 2D concepts into 3D designs"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
-      "indent": 1,
-      "location": "pages/item-cbff549d-e8f9-4804-b2ec-059cf0863101/index.html",
-      "slug": "exercises/low-poly-non-photorealistic-rendering",
-      "order": 10,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Low poly non-photorealistic rendering",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/low-poly-non-photorealistic-rendering",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recc8Zz9a0zTOaRyE_image_t-pose-banner.jpg",
-          "imageAlt": "t-pose-banner.jpg",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-4722a907-f26c-4072-ba99-930558a46a7f",
-      "indent": 1,
-      "location": "pages/item-4722a907-f26c-4072-ba99-930558a46a7f/index.html",
-      "slug": "pathways/short-film-and-vfx-pathway-1",
-      "order": 10,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Short Film and VFX Pathway",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/short-film-and-vfx",
-        "tags": "Animation,VFX,Short Film,Compositing,Production Pipeline",
-        "oerFields": {
-          "difficulty": "Advanced",
-          "estimatedDuration": "32 weeks",
-          "learningObjectives": [
-            "Create complete animated short films from concept to final render",
-            "Integrate realistic visual effects with animated content",
-            "Apply professional compositing workflows to enhance final output",
-            "Collaborate in team-based production environments",
-            "Understand the full pipeline from pre-production to post-production"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
-      "indent": 1,
-      "location": "pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.html",
-      "slug": "lessons/hard-surface-modeling",
-      "order": 11,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Hard Surface Modeling",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/hard-surface-modeling",
-        "oerFields": {
-          "estimatedDuration": "5 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Apply hard surface modeling techniques",
-            "Create clean edge flow and topology",
-            "Use modifiers for non-destructive workflows",
-            "Model mechanical and manufactured objects",
-            "Maintain precision and accuracy in models"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-71d8f72c-1a31-4a3b-b75d-90f57f6fde5d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-b57b43a9-5427-445c-affe-80ce46848788",
-      "indent": 1,
-      "location": "pages/item-b57b43a9-5427-445c-affe-80ce46848788/index.html",
-      "slug": "exercises/modeling-random-objects",
-      "order": 11,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling random objects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/modeling-random-objects",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "image": "files/recLtYP0nJUL7RK8O_image_modeling-objects-header.jpg",
-          "imageAlt": "modeling-objects-header.jpg",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-9d4fd3e6-6513-401e-a940-83314f4f35d3",
-      "indent": 1,
-      "location": "pages/item-9d4fd3e6-6513-401e-a940-83314f4f35d3/index.html",
-      "slug": "pathways/short-film-pathway-1",
-      "order": 11,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Short Film Pathway",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/short-film",
-        "tags": "Animation,Short Film,Storytelling,Production Pipeline",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "estimatedDuration": "24 weeks",
-          "learningObjectives": [
-            "Develop strong storytelling and narrative skills for animation",
-            "Create character performances that convey emotion and personality",
-            "Produce complete animated short films from concept to completion",
-            "Apply professional compositing and finishing techniques",
-            "Understand animation production pipelines and workflows"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-      "indent": 1,
-      "location": "pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.html",
-      "slug": "lessons/digital-sculpting",
-      "order": 12,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Digital Sculpting",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "lesson",
-        "oerSource": "lessons/digital-sculpting",
-        "oerFields": {
-          "estimatedDuration": "5 hours",
-          "courses": [
-            "DART 303"
-          ],
-          "learningObjectives": [
-            "Understand sculpting tools and workflows",
-            "Create organic forms using sculpting techniques",
-            "Apply anatomy principles to character sculpts",
-            "Manage subdivision levels and detail",
-            "Retopologize sculpts for animation"
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
-      "id": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
-      "indent": 1,
-      "location": "pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.html",
-      "slug": "exercises/modeling-and-sculpting-a-sea-creature",
-      "order": 12,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling and sculpting a sea creature",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/modeling-and-sculpting-a-sea-creature",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Advanced",
-          "image": "files/reckkzm19AZnEIkJE_image_sculpting-retopo-header-v1.jpg",
-          "imageAlt": "sculpting-retopo-header-v1.jpg",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-d2d60490-236c-41c5-b5ac-e20e304d118e",
-      "indent": 1,
-      "location": "pages/item-d2d60490-236c-41c5-b5ac-e20e304d118e/index.html",
-      "slug": "pathways/visual-effects-vfx-1",
-      "order": 12,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Visual Effects (VFX)",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/visual-effects-vfx",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0099e8e7-f92d-46c8-90a6-027fde23e59d",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
-      "id": "item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b",
-      "indent": 1,
-      "location": "pages/item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b/index.html",
-      "slug": "exercises/texturing-low-poly-assets-with-a-palette-texture",
-      "order": 13,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Texturing Low-poly Assets with a Palette Texture",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/texturing-low-poly-assets-with-a-palette-texture",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "courses": [
-            "DART 303"
-          ],
-          "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "placeholder": true,
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-a203e95e-0ddd-43af-9519-ee3df76a5b2d",
-      "indent": 1,
-      "location": "pages/item-a203e95e-0ddd-43af-9519-ee3df76a5b2d/index.html",
-      "slug": "exercises/texturing-random-objects",
-      "order": 14,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Texturing random objects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/texturing-random-objects",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "image": "files/reczUhTIOSSFk77BH_image_texturing-objects-header-v2.jpg",
-          "imageAlt": "texturing-objects-header-v2.jpg",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
-      "indent": 1,
-      "location": "pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.html",
-      "slug": "exercises/sculpting-retopo-and-texturing",
-      "order": 15,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Sculpting, retopo, and texturing",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/sculpting-retopo-and-texturing",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Advanced",
-          "image": "files/rec9LnLexVEqnrZNs_image_sculpting-retopo-header-v2.png",
-          "imageAlt": "sculpting-retopo-header-v2.png",
-          "license": "CC BY 4.0",
-          "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-858f23fb-b6b5-442a-ac36-94d4afe1718f",
-      "indent": 1,
-      "location": "pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.html",
-      "slug": "exercises/baking-normal-maps",
-      "order": 16,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Baking Normal Maps",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/baking-normal-maps",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Advanced",
-          "courses": [
-            "DART 303"
-          ],
-          "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "placeholder": true,
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
-      }
-    },
-    {
-      "id": "item-a92f242a-b30b-4685-b277-c205bd49ca90",
-      "indent": 1,
-      "location": "pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.html",
-      "slug": "exercises/importing-assets-into-playcanvas",
-      "order": 17,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Importing Assets into PlayCanvas",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "exercise",
-        "oerSource": "exercises/importing-assets-into-playcanvas",
-        "tags": "Blender,PlayCanvas",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "courses": [
-            "DART 303"
-          ],
-          "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "placeholder": true,
-          "allowEmbed": true
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829987
       }
     }
   ]
