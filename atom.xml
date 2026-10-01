@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Stylized Prop Set</title>
-    <id>item-42c38856-a9b9-4b74-b333-dd17257b55d6</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-daf70320-e677-41e7-9643-048daf27fa8d"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>History of CGI</title>
     <id>item-d20b5a98-dc5e-4ce8-b734-32490288d27c</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -873,6 +861,26 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <li>Shadows: Increase the shadow map to 4K</li>
 </ol>
 </li>
+</ol>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Stylized Prop Set</title>
+    <id>item-0166883b-7fd8-465a-a98b-74f4f9b02cb0</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/projects/stylized-prop-set"/>
+    <category term="Blender,PlayCanvas" label="Blender,PlayCanvas" />
+    <content type="html">
+      <![CDATA[ <p>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Design a cohesive set of props</li>
+<li>Build each prop within a polygon budget</li>
+<li>Texture the set with a shared palette</li>
+<li>Present the set in PlayCanvas</li>
 </ol>
  ]]>
     </content>

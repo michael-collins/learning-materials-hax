@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Stylized Prop Set</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>History of CGI</title>
       <link>https://localhost:3000/learning-materials/lessons/history-of-cgi</link>
       <description>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</description>
@@ -188,6 +181,14 @@
       <link>https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering</link>
       <description>Presentation Topics Covered Video Screening “Spectacle, Speculation, Spam” by Alan Warburton Lighting Theory by Andrew Price Demo Lighting and Rendering Video (Unedited live demo) Technical Readings for 3D Rendering FX Guide: “Art of Rendering” FX Guide: “State of Rendering” For your Bookshelf How to Render by Scott Robertson Software Takes Command by Lev Manovich The Language of New Media by Lev Manovich TerminologyLighting setups 3 point lighting (key, fill, rim) Light types: Area, Spot, Di...</description>
       <guid>https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Stylized Prop Set</title>
+      <link>https://localhost:3000/learning-materials/projects/stylized-prop-set</link>
+      <description>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine. Learning Objectives Design a cohesive set of props Build each prop within a polygon budget Texture the set with a shared palette Present the set in PlayCanvas</description>
+      <category>Blender,PlayCanvas</category>
+      <guid>https://localhost:3000/learning-materials/projects/stylized-prop-set</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
