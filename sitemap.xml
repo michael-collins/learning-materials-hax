@@ -205,12 +205,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/projects</loc>
-    <lastmod>2026-10-01T18:22:49.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/lessons/real-time-asset-budgets</loc>
     <lastmod>2026-10-01T18:22:46.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -221,6 +215,12 @@
     <lastmod>2026-10-01T18:22:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/projects</loc>
+    <lastmod>2026-10-01T18:22:49.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/drawing-for-3d-design</loc>
@@ -653,5 +653,23 @@
     <lastmod>2026-10-01T18:22:49.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/library</loc>
+    <lastmod>2026-10-01T18:22:49.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/curriculum</loc>
+    <lastmod>2026-10-01T18:22:49.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/assessments</loc>
+    <lastmod>2026-10-01T18:22:49.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>
