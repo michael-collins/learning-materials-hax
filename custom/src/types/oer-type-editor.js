@@ -216,6 +216,7 @@ class OerTypeEditor extends LitElement {
       if ("label" in patch && !f.__nameTouched && !f.__saved) f.name = fieldNameFrom(patch.label);
       Object.assign(f, patch);
       if (f.kind !== "select") delete f.options;
+      if (f.kind !== "relation") delete f.types;
       for (const k of Object.keys(f)) if (f[k] === false || f[k] === "") if (k !== "label" && k !== "name") delete f[k];
     });
   }
@@ -897,6 +898,24 @@ class OerTypeEditor extends LitElement {
               <label for="help-${i}">Help text</label>
               <input id="help-${i}" class="input" .value="${f.help || ""}" @input="${(e) => this._setField(i, { help: e.target.value })}" />
             </div>
+            ${f.kind === "relation"
+              ? html`<div class="wide">
+                  <span class="label">Can link to</span>
+                  <div class="chips">
+                    ${this._types.map((o) => {
+                      const on = (f.types || []).includes(o.id);
+                      return html`<button
+                        class="chip"
+                        aria-pressed="${on ? "true" : "false"}"
+                        @click="${() => this._setField(i, { types: on ? (f.types || []).filter((x) => x !== o.id) : [...(f.types || []), o.id] })}"
+                      >
+                        ${on ? lucide("oer:check", "sm") : ""}${o.label}
+                      </button>`;
+                    })}
+                  </div>
+                  <p class="hint">None selected: any page can be linked.</p>
+                </div>`
+              : ""}
             ${f.kind === "select"
               ? html`<div class="wide">
                   <label for="opts-${i}">Choices</label>

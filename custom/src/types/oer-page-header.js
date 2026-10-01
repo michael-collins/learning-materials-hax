@@ -17,6 +17,7 @@ import { isSnapshot, latestOf } from "../versions/versioning.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { bookPrint } from "../books/oer-book-print.js";
 import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
+import { resolveLinks, isImage, fileLabel } from "./relations.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -156,6 +157,71 @@ class OerPageHeader extends LitElement {
         background: color-mix(in srgb, var(--primary) 88%, black);
         color: var(--primary-foreground);
       }
+      .rel,
+      .att {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .rel li,
+      .att li {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        --simple-icon-height: 1rem;
+        --simple-icon-width: 1rem;
+      }
+      .rel simple-icon-lite,
+      .noicon {
+        flex: none;
+        width: 1rem;
+        color: var(--muted-foreground);
+      }
+      .rel-text {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9375rem;
+        line-height: 1.4;
+      }
+      .rel-text small {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
+      .att img,
+      .att .kind {
+        flex: none;
+        width: 4rem;
+        height: 2.75rem;
+        object-fit: cover;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border);
+        background: var(--muted);
+      }
+      .att .kind {
+        display: grid;
+        place-items: center;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--muted-foreground);
+      }
+      .dl {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: var(--radius-md);
+        color: var(--foreground);
+      }
+      .dl:hover {
+        background: var(--accent);
+      }
       .menu-wrap {
         position: relative;
       }
@@ -268,6 +334,40 @@ class OerPageHeader extends LitElement {
     `;
   }
 
+  // linked pages (prerequisites, resources…): type icon, title, type, version
+  _renderLinks(value) {
+    const links = resolveLinks(value, this._allItems || []);
+    return html`<ul class="rel">
+      ${links.map((l) => {
+        const type = this._types.find((t) => t.id === l.item?.metadata?.pageType);
+        return html`<li>
+          ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
+          <span class="rel-text">
+            ${l.item ? html`<a href="${l.href}">${l.item.title}</a>` : html`<em>Missing page</em>`}
+            <small>${[type?.label, l.version ? `v${l.version}` : ""].filter(Boolean).join(" · ")}</small>
+          </span>
+        </li>`;
+      })}
+    </ul>`;
+  }
+
+  // attachments: thumbnail or file kind, title, description, download / open
+  _renderFiles(value) {
+    const rows = (Array.isArray(value) ? value : []).filter((r) => r?.url);
+    return html`<ul class="att">
+      ${rows.map((r) => {
+        const external = /^https?:\/\//i.test(r.url) && !r.url.startsWith(globalThis.location.origin);
+        return html`<li>
+          ${isImage(r.url) ? html`<img src="${r.url}" alt="${r.alt || ""}" loading="lazy" />` : html`<span class="kind">${fileLabel(r.url)}</span>`}
+          <span class="rel-text"><b>${r.title || r.url.split("/").pop()}</b>${r.description ? html`<small>${r.description}</small>` : ""}</span>
+          <a class="dl" href="${r.url}" ?download="${!external}" target="${external ? "_blank" : ""}" rel="${external ? "noopener noreferrer" : ""}" aria-label="${external ? "Open" : "Download"} ${r.title || "file"}">
+            ${lucide(external ? "icons:open-in-new" : "icons:file-download")}
+          </a>
+        </li>`;
+      })}
+    </ul>`;
+  }
+
   async _export(kind, item) {
     this._exportOpen = false;
     if (kind === "print") return bookPrint().show(item.id);
@@ -362,7 +462,11 @@ class OerPageHeader extends LitElement {
               const v = values[f.name];
               return html`<section class="block">
                 <h2>${f.label}</h2>
-                ${f.kind === "list"
+                ${f.kind === "relation"
+                  ? this._renderLinks(v)
+                  : f.kind === "files"
+                    ? this._renderFiles(v)
+                    : f.kind === "list"
                   ? html`<ul>${(Array.isArray(v) ? v : [v]).map((x) => html`<li>${x}</li>`)}</ul>`
                   : f.kind === "image"
                     ? html`<img src="${v}" alt="" />`

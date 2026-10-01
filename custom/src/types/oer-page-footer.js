@@ -19,6 +19,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
+import { usedIn } from "./relations.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -256,6 +257,16 @@ class OerPageFooter extends LitElement {
         font-weight: 600;
         color: var(--foreground);
       }
+      .used .via {
+        margin-left: -0.375rem;
+        font-size: 0.75rem;
+      }
+      .used .via::before {
+        content: "(";
+      }
+      .used .via::after {
+        content: ")";
+      }
       .chips {
         display: inline-flex;
         flex-wrap: wrap;
@@ -349,6 +360,23 @@ class OerPageFooter extends LitElement {
     </div>`;
   }
 
+  // pages that link here (Decap's "Part of"): via a relation field or by
+  // including this page as a chapter
+  _renderUsedIn() {
+    const id = this._item?.metadata?.oerRef?.page ? null : this._item?.id;
+    if (!id) return "";
+    const types = contentTypes(this._items).types;
+    const refs = usedIn(id, types, this._items);
+    if (!refs.length) return "";
+    return html`<div class="row used">
+      <span class="label">Used in</span>
+      ${refs.map((r, n) => {
+        const t = types.find((x) => x.id === r.item.metadata?.pageType);
+        return html`${n ? html`<span aria-hidden="true">·</span>` : ""}<a href="${r.item.slug}">${r.item.title}</a><span class="via">${t?.label ? `${t.label}, ` : ""}${r.via.toLowerCase()}</span>`;
+      })}
+    </div>`;
+  }
+
   render() {
     const item = this._item;
     if (!item?.metadata?.pageType || item.metadata.pageType === SYSTEM_TYPE) return html``;
@@ -374,6 +402,7 @@ class OerPageFooter extends LitElement {
         </span>
       </div>
       ${this._renderAiul(aiCodes)}
+      ${this._renderUsedIn()}
       <div class="row">
         <span class="chips">
           <button class="chip" aria-expanded="${!!this._cite}" @click="${() => ((this._cite = !this._cite), (this._schemaOpen = false))}">${lucide("editor:format-quote")}Cite</button>
