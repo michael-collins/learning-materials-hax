@@ -11,6 +11,8 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
 import { pageDetails } from "./oer-page-details.js";
+import { embedDialog } from "../embed/oer-embed-dialog.js";
+import { isEmbedded } from "../embed/embed-mode.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -99,9 +101,13 @@ class OerPageHeader extends LitElement {
         font-weight: 500;
         color: var(--foreground);
       }
+      .actions {
+        margin-left: auto;
+        display: inline-flex;
+        gap: 0.25rem;
+      }
       .edit {
         all: unset;
-        margin-left: auto;
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
@@ -196,14 +202,19 @@ class OerPageHeader extends LitElement {
     // images get their own card
     const pills = shown.filter((f) => ["text", "number", "select", "boolean", "date"].includes(f.kind));
     const blocks = shown.filter((f) => !pills.includes(f));
-    if (!type && !this.editable) return html``;
+    // embedding is on unless the page's "Allow embedding" field says no
+    const canEmbed = !isEmbedded() && values.allowEmbed !== false && item.metadata?.published !== false;
+    if (!type && !this.editable && !canEmbed) return html``;
     return html`
       <div class="meta">
         ${type ? html`<span class="type">${type.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type.label}</span>` : ""}
         ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
-        ${this.editable
-          ? html`<button class="edit" @click="${() => pageDetails().show(item.id)}">${lucide("image:tune")}${type ? "Edit details" : "Set page type"}</button>`
-          : ""}
+        <span class="actions">
+          ${canEmbed ? html`<button class="edit" @click="${() => embedDialog().show(item)}">${lucide("icons:open-in-new")}Embed</button>` : ""}
+          ${this.editable
+            ? html`<button class="edit" @click="${() => pageDetails().show(item.id)}">${lucide("image:tune")}${type ? "Edit details" : "Set page type"}</button>`
+            : ""}
+        </span>
       </div>
       ${type && item.description ? html`<p class="desc">${item.description}</p>` : ""}
       ${blocks.length

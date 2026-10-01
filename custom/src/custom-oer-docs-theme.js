@@ -47,6 +47,7 @@ import { typeEditor } from "./types/oer-type-editor.js";
 import { pageDetails } from "./types/oer-page-details.js";
 import { isSystemItem } from "./types/content-types.js";
 import "./types/oer-page-header.js";
+import { isEmbedded, startEmbedReporting } from "./embed/embed-mode.js";
 import { themeSkin } from "./theme-skin.js";
 
 registerShadowStyles(themeSkin);
@@ -118,6 +119,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _published: { state: true },
       _pageMenuOpen: { state: true },
       _sidebarTab: { state: true },
+      embed: { type: Boolean, reflect: true },
+      hideHeader: { type: Boolean, reflect: true, attribute: "hide-header" },
+      hideTitle: { type: Boolean, reflect: true, attribute: "hide-title" },
       _siteDescription: { state: true },
     };
   }
@@ -133,6 +137,12 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__keyHandler = this._onKeydown.bind(this);
     this._loggedIn = false;
     this._pageMenuOpen = false;
+    // ?embed=1: chrome-less page for LMS iframes; decided once, so following
+    // links inside the frame stays embedded
+    const params = new URLSearchParams(globalThis.location.search);
+    this.embed = isEmbedded();
+    this.hideHeader = this.embed && params.get("hideHeader") === "true";
+    this.hideTitle = this.embed && params.get("hideTitle") === "true";
     try {
       this._sidebarTab = globalThis.localStorage.getItem("oer-sidebar-tab") === "site" ? "site" : "nav";
     } catch {
@@ -920,6 +930,35 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           }
         }
 
+        /* embed mode (?embed=1): only the page itself */
+        :host([embed]) {
+          background: var(--background);
+        }
+        :host([embed]) .shell {
+          display: block;
+        }
+        :host([embed]) .sidebar,
+        :host([embed]) .scrim,
+        :host([embed]) .topbar,
+        :host([embed]) .pager,
+        :host([embed]) .page-header .menu-wrap,
+        :host([embed]) .skip-link,
+        :host([hide-header]) oer-page-header,
+        :host([hide-title]) site-active-title {
+          display: none !important;
+        }
+        :host([embed]) .main-col {
+          margin: 0 !important;
+          height: auto !important;
+          overflow: visible !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        :host([embed]) main {
+          overflow: visible !important;
+          padding: 1rem 1.25rem 1.5rem !important;
+        }
         .skip-link:focus {
           z-index: 50;
         }
@@ -1123,6 +1162,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           : ""}
       </div>
     `;
+  }
+
+  firstUpdated(changed) {
+    super.firstUpdated?.(changed);
+    // the host itself: it persists across re-renders and, embedded, is
+    // exactly as tall as the page content
+    if (this.embed) startEmbedReporting(this);
   }
 
   // Nav (page list) / Site (site-wide tools) tabs at the top of the sidebar
