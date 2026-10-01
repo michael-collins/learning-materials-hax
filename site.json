@@ -2633,7 +2633,7 @@
       "order": 1000,
       "parent": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
       "title": "v0.0.1",
-      "description": "",
+      "description": "Learn rendering workflows, engine settings, and optimization techniques to produce high-quality final images.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
