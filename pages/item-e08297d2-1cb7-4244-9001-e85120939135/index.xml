@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e08297d2-1cb7-4244-9001-e85120939135</id>
+<indent>2</indent>
+<location>pages/item-e08297d2-1cb7-4244-9001-e85120939135/index.xml</location>
+<slug>pathways/game-artist-pathway-1/texturing-for-real-time</slug>
+<order>3</order>
+<parent>item-72db2076-5252-4246-af1d-685903483097</parent>
+<title>Texturing for real time</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

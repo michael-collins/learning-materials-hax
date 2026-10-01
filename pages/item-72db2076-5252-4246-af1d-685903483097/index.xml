@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-72db2076-5252-4246-af1d-685903483097</id>
+<indent>1</indent>
+<location>pages/item-72db2076-5252-4246-af1d-685903483097/index.xml</location>
+<slug>pathways/game-artist-pathway-1</slug>
+<order>3</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Game Artist Pathway</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/game-artist</oerSource>
+<tags>Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR</tags>
+<oerFields>
+<estimatedDuration>One course run (6 or 15 weeks, same credits)</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Create game-ready 3D assets with efficient topology</item>
+<item>Implement content in game engines like Unreal and Unity</item>
+<item>Optimize models and textures for real-time rendering</item>
+<item>Design interactive environments for games</item>
+<item>Understand technical constraints and performance budgets</item>
+<item>Collaborate with game development teams</item>
+</learningObjectives>
+<levels>
+<item>Beginner</item>
+<item>Intermediate</item>
+<item>Advanced</item>
+</levels>
+<targetRole>Game Artist</targetRole>
+<prerequisites>
+<item>
+<page>item-c3f1331f-89de-4e5a-ae10-555fe728704c</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>This pathway prepares students for careers in the game industry, focusing on the creation of 3D content for interactive and real-time applications. Students will learn to balance artistic quality with technical performance requirements, creating assets that work seamlessly in game engines and virtual reality platforms.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is perfect for students interested in:</p>
+<ul>
+<li>Video game development</li>
+<li>Virtual reality experiences</li>
+<li>Augmented reality applications</li>
+<li>Interactive installations</li>
+<li>Mobile game development</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>3D Game Artist</li>
+<li>Environment Artist</li>
+<li>Character Artist</li>
+<li>Technical Artist</li>
+<li>VR/AR Developer</li>
+<li>Props Artist</li>
+</ul>
+]]></content>
+</item>

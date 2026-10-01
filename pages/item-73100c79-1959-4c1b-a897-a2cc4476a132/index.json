@@ -1,0 +1,24 @@
+{
+  "id": "item-73100c79-1959-4c1b-a897-a2cc4476a132",
+  "indent": 3,
+  "location": "pages/item-73100c79-1959-4c1b-a897-a2cc4476a132/index.json",
+  "slug": "pathways/cgi-foundations-1/texturing/introduction-to-texturing",
+  "order": 1,
+  "parent": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
+  "title": "Introduction to Texturing",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "lecture",
+    "oerRef": {
+      "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
+      "version": ""
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-include page=\"item-be2fc5ef-ba1f-484b-be6a-2216a24314a2\"></oer-include>"
+}

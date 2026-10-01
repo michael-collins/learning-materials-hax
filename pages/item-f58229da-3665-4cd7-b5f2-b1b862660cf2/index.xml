@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f58229da-3665-4cd7-b5f2-b1b862660cf2</id>
+<indent>3</indent>
+<location>pages/item-f58229da-3665-4cd7-b5f2-b1b862660cf2/index.xml</location>
+<slug>pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time</slug>
+<order>1</order>
+<parent>item-f48b08dd-d5ed-4c0a-9c04-061301788414</parent>
+<title>Environment Design for Real-time</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-c9cb258f-d7f0-4668-a301-fff71e07b1d0</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c9cb258f-d7f0-4668-a301-fff71e07b1d0"></oer-include>]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a0ed15db-5993-4634-8a15-896edab9b4a2</id>
+<indent>3</indent>
+<location>pages/item-a0ed15db-5993-4634-8a15-896edab9b4a2/index.xml</location>
+<slug>pathways/cgi-foundations-1/modeling/modeling-the-airline-chair</slug>
+<order>2</order>
+<parent>item-c1c083f0-47c6-4706-8651-d63d65b46db1</parent>
+<title>Modeling the Airline Chair</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7"></oer-include>]]></content>
+</item>

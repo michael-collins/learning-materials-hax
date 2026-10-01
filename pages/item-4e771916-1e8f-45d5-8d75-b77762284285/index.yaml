@@ -1,0 +1,20 @@
+id: item-4e771916-1e8f-45d5-8d75-b77762284285
+indent: 3
+location: pages/item-4e771916-1e8f-45d5-8d75-b77762284285/index.yaml
+slug: pathways/cgi-foundations-1/modeling/introduction-to-modeling
+order: 1
+parent: item-c1c083f0-47c6-4706-8651-d63d65b46db1
+title: Introduction to Modeling
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: lecture
+  oerRef:
+    page: item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866
+    version: ''
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: <oer-include page="item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866"></oer-include>

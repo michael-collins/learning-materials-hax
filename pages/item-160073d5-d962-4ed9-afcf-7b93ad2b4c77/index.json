@@ -1,0 +1,43 @@
+{
+  "id": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
+  "indent": 1,
+  "location": "pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.json",
+  "slug": "pathways/short-film-pathway-1",
+  "order": 11,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Short Film Pathway",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "pathway",
+    "oerImport": "decap-pathways",
+    "oerSource": "pathways/short-film",
+    "tags": "Animation,Short Film,Storytelling,Production Pipeline",
+    "oerFields": {
+      "difficulty": "Intermediate",
+      "estimatedDuration": "24 weeks",
+      "learningObjectives": [
+        "Develop strong storytelling and narrative skills for animation",
+        "Create character performances that convey emotion and personality",
+        "Produce complete animated short films from concept to completion",
+        "Apply professional compositing and finishing techniques",
+        "Understand animation production pipelines and workflows"
+      ],
+      "prerequisites": [
+        {
+          "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>This pathway is designed for aspiring animators who want to create narrative-driven short films using 3D animation. Students will progress from foundational CGI skills through character animation and compositing, developing the complete skillset needed to produce professional-quality animated shorts.</p>\n<h2>Who This Is For</h2>\n<p>This pathway is ideal for students aiming to work in:</p>\n<ul>\n<li>Animation studios</li>\n<li>Independent animation projects</li>\n<li>Film production companies</li>\n<li>Advertising and commercial animation</li>\n<li>Educational media production</li>\n</ul>\n<h2>Career Outcomes</h2>\n<p>Graduates will be prepared for roles including:</p>\n<ul>\n<li>Character Animator</li>\n<li>3D Animator</li>\n<li>Animation Director</li>\n<li>Storyboard Artist</li>\n<li>Animation Generalist</li>\n</ul>\n<h2>Examples</h2>\n<ul>\n<li>Example artist or studio</li>\n</ul>\n<h2>Specializations</h2>\n<p>This pathway includes the following specializations:</p>\n"
+}

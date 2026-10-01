@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-dda3178f-c205-4e8d-92e4-d25ccdf18444</id>
+<indent>3</indent>
+<location>pages/item-dda3178f-c205-4e8d-92e4-d25ccdf18444/index.xml</location>
+<slug>pathways/game-artist-pathway-1/modeling-game-assets/low-poly-non-photorealistic-rendering</slug>
+<order>1</order>
+<parent>item-9c47d5c1-c709-4860-91a2-eb7847d712c3</parent>
+<title>Low poly non-photorealistic rendering</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Beginner</oerLevel>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-cbff549d-e8f9-4804-b2ec-059cf0863101</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-cbff549d-e8f9-4804-b2ec-059cf0863101"></oer-include>]]></content>
+</item>

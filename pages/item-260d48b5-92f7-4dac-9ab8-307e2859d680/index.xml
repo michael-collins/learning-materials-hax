@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-260d48b5-92f7-4dac-9ab8-307e2859d680</id>
+<indent>2</indent>
+<location>pages/item-260d48b5-92f7-4dac-9ab8-307e2859d680/index.xml</location>
+<slug>pathways/cgi-foundations-1/texturing</slug>
+<order>2</order>
+<parent>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</parent>
+<title>Texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

@@ -1,0 +1,21 @@
+id: item-736dfac1-2506-450c-a0c0-4b48170057f3
+indent: 3
+location: pages/item-736dfac1-2506-450c-a0c0-4b48170057f3/index.yaml
+slug: pathways/game-artist-pathway-1/project/realtime-game-environment
+order: 2
+parent: item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2
+title: Realtime Game Environment
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  oerLevel: Advanced
+  pageType: project
+  oerRef:
+    page: item-55d4ea63-f507-4470-b2c8-e8b11b1c499b
+    version: ''
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: <oer-include page="item-55d4ea63-f507-4470-b2c8-e8b11b1c499b"></oer-include>

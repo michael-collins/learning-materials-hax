@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9c47d5c1-c709-4860-91a2-eb7847d712c3</id>
+<indent>2</indent>
+<location>pages/item-9c47d5c1-c709-4860-91a2-eb7847d712c3/index.xml</location>
+<slug>pathways/game-artist-pathway-1/modeling-game-assets</slug>
+<order>2</order>
+<parent>item-72db2076-5252-4246-af1d-685903483097</parent>
+<title>Modeling game assets</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

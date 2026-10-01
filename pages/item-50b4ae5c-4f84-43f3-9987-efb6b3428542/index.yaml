@@ -1,0 +1,30 @@
+id: item-50b4ae5c-4f84-43f3-9987-efb6b3428542
+indent: 1
+location: pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.yaml
+slug: pathways/production-management-1
+order: 9
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Production management
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/production-management
+  oerFields:
+    prerequisites:
+      - page: item-c3f1331f-89de-4e5a-ae10-555fe728704c
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Oversees the planning and execution of 3D projects, ensuring deadlines and
+  budgets are met.</p>

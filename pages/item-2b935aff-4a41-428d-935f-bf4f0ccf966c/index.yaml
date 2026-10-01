@@ -1,0 +1,20 @@
+id: item-2b935aff-4a41-428d-935f-bf4f0ccf966c
+indent: 3
+location: pages/item-2b935aff-4a41-428d-935f-bf4f0ccf966c/index.yaml
+slug: pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets
+order: 2
+parent: item-f48b08dd-d5ed-4c0a-9c04-061301788414
+title: Real-time Asset Budgets
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: lesson
+  oerRef:
+    page: item-c43a83f7-2300-4e9c-bd16-bf418744f1d9
+    version: ''
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: <oer-include page="item-c43a83f7-2300-4e9c-bd16-bf418744f1d9"></oer-include>

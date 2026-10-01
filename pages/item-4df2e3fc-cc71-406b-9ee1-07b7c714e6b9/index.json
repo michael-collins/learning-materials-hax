@@ -1,0 +1,33 @@
+{
+  "id": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
+  "indent": 1,
+  "location": "pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.json",
+  "slug": "pathways/product-design-1",
+  "order": 8,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Product design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "pathway",
+    "oerImport": "decap-pathways",
+    "oerSource": "pathways/product-design",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Designs consumer products in 3D for manufacturing or visualization purposes.</p>\n"
+}

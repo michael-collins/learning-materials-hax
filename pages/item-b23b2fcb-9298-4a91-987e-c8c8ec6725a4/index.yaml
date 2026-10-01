@@ -1,0 +1,30 @@
+id: item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4
+indent: 1
+location: pages/item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4/index.yaml
+slug: pathways/digital-fabrication-1
+order: 2
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Digital fabrication
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/digital-fabrication
+  oerFields:
+    prerequisites:
+      - page: item-c3f1331f-89de-4e5a-ae10-555fe728704c
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Utilizes 3D printing or CNC machining to create physical objects from
+  digital designs.</p>

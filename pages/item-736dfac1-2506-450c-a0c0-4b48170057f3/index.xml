@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-736dfac1-2506-450c-a0c0-4b48170057f3</id>
+<indent>3</indent>
+<location>pages/item-736dfac1-2506-450c-a0c0-4b48170057f3/index.xml</location>
+<slug>pathways/game-artist-pathway-1/project/realtime-game-environment</slug>
+<order>2</order>
+<parent>item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2</parent>
+<title>Realtime Game Environment</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Advanced</oerLevel>
+<pageType>project</pageType>
+<oerRef>
+<page>item-55d4ea63-f507-4470-b2c8-e8b11b1c499b</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-55d4ea63-f507-4470-b2c8-e8b11b1c499b"></oer-include>]]></content>
+</item>

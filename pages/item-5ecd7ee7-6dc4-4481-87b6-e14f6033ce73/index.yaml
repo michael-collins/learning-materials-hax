@@ -1,0 +1,20 @@
+id: item-5ecd7ee7-6dc4-4481-87b6-e14f6033ce73
+indent: 3
+location: pages/item-5ecd7ee7-6dc4-4481-87b6-e14f6033ce73/index.yaml
+slug: pathways/game-artist-pathway-1/game-art-in-real-time/real-time-engines
+order: 0
+parent: item-f48b08dd-d5ed-4c0a-9c04-061301788414
+title: Real-time Engines
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: lesson
+  oerRef:
+    page: item-3c14822b-53dd-4a66-aac7-f8ec740bbea5
+    version: ''
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: <oer-include page="item-3c14822b-53dd-4a66-aac7-f8ec740bbea5"></oer-include>

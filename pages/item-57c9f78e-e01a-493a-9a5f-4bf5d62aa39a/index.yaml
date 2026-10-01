@@ -1,0 +1,30 @@
+id: item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a
+indent: 1
+location: pages/item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a/index.yaml
+slug: pathways/lighting-and-cinematography-1
+order: 6
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Lighting and cinematography
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/lighting-and-cinematography
+  oerFields:
+    prerequisites:
+      - page: item-c3f1331f-89de-4e5a-ae10-555fe728704c
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Sets up lighting and camera angles to create visually compelling 3D
+  scenes.</p>

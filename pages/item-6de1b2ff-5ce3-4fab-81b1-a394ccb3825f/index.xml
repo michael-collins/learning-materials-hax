@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f</id>
+<indent>2</indent>
+<location>pages/item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f/index.xml</location>
+<slug>pathways/cgi-foundations-1/project</slug>
+<order>4</order>
+<parent>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</parent>
+<title>Project</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

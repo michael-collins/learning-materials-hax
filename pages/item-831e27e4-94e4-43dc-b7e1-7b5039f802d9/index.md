@@ -1,0 +1,1 @@
+Creates animated graphics for multimedia projects, often involving typography and visual effects.

@@ -1,0 +1,33 @@
+{
+  "id": "item-427f67e4-123e-4f70-b632-4e18a8001777",
+  "indent": 1,
+  "location": "pages/item-427f67e4-123e-4f70-b632-4e18a8001777/index.json",
+  "slug": "pathways/game-design-and-development-1",
+  "order": 4,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Game design and development",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "pathway",
+    "oerImport": "decap-pathways",
+    "oerSource": "pathways/game-design-and-development",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Designs gameplay mechanics, levels, and user experiences for video games.</p>\n"
+}

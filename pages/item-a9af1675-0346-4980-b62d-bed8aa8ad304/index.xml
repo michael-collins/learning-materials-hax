@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a9af1675-0346-4980-b62d-bed8aa8ad304</id>
+<indent>3</indent>
+<location>pages/item-a9af1675-0346-4980-b62d-bed8aa8ad304/index.xml</location>
+<slug>pathways/cgi-foundations-1/modeling/3d-modeling-fundamentals</slug>
+<order>0</order>
+<parent>item-c1c083f0-47c6-4706-8651-d63d65b46db1</parent>
+<title>3D Modeling Fundamentals</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d05396b9-88a6-4631-821f-40a2e9bd2d4f"></oer-include>]]></content>
+</item>

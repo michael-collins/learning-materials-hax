@@ -1,0 +1,20 @@
+{
+  "id": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
+  "indent": 2,
+  "location": "pages/item-260d48b5-92f7-4dac-9ab8-307e2859d680/index.json",
+  "slug": "pathways/cgi-foundations-1/texturing",
+  "order": 2,
+  "parent": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+  "title": "Texturing",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "section",
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<p></p>"
+}

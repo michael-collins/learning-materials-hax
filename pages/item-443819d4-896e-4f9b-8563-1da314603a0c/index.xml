@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-443819d4-896e-4f9b-8563-1da314603a0c</id>
+<indent>3</indent>
+<location>pages/item-443819d4-896e-4f9b-8563-1da314603a0c/index.xml</location>
+<slug>pathways/cgi-foundations-1/lighting-camera-rendering/lighting-principles</slug>
+<order>0</order>
+<parent>item-78cb5c5f-c643-4eaf-990f-33b1bc89f214</parent>
+<title>Lighting Principles</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95"></oer-include>]]></content>
+</item>

@@ -1,0 +1,20 @@
+id: item-0de38b7c-691f-4177-9559-efb54871af7f
+indent: 3
+location: pages/item-0de38b7c-691f-4177-9559-efb54871af7f/index.yaml
+slug: pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room
+order: 5
+parent: item-78cb5c5f-c643-4eaf-990f-33b1bc89f214
+title: Rendering a room
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: exercise
+  oerRef:
+    page: item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129
+    version: ''
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: <oer-include page="item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129"></oer-include>

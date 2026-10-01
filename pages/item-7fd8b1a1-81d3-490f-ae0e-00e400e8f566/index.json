@@ -1,0 +1,24 @@
+{
+  "id": "item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566",
+  "indent": 3,
+  "location": "pages/item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566/index.json",
+  "slug": "pathways/game-artist-pathway-1/concept-blockout/creating-blockouts-for-games",
+  "order": 1,
+  "parent": "item-9023f478-1c92-4338-8aff-d094f339b5c3",
+  "title": "Creating Blockouts for Games",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "tutorial",
+    "oerRef": {
+      "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
+      "version": ""
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-include page=\"item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f\"></oer-include>"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-78cb5c5f-c643-4eaf-990f-33b1bc89f214</id>
+<indent>2</indent>
+<location>pages/item-78cb5c5f-c643-4eaf-990f-33b1bc89f214/index.xml</location>
+<slug>pathways/cgi-foundations-1/lighting-camera-rendering</slug>
+<order>3</order>
+<parent>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</parent>
+<title>Lighting, camera &amp; rendering</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-50b4ae5c-4f84-43f3-9987-efb6b3428542</id>
+<indent>1</indent>
+<location>pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.xml</location>
+<slug>pathways/production-management-1</slug>
+<order>9</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Production management</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/production-management</oerSource>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-c3f1331f-89de-4e5a-ae10-555fe728704c</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Oversees the planning and execution of 3D projects, ensuring deadlines and budgets are met.</p>
+]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f0ef87c0-d598-433c-99f6-1a66acff04fb</id>
+<indent>3</indent>
+<location>pages/item-f0ef87c0-d598-433c-99f6-1a66acff04fb/index.xml</location>
+<slug>pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-objects</slug>
+<order>0</order>
+<parent>item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f</parent>
+<title>You don&apos;t see that everyday objects</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>project</pageType>
+<oerRef>
+<page>item-48ad9f94-3f8b-44e5-8416-316cff49f4d2</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-48ad9f94-3f8b-44e5-8416-316cff49f4d2"></oer-include>]]></content>
+</item>

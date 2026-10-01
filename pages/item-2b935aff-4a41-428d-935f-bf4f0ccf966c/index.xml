@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2b935aff-4a41-428d-935f-bf4f0ccf966c</id>
+<indent>3</indent>
+<location>pages/item-2b935aff-4a41-428d-935f-bf4f0ccf966c/index.xml</location>
+<slug>pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets</slug>
+<order>2</order>
+<parent>item-f48b08dd-d5ed-4c0a-9c04-061301788414</parent>
+<title>Real-time Asset Budgets</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-c43a83f7-2300-4e9c-bd16-bf418744f1d9</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c43a83f7-2300-4e9c-bd16-bf418744f1d9"></oer-include>]]></content>
+</item>

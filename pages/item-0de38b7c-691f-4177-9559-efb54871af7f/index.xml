@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0de38b7c-691f-4177-9559-efb54871af7f</id>
+<indent>3</indent>
+<location>pages/item-0de38b7c-691f-4177-9559-efb54871af7f/index.xml</location>
+<slug>pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room</slug>
+<order>5</order>
+<parent>item-78cb5c5f-c643-4eaf-990f-33b1bc89f214</parent>
+<title>Rendering a room</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129"></oer-include>]]></content>
+</item>

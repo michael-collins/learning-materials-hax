@@ -1,0 +1,30 @@
+id: item-1dba3ce1-6791-4d78-860d-bf8d6f338579
+indent: 1
+location: pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.yaml
+slug: pathways/visual-effects-vfx-1
+order: 12
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Visual Effects (VFX)
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/visual-effects-vfx
+  oerFields:
+    prerequisites:
+      - page: item-c3f1331f-89de-4e5a-ae10-555fe728704c
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790830075
+  images: []
+  videos: []
+  updated: 1790830075
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Integrates CGI elements into live-action footage and blends them
+  seamlessly.</p>

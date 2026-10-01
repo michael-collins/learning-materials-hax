@@ -1,0 +1,24 @@
+{
+  "id": "item-00dc025d-e8ed-4acd-80f1-db19accee571",
+  "indent": 3,
+  "location": "pages/item-00dc025d-e8ed-4acd-80f1-db19accee571/index.json",
+  "slug": "pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters",
+  "order": 1,
+  "parent": "item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f",
+  "title": "You don't see that everyday object posters",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "project",
+    "oerRef": {
+      "page": "item-930abc68-c77e-479c-b2ff-220e4714c712",
+      "version": ""
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-include page=\"item-930abc68-c77e-479c-b2ff-220e4714c712\"></oer-include>"
+}

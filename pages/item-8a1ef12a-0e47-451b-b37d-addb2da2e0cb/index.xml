@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8a1ef12a-0e47-451b-b37d-addb2da2e0cb</id>
+<indent>3</indent>
+<location>pages/item-8a1ef12a-0e47-451b-b37d-addb2da2e0cb/index.xml</location>
+<slug>pathways/cgi-foundations-1/lighting-camera-rendering/lighting-and-rendering-the-airline-chair</slug>
+<order>4</order>
+<parent>item-78cb5c5f-c643-4eaf-990f-33b1bc89f214</parent>
+<title>Lighting and Rendering the Airline Chair</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-cfaff943-bb9c-4bb5-ba04-82a293c03f96</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-cfaff943-bb9c-4bb5-ba04-82a293c03f96"></oer-include>]]></content>
+</item>

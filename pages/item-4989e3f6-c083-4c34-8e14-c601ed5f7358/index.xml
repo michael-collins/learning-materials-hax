@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4989e3f6-c083-4c34-8e14-c601ed5f7358</id>
+<indent>3</indent>
+<location>pages/item-4989e3f6-c083-4c34-8e14-c601ed5f7358/index.xml</location>
+<slug>pathways/game-artist-pathway-1/texturing-for-real-time/texturing-random-objects</slug>
+<order>1</order>
+<parent>item-e08297d2-1cb7-4244-9001-e85120939135</parent>
+<title>Texturing random objects</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Intermediate</oerLevel>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-a203e95e-0ddd-43af-9519-ee3df76a5b2d</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-a203e95e-0ddd-43af-9519-ee3df76a5b2d"></oer-include>]]></content>
+</item>

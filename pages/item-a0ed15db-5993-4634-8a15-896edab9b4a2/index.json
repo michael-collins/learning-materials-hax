@@ -1,0 +1,24 @@
+{
+  "id": "item-a0ed15db-5993-4634-8a15-896edab9b4a2",
+  "indent": 3,
+  "location": "pages/item-a0ed15db-5993-4634-8a15-896edab9b4a2/index.json",
+  "slug": "pathways/cgi-foundations-1/modeling/modeling-the-airline-chair",
+  "order": 2,
+  "parent": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
+  "title": "Modeling the Airline Chair",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "exercise",
+    "oerRef": {
+      "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
+      "version": ""
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-include page=\"item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7\"></oer-include>"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9</id>
+<indent>1</indent>
+<location>pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.xml</location>
+<slug>pathways/product-design-1</slug>
+<order>8</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Product design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/product-design</oerSource>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-c3f1331f-89de-4e5a-ae10-555fe728704c</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Designs consumer products in 3D for manufacturing or visualization purposes.</p>
+]]></content>
+</item>

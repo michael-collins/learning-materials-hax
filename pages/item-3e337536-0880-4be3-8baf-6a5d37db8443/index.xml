@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3e337536-0880-4be3-8baf-6a5d37db8443</id>
+<indent>3</indent>
+<location>pages/item-3e337536-0880-4be3-8baf-6a5d37db8443/index.xml</location>
+<slug>pathways/cgi-foundations-1/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering</slug>
+<order>3</order>
+<parent>item-78cb5c5f-c643-4eaf-990f-33b1bc89f214</parent>
+<title>Introduction to Cameras, Lighting, and Rendering</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lecture</pageType>
+<oerRef>
+<page>item-81dbd5a3-3e7f-447c-a522-630f6001a8f0</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-81dbd5a3-3e7f-447c-a522-630f6001a8f0"></oer-include>]]></content>
+</item>

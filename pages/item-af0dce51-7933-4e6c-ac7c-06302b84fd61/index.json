@@ -1,0 +1,24 @@
+{
+  "id": "item-af0dce51-7933-4e6c-ac7c-06302b84fd61",
+  "indent": 3,
+  "location": "pages/item-af0dce51-7933-4e6c-ac7c-06302b84fd61/index.json",
+  "slug": "pathways/cgi-foundations-1/texturing/texturing-a-room",
+  "order": 3,
+  "parent": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
+  "title": "Texturing a room",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "oerImport": "decap-pathways",
+    "pageType": "exercise",
+    "oerRef": {
+      "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
+      "version": ""
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-include page=\"item-d069ea51-73ec-4db0-b27a-612dbfd77bcf\"></oer-include>"
+}

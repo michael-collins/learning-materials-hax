@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4bc1ec8a-85d7-4eb2-848d-87c1f408a033</id>
+<indent>3</indent>
+<location>pages/item-4bc1ec8a-85d7-4eb2-848d-87c1f408a033/index.xml</location>
+<slug>pathways/game-artist-pathway-1/modeling-game-assets/hard-surface-modeling</slug>
+<order>2</order>
+<parent>item-9c47d5c1-c709-4860-91a2-eb7847d712c3</parent>
+<title>Hard Surface Modeling</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Intermediate</oerLevel>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-2388c81a-f80d-44c8-be9c-57c64c8b29ab</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-2388c81a-f80d-44c8-be9c-57c64c8b29ab"></oer-include>]]></content>
+</item>

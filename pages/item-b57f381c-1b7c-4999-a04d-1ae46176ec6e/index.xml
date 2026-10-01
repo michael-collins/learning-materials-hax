@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b57f381c-1b7c-4999-a04d-1ae46176ec6e</id>
+<indent>3</indent>
+<location>pages/item-b57f381c-1b7c-4999-a04d-1ae46176ec6e/index.xml</location>
+<slug>pathways/cgi-foundations-1/texturing/texturing-and-uv-mapping</slug>
+<order>0</order>
+<parent>item-260d48b5-92f7-4dac-9ab8-307e2859d680</parent>
+<title>Texturing and UV Mapping</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4"></oer-include>]]></content>
+</item>

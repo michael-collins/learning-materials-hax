@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-73100c79-1959-4c1b-a897-a2cc4476a132</id>
+<indent>3</indent>
+<location>pages/item-73100c79-1959-4c1b-a897-a2cc4476a132/index.xml</location>
+<slug>pathways/cgi-foundations-1/texturing/introduction-to-texturing</slug>
+<order>1</order>
+<parent>item-260d48b5-92f7-4dac-9ab8-307e2859d680</parent>
+<title>Introduction to Texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lecture</pageType>
+<oerRef>
+<page>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-be2fc5ef-ba1f-484b-be6a-2216a24314a2"></oer-include>]]></content>
+</item>

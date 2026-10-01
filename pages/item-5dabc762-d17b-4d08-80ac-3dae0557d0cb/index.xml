@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5dabc762-d17b-4d08-80ac-3dae0557d0cb</id>
+<indent>1</indent>
+<location>pages/item-5dabc762-d17b-4d08-80ac-3dae0557d0cb/index.xml</location>
+<slug>pathways/short-film-and-vfx-pathway-1</slug>
+<order>10</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Short Film and VFX Pathway</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/short-film-and-vfx</oerSource>
+<tags>Animation,VFX,Short Film,Compositing,Production Pipeline</tags>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<estimatedDuration>32 weeks</estimatedDuration>
+<learningObjectives>
+<item>Create complete animated short films from concept to final render</item>
+<item>Integrate realistic visual effects with animated content</item>
+<item>Apply professional compositing workflows to enhance final output</item>
+<item>Collaborate in team-based production environments</item>
+<item>Understand the full pipeline from pre-production to post-production</item>
+</learningObjectives>
+<prerequisites>
+<item>
+<page>item-c3f1331f-89de-4e5a-ae10-555fe728704c</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>This pathway is designed for aspiring animation and VFX artists who want to create high-quality animated short films with professional-grade visual effects. Students will progress from foundational CGI skills through advanced animation and simulation techniques, culminating in the ability to produce complete animated narratives with integrated VFX elements.</p>
+<h2>Who This Is For</h2>
+<p>This pathway is ideal for students aiming to work in:</p>
+<ul>
+<li>Animation studios</li>
+<li>VFX houses</li>
+<li>Film production companies</li>
+<li>Independent animation projects</li>
+<li>Post-production facilities</li>
+</ul>
+<h2>Career Outcomes</h2>
+<p>Graduates will be prepared for roles including:</p>
+<ul>
+<li>Character Animator</li>
+<li>VFX Artist</li>
+<li>Compositor</li>
+<li>Technical Director</li>
+<li>Animation Generalist</li>
+</ul>
+]]></content>
+</item>

@@ -1,0 +1,33 @@
+{
+  "id": "item-831e27e4-94e4-43dc-b7e1-7b5039f802d9",
+  "indent": 1,
+  "location": "pages/item-831e27e4-94e4-43dc-b7e1-7b5039f802d9/index.json",
+  "slug": "pathways/motion-graphics-1",
+  "order": 7,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Motion graphics",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "pathway",
+    "oerImport": "decap-pathways",
+    "oerSource": "pathways/motion-graphics",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-c3f1331f-89de-4e5a-ae10-555fe728704c",
+          "version": ""
+        }
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790830075,
+    "images": [],
+    "videos": [],
+    "updated": 1790830075
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>Creates animated graphics for multimedia projects, often involving typography and visual effects.</p>\n"
+}

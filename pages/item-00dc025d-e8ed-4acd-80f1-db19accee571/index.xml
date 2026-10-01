@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-00dc025d-e8ed-4acd-80f1-db19accee571</id>
+<indent>3</indent>
+<location>pages/item-00dc025d-e8ed-4acd-80f1-db19accee571/index.xml</location>
+<slug>pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters</slug>
+<order>1</order>
+<parent>item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f</parent>
+<title>You don&apos;t see that everyday object posters</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>project</pageType>
+<oerRef>
+<page>item-930abc68-c77e-479c-b2ff-220e4714c712</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-930abc68-c77e-479c-b2ff-220e4714c712"></oer-include>]]></content>
+</item>

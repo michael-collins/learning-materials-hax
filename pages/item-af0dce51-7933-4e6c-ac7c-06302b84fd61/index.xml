@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-af0dce51-7933-4e6c-ac7c-06302b84fd61</id>
+<indent>3</indent>
+<location>pages/item-af0dce51-7933-4e6c-ac7c-06302b84fd61/index.xml</location>
+<slug>pathways/cgi-foundations-1/texturing/texturing-a-room</slug>
+<order>3</order>
+<parent>item-260d48b5-92f7-4dac-9ab8-307e2859d680</parent>
+<title>Texturing a room</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-d069ea51-73ec-4db0-b27a-612dbfd77bcf</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d069ea51-73ec-4db0-b27a-612dbfd77bcf"></oer-include>]]></content>
+</item>

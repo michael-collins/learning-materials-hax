@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a</id>
+<indent>1</indent>
+<location>pages/item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a/index.xml</location>
+<slug>pathways/lighting-and-cinematography-1</slug>
+<order>6</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Lighting and cinematography</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/lighting-and-cinematography</oerSource>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-c3f1331f-89de-4e5a-ae10-555fe728704c</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Sets up lighting and camera angles to create visually compelling 3D scenes.</p>
+]]></content>
+</item>

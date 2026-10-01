@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-955f3a9a-72db-424a-a8e0-f195c322a57f</id>
+<indent>3</indent>
+<location>pages/item-955f3a9a-72db-424a-a8e0-f195c322a57f/index.xml</location>
+<slug>pathways/game-artist-pathway-1/project/stylized-prop-set</slug>
+<order>0</order>
+<parent>item-99304aa2-3f5e-409b-92b7-3d5fa3af94c2</parent>
+<title>Stylized Prop Set</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Beginner</oerLevel>
+<pageType>project</pageType>
+<oerRef>
+<page>item-0166883b-7fd8-465a-a98b-74f4f9b02cb0</page>
+<version></version>
+</oerRef>
+<created>1790830075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790830075</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-0166883b-7fd8-465a-a98b-74f4f9b02cb0"></oer-include>]]></content>
+</item>
