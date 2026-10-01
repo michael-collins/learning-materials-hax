@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Texturing Low-poly Assets with a Palette Texture</title>
-    <id>item-fe878051-6f3c-49ad-a7ea-d69d17a07a20</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-ea39d40c-d83e-4da9-82c8-1e1ee2a05996"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Importing Assets into PlayCanvas</title>
     <id>item-f16495d6-2492-484f-9565-f79c27a1396c</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -775,6 +763,47 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-af04c3dd-dea6-415e-9e84-44d787b9cf72"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Modeling the Airline Chair</title>
+    <id>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair"/>
+    <category term="Blender,Modeling" label="Blender,Modeling" />
+    <content type="html">
+      <![CDATA[ <p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f" title="Modeling the Airline Chair Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice using 3D software interface and terminology.</li>
+<li>Use modeling workflows to create high quality topology and edge flow.</li>
+<li>Demonstrate understanding of fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide.</li>
+</ol>
+<h2>Instructions</h2>
+<p><strong>Note:</strong> You should have a basic understanding Blender's interface to complete this exercise.</p>
+<ol>
+<li>Create a folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>
+<li>Follow the six-part video demonstration to model the <a href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber Airline Chair</a>. Skills to practice include:
+<ul>
+<li>polygonal edge flow</li>
+<li>extruding polygon faces</li>
+<li>inserting edge loops</li>
+<li>moving, rotating, and scaling vertices, edges, and faces</li>
+<li>mirroring and duplicating geometry</li>
+</ul>
+</li>
+<li>Clean up your <a href="https://www.youtube.com/watch?v=Lip59doQQRk">edge flow</a>.</li>
+<li>Save the 3D scene file as ‘<strong><em>LASTNAME</em>-modeling-chair.blend’</strong> (I.E. – <em>collins</em>-modeling-b1.blend) in the project folder.</li>
+<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-modeling-chair.zip.</strong></li>
+<li>Upload the .zip file to the assignment dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+ ]]>
     </content>
   </entry>
 </feed>

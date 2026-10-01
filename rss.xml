@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Texturing Low-poly Assets with a Palette Texture</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Importing Assets into PlayCanvas</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas</link>
       <description></description>
@@ -187,6 +180,14 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/blocking-out-a-game-space</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/blocking-out-a-game-space</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modeling the Airline Chair</title>
+      <link>https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair</link>
+      <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair. Learning Objectives Practice using 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Demonstrate understanding of fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions Note: You should have a basic understanding Blender&apos;s inter...</description>
+      <category>Blender,Modeling</category>
+      <guid>https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
