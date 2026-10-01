@@ -20,7 +20,7 @@ import {
   autorun,
   toJS,
 } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
-import "@haxtheweb/haxcms-elements/lib/ui-components/navigation/site-menu.js";
+import "./outline/oer-site-nav.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/navigation/site-breadcrumb.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/active-item/site-active-title.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/layout/site-modal.js";
@@ -38,7 +38,6 @@ import {
   logout,
   undo,
   redo,
-  addPage,
   openOutline,
   openSiteSettings,
   MOD,
@@ -85,7 +84,6 @@ const icon = {
   lockOpen: lucide("icons:lock-open"),
   trash: lucide("icons:delete"),
   book: lucide("lrn:book"),
-  filePlus: lucide("hax:add-page"),
   siteMap: lucide("hax:site-map"),
   settings: lucide("icons:settings"),
   code: lucide("icons:code"),
@@ -385,10 +383,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           padding: 0.5rem;
           scrollbar-width: thin;
           scrollbar-color: var(--border) transparent;
-        }
-        site-menu {
-          height: auto;
-          --site-menu-font-size: 0.875rem;
         }
         .sidebar-footer {
           padding: 0.75rem;
@@ -954,14 +948,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         </div>
         ${this._loggedIn && !this.editMode
           ? html`<div class="site-actions" role="group" aria-label="Site">
-              <button class="site-action" @click="${addPage}">${icon.filePlus}Add page</button>
               <button class="site-action" @click="${openOutline}">${icon.siteMap}Outline</button>
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`
           : ""}
         <nav aria-label="Course outline">
           <div class="nav-group-label">Contents</div>
-          <site-menu part="site-menu"></site-menu>
+          <oer-site-nav part="site-menu" ?editable="${this._loggedIn && !this.editMode}"></oer-site-nav>
         </nav>
         ${this._loggedIn
           ? html`<div class="sidebar-footer">${this.renderUser()}</div>`
