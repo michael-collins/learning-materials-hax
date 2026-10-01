@@ -673,18 +673,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Blocking Out a Game Space</title>
-    <id>item-37411951-fa60-421d-8850-084235682924</id>
-    <updated>2026-10-01T04:46:27.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/blocking-out-a-game-space"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-af04c3dd-dea6-415e-9e84-44d787b9cf72"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Modeling the Airline Chair</title>
     <id>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</id>
     <updated>2026-10-01T04:46:27.000Z</updated>
@@ -864,6 +852,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-f83868f0-e72d-43cd-b3b6-019b35bd4947"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Sculpting, retopo, and texturing</title>
+    <id>item-f9e72d9c-c6f5-4a29-b8fd-9a9207bbb863</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-14092a66-b6a9-4e88-9f05-564806703c39"></oer-include> ]]>
     </content>
   </entry>
 </feed>
