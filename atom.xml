@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Modeling a Low Poly Animal and Introduction to Particles</title>
-    <id>item-f3cd38ac-0f0c-4f4d-8b19-9c3656fb25dc</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-55d0b3fa-f1ad-42b6-a455-7890ca1bcea9"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Texturing Low-poly Assets with a Palette Texture</title>
     <id>item-fe878051-6f3c-49ad-a7ea-d69d17a07a20</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -775,6 +763,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     <content type="html">
       <![CDATA[ <p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>
  ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Blocking Out a Game Space</title>
+    <id>item-37411951-fa60-421d-8850-084235682924</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/blocking-out-a-game-space"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-af04c3dd-dea6-415e-9e84-44d787b9cf72"></oer-include> ]]>
     </content>
   </entry>
 </feed>

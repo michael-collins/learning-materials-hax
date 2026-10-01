@@ -222,30 +222,6 @@
       }
     },
     {
-      "id": "item-f3cd38ac-0f0c-4f4d-8b19-9c3656fb25dc",
-      "indent": 3,
-      "location": "pages/item-f3cd38ac-0f0c-4f4d-8b19-9c3656fb25dc/index.html",
-      "slug": "pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles",
-      "order": 0,
-      "parent": "item-604b6318-14b1-41aa-8602-c7f5c88559bf",
-      "title": "Modeling a Low Poly Animal and Introduction to Particles",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Beginner",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-55d0b3fa-f1ad-42b6-a455-7890ca1bcea9",
-          "version": ""
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
       "id": "item-fe878051-6f3c-49ad-a7ea-d69d17a07a20",
       "indent": 3,
       "location": "pages/item-fe878051-6f3c-49ad-a7ea-d69d17a07a20/index.html",
