@@ -139,13 +139,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>You don&apos;t see that everyday object posters</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-object-posters</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Environment Design for Real-time</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/environment-design-for-real-time</link>
       <description></description>
@@ -187,6 +180,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Creating Blockouts for Games</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
