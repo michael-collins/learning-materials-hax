@@ -1404,7 +1404,7 @@
       "order": 1000,
       "parent": "item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171",
       "title": "v0.9.0",
-      "description": "",
+      "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "pageType": "oer:exercise",
         "oerFields": {
