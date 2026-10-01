@@ -658,6 +658,12 @@ import{SimpleIconsetStore as Et}from"@haxtheweb/simple-icon/lib/simple-iconset.j
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
     }
+    /* buttons that show their label (e.g. in Site Settings) size to it,
+       instead of squeezing the text into an icon-sized square */
+    [part="sources"] simple-toolbar-button[show-text-label] {
+      width: auto !important;
+      padding: 0 0.625rem !important;
+    }
     [part="description"],
     #description {
       margin-top: 0.375rem !important;
