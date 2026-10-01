@@ -142,13 +142,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Digital fabrication</title>
-      <link>https://localhost:3000/learning-materials/pathways/digital-fabrication</link>
-      <description>Utilizes 3D printing or CNC machining to create physical objects from digital designs.</description>
-      <guid>https://localhost:3000/learning-materials/pathways/digital-fabrication</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Modeling game assets</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets</link>
       <description></description>
@@ -189,6 +182,13 @@
       <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space. Learning Objectives Become familiarized with 3D software terminology Practice polygonal modeling workflows Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel. Instructions Note: There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction....</description>
       <category>Blender</category>
       <guid>https://localhost:3000/learning-materials/exercises/modeling-a-room</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modeling random objects</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>

@@ -781,20 +781,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Digital fabrication</title>
-    <id>item-d3c4942c-f165-435b-983b-9c0bee39dccd</id>
-    <updated>2026-10-01T04:46:27.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/digital-fabrication"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-pathway layout="matrix"></oer-pathway>
-<p>Utilizes 3D printing or CNC machining to create physical objects from digital designs.</p>
- ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Modeling game assets</title>
     <id>item-604b6318-14b1-41aa-8602-c7f5c88559bf</id>
     <updated>2026-10-01T04:46:27.000Z</updated>
@@ -896,6 +882,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="exercise"></oer-rubric>
  ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Modeling random objects</title>
+    <id>item-89acf18e-ec50-4745-ae08-40da688a327e</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-053b3332-cb45-4124-a87e-1d109f4f1292"></oer-include> ]]>
     </content>
   </entry>
 </feed>
