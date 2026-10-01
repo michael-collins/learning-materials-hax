@@ -21,7 +21,7 @@ import {
   toJS,
 } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import "./outline/oer-site-nav.js";
-import "@haxtheweb/haxcms-elements/lib/ui-components/navigation/site-breadcrumb.js";
+import "./ui/oer-breadcrumb.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/active-item/site-active-title.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/layout/site-modal.js";
 import { shadcnTokens } from "./tokens/shadcn-tokens.js";
@@ -546,12 +546,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           outline: 2px solid var(--ring);
           outline-offset: 2px;
         }
-        site-breadcrumb {
+        oer-breadcrumb {
           flex: 1;
           min-width: 0;
-          font-size: 0.875rem;
-          --site-breadcrumb-margin: 0;
-          color: var(--muted-foreground);
         }
         .separator {
           width: 1px;
@@ -1235,7 +1232,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           ${icon.panelLeft}
         </button>
         <div class="separator" aria-hidden="true"></div>
-        <site-breadcrumb part="breadcrumb"></site-breadcrumb>
+        <oer-breadcrumb part="breadcrumb"></oer-breadcrumb>
         <button class="icon-btn" @click="${this.openSearch}" title="Search the site (⌘K)" aria-label="Search the site">
           ${icon.search}
         </button>
