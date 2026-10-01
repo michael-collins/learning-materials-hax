@@ -5312,41 +5312,6 @@
       }
     },
     {
-      "id": "item-fbc3aa07-3ac2-47fb-a966-4170ff066869",
-      "indent": 1,
-      "location": "pages/item-fbc3aa07-3ac2-47fb-a966-4170ff066869/index.html",
-      "slug": "pathways/production-management",
-      "order": 9,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Production management",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/production-management",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-50b4ae5c-4f84-43f3-9987-efb6b3428542",
       "indent": 1,
       "location": "pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.html",
