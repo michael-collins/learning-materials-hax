@@ -750,52 +750,6 @@
       }
     },
     {
-      "id": "item-9f8b1b26-1d87-4b97-8e41-bfc45bb14029",
-      "indent": 1,
-      "location": "pages/item-9f8b1b26-1d87-4b97-8e41-bfc45bb14029/index.html",
-      "slug": "pathways/compositor-pathway",
-      "order": 1,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Compositor Pathway",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/compositor",
-        "tags": "Compositing,Post-production,VFX,Color Grading,Nuke,After Effects",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "estimatedDuration": "14 weeks",
-          "learningObjectives": [
-            "Integrate CGI elements with live-action footage seamlessly",
-            "Apply color correction and grading techniques",
-            "Use keying and rotoscoping for element isolation",
-            "Create realistic lighting and shadow integration",
-            "Understand compositing workflows and node-based systems",
-            "Deliver final outputs to professional specifications"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830073,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-2d17b512-9f6b-447f-ab5d-db359f3a0f70",
       "indent": 2,
       "location": "pages/item-2d17b512-9f6b-447f-ab5d-db359f3a0f70/index.html",
