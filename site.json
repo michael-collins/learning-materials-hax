@@ -875,28 +875,6 @@
       }
     },
     {
-      "id": "item-fd2a8921-39e9-4674-91cf-97e8c6777ac4",
-      "indent": 2,
-      "location": "pages/item-fd2a8921-39e9-4674-91cf-97e8c6777ac4/index.html",
-      "slug": "pathways/cgi-foundations/modeling",
-      "order": 1,
-      "parent": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-      "title": "Modeling",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830072,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-50761876-d2fc-4e11-a460-fc8c4487abe0",
       "indent": 3,
       "location": "pages/item-50761876-d2fc-4e11-a460-fc8c4487abe0/index.html",
