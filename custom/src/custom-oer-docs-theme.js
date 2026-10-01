@@ -123,6 +123,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _published: { state: true },
       _pageMenuOpen: { state: true },
       _sidebarTab: { state: true },
+      _userMenuOpen: { state: true },
       _book: { state: true },
       _bookFilter: { state: true },
       embed: { type: Boolean, reflect: true },
@@ -156,6 +157,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
     this.__outsideMenu = (e) => {
       const path = e.composedPath();
+      if (this._userMenuOpen && !path.includes(this.shadowRoot.querySelector(".user-wrap"))) {
+        this._userMenuOpen = false;
+      }
       if (this._pageMenuOpen && !path.includes(this.shadowRoot.querySelector(".page-header .menu-wrap"))) {
         this._pageMenuOpen = false;
       }
@@ -686,12 +690,48 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           font-weight: 500;
           color: var(--muted-foreground);
         }
-        /* footer: Site group + compact user row */
+        /* account menu (shadcn NavUser) */
+        .user-wrap {
+          position: relative;
+        }
         .user-row {
+          all: unset;
+          box-sizing: border-box;
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          padding: 0.25rem 0.25rem 0 0.5rem;
+          width: 100%;
+          height: 2.5rem;
+          padding: 0 0.5rem;
+          border-radius: var(--radius-md);
+          cursor: pointer;
+        }
+        .user-row:hover,
+        .user-row[aria-expanded="true"] {
+          background: var(--sidebar-accent, var(--accent));
+        }
+        .user-row:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: -2px;
+        }
+        .user-row > .lucide:last-child {
+          width: 1rem;
+          height: 1rem;
+          color: var(--muted-foreground);
+          transform: rotate(180deg);
+        }
+        .menu.user-menu {
+          top: auto;
+          bottom: calc(100% + 0.25rem);
+          left: 0;
+          right: 0;
+          min-width: 0;
+        }
+        .menu-label {
+          padding: 0.375rem 0.5rem;
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: var(--muted-foreground);
         }
         .avatar {
           display: inline-flex;
@@ -1349,20 +1389,43 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
   }
 
+  // the account is a menu (shadcn NavUser): dashboard and log out
   renderUser() {
     const name = this._userName || "Signed in";
     return html`
-      <div class="user-row">
-        <span class="avatar" aria-hidden="true">${this._userName ? name.slice(0, 2) : icon.user}</span>
-        <span class="user-name">${name}</span>
-        <a class="icon-btn sm" href="${stockUI()?.backLink ?? "/"}" title="Site dashboard" aria-label="Site dashboard">
-          ${icon.layoutDashboard}
-        </a>
-        <button class="icon-btn sm danger" @click="${logout}" title="Log out" aria-label="Log out">
-          ${icon.logOut}
+      <div class="user-wrap">
+        <button
+          class="user-row"
+          aria-haspopup="menu"
+          aria-expanded="${!!this._userMenuOpen}"
+          @click="${() => (this._userMenuOpen = !this._userMenuOpen)}"
+        >
+          <span class="avatar" aria-hidden="true">${this._userName ? name.slice(0, 2) : icon.user}</span>
+          <span class="user-name">${name}</span>
+          ${icon.chevronDown}
         </button>
+        ${this._userMenuOpen
+          ? html`<div class="menu user-menu" role="menu" aria-label="Account" @keydown="${this._userMenuKeys}">
+              <div class="menu-label">${name}</div>
+              <a role="menuitem" href="${stockUI()?.backLink ?? "/"}">${icon.layoutDashboard}Site dashboard</a>
+              <div class="menu-sep" role="separator"></div>
+              <button role="menuitem" class="danger" @click="${() => ((this._userMenuOpen = false), logout())}">${icon.logOut}Log out</button>
+            </div>`
+          : ""}
       </div>
     `;
+  }
+
+  _userMenuKeys(e) {
+    const items = [...this.shadowRoot.querySelectorAll('.user-menu [role="menuitem"]')];
+    const i = items.indexOf(this.shadowRoot.activeElement);
+    if (e.key === "Escape") {
+      this._userMenuOpen = false;
+      this.shadowRoot.querySelector(".user-row")?.focus();
+    } else if (e.key === "ArrowDown") items[(i + 1) % items.length]?.focus();
+    else if (e.key === "ArrowUp") items[(i - 1 + items.length) % items.length]?.focus();
+    else return;
+    e.preventDefault();
   }
 
   _togglePageMenu() {
