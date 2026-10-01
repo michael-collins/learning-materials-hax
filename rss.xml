@@ -165,14 +165,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Game Artist Pathway</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway</link>
-      <description>This pathway prepares students for careers in the game industry, focusing on the creation of 3D content for interactive and real-time applications. Students will learn to balance artistic quality with technical performance requirements, creating assets that work seamlessly in game engines and virtual reality platforms. Who This Is For This pathway is perfect for students interested in: Video game development Virtual reality experiences Augmented reality applications Interactive installations ...</description>
-      <category>Game Development,Real-time,3D Modeling,Game Engine,Interactive,VR/AR</category>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Texturing for real time</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time</link>
       <description></description>
@@ -191,6 +183,14 @@
       <link>https://localhost:3000/learning-materials/lessons/lighting-principles</link>
       <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</description>
       <guid>https://localhost:3000/learning-materials/lessons/lighting-principles</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Texturing the Airline Chair</title>
+      <link>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</link>
+      <description>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair. Learning Objectives Become familiarized with 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Perform fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions No...</description>
+      <category>Blender,Texturing</category>
+      <guid>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
