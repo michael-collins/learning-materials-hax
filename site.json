@@ -46,7 +46,7 @@
       "description": "",
       "metadata": {
         "created": 1790801562,
-        "updated": 1790822623,
+        "updated": 1790822799,
         "published": true,
         "locked": false,
         "status": ""
@@ -63,7 +63,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790822623,
+        "updated": 1790822799,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -97,7 +97,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790822623,
+        "updated": 1790822799,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -122,7 +122,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790822623,
+        "updated": 1790822799,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -147,7 +147,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790822623,
+        "updated": 1790822799,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -161,23 +161,6 @@
       }
     },
     {
-      "id": "item-9e71a8cb-a95e-4319-9c09-63d1aa1f95d6",
-      "indent": 0,
-      "location": "pages/item-9e71a8cb-a95e-4319-9c09-63d1aa1f95d6/index.html",
-      "slug": "lessons/typed-test-lesson",
-      "order": 1,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Typed test lesson",
-      "description": "",
-      "metadata": {
-        "pageType": "lesson",
-        "created": 1790822782,
-        "updated": 1790822782,
-        "images": [],
-        "videos": []
-      }
-    },
-    {
       "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "indent": 0,
       "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
@@ -188,7 +171,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790822623,
+        "updated": 1790822799,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -2641,7 +2624,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1790822623,
+        "updated": 1790822799,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
