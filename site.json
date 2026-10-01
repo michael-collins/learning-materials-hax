@@ -4782,28 +4782,6 @@
       }
     },
     {
-      "id": "item-4c86e154-f625-4399-93c5-611f6a1768b1",
-      "indent": 2,
-      "location": "pages/item-4c86e154-f625-4399-93c5-611f6a1768b1/index.html",
-      "slug": "pathways/game-artist-pathway/project",
-      "order": 5,
-      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
-      "title": "Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-8304d26e-d001-4439-b5d9-652e37d52508",
       "indent": 1,
       "location": "pages/item-8304d26e-d001-4439-b5d9-652e37d52508/index.html",
