@@ -112,13 +112,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Texturing random objects</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Modular Environment Kit</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/modular-environment-kit</link>
       <description></description>
@@ -188,6 +181,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/realtime-game-environment</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/realtime-game-environment</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Texturing and UV Mapping</title>
+      <link>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</link>
+      <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</description>
+      <guid>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
