@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790829580
+      "updated": 1790829796
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "",
       "metadata": {
         "created": 1790801562,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "published": true,
         "locked": false,
         "status": "",
@@ -64,7 +64,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -89,7 +89,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -108,12 +108,7 @@
           "aiLicense": "AIUL-WA",
           "placeholder": false,
           "allowEmbed": false,
-          "prerequisites": [
-            {
-              "page": "item-1903f5ba-d051-49cf-9836-073992c93548",
-              "version": ""
-            }
-          ],
+          "prerequisites": [],
           "attachments": [
             {
               "title": "Bouncing Ball Reference",
@@ -137,7 +132,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -162,7 +157,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -187,7 +182,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -2812,7 +2807,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1790829579,
+        "updated": 1790829796,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -2829,7 +2824,7 @@
       "description": "\n",
       "metadata": {
         "created": 1790827963,
-        "updated": 1790829579,
+        "updated": 1790829796,
         "images": [],
         "videos": [],
         "published": true,
