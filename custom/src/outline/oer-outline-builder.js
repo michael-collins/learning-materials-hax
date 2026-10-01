@@ -151,10 +151,9 @@ class OerOutlineBuilder extends LitElement {
           (o.metadata?.pageType || "") !== row.type;
         Object.assign(item, { parent: parent || null, order, indent, title });
         item.metadata = { ...(o.metadata || {}) };
-        if (row.icon) item.metadata.icon = row.icon;
-        else delete item.metadata.icon;
-        if (row.type) item.metadata.pageType = row.type;
-        else delete item.metadata.pageType;
+        // HAXcms merges metadata on outline saves: clear with "", not delete
+        item.metadata.icon = row.icon || "";
+        item.metadata.pageType = row.type || "";
         if (changed) item.modified = true;
       } else {
         out.set(row.id, {

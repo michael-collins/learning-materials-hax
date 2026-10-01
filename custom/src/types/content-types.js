@@ -145,8 +145,9 @@ export async function savePageDetails(id, { pageType, description, fields }) {
   const out = list.map((item) => {
     if (item.id !== id) return item;
     const metadata = { ...item.metadata, oerFields: fields };
-    if (pageType) metadata.pageType = pageType;
-    else delete metadata.pageType;
+    // HAXcms merges metadata on outline saves, so clear with "" (a missing
+    // key would leave the old value in place)
+    metadata.pageType = pageType || "";
     return { ...item, metadata, modified: true };
   });
   await saveOutline(out);
