@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>You don&apos;t see that everyday objects</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Game art in real time</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time</link>
       <description></description>
@@ -187,6 +180,13 @@
       <description>This streamlined pathway focuses specifically on digital compositing skills, providing students with the technical and artistic abilities needed to work in post-production facilities. Students will learn to combine multiple elements into final, polished images for film, television, and digital media. Who This Is For This pathway is ideal for students interested in: Post-production and finishing Visual effects compositing Color grading and correction Motion graphics integration Commercial prod...</description>
       <category>Compositing,Post-production,VFX,Color Grading,Nuke,After Effects</category>
       <guid>https://localhost:3000/learning-materials/pathways/compositor-pathway</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Concept &amp; blockout</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
