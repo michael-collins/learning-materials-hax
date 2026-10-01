@@ -300,12 +300,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       css`
         /* desktop uses the inset layout, which scrolls inside its card;
            the document itself must not scroll. (HAX appends a row of inline
-           "manager" elements after the site, adding a ~20px line box.) */
+           "manager" elements after the site, adding a ~20px line box.)
+           overflow: hidden still lets scrollIntoView / focus scroll the body,
+           which slid the layout up and showed that line as a gap at the
+           bottom; clip allows no scrolling at all */
         @media (min-width: 768px) {
           html,
           body {
             height: 100%;
             overflow: hidden;
+            overflow: clip;
           }
         }
         custom-oer-docs-theme {
