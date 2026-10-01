@@ -84,6 +84,10 @@ class OerOutlineBuilder extends LitElement {
   /** Open for the whole site, or for the sub-pages of page `rootId`. */
   show(rootId = null) {
     const items = toJS(store.manifest?.items) || [];
+    // converting the manifest out of MobX is slow (~3ms); keep one copy per
+    // open instead of converting per row while rendering
+    this._items = items;
+    this._byId = new Map(items.map((i) => [i.id, i]));
     this._root = rootId;
     this._rootItem = rootId ? items.find((i) => i.id === rootId) : null;
     // the hidden content-types page is configuration, not part of the outline
@@ -718,7 +722,7 @@ class OerOutlineBuilder extends LitElement {
       i = this._index(r.id);
       if (r.type === PATHWAY_TYPE) return pathwayLevels(r.orig);
     }
-    const root = this._root ? pathwayOf(this._root, toJS(store.manifest?.items) || []) : null;
+    const root = this._root ? pathwayOf(this._root, this._items || []) : null;
     return root ? pathwayLevels(root) : [];
   }
 
@@ -1178,15 +1182,26 @@ class OerOutlineBuilder extends LitElement {
         font-family: var(--font-mono, ui-monospace, monospace);
         font-weight: 600;
       }
+      /* add row: Add page · Add existing · Add heading, side by side */
       .add-wrap {
         position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.125rem;
+      }
+      .add-wrap .add {
+        flex: none;
+        width: auto;
+        padding-right: 0.5rem;
+        border-radius: var(--radius-sm);
+      }
+      .add-wrap:hover .add .label,
+      .add-wrap:focus-within .add .label {
+        opacity: 1;
       }
       .add-existing {
         all: unset;
-        position: absolute;
-        top: 50%;
-        right: 0.5rem;
-        transform: translateY(-50%);
+        flex: none;
         display: inline-flex;
         align-items: center;
         gap: 0.25rem;
@@ -1474,7 +1489,7 @@ class OerOutlineBuilder extends LitElement {
   }
 
   _renderRef(row) {
-    const target = (toJS(store.manifest?.items) || []).find((i) => i.id === row.ref.page);
+    const target = this._byId?.get(row.ref.page);
     return html`<span class="ref" title="${target ? `Shows “${target.title}”${row.ref.version ? ` v${row.ref.version}` : " (latest)"}` : "Linked page not found"}">
       ${lucide("icons:link", "sm")}${target ? target.title : "missing"}${row.ref.version ? html`<b>v${row.ref.version}</b>` : ""}
     </span>`;
