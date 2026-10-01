@@ -7496,7 +7496,7 @@
       "order": 1000,
       "parent": "item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a",
       "title": "v0.9.0",
-      "description": "",
+      "description": "Sets up lighting and camera angles to create visually compelling 3D scenes.",
       "metadata": {
         "pageType": "oer:pathway",
         "oerFields": {
