@@ -5535,32 +5535,6 @@
       }
     },
     {
-      "id": "item-8bfb86d5-9cc8-495b-a8c3-38e289e2b872",
-      "indent": 3,
-      "location": "pages/item-8bfb86d5-9cc8-495b-a8c3-38e289e2b872/index.html",
-      "slug": "pathways/cgi-foundations/lighting-camera-rendering/rendering-a-room",
-      "order": 5,
-      "parent": "item-94b5861e-b488-429f-956d-30a56545a026",
-      "title": "Rendering a room",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830073,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
       "indent": 1,
       "location": "pages/item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41/index.html",
