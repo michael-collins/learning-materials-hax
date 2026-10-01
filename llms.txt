@@ -16,6 +16,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 - [Lessons](https://localhost:3000/learning-materials/pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
+- [Content types](https://localhost:3000/learning-materials/pages/item-b4e121df-b071-4067-a68c-23f5a26d3841/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

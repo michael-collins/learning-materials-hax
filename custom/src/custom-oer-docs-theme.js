@@ -43,6 +43,10 @@ import {
 } from "./editor/stock.js";
 import { settingsDialog } from "./editor/oer-settings-dialog.js";
 import { outlineBuilder } from "./outline/oer-outline-builder.js";
+import { typeEditor } from "./types/oer-type-editor.js";
+import { pageDetails } from "./types/oer-page-details.js";
+import { isSystemItem } from "./types/content-types.js";
+import "./types/oer-page-header.js";
 import { themeSkin } from "./theme-skin.js";
 
 registerShadowStyles(themeSkin);
@@ -86,6 +90,8 @@ const icon = {
   book: lucide("lrn:book"),
   siteMap: lucide("hax:site-map"),
   settings: lucide("icons:settings"),
+  types: lucide("hax:templates"),
+  details: lucide("image:tune"),
   code: lucide("icons:code"),
   chevronLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`,
   chevronRight: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`,
@@ -172,9 +178,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     // on every route change: close the mobile drawer, recompute prev/next
     this.__disposer.push(
       autorun(() => {
-        toJS(store.activeId);
-        const items = toJS(store.routerManifest?.items) || [];
-        const idx = toJS(store.activeManifestIndex);
+        const active = toJS(store.activeId);
+        // the hidden content-types page is configuration, never a stop
+        const items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i));
+        const idx = items.findIndex((i) => i.id === active);
         Promise.resolve().then(() => {
           this.mobileOpen = false;
           this._prev = idx > 0 ? items[idx - 1] : null;
@@ -949,6 +956,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         ${this._loggedIn && !this.editMode
           ? html`<div class="site-actions" role="group" aria-label="Site">
               <button class="site-action" @click="${() => outlineBuilder().show()}">${icon.siteMap}Outline</button>
+              <button class="site-action" @click="${() => typeEditor().show()}">${icon.types}Content types</button>
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`
           : ""}
@@ -971,6 +979,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               <site-active-title part="page-title"></site-active-title>
               ${this._loggedIn && !this.editMode ? this.renderPageMenu() : ""}
             </div>
+            <oer-page-header ?editable="${this._loggedIn && !this.editMode}"></oer-page-header>
             <section id="slot"><slot></slot></section>
             <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
               ${this._prev
@@ -1084,6 +1093,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ${item(pb("_editTitle"), icon.type, "Rename page")}
               ${item(pb("_editIcon"), icon.shapes, "Change icon")}
               ${item(pb("_editMedia"), icon.image, "Page media")}
+              ${item(this._menuAction(() => pageDetails().show(store.activeId)), icon.details, "Page details")}
               ${item(pb("_editTags"), icon.tag, "Tags")}
               ${item(this._menuAction(() => outlineBuilder().show(store.activeId)), icon.siteMap, "Edit page outline")}
               <div class="menu-sep" role="separator"></div>

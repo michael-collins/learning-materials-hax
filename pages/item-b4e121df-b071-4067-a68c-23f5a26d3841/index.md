@@ -1,0 +1,1 @@
+This page stores the site's content type definitions.

@@ -1,0 +1,2424 @@
+{
+  "version": 1,
+  "types": [
+    {
+      "id": "section",
+      "label": "Section",
+      "icon": "icons:folder",
+      "description": "A heading that groups other pages (e.g. Topics, Readings).",
+      "children": null,
+      "fields": []
+    },
+    {
+      "id": "article",
+      "label": "Article",
+      "icon": "hax:newspaper",
+      "description": "",
+      "children": [],
+      "fields": [
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "kind": "date"
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean"
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        }
+      ]
+    },
+    {
+      "id": "tutorial",
+      "label": "Tutorial",
+      "icon": "courseicons:strategy",
+      "description": "",
+      "children": [],
+      "fields": [
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "kind": "date"
+        },
+        {
+          "name": "difficulty",
+          "label": "Difficulty",
+          "kind": "select",
+          "options": [
+            {
+              "value": "Beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "Intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "Advanced",
+              "label": "Advanced"
+            }
+          ],
+          "header": true
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean"
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "label": "Exercise",
+      "icon": "hax:task",
+      "description": "",
+      "children": [],
+      "fields": [
+        {
+          "name": "difficulty",
+          "label": "Difficulty",
+          "kind": "select",
+          "options": [
+            {
+              "value": "Beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "Intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "Advanced",
+              "label": "Advanced"
+            }
+          ],
+          "header": true
+        },
+        {
+          "name": "image",
+          "label": "Featured Image",
+          "kind": "image"
+        },
+        {
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "kind": "text"
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "aiLicense",
+          "label": "AI Usage Licenses",
+          "kind": "select",
+          "help": "Select one or more AI usage policies. Defaults: AIUL-WA (general approval required) + AIUL-NA-3D (no AI for 3D work)",
+          "options": [
+            {
+              "value": "AIUL-NA",
+              "label": "AIUL-NA"
+            },
+            {
+              "value": "AIUL-NA-WR",
+              "label": "AIUL-NA-WR"
+            },
+            {
+              "value": "AIUL-NA-IM",
+              "label": "AIUL-NA-IM"
+            },
+            {
+              "value": "AIUL-NA-VD",
+              "label": "AIUL-NA-VD"
+            },
+            {
+              "value": "AIUL-NA-AU",
+              "label": "AIUL-NA-AU"
+            },
+            {
+              "value": "AIUL-NA-3D",
+              "label": "AIUL-NA-3D"
+            },
+            {
+              "value": "AIUL-NA-TR",
+              "label": "AIUL-NA-TR"
+            },
+            {
+              "value": "AIUL-NA-MX",
+              "label": "AIUL-NA-MX"
+            },
+            {
+              "value": "AIUL-NA-CO",
+              "label": "AIUL-NA-CO"
+            },
+            {
+              "value": "AIUL-WA",
+              "label": "AIUL-WA"
+            },
+            {
+              "value": "AIUL-WA-WR",
+              "label": "AIUL-WA-WR"
+            },
+            {
+              "value": "AIUL-WA-IM",
+              "label": "AIUL-WA-IM"
+            },
+            {
+              "value": "AIUL-WA-VD",
+              "label": "AIUL-WA-VD"
+            },
+            {
+              "value": "AIUL-WA-AU",
+              "label": "AIUL-WA-AU"
+            },
+            {
+              "value": "AIUL-WA-3D",
+              "label": "AIUL-WA-3D"
+            },
+            {
+              "value": "AIUL-WA-TR",
+              "label": "AIUL-WA-TR"
+            },
+            {
+              "value": "AIUL-WA-MX",
+              "label": "AIUL-WA-MX"
+            },
+            {
+              "value": "AIUL-WA-CO",
+              "label": "AIUL-WA-CO"
+            },
+            {
+              "value": "AIUL-CD",
+              "label": "AIUL-CD"
+            },
+            {
+              "value": "AIUL-CD-WR",
+              "label": "AIUL-CD-WR"
+            },
+            {
+              "value": "AIUL-CD-IM",
+              "label": "AIUL-CD-IM"
+            },
+            {
+              "value": "AIUL-CD-VD",
+              "label": "AIUL-CD-VD"
+            },
+            {
+              "value": "AIUL-CD-AU",
+              "label": "AIUL-CD-AU"
+            },
+            {
+              "value": "AIUL-CD-3D",
+              "label": "AIUL-CD-3D"
+            },
+            {
+              "value": "AIUL-CD-TR",
+              "label": "AIUL-CD-TR"
+            },
+            {
+              "value": "AIUL-CD-MX",
+              "label": "AIUL-CD-MX"
+            },
+            {
+              "value": "AIUL-CD-CO",
+              "label": "AIUL-CD-CO"
+            },
+            {
+              "value": "AIUL-TC",
+              "label": "AIUL-TC"
+            },
+            {
+              "value": "AIUL-TC-WR",
+              "label": "AIUL-TC-WR"
+            },
+            {
+              "value": "AIUL-TC-IM",
+              "label": "AIUL-TC-IM"
+            },
+            {
+              "value": "AIUL-TC-VD",
+              "label": "AIUL-TC-VD"
+            },
+            {
+              "value": "AIUL-TC-AU",
+              "label": "AIUL-TC-AU"
+            },
+            {
+              "value": "AIUL-TC-3D",
+              "label": "AIUL-TC-3D"
+            },
+            {
+              "value": "AIUL-TC-TR",
+              "label": "AIUL-TC-TR"
+            },
+            {
+              "value": "AIUL-TC-MX",
+              "label": "AIUL-TC-MX"
+            },
+            {
+              "value": "AIUL-TC-CO",
+              "label": "AIUL-TC-CO"
+            },
+            {
+              "value": "AIUL-DP",
+              "label": "AIUL-DP"
+            },
+            {
+              "value": "AIUL-DP-WR",
+              "label": "AIUL-DP-WR"
+            },
+            {
+              "value": "AIUL-DP-IM",
+              "label": "AIUL-DP-IM"
+            },
+            {
+              "value": "AIUL-DP-VD",
+              "label": "AIUL-DP-VD"
+            },
+            {
+              "value": "AIUL-DP-AU",
+              "label": "AIUL-DP-AU"
+            },
+            {
+              "value": "AIUL-DP-3D",
+              "label": "AIUL-DP-3D"
+            },
+            {
+              "value": "AIUL-DP-TR",
+              "label": "AIUL-DP-TR"
+            },
+            {
+              "value": "AIUL-DP-MX",
+              "label": "AIUL-DP-MX"
+            },
+            {
+              "value": "AIUL-DP-CO",
+              "label": "AIUL-DP-CO"
+            },
+            {
+              "value": "AIUL-IU",
+              "label": "AIUL-IU"
+            },
+            {
+              "value": "AIUL-IU-WR",
+              "label": "AIUL-IU-WR"
+            },
+            {
+              "value": "AIUL-IU-IM",
+              "label": "AIUL-IU-IM"
+            },
+            {
+              "value": "AIUL-IU-VD",
+              "label": "AIUL-IU-VD"
+            },
+            {
+              "value": "AIUL-IU-AU",
+              "label": "AIUL-IU-AU"
+            },
+            {
+              "value": "AIUL-IU-3D",
+              "label": "AIUL-IU-3D"
+            },
+            {
+              "value": "AIUL-IU-TR",
+              "label": "AIUL-IU-TR"
+            },
+            {
+              "value": "AIUL-IU-MX",
+              "label": "AIUL-IU-MX"
+            },
+            {
+              "value": "AIUL-IU-CO",
+              "label": "AIUL-IU-CO"
+            }
+          ]
+        },
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "authorUrl",
+          "label": "Author URL (legacy)",
+          "kind": "text"
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean",
+          "help": "Enable iframe embedding for this content"
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        }
+      ]
+    },
+    {
+      "id": "project",
+      "label": "Project",
+      "icon": "hax:bulletin-board",
+      "description": "",
+      "children": [],
+      "fields": [
+        {
+          "name": "difficulty",
+          "label": "Difficulty",
+          "kind": "select",
+          "options": [
+            {
+              "value": "Beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "Intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "Advanced",
+              "label": "Advanced"
+            }
+          ],
+          "header": true
+        },
+        {
+          "name": "image",
+          "label": "Featured Image",
+          "kind": "image"
+        },
+        {
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "kind": "text"
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "aiLicense",
+          "label": "AI Usage Licenses",
+          "kind": "select",
+          "help": "Select one or more AI usage policies. Defaults: AIUL-WA (approval required) + AIUL-CD (conceptual ok) + AIUL-NA-3D (no AI for 3D)",
+          "options": [
+            {
+              "value": "AIUL-NA",
+              "label": "AIUL-NA"
+            },
+            {
+              "value": "AIUL-NA-WR",
+              "label": "AIUL-NA-WR"
+            },
+            {
+              "value": "AIUL-NA-IM",
+              "label": "AIUL-NA-IM"
+            },
+            {
+              "value": "AIUL-NA-VD",
+              "label": "AIUL-NA-VD"
+            },
+            {
+              "value": "AIUL-NA-AU",
+              "label": "AIUL-NA-AU"
+            },
+            {
+              "value": "AIUL-NA-3D",
+              "label": "AIUL-NA-3D"
+            },
+            {
+              "value": "AIUL-NA-TR",
+              "label": "AIUL-NA-TR"
+            },
+            {
+              "value": "AIUL-NA-MX",
+              "label": "AIUL-NA-MX"
+            },
+            {
+              "value": "AIUL-NA-CO",
+              "label": "AIUL-NA-CO"
+            },
+            {
+              "value": "AIUL-WA",
+              "label": "AIUL-WA"
+            },
+            {
+              "value": "AIUL-WA-WR",
+              "label": "AIUL-WA-WR"
+            },
+            {
+              "value": "AIUL-WA-IM",
+              "label": "AIUL-WA-IM"
+            },
+            {
+              "value": "AIUL-WA-VD",
+              "label": "AIUL-WA-VD"
+            },
+            {
+              "value": "AIUL-WA-AU",
+              "label": "AIUL-WA-AU"
+            },
+            {
+              "value": "AIUL-WA-3D",
+              "label": "AIUL-WA-3D"
+            },
+            {
+              "value": "AIUL-WA-TR",
+              "label": "AIUL-WA-TR"
+            },
+            {
+              "value": "AIUL-WA-MX",
+              "label": "AIUL-WA-MX"
+            },
+            {
+              "value": "AIUL-WA-CO",
+              "label": "AIUL-WA-CO"
+            },
+            {
+              "value": "AIUL-CD",
+              "label": "AIUL-CD"
+            },
+            {
+              "value": "AIUL-CD-WR",
+              "label": "AIUL-CD-WR"
+            },
+            {
+              "value": "AIUL-CD-IM",
+              "label": "AIUL-CD-IM"
+            },
+            {
+              "value": "AIUL-CD-VD",
+              "label": "AIUL-CD-VD"
+            },
+            {
+              "value": "AIUL-CD-AU",
+              "label": "AIUL-CD-AU"
+            },
+            {
+              "value": "AIUL-CD-3D",
+              "label": "AIUL-CD-3D"
+            },
+            {
+              "value": "AIUL-CD-TR",
+              "label": "AIUL-CD-TR"
+            },
+            {
+              "value": "AIUL-CD-MX",
+              "label": "AIUL-CD-MX"
+            },
+            {
+              "value": "AIUL-CD-CO",
+              "label": "AIUL-CD-CO"
+            },
+            {
+              "value": "AIUL-TC",
+              "label": "AIUL-TC"
+            },
+            {
+              "value": "AIUL-TC-WR",
+              "label": "AIUL-TC-WR"
+            },
+            {
+              "value": "AIUL-TC-IM",
+              "label": "AIUL-TC-IM"
+            },
+            {
+              "value": "AIUL-TC-VD",
+              "label": "AIUL-TC-VD"
+            },
+            {
+              "value": "AIUL-TC-AU",
+              "label": "AIUL-TC-AU"
+            },
+            {
+              "value": "AIUL-TC-3D",
+              "label": "AIUL-TC-3D"
+            },
+            {
+              "value": "AIUL-TC-TR",
+              "label": "AIUL-TC-TR"
+            },
+            {
+              "value": "AIUL-TC-MX",
+              "label": "AIUL-TC-MX"
+            },
+            {
+              "value": "AIUL-TC-CO",
+              "label": "AIUL-TC-CO"
+            },
+            {
+              "value": "AIUL-DP",
+              "label": "AIUL-DP"
+            },
+            {
+              "value": "AIUL-DP-WR",
+              "label": "AIUL-DP-WR"
+            },
+            {
+              "value": "AIUL-DP-IM",
+              "label": "AIUL-DP-IM"
+            },
+            {
+              "value": "AIUL-DP-VD",
+              "label": "AIUL-DP-VD"
+            },
+            {
+              "value": "AIUL-DP-AU",
+              "label": "AIUL-DP-AU"
+            },
+            {
+              "value": "AIUL-DP-3D",
+              "label": "AIUL-DP-3D"
+            },
+            {
+              "value": "AIUL-DP-TR",
+              "label": "AIUL-DP-TR"
+            },
+            {
+              "value": "AIUL-DP-MX",
+              "label": "AIUL-DP-MX"
+            },
+            {
+              "value": "AIUL-DP-CO",
+              "label": "AIUL-DP-CO"
+            },
+            {
+              "value": "AIUL-IU",
+              "label": "AIUL-IU"
+            },
+            {
+              "value": "AIUL-IU-WR",
+              "label": "AIUL-IU-WR"
+            },
+            {
+              "value": "AIUL-IU-IM",
+              "label": "AIUL-IU-IM"
+            },
+            {
+              "value": "AIUL-IU-VD",
+              "label": "AIUL-IU-VD"
+            },
+            {
+              "value": "AIUL-IU-AU",
+              "label": "AIUL-IU-AU"
+            },
+            {
+              "value": "AIUL-IU-3D",
+              "label": "AIUL-IU-3D"
+            },
+            {
+              "value": "AIUL-IU-TR",
+              "label": "AIUL-IU-TR"
+            },
+            {
+              "value": "AIUL-IU-MX",
+              "label": "AIUL-IU-MX"
+            },
+            {
+              "value": "AIUL-IU-CO",
+              "label": "AIUL-IU-CO"
+            }
+          ]
+        },
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "authorUrl",
+          "label": "Author URL (legacy)",
+          "kind": "text"
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean",
+          "help": "Enable iframe embedding for this content"
+        },
+        {
+          "name": "publishEmbed",
+          "label": "Publish for Embed",
+          "kind": "boolean",
+          "help": "Make this version available for embedding"
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        }
+      ]
+    },
+    {
+      "id": "specialization",
+      "label": "Specialization",
+      "icon": "lrn:teacher",
+      "description": "",
+      "children": [
+        "lesson"
+      ],
+      "fields": [
+        {
+          "name": "difficulty",
+          "label": "Difficulty",
+          "kind": "select",
+          "options": [
+            {
+              "value": "Beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "Intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "Advanced",
+              "label": "Advanced"
+            }
+          ],
+          "header": true
+        },
+        {
+          "name": "estimatedDuration",
+          "label": "Estimated Duration",
+          "kind": "text",
+          "help": "e.g., '8 weeks', '3 months'",
+          "header": true
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "whoItsFor",
+          "label": "Who It's For",
+          "kind": "longtext",
+          "header": true
+        },
+        {
+          "name": "targetRole",
+          "label": "Target Role",
+          "kind": "text",
+          "help": "e.g., '3D Modeler', 'Animator'",
+          "header": true
+        },
+        {
+          "name": "skills",
+          "label": "Skills",
+          "kind": "list",
+          "help": "Key skills students will develop",
+          "header": true
+        },
+        {
+          "name": "tools",
+          "label": "Tools",
+          "kind": "list",
+          "help": "Software and hardware used",
+          "header": true
+        },
+        {
+          "name": "learningObjectives",
+          "label": "Learning Objectives",
+          "kind": "list",
+          "header": true
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        },
+        {
+          "name": "image",
+          "label": "Featured Image",
+          "kind": "image"
+        },
+        {
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "kind": "text"
+        },
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean"
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "aiLicense",
+          "label": "AI Usage Licenses",
+          "kind": "select",
+          "help": "Select one or more AI usage policies",
+          "options": [
+            {
+              "value": "AIUL-NA",
+              "label": "AIUL-NA"
+            },
+            {
+              "value": "AIUL-NA-WR",
+              "label": "AIUL-NA-WR"
+            },
+            {
+              "value": "AIUL-NA-IM",
+              "label": "AIUL-NA-IM"
+            },
+            {
+              "value": "AIUL-NA-VD",
+              "label": "AIUL-NA-VD"
+            },
+            {
+              "value": "AIUL-NA-AU",
+              "label": "AIUL-NA-AU"
+            },
+            {
+              "value": "AIUL-NA-3D",
+              "label": "AIUL-NA-3D"
+            },
+            {
+              "value": "AIUL-NA-TR",
+              "label": "AIUL-NA-TR"
+            },
+            {
+              "value": "AIUL-NA-MX",
+              "label": "AIUL-NA-MX"
+            },
+            {
+              "value": "AIUL-NA-CO",
+              "label": "AIUL-NA-CO"
+            },
+            {
+              "value": "AIUL-WA",
+              "label": "AIUL-WA"
+            },
+            {
+              "value": "AIUL-WA-WR",
+              "label": "AIUL-WA-WR"
+            },
+            {
+              "value": "AIUL-WA-IM",
+              "label": "AIUL-WA-IM"
+            },
+            {
+              "value": "AIUL-WA-VD",
+              "label": "AIUL-WA-VD"
+            },
+            {
+              "value": "AIUL-WA-AU",
+              "label": "AIUL-WA-AU"
+            },
+            {
+              "value": "AIUL-WA-3D",
+              "label": "AIUL-WA-3D"
+            },
+            {
+              "value": "AIUL-WA-TR",
+              "label": "AIUL-WA-TR"
+            },
+            {
+              "value": "AIUL-WA-MX",
+              "label": "AIUL-WA-MX"
+            },
+            {
+              "value": "AIUL-WA-CO",
+              "label": "AIUL-WA-CO"
+            },
+            {
+              "value": "AIUL-CD",
+              "label": "AIUL-CD"
+            },
+            {
+              "value": "AIUL-CD-WR",
+              "label": "AIUL-CD-WR"
+            },
+            {
+              "value": "AIUL-CD-IM",
+              "label": "AIUL-CD-IM"
+            },
+            {
+              "value": "AIUL-CD-VD",
+              "label": "AIUL-CD-VD"
+            },
+            {
+              "value": "AIUL-CD-AU",
+              "label": "AIUL-CD-AU"
+            },
+            {
+              "value": "AIUL-CD-3D",
+              "label": "AIUL-CD-3D"
+            },
+            {
+              "value": "AIUL-CD-TR",
+              "label": "AIUL-CD-TR"
+            },
+            {
+              "value": "AIUL-CD-MX",
+              "label": "AIUL-CD-MX"
+            },
+            {
+              "value": "AIUL-CD-CO",
+              "label": "AIUL-CD-CO"
+            },
+            {
+              "value": "AIUL-TC",
+              "label": "AIUL-TC"
+            },
+            {
+              "value": "AIUL-TC-WR",
+              "label": "AIUL-TC-WR"
+            },
+            {
+              "value": "AIUL-TC-IM",
+              "label": "AIUL-TC-IM"
+            },
+            {
+              "value": "AIUL-TC-VD",
+              "label": "AIUL-TC-VD"
+            },
+            {
+              "value": "AIUL-TC-AU",
+              "label": "AIUL-TC-AU"
+            },
+            {
+              "value": "AIUL-TC-3D",
+              "label": "AIUL-TC-3D"
+            },
+            {
+              "value": "AIUL-TC-TR",
+              "label": "AIUL-TC-TR"
+            },
+            {
+              "value": "AIUL-TC-MX",
+              "label": "AIUL-TC-MX"
+            },
+            {
+              "value": "AIUL-TC-CO",
+              "label": "AIUL-TC-CO"
+            },
+            {
+              "value": "AIUL-DP",
+              "label": "AIUL-DP"
+            },
+            {
+              "value": "AIUL-DP-WR",
+              "label": "AIUL-DP-WR"
+            },
+            {
+              "value": "AIUL-DP-IM",
+              "label": "AIUL-DP-IM"
+            },
+            {
+              "value": "AIUL-DP-VD",
+              "label": "AIUL-DP-VD"
+            },
+            {
+              "value": "AIUL-DP-AU",
+              "label": "AIUL-DP-AU"
+            },
+            {
+              "value": "AIUL-DP-3D",
+              "label": "AIUL-DP-3D"
+            },
+            {
+              "value": "AIUL-DP-TR",
+              "label": "AIUL-DP-TR"
+            },
+            {
+              "value": "AIUL-DP-MX",
+              "label": "AIUL-DP-MX"
+            },
+            {
+              "value": "AIUL-DP-CO",
+              "label": "AIUL-DP-CO"
+            },
+            {
+              "value": "AIUL-IU",
+              "label": "AIUL-IU"
+            },
+            {
+              "value": "AIUL-IU-WR",
+              "label": "AIUL-IU-WR"
+            },
+            {
+              "value": "AIUL-IU-IM",
+              "label": "AIUL-IU-IM"
+            },
+            {
+              "value": "AIUL-IU-VD",
+              "label": "AIUL-IU-VD"
+            },
+            {
+              "value": "AIUL-IU-AU",
+              "label": "AIUL-IU-AU"
+            },
+            {
+              "value": "AIUL-IU-3D",
+              "label": "AIUL-IU-3D"
+            },
+            {
+              "value": "AIUL-IU-TR",
+              "label": "AIUL-IU-TR"
+            },
+            {
+              "value": "AIUL-IU-MX",
+              "label": "AIUL-IU-MX"
+            },
+            {
+              "value": "AIUL-IU-CO",
+              "label": "AIUL-IU-CO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pathway",
+      "label": "Pathway",
+      "icon": "hax:unit",
+      "description": "",
+      "children": [
+        "section",
+        "specialization",
+        "lesson"
+      ],
+      "fields": [
+        {
+          "name": "difficulty",
+          "label": "Difficulty",
+          "kind": "select",
+          "help": "For single-level pathways. Multi-level pathways use Levels below.",
+          "options": [
+            {
+              "value": "Beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "Intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "Advanced",
+              "label": "Advanced"
+            }
+          ],
+          "header": true
+        },
+        {
+          "name": "estimatedDuration",
+          "label": "Estimated Duration",
+          "kind": "text",
+          "help": "e.g., '12 weeks', '6 months'",
+          "header": true
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "learningObjectives",
+          "label": "Learning Objectives",
+          "kind": "list",
+          "header": true
+        },
+        {
+          "name": "levels",
+          "label": "Levels",
+          "kind": "select",
+          "help": "Levels this pathway is offered at. Leave empty for a single-level pathway such as CGI Foundations.",
+          "options": [
+            {
+              "value": "Beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "Intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "Advanced",
+              "label": "Advanced"
+            }
+          ]
+        },
+        {
+          "name": "testOutCriteria",
+          "label": "Test-out criteria",
+          "kind": "list",
+          "help": "What a student must show to test out of this pathway. Students request a test-out from the instructor."
+        },
+        {
+          "name": "targetRole",
+          "label": "Target Role",
+          "kind": "text",
+          "header": true
+        },
+        {
+          "name": "whoItsFor",
+          "label": "Who It's For",
+          "kind": "longtext",
+          "header": true
+        },
+        {
+          "name": "skills",
+          "label": "Skills",
+          "kind": "list",
+          "header": true
+        },
+        {
+          "name": "tools",
+          "label": "Tools",
+          "kind": "list",
+          "header": true
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        },
+        {
+          "name": "image",
+          "label": "Featured Image",
+          "kind": "image"
+        },
+        {
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "kind": "text"
+        },
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean"
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "aiLicense",
+          "label": "AI Usage Licenses",
+          "kind": "select",
+          "help": "Select one or more AI usage policies",
+          "options": [
+            {
+              "value": "AIUL-NA",
+              "label": "AIUL-NA"
+            },
+            {
+              "value": "AIUL-NA-WR",
+              "label": "AIUL-NA-WR"
+            },
+            {
+              "value": "AIUL-NA-IM",
+              "label": "AIUL-NA-IM"
+            },
+            {
+              "value": "AIUL-NA-VD",
+              "label": "AIUL-NA-VD"
+            },
+            {
+              "value": "AIUL-NA-AU",
+              "label": "AIUL-NA-AU"
+            },
+            {
+              "value": "AIUL-NA-3D",
+              "label": "AIUL-NA-3D"
+            },
+            {
+              "value": "AIUL-NA-TR",
+              "label": "AIUL-NA-TR"
+            },
+            {
+              "value": "AIUL-NA-MX",
+              "label": "AIUL-NA-MX"
+            },
+            {
+              "value": "AIUL-NA-CO",
+              "label": "AIUL-NA-CO"
+            },
+            {
+              "value": "AIUL-WA",
+              "label": "AIUL-WA"
+            },
+            {
+              "value": "AIUL-WA-WR",
+              "label": "AIUL-WA-WR"
+            },
+            {
+              "value": "AIUL-WA-IM",
+              "label": "AIUL-WA-IM"
+            },
+            {
+              "value": "AIUL-WA-VD",
+              "label": "AIUL-WA-VD"
+            },
+            {
+              "value": "AIUL-WA-AU",
+              "label": "AIUL-WA-AU"
+            },
+            {
+              "value": "AIUL-WA-3D",
+              "label": "AIUL-WA-3D"
+            },
+            {
+              "value": "AIUL-WA-TR",
+              "label": "AIUL-WA-TR"
+            },
+            {
+              "value": "AIUL-WA-MX",
+              "label": "AIUL-WA-MX"
+            },
+            {
+              "value": "AIUL-WA-CO",
+              "label": "AIUL-WA-CO"
+            },
+            {
+              "value": "AIUL-CD",
+              "label": "AIUL-CD"
+            },
+            {
+              "value": "AIUL-CD-WR",
+              "label": "AIUL-CD-WR"
+            },
+            {
+              "value": "AIUL-CD-IM",
+              "label": "AIUL-CD-IM"
+            },
+            {
+              "value": "AIUL-CD-VD",
+              "label": "AIUL-CD-VD"
+            },
+            {
+              "value": "AIUL-CD-AU",
+              "label": "AIUL-CD-AU"
+            },
+            {
+              "value": "AIUL-CD-3D",
+              "label": "AIUL-CD-3D"
+            },
+            {
+              "value": "AIUL-CD-TR",
+              "label": "AIUL-CD-TR"
+            },
+            {
+              "value": "AIUL-CD-MX",
+              "label": "AIUL-CD-MX"
+            },
+            {
+              "value": "AIUL-CD-CO",
+              "label": "AIUL-CD-CO"
+            },
+            {
+              "value": "AIUL-TC",
+              "label": "AIUL-TC"
+            },
+            {
+              "value": "AIUL-TC-WR",
+              "label": "AIUL-TC-WR"
+            },
+            {
+              "value": "AIUL-TC-IM",
+              "label": "AIUL-TC-IM"
+            },
+            {
+              "value": "AIUL-TC-VD",
+              "label": "AIUL-TC-VD"
+            },
+            {
+              "value": "AIUL-TC-AU",
+              "label": "AIUL-TC-AU"
+            },
+            {
+              "value": "AIUL-TC-3D",
+              "label": "AIUL-TC-3D"
+            },
+            {
+              "value": "AIUL-TC-TR",
+              "label": "AIUL-TC-TR"
+            },
+            {
+              "value": "AIUL-TC-MX",
+              "label": "AIUL-TC-MX"
+            },
+            {
+              "value": "AIUL-TC-CO",
+              "label": "AIUL-TC-CO"
+            },
+            {
+              "value": "AIUL-DP",
+              "label": "AIUL-DP"
+            },
+            {
+              "value": "AIUL-DP-WR",
+              "label": "AIUL-DP-WR"
+            },
+            {
+              "value": "AIUL-DP-IM",
+              "label": "AIUL-DP-IM"
+            },
+            {
+              "value": "AIUL-DP-VD",
+              "label": "AIUL-DP-VD"
+            },
+            {
+              "value": "AIUL-DP-AU",
+              "label": "AIUL-DP-AU"
+            },
+            {
+              "value": "AIUL-DP-3D",
+              "label": "AIUL-DP-3D"
+            },
+            {
+              "value": "AIUL-DP-TR",
+              "label": "AIUL-DP-TR"
+            },
+            {
+              "value": "AIUL-DP-MX",
+              "label": "AIUL-DP-MX"
+            },
+            {
+              "value": "AIUL-DP-CO",
+              "label": "AIUL-DP-CO"
+            },
+            {
+              "value": "AIUL-IU",
+              "label": "AIUL-IU"
+            },
+            {
+              "value": "AIUL-IU-WR",
+              "label": "AIUL-IU-WR"
+            },
+            {
+              "value": "AIUL-IU-IM",
+              "label": "AIUL-IU-IM"
+            },
+            {
+              "value": "AIUL-IU-VD",
+              "label": "AIUL-IU-VD"
+            },
+            {
+              "value": "AIUL-IU-AU",
+              "label": "AIUL-IU-AU"
+            },
+            {
+              "value": "AIUL-IU-3D",
+              "label": "AIUL-IU-3D"
+            },
+            {
+              "value": "AIUL-IU-TR",
+              "label": "AIUL-IU-TR"
+            },
+            {
+              "value": "AIUL-IU-MX",
+              "label": "AIUL-IU-MX"
+            },
+            {
+              "value": "AIUL-IU-CO",
+              "label": "AIUL-IU-CO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lecture",
+      "label": "Lecture",
+      "icon": "image:slideshow",
+      "description": "",
+      "children": [],
+      "fields": [
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "image",
+          "label": "Featured Image",
+          "kind": "image"
+        },
+        {
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "kind": "text"
+        },
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "aiLicense",
+          "label": "AI Usage Licenses",
+          "kind": "select",
+          "options": [
+            {
+              "value": "AIUL-NA",
+              "label": "AIUL-NA"
+            },
+            {
+              "value": "AIUL-NA-WR",
+              "label": "AIUL-NA-WR"
+            },
+            {
+              "value": "AIUL-NA-IM",
+              "label": "AIUL-NA-IM"
+            },
+            {
+              "value": "AIUL-NA-VD",
+              "label": "AIUL-NA-VD"
+            },
+            {
+              "value": "AIUL-NA-AU",
+              "label": "AIUL-NA-AU"
+            },
+            {
+              "value": "AIUL-NA-3D",
+              "label": "AIUL-NA-3D"
+            },
+            {
+              "value": "AIUL-NA-TR",
+              "label": "AIUL-NA-TR"
+            },
+            {
+              "value": "AIUL-NA-MX",
+              "label": "AIUL-NA-MX"
+            },
+            {
+              "value": "AIUL-NA-CO",
+              "label": "AIUL-NA-CO"
+            },
+            {
+              "value": "AIUL-WA",
+              "label": "AIUL-WA"
+            },
+            {
+              "value": "AIUL-WA-WR",
+              "label": "AIUL-WA-WR"
+            },
+            {
+              "value": "AIUL-WA-IM",
+              "label": "AIUL-WA-IM"
+            },
+            {
+              "value": "AIUL-WA-VD",
+              "label": "AIUL-WA-VD"
+            },
+            {
+              "value": "AIUL-WA-AU",
+              "label": "AIUL-WA-AU"
+            },
+            {
+              "value": "AIUL-WA-3D",
+              "label": "AIUL-WA-3D"
+            },
+            {
+              "value": "AIUL-WA-TR",
+              "label": "AIUL-WA-TR"
+            },
+            {
+              "value": "AIUL-WA-MX",
+              "label": "AIUL-WA-MX"
+            },
+            {
+              "value": "AIUL-WA-CO",
+              "label": "AIUL-WA-CO"
+            },
+            {
+              "value": "AIUL-CD",
+              "label": "AIUL-CD"
+            },
+            {
+              "value": "AIUL-CD-WR",
+              "label": "AIUL-CD-WR"
+            },
+            {
+              "value": "AIUL-CD-IM",
+              "label": "AIUL-CD-IM"
+            },
+            {
+              "value": "AIUL-CD-VD",
+              "label": "AIUL-CD-VD"
+            },
+            {
+              "value": "AIUL-CD-AU",
+              "label": "AIUL-CD-AU"
+            },
+            {
+              "value": "AIUL-CD-3D",
+              "label": "AIUL-CD-3D"
+            },
+            {
+              "value": "AIUL-CD-TR",
+              "label": "AIUL-CD-TR"
+            },
+            {
+              "value": "AIUL-CD-MX",
+              "label": "AIUL-CD-MX"
+            },
+            {
+              "value": "AIUL-CD-CO",
+              "label": "AIUL-CD-CO"
+            },
+            {
+              "value": "AIUL-TC",
+              "label": "AIUL-TC"
+            },
+            {
+              "value": "AIUL-TC-WR",
+              "label": "AIUL-TC-WR"
+            },
+            {
+              "value": "AIUL-TC-IM",
+              "label": "AIUL-TC-IM"
+            },
+            {
+              "value": "AIUL-TC-VD",
+              "label": "AIUL-TC-VD"
+            },
+            {
+              "value": "AIUL-TC-AU",
+              "label": "AIUL-TC-AU"
+            },
+            {
+              "value": "AIUL-TC-3D",
+              "label": "AIUL-TC-3D"
+            },
+            {
+              "value": "AIUL-TC-TR",
+              "label": "AIUL-TC-TR"
+            },
+            {
+              "value": "AIUL-TC-MX",
+              "label": "AIUL-TC-MX"
+            },
+            {
+              "value": "AIUL-TC-CO",
+              "label": "AIUL-TC-CO"
+            },
+            {
+              "value": "AIUL-DP",
+              "label": "AIUL-DP"
+            },
+            {
+              "value": "AIUL-DP-WR",
+              "label": "AIUL-DP-WR"
+            },
+            {
+              "value": "AIUL-DP-IM",
+              "label": "AIUL-DP-IM"
+            },
+            {
+              "value": "AIUL-DP-VD",
+              "label": "AIUL-DP-VD"
+            },
+            {
+              "value": "AIUL-DP-AU",
+              "label": "AIUL-DP-AU"
+            },
+            {
+              "value": "AIUL-DP-3D",
+              "label": "AIUL-DP-3D"
+            },
+            {
+              "value": "AIUL-DP-TR",
+              "label": "AIUL-DP-TR"
+            },
+            {
+              "value": "AIUL-DP-MX",
+              "label": "AIUL-DP-MX"
+            },
+            {
+              "value": "AIUL-DP-CO",
+              "label": "AIUL-DP-CO"
+            },
+            {
+              "value": "AIUL-IU",
+              "label": "AIUL-IU"
+            },
+            {
+              "value": "AIUL-IU-WR",
+              "label": "AIUL-IU-WR"
+            },
+            {
+              "value": "AIUL-IU-IM",
+              "label": "AIUL-IU-IM"
+            },
+            {
+              "value": "AIUL-IU-VD",
+              "label": "AIUL-IU-VD"
+            },
+            {
+              "value": "AIUL-IU-AU",
+              "label": "AIUL-IU-AU"
+            },
+            {
+              "value": "AIUL-IU-3D",
+              "label": "AIUL-IU-3D"
+            },
+            {
+              "value": "AIUL-IU-TR",
+              "label": "AIUL-IU-TR"
+            },
+            {
+              "value": "AIUL-IU-MX",
+              "label": "AIUL-IU-MX"
+            },
+            {
+              "value": "AIUL-IU-CO",
+              "label": "AIUL-IU-CO"
+            }
+          ]
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean"
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        }
+      ]
+    },
+    {
+      "id": "lesson",
+      "label": "Lesson",
+      "icon": "hax:lesson",
+      "description": "",
+      "children": [
+        "section",
+        "article",
+        "tutorial",
+        "lecture",
+        "exercise",
+        "project"
+      ],
+      "fields": [
+        {
+          "name": "estimatedDuration",
+          "label": "Estimated Duration",
+          "kind": "text",
+          "help": "e.g., '3 hours', '2 days'",
+          "header": true
+        },
+        {
+          "name": "courses",
+          "label": "Courses",
+          "kind": "list",
+          "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+        },
+        {
+          "name": "learningObjectives",
+          "label": "Learning Objectives",
+          "kind": "list",
+          "header": true
+        },
+        {
+          "name": "prerequisites",
+          "label": "Prerequisites",
+          "kind": "list",
+          "help": "Add prerequisite content that should be completed first",
+          "header": true
+        },
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single author. Use the Authors list above for new content."
+        },
+        {
+          "name": "placeholder",
+          "label": "In development",
+          "kind": "boolean",
+          "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+        },
+        {
+          "name": "allowEmbed",
+          "label": "Allow Embedding",
+          "kind": "boolean"
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        },
+        {
+          "name": "aiLicense",
+          "label": "AI Usage Licenses",
+          "kind": "select",
+          "help": "Select one or more AI usage policies",
+          "options": [
+            {
+              "value": "AIUL-NA",
+              "label": "AIUL-NA"
+            },
+            {
+              "value": "AIUL-NA-WR",
+              "label": "AIUL-NA-WR"
+            },
+            {
+              "value": "AIUL-NA-IM",
+              "label": "AIUL-NA-IM"
+            },
+            {
+              "value": "AIUL-NA-VD",
+              "label": "AIUL-NA-VD"
+            },
+            {
+              "value": "AIUL-NA-AU",
+              "label": "AIUL-NA-AU"
+            },
+            {
+              "value": "AIUL-NA-3D",
+              "label": "AIUL-NA-3D"
+            },
+            {
+              "value": "AIUL-NA-TR",
+              "label": "AIUL-NA-TR"
+            },
+            {
+              "value": "AIUL-NA-MX",
+              "label": "AIUL-NA-MX"
+            },
+            {
+              "value": "AIUL-NA-CO",
+              "label": "AIUL-NA-CO"
+            },
+            {
+              "value": "AIUL-WA",
+              "label": "AIUL-WA"
+            },
+            {
+              "value": "AIUL-WA-WR",
+              "label": "AIUL-WA-WR"
+            },
+            {
+              "value": "AIUL-WA-IM",
+              "label": "AIUL-WA-IM"
+            },
+            {
+              "value": "AIUL-WA-VD",
+              "label": "AIUL-WA-VD"
+            },
+            {
+              "value": "AIUL-WA-AU",
+              "label": "AIUL-WA-AU"
+            },
+            {
+              "value": "AIUL-WA-3D",
+              "label": "AIUL-WA-3D"
+            },
+            {
+              "value": "AIUL-WA-TR",
+              "label": "AIUL-WA-TR"
+            },
+            {
+              "value": "AIUL-WA-MX",
+              "label": "AIUL-WA-MX"
+            },
+            {
+              "value": "AIUL-WA-CO",
+              "label": "AIUL-WA-CO"
+            },
+            {
+              "value": "AIUL-CD",
+              "label": "AIUL-CD"
+            },
+            {
+              "value": "AIUL-CD-WR",
+              "label": "AIUL-CD-WR"
+            },
+            {
+              "value": "AIUL-CD-IM",
+              "label": "AIUL-CD-IM"
+            },
+            {
+              "value": "AIUL-CD-VD",
+              "label": "AIUL-CD-VD"
+            },
+            {
+              "value": "AIUL-CD-AU",
+              "label": "AIUL-CD-AU"
+            },
+            {
+              "value": "AIUL-CD-3D",
+              "label": "AIUL-CD-3D"
+            },
+            {
+              "value": "AIUL-CD-TR",
+              "label": "AIUL-CD-TR"
+            },
+            {
+              "value": "AIUL-CD-MX",
+              "label": "AIUL-CD-MX"
+            },
+            {
+              "value": "AIUL-CD-CO",
+              "label": "AIUL-CD-CO"
+            },
+            {
+              "value": "AIUL-TC",
+              "label": "AIUL-TC"
+            },
+            {
+              "value": "AIUL-TC-WR",
+              "label": "AIUL-TC-WR"
+            },
+            {
+              "value": "AIUL-TC-IM",
+              "label": "AIUL-TC-IM"
+            },
+            {
+              "value": "AIUL-TC-VD",
+              "label": "AIUL-TC-VD"
+            },
+            {
+              "value": "AIUL-TC-AU",
+              "label": "AIUL-TC-AU"
+            },
+            {
+              "value": "AIUL-TC-3D",
+              "label": "AIUL-TC-3D"
+            },
+            {
+              "value": "AIUL-TC-TR",
+              "label": "AIUL-TC-TR"
+            },
+            {
+              "value": "AIUL-TC-MX",
+              "label": "AIUL-TC-MX"
+            },
+            {
+              "value": "AIUL-TC-CO",
+              "label": "AIUL-TC-CO"
+            },
+            {
+              "value": "AIUL-DP",
+              "label": "AIUL-DP"
+            },
+            {
+              "value": "AIUL-DP-WR",
+              "label": "AIUL-DP-WR"
+            },
+            {
+              "value": "AIUL-DP-IM",
+              "label": "AIUL-DP-IM"
+            },
+            {
+              "value": "AIUL-DP-VD",
+              "label": "AIUL-DP-VD"
+            },
+            {
+              "value": "AIUL-DP-AU",
+              "label": "AIUL-DP-AU"
+            },
+            {
+              "value": "AIUL-DP-3D",
+              "label": "AIUL-DP-3D"
+            },
+            {
+              "value": "AIUL-DP-TR",
+              "label": "AIUL-DP-TR"
+            },
+            {
+              "value": "AIUL-DP-MX",
+              "label": "AIUL-DP-MX"
+            },
+            {
+              "value": "AIUL-DP-CO",
+              "label": "AIUL-DP-CO"
+            },
+            {
+              "value": "AIUL-IU",
+              "label": "AIUL-IU"
+            },
+            {
+              "value": "AIUL-IU-WR",
+              "label": "AIUL-IU-WR"
+            },
+            {
+              "value": "AIUL-IU-IM",
+              "label": "AIUL-IU-IM"
+            },
+            {
+              "value": "AIUL-IU-VD",
+              "label": "AIUL-IU-VD"
+            },
+            {
+              "value": "AIUL-IU-AU",
+              "label": "AIUL-IU-AU"
+            },
+            {
+              "value": "AIUL-IU-3D",
+              "label": "AIUL-IU-3D"
+            },
+            {
+              "value": "AIUL-IU-TR",
+              "label": "AIUL-IU-TR"
+            },
+            {
+              "value": "AIUL-IU-MX",
+              "label": "AIUL-IU-MX"
+            },
+            {
+              "value": "AIUL-IU-CO",
+              "label": "AIUL-IU-CO"
+            }
+          ]
+        },
+        {
+          "name": "publishEmbed",
+          "label": "Publish for Embed",
+          "kind": "boolean",
+          "help": "Make this version available for embedding"
+        }
+      ]
+    },
+    {
+      "id": "rubric",
+      "label": "Assessment rubric",
+      "icon": "lrn:assessment",
+      "description": "",
+      "children": [],
+      "fields": [
+        {
+          "name": "recordId",
+          "label": "Record ID",
+          "kind": "text",
+          "help": "Original Airtable record ID (for reference)"
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "resource",
+      "label": "Resource",
+      "icon": "editor:attach-file",
+      "description": "",
+      "children": [],
+      "fields": []
+    },
+    {
+      "id": "book",
+      "label": "Book",
+      "icon": "lrn:book",
+      "description": "",
+      "children": [
+        "section",
+        "lesson",
+        "article",
+        "tutorial",
+        "lecture",
+        "exercise",
+        "project"
+      ],
+      "fields": [
+        {
+          "name": "author",
+          "label": "Author (legacy)",
+          "kind": "text",
+          "help": "Legacy single-author name. Use the Authors list above for new content."
+        },
+        {
+          "name": "authorUrl",
+          "label": "Author URL (legacy)",
+          "kind": "text"
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "kind": "date"
+        },
+        {
+          "name": "coverImage",
+          "label": "Cover Image",
+          "kind": "image"
+        },
+        {
+          "name": "coverImageAlt",
+          "label": "Cover Image Alt",
+          "kind": "text"
+        },
+        {
+          "name": "introductionTitle",
+          "label": "Introduction Page Title",
+          "kind": "text",
+          "help": "Label for the book's landing page in the sidebar navigation. Defaults to 'Introduction'."
+        },
+        {
+          "name": "theme",
+          "label": "Theme",
+          "kind": "select",
+          "help": "Visual theme for the book's public-facing pages",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "lambda",
+              "label": "Lambda (Dark Tech)"
+            },
+            {
+              "value": "minimal",
+              "label": "Minimal"
+            }
+          ]
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "select",
+          "options": [
+            {
+              "value": "CC BY 4.0",
+              "label": "CC BY 4.0"
+            },
+            {
+              "value": "CC BY-SA 4.0",
+              "label": "CC BY-SA 4.0"
+            },
+            {
+              "value": "CC BY-NC 4.0",
+              "label": "CC BY-NC 4.0"
+            },
+            {
+              "value": "CC BY-NC-SA 4.0",
+              "label": "CC BY-NC-SA 4.0"
+            },
+            {
+              "value": "CC BY-ND 4.0",
+              "label": "CC BY-ND 4.0"
+            },
+            {
+              "value": "CC BY-NC-ND 4.0",
+              "label": "CC BY-NC-ND 4.0"
+            },
+            {
+              "value": "CC0 1.0",
+              "label": "CC0 1.0"
+            },
+            {
+              "value": "All Rights Reserved",
+              "label": "All Rights Reserved"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

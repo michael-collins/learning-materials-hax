@@ -1,0 +1,2456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
+<indent>0</indent>
+<location>pages/item-b4e121df-b071-4067-a68c-23f5a26d3841/index.xml</location>
+<slug>content-types</slug>
+<order>3</order>
+<parent></parent>
+<title>Content types</title>
+<description></description>
+<metadata>
+<pageType>oer-system</pageType>
+<hideInMenu>true</hideInMenu>
+<published>false</published>
+<oerContentTypes>
+<version>1</version>
+<types>
+<item>
+<id>section</id>
+<label>Section</label>
+<icon>icons:folder</icon>
+<description>A heading that groups other pages (e.g. Topics, Readings).</description>
+<children></children>
+<fields>
+</fields>
+</item>
+<item>
+<id>article</id>
+<label>Article</label>
+<icon>hax:newspaper</icon>
+<description></description>
+<children>
+</children>
+<fields>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>date</name>
+<label>Date</label>
+<kind>date</kind>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+</fields>
+</item>
+<item>
+<id>tutorial</id>
+<label>Tutorial</label>
+<icon>courseicons:strategy</icon>
+<description></description>
+<children>
+</children>
+<fields>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>date</name>
+<label>Date</label>
+<kind>date</kind>
+</item>
+<item>
+<name>difficulty</name>
+<label>Difficulty</label>
+<kind>select</kind>
+<options>
+<item>
+<value>Beginner</value>
+<label>Beginner</label>
+</item>
+<item>
+<value>Intermediate</value>
+<label>Intermediate</label>
+</item>
+<item>
+<value>Advanced</value>
+<label>Advanced</label>
+</item>
+</options>
+<header>true</header>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+</fields>
+</item>
+<item>
+<id>exercise</id>
+<label>Exercise</label>
+<icon>hax:task</icon>
+<description></description>
+<children>
+</children>
+<fields>
+<item>
+<name>difficulty</name>
+<label>Difficulty</label>
+<kind>select</kind>
+<options>
+<item>
+<value>Beginner</value>
+<label>Beginner</label>
+</item>
+<item>
+<value>Intermediate</value>
+<label>Intermediate</label>
+</item>
+<item>
+<value>Advanced</value>
+<label>Advanced</label>
+</item>
+</options>
+<header>true</header>
+</item>
+<item>
+<name>image</name>
+<label>Featured Image</label>
+<kind>image</kind>
+</item>
+<item>
+<name>imageAlt</name>
+<label>Image Alt Text</label>
+<kind>text</kind>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>aiLicense</name>
+<label>AI Usage Licenses</label>
+<kind>select</kind>
+<help>Select one or more AI usage policies. Defaults: AIUL-WA (general approval required) + AIUL-NA-3D (no AI for 3D work)</help>
+<options>
+<item>
+<value>AIUL-NA</value>
+<label>AIUL-NA</label>
+</item>
+<item>
+<value>AIUL-NA-WR</value>
+<label>AIUL-NA-WR</label>
+</item>
+<item>
+<value>AIUL-NA-IM</value>
+<label>AIUL-NA-IM</label>
+</item>
+<item>
+<value>AIUL-NA-VD</value>
+<label>AIUL-NA-VD</label>
+</item>
+<item>
+<value>AIUL-NA-AU</value>
+<label>AIUL-NA-AU</label>
+</item>
+<item>
+<value>AIUL-NA-3D</value>
+<label>AIUL-NA-3D</label>
+</item>
+<item>
+<value>AIUL-NA-TR</value>
+<label>AIUL-NA-TR</label>
+</item>
+<item>
+<value>AIUL-NA-MX</value>
+<label>AIUL-NA-MX</label>
+</item>
+<item>
+<value>AIUL-NA-CO</value>
+<label>AIUL-NA-CO</label>
+</item>
+<item>
+<value>AIUL-WA</value>
+<label>AIUL-WA</label>
+</item>
+<item>
+<value>AIUL-WA-WR</value>
+<label>AIUL-WA-WR</label>
+</item>
+<item>
+<value>AIUL-WA-IM</value>
+<label>AIUL-WA-IM</label>
+</item>
+<item>
+<value>AIUL-WA-VD</value>
+<label>AIUL-WA-VD</label>
+</item>
+<item>
+<value>AIUL-WA-AU</value>
+<label>AIUL-WA-AU</label>
+</item>
+<item>
+<value>AIUL-WA-3D</value>
+<label>AIUL-WA-3D</label>
+</item>
+<item>
+<value>AIUL-WA-TR</value>
+<label>AIUL-WA-TR</label>
+</item>
+<item>
+<value>AIUL-WA-MX</value>
+<label>AIUL-WA-MX</label>
+</item>
+<item>
+<value>AIUL-WA-CO</value>
+<label>AIUL-WA-CO</label>
+</item>
+<item>
+<value>AIUL-CD</value>
+<label>AIUL-CD</label>
+</item>
+<item>
+<value>AIUL-CD-WR</value>
+<label>AIUL-CD-WR</label>
+</item>
+<item>
+<value>AIUL-CD-IM</value>
+<label>AIUL-CD-IM</label>
+</item>
+<item>
+<value>AIUL-CD-VD</value>
+<label>AIUL-CD-VD</label>
+</item>
+<item>
+<value>AIUL-CD-AU</value>
+<label>AIUL-CD-AU</label>
+</item>
+<item>
+<value>AIUL-CD-3D</value>
+<label>AIUL-CD-3D</label>
+</item>
+<item>
+<value>AIUL-CD-TR</value>
+<label>AIUL-CD-TR</label>
+</item>
+<item>
+<value>AIUL-CD-MX</value>
+<label>AIUL-CD-MX</label>
+</item>
+<item>
+<value>AIUL-CD-CO</value>
+<label>AIUL-CD-CO</label>
+</item>
+<item>
+<value>AIUL-TC</value>
+<label>AIUL-TC</label>
+</item>
+<item>
+<value>AIUL-TC-WR</value>
+<label>AIUL-TC-WR</label>
+</item>
+<item>
+<value>AIUL-TC-IM</value>
+<label>AIUL-TC-IM</label>
+</item>
+<item>
+<value>AIUL-TC-VD</value>
+<label>AIUL-TC-VD</label>
+</item>
+<item>
+<value>AIUL-TC-AU</value>
+<label>AIUL-TC-AU</label>
+</item>
+<item>
+<value>AIUL-TC-3D</value>
+<label>AIUL-TC-3D</label>
+</item>
+<item>
+<value>AIUL-TC-TR</value>
+<label>AIUL-TC-TR</label>
+</item>
+<item>
+<value>AIUL-TC-MX</value>
+<label>AIUL-TC-MX</label>
+</item>
+<item>
+<value>AIUL-TC-CO</value>
+<label>AIUL-TC-CO</label>
+</item>
+<item>
+<value>AIUL-DP</value>
+<label>AIUL-DP</label>
+</item>
+<item>
+<value>AIUL-DP-WR</value>
+<label>AIUL-DP-WR</label>
+</item>
+<item>
+<value>AIUL-DP-IM</value>
+<label>AIUL-DP-IM</label>
+</item>
+<item>
+<value>AIUL-DP-VD</value>
+<label>AIUL-DP-VD</label>
+</item>
+<item>
+<value>AIUL-DP-AU</value>
+<label>AIUL-DP-AU</label>
+</item>
+<item>
+<value>AIUL-DP-3D</value>
+<label>AIUL-DP-3D</label>
+</item>
+<item>
+<value>AIUL-DP-TR</value>
+<label>AIUL-DP-TR</label>
+</item>
+<item>
+<value>AIUL-DP-MX</value>
+<label>AIUL-DP-MX</label>
+</item>
+<item>
+<value>AIUL-DP-CO</value>
+<label>AIUL-DP-CO</label>
+</item>
+<item>
+<value>AIUL-IU</value>
+<label>AIUL-IU</label>
+</item>
+<item>
+<value>AIUL-IU-WR</value>
+<label>AIUL-IU-WR</label>
+</item>
+<item>
+<value>AIUL-IU-IM</value>
+<label>AIUL-IU-IM</label>
+</item>
+<item>
+<value>AIUL-IU-VD</value>
+<label>AIUL-IU-VD</label>
+</item>
+<item>
+<value>AIUL-IU-AU</value>
+<label>AIUL-IU-AU</label>
+</item>
+<item>
+<value>AIUL-IU-3D</value>
+<label>AIUL-IU-3D</label>
+</item>
+<item>
+<value>AIUL-IU-TR</value>
+<label>AIUL-IU-TR</label>
+</item>
+<item>
+<value>AIUL-IU-MX</value>
+<label>AIUL-IU-MX</label>
+</item>
+<item>
+<value>AIUL-IU-CO</value>
+<label>AIUL-IU-CO</label>
+</item>
+</options>
+</item>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>authorUrl</name>
+<label>Author URL (legacy)</label>
+<kind>text</kind>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+<help>Enable iframe embedding for this content</help>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+</fields>
+</item>
+<item>
+<id>project</id>
+<label>Project</label>
+<icon>hax:bulletin-board</icon>
+<description></description>
+<children>
+</children>
+<fields>
+<item>
+<name>difficulty</name>
+<label>Difficulty</label>
+<kind>select</kind>
+<options>
+<item>
+<value>Beginner</value>
+<label>Beginner</label>
+</item>
+<item>
+<value>Intermediate</value>
+<label>Intermediate</label>
+</item>
+<item>
+<value>Advanced</value>
+<label>Advanced</label>
+</item>
+</options>
+<header>true</header>
+</item>
+<item>
+<name>image</name>
+<label>Featured Image</label>
+<kind>image</kind>
+</item>
+<item>
+<name>imageAlt</name>
+<label>Image Alt Text</label>
+<kind>text</kind>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>aiLicense</name>
+<label>AI Usage Licenses</label>
+<kind>select</kind>
+<help>Select one or more AI usage policies. Defaults: AIUL-WA (approval required) + AIUL-CD (conceptual ok) + AIUL-NA-3D (no AI for 3D)</help>
+<options>
+<item>
+<value>AIUL-NA</value>
+<label>AIUL-NA</label>
+</item>
+<item>
+<value>AIUL-NA-WR</value>
+<label>AIUL-NA-WR</label>
+</item>
+<item>
+<value>AIUL-NA-IM</value>
+<label>AIUL-NA-IM</label>
+</item>
+<item>
+<value>AIUL-NA-VD</value>
+<label>AIUL-NA-VD</label>
+</item>
+<item>
+<value>AIUL-NA-AU</value>
+<label>AIUL-NA-AU</label>
+</item>
+<item>
+<value>AIUL-NA-3D</value>
+<label>AIUL-NA-3D</label>
+</item>
+<item>
+<value>AIUL-NA-TR</value>
+<label>AIUL-NA-TR</label>
+</item>
+<item>
+<value>AIUL-NA-MX</value>
+<label>AIUL-NA-MX</label>
+</item>
+<item>
+<value>AIUL-NA-CO</value>
+<label>AIUL-NA-CO</label>
+</item>
+<item>
+<value>AIUL-WA</value>
+<label>AIUL-WA</label>
+</item>
+<item>
+<value>AIUL-WA-WR</value>
+<label>AIUL-WA-WR</label>
+</item>
+<item>
+<value>AIUL-WA-IM</value>
+<label>AIUL-WA-IM</label>
+</item>
+<item>
+<value>AIUL-WA-VD</value>
+<label>AIUL-WA-VD</label>
+</item>
+<item>
+<value>AIUL-WA-AU</value>
+<label>AIUL-WA-AU</label>
+</item>
+<item>
+<value>AIUL-WA-3D</value>
+<label>AIUL-WA-3D</label>
+</item>
+<item>
+<value>AIUL-WA-TR</value>
+<label>AIUL-WA-TR</label>
+</item>
+<item>
+<value>AIUL-WA-MX</value>
+<label>AIUL-WA-MX</label>
+</item>
+<item>
+<value>AIUL-WA-CO</value>
+<label>AIUL-WA-CO</label>
+</item>
+<item>
+<value>AIUL-CD</value>
+<label>AIUL-CD</label>
+</item>
+<item>
+<value>AIUL-CD-WR</value>
+<label>AIUL-CD-WR</label>
+</item>
+<item>
+<value>AIUL-CD-IM</value>
+<label>AIUL-CD-IM</label>
+</item>
+<item>
+<value>AIUL-CD-VD</value>
+<label>AIUL-CD-VD</label>
+</item>
+<item>
+<value>AIUL-CD-AU</value>
+<label>AIUL-CD-AU</label>
+</item>
+<item>
+<value>AIUL-CD-3D</value>
+<label>AIUL-CD-3D</label>
+</item>
+<item>
+<value>AIUL-CD-TR</value>
+<label>AIUL-CD-TR</label>
+</item>
+<item>
+<value>AIUL-CD-MX</value>
+<label>AIUL-CD-MX</label>
+</item>
+<item>
+<value>AIUL-CD-CO</value>
+<label>AIUL-CD-CO</label>
+</item>
+<item>
+<value>AIUL-TC</value>
+<label>AIUL-TC</label>
+</item>
+<item>
+<value>AIUL-TC-WR</value>
+<label>AIUL-TC-WR</label>
+</item>
+<item>
+<value>AIUL-TC-IM</value>
+<label>AIUL-TC-IM</label>
+</item>
+<item>
+<value>AIUL-TC-VD</value>
+<label>AIUL-TC-VD</label>
+</item>
+<item>
+<value>AIUL-TC-AU</value>
+<label>AIUL-TC-AU</label>
+</item>
+<item>
+<value>AIUL-TC-3D</value>
+<label>AIUL-TC-3D</label>
+</item>
+<item>
+<value>AIUL-TC-TR</value>
+<label>AIUL-TC-TR</label>
+</item>
+<item>
+<value>AIUL-TC-MX</value>
+<label>AIUL-TC-MX</label>
+</item>
+<item>
+<value>AIUL-TC-CO</value>
+<label>AIUL-TC-CO</label>
+</item>
+<item>
+<value>AIUL-DP</value>
+<label>AIUL-DP</label>
+</item>
+<item>
+<value>AIUL-DP-WR</value>
+<label>AIUL-DP-WR</label>
+</item>
+<item>
+<value>AIUL-DP-IM</value>
+<label>AIUL-DP-IM</label>
+</item>
+<item>
+<value>AIUL-DP-VD</value>
+<label>AIUL-DP-VD</label>
+</item>
+<item>
+<value>AIUL-DP-AU</value>
+<label>AIUL-DP-AU</label>
+</item>
+<item>
+<value>AIUL-DP-3D</value>
+<label>AIUL-DP-3D</label>
+</item>
+<item>
+<value>AIUL-DP-TR</value>
+<label>AIUL-DP-TR</label>
+</item>
+<item>
+<value>AIUL-DP-MX</value>
+<label>AIUL-DP-MX</label>
+</item>
+<item>
+<value>AIUL-DP-CO</value>
+<label>AIUL-DP-CO</label>
+</item>
+<item>
+<value>AIUL-IU</value>
+<label>AIUL-IU</label>
+</item>
+<item>
+<value>AIUL-IU-WR</value>
+<label>AIUL-IU-WR</label>
+</item>
+<item>
+<value>AIUL-IU-IM</value>
+<label>AIUL-IU-IM</label>
+</item>
+<item>
+<value>AIUL-IU-VD</value>
+<label>AIUL-IU-VD</label>
+</item>
+<item>
+<value>AIUL-IU-AU</value>
+<label>AIUL-IU-AU</label>
+</item>
+<item>
+<value>AIUL-IU-3D</value>
+<label>AIUL-IU-3D</label>
+</item>
+<item>
+<value>AIUL-IU-TR</value>
+<label>AIUL-IU-TR</label>
+</item>
+<item>
+<value>AIUL-IU-MX</value>
+<label>AIUL-IU-MX</label>
+</item>
+<item>
+<value>AIUL-IU-CO</value>
+<label>AIUL-IU-CO</label>
+</item>
+</options>
+</item>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>authorUrl</name>
+<label>Author URL (legacy)</label>
+<kind>text</kind>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+<help>Enable iframe embedding for this content</help>
+</item>
+<item>
+<name>publishEmbed</name>
+<label>Publish for Embed</label>
+<kind>boolean</kind>
+<help>Make this version available for embedding</help>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+</fields>
+</item>
+<item>
+<id>specialization</id>
+<label>Specialization</label>
+<icon>lrn:teacher</icon>
+<description></description>
+<children>
+<item>lesson</item>
+</children>
+<fields>
+<item>
+<name>difficulty</name>
+<label>Difficulty</label>
+<kind>select</kind>
+<options>
+<item>
+<value>Beginner</value>
+<label>Beginner</label>
+</item>
+<item>
+<value>Intermediate</value>
+<label>Intermediate</label>
+</item>
+<item>
+<value>Advanced</value>
+<label>Advanced</label>
+</item>
+</options>
+<header>true</header>
+</item>
+<item>
+<name>estimatedDuration</name>
+<label>Estimated Duration</label>
+<kind>text</kind>
+<help>e.g., &apos;8 weeks&apos;, &apos;3 months&apos;</help>
+<header>true</header>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>whoItsFor</name>
+<label>Who It&apos;s For</label>
+<kind>longtext</kind>
+<header>true</header>
+</item>
+<item>
+<name>targetRole</name>
+<label>Target Role</label>
+<kind>text</kind>
+<help>e.g., &apos;3D Modeler&apos;, &apos;Animator&apos;</help>
+<header>true</header>
+</item>
+<item>
+<name>skills</name>
+<label>Skills</label>
+<kind>list</kind>
+<help>Key skills students will develop</help>
+<header>true</header>
+</item>
+<item>
+<name>tools</name>
+<label>Tools</label>
+<kind>list</kind>
+<help>Software and hardware used</help>
+<header>true</header>
+</item>
+<item>
+<name>learningObjectives</name>
+<label>Learning Objectives</label>
+<kind>list</kind>
+<header>true</header>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+<item>
+<name>image</name>
+<label>Featured Image</label>
+<kind>image</kind>
+</item>
+<item>
+<name>imageAlt</name>
+<label>Image Alt Text</label>
+<kind>text</kind>
+</item>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>aiLicense</name>
+<label>AI Usage Licenses</label>
+<kind>select</kind>
+<help>Select one or more AI usage policies</help>
+<options>
+<item>
+<value>AIUL-NA</value>
+<label>AIUL-NA</label>
+</item>
+<item>
+<value>AIUL-NA-WR</value>
+<label>AIUL-NA-WR</label>
+</item>
+<item>
+<value>AIUL-NA-IM</value>
+<label>AIUL-NA-IM</label>
+</item>
+<item>
+<value>AIUL-NA-VD</value>
+<label>AIUL-NA-VD</label>
+</item>
+<item>
+<value>AIUL-NA-AU</value>
+<label>AIUL-NA-AU</label>
+</item>
+<item>
+<value>AIUL-NA-3D</value>
+<label>AIUL-NA-3D</label>
+</item>
+<item>
+<value>AIUL-NA-TR</value>
+<label>AIUL-NA-TR</label>
+</item>
+<item>
+<value>AIUL-NA-MX</value>
+<label>AIUL-NA-MX</label>
+</item>
+<item>
+<value>AIUL-NA-CO</value>
+<label>AIUL-NA-CO</label>
+</item>
+<item>
+<value>AIUL-WA</value>
+<label>AIUL-WA</label>
+</item>
+<item>
+<value>AIUL-WA-WR</value>
+<label>AIUL-WA-WR</label>
+</item>
+<item>
+<value>AIUL-WA-IM</value>
+<label>AIUL-WA-IM</label>
+</item>
+<item>
+<value>AIUL-WA-VD</value>
+<label>AIUL-WA-VD</label>
+</item>
+<item>
+<value>AIUL-WA-AU</value>
+<label>AIUL-WA-AU</label>
+</item>
+<item>
+<value>AIUL-WA-3D</value>
+<label>AIUL-WA-3D</label>
+</item>
+<item>
+<value>AIUL-WA-TR</value>
+<label>AIUL-WA-TR</label>
+</item>
+<item>
+<value>AIUL-WA-MX</value>
+<label>AIUL-WA-MX</label>
+</item>
+<item>
+<value>AIUL-WA-CO</value>
+<label>AIUL-WA-CO</label>
+</item>
+<item>
+<value>AIUL-CD</value>
+<label>AIUL-CD</label>
+</item>
+<item>
+<value>AIUL-CD-WR</value>
+<label>AIUL-CD-WR</label>
+</item>
+<item>
+<value>AIUL-CD-IM</value>
+<label>AIUL-CD-IM</label>
+</item>
+<item>
+<value>AIUL-CD-VD</value>
+<label>AIUL-CD-VD</label>
+</item>
+<item>
+<value>AIUL-CD-AU</value>
+<label>AIUL-CD-AU</label>
+</item>
+<item>
+<value>AIUL-CD-3D</value>
+<label>AIUL-CD-3D</label>
+</item>
+<item>
+<value>AIUL-CD-TR</value>
+<label>AIUL-CD-TR</label>
+</item>
+<item>
+<value>AIUL-CD-MX</value>
+<label>AIUL-CD-MX</label>
+</item>
+<item>
+<value>AIUL-CD-CO</value>
+<label>AIUL-CD-CO</label>
+</item>
+<item>
+<value>AIUL-TC</value>
+<label>AIUL-TC</label>
+</item>
+<item>
+<value>AIUL-TC-WR</value>
+<label>AIUL-TC-WR</label>
+</item>
+<item>
+<value>AIUL-TC-IM</value>
+<label>AIUL-TC-IM</label>
+</item>
+<item>
+<value>AIUL-TC-VD</value>
+<label>AIUL-TC-VD</label>
+</item>
+<item>
+<value>AIUL-TC-AU</value>
+<label>AIUL-TC-AU</label>
+</item>
+<item>
+<value>AIUL-TC-3D</value>
+<label>AIUL-TC-3D</label>
+</item>
+<item>
+<value>AIUL-TC-TR</value>
+<label>AIUL-TC-TR</label>
+</item>
+<item>
+<value>AIUL-TC-MX</value>
+<label>AIUL-TC-MX</label>
+</item>
+<item>
+<value>AIUL-TC-CO</value>
+<label>AIUL-TC-CO</label>
+</item>
+<item>
+<value>AIUL-DP</value>
+<label>AIUL-DP</label>
+</item>
+<item>
+<value>AIUL-DP-WR</value>
+<label>AIUL-DP-WR</label>
+</item>
+<item>
+<value>AIUL-DP-IM</value>
+<label>AIUL-DP-IM</label>
+</item>
+<item>
+<value>AIUL-DP-VD</value>
+<label>AIUL-DP-VD</label>
+</item>
+<item>
+<value>AIUL-DP-AU</value>
+<label>AIUL-DP-AU</label>
+</item>
+<item>
+<value>AIUL-DP-3D</value>
+<label>AIUL-DP-3D</label>
+</item>
+<item>
+<value>AIUL-DP-TR</value>
+<label>AIUL-DP-TR</label>
+</item>
+<item>
+<value>AIUL-DP-MX</value>
+<label>AIUL-DP-MX</label>
+</item>
+<item>
+<value>AIUL-DP-CO</value>
+<label>AIUL-DP-CO</label>
+</item>
+<item>
+<value>AIUL-IU</value>
+<label>AIUL-IU</label>
+</item>
+<item>
+<value>AIUL-IU-WR</value>
+<label>AIUL-IU-WR</label>
+</item>
+<item>
+<value>AIUL-IU-IM</value>
+<label>AIUL-IU-IM</label>
+</item>
+<item>
+<value>AIUL-IU-VD</value>
+<label>AIUL-IU-VD</label>
+</item>
+<item>
+<value>AIUL-IU-AU</value>
+<label>AIUL-IU-AU</label>
+</item>
+<item>
+<value>AIUL-IU-3D</value>
+<label>AIUL-IU-3D</label>
+</item>
+<item>
+<value>AIUL-IU-TR</value>
+<label>AIUL-IU-TR</label>
+</item>
+<item>
+<value>AIUL-IU-MX</value>
+<label>AIUL-IU-MX</label>
+</item>
+<item>
+<value>AIUL-IU-CO</value>
+<label>AIUL-IU-CO</label>
+</item>
+</options>
+</item>
+</fields>
+</item>
+<item>
+<id>pathway</id>
+<label>Pathway</label>
+<icon>hax:unit</icon>
+<description></description>
+<children>
+<item>section</item>
+<item>specialization</item>
+<item>lesson</item>
+</children>
+<fields>
+<item>
+<name>difficulty</name>
+<label>Difficulty</label>
+<kind>select</kind>
+<help>For single-level pathways. Multi-level pathways use Levels below.</help>
+<options>
+<item>
+<value>Beginner</value>
+<label>Beginner</label>
+</item>
+<item>
+<value>Intermediate</value>
+<label>Intermediate</label>
+</item>
+<item>
+<value>Advanced</value>
+<label>Advanced</label>
+</item>
+</options>
+<header>true</header>
+</item>
+<item>
+<name>estimatedDuration</name>
+<label>Estimated Duration</label>
+<kind>text</kind>
+<help>e.g., &apos;12 weeks&apos;, &apos;6 months&apos;</help>
+<header>true</header>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>learningObjectives</name>
+<label>Learning Objectives</label>
+<kind>list</kind>
+<header>true</header>
+</item>
+<item>
+<name>levels</name>
+<label>Levels</label>
+<kind>select</kind>
+<help>Levels this pathway is offered at. Leave empty for a single-level pathway such as CGI Foundations.</help>
+<options>
+<item>
+<value>Beginner</value>
+<label>Beginner</label>
+</item>
+<item>
+<value>Intermediate</value>
+<label>Intermediate</label>
+</item>
+<item>
+<value>Advanced</value>
+<label>Advanced</label>
+</item>
+</options>
+</item>
+<item>
+<name>testOutCriteria</name>
+<label>Test-out criteria</label>
+<kind>list</kind>
+<help>What a student must show to test out of this pathway. Students request a test-out from the instructor.</help>
+</item>
+<item>
+<name>targetRole</name>
+<label>Target Role</label>
+<kind>text</kind>
+<header>true</header>
+</item>
+<item>
+<name>whoItsFor</name>
+<label>Who It&apos;s For</label>
+<kind>longtext</kind>
+<header>true</header>
+</item>
+<item>
+<name>skills</name>
+<label>Skills</label>
+<kind>list</kind>
+<header>true</header>
+</item>
+<item>
+<name>tools</name>
+<label>Tools</label>
+<kind>list</kind>
+<header>true</header>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+<item>
+<name>image</name>
+<label>Featured Image</label>
+<kind>image</kind>
+</item>
+<item>
+<name>imageAlt</name>
+<label>Image Alt Text</label>
+<kind>text</kind>
+</item>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>aiLicense</name>
+<label>AI Usage Licenses</label>
+<kind>select</kind>
+<help>Select one or more AI usage policies</help>
+<options>
+<item>
+<value>AIUL-NA</value>
+<label>AIUL-NA</label>
+</item>
+<item>
+<value>AIUL-NA-WR</value>
+<label>AIUL-NA-WR</label>
+</item>
+<item>
+<value>AIUL-NA-IM</value>
+<label>AIUL-NA-IM</label>
+</item>
+<item>
+<value>AIUL-NA-VD</value>
+<label>AIUL-NA-VD</label>
+</item>
+<item>
+<value>AIUL-NA-AU</value>
+<label>AIUL-NA-AU</label>
+</item>
+<item>
+<value>AIUL-NA-3D</value>
+<label>AIUL-NA-3D</label>
+</item>
+<item>
+<value>AIUL-NA-TR</value>
+<label>AIUL-NA-TR</label>
+</item>
+<item>
+<value>AIUL-NA-MX</value>
+<label>AIUL-NA-MX</label>
+</item>
+<item>
+<value>AIUL-NA-CO</value>
+<label>AIUL-NA-CO</label>
+</item>
+<item>
+<value>AIUL-WA</value>
+<label>AIUL-WA</label>
+</item>
+<item>
+<value>AIUL-WA-WR</value>
+<label>AIUL-WA-WR</label>
+</item>
+<item>
+<value>AIUL-WA-IM</value>
+<label>AIUL-WA-IM</label>
+</item>
+<item>
+<value>AIUL-WA-VD</value>
+<label>AIUL-WA-VD</label>
+</item>
+<item>
+<value>AIUL-WA-AU</value>
+<label>AIUL-WA-AU</label>
+</item>
+<item>
+<value>AIUL-WA-3D</value>
+<label>AIUL-WA-3D</label>
+</item>
+<item>
+<value>AIUL-WA-TR</value>
+<label>AIUL-WA-TR</label>
+</item>
+<item>
+<value>AIUL-WA-MX</value>
+<label>AIUL-WA-MX</label>
+</item>
+<item>
+<value>AIUL-WA-CO</value>
+<label>AIUL-WA-CO</label>
+</item>
+<item>
+<value>AIUL-CD</value>
+<label>AIUL-CD</label>
+</item>
+<item>
+<value>AIUL-CD-WR</value>
+<label>AIUL-CD-WR</label>
+</item>
+<item>
+<value>AIUL-CD-IM</value>
+<label>AIUL-CD-IM</label>
+</item>
+<item>
+<value>AIUL-CD-VD</value>
+<label>AIUL-CD-VD</label>
+</item>
+<item>
+<value>AIUL-CD-AU</value>
+<label>AIUL-CD-AU</label>
+</item>
+<item>
+<value>AIUL-CD-3D</value>
+<label>AIUL-CD-3D</label>
+</item>
+<item>
+<value>AIUL-CD-TR</value>
+<label>AIUL-CD-TR</label>
+</item>
+<item>
+<value>AIUL-CD-MX</value>
+<label>AIUL-CD-MX</label>
+</item>
+<item>
+<value>AIUL-CD-CO</value>
+<label>AIUL-CD-CO</label>
+</item>
+<item>
+<value>AIUL-TC</value>
+<label>AIUL-TC</label>
+</item>
+<item>
+<value>AIUL-TC-WR</value>
+<label>AIUL-TC-WR</label>
+</item>
+<item>
+<value>AIUL-TC-IM</value>
+<label>AIUL-TC-IM</label>
+</item>
+<item>
+<value>AIUL-TC-VD</value>
+<label>AIUL-TC-VD</label>
+</item>
+<item>
+<value>AIUL-TC-AU</value>
+<label>AIUL-TC-AU</label>
+</item>
+<item>
+<value>AIUL-TC-3D</value>
+<label>AIUL-TC-3D</label>
+</item>
+<item>
+<value>AIUL-TC-TR</value>
+<label>AIUL-TC-TR</label>
+</item>
+<item>
+<value>AIUL-TC-MX</value>
+<label>AIUL-TC-MX</label>
+</item>
+<item>
+<value>AIUL-TC-CO</value>
+<label>AIUL-TC-CO</label>
+</item>
+<item>
+<value>AIUL-DP</value>
+<label>AIUL-DP</label>
+</item>
+<item>
+<value>AIUL-DP-WR</value>
+<label>AIUL-DP-WR</label>
+</item>
+<item>
+<value>AIUL-DP-IM</value>
+<label>AIUL-DP-IM</label>
+</item>
+<item>
+<value>AIUL-DP-VD</value>
+<label>AIUL-DP-VD</label>
+</item>
+<item>
+<value>AIUL-DP-AU</value>
+<label>AIUL-DP-AU</label>
+</item>
+<item>
+<value>AIUL-DP-3D</value>
+<label>AIUL-DP-3D</label>
+</item>
+<item>
+<value>AIUL-DP-TR</value>
+<label>AIUL-DP-TR</label>
+</item>
+<item>
+<value>AIUL-DP-MX</value>
+<label>AIUL-DP-MX</label>
+</item>
+<item>
+<value>AIUL-DP-CO</value>
+<label>AIUL-DP-CO</label>
+</item>
+<item>
+<value>AIUL-IU</value>
+<label>AIUL-IU</label>
+</item>
+<item>
+<value>AIUL-IU-WR</value>
+<label>AIUL-IU-WR</label>
+</item>
+<item>
+<value>AIUL-IU-IM</value>
+<label>AIUL-IU-IM</label>
+</item>
+<item>
+<value>AIUL-IU-VD</value>
+<label>AIUL-IU-VD</label>
+</item>
+<item>
+<value>AIUL-IU-AU</value>
+<label>AIUL-IU-AU</label>
+</item>
+<item>
+<value>AIUL-IU-3D</value>
+<label>AIUL-IU-3D</label>
+</item>
+<item>
+<value>AIUL-IU-TR</value>
+<label>AIUL-IU-TR</label>
+</item>
+<item>
+<value>AIUL-IU-MX</value>
+<label>AIUL-IU-MX</label>
+</item>
+<item>
+<value>AIUL-IU-CO</value>
+<label>AIUL-IU-CO</label>
+</item>
+</options>
+</item>
+</fields>
+</item>
+<item>
+<id>lecture</id>
+<label>Lecture</label>
+<icon>image:slideshow</icon>
+<description></description>
+<children>
+</children>
+<fields>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>image</name>
+<label>Featured Image</label>
+<kind>image</kind>
+</item>
+<item>
+<name>imageAlt</name>
+<label>Image Alt Text</label>
+<kind>text</kind>
+</item>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>aiLicense</name>
+<label>AI Usage Licenses</label>
+<kind>select</kind>
+<options>
+<item>
+<value>AIUL-NA</value>
+<label>AIUL-NA</label>
+</item>
+<item>
+<value>AIUL-NA-WR</value>
+<label>AIUL-NA-WR</label>
+</item>
+<item>
+<value>AIUL-NA-IM</value>
+<label>AIUL-NA-IM</label>
+</item>
+<item>
+<value>AIUL-NA-VD</value>
+<label>AIUL-NA-VD</label>
+</item>
+<item>
+<value>AIUL-NA-AU</value>
+<label>AIUL-NA-AU</label>
+</item>
+<item>
+<value>AIUL-NA-3D</value>
+<label>AIUL-NA-3D</label>
+</item>
+<item>
+<value>AIUL-NA-TR</value>
+<label>AIUL-NA-TR</label>
+</item>
+<item>
+<value>AIUL-NA-MX</value>
+<label>AIUL-NA-MX</label>
+</item>
+<item>
+<value>AIUL-NA-CO</value>
+<label>AIUL-NA-CO</label>
+</item>
+<item>
+<value>AIUL-WA</value>
+<label>AIUL-WA</label>
+</item>
+<item>
+<value>AIUL-WA-WR</value>
+<label>AIUL-WA-WR</label>
+</item>
+<item>
+<value>AIUL-WA-IM</value>
+<label>AIUL-WA-IM</label>
+</item>
+<item>
+<value>AIUL-WA-VD</value>
+<label>AIUL-WA-VD</label>
+</item>
+<item>
+<value>AIUL-WA-AU</value>
+<label>AIUL-WA-AU</label>
+</item>
+<item>
+<value>AIUL-WA-3D</value>
+<label>AIUL-WA-3D</label>
+</item>
+<item>
+<value>AIUL-WA-TR</value>
+<label>AIUL-WA-TR</label>
+</item>
+<item>
+<value>AIUL-WA-MX</value>
+<label>AIUL-WA-MX</label>
+</item>
+<item>
+<value>AIUL-WA-CO</value>
+<label>AIUL-WA-CO</label>
+</item>
+<item>
+<value>AIUL-CD</value>
+<label>AIUL-CD</label>
+</item>
+<item>
+<value>AIUL-CD-WR</value>
+<label>AIUL-CD-WR</label>
+</item>
+<item>
+<value>AIUL-CD-IM</value>
+<label>AIUL-CD-IM</label>
+</item>
+<item>
+<value>AIUL-CD-VD</value>
+<label>AIUL-CD-VD</label>
+</item>
+<item>
+<value>AIUL-CD-AU</value>
+<label>AIUL-CD-AU</label>
+</item>
+<item>
+<value>AIUL-CD-3D</value>
+<label>AIUL-CD-3D</label>
+</item>
+<item>
+<value>AIUL-CD-TR</value>
+<label>AIUL-CD-TR</label>
+</item>
+<item>
+<value>AIUL-CD-MX</value>
+<label>AIUL-CD-MX</label>
+</item>
+<item>
+<value>AIUL-CD-CO</value>
+<label>AIUL-CD-CO</label>
+</item>
+<item>
+<value>AIUL-TC</value>
+<label>AIUL-TC</label>
+</item>
+<item>
+<value>AIUL-TC-WR</value>
+<label>AIUL-TC-WR</label>
+</item>
+<item>
+<value>AIUL-TC-IM</value>
+<label>AIUL-TC-IM</label>
+</item>
+<item>
+<value>AIUL-TC-VD</value>
+<label>AIUL-TC-VD</label>
+</item>
+<item>
+<value>AIUL-TC-AU</value>
+<label>AIUL-TC-AU</label>
+</item>
+<item>
+<value>AIUL-TC-3D</value>
+<label>AIUL-TC-3D</label>
+</item>
+<item>
+<value>AIUL-TC-TR</value>
+<label>AIUL-TC-TR</label>
+</item>
+<item>
+<value>AIUL-TC-MX</value>
+<label>AIUL-TC-MX</label>
+</item>
+<item>
+<value>AIUL-TC-CO</value>
+<label>AIUL-TC-CO</label>
+</item>
+<item>
+<value>AIUL-DP</value>
+<label>AIUL-DP</label>
+</item>
+<item>
+<value>AIUL-DP-WR</value>
+<label>AIUL-DP-WR</label>
+</item>
+<item>
+<value>AIUL-DP-IM</value>
+<label>AIUL-DP-IM</label>
+</item>
+<item>
+<value>AIUL-DP-VD</value>
+<label>AIUL-DP-VD</label>
+</item>
+<item>
+<value>AIUL-DP-AU</value>
+<label>AIUL-DP-AU</label>
+</item>
+<item>
+<value>AIUL-DP-3D</value>
+<label>AIUL-DP-3D</label>
+</item>
+<item>
+<value>AIUL-DP-TR</value>
+<label>AIUL-DP-TR</label>
+</item>
+<item>
+<value>AIUL-DP-MX</value>
+<label>AIUL-DP-MX</label>
+</item>
+<item>
+<value>AIUL-DP-CO</value>
+<label>AIUL-DP-CO</label>
+</item>
+<item>
+<value>AIUL-IU</value>
+<label>AIUL-IU</label>
+</item>
+<item>
+<value>AIUL-IU-WR</value>
+<label>AIUL-IU-WR</label>
+</item>
+<item>
+<value>AIUL-IU-IM</value>
+<label>AIUL-IU-IM</label>
+</item>
+<item>
+<value>AIUL-IU-VD</value>
+<label>AIUL-IU-VD</label>
+</item>
+<item>
+<value>AIUL-IU-AU</value>
+<label>AIUL-IU-AU</label>
+</item>
+<item>
+<value>AIUL-IU-3D</value>
+<label>AIUL-IU-3D</label>
+</item>
+<item>
+<value>AIUL-IU-TR</value>
+<label>AIUL-IU-TR</label>
+</item>
+<item>
+<value>AIUL-IU-MX</value>
+<label>AIUL-IU-MX</label>
+</item>
+<item>
+<value>AIUL-IU-CO</value>
+<label>AIUL-IU-CO</label>
+</item>
+</options>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+</fields>
+</item>
+<item>
+<id>lesson</id>
+<label>Lesson</label>
+<icon>hax:lesson</icon>
+<description></description>
+<children>
+<item>section</item>
+<item>article</item>
+<item>tutorial</item>
+<item>lecture</item>
+<item>exercise</item>
+<item>project</item>
+</children>
+<fields>
+<item>
+<name>estimatedDuration</name>
+<label>Estimated Duration</label>
+<kind>text</kind>
+<help>e.g., &apos;3 hours&apos;, &apos;2 days&apos;</help>
+<header>true</header>
+</item>
+<item>
+<name>courses</name>
+<label>Courses</label>
+<kind>list</kind>
+<help>Course codes associated with this content (e.g., DART 303). Multiple courses are supported.</help>
+</item>
+<item>
+<name>learningObjectives</name>
+<label>Learning Objectives</label>
+<kind>list</kind>
+<header>true</header>
+</item>
+<item>
+<name>prerequisites</name>
+<label>Prerequisites</label>
+<kind>list</kind>
+<help>Add prerequisite content that should be completed first</help>
+<header>true</header>
+</item>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single author. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>placeholder</name>
+<label>In development</label>
+<kind>boolean</kind>
+<help>A stub that will be developed into the real item. Shown with an In development badge on the site.</help>
+</item>
+<item>
+<name>allowEmbed</name>
+<label>Allow Embedding</label>
+<kind>boolean</kind>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+<item>
+<name>aiLicense</name>
+<label>AI Usage Licenses</label>
+<kind>select</kind>
+<help>Select one or more AI usage policies</help>
+<options>
+<item>
+<value>AIUL-NA</value>
+<label>AIUL-NA</label>
+</item>
+<item>
+<value>AIUL-NA-WR</value>
+<label>AIUL-NA-WR</label>
+</item>
+<item>
+<value>AIUL-NA-IM</value>
+<label>AIUL-NA-IM</label>
+</item>
+<item>
+<value>AIUL-NA-VD</value>
+<label>AIUL-NA-VD</label>
+</item>
+<item>
+<value>AIUL-NA-AU</value>
+<label>AIUL-NA-AU</label>
+</item>
+<item>
+<value>AIUL-NA-3D</value>
+<label>AIUL-NA-3D</label>
+</item>
+<item>
+<value>AIUL-NA-TR</value>
+<label>AIUL-NA-TR</label>
+</item>
+<item>
+<value>AIUL-NA-MX</value>
+<label>AIUL-NA-MX</label>
+</item>
+<item>
+<value>AIUL-NA-CO</value>
+<label>AIUL-NA-CO</label>
+</item>
+<item>
+<value>AIUL-WA</value>
+<label>AIUL-WA</label>
+</item>
+<item>
+<value>AIUL-WA-WR</value>
+<label>AIUL-WA-WR</label>
+</item>
+<item>
+<value>AIUL-WA-IM</value>
+<label>AIUL-WA-IM</label>
+</item>
+<item>
+<value>AIUL-WA-VD</value>
+<label>AIUL-WA-VD</label>
+</item>
+<item>
+<value>AIUL-WA-AU</value>
+<label>AIUL-WA-AU</label>
+</item>
+<item>
+<value>AIUL-WA-3D</value>
+<label>AIUL-WA-3D</label>
+</item>
+<item>
+<value>AIUL-WA-TR</value>
+<label>AIUL-WA-TR</label>
+</item>
+<item>
+<value>AIUL-WA-MX</value>
+<label>AIUL-WA-MX</label>
+</item>
+<item>
+<value>AIUL-WA-CO</value>
+<label>AIUL-WA-CO</label>
+</item>
+<item>
+<value>AIUL-CD</value>
+<label>AIUL-CD</label>
+</item>
+<item>
+<value>AIUL-CD-WR</value>
+<label>AIUL-CD-WR</label>
+</item>
+<item>
+<value>AIUL-CD-IM</value>
+<label>AIUL-CD-IM</label>
+</item>
+<item>
+<value>AIUL-CD-VD</value>
+<label>AIUL-CD-VD</label>
+</item>
+<item>
+<value>AIUL-CD-AU</value>
+<label>AIUL-CD-AU</label>
+</item>
+<item>
+<value>AIUL-CD-3D</value>
+<label>AIUL-CD-3D</label>
+</item>
+<item>
+<value>AIUL-CD-TR</value>
+<label>AIUL-CD-TR</label>
+</item>
+<item>
+<value>AIUL-CD-MX</value>
+<label>AIUL-CD-MX</label>
+</item>
+<item>
+<value>AIUL-CD-CO</value>
+<label>AIUL-CD-CO</label>
+</item>
+<item>
+<value>AIUL-TC</value>
+<label>AIUL-TC</label>
+</item>
+<item>
+<value>AIUL-TC-WR</value>
+<label>AIUL-TC-WR</label>
+</item>
+<item>
+<value>AIUL-TC-IM</value>
+<label>AIUL-TC-IM</label>
+</item>
+<item>
+<value>AIUL-TC-VD</value>
+<label>AIUL-TC-VD</label>
+</item>
+<item>
+<value>AIUL-TC-AU</value>
+<label>AIUL-TC-AU</label>
+</item>
+<item>
+<value>AIUL-TC-3D</value>
+<label>AIUL-TC-3D</label>
+</item>
+<item>
+<value>AIUL-TC-TR</value>
+<label>AIUL-TC-TR</label>
+</item>
+<item>
+<value>AIUL-TC-MX</value>
+<label>AIUL-TC-MX</label>
+</item>
+<item>
+<value>AIUL-TC-CO</value>
+<label>AIUL-TC-CO</label>
+</item>
+<item>
+<value>AIUL-DP</value>
+<label>AIUL-DP</label>
+</item>
+<item>
+<value>AIUL-DP-WR</value>
+<label>AIUL-DP-WR</label>
+</item>
+<item>
+<value>AIUL-DP-IM</value>
+<label>AIUL-DP-IM</label>
+</item>
+<item>
+<value>AIUL-DP-VD</value>
+<label>AIUL-DP-VD</label>
+</item>
+<item>
+<value>AIUL-DP-AU</value>
+<label>AIUL-DP-AU</label>
+</item>
+<item>
+<value>AIUL-DP-3D</value>
+<label>AIUL-DP-3D</label>
+</item>
+<item>
+<value>AIUL-DP-TR</value>
+<label>AIUL-DP-TR</label>
+</item>
+<item>
+<value>AIUL-DP-MX</value>
+<label>AIUL-DP-MX</label>
+</item>
+<item>
+<value>AIUL-DP-CO</value>
+<label>AIUL-DP-CO</label>
+</item>
+<item>
+<value>AIUL-IU</value>
+<label>AIUL-IU</label>
+</item>
+<item>
+<value>AIUL-IU-WR</value>
+<label>AIUL-IU-WR</label>
+</item>
+<item>
+<value>AIUL-IU-IM</value>
+<label>AIUL-IU-IM</label>
+</item>
+<item>
+<value>AIUL-IU-VD</value>
+<label>AIUL-IU-VD</label>
+</item>
+<item>
+<value>AIUL-IU-AU</value>
+<label>AIUL-IU-AU</label>
+</item>
+<item>
+<value>AIUL-IU-3D</value>
+<label>AIUL-IU-3D</label>
+</item>
+<item>
+<value>AIUL-IU-TR</value>
+<label>AIUL-IU-TR</label>
+</item>
+<item>
+<value>AIUL-IU-MX</value>
+<label>AIUL-IU-MX</label>
+</item>
+<item>
+<value>AIUL-IU-CO</value>
+<label>AIUL-IU-CO</label>
+</item>
+</options>
+</item>
+<item>
+<name>publishEmbed</name>
+<label>Publish for Embed</label>
+<kind>boolean</kind>
+<help>Make this version available for embedding</help>
+</item>
+</fields>
+</item>
+<item>
+<id>rubric</id>
+<label>Assessment rubric</label>
+<icon>lrn:assessment</icon>
+<description></description>
+<children>
+</children>
+<fields>
+<item>
+<name>recordId</name>
+<label>Record ID</label>
+<kind>text</kind>
+<help>Original Airtable record ID (for reference)</help>
+</item>
+<item>
+<name>name</name>
+<label>Name</label>
+<kind>text</kind>
+</item>
+</fields>
+</item>
+<item>
+<id>resource</id>
+<label>Resource</label>
+<icon>editor:attach-file</icon>
+<description></description>
+<children>
+</children>
+<fields>
+</fields>
+</item>
+<item>
+<id>book</id>
+<label>Book</label>
+<icon>lrn:book</icon>
+<description></description>
+<children>
+<item>section</item>
+<item>lesson</item>
+<item>article</item>
+<item>tutorial</item>
+<item>lecture</item>
+<item>exercise</item>
+<item>project</item>
+</children>
+<fields>
+<item>
+<name>author</name>
+<label>Author (legacy)</label>
+<kind>text</kind>
+<help>Legacy single-author name. Use the Authors list above for new content.</help>
+</item>
+<item>
+<name>authorUrl</name>
+<label>Author URL (legacy)</label>
+<kind>text</kind>
+</item>
+<item>
+<name>date</name>
+<label>Date</label>
+<kind>date</kind>
+</item>
+<item>
+<name>coverImage</name>
+<label>Cover Image</label>
+<kind>image</kind>
+</item>
+<item>
+<name>coverImageAlt</name>
+<label>Cover Image Alt</label>
+<kind>text</kind>
+</item>
+<item>
+<name>introductionTitle</name>
+<label>Introduction Page Title</label>
+<kind>text</kind>
+<help>Label for the book&apos;s landing page in the sidebar navigation. Defaults to &apos;Introduction&apos;.</help>
+</item>
+<item>
+<name>theme</name>
+<label>Theme</label>
+<kind>select</kind>
+<help>Visual theme for the book&apos;s public-facing pages</help>
+<options>
+<item>
+<value>default</value>
+<label>Default</label>
+</item>
+<item>
+<value>lambda</value>
+<label>Lambda (Dark Tech)</label>
+</item>
+<item>
+<value>minimal</value>
+<label>Minimal</label>
+</item>
+</options>
+</item>
+<item>
+<name>license</name>
+<label>License</label>
+<kind>select</kind>
+<options>
+<item>
+<value>CC BY 4.0</value>
+<label>CC BY 4.0</label>
+</item>
+<item>
+<value>CC BY-SA 4.0</value>
+<label>CC BY-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-NC 4.0</value>
+<label>CC BY-NC 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-SA 4.0</value>
+<label>CC BY-NC-SA 4.0</label>
+</item>
+<item>
+<value>CC BY-ND 4.0</value>
+<label>CC BY-ND 4.0</label>
+</item>
+<item>
+<value>CC BY-NC-ND 4.0</value>
+<label>CC BY-NC-ND 4.0</label>
+</item>
+<item>
+<value>CC0 1.0</value>
+<label>CC0 1.0</label>
+</item>
+<item>
+<value>All Rights Reserved</value>
+<label>All Rights Reserved</label>
+</item>
+</options>
+</item>
+</fields>
+</item>
+</types>
+</oerContentTypes>
+<created>1790822587</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790822587</updated>
+</metadata>
+<content><![CDATA[<p>This page stores the site's content type definitions.</p>]]></content>
+</item>

@@ -76,7 +76,25 @@ export function createPage(title, parent = null) {
  * designer sends them.
  */
 export function saveOutline(items) {
+  const before = store.manifest;
   siteEditor()?.saveOutline?.({ detail: items });
+  return manifestChange(before);
+}
+
+/**
+ * Resolves once HAXcms has reloaded the manifest after a write (the store
+ * swaps in a new manifest object), or after `timeout` ms.
+ */
+export function manifestChange(before = store.manifest, timeout = 15000) {
+  return new Promise((resolve) => {
+    const started = Date.now();
+    const check = () => {
+      if (store.manifest !== before) resolve(true);
+      else if (Date.now() - started > timeout) resolve(false);
+      else setTimeout(check, 200);
+    };
+    setTimeout(check, 200);
+  });
 }
 
 export const newItemId = () => `item-${globalThis.crypto.randomUUID()}`;

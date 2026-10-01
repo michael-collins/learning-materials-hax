@@ -18,6 +18,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { flatten, saveOutline, newItemId } from "./outline-model.js";
+import { isSystemItem } from "../types/content-types.js";
 
 const INDENT_PX = 20;
 const MAX_DEPTH = 6;
@@ -81,7 +82,8 @@ class OerOutlineBuilder extends LitElement {
     const items = toJS(store.manifest?.items) || [];
     this._root = rootId;
     this._rootItem = rootId ? items.find((i) => i.id === rootId) : null;
-    this._rows = flatten(items, rootId).map(({ item, depth }) => ({
+    // the hidden content-types page is configuration, not part of the outline
+    this._rows = flatten(items.filter((i) => !isSystemItem(i)), rootId).map(({ item, depth }) => ({
       id: item.id,
       title: item.title,
       icon: item.metadata?.icon || "",
