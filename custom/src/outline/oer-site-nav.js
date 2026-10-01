@@ -339,6 +339,10 @@ class OerSiteNav extends LitElement {
       :host([no-icons]) .group-label {
         padding: 0 0.75rem;
       }
+      /* pages under a heading sit one step in from its label */
+      :host([no-icons]) li.grouped {
+        margin-left: 0.75rem;
+      }
       :host([no-icons]) li.heading:not(:first-child) {
         margin-top: 1.5rem;
       }
@@ -388,13 +392,14 @@ class OerSiteNav extends LitElement {
     `;
   }
 
-  _renderAdd(parent) {
+  // grouped: the list has headings, so a new page lands in the last group
+  _renderAdd(parent, grouped = false) {
     if (!this.editable) return "";
     const key = parent ?? "root";
     const { types, untyped } = this._choices(parent);
     if (!types.length && !untyped) return "";
     if (this._adding === key) {
-      return html`<li class="add-field">
+      return html`<li class="add-field ${grouped ? "grouped" : ""}">
         ${types.length
           ? html`<select
               class="add-type"
@@ -419,7 +424,7 @@ class OerSiteNav extends LitElement {
         />
       </li>`;
     }
-    return html`<li class="row">
+    return html`<li class="row ${grouped ? "grouped" : ""}">
       <button class="add" data-add="${key}" @click="${() => this._startAdd(parent)}">
         ${lucide("oer:plus")}Add page
       </button>
@@ -428,16 +433,19 @@ class OerSiteNav extends LitElement {
 
   _renderLevel(kids, parent, depth) {
     const list = kids.get(parent) || [];
+    // items after a heading belong to its group (indented when icons are off)
+    let grouped = false;
     return html`<ul role="list">
       ${list.map((item) => {
         if (isHeading(item)) {
+          grouped = true;
           return html`<li class="heading"><span class="group-label" role="heading" aria-level="2">${item.title}</span></li>`;
         }
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
         const open = this.__forceOpen || this._open.has(item.id);
         const iconName = item.metadata?.icon;
-        return html`<li class="${hasKids ? "has-kids" : ""}">
+        return html`<li class="${[hasKids ? "has-kids" : "", grouped ? "grouped" : ""].join(" ")}">
           <div class="row">
             <a
               href="${item.slug}"
@@ -465,7 +473,7 @@ class OerSiteNav extends LitElement {
           ${hasKids && open ? this._renderLevel(kids, item.id, depth + 1) : ""}
         </li>`;
       })}
-      ${this._renderAdd(parent)}
+      ${this._renderAdd(parent, list.some(isHeading))}
     </ul>`;
   }
 
