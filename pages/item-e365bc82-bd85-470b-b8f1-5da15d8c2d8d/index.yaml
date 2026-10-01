@@ -1,0 +1,106 @@
+id: item-e365bc82-bd85-470b-b8f1-5da15d8c2d8d
+indent: 2
+location: pages/item-e365bc82-bd85-470b-b8f1-5da15d8c2d8d/index.yaml
+slug: exercises/animating-a-bouncing-ball/v1-0-0
+order: 1000
+parent: item-21d4a4b1-6588-4417-a049-a7a1a9d69626
+title: v1.0.0
+description: ''
+metadata:
+  pageType: exercise
+  oerFields: {}
+  icon: courseicons:learning-objectives
+  oerSnapshotOf: item-21d4a4b1-6588-4417-a049-a7a1a9d69626
+  oerSnapshotTitle: Animating a bouncing ball
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1790825016
+  images: []
+  videos: []
+  updated: 1790825016
+content: >-
+  <p>In this exercise, level 1 students will practice keyframe animation to
+  animate a bouncing ball</p>
+
+  <video-player
+  source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"
+  title="Animating a bouncing ball Tutorial"></video-player>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice keyframe animation of translation, rotation, and scale
+  properties.</li>
+
+  <li>Become familiarized with keyframe animation.</li>
+
+  <li>Apply principles of animation</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Watch linked tutorials in Learning Resources to get acquainted with
+  animation tools.</li>
+
+  <li>Create a project folder on your computer and save a new
+  <code>.blend</code> file called <code>LASTNAME-ball-bounce.blend</code>.</li>
+
+  <li>Follow the video demonstrations to animate a bouncing ball.
+
+  <ul>
+
+  <li>The duration of the animation should be at least 31 frames.</li>
+
+  <li>Download and use the provided ball bounce reference image.</li>
+
+  <li>Create a 9" sphere and apply the scale (<strong>CTRL</strong>+<strong>A ⟶
+  Apply Scale</strong>).</li>
+
+  <li>Following the reference, create an animation either by keyframing each
+  frame or by using a motion path. Either technique will be accepted.</li>
+
+  <li>Add squash and stretch to the sphere.</li>
+
+  </ul>
+
+  </li>
+
+  <li>Export a rendered video.
+
+  <ul>
+
+  <li>To create a video file, save the file and set the render settings output
+  folder to the project folder.</li>
+
+  <li>Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>,
+  change the encoding format to <strong>MPEG-4</strong></li>
+
+  <li>Under <strong>Codec,</strong> choose <strong>H.264</strong>.</li>
+
+  <li>Choose <strong>Render</strong> ⟶ <strong>Render Animation</strong> to
+  create the animation file.</li>
+
+  </ul>
+
+  </li>
+
+  <li>Compress the project folder once you’ve completed the tutorial and rename
+  it <code>LASTNAME-</code>ball-bounce<code>.zip</code>.</li>
+
+  <li>Upload the .zip file to the assignment dropbox.</li>
+
+  <li>Double check that you’ve included all files and that your .zip file can be
+  downloaded and opened.</li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>
