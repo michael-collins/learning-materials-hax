@@ -222,29 +222,6 @@
       }
     },
     {
-      "id": "item-a98fa6df-b90d-4336-9d47-e86a5dbfce78",
-      "indent": 3,
-      "location": "pages/item-a98fa6df-b90d-4336-9d47-e86a5dbfce78/index.html",
-      "slug": "pathways/game-artist-pathway/game-art-in-real-time/real-time-engines",
-      "order": 0,
-      "parent": "item-87c012e1-218b-4bad-8af3-59881e7f6707",
-      "title": "Real-time Engines",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-f46be04c-9554-4176-9e13-977f2abb1181",
-          "version": ""
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829986
-      }
-    },
-    {
       "id": "item-ecd34213-666d-44f0-aa95-0225a82ee26a",
       "indent": 3,
       "location": "pages/item-ecd34213-666d-44f0-aa95-0225a82ee26a/index.html",

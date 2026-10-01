@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Real-time Engines</title>
-    <id>item-a98fa6df-b90d-4336-9d47-e86a5dbfce78</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/real-time-engines"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-f46be04c-9554-4176-9e13-977f2abb1181"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Drawing for 3D Design</title>
     <id>item-ecd34213-666d-44f0-aa95-0225a82ee26a</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -774,6 +762,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-0ad185d5-d5ec-45f3-892d-bbcffc60f531"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Texturing random objects</title>
+    <id>item-22022e32-6788-4233-b3e6-a1e5a2280d4e</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-5f88b120-daa9-41d1-a502-03e8136a24ab"></oer-include> ]]>
     </content>
   </entry>
 </feed>
