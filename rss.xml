@@ -112,13 +112,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Concept &amp; blockout</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Creating Blockouts for Games</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</link>
       <description></description>
@@ -188,6 +181,13 @@
       <link>https://localhost:3000/learning-materials/pathways/digital-fabrication</link>
       <description>Utilizes 3D printing or CNC machining to create physical objects from digital designs.</description>
       <guid>https://localhost:3000/learning-materials/pathways/digital-fabrication</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modeling game assets</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>

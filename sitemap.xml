@@ -85,12 +85,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout</loc>
-    <lastmod>2026-10-01T04:46:26.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</loc>
     <lastmod>2026-10-01T04:46:26.000Z</lastmod>
     <changefreq>daily</changefreq>
