@@ -5545,38 +5545,6 @@
       }
     },
     {
-      "id": "item-5b70b23b-cee8-4709-bf47-ca6f5595e4f6",
-      "indent": 1,
-      "location": "pages/item-5b70b23b-cee8-4709-bf47-ca6f5595e4f6/index.html",
-      "slug": "pathways/visual-effects-vfx",
-      "order": 12,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Visual Effects (VFX)",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/visual-effects-vfx",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2f8bd775-cbd4-4275-acb6-94c841e172e7",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829988
-      }
-    },
-    {
       "id": "item-d2d60490-236c-41c5-b5ac-e20e304d118e",
       "indent": 1,
       "location": "pages/item-d2d60490-236c-41c5-b5ac-e20e304d118e/index.html",
