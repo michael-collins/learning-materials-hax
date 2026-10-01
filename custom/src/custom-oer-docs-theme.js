@@ -48,6 +48,8 @@ import { pageDetails } from "./types/oer-page-details.js";
 import { isSystemItem } from "./types/content-types.js";
 import "./types/oer-page-header.js";
 import { isEmbedded, startEmbedReporting } from "./embed/embed-mode.js";
+import { isSnapshot, versionsOf } from "./versions/versioning.js";
+import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
 
 registerShadowStyles(themeSkin);
@@ -196,10 +198,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       autorun(() => {
         const active = toJS(store.activeId);
         // the hidden content-types page is configuration, never a stop
-        const items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i));
+        const items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i));
         const idx = items.findIndex((i) => i.id === active);
         Promise.resolve().then(() => {
           this.mobileOpen = false;
+          this._followVersionParam(active);
           this._prev = idx > 0 ? items[idx - 1] : null;
           this._next = idx >= 0 && idx < items.length - 1 ? items[idx + 1] : null;
         });
@@ -1151,6 +1154,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ${item(pb("_editTags"), icon.tag, "Tags")}
               ${item(this._menuAction(() => outlineBuilder().show(store.activeId)), icon.siteMap, "Edit page outline")}
               <div class="menu-sep" role="separator"></div>
+              ${item(this._menuAction(() => versionsDialog().show(store.activeId, { publish: true })), icon.history, "Versions…")}
               ${item(pb("_openRevisions"), icon.history, "Revisions")}
               ${item(pb("_openPageReport"), icon.chart, "Page report")}
               <div class="menu-sep" role="separator"></div>
@@ -1162,6 +1166,17 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           : ""}
       </div>
     `;
+  }
+
+  // ?version=1.2.0 (links from the Decap site) opens that release's snapshot
+  _followVersionParam(activeId) {
+    const wanted = new URLSearchParams(globalThis.location.search).get("version");
+    if (!wanted || !activeId) return;
+    const release = versionsOf(activeId).find((v) => v.version === wanted);
+    if (release?.snapshot) {
+      globalThis.history.replaceState({}, "", release.snapshot.slug);
+      globalThis.dispatchEvent(new PopStateEvent("popstate"));
+    }
   }
 
   firstUpdated(changed) {

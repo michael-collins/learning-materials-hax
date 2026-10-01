@@ -138,7 +138,8 @@ export class OerCollection extends LitElement {
 
   _select(all) {
     const wanted = new Set(this._typeIds);
-    let pool = all.filter((i) => !isSystemItem(i) && !i.metadata?.hideInMenu);
+    // configuration and frozen version snapshots are never listed
+    let pool = all.filter((i) => !isSystemItem(i) && !i.metadata?.oerSnapshotOf && !i.metadata?.hideInMenu);
     // readers do not see drafts
     if (!store.isLoggedIn) pool = pool.filter((i) => i.metadata?.published !== false);
     if (this.scope !== "site" && this._pageId) {

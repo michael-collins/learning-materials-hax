@@ -13,6 +13,8 @@ import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
 import { pageDetails } from "./oer-page-details.js";
 import { embedDialog } from "../embed/oer-embed-dialog.js";
 import { isEmbedded } from "../embed/embed-mode.js";
+import { isSnapshot, latestOf } from "../versions/versioning.js";
+import { versionsDialog } from "../versions/oer-versions-dialog.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -45,6 +47,7 @@ class OerPageHeader extends LitElement {
       const item = toJS(store.activeItem);
       const items = toJS(store.manifest?.items) || [];
       Promise.resolve().then(() => {
+        this._allItems = items;
         // the active item can lag a manifest reload; prefer the fresh copy
         this._item = (item && items.find((i) => i.id === item.id)) || item;
         this._types = contentTypes(items).types;
@@ -96,6 +99,44 @@ class OerPageHeader extends LitElement {
         border-radius: 999px;
         font-size: 0.75rem;
         color: var(--muted-foreground);
+      }
+      .pill.version {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        height: 1.5rem;
+        padding: 0 0.625rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: 0.75rem;
+        color: var(--foreground);
+        cursor: pointer;
+      }
+      .pill.version:hover {
+        background: var(--accent);
+      }
+      .pill.version:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .archived {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 1rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid color-mix(in srgb, oklch(0.62 0.15 70) 45%, transparent);
+        border-radius: var(--radius-md);
+        background: color-mix(in srgb, oklch(0.62 0.15 70) 10%, var(--background));
+        font-size: 0.875rem;
+      }
+      .archived a {
+        margin-left: auto;
+        font-weight: 500;
+        color: var(--link, var(--primary));
       }
       .pill b {
         font-weight: 500;
@@ -204,10 +245,26 @@ class OerPageHeader extends LitElement {
     const blocks = shown.filter((f) => !pills.includes(f));
     // embedding is on unless the page's "Allow embedding" field says no
     const canEmbed = !isEmbedded() && values.allowEmbed !== false && item.metadata?.published !== false;
-    if (!type && !this.editable && !canEmbed) return html``;
+    const snapshot = isSnapshot(item);
+    const latest = snapshot ? latestOf(item, this._allItems) : null;
+    const version = item.metadata?.version;
+    if (!type && !this.editable && !canEmbed && !version) return html``;
+    const versionPill = version
+      ? html`<button class="pill version" title="Versions" @click="${() => versionsDialog().show(snapshot ? latest?.id : item.id)}">
+          ${lucide("icons:history")}v${version}${snapshot ? " · archived" : ""}
+        </button>`
+      : "";
     return html`
+      ${snapshot && latest
+        ? html`<div class="archived" role="status">
+            ${lucide("icons:history")}
+            <span>You're viewing version ${version} of <b>${latest.title}</b>, as released.</span>
+            <a href="${latest.slug}">See the latest version</a>
+          </div>`
+        : ""}
       <div class="meta">
         ${type ? html`<span class="type">${type.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type.label}</span>` : ""}
+        ${versionPill}
         ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
           ${canEmbed ? html`<button class="edit" @click="${() => embedDialog().show(item)}">${lucide("icons:open-in-new")}Embed</button>` : ""}
