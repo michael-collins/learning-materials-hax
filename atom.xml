@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Texturing and UV Mapping</title>
-    <id>item-2451e262-c558-4a78-b7e1-cf178282843c</id>
-    <updated>2026-10-01T04:46:25.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-and-uv-mapping"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-d3589db4-c47b-40af-987a-ecca47d7a3c5"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Lighting Principles</title>
     <id>item-962dad7a-08ea-4666-94a5-358849a4f59f</id>
     <updated>2026-10-01T04:46:25.000Z</updated>
@@ -614,6 +602,19 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-1d24f966-a252-493c-a9e4-c91b794d3e3a"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>History of CGI</title>
+    <id>item-d20b5a98-dc5e-4ce8-b734-32490288d27c</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lessons/history-of-cgi"/>
+    
+    <content type="html">
+      <![CDATA[ <p>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</p>
+ ]]>
     </content>
   </entry>
 </feed>
