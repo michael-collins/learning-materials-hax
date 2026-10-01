@@ -719,6 +719,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           text-transform: uppercase;
           color: var(--muted-foreground);
         }
+        /* breathing room between the sidebar tabs (or brand) and the outline */
+        #panel-nav > oer-site-nav {
+          margin-top: 1rem;
+        }
         .nav-actions {
           display: flex;
           justify-content: center;
