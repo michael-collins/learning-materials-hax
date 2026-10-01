@@ -449,18 +449,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Game art in real time</title>
-    <id>item-87c012e1-218b-4bad-8af3-59881e7f6707</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Real-time Engines</title>
     <id>item-a98fa6df-b90d-4336-9d47-e86a5dbfce78</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -774,6 +762,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-20f9da7e-8d57-464e-afc3-3723ef1b4aad"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Low poly non-photorealistic rendering</title>
+    <id>item-523a4adf-2bfd-4f2c-8da9-67c02a77e000</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-0ad185d5-d5ec-45f3-892d-bbcffc60f531"></oer-include> ]]>
     </content>
   </entry>
 </feed>

@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Game art in real time</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Real-time Engines</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/real-time-engines</link>
       <description></description>
@@ -187,6 +180,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Low poly non-photorealistic rendering</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
