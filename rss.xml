@@ -153,13 +153,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Introduction to Texturing</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/introduction-to-texturing</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/introduction-to-texturing</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Camera and Composition</title>
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/camera-and-composition</link>
       <description></description>
@@ -185,6 +178,13 @@
       <link>https://localhost:3000/learning-materials/lessons/history-of-cgi</link>
       <description>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</description>
       <guid>https://localhost:3000/learning-materials/lessons/history-of-cgi</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Introduction to Texturing</title>
+      <link>https://localhost:3000/learning-materials/lectures/introduction-to-texturing</link>
+      <description>Presentation Topics Covered Video Screening Amino Assets by ZEITGUISED Bee 3D Animated Short Lighting Technical Director: Riccardo Zoccarato Student Reel: Cindy Jang Classroom scene - making of Oblivion GFX montage Substance painter trailer Books The Language of New Media By Lev Manovich Software Takes Command By Lev Manovich Terminology UV Mapping Non-manifold Geometry Unfolding tools UV “island” UV Export Prepping mesh for UV Mapping Reset scale to 1. Use ‘ Apply ’ in Blender. (Translation ...</description>
+      <guid>https://localhost:3000/learning-materials/lectures/introduction-to-texturing</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>

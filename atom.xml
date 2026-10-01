@@ -557,18 +557,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Introduction to Texturing</title>
-    <id>item-47df2221-f2e9-48bd-b49c-f972cc9ba937</id>
-    <updated>2026-10-01T04:46:25.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/introduction-to-texturing"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-cbd29762-82a1-4e7a-ab72-01fd8a5a4123"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Camera and Composition</title>
     <id>item-54915127-e9fa-4bd3-9209-026bb7fd2962</id>
     <updated>2026-10-01T04:46:25.000Z</updated>
@@ -614,6 +602,63 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <p>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</p>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Introduction to Texturing</title>
+    <id>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</id>
+    <updated>2026-10-01T04:46:26.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/lectures/introduction-to-texturing"/>
+    
+    <content type="html">
+      <![CDATA[ <h2>Presentation</h2>
+<oer-google-slides slides="2PACX-1vTkzHEnQyXV6Fs5q3E_H1P0QwrWdhlFd6t-uePHf5mLug6Wr1A_54dHY2lYJgeZ6_oww2cFfpsmVm0v" title="Introduction to Texturing"></oer-google-slides>
+<h2>Topics Covered</h2>
+<ul>
+<li>
+<ol>
+<li><strong>Video Screening</strong></li>
+<li><a href="https://vimeo.com/2826822">Amino Assets</a> by ZEITGUISED</li>
+<li><a href="https://vimeo.com/44228708">Bee 3D Animated Short</a></li>
+<li>Lighting Technical Director: <a href="https://vimeo.com/200015451">Riccardo Zoccarato</a></li>
+<li>Student Reel: <a href="https://vimeo.com/52911102">Cindy Jang</a></li>
+<li><a href="https://vimeo.com/12888604">Classroom scene - making of</a></li>
+<li><a href="https://vimeo.com/64377100">Oblivion GFX montage</a></li>
+<li><a href="https://youtu.be/ZwotHwt-YWk?t=26">Substance painter trailer</a></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><strong>Books</strong>
+<ol>
+<li><a href="http://manovich.net/index.php/projects/language-of-new-media">The Language of New Media</a> By Lev Manovich</li>
+<li><a href="http://manovich.net/index.php/projects/software-takes-command">Software Takes Command</a> By Lev Manovich</li>
+</ol>
+</li>
+<li><strong>Terminology</strong>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/UV_mapping">UV Mapping</a></li>
+<li>Non-manifold Geometry</li>
+<li>Unfolding tools</li>
+<li>UV “island”</li>
+<li>UV Export</li>
+</ol>
+</li>
+<li><strong>Prepping mesh for UV Mapping</strong>
+<ol>
+<li>Reset scale to 1. Use ‘<strong>Apply</strong>’ in Blender. (Translation and rotation is also sometimes needed)</li>
+<li>Check mesh for problems</li>
+</ol>
+</li>
+<li><strong>UV Unwrapping Tips:</strong>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=Y7M-B6xnaEM">UV Unwrapping - Blender 2.80 Fundamentals</a></li>
+</ol>
+</li>
+</ol>
  ]]>
     </content>
   </entry>
