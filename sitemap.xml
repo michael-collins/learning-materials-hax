@@ -181,12 +181,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/rendering-techniques</loc>
-    <lastmod>2026-10-01T04:46:25.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/real-time-asset-budgets</loc>
     <lastmod>2026-10-01T04:46:26.000Z</lastmod>
     <changefreq>daily</changefreq>
