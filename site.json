@@ -5210,41 +5210,6 @@
       }
     },
     {
-      "id": "item-8f797a7f-b90c-420c-82aa-29609e21a914",
-      "indent": 1,
-      "location": "pages/item-8f797a7f-b90c-420c-82aa-29609e21a914/index.html",
-      "slug": "pathways/product-design",
-      "order": 8,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Product design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/product-design",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
       "indent": 1,
       "location": "pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.html",
