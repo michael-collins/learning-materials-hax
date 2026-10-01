@@ -69,6 +69,7 @@ export class OerPathway extends LitElement {
       css`
         :host {
           display: block;
+          text-align: start;
           margin: 1.5rem 0 2rem;
           font-family: var(--font-sans, system-ui, sans-serif);
           color: var(--foreground, #111);

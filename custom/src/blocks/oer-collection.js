@@ -305,6 +305,7 @@ export class OerCollection extends LitElement {
     return [pathwayChipStyles, css`
       :host {
         display: block;
+        text-align: start;
         margin: 2rem 0;
         font-family: var(--font-sans, system-ui, sans-serif);
         color: var(--foreground, #111);

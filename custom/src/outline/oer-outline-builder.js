@@ -1817,7 +1817,7 @@ class OerOutlineBuilder extends LitElement {
                   ? html`<span class="warn">${deleting} page${deleting === 1 ? "" : "s"} will be deleted when you save.</span>`
                   : html`<div class="hints" aria-hidden="true">
                       <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span>
-                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span>
+                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span><span><kbd>T</kbd> type</span><span><kbd>L</kbd> level</span>
                       <span>drag ↔ to change level</span>
                     </div>`}
                 <button class="btn outline" @click="${this._requestClose}">Cancel</button>

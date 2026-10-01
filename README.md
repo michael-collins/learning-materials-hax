@@ -18,10 +18,12 @@ Tooling, migration scripts and the regression-protection proposal are in **[nu-h
 - **Content types:** a visual type editor for fields, defaults, "can contain" rules, starter content, OER Schema class and reader layout. Each typed page gets a header with its fields.
 - **Versions:** semver releases frozen as read-only snapshots, a versions dialog, archived-version banners and `?version=` links.
 - **Books:** reuse lessons and articles without copying, a reader layout (book sidebar, chapter filter, in-book Previous/Next) and exports (print/PDF, HTML zip, IMS Common Cartridge).
+- **Relations and files:** "Link to pages" fields (optionally limited to types, pinned to a version) and "Files and links" fields with uploads; pages list where they are used.
 - **Page footer:** Creative Commons license line, AI Usage License (AIUL), citation formats and OER Schema JSON-LD.
 
 **Blocks**
-- **Page collection:** a filter/sort table, cards or module outline of pages by type and place.
+- **Page collection:** a filter/sort table, cards, module outline or pathways index ("Start here", what builds on it, "In development") of pages by type and place.
+- **Pathway:** a pathway's facts (course, length, levels, prerequisites), its route as a level matrix (modules × levels) or a module list with a level switcher, objectives and test-out criteria, in three layouts. Items get a level in the outline builder (L key); untyped, unlinked items show as planned.
 - **Embeds:** embedded page, video, Google Slides, Sketchfab, 3D model viewer and code examples (CodePen, JSFiddle, CodeSandbox, StackBlitz, Replit, Glitch), all with caption and credit.
 - **Other blocks:** callout, divider with label, spacer, rubric, and include-a-page.
 
@@ -42,6 +44,7 @@ Theme entry: `custom/src/custom.js`. Modules:
 - `versions/`: releases
 - `books/`: include, picker, reader exports
 - `embed/`: embed mode and dialog
+- `pathways/`: pathway model, level chips, pathway block
 - `tokens/`: design tokens
 
 HAXcms commits the whole site folder on every save, so commit code changes before testing saves in the browser.
