@@ -2113,7 +2113,7 @@
       "order": 1001,
       "parent": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
       "title": "v0.9.0",
-      "description": "",
+      "description": "Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
