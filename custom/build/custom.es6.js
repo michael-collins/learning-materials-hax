@@ -7949,6 +7949,23 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         custom-oer-docs-theme :is(p, li) {
           text-align: start;
         }
+        /* screenshots and other figures in page content */
+        custom-oer-docs-theme figure {
+          margin: 1.5rem 0;
+        }
+        custom-oer-docs-theme figure img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+        }
+        custom-oer-docs-theme figcaption {
+          margin-top: 0.5rem;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          color: var(--muted-foreground);
+        }
         custom-oer-docs-theme .lead {
           font-size: 1.125rem;
           color: var(--muted-foreground);
