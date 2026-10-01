@@ -810,29 +810,6 @@
       }
     },
     {
-      "id": "item-6b93d85c-03da-4ab7-9598-f75b997e8549",
-      "indent": 3,
-      "location": "pages/item-6b93d85c-03da-4ab7-9598-f75b997e8549/index.html",
-      "slug": "pathways/cgi-foundations/modeling/introduction-to-modeling",
-      "order": 1,
-      "parent": "item-008f74f4-74d2-4309-a769-6f73be85b539",
-      "title": "Introduction to Modeling",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "lecture",
-        "oerRef": {
-          "page": "item-177b787f-5763-4012-874f-7eeb57cb622a",
-          "version": ""
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1790829985
-      }
-    },
-    {
       "id": "item-47df2221-f2e9-48bd-b49c-f972cc9ba937",
       "indent": 3,
       "location": "pages/item-47df2221-f2e9-48bd-b49c-f972cc9ba937/index.html",
