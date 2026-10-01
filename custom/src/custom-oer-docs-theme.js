@@ -735,11 +735,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           padding: 0 0.75rem;
           border: 1px solid var(--input-border, var(--border));
           border-radius: var(--radius-md);
-          background: var(--background);
+          background: transparent;
           font-size: 0.8125rem;
           font-weight: 500;
           color: var(--foreground);
-          box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
           cursor: pointer;
         }
         .label-action:hover {
