@@ -26,6 +26,10 @@ const gizmo = (title, description, icon, tags) => ({
 // (a plain boolean attribute can only say "on")
 const onByDefault = { fromAttribute: (v) => v !== "false", toAttribute: (v) => (v ? "" : "false") };
 
+// Every embed iframe is `credentialless` with an explicit referrer policy:
+// HAXcms' dev server is cross-origin isolated (COEP), which blocks
+// cross-origin frames that don't opt in, and its Referrer-Policy:
+// same-origin strips the referrer YouTube now requires (error 153).
 const ALLOW_MEDIA = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
 
 /* ---------- iframe ---------- */
@@ -61,6 +65,7 @@ export class OerIframe extends OerMediaFigure {
       allow="${ALLOW_MEDIA}"
       allowfullscreen
       loading="lazy"
+      credentialless
       referrerpolicy="strict-origin-when-cross-origin"
     ></iframe>`;
   }
@@ -100,7 +105,7 @@ export class OerVideo extends OerMediaFigure {
 
   renderMedia() {
     if (!this.src) return this.renderEmpty("video", "Paste a YouTube or Vimeo link in the block settings.");
-    return html`<iframe src="${videoEmbed(this.src)}" title="${this.title || "Video"}" allow="${ALLOW_MEDIA}" allowfullscreen loading="lazy"></iframe>`;
+    return html`<iframe src="${videoEmbed(this.src)}" title="${this.title || "Video"}" allow="${ALLOW_MEDIA}" allowfullscreen loading="lazy" credentialless referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
   }
 
   static get haxProperties() {
@@ -138,7 +143,7 @@ export class OerGoogleSlides extends OerMediaFigure {
 
   renderMedia() {
     if (!this.slides) return this.renderEmpty("slides", "Paste the presentation link or ID in the block settings.");
-    return html`<iframe src="${slidesEmbed(this.slides)}" title="${this.title || "Presentation"}" allowfullscreen loading="lazy"></iframe>`;
+    return html`<iframe src="${slidesEmbed(this.slides)}" title="${this.title || "Presentation"}" allowfullscreen loading="lazy" credentialless referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
   }
 
   static get haxProperties() {
@@ -188,6 +193,8 @@ export class OerSketchfab extends OerMediaFigure {
       allow="autoplay; fullscreen; xr-spatial-tracking"
       allowfullscreen
       loading="lazy"
+      credentialless
+      referrerpolicy="strict-origin-when-cross-origin"
     ></iframe>`;
   }
 

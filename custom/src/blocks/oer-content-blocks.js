@@ -219,6 +219,8 @@ export class OerCodeEmbed extends OerMediaFigure {
       loading="lazy"
       sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
       allow="clipboard-write"
+      credentialless
+      referrerpolicy="strict-origin-when-cross-origin"
     ></iframe>`;
   }
 
