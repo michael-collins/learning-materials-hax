@@ -4195,28 +4195,6 @@
       }
     },
     {
-      "id": "item-56855913-6bf5-4cbc-90cc-1615be549a4c",
-      "indent": 2,
-      "location": "pages/item-56855913-6bf5-4cbc-90cc-1615be549a4c/index.html",
-      "slug": "pathways/game-artist-pathway/texturing-for-real-time",
-      "order": 3,
-      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
-      "title": "Texturing for real time",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-0372bb48-894e-4b07-bd3a-ea66bc752f7a",
       "indent": 3,
       "location": "pages/item-0372bb48-894e-4b07-bd3a-ea66bc752f7a/index.html",
