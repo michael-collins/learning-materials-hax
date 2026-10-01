@@ -3,10 +3,6 @@
  * nothing important hidden behind overflow menus, sensible panels open by
  * default. Each tweak patches one element class once it is defined.
  */
-import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { showPanel, PANELS, addPage, openOutline, openSiteSettings, logout, stockUI } from "./stock.js";
-import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
-import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
 function onDefined(tag, fn) {
   customElements.whenDefined(tag).then(() => fn(customElements.get(tag)));
@@ -101,118 +97,10 @@ export function installUxTweaks() {
 }
 
 /**
- * The editor side panel (hax-tray), docked where the site sidebar sits:
- * - A tab strip (Block / Outline / Source) is injected at the top. The
- *   Insert panel is replaced by oer-block-inserter; anything that still asks
- *   for it (stock shortcuts, Merlin) lands on Block instead.
- *   Tabs always *show* their panel; stock toggled it closed when the active
- *   button was pressed again, which is why Insert and Block both appeared
- *   to switch the pane off.
- * - The panel stays open for the whole editing session.
- * - Block settings open with "Configure" expanded.
+ * The editor panel (hax-tray) is only shown inside oer-settings-dialog
+ * (block settings, HTML source). Block settings open with "Configure"
+ * expanded.
  */
-
-// no Insert tab: blocks are inserted in place with oer-block-inserter
-const TABS = [
-  ["content-edit", "image:tune", "Block"],
-  ["content-map", "icons:toc", "Outline"],
-  ["view-source", "hax:html-code", "Source"],
-];
-
-function iconSpan(name) {
-  const span = globalThis.document.createElement("span");
-  span.className = "oer-icon";
-  span.setAttribute("aria-hidden", "true");
-  span.style.setProperty("--src", `url("${LUCIDE_ICONS[name]}")`);
-  return span;
-}
-
-function buildTabs() {
-  const list = globalThis.document.createElement("div");
-  list.className = "oer-tabs";
-  list.setAttribute("role", "tablist");
-  list.setAttribute("aria-label", "Editor panel");
-  for (const [name, iconName, label] of TABS) {
-    const b = globalThis.document.createElement("button");
-    b.type = "button";
-    b.className = "oer-tab";
-    b.dataset.panel = name;
-    b.setAttribute("role", "tab");
-    b.append(iconSpan(iconName), globalThis.document.createTextNode(label));
-    b.addEventListener("click", () => showPanel(name));
-    list.append(b);
-  }
-  // arrow keys move between tabs, as in any tablist
-  list.addEventListener("keydown", (e) => {
-    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-    const tabs = [...list.querySelectorAll(".oer-tab")];
-    const i = tabs.indexOf(e.target);
-    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
-    next.focus();
-    next.click();
-  });
-  // header strip at the same height as the editor header beside it
-  const header = globalThis.document.createElement("div");
-  header.className = "oer-panel-header";
-  header.append(list);
-  return header;
-}
-
-// Site actions live in the editor panel's footer, shown only while editing
-function buildSiteFooter() {
-  const doc = globalThis.document;
-  const footer = doc.createElement("div");
-  footer.className = "oer-panel-footer";
-  const label = doc.createElement("div");
-  label.className = "oer-footer-label";
-  label.textContent = "Site";
-  footer.append(label);
-  for (const [iconName, text, fn] of [
-    ["hax:add-page", "Add page", addPage],
-    ["hax:site-map", "Outline", openOutline],
-    ["icons:settings", "Settings", openSiteSettings],
-  ]) {
-    const b = doc.createElement("button");
-    b.type = "button";
-    b.className = "oer-footer-item";
-    b.append(iconSpan(iconName), doc.createTextNode(text));
-    b.addEventListener("click", fn);
-    footer.append(b);
-  }
-  footer.append(buildAccountRow());
-  return footer;
-}
-
-// same account row as the sidebar footer: initials, name, dashboard, log out
-function buildAccountRow() {
-  const doc = globalThis.document;
-  const name = store.userData?.userName || "";
-  const row = doc.createElement("div");
-  row.className = "oer-account";
-  const avatar = doc.createElement("span");
-  avatar.className = "oer-avatar";
-  avatar.setAttribute("aria-hidden", "true");
-  if (name) avatar.textContent = name.slice(0, 2);
-  else avatar.append(iconSpan("social:person"));
-  const label = doc.createElement("span");
-  label.className = "oer-account-name";
-  label.textContent = name || "Signed in";
-  const dash = doc.createElement("a");
-  dash.className = "oer-account-btn";
-  dash.href = stockUI()?.backLink ?? "/";
-  dash.title = "Site dashboard";
-  dash.setAttribute("aria-label", "Site dashboard");
-  dash.append(iconSpan("hax:home-edit"));
-  const out = doc.createElement("button");
-  out.type = "button";
-  out.className = "oer-account-btn danger";
-  out.title = "Log out";
-  out.setAttribute("aria-label", "Log out");
-  out.append(iconSpan("icons:exit-to-app"));
-  out.addEventListener("click", logout);
-  row.append(avatar, label, dash, out);
-  return row;
-}
 
 function whenElement(tag, fn) {
   const doc = globalThis.document;
@@ -236,43 +124,8 @@ export function installTrayEnhancer() {
     tray.__oerEnhanced = true;
     let lastConfigure = null;
 
-    const syncTabs = () => {
-      const current = tray.getAttribute("tray-detail");
-      // Insert has no tab; send requests for it to Block. HAX itself flips
-      // back to Insert when nothing is selected, so redirect at most once a
-      // frame and only while editing (otherwise the two observers ping-pong
-      // and lock up the page)
-      if (current === "content-add" && store.editMode && !tray.__oerRedirect) {
-        tray.__oerRedirect = true;
-        requestAnimationFrame(() => {
-          tray.__oerRedirect = false;
-          if (tray.getAttribute("tray-detail") !== "content-add") return;
-          // with nothing selected HAX would switch straight back to Insert
-          const hax = globalThis.HaxStore?.requestAvailability?.();
-          if (hax && !hax.activeNode) {
-            const first = [...(hax.activeHaxBody?.children || [])].find((el) => el.localName !== "page-break");
-            if (first) hax.activeNode = first;
-          }
-          showPanel("content-edit");
-        });
-      }
-      for (const tab of tray.shadowRoot.querySelectorAll(".oer-tab")) {
-        const on = tab.dataset.panel === current;
-        tab.setAttribute("aria-selected", String(on));
-        tab.tabIndex = on ? 0 : -1;
-      }
-    };
-
     const enhance = () => {
       const root = tray.shadowRoot;
-      const detail = root.querySelector(".detail");
-      if (detail && !detail.querySelector(".oer-panel-header")) {
-        detail.prepend(buildTabs());
-        syncTabs();
-      }
-      if (detail && !detail.querySelector(".oer-panel-footer")) {
-        detail.append(buildSiteFooter());
-      }
       // HAX re-renders the section elements after the form itself, so key
       // off the Configure section's identity rather than the form's
       const configure = root.querySelector('a11y-collapse[id="settings.configure"]');
@@ -284,16 +137,6 @@ export function installTrayEnhancer() {
       }
     };
     new MutationObserver(enhance).observe(tray.shadowRoot, { childList: true, subtree: true });
-    new MutationObserver(syncTabs).observe(tray, { attributes: true, attributeFilter: ["tray-detail"] });
     enhance();
-
-    // keep the panel open while editing, defaulting to Block
-    autorun(() => {
-      if (!toJS(store.editMode)) return;
-      requestAnimationFrame(() => {
-        const current = tray.getAttribute("tray-detail");
-        showPanel(PANELS.includes(current) && current !== "content-add" ? current : "content-edit");
-      });
-    });
   });
 }

@@ -38,8 +38,12 @@ import {
   logout,
   undo,
   redo,
+  addPage,
+  openOutline,
+  openSiteSettings,
   MOD,
 } from "./editor/stock.js";
+import { settingsDialog } from "./editor/oer-settings-dialog.js";
 import { themeSkin } from "./theme-skin.js";
 
 registerShadowStyles(themeSkin);
@@ -81,6 +85,10 @@ const icon = {
   lockOpen: lucide("icons:lock-open"),
   trash: lucide("icons:delete"),
   book: lucide("lrn:book"),
+  filePlus: lucide("hax:add-page"),
+  siteMap: lucide("hax:site-map"),
+  settings: lucide("icons:settings"),
+  code: lucide("icons:code"),
   chevronLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`,
   chevronRight: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`,
 };
@@ -771,13 +779,45 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           gap: 0.25rem;
         }
 
-        /* edit mode: the site sidebar makes way for the docked editor panel
-           (hax-tray, positioned by the editor skin at the same spot) */
-        :host([edit-mode]) .shell {
-          grid-template-columns: var(--editor-panel-width) minmax(0, 1fr);
+        /* edit mode: the sidebar stays, but navigating away would drop
+           unsaved edits, so it is inert (see render) and dimmed */
+        :host([edit-mode]) .sidebar nav {
+          opacity: 0.6;
         }
-        :host([edit-mode]) .sidebar {
-          visibility: hidden;
+
+        /* site actions above the page list (signed in, not editing):
+           shadcn SidebarMenuButton rows */
+        .site-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 0.125rem;
+          padding: 0 0.5rem 0.5rem;
+        }
+        .site-action {
+          all: unset;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          height: 2rem;
+          padding: 0 0.5rem;
+          border-radius: var(--radius-md);
+          font-size: 0.875rem;
+          color: var(--sidebar-foreground, var(--foreground));
+          cursor: pointer;
+        }
+        .site-action:hover {
+          background: var(--sidebar-accent, var(--accent));
+          color: var(--sidebar-accent-foreground, var(--accent-foreground));
+        }
+        .site-action:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: -2px;
+        }
+        .site-action .lucide {
+          width: 1rem;
+          height: 1rem;
+          color: var(--muted-foreground);
         }
 
         /* shadcn sidebar-08 "inset" variant: the page takes the sidebar's
@@ -912,6 +952,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             <site-search></site-search>
           </site-modal>
         </div>
+        ${this._loggedIn && !this.editMode
+          ? html`<div class="site-actions" role="group" aria-label="Site">
+              <button class="site-action" @click="${addPage}">${icon.filePlus}Add page</button>
+              <button class="site-action" @click="${openOutline}">${icon.siteMap}Outline</button>
+              <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
+            </div>`
+          : ""}
         <nav aria-label="Course outline">
           <div class="nav-group-label">Contents</div>
           <site-menu part="site-menu"></site-menu>
@@ -995,6 +1042,14 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             ${icon.redo}
           </button>
           <div class="separator" aria-hidden="true"></div>
+          <button
+            class="icon-btn"
+            @click="${() => settingsDialog().open("source")}"
+            title="Edit HTML source"
+            aria-label="Edit HTML source"
+          >
+            ${icon.code}
+          </button>
           <oer-command-search></oer-command-search>
           <div class="separator" aria-hidden="true"></div>
           <button class="btn btn-outline" @click="${cancelEdit}" title="Discard changes (${MOD}⇧/)">

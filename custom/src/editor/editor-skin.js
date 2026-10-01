@@ -428,22 +428,27 @@ export const editorSkin = {
   /* ---------- block tray: shadcn Sheet side panel ---------- */
   /* editor side panel, docked into the site sidebar's slot while editing */
   "hax-tray": css`
+    /* HAX's editor panel only appears inside oer-settings-dialog, laid
+       over the dialog's form area (which sets the --oer-tray-* values) */
     :host {
       position: fixed !important;
-      top: 0 !important;
-      bottom: 0 !important;
-      left: 0 !important;
+      top: var(--oer-tray-top, 0) !important;
+      left: var(--oer-tray-left, 0) !important;
       right: auto !important;
-      width: var(--editor-panel-width) !important;
-      z-index: 35 !important;
+      bottom: auto !important;
+      width: var(--oer-tray-width, var(--editor-panel-width)) !important;
+      height: var(--oer-tray-height, 100dvh) !important;
+      z-index: 10001 !important;
       font-family: var(--font-sans) !important;
       color: var(--foreground);
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
     }
-    :host([collapsed]) {
+    :host([collapsed]),
+    :host(:not([data-oer-dialog])) {
       display: none !important;
     }
+    /* the dialog has its own title bar */
     /* stock reserves 64px above the panel for its own top bar */
     .wrapper {
       margin: 0 !important;
@@ -485,204 +490,9 @@ export const editorSkin = {
       display: none !important;
     }
 
-    /* panel header: aligned with the editor header (same height and
-       bottom rule), holding a shadcn TabsList */
-    .oer-panel-header {
-      flex: none;
-      display: flex;
-      align-items: center;
-      /* level with the content card's header (card has a 0.5rem inset) */
-      height: calc(var(--topbar-height) + 0.5rem);
-      padding: 0.5rem 0.75rem 0;
-      box-sizing: border-box;
-    }
-    .oer-tabs {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.125rem;
-      padding: 0.1875rem;
-      border-radius: var(--radius-md);
-      background: var(--muted);
-    }
-    /* text-only tabs, as in the learning-materials editor */
-    .oer-tab .oer-icon {
-      display: none;
-    }
-    .oer-tab {
-      all: unset;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.375rem;
-      height: 1.875rem;
-      border-radius: calc(var(--radius-md) - 2px);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--muted-foreground);
-      cursor: pointer;
-    }
-    .oer-tab:hover {
-      color: var(--foreground);
-    }
-    .oer-tab[aria-selected="true"] {
-      background: var(--background);
-      color: var(--foreground);
-      box-shadow: 0 1px 2px rgb(0 0 0 / 0.12), 0 0 0 1px var(--border);
-    }
-    .oer-tab:focus-visible {
-      outline: 2px solid var(--ring);
-      outline-offset: 1px;
-    }
-    .oer-icon {
-      display: inline-block;
-      flex: none;
-      width: 0.875rem;
-      height: 0.875rem;
-      background: currentColor;
-      -webkit-mask: var(--src) center / contain no-repeat;
-      mask: var(--src) center / contain no-repeat;
-    }
-
-    /* panel footer: Site actions (only visible while editing, since the
-       panel only exists then) */
-    .oer-panel-footer {
-      flex: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.125rem;
-      padding: 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-    .oer-footer-label {
-      padding: 0.25rem 0.75rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted-foreground);
-    }
-    .oer-footer-item {
-      all: unset;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.375rem 0.75rem;
-      border-radius: var(--radius-md);
-      font-size: 0.875rem;
-      color: var(--foreground);
-      cursor: pointer;
-    }
-    .oer-footer-item .oer-icon {
-      width: 1rem;
-      height: 1rem;
-      color: var(--muted-foreground);
-    }
-    .oer-footer-item:hover {
-      background: var(--accent);
-      color: var(--accent-foreground);
-    }
-    .oer-footer-item:focus-visible {
-      outline: 2px solid var(--ring);
-      outline-offset: -2px;
-    }
-
-    .oer-account {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-      padding: 0.5rem 0.25rem 0 0.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .oer-avatar {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: none;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 999px;
-      background: var(--muted);
-      color: var(--foreground);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    .oer-avatar .oer-icon {
-      width: 0.875rem;
-      height: 0.875rem;
-    }
-    .oer-account-name {
-      flex: 1;
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-    .oer-account-btn {
-      all: unset;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.75rem;
-      height: 1.75rem;
-      border-radius: var(--radius-md);
-      color: var(--muted-foreground);
-      cursor: pointer;
-    }
-    .oer-account-btn:hover {
-      background: var(--accent);
-      color: var(--foreground);
-    }
-    .oer-account-btn.danger:hover {
-      color: var(--destructive);
-      background: color-mix(in oklch, var(--destructive) 10%, transparent);
-    }
-    .oer-account-btn:focus-visible {
-      outline: 2px solid var(--ring);
-      outline-offset: 1px;
-    }
-
-    /* panel sub-header: only the Block tab needs it (names the block) */
-    :host(:not([tray-detail="content-edit"])) .tray-detail-titlebar {
-      display: none !important;
-    }
+    /* the dialog's own title names the block */
     .tray-detail-titlebar {
-      position: sticky !important;
-      /* #tray-detail has 0.75rem top padding; stick flush under the header */
-      top: -0.75rem !important;
-      margin-top: -0.75rem !important;
-      z-index: 2 !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 0.5rem !important;
-      height: auto !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      margin-bottom: 0.5rem !important;
-      padding: 0.625rem 1rem !important;
-      background: var(--card) !important;
-      color: var(--foreground) !important;
-      border-bottom: 1px solid var(--border) !important;
-      font-family: var(--font-sans) !important;
-      font-size: 0.875rem !important;
-      font-weight: 600 !important;
-      letter-spacing: normal !important;
-      text-transform: none !important;
-      --simple-icon-color: var(--muted-foreground);
-    }
-    .tray-detail-titlebar-icon {
-      --simple-icon-height: 1rem !important;
-      --simple-icon-width: 1rem !important;
-      width: 1rem !important;
-      height: 1rem !important;
-    }
-    .tray-detail-titlebar-label {
-      flex: 1;
-      text-align: start !important;
+      display: none !important;
     }
 
     /* Insert panel: finding a block comes first, uploading media last */

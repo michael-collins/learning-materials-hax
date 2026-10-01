@@ -23,7 +23,8 @@
  * outlined; while dragging, every layout is. The label becomes a
  * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
  * opens the layout menu (presets, select, remove; or "put in columns" for
- * a block outside any layout).
+ * a block outside any layout). The sliders button opens the block's
+ * settings (oer-settings-dialog).
  *
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
  * floating drag menu in hax-plate-context.
@@ -34,6 +35,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { contentViewport, pressPlate } from "./stock.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
+import { settingsDialog } from "./oer-settings-dialog.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 
 const icon = (name) =>
@@ -592,6 +594,18 @@ class OerBlockFrame extends LitElement {
   _renderLabel() {
     const inLayout = this._layout && this._layout !== this.__node;
     return html`<div class="label" @mousedown="${(e) => e.preventDefault()}">
+      <button
+        class="lay"
+        title="Block settings"
+        aria-label="Block settings"
+        aria-haspopup="dialog"
+        @click="${() => {
+          this._menu = false;
+          settingsDialog().open("settings");
+        }}"
+      >
+        ${icon("sliders-horizontal")}
+      </button>
       <button
         class="lay"
         title="Layout"

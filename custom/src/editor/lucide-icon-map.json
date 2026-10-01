@@ -260,5 +260,7 @@
   "oer:smile-plus": "smile-plus",
   "oer:grip-vertical": "grip-vertical",
   "oer:chevron-up": "chevron-up",
-  "oer:chevron-down": "chevron-down"
+  "oer:chevron-down": "chevron-down",
+  "oer:sliders-horizontal": "sliders-horizontal",
+  "oer:x": "x"
 }
