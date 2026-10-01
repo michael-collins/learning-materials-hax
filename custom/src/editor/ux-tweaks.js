@@ -4,7 +4,7 @@
  * default. Each tweak patches one element class once it is defined.
  */
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { showPanel, PANELS } from "./stock.js";
+import { showPanel, PANELS, addPage, openOutline, openSiteSettings } from "./stock.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
@@ -156,6 +156,30 @@ function buildTabs() {
   return header;
 }
 
+// Site actions live in the editor panel's footer, shown only while editing
+function buildSiteFooter() {
+  const doc = globalThis.document;
+  const footer = doc.createElement("div");
+  footer.className = "oer-panel-footer";
+  const label = doc.createElement("div");
+  label.className = "oer-footer-label";
+  label.textContent = "Site";
+  footer.append(label);
+  for (const [iconName, text, fn] of [
+    ["hax:add-page", "Add page", addPage],
+    ["hax:site-map", "Outline", openOutline],
+    ["icons:settings", "Settings", openSiteSettings],
+  ]) {
+    const b = doc.createElement("button");
+    b.type = "button";
+    b.className = "oer-footer-item";
+    b.append(iconSpan(iconName), doc.createTextNode(text));
+    b.addEventListener("click", fn);
+    footer.append(b);
+  }
+  return footer;
+}
+
 function whenElement(tag, fn) {
   const doc = globalThis.document;
   const found = doc.querySelector(tag);
@@ -193,6 +217,9 @@ export function installTrayEnhancer() {
       if (detail && !detail.querySelector(".oer-panel-header")) {
         detail.prepend(buildTabs());
         syncTabs();
+      }
+      if (detail && !detail.querySelector(".oer-panel-footer")) {
+        detail.append(buildSiteFooter());
       }
       // HAX re-renders the section elements after the form itself, so key
       // off the Configure section's identity rather than the form's

@@ -34,9 +34,6 @@ import {
   editPage,
   savePage,
   cancelEdit,
-  addPage,
-  openOutline,
-  openSiteSettings,
   toggleLock,
   logout,
   undo,
@@ -70,9 +67,6 @@ const icon = {
   chevronDown: lucide("icons:expand-more"),
   pencil: lucide("icons:create"),
   lock: lucide("icons:lock"),
-  filePlus: lucide("hax:add-page"),
-  network: lucide("hax:site-map"),
-  settings: lucide("icons:settings"),
   user: lucide("social:person"),
   layoutDashboard: lucide("hax:home-edit"),
   logOut: lucide("icons:exit-to-app"),
@@ -234,6 +228,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       shadcnTokens,
       dddBridge,
       css`
+        /* desktop uses the inset layout, which scrolls inside its card;
+           the document itself must not scroll. (HAX appends a row of inline
+           "manager" elements after the site, adding a ~20px line box.) */
+        @media (min-width: 768px) {
+          html,
+          body {
+            height: 100%;
+            overflow: hidden;
+          }
+        }
         custom-oer-docs-theme {
           line-height: 1.7;
         }
@@ -612,14 +616,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           flex-direction: column;
           gap: 0.5rem;
         }
-        .nav-group[hidden] {
-          display: none;
-        }
-        .nav-group {
-          display: flex;
-          flex-direction: column;
-          gap: 0.125rem;
-        }
         /* shadcn SidebarGroupLabel: h-8, text-xs, medium, muted */
         .nav-group-label {
           display: flex;
@@ -630,46 +626,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           font-weight: 500;
           color: var(--muted-foreground);
         }
-        .nav-item {
-          all: unset;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          height: 2rem;
-          padding: 0 0.5rem;
-          border-radius: var(--radius-md);
-          font-size: 0.875rem;
-          color: var(--foreground);
-          cursor: pointer;
-        }
-        .nav-item .lucide {
-          color: var(--muted-foreground);
-        }
-        .nav-item:hover {
-          background: var(--accent);
-          color: var(--accent-foreground);
-        }
-        .nav-item:focus-visible {
-          outline: 2px solid var(--ring);
-          outline-offset: -2px;
-        }
         /* footer: Site group + compact user row */
-        .sidebar-footer .nav-group {
-          padding-bottom: 0.5rem;
-          border-bottom: 1px solid var(--border);
-          margin-bottom: 0.25rem;
-        }
-        .sidebar-footer .nav-group-label {
-          height: auto;
-          padding: 0.25rem 0.75rem;
-          font-weight: 600;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-        }
-        .sidebar-footer .nav-item {
-          height: auto;
-          padding: 0.375rem 0.75rem;
-        }
         .user-row {
           display: flex;
           align-items: center;
@@ -837,11 +794,15 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           .sidebar-header {
             border-bottom: 0;
           }
+          /* the card is a column: fixed header, scrolling body below it,
+             so the scrollbar never runs up beside the header */
           .main-col {
+            display: flex;
+            flex-direction: column;
             margin: 0.5rem 0.5rem 0.5rem 0;
             height: calc(100vh - 1rem);
             height: calc(100dvh - 1rem);
-            overflow-y: auto;
+            overflow: hidden;
             border-radius: 0.75rem;
             background: var(--background);
             /* shadow-sm plus a faint outline, so the card edge stays
@@ -849,14 +810,21 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             box-shadow:
               0 1px 2px rgb(0 0 0 / 0.06),
               0 0 0 1px color-mix(in oklch, var(--foreground) 9%, transparent);
-            scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
           }
           :host([collapsed]) .main-col {
             margin-left: 0.5rem;
           }
           .topbar {
+            position: relative;
             top: 0;
+            flex: none;
+          }
+          main {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
           }
         }
 
@@ -946,7 +914,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           <site-menu part="site-menu"></site-menu>
         </nav>
         ${this._loggedIn
-          ? html`<div class="sidebar-footer">${this.renderSiteAdmin()} ${this.renderUser()}</div>`
+          ? html`<div class="sidebar-footer">${this.renderUser()}</div>`
           : ""}
       </aside>
       <div class="scrim" role="presentation" @click="${this._closeMobile}"></div>
@@ -1076,18 +1044,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ${item(pb("_deletePage"), icon.trash, "Delete page", "danger")}
             </div>`
           : ""}
-      </div>
-    `;
-  }
-
-  // site-level actions, grouped like the learning-materials CMS sidebar
-  renderSiteAdmin() {
-    return html`
-      <div class="nav-group" ?hidden="${this.editMode}">
-        <div class="nav-group-label">Site</div>
-        <button class="nav-item" @click="${addPage}">${icon.filePlus}Add page</button>
-        <button class="nav-item" @click="${openOutline}">${icon.network}Outline</button>
-        <button class="nav-item" @click="${openSiteSettings}">${icon.settings}Settings</button>
       </div>
     `;
   }

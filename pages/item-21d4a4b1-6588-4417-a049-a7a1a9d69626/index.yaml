@@ -1,9 +1,9 @@
 id: item-21d4a4b1-6588-4417-a049-a7a1a9d69626
 indent: 0
 location: pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.yaml
-slug: animating-a-bouncing-ball
+slug: exercises/animating-a-bouncing-ball
 order: 0
-parent: null
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
 title: Animating a bouncing ball
 description: >-
   In this exercise, level 1 students will practice keyframe animation to animate
@@ -17,7 +17,7 @@ description: >-
   Become 
 metadata:
   created: 1790802192
-  updated: 1790802192
+  updated: 1790813392
   images: []
   videos: []
   overridePathauto: false
@@ -27,15 +27,26 @@ metadata:
   tags: Blender,Animation
   locked: false
   readtime: 1
+  icon: courseicons:learning-objectives
+  linkTarget: _self
 content: >
+
   <p>In this exercise, level 1 students will practice keyframe animation to
   animate a bouncing ball</p>
 
   <video-player
   source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"
-  title="Animating a bouncing ball Tutorial"></video-player>
+  title="Animating a bouncing ball Tutorial" accent-color="grey"
+  crossorigin="anonymous" sticky-corner="none" audio-description-source=""
+  typeof="oer:MediaObject" resource="#babcc544-ef62-8d68-3322-8e6889770781"
+  prefix="oer:http://oerschema.org/ schema:http://schema.org/
+  dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
+  cc:http://creativecommons.org/ns# bib:http://bib.schema.org"
+  element-visible="" source-type="youtube" lang="en"
+  source-data="[{&quot;src&quot;:&quot;https://youtube.com/embed/videoseries&quot;,&quot;type&quot;:&quot;&quot;}]"
+  start-time="PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"></video-player>
 
-  <h2>Learning Objectives</h2>
+  <h2 id="h2--947685220">Learning Objectives</h2>
 
   <ol>
 
@@ -48,7 +59,7 @@ content: >
 
   </ol>
 
-  <h2>Instructions</h2>
+  <h2 id="h2-921696709">Instructions</h2>
 
   <ol>
 
@@ -57,6 +68,7 @@ content: >
 
   <li>Create a project folder on your computer and save a new
   <code>.blend</code> file called <code>LASTNAME-ball-bounce.blend</code>.</li>
+
 
   <li>Follow the video demonstrations to animate a bouncing ball.
 
@@ -69,6 +81,7 @@ content: >
   <li>Create a 9" sphere and apply the scale (<strong>CTRL</strong>+<strong>A ⟶
   Apply Scale</strong>).</li>
 
+
   <li>Following the reference, create an animation either by keyframing each
   frame or by using a motion path. Either technique will be accepted.</li>
 
@@ -76,7 +89,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   <li>Export a rendered video.
 
@@ -88,17 +103,23 @@ content: >
   <li>Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>,
   change the encoding format to <strong>MPEG-4</strong></li>
 
+
   <li>Under <strong>Codec,</strong> choose <strong>H.264</strong>.</li>
+
 
   <li>Choose <strong>Render</strong> ⟶ <strong>Render Animation</strong> to
   create the animation file.</li>
 
+
   </ul>
+
 
   </li>
 
+
   <li>Compress the project folder once you’ve completed the tutorial and rename
   it <code>LASTNAME-</code>ball-bounce<code>.zip</code>.</li>
+
 
   <li>Upload the .zip file to the assignment dropbox.</li>
 
@@ -107,6 +128,21 @@ content: >
 
   </ol>
 
-  <h2>Grading Rubric</h2>
+  <h2 id="h2--789233351">Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" accent-color="grey"
+  _rubric="{&quot;id&quot;:&quot;recviCCqLwU1SAn2Z&quot;,&quot;slug&quot;:&quot;exercise&quot;,&quot;name&quot;:&quot;Exercise&quot;,&quot;description&quot;:&quot;An
+  exercise assessment type is formative and tends to focus on evaluating mastery
+  of a narrow set of competencies and capabilities, defined in the learning
+  objectives.&quot;,&quot;criteria&quot;:[{&quot;id&quot;:&quot;recDvB7XFqiTA9AX6&quot;,&quot;name&quot;:&quot;Steps
+  completed&quot;,&quot;description&quot;:&quot;This criteria assess whether you
+  completed all parts of a given set of
+  instructions.&quot;},{&quot;id&quot;:&quot;recCfnMbyUIiHI3PT&quot;,&quot;name&quot;:&quot;Attention
+  to detail&quot;,&quot;description&quot;:&quot;This criteria measures ability
+  to use proper naming conventions and formats, meet submission deadlines, check
+  to see that others are able to access submitted materials, and fulfills other
+  specified
+  requirements.&quot;},{&quot;id&quot;:&quot;recgzIu9wDNGWpJhv&quot;,&quot;name&quot;:&quot;On
+  time&quot;,&quot;description&quot;:&quot;This criterion checks to see if the
+  assigned task was submitted on time. This indirectly assesses time
+  management.&quot;}]}" _loaded=""></oer-rubric>

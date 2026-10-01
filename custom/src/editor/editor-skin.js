@@ -539,6 +539,49 @@ export const editorSkin = {
       mask: var(--src) center / contain no-repeat;
     }
 
+    /* panel footer: Site actions (only visible while editing, since the
+       panel only exists then) */
+    .oer-panel-footer {
+      flex: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+      padding: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .oer-footer-label {
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted-foreground);
+    }
+    .oer-footer-item {
+      all: unset;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.75rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      color: var(--foreground);
+      cursor: pointer;
+    }
+    .oer-footer-item .oer-icon {
+      width: 1rem;
+      height: 1rem;
+      color: var(--muted-foreground);
+    }
+    .oer-footer-item:hover {
+      background: var(--accent);
+      color: var(--accent-foreground);
+    }
+    .oer-footer-item:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: -2px;
+    }
+
     /* panel sub-header: only the Block tab needs it (names the block) */
     :host(:not([tray-detail="content-edit"])) .tray-detail-titlebar {
       display: none !important;
