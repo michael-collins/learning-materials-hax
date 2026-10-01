@@ -146,9 +146,13 @@ export async function savePageDetails(id, { pageType, description, fields }) {
   const current = list.find((i) => i.id === id);
   const out = list.map((item) => {
     if (item.id !== id) return item;
-    const metadata = { ...item.metadata, oerFields: fields };
-    // HAXcms merges metadata on outline saves, so clear with "" (a missing
-    // key would leave the old value in place)
+    // HAXcms merges metadata on outline saves (oerFields too, key by key),
+    // so clear with "" or [] (a missing key would leave the old value)
+    const cleared = {};
+    for (const [k, v] of Object.entries(item.metadata?.oerFields || {})) {
+      if (!(k in fields)) cleared[k] = Array.isArray(v) ? [] : "";
+    }
+    const metadata = { ...item.metadata, oerFields: { ...cleared, ...fields } };
     metadata.pageType = pageType || "";
     return { ...item, metadata, modified: true };
   });
