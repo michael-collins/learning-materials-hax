@@ -781,18 +781,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Modeling game assets</title>
-    <id>item-604b6318-14b1-41aa-8602-c7f5c88559bf</id>
-    <updated>2026-10-01T04:46:27.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets"/>
-    
-    <content type="html">
-      <![CDATA[ <p></p> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Hard Surface Modeling</title>
     <id>item-4bb8978d-99a6-4b98-8373-a70600d6859a</id>
     <updated>2026-10-01T04:46:27.000Z</updated>
@@ -894,6 +882,25 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-053b3332-cb45-4124-a87e-1d109f4f1292"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Modular Environment Kit</title>
+    <id>item-e09e22f7-6a97-4fed-bd10-2cde35349b24</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/projects/modular-environment-kit"/>
+    <category term="Blender,PlayCanvas" label="Blender,PlayCanvas" />
+    <content type="html">
+      <![CDATA[ <p>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Plan a modular grid and pivot conventions</li>
+<li>Model and texture reusable pieces</li>
+<li>Assemble a scene from the kit in a real-time engine</li>
+</ol>
+ ]]>
     </content>
   </entry>
 </feed>
