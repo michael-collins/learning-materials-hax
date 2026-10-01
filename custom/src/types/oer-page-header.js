@@ -291,7 +291,12 @@ class OerPageHeader extends LitElement {
   }
 
   render() {
-    const item = this._item;
+    // a linked chapter (oer-include page in a book) shows its source's
+    // description and fields
+    const own = this._item;
+    const refId = own?.metadata?.oerRef?.page;
+    const source = refId ? (this._allItems || []).find((i) => i.id === refId) : null;
+    const item = source ? { ...own, description: own.description || source.description, metadata: { ...own.metadata, oerFields: source.metadata?.oerFields || {} } } : own;
     const typeId = item?.metadata?.pageType;
     if (!item || typeId === SYSTEM_TYPE) return html``;
     const type = this._types.find((t) => t.id === typeId);
