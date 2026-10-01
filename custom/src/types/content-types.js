@@ -32,6 +32,8 @@ export const FIELD_KINDS = [
   { kind: "date", label: "Date" },
   { kind: "image", label: "Image URL" },
   { kind: "url", label: "Link" },
+  { kind: "relation", label: "Link to pages" },
+  { kind: "files", label: "Files and links" },
 ];
 
 const items = () => toJS(store.manifest?.items) || [];

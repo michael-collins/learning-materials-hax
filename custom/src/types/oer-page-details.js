@@ -11,6 +11,9 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, allowedChildTypes, savePageDetails } from "./content-types.js";
+import { resolveLinks, uploadFile, isImage } from "./relations.js";
+import { pagePicker } from "../books/oer-page-picker.js";
+import { versionsOf } from "../versions/versioning.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -97,6 +100,12 @@ class OerPageDetails extends LitElement {
     for (const f of this._typeDef?.fields || []) {
       let v = this._values[f.name];
       if (f.kind === "list") v = (v || []).map((x) => String(x).trim()).filter(Boolean);
+      if (f.kind === "relation") v = (Array.isArray(v) ? v : []).filter((x) => x?.page).map((x) => ({ page: x.page, version: x.version || "" }));
+      if (f.kind === "files") {
+        v = (Array.isArray(v) ? v : [])
+          .map((x) => ({ title: (x.title || "").trim(), url: (x.url || "").trim(), description: (x.description || "").trim(), alt: (x.alt || "").trim() }))
+          .filter((x) => x.url || x.title);
+      }
       if (f.kind === "number" && v !== "" && v !== undefined) v = Number(v);
       if (!empty(v) || f.kind === "boolean") fields[f.name] = f.kind === "boolean" ? !!v : v;
     }
@@ -286,6 +295,96 @@ class OerPageDetails extends LitElement {
         background: var(--accent);
         color: var(--destructive);
       }
+      .links,
+      .files {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+      }
+      .link-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.375rem 0.375rem 0.375rem 0.625rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        --simple-icon-height: 1rem;
+        --simple-icon-width: 1rem;
+      }
+      .link-title {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .link-title small {
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: var(--muted-foreground);
+      }
+      .link-row select {
+        width: auto;
+        height: 2rem;
+        font-size: 0.8125rem;
+      }
+      .icon-act[disabled] {
+        opacity: 0.35;
+        cursor: default;
+      }
+      .file-row {
+        display: flex;
+        gap: 0.375rem;
+        margin: 0;
+        padding: 0.625rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+      }
+      .file-grid {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        min-width: 0;
+      }
+      .url-row {
+        display: flex;
+        gap: 0.375rem;
+      }
+      .upload {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        height: 2.25rem;
+        padding: 0 0.75rem;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .upload:hover {
+        background: var(--accent);
+      }
+      .upload:focus-within {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .upload input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+      }
       .add-item {
         all: unset;
         align-self: flex-start;
@@ -371,6 +470,10 @@ class OerPageDetails extends LitElement {
           <label class="check"><input id="${id}" type="checkbox" .checked="${!!v}" @change="${(e) => this._set(f.name, e.target.checked)}" />${f.label}</label>
           ${help}
         </div>`;
+      case "relation":
+        return html`<div><span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>${this._renderRelation(f)}${help}${err}</div>`;
+      case "files":
+        return html`<div><span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>${this._renderFiles(f)}${help}${err}</div>`;
       case "list": {
         const list = Array.isArray(v) ? v : v ? [v] : [];
         const rows = list.length ? list : [""];
@@ -418,6 +521,108 @@ class OerPageDetails extends LitElement {
       }
     }
     return html`<div>${label}${control}${help}${err}</div>`;
+  }
+
+  /* ---------- relation: links to other pages ---------- */
+
+  async _addLinks(f) {
+    const current = Array.isArray(this._values[f.name]) ? this._values[f.name] : [];
+    const typeLabels = (f.types || []).map((t) => this._allTypes.find((x) => x.id === t)?.label).filter(Boolean);
+    const choice = await pagePicker().pick({
+      exclude: [this._item.id, ...current.map((c) => c.page)],
+      types: f.types,
+      children: false,
+      title: `Add to ${f.label}`,
+      hint: typeLabels.length ? `Choose a page: ${typeLabels.join(", ")}.` : "Choose any page. Pin a released version to keep linking to it as it is now.",
+    });
+    if (choice) this._set(f.name, [...current, { page: choice.page.id, version: choice.version || "" }]);
+  }
+
+  _renderRelation(f) {
+    const value = Array.isArray(this._values[f.name]) ? this._values[f.name] : [];
+    const links = resolveLinks(value);
+    const update = (fn) => {
+      const next = [...value];
+      fn(next);
+      this._set(f.name, next);
+    };
+    return html`<div class="links" role="list">
+      ${links.map((l, i) => {
+        const type = this._allTypes.find((t) => t.id === l.item?.metadata?.pageType);
+        const releases = l.item ? versionsOf(l.item.id) : [];
+        return html`<div class="link-row" role="listitem">
+          ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : lucide("lrn:page", "sm")}
+          <span class="link-title">${l.item ? l.item.title : html`<em>Missing page</em>`}<small>${type?.label || ""}</small></span>
+          ${releases.length
+            ? html`<select aria-label="Version of ${l.item.title}" @change="${(e) => update((n) => (n[i] = { ...n[i], version: e.target.value }))}">
+                <option value="" ?selected="${!l.version}">Latest</option>
+                ${releases.map((r) => html`<option value="${r.version}" ?selected="${r.version === l.version}">v${r.version}</option>`)}
+              </select>`
+            : ""}
+          <button class="icon-act" title="Move up" aria-label="Move ${l.item?.title || "link"} up" ?disabled="${i === 0}" @click="${() => update((n) => n.splice(i - 1, 0, n.splice(i, 1)[0]))}">
+            ${lucide("icons:arrow-upward", "sm")}
+          </button>
+          <button class="icon-act" title="Remove" aria-label="Remove ${l.item?.title || "link"}" @click="${() => update((n) => n.splice(i, 1))}">${lucide("oer:x", "sm")}</button>
+        </div>`;
+      })}
+      <button class="add-item" @click="${() => this._addLinks(f)}">${lucide("oer:plus", "sm")}Add ${f.label.toLowerCase()}</button>
+    </div>`;
+  }
+
+  /* ---------- files: attachments (file or external link) ---------- */
+
+  async _upload(f, i, input) {
+    const file = input.files?.[0];
+    if (!file) return;
+    const rows = [...(this._values[f.name] || [])];
+    rows[i] = { ...rows[i], uploading: true };
+    this._set(f.name, rows);
+    try {
+      const url = await uploadFile(file);
+      const next = [...(this._values[f.name] || [])];
+      next[i] = { ...next[i], url, title: next[i].title || file.name.replace(/\.[^.]+$/, ""), uploading: false, error: "" };
+      this._set(f.name, next);
+    } catch (err) {
+      const next = [...(this._values[f.name] || [])];
+      next[i] = { ...next[i], uploading: false, error: err.message };
+      this._set(f.name, next);
+    }
+    input.value = "";
+  }
+
+  _renderFiles(f) {
+    const rows = Array.isArray(this._values[f.name]) ? this._values[f.name] : [];
+    const set = (i, patch) => {
+      const next = [...rows];
+      next[i] = { ...next[i], ...patch };
+      this._set(f.name, next);
+    };
+    return html`<div class="files">
+      ${rows.map(
+        (r, i) => html`<fieldset class="file-row">
+          <legend class="sr">${f.label} ${i + 1}</legend>
+          <div class="file-grid">
+            <input class="input" placeholder="Title" aria-label="Title" .value="${r.title || ""}" @input="${(e) => set(i, { title: e.target.value })}" />
+            <div class="url-row">
+              <input class="input" placeholder="File or link address" aria-label="File or link address" .value="${r.url || ""}" @input="${(e) => set(i, { url: e.target.value })}" />
+              <label class="upload">
+                ${lucide("icons:file-upload", "sm")}${r.uploading ? "Uploading…" : "Upload"}
+                <input type="file" @change="${(e) => this._upload(f, i, e.target)}" />
+              </label>
+            </div>
+            <input class="input" placeholder="Description (optional)" aria-label="Description" .value="${r.description || ""}" @input="${(e) => set(i, { description: e.target.value })}" />
+            ${isImage(r.url)
+              ? html`<input class="input" placeholder="Alt text for the image" aria-label="Alt text" .value="${r.alt || ""}" @input="${(e) => set(i, { alt: e.target.value })}" />`
+              : ""}
+            ${r.error ? html`<p class="err">${r.error}</p>` : ""}
+          </div>
+          <button class="icon-act" title="Remove" aria-label="Remove ${r.title || "file"}" @click="${() => this._set(f.name, rows.filter((_, j) => j !== i))}">${lucide("oer:x", "sm")}</button>
+        </fieldset>`,
+      )}
+      <button class="add-item" @click="${() => this._set(f.name, [...rows, { title: "", url: "", description: "", alt: "" }])}">
+        ${lucide("oer:plus", "sm")}Add file or link
+      </button>
+    </div>`;
   }
 
   render() {

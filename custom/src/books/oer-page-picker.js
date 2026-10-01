@@ -48,8 +48,16 @@ class OerPagePicker extends LitElement {
     };
   }
 
-  pick({ exclude = [] } = {}) {
+  /**
+   * types: limit to these content type ids; children: offer "Also add its
+   * sub-pages"; title: dialog heading.
+   */
+  pick({ exclude = [], types = null, children = true, title = "Add an existing page", hint = null } = {}) {
     this._exclude = new Set(exclude);
+    this._only = types && types.length ? new Set(types) : null;
+    this._offerChildren = children;
+    this._title = title;
+    this._hint = hint;
     this._q = "";
     this._type = "";
     this._versions = {};
@@ -68,7 +76,9 @@ class OerPagePicker extends LitElement {
   }
 
   get _items() {
-    return (toJS(store.manifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i) && !this._exclude?.has(i.id));
+    return (toJS(store.manifest?.items) || []).filter(
+      (i) => !isSystemItem(i) && !isSnapshot(i) && !this._exclude?.has(i.id) && (!this._only || this._only.has(i.metadata?.pageType)),
+    );
   }
 
   static get styles() {
@@ -252,7 +262,7 @@ class OerPagePicker extends LitElement {
 
   render() {
     if (!this.open) return html``;
-    const types = contentTypes().types;
+    const types = contentTypes().types.filter((t) => !this._only || this._only.has(t.id));
     const q = this._q.trim().toLowerCase();
     const all = toJS(store.manifest?.items) || [];
     const byId = new Map(all.map((i) => [i.id, i]));
@@ -263,8 +273,8 @@ class OerPagePicker extends LitElement {
     return html`
       <div class="backdrop" @click="${() => this._done(null)}"></div>
       <div class="box" role="dialog" aria-modal="true" aria-labelledby="t">
-        <h2 id="t">Add an existing page</h2>
-        <p class="sub">It is shown here, not copied: changes to the original appear here, unless you pin a released version.</p>
+        <h2 id="t">${this._title}</h2>
+        <p class="sub">${this._hint ?? "It is shown here, not copied: changes to the original appear here, unless you pin a released version."}</p>
         <div class="bar">
           <label class="search">${lucide("icons:search")}<input type="search" placeholder="Search pages…" aria-label="Search pages" .value="${this._q}" @input="${(e) => (this._q = e.target.value)}" /></label>
           <select aria-label="Content type" @change="${(e) => (this._type = e.target.value)}">
@@ -298,7 +308,9 @@ class OerPagePicker extends LitElement {
             </ul>`
           : html`<div class="empty">No pages match.</div>`}
         <div class="foot">
-          <label><input type="checkbox" .checked="${this._children}" @change="${(e) => (this._children = e.target.checked)}" />Also add its sub-pages</label>
+          ${this._offerChildren
+            ? html`<label><input type="checkbox" .checked="${this._children}" @change="${(e) => (this._children = e.target.checked)}" />Also add its sub-pages</label>`
+            : html`<span></span>`}
           <button class="cancel" @click="${() => this._done(null)}">Cancel</button>
         </div>
       </div>
