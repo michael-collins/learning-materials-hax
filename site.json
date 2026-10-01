@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790880633
+      "updated": 1790880634
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -7666,7 +7666,7 @@
       "order": 1000,
       "parent": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
       "title": "v0.9.0",
-      "description": "",
+      "description": "Designs consumer products in 3D for manufacturing or visualization purposes.",
       "metadata": {
         "pageType": "oer:pathway",
         "oerFields": {
