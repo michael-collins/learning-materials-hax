@@ -509,18 +509,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Environment Design for Real-time</title>
-    <id>item-26cdeff3-9f18-4f6b-b68f-6af8ec81efb7</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/environment-design-for-real-time"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-1d24f966-a252-493c-a9e4-c91b794d3e3a"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>History of CGI</title>
     <id>item-d20b5a98-dc5e-4ce8-b734-32490288d27c</id>
     <updated>2026-10-01T04:46:26.000Z</updated>
@@ -774,6 +762,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <oer-include page="item-5f88b120-daa9-41d1-a502-03e8136a24ab"></oer-include> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Modular Environment Kit</title>
+    <id>item-106e5253-8f9c-49b0-afb1-cabb037d994f</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/modular-environment-kit"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-3a5f87f8-0e55-47f8-b4cf-34e719c73c1a"></oer-include> ]]>
     </content>
   </entry>
 </feed>
