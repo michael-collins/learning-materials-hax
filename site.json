@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790830088
+      "updated": 1790830089
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -1279,7 +1279,7 @@
       "order": 7,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Real-time Engines",
-      "description": "",
+      "description": "Learn to work with game engines like Unity and Unreal Engine, implementing 3D assets and creating interactive experiences.",
       "metadata": {
         "published": true,
         "pageType": "lesson",
