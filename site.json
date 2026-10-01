@@ -4508,41 +4508,6 @@
       }
     },
     {
-      "id": "item-a0193c61-6a43-481f-9537-5e0def679374",
-      "indent": 1,
-      "location": "pages/item-a0193c61-6a43-481f-9537-5e0def679374/index.html",
-      "slug": "pathways/game-design-and-development",
-      "order": 4,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Game design and development",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/game-design-and-development",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-55d4ea63-f507-4470-b2c8-e8b11b1c499b",
       "indent": 1,
       "location": "pages/item-55d4ea63-f507-4470-b2c8-e8b11b1c499b/index.html",
