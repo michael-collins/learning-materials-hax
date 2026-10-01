@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790825737
+      "updated": 1790827261
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -49,7 +49,8 @@
         "updated": 1790825737,
         "published": true,
         "locked": false,
-        "status": ""
+        "status": "",
+        "icon": "av:art-track"
       }
     },
     {
