@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/learning-materials</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2026 02:33:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 02:43:07 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/learning-materials/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -52,6 +52,13 @@
       <description>Formative practice focused on a narrow set of competencies.</description>
       <guid>https://localhost:3000/learning-materials/exercises</guid>
       <pubDate>Wed, 30 Sep 2026 21:03:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>Content types</title>
+      <link>https://localhost:3000/learning-materials/content-types</link>
+      <description>This page stores the site&apos;s content type definitions.</description>
+      <guid>https://localhost:3000/learning-materials/content-types</guid>
+      <pubDate>Thu, 01 Oct 2026 02:43:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
