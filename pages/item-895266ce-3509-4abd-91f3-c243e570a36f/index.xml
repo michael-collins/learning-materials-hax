@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-895266ce-3509-4abd-91f3-c243e570a36f</id>
+<indent>0</indent>
+<location>pages/item-895266ce-3509-4abd-91f3-c243e570a36f/index.xml</location>
+<slug>outline-test-page</slug>
+<order>3</order>
+<parent></parent>
+<title>Outline test page</title>
+<description></description>
+<metadata>
+<created>1790821625</created>
+<updated>1790821625</updated>
+<images>
+</images>
+<videos>
+</videos>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>
