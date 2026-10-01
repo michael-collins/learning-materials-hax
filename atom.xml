@@ -12,7 +12,7 @@
   <entry>
     <title>Welcome to learning-materials</title>
     <id>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/welcome-to-learning-materials"/>
@@ -57,7 +57,7 @@ bottom-text="...probably"
   <entry>
     <title>Animation Principles</title>
     <id>item-1903f5ba-d051-49cf-9836-073992c93548</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th</summary>
     <link href="https://localhost:3000/learning-materials/lessons/animation-principles"/>
@@ -70,7 +70,7 @@ bottom-text="...probably"
   <entry>
     <title>Lessons</title>
     <id>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
     <link href="https://localhost:3000/learning-materials/lessons"/>
@@ -85,7 +85,7 @@ bottom-text="...probably"
   <entry>
     <title>Animating a bouncing ball</title>
     <id>item-21d4a4b1-6588-4417-a049-a7a1a9d69626</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball
 Learning Objectives
@@ -136,7 +136,7 @@ Become </summary>
   <entry>
     <title>Animated textures</title>
     <id>item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</summary>
     <link href="https://localhost:3000/learning-materials/exercises/animated-textures"/>
@@ -175,7 +175,7 @@ Become </summary>
   <entry>
     <title>Exercises</title>
     <id>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>Formative practice focused on a narrow set of competencies.</summary>
     <link href="https://localhost:3000/learning-materials/exercises"/>
@@ -190,7 +190,7 @@ Become </summary>
   <entry>
     <title>Content types</title>
     <id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
-    <updated>2026-10-01T03:24:55.000Z</updated>
+    <updated>2026-10-01T03:30:10.000Z</updated>
     <published>2026-10-01T02:43:07.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/content-types"/>
