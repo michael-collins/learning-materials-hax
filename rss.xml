@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/learning-materials</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2026 03:15:15 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 03:15:29 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/learning-materials/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -26,7 +26,7 @@
     <item>
       <title>Lessons</title>
       <link>https://localhost:3000/learning-materials/lessons</link>
-      <description>Lessons group lectures, tutorials and exercises around a set of learning objectives. \n &amp;quot;},{&amp;quot;id&amp;quot;:&amp;quot;article&amp;quot;,&amp;quot;label&amp;quot;:&amp;quot;Article&amp;quot;,&amp;quot;icon&amp;quot;:&amp;quot;hax:newspaper&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;children&amp;quot;:[],&amp;quot;fields&amp;quot;:[{&amp;quot;name&amp;quot;:&amp;quot;author&amp;quot;,&amp;quot;label&amp;quot;:&amp;quot;Author (legacy)&amp;quot;,&amp;quot;kind&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;help&amp;quot;:&amp;quot;Legacy single author. Use the Authors list above for new conten...</description>
+      <description>Lessons group lectures, tutorials and exercises around a set of learning objectives.</description>
       <guid>https://localhost:3000/learning-materials/lessons</guid>
       <pubDate>Wed, 30 Sep 2026 21:03:11 GMT</pubDate>
     </item>
