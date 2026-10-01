@@ -27,6 +27,15 @@ const lucide = (name, cls = "") =>
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
+// one-click starter blocks (oer-collection views of the page's sub-pages)
+const STARTERS = [
+  { label: "Paragraph", html: "<p></p>" },
+  { label: "Sub-page outline", html: '<h2>In this lesson</h2>\n<oer-collection scope="children" view="outline" sort="order"></oer-collection>' },
+  { label: "Sub-page table", html: '<oer-collection scope="children" view="table" sort="order" controls="full"></oer-collection>' },
+  { label: "Sub-page cards", html: '<oer-collection scope="children" view="cards" sort="order" controls="none"></oer-collection>' },
+  { label: "Callout", html: '<oer-callout type="objective" title="What you will learn"><p></p></oer-callout>' },
+];
+
 class OerTypeEditor extends LitElement {
   static get tag() {
     return "oer-type-editor";
@@ -986,6 +995,25 @@ class OerTypeEditor extends LitElement {
           <button class="add" @click="${this._addField}">${lucide("oer:plus", "sm")}Add field</button>
         </div>
         <p class="hint">“In header” fields show at the top of each page of this type.</p>
+      </section>
+
+      <section>
+        <h3>Starter content</h3>
+        <textarea
+          class="mono"
+          style="min-height:7rem"
+          aria-label="Starter content (HTML)"
+          .value="${t.template || ""}"
+          @input="${(e) => this._update((x) => (x.template = e.target.value))}"
+        ></textarea>
+        <div class="chips">
+          ${STARTERS.map(
+            (st) => html`<button class="chip" @click="${() => this._update((x) => (x.template = `${(x.template || "").trim()}\n${st.html}`.trim()))}">
+              ${lucide("oer:plus", "sm")}${st.label}
+            </button>`,
+          )}
+        </div>
+        <p class="hint">What a new page of this type starts with (HTML; any blocks). Existing pages are not changed.</p>
       </section>
 
       <section class="danger-zone">

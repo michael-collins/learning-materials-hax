@@ -17,7 +17,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { flatten, saveOutline, newItemId } from "./outline-model.js";
+import { flatten, saveOutline, newItemId, starterContent } from "./outline-model.js";
 import { isSystemItem, contentTypes } from "../types/content-types.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 
@@ -165,7 +165,7 @@ class OerOutlineBuilder extends LitElement {
           location: "",
           description: "",
           metadata: { ...(row.icon ? { icon: row.icon } : {}), ...(row.type ? { pageType: row.type } : {}) },
-          contents: "<p></p>",
+          contents: starterContent(row.type),
           new: true,
         });
       }

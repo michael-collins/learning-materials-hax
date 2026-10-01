@@ -51,6 +51,13 @@ function siteEditor() {
   return store.cmsSiteEditor?.instance ?? globalThis.document.querySelector("haxcms-site-editor");
 }
 
+/** A content type's starter content (its template), or an empty paragraph. */
+export function starterContent(pageType) {
+  const defs = store.manifest?.items?.find?.((i) => i.metadata?.pageType === "oer-system")?.metadata?.oerContentTypes;
+  const type = defs?.types?.find?.((t) => t.id === pageType);
+  return (type?.template || "").trim() || "<p></p>";
+}
+
 /**
  * Create a page at the end of `parent`'s children (null = top level),
  * optionally of a content type.
@@ -68,7 +75,7 @@ export function createPage(title, parent = null, pageType = "") {
       detail: {
         originalTarget: target,
         values: {
-          node: { title: title || "New page", location: "", contents: "<p></p>" },
+          node: { title: title || "New page", location: "", contents: starterContent(pageType) },
           order,
           parent: parent || null,
           ...(pageType ? { metadata: { pageType } } : {}),
