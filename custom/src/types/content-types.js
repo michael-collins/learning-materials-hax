@@ -26,6 +26,15 @@ import { saveOutline, newItemId } from "../outline/outline-model.js";
 export const TYPE_PREFIX = "oer:";
 export const SYSTEM_TYPE = "oer:system";
 export const SECTION_TYPE = "oer:section";
+/**
+ * Headings: outline items that only label a group of the pages after them
+ * in the sidebar (Decap's "Library", "Assessments"…). They are hidden from
+ * menus (stock themes skip them), hold no sub-pages and are never a stop in
+ * Previous / Next, so grouping never changes a page's URL.
+ */
+export const HEADING_TYPE = "oer:heading";
+export const HEADING_DEF = { id: HEADING_TYPE, label: "Heading", icon: "oer:heading-2", children: [], fields: [] };
+export const isHeading = (item) => item?.metadata?.pageType === HEADING_TYPE;
 
 export const FIELD_KINDS = [
   { kind: "text", label: "Text" },

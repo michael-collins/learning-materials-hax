@@ -23,7 +23,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { childrenMap, ancestors, createPage } from "./outline-model.js";
-import { allowedChildTypes, contentTypes } from "../types/content-types.js";
+import { allowedChildTypes, contentTypes, isHeading } from "../types/content-types.js";
 
 const STORAGE_KEY = "oer-site-nav-open";
 
@@ -76,7 +76,9 @@ class OerSiteNav extends LitElement {
         const active = toJS(store.activeId);
         Promise.resolve().then(() => {
           this._all = items;
-          this._items = items.filter((i) => !i.metadata?.hideInMenu);
+          // headings are hidden from menus (stock themes skip them) but
+          // label groups here
+          this._items = items.filter((i) => !i.metadata?.hideInMenu || isHeading(i));
           if (active !== this._activeId) {
             this._activeId = active;
             // reveal the active page
@@ -285,6 +287,22 @@ class OerSiteNav extends LitElement {
         background: var(--accent);
         color: var(--foreground);
       }
+      /* outline headings: a label over the pages after them */
+      li.heading {
+        list-style: none;
+      }
+      li.heading:not(:first-child) {
+        margin-top: 0.75rem;
+      }
+      .group-label {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+        padding: 0 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+      }
       .none {
         margin: 0.5rem;
         font-size: 0.8125rem;
@@ -370,6 +388,9 @@ class OerSiteNav extends LitElement {
     const list = kids.get(parent) || [];
     return html`<ul role="list">
       ${list.map((item) => {
+        if (isHeading(item)) {
+          return html`<li class="heading"><span class="group-label" role="heading" aria-level="2">${item.title}</span></li>`;
+        }
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
         const open = this.__forceOpen || this._open.has(item.id);

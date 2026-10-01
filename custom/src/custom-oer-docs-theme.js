@@ -45,7 +45,7 @@ import { settingsDialog } from "./editor/oer-settings-dialog.js";
 import { outlineBuilder } from "./outline/oer-outline-builder.js";
 import { typeEditor } from "./types/oer-type-editor.js";
 import { pageDetails } from "./types/oer-page-details.js";
-import { isSystemItem, contentTypes } from "./types/content-types.js";
+import { isSystemItem, contentTypes, isHeading } from "./types/content-types.js";
 import { flatten } from "./outline/outline-model.js";
 import "./types/oer-page-header.js";
 import "./types/oer-page-footer.js";
@@ -224,7 +224,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         const book = this._bookOf(active, all);
         // the hidden content-types page is configuration, never a stop;
         // inside a book, Previous / Next stay within the book
-        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i));
+        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i) && !isHeading(i));
         if (book) {
           const inBook = new Set([book.id, ...flatten(all, book.id).map((x) => x.item.id)]);
           items = items.filter((i) => inBook.has(i.id));

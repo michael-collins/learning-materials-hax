@@ -19,7 +19,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { flatten, saveOutline, newItemId, starterContent, childrenMap } from "./outline-model.js";
-import { isSystemItem, contentTypes } from "../types/content-types.js";
+import { isSystemItem, contentTypes, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
 import { isSnapshot } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
@@ -96,7 +96,8 @@ class OerOutlineBuilder extends LitElement {
       depth,
       orig: item,
     }));
-    this._types = contentTypes(items).types;
+    // headings are built in, not a content type of the site
+    this._types = [...contentTypes(items).types, HEADING_DEF];
     this._snapshot = this._signature();
     this._deleted = new Map();
     this._collapsed = new Set();
@@ -160,6 +161,8 @@ class OerOutlineBuilder extends LitElement {
         // HAXcms merges metadata on outline saves: clear with "", not delete
         item.metadata.icon = row.icon || "";
         item.metadata.pageType = row.type || "";
+        if (row.type === HEADING_TYPE) item.metadata.hideInMenu = true;
+        else if (o.metadata?.pageType === HEADING_TYPE) item.metadata.hideInMenu = false;
         if (row.level || o.metadata?.oerLevel) item.metadata.oerLevel = row.level || "";
         if (changed) item.modified = true;
       } else {
@@ -176,6 +179,7 @@ class OerOutlineBuilder extends LitElement {
             ...(row.type ? { pageType: row.type } : {}),
             ...(row.ref ? { oerRef: row.ref } : {}),
             ...(row.level ? { oerLevel: row.level } : {}),
+            ...(row.type === HEADING_TYPE ? { hideInMenu: true } : {}),
           },
           // a linked page shows the original instead of starter content
           contents: row.ref
@@ -362,6 +366,16 @@ class OerOutlineBuilder extends LitElement {
     list.splice(idx < 0 ? list.length : this._subtree(idx).end, 0, ...rows);
     this._commit(list);
     this._focusRow(rows[0].id);
+  }
+
+  _addHeading(afterId, depth) {
+    const rows = [...this._rows];
+    const idx = this._index(afterId);
+    const at = idx < 0 ? rows.length : this._subtree(idx).end;
+    const row = { ...this._newRow(depth), type: HEADING_TYPE };
+    rows.splice(at, 0, row);
+    this._commit(rows);
+    this._startEdit(row.id);
   }
 
   _addChild(parentId) {
@@ -678,6 +692,8 @@ class OerOutlineBuilder extends LitElement {
 
   _invalid(idx) {
     const row = this._rows[idx];
+    // a heading may label any level (it holds no pages itself)
+    if (row.type === HEADING_TYPE) return false;
     const { types, untyped } = this._rowAllowed(idx);
     return row.type ? !types.some((t) => t.id === row.type) : !untyped;
   }
@@ -1213,6 +1229,13 @@ class OerOutlineBuilder extends LitElement {
         background: transparent;
         font-size: inherit;
       }
+      .heading-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+      }
       .type-chip.untyped {
         background: transparent;
         opacity: 0;
@@ -1504,7 +1527,10 @@ class OerOutlineBuilder extends LitElement {
         </div>
       </div>`;
     }
-    const { types, untyped } = this._rowAllowed(idx);
+    const allowed = this._rowAllowed(idx);
+    const untyped = allowed.untyped;
+    // a heading can go anywhere, whatever the parent allows
+    const types = allowed.types.some((t) => t.id === HEADING_TYPE) ? allowed.types : [...allowed.types, HEADING_DEF];
     return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
       <div
         class="type-menu"
@@ -1648,7 +1674,7 @@ class OerOutlineBuilder extends LitElement {
             class="edit"
             data-edit="${row.id}"
             .value="${row.title}"
-            placeholder="${row.depth === 0 ? "Page title…" : "Sub-page title…"}"
+            placeholder="${row.type === HEADING_TYPE ? "Heading…" : row.depth === 0 ? "Page title…" : "Sub-page title…"}"
             aria-label="Page title"
             @input="${(e) => this._rename(row.id, e.target.value)}"
             @keydown="${(e) => this._editKeys(e, row)}"
@@ -1656,8 +1682,8 @@ class OerOutlineBuilder extends LitElement {
           />`
         : html`<div class="title" @dblclick="${() => this._startEdit(row.id)}">
             ${row.title
-              ? html`<span class="${row.depth === 0 ? "top" : "nested"}">${row.title}</span>`
-              : html`<span class="placeholder">${row.depth === 0 ? "Page title…" : "Sub-page title…"}</span>`}
+              ? html`<span class="${row.type === HEADING_TYPE ? "heading-title" : row.depth === 0 ? "top" : "nested"}">${row.title}</span>`
+              : html`<span class="placeholder">${row.type === HEADING_TYPE ? "Heading…" : row.depth === 0 ? "Page title…" : "Sub-page title…"}</span>`}
             ${row.orig ? "" : html`<span class="new-badge">New</span>`}
           </div>`}
       <button
@@ -1755,6 +1781,18 @@ class OerOutlineBuilder extends LitElement {
         }}"
       >
         ${lucide("icons:link", "sm")}Add existing
+      </button>
+      <button
+        class="add-existing"
+        title="Add a heading that labels the pages after it in the navigation"
+        @mouseenter="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
+        @mouseleave="${() => (this._hoverAdd = null)}"
+        @click="${() => {
+          this._hoverAdd = null;
+          this._addHeading(add.afterId, add.depth);
+        }}"
+      >
+        ${lucide("oer:heading-2", "sm")}Add heading
       </button>
     </div>`;
   }
