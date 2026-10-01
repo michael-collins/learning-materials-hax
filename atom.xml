@@ -199,16 +199,4 @@ Become </summary>
       <![CDATA[ <p>This page stores the site's content type definitions.</p> ]]>
     </content>
   </entry>
-  <entry>
-    <title>Animation Principles</title>
-    <id>item-ec7f8fb5-c5b4-4669-90f8-2d347f16f2fe</id>
-    <updated>2026-10-01T03:32:24.000Z</updated>
-    <published>2026-10-01T03:31:11.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/test-book/animation-principles"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-1903f5ba-d051-49cf-9836-073992c93548"></oer-include> ]]>
-    </content>
-  </entry>
 </feed>

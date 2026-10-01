@@ -105,31 +105,6 @@
       }
     },
     {
-      "id": "item-ec7f8fb5-c5b4-4669-90f8-2d347f16f2fe",
-      "indent": 1,
-      "location": "pages/item-ec7f8fb5-c5b4-4669-90f8-2d347f16f2fe/index.html",
-      "slug": "test-book/animation-principles",
-      "order": 0,
-      "parent": "item-db54ad23-ce19-428e-ad94-986c049e637d",
-      "title": "Animation Principles",
-      "description": "",
-      "metadata": {
-        "icon": "hax:lesson",
-        "pageType": "lesson",
-        "oerRef": {
-          "page": "item-1903f5ba-d051-49cf-9836-073992c93548",
-          "version": ""
-        },
-        "created": 1790825471,
-        "images": [],
-        "videos": [],
-        "updated": 1790825544,
-        "published": true,
-        "locked": false,
-        "status": ""
-      }
-    },
-    {
       "id": "item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171",
       "indent": 1,
       "location": "pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.html",

@@ -60,12 +60,5 @@
       <guid>https://localhost:3000/learning-materials/content-types</guid>
       <pubDate>Thu, 01 Oct 2026 02:43:07 GMT</pubDate>
     </item>
-    <item>
-      <title>Animation Principles</title>
-      <link>https://localhost:3000/learning-materials/test-book/animation-principles</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/test-book/animation-principles</guid>
-      <pubDate>Thu, 01 Oct 2026 03:31:11 GMT</pubDate>
-    </item>
   </channel>
 </rss>
