@@ -721,20 +721,25 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         .nav-actions {
           display: flex;
-          justify-content: flex-end;
-          padding: 0 0.25rem 0.25rem;
+          justify-content: center;
+          padding: 0 0.25rem 0.5rem;
         }
+        /* shadcn Button, variant "outline", size "sm" */
         .label-action {
           all: unset;
+          box-sizing: border-box;
           display: inline-flex;
           align-items: center;
           gap: 0.375rem;
-          height: 1.75rem;
-          padding: 0 0.5rem;
+          height: 2rem;
+          padding: 0 0.75rem;
+          border: 1px solid var(--input-border, var(--border));
           border-radius: var(--radius-md);
-          font-size: 0.75rem;
+          background: var(--background);
+          font-size: 0.8125rem;
           font-weight: 500;
-          color: var(--muted-foreground);
+          color: var(--foreground);
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
           cursor: pointer;
         }
         .label-action:hover {
