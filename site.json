@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790830086
+      "updated": 1790830087
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -2436,7 +2436,7 @@
       "order": 2,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Digital fabrication",
-      "description": "",
+      "description": "Utilizes 3D printing or CNC machining to create physical objects from digital designs.",
       "metadata": {
         "published": true,
         "pageType": "pathway",
