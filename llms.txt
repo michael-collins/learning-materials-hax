@@ -16,10 +16,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Introduction to Modeling](https://localhost:3000/learning-materials/pages/item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866/index.md)
 - [You don't see that everyday objects](https://localhost:3000/learning-materials/pages/item-48ad9f94-3f8b-44e5-8416-316cff49f4d2/index.md)
 - [Creating Blockouts for Games](https://localhost:3000/learning-materials/pages/item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f/index.md)
-- [Game art in real time](https://localhost:3000/learning-materials/pages/item-4a7207fe-5b2f-4000-862e-fea9e7f0614d/index.md)
 - [Real-time Engines](https://localhost:3000/learning-materials/pages/item-41c8177b-a696-441e-bdb6-9139bcf16dad/index.md)
-- [Environment Design for Real-time](https://localhost:3000/learning-materials/pages/item-53222b15-394a-4c5f-b7ed-816cf37fa854/index.md)
-- [Real-time Asset Budgets](https://localhost:3000/learning-materials/pages/item-67def973-4ca7-412b-a25b-8a6a2fe5f2ea/index.md)
 - [Drawing for 3D Design](https://localhost:3000/learning-materials/pages/item-3ce93755-09fa-439c-888e-765d3b2e0021/index.md)
 - [Modeling a Low Poly Animal and Introduction to Particles](https://localhost:3000/learning-materials/pages/item-ff1635a7-5be0-4b0a-a080-3831a5d5d6ce/index.md)
 - [Texturing Low-poly Assets with a Palette Texture](https://localhost:3000/learning-materials/pages/item-d17b0045-e633-49f0-b8a4-26bc90db294e/index.md)
@@ -57,6 +54,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Texturing Low-poly Assets with a Palette Texture](https://localhost:3000/learning-materials/pages/item-25240f21-af75-4edc-b30a-4b9e8b94d1ed/index.md)
 - [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-551064b6-4beb-4326-8d70-f723bd60010d/index.md)
 - [Stylized Prop Set](https://localhost:3000/learning-materials/pages/item-955f3a9a-72db-424a-a8e0-f195c322a57f/index.md)
+- [Environment Design for Real-time](https://localhost:3000/learning-materials/pages/item-53222b15-394a-4c5f-b7ed-816cf37fa854/index.md)
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 - [Lessons](https://localhost:3000/learning-materials/pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [History of CGI](https://localhost:3000/learning-materials/pages/item-d20b5a98-dc5e-4ce8-b734-32490288d27c/index.md)
@@ -87,6 +85,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-dda3178f-c205-4e8d-92e4-d25ccdf18444/index.md)
 - [Texturing random objects](https://localhost:3000/learning-materials/pages/item-4989e3f6-c083-4c34-8e14-c601ed5f7358/index.md)
 - [Modular Environment Kit](https://localhost:3000/learning-materials/pages/item-4288443d-8358-4b17-b92b-12331e9293fb/index.md)
+- [Real-time Asset Budgets](https://localhost:3000/learning-materials/pages/item-67def973-4ca7-412b-a25b-8a6a2fe5f2ea/index.md)
 - [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
 - [Modeling the Airline Chair](https://localhost:3000/learning-materials/pages/item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7/index.md)
 - [Modeling a room](https://localhost:3000/learning-materials/pages/item-dbf43915-8e34-4116-a6e7-67cd08a1316e/index.md)
