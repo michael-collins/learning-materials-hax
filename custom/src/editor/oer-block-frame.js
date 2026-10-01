@@ -108,6 +108,7 @@ class OerBlockFrame extends LitElement {
     const visTop = Math.max(f.top, view.top);
     const visBottom = Math.min(f.bottom, view.bottom);
     s.setProperty("--grip", `${Math.round((visTop + visBottom) / 2 - f.top)}px`);
+    this.toggleAttribute("compact", f.compact);
 
     if (this._drag) this._dragFrame();
   }
@@ -269,6 +270,10 @@ class OerBlockFrame extends LitElement {
         cursor: grab;
         touch-action: none;
       }
+      /* short blocks: just the grip; ↑ / ↓ remain in the rail's Block menu */
+      :host([compact]) .step {
+        display: none;
+      }
       :host([dragging]) .grip {
         cursor: grabbing;
       }
@@ -330,7 +335,7 @@ class OerBlockFrame extends LitElement {
       <div class="ring"></div>
       <div class="label">${this._label}</div>
       <div class="handle" @mousedown="${(e) => e.preventDefault()}">
-        <button title="Move up" aria-label="Move block up" @click="${() => this._move("up")}">${icon("chevron-up")}</button>
+        <button class="step" title="Move up" aria-label="Move block up" @click="${() => this._move("up")}">${icon("chevron-up")}</button>
         <button
           class="grip"
           title="Drag to move (or use the arrow keys)"
@@ -343,7 +348,7 @@ class OerBlockFrame extends LitElement {
         >
           ${icon("grip-vertical")}
         </button>
-        <button title="Move down" aria-label="Move block down" @click="${() => this._move("down")}">${icon("chevron-down")}</button>
+        <button class="step" title="Move down" aria-label="Move block down" @click="${() => this._move("down")}">${icon("chevron-down")}</button>
       </div>
       ${d?.valid && d.rect
         ? html`<div class="drop" style="top:${d.rect.top}px;left:${d.rect.left}px;width:${d.rect.width}px;height:${d.rect.height}px"></div>`

@@ -9,21 +9,28 @@
  */
 
 export const RING_OFFSET = 4; // frame sits this far outside the block
-export const FRAME_MIN_HEIGHT = 60; // room for the handle's ↑ ⠿ ↓
+export const FULL_HANDLE_HEIGHT = 60; // shorter frames show only the grip
 export const HANDLE_WIDTH = 20;
 const MIN_SLOT = 16;
 
-/** The selection frame around a block, in viewport coordinates. */
+/**
+ * The selection frame around a block, in viewport coordinates. `compact`
+ * frames are too short for the handle's ↑ ⠿ ↓ and show just the grip (move
+ * up / down stay in the rail's Block menu).
+ */
 export function frameRect(node) {
   const r = node.getBoundingClientRect();
-  let top = r.top - RING_OFFSET;
-  let bottom = r.bottom + RING_OFFSET;
-  if (bottom - top < FRAME_MIN_HEIGHT) {
-    const grow = (FRAME_MIN_HEIGHT - (bottom - top)) / 2;
-    top -= grow;
-    bottom += grow;
-  }
-  return { top, bottom, left: r.left - RING_OFFSET, right: r.right + RING_OFFSET, height: bottom - top, block: r };
+  const top = r.top - RING_OFFSET;
+  const bottom = r.bottom + RING_OFFSET;
+  return {
+    top,
+    bottom,
+    left: r.left - RING_OFFSET,
+    right: r.right + RING_OFFSET,
+    height: bottom - top,
+    compact: bottom - top < FULL_HANDLE_HEIGHT,
+    block: r,
+  };
 }
 
 const isBlock = (el) => el.localName !== "page-break" && el.getClientRects().length > 0;
@@ -46,7 +53,10 @@ function columns(container) {
   const root = container.shadowRoot;
   const out = [];
   if (!root) return out;
-  for (const col of root.querySelectorAll("[id^='col']")) {
+  // grid-plate always renders six columns; the layout ("2-1", "1-1-1", ...)
+  // says how many are in use
+  const used = typeof container.layout === "string" ? container.layout.split("-").length : Infinity;
+  for (const col of [...root.querySelectorAll("[id^='col']")].slice(0, used)) {
     const slot = col.querySelector("slot");
     const name = slot?.getAttribute("name");
     const rect = col.getBoundingClientRect();
