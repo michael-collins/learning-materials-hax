@@ -51,8 +51,11 @@ function siteEditor() {
   return store.cmsSiteEditor?.instance ?? globalThis.document.querySelector("haxcms-site-editor");
 }
 
-/** Create a page at the end of `parent`'s children (null = top level). */
-export function createPage(title, parent = null) {
+/**
+ * Create a page at the end of `parent`'s children (null = top level),
+ * optionally of a content type.
+ */
+export function createPage(title, parent = null, pageType = "") {
   const siblings = childrenMap(store.manifest?.items).get(parent || null) || [];
   const last = siblings[siblings.length - 1];
   const order = last ? (Number(last.order) || 0) + 1 : 0;
@@ -64,7 +67,12 @@ export function createPage(title, parent = null) {
       cancelable: true,
       detail: {
         originalTarget: target,
-        values: { node: { title: title || "New page", location: "", contents: "<p></p>" }, order, parent: parent || null },
+        values: {
+          node: { title: title || "New page", location: "", contents: "<p></p>" },
+          order,
+          parent: parent || null,
+          ...(pageType ? { metadata: { pageType } } : {}),
+        },
       },
     }),
   );

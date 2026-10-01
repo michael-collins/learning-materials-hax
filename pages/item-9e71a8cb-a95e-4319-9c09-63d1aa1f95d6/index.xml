@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9e71a8cb-a95e-4319-9c09-63d1aa1f95d6</id>
+<indent>0</indent>
+<location>pages/item-9e71a8cb-a95e-4319-9c09-63d1aa1f95d6/index.xml</location>
+<slug>lessons/typed-test-lesson</slug>
+<order>1</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Typed test lesson</title>
+<description></description>
+<metadata>
+<pageType>lesson</pageType>
+<created>1790822782</created>
+<updated>1790822782</updated>
+<images>
+</images>
+<videos>
+</videos>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

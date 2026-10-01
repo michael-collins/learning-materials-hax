@@ -18,7 +18,8 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { flatten, saveOutline, newItemId } from "./outline-model.js";
-import { isSystemItem } from "../types/content-types.js";
+import { isSystemItem, contentTypes } from "../types/content-types.js";
+import { iconPicker } from "../ui/oer-icon-picker.js";
 
 const INDENT_PX = 20;
 const MAX_DEPTH = 6;
@@ -27,8 +28,6 @@ const LONG_PRESS_MS = 2000;
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
-// icons offered by the picker: the HAX icon names this site maps to Lucide
-const ICON_CHOICES = Object.keys(LUCIDE_ICONS).filter((k) => !k.startsWith("oer:"));
 
 class OerOutlineBuilder extends LitElement {
   static get tag() {
@@ -45,8 +44,7 @@ class OerOutlineBuilder extends LitElement {
       _hoverAdd: { state: true },
       _drag: { state: true },
       _longPress: { state: true },
-      _iconFor: { state: true },
-      _iconQuery: { state: true },
+      _typeMenu: { state: true }, // { id, x, y } while choosing a row's type
       _confirmDiscard: { state: true },
     };
   }
@@ -62,12 +60,13 @@ class OerOutlineBuilder extends LitElement {
     this._hoverAdd = null; // { afterId, depth }
     this._drag = null; // { id, overId, position, startX, x, origDepth, previewDepth, droppedOnOther }
     this._longPress = null;
-    this._iconFor = null;
-    this._iconQuery = "";
+    this._typeMenu = null;
+    this._types = [];
     this._confirmDiscard = false;
     this.__keys = (e) => {
       if (!this.open || e.key !== "Escape") return;
-      if (this._iconFor) this._iconFor = null;
+      if (globalThis.document.querySelector("oer-icon-picker[open]")) return;
+      if (this._typeMenu) this._typeMenu = null;
       else if (this._editing) this._editing = null;
       else this._requestClose();
       e.preventDefault();
@@ -87,9 +86,11 @@ class OerOutlineBuilder extends LitElement {
       id: item.id,
       title: item.title,
       icon: item.metadata?.icon || "",
+      type: item.metadata?.pageType || "",
       depth,
       orig: item,
     }));
+    this._types = contentTypes(items).types;
     this._snapshot = this._signature();
     this._deleted = new Map();
     this._collapsed = new Set();
@@ -102,12 +103,12 @@ class OerOutlineBuilder extends LitElement {
 
   _close() {
     this.open = false;
-    this._iconFor = null;
+    this._typeMenu = null;
     globalThis.removeEventListener("keydown", this.__keys, true);
   }
 
   _signature() {
-    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.depth]));
+    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.depth]));
   }
 
   get _dirty() {
@@ -145,11 +146,14 @@ class OerOutlineBuilder extends LitElement {
           Number(o.order) !== order ||
           Number(o.indent) !== indent ||
           o.title !== title ||
-          (o.metadata?.icon || "") !== row.icon;
+          (o.metadata?.icon || "") !== row.icon ||
+          (o.metadata?.pageType || "") !== row.type;
         Object.assign(item, { parent: parent || null, order, indent, title });
         item.metadata = { ...(o.metadata || {}) };
         if (row.icon) item.metadata.icon = row.icon;
         else delete item.metadata.icon;
+        if (row.type) item.metadata.pageType = row.type;
+        else delete item.metadata.pageType;
         if (changed) item.modified = true;
       } else {
         out.set(row.id, {
@@ -160,7 +164,7 @@ class OerOutlineBuilder extends LitElement {
           indent,
           location: "",
           description: "",
-          metadata: row.icon ? { icon: row.icon } : {},
+          metadata: { ...(row.icon ? { icon: row.icon } : {}), ...(row.type ? { pageType: row.type } : {}) },
           contents: "<p></p>",
           new: true,
         });
@@ -296,15 +300,23 @@ class OerOutlineBuilder extends LitElement {
     this._confirmDiscard = false;
   }
 
-  _newRow(depth) {
-    return { id: newItemId(), title: "", icon: "", depth, orig: null };
+  _newRow(depth, parentType = null) {
+    return { id: newItemId(), title: "", icon: "", type: this._defaultType(parentType), depth, orig: null };
   }
 
   _addAfter(afterId, depth) {
     const rows = [...this._rows];
     const idx = this._index(afterId);
     const at = idx < 0 ? rows.length : this._subtree(idx).end;
-    const row = this._newRow(depth);
+    // parent of the new row: the nearest row above it that is shallower
+    let parentType = this._rootItem?.metadata?.pageType || null;
+    for (let i = at - 1; i >= 0; i--) {
+      if (rows[i].depth < depth) {
+        parentType = rows[i].type || null;
+        break;
+      }
+    }
+    const row = this._newRow(depth, parentType);
     rows.splice(at, 0, row);
     this._commit(rows);
     this._startEdit(row.id);
@@ -314,7 +326,7 @@ class OerOutlineBuilder extends LitElement {
     const idx = this._index(parentId);
     if (idx < 0) return;
     const rows = [...this._rows];
-    const row = this._newRow(Math.min(rows[idx].depth + 1, MAX_DEPTH));
+    const row = this._newRow(Math.min(rows[idx].depth + 1, MAX_DEPTH), rows[idx].type || null);
     rows.splice(this._subtree(idx).end, 0, row);
     const c = new Set(this._collapsed);
     c.delete(parentId);
@@ -324,7 +336,7 @@ class OerOutlineBuilder extends LitElement {
   }
 
   _addFirst() {
-    const row = this._newRow(0);
+    const row = this._newRow(0, this._rootItem?.metadata?.pageType || null);
     this._commit([...this._rows, row]);
     this._startEdit(row.id);
   }
@@ -584,10 +596,54 @@ class OerOutlineBuilder extends LitElement {
 
   /* ---------- icons ---------- */
 
-  _setIcon(name) {
-    const id = this._iconFor;
-    this._iconFor = null;
-    this._commit(this._rows.map((r) => (r.id === id ? { ...r, icon: name } : r)));
+  async _chooseIcon(row) {
+    const name = await iconPicker().pick(row.icon);
+    if (name === null) return;
+    this._commit(this._rows.map((r) => (r.id === row.id ? { ...r, icon: name } : r)));
+    this._focusRow(row.id);
+  }
+
+  /* ---------- content types ---------- */
+
+  // the row's parent row (nearest shallower row above), or null at the top
+  _parentRow(idx) {
+    const depth = this._rows[idx].depth;
+    for (let i = idx - 1; i >= 0; i--) if (this._rows[i].depth < depth) return this._rows[i];
+    return null;
+  }
+
+  // types allowed under a parent type id (null = top level / untyped)
+  _allowedUnder(parentType) {
+    const types = this._types;
+    const parent = parentType ? types.find((t) => t.id === parentType) : null;
+    const restricted = !!parent && Array.isArray(parent.children);
+    return {
+      types: restricted ? types.filter((t) => parent.children.includes(t.id)) : types,
+      untyped: !restricted,
+      none: restricted && parent.children.length === 0,
+    };
+  }
+
+  _rowAllowed(idx) {
+    const parent = this._parentRow(idx);
+    const rootType = parent ? null : this._rootItem?.metadata?.pageType || null;
+    return this._allowedUnder(parent ? parent.type : rootType);
+  }
+
+  _invalid(idx) {
+    const row = this._rows[idx];
+    const { types, untyped } = this._rowAllowed(idx);
+    return row.type ? !types.some((t) => t.id === row.type) : !untyped;
+  }
+
+  _defaultType(parentType) {
+    const { types, untyped } = this._allowedUnder(parentType);
+    return untyped ? "" : types[0]?.id || "";
+  }
+
+  _setType(id, type) {
+    this._typeMenu = null;
+    this._commit(this._rows.map((r) => (r.id === id ? { ...r, type } : r)));
     this._focusRow(id);
   }
 
@@ -996,6 +1052,103 @@ class OerOutlineBuilder extends LitElement {
         opacity: 1;
       }
 
+      /* content type chip + menu */
+      .type-chip {
+        all: unset;
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        height: 1.25rem;
+        margin-right: 0.25rem;
+        padding: 0 0.5rem;
+        border-radius: 999px;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+        background: var(--muted);
+        cursor: pointer;
+        --simple-icon-height: 0.75rem;
+        --simple-icon-width: 0.75rem;
+      }
+      .type-chip:hover {
+        color: var(--foreground);
+        background: var(--accent);
+      }
+      .type-chip.untyped {
+        background: transparent;
+        opacity: 0;
+      }
+      .row:hover .type-chip.untyped,
+      .row:focus-within .type-chip.untyped {
+        opacity: 1;
+      }
+      .type-chip.bad {
+        opacity: 1;
+        color: var(--destructive);
+        background: color-mix(in oklch, var(--destructive) 10%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--destructive) 40%, transparent);
+      }
+      .row.invalid {
+        background: color-mix(in oklch, var(--destructive) 5%, transparent);
+      }
+      .menu-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 6;
+      }
+      .type-menu {
+        position: absolute;
+        transform: translateX(-100%);
+        min-width: 12rem;
+        max-height: 20rem;
+        overflow-y: auto;
+        padding: 0.25rem;
+        box-sizing: border-box;
+        background: var(--popover, var(--background));
+        color: var(--popover-foreground, var(--foreground));
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+      }
+      .menu-label {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--muted-foreground);
+      }
+      .type-menu button {
+        all: unset;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        height: 2rem;
+        padding: 0 0.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        cursor: pointer;
+        --simple-icon-height: 1rem;
+        --simple-icon-width: 1rem;
+      }
+      .type-menu button:hover,
+      .type-menu button:focus-visible {
+        background: var(--accent);
+        color: var(--accent-foreground, var(--foreground));
+      }
+      .type-menu .check,
+      .type-menu .ph {
+        display: inline-flex;
+        width: 1rem;
+        flex: none;
+      }
+      .menu-empty {
+        padding: 0.5rem;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
+
       /* add rows closing each level */
       .add {
         all: unset;
@@ -1127,105 +1280,90 @@ class OerOutlineBuilder extends LitElement {
         color: var(--destructive-foreground, white);
       }
 
-      /* icon picker */
-      .picker {
-        position: absolute;
-        inset: 0;
-        z-index: 5;
-        display: grid;
-        place-items: center;
-        background: rgb(0 0 0 / 0.3);
-      }
-      .picker-box {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        width: min(30rem, calc(100% - 2rem));
-        max-height: 80%;
-        padding: 1.25rem;
-        box-sizing: border-box;
-        background: var(--background);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
-      }
-      .picker-box h3 {
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-      .search {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        height: 2.25rem;
-        padding: 0 0.75rem;
-        border: 1px solid var(--input-border, var(--border));
-        border-radius: var(--radius-md);
-        color: var(--muted-foreground);
-      }
-      .search input {
-        flex: 1;
-        min-width: 0;
-        border: 0;
-        outline: none;
-        background: transparent;
-        color: var(--foreground);
-        font: inherit;
-        font-size: 0.875rem;
-      }
-      .grid {
-        flex: 1;
-        min-height: 0;
-        overflow-y: auto;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 0.25rem;
-      }
-      .grid button {
-        all: unset;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.25rem;
-        padding: 0.5rem 0.25rem;
-        border-radius: var(--radius-md);
-        cursor: pointer;
-      }
-      .grid button:hover,
-      .grid button:focus-visible {
-        background: var(--accent);
-      }
-      .grid .lucide {
-        width: 1.25rem;
-        height: 1.25rem;
-      }
-      .grid small {
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        text-align: center;
-        font-size: 0.5625rem;
-        color: var(--muted-foreground);
-      }
-      .picker-foot {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 0.75rem;
-        border-top: 1px solid var(--border);
-      }
-      .link-danger {
-        all: unset;
-        font-size: 0.75rem;
-        color: var(--destructive);
-        cursor: pointer;
-      }
-      .link-danger:hover {
-        text-decoration: underline;
-      }
     `;
+  }
+
+  // an add row's level is closed when its parent's type may contain nothing
+  _levelClosed(add) {
+    const idx = this._index(add.afterId);
+    if (idx < 0) return false;
+    const parent = this._parentRow(idx);
+    const parentType = parent ? parent.type : this._rootItem?.metadata?.pageType || null;
+    return this._allowedUnder(parentType || null).none;
+  }
+
+  _renderTypeChip(row, index) {
+    if (!this._types.length) return "";
+    const type = this._types.find((t) => t.id === row.type);
+    const invalid = this._invalid(index);
+    return html`<button
+      class="type-chip ${type ? "" : "untyped"} ${invalid ? "bad" : ""}"
+      tabindex="-1"
+      title="${invalid ? "This type is not allowed here. Click to change." : "Content type (click to change)"}"
+      aria-label="Content type: ${type ? type.label : "none"}${invalid ? ", not allowed here" : ""}. Change"
+      @mousedown="${(e) => e.preventDefault()}"
+      @click="${(e) => {
+        e.stopPropagation();
+        const r = e.currentTarget.getBoundingClientRect();
+        const box = this.shadowRoot.querySelector(".dialog").getBoundingClientRect();
+        this._typeMenu = { id: row.id, index, x: r.right - box.left, y: r.bottom - box.top + 4 };
+      }}"
+    >
+      ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type ? type.label : "No type"}
+    </button>`;
+  }
+
+  _renderTypeMenu() {
+    const m = this._typeMenu;
+    const idx = this._index(m.id);
+    if (idx < 0) return "";
+    const row = this._rows[idx];
+    const { types, untyped } = this._rowAllowed(idx);
+    return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
+      <div
+        class="type-menu"
+        role="menu"
+        aria-label="Content type"
+        style="left:${m.x}px;top:${m.y}px"
+        @click="${(e) => e.stopPropagation()}"
+        @keydown="${(e) => {
+          const items = [...e.currentTarget.querySelectorAll("[role=menuitemradio]")];
+          const i = items.indexOf(this.shadowRoot.activeElement);
+          if (e.key === "ArrowDown") items[(i + 1) % items.length]?.focus();
+          else if (e.key === "ArrowUp") items[(i - 1 + items.length) % items.length]?.focus();
+          else if (e.key === "Escape") this._typeMenu = null;
+          else return;
+          e.preventDefault();
+          e.stopPropagation();
+        }}"
+      >
+        <div class="menu-label">Content type</div>
+        ${untyped
+          ? html`<button role="menuitemradio" aria-checked="${!row.type ? "true" : "false"}" @click="${() => this._setType(row.id, "")}">
+              <span class="check">${!row.type ? lucide("oer:check", "sm") : ""}</span>No type
+            </button>`
+          : ""}
+        ${types.map(
+          (t) => html`<button role="menuitemradio" aria-checked="${t.id === row.type ? "true" : "false"}" @click="${() => this._setType(row.id, t.id)}">
+            <span class="check">${t.id === row.type ? lucide("oer:check", "sm") : ""}</span>
+            ${t.icon ? html`<simple-icon-lite icon="${t.icon}"></simple-icon-lite>` : html`<span class="ph"></span>`}${t.label}
+          </button>`,
+        )}
+        ${!types.length && !untyped ? html`<div class="menu-empty">Nothing is allowed here.</div>` : ""}
+      </div>
+    </div>`;
+  }
+
+  updated(changed) {
+    if (changed.has("_typeMenu") && this._typeMenu) {
+      const menu = this.shadowRoot.querySelector(".type-menu");
+      if (!menu) return;
+      // keep the menu inside the dialog; open upwards near the bottom
+      const box = this.shadowRoot.querySelector(".dialog").getBoundingClientRect();
+      const r = menu.getBoundingClientRect();
+      if (r.bottom > box.bottom - 8) menu.style.top = `${Math.max(8, this._typeMenu.y - r.height - 36)}px`;
+      (menu.querySelector("[aria-checked=true]") || menu.querySelector("[role=menuitemradio]"))?.focus();
+    }
   }
 
   _renderIndent(row, index, vis, vIdx) {
@@ -1262,6 +1400,7 @@ class OerOutlineBuilder extends LitElement {
       d?.id === row.id ? "dragging" : "",
       d?.overId === row.id && d.id !== row.id && d.position === "child" ? "child-target" : "",
       this._longPress === row.id ? "pressing" : "",
+      this._invalid(index) ? "invalid" : "",
     ].join(" ");
     return html`<div
       class="${classes}"
@@ -1312,8 +1451,7 @@ class OerOutlineBuilder extends LitElement {
             aria-label="${row.icon ? "Change icon" : "Set icon"}"
             @click="${(e) => {
               e.stopPropagation();
-              this._iconQuery = "";
-              this._iconFor = row.id;
+              this._chooseIcon(row);
             }}"
           >
             ${row.icon ? html`<simple-icon-lite icon="${row.icon}"></simple-icon-lite>` : lucide("oer:smile-plus", "sm")}
@@ -1350,9 +1488,10 @@ class OerOutlineBuilder extends LitElement {
       >
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
       </button>
+      ${this._renderTypeChip(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
       <div class="hover-only">
-        ${row.depth < MAX_DEPTH
+        ${row.depth < MAX_DEPTH && !this._allowedUnder(row.type || null).none
           ? html`<button
               class="act"
               tabindex="-1"
@@ -1414,37 +1553,6 @@ class OerOutlineBuilder extends LitElement {
     </button>`;
   }
 
-  _renderPicker() {
-    const q = this._iconQuery.trim().toLowerCase();
-    const icons = (q ? ICON_CHOICES.filter((n) => n.toLowerCase().includes(q)) : ICON_CHOICES).slice(0, 96);
-    return html`<div class="picker" @click="${(e) => e.target === e.currentTarget && (this._iconFor = null)}">
-      <div class="picker-box" role="dialog" aria-label="Choose icon">
-        <h3>Choose icon</h3>
-        <div class="search">
-          ${lucide("icons:search")}
-          <input
-            type="text"
-            placeholder="Search icons…"
-            aria-label="Search icons"
-            .value="${this._iconQuery}"
-            @input="${(e) => (this._iconQuery = e.target.value)}"
-          />
-        </div>
-        <div class="grid">
-          ${icons.map(
-            (name) => html`<button title="${name}" @click="${() => this._setIcon(name)}">
-              ${lucide(name)}<small>${name.split(":").pop()}</small>
-            </button>`,
-          )}
-        </div>
-        <div class="picker-foot">
-          <button class="link-danger" @click="${() => this._setIcon("")}">Remove icon</button>
-          <button class="btn outline" @click="${() => (this._iconFor = null)}">Cancel</button>
-        </div>
-      </div>
-    </div>`;
-  }
-
   render() {
     if (!this.open) return html``;
     const vis = this._visible();
@@ -1452,6 +1560,7 @@ class OerOutlineBuilder extends LitElement {
     const anyKids = this._rows.some((_, i) => this._hasChildren(i));
     const dirty = this._dirty;
     const deleting = this._deleted.size;
+    const invalidCount = this._rows.filter((_, i) => this._invalid(i)).length;
     return html`
       <div class="backdrop" @click="${this._requestClose}"></div>
       <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="t">
@@ -1479,7 +1588,9 @@ class OerOutlineBuilder extends LitElement {
             ? html`<div class="tree" role="tree" aria-label="Pages">
                 ${vis.map(
                   ({ row, index }, vIdx) => html`${this._renderRow(row, index, vis, vIdx)}
-                  ${this._closingRows(vis, vIdx).map((add) => this._renderAddRow(add, vis, vIdx))}`,
+                  ${this._closingRows(vis, vIdx)
+                    .filter((add) => !this._levelClosed(add))
+                    .map((add) => this._renderAddRow(add, vis, vIdx))}`,
                 )}
               </div>`
             : html`<div class="empty">
@@ -1493,7 +1604,9 @@ class OerOutlineBuilder extends LitElement {
             ? html`<span class="warn">Discard your outline changes?</span>
                 <button class="btn outline" @click="${() => (this._confirmDiscard = false)}">Keep editing</button>
                 <button class="btn destructive" @click="${this._close}">Discard</button>`
-            : html`${deleting
+            : html`${invalidCount
+                  ? html`<span class="warn">${invalidCount} page${invalidCount === 1 ? " is" : "s are"} in a place ${invalidCount === 1 ? "its" : "their"} type isn't allowed. Change the type or move ${invalidCount === 1 ? "it" : "them"}.</span>`
+                  : deleting
                   ? html`<span class="warn">${deleting} page${deleting === 1 ? "" : "s"} will be deleted when you save.</span>`
                   : html`<div class="hints" aria-hidden="true">
                       <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span>
@@ -1503,13 +1616,13 @@ class OerOutlineBuilder extends LitElement {
                 <button class="btn outline" @click="${this._requestClose}">Cancel</button>
                 <button
                   class="btn primary"
-                  aria-disabled="${dirty ? "false" : "true"}"
-                  @click="${() => dirty && this._save()}"
+                  aria-disabled="${dirty && !invalidCount ? "false" : "true"}"
+                  @click="${() => dirty && !invalidCount && this._save()}"
                 >
                   Save outline
                 </button>`}
         </footer>
-        ${this._iconFor ? this._renderPicker() : ""}
+        ${this._typeMenu ? this._renderTypeMenu() : ""}
       </div>
     `;
   }

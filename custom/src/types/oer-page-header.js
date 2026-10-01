@@ -130,6 +130,7 @@ class OerPageHeader extends LitElement {
       }
       .desc {
         margin: 0 0 1.25rem;
+        text-align: start;
         font-size: 1.125rem;
         line-height: 1.6;
         color: var(--muted-foreground);

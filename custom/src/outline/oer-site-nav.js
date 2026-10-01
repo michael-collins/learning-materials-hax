@@ -10,8 +10,10 @@
  *   ◎ Exercises               ›
  *   + Add page                ← creates a top-level page
  *
- * Clicking "Add page" turns the row into a title field: Enter creates the
- * page there (HAXcms then opens it), Escape cancels. Top-level rows show
+ * Clicking "Add page" turns the row into a content-type choice (only the
+ * types the parent page may contain) and a title field: Enter creates the
+ * page there (HAXcms then opens it), Escape cancels. Levels whose type may
+ * contain nothing have no "Add page" row. Top-level rows show
  * the page icon; nested rows sit beside a vertical rule. Parents expand and
  * collapse with their chevron; the active page's ancestors open by
  * default, and the open state is remembered per browser.
@@ -21,6 +23,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { childrenMap, ancestors, createPage } from "./outline-model.js";
+import { allowedChildTypes, contentTypes } from "../types/content-types.js";
 
 const STORAGE_KEY = "oer-site-nav-open";
 
@@ -48,6 +51,7 @@ class OerSiteNav extends LitElement {
       _activeId: { state: true },
       _open: { state: true },
       _adding: { state: true }, // parent id (or "root") being added to
+      _addType: { state: true },
     };
   }
 
@@ -68,6 +72,7 @@ class OerSiteNav extends LitElement {
         const items = toJS(store.manifest?.items) || [];
         const active = toJS(store.activeId);
         Promise.resolve().then(() => {
+          this._all = items;
           this._items = items.filter((i) => !i.metadata?.hideInMenu);
           if (active !== this._activeId) {
             this._activeId = active;
@@ -103,7 +108,19 @@ class OerSiteNav extends LitElement {
     this._setOpen(open);
   }
 
+  // content types allowed under `parent` (and whether untyped is allowed)
+  _choices(parent) {
+    const all = this._all || [];
+    const parentType = parent ? all.find((i) => i.id === parent)?.metadata?.pageType : null;
+    const types = allowedChildTypes(parentType || null, all);
+    const known = parentType && contentTypes(all).types.find((t) => t.id === parentType);
+    const restricted = !!known && Array.isArray(known.children);
+    return { types, untyped: !restricted };
+  }
+
   _startAdd(parent) {
+    const { types, untyped } = this._choices(parent);
+    this._addType = untyped ? "" : types[0]?.id || "";
     this._adding = parent ?? "root";
     this.updateComplete.then(() => this.shadowRoot.querySelector(".add-input")?.focus());
   }
@@ -111,9 +128,13 @@ class OerSiteNav extends LitElement {
   _addKeys(e, parent) {
     if (e.key === "Enter") {
       e.preventDefault();
-      const title = e.target.value.trim();
+      const title = (this.shadowRoot.querySelector(".add-input")?.value || "").trim();
+      if (!title) {
+        this.shadowRoot.querySelector(".add-input")?.focus();
+        return;
+      }
       this._adding = null;
-      if (title) createPage(title, parent);
+      if (title) createPage(title, parent, this._addType);
     } else if (e.key === "Escape") {
       e.preventDefault();
       this._adding = null;
@@ -265,7 +286,22 @@ class OerSiteNav extends LitElement {
         height: 0.875rem;
       }
       .add-field {
-        padding: 0 0.25rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        height: auto !important;
+        padding: 0.25rem;
+      }
+      .add-type {
+        box-sizing: border-box;
+        height: 1.75rem;
+        padding: 0 0.375rem;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        background: var(--background);
+        color: var(--foreground);
+        font: inherit;
+        font-size: 0.8125rem;
       }
       .add-input {
         flex: 1;
@@ -286,8 +322,21 @@ class OerSiteNav extends LitElement {
   _renderAdd(parent) {
     if (!this.editable) return "";
     const key = parent ?? "root";
+    const { types, untyped } = this._choices(parent);
+    if (!types.length && !untyped) return "";
     if (this._adding === key) {
       return html`<li class="add-field">
+        ${types.length
+          ? html`<select
+              class="add-type"
+              aria-label="Content type of the new page"
+              @change="${(e) => (this._addType = e.target.value)}"
+              @keydown="${(e) => this._addKeys(e, parent)}"
+            >
+              ${untyped ? html`<option value="" ?selected="${!this._addType}">No type</option>` : ""}
+              ${types.map((t) => html`<option value="${t.id}" ?selected="${t.id === this._addType}">${t.label}</option>`)}
+            </select>`
+          : ""}
         <input
           class="add-input"
           type="text"
@@ -295,7 +344,8 @@ class OerSiteNav extends LitElement {
           aria-label="New page title"
           @keydown="${(e) => this._addKeys(e, parent)}"
           @blur="${(e) => {
-            if (!e.target.value.trim()) this._adding = null;
+            // moving to the type choice is not leaving the row
+            if (!e.target.value.trim() && !e.relatedTarget?.classList?.contains("add-type")) this._adding = null;
           }}"
         />
       </li>`;
