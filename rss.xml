@@ -6,13 +6,13 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/learning-materials</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2026 18:50:34 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 19:29:19 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/learning-materials/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Welcome to learning-materials</title>
       <link>https://localhost:3000/learning-materials/welcome-to-learning-materials</link>
-      <description>Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We&apos;ve got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a little video exploring some of them! Here&apos;s a list of just a few things to get started, or if your a pro, delete this content and have fun! Edit this content by hitting &quot;Edit page&quot; above Hit enter in a paragraph of text to add another one Click &quot;Merlin&quot; to see a list of all the things you can do Tr...</description>
+      <description>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licensing, plus an editor redesigned in the shadcn/ui style. This page explains what is new and where to find it. Most actions live in three places: the sidebar (Navigation and Site tabs), the page menu (the ⌄ beside a page title) and the top bar (search, command search and dark mode). Getting around ...</description>
       <guid>https://localhost:3000/learning-materials/welcome-to-learning-materials</guid>
       <pubDate>Wed, 30 Sep 2026 20:52:42 GMT</pubDate>
     </item>

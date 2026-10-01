@@ -10,7 +10,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [llms.txt](https://localhost:3000/learning-materials/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
 
 ## Pages
-- [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
+- [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md): What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.
 - [Animation Principles](https://localhost:3000/learning-materials/pages/item-1903f5ba-d051-49cf-9836-073992c93548/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th
 - [v0.0.1](https://localhost:3000/learning-materials/pages/item-941036b0-0b0d-4094-aea4-ff7802399ff3/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-ef8736da-f646-4540-b163-75a456866c7d/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.
