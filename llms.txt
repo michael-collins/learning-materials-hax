@@ -13,10 +13,12 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md)
 - [Animation Principles](https://localhost:3000/learning-materials/pages/item-1903f5ba-d051-49cf-9836-073992c93548/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th
 - [Animating a bouncing ball](https://localhost:3000/learning-materials/pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.md): In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball Learning Objectives Practice keyframe animation of translation, rotation, and scale properties. Become
+- [Animation Principles](https://localhost:3000/learning-materials/pages/item-ec7f8fb5-c5b4-4669-90f8-2d347f16f2fe/index.md)
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 - [Lessons](https://localhost:3000/learning-materials/pages/item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6/index.md): Lessons group lectures, tutorials and exercises around a set of learning objectives.
 - [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
 - [Content types](https://localhost:3000/learning-materials/pages/item-b4e121df-b071-4067-a68c-23f5a26d3841/index.md)
+- [Test book](https://localhost:3000/learning-materials/pages/item-db54ad23-ce19-428e-ad94-986c049e637d/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

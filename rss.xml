@@ -60,5 +60,12 @@
       <guid>https://localhost:3000/learning-materials/content-types</guid>
       <pubDate>Thu, 01 Oct 2026 02:43:07 GMT</pubDate>
     </item>
+    <item>
+      <title>Test book</title>
+      <link>https://localhost:3000/learning-materials/test-book</link>
+      <description>Contents</description>
+      <guid>https://localhost:3000/learning-materials/test-book</guid>
+      <pubDate>Thu, 01 Oct 2026 03:30:28 GMT</pubDate>
+    </item>
   </channel>
 </rss>

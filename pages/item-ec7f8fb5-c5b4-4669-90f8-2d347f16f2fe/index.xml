@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ec7f8fb5-c5b4-4669-90f8-2d347f16f2fe</id>
+<indent>1</indent>
+<location>pages/item-ec7f8fb5-c5b4-4669-90f8-2d347f16f2fe/index.xml</location>
+<slug>test-book/animation-principles</slug>
+<order>0</order>
+<parent>item-db54ad23-ce19-428e-ad94-986c049e637d</parent>
+<title>Animation Principles</title>
+<description></description>
+<metadata>
+<icon>hax:lesson</icon>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-1903f5ba-d051-49cf-9836-073992c93548</page>
+<version></version>
+</oerRef>
+<created>1790825471</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790825471</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-1903f5ba-d051-49cf-9836-073992c93548"></oer-include>]]></content>
+</item>
