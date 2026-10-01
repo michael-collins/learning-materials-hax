@@ -1688,6 +1688,27 @@ export const editorSkin = {
     }
   `,
 
+  /* column layouts while editing: no stock borders/dotted outlines; the
+     layout around the selection is outlined by oer-block-frame instead.
+     Nested blocks get the same dashed hover hint as top-level ones. */
+  "grid-plate": css`
+    :host([data-hax-ray]) div ::slotted(*),
+    :host([data-hax-ray]) div ::slotted(*:hover),
+    :host([data-hax-ray]) div ::slotted([data-hax-active]),
+    :host([data-hax-ray]) div ::slotted([data-hax-active]:hover) {
+      border: 0 !important;
+      outline: 0 !important;
+    }
+    :host([data-hax-ray]) div ::slotted(*:hover:not([data-hax-active])) {
+      outline: 1px dashed var(--muted-foreground) !important;
+      outline-offset: 4px !important;
+    }
+    :host([data-hax-ray]) [data-layout-slotname],
+    :host([data-hax-ray]) [data-layout-slotname]:hover {
+      outline: 0 !important;
+    }
+  `,
+
   /* ---------- every HAX dialog: shadcn Dialog ---------- */
   // callers pass titlebar colours as inline custom properties on the host;
   // :host !important outranks an inline (outer, normal) declaration

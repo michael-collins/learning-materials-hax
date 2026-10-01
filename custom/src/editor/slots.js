@@ -166,13 +166,29 @@ export function nearestSlot(slots, x, y) {
 export const sameSlot = (a, b) =>
   !!a && !!b && a.container === b.container && a.slotName === b.slotName && a.before === b.before && a.after === b.after;
 
+/**
+ * Drop `slot` attributes from blocks that are no longer in a layout. HAX's
+ * Block panel re-applies the slot it read earlier a moment after a block is
+ * moved, so this runs again once that has happened.
+ */
+export function clearStraySlots(nodes) {
+  const clean = () => {
+    for (const n of nodes) {
+      if (n?.isConnected && n.hasAttribute("slot") && n.parentElement?.localName !== "grid-plate") n.removeAttribute("slot");
+    }
+  };
+  clean();
+  setTimeout(clean, 150);
+  setTimeout(clean, 600);
+}
+
 /** Put an existing block into a slot. */
 export function placeInSlot(node, slot) {
   if (slot.before) slot.before.before(node);
   else if (slot.after) slot.after.after(node);
   else slot.container.append(node);
   if (slot.slotName) node.setAttribute("slot", slot.slotName);
-  else node.removeAttribute("slot");
+  else clearStraySlots([node]);
 }
 
 /** Insert a new block into a slot via HAX, returning the new element. */

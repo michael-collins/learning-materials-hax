@@ -18,6 +18,13 @@
  * uses. Escape cancels a drag. The frame never takes pointer events except
  * on the handle, so the block stays editable.
  *
+ * Layouts: when the block is inside a column layout (or is one), that
+ * layout gets a dashed outline with a "Columns · n" tab and its columns are
+ * outlined; while dragging, every layout is. The label becomes a
+ * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
+ * opens the layout menu (presets, select, remove; or "put in columns" for
+ * a block outside any layout).
+ *
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
  * floating drag menu in hax-plate-context.
  * @element oer-block-frame
@@ -27,6 +34,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { contentViewport, pressPlate } from "./stock.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
+import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -43,6 +51,9 @@ class OerBlockFrame extends LitElement {
     return {
       _label: { state: true },
       _drag: { state: true },
+      _layout: { state: true },
+      _guides: { state: true },
+      _menu: { state: true },
     };
   }
 
@@ -50,8 +61,20 @@ class OerBlockFrame extends LitElement {
     super();
     this._label = "";
     this._drag = null; // { x, y, slot, valid }
+    this._layout = null; // the grid-plate around (or being) the active block
+    this._guides = []; // outlines for layouts and their columns
+    this._menu = false;
+    this.__outside = (e) => {
+      if (this._menu && !e.composedPath().includes(this)) this._menu = false;
+    };
     this.__tick = this._tick.bind(this);
     this.__keys = (e) => {
+      if (this._menu && e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        this._menu = false;
+        return;
+      }
       if (this._drag && e.key === "Escape") {
         e.preventDefault();
         e.stopPropagation();
@@ -65,9 +88,11 @@ class OerBlockFrame extends LitElement {
     this.hidden = true;
     this.__raf = requestAnimationFrame(this.__tick);
     globalThis.addEventListener("keydown", this.__keys, true);
+    globalThis.addEventListener("pointerdown", this.__outside, true);
   }
 
   disconnectedCallback() {
+    globalThis.removeEventListener("pointerdown", this.__outside, true);
     cancelAnimationFrame(this.__raf);
     globalThis.removeEventListener("keydown", this.__keys, true);
     super.disconnectedCallback();
@@ -85,10 +110,13 @@ class OerBlockFrame extends LitElement {
     if (!node || !node.isConnected || node.localName === "page-break") {
       this.hidden = true;
       this.__node = null;
+      this._menu = false;
       return;
     }
     if (node !== this.__node) {
       this.__node = node;
+      this._menu = false;
+      this._layout = layoutOf(hax.activeHaxBody, node);
       const schema = hax.haxSchemaFromTag?.(node.localName);
       this._label = schema?.gizmo?.title || node.localName;
     }
@@ -110,7 +138,83 @@ class OerBlockFrame extends LitElement {
     s.setProperty("--grip", `${Math.round((visTop + visBottom) / 2 - f.top)}px`);
     this.toggleAttribute("compact", f.compact);
 
+    this._updateGuides();
     if (this._drag) this._dragFrame();
+  }
+
+  // the active layout's outline and columns; every layout while dragging
+  _updateGuides() {
+    const body = this._hax?.activeHaxBody;
+    const grids = this._drag ? [...(body?.querySelectorAll("grid-plate") || [])] : this._layout?.isConnected ? [this._layout] : [];
+    const round = (r) => ({ top: Math.round(r.top), left: Math.round(r.left), width: Math.round(r.width), height: Math.round(r.height) });
+    const guides = grids
+      .filter((g) => g.getClientRects().length)
+      .map((g) => {
+        const box = round(g.getBoundingClientRect());
+        const cols = columnRects(g).map(round);
+        // a dashed divider between neighbouring columns: vertical when they
+        // sit side by side, horizontal when the layout has stacked them
+        const dividers = [];
+        for (let i = 1; i < cols.length; i++) {
+          const a = cols[i - 1];
+          const b = cols[i];
+          if (b.left >= a.left + a.width - 1) {
+            dividers.push({ left: Math.round((a.left + a.width + b.left) / 2), top: box.top, width: 0, height: box.height });
+          } else {
+            dividers.push({ left: box.left, top: Math.round((a.top + a.height + b.top) / 2), width: box.width, height: 0 });
+          }
+        }
+        return { ...box, count: columnCount(g), cols, dividers };
+      });
+    const key = JSON.stringify(guides);
+    if (key !== this.__guideKey) {
+      this.__guideKey = key;
+      this._guides = guides;
+    }
+  }
+
+  /* ---------- layouts ---------- */
+
+  // actions re-read the layout rather than trusting the per-frame copy
+  _currentLayout() {
+    const hax = this._hax;
+    const node = hax?.activeNode;
+    return node ? layoutOf(hax.activeHaxBody, node) : null;
+  }
+
+  _selectLayout() {
+    const hax = this._hax;
+    const grid = this._currentLayout();
+    if (hax && grid) hax.activeNode = grid;
+    this._menu = false;
+  }
+
+  async _chooseLayout(key) {
+    const hax = this._hax;
+    const node = hax?.activeNode;
+    this._menu = false;
+    if (!hax || !node) return;
+    const layout = this._currentLayout();
+    if (layout) {
+      setLayout(layout, key);
+    } else {
+      const grid = await wrapInColumns(hax, node, key);
+      if (grid) {
+        this.__node = null; // re-read the layout on the next frame
+        hax.activeNode = node;
+      }
+    }
+  }
+
+  _removeLayout() {
+    const hax = this._hax;
+    const grid = this._currentLayout();
+    this._menu = false;
+    if (!hax || !grid) return;
+    const keep = hax.activeNode === grid ? null : hax.activeNode;
+    const first = removeLayout(grid);
+    this.__node = null;
+    hax.activeNode = keep || first;
   }
 
   /* ---------- move ---------- */
@@ -284,11 +388,17 @@ class OerBlockFrame extends LitElement {
         -webkit-mask: var(--src) center / contain no-repeat;
         mask: var(--src) center / contain no-repeat;
       }
+      /* breadcrumb label: [▥] Columns › Paragraph */
       .label {
+        pointer-events: auto;
         top: var(--top);
         left: calc(var(--left) + var(--width));
         transform: translate(-100%, -100%);
-        padding: 0.125rem 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.125rem;
+        height: 1.5rem;
+        padding: 0 0.375rem 0 0.125rem;
         font-size: 0.75rem;
         font-weight: 600;
         line-height: 1.25rem;
@@ -296,6 +406,148 @@ class OerBlockFrame extends LitElement {
         color: var(--primary-foreground);
         background: var(--primary);
         border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      }
+      .label button {
+        width: auto;
+        height: 1.25rem;
+        padding: 0 0.25rem;
+        border-radius: var(--radius-sm);
+        font: inherit;
+        color: inherit;
+      }
+      .label .lay {
+        width: 1.25rem;
+        padding: 0;
+      }
+      .label .crumb {
+        font-weight: 500;
+        opacity: 0.85;
+      }
+      .label .sep {
+        opacity: 0.7;
+      }
+      .label .sep .icon {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+
+      /* layout guides: the layout around the selection, and its columns */
+      .guide,
+      .col {
+        position: fixed;
+        box-sizing: border-box;
+        border-radius: var(--radius-sm);
+      }
+      .guide {
+        border: 1px dashed color-mix(in oklch, var(--primary) 70%, transparent);
+      }
+      .col {
+        background: color-mix(in oklch, var(--primary) 4%, transparent);
+      }
+      .divider {
+        position: fixed;
+        box-sizing: border-box;
+        border-left: 1px dashed color-mix(in oklch, var(--primary) 60%, transparent);
+        border-top: 1px dashed color-mix(in oklch, var(--primary) 60%, transparent);
+      }
+      .divider.v {
+        border-top: 0;
+      }
+      .divider.h {
+        border-left: 0;
+      }
+      .tab {
+        position: absolute;
+        top: 0;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        padding: 0 0.375rem;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        line-height: 1.125rem;
+        white-space: nowrap;
+        color: var(--primary);
+        background: var(--background);
+        border: 1px solid color-mix(in oklch, var(--primary) 70%, transparent);
+        border-radius: 999px;
+      }
+
+      /* layout menu (shadcn DropdownMenu) */
+      .menu {
+        pointer-events: auto;
+        position: fixed;
+        top: var(--top);
+        left: calc(var(--left) + var(--width));
+        transform: translateX(-100%);
+        width: 16rem;
+        box-sizing: border-box;
+        padding: 0.25rem;
+        color: var(--popover-foreground);
+        background: var(--popover);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      }
+      .menu .head {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--muted-foreground);
+      }
+      .presets {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.25rem;
+        padding: 0.25rem;
+      }
+      .menu .presets button {
+        width: auto;
+        height: 2.25rem;
+        padding: 0.375rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        display: flex;
+        gap: 2px;
+      }
+      .menu .presets button:hover {
+        border-color: var(--primary);
+        background: var(--accent);
+      }
+      .menu .presets button[aria-checked="true"] {
+        border-color: var(--primary);
+        box-shadow: inset 0 0 0 1px var(--primary);
+      }
+      .bar {
+        height: 100%;
+        border-radius: 2px;
+        background: color-mix(in oklch, var(--foreground) 35%, transparent);
+      }
+      .menu .presets button[aria-checked="true"] .bar {
+        background: var(--primary);
+      }
+      .menu .sepline {
+        height: 1px;
+        margin: 0.25rem -0.25rem;
+        background: var(--border);
+      }
+      .menu .item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        height: 2rem;
+        padding: 0 0.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        justify-content: flex-start;
+      }
+      .menu .item:hover {
+        background: var(--accent);
+        color: var(--accent-foreground);
+      }
+      .menu .icon {
+        width: 1rem;
+        height: 1rem;
       }
       /* while dragging: the block's frame goes quiet, the target slot lights up */
       :host([dragging]) .ring {
@@ -327,13 +579,85 @@ class OerBlockFrame extends LitElement {
 
   updated(changed) {
     if (changed.has("_drag")) this.toggleAttribute("dragging", !!this._drag);
+    // the layout menu opens below the label; lift it if it runs off-screen
+    const menu = this.shadowRoot.querySelector(".menu");
+    if (menu) {
+      menu.style.marginTop = "0px";
+      const r = menu.getBoundingClientRect();
+      const over = r.bottom - (globalThis.innerHeight - 8);
+      if (over > 0) menu.style.marginTop = `${-Math.min(over, r.top - 8)}px`;
+    }
+  }
+
+  _renderLabel() {
+    const inLayout = this._layout && this._layout !== this.__node;
+    return html`<div class="label" @mousedown="${(e) => e.preventDefault()}">
+      <button
+        class="lay"
+        title="Layout"
+        aria-label="Layout options"
+        aria-haspopup="menu"
+        aria-expanded="${this._menu ? "true" : "false"}"
+        @click="${() => (this._menu = !this._menu)}"
+      >
+        ${icon("columns-2")}
+      </button>
+      ${inLayout
+        ? html`<button class="crumb" title="Select the column layout" @click="${this._selectLayout}">Columns</button>
+            <span class="sep" aria-hidden="true">${icon("chevron-right")}</span>`
+        : ""}
+      <span>${this._label}</span>
+    </div>`;
+  }
+
+  _renderMenu() {
+    const grid = this._layout;
+    const presets = layoutPresets(grid).filter((p) => grid || p.key !== "1");
+    return html`<div class="menu" role="menu" aria-label="Layout" @mousedown="${(e) => e.preventDefault()}">
+      <div class="head">${grid ? "Column layout" : "Put in columns"}</div>
+      <div class="presets" role="group" aria-label="Column presets">
+        ${presets.map(
+          (p) => html`<button
+            role="menuitemradio"
+            aria-checked="${grid?.layout === p.key ? "true" : "false"}"
+            title="${p.label}"
+            aria-label="${p.ratios.length} columns: ${p.label}"
+            @click="${() => this._chooseLayout(p.key)}"
+          >
+            ${p.ratios.map((r) => html`<span class="bar" style="flex:${r}"></span>`)}
+          </button>`,
+        )}
+      </div>
+      ${grid
+        ? html`<div class="sepline"></div>
+            ${grid !== this.__node
+              ? html`<button class="item" role="menuitem" @click="${this._selectLayout}">${icon("box")} Select layout</button>`
+              : ""}
+            <button class="item" role="menuitem" @click="${this._removeLayout}">${icon("panel-right-close")} Remove layout, keep blocks</button>`
+        : ""}
+    </div>`;
   }
 
   render() {
     const d = this._drag;
     return html`
+      ${this._guides.map(
+        (g) => html`${g.cols.map(
+            (c) => html`<div class="col" style="top:${c.top}px;left:${c.left}px;width:${c.width}px;height:${c.height}px"></div>`,
+          )}
+          ${g.dividers.map(
+            (v) => html`<div
+              class="divider ${v.width ? "h" : "v"}"
+              style="top:${v.top}px;left:${v.left}px;width:${v.width}px;height:${v.height}px"
+            ></div>`,
+          )}
+          <div class="guide" style="top:${g.top - 6}px;left:${g.left - 6}px;width:${g.width + 12}px;height:${g.height + 12}px">
+            <span class="tab">Columns · ${g.count}</span>
+          </div>`,
+      )}
       <div class="ring"></div>
-      <div class="label">${this._label}</div>
+      ${this._renderLabel()}
+      ${this._menu ? this._renderMenu() : ""}
       <div class="handle" @mousedown="${(e) => e.preventDefault()}">
         <button class="step" title="Move up" aria-label="Move block up" @click="${() => this._move("up")}">${icon("chevron-up")}</button>
         <button

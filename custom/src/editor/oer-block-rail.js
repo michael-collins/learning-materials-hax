@@ -257,8 +257,11 @@ class OerBlockRail extends LitElement {
       return;
     }
     this.hidden = false;
-    // left of the frame's drag handle
-    const left = Math.round(f.left - HANDLE_WIDTH - 8 - (rail?.offsetWidth || 42));
+    // left of the frame's drag handle, but always in the page gutter: a
+    // block in a second column must not put the rail over the first
+    const bodyLeft = this._hax?.activeHaxBody?.getBoundingClientRect().left ?? f.left;
+    const anchor = Math.min(f.left, bodyLeft - 4 - 6);
+    const left = Math.round(anchor - HANDLE_WIDTH - 8 - (rail?.offsetWidth || 42));
     this.style.transform = `translate(${left}px, ${Math.round(top)}px)`;
   }
 
