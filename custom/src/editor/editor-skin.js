@@ -97,6 +97,8 @@ const EDITOR_TAGS = [
   "simple-context-menu",
   "simple-tooltip",
   "d-d-d-sample",
+  "hax-plate-context",
+  "simple-picker",
   "hax-map",
   "hax-view-source",
   "hax-gizmo-browser",
@@ -453,7 +455,10 @@ export const editorSkin = {
       width: 100% !important;
       height: 100% !important;
       max-width: none !important;
+      max-height: none !important;
       transform: none !important;
+      /* stock makes the panel drag-resizable, drawing a corner grip */
+      resize: none !important;
     }
     /* inset variant: the panel sits on the page background like the
        sidebar it replaces, beside the rounded content card */
@@ -580,6 +585,65 @@ export const editorSkin = {
     .oer-footer-item:focus-visible {
       outline: 2px solid var(--ring);
       outline-offset: -2px;
+    }
+
+    .oer-account {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.25rem 0 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .oer-avatar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 999px;
+      background: var(--muted);
+      color: var(--foreground);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .oer-avatar .oer-icon {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+    .oer-account-name {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .oer-account-btn {
+      all: unset;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: var(--radius-md);
+      color: var(--muted-foreground);
+      cursor: pointer;
+    }
+    .oer-account-btn:hover {
+      background: var(--accent);
+      color: var(--foreground);
+    }
+    .oer-account-btn.danger:hover {
+      color: var(--destructive);
+      background: color-mix(in oklch, var(--destructive) 10%, transparent);
+    }
+    .oer-account-btn:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 1px;
     }
 
     /* panel sub-header: only the Block tab needs it (names the block) */
@@ -952,7 +1016,125 @@ export const editorSkin = {
     }
   `,
 
-  /* ---------- floating block + text toolbars (shadcn Toolbar) ---------- */
+  /* ---------- floating block + text toolbars (shadcn Toolbar) ----------
+     Shared spec: 28px ghost buttons, 16px foreground icons, 2px gaps, 1px
+     dividers between groups. */
+  "hax-plate-context": css`
+    /* the groups are slotted into hax-toolbar from here; stock gives each
+       its own #ddd box inside the toolbar's border */
+    .group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.125rem !important;
+      padding: 0 0.125rem !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+    .group + .group {
+      border-left: 1px solid var(--border) !important;
+      margin-left: 0.125rem !important;
+      padding-left: 0.25rem !important;
+    }
+  `,
+  "rich-text-editor-toolbar, hax-text-editor-toolbar": css`
+    /* selecting text adds selection-only buttons; let them wrap onto a
+       second row inside the toolbar box instead of spilling over the text */
+    :host {
+      height: auto !important;
+      max-height: none !important;
+    }
+    #buttons {
+      flex-wrap: wrap !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: 100% !important;
+      overflow: visible !important;
+      row-gap: 0.125rem !important;
+    }
+    .group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.125rem !important;
+    }
+    #buttons > * + .group,
+    #buttons > .group + * {
+      border-left: 1px solid var(--border);
+      padding-left: 0.25rem;
+      margin-left: 0.125rem;
+    }
+  `,
+  "hax-context-item, hax-toolbar-menu, hax-toolbar-item, rich-text-editor-button, hax-text-editor-button, rich-text-editor-link, rich-text-editor-unlink, rich-text-editor-underline, rich-text-editor-symbol-picker, rich-text-editor-emoji-picker, rich-text-editor-icon-picker": css`
+    :host {
+      --simple-icon-height: 1rem !important;
+      --simple-icon-width: 1rem !important;
+      --simple-icon-color: var(--foreground);
+      color: var(--foreground);
+    }
+    button {
+      box-sizing: border-box !important;
+      height: 1.75rem !important;
+      min-width: 1.75rem !important;
+      padding: 0 0.375rem !important;
+      gap: 0.125rem !important;
+      border: 0 !important;
+      border-radius: var(--radius-sm) !important;
+      background: transparent !important;
+      color: var(--foreground) !important;
+      box-shadow: none !important;
+    }
+    button:hover,
+    :host([toggled]) button,
+    button[aria-pressed="true"] {
+      background: var(--accent) !important;
+      color: var(--accent-foreground) !important;
+    }
+    button:focus-visible {
+      outline: 2px solid var(--ring) !important;
+      outline-offset: 1px !important;
+    }
+    #icon {
+      width: 1rem !important;
+      height: 1rem !important;
+    }
+    /* dropdown menus keep a small muted caret after the icon */
+    #dropdownicon {
+      width: 0.75rem !important;
+      height: 0.75rem !important;
+      --simple-icon-width: 0.75rem !important;
+      --simple-icon-height: 0.75rem !important;
+      --simple-icon-color: var(--muted-foreground);
+      color: var(--muted-foreground) !important;
+    }
+  `,
+  "simple-picker": css`
+    [part="sample"] {
+      box-sizing: border-box !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.125rem !important;
+      height: 1.75rem !important;
+      padding: 0 0.375rem !important;
+      border: 0 !important;
+      border-radius: var(--radius-sm) !important;
+      background: transparent !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.8125rem !important;
+      font-weight: 500 !important;
+      color: var(--foreground) !important;
+      --simple-icon-height: 0.875rem;
+      --simple-icon-width: 0.875rem;
+      --simple-icon-color: var(--muted-foreground);
+    }
+    [part="sample"]:hover {
+      background: var(--accent) !important;
+    }
+    [part="label"]:empty {
+      display: none !important;
+    }
+  `,
+
   /* block toolbar: one continuous toolbar with dividers between groups,
      instead of three separate floating boxes */
   "hax-toolbar": css`

@@ -799,7 +799,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           .main-col {
             display: flex;
             flex-direction: column;
-            margin: 0.5rem 0.5rem 0.5rem 0;
+            /* gap on all sides so the card's outline never sits under the
+               sidebar or the docked editor panel */
+            margin: 0.5rem;
             height: calc(100vh - 1rem);
             height: calc(100dvh - 1rem);
             overflow: hidden;
@@ -810,9 +812,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             box-shadow:
               0 1px 2px rgb(0 0 0 / 0.06),
               0 0 0 1px color-mix(in oklch, var(--foreground) 9%, transparent);
-          }
-          :host([collapsed]) .main-col {
-            margin-left: 0.5rem;
           }
           .topbar {
             position: relative;

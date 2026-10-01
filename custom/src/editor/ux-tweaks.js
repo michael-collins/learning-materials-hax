@@ -4,7 +4,7 @@
  * default. Each tweak patches one element class once it is defined.
  */
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { showPanel, PANELS, addPage, openOutline, openSiteSettings } from "./stock.js";
+import { showPanel, PANELS, addPage, openOutline, openSiteSettings, logout, stockUI } from "./stock.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
@@ -177,7 +177,39 @@ function buildSiteFooter() {
     b.addEventListener("click", fn);
     footer.append(b);
   }
+  footer.append(buildAccountRow());
   return footer;
+}
+
+// same account row as the sidebar footer: initials, name, dashboard, log out
+function buildAccountRow() {
+  const doc = globalThis.document;
+  const name = store.userData?.userName || "";
+  const row = doc.createElement("div");
+  row.className = "oer-account";
+  const avatar = doc.createElement("span");
+  avatar.className = "oer-avatar";
+  avatar.setAttribute("aria-hidden", "true");
+  if (name) avatar.textContent = name.slice(0, 2);
+  else avatar.append(iconSpan("social:person"));
+  const label = doc.createElement("span");
+  label.className = "oer-account-name";
+  label.textContent = name || "Signed in";
+  const dash = doc.createElement("a");
+  dash.className = "oer-account-btn";
+  dash.href = stockUI()?.backLink ?? "/";
+  dash.title = "Site dashboard";
+  dash.setAttribute("aria-label", "Site dashboard");
+  dash.append(iconSpan("hax:home-edit"));
+  const out = doc.createElement("button");
+  out.type = "button";
+  out.className = "oer-account-btn danger";
+  out.title = "Log out";
+  out.setAttribute("aria-label", "Log out");
+  out.append(iconSpan("icons:exit-to-app"));
+  out.addEventListener("click", logout);
+  row.append(avatar, label, dash, out);
+  return row;
 }
 
 function whenElement(tag, fn) {

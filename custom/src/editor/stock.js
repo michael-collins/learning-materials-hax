@@ -71,4 +71,4 @@ export function openCommandPalette(query = "") {
 
 export const isMac = /Mac|iPhone|iPad/.test(globalThis.navigator?.platform ?? "");
 export const MOD = isMac ? "⌘" : "Ctrl";
-export const DAEMON = isMac ? "⌘⇧" : "Alt⇧";
+export const DAEMON = isMac ? "⌘⇧K" : "Ctrl⇧K";
