@@ -38,7 +38,8 @@ const SORTS = { title: "Title", updated: "Recently updated", created: "Newest", 
 const DIFFICULTY_ORDER = ["beginner", "intermediate", "advanced"];
 
 const toList = (v) => (Array.isArray(v) ? v : typeof v === "string" && v ? v.split(",").map((s) => s.trim()).filter(Boolean) : []);
-const text = (v) => (Array.isArray(v) ? v.join(", ") : v == null ? "" : String(v));
+const toFiles = (v) => (Array.isArray(v) ? v : []).filter((f) => f && (f.url || f.title));
+const fileName = (url) => String(url).split(/[?#]/)[0].split("/").pop();
 
 function readStore(key) {
   try {
@@ -169,6 +170,16 @@ export class OerCollection extends LitElement {
     return item.metadata?.oerFields?.[name];
   }
 
+  // a field value as words: linked page titles, file titles, choice labels
+  _plain(value, field = null) {
+    if (Array.isArray(value)) return value.map((v) => this._plain(v, field)).filter(Boolean).join(", ");
+    if (value && typeof value === "object") {
+      if (value.page) return resolveLinks([value], this._all || [])[0]?.item?.title || "";
+      return value.title || value.url || "";
+    }
+    return value == null ? "" : String(this._label(field, value));
+  }
+
   _image(item) {
     const f = item.metadata?.oerFields || {};
     return f.image || f.coverImage || item.metadata?.image || "";
@@ -210,7 +221,7 @@ export class OerCollection extends LitElement {
     for (const f of this._fields) {
       if (!f.header || f.kind === "list" || f.kind === "longtext" || f.kind === "image") continue;
       if (!this._items.some((i) => this._value(i, f.name) !== undefined && this._value(i, f.name) !== "")) continue;
-      cols.push({ key: f.name, label: f.label, field: f, sortable: true });
+      cols.push({ key: f.name, label: f.label, field: f, sortable: f.kind !== "relation" && f.kind !== "files" });
     }
     return cols;
   }
@@ -220,7 +231,7 @@ export class OerCollection extends LitElement {
     const needle = q.trim().toLowerCase();
     return this._items.filter((i) => {
       if (needle) {
-        const hay = [i.title, i.description, ...toList(i.metadata?.tags), ...Object.values(i.metadata?.oerFields || {}).map(text)].join(" ").toLowerCase();
+        const hay = [i.title, i.description, ...toList(i.metadata?.tags), ...Object.values(i.metadata?.oerFields || {}).map((v) => this._plain(v))].join(" ").toLowerCase();
         if (!hay.includes(needle)) return false;
       }
       for (const [name, value] of Object.entries(filters)) {
@@ -245,7 +256,7 @@ export class OerCollection extends LitElement {
         const n = DIFFICULTY_ORDER.indexOf(String(this._value(i, key) || "").toLowerCase());
         return n < 0 ? 99 : n;
       }
-      return text(this._value(i, key));
+      return this._plain(this._value(i, key));
     };
     return [...list].sort((a, b) => {
       const x = val(a);
@@ -586,6 +597,14 @@ export class OerCollection extends LitElement {
         --simple-icon-height: 0.75rem;
         --simple-icon-width: 0.75rem;
       }
+      .cell-link {
+        color: var(--primary, #0071b6);
+        text-decoration: none;
+      }
+      .cell-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
       .pill.muted {
         background: var(--muted, #f4f4f5);
         color: var(--muted-foreground, #555);
@@ -902,13 +921,16 @@ export class OerCollection extends LitElement {
     const out = [];
     for (const f of this._fields) {
       if (!f.header || !["select", "text", "number"].includes(f.kind)) continue;
-      const v = this._value(item, f.name);
-      if (v === undefined || v === "" || v === null) continue;
-      out.push(
-        f.kind === "select" && this._filterFields.includes(f)
-          ? html`<button class="pill" title="Filter by ${f.label}" @click="${(e) => (e.preventDefault(), this._setFilter(f.name, v))}">${this._label(f, v)}</button>`
-          : html`<span class="pill muted">${f.kind === "text" && /duration|time/i.test(f.name) ? lucide("device:access-time", "xs") : ""}${this._label(f, v)}</span>`,
-      );
+      const raw = this._value(item, f.name);
+      if (raw === undefined || raw === "" || raw === null) continue;
+      // a choice field that allows several values gives one pill per value
+      for (const v of f.kind === "select" ? toList(raw) : [raw]) {
+        out.push(
+          f.kind === "select" && this._filterFields.includes(f)
+            ? html`<button class="pill" title="Filter by ${f.label}" @click="${(e) => (e.preventDefault(), this._setFilter(f.name, v))}">${this._label(f, v)}</button>`
+            : html`<span class="pill muted">${f.kind === "text" && /duration|time/i.test(f.name) ? lucide("device:access-time", "xs") : ""}${this._label(f, v)}</span>`,
+        );
+      }
       if (out.length >= limit) break;
     }
     return out;
@@ -935,12 +957,25 @@ export class OerCollection extends LitElement {
         );
       default: {
         const v = this._value(item, col.key);
-        if (v === undefined || v === "") return "";
-        if (col.field?.kind === "select" && this._filterFields.includes(col.field)) {
-          return html`<button class="pill" title="Filter by ${col.label}" @click="${() => this._setFilter(col.key, v)}">${this._label(col.field, v)}</button>`;
+        if (v === undefined || v === "" || (Array.isArray(v) && !v.length)) return "";
+        const kind = col.field?.kind;
+        if (kind === "relation") {
+          return resolveLinks(v, this._all || [])
+            .filter((r) => !r.missing)
+            .map((r, n) => html`${n ? ", " : ""}<a class="cell-link" href="${r.href}">${r.item.title}</a>${r.version ? ` v${r.version}` : ""}`);
         }
-        if (col.field?.kind === "boolean") return v ? "Yes" : "No";
-        return text(this._label(col.field, v));
+        if (kind === "files") {
+          return toFiles(v).map(
+            (f, n) => html`${n ? ", " : ""}${f.url ? html`<a class="cell-link" href="${f.url}" download>${f.title || fileName(f.url)}</a>` : f.title}`,
+          );
+        }
+        if (kind === "select" && this._filterFields.includes(col.field)) {
+          return toList(v).map(
+            (x) => html`<button class="pill" title="Filter by ${col.label}" @click="${() => this._setFilter(col.key, x)}">${this._label(col.field, x)}</button>`,
+          );
+        }
+        if (kind === "boolean") return v ? "Yes" : "No";
+        return this._plain(v, col.field);
       }
     }
   }
