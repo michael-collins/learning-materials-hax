@@ -42,6 +42,26 @@ export function installUxTweaks() {
     });
   }
 
+  // Colour swatch grids print no names; expose each as a tooltip.
+  onDefined("simple-fields-field", (Cls) => {
+    const proto = Cls.prototype;
+    const updated = proto.updated;
+    const name = (option) => {
+      const sample = option.querySelector('d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]');
+      return sample?.shadowRoot?.querySelector(".label")?.textContent?.trim();
+    };
+    proto.updated = function (changed) {
+      updated?.call(this, changed);
+      if (this.type !== "radio") return;
+      requestAnimationFrame(() => {
+        for (const option of this.shadowRoot?.querySelectorAll('[part="option"]') ?? []) {
+          const label = name(option);
+          if (label && option.title !== label) option.title = label;
+        }
+      });
+    };
+  });
+
   // Insert panel: the block filter has a label but no placeholder hint.
   onDefined("hax-gizmo-browser", (Cls) => {
     const proto = Cls.prototype;

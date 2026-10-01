@@ -313,6 +313,58 @@ export const editorSkin = {
       display: inline-flex !important;
       margin: 0 !important;
     }
+
+    /* colour pickers (options rendered as d-d-d-sample swatches): a grid
+       of swatches instead of a checklist. The radio stays, invisible but
+       stretched over the swatch, so clicks, keyboard and screen readers
+       work unchanged; names show as tooltips (set in ux-tweaks.js). */
+    :host([type="radio"]) [part="fieldset-options"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) {
+      grid-template-columns: repeat(auto-fill, 1.75rem) !important;
+      gap: 0.5rem !important;
+      padding: 0.25rem 0.125rem !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) {
+      position: relative !important;
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      border-radius: var(--radius-md) !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) [part="option-label"] {
+      position: absolute !important;
+      inset: 0 !important;
+      margin: 0 !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) [part="option-inner"] {
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1;
+    }
+    /* HAX draws its radio circle as an icon; the swatch ring replaces it */
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) simple-icon-lite,
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) [part="option-icon"] {
+      display: none !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]) input {
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      opacity: 0 !important;
+      cursor: pointer !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]):has(input:checked) {
+      box-shadow: 0 0 0 2px var(--card), 0 0 0 4px var(--primary) !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]):has(input:focus-visible) {
+      box-shadow: 0 0 0 2px var(--card), 0 0 0 4px var(--ring) !important;
+    }
+    :host([type="radio"]) [part="option"]:has(d-d-d-sample[type="accent"], d-d-d-sample[type="primary"]):hover {
+      transform: none;
+      box-shadow: 0 0 0 2px var(--card), 0 0 0 3px var(--muted-foreground) !important;
+    }
   `,
 
   /* ---------- toolbar buttons: shadcn ghost Button (icon, h-8) ---------- */
@@ -1288,6 +1340,35 @@ export const editorSkin = {
 
   /* colour / style swatch labels in radio groups: one line, swatch first */
   "d-d-d-sample": css`
+    /* colour swatches fill their grid cell; the name is kept for screen
+       readers (and shown as a tooltip) rather than printed */
+    :host([type="accent"]),
+    :host([type="primary"]) {
+      display: block !important;
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+    }
+    :host([type="accent"]) .wrapper,
+    :host([type="primary"]) .wrapper {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      gap: 0 !important;
+    }
+    :host([type="accent"]) .sample,
+    :host([type="primary"]) .sample {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      border-radius: var(--radius-md) !important;
+    }
+    :host([type="accent"]) .label,
+    :host([type="primary"]) .label {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      clip-path: inset(50%) !important;
+      white-space: nowrap !important;
+    }
     .wrapper {
       display: flex !important;
       align-items: center !important;
