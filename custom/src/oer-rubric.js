@@ -13,6 +13,7 @@
  * @element oer-rubric
  */
 import { html, css } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { registerBlocks } from "./blocks/register.js";
 import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 
 const DATA_URL = "files/data/rubrics.json";
@@ -181,7 +182,7 @@ export class OerRubric extends DDD {
         description: "Assessment rubric from the site's rubrics data file.",
         icon: "icons:assignment-turned-in",
         color: "blue",
-        tags: ["Education", "assessment", "rubric", "grading"],
+        tags: ["Instructional", "assessment", "rubric", "grading"],
         meta: { author: "Michael Collins" },
       },
       settings: {
@@ -213,3 +214,4 @@ export class OerRubric extends DDD {
   }
 }
 customElements.define(OerRubric.tag, OerRubric);
+registerBlocks(OerRubric);
