@@ -7,11 +7,10 @@
 <order>4</order>
 <parent></parent>
 <title>Pathways</title>
-<description>
-</description>
+<description>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r</description>
 <metadata>
 <created>1790827963</created>
-<updated>1790829193</updated>
+<updated>1790829910</updated>
 <images>
 </images>
 <videos>
@@ -21,10 +20,8 @@
 <status></status>
 <overridePathauto>false</overridePathauto>
 <hideInMenu>false</hideInMenu>
-<linkTarget>_self</linkTarget>
 <readtime>1</readtime>
 </metadata>
-<content><![CDATA[
-<p></p>
-]]></content>
+<content><![CDATA[<p>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a repeat run.</p>
+<oer-collection types="pathway" scope="children" view="pathways" sort="title" controls="none"></oer-collection>]]></content>
 </item>

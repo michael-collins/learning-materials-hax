@@ -63,7 +63,7 @@
     <item>
       <title>Pathways</title>
       <link>https://localhost:3000/learning-materials/pathways</link>
-      <description></description>
+      <description>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a repeat run.</description>
       <guid>https://localhost:3000/learning-materials/pathways</guid>
       <pubDate>Thu, 01 Oct 2026 04:12:43 GMT</pubDate>
     </item>
@@ -112,10 +112,45 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
+      <title>Modeling</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
       <title>3D Modeling Fundamentals</title>
       <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/3d-modeling-fundamentals</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/3d-modeling-fundamentals</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Introduction to Modeling</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/introduction-to-modeling</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modeling the Airline Chair</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-the-airline-chair</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-the-airline-chair</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modeling a room</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-a-room</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/modeling/modeling-a-room</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Texturing</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
@@ -126,66 +161,31 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Lighting Principles</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/lighting-principles</link>
+      <title>Introduction to Texturing</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/introduction-to-texturing</link>
       <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/lighting-principles</guid>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/introduction-to-texturing</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>You don&apos;t see that everyday objects</title>
-      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects</link>
+      <title>Texturing the Airline Chair</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-the-airline-chair</link>
       <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/project/you-don-t-see-that-everyday-objects</guid>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-the-airline-chair</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Game art in real time</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time</link>
+      <title>Texturing a room</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-a-room</link>
       <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time</guid>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/texturing/texturing-a-room</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Real-time Engines</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/real-time-engines</link>
+      <title>Lighting, camera &amp; rendering</title>
+      <link>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering</link>
       <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/game-art-in-real-time/real-time-engines</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Drawing for 3D Design</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/drawing-for-3d-design</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Modeling a Low Poly Animal and Introduction to Particles</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Texturing Low-poly Assets with a Palette Texture</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Importing Assets into PlayCanvas</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Stylized Prop Set</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set</guid>
+      <guid>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
