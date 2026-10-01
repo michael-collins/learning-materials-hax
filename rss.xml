@@ -90,13 +90,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Importing Assets into PlayCanvas</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/into-the-engine/importing-assets-into-playcanvas</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Stylized Prop Set</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/stylized-prop-set</link>
       <description></description>
@@ -188,6 +181,13 @@
       <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair. Learning Objectives Practice using 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Demonstrate understanding of fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions Note: You should have a basic understanding Blender&apos;s inter...</description>
       <category>Blender,Modeling</category>
       <guid>https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Introduction to Cameras, Lighting, and Rendering</title>
+      <link>https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering</link>
+      <description>Presentation Topics Covered Video Screening “Spectacle, Speculation, Spam” by Alan Warburton Lighting Theory by Andrew Price Demo Lighting and Rendering Video (Unedited live demo) Technical Readings for 3D Rendering FX Guide: “Art of Rendering” FX Guide: “State of Rendering” For your Bookshelf How to Render by Scott Robertson Software Takes Command by Lev Manovich The Language of New Media by Lev Manovich TerminologyLighting setups 3 point lighting (key, fill, rim) Light types: Area, Spot, Di...</description>
+      <guid>https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
