@@ -1020,6 +1020,12 @@ export const editorSkin = {
      Shared spec: 28px ghost buttons, 16px foreground icons, 2px gaps, 1px
      dividers between groups. */
   "hax-plate-context": css`
+    /* replaced by oer-block-rail, which presses these controls; kept
+       mounted (not display:none) so their handlers and state stay live */
+    :host {
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
     /* the groups are slotted into hax-toolbar from here; stock gives each
        its own #ddd box inside the toolbar's border */
     .group {
@@ -1186,6 +1192,11 @@ export const editorSkin = {
     }
   `,
   "hax-text-editor-toolbar, rich-text-editor-toolbar": css`
+    /* hax-text-editor-toolbar is replaced by oer-block-rail (see above) */
+    :host(hax-text-editor-toolbar) {
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
     :host {
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
@@ -1968,6 +1979,26 @@ export const editorSkin = {
     button:focus-visible,
     a:focus-visible {
       ${focusRing}
+    }
+  `,
+
+  /* link (and other inline) prompts: shadcn Popover with a form; layered
+     above oer-block-rail, which it often overlaps */
+  "rich-text-editor-prompt": css`
+    #prompt {
+      z-index: 9995 !important;
+    }
+    #form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      font-family: var(--font-sans);
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
     }
   `,
 
