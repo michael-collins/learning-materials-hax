@@ -5084,41 +5084,6 @@
       }
     },
     {
-      "id": "item-1f23c00e-327e-4c43-b4e9-01c93d33fe99",
-      "indent": 1,
-      "location": "pages/item-1f23c00e-327e-4c43-b4e9-01c93d33fe99/index.html",
-      "slug": "pathways/motion-graphics",
-      "order": 7,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Motion graphics",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/motion-graphics",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "indent": 0,
       "location": "pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.html",
