@@ -5416,51 +5416,6 @@
       }
     },
     {
-      "id": "item-4722a907-f26c-4072-ba99-930558a46a7f",
-      "indent": 1,
-      "location": "pages/item-4722a907-f26c-4072-ba99-930558a46a7f/index.html",
-      "slug": "pathways/short-film-and-vfx-pathway",
-      "order": 10,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Short Film and VFX Pathway",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/short-film-and-vfx",
-        "tags": "Animation,VFX,Short Film,Compositing,Production Pipeline",
-        "oerFields": {
-          "difficulty": "Advanced",
-          "estimatedDuration": "32 weeks",
-          "learningObjectives": [
-            "Create complete animated short films from concept to final render",
-            "Integrate realistic visual effects with animated content",
-            "Apply professional compositing workflows to enhance final output",
-            "Collaborate in team-based production environments",
-            "Understand the full pipeline from pre-production to post-production"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-5dabc762-d17b-4d08-80ac-3dae0557d0cb",
       "indent": 1,
       "location": "pages/item-5dabc762-d17b-4d08-80ac-3dae0557d0cb/index.html",
