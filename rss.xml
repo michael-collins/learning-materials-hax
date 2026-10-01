@@ -112,13 +112,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Creating Blockouts for Games</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>Low poly non-photorealistic rendering</title>
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering</link>
       <description></description>
@@ -188,6 +181,13 @@
       <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets</link>
       <description></description>
       <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hard Surface Modeling</title>
+      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling</link>
+      <description></description>
+      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>

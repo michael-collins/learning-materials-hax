@@ -624,18 +624,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Creating Blockouts for Games</title>
-    <id>item-5ec9ac4a-0a1d-45e8-ab1b-5a36f3d4ac6b</id>
-    <updated>2026-10-01T04:46:26.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-20f9da7e-8d57-464e-afc3-3723ef1b4aad"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Low poly non-photorealistic rendering</title>
     <id>item-523a4adf-2bfd-4f2c-8da9-67c02a77e000</id>
     <updated>2026-10-01T04:46:27.000Z</updated>
@@ -864,6 +852,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     
     <content type="html">
       <![CDATA[ <p></p> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Hard Surface Modeling</title>
+    <id>item-4bb8978d-99a6-4b98-8373-a70600d6859a</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/hard-surface-modeling"/>
+    
+    <content type="html">
+      <![CDATA[ <oer-include page="item-f83868f0-e72d-43cd-b3b6-019b35bd4947"></oer-include> ]]>
     </content>
   </entry>
 </feed>
