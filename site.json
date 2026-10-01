@@ -2213,7 +2213,7 @@
       "order": 1000,
       "parent": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
       "title": "v0.0.1",
-      "description": "",
+      "description": "Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerFields": {
