@@ -173,6 +173,22 @@
         "status": "",
         "icon": "courseicons:learning-objectives"
       }
+    },
+    {
+      "id": "item-e8fc3bba-6963-49c7-887d-998d5f8eef98",
+      "indent": 0,
+      "location": "pages/item-e8fc3bba-6963-49c7-887d-998d5f8eef98/index.html",
+      "slug": "type-test",
+      "order": 99,
+      "parent": null,
+      "title": "Type test",
+      "description": "",
+      "metadata": {
+        "created": 1790821986,
+        "updated": 1790821986,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
