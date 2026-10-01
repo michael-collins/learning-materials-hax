@@ -289,12 +289,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation</loc>
-    <lastmod>2026-10-01T04:47:52.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/orientation/history-of-cgi</loc>
     <lastmod>2026-10-01T04:47:52.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -667,40 +661,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/3d-modeling-fundamentals</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/introduction-to-modeling</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/modeling-the-airline-chair</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/modeling-a-room</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/texturing-and-uv-mapping</loc>
@@ -709,97 +673,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/introduction-to-texturing</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/texturing-the-airline-chair</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/texturing-a-room</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/lighting-principles</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/camera-and-composition</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/rendering-techniques</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/lighting-and-rendering-the-airline-chair</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/project</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-objects</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/compositor-pathway-1</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/digital-fabrication-1</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -817,13 +697,73 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/concept-blockout/drawing-for-3d-design</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/into-the-engine/importing-assets-into-playcanvas</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/project/stylized-prop-set</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/introduction-to-modeling</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/introduction-to-texturing</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/camera-and-composition</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/project/you-don-t-see-that-everyday-object-posters</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/compositor-pathway-1</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/environment-design-for-real-time</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -835,13 +775,61 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/concept-blockout/drawing-for-3d-design</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/concept-blockout/creating-blockouts-for-games</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/concept-blockout/creating-blockouts-for-games</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/low-poly-non-photorealistic-rendering</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time/texturing-random-objects</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/project/modular-environment-kit</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/modeling-the-airline-chair</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/texturing-the-airline-chair</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/rendering-techniques</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/digital-fabrication-1</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/game-art-in-real-time/real-time-asset-budgets</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -859,55 +847,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-a-low-poly-animal-and-introduction-to-particles</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/low-poly-non-photorealistic-rendering</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/hard-surface-modeling</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/digital-sculpting</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-and-sculpting-a-sea-creature</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time/texturing-low-poly-assets-with-a-palette-texture</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time/texturing-random-objects</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -919,7 +859,73 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/project/realtime-game-environment</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/modeling/modeling-a-room</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/texturing/texturing-a-room</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-random-objects</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/texturing-for-real-time/baking-normal-maps</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/lighting-and-rendering-the-airline-chair</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/project</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/digital-sculpting</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -931,7 +937,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/into-the-engine/importing-assets-into-playcanvas</loc>
+    <loc>https://localhost:3000/learning-materials/pathways/game-design-and-development-1</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations-1/lighting-camera-rendering/rendering-a-room</loc>
+    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/modeling-game-assets/modeling-and-sculpting-a-sea-creature</loc>
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -941,30 +959,6 @@
     <lastmod>2026-10-01T04:47:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/project/stylized-prop-set</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/project/modular-environment-kit</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway-1/project/realtime-game-environment</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-design-and-development-1</loc>
-    <lastmod>2026-10-01T04:47:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/pathways/illustration-and-visualization-1</loc>
