@@ -47,6 +47,33 @@ export function addPage() {
  * Show a panel in the editor side panel. Unlike stock haxButtonOp this
  * never toggles: selecting the current tab keeps it open.
  */
+/**
+ * Press a control in HAX's (hidden) block toolbar by its event-name, e.g.
+ * "hax-plate-up". Clicks the control's inner native button, which runs its
+ * handler; the custom element's own click() is overridden.
+ */
+export function pressPlate(eventName) {
+  const plate = haxStore()?.activeHaxBody?.shadowRoot?.querySelector("hax-plate-context");
+  const find = (root) => {
+    for (const el of root?.querySelectorAll("*") || []) {
+      if (el.getAttribute("event-name") === eventName) return el;
+      const inner = el.shadowRoot && find(el.shadowRoot);
+      if (inner) return inner;
+    }
+    return null;
+  };
+  const item = plate && (find(plate) || find(plate.shadowRoot));
+  let button = null;
+  const queue = [item?.shadowRoot];
+  while (!button && queue.length) {
+    const root = queue.shift();
+    if (!root) continue;
+    button = root.querySelector("button");
+    for (const child of root.querySelectorAll("*")) queue.push(child.shadowRoot);
+  }
+  button?.click();
+}
+
 /** The theme's scrolling content area, for clipping overlays below the header. */
 export function contentViewport() {
   const main = globalThis.document.querySelector("custom-oer-docs-theme")?.shadowRoot?.querySelector("main");

@@ -257,5 +257,8 @@
   "oer:message-square-quote": "message-square-quote",
   "oer:chevron-right": "chevron-right",
   "oer:check": "check",
-  "oer:smile-plus": "smile-plus"
+  "oer:smile-plus": "smile-plus",
+  "oer:grip-vertical": "grip-vertical",
+  "oer:chevron-up": "chevron-up",
+  "oer:chevron-down": "chevron-down"
 }

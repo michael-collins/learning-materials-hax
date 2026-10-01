@@ -21,8 +21,8 @@ import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { contentViewport } from "./stock.js";
+import { computeSlots, slotAt, sameSlot, insertInSlot } from "./slots.js";
 
-const MIN_SLOT = 16; // px; slots narrower than this are padded around their centre
 const PANEL_W = 288;
 const PREVIEW_W = 288;
 
@@ -46,9 +46,9 @@ class OerBlockInserter extends LitElement {
 
   constructor() {
     super();
-    this._hover = null; // { gap, top, height, left, width }
+    this._hover = null; // a slot from slots.js, rounded
     this._end = null; // { y, left }
-    this._open = null; // { gap, x, y }
+    this._open = null; // { slot, x, y }
     this._query = "";
     this._active = 0;
     this.__tick = this._tick.bind(this);
@@ -111,64 +111,52 @@ class OerBlockInserter extends LitElement {
       end && this._end && this._end.y === end.y && this._end.left === end.left && this._end.width === end.width;
     if (!sameEnd && (end || this._end)) this._end = end;
 
-    // the empty slot in front of each block (the margin between blocks)
-    const slot = (i) => {
-      let top = i === 0 ? rects[0].top - MIN_SLOT : rects[i - 1].bottom;
-      let bottom = rects[i].top;
-      if (bottom - top < MIN_SLOT) {
-        const mid = (top + bottom) / 2;
-        top = mid - MIN_SLOT / 2;
-        bottom = mid + MIN_SLOT / 2;
-      }
-      return { gap: i, top: Math.round(top), height: Math.round(bottom - top), left: Math.round(b.left), width: Math.round(b.width) };
-    };
-
+    // empty slots between blocks, including inside layout columns; the
+    // slot after the last top-level block is the "Add block" row instead
     let hover = null;
-    if (this._open) {
-      // keep the chosen slot marked while choosing a block
-      if (this._open.gap < rects.length) hover = slot(this._open.gap);
-    } else {
-      const p = this.__pointer;
-      if (p && p.x > b.left - 72 && p.x < b.right + 8) {
-        for (let i = 0; i < rects.length; i++) {
-          const s = slot(i);
-          if (p.y >= s.top && p.y <= s.top + s.height && inView(s.top + s.height / 2)) {
-            hover = s;
-            break;
-          }
-        }
+    if (!globalThis.__oerDragging) {
+      const slots = computeSlots(body).filter((sl) => !sl.end);
+      if (this._open) {
+        // keep the chosen slot marked (and following the page) while choosing
+        if (!this._open.slot.end) hover = slots.find((sl) => sameSlot(sl, this._open.slot)) || null;
+      } else if (this.__pointer) {
+        const sl = slotAt(slots, this.__pointer.x, this.__pointer.y, { gutter: 72 });
+        if (sl && inView(sl.top + sl.height / 2)) hover = sl;
       }
     }
+    if (hover) {
+      hover = { ...hover, top: Math.round(hover.top), height: Math.round(hover.height), left: Math.round(hover.left), width: Math.round(hover.width) };
+    }
     const same =
-      hover &&
-      this._hover &&
-      ["gap", "top", "height", "left", "width"].every((k) => hover[k] === this._hover[k]);
+      hover && this._hover && sameSlot(hover, this._hover) &&
+      ["top", "height", "left", "width"].every((k) => hover[k] === this._hover[k]);
     if (!same && (hover || this._hover)) this._hover = hover;
   }
 
   /* ---------- flyout ---------- */
 
   /**
-   * Open the block list for the gap in front of block `gap` (blocks.length
-   * = after the last block). `anchor` is the {x, y} the flyout starts from.
+   * Open the block list for a slot (see slots.js). `anchor` is the {x, y}
+   * the flyout starts from.
    */
-  openAt(gap, anchor) {
+  openAt(slot, anchor) {
     this._query = "";
     this._active = 0;
-    this._open = { gap, x: anchor.x, y: anchor.y };
+    this._open = { slot, x: anchor.x, y: anchor.y };
     this.updateComplete.then(() => this.shadowRoot.querySelector(".panel input")?.focus());
   }
 
-  /** Open for the gap above or below a block (used by oer-block-rail). */
+  _endSlot() {
+    return computeSlots(this._hax?.activeHaxBody).find((sl) => sl.end);
+  }
+
+  /** Open for the slot above or below a block (used by oer-block-rail). */
   openFor(node, where) {
-    const blocks = this._blocks();
-    let top = node;
-    while (top && top.parentNode !== this._hax?.activeHaxBody) top = top.parentNode;
-    const i = blocks.indexOf(top);
-    if (i < 0) return;
-    const r = top.getBoundingClientRect();
-    const gap = where === "below" ? i + 1 : i;
-    this.openAt(gap, { x: r.left + 12, y: where === "below" ? r.bottom : r.top });
+    const slots = computeSlots(this._hax?.activeHaxBody);
+    const slot = slots.find((sl) => (where === "below" ? sl.after === node : sl.before === node));
+    if (!slot) return;
+    const r = node.getBoundingClientRect();
+    this.openAt(slot, { x: r.left + 12, y: where === "below" ? r.bottom : r.top });
   }
 
   close() {
@@ -181,12 +169,22 @@ class OerBlockInserter extends LitElement {
     const browser = hax?.haxTray?.shadowRoot?.querySelector("hax-gizmo-browser");
     const allowed = (g) => (browser?._gizmoAllowedInTray ? browser._gizmoAllowedInTray(g) : !!g?.tag);
     const all = (hax?.gizmoList || []).filter(allowed);
+    // block templates ("stax"): several blocks inserted together
+    const templates = hax?.platformAllows?.("blockTemplates") === false
+      ? []
+      : (hax?.staxList || []).filter((t) => t?.stax?.length).map((t) => ({
+          stax: t.stax,
+          title: t.details?.title || "Template",
+          description: t.details?.description || "",
+          image: t.details?.image || "",
+          icon: t.details?.icon || "hax:templates",
+          tags: t.details?.tags || [],
+        }));
     const q = this._query.trim().toLowerCase();
     if (q) {
-      const hits = all.filter((g) =>
-        [g.title, g.tag, g.description, ...(g.tags || [])].join(" ").toLowerCase().includes(q),
-      );
-      return [{ label: `Results`, items: hits }];
+      const match = (g) => [g.title, g.tag, g.description, ...(g.tags || [])].join(" ").toLowerCase().includes(q);
+      const sections = [{ label: "Blocks", items: all.filter(match) }, { label: "Templates", items: templates.filter(match) }];
+      return sections.filter((sec) => sec.items.length);
     }
     const sections = [];
     const recent = (browser?.recentGizmoList || []).filter(allowed).slice().reverse();
@@ -198,31 +196,32 @@ class OerBlockInserter extends LitElement {
       const items = all.filter((g) => (g.tags?.[0] || "Other") === cat).sort((a, b) => a.title.localeCompare(b.title));
       if (items.length) sections.push({ label: cat, items });
     }
+    if (templates.length) sections.push({ label: "Templates", items: templates });
     return sections;
   }
 
-  async _insert(gizmo) {
+  async _insert(item) {
     const hax = this._hax;
-    const body = hax?.activeHaxBody;
-    if (!body || !gizmo) return;
-    const gap = this._open?.gap ?? 0;
+    if (!hax?.activeHaxBody || !item || !this._open) return;
+    const slot = this._open.slot;
     this.close();
-    const blocks = this._blocks();
-    const before = new Set(body.children);
-    // haxInsert places the new block after the given node; the top slot
-    // goes after the page-break that opens every page
-    const after =
-      gap > 0 ? blocks[Math.min(gap, blocks.length) - 1] : [...body.children].find((el) => el.localName === "page-break");
-
-    // same template the stock Insert panel uses (data-demo-schema)
-    const schema = hax.haxSchemaFromTag(gizmo.tag);
-    const detail = schema?.demoSchema?.[0] || hax.haxElementPrototype({ tag: gizmo.tag }, {}, "");
-    hax.recentGizmoList?.push?.(schema?.gizmo || gizmo);
-    body.__addAbove = false;
-    body.haxInsert(detail.tag, detail.content || "", detail.properties || {}, after || null);
-
-    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    const added = [...body.children].find((el) => !before.has(el));
+    let added = null;
+    if (item.stax) {
+      // a template: its blocks in order, each after the previous one
+      let target = slot;
+      for (const block of item.stax) {
+        const el = await insertInSlot(hax, target, block);
+        if (!el) break;
+        added = added || el;
+        target = { ...slot, after: el, before: null };
+      }
+    } else {
+      // same template the stock Insert panel uses (data-demo-schema)
+      const schema = hax.haxSchemaFromTag(item.tag);
+      const detail = schema?.demoSchema?.[0] || hax.haxElementPrototype({ tag: item.tag }, {}, "");
+      hax.recentGizmoList?.push?.(schema?.gizmo || item);
+      added = await insertInSlot(hax, slot, detail);
+    }
     if (!added) return;
     hax.activeNode = added;
     added.focus?.();
@@ -422,6 +421,32 @@ class OerBlockInserter extends LitElement {
         width: ${PREVIEW_W}px;
         overflow: hidden;
       }
+      .tpl ol {
+        margin: 0;
+        padding: 1rem 1rem 1rem 2.25rem;
+        background: var(--muted);
+        border-bottom: 1px solid var(--border);
+        font-size: 0.875rem;
+      }
+      .tpl img {
+        display: block;
+        width: 100%;
+        max-height: 9rem;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border);
+      }
+      .tpl-info {
+        padding: 0.75rem 1rem;
+      }
+      .tpl-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+      .tpl-desc {
+        margin-top: 0.25rem;
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
     `;
   }
 
@@ -435,7 +460,8 @@ class OerBlockInserter extends LitElement {
     // beside the anchor, kept on screen; the preview goes right of the
     // panel, or left of it when there is no room
     const x = Math.max(8, Math.min(o.x + 16, vw - PANEL_W - 8));
-    const y = Math.max(8, Math.min(o.y - 20, vh - Math.min(480, vh - 16) - 8));
+    // start level with the slot; updated() lifts it if it runs off the bottom
+    const y = Math.max(8, o.y - 20);
     const previewLeft = x + PANEL_W + 8 + PREVIEW_W <= vw - 8 ? x + PANEL_W + 8 : x - PREVIEW_W - 8;
     let i = -1;
     return html`
@@ -486,15 +512,38 @@ class OerBlockInserter extends LitElement {
       </div>
       ${active
         ? html`<div class="preview" style="left:${previewLeft}px;top:${y}px" aria-hidden="true">
-            <hax-element-demo
+            ${active.stax ? this._renderTemplatePreview(active) : html`<hax-element-demo
               .renderTag="${active.tag}"
               .gizmoTitle="${active.title}"
               .gizmoIcon="${active.icon}"
               .gizmoDescription="${active.description || ""}"
-            ></hax-element-demo>
+            ></hax-element-demo>`}
           </div>`
         : ""}
     `;
+  }
+
+  // templates have no live demo: show their image, or the blocks they add
+  _renderTemplatePreview(t) {
+    const hax = this._hax;
+    const names = t.stax.map((b) => hax?.haxSchemaFromTag(b.tag)?.gizmo?.title || b.tag);
+    return html`<div class="tpl">
+      ${t.image ? html`<img src="${t.image}" alt="" />` : html`<ol>${names.map((n) => html`<li>${n}</li>`)}</ol>`}
+      <div class="tpl-info">
+        <div class="tpl-title">${t.title}</div>
+        <div class="tpl-desc">${t.description || `${names.length} block${names.length === 1 ? "" : "s"}`}</div>
+      </div>
+    </div>`;
+  }
+
+  // flyouts are positioned before their height is known; once rendered,
+  // lift any that run past the bottom of the window
+  updated() {
+    const vh = globalThis.innerHeight;
+    for (const el of this.shadowRoot.querySelectorAll(".panel, .preview")) {
+      const r = el.getBoundingClientRect();
+      if (r.bottom > vh - 8) el.style.top = `${Math.max(8, r.top - (r.bottom - (vh - 8)))}px`;
+    }
   }
 
   render() {
@@ -508,17 +557,20 @@ class OerBlockInserter extends LitElement {
             tabindex="-1"
             title="Insert block here"
             aria-label="Insert block here"
-            @click="${() => this.openAt(h.gap, { x: h.left, y: h.top + h.height / 2 })}"
+            @click="${() => this.openAt(h, { x: h.left, y: h.top + h.height / 2 })}"
           >
             <span class="plus">${icon("plus")}</span>
           </button>`
         : ""}
       ${e
         ? html`<button
-            class="end ${this._open && this._open.gap >= this._blocks().length ? "chosen" : ""}"
+            class="end ${this._open?.slot.end ? "chosen" : ""}"
             style="left:${e.left}px;top:${e.y}px;width:${e.width}px"
             aria-haspopup="listbox"
-            @click="${() => this.openAt(this._blocks().length, { x: e.left, y: e.y })}"
+            @click="${() => {
+              const slot = this._endSlot();
+              if (slot) this.openAt(slot, { x: e.left, y: e.y });
+            }}"
           >
             ${icon("plus")} Add block
           </button>`

@@ -483,7 +483,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         /* gutter for oer-block-rail, which sits left of the selected block */
         :host([edit-mode]) main {
-          padding-left: 4.5rem;
+          padding-left: 5.5rem;
         }
         article {
           max-width: 48rem;

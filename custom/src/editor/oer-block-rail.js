@@ -22,6 +22,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { MOD, contentViewport } from "./stock.js";
+import { HANDLE_WIDTH, frameRect } from "./slots.js";
 
 const SEP = { sep: true };
 
@@ -244,17 +245,20 @@ class OerBlockRail extends LitElement {
     const railH = rail?.offsetHeight || 0;
     const view = contentViewport();
     const top0 = view.top + 8;
-    // stay level with the block's top, sticking inside the viewport while a
-    // tall block scrolls, but never below the block's bottom edge
-    let top = r.top;
-    if (top < top0) top = Math.max(Math.min(top0, r.bottom - railH), r.top);
-    const offscreen = r.bottom < top0 || r.top > view.bottom || r.width === 0;
+    // level with the selection frame's top (see oer-block-frame), sticking
+    // inside the viewport while a tall block scrolls, but never below the
+    // frame's bottom edge
+    const f = frameRect(node);
+    let top = f.top;
+    if (top < top0) top = Math.max(Math.min(top0, f.bottom - railH), f.top);
+    const offscreen = f.bottom < top0 || f.top > view.bottom || r.width === 0;
     if (offscreen && !this._open) {
       this.hidden = true;
       return;
     }
     this.hidden = false;
-    const left = Math.round(r.left - (rail?.offsetWidth || 40) - 12);
+    // left of the frame's drag handle
+    const left = Math.round(f.left - HANDLE_WIDTH - 8 - (rail?.offsetWidth || 42));
     this.style.transform = `translate(${left}px, ${Math.round(top)}px)`;
   }
 
@@ -458,6 +462,16 @@ class OerBlockRail extends LitElement {
   _keepSelection(e) {
     if (e.target.closest?.("input")) return;
     e.preventDefault();
+  }
+
+  // menus open level with their rail button; lift one that would run past
+  // the bottom of the window (its top is relative to the rail)
+  updated() {
+    const menu = this.shadowRoot.querySelector(".menu");
+    if (!menu) return;
+    const r = menu.getBoundingClientRect();
+    const over = r.bottom - (globalThis.innerHeight - 8);
+    if (over > 0) menu.style.top = `${Math.max(menu.offsetTop - over, 8 - this.getBoundingClientRect().top)}px`;
   }
 
   /* ---------- render ---------- */

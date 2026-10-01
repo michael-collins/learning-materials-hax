@@ -1671,16 +1671,14 @@ export const editorSkin = {
     ::slotted(ol) {
       text-align: start !important;
     }
-    /* hover = dashed hint, selected = solid ring (labelled by
-       oer-block-label); distinct in shape, not just in colour */
+    /* hover = dashed hint; the selected block's ring, label and drag
+       handle are drawn by oer-block-frame */
     ::slotted(*:hover:not([data-hax-active])) {
       outline: 1px dashed var(--muted-foreground) !important;
       outline-offset: 4px !important;
     }
     ::slotted([data-hax-active]) {
-      outline: 2px solid var(--primary) !important;
-      outline-offset: 4px !important;
-      border-radius: var(--radius-sm);
+      outline: 0 !important;
     }
     /* page-break is shown as a compact button that marks its own state */
     ::slotted(page-break),
