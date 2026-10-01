@@ -6,12 +6,19 @@
   "order": 4,
   "parent": null,
   "title": "Pathways",
-  "description": "",
+  "description": "\n",
   "metadata": {
     "created": 1790827963,
-    "updated": 1790827963,
+    "updated": 1790829193,
     "images": [],
-    "videos": []
+    "videos": [],
+    "published": true,
+    "locked": false,
+    "status": "",
+    "overridePathauto": false,
+    "hideInMenu": false,
+    "linkTarget": "_self",
+    "readtime": 1
   },
-  "content": "<p></p>"
+  "content": "\n<p></p>\n"
 }
