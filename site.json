@@ -3758,7 +3758,7 @@
       "order": 1000,
       "parent": "item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4",
       "title": "v0.9.0",
-      "description": "",
+      "description": "Utilizes 3D printing or CNC machining to create physical objects from digital designs.",
       "metadata": {
         "pageType": "oer:pathway",
         "oerFields": {
