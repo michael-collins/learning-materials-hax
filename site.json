@@ -1598,33 +1598,6 @@
       }
     },
     {
-      "id": "item-5a88637f-652e-4e41-aa93-ca8fd15bacd3",
-      "indent": 3,
-      "location": "pages/item-5a88637f-652e-4e41-aa93-ca8fd15bacd3/index.html",
-      "slug": "pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects",
-      "order": 3,
-      "parent": "item-6c6a275f-1698-4393-a5b3-efedc3109116",
-      "title": "Modeling random objects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Intermediate",
-        "pageType": "exercise",
-        "oerRef": {
-          "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830074,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-b4e121df-b071-4067-a68c-23f5a26d3841",
       "indent": 0,
       "location": "pages/item-b4e121df-b071-4067-a68c-23f5a26d3841/index.html",
