@@ -157,12 +157,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/illustration-and-visualization</loc>
-    <lastmod>2026-10-01T04:46:28.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/lectures</loc>
     <lastmod>2026-10-01T04:46:28.000Z</lastmod>
     <changefreq>daily</changefreq>
