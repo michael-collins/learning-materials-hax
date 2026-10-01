@@ -750,33 +750,6 @@
       }
     },
     {
-      "id": "item-4557b8e1-3f92-4a9e-9652-1f6e8f40f051",
-      "indent": 3,
-      "location": "pages/item-4557b8e1-3f92-4a9e-9652-1f6e8f40f051/index.html",
-      "slug": "pathways/game-artist-pathway/project/modular-environment-kit",
-      "order": 1,
-      "parent": "item-4c86e154-f625-4399-93c5-611f6a1768b1",
-      "title": "Modular Environment Kit",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "oerLevel": "Intermediate",
-        "pageType": "project",
-        "oerRef": {
-          "page": "item-e09e22f7-6a97-4fed-bd10-2cde35349b24",
-          "version": ""
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830074,
-        "locked": false,
-        "status": "",
-        "icon": "hax:bulletin-board"
-      }
-    },
-    {
       "id": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
       "indent": 2,
       "location": "pages/item-c1c083f0-47c6-4706-8651-d63d65b46db1/index.html",
