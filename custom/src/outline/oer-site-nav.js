@@ -47,6 +47,9 @@ class OerSiteNav extends LitElement {
     return {
       // authors get the "Add page" rows (set by the theme)
       editable: { type: Boolean, reflect: true },
+      // show only the pages under this one (a book's chapters)
+      root: { type: String },
+      filter: { type: String },
       _items: { state: true },
       _activeId: { state: true },
       _open: { state: true },
@@ -281,6 +284,11 @@ class OerSiteNav extends LitElement {
         background: var(--accent);
         color: var(--foreground);
       }
+      .none {
+        margin: 0.5rem;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
       .add .lucide {
         width: 0.875rem;
         height: 0.875rem;
@@ -363,7 +371,7 @@ class OerSiteNav extends LitElement {
       ${list.map((item) => {
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
-        const open = this._open.has(item.id);
+        const open = this.__forceOpen || this._open.has(item.id);
         const iconName = item.metadata?.icon;
         return html`<li class="${hasKids ? "has-kids" : ""}">
           <div class="row">
@@ -398,8 +406,22 @@ class OerSiteNav extends LitElement {
   }
 
   render() {
-    const kids = childrenMap(this._items);
-    return this._renderLevel(kids, null, 0);
+    let items = this._items;
+    const q = (this.filter || "").trim().toLowerCase();
+    if (q) {
+      // matches plus their ancestors, so the tree still reads
+      const byId = new Map(items.map((i) => [i.id, i]));
+      const keep = new Set();
+      for (const i of items) {
+        if (!i.title.toLowerCase().includes(q)) continue;
+        for (let cur = i; cur && !keep.has(cur.id); cur = byId.get(cur.parent)) keep.add(cur.id);
+      }
+      items = items.filter((i) => keep.has(i.id));
+      this.__forceOpen = true;
+    } else this.__forceOpen = false;
+    const kids = childrenMap(items);
+    if (q && !items.length) return html`<p class="none">No pages match “${this.filter}”.</p>`;
+    return this._renderLevel(kids, this.root || null, 0);
   }
 }
 customElements.define(OerSiteNav.tag, OerSiteNav);

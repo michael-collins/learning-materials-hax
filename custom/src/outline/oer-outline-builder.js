@@ -17,10 +17,11 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { flatten, saveOutline, newItemId, starterContent } from "./outline-model.js";
+import { flatten, saveOutline, newItemId, starterContent, childrenMap } from "./outline-model.js";
 import { isSystemItem, contentTypes } from "../types/content-types.js";
 import { isSnapshot } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
+import { pagePicker } from "../books/oer-page-picker.js";
 
 const INDENT_PX = 20;
 const MAX_DEPTH = 6;
@@ -88,6 +89,7 @@ class OerOutlineBuilder extends LitElement {
       title: item.title,
       icon: item.metadata?.icon || "",
       type: item.metadata?.pageType || "",
+      ref: item.metadata?.oerRef?.page ? item.metadata.oerRef : null,
       depth,
       orig: item,
     }));
@@ -109,7 +111,7 @@ class OerOutlineBuilder extends LitElement {
   }
 
   _signature() {
-    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.depth]));
+    return JSON.stringify(this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.depth, r.ref?.page, r.ref?.version]));
   }
 
   get _dirty() {
@@ -164,8 +166,15 @@ class OerOutlineBuilder extends LitElement {
           indent,
           location: "",
           description: "",
-          metadata: { ...(row.icon ? { icon: row.icon } : {}), ...(row.type ? { pageType: row.type } : {}) },
-          contents: starterContent(row.type),
+          metadata: {
+            ...(row.icon ? { icon: row.icon } : {}),
+            ...(row.type ? { pageType: row.type } : {}),
+            ...(row.ref ? { oerRef: row.ref } : {}),
+          },
+          // a linked page shows the original instead of starter content
+          contents: row.ref
+            ? `<oer-include page="${row.ref.page}"${row.ref.version ? ` version="${row.ref.version}"` : ""}></oer-include>`
+            : starterContent(row.type),
           new: true,
         });
       }
@@ -320,6 +329,33 @@ class OerOutlineBuilder extends LitElement {
     rows.splice(at, 0, row);
     this._commit(rows);
     this._startEdit(row.id);
+  }
+
+  /** Link existing pages (learning-materials-decapcms "Add existing"). */
+  async _addExisting(afterId, depth) {
+    const choice = await pagePicker().pick({ exclude: this._root ? [this._root] : [] });
+    if (!choice) return;
+    const all = toJS(store.manifest?.items) || [];
+    const kids = childrenMap(all.filter((i) => !isSystemItem(i) && !isSnapshot(i)));
+    const linked = (page, d, version = "") => ({
+      id: newItemId(),
+      title: page.title,
+      icon: page.metadata?.icon || "",
+      type: page.metadata?.pageType || "",
+      ref: { page: page.id, version },
+      depth: Math.min(d, MAX_DEPTH),
+      orig: null,
+    });
+    const rows = [linked(choice.page, depth, choice.version)];
+    if (choice.withChildren) {
+      const walk = (id, d) => (kids.get(id) || []).forEach((c) => (rows.push(linked(c, d)), walk(c.id, d + 1)));
+      walk(choice.page.id, depth + 1);
+    }
+    const list = [...this._rows];
+    const idx = this._index(afterId);
+    list.splice(idx < 0 ? list.length : this._subtree(idx).end, 0, ...rows);
+    this._commit(list);
+    this._focusRow(rows[0].id);
   }
 
   _addChild(parentId) {
@@ -1052,6 +1088,60 @@ class OerOutlineBuilder extends LitElement {
         opacity: 1;
       }
 
+      /* linked pages + "Add existing" */
+      .ref {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        max-width: 14rem;
+        height: 1.25rem;
+        margin-right: 0.25rem;
+        padding: 0 0.5rem;
+        overflow: hidden;
+        border-radius: 999px;
+        font-size: 0.6875rem;
+        color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 8%, transparent);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .ref b {
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-weight: 600;
+      }
+      .add-wrap {
+        position: relative;
+      }
+      .add-existing {
+        all: unset;
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        height: 1.375rem;
+        padding: 0 0.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+        opacity: 0;
+        cursor: pointer;
+      }
+      .add-wrap:hover .add-existing,
+      .add-wrap:focus-within .add-existing {
+        opacity: 1;
+      }
+      .add-existing:hover,
+      .add-existing:focus-visible {
+        background: var(--accent);
+        color: var(--foreground);
+        opacity: 1;
+      }
+
       /* content type chip + menu */
       .type-chip {
         all: unset;
@@ -1292,6 +1382,13 @@ class OerOutlineBuilder extends LitElement {
     return this._allowedUnder(parentType || null).none;
   }
 
+  _renderRef(row) {
+    const target = (toJS(store.manifest?.items) || []).find((i) => i.id === row.ref.page);
+    return html`<span class="ref" title="${target ? `Shows “${target.title}”${row.ref.version ? ` v${row.ref.version}` : " (latest)"}` : "Linked page not found"}">
+      ${lucide("icons:link", "sm")}${target ? target.title : "missing"}${row.ref.version ? html`<b>v${row.ref.version}</b>` : ""}
+    </span>`;
+  }
+
   _renderTypeChip(row, index) {
     if (!this._types.length) return "";
     const type = this._types.find((t) => t.id === row.type);
@@ -1488,6 +1585,7 @@ class OerOutlineBuilder extends LitElement {
       >
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
       </button>
+      ${row.ref ? this._renderRef(row) : ""}
       ${this._renderTypeChip(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
       <div class="hover-only">
@@ -1553,6 +1651,24 @@ class OerOutlineBuilder extends LitElement {
     </button>`;
   }
 
+  _renderAddRows(add, vis, vIdx) {
+    return html`<div class="add-wrap">
+      ${this._renderAddRow(add, vis, vIdx)}
+      <button
+        class="add-existing"
+        title="Show an existing page here (not a copy)"
+        @mouseenter="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
+        @mouseleave="${() => (this._hoverAdd = null)}"
+        @click="${() => {
+          this._hoverAdd = null;
+          this._addExisting(add.afterId, add.depth);
+        }}"
+      >
+        ${lucide("icons:link", "sm")}Add existing
+      </button>
+    </div>`;
+  }
+
   render() {
     if (!this.open) return html``;
     const vis = this._visible();
@@ -1590,13 +1706,14 @@ class OerOutlineBuilder extends LitElement {
                   ({ row, index }, vIdx) => html`${this._renderRow(row, index, vis, vIdx)}
                   ${this._closingRows(vis, vIdx)
                     .filter((add) => !this._levelClosed(add))
-                    .map((add) => this._renderAddRow(add, vis, vIdx))}`,
+                    .map((add) => this._renderAddRows(add, vis, vIdx))}`,
                 )}
               </div>`
             : html`<div class="empty">
                 ${lucide("hax:site-map")}
                 <p>No pages yet</p>
                 <button class="btn outline" @click="${this._addFirst}">${lucide("oer:plus", "sm")}Add page</button>
+                <button class="btn outline" @click="${() => this._addExisting(null, 0)}">${lucide("icons:link", "sm")}Add existing</button>
               </div>`}
         </div>
         <footer>

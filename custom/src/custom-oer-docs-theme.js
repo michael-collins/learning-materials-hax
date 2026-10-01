@@ -45,7 +45,8 @@ import { settingsDialog } from "./editor/oer-settings-dialog.js";
 import { outlineBuilder } from "./outline/oer-outline-builder.js";
 import { typeEditor } from "./types/oer-type-editor.js";
 import { pageDetails } from "./types/oer-page-details.js";
-import { isSystemItem } from "./types/content-types.js";
+import { isSystemItem, contentTypes } from "./types/content-types.js";
+import { flatten } from "./outline/outline-model.js";
 import "./types/oer-page-header.js";
 import { isEmbedded, startEmbedReporting } from "./embed/embed-mode.js";
 import { isSnapshot, versionsOf } from "./versions/versioning.js";
@@ -121,6 +122,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _published: { state: true },
       _pageMenuOpen: { state: true },
       _sidebarTab: { state: true },
+      _book: { state: true },
+      _bookFilter: { state: true },
       embed: { type: Boolean, reflect: true },
       hideHeader: { type: Boolean, reflect: true, attribute: "hide-header" },
       hideTitle: { type: Boolean, reflect: true, attribute: "hide-title" },
@@ -197,11 +200,20 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__disposer.push(
       autorun(() => {
         const active = toJS(store.activeId);
-        // the hidden content-types page is configuration, never a stop
-        const items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i));
+        const all = toJS(store.manifest?.items) || [];
+        const book = this._bookOf(active, all);
+        // the hidden content-types page is configuration, never a stop;
+        // inside a book, Previous / Next stay within the book
+        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i));
+        if (book) {
+          const inBook = new Set([book.id, ...flatten(all, book.id).map((x) => x.item.id)]);
+          items = items.filter((i) => inBook.has(i.id));
+        }
         const idx = items.findIndex((i) => i.id === active);
         Promise.resolve().then(() => {
           this.mobileOpen = false;
+          if (book?.id !== this._book?.id) this._bookFilter = "";
+          this._book = book;
           this._followVersionParam(active);
           this._prev = idx > 0 ? items[idx - 1] : null;
           this._next = idx >= 0 && idx < items.length - 1 ? items[idx + 1] : null;
@@ -820,6 +832,84 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           opacity: 0.6;
         }
 
+        /* reader layout: the book's own header above its chapters */
+        .book-head {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          padding: 0.75rem 0.75rem 0.25rem;
+        }
+        .book-back {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          font-size: 0.75rem;
+          color: var(--muted-foreground);
+          text-decoration: none;
+        }
+        .book-back:hover {
+          color: var(--foreground);
+        }
+        .book-back svg {
+          width: 0.875rem;
+          height: 0.875rem;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 2;
+        }
+        .book-title {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.375rem 0.5rem;
+          border-radius: var(--radius-md);
+          font-weight: 600;
+          font-size: 0.9375rem;
+          color: var(--foreground);
+          text-decoration: none;
+        }
+        .book-title:hover,
+        .book-title[aria-current="page"] {
+          background: var(--accent);
+        }
+        .book-title .lucide {
+          width: 1rem;
+          height: 1rem;
+          color: var(--primary);
+        }
+        .book-filter {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          height: 2rem;
+          padding: 0 0.625rem;
+          border: 1px solid var(--input-border, var(--border));
+          border-radius: var(--radius-md);
+          background: var(--background);
+          color: var(--muted-foreground);
+        }
+        .book-filter:focus-within {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .book-filter svg {
+          width: 0.875rem;
+          height: 0.875rem;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 2;
+        }
+        .book-filter input {
+          flex: 1;
+          min-width: 0;
+          border: 0;
+          outline: none;
+          background: transparent;
+          color: var(--foreground);
+          font: inherit;
+          font-size: 0.8125rem;
+        }
+
         /* Site tab rows: shadcn SidebarMenuButton */
         .site-action {
           all: unset;
@@ -997,15 +1087,21 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           </a>
         </div>
         ${this._loggedIn ? this.renderSidebarTabs() : ""}
+        ${this._book && !this.editMode && this._sidebarTab !== "site" ? this.renderBookHeader() : ""}
         <nav
-          aria-label="Course outline"
+          aria-label="${this._book ? "Book contents" : "Course outline"}"
           id="panel-nav"
           role="${this._loggedIn ? "tabpanel" : "navigation"}"
           aria-labelledby="${this._loggedIn ? "tab-nav" : ""}"
           ?hidden="${this._loggedIn && this._sidebarTab === "site"}"
         >
-          <div class="nav-group-label">Contents</div>
-          <oer-site-nav part="site-menu" ?editable="${this._loggedIn && !this.editMode}"></oer-site-nav>
+          ${this._book ? "" : html`<div class="nav-group-label">Contents</div>`}
+          <oer-site-nav
+            part="site-menu"
+            ?editable="${this._loggedIn && !this.editMode}"
+            .root="${this._book?.id || null}"
+            .filter="${this._book ? this._bookFilter || "" : ""}"
+          ></oer-site-nav>
         </nav>
         ${this._loggedIn && this._sidebarTab === "site"
           ? html`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
@@ -1177,6 +1273,34 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       globalThis.history.replaceState({}, "", release.snapshot.slug);
       globalThis.dispatchEvent(new PopStateEvent("popstate"));
     }
+  }
+
+  // the nearest page (the active one or an ancestor) whose type reads as a book
+  _bookOf(activeId, items) {
+    const types = contentTypes(items).types;
+    const byId = new Map(items.map((i) => [i.id, i]));
+    for (let cur = byId.get(activeId); cur; cur = byId.get(cur.parent)) {
+      if (types.find((t) => t.id === cur.metadata?.pageType)?.reader) return cur;
+    }
+    return null;
+  }
+
+  renderBookHeader() {
+    const b = this._book;
+    return html`<div class="book-head">
+      <a class="book-back" href="${store.homeLink || "./"}">${icon.chevronLeft}All pages</a>
+      <a class="book-title" href="${b.slug}" aria-current="${store.activeId === b.id ? "page" : "false"}">${icon.book}<span>${b.title}</span></a>
+      <label class="book-filter">
+        ${icon.search}
+        <input
+          type="search"
+          placeholder="Filter chapters…"
+          aria-label="Filter chapters"
+          .value="${this._bookFilter || ""}"
+          @input="${(e) => (this._bookFilter = e.target.value)}"
+        />
+      </label>
+    </div>`;
   }
 
   firstUpdated(changed) {

@@ -961,6 +961,14 @@ class OerTypeEditor extends LitElement {
       </section>
 
       <section>
+        <label class="check" style="font-size:0.875rem">
+          <input type="checkbox" .checked="${!!t.reader}" @change="${(e) => this._update((x) => (x.reader = e.target.checked || undefined))}" />
+          Reader layout
+        </label>
+        <p class="hint">Pages inside one of these read like a book: the sidebar shows only its chapters (with a filter), Previous / Next stays inside it, and it gets a “Start reading” button.</p>
+      </section>
+
+      <section>
         <h3>Can contain</h3>
         <div class="radios" role="radiogroup" aria-label="Can contain">
           <label><input type="radio" name="children" .checked="${mode === "any"}" @change="${() => this._setChildrenMode("any")}" />Any type</label>

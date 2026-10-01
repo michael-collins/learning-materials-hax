@@ -142,6 +142,16 @@ class OerPageHeader extends LitElement {
         font-weight: 500;
         color: var(--foreground);
       }
+      .edit.start {
+        background: var(--primary);
+        color: var(--primary-foreground);
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .edit.start:hover {
+        background: color-mix(in srgb, var(--primary) 88%, black);
+        color: var(--primary-foreground);
+      }
       .actions {
         margin-left: auto;
         display: inline-flex;
@@ -248,6 +258,10 @@ class OerPageHeader extends LitElement {
     const snapshot = isSnapshot(item);
     const latest = snapshot ? latestOf(item, this._allItems) : null;
     const version = item.metadata?.version;
+    // books: the first chapter, for "Start reading"
+    const firstChild = (this._allItems || [])
+      .filter((i) => i.parent === item.id && !i.metadata?.oerSnapshotOf && !i.metadata?.hideInMenu)
+      .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))[0];
     if (!type && !this.editable && !canEmbed && !version) return html``;
     const versionPill = version
       ? html`<button class="pill version" title="Versions" @click="${() => versionsDialog().show(snapshot ? latest?.id : item.id)}">
@@ -267,6 +281,9 @@ class OerPageHeader extends LitElement {
         ${versionPill}
         ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
+          ${type?.reader && firstChild
+            ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>`
+            : ""}
           ${canEmbed ? html`<button class="edit" @click="${() => embedDialog().show(item)}">${lucide("icons:open-in-new")}Embed</button>` : ""}
           ${this.editable
             ? html`<button class="edit" @click="${() => pageDetails().show(item.id)}">${lucide("image:tune")}${type ? "Edit details" : "Set page type"}</button>`
