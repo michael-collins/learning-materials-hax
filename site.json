@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1790828272
+      "updated": 1790828359
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -80,7 +80,7 @@
     },
     {
       "id": "item-21d4a4b1-6588-4417-a049-a7a1a9d69626",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.html",
       "slug": "exercises/animating-a-bouncing-ball",
       "order": 0,
@@ -89,7 +89,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1790828271,
+        "updated": 1790828359,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -116,7 +116,8 @@
               "alt": "An image depicting 31 frames of a bouncing ball, from left to right with descending energy. A red motion path runs through the center of each ball position."
             }
           ]
-        }
+        },
+        "linkTarget": "_self"
       }
     },
     {

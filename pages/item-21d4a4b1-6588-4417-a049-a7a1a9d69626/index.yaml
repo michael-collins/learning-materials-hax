@@ -1,9 +1,9 @@
 id: item-21d4a4b1-6588-4417-a049-a7a1a9d69626
 indent: 0
 location: pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.yaml
-slug: animating-a-bouncing-ball
+slug: exercises/animating-a-bouncing-ball
 order: 0
-parent: null
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
 title: Animating a bouncing ball
 description: >-
   In this exercise, level 1 students will practice keyframe animation to animate
@@ -17,7 +17,7 @@ description: >-
   Become 
 metadata:
   created: 1790802192
-  updated: 1790802192
+  updated: 1790828359
   images: []
   videos: []
   overridePathauto: false
@@ -27,15 +27,42 @@ metadata:
   tags: Blender,Animation
   locked: false
   readtime: 1
+  status: ''
+  icon: courseicons:learning-objectives
+  version: ''
+  oerVersions: []
+  oerFields:
+    license: CC BY 4.0
+    aiLicense: AIUL-WA
+    placeholder: false
+    allowEmbed: false
+    attachments:
+      - title: Bouncing Ball Reference
+        url: files/ball-bounce-reference.png
+        description: Bouncing ball animation reference
+        alt: >-
+          An image depicting 31 frames of a bouncing ball, from left to right
+          with descending energy. A red motion path runs through the center of
+          each ball position.
+  linkTarget: _self
 content: >
+
   <p>In this exercise, level 1 students will practice keyframe animation to
   animate a bouncing ball</p>
 
   <video-player
   source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"
-  title="Animating a bouncing ball Tutorial"></video-player>
+  title="Animating a bouncing ball Tutorial" accent-color="grey"
+  crossorigin="anonymous" sticky-corner="none" audio-description-source=""
+  typeof="oer:MediaObject" resource="#f94100cf-958a-b270-d6b3-606d01caa121"
+  prefix="oer:http://oerschema.org/ schema:http://schema.org/
+  dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
+  cc:http://creativecommons.org/ns# bib:http://bib.schema.org"
+  element-visible="" source-type="youtube" lang="en"
+  source-data="[{&quot;src&quot;:&quot;https://youtube.com/embed/videoseries&quot;,&quot;type&quot;:&quot;&quot;}]"
+  start-time="PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"></video-player>
 
-  <h2>Learning Objectives</h2>
+  <h2 id="h2--947685220">Learning Objectives</h2>
 
   <ol>
 
@@ -48,7 +75,7 @@ content: >
 
   </ol>
 
-  <h2>Instructions</h2>
+  <h2 id="h2-921696709">Instructions</h2>
 
   <ol>
 
@@ -57,6 +84,7 @@ content: >
 
   <li>Create a project folder on your computer and save a new
   <code>.blend</code> file called <code>LASTNAME-ball-bounce.blend</code>.</li>
+
 
   <li>Follow the video demonstrations to animate a bouncing ball.
 
@@ -69,6 +97,7 @@ content: >
   <li>Create a 9" sphere and apply the scale (<strong>CTRL</strong>+<strong>A ⟶
   Apply Scale</strong>).</li>
 
+
   <li>Following the reference, create an animation either by keyframing each
   frame or by using a motion path. Either technique will be accepted.</li>
 
@@ -76,7 +105,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   <li>Export a rendered video.
 
@@ -88,17 +119,23 @@ content: >
   <li>Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>,
   change the encoding format to <strong>MPEG-4</strong></li>
 
+
   <li>Under <strong>Codec,</strong> choose <strong>H.264</strong>.</li>
+
 
   <li>Choose <strong>Render</strong> ⟶ <strong>Render Animation</strong> to
   create the animation file.</li>
 
+
   </ul>
+
 
   </li>
 
+
   <li>Compress the project folder once you’ve completed the tutorial and rename
   it <code>LASTNAME-</code>ball-bounce<code>.zip</code>.</li>
+
 
   <li>Upload the .zip file to the assignment dropbox.</li>
 
@@ -107,6 +144,6 @@ content: >
 
   </ol>
 
-  <h2>Grading Rubric</h2>
+  <h2 id="h2--789233351">Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" accent-color="grey"></oer-rubric>
