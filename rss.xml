@@ -112,13 +112,6 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Modular Environment Kit</title>
-      <link>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/modular-environment-kit</link>
-      <description></description>
-      <guid>https://localhost:3000/learning-materials/pathways/game-artist-pathway/project/modular-environment-kit</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
       <title>3D Modeling Fundamentals</title>
       <link>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</link>
       <description>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</description>
@@ -188,6 +181,14 @@
       <link>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</link>
       <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</description>
       <guid>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modeling a room</title>
+      <link>https://localhost:3000/learning-materials/exercises/modeling-a-room</link>
+      <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space. Learning Objectives Become familiarized with 3D software terminology Practice polygonal modeling workflows Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel. Instructions Note: There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction....</description>
+      <category>Blender</category>
+      <guid>https://localhost:3000/learning-materials/exercises/modeling-a-room</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
