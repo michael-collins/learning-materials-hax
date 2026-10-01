@@ -5536,51 +5536,6 @@
       }
     },
     {
-      "id": "item-9d4fd3e6-6513-401e-a940-83314f4f35d3",
-      "indent": 1,
-      "location": "pages/item-9d4fd3e6-6513-401e-a940-83314f4f35d3/index.html",
-      "slug": "pathways/short-film-pathway",
-      "order": 11,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Short Film Pathway",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/short-film",
-        "tags": "Animation,Short Film,Storytelling,Production Pipeline",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "estimatedDuration": "24 weeks",
-          "learningObjectives": [
-            "Develop strong storytelling and narrative skills for animation",
-            "Create character performances that convey emotion and personality",
-            "Produce complete animated short films from concept to completion",
-            "Apply professional compositing and finishing techniques",
-            "Understand animation production pipelines and workflows"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-2676f101-8732-4fde-991d-9733f9042ef9",
-              "version": ""
-            }
-          ],
-          "author": "Michael Collins",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
       "indent": 1,
       "location": "pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.html",
