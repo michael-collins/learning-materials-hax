@@ -719,15 +719,21 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           text-transform: uppercase;
           color: var(--muted-foreground);
         }
+        .nav-actions {
+          display: flex;
+          justify-content: flex-end;
+          padding: 0 0.25rem 0.25rem;
+        }
         .label-action {
           all: unset;
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          width: 1.5rem;
-          height: 1.5rem;
-          margin-left: auto;
-          border-radius: var(--radius-sm);
+          gap: 0.375rem;
+          height: 1.75rem;
+          padding: 0 0.5rem;
+          border-radius: var(--radius-md);
+          font-size: 0.75rem;
+          font-weight: 500;
           color: var(--muted-foreground);
           cursor: pointer;
         }
@@ -1190,16 +1196,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           aria-labelledby="${this._loggedIn ? "tab-nav" : ""}"
           ?hidden="${this._loggedIn && this._sidebarTab === "site"}"
         >
-          ${this._book
-            ? ""
-            : html`<div class="nav-group-label">
-                <span>Outline</span>
-                ${this._loggedIn && !this.editMode
-                  ? html`<button class="label-action" title="Edit outline" aria-label="Edit outline" @click="${() => outlineBuilder().show()}">
-                      ${icon.pencil}
-                    </button>`
-                  : ""}
-              </div>`}
+          ${!this._book && this._loggedIn && !this.editMode
+            ? html`<div class="nav-actions">
+                <button class="label-action" @click="${() => outlineBuilder().show()}">${icon.pencil}Edit outline</button>
+              </div>`
+            : ""}
           <oer-site-nav
             part="site-menu"
             ?editable="${this._loggedIn && !this.editMode}"
