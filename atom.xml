@@ -861,18 +861,6 @@ We will also touch on the concept of hyper-objects—entities that transcend our
     </content>
   </entry>
   <entry>
-    <title>Modeling random objects</title>
-    <id>item-89acf18e-ec50-4745-ae08-40da688a327e</id>
-    <updated>2026-10-01T04:46:27.000Z</updated>
-    <published>2026-10-01T04:45:09.000Z</published>
-    <summary></summary>
-    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects"/>
-    
-    <content type="html">
-      <![CDATA[ <oer-include page="item-053b3332-cb45-4124-a87e-1d109f4f1292"></oer-include> ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Modular Environment Kit</title>
     <id>item-e09e22f7-6a97-4fed-bd10-2cde35349b24</id>
     <updated>2026-10-01T04:46:27.000Z</updated>
@@ -922,6 +910,18 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <li>Props Artist</li>
 </ul>
  ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Texturing for real time</title>
+    <id>item-3265a8cd-a394-4c8e-93d4-d15e2311d891</id>
+    <updated>2026-10-01T04:46:27.000Z</updated>
+    <published>2026-10-01T04:45:09.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time"/>
+    
+    <content type="html">
+      <![CDATA[ <p></p> ]]>
     </content>
   </entry>
 </feed>
