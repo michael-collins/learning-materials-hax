@@ -8197,7 +8197,7 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         .nav-actions {
           display: flex;
           justify-content: center;
-          padding: 0 0.25rem 0.5rem;
+          padding: 0.75rem 0.25rem 0.5rem;
         }
         /* shadcn Button, variant "outline", size "sm" */
         .label-action {
@@ -8205,13 +8205,13 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           box-sizing: border-box;
           display: inline-flex;
           align-items: center;
-          gap: 0.375rem;
-          height: 2rem;
-          padding: 0 0.75rem;
+          gap: 0.3125rem;
+          height: 1.625rem;
+          padding: 0 0.5rem;
           border: 1px solid var(--input-border, var(--border));
           border-radius: var(--radius-md);
           background: transparent;
-          font-size: 0.8125rem;
+          font-size: 0.75rem;
           font-weight: 500;
           color: var(--foreground);
           cursor: pointer;
@@ -8225,8 +8225,8 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           outline-offset: 1px;
         }
         .label-action svg {
-          width: 0.875rem;
-          height: 0.875rem;
+          width: 0.75rem;
+          height: 0.75rem;
         }
         /* account menu (shadcn NavUser) */
         .user-wrap {
