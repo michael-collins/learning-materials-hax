@@ -4486,28 +4486,6 @@
       }
     },
     {
-      "id": "item-4810f01c-4017-4e24-bea6-d7a2e52d0a89",
-      "indent": 2,
-      "location": "pages/item-4810f01c-4017-4e24-bea6-d7a2e52d0a89/index.html",
-      "slug": "pathways/game-artist-pathway/into-the-engine",
-      "order": 4,
-      "parent": "item-d0df6229-24d2-4d59-b0b5-7faa8c5ad097",
-      "title": "Into the engine",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "section",
-        "created": 1790829988,
-        "images": [],
-        "videos": [],
-        "updated": 1790830075,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "indent": 0,
       "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
