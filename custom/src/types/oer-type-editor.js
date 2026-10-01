@@ -889,6 +889,11 @@ class OerTypeEditor extends LitElement {
               <p class="hint">Stored name of the value. Changing it hides values saved under the old key.</p>
             </div>
             <div>
+              <label for="def-${i}">Default</label>
+              <input id="def-${i}" class="input" .value="${f.default ?? ""}" @input="${(e) => this._setField(i, { default: e.target.value })}" />
+              <p class="hint">Used when a page has no value (e.g. CC BY 4.0).</p>
+            </div>
+            <div>
               <label for="help-${i}">Help text</label>
               <input id="help-${i}" class="input" .value="${f.help || ""}" @input="${(e) => this._setField(i, { help: e.target.value })}" />
             </div>
@@ -952,6 +957,17 @@ class OerTypeEditor extends LitElement {
               ${t.icon ? html`<simple-icon-lite icon="${t.icon}"></simple-icon-lite>` : lucide("oer:smile-plus")}${t.icon ? "Change" : "Choose"}
             </button>
           </div>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="type-schema">OER Schema class</label>
+          <input
+            id="type-schema"
+            class="input mono"
+            placeholder="e.g. oer:LearningComponent"
+            .value="${t.schemaType || ""}"
+            @input="${(e) => this._update((x) => (x.schemaType = e.target.value.trim() || undefined))}"
+          />
+          <p class="hint">How pages of this type describe themselves to search engines and repositories (oerschema.org). Left empty, a sensible default is used.</p>
         </div>
         ${locked ? html`<p class="hint">The ID is fixed because ${used} page${used === 1 ? " uses" : "s use"} this type.</p>` : ""}
         <div style="margin-top:1rem">

@@ -57,6 +57,13 @@ class OerPageDetails extends LitElement {
     this._type = item.metadata?.pageType || "";
     this._desc = item.description || "";
     this._values = { ...(item.metadata?.oerFields || {}) };
+    // empty fields start from their type's defaults
+    const def = contentTypes(items).types.find((t) => t.id === item.metadata?.pageType);
+    for (const f of def?.fields || []) {
+      if (f.default !== undefined && f.default !== "" && (this._values[f.name] === undefined || this._values[f.name] === "")) {
+        this._values[f.name] = f.kind === "list" ? String(f.default).split(",").map((s) => s.trim()) : f.default;
+      }
+    }
     this._tried = false;
     this._saving = false;
     this.open = true;

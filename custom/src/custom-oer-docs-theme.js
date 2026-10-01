@@ -48,6 +48,7 @@ import { pageDetails } from "./types/oer-page-details.js";
 import { isSystemItem, contentTypes } from "./types/content-types.js";
 import { flatten } from "./outline/outline-model.js";
 import "./types/oer-page-header.js";
+import "./types/oer-page-footer.js";
 import { isEmbedded, startEmbedReporting } from "./embed/embed-mode.js";
 import { isSnapshot, versionsOf } from "./versions/versioning.js";
 import { versionsDialog } from "./versions/oer-versions-dialog.js";
@@ -1128,6 +1129,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             </div>
             <oer-page-header ?editable="${this._loggedIn && !this.editMode}"></oer-page-header>
             <section id="slot"><slot></slot></section>
+            ${this.editMode ? "" : html`<oer-page-footer></oer-page-footer>`}
             <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
               ${this._prev
                 ? html`<a class="pager-link prev" href="${this._prev.slug}">

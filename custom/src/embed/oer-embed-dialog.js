@@ -17,6 +17,7 @@ const lucide = (name, cls = "") =>
 // what can be left out of the embedded page (query flags read by the page)
 const OPTIONS = [
   { key: "hideRubric", label: "Rubric", hint: "Assessment rubrics on the page." },
+  { key: "hideAILicense", label: "AI usage license", hint: "The AIUL notice in the page footer." },
   { key: "hideHeader", label: "Page header", hint: "Type, description and details under the title." },
   { key: "hideTitle", label: "Title", hint: "The page title." },
 ];
