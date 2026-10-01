@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</id>
+<indent>1</indent>
+<location>pages/item-be2fc5ef-ba1f-484b-be6a-2216a24314a2/index.xml</location>
+<slug>lectures/introduction-to-texturing</slug>
+<order>1</order>
+<parent>item-05aef7c3-2829-4d60-abd5-49cf9a82382a</parent>
+<title>Introduction to Texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>lecture</pageType>
+<oerSource>lectures/introduction-to-texturing</oerSource>
+<oerFields>
+<author>Michael Collins</author>
+<license>CC BY 4.0</license>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<h2>Presentation</h2>
+<oer-google-slides slides="2PACX-1vTkzHEnQyXV6Fs5q3E_H1P0QwrWdhlFd6t-uePHf5mLug6Wr1A_54dHY2lYJgeZ6_oww2cFfpsmVm0v" title="Introduction to Texturing"></oer-google-slides>
+<h2>Topics Covered</h2>
+<ul>
+<li>
+<ol>
+<li><strong>Video Screening</strong></li>
+<li><a href="https://vimeo.com/2826822">Amino Assets</a> by ZEITGUISED</li>
+<li><a href="https://vimeo.com/44228708">Bee 3D Animated Short</a></li>
+<li>Lighting Technical Director: <a href="https://vimeo.com/200015451">Riccardo Zoccarato</a></li>
+<li>Student Reel: <a href="https://vimeo.com/52911102">Cindy Jang</a></li>
+<li><a href="https://vimeo.com/12888604">Classroom scene - making of</a></li>
+<li><a href="https://vimeo.com/64377100">Oblivion GFX montage</a></li>
+<li><a href="https://youtu.be/ZwotHwt-YWk?t=26">Substance painter trailer</a></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><strong>Books</strong>
+<ol>
+<li><a href="http://manovich.net/index.php/projects/language-of-new-media">The Language of New Media</a> By Lev Manovich</li>
+<li><a href="http://manovich.net/index.php/projects/software-takes-command">Software Takes Command</a> By Lev Manovich</li>
+</ol>
+</li>
+<li><strong>Terminology</strong>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/UV_mapping">UV Mapping</a></li>
+<li>Non-manifold Geometry</li>
+<li>Unfolding tools</li>
+<li>UV “island”</li>
+<li>UV Export</li>
+</ol>
+</li>
+<li><strong>Prepping mesh for UV Mapping</strong>
+<ol>
+<li>Reset scale to 1. Use ‘<strong>Apply</strong>’ in Blender. (Translation and rotation is also sometimes needed)</li>
+<li>Check mesh for problems</li>
+</ol>
+</li>
+<li><strong>UV Unwrapping Tips:</strong>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=Y7M-B6xnaEM">UV Unwrapping - Blender 2.80 Fundamentals</a></li>
+</ol>
+</li>
+</ol>
+]]></content>
+</item>

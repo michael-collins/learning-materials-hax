@@ -1,0 +1,32 @@
+{
+  "id": "item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b",
+  "indent": 1,
+  "location": "pages/item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b/index.json",
+  "slug": "exercises/texturing-low-poly-assets-with-a-palette-texture",
+  "order": 13,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Texturing Low-poly Assets with a Palette Texture",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "exercise",
+    "oerSource": "exercises/texturing-low-poly-assets-with-a-palette-texture",
+    "tags": "Blender",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "placeholder": true,
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Texture a set of low-poly assets with a single shared color-palette texture, a common technique for stylized games.</p>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Unwrap UVs onto a shared palette texture</li>\n<li>Use one material across many assets</li>\n<li>Keep a consistent stylized color scheme</li>\n</ol>\n"
+}

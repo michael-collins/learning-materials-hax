@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-89acf18e-ec50-4745-ae08-40da688a327e</id>
+<indent>3</indent>
+<location>pages/item-89acf18e-ec50-4745-ae08-40da688a327e/index.xml</location>
+<slug>pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects</slug>
+<order>3</order>
+<parent>item-604b6318-14b1-41aa-8602-c7f5c88559bf</parent>
+<title>Modeling random objects</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Intermediate</oerLevel>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-053b3332-cb45-4124-a87e-1d109f4f1292</page>
+<version></version>
+</oerRef>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-053b3332-cb45-4124-a87e-1d109f4f1292"></oer-include>]]></content>
+</item>

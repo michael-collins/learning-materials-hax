@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e09e22f7-6a97-4fed-bd10-2cde35349b24</id>
+<indent>1</indent>
+<location>pages/item-e09e22f7-6a97-4fed-bd10-2cde35349b24/index.xml</location>
+<slug>projects/modular-environment-kit</slug>
+<order>3</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Modular Environment Kit</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>project</pageType>
+<oerSource>projects/modular-environment-kit</oerSource>
+<tags>Blender,PlayCanvas</tags>
+<oerFields>
+<difficulty>Intermediate</difficulty>
+<courses>
+<item>DART 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Plan a modular grid and pivot conventions</li>
+<li>Model and texture reusable pieces</li>
+<li>Assemble a scene from the kit in a real-time engine</li>
+</ol>
+]]></content>
+</item>

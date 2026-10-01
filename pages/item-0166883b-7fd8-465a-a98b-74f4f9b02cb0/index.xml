@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0166883b-7fd8-465a-a98b-74f4f9b02cb0</id>
+<indent>1</indent>
+<location>pages/item-0166883b-7fd8-465a-a98b-74f4f9b02cb0/index.xml</location>
+<slug>projects/stylized-prop-set</slug>
+<order>2</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Stylized Prop Set</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>project</pageType>
+<oerSource>projects/stylized-prop-set</oerSource>
+<tags>Blender,PlayCanvas</tags>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<courses>
+<item>DART 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Design a cohesive set of props</li>
+<li>Build each prop within a polygon budget</li>
+<li>Texture the set with a shared palette</li>
+<li>Present the set in PlayCanvas</li>
+</ol>
+]]></content>
+</item>

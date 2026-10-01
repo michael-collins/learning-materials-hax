@@ -1,0 +1,32 @@
+{
+  "id": "item-858f23fb-b6b5-442a-ac36-94d4afe1718f",
+  "indent": 1,
+  "location": "pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.json",
+  "slug": "exercises/baking-normal-maps",
+  "order": 16,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Baking Normal Maps",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "exercise",
+    "oerSource": "exercises/baking-normal-maps",
+    "tags": "Blender",
+    "oerFields": {
+      "difficulty": "Advanced",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "placeholder": true,
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Bake detail from a high-poly sculpt onto a low-poly, game-ready mesh using normal and ambient occlusion maps.</p>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Prepare high- and low-poly meshes for baking</li>\n<li>Set up a cage and bake normal and ambient occlusion maps</li>\n<li>Diagnose and fix common baking artifacts</li>\n</ol>\n"
+}

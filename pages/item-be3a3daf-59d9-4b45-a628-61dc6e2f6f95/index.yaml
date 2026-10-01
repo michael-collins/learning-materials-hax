@@ -1,0 +1,34 @@
+id: item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95
+indent: 1
+location: pages/item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95/index.yaml
+slug: lessons/lighting-principles
+order: 4
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: Lighting Principles
+description: ''
+metadata:
+  published: true
+  pageType: lesson
+  oerSource: lessons/lighting-principles
+  oerFields:
+    estimatedDuration: 3 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand three-point lighting setup
+      - Apply different light types effectively
+      - Create mood and atmosphere with lighting
+      - Use HDRI and environmental lighting
+      - Balance light intensity and color
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <p>Learn the fundamental principles of lighting in 3D, including light types,
+  placement strategies, and techniques for creating compelling visual
+  scenes.</p>

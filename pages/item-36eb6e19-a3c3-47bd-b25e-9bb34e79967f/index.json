@@ -1,0 +1,29 @@
+{
+  "id": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
+  "indent": 1,
+  "location": "pages/item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f/index.json",
+  "slug": "tutorials/creating-blockouts-for-games",
+  "order": 0,
+  "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+  "title": "Creating Blockouts for Games",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "tutorial",
+    "oerSource": "tutorials/creating-blockouts-for-games",
+    "oerFields": {
+      "date": "2026-04-08T04:00:00.000Z",
+      "difficulty": "Beginner",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<oer-video src=\"https://www.youtube.com/watch?v=9Dtkt2Ogric\" title=\"Modular Environment Creation\" credit=\"WorldofLevelDesign\"></oer-video>\n<oer-video src=\"https://www.youtube.com/watch?v=-_-SNug8VUA\" title=\"Blockout in Level design l Blocktober\" credit=\"InspirationTuts\"></oer-video>\n<oer-video src=\"https://www.youtube.com/watch?v=fjakOuNer78\" title=\"What Is Greyboxing in Videogames?\" credit=\"Neil Blevins\"></oer-video>\n"
+}

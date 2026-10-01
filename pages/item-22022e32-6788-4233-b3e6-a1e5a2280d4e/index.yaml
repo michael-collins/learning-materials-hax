@@ -1,0 +1,21 @@
+id: item-22022e32-6788-4233-b3e6-a1e5a2280d4e
+indent: 3
+location: pages/item-22022e32-6788-4233-b3e6-a1e5a2280d4e/index.yaml
+slug: pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects
+order: 1
+parent: item-3265a8cd-a394-4c8e-93d4-d15e2311d891
+title: Texturing random objects
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  oerLevel: Intermediate
+  pageType: exercise
+  oerRef:
+    page: item-5f88b120-daa9-41d1-a502-03e8136a24ab
+    version: ''
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: <oer-include page="item-5f88b120-daa9-41d1-a502-03e8136a24ab"></oer-include>

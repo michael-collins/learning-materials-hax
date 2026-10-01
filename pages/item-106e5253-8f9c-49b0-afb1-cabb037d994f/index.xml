@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-106e5253-8f9c-49b0-afb1-cabb037d994f</id>
+<indent>3</indent>
+<location>pages/item-106e5253-8f9c-49b0-afb1-cabb037d994f/index.xml</location>
+<slug>pathways/game-artist-pathway/project/modular-environment-kit</slug>
+<order>1</order>
+<parent>item-155fbd7e-d0d0-4525-a0b1-da17cfd30e48</parent>
+<title>Modular Environment Kit</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Intermediate</oerLevel>
+<pageType>project</pageType>
+<oerRef>
+<page>item-3a5f87f8-0e55-47f8-b4cf-34e719c73c1a</page>
+<version></version>
+</oerRef>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-3a5f87f8-0e55-47f8-b4cf-34e719c73c1a"></oer-include>]]></content>
+</item>

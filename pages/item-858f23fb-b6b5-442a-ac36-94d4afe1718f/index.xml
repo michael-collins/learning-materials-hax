@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-858f23fb-b6b5-442a-ac36-94d4afe1718f</id>
+<indent>1</indent>
+<location>pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.xml</location>
+<slug>exercises/baking-normal-maps</slug>
+<order>16</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Baking Normal Maps</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>exercise</pageType>
+<oerSource>exercises/baking-normal-maps</oerSource>
+<tags>Blender</tags>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<courses>
+<item>DART 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Bake detail from a high-poly sculpt onto a low-poly, game-ready mesh using normal and ambient occlusion maps.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Prepare high- and low-poly meshes for baking</li>
+<li>Set up a cage and bake normal and ambient occlusion maps</li>
+<li>Diagnose and fix common baking artifacts</li>
+</ol>
+]]></content>
+</item>

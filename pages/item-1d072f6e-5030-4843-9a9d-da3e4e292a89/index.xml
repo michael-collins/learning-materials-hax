@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1d072f6e-5030-4843-9a9d-da3e4e292a89</id>
+<indent>3</indent>
+<location>pages/item-1d072f6e-5030-4843-9a9d-da3e4e292a89/index.xml</location>
+<slug>pathways/cgi-foundations/lighting-camera-rendering/rendering-techniques</slug>
+<order>2</order>
+<parent>item-c1960517-1ab7-4b88-ba31-d392368e45db</parent>
+<title>Rendering Techniques</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>lesson</pageType>
+<oerRef>
+<page>item-b13b8a69-b7f7-445d-8187-1d8d95214d33</page>
+<version></version>
+</oerRef>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b13b8a69-b7f7-445d-8187-1d8d95214d33"></oer-include>]]></content>
+</item>

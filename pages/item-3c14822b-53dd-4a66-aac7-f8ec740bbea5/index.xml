@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3c14822b-53dd-4a66-aac7-f8ec740bbea5</id>
+<indent>1</indent>
+<location>pages/item-3c14822b-53dd-4a66-aac7-f8ec740bbea5/index.xml</location>
+<slug>lessons/real-time-engines</slug>
+<order>7</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Real-time Engines</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>lesson</pageType>
+<oerSource>lessons/realtime-engines</oerSource>
+<oerFields>
+<estimatedDuration>6 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Navigate game engine interfaces</item>
+<item>Import and configure 3D assets</item>
+<item>Set up materials and shaders</item>
+<item>Implement real-time lighting</item>
+<item>Create basic interactive elements</item>
+<item>Optimize performance and build settings</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Gain proficiency in game engines, learning how to import assets, configure materials, and build interactive real-time experiences.</p>
+]]></content>
+</item>

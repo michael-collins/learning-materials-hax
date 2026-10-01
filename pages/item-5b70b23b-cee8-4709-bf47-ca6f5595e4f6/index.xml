@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5b70b23b-cee8-4709-bf47-ca6f5595e4f6</id>
+<indent>1</indent>
+<location>pages/item-5b70b23b-cee8-4709-bf47-ca6f5595e4f6/index.xml</location>
+<slug>pathways/visual-effects-vfx</slug>
+<order>12</order>
+<parent>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</parent>
+<title>Visual Effects (VFX)</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>pathway</pageType>
+<oerImport>decap-pathways</oerImport>
+<oerSource>pathways/visual-effects-vfx</oerSource>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-2f8bd775-cbd4-4275-acb6-94c841e172e7</page>
+<version></version>
+</item>
+</prerequisites>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>Integrates CGI elements into live-action footage and blends them seamlessly.</p>
+]]></content>
+</item>

@@ -1,0 +1,25 @@
+{
+  "id": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
+  "indent": 1,
+  "location": "pages/item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866/index.json",
+  "slug": "lectures/introduction-to-modeling",
+  "order": 0,
+  "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+  "title": "Introduction to Modeling",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "lecture",
+    "oerSource": "lectures/introduction-to-modeling",
+    "oerFields": {
+      "author": "Michael Collins",
+      "license": "CC BY 4.0",
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<h2>Presentation</h2>\n<oer-google-slides slides=\"2PACX-1vQZHGphZzWL_7iw-faSX3DelelBxrRQg11TOINuDqnZxyLX3QDhGbVKMgm1wtDhuq9jNnroVi0JSiVp\" title=\"Introduction to Modeling\"></oer-google-slides>\n<h2>Topics Covered</h2>\n<ul>\n<li>\n<ol>\n<li><strong>Presentation:</strong></li>\n<li><a href=\"https://docs.google.com/presentation/d/e/2PACX-1vQZHGphZzWL_7iw-faSX3DelelBxrRQg11TOINuDqnZxyLX3QDhGbVKMgm1wtDhuq9jNnroVi0JSiVp/pub?start=false&amp;loop=false&amp;delayms=3000&amp;slide=id.p\">Modeling Primer</a></li>\n</ol>\n</li>\n</ul>\n<ol start=\"2\">\n<li><strong>Video Screening</strong>\n<ol>\n<li><a href=\"https://www.youtube.com/watch?v=Lu5y8SMuzMs\">The Analog and the Digital</a></li>\n<li>Ed Catmull and Fred Parke (1972): <a href=\"https://vimeo.com/16292363\">A Computer Animated Hand</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=C-L-WA-nQzI\">The Adventures of André &amp; Wally B.</a>, The Graphics Group at Lucasfilm, renamed Pixar, (1984)</li>\n<li><a href=\"https://www.youtube.com/watch?time_continue=9&amp;v=4GiLAOtjHNo\">3D Portrait</a></li>\n</ol>\n</li>\n<li><strong>Terminology</strong>\n<ol>\n<li>Polygon</li>\n<li>Quad</li>\n<li>nGon</li>\n<li>Avoid more than 4 edges to a polygon</li>\n<li>Vertex</li>\n<li>Edge</li>\n<li>Face</li>\n<li>Non-manifold Geometry</li>\n<li>Typically causes render and rigging errors</li>\n<li><a href=\"https://www.youtube.com/watch?v=C36h00d7xGs\">Platonic Solid</a></li>\n<li><a href=\"https://docs.blender.org/manual/en/latest/modeling/meshes/primitives.html\">3D Modeling Primitives</a></li>\n<li>Snapping</li>\n<li>Extrude</li>\n<li>Bevel</li>\n<li><a href=\"https://youtu.be/mX0NB9IyYpU?t=1m27s\">Subdivide</a></li>\n<li>Quads (best for rendering, deformation, and general modeling)</li>\n<li>Duplicate Linked (instance) vs Duplicate (copy/paste)</li>\n<li>Mirror</li>\n<li><a href=\"https://www.turbosquid.com/CheckMate\">Checkmate Modeling Standard</a></li>\n</ol>\n</li>\n<li><strong>Tutorials</strong>\n<ol>\n<li><a href=\"https://www.youtube.com/watch?v=ulPG79oUwrs\">Resolving Geometry Issues</a></li>\n</ol>\n</li>\n<li><strong>Introductory Blender Learning Materials</strong>\n<ol>\n<li><a href=\"https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6\">Blender Foundation: Introduction to Blender 2.8</a></li>\n</ol>\n</li>\n</ol>\n"
+}

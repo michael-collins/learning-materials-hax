@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-008f74f4-74d2-4309-a769-6f73be85b539</id>
+<indent>2</indent>
+<location>pages/item-008f74f4-74d2-4309-a769-6f73be85b539/index.xml</location>
+<slug>pathways/cgi-foundations/modeling</slug>
+<order>1</order>
+<parent>item-fb3f53ee-ba08-416e-b065-96d6681a932f</parent>
+<title>Modeling</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

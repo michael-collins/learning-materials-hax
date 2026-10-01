@@ -1,0 +1,101 @@
+id: item-a203e95e-0ddd-43af-9519-ee3df76a5b2d
+indent: 1
+location: pages/item-a203e95e-0ddd-43af-9519-ee3df76a5b2d/index.yaml
+slug: exercises/texturing-random-objects
+order: 14
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Texturing random objects
+description: ''
+metadata:
+  published: true
+  pageType: exercise
+  oerSource: exercises/texturing-random-objects
+  tags: Blender
+  oerFields:
+    difficulty: Intermediate
+    image: files/reczUhTIOSSFk77BH_image_texturing-objects-header-v2.jpg
+    imageAlt: texturing-objects-header-v2.jpg
+    license: CC BY 4.0
+    aiLicense: AIUL-WA, AIUL-NA-3D
+    author: Michael Collins
+    authorUrl: https://michaelcollins.xyz
+    allowEmbed: true
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <p>In this exercise, you will continue working on your objects. Practice
+  unwrapping UVs, exporting UV maps, and create textures in 2D image editing
+  software like Photoshop.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrWipZPDR5ZYk4-EgwFzMahg"
+  title="Texturing random objects Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Become familiarized with 3D software interface and terminology.</li>
+
+  <li>Use texturing workflows to add color and texture to your polygonal
+  models.</li>
+
+  <li>Perform fundamental UV unwrapping operations including UV unwrap, mark
+  seams, and project from view.</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Watch the tutorials in Learning Resources.</li>
+
+  <li>Duplicate the modeling folder on your computer. <strong>This will be your
+  project folder.</strong> Save all files to this folder.</li>
+
+  <li>Apply the scale transform to reset each polygonal object.</li>
+
+  <li>Unwrap the objects’ UVs using the various methods and tools described in
+  the tutorials.</li>
+
+  <li>Export a UV map for each of the three objects and save it in the project
+  folder as <code>uv-object-1.png</code>, <code>uv-object-2.png</code>, and
+  <code>uv-object-3.png</code>. If you have more than one UV map per object, use
+  a logical naming scheme.</li>
+
+  <li>Import the UV maps into Photoshop and create textures.
+
+  <ul>
+
+  <li>Alternatively, you may use Blender’s internal texturing tools and
+  workflow, or use Substance Painter! Have at it.</li>
+
+  </ul>
+
+  </li>
+
+  <li>Save the textures as <code>object1-color.png</code>,
+  <code>object2-color.png</code>, and <code>object3-color.png</code>, etc. in
+  the project folder.</li>
+
+  <li>In Blender, set up the textures so they are visible on the model.</li>
+
+  <li>Save the 3D scene file as<code> LASTNAME-texturing-objects</code> in the
+  project folder.</li>
+
+  <li>Compress the project folder once you’ve completed the tutorial and rename
+  it <code>LASTNAME-texturing-objects.zip</code>.</li>
+
+  <li>Upload the .zip file to the assignment dropbox.</li>
+
+  <li>Double check that you’ve included all files and that your
+  <code>.zip</code> file can be downloaded and opened.</li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

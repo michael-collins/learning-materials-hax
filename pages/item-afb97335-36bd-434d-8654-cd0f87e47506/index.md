@@ -1,0 +1,1 @@
+Oversees the planning and execution of 3D projects, ensuring deadlines and budgets are met.

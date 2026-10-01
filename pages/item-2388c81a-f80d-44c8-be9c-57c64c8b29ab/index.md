@@ -1,0 +1,1 @@
+Develop proficiency in hard surface modeling for creating precise, clean geometric forms typical of products, vehicles, and architectural elements.

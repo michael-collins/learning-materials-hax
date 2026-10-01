@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-18e9dbe1-ac29-44d0-871e-77b3d075db8c</id>
+<indent>3</indent>
+<location>pages/item-18e9dbe1-ac29-44d0-871e-77b3d075db8c/index.xml</location>
+<slug>pathways/game-artist-pathway/modeling-game-assets/modeling-and-sculpting-a-sea-creature</slug>
+<order>5</order>
+<parent>item-604b6318-14b1-41aa-8602-c7f5c88559bf</parent>
+<title>Modeling and sculpting a sea creature</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Advanced</oerLevel>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-a2410717-4a7b-4a92-9b2d-90d55343f94b</page>
+<version></version>
+</oerRef>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-a2410717-4a7b-4a92-9b2d-90d55343f94b"></oer-include>]]></content>
+</item>

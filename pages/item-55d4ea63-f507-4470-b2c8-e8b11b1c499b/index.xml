@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-55d4ea63-f507-4470-b2c8-e8b11b1c499b</id>
+<indent>1</indent>
+<location>pages/item-55d4ea63-f507-4470-b2c8-e8b11b1c499b/index.xml</location>
+<slug>projects/realtime-game-environment</slug>
+<order>4</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Realtime Game Environment</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>project</pageType>
+<oerSource>projects/realtime-game-environment</oerSource>
+<tags>Blender,PlayCanvas,Github</tags>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<image>files/game-environment-banner-mmaenefy.jpg</image>
+<imageAlt>Banner image of a game environment.</imageAlt>
+<courses>
+<item>Dart 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<aiLicense>AIUL-CD, AIUL-NA-3D</aiLicense>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<allowEmbed>true</allowEmbed>
+<publishEmbed>true</publishEmbed>
+<attachments>
+<item>
+<title>Work Statement Worksheet (.doc)</title>
+<url>files/recAhknW8gYC34qZr_attachment_dart303-project-statement-worksheet-1.docx</url>
+<description>Work statement worksheet</description>
+<alt>Work statement worksheet</alt>
+</item>
+<item>
+<title>PlayCanvas Technical Resources</title>
+<url>https://docs.google.com/document/d/1o2QzpJocAsGN0vMm7glIa31BEBgKIPR6mYQ0tRfMA5o/edit?usp=sharing</url>
+<description></description>
+<alt></alt>
+</item>
+</attachments>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player understand where they are, what happened there, who belongs there, and what kinds of actions are possible?</p>
+<p>This project asks you to consider game design, architecture, and spatial theory. In game studies, environment design is often understood as a form of environmental storytelling, where space communicates narrative, mood, and player possibility through layout, objects, lighting, and atmosphere. In architecture and urban design, theorists such as Kevin Lynch, Juhani Pallasmaa, and Gaston Bachelard help us think about how spaces become legible, memorable, sensory, and emotionally meaningful. As you research and design your environment, consider not just what your space looks like, but how it guides, affects, and communicates with a player.</p>
+<ol>
+<li><a href="https://catalog.libraries.psu.edu/catalog/18365742"><strong>Gaston Bachelard – <em>The Poetics of Space</em></strong></a> <strong>(2014):</strong> Bachelard explores how intimate spaces like rooms, attics, drawers, corners, and nests can shape memory, imagination, and feeling. This reading focuses on emotional tone, symbolic space, or the psychology of interiors and environmental storytelling.</li>
+<li><a href="https://paas.org.pl/wp-content"><strong>Henry Jenkins – <em>Game Design as Narrative Architecture</em></strong></a> <strong>(2004):</strong> Jenkins argues for understanding games as spaces with narrative possibilities. This is a useful starting point for thinking about environments as active in the process of meaning-making rather than passive backgrounds.</li>
+<li><a href="https://www.cooldavis.org/wp-content"><strong>Kevin Lynch – <em>The Image of the City</em></strong></a> <strong>(1960):</strong> Lynch’s concept of imageability helps explain how spaces become vivid, memorable, and navigable, and discusses the importance of landmarks, paths, edges, districts, and nodes.</li>
+<li><a href="https://onlinelibrary-wiley-com.ezaccess.libraries.psu.edu/doi/book/10.1002/9781394200702"><strong>Juhani Pallasmaa – <em>The Eyes of the Skin: Architecture and the Senses</em></strong></a> <em><strong>(1996):</strong></em> Pallasmaa’s book is a classic of architectural theory and asks why design is so often treated as purely visual when human experience is multi-sensory. This is useful for thinking about atmosphere, embodiment, sound, surface, light, compression, scale, and mood.</li>
+</ol>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice creative problem solving and visual storytelling skills.</li>
+<li>Demonstrate understanding of real-time 3D environment production through modeling, materials, lighting, scene assembly, optimization, and animation.</li>
+<li>Practice visual storytelling through the design of spatial atmosphere, layout, props, and environmental detail.</li>
+<li>Apply ideas from game design and spatial theory to create an explorable 3D environment using  modular/reusable 3D assets.</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>
+<p>Read the project description and select at least <strong>one reading</strong> from the list above to support your research and design process.</p>
+</li>
+<li>
+<p>Based on the concept development worksheet you completed, identify whether the setting or scenario is realistic, stylized, speculative, historical, surreal, atmospheric, or genre-based.</p>
+</li>
+<li>
+<p>Consider the role of the environment as a designed space:</p>
+<ul>
+<li>
+<p>Who uses this place?</p>
+</li>
+<li>
+<p>What happened here?</p>
+</li>
+<li>
+<p>What mood should the player feel?</p>
+</li>
+<li>
+<p>How does the space guide exploration or interaction?</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Go through the production process:</p>
+<ol>
+<li>
+<p><strong>Pre-viz</strong> (references, sketches, mood boards, layout ideas, research)</p>
+</li>
+<li>
+<p><strong>Production</strong> (blockout, modeling, materials, lighting, real-time implementation, optimization)</p>
+<ol>
+<li>Use <a href="http://PlayCanvas.com">PlayCanvas.com</a> to build the game environment using assets you modeled and textured in Blender. See tutorials. <strong>Note:</strong> If you already have experience with other 3D game engines (Godot, Unity, Unreal), you may use those in place of PlayCanvas.</li>
+<li>Host the game environment for free on <a href="http://Github.com">Github.com. </a>See tutorials.</li>
+<li>Rather than building everything as a one-off asset, build <strong>low-poly modular assets</strong> that can be reused in the scene to construct the environment.</li>
+</ol>
+</li>
+<li>
+<p>Publishing: Make game available on Github</p>
+</li>
+<li>
+<p><strong>Reflection / work statement</strong></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Share progress updates and participate in critique and feedback with peers.</p>
+</li>
+</ol>
+<h2>Requirements</h2>
+<h3>Pre-viz</h3>
+<ol>
+<li>
+<p><strong>Sketches / diagrams</strong> (<code>.jpg</code> or <code>.png</code>)</p>
+<ul>
+<li>
+<p>Produce <strong>3–5 pages</strong> of concept sketches, thumbnails, maps, or layout ideas. Please add notations and labels.</p>
+</li>
+<li>
+<p>These can include top-down level ideas, perspective sketches, focal-point studies, lighting studies, or prop concepts.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Reference sheet / mood board</strong> (<code>.jpg</code> or <code>.png</code>)</p>
+<ul>
+<li>
+<p>Compile references for architecture, landscape, lighting, materials, props, composition, and atmosphere.</p>
+</li>
+<li>
+<p>Save references as one organized image sheet.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Intent document</strong> (<code>.doc</code>)</p>
+<ul>
+<li>
+<p>Include your name and date.</p>
+</li>
+<li>
+<p>Write a short description of the environment you plan to create.</p>
+</li>
+<li>
+<p>Identify the key concept, mood, and player experience.</p>
+</li>
+<li>
+<p>Briefly note which reading or theory is helping shape your approach.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Production updates</h3>
+<ol>
+<li>
+<p>Submit screenshots from Blender and PlayCanvas showing major progress stages:</p>
+<ul>
+<li>
+<p>blockout</p>
+</li>
+<li>
+<p>low poly asset development</p>
+</li>
+<li>
+<p>texturing/material setup</p>
+</li>
+<li>
+<p>lighting</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Write a brief reflection on your creative and technical process.</p>
+</li>
+<li>
+<p>If AI tools are used for brainstorming, reference gathering, or ideation, explain how they were used and how they affected the process. If they supported a technical production process, please explain what tools were used and how it impacted the production.</p>
+</li>
+</ol>
+<p><strong>Work Statement (.doc):</strong></p>
+<p>A work statement is a clear articulation about what you’ve made. This is not a journal entry, where you might feel compelled to complain about problems you’ve had with software, or that it didn’t turn out how you wanted. Instead, imagine this is being printed in a magazine, or put on the side of a gallery. What do you want your viewers to come away with?<br>
+<br>
+<strong>Upload work (.zip):</strong></p>
+<ol>
+<li>A recorded video of you doing a walkthrough of the game environment.</li>
+<li>One or more renders of your game assets
+<ol>
+<li>The renders should be 1920px x 1080px landscape orientation (wide).</li>
+</ol>
+</li>
+<li>A link to the live PlayCanvas scene.
+<ol>
+<li>Please follow the tutorials to host your game on <a href="http://Github.com">Github.com</a></li>
+</ol>
+</li>
+<li>Upload game .zip as a&nbsp;<code>LASTNAME-game-files.zip</code>&nbsp;file
+<ol>
+<li>Include final work statement
+<ul>
+<li>MS Word .doc format</li>
+<li>150 words minimum</li>
+<li>file name:&nbsp;<code>LASTNAME-game-statement.doc</code></li>
+</ul>
+</li>
+<li>Include the media you created</li>
+</ol>
+</li>
+<li>Post your render(s) to the&nbsp;<strong>Project discussion</strong>&nbsp;discussion thread.</li>
+<li>Participate in work critique with peers.</li>
+</ol>
+<h2>Tutorial</h2>
+<oer-video src="https://youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj" title="PlayCanvas Tutorials"></oer-video>
+<oer-video src="https://youtube.com/playlist?list=PLn3ukorJv4vul0BmORcWYNOVi3nnna-M4" title="Grant Abbitt – Low Poly Game Modeling"></oer-video>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="project"></oer-rubric>
+]]></content>
+</item>

@@ -1,0 +1,19 @@
+{
+  "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "indent": 0,
+  "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.json",
+  "slug": "projects",
+  "order": 6,
+  "parent": null,
+  "title": "Projects",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "section",
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Larger pieces of work that bring several skills together.</p>\n<oer-collection types=\"project\" scope=\"site\" view=\"table\" sort=\"title\" per-page=\"20\" controls=\"full\"></oer-collection>"
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-dbe4cef4-73d0-43d9-b532-46081fc2688c</id>
+<indent>1</indent>
+<location>pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.xml</location>
+<slug>exercises/modeling-and-sculpting-a-sea-creature</slug>
+<order>12</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Modeling and sculpting a sea creature</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>exercise</pageType>
+<oerSource>exercises/modeling-and-sculpting-a-sea-creature</oerSource>
+<tags>Blender</tags>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<image>files/reckkzm19AZnEIkJE_image_sculpting-retopo-header-v1.jpg</image>
+<imageAlt>sculpting-retopo-header-v1.jpg</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, you will practice sculpting tools and workflows, as well as go through the process of retopology. You will end up with two models, a high resolution sculpt and a base mesh that will be ready for texturing.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrW9SylyEr8DprET38xynl_5" title="Modeling and sculpting a sea creature Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Become familiarized with 3D sculpting tools and terminology.</li>
+<li>Use sculpting tools and workflows to create high resolution sculpt and retopology workflows to create a base mesh.</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Watch the tutorials related to sculpting.</li>
+<li>Create a project folder</li>
+<li>Find reference images online for your subject and save them to project folder.</li>
+<li>Use the techniques learned to create a detailed sculpt of an <strong>aquatic sea creature</strong>.</li>
+<li>Create a second model by retopologizing the sculpt to create a low poly base mesh.
+<ul>
+<li>You should have two models: Hi-res sculpt and a low poly base mesh model</li>
+</ul>
+</li>
+<li>Save your blend file in a project folder <code>YOURNAME-sculpting.blend</code>.</li>
+<li>Compress the folder once you’ve completed the tutorial and rename it <code>YOURNAME-sculpting.zip</code><em>.</em></li>
+<li>Upload the <code>.zip</code> file to the assignment dropbox.</li>
+<li>Ensure you’ve included everything properly. Failure to ensure that you’ve uploaded the file will result in your exercise being graded according the grading criteria.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

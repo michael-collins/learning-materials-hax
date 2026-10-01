@@ -1,0 +1,37 @@
+{
+  "id": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+  "indent": 1,
+  "location": "pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.json",
+  "slug": "lessons/digital-sculpting",
+  "order": 12,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "Digital Sculpting",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "lesson",
+    "oerSource": "lessons/digital-sculpting",
+    "oerFields": {
+      "estimatedDuration": "5 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Understand sculpting tools and workflows",
+        "Create organic forms using sculpting techniques",
+        "Apply anatomy principles to character sculpts",
+        "Manage subdivision levels and detail",
+        "Retopologize sculpts for animation"
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Learn digital sculpting techniques for creating highly detailed organic models, characters, and illustrations with natural forms.</p>\n"
+}

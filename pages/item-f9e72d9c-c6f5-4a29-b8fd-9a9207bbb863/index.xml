@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f9e72d9c-c6f5-4a29-b8fd-9a9207bbb863</id>
+<indent>3</indent>
+<location>pages/item-f9e72d9c-c6f5-4a29-b8fd-9a9207bbb863/index.xml</location>
+<slug>pathways/game-artist-pathway/texturing-for-real-time/sculpting-retopo-and-texturing</slug>
+<order>2</order>
+<parent>item-3265a8cd-a394-4c8e-93d4-d15e2311d891</parent>
+<title>Sculpting, retopo, and texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<oerLevel>Advanced</oerLevel>
+<pageType>exercise</pageType>
+<oerRef>
+<page>item-14092a66-b6a9-4e88-9f05-564806703c39</page>
+<version></version>
+</oerRef>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-14092a66-b6a9-4e88-9f05-564806703c39"></oer-include>]]></content>
+</item>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-685e56cc-c545-4d08-81c8-c724fe5cc33d</id>
+<indent>1</indent>
+<location>pages/item-685e56cc-c545-4d08-81c8-c724fe5cc33d/index.xml</location>
+<slug>lessons/rendering-techniques</slug>
+<order>6</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Rendering Techniques</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>lesson</pageType>
+<oerSource>lessons/rendering-techniques</oerSource>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand rendering engines and their settings</item>
+<item>Configure render settings for quality output</item>
+<item>Optimize render times effectively</item>
+<item>Set up render layers and passes</item>
+<item>Export renders in appropriate formats</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Master the rendering process from setup to final output, learning how to configure render engines and optimize settings for professional results.</p>
+]]></content>
+</item>

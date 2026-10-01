@@ -1,0 +1,21 @@
+id: item-26cdeff3-9f18-4f6b-b68f-6af8ec81efb7
+indent: 3
+location: pages/item-26cdeff3-9f18-4f6b-b68f-6af8ec81efb7/index.yaml
+slug: >-
+  pathways/game-artist-pathway/game-art-in-real-time/environment-design-for-real-time
+order: 1
+parent: item-87c012e1-218b-4bad-8af3-59881e7f6707
+title: Environment Design for Real-time
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: lesson
+  oerRef:
+    page: item-1d24f966-a252-493c-a9e4-c91b794d3e3a
+    version: ''
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: <oer-include page="item-1d24f966-a252-493c-a9e4-c91b794d3e3a"></oer-include>

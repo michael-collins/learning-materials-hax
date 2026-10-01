@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6241fb90-bb1c-4087-ad7a-10536473220e</id>
+<indent>2</indent>
+<location>pages/item-6241fb90-bb1c-4087-ad7a-10536473220e/index.xml</location>
+<slug>pathways/game-artist-pathway/concept-blockout</slug>
+<order>1</order>
+<parent>item-39e4ffab-fa6f-4e51-8107-eb710ae38c56</parent>
+<title>Concept &amp; blockout</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

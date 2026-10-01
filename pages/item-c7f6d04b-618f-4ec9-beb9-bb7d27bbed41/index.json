@@ -1,0 +1,36 @@
+{
+  "id": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
+  "indent": 1,
+  "location": "pages/item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41/index.json",
+  "slug": "lessons/camera-and-composition",
+  "order": 5,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "Camera and Composition",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "lesson",
+    "oerSource": "lessons/camera-composition",
+    "oerFields": {
+      "estimatedDuration": "2 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Understand camera settings and properties",
+        "Apply composition principles to 3D scenes",
+        "Create effective camera angles and movements",
+        "Use focal length and depth of field creatively"
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</p>\n"
+}

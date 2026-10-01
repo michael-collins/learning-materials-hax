@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129</id>
+<indent>1</indent>
+<location>pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.xml</location>
+<slug>exercises/rendering-a-room</slug>
+<order>7</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Rendering a room</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>exercise</pageType>
+<oerSource>exercises/rendering-a-room</oerSource>
+<tags>Blender</tags>
+<oerFields>
+<difficulty>Intermediate</difficulty>
+<image>files/rechLzLJpVGI50gnn_image_room-banner2.png</image>
+<imageAlt>room-banner2.png</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, you will continue working on your objects and create a lighting and background setup for final rendering.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrU-XvcElSlBW7dQn4n1yj54" title="Rendering a room Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice configuring render settings to create a high quality render in Blender.</li>
+<li>Apply appropriate lighting strategies to light the room</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Watch the tutorials in Learning Resources.</li>
+<li>Duplicate the modeling folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>
+<li>Configure materials and lights to achieve the desired lighting style.</li>
+<li>Enable and configure the camera's <strong>depth of field</strong> settings</li>
+<li>Render settings using <strong>Cycles</strong>
+<ol>
+<li>Hi-res image render: 3840×2160</li>
+<li>Render sample settings: 500</li>
+<li>Denoise enabled</li>
+</ol>
+</li>
+<li>Save the image as <code>room-render.png</code>, etc. in the project folder. One render of each object is all that is required.</li>
+<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-room-render.zip</code><strong>.</strong></li>
+<li>Upload the .zip file to the assignment dropbox.</li>
+<li>Double check that you’ve included all files and that your <code>.zip</code> file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

@@ -1,0 +1,31 @@
+{
+  "id": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
+  "indent": 1,
+  "location": "pages/item-d069ea51-73ec-4db0-b27a-612dbfd77bcf/index.json",
+  "slug": "exercises/texturing-a-room",
+  "order": 5,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Texturing a room",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "exercise",
+    "oerSource": "exercises/texturing-a-room",
+    "tags": "Blender",
+    "oerFields": {
+      "difficulty": "Intermediate",
+      "image": "files/recJabaqMEyrxdB23_image_interior-texture-banner.png",
+      "imageAlt": "interior-texture-banner.png",
+      "license": "CC BY 4.0",
+      "aiLicense": "AIUL-WA, AIUL-NA-3D",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>In this exercise, you will continue working on your objects. Practice unwrapping UVs, exporting UV maps, and create textures in 2D image editing software like Photoshop.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVw5dp65bKPjF6iFdKpF2el\" title=\"Texturing a room Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software interface and terminology.</li>\n<li>Use texturing workflows to add color and texture to your polygonal models.</li>\n<li>Perform fundamental UV unwrapping operations including UV unwrap, mark seams, and project from view.</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the tutorials in Learning Resources.</li>\n<li>Duplicate the modeling folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>\n<li>Apply the scale transforms to reset each polygonal object's scale to 1,1,1.</li>\n<li>Create optimized UV layouts for all of the objects in your scene.</li>\n<li>Use a texture painting workflow in Blender to achieve a painterly textured scene.\n<ul>\n<li>Alternatively, you may use external software such as Photoshop or Adobe Substance Painter! Have at it.</li>\n</ul>\n</li>\n<li>Ensure all textures are saved to the project folder\n<ol>\n<li>Remember, Blender's internal texture painting tool will not save the texture automatically, you must save the texture to your hard drive.</li>\n</ol>\n</li>\n<li>In Blender, set up the textures so they are visible on the model.</li>\n<li>Save the 3D scene file as<code> LASTNAME-texturing-room</code> in the project folder.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-texturing-room.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your <code>.zip</code> file can be downloaded and opened.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

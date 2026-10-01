@@ -1,0 +1,32 @@
+{
+  "id": "item-e09e22f7-6a97-4fed-bd10-2cde35349b24",
+  "indent": 1,
+  "location": "pages/item-e09e22f7-6a97-4fed-bd10-2cde35349b24/index.json",
+  "slug": "projects/modular-environment-kit",
+  "order": 3,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Modular Environment Kit",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "project",
+    "oerSource": "projects/modular-environment-kit",
+    "tags": "Blender,PlayCanvas",
+    "oerFields": {
+      "difficulty": "Intermediate",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "placeholder": true,
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene.</p>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Plan a modular grid and pivot conventions</li>\n<li>Model and texture reusable pieces</li>\n<li>Assemble a scene from the kit in a real-time engine</li>\n</ol>\n"
+}

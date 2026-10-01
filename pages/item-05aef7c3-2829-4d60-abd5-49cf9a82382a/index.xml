@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-05aef7c3-2829-4d60-abd5-49cf9a82382a</id>
+<indent>0</indent>
+<location>pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.xml</location>
+<slug>lectures</slug>
+<order>5</order>
+<parent></parent>
+<title>Lectures</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>section</pageType>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Presentations that introduce the ideas behind a topic.</p>
+<oer-collection types="lecture" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+</item>

@@ -1,0 +1,115 @@
+id: item-cfaff943-bb9c-4bb5-ba04-82a293c03f96
+indent: 1
+location: pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.yaml
+slug: exercises/lighting-and-rendering-the-airline-chair
+order: 6
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Lighting and Rendering the Airline Chair
+description: ''
+metadata:
+  published: true
+  pageType: exercise
+  oerSource: exercises/lighting-and-rendering-the-airline-chair
+  tags: Blender,Lighting
+  oerFields:
+    difficulty: Beginner
+    image: files/recbAgArvnM20cFKL_image_rendering-banner.jpg
+    imageAlt: rendering-banner.jpg
+    license: CC BY 4.0
+    aiLicense: AIUL-WA, AIUL-NA-3D
+    author: Michael Collins
+    authorUrl: https://michaelcollins.xyz
+    allowEmbed: true
+    attachments:
+      - title: Airline Chair 3/4 view
+        url: files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg
+        description: Airline Chair designed by KEM Weber.
+        alt: Airline Chair
+      - title: Airline Chair side view
+        url: files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg
+        description: Airline Chair designed by KEM Weber.
+        alt: Airline Chair
+      - title: Airline Chair Example render
+        url: files/recjNVy0NcTvHBB5t_attachment_chair-render-compressed.jpg
+        description: Airline Chair example render
+        alt: An example rendering of the KEM Weber Airline Chair
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <p>In this exercise, you will create a final render of the KEM Weber Airline
+  Chair. You will practice setting up 3-point lighting, adding cameras, creating
+  a backdrop, optionally adding additional textures to the materials,
+  configuring render settings, and doing some post-production cleanup in
+  Photoshop.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q"
+  title="Lighting and Rendering the Airline Chair Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Become familiarized with the rendering process.</li>
+
+  <li>Become familiarized with setting up and configuring lights and a
+  backdrop.</li>
+
+  <li>Practice color grading in Photoshop</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p><strong>Note:</strong> You should have a basic understanding of Blender's
+  interface before completing this exercise. You should also complete the
+  exercise called <strong>Modeling the Airline Chair</strong> prior to
+  completing this exercise.</p>
+
+  <ol>
+
+  <li>Duplicate the texturing folder on your computer. <strong>This will be your
+  project folder.</strong> Save all files to this folder.</li>
+
+  <li>Follow the video demonstrations to light and render the <a
+  href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber
+  Airline Chair</a>.</li>
+
+  <li>Enable <strong>Cycles</strong> rendering mode.</li>
+
+  <li>Add a backdrop and three point lighting setup.</li>
+
+  <li>Configure your render camera with a pleasing focal length and compose your
+  layout.</li>
+
+  <li>Configure the render settings <strong>sampling</strong> to be high enough
+  to reduce noise. Somewhere between 250 and 750 should give good results.</li>
+
+  <li>Render and import the image into Photoshop to adjust saturation,
+  contrast.</li>
+
+  <li>Save the render as <strong><em>LASTNAME</em>-rendering-chair.png</strong>,
+  etc. in the project folder. Name the files in an organized in a logical
+  way.</li>
+
+  <li>Remove large Photoshop files that you may have in the project folder
+  before compressing for upload.</li>
+
+  <li>Save the 3D scene file as
+  <strong><em>LASTNAME</em>-rendering-chair</strong> in the project folder.</li>
+
+  <li>Compress the project folder once you’ve completed the tutorial and rename
+  it <strong><em>LASTNAME</em>-rendering-chair.zip.</strong></li>
+
+  <li>Upload the .zip file to the assignment dropbox.</li>
+
+  <li>Double check that you’ve included all files and that your .zip file can be
+  downloaded and opened.</li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

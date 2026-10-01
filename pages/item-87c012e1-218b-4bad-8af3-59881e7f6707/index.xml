@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-87c012e1-218b-4bad-8af3-59881e7f6707</id>
+<indent>2</indent>
+<location>pages/item-87c012e1-218b-4bad-8af3-59881e7f6707/index.xml</location>
+<slug>pathways/game-artist-pathway/game-art-in-real-time</slug>
+<order>0</order>
+<parent>item-39e4ffab-fa6f-4e51-8107-eb710ae38c56</parent>
+<title>Game art in real time</title>
+<description></description>
+<metadata>
+<published>true</published>
+<oerImport>decap-pathways</oerImport>
+<pageType>section</pageType>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

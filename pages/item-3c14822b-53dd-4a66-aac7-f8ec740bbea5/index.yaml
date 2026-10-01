@@ -1,0 +1,34 @@
+id: item-3c14822b-53dd-4a66-aac7-f8ec740bbea5
+indent: 1
+location: pages/item-3c14822b-53dd-4a66-aac7-f8ec740bbea5/index.yaml
+slug: lessons/real-time-engines
+order: 7
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: Real-time Engines
+description: ''
+metadata:
+  published: true
+  pageType: lesson
+  oerSource: lessons/realtime-engines
+  oerFields:
+    estimatedDuration: 6 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Navigate game engine interfaces
+      - Import and configure 3D assets
+      - Set up materials and shaders
+      - Implement real-time lighting
+      - Create basic interactive elements
+      - Optimize performance and build settings
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <p>Gain proficiency in game engines, learning how to import assets, configure
+  materials, and build interactive real-time experiences.</p>

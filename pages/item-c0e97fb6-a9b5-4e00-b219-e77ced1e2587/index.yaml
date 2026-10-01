@@ -1,0 +1,81 @@
+id: item-c0e97fb6-a9b5-4e00-b219-e77ced1e2587
+indent: 1
+location: pages/item-c0e97fb6-a9b5-4e00-b219-e77ced1e2587/index.yaml
+slug: pathways/compositor-pathway
+order: 1
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Compositor Pathway
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/compositor
+  tags: Compositing,Post-production,VFX,Color Grading,Nuke,After Effects
+  oerFields:
+    difficulty: Intermediate
+    estimatedDuration: 14 weeks
+    learningObjectives:
+      - Integrate CGI elements with live-action footage seamlessly
+      - Apply color correction and grading techniques
+      - Use keying and rotoscoping for element isolation
+      - Create realistic lighting and shadow integration
+      - Understand compositing workflows and node-based systems
+      - Deliver final outputs to professional specifications
+    prerequisites:
+      - page: item-2f8bd775-cbd4-4275-acb6-94c841e172e7
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>This streamlined pathway focuses specifically on digital compositing
+  skills, providing students with the technical and artistic abilities needed to
+  work in post-production facilities. Students will learn to combine multiple
+  elements into final, polished images for film, television, and digital
+  media.</p>
+
+  <h2>Who This Is For</h2>
+
+  <p>This pathway is ideal for students interested in:</p>
+
+  <ul>
+
+  <li>Post-production and finishing</li>
+
+  <li>Visual effects compositing</li>
+
+  <li>Color grading and correction</li>
+
+  <li>Motion graphics integration</li>
+
+  <li>Commercial production</li>
+
+  </ul>
+
+  <h2>Career Outcomes</h2>
+
+  <p>Graduates will be prepared for roles including:</p>
+
+  <ul>
+
+  <li>Digital Compositor</li>
+
+  <li>Compositing Artist</li>
+
+  <li>VFX Compositor</li>
+
+  <li>Finishing Artist</li>
+
+  <li>Color Grading Technician</li>
+
+  <li>Junior Compositor</li>
+
+  </ul>

@@ -1,0 +1,89 @@
+id: item-dbe4cef4-73d0-43d9-b532-46081fc2688c
+indent: 1
+location: pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.yaml
+slug: exercises/modeling-and-sculpting-a-sea-creature
+order: 12
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling and sculpting a sea creature
+description: ''
+metadata:
+  published: true
+  pageType: exercise
+  oerSource: exercises/modeling-and-sculpting-a-sea-creature
+  tags: Blender
+  oerFields:
+    difficulty: Advanced
+    image: files/reckkzm19AZnEIkJE_image_sculpting-retopo-header-v1.jpg
+    imageAlt: sculpting-retopo-header-v1.jpg
+    license: CC BY 4.0
+    aiLicense: AIUL-WA, AIUL-NA-3D
+    author: Michael Collins
+    authorUrl: https://michaelcollins.xyz
+    allowEmbed: true
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <p>In this exercise, you will practice sculpting tools and workflows, as well
+  as go through the process of retopology. You will end up with two models, a
+  high resolution sculpt and a base mesh that will be ready for texturing.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrW9SylyEr8DprET38xynl_5"
+  title="Modeling and sculpting a sea creature Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Become familiarized with 3D sculpting tools and terminology.</li>
+
+  <li>Use sculpting tools and workflows to create high resolution sculpt and
+  retopology workflows to create a base mesh.</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Watch the tutorials related to sculpting.</li>
+
+  <li>Create a project folder</li>
+
+  <li>Find reference images online for your subject and save them to project
+  folder.</li>
+
+  <li>Use the techniques learned to create a detailed sculpt of an
+  <strong>aquatic sea creature</strong>.</li>
+
+  <li>Create a second model by retopologizing the sculpt to create a low poly
+  base mesh.
+
+  <ul>
+
+  <li>You should have two models: Hi-res sculpt and a low poly base mesh
+  model</li>
+
+  </ul>
+
+  </li>
+
+  <li>Save your blend file in a project folder
+  <code>YOURNAME-sculpting.blend</code>.</li>
+
+  <li>Compress the folder once you’ve completed the tutorial and rename it
+  <code>YOURNAME-sculpting.zip</code><em>.</em></li>
+
+  <li>Upload the <code>.zip</code> file to the assignment dropbox.</li>
+
+  <li>Ensure you’ve included everything properly. Failure to ensure that you’ve
+  uploaded the file will result in your exercise being graded according the
+  grading criteria.</li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

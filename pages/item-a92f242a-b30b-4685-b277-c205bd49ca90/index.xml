@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a92f242a-b30b-4685-b277-c205bd49ca90</id>
+<indent>1</indent>
+<location>pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.xml</location>
+<slug>exercises/importing-assets-into-playcanvas</slug>
+<order>17</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Importing Assets into PlayCanvas</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>exercise</pageType>
+<oerSource>exercises/importing-assets-into-playcanvas</oerSource>
+<tags>Blender,PlayCanvas</tags>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<courses>
+<item>DART 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Export models and textures from Blender and bring them into PlayCanvas with correct scale, materials and lighting.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Export glTF/GLB files with correct transforms</li>
+<li>Set up PBR materials in PlayCanvas</li>
+<li>Light and preview assets in a real-time scene</li>
+</ol>
+]]></content>
+</item>

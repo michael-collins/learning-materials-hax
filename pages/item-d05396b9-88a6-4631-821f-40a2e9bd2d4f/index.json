@@ -1,0 +1,39 @@
+{
+  "id": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+  "indent": 1,
+  "location": "pages/item-d05396b9-88a6-4631-821f-40a2e9bd2d4f/index.json",
+  "slug": "lessons/3d-modeling-fundamentals",
+  "order": 2,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "3D Modeling Fundamentals",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "lesson",
+    "oerSource": "lessons/3d-modeling-fundamentals",
+    "tags": "",
+    "oerFields": {
+      "estimatedDuration": "4 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Understand polygon modeling concepts and workflows",
+        "Create 3D geometry using basic modeling tools",
+        "Apply proper topology principles to models",
+        "Develop efficient modeling techniques"
+      ],
+      "author": "Michael Collins",
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0",
+      "aiLicense": "AIUL-WA",
+      "publishEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>\n"
+}

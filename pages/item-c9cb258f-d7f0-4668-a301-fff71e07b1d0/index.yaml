@@ -1,0 +1,33 @@
+id: item-c9cb258f-d7f0-4668-a301-fff71e07b1d0
+indent: 1
+location: pages/item-c9cb258f-d7f0-4668-a301-fff71e07b1d0/index.yaml
+slug: lessons/environment-design-for-real-time
+order: 8
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: Environment Design for Real-time
+description: ''
+metadata:
+  published: true
+  pageType: lesson
+  oerSource: lessons/environment-design-realtime
+  oerFields:
+    estimatedDuration: 5 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Design environments for real-time rendering
+      - Create modular and reusable assets
+      - Apply level design principles
+      - Optimize environments for performance
+      - Implement efficient lighting strategies
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <p>Master environment design for real-time applications, learning to create
+  engaging spaces while maintaining performance constraints.</p>

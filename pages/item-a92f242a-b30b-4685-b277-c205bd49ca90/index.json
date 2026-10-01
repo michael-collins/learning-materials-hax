@@ -1,0 +1,32 @@
+{
+  "id": "item-a92f242a-b30b-4685-b277-c205bd49ca90",
+  "indent": 1,
+  "location": "pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.json",
+  "slug": "exercises/importing-assets-into-playcanvas",
+  "order": 17,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Importing Assets into PlayCanvas",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "exercise",
+    "oerSource": "exercises/importing-assets-into-playcanvas",
+    "tags": "Blender,PlayCanvas",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "placeholder": true,
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Export models and textures from Blender and bring them into PlayCanvas with correct scale, materials and lighting.</p>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Export glTF/GLB files with correct transforms</li>\n<li>Set up PBR materials in PlayCanvas</li>\n<li>Light and preview assets in a real-time scene</li>\n</ol>\n"
+}

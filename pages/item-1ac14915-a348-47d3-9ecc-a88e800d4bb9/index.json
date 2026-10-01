@@ -1,0 +1,45 @@
+{
+  "id": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
+  "indent": 1,
+  "location": "pages/item-1ac14915-a348-47d3-9ecc-a88e800d4bb9/index.json",
+  "slug": "exercises/texturing-the-airline-chair",
+  "order": 4,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Texturing the Airline Chair",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "exercise",
+    "oerSource": "exercises/texturing-the-airline-chair",
+    "tags": "Blender,Texturing",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "image": "files/recF0xzVxfkZoJ63J_image_airline-chair-texturing-header.jpg",
+      "imageAlt": "airline-chair-texturing-header.jpg",
+      "license": "CC BY 4.0",
+      "aiLicense": "AIUL-WA, AIUL-NA-3D",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "allowEmbed": true,
+      "attachments": [
+        {
+          "title": "Airline Chair 3/4 view",
+          "url": "files/reciiBA8GKDiKgnat_attachment_244141_743985d156708c43_b.jpg",
+          "description": "Airline Chair designed by KEM Weber.",
+          "alt": "Airline Chair"
+        },
+        {
+          "title": "Airline Chair side view",
+          "url": "files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg",
+          "description": "Airline Chair designed by KEM Weber.",
+          "alt": "Airline Chair"
+        }
+      ]
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq\" title=\"Texturing the Airline Chair Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Perform fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide.</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>Note:</strong> You should have a basic understanding of Blender's interface before completing this exercise. You should also complete the exercise called <strong>Modeling the Airline Chair</strong> prior to completing this exercise.</p>\n<ol>\n<li>Duplicate the modeling folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.\n<ul>\n<li>If you were unable to produce a polygonal model, you can download the Airline Chair Model, and use it to complete the assignment.</li>\n</ul>\n</li>\n<li>Follow the video demonstration to create UV maps to texture the <a href=\"https://collection.cooperhewitt.org/objects/404536651/images/\">KEM Weber Airline Chair</a>.</li>\n<li>Apply the scale transform to reset each polygonal object.</li>\n<li>Unwrap the chair’s parts’ UVs using the various methods and tools described in the tutorials.</li>\n<li>Export a UV map for each part and save it in the project folder as <strong><em>uv-arm.jpg</em></strong>, <strong><em>uv-cushion.jpg</em></strong><em>,</em> etc.</li>\n<li>Import the UV maps into Photoshop and create textures to match the Airline Chair as closely as possible.</li>\n<li>Save the textures as <strong><em>arm_color.jpg</em></strong>, <strong><em>cushion1_color.jpg</em></strong>, etc. in the project folder. Name the files in an organized in a logical way.</li>\n<li>In Blender, set up the chair’s textures so they are visible on the model.</li>\n<li>Save the 3D scene file as <strong><em>LASTNAME</em>-texturing-chair</strong> in the project folder.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-texturing-chair.zip.</strong></li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

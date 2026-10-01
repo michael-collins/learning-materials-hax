@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c43a83f7-2300-4e9c-bd16-bf418744f1d9</id>
+<indent>1</indent>
+<location>pages/item-c43a83f7-2300-4e9c-bd16-bf418744f1d9/index.xml</location>
+<slug>lessons/real-time-asset-budgets</slug>
+<order>9</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Real-time Asset Budgets</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>lesson</pageType>
+<oerSource>lessons/realtime-asset-budgets</oerSource>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Explain how real-time rendering differs from offline rendering</item>
+<item>Estimate polygon and texture budgets for an asset</item>
+<item>Apply consistent texel density across a set of assets</item>
+<item>Reduce draw calls with shared materials and texture atlases</item>
+</learningObjectives>
+<author>Michael Collins</author>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.</p>
+]]></content>
+</item>

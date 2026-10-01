@@ -1,0 +1,90 @@
+id: item-c682a557-57c2-4271-9bde-fb0c26fe5131
+indent: 1
+location: pages/item-c682a557-57c2-4271-9bde-fb0c26fe5131/index.yaml
+slug: pathways/short-film-pathway
+order: 11
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Short Film Pathway
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/short-film
+  tags: Animation,Short Film,Storytelling,Production Pipeline
+  oerFields:
+    difficulty: Intermediate
+    estimatedDuration: 24 weeks
+    learningObjectives:
+      - Develop strong storytelling and narrative skills for animation
+      - Create character performances that convey emotion and personality
+      - Produce complete animated short films from concept to completion
+      - Apply professional compositing and finishing techniques
+      - Understand animation production pipelines and workflows
+    prerequisites:
+      - page: item-2f8bd775-cbd4-4275-acb6-94c841e172e7
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>This pathway is designed for aspiring animators who want to create
+  narrative-driven short films using 3D animation. Students will progress from
+  foundational CGI skills through character animation and compositing,
+  developing the complete skillset needed to produce professional-quality
+  animated shorts.</p>
+
+  <h2>Who This Is For</h2>
+
+  <p>This pathway is ideal for students aiming to work in:</p>
+
+  <ul>
+
+  <li>Animation studios</li>
+
+  <li>Independent animation projects</li>
+
+  <li>Film production companies</li>
+
+  <li>Advertising and commercial animation</li>
+
+  <li>Educational media production</li>
+
+  </ul>
+
+  <h2>Career Outcomes</h2>
+
+  <p>Graduates will be prepared for roles including:</p>
+
+  <ul>
+
+  <li>Character Animator</li>
+
+  <li>3D Animator</li>
+
+  <li>Animation Director</li>
+
+  <li>Storyboard Artist</li>
+
+  <li>Animation Generalist</li>
+
+  </ul>
+
+  <h2>Examples</h2>
+
+  <ul>
+
+  <li>Example artist or studio</li>
+
+  </ul>
+
+  <h2>Specializations</h2>
+
+  <p>This pathway includes the following specializations:</p>

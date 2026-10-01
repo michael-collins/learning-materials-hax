@@ -1,0 +1,30 @@
+id: item-818141ba-4851-449d-9b0e-f2a85d9b3c9d
+indent: 1
+location: pages/item-818141ba-4851-449d-9b0e-f2a85d9b3c9d/index.yaml
+slug: pathways/illustration-and-visualization
+order: 5
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Illustration and visualization
+description: ''
+metadata:
+  published: true
+  pageType: pathway
+  oerImport: decap-pathways
+  oerSource: pathways/illustration-and-visualization
+  oerFields:
+    prerequisites:
+      - page: item-2f8bd775-cbd4-4275-acb6-94c841e172e7
+        version: ''
+    author: Michael Collins
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: >
+  <oer-pathway layout="matrix"></oer-pathway>
+
+  <p>Creates realistic architectural visualizations for design, marketing, or
+  presentations.</p>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e</id>
+<indent>1</indent>
+<location>pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.xml</location>
+<slug>exercises/blocking-out-a-game-space</slug>
+<order>8</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Blocking Out a Game Space</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>exercise</pageType>
+<oerSource>exercises/blocking-out-a-game-space</oerSource>
+<tags>Blender</tags>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<courses>
+<item>DART 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<author>Michael Collins</author>
+<authorUrl>https://michaelcollins.xyz</authorUrl>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1790829909</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790829909</updated>
+</metadata>
+<content><![CDATA[<p>Block out a small playable space with simple primitives to test scale, layout and sightlines before any detailed modeling.</p>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Establish player scale and metrics for a space</li>
+<li>Lay out a space for navigation and focal points</li>
+<li>Iterate on a greybox before committing to detail</li>
+</ol>
+]]></content>
+</item>

@@ -1,0 +1,32 @@
+{
+  "id": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
+  "indent": 1,
+  "location": "pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.json",
+  "slug": "exercises/blocking-out-a-game-space",
+  "order": 8,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Blocking Out a Game Space",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "exercise",
+    "oerSource": "exercises/blocking-out-a-game-space",
+    "tags": "Blender",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "author": "Michael Collins",
+      "authorUrl": "https://michaelcollins.xyz",
+      "placeholder": true,
+      "allowEmbed": true
+    },
+    "created": 1790829909,
+    "images": [],
+    "videos": [],
+    "updated": 1790829909
+  },
+  "content": "<p>Block out a small playable space with simple primitives to test scale, layout and sightlines before any detailed modeling.</p>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Establish player scale and metrics for a space</li>\n<li>Lay out a space for navigation and focal points</li>\n<li>Iterate on a greybox before committing to detail</li>\n</ol>\n"
+}

@@ -1,0 +1,20 @@
+id: item-962dad7a-08ea-4666-94a5-358849a4f59f
+indent: 3
+location: pages/item-962dad7a-08ea-4666-94a5-358849a4f59f/index.yaml
+slug: pathways/cgi-foundations/lighting-camera-rendering/lighting-principles
+order: 0
+parent: item-c1960517-1ab7-4b88-ba31-d392368e45db
+title: Lighting Principles
+description: ''
+metadata:
+  published: true
+  oerImport: decap-pathways
+  pageType: lesson
+  oerRef:
+    page: item-386131cb-357e-4d86-a8e1-60a087187690
+    version: ''
+  created: 1790829909
+  images: []
+  videos: []
+  updated: 1790829909
+content: <oer-include page="item-386131cb-357e-4d86-a8e1-60a087187690"></oer-include>
