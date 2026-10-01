@@ -1519,10 +1519,88 @@ export const editorSkin = {
     }
   `,
 
+  /* Site Settings sub-dialogs */
+  "haxcms-theme-picker": css`
+    :host {
+      font-family: var(--font-sans) !important;
+    }
+    legend {
+      font-size: 0.875rem !important;
+      font-weight: 600 !important;
+    }
+    .description {
+      font-size: 0.8125rem !important;
+      color: var(--muted-foreground) !important;
+    }
+    .option {
+      border: 1px solid var(--border) !important;
+      border-radius: var(--radius-lg) !important;
+      background: var(--card, var(--background)) !important;
+      box-shadow: none !important;
+    }
+    .option:hover {
+      border-color: color-mix(in srgb, var(--primary) 45%, var(--border)) !important;
+    }
+    .option.selected {
+      border-color: var(--primary) !important;
+      box-shadow: 0 0 0 1px var(--primary) !important;
+    }
+    .option:focus-within {
+      outline: 2px solid var(--ring) !important;
+      outline-offset: 2px !important;
+    }
+    /* shadcn Badge: Active = primary, Selected = outline */
+    .flag {
+      padding: 0 0.5rem !important;
+      border-radius: 999px !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.6875rem !important;
+      font-weight: 600 !important;
+      line-height: 1.25rem !important;
+      letter-spacing: normal !important;
+      text-transform: none !important;
+    }
+    .flag.active {
+      background: var(--primary) !important;
+      color: var(--primary-foreground) !important;
+      border: 0 !important;
+    }
+    .flag.selected {
+      background: var(--background) !important;
+      color: var(--foreground) !important;
+      border: 1px solid var(--border) !important;
+    }
+    .theme-name {
+      font-size: 0.875rem !important;
+      font-weight: 500 !important;
+      line-height: 1.3 !important;
+      color: var(--foreground) !important;
+    }
+    .preview-fallback {
+      font-size: 0.75rem !important;
+      color: var(--muted-foreground) !important;
+      background: var(--muted) !important;
+    }
+  `,
+
   /* ---------- every HAX dialog: shadcn Dialog ---------- */
   // callers pass titlebar colours as inline custom properties on the host;
   // :host !important outranks an inline (outer, normal) declaration
   "simple-modal": css`
+    /* title breadcrumb (Site Settings > Appearance): icon, gap, text */
+    .breadcrumb-button,
+    [class*="breadcrumb"] {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.375rem !important;
+    }
+    .breadcrumb-icon {
+      --simple-icon-height: 1rem;
+      --simple-icon-width: 1rem;
+      width: 1rem !important;
+      height: 1rem !important;
+      color: var(--muted-foreground) !important;
+    }
     :host {
       --simple-modal-titlebar-background: var(--background) !important;
       --simple-modal-titlebar-color: var(--foreground) !important;
