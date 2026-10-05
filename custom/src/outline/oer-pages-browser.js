@@ -9,7 +9,7 @@
  * @element oer-pages-browser
  */
 import { html, css, LitElement } from "../lit.js";
-import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { isSystemItem, isHeading, contentTypes } from "../types/content-types.js";
 import { saveOutline, deletionSet, ancestors } from "./outline-model.js";
@@ -58,17 +58,25 @@ class OerPagesBrowser extends LitElement {
     this._confirm = null;
     this._busy = false;
     this.open = true;
+    // follow the manifest while open (saves here and elsewhere replace it)
+    this.__stop?.();
+    this.__stop = autorun(() => {
+      this._list = toJS(store.manifest?.items) || [];
+      this.requestUpdate();
+    });
     globalThis.addEventListener("keydown", this.__keys, true);
     this.updateComplete.then(() => this.shadowRoot.querySelector("input")?.focus());
   }
 
   _close() {
     this.open = false;
+    this.__stop?.();
+    this.__stop = null;
     globalThis.removeEventListener("keydown", this.__keys, true);
   }
 
   get _items() {
-    return toJS(store.manifest?.items) || [];
+    return this._list || [];
   }
 
   // why the navigation doesn't list a page ("" when it does)
@@ -214,6 +222,10 @@ class OerPagesBrowser extends LitElement {
         border: 1px solid var(--input-border, var(--border));
         border-radius: var(--radius-md);
         color: var(--muted-foreground);
+      }
+      .search:focus-within {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
       }
       .search input {
         flex: 1;

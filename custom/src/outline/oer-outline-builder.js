@@ -2077,7 +2077,7 @@ class OerOutlineBuilder extends LitElement {
                   : deleting || hiding
                   ? html`<span class="warn">
                       ${[
-                        deleting ? `${deleting} page${deleting === 1 ? "" : "s"} (with sub-pages and archived versions) will be deleted${brokenLinks ? `, breaking ${brokenLinks} link${brokenLinks === 1 ? "" : "s"} to ${deleting === 1 ? "it" : "them"}` : ""}.` : "",
+                        deleting ? `${deleting} page${deleting === 1 ? "" : "s"}${deleting > this._deleted.size ? " (with sub-pages and archived versions)" : ""} will be deleted${brokenLinks ? `, breaking ${brokenLinks} link${brokenLinks === 1 ? "" : "s"} to ${deleting === 1 ? "it" : "them"}` : ""}.` : "",
                         hiding ? `${hiding} page${hiding === 1 ? "" : "s"} will leave the navigation and stay in Browse pages.` : "",
                       ].join(" ")}
                     </span>`

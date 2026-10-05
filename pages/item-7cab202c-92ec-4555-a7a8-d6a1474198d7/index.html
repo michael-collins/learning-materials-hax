@@ -2,7 +2,7 @@
 <oer-callout type="tip" title="Where things are"><p>Most actions live in three places: the <strong>sidebar</strong> (Navigation and Site tabs), the <strong>page menu</strong> (the ⌄ beside a page title) and the <strong>top bar</strong> (search, command search and dark mode).</p></oer-callout>
 <h2>Getting around</h2>
 <ul>
-  <li><strong>Sidebar tabs.</strong> Signed-in authors see two tabs. <em>Navigation</em> shows the site's outline; <em>Site</em> holds Content types and Settings. Readers see the outline only.</li>
+  <li><strong>Sidebar tabs.</strong> Signed-in authors see two tabs. <em>Navigation</em> shows the site's outline; <em>Site</em> holds Browse pages, Content types and Settings. Readers see the outline only.</li>
   <li><strong>Outline headings.</strong> Uppercase labels such as Library, Curriculum and Assessments group the pages after them, like the categories of the Decap site. Headings never change a page's address.</li>
   <li><strong>Icons in navigation.</strong> Page icons can be switched off for the whole site in the outline builder. Without icons the sidebar uses the Decap layout: roomier rows, bold top-level pages and pages indented under their heading.</li>
   <li><strong>Breadcrumbs.</strong> The top bar shows where a page sits. On narrow screens the levels above collapse into a … menu so the trail stays on one line.</li>
@@ -48,13 +48,14 @@
 <oer-schematic preset="page-details" alt="Diagram of the Page details dialog over the page: content type, description and field inputs, with a Save button." caption="Page details: the page’s type, description and fields."></oer-schematic>
 
 <h2>The outline builder</h2>
-<p>Open it with <strong>Edit outline</strong> at the foot of the sidebar (or from a page's menu for its sub-pages). Nothing is written until <strong>Save outline</strong>.</p>
+<p>Open it with <strong>Edit outline</strong> under the sidebar's pages (or from a page's menu for its sub-pages). Nothing is written until <strong>Save outline</strong>.</p>
 <ul>
   <li>Drag rows to reorder them: the top of a row puts a page before it, the middle makes it a child, the bottom puts it after, and dragging sideways changes its level.</li>
   <li>Hover the space at the end of a level for <strong>Add page</strong>, <strong>Add existing</strong> (show an existing page here without copying it) and <strong>Add heading</strong>.</li>
-  <li>Each row's chip sets its content type. Inside a pathway with several levels, <kbd>L</kbd> sets an item's level. On a linked page, the link chip (or <kbd>V</kbd>) chooses the version it shows: the latest, or a released version.</li>
+  <li>Each row's chip sets its content type. Inside a pathway with several levels, <kbd>L</kbd> sets an item's level. On a linked page, the link chip (or <kbd>V</kbd>) chooses the version it shows: the latest, or a released version. A page with released versions has a version chip too: the navigation and Previous/Next link to the release you choose.</li>
+  <li><strong>Removing a row</strong> (the eye button, or <kbd>Delete</kbd>) only takes the page out of the navigation; the page and its sub-pages are kept. <strong>Delete page</strong> (the bin, or <kbd>Shift</kbd>+<kbd>Delete</kbd>) deletes it on save, with its sub-pages and archived versions. <em>Add existing</em> on a page that is out of the navigation moves it back in.</li>
   <li><strong>Edit icons</strong> shows the icon column; <strong>Icons in navigation</strong> switches icons on or off for the whole sidebar.</li>
-  <li>Keyboard: <kbd>Enter</kbd> rename, <kbd>Tab</kbd>/<kbd>Shift</kbd>+<kbd>Tab</kbd> indent and outdent, <kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd> move, <kbd>←</kbd>/<kbd>→</kbd> collapse and expand, <kbd>Delete</kbd> remove, <kbd>T</kbd> type, <kbd>L</kbd> level, <kbd>V</kbd> version.</li>
+  <li>Keyboard: <kbd>Enter</kbd> rename, <kbd>Tab</kbd>/<kbd>Shift</kbd>+<kbd>Tab</kbd> indent and outdent, <kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd> move, <kbd>←</kbd>/<kbd>→</kbd> collapse and expand, <kbd>Delete</kbd> remove from navigation, <kbd>Shift</kbd>+<kbd>Delete</kbd> delete page, <kbd>T</kbd> type, <kbd>L</kbd> level, <kbd>V</kbd> version.</li>
 </ul>
 <oer-schematic preset="outline-builder" alt="Diagram of the outline builder: rows grouped under Library and Curriculum headings, a link chip showing version v1.2.0, the Icons switch and Save, and Add page, Add existing and Add heading buttons." caption="The outline builder: headings, a linked page showing its version, and the add buttons."></oer-schematic>
 
@@ -63,6 +64,8 @@
 <oer-schematic preset="pathways-index" alt="Diagram of the Pathways page: cards in three groups, Start here, Builds on and In development." caption="The Pathways index: where to start, what builds on it, and what is in development."></oer-schematic>
 <oer-schematic preset="pathway" alt="Diagram of a pathway page: a row of facts, then a matrix of modules against Beginner, Intermediate and Advanced levels." caption="A pathway page: the facts, then the route as a matrix of modules by level."></oer-schematic>
 
+<h2>Browse pages</h2>
+<p><em>Site → Browse pages</em> lists every page, including pages the navigation doesn't show: pages removed from the outline, archived versions and linked copies. Search or filter them, open one, put a page back in the navigation with <strong>Show in navigation</strong>, or delete it.</p>
 <h2>Versions</h2>
 <ul>
   <li>The version tag in a page's header, and <em>Versions…</em> in the page menu, open the page's releases. Authors publish a new release with a semver number (1.2.0) and notes; the page's content at that moment is kept as an archived copy.</li>
