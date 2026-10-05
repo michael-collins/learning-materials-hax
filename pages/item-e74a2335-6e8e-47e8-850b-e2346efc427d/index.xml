@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e74a2335-6e8e-47e8-850b-e2346efc427d</id>
+<indent>1</indent>
+<location>pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.xml</location>
+<slug>quizzes/short-film-pathway-readiness-quiz</slug>
+<order>0</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Short Film Pathway readiness quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>readiness:item-160073d5-d962-4ed9-afcf-7b93ad2b4c77</oerTmpKey>
+<oerFields>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791229754</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791229754</updated>
+</metadata>
+<content><![CDATA[<p>Before you start Short Film Pathway: can you answer these? Your answers aren't recorded.</p>
+<self-check title="Are you ready?">
+  <p slot="question">What makes a story work in a short film only a few minutes long?</p>
+  <p>One clear character with a goal, a simple conflict, a beginning, middle and end, an emotional change, and storytelling that relies on pictures more than words.</p>
+</self-check>
+<self-check title="Are you ready?">
+  <p slot="question">How can an animator convey a character's emotion without dialogue?</p>
+  <p>Through posing and silhouette, timing and spacing, facial expression, acting choices and staging.</p>
+</self-check>
+]]></content>
+</item>

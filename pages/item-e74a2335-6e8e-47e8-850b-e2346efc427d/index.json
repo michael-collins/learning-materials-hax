@@ -1,0 +1,30 @@
+{
+  "id": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
+  "indent": 1,
+  "location": "pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.json",
+  "slug": "quizzes/short-film-pathway-readiness-quiz",
+  "order": 0,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "Short Film Pathway readiness quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "readiness:item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
+    "oerFields": {
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791229754,
+    "images": [],
+    "videos": [],
+    "updated": 1791229754
+  },
+  "content": "<p>Before you start Short Film Pathway: can you answer these? Your answers aren't recorded.</p>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">What makes a story work in a short film only a few minutes long?</p>\n  <p>One clear character with a goal, a simple conflict, a beginning, middle and end, an emotional change, and storytelling that relies on pictures more than words.</p>\n</self-check>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">How can an animator convey a character's emotion without dialogue?</p>\n  <p>Through posing and silhouette, timing and spacing, facial expression, acting choices and staging.</p>\n</self-check>\n"
+}
