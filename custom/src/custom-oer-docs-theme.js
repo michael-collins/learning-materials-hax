@@ -43,6 +43,7 @@ import {
 } from "./editor/stock.js";
 import { settingsDialog } from "./editor/oer-settings-dialog.js";
 import { outlineBuilder } from "./outline/oer-outline-builder.js";
+import { pagesBrowser } from "./outline/oer-pages-browser.js";
 import { typeEditor } from "./types/oer-type-editor.js";
 import { pageDetails } from "./types/oer-page-details.js";
 import { isSystemItem, contentTypes, isHeading } from "./types/content-types.js";
@@ -102,6 +103,7 @@ const icon = {
   siteMap: lucide("hax:site-map"),
   settings: lucide("icons:settings"),
   types: lucide("hax:templates"),
+  files: lucide("oer:files"),
   details: lucide("image:tune"),
   code: lucide("icons:code"),
   chevronLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`,
@@ -224,19 +226,30 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         const book = this._bookOf(active, all);
         // the hidden content-types page is configuration, never a stop;
         // inside a book, Previous / Next stay within the book
-        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i) && !isHeading(i));
+        // pages removed from the navigation aren't stops either
+        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i) && !isHeading(i) && !i.metadata?.hideInMenu);
         if (book) {
           const inBook = new Set([book.id, ...flatten(all, book.id).map((x) => x.item.id)]);
           items = items.filter((i) => inBook.has(i.id));
         }
-        const idx = items.findIndex((i) => i.id === active);
+        // on the release an item is pinned to, the pager goes on from that item
+        const activeItem = all.find((i) => i.id === active);
+        const pinnedTo = activeItem?.metadata?.oerSnapshotOf;
+        const here = pinnedTo && all.find((i) => i.id === pinnedTo)?.metadata?.oerNavVersion === activeItem.metadata.version ? pinnedTo : active;
+        const idx = items.findIndex((i) => i.id === here);
+        // an item pinned to a release (metadata.oerNavVersion) links to it
+        const stop = (item) => {
+          const v = item?.metadata?.oerNavVersion;
+          const snap = v && all.find((i) => i.metadata?.oerSnapshotOf === item.id && i.metadata?.version === v);
+          return item && snap ? { ...item, slug: snap.slug } : item;
+        };
         Promise.resolve().then(() => {
           this.mobileOpen = false;
           if (book?.id !== this._book?.id) this._bookFilter = "";
           this._book = book;
           this._followVersionParam(active);
-          this._prev = idx > 0 ? items[idx - 1] : null;
-          this._next = idx >= 0 && idx < items.length - 1 ? items[idx + 1] : null;
+          this._prev = idx > 0 ? stop(items[idx - 1]) : null;
+          this._next = idx >= 0 && idx < items.length - 1 ? stop(items[idx + 1]) : null;
         });
       }),
     );
@@ -1240,6 +1253,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         ${this._loggedIn && this._sidebarTab === "site"
           ? html`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
               <div class="nav-group-label">Site</div>
+              <button class="site-action" @click="${() => pagesBrowser().show()}">${icon.files}Browse pages</button>
               <button class="site-action" @click="${() => typeEditor().show()}">${icon.types}Content types</button>
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`

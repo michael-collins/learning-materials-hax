@@ -113,3 +113,25 @@ export function manifestChange(before = store.manifest, timeout = 15000) {
 }
 
 export const newItemId = () => `item-${globalThis.crypto.randomUUID()}`;
+
+/**
+ * What deleting pages `ids` takes with it: their sub-pages (hidden ones
+ * too) and the archived versions of all of them. HAXcms deletes only the
+ * items it is told to, which would leave the rest pointing at a missing
+ * parent.
+ */
+export function deletionSet(items, ids) {
+  const out = new Set(ids);
+  let grew = true;
+  while (grew) {
+    grew = false;
+    for (const i of items || []) {
+      if (out.has(i.id)) continue;
+      if (out.has(i.parent) || out.has(i.metadata?.oerSnapshotOf)) {
+        out.add(i.id);
+        grew = true;
+      }
+    }
+  }
+  return out;
+}

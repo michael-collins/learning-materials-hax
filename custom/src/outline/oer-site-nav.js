@@ -448,9 +448,9 @@ class OerSiteNav extends LitElement {
         return html`<li class="${[hasKids ? "has-kids" : "", grouped ? "grouped" : ""].join(" ")}">
           <div class="row">
             <a
-              href="${item.slug}"
+              href="${this._href(item)}"
               class="${item.metadata?.published === false ? "draft" : ""}"
-              aria-current="${item.id === this._activeId ? "page" : item.id === this.__location ? "location" : "false"}"
+              aria-current="${item.id === this._activeId || item.id === this.__pinnedActive ? "page" : item.id === this.__location ? "location" : "false"}"
             >
               ${depth === 0 && navIconsOn(this._all)
                 ? iconName
@@ -477,6 +477,15 @@ class OerSiteNav extends LitElement {
     </ul>`;
   }
 
+  // an item pinned to a release (outline builder, metadata.oerNavVersion)
+  // links to that release's archived copy
+  _href(item) {
+    const v = item.metadata?.oerNavVersion;
+    if (!v) return item.slug;
+    const snap = (this._all || []).find((i) => i.metadata?.oerSnapshotOf === item.id && i.metadata?.version === v);
+    return snap ? snap.slug : item.slug;
+  }
+
   // types whose pages stay out of the site nav (as Decap lists only its
   // collections): their pages and everything under them
   _navItems() {
@@ -495,6 +504,12 @@ class OerSiteNav extends LitElement {
     let here = byId.get(this._activeId);
     while (here && !shown.has(here.id)) here = byId.get(here.parent);
     this.__location = here && here.id !== this._activeId ? here.id : null;
+    // an item pinned to a release is the current page on that release
+    const active = byId.get(this._activeId);
+    if (here && active?.metadata?.oerSnapshotOf === here.id && active.metadata.version === here.metadata?.oerNavVersion) {
+      this.__location = null;
+      this.__pinnedActive = here.id;
+    } else this.__pinnedActive = null;
     const q = (this.filter || "").trim().toLowerCase();
     if (q) {
       // matches plus their ancestors, so the tree still reads

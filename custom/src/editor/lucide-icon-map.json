@@ -268,5 +268,8 @@
   "oer:circle-check": "circle-check",
   "oer:clock": "clock",
   "oer:arrow-right": "arrow-right",
-  "oer:circle-alert": "circle-alert"
+  "oer:circle-alert": "circle-alert",
+  "oer:eye-off": "eye-off",
+  "oer:eye": "eye",
+  "oer:files": "files"
 }

@@ -9,8 +9,10 @@
  *
  * Keyboard (row focused): Enter/F2 rename · Tab / Shift+Tab indent /
  * outdent · Alt+↑/↓ move with sub-pages · ↑/↓ previous/next row · ←/→
- * collapse/expand · Delete remove · T content type · L level (inside a
- * pathway with several levels) · V version a linked page shows. Drag a row: top third = before, middle =
+ * collapse/expand · Delete remove from the navigation (the page stays, in
+ * Browse pages) · Shift+Delete delete the page · T content type · L level
+ * (inside a pathway with several levels) · V version: the one a linked page
+ * shows, or the release the navigation links to. Drag a row: top third = before, middle =
  * make child, bottom third = after; drag left/right to change level. Hold a
  * parent for 2 s to collapse it before dragging.
  * @element oer-outline-builder
@@ -18,7 +20,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { flatten, saveOutline, newItemId, starterContent, childrenMap } from "./outline-model.js";
+import { flatten, saveOutline, newItemId, starterContent, childrenMap, deletionSet } from "./outline-model.js";
 import { isSystemItem, systemItem, contentTypes, navIconsOn, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
 import { isSnapshot, versionsOf } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
@@ -60,7 +62,8 @@ class OerOutlineBuilder extends LitElement {
     super();
     this.open = false;
     this._rows = []; // [{ id, title, icon, depth, orig }]
-    this._deleted = new Map(); // id -> original item
+    this._deleted = new Map(); // id -> original item, deleted on save
+    this._hidden = new Map(); // id -> original item, removed from the nav on save
     this._collapsed = new Set();
     this._editing = null;
     this._showIcons = true;
@@ -93,12 +96,16 @@ class OerOutlineBuilder extends LitElement {
     this._root = rootId;
     this._rootItem = rootId ? items.find((i) => i.id === rootId) : null;
     // the hidden content-types page is configuration, not part of the outline
-    this._rows = flatten(items.filter((i) => !isSystemItem(i) && !isSnapshot(i)), rootId).map(({ item, depth }) => ({
+    // pages removed from the navigation (and their sub-pages) are listed in
+    // Browse pages instead; headings are hidden from stock menus but shown here
+    const outOfNav = (i) => i.metadata?.hideInMenu && i.metadata?.pageType !== HEADING_TYPE;
+    this._rows = flatten(items.filter((i) => !isSystemItem(i) && !isSnapshot(i) && !outOfNav(i)), rootId).map(({ item, depth }) => ({
       id: item.id,
       title: item.title,
       icon: item.metadata?.icon || "",
       type: item.metadata?.pageType || "",
       ref: item.metadata?.oerRef?.page ? item.metadata.oerRef : null,
+      navVersion: item.metadata?.oerNavVersion || "",
       level: item.metadata?.oerLevel || "",
       depth,
       orig: item,
@@ -108,6 +115,7 @@ class OerOutlineBuilder extends LitElement {
     this._navIcons = navIconsOn(items);
     this._snapshot = this._signature();
     this._deleted = new Map();
+    this._hidden = new Map();
     this._collapsed = new Set();
     this._editing = null;
     this._confirmDiscard = false;
@@ -123,11 +131,11 @@ class OerOutlineBuilder extends LitElement {
   }
 
   _signature() {
-    return JSON.stringify([this._navIcons, ...this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.level, r.depth, r.ref?.page, r.ref?.version])]);
+    return JSON.stringify([this._navIcons, ...this._rows.map((r) => [r.id, r.title, r.icon, r.type, r.level, r.depth, r.ref?.page, r.ref?.version, r.navVersion, !!r.unhide])]);
   }
 
   get _dirty() {
-    return this._deleted.size > 0 || this._signature() !== this._snapshot;
+    return this._deleted.size > 0 || this._hidden.size > 0 || this._signature() !== this._snapshot;
   }
 
   _requestClose() {
@@ -164,15 +172,19 @@ class OerOutlineBuilder extends LitElement {
           (o.metadata?.icon || "") !== row.icon ||
           (o.metadata?.pageType || "") !== row.type ||
           (o.metadata?.oerLevel || "") !== (row.level || "") ||
-          (o.metadata?.oerRef?.version || "") !== (row.ref?.version || "");
+          (o.metadata?.oerRef?.version || "") !== (row.ref?.version || "") ||
+          (o.metadata?.oerNavVersion || "") !== (row.navVersion || "") ||
+          !!row.unhide;
         Object.assign(item, { parent: parent || null, order, indent, title });
         item.metadata = { ...(o.metadata || {}) };
         // HAXcms merges metadata on outline saves: clear with "", not delete
         item.metadata.icon = row.icon || "";
         item.metadata.pageType = row.type || "";
         if (row.type === HEADING_TYPE) item.metadata.hideInMenu = true;
-        else if (o.metadata?.pageType === HEADING_TYPE) item.metadata.hideInMenu = false;
+        else if (o.metadata?.pageType === HEADING_TYPE || row.unhide) item.metadata.hideInMenu = false;
         if (row.level || o.metadata?.oerLevel) item.metadata.oerLevel = row.level || "";
+        // the release the navigation links to (empty: the latest)
+        if (row.navVersion || o.metadata?.oerNavVersion) item.metadata.oerNavVersion = row.navVersion || "";
         // a linked page pinned to another version: the link and the page's
         // oer-include both change (outline saves write contents when given)
         if (row.ref && (o.metadata?.oerRef?.version || "") !== (row.ref.version || "")) {
@@ -202,7 +214,16 @@ class OerOutlineBuilder extends LitElement {
         });
       }
     }
-    for (const id of this._deleted.keys()) {
+    // removed rows stay as pages, out of the navigation; their sub-pages
+    // keep their place under them
+    for (const id of this._hidden.keys()) {
+      const item = out.get(id);
+      if (!item || this._deleted.has(id)) continue;
+      item.metadata = { ...(item.metadata || {}), hideInMenu: true };
+      item.modified = true;
+    }
+    // deleting a page also deletes its archived versions
+    for (const id of this._deletedWithVersions()) {
       const item = out.get(id);
       if (item) item.delete = true;
     }
@@ -376,6 +397,39 @@ class OerOutlineBuilder extends LitElement {
       depth: Math.min(d, MAX_DEPTH),
       orig: null,
     });
+    // a page that is out of the navigation moves back in here itself, with
+    // its sub-pages, instead of being linked
+    const page = choice.page;
+    const outOfNav = this._hidden.has(page.id) || (page.metadata?.hideInMenu && page.metadata?.pageType !== HEADING_TYPE && this._index(page.id) < 0);
+    if (outOfNav) {
+      this._hidden.delete(page.id);
+      const own = (item, d) => ({
+        id: item.id,
+        title: item.title,
+        icon: item.metadata?.icon || "",
+        type: item.metadata?.pageType || "",
+        ref: item.metadata?.oerRef?.page ? item.metadata.oerRef : null,
+        navVersion: item.id === page.id ? choice.version || "" : item.metadata?.oerNavVersion || "",
+        level: item.metadata?.oerLevel || "",
+        depth: Math.min(d, MAX_DEPTH),
+        orig: item,
+        unhide: item.id === page.id,
+      });
+      const rows = [own(page, depth)];
+      const walk = (id, d) =>
+        (kids.get(id) || []).forEach((c) => {
+          if (c.metadata?.hideInMenu && c.metadata?.pageType !== HEADING_TYPE) return;
+          rows.push(own(c, d));
+          walk(c.id, d + 1);
+        });
+      walk(page.id, depth + 1);
+      const list = [...this._rows];
+      const idx = this._index(afterId);
+      list.splice(idx < 0 ? list.length : this._subtree(idx).end, 0, ...rows);
+      this._commit(list);
+      this._focusRow(page.id);
+      return;
+    }
     const rows = [linked(choice.page, depth, choice.version)];
     if (choice.withChildren) {
       const walk = (id, d) => (kids.get(id) || []).forEach((c) => (rows.push(linked(c, d)), walk(c.id, d + 1)));
@@ -417,16 +471,34 @@ class OerOutlineBuilder extends LitElement {
     this._startEdit(row.id);
   }
 
-  _remove(id) {
+  /**
+   * Take a row and its sub-pages out of the outline. By default the page is
+   * only removed from the navigation (it stays in Browse pages); with
+   * `deletePage` it and its sub-pages are deleted when the outline is saved.
+   */
+  _remove(id, { deletePage = false } = {}) {
     const idx = this._index(id);
     if (idx < 0) return;
     const { start, end } = this._subtree(idx);
     const rows = [...this._rows];
-    for (const r of rows.slice(start, end)) if (r.orig) this._deleted.set(r.id, r.orig);
+    if (deletePage) {
+      for (const r of rows.slice(start, end)) if (r.orig) this._deleted.set(r.id, r.orig);
+    } else if (rows[idx].orig) this._hidden.set(id, rows[idx].orig);
     const prev = idx > 0 ? rows[idx - 1].id : null;
     rows.splice(start, end - start);
     this._commit(rows);
     if (prev) this._focusRow(prev);
+  }
+
+  // ids deleted on save: the deleted pages plus their archived versions
+  _deletedWithVersions() {
+    return this._deleted.size ? deletionSet(this._items, this._deleted.keys()) : new Set();
+  }
+
+  // links elsewhere in the site that show a page being deleted
+  _linksToDeleted() {
+    const ids = this._deletedWithVersions();
+    return (this._items || []).filter((i) => !ids.has(i.id) && ids.has(i.metadata?.oerRef?.page)).length;
   }
 
   _rename(id, title) {
@@ -556,6 +628,7 @@ class OerOutlineBuilder extends LitElement {
     else if (e.key === "ArrowDown") go(v + 1);
     else if (e.key === "ArrowRight" && this._hasChildren(index) && this._collapsed.has(row.id)) this._toggle(row.id);
     else if (e.key === "ArrowLeft" && this._hasChildren(index) && !this._collapsed.has(row.id)) this._toggle(row.id);
+    else if (e.key === "Delete" && e.shiftKey) this._remove(row.id, { deletePage: true });
     else if (e.key === "Delete" || (e.key === "Backspace" && !row.title)) this._remove(row.id);
     else if ((e.key === "t" || e.key === "l" || e.key === "v") && !e.metaKey && !e.ctrlKey && !e.altKey) {
       // levels have no chip on the row: L opens the menu at the title, and
@@ -1537,9 +1610,11 @@ class OerOutlineBuilder extends LitElement {
     return versionsOf(pageId, this._items || []).filter((r) => r.snapshot);
   }
 
+  // a link shows that version of its page; a page's own row makes the
+  // navigation link to that release
   _setVersion(id, version) {
     this._typeMenu = null;
-    this._commit(this._rows.map((r) => (r.id === id ? { ...r, ref: { ...r.ref, version } } : r)));
+    this._commit(this._rows.map((r) => (r.id === id ? (r.ref ? { ...r, ref: { ...r.ref, version } } : { ...r, navVersion: version }) : r)));
     this._focusRow(id);
   }
 
@@ -1561,6 +1636,24 @@ class OerOutlineBuilder extends LitElement {
       }}"
     >
       ${lucide("icons:link", "sm")}<span class="ref-title">${target ? target.title : "missing"}</span><b>${pinned ? `v${pinned}` : "latest"}</b>
+    </button>`;
+  }
+
+  _renderNavVersion(row, index) {
+    const pinned = row.navVersion;
+    const label = `The navigation links to ${pinned ? `v${pinned} as released` : "the latest version"}. Change version (V)`;
+    return html`<button
+      class="ref ${pinned ? "pinned" : ""}"
+      tabindex="-1"
+      title="${label}"
+      aria-label="${label}"
+      @mousedown="${(e) => e.preventDefault()}"
+      @click="${(e) => {
+        e.stopPropagation();
+        this._openMenu(row, index, "version", e.currentTarget);
+      }}"
+    >
+      ${lucide("icons:history", "sm")}<b>${pinned ? `v${pinned}` : "latest"}</b>
     </button>`;
   }
 
@@ -1603,15 +1696,17 @@ class OerOutlineBuilder extends LitElement {
       e.stopPropagation();
     };
     if (m.kind === "version") {
-      const target = this._byId?.get(row.ref?.page);
-      const releases = this._pinnable(row.ref?.page);
+      const pageId = row.ref ? row.ref.page : row.id;
+      const chosen = (row.ref ? row.ref.version : row.navVersion) || "";
+      const target = this._byId?.get(pageId);
+      const releases = this._pinnable(pageId);
       const current = target?.metadata?.version;
-      const opt = (value, label, hint = "") => html`<button role="menuitemradio" aria-checked="${(row.ref?.version || "") === value ? "true" : "false"}" @click="${() => this._setVersion(row.id, value)}">
-        <span class="check">${(row.ref?.version || "") === value ? lucide("oer:check", "sm") : ""}</span>${label}${hint ? html`<span class="menu-hint">${hint}</span>` : ""}
+      const opt = (value, label, hint = "") => html`<button role="menuitemradio" aria-checked="${chosen === value ? "true" : "false"}" @click="${() => this._setVersion(row.id, value)}">
+        <span class="check">${chosen === value ? lucide("oer:check", "sm") : ""}</span>${label}${hint ? html`<span class="menu-hint">${hint}</span>` : ""}
       </button>`;
       return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
         <div class="type-menu" role="menu" aria-label="Version" style="left:${m.x}px;top:${m.y}px" @click="${(e) => e.stopPropagation()}" @keydown="${menuKeys}">
-          <div class="menu-label">Version shown</div>
+          <div class="menu-label">${row.ref ? "Version shown" : "Navigation links to"}</div>
           ${opt("", "Latest", current ? `v${current}, follows changes` : "follows changes")}
           ${releases.map((r) => opt(r.version, `v${r.version}`, "as released"))}
           ${releases.length ? "" : html`<div class="menu-empty">No earlier versions released yet.</div>`}
@@ -1804,7 +1899,7 @@ class OerOutlineBuilder extends LitElement {
       >
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
       </button>
-      ${row.ref ? this._renderRef(row, index) : ""}
+      ${row.ref ? this._renderRef(row, index) : this._pinnable(row.id).length ? this._renderNavVersion(row, index) : ""}
       ${this._renderTypeChip(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
       <div class="hover-only">
@@ -1823,13 +1918,25 @@ class OerOutlineBuilder extends LitElement {
             </button>`
           : ""}
         <button
-          class="act danger"
+          class="act"
           tabindex="-1"
-          title="Delete"
-          aria-label="Delete"
+          title="Remove from navigation (Delete). The page is kept."
+          aria-label="Remove from navigation"
           @click="${(e) => {
             e.stopPropagation();
             this._remove(row.id);
+          }}"
+        >
+          ${lucide("oer:eye-off", "sm")}
+        </button>
+        <button
+          class="act danger"
+          tabindex="-1"
+          title="Delete page (Shift+Delete)"
+          aria-label="Delete page"
+          @click="${(e) => {
+            e.stopPropagation();
+            this._remove(row.id, { deletePage: true });
           }}"
         >
           ${lucide("oer:trash-2", "sm")}
@@ -1906,7 +2013,9 @@ class OerOutlineBuilder extends LitElement {
     const top = this._rows.filter((r) => r.depth === 0).length;
     const anyKids = this._rows.some((_, i) => this._hasChildren(i));
     const dirty = this._dirty;
-    const deleting = this._deleted.size;
+    const deleting = this._deletedWithVersions().size;
+    const hiding = [...this._hidden.keys()].filter((id) => !this._deleted.has(id)).length;
+    const brokenLinks = deleting ? this._linksToDeleted() : 0;
     const invalidCount = this._rows.filter((_, i) => this._invalid(i)).length;
     return html`
       <div class="backdrop" @click="${this._requestClose}"></div>
@@ -1965,11 +2074,16 @@ class OerOutlineBuilder extends LitElement {
                 <button class="btn destructive" @click="${this._close}">Discard</button>`
             : html`${invalidCount
                   ? html`<span class="warn">${invalidCount} page${invalidCount === 1 ? " is" : "s are"} in a place ${invalidCount === 1 ? "its" : "their"} type isn't allowed. Change the type or move ${invalidCount === 1 ? "it" : "them"}.</span>`
-                  : deleting
-                  ? html`<span class="warn">${deleting} page${deleting === 1 ? "" : "s"} will be deleted when you save.</span>`
+                  : deleting || hiding
+                  ? html`<span class="warn">
+                      ${[
+                        deleting ? `${deleting} page${deleting === 1 ? "" : "s"} (with sub-pages and archived versions) will be deleted${brokenLinks ? `, breaking ${brokenLinks} link${brokenLinks === 1 ? "" : "s"} to ${deleting === 1 ? "it" : "them"}` : ""}.` : "",
+                        hiding ? `${hiding} page${hiding === 1 ? "" : "s"} will leave the navigation and stay in Browse pages.` : "",
+                      ].join(" ")}
+                    </span>`
                   : html`<div class="hints" aria-hidden="true">
                       <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span>
-                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span><span><kbd>T</kbd> type</span><span><kbd>L</kbd> level</span><span><kbd>V</kbd> version</span>
+                      <span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>←→</kbd> collapse</span><span><kbd>T</kbd> type</span><span><kbd>L</kbd> level</span><span><kbd>V</kbd> version</span><span><kbd>Del</kbd> remove</span><span><kbd>⇧Del</kbd> delete</span>
                       <span>drag ↔ to change level</span>
                     </div>`}
                 <button class="btn outline" @click="${this._requestClose}">Cancel</button>
