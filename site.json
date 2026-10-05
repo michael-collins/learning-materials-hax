@@ -1,6 +1,6 @@
 {
   "id": "86392ef4-873f-43f4-9247-67adccb7f646",
-  "title": "learning-materials",
+  "title": "Digital Arts OER",
   "author": "",
   "description": "",
   "license": "by-sa",
@@ -15,7 +15,8 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791238760
+      "updated": 1791242213,
+      "version": "26.8.0"
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -32,7 +33,8 @@
     },
     "node": {
       "fields": {}
-    }
+    },
+    "platform": {}
   },
   "items": [
     {
