@@ -409,6 +409,13 @@ class OerBlockRail extends LitElement {
       node.focus?.();
       return;
     }
+    // linking an existing reference to Resources: no new citation
+    if (choice.linkReference) {
+      node.focus?.();
+      if (choice.resource) linkReferenceToResource(body, choice.linkReference, choice.resource);
+      else this._saveResource(choice.data).then((id) => linkReferenceToResource(body, choice.linkReference, id));
+      return;
+    }
     const liId = insertCitation(body, range, choice);
     node.focus?.();
     if (choice.saveAsResource) this._saveResource(choice.data).then((id) => linkReferenceToResource(body, liId, id));
@@ -443,8 +450,15 @@ class OerBlockRail extends LitElement {
         new: true,
       },
     ]);
-    const after = toJS(store.manifest?.items) || [];
-    return after.find((i) => i.metadata?.pageType === "oer:resource" && i.title === parts.title && (i.metadata?.oerFields?.url || "") === (parts.url || ""))?.id || "";
+    // the outline can refresh more than once; wait for the one with the page
+    const find = () =>
+      (toJS(store.manifest?.items) || []).find((i) => i.metadata?.pageType === "oer:resource" && i.title === parts.title && (i.metadata?.oerFields?.url || "") === (parts.url || ""))?.id || "";
+    for (let waited = 0; waited < 15000; waited += 250) {
+      const id = find();
+      if (id) return id;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    return "";
   }
 
   _insertGlyph(opt) {

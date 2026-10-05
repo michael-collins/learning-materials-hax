@@ -15,6 +15,8 @@
  * HAX serializes the page for saving, so manual edits are tidied too.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { saveOutline } from "../outline/outline-model.js";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -109,7 +111,8 @@ export function pageReferences(body) {
   return [...(section?.querySelectorAll("ol > li[id^='fn-']") || [])].map((li) => {
     const copy = li.cloneNode(true);
     copy.querySelectorAll("a.fn-back").forEach((b) => b.remove());
-    return { id: li.id, html: copy.innerHTML.trim(), text: copy.textContent.trim(), resource: li.dataset.resource || "" };
+    const link = copy.querySelector("a[href^='http']");
+    return { id: li.id, html: copy.innerHTML.trim(), text: copy.textContent.trim(), resource: li.dataset.resource || "", url: link?.getAttribute("href") || "", linkText: link?.textContent.trim() || "" };
   });
 }
 
@@ -155,6 +158,42 @@ export function linkReferenceToResource(body, liId, resourceId) {
   if (li && resourceId) li.dataset.resource = resourceId;
 }
 
+/** The Resource pages a page's References point to, in order. */
+export function citedResources(root) {
+  return [...new Set([...(root?.querySelectorAll("section.footnotes li[data-resource]") || [])].map((li) => li.dataset.resource).filter(Boolean))];
+}
+
+/**
+ * After an editing session ends, read the page as it was saved and record
+ * the Resources it cites in its metadata (oerCites), so a Resource page can
+ * list the pages citing it from the outline alone (no site-wide index).
+ * Cancelled edits read back unchanged, so they record nothing.
+ */
+let recording = false;
+function recordCitationsAfterEditing() {
+  if (recording) return;
+  recording = true;
+  let wasEditing = !!store.editMode;
+  autorun(() => {
+    const editing = !!store.editMode;
+    const id = store.activeId;
+    if (wasEditing && !editing && id) setTimeout(() => recordCitations(id), 1500);
+    wasEditing = editing;
+  });
+}
+
+export async function recordCitations(id) {
+  const item = (toJS(store.manifest?.items) || []).find((i) => i.id === id);
+  if (!item?.location) return;
+  const res = await fetch(new URL(`${item.location}?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" }).catch(() => null);
+  if (!res?.ok) return;
+  const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+  const cites = citedResources(doc);
+  const before = item.metadata?.oerCites || [];
+  if (JSON.stringify(cites) === JSON.stringify(before)) return;
+  await saveOutline([{ ...item, metadata: { ...item.metadata, oerCites: cites }, modified: true }]);
+}
+
 // tidy citations whenever HAX serializes the page (its save path)
 let patched = false;
 export function installCitationNormalizer() {
@@ -172,6 +211,7 @@ export function installCitationNormalizer() {
       return original.apply(this, args);
     };
   };
+  recordCitationsAfterEditing();
   const cls = customElements.get("hax-body");
   if (cls) patch(cls);
   else customElements.whenDefined("hax-body").then(() => patch(customElements.get("hax-body")));

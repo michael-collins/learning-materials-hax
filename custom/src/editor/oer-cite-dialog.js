@@ -4,7 +4,14 @@
  * link, publisher, or free text), optionally saved as a Resource page.
  *
  *   const choice = await citeDialog().pick({ references });
- *   // { id } | { html, resource } | { html, data, saveAsResource } | null
+ *   // cite:  { id } | { html, resource } | { html, data, saveAsResource }
+ *   // link an existing reference to Resources (no new citation):
+ *   //        { linkReference, resource } | { linkReference, data, saveAsResource: true }
+ *   // or null when cancelled
+ *
+ * A new source that matches a Resource (same link, or same title) offers
+ * to cite the Resource instead; a reference on the page that isn't linked
+ * to a Resource can be linked to a matching one, or added to Resources.
  * @element oer-cite-dialog
  */
 import { html, css, LitElement } from "../lit.js";
@@ -22,6 +29,16 @@ const TABS = [
   { id: "resources", label: "Resources" },
   { id: "new", label: "New source" },
 ];
+
+const normUrl = (u) => String(u || "").trim().toLowerCase().replace(/^https?:\/\/(www\.)?/, "").replace(/[#?].*$/, "").replace(/\/+$/, "");
+const normTitle = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
+/** A Resource that is the same source: same link, else same title. */
+export function matchResource(resources, { url = "", title = "" } = {}) {
+  const u = normUrl(url);
+  const t = normTitle(title);
+  return (u && resources.find((r) => normUrl(r.metadata?.oerFields?.url) === u)) || (t.length > 3 && resources.find((r) => normTitle(r.title) === t)) || null;
+}
 
 // a Resource page's fields as citation parts
 export function resourceCitation(item) {
@@ -67,6 +84,7 @@ class OerCiteDialog extends LitElement {
     this._form = { authors: "", year: "", title: "", url: "", publisher: "" };
     this._free = "";
     this._save = true;
+    this._linkTarget = null;
     this._returnFocus = globalThis.document.activeElement;
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
@@ -79,6 +97,10 @@ class OerCiteDialog extends LitElement {
     globalThis.removeEventListener("keydown", this.__keys, true);
     this._resolve?.(value);
     this._resolve = null;
+  }
+
+  get _allResources() {
+    return (toJS(store.manifest?.items) || []).filter((i) => i.metadata?.pageType === "oer:resource" && !i.metadata?.oerSnapshotOf);
   }
 
   get _resources() {
@@ -95,12 +117,18 @@ class OerCiteDialog extends LitElement {
   }
 
   get _canCite() {
+    if (this._tab === "new" && this._linkTarget) return !!this._form.title.trim();
     if (this._tab === "new") return !!(this._free.trim() || this._form.title.trim() || this._form.url.trim());
     return !!this._chosen;
   }
 
   _cite() {
     if (!this._canCite) return;
+    // adding an existing reference to Resources: no new citation
+    if (this._linkTarget && this._tab === "new") {
+      const parts = this._newParts;
+      return this._finish({ linkReference: this._linkTarget, data: parts, saveAsResource: true });
+    }
     if (this._tab === "page") return this._finish({ id: this._chosen });
     if (this._tab === "resources") {
       const item = this._resources.find((i) => i.id === this._chosen) || (toJS(store.manifest?.items) || []).find((i) => i.id === this._chosen);
@@ -282,6 +310,60 @@ class OerCiteDialog extends LitElement {
         color: var(--link);
         pointer-events: none;
       }
+      .ref-actions,
+      .res {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+        margin-top: 0.375rem;
+      }
+      .res {
+        align-items: center;
+        color: var(--muted-foreground);
+        font-size: 0.75rem;
+      }
+      .mini {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        height: 1.625rem;
+        padding: 0 0.5rem;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        background: var(--background);
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .mini:hover {
+        background: var(--accent);
+      }
+      .mini:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .notice {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 0.875rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: var(--radius-md);
+        background: color-mix(in srgb, var(--muted) 60%, transparent);
+        font-size: 0.8125rem;
+        line-height: 1.5;
+      }
+      .notice.match {
+        background: color-mix(in srgb, var(--primary) 9%, transparent);
+      }
+      .notice span {
+        flex: 1;
+      }
+      textarea[hidden] {
+        display: none;
+      }
       .empty {
         font-size: 0.875rem;
         color: var(--muted-foreground);
@@ -399,14 +481,36 @@ class OerCiteDialog extends LitElement {
     </label>`;
   }
 
+  // turn an existing reference into a Resource: the New source form,
+  // filled in from the reference's link
+  _addToResources(r) {
+    this._linkTarget = r.id;
+    this._form = { authors: "", year: (r.text.match(/\b(1[89]\d\d|20\d\d)\b/) || [])[1] || "", title: r.linkText || r.text.slice(0, 120), url: r.url, publisher: "" };
+    this._free = "";
+    this._tab = "new";
+    this.updateComplete.then(() => this.shadowRoot.getElementById("c-title")?.focus());
+  }
+
   _renderPage() {
     const refs = this._references || [];
     if (!refs.length) return html`<p class="empty">This page has no references yet.</p>`;
+    const resources = this._allResources;
     return html`<div class="options" role="radiogroup" aria-label="References on this page">
       ${refs.map((r, i) => {
         const span = globalThis.document.createElement("span");
         span.innerHTML = r.html;
-        return this._option(r.id, "", "", html`<b>${i + 1}.</b> ${span}`);
+        const linked = r.resource && resources.find((x) => x.id === r.resource);
+        const match = !linked && matchResource(resources, { url: r.url, title: r.linkText });
+        const actions = linked
+          ? html`<small class="res">${lucide("editor:attach-file", "sm")}In Resources: ${linked.title}</small>`
+          : html`<span class="ref-actions">
+              ${match
+                ? html`<button class="mini" @click="${(e) => (e.preventDefault(), this._finish({ linkReference: r.id, resource: match.id }))}">
+                    ${lucide("icons:link", "sm")}Link to “${match.title}” in Resources
+                  </button>`
+                : html`<button class="mini" @click="${(e) => (e.preventDefault(), this._addToResources(r))}">${lucide("oer:plus", "sm")}Add to Resources</button>`}
+            </span>`;
+        return this._option(r.id, "", "", html`<b>${i + 1}.</b> ${span}${actions}`);
       })}
     </div>`;
   }
@@ -434,7 +538,28 @@ class OerCiteDialog extends LitElement {
     const preview = this._free.trim() ? esc(this._free.trim()) : formatCitation(this._newParts);
     const div = globalThis.document.createElement("div");
     div.innerHTML = preview;
-    return html`<div class="grid">
+    const freeUrl = (this._free.match(/https?:\/\/\S+/) || [])[0] || "";
+    const match = matchResource(this._allResources, this._free.trim() ? { url: freeUrl } : { url: f.url, title: f.title });
+    const target = this._linkTarget && (this._references || []).findIndex((r) => r.id === this._linkTarget) + 1;
+    return html`${target
+        ? html`<p class="notice">Adding reference ${target} to Resources. The page's reference keeps its wording and links to the new Resource page.
+            <button class="mini" @click="${() => ((this._linkTarget = null), (this._tab = "page"))}">Back</button></p>`
+        : ""}
+      ${match
+        ? html`<p class="notice match">
+            ${lucide("editor:attach-file", "sm")}<span>Already in Resources: <b>${match.title}</b></span>
+            <button
+              class="mini"
+              @click="${() =>
+                this._linkTarget
+                  ? this._finish({ linkReference: this._linkTarget, resource: match.id })
+                  : this._finish({ html: formatCitation(resourceCitation(match)), resource: match.id })}"
+            >
+              ${this._linkTarget ? "Link to it instead" : "Cite it instead"}
+            </button>
+          </p>`
+        : ""}
+      <div class="grid">
         <div class="field full"><label for="c-title">Title</label><input id="c-title" .value="${f.title}" @input="${set("title")}" /></div>
         <div class="field"><label for="c-authors">Authors</label><input id="c-authors" .value="${f.authors}" @input="${set("authors")}" placeholder="e.g. William McDonough; Michael Braungart" /></div>
         <div class="field"><label for="c-year">Year</label><input id="c-year" .value="${f.year}" @input="${set("year")}" inputmode="numeric" /></div>
@@ -442,10 +567,10 @@ class OerCiteDialog extends LitElement {
         <div class="field full"><label for="c-pub">Publisher</label><input id="c-pub" .value="${f.publisher}" @input="${set("publisher")}" /></div>
       </div>
       <p class="hint">Separate authors with a semicolon.</p>
-      <p class="or">Or write it yourself</p>
-      <textarea aria-label="Citation text" .value="${this._free}" @input="${(e) => (this._free = e.target.value)}" placeholder="Rittel, Horst. “Dilemmas in a General Theory of Planning.” Policy Sciences, 1973: 155–169."></textarea>
+      ${this._linkTarget ? "" : html`<p class="or">Or write it yourself</p>`}
+      <textarea ?hidden="${!!this._linkTarget}" aria-label="Citation text" .value="${this._free}" @input="${(e) => (this._free = e.target.value)}" placeholder="Rittel, Horst. “Dilemmas in a General Theory of Planning.” Policy Sciences, 1973: 155–169."></textarea>
       ${preview ? html`<div class="preview" aria-live="polite">${div}</div>` : ""}
-      ${!this._free.trim()
+      ${!this._free.trim() && !this._linkTarget
         ? html`<label class="check"
             ><input type="checkbox" .checked="${this._save}" @change="${(e) => (this._save = e.target.checked)}" />Also add it to Resources, so other pages can cite it</label
           >`
@@ -479,7 +604,9 @@ class OerCiteDialog extends LitElement {
         <div class="body" role="tabpanel">${body}</div>
         <footer>
           <button class="btn outline" @click="${() => this._finish(null)}">Cancel</button>
-          <button class="btn primary" aria-disabled="${this._canCite ? "false" : "true"}" @click="${this._cite}">Cite</button>
+          <button class="btn primary" aria-disabled="${this._canCite ? "false" : "true"}" @click="${this._cite}">
+            ${this._linkTarget && this._tab === "new" ? "Add to Resources" : "Cite"}
+          </button>
         </footer>
       </div>
     `;

@@ -751,9 +751,15 @@ class OerPageFooter extends LitElement {
     const id = this._item?.metadata?.oerRef?.page ? null : this._item?.id;
     if (!id) return "";
     const refs = usedIn(id, contentTypes(this._items).types, this._items);
-    if (!refs.length) return "";
+    // pages whose References cite this page (a Resource), from the
+    // oerCites each page records when it's saved
+    const citing = (this._items || []).filter(
+      (i) => !i.metadata?.oerSnapshotOf && (i.metadata?.oerCites || []).includes(id) && (store.isLoggedIn || i.metadata?.published !== false),
+    );
+    if (!refs.length && !citing.length) return "";
     const groups = new Map();
     for (const r of refs) groups.set(r.via, [...(groups.get(r.via) || []), r.item]);
+    if (citing.length) groups.set("Cited by", citing);
     const hidden = [...groups.values()].reduce((n, list) => n + Math.max(0, list.length - USED_PREVIEW), 0);
     return html`<dt>Used in</dt>
       <dd>
