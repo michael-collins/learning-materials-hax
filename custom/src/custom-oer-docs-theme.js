@@ -55,6 +55,7 @@ import { embedDialog } from "./embed/oer-embed-dialog.js";
 import { isSnapshot, versionsOf } from "./versions/versioning.js";
 import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
+import { learningSkin, installLearningBlocks } from "./learning-skin.js";
 import { installEditorChrome } from "./editor/index.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 
@@ -262,6 +263,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     if (!themeSkinRegistered) {
       themeSkinRegistered = true;
       registerShadowStyles(themeSkin);
+      registerShadowStyles(learningSkin);
+      installLearningBlocks();
     }
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
