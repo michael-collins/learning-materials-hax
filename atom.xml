@@ -12,7 +12,7 @@
   <entry>
     <title>Welcome to learning-materials</title>
     <id>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</id>
-    <updated>2026-10-05T16:03:41.000Z</updated>
+    <updated>2026-10-05T18:14:00.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary>What this site&apos;s theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.</summary>
     <link href="https://localhost:3000/learning-materials/welcome-to-learning-materials"/>
@@ -45,10 +45,11 @@
 <h3>Blocks this theme adds</h3>
 <ul>
   <li><strong>Callout</strong>: notes, tips, warnings, definitions and objectives.</li>
-  <li><strong>Embeds</strong>: embedded page, video, Google Slides, Sketchfab, 3D model viewer and code examples (CodePen, JSFiddle, CodeSandbox, StackBlitz, Replit, Glitch), each with a caption and credit.</li>
+  <li><strong>Embeds</strong>: embedded page, video, Google Slides, Sketchfab, 3D model viewer and code examples (CodePen, JSFiddle, CodeSandbox, StackBlitz, Replit, Glitch), each with a caption, credit and its own licence.</li>
   <li><strong>Page collection</strong>: lists pages by type and place as a filterable, sortable table, cards, a module outline or a pathways index.</li>
   <li><strong>Pathway</strong>: a pathway's facts, its route by level (a level matrix or a list with a level switcher), objectives and test-out criteria, in three layouts.</li>
   <li><strong>Include a page</strong>: shows another page here without copying it, optionally pinned to a released version.</li>
+  <li><strong>Credit</strong>: attribution for an image, excerpt or adapted work placed above it (title, creator, source, licence and changes).</li>
   <li><strong>Rubric</strong>, <strong>divider with label</strong> and <strong>spacer</strong>.</li>
 </ul>
 <oer-schematic preset="collection" alt="Diagram of a page collection: a search box and filter above a table, with the Table view switch and a sortable column highlighted." caption="A page collection in table view, with search, a filter, sortable columns and the view switch."></oer-schematic>
@@ -56,7 +57,7 @@
 <h2>Content types and page details</h2>
 <p>Every page can have a <strong>content type</strong> (Lesson, Exercise, Pathway…) with its own fields, like the collections of the Decap site. Manage them in <em>Site → Content types</em>:</p>
 <ul>
-  <li><strong>Fields</strong> can be text, long text, number, choice (one or several), list, yes/no, date, image, link, <em>Link to pages</em> (prerequisites, resources; optionally limited to some types and pinned to a version) and <em>Files and links</em> (downloads with title, description and alt text).</li>
+  <li><strong>Fields</strong> can be text, long text, number, choice (one or several), list, yes/no, date, image, link, <em>Link to pages</em> (prerequisites, resources; optionally limited to some types and pinned to a version), <em>Files and links</em> (downloads with title, description and alt text) and <em>People</em> (names with optional links, used for Authors).</li>
   <li><strong>Show in page header</strong> on a field puts it in the header: short values as labels beside the type badge, lists, links and files as cards.</li>
   <li><strong>Show in the navigation</strong> keeps pages of a type out of the sidebar, so it lists only the sections that hold them.</li>
   <li><strong>Reader layout</strong> makes pages inside a type read like a book; <strong>starter content</strong> fills new pages of the type.</li>
@@ -102,7 +103,7 @@
 <oer-schematic preset="embed" alt="Diagram of the Embed dialog: the embed code, checkboxes for what to leave out, and a Copy button." caption="Embed this page: choose what to leave out, then copy the code."></oer-schematic>
 
 <h2>The page footer</h2>
-<p>Typed pages end with their licence and credits: the Creative Commons licence with its icons, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, a <strong>Cite</strong> menu (APA, MLA, Chicago, BibTeX) and the <strong>OER Schema</strong> badge, which shows the structured data published with every page for search engines and repositories.</p>
+<p>Typed pages end with their licence and credits: the Creative Commons licence with its icons and the authors, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, <strong>Credits</strong> for third-party material (from Credit blocks and media with a credit or licence), a <strong>Cite</strong> menu (APA, MLA, Chicago, BibTeX) and the <strong>OER Schema</strong> badge, which shows the structured data published with every page for search engines and repositories.</p>
 <oer-schematic preset="footer" alt="Diagram of the page footer: licence icons with Cite and OER Schema buttons, then rows for AI use, Version and Used in." caption="The page footer: licence, AI use, version and where the page is used."></oer-schematic>
 
 <h2>Accessibility</h2>
@@ -114,7 +115,7 @@
   <entry>
     <title>Animation Principles</title>
     <id>item-1903f5ba-d051-49cf-9836-073992c93548</id>
-    <updated>2026-10-05T16:03:41.000Z</updated>
+    <updated>2026-10-05T18:14:00.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th</summary>
     <link href="https://localhost:3000/learning-materials/lessons/animation-principles"/>
@@ -127,7 +128,7 @@
   <entry>
     <title>Lessons</title>
     <id>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</id>
-    <updated>2026-10-05T16:03:51.000Z</updated>
+    <updated>2026-10-05T18:14:08.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
     <link href="https://localhost:3000/learning-materials/lessons"/>
@@ -142,7 +143,7 @@
   <entry>
     <title>Animating a bouncing ball</title>
     <id>item-21d4a4b1-6588-4417-a049-a7a1a9d69626</id>
-    <updated>2026-10-05T16:03:41.000Z</updated>
+    <updated>2026-10-05T18:14:00.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball
 Learning Objectives
@@ -204,7 +205,7 @@ Become </summary>
   <entry>
     <title>Animated textures</title>
     <id>item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171</id>
-    <updated>2026-10-05T16:03:48.000Z</updated>
+    <updated>2026-10-05T18:14:05.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</summary>
     <link href="https://localhost:3000/learning-materials/exercises/animated-textures"/>
@@ -243,7 +244,7 @@ Become </summary>
   <entry>
     <title>Exercises</title>
     <id>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</id>
-    <updated>2026-10-05T16:03:55.000Z</updated>
+    <updated>2026-10-05T18:14:10.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>Formative practice focused on a narrow set of competencies.</summary>
     <link href="https://localhost:3000/learning-materials/exercises"/>
@@ -258,7 +259,7 @@ Become </summary>
   <entry>
     <title>Content types</title>
     <id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
-    <updated>2026-10-05T16:03:53.000Z</updated>
+    <updated>2026-10-05T18:14:09.000Z</updated>
     <published>2026-10-01T02:43:07.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/content-types"/>
@@ -270,7 +271,7 @@ Become </summary>
   <entry>
     <title>Pathways</title>
     <id>item-eedb63ad-5692-4b6b-842e-a09ce82b07ee</id>
-    <updated>2026-10-05T16:03:54.000Z</updated>
+    <updated>2026-10-05T18:14:10.000Z</updated>
     <published>2026-10-01T04:12:43.000Z</published>
     <summary>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r</summary>
     <link href="https://localhost:3000/learning-materials/pathways"/>
@@ -283,7 +284,7 @@ Become </summary>
   <entry>
     <title>Introduction to Modeling</title>
     <id>item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866</id>
-    <updated>2026-10-05T16:03:42.000Z</updated>
+    <updated>2026-10-05T18:14:00.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/lectures/introduction-to-modeling"/>
@@ -349,20 +350,16 @@ Become </summary>
   <entry>
     <title>You don&apos;t see that everyday objects</title>
     <id>item-48ad9f94-3f8b-44e5-8416-316cff49f4d2</id>
-    <updated>2026-10-05T16:03:42.000Z</updated>
+    <updated>2026-10-05T18:14:01.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-objects"/>
     <category term="Blender" label="Blender" />
     <content type="html">
-      <![CDATA[ <p>For this project, you will produce 3D rendered images of products and other objects you experience every day, but with one slight difference. You will augment the object in such a way to inhibit its utility, material qualities, or its system or environmental context.
-&lt;br&gt;&lt;br&gt;
-To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. <strong><em><a href="https://www.merriam-webster.com/dictionary/ontology">Ontology</a></em></strong>, the study of being, invites us to question not just what objects <em>are</em> but <em>how</em> they are—how they exist independently of human utility and purpose. By distorting or modifying the object, you are encouraged to explore the essence of its being outside of the roles assigned to it by human need or desire.
-&lt;br&gt;&lt;br&gt;
-We will also touch on the concept of hyper-objects—entities that transcend our immediate comprehension and experience, such as climate change or the internet. These phenomena challenge our usual boundaries of time, space, and perception. As you alter your chosen object, consider whether it can become something more than a mere item of daily use. Can its altered form push it into a new realm of being, perhaps even taking on characteristics of a hyper-object that defies easy understanding?
-&lt;br&gt;&lt;br&gt;
-<strong>Further reading:</strong>
-&lt;br&gt;&lt;br&gt;</p>
+      <![CDATA[ <p>For this project, you will produce 3D rendered images of products and other objects you experience every day, but with one slight difference. You will augment the object in such a way to inhibit its utility, material qualities, or its system or environmental context.</p>
+<p>To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. <strong><em><a href="https://www.merriam-webster.com/dictionary/ontology">Ontology</a></em></strong>, the study of being, invites us to question not just what objects <em>are</em> but <em>how</em> they are—how they exist independently of human utility and purpose. By distorting or modifying the object, you are encouraged to explore the essence of its being outside of the roles assigned to it by human need or desire.</p>
+<p>We will also touch on the concept of hyper-objects—entities that transcend our immediate comprehension and experience, such as climate change or the internet. These phenomena challenge our usual boundaries of time, space, and perception. As you alter your chosen object, consider whether it can become something more than a mere item of daily use. Can its altered form push it into a new realm of being, perhaps even taking on characteristics of a hyper-object that defies easy understanding?</p>
+<p><strong>Further reading:</strong></p>
 <ol>
 <li><strong><a href="http://ezaccess.libraries.psu.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;db=nlebk&amp;AN=672907&amp;site=ehost-live&amp;scope=site&amp;ebv=EB&amp;ppid=pp_Cover">Anthony Dunne &amp; Fiona Raby - <em>Speculative Everything: Design, Fiction, and Social Dreaming</em></a> (2013):</strong> Dunne and Raby explore the use of speculative design as a tool for reimagining objects and systems. This book will help you think critically about how design can question the status quo and offer alternative realities, which aligns with the idea of augmenting objects to alter their utility and context.</li>
 <li><strong><a href="http://ezaccess.libraries.psu.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;db=nlebk&amp;AN=2332813&amp;site=ehost-live&amp;scope=site&amp;ebv=EB&amp;ppid=pp_15">Joseph Bedford - Is There an Object Oriented Architecture? : Engaging Graham Harman</a> (2020):</strong> Harman's work is central to Object-Oriented Ontology (OOO), a branch of metaphysics that explores the independence of objects from human perception. This book provides a foundational understanding of how objects interact with one another outside of human intervention.</li>
@@ -397,8 +394,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <ul>
 <li>Include name and date</li>
 <li>Short one sentence description of what you intend to make.</li>
-<li>Upload this in an MS Word&nbsp;<code>doc</code>&nbsp;format.
-&lt;br&gt;&lt;br&gt;</li>
+<li>Upload this in an MS Word&nbsp;<code>doc</code>&nbsp;format.</li>
 </ul>
 </li>
 </ol>
@@ -406,12 +402,10 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 <ol>
 <li>Submit screenshots from Blender showing significant progress.</li>
 <li>Post your screenshots to the&nbsp;<strong>Project updates</strong>&nbsp;discussion thread.</li>
-<li>Meet with instructor if needed.
-&lt;br&gt;&lt;br&gt;</li>
+<li>Meet with instructor if needed.</li>
 </ol>
 <p><strong>Work Statement (.doc):</strong></p>
-<p>A work statement is a clear articulation about what you’ve made. This is not a journal entry, where you might feel compelled to complain about problems you’ve had with software, or that it didn’t turn out how you wanted. Instead, imagine this is being printed in a magazine, or put on the side of a gallery. What do you want your viewers to come away with?
-&lt;br&gt;&lt;br&gt;</p>
+<p>A work statement is a clear articulation about what you’ve made. This is not a journal entry, where you might feel compelled to complain about problems you’ve had with software, or that it didn’t turn out how you wanted. Instead, imagine this is being printed in a magazine, or put on the side of a gallery. What do you want your viewers to come away with?</p>
 <p><strong>Include the following to create a clear work statement:</strong></p>
 <ol>
 <li>Your name and date</li>
@@ -449,8 +443,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
 </ul>
 </li>
 </ol>
-<p>&lt;br&gt;&lt;br&gt;
-<strong>Upload work (.zip):</strong></p>
+<p><strong>Upload work (.zip):</strong></p>
 <ol>
 <li>Images should be: 1920px by 1080px minimum.</li>
 <li>Upload final materials as a&nbsp;<code>LASTNAME-project1-files.zip</code>&nbsp;file
@@ -493,7 +486,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Creating Blockouts for Games</title>
     <id>item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f</id>
-    <updated>2026-10-05T16:03:42.000Z</updated>
+    <updated>2026-10-05T18:14:01.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/tutorials/creating-blockouts-for-games"/>
@@ -508,7 +501,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>History of CGI</title>
     <id>item-d20b5a98-dc5e-4ce8-b734-32490288d27c</id>
-    <updated>2026-10-05T16:03:48.000Z</updated>
+    <updated>2026-10-05T18:14:05.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/history-of-cgi"/>
@@ -521,7 +514,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Introduction to Texturing</title>
     <id>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</id>
-    <updated>2026-10-05T16:03:49.000Z</updated>
+    <updated>2026-10-05T18:14:05.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/lectures/introduction-to-texturing"/>
@@ -578,7 +571,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>You don&apos;t see that everyday object posters</title>
     <id>item-930abc68-c77e-479c-b2ff-220e4714c712</id>
-    <updated>2026-10-05T16:03:49.000Z</updated>
+    <updated>2026-10-05T18:14:06.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters"/>
@@ -683,7 +676,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>3D Modeling Fundamentals</title>
     <id>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</id>
-    <updated>2026-10-05T16:03:50.000Z</updated>
+    <updated>2026-10-05T18:14:07.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals"/>
@@ -696,7 +689,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Modeling the Airline Chair</title>
     <id>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</id>
-    <updated>2026-10-05T16:03:50.000Z</updated>
+    <updated>2026-10-05T18:14:07.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair"/>
@@ -737,7 +730,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Introduction to Cameras, Lighting, and Rendering</title>
     <id>item-81dbd5a3-3e7f-447c-a522-630f6001a8f0</id>
-    <updated>2026-10-05T16:03:51.000Z</updated>
+    <updated>2026-10-05T18:14:07.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering"/>
@@ -820,7 +813,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Stylized Prop Set</title>
     <id>item-0166883b-7fd8-465a-a98b-74f4f9b02cb0</id>
-    <updated>2026-10-05T16:03:51.000Z</updated>
+    <updated>2026-10-05T18:14:07.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/stylized-prop-set"/>
@@ -840,7 +833,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Texturing and UV Mapping</title>
     <id>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</id>
-    <updated>2026-10-05T16:03:51.000Z</updated>
+    <updated>2026-10-05T18:14:08.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
@@ -853,7 +846,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Modeling a room</title>
     <id>item-dbf43915-8e34-4116-a6e7-67cd08a1316e</id>
-    <updated>2026-10-05T16:03:52.000Z</updated>
+    <updated>2026-10-05T18:14:08.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/exercises/modeling-a-room"/>
@@ -896,7 +889,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Modular Environment Kit</title>
     <id>item-e09e22f7-6a97-4fed-bd10-2cde35349b24</id>
-    <updated>2026-10-05T16:03:52.000Z</updated>
+    <updated>2026-10-05T18:14:08.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/modular-environment-kit"/>
@@ -915,7 +908,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Lectures</title>
     <id>item-05aef7c3-2829-4d60-abd5-49cf9a82382a</id>
-    <updated>2026-10-05T16:03:53.000Z</updated>
+    <updated>2026-10-05T18:14:09.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/lectures"/>
@@ -928,7 +921,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Lighting Principles</title>
     <id>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</id>
-    <updated>2026-10-05T16:03:52.000Z</updated>
+    <updated>2026-10-05T18:14:08.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore fundamental lighting principles and techniques for creating mood, atmosphere, and visual interest in 3D scenes.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/lighting-principles"/>
@@ -941,7 +934,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Texturing the Airline Chair</title>
     <id>item-1ac14915-a348-47d3-9ecc-a88e800d4bb9</id>
-    <updated>2026-10-05T16:03:53.000Z</updated>
+    <updated>2026-10-05T18:14:09.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair"/>
@@ -983,7 +976,7 @@ We will also touch on the concept of hyper-objects—entities that transcend our
   <entry>
     <title>Realtime Game Environment</title>
     <id>item-55d4ea63-f507-4470-b2c8-e8b11b1c499b</id>
-    <updated>2026-10-05T16:03:53.000Z</updated>
+    <updated>2026-10-05T18:14:09.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/realtime-game-environment"/>
