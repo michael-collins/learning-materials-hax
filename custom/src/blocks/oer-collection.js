@@ -172,6 +172,7 @@ export class OerCollection extends LitElement {
 
   // a field value as words: linked page titles, file titles, choice labels
   _plain(value, field = null) {
+    if (field?.kind === "people" || (value && typeof value === "object" && "name" in value)) return toList(value).map((p) => (typeof p === "object" ? p.name : p)).filter(Boolean).join(", ");
     if (Array.isArray(value)) return value.map((v) => this._plain(v, field)).filter(Boolean).join(", ");
     if (value && typeof value === "object") {
       if (value.page) return resolveLinks([value], this._all || [])[0]?.item?.title || "";

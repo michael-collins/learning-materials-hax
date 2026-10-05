@@ -48,9 +48,21 @@ export const FIELD_KINDS = [
   { kind: "url", label: "Link" },
   { kind: "relation", label: "Link to pages" },
   { kind: "files", label: "Files and links" },
+  { kind: "people", label: "People" },
 ];
 
 const items = () => toJS(store.manifest?.items) || [];
+
+/**
+ * A "people" field's value as [{ name, url }]: also reads a plain name or a
+ * list of names (older single-author text fields).
+ */
+export function peopleOf(v) {
+  const list = Array.isArray(v) ? v : v === undefined || v === null || v === "" ? [] : [v];
+  return list
+    .map((x) => (x && typeof x === "object" ? { name: String(x.name || ""), url: String(x.url || "") } : { name: String(x), url: "" }))
+    .filter((x) => x.name || x.url);
+}
 
 export const isSystemItem = (item) => item?.metadata?.pageType === SYSTEM_TYPE;
 

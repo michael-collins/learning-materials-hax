@@ -23,7 +23,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
+import { contentTypes, SYSTEM_TYPE, peopleOf } from "./content-types.js";
 import { usedIn } from "./relations.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 
@@ -135,13 +135,19 @@ class OerPageFooter extends LitElement {
     return values;
   }
 
-  get _authors() {
+  // [{ name, url }]: the page's Authors (a People field), an older single
+  // author text field with its authorUrl, or the site's author
+  get _people() {
     const f = this._fields;
-    const list = toList(f.authors).map((a) => (typeof a === "object" ? a.name : a));
+    const list = peopleOf(f.authors);
     if (list.length) return list;
-    if (f.author) return [String(f.author)];
+    if (f.author) return [{ name: String(f.author), url: String(f.authorUrl || "") }];
     const site = this._site?.author || this._site?.metadata?.author?.name;
-    return site ? [String(site)] : [];
+    return site ? [{ name: String(site), url: "" }] : [];
+  }
+
+  get _authors() {
+    return this._people.map((p) => p.name);
   }
 
   get _type() {
@@ -168,7 +174,7 @@ class OerPageFooter extends LitElement {
     if (item.description) data["schema:description"] = item.description;
     if (cc?.url) data["schema:license"] = cc.url;
     const authors = this._authors;
-    if (authors.length) data["schema:author"] = authors.map((name) => ({ "@type": "schema:Person", "schema:name": name }));
+    if (authors.length) data["schema:author"] = this._people.map((p) => ({ "@type": "schema:Person", "schema:name": p.name, ...(p.url ? { "schema:url": p.url } : {}) }));
     if (item.metadata?.updated) data["schema:dateModified"] = new Date(item.metadata.updated * 1000).toISOString();
     if (item.metadata?.version) data["schema:version"] = item.metadata.version;
     if (f.difficulty) data["schema:educationalLevel"] = f.difficulty;
@@ -489,6 +495,15 @@ class OerPageFooter extends LitElement {
       </dd>`;
   }
 
+  // "A", "A and B", "A, B and C", each linked when it has a link
+  _renderPeople() {
+    const people = this._people;
+    return people.map((p, i) => {
+      const sep = i === 0 ? "" : i === people.length - 1 ? " and " : ", ";
+      return html`${sep}${p.url ? html`<a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.name}</a>` : p.name}`;
+    });
+  }
+
   _renderVersion() {
     const item = this._item;
     const version = item?.metadata?.version;
@@ -560,7 +575,7 @@ class OerPageFooter extends LitElement {
               </a>`
             : ""}
           <span>
-            <b>${item.title}</b>${authors.length ? ` by ${authors.join(", ")}` : ""}${cc
+            <b>${item.title}</b>${authors.length ? html` by ${this._renderPeople()}` : ""}${cc
               ? html` is licensed under ${cc.url ? html`<a href="${cc.url}" target="_blank" rel="license noopener noreferrer">${cc.name}</a>` : cc.name}.`
               : f.license
                 ? html` — ${f.license}.`

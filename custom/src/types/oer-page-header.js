@@ -9,7 +9,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
+import { contentTypes, SYSTEM_TYPE, peopleOf } from "./content-types.js";
 import { isSnapshot, latestOf } from "../versions/versioning.js";
 import { bookPrint } from "../books/oer-book-print.js";
 import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
@@ -355,6 +355,7 @@ class OerPageHeader extends LitElement {
   }
 
   _short(f, v) {
+    if (f.kind === "people") return peopleOf(v).map((p) => p.name).join(", ");
     if (Array.isArray(v)) return v.map((x) => this._short(f, x)).join(", ");
     if (f.kind === "boolean") return v ? "Yes" : "No";
     if (f.kind === "select") return (f.options || []).find((o) => o.value === v)?.label || v;
@@ -379,7 +380,7 @@ class OerPageHeader extends LitElement {
     const shown = (type?.fields || []).filter((f) => f.header && hasValue(values[f.name]));
     // short values become pills beside the type; lists, long text and
     // images get their own card
-    const pills = shown.filter((f) => ["text", "number", "select", "boolean", "date"].includes(f.kind));
+    const pills = shown.filter((f) => ["text", "number", "select", "boolean", "date", "people"].includes(f.kind));
     const blocks = shown.filter((f) => !pills.includes(f));
     const snapshot = isSnapshot(item);
     const latest = snapshot ? latestOf(item, this._allItems) : null;

@@ -10,7 +10,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, allowedChildTypes, savePageDetails } from "./content-types.js";
+import { contentTypes, allowedChildTypes, savePageDetails, peopleOf } from "./content-types.js";
 import { resolveLinks, uploadFile, isImage } from "./relations.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { versionsOf } from "../versions/versioning.js";
@@ -109,6 +109,7 @@ class OerPageDetails extends LitElement {
           .map((x) => ({ title: (x.title || "").trim(), url: (x.url || "").trim(), description: (x.description || "").trim(), alt: (x.alt || "").trim() }))
           .filter((x) => x.url || x.title);
       }
+      if (f.kind === "people") v = peopleOf(v).map((x) => ({ name: x.name.trim(), url: (x.url || "").trim() })).filter((x) => x.name);
       if (f.kind === "number" && v !== "" && v !== undefined) v = Number(v);
       if (!empty(v) || f.kind === "boolean") fields[f.name] = f.kind === "boolean" ? !!v : v;
     }
@@ -438,6 +439,26 @@ class OerPageDetails extends LitElement {
         font-weight: 500;
         cursor: pointer;
       }
+      .people {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+      }
+      .person-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto auto;
+        gap: 0.375rem;
+        align-items: center;
+      }
+      @media (max-width: 480px) {
+        .person-row {
+          grid-template-columns: minmax(0, 1fr) auto auto;
+        }
+        .person-row input[type="url"] {
+          grid-column: 1;
+          grid-row: 2;
+        }
+      }
       .btn.outline {
         border: 1px solid var(--input-border, var(--border));
       }
@@ -499,6 +520,8 @@ class OerPageDetails extends LitElement {
         </div>`;
       case "relation":
         return html`<div><span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>${this._renderRelation(f)}${help}${err}</div>`;
+      case "people":
+        return html`<div><span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>${this._renderPeople(f)}${help}${err}</div>`;
       case "files":
         return html`<div><span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>${this._renderFiles(f)}${help}${err}</div>`;
       case "list": {
@@ -593,6 +616,54 @@ class OerPageDetails extends LitElement {
         </div>`;
       })}
       <button class="add-item" @click="${() => this._addLinks(f)}">${lucide("oer:plus", "sm")}Add ${f.label.toLowerCase()}</button>
+    </div>`;
+  }
+
+  /* ---------- people: name and optional link, in order ---------- */
+
+  _renderPeople(f) {
+    const id = `f-${f.name}`;
+    const stored = peopleOf(this._values[f.name]);
+    const rows = stored.length ? stored : [{ name: "", url: "" }];
+    const update = (fn) => {
+      const next = rows.map((r) => ({ ...r }));
+      fn(next);
+      this._set(f.name, next);
+    };
+    return html`<div class="people" role="group" aria-labelledby="${id}-l">
+      ${rows.map(
+        (r, i) => html`<div class="person-row">
+          <input
+            class="input"
+            id="${i === 0 ? id : `${id}-${i}`}"
+            placeholder="Name"
+            aria-label="${f.label} ${i + 1}: name"
+            .value="${r.name}"
+            @input="${(e) => update((n) => (n[i].name = e.target.value))}"
+          />
+          <input
+            class="input"
+            type="url"
+            placeholder="Link (optional)"
+            aria-label="${f.label} ${i + 1}: link"
+            .value="${r.url || ""}"
+            @input="${(e) => update((n) => (n[i].url = e.target.value))}"
+          />
+          <button class="icon-act" title="Move up" aria-label="Move ${r.name || `person ${i + 1}`} up" ?disabled="${i === 0}" @click="${() => update((n) => n.splice(i - 1, 0, n.splice(i, 1)[0]))}">
+            ${lucide("icons:arrow-upward", "sm")}
+          </button>
+          <button class="icon-act" title="Remove" aria-label="Remove ${r.name || `person ${i + 1}`}" @click="${() => update((n) => n.splice(i, 1))}">${lucide("oer:x", "sm")}</button>
+        </div>`,
+      )}
+      <button
+        class="add-item"
+        @click="${() => {
+          update((n) => n.push({ name: "", url: "" }));
+          this.updateComplete.then(() => this.shadowRoot.getElementById(`${id}-${rows.length}`)?.focus());
+        }}"
+      >
+        ${lucide("oer:plus", "sm")}Add person
+      </button>
     </div>`;
   }
 
