@@ -146,6 +146,11 @@ export function resolvePathway(pathway, list = items(), types = contentTypes(lis
       missing: !!refId && !src,
       placeholder: !!src?.metadata?.oerFields?.placeholder,
       group,
+      // a lesson's materials and quiz (its "In this lesson" field)
+      components: (src?.metadata?.oerFields?.components || [])
+        .map((c) => byId.get(c?.page))
+        .filter((c) => c && visibleTo(c))
+        .map((c) => ({ id: c.id, title: c.title, href: c.slug, type: typeOf(c), typeLabel: typeOf(c)?.label || "", draft: c.metadata?.published === false })),
     };
   };
 

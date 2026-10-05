@@ -72,7 +72,9 @@ class OerSiteNav extends LitElement {
     super.connectedCallback();
     this.__disposers.push(
       autorun(() => {
-        const items = toJS(store.manifest?.items) || [];
+        const loggedIn = !!store.isLoggedIn;
+        // unpublished pages are listed for authors only
+        const items = (toJS(store.manifest?.items) || []).filter((i) => loggedIn || i.metadata?.published !== false);
         const active = toJS(store.activeId);
         Promise.resolve().then(() => {
           this._all = items;

@@ -228,7 +228,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         // the hidden content-types page is configuration, never a stop;
         // inside a book, Previous / Next stay within the book
         // pages removed from the navigation aren't stops either
-        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i) && !isHeading(i) && !i.metadata?.hideInMenu);
+        const loggedIn = !!store.isLoggedIn;
+        let items = (toJS(store.routerManifest?.items) || []).filter((i) => !isSystemItem(i) && !isSnapshot(i) && !isHeading(i) && !i.metadata?.hideInMenu && (loggedIn || i.metadata?.published !== false));
         if (book) {
           const inBook = new Set([book.id, ...flatten(all, book.id).map((x) => x.item.id)]);
           items = items.filter((i) => inBook.has(i.id));

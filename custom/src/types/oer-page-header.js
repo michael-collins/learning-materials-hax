@@ -336,7 +336,8 @@ class OerPageHeader extends LitElement {
 
   // linked pages (prerequisites, resources…): type icon, title, type, version
   _renderLinks(value) {
-    const links = resolveLinks(value, this._allItems || []);
+    // unpublished pages (e.g. a quiz under review) are listed for authors only
+    const links = resolveLinks(value, this._allItems || []).filter((l) => store.isLoggedIn || l.item?.metadata?.published !== false);
     return html`<ul class="rel">
       ${links.map((l) => {
         const type = this._types.find((t) => t.id === l.item?.metadata?.pageType);

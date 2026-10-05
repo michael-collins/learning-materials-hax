@@ -50,7 +50,9 @@ const lucide = (name, cls = "") =>
 const SCHEMA_TYPES = {
   lesson: "oer:LearningComponent",
   exercise: "oer:Practice",
-  project: "oer:Assessment",
+  project: "oer:Project",
+  quiz: "oer:Quiz",
+  unit: "oer:Unit",
   pathway: "oer:Course",
   specialization: "oer:InstructionalPattern",
   article: "oer:SupportingMaterial",
@@ -196,6 +198,21 @@ class OerPageFooter extends LitElement {
     if (f.estimatedDuration) data["schema:timeRequired"] = f.estimatedDuration;
     const objectives = toList(f.learningObjectives);
     if (objectives.length) data["oer:hasLearningObjective"] = objectives.map((o) => ({ "@type": "oer:LearningObjective", "schema:description": o }));
+    // a lesson's materials and quiz (published ones)
+    const components = (f.components || [])
+      .map((c) => (this._items || []).find((i) => i.id === c?.page))
+      .filter((c) => c && c.metadata?.published !== false);
+    if (components.length) {
+      const types = contentTypes(this._items || []).types;
+      data["oer:hasComponent"] = components.map((c) => {
+        const t = types.find((x) => x.id === c.metadata?.pageType);
+        return {
+          "@type": t?.schemaType || SCHEMA_TYPES[String(c.metadata?.pageType || "").replace(/^oer:/, "")] || "oer:LearningComponent",
+          "schema:name": c.title,
+          "schema:url": new URL(c.slug, globalThis.document.baseURI).href,
+        };
+      });
+    }
     const tags = toList(String(item.metadata?.tags || "").split(","));
     if (tags.length) data["schema:keywords"] = tags.join(", ");
     // third-party material on the page, each with its own credit and licence

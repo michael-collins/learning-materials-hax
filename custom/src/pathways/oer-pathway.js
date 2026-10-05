@@ -341,6 +341,44 @@ export class OerPathway extends LitElement {
           font-size: 0.75rem;
           color: var(--muted-foreground, #555);
         }
+        .components {
+          list-style: none;
+          margin: 0.375rem 0 0;
+          padding: 0 0 0 0.75rem;
+          border-left: 1px solid var(--border, #e5e5e5);
+          display: flex;
+          flex-direction: column;
+          gap: 0.125rem;
+          font-size: 0.8125rem;
+          --simple-icon-height: 0.875rem;
+          --simple-icon-width: 0.875rem;
+          --simple-icon-color: var(--muted-foreground, #555);
+        }
+        .components li {
+          display: flex;
+          align-items: baseline;
+          gap: 0.375rem;
+          min-width: 0;
+        }
+        .components simple-icon-lite,
+        .components .lucide {
+          flex: none;
+          align-self: center;
+        }
+        .components a {
+          color: inherit;
+          text-decoration: none;
+        }
+        .components a:hover {
+          color: var(--primary, #0071b6);
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+        .components .ctype {
+          color: var(--muted-foreground, #555);
+          font-size: 0.75rem;
+          white-space: nowrap;
+        }
         .item-meta .bad {
           color: var(--destructive, #b91c1c);
         }
@@ -568,6 +606,16 @@ export class OerPathway extends LitElement {
           ${item.missing ? html`<span class="bad">Linked content not found</span>` : html`<span>${item.planned ? "Planned" : item.typeLabel || "Page"}</span>`}
           ${item.duration ? html`<span class="dur">${lucide("oer:clock", "xs")}${item.duration}</span>` : ""}
         </p>
+        ${item.components?.length
+          ? html`<ul class="components" aria-label="In ${item.title}">
+              ${item.components.map(
+                (c) => html`<li>
+                  ${c.type?.icon ? html`<simple-icon-lite icon="${c.type.icon}"></simple-icon-lite>` : lucide("lrn:page", "xs")}
+                  <a href="${c.href}">${c.title}</a><span class="ctype">${c.typeLabel}${c.draft ? " · unpublished" : ""}</span>
+                </li>`,
+              )}
+            </ul>`
+          : ""}
       </div>
     </div>`;
   }
