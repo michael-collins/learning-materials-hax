@@ -2593,30 +2593,6 @@
       }
     },
     {
-      "id": "item-a8d02555-bfc4-421e-b99e-6f57510712fd",
-      "indent": 1,
-      "location": "pages/item-a8d02555-bfc4-421e-b99e-6f57510712fd/index.html",
-      "slug": "welcome-to-learning-materials-1/welcome-to-learning-materials",
-      "order": 1,
-      "parent": "item-00c7957b-0cb5-4664-b073-060a49212806",
-      "title": "Welcome to learning-materials",
-      "description": "",
-      "metadata": {
-        "icon": "av:art-track",
-        "oerRef": {
-          "page": "item-00c7957b-0cb5-4664-b073-060a49212806",
-          "version": ""
-        },
-        "created": 1791210475,
-        "images": [],
-        "videos": [],
-        "updated": 1791212329,
-        "published": true,
-        "locked": false,
-        "status": ""
-      }
-    },
-    {
       "id": "item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171",
       "indent": 1,
       "location": "pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.html",
