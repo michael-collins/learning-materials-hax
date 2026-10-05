@@ -1003,12 +1003,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/welcome-to-learning-materials-1/untitled-page</loc>
-    <lastmod>2026-10-05T14:58:49.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/welcome-to-learning-materials-1/welcome-to-learning-materials</loc>
     <lastmod>2026-10-05T14:58:49.000Z</lastmod>
     <changefreq>daily</changefreq>

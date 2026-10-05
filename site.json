@@ -2377,25 +2377,6 @@
       }
     },
     {
-      "id": "item-1c914250-9ca3-45fe-a422-230a521300a2",
-      "indent": 1,
-      "location": "pages/item-1c914250-9ca3-45fe-a422-230a521300a2/index.html",
-      "slug": "welcome-to-learning-materials-1/untitled-page",
-      "order": 0,
-      "parent": "item-00c7957b-0cb5-4664-b073-060a49212806",
-      "title": "Untitled page",
-      "description": "",
-      "metadata": {
-        "created": 1791210475,
-        "images": [],
-        "videos": [],
-        "updated": 1791212329,
-        "published": true,
-        "locked": false,
-        "status": ""
-      }
-    },
-    {
       "id": "item-194f2951-b4f9-4861-a0fd-1442221585fb",
       "indent": 1,
       "location": "pages/item-194f2951-b4f9-4861-a0fd-1442221585fb/index.html",
