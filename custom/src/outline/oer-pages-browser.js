@@ -109,6 +109,12 @@ class OerPagesBrowser extends LitElement {
     this._busy = false;
   }
 
+  // rows are reused as search and filters change, and a click changes a
+  // checkbox behind Lit's back: set every box from the selection each time
+  updated() {
+    for (const box of this.shadowRoot.querySelectorAll(".pick[data-id]")) box.checked = this._selected.has(box.dataset.id);
+  }
+
   _toggleSelect(id, on) {
     const next = new Set(this._selected);
     if (on) next.add(id);
@@ -177,6 +183,7 @@ class OerPagesBrowser extends LitElement {
     await saveOutline(this._items.map((i) => (ids.has(i.id) ? { ...i, delete: true } : i)));
     this._selected = new Set([...this._selected].filter((id) => !ids.has(id)));
     this._confirm = null;
+    this._status = `Deleted ${ids.size} page${ids.size === 1 ? "" : "s"}.`;
     this._busy = false;
   }
 
@@ -440,6 +447,9 @@ class OerPagesBrowser extends LitElement {
       .btn.ghost:hover {
         background: var(--accent);
       }
+      .btn.outline.danger {
+        color: var(--destructive);
+      }
       .btn.ghost.danger {
         color: var(--destructive);
       }
@@ -500,7 +510,7 @@ class OerPagesBrowser extends LitElement {
     const links = doomed ? items.filter((i) => !doomed.has(i.id) && doomed.has(i.metadata?.oerRef?.page)).length : 0;
     const checked = this._selected.has(item.id);
     return html`<li class="${checked ? "selected" : ""}">
-      <input type="checkbox" class="pick" aria-label="Select ${title}" .checked="${checked}" @change="${(e) => this._toggleSelect(item.id, e.target.checked)}" />
+      <input type="checkbox" class="pick" data-id="${item.id}" aria-label="Select ${title}" .checked="${checked}" @change="${(e) => this._toggleSelect(item.id, e.target.checked)}" />
       <div class="main">
         <button class="title" @click="${() => this._go(item.slug)}">${title}</button>
         <span class="badges">
@@ -564,8 +574,12 @@ class OerPagesBrowser extends LitElement {
       <span class="count" aria-live="polite">
         ${this._status || (n ? `${n} selected${offscreen ? ` (${offscreen} not shown)` : ""}` : "Select pages to append them to the navigation.")}
       </span>
-      ${n
+      ${n && this._confirm === "__selection" ? this._renderBulkConfirm() : ""}
+      ${n && this._confirm !== "__selection"
         ? html`<button class="btn ghost" @click="${() => (this._selected = new Set())}">Clear</button>
+            <button class="btn outline danger" aria-disabled="${busy}" @click="${() => !this._busy && (this._confirm = "__selection")}">
+              ${lucide("oer:trash-2", "sm")}Delete
+            </button>
             <button
               class="btn primary"
               aria-disabled="${busy}"
@@ -574,6 +588,26 @@ class OerPagesBrowser extends LitElement {
               ${lucide("oer:plus", "sm")}${this._busy ? "Appending…" : "Append to navigation"}
             </button>`
         : ""}
+    </div>`;
+  }
+
+  // confirm deleting the whole selection, with what goes along with it
+  _renderBulkConfirm() {
+    const items = this._items;
+    const doomed = deletionSet(items, this._selected);
+    const n = this._selected.size;
+    const extra = doomed.size - n;
+    const links = items.filter((i) => !doomed.has(i.id) && doomed.has(i.metadata?.oerRef?.page)).length;
+    const busy = this._busy ? "true" : "false";
+    return html`<div class="confirm" role="alert">
+      <span
+        >Delete ${n} selected page${n === 1 ? "" : "s"}${extra ? ` and ${extra} sub-page${extra === 1 ? "" : "s"} or archived version${extra === 1 ? "" : "s"}` : ""}?
+        ${links ? `${links} link${links === 1 ? "" : "s"} to ${n + extra === 1 ? "it" : "them"} will break. ` : ""}This can't be undone here.</span
+      >
+      <button class="btn outline" @click="${() => (this._confirm = null)}">Cancel</button>
+      <button class="btn destructive" aria-disabled="${busy}" @click="${() => !this._busy && this._delete(doomed)}">
+        ${this._busy ? "Deleting…" : `Delete ${doomed.size}`}
+      </button>
     </div>`;
   }
 
