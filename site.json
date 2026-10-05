@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231518
+      "updated": 1791231519
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -10072,7 +10072,7 @@
       "order": 32,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "VFX Compositing Integration",
-      "description": "",
+      "description": "Learn to integrate simulated VFX elements with live-action footage through advanced compositing techniques.",
       "metadata": {
         "published": true,
         "pageType": "oer:lesson",
