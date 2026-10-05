@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>learning-materials</title>
+  <title>Digital Arts OER</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-10-05T22:19:20.000Z</updated>
+  <updated>2026-10-05T23:16:53.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -37,6 +37,7 @@
   <li><strong>Edit page</strong> from the page menu, or press ⌘⇧E. Save and Cancel sit in the editing bar at the top.</li>
   <li><strong>Block rail.</strong> The selected block gets a rail on its left with Block, Text, Format and Insert menus, in place of HAX's floating toolbars.</li>
   <li><strong>Insert in place.</strong> Hover the space between blocks, including inside columns, to add a block from a searchable list with previews and templates.</li>
+  <li><strong>Citations.</strong> In a text block, <em>Insert inline → Citation…</em> adds a numbered citation at the cursor: cite a reference already on the page, one of the site's Resources, or a new source (author, year, title, link, publisher, or free text), which can be saved to Resources for other pages. A new source that's already in Resources is spotted (same link or title) and offered instead; references not linked to a Resource can be linked to a matching one or added to Resources from the dialog's <em>On this page</em> tab. Each page records the Resources it cites when you save, and a Resource page lists them under <em>Used in → Cited by</em>. The page's References list is numbered in reading order and kept in step when you save; readers can hover or focus a number to see the reference.</li>
   <li><strong>Block settings</strong> open in a dialog with a live preview. The HTML source view opens in a dialog too.</li>
   <li>The editor is quiet and still: no sounds and no decorative animation, and every control works from the keyboard.</li>
 </ul>
@@ -103,9 +104,11 @@
 <oer-schematic preset="embed" alt="Diagram of the Embed dialog: the embed code, checkboxes for what to leave out, and a Copy button." caption="Embed this page: choose what to leave out, then copy the code."></oer-schematic>
 
 <h2>The page footer</h2>
-<p>Typed pages end with their licence and credits: the Creative Commons licence with its icons and the authors, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, <strong>Credits</strong> for third-party material (from Credit blocks and media with a credit or licence), a <strong>Cite</strong> menu (APA, MLA, Chicago, BibTeX) and the <strong>OER Schema</strong> badge, which shows the structured data published with every page for search engines and repositories.</p>
+<p>Typed pages end with their licence and credits: the Creative Commons licence with its icons and the authors, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, <strong>Credits</strong> for third-party material (from Credit blocks and media with a credit or licence), a <strong>Cite</strong> menu (APA, MLA, Chicago and BibTeX, naming the version, with a permanent link and RIS and CSL-JSON files for reference managers) and the <strong>OER Schema</strong> badge, which shows the structured data published with every page for search engines and repositories.</p>
 <oer-schematic preset="footer" alt="Diagram of the page footer: licence icons with Cite and OER Schema buttons, then rows for AI use, Version and Used in." caption="The page footer: licence, AI use, version and where the page is used."></oer-schematic>
 
+<h2>Citing and finding pages</h2>
+<p>Every page has a <strong>permanent link</strong> (<code>?p=</code> and the page's id, plus <code>&amp;version=</code> for a release) that keeps working when a page is renamed or moved. Pages carry citation metadata (<code>citation_*</code> and Dublin Core tags) so Google Scholar and reference managers such as Zotero pick up the title, authors, date, publisher and licence, alongside the OER Schema data.</p>
 <h2>Accessibility</h2>
 <p>Colours meet WCAG AA contrast in light and dark mode, the layout works at phone width, every control has a keyboard path and a label, menus stay inside the window, and nothing moves for decoration.</p>
 <oer-callout type="info" title="Built on HAX"><p>The theme is a layer on top of stock HAXcms, with no changes to HAX itself. Fixes found along the way have been contributed back to HAX. If the site switches to another HAX theme, the editor returns to stock HAX while these blocks keep working.</p></oer-callout>

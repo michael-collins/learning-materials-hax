@@ -1,4 +1,4 @@
-# learning-materials
+# Digital Arts OER
 
 HAXcms is a file-based CMS: authored pages and metadata are stored as portable files, not locked into a database-only workflow.
 The canonical site structure is `site.json`, represented in JSON Outline Schema (`id`, `parent`, `order`, `slug`, `location`, and `metadata`).
