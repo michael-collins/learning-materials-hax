@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231510
+      "updated": 1791231511
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -9452,7 +9452,7 @@
       "order": 15,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Constraints and Animation Controls",
-      "description": "",
+      "description": "Master the use of constraints and control systems to create complex animations with efficient workflows.",
       "metadata": {
         "published": true,
         "pageType": "oer:lesson",
