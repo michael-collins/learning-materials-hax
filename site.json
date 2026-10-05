@@ -2749,6 +2749,42 @@
       }
     },
     {
+      "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
+      "indent": 1,
+      "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
+      "slug": "quizzes/history-of-cgi-quiz",
+      "order": 0,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "History of CGI quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791228261
+      }
+    },
+    {
       "id": "item-ef8736da-f646-4540-b163-75a456866c7d",
       "indent": 2,
       "location": "pages/item-ef8736da-f646-4540-b163-75a456866c7d/index.html",
@@ -3899,29 +3935,51 @@
       }
     },
     {
-      "id": "item-a0ed15db-5993-4634-8a15-896edab9b4a2",
-      "indent": 3,
-      "location": "pages/item-a0ed15db-5993-4634-8a15-896edab9b4a2/index.html",
-      "slug": "pathways/cgi-foundations/modeling/modeling-the-airline-chair",
-      "order": 2,
-      "parent": "item-c1c083f0-47c6-4706-8651-d63d65b46db1",
-      "title": "Modeling the Airline Chair",
+      "id": "item-92d58ed2-e302-4a8a-9643-bd3efe56c963",
+      "indent": 1,
+      "location": "pages/item-92d58ed2-e302-4a8a-9643-bd3efe56c963/index.html",
+      "slug": "quizzes/3d-modeling-fundamentals-quiz",
+      "order": 1,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "3D Modeling Fundamentals quiz",
       "description": "",
       "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "oer:exercise",
-        "oerRef": {
-          "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
-          "version": ""
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+              "version": ""
+            },
+            {
+              "page": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
+              "version": ""
+            },
+            {
+              "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
+              "version": ""
+            },
+            {
+              "page": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
         },
-        "created": 1790830075,
+        "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791228252,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
+        "updated": 1791228261
       }
     },
     {
@@ -4480,6 +4538,54 @@
       }
     },
     {
+      "id": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
+      "indent": 1,
+      "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.html",
+      "slug": "quizzes/texturing-and-uv-mapping-quiz",
+      "order": 2,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Texturing and UV Mapping quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
+              "version": ""
+            },
+            {
+              "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
+              "version": ""
+            },
+            {
+              "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
+              "version": ""
+            },
+            {
+              "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791228261
+      }
+    },
+    {
       "id": "item-7ebcc5b7-026a-4158-94d1-5abc381575c2",
       "indent": 3,
       "location": "pages/item-7ebcc5b7-026a-4158-94d1-5abc381575c2/index.html",
@@ -4928,6 +5034,46 @@
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-8ee5f7a7-3464-4b92-82e7-83b178107cac",
+      "indent": 1,
+      "location": "pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.html",
+      "slug": "quizzes/lighting-principles-quiz",
+      "order": 3,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Lighting Principles quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
+              "version": ""
+            },
+            {
+              "page": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791228261
       }
     },
     {
@@ -8072,6 +8218,42 @@
       }
     },
     {
+      "id": "item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840",
+      "indent": 1,
+      "location": "pages/item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840/index.html",
+      "slug": "quizzes/camera-and-composition-quiz",
+      "order": 4,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Camera and Composition quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791228261
+      }
+    },
+    {
       "id": "item-0de38b7c-691f-4177-9559-efb54871af7f",
       "indent": 3,
       "location": "pages/item-0de38b7c-691f-4177-9559-efb54871af7f/index.html",
@@ -8340,6 +8522,50 @@
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-bea752bd-0781-46bf-8fcf-db273caa8d00",
+      "indent": 1,
+      "location": "pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.html",
+      "slug": "quizzes/rendering-techniques-quiz",
+      "order": 5,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Rendering Techniques quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
+              "version": ""
+            },
+            {
+              "page": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
+              "version": ""
+            },
+            {
+              "page": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791228261
       }
     },
     {
@@ -9385,6 +9611,25 @@
       }
     },
     {
+      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "indent": 0,
+      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
+      "slug": "quizzes",
+      "order": 10,
+      "parent": null,
+      "title": "Quizzes",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "icon": "lrn:quiz",
+        "oerTmpKey": "quizzes",
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791228261
+      }
+    },
+    {
       "id": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
       "indent": 1,
       "location": "pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.html",
@@ -10000,277 +10245,6 @@
             "notes": ""
           }
         ]
-      }
-    },
-    {
-      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "indent": 0,
-      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
-      "slug": "quizzes",
-      "order": 10,
-      "parent": null,
-      "title": "Quizzes",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:section",
-        "icon": "lrn:quiz",
-        "oerTmpKey": "quizzes",
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
-      }
-    },
-    {
-      "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
-      "indent": 1,
-      "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
-      "slug": "quizzes/history-of-cgi-quiz",
-      "order": 0,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "History of CGI quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
-      }
-    },
-    {
-      "id": "item-92d58ed2-e302-4a8a-9643-bd3efe56c963",
-      "indent": 1,
-      "location": "pages/item-92d58ed2-e302-4a8a-9643-bd3efe56c963/index.html",
-      "slug": "quizzes/3d-modeling-fundamentals-quiz",
-      "order": 1,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "3D Modeling Fundamentals quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
-              "version": ""
-            },
-            {
-              "page": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
-              "version": ""
-            },
-            {
-              "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
-              "version": ""
-            },
-            {
-              "page": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
-      }
-    },
-    {
-      "id": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
-      "indent": 1,
-      "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.html",
-      "slug": "quizzes/texturing-and-uv-mapping-quiz",
-      "order": 2,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Texturing and UV Mapping quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
-              "version": ""
-            },
-            {
-              "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
-              "version": ""
-            },
-            {
-              "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
-              "version": ""
-            },
-            {
-              "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
-      }
-    },
-    {
-      "id": "item-8ee5f7a7-3464-4b92-82e7-83b178107cac",
-      "indent": 1,
-      "location": "pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.html",
-      "slug": "quizzes/lighting-principles-quiz",
-      "order": 3,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Lighting Principles quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
-              "version": ""
-            },
-            {
-              "page": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
-      }
-    },
-    {
-      "id": "item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840",
-      "indent": 1,
-      "location": "pages/item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840/index.html",
-      "slug": "quizzes/camera-and-composition-quiz",
-      "order": 4,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Camera and Composition quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
-      }
-    },
-    {
-      "id": "item-bea752bd-0781-46bf-8fcf-db273caa8d00",
-      "indent": 1,
-      "location": "pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.html",
-      "slug": "quizzes/rendering-techniques-quiz",
-      "order": 5,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Rendering Techniques quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
-              "version": ""
-            },
-            {
-              "page": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
-              "version": ""
-            },
-            {
-              "page": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791228261
       }
     }
   ]
