@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791229765
+      "updated": 1791229827
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.",
       "metadata": {
         "created": 1790801562,
-        "updated": 1791229755,
+        "updated": 1791229816,
         "published": true,
         "locked": false,
         "status": "",
@@ -84,7 +84,7 @@
         "created": 1791210080,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229816,
         "status": ""
       }
     },
@@ -99,7 +99,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791229755,
+        "updated": 1791229816,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -173,7 +173,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "status": ""
       }
     },
@@ -211,7 +211,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "status": ""
       }
     },
@@ -226,7 +226,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791229755,
+        "updated": 1791229817,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -322,7 +322,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "status": ""
       }
     },
@@ -354,7 +354,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -407,7 +407,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "status": ""
       }
     },
@@ -466,7 +466,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -545,7 +545,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "status": ""
       }
     },
@@ -574,7 +574,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -663,7 +663,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -693,7 +693,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -719,7 +719,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229755,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -741,7 +741,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -767,7 +767,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -789,7 +789,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -815,7 +815,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229817,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -837,7 +837,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -863,7 +863,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -889,7 +889,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -915,7 +915,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -937,7 +937,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -963,7 +963,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -989,7 +989,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1011,7 +1011,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1037,7 +1037,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1063,7 +1063,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1089,7 +1089,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1115,7 +1115,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229756,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1142,7 +1142,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1168,7 +1168,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1195,7 +1195,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229818,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1246,7 +1246,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229818,
         "status": ""
       }
     },
@@ -1299,7 +1299,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1349,7 +1349,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1399,7 +1399,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1448,7 +1448,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1498,7 +1498,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1549,7 +1549,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1599,7 +1599,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1649,7 +1649,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1705,7 +1705,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1755,7 +1755,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1793,7 +1793,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1831,7 +1831,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229757,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1881,7 +1881,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1926,7 +1926,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -1971,7 +1971,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -2016,7 +2016,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229819,
         "status": ""
       }
     },
@@ -2061,7 +2061,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2106,7 +2106,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2151,7 +2151,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2196,7 +2196,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2245,7 +2245,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2294,7 +2294,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2339,7 +2339,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2392,7 +2392,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2451,7 +2451,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2496,7 +2496,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2555,7 +2555,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2600,7 +2600,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2665,7 +2665,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229758,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2710,7 +2710,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2754,7 +2754,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2799,7 +2799,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229820,
         "status": ""
       }
     },
@@ -2844,7 +2844,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229821,
         "status": ""
       }
     },
@@ -2889,7 +2889,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229821,
         "status": ""
       }
     },
@@ -2934,7 +2934,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229821,
         "status": ""
       }
     },
@@ -2979,44 +2979,8 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229821,
         "status": ""
-      }
-    },
-    {
-      "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
-      "indent": 1,
-      "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
-      "slug": "quizzes/history-of-cgi-quiz",
-      "order": 0,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "History of CGI quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791229759
       }
     },
     {
@@ -3045,17 +3009,17 @@
         "created": 1791229659,
         "images": [],
         "videos": [],
-        "updated": 1791229759
+        "updated": 1791229821
       }
     },
     {
-      "id": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
+      "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
       "indent": 1,
-      "location": "pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.html",
-      "slug": "quizzes/real-time-engines-quiz",
-      "order": 0,
+      "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
+      "slug": "quizzes/history-of-cgi-quiz",
+      "order": 1,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Real-time Engines quiz",
+      "title": "History of CGI quiz",
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
@@ -3065,7 +3029,7 @@
         "oerFields": {
           "prerequisites": [
             {
-              "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+              "page": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
               "version": ""
             }
           ],
@@ -3078,97 +3042,10 @@
           ],
           "license": "CC BY 4.0"
         },
-        "created": 1791229683,
+        "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229759
-      }
-    },
-    {
-      "id": "item-935c06ff-8c18-4192-9563-f8460f801fb9",
-      "indent": 1,
-      "location": "pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.html",
-      "slug": "quizzes/compositor-pathway-readiness-quiz",
-      "order": 0,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Compositor Pathway readiness quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791229707,
-        "images": [],
-        "videos": [],
-        "updated": 1791229759
-      }
-    },
-    {
-      "id": "item-e4e10eff-a688-4ead-8963-d36e02adc4e5",
-      "indent": 1,
-      "location": "pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.html",
-      "slug": "quizzes/short-film-and-vfx-pathway-readiness-quiz",
-      "order": 0,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Short Film and VFX Pathway readiness quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791229731,
-        "images": [],
-        "videos": [],
-        "updated": 1791229759
-      }
-    },
-    {
-      "id": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
-      "indent": 1,
-      "location": "pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.html",
-      "slug": "quizzes/short-film-pathway-readiness-quiz",
-      "order": 0,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Short Film Pathway readiness quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791229754,
-        "images": [],
-        "videos": [],
-        "updated": 1791229759
+        "updated": 1791229821
       }
     },
     {
@@ -3182,7 +3059,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791229759,
+        "updated": 1791229821,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -3254,7 +3131,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229821,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -3323,7 +3200,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229759,
+        "updated": 1791229821,
         "status": ""
       }
     },
@@ -3355,7 +3232,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229821,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3422,7 +3299,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229821,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -3489,7 +3366,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229821,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3524,7 +3401,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229821,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3551,7 +3428,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3578,7 +3455,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -3633,7 +3510,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3683,7 +3560,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3733,7 +3610,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3782,7 +3659,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3832,7 +3709,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3883,7 +3760,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3933,7 +3810,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -3983,7 +3860,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -4039,7 +3916,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -4089,7 +3966,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229760,
+        "updated": 1791229822,
         "status": ""
       }
     },
@@ -4108,7 +3985,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229822,
         "published": true,
         "locked": false,
         "status": "",
@@ -4120,7 +3997,7 @@
       "indent": 1,
       "location": "pages/item-92d58ed2-e302-4a8a-9643-bd3efe56c963/index.html",
       "slug": "quizzes/3d-modeling-fundamentals-quiz",
-      "order": 1,
+      "order": 2,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "title": "3D Modeling Fundamentals quiz",
       "description": "",
@@ -4160,43 +4037,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229761
-      }
-    },
-    {
-      "id": "item-9e3bacc6-5f86-471f-adc6-0349fc801452",
-      "indent": 1,
-      "location": "pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.html",
-      "slug": "quizzes/environment-design-for-real-time-quiz",
-      "order": 1,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Environment Design for Real-time quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229761
+        "updated": 1791229822
       }
     },
     {
@@ -4261,7 +4102,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229822,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4335,7 +4176,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4382,7 +4223,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4435,7 +4276,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -4485,7 +4326,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4520,7 +4361,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4547,7 +4388,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -4574,7 +4415,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -4601,7 +4442,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4628,7 +4469,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -4645,7 +4486,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791229761,
+        "updated": 1791229823,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -4717,7 +4558,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4791,7 +4632,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229761,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4860,7 +4701,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4938,7 +4779,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5009,7 +4850,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5079,7 +4920,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229823,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5148,7 +4989,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5216,7 +5057,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5304,7 +5145,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5378,7 +5219,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -5407,7 +5248,7 @@
       "indent": 1,
       "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.html",
       "slug": "quizzes/texturing-and-uv-mapping-quiz",
-      "order": 2,
+      "order": 3,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "title": "Texturing and UV Mapping quiz",
       "description": "",
@@ -5447,43 +5288,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229762
-      }
-    },
-    {
-      "id": "item-706b8000-e39c-45d3-87c4-9aab5ae94482",
-      "indent": 1,
-      "location": "pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.html",
-      "slug": "quizzes/real-time-asset-budgets-quiz",
-      "order": 2,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Real-time Asset Budgets quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229762
+        "updated": 1791229824
       }
     },
     {
@@ -5522,7 +5327,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -5575,7 +5380,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -5649,7 +5454,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -5684,7 +5489,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5711,7 +5516,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5733,7 +5538,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5755,7 +5560,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229762,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5815,7 +5620,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229824,
         "status": ""
       }
     },
@@ -5834,7 +5639,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229824,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5845,7 +5650,7 @@
       "indent": 1,
       "location": "pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.html",
       "slug": "quizzes/lighting-principles-quiz",
-      "order": 3,
+      "order": 4,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "title": "Lighting Principles quiz",
       "description": "",
@@ -5877,51 +5682,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229763
-      }
-    },
-    {
-      "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
-      "indent": 1,
-      "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
-      "slug": "quizzes/drawing-for-3d-design-quiz",
-      "order": 3,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Drawing for 3D Design quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
-              "version": ""
-            },
-            {
-              "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
-              "version": ""
-            },
-            {
-              "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229763
+        "updated": 1791229824
       }
     },
     {
@@ -8688,7 +8449,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8745,7 +8506,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8800,7 +8561,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8873,7 +8634,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -8902,7 +8663,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -8913,7 +8674,7 @@
       "indent": 1,
       "location": "pages/item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840/index.html",
       "slug": "quizzes/camera-and-composition-quiz",
-      "order": 4,
+      "order": 5,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "title": "Camera and Composition quiz",
       "description": "",
@@ -8941,55 +8702,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229763
-      }
-    },
-    {
-      "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
-      "indent": 1,
-      "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.html",
-      "slug": "quizzes/hard-surface-modeling-quiz",
-      "order": 4,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Hard Surface Modeling quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
-              "version": ""
-            },
-            {
-              "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
-              "version": ""
-            },
-            {
-              "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
-              "version": ""
-            },
-            {
-              "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229763
+        "updated": 1791229825
       }
     },
     {
@@ -9028,7 +8741,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9083,7 +8796,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9117,7 +8830,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791229763,
+        "updated": 1791229825,
         "published": true,
         "locked": false,
         "status": "",
@@ -9129,7 +8842,7 @@
       "indent": 1,
       "location": "pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.html",
       "slug": "quizzes/rendering-techniques-quiz",
-      "order": 5,
+      "order": 6,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "title": "Rendering Techniques quiz",
       "description": "",
@@ -9165,47 +8878,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229763
-      }
-    },
-    {
-      "id": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
-      "indent": 1,
-      "location": "pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.html",
-      "slug": "quizzes/digital-sculpting-quiz",
-      "order": 5,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Digital Sculpting quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-              "version": ""
-            },
-            {
-              "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229764
+        "updated": 1791229825
       }
     },
     {
@@ -9244,7 +8917,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9319,7 +8992,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9349,7 +9022,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1791229764,
+        "updated": 1791229825,
         "images": [],
         "videos": [],
         "published": true,
@@ -9398,7 +9071,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229825,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9453,7 +9126,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9508,7 +9181,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9579,7 +9252,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9650,7 +9323,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9705,7 +9378,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9725,13 +9398,13 @@
       }
     },
     {
-      "id": "item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4",
+      "id": "item-935c06ff-8c18-4192-9563-f8460f801fb9",
       "indent": 1,
-      "location": "pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.html",
-      "slug": "quizzes/game-artist-pathway-readiness-quiz",
-      "order": 6,
+      "location": "pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.html",
+      "slug": "quizzes/compositor-pathway-readiness-quiz",
+      "order": 7,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Game Artist Pathway readiness quiz",
+      "title": "Compositor Pathway readiness quiz",
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
@@ -9747,10 +9420,10 @@
             }
           ]
         },
-        "created": 1791229683,
+        "created": 1791229707,
         "images": [],
         "videos": [],
-        "updated": 1791229764
+        "updated": 1791229821
       }
     },
     {
@@ -9789,7 +9462,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9823,11 +9496,40 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "published": true,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4",
+      "indent": 1,
+      "location": "pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.html",
+      "slug": "quizzes/game-artist-pathway-readiness-quiz",
+      "order": 8,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Game Artist Pathway readiness quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229826
       }
     },
     {
@@ -9864,7 +9566,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9889,7 +9591,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791229764,
+        "updated": 1791229826,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -9938,7 +9640,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229764,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9993,7 +9695,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10048,7 +9750,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10103,7 +9805,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10156,7 +9858,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10206,7 +9908,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229826,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10261,7 +9963,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229827,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10314,7 +10016,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229827,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10362,7 +10064,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229827,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10374,6 +10076,42 @@
             "notes": ""
           }
         ]
+      }
+    },
+    {
+      "id": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
+      "indent": 1,
+      "location": "pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.html",
+      "slug": "quizzes/real-time-engines-quiz",
+      "order": 9,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Real-time Engines quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229821
       }
     },
     {
@@ -10391,10 +10129,46 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791229765,
+        "updated": 1791229827,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-9e3bacc6-5f86-471f-adc6-0349fc801452",
+      "indent": 1,
+      "location": "pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.html",
+      "slug": "quizzes/environment-design-for-real-time-quiz",
+      "order": 10,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Environment Design for Real-time quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229822
       }
     },
     {
@@ -10413,7 +10187,233 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791229765
+        "updated": 1791229827
+      }
+    },
+    {
+      "id": "item-706b8000-e39c-45d3-87c4-9aab5ae94482",
+      "indent": 1,
+      "location": "pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.html",
+      "slug": "quizzes/real-time-asset-budgets-quiz",
+      "order": 11,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Real-time Asset Budgets quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229824
+      }
+    },
+    {
+      "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
+      "indent": 1,
+      "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
+      "slug": "quizzes/drawing-for-3d-design-quiz",
+      "order": 12,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Drawing for 3D Design quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+              "version": ""
+            },
+            {
+              "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
+              "version": ""
+            },
+            {
+              "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229825
+      }
+    },
+    {
+      "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
+      "indent": 1,
+      "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.html",
+      "slug": "quizzes/hard-surface-modeling-quiz",
+      "order": 13,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Hard Surface Modeling quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+              "version": ""
+            },
+            {
+              "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
+              "version": ""
+            },
+            {
+              "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
+              "version": ""
+            },
+            {
+              "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229825
+      }
+    },
+    {
+      "id": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
+      "indent": 1,
+      "location": "pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.html",
+      "slug": "quizzes/digital-sculpting-quiz",
+      "order": 14,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Digital Sculpting quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+              "version": ""
+            },
+            {
+              "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229825
+      }
+    },
+    {
+      "id": "item-e4e10eff-a688-4ead-8963-d36e02adc4e5",
+      "indent": 1,
+      "location": "pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.html",
+      "slug": "quizzes/short-film-and-vfx-pathway-readiness-quiz",
+      "order": 15,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Short Film and VFX Pathway readiness quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791229731,
+        "images": [],
+        "videos": [],
+        "updated": 1791229821
+      }
+    },
+    {
+      "id": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
+      "indent": 1,
+      "location": "pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.html",
+      "slug": "quizzes/short-film-pathway-readiness-quiz",
+      "order": 16,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Short Film Pathway readiness quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791229754,
+        "images": [],
+        "videos": [],
+        "updated": 1791229821
       }
     }
   ]

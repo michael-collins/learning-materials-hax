@@ -81,12 +81,8 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-e901c265-41ed-46ad-bdf9-a6958641a350/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-0ecd661a-3e15-4eda-8a72-51762dba558f/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-ebf9ed4f-3a9c-4685-8ed2-d36fae325b07/index.md)
-- [History of CGI quiz](https://localhost:3000/learning-materials/pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.md)
 - [CGI Foundations readiness quiz](https://localhost:3000/learning-materials/pages/item-72856b15-d616-43ca-bfa5-9378c364c2d1/index.md)
-- [Real-time Engines quiz](https://localhost:3000/learning-materials/pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.md)
-- [Compositor Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.md)
-- [Short Film and VFX Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.md)
-- [Short Film Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.md)
+- [History of CGI quiz](https://localhost:3000/learning-materials/pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.md)
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 - [History of CGI](https://localhost:3000/learning-materials/pages/item-d20b5a98-dc5e-4ce8-b734-32490288d27c/index.md): Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-e2116614-ee77-4d42-be36-2231098b3e29/index.md): Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.
@@ -108,7 +104,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-e106ecce-bdda-42d1-9c5b-cde343b86d7b/index.md): Master organic modeling through digital sculpting techniques, creating detailed characters and organic forms.
 - [Library](https://localhost:3000/learning-materials/pages/item-fae18bf7-28d5-4bf9-9afc-a2f05e98ec5f/index.md)
 - [3D Modeling Fundamentals quiz](https://localhost:3000/learning-materials/pages/item-92d58ed2-e302-4a8a-9643-bd3efe56c963/index.md)
-- [Environment Design for Real-time quiz](https://localhost:3000/learning-materials/pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.md)
 - [3D Modeling Fundamentals](https://localhost:3000/learning-materials/pages/item-d05396b9-88a6-4631-821f-40a2e9bd2d4f/index.md): Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.
 - [Modeling the Airline Chair](https://localhost:3000/learning-materials/pages/item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7/index.md)
 - [Introduction to Cameras, Lighting, and Rendering](https://localhost:3000/learning-materials/pages/item-81dbd5a3-3e7f-447c-a522-630f6001a8f0/index.md)
@@ -131,7 +126,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Hard Surface Modeling](https://localhost:3000/learning-materials/pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.md): Master hard surface modeling techniques for creating mechanical objects, products, and architectural elements with clean geometry.
 - [Digital Sculpting](https://localhost:3000/learning-materials/pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.md): Master organic modeling through digital sculpting techniques, creating detailed characters and organic forms.
 - [Texturing and UV Mapping quiz](https://localhost:3000/learning-materials/pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.md)
-- [Real-time Asset Budgets quiz](https://localhost:3000/learning-materials/pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.md)
 - [Modeling a room](https://localhost:3000/learning-materials/pages/item-dbf43915-8e34-4116-a6e7-67cd08a1316e/index.md)
 - [Modular Environment Kit](https://localhost:3000/learning-materials/pages/item-e09e22f7-6a97-4fed-bd10-2cde35349b24/index.md)
 - [Game Artist Pathway](https://localhost:3000/learning-materials/pages/item-72db2076-5252-4246-af1d-685903483097/index.md): Become a skilled game artist capable of creating optimized 3D assets for real-time environments. This pathway covers the complete skillset needed for game development, from foundational CGI to advanced real-time optimization and interactive design.
@@ -142,19 +136,16 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-7c692ee1-da72-4ac2-8673-7edd58c2be8c/index.md): Become a skilled game artist capable of creating optimized 3D assets for real-time environments. This pathway covers the complete skillset needed for game development, from foundational CGI to advanced real-time optimization and interactive design.
 - [Lectures](https://localhost:3000/learning-materials/pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.md)
 - [Lighting Principles quiz](https://localhost:3000/learning-materials/pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.md)
-- [Drawing for 3D Design quiz](https://localhost:3000/learning-materials/pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.md)
 - [Content types](https://localhost:3000/learning-materials/pages/item-b4e121df-b071-4067-a68c-23f5a26d3841/index.md)
 - [Texturing the Airline Chair](https://localhost:3000/learning-materials/pages/item-1ac14915-a348-47d3-9ecc-a88e800d4bb9/index.md)
 - [Game design and development](https://localhost:3000/learning-materials/pages/item-427f67e4-123e-4f70-b632-4e18a8001777/index.md): Designs gameplay mechanics, levels, and user experiences for video games.
 - [Realtime Game Environment](https://localhost:3000/learning-materials/pages/item-55d4ea63-f507-4470-b2c8-e8b11b1c499b/index.md)
 - [Tutorials](https://localhost:3000/learning-materials/pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.md)
 - [Camera and Composition quiz](https://localhost:3000/learning-materials/pages/item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840/index.md)
-- [Hard Surface Modeling quiz](https://localhost:3000/learning-materials/pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.md)
 - [Texturing a room](https://localhost:3000/learning-materials/pages/item-d069ea51-73ec-4db0-b27a-612dbfd77bcf/index.md)
 - [Illustration and visualization](https://localhost:3000/learning-materials/pages/item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9/index.md): Creates realistic architectural visualizations for design, marketing, or presentations.
 - [Curriculum](https://localhost:3000/learning-materials/pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.md)
 - [Rendering Techniques quiz](https://localhost:3000/learning-materials/pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.md)
-- [Digital Sculpting quiz](https://localhost:3000/learning-materials/pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.md)
 - [Lighting and cinematography](https://localhost:3000/learning-materials/pages/item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a/index.md): Sets up lighting and camera angles to create visually compelling 3D scenes.
 - [Lighting and Rendering the Airline Chair](https://localhost:3000/learning-materials/pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.md)
 - [Pathways](https://localhost:3000/learning-materials/pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.md): A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r
@@ -164,9 +155,10 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Short Film and VFX Pathway](https://localhost:3000/learning-materials/pages/item-5dabc762-d17b-4d08-80ac-3dae0557d0cb/index.md): A comprehensive pathway for creating animated short films with visual effects. This pathway combines traditional animation techniques with advanced simulation and compositing skills to produce cinematic CGI content with professional VFX elements.
 - [Short Film Pathway](https://localhost:3000/learning-materials/pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.md): Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.
 - [Visual Effects (VFX)](https://localhost:3000/learning-materials/pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.md): Integrates CGI elements into live-action footage and blends them seamlessly.
-- [Game Artist Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.md)
+- [Compositor Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.md)
 - [Rendering a room](https://localhost:3000/learning-materials/pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.md)
 - [Assessments](https://localhost:3000/learning-materials/pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.md)
+- [Game Artist Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.md)
 - [Blocking Out a Game Space](https://localhost:3000/learning-materials/pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.md)
 - [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
 - [Modeling a Low Poly Animal and Introduction to Particles](https://localhost:3000/learning-materials/pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.md)
@@ -178,8 +170,16 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Sculpting, retopo, and texturing](https://localhost:3000/learning-materials/pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.md)
 - [Baking Normal Maps](https://localhost:3000/learning-materials/pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.md)
 - [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.md)
+- [Real-time Engines quiz](https://localhost:3000/learning-materials/pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.md)
 - [Projects](https://localhost:3000/learning-materials/pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.md)
+- [Environment Design for Real-time quiz](https://localhost:3000/learning-materials/pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.md)
 - [Quizzes](https://localhost:3000/learning-materials/pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.md)
+- [Real-time Asset Budgets quiz](https://localhost:3000/learning-materials/pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.md)
+- [Drawing for 3D Design quiz](https://localhost:3000/learning-materials/pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.md)
+- [Hard Surface Modeling quiz](https://localhost:3000/learning-materials/pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.md)
+- [Digital Sculpting quiz](https://localhost:3000/learning-materials/pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.md)
+- [Short Film and VFX Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.md)
+- [Short Film Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
