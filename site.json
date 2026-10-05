@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231503
+      "updated": 1791231505
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -7343,7 +7343,7 @@
       "order": 1,
       "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
       "title": "3D Communities",
-      "description": "",
+      "description": "Get involved with communities of practice for 3D fields.",
       "metadata": {
         "published": true,
         "pageType": "oer:article",
