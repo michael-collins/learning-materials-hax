@@ -1008,4 +1008,10 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/quizzes/short-film-and-vfx-pathway-readiness-quiz</loc>
+    <lastmod>2026-10-05T19:48:51.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
