@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231505
+      "updated": 1791231506
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -7373,7 +7373,7 @@
       "order": 1,
       "parent": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
       "title": "DMD 300: Digital Multimedia Design Studio",
-      "description": "",
+      "description": "DMD 300 is the second of three spine courses in the Bachelor of Design in Digital Multimedia Design (DMD) program at Penn State University. This program is the first entirely online multi-college u...",
       "metadata": {
         "published": false,
         "pageType": "oer:book",
