@@ -10031,7 +10031,7 @@
       "order": 31,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Render Layers and Passes",
-      "description": "",
+      "description": "Learn to work with render layers and passes to maintain flexibility and control in the compositing process.",
       "metadata": {
         "published": true,
         "pageType": "oer:lesson",
