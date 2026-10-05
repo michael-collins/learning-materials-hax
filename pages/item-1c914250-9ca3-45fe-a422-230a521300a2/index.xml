@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1c914250-9ca3-45fe-a422-230a521300a2</id>
+<indent>1</indent>
+<location>pages/item-1c914250-9ca3-45fe-a422-230a521300a2/index.xml</location>
+<slug>welcome-to-learning-materials/untitled-page</slug>
+<order>0</order>
+<parent>item-00c7957b-0cb5-4664-b073-060a49212806</parent>
+<title>Untitled page</title>
+<description></description>
+<metadata>
+<created>1791210475</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791210475</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

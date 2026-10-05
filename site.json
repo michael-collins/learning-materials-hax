@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791210256
+      "updated": 1791210475
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791210241,
+        "updated": 1791210462,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -113,7 +113,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -151,7 +151,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -166,7 +166,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791210252,
+        "updated": 1791210472,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -251,7 +251,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210472,
         "status": ""
       }
     },
@@ -276,7 +276,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -322,7 +322,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "status": ""
       }
     },
@@ -371,7 +371,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -440,7 +440,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "status": ""
       }
     },
@@ -469,7 +469,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -545,7 +545,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -575,7 +575,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -601,7 +601,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -623,7 +623,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -649,7 +649,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -675,7 +675,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -701,7 +701,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -727,7 +727,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -749,7 +749,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -775,7 +775,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -801,7 +801,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -827,7 +827,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -853,7 +853,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -875,7 +875,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210246,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -901,7 +901,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210467,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -927,7 +927,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -953,7 +953,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -979,7 +979,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1005,7 +1005,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1031,7 +1031,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1053,7 +1053,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1079,7 +1079,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1105,7 +1105,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1127,7 +1127,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1153,7 +1153,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1179,7 +1179,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1205,7 +1205,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1231,7 +1231,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1258,7 +1258,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1285,7 +1285,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1311,7 +1311,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1338,7 +1338,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1382,7 +1382,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -1426,7 +1426,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -1469,7 +1469,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -1512,7 +1512,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -1554,7 +1554,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -1597,7 +1597,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -1641,7 +1641,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -1684,7 +1684,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -1727,7 +1727,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -1776,7 +1776,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -1819,7 +1819,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -1850,7 +1850,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "status": ""
       }
     },
@@ -1881,7 +1881,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "status": ""
       }
     },
@@ -1924,7 +1924,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "status": ""
       }
     },
@@ -1962,7 +1962,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210468,
         "status": ""
       }
     },
@@ -2000,7 +2000,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -2038,7 +2038,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -2076,7 +2076,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -2114,7 +2114,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -2152,7 +2152,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -2190,7 +2190,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -2232,7 +2232,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210472,
         "status": ""
       }
     },
@@ -2274,7 +2274,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210472,
         "status": ""
       }
     },
@@ -2312,7 +2312,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210472,
         "status": ""
       }
     },
@@ -2356,7 +2356,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210472,
         "status": ""
       }
     },
@@ -2406,7 +2406,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210473,
         "status": ""
       }
     },
@@ -2442,7 +2442,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210473,
         "status": ""
       }
     },
@@ -2492,7 +2492,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "status": ""
       }
     },
@@ -2528,7 +2528,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "status": ""
       }
     },
@@ -2584,7 +2584,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "status": ""
       }
     },
@@ -2620,7 +2620,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "status": ""
       }
     },
@@ -2655,7 +2655,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210474,
         "status": ""
       }
     },
@@ -2691,7 +2691,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "status": ""
       }
     },
@@ -2727,7 +2727,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "status": ""
       }
     },
@@ -2763,7 +2763,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "status": ""
       }
     },
@@ -2799,7 +2799,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "status": ""
       }
     },
@@ -2835,7 +2835,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "status": ""
       }
     },
@@ -2843,7 +2843,7 @@
       "id": "item-00c7957b-0cb5-4664-b073-060a49212806",
       "indent": 0,
       "location": "pages/item-00c7957b-0cb5-4664-b073-060a49212806/index.html",
-      "slug": "welcome-to-learning-materials-1",
+      "slug": "welcome-to-learning-materials",
       "order": 0,
       "parent": null,
       "title": "Welcome to learning-materials",
@@ -2857,7 +2857,48 @@
         "created": 1791210255,
         "images": [],
         "videos": [],
-        "updated": 1791210255
+        "updated": 1791210462,
+        "published": true,
+        "locked": false,
+        "status": "",
+        "pageType": ""
+      }
+    },
+    {
+      "id": "item-1c914250-9ca3-45fe-a422-230a521300a2",
+      "indent": 1,
+      "location": "pages/item-1c914250-9ca3-45fe-a422-230a521300a2/index.html",
+      "slug": "welcome-to-learning-materials/untitled-page",
+      "order": 0,
+      "parent": "item-00c7957b-0cb5-4664-b073-060a49212806",
+      "title": "Untitled page",
+      "description": "",
+      "metadata": {
+        "created": 1791210475,
+        "images": [],
+        "videos": [],
+        "updated": 1791210475
+      }
+    },
+    {
+      "id": "item-a8d02555-bfc4-421e-b99e-6f57510712fd",
+      "indent": 1,
+      "location": "pages/item-a8d02555-bfc4-421e-b99e-6f57510712fd/index.html",
+      "slug": "welcome-to-learning-materials/welcome-to-learning-materials",
+      "order": 1,
+      "parent": "item-00c7957b-0cb5-4664-b073-060a49212806",
+      "title": "Welcome to learning-materials",
+      "description": "",
+      "metadata": {
+        "icon": "av:art-track",
+        "oerRef": {
+          "page": "item-00c7957b-0cb5-4664-b073-060a49212806",
+          "version": ""
+        },
+        "created": 1791210475,
+        "images": [],
+        "videos": [],
+        "updated": 1791210475
       }
     },
     {
@@ -2871,7 +2912,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791210252,
+        "updated": 1791210472,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -2930,7 +2971,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210463,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -2992,7 +3033,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -3017,7 +3058,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3075,7 +3116,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -3129,7 +3170,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3164,7 +3205,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3190,7 +3231,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3216,7 +3257,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3243,7 +3284,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3270,7 +3311,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3297,7 +3338,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -3318,7 +3359,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210462,
         "published": true,
         "locked": false,
         "status": "",
@@ -3365,7 +3406,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -3408,7 +3449,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "status": ""
       }
     },
@@ -3451,7 +3492,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -3493,7 +3534,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -3536,7 +3577,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -3580,7 +3621,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "status": ""
       }
     },
@@ -3623,7 +3664,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -3666,7 +3707,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -3715,7 +3756,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -3758,7 +3799,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "status": ""
       }
     },
@@ -3773,7 +3814,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791210241,
+        "updated": 1791210462,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -3822,7 +3863,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -3879,7 +3920,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -3936,7 +3977,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210463,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -3992,7 +4033,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210242,
+        "updated": 1791210464,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4049,7 +4090,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4107,7 +4148,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4164,7 +4205,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210464,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4220,7 +4261,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210465,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4267,7 +4308,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210243,
+        "updated": 1791210465,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4330,7 +4371,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4387,7 +4428,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4452,7 +4493,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210472,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4492,7 +4533,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4539,7 +4580,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -4582,7 +4623,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210247,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4617,7 +4658,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4644,7 +4685,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -4671,7 +4712,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210469,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4698,7 +4739,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -4725,7 +4766,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4752,7 +4793,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4779,7 +4820,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -4812,7 +4853,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7454,7 +7495,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7489,7 +7530,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -7550,7 +7591,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210248,
+        "updated": 1791210468,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7585,7 +7626,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7612,7 +7653,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7634,7 +7675,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210249,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7656,7 +7697,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210470,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7709,7 +7750,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210471,
         "status": ""
       }
     },
@@ -7728,7 +7769,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210244,
+        "updated": 1791210465,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7775,7 +7816,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7823,7 +7864,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210471,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7887,7 +7928,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -7916,7 +7957,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7949,7 +7990,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7997,7 +8038,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210471,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8031,7 +8072,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791210245,
+        "updated": 1791210466,
         "published": true,
         "locked": false,
         "status": "",
@@ -8067,7 +8108,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210250,
+        "updated": 1791210471,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8133,7 +8174,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8163,7 +8204,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1791210245,
+        "updated": 1791210466,
         "images": [],
         "videos": [],
         "published": true,
@@ -8205,7 +8246,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8253,7 +8294,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8301,7 +8342,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210471,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8359,7 +8400,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210472,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8417,7 +8458,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210472,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8465,7 +8506,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791210251,
+        "updated": 1791210472,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8511,7 +8552,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8545,7 +8586,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791210252,
+        "updated": 1791210472,
         "published": true,
         "locked": false,
         "status": "",
@@ -8580,7 +8621,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8605,7 +8646,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791210252,
+        "updated": 1791210472,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -8645,7 +8686,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210253,
+        "updated": 1791210473,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8691,7 +8732,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8737,7 +8778,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8783,7 +8824,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8830,7 +8871,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8871,7 +8912,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8917,7 +8958,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8964,7 +9005,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210254,
+        "updated": 1791210474,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9006,7 +9047,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9035,7 +9076,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791210255,
+        "updated": 1791210475,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -9043,10 +9084,10 @@
     },
     {
       "id": "item-194f2951-b4f9-4861-a0fd-1442221585fb",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-194f2951-b4f9-4861-a0fd-1442221585fb/index.html",
-      "slug": "welcome-to-learning-materials/v0-0-1",
-      "order": 166,
+      "slug": "v0-0-1",
+      "order": 11,
       "parent": null,
       "title": "v0.0.1",
       "description": "",
@@ -9063,7 +9104,7 @@
         "created": 1791210080,
         "images": [],
         "videos": [],
-        "updated": 1791210241,
+        "updated": 1791210475,
         "status": ""
       }
     }
