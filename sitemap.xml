@@ -493,12 +493,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/cgi-foundations/lighting-camera-rendering/introduction-to-cameras-lighting-and-rendering</loc>
-    <lastmod>2026-10-05T19:24:13.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/modeling-random-objects</loc>
     <lastmod>2026-10-05T19:24:18.000Z</lastmod>
     <changefreq>daily</changefreq>
