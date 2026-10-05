@@ -9,6 +9,7 @@
  * copy the new type and description onto it.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { autorun } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { pageDetails } from "../types/oer-page-details.js";
 
 const LABEL = "Page details";
@@ -74,8 +75,14 @@ export function installPageBreakDetails() {
     },
     true,
   );
-  // relabel page-breaks as they render
-  const relabelAll = () => globalThis.document.querySelectorAll("hax-body page-break").forEach(relabel);
-  new MutationObserver(relabelAll).observe(globalThis.document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-hax-ray"] });
-  relabelAll();
+  // relabel when editing starts (hax-body lives in a shadow root, so it is
+  // found through HAX's store; it fills in shortly after edit mode turns on)
+  const relabelAll = () => {
+    const body = globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody;
+    body?.querySelectorAll?.("page-break").forEach(relabel);
+  };
+  autorun(() => {
+    if (!store.editMode) return;
+    for (const ms of [0, 300, 1000, 2500]) setTimeout(relabelAll, ms);
+  });
 }
