@@ -1,0 +1,30 @@
+{
+  "id": "item-72856b15-d616-43ca-bfa5-9378c364c2d1",
+  "indent": 1,
+  "location": "pages/item-72856b15-d616-43ca-bfa5-9378c364c2d1/index.json",
+  "slug": "quizzes/cgi-foundations-readiness-quiz",
+  "order": 0,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "CGI Foundations readiness quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "readiness:item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+    "oerFields": {
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791229659,
+    "images": [],
+    "videos": [],
+    "updated": 1791229659
+  },
+  "content": "<p>Before you start CGI Foundations: can you answer these? Your answers aren't recorded.</p>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">Can you describe the main stages of a CGI project, from concept to final image?</p>\n  <p>Concept and reference, modeling, UV mapping and texturing (shading), lighting, camera and layout, rendering, and compositing or output. Animation joins the pipeline when things move.</p>\n</self-check>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">What is the difference between modeling, texturing and lighting, and how does each affect the final render?</p>\n  <p>Modeling defines the shape, texturing and shading define what surfaces are made of and how they react to light, and lighting reveals the form, sets the mood and directs the viewer's eye.</p>\n</self-check>\n"
+}

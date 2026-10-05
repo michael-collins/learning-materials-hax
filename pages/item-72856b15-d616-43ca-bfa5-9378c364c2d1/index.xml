@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-72856b15-d616-43ca-bfa5-9378c364c2d1</id>
+<indent>1</indent>
+<location>pages/item-72856b15-d616-43ca-bfa5-9378c364c2d1/index.xml</location>
+<slug>quizzes/cgi-foundations-readiness-quiz</slug>
+<order>0</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>CGI Foundations readiness quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>readiness:item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</oerTmpKey>
+<oerFields>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791229659</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791229659</updated>
+</metadata>
+<content><![CDATA[<p>Before you start CGI Foundations: can you answer these? Your answers aren't recorded.</p>
+<self-check title="Are you ready?">
+  <p slot="question">Can you describe the main stages of a CGI project, from concept to final image?</p>
+  <p>Concept and reference, modeling, UV mapping and texturing (shading), lighting, camera and layout, rendering, and compositing or output. Animation joins the pipeline when things move.</p>
+</self-check>
+<self-check title="Are you ready?">
+  <p slot="question">What is the difference between modeling, texturing and lighting, and how does each affect the final render?</p>
+  <p>Modeling defines the shape, texturing and shading define what surfaces are made of and how they react to light, and lighting reveals the form, sets the mood and directs the viewer's eye.</p>
+</self-check>
+]]></content>
+</item>
