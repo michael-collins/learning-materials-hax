@@ -9785,7 +9785,7 @@
       "order": 25,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Exporting and Delivery",
-      "description": "",
+      "description": "Master export settings, file formats, and delivery workflows for various output requirements and platforms.",
       "metadata": {
         "published": true,
         "pageType": "oer:lesson",
