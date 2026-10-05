@@ -840,3 +840,66 @@ for (const name of ["_data", "_level"]) {
 
 if (!customElements.get(OerPathway.tag)) customElements.define(OerPathway.tag, OerPathway);
 registerBlocks(OerPathway);
+
+/**
+ * `oer-unit` — the body of a unit page: the unit's lessons with their
+ * materials and quiz, and its unit project, as the pathway lists them.
+ * Units are a pathway's modules, so it reuses the pathway's rows.
+ * @element oer-unit
+ */
+export class OerUnit extends OerPathway {
+  static get tag() {
+    return "oer-unit";
+  }
+
+  static get properties() {
+    return {};
+  }
+
+  // the unit is the active page, or the nearest ancestor that is a module
+  _module() {
+    const p = this._data;
+    if (!p) return null;
+    const list = toJS(store.manifest?.items) || [];
+    const byId = new Map(list.map((i) => [i.id, i]));
+    for (let cur = byId.get(toJS(store.activeId)); cur; cur = byId.get(cur.parent)) {
+      const m = p.modules.find((x) => x.id === cur.id);
+      if (m) return m;
+    }
+    return null;
+  }
+
+  render() {
+    const m = this._module();
+    if (!m) return html`<div class="empty">This block lists a unit's lessons. Place it on a unit page inside a pathway.</div>`;
+    return html`<section aria-label="In this unit">
+      <div class="card module">
+        <div class="module-head">
+          <h3>In this unit</h3>
+          <span class="count">${m.items.length} ${m.items.length === 1 ? "item" : "items"}</span>
+        </div>
+        <div class="rows">${m.items.map((item) => this._itemRow(item, true))}</div>
+      </div>
+    </section>`;
+  }
+
+  static get haxProperties() {
+    return {
+      canScale: false,
+      canEditSource: true,
+      gizmo: {
+        title: "Unit outline",
+        description: "A unit's lessons, their materials and quiz, and the unit project.",
+        icon: "icons:view-module",
+        color: "blue",
+        tags: ["Layout", "unit", "pathway", "outline"],
+        meta: { author: "Michael Collins" },
+      },
+      settings: { configure: [], advanced: [] },
+      demoSchema: [{ tag: "oer-unit", properties: {}, content: "" }],
+    };
+  }
+}
+
+if (!customElements.get(OerUnit.tag)) customElements.define(OerUnit.tag, OerUnit);
+registerBlocks(OerUnit);
