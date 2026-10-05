@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231126
+      "updated": 1791231503
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.",
       "metadata": {
         "created": 1790801562,
-        "updated": 1791231112,
+        "updated": 1791231129,
         "published": true,
         "locked": false,
         "status": "",
@@ -84,7 +84,7 @@
         "created": 1791210080,
         "images": [],
         "videos": [],
-        "updated": 1791231112,
+        "updated": 1791231129,
         "status": ""
       }
     },
@@ -99,7 +99,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791231112,
+        "updated": 1791231130,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -173,7 +173,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231130,
         "status": ""
       }
     },
@@ -211,7 +211,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231131,
         "status": ""
       }
     },
@@ -226,7 +226,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791231113,
+        "updated": 1791231132,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -322,7 +322,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231132,
         "status": ""
       }
     },
@@ -354,7 +354,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231133,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -407,7 +407,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231134,
         "status": ""
       }
     },
@@ -466,7 +466,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231134,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -545,7 +545,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231135,
         "status": ""
       }
     },
@@ -574,7 +574,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231136,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -663,7 +663,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231136,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -693,7 +693,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231137,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -719,7 +719,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231137,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -741,7 +741,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231138,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -767,7 +767,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231139,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -789,7 +789,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231139,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -815,7 +815,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231113,
+        "updated": 1791231140,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -837,7 +837,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231140,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -863,7 +863,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231141,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -889,7 +889,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231142,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -915,7 +915,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231142,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -937,7 +937,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231143,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -963,7 +963,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231144,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -989,7 +989,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231144,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1011,7 +1011,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231145,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1037,7 +1037,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231145,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1063,7 +1063,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231146,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1089,7 +1089,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231147,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1115,7 +1115,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231147,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1142,7 +1142,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231148,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1168,7 +1168,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231149,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1195,7 +1195,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231149,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1246,7 +1246,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231150,
         "status": ""
       }
     },
@@ -1299,7 +1299,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231114,
+        "updated": 1791231150,
         "status": ""
       }
     },
@@ -1349,7 +1349,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231151,
         "status": ""
       }
     },
@@ -1399,7 +1399,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231152,
         "status": ""
       }
     },
@@ -1448,7 +1448,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231152,
         "status": ""
       }
     },
@@ -1498,7 +1498,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231153,
         "status": ""
       }
     },
@@ -1549,7 +1549,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231154,
         "status": ""
       }
     },
@@ -1599,7 +1599,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231154,
         "status": ""
       }
     },
@@ -1649,7 +1649,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231155,
         "status": ""
       }
     },
@@ -1705,7 +1705,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231155,
         "status": ""
       }
     },
@@ -1755,7 +1755,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231156,
         "status": ""
       }
     },
@@ -1793,7 +1793,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231157,
         "status": ""
       }
     },
@@ -1831,7 +1831,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231157,
         "status": ""
       }
     },
@@ -1881,7 +1881,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231158,
         "status": ""
       }
     },
@@ -1926,7 +1926,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231158,
         "status": ""
       }
     },
@@ -1971,7 +1971,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231159,
         "status": ""
       }
     },
@@ -2016,7 +2016,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231160,
         "status": ""
       }
     },
@@ -2061,7 +2061,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231115,
+        "updated": 1791231160,
         "status": ""
       }
     },
@@ -2106,7 +2106,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231161,
         "status": ""
       }
     },
@@ -2151,7 +2151,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231162,
         "status": ""
       }
     },
@@ -2196,7 +2196,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231162,
         "status": ""
       }
     },
@@ -2245,7 +2245,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231163,
         "status": ""
       }
     },
@@ -2294,7 +2294,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231163,
         "status": ""
       }
     },
@@ -2339,7 +2339,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231164,
         "status": ""
       }
     },
@@ -2392,7 +2392,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231165,
         "status": ""
       }
     },
@@ -2451,7 +2451,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231165,
         "status": ""
       }
     },
@@ -2496,7 +2496,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231166,
         "status": ""
       }
     },
@@ -2555,7 +2555,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231167,
         "status": ""
       }
     },
@@ -2600,7 +2600,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231167,
         "status": ""
       }
     },
@@ -2665,7 +2665,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231168,
         "status": ""
       }
     },
@@ -2710,7 +2710,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231168,
         "status": ""
       }
     },
@@ -2754,7 +2754,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231169,
         "status": ""
       }
     },
@@ -2799,7 +2799,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231170,
         "status": ""
       }
     },
@@ -2844,7 +2844,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231116,
+        "updated": 1791231170,
         "status": ""
       }
     },
@@ -2889,7 +2889,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231171,
         "status": ""
       }
     },
@@ -2934,7 +2934,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231171,
         "status": ""
       }
     },
@@ -2979,7 +2979,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231172,
         "status": ""
       }
     },
@@ -3009,7 +3009,7 @@
         "created": 1791229659,
         "images": [],
         "videos": [],
-        "updated": 1791231117
+        "updated": 1791231173
       }
     },
     {
@@ -3020,7 +3020,7 @@
       "order": 0,
       "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
       "title": "3D Career Development",
-      "description": "",
+      "description": "An overview of opportunities available in 3D fields.",
       "metadata": {
         "published": true,
         "pageType": "oer:article",
@@ -3039,7 +3039,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231173
       }
     },
     {
@@ -3067,7 +3067,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231174
       }
     },
     {
@@ -3085,7 +3085,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231175
       }
     },
     {
@@ -3101,13 +3101,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-058b363f-dd3c-4978-a86d-389c397a9904",
+          "page": "item-ef516882-f25b-4615-b7d6-4b0c0152f56f",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231175
       }
     },
     {
@@ -3123,13 +3123,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-5161bc94-86bf-45f3-a8d2-2deb63e07ba6",
+          "page": "item-a9215055-dc03-4b75-8115-ce7ede2a1a7f",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231176
       }
     },
     {
@@ -3145,13 +3145,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-140d89fe-034b-43da-b1f1-66c81e99a8bc",
+          "page": "item-7aa63497-f052-46ca-b658-ab757988689d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231177
       }
     },
     {
@@ -3167,13 +3167,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-f4603c46-6e1f-488d-ab4b-39c6a4786ee1",
+          "page": "item-7fe733c9-0c02-4d6f-9da2-fc15e2144048",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231177
       }
     },
     {
@@ -3189,13 +3189,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-40aab875-b3c9-4014-b1fc-f62c9ad19a7b",
+          "page": "item-ae0a99b9-2eeb-4096-b4dc-cb4aabe83fe5",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231178
       }
     },
     {
@@ -3211,13 +3211,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-21700969-1e82-42f9-bb66-dee9ade13580",
+          "page": "item-de8742e0-d71d-4010-9dd9-6196e48f9772",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231178
       }
     },
     {
@@ -3233,13 +3233,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-e00f02ed-d4c1-4751-8489-b4689069179d",
+          "page": "item-1d34261b-1f89-42b9-89da-6872aecea2c5",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231179
       }
     },
     {
@@ -3255,13 +3255,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-311dc1f3-f001-4c36-9eab-3ebcdf9a50b8",
+          "page": "item-a2f517e9-766a-40ec-af09-c180caf5911b",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231180
       }
     },
     {
@@ -3277,13 +3277,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-211da806-1505-4fac-87b7-33ce762c4b56",
+          "page": "item-7c30ea9a-fa18-4ad0-aeed-c4a4b6d9db7b",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231180
       }
     },
     {
@@ -3299,13 +3299,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-b1984c92-632e-464a-906a-eade21a5baf3",
+          "page": "item-117822a8-03c3-4ceb-9126-3d4ba3bdf07d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231181
       }
     },
     {
@@ -3321,13 +3321,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-48712468-759e-4620-b58b-b28327010442",
+          "page": "item-143f3783-959c-45c3-8758-dacef0f6861f",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231182
       }
     },
     {
@@ -3345,7 +3345,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231182
       }
     },
     {
@@ -3361,13 +3361,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-a1471c97-2a83-4620-9234-f5ab8b33d7f2",
+          "page": "item-7ffaac6d-dc2c-4d1e-beba-590d1527324b",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231183
       }
     },
     {
@@ -3383,13 +3383,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-f39d16b4-ee46-46f1-b3b3-1a044050ec2a",
+          "page": "item-2e54ed99-775d-4139-b09b-dfe8ef20dfe3",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231183
       }
     },
     {
@@ -3405,13 +3405,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-327aaada-40fa-4c3e-8d55-097afc080724",
+          "page": "item-d4730012-a997-499e-bcd6-4cbdd1c82722",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231184
       }
     },
     {
@@ -3427,13 +3427,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-ac8bd5c0-10a0-4f8b-8ec8-e05985eb29d5",
+          "page": "item-72d47f2c-e77e-413b-9491-a32d1e1c85d6",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231185
       }
     },
     {
@@ -3449,13 +3449,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-30b32609-79cd-47ee-9355-c96b3e98f948",
+          "page": "item-e0ede078-9855-406b-aff7-50ae23c8e08a",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231185
       }
     },
     {
@@ -3473,7 +3473,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231186
       }
     },
     {
@@ -3489,13 +3489,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-c54ad01f-292b-4597-aec2-a7109176895c",
+          "page": "item-4907f484-334f-40c3-aeca-7c3d5468daff",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231187
       }
     },
     {
@@ -3513,7 +3513,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231187
       }
     },
     {
@@ -3529,13 +3529,13 @@
         "published": true,
         "pageType": "oer:exercise",
         "oerRef": {
-          "page": "item-ee712650-1b9b-4e4f-bfdf-4fdd079b0bf7",
+          "page": "item-49f2ccad-d902-43b4-b984-b4df75bc02f8",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231188
       }
     },
     {
@@ -3551,13 +3551,13 @@
         "published": true,
         "pageType": "oer:exercise",
         "oerRef": {
-          "page": "item-3fefc2f4-3534-4ef9-afd3-1b4478db761a",
+          "page": "item-5bc22eb2-f467-4292-a344-11e4e4598f90",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231188
       }
     },
     {
@@ -3575,7 +3575,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231189
       }
     },
     {
@@ -3591,13 +3591,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-381cc69f-351b-4517-b667-7f5f1f933075",
+          "page": "item-75316068-2181-48e7-8440-ffc741111abd",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231190
       }
     },
     {
@@ -3613,13 +3613,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-95ac675e-94d7-414d-81ee-275b4aedc913",
+          "page": "item-2d85fa9b-387f-40ec-91cf-e2e5c7055a04",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231190
       }
     },
     {
@@ -3637,7 +3637,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231191
       }
     },
     {
@@ -3653,13 +3653,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-b394d874-3ac5-4d63-bdc5-e5d03da9236d",
+          "page": "item-756e6699-fcea-4d59-83df-59cefafe1f95",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231192
       }
     },
     {
@@ -3675,13 +3675,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-b9d7b4eb-2b04-4cfd-88c2-8982abc7923e",
+          "page": "item-a42cb179-b94a-4cd7-b36c-d2b352c1633d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231192
       }
     },
     {
@@ -3699,7 +3699,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231193
       }
     },
     {
@@ -3715,13 +3715,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-cd470f92-2195-4bfc-af80-06e980606814",
+          "page": "item-ed6a9c59-a3f7-42f3-a042-eb4fc88002b2",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231194
       }
     },
     {
@@ -3737,13 +3737,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-9f2b256c-8f77-4d40-b927-4cb49ed19205",
+          "page": "item-d1b6c51f-8d4c-4c8a-9576-838b0959d5d7",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231194
       }
     },
     {
@@ -3759,13 +3759,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-eeae23b8-5c99-410d-8683-c108f6137c0b",
+          "page": "item-eb1a3b5b-a330-41cf-a03f-ce58c6031189",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231195
       }
     },
     {
@@ -3781,13 +3781,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-9e30fd01-62ab-45ce-9bc0-841e0739e8af",
+          "page": "item-e58e3e63-4a83-4880-9750-a8c990bbdc86",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231195
       }
     },
     {
@@ -3803,13 +3803,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-25a3fcf2-9193-4fab-a1fa-cd708ce2ca71",
+          "page": "item-db5f9459-47f5-4d25-9988-3703db22f4b9",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231196
       }
     },
     {
@@ -3825,13 +3825,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-c2539732-3f41-432e-858d-18f5966e17f7",
+          "page": "item-34704e11-d9fc-424f-bc28-3a43396014ff",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231197
       }
     },
     {
@@ -3849,7 +3849,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231197
       }
     },
     {
@@ -3865,13 +3865,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-27710ed3-03f1-48a9-84a1-9e572ae45978",
+          "page": "item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231198
       }
     },
     {
@@ -3887,13 +3887,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-7c8822f9-910a-4c5c-98c0-d0a0b30f1476",
+          "page": "item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231199
       }
     },
     {
@@ -3909,13 +3909,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-6ad59bbc-0216-4406-8765-4e0f9120f3b4",
+          "page": "item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231199
       }
     },
     {
@@ -3931,13 +3931,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-5b111bd9-f16f-4465-ae9e-d0f31542c282",
+          "page": "item-025f599c-65f1-41d7-9bdd-10778199ea2f",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231200
       }
     },
     {
@@ -3953,13 +3953,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-7394a9fe-bb6f-4420-affe-825e76cc78f2",
+          "page": "item-8791fde3-3e35-4a01-bd33-2064ed777616",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231200
       }
     },
     {
@@ -3977,7 +3977,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231201
       }
     },
     {
@@ -3993,13 +3993,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-39988aaf-286a-455c-b75f-a1ee379852c7",
+          "page": "item-a607168c-6d0e-4926-bb54-fc098878b27d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231202
       }
     },
     {
@@ -4017,7 +4017,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231202
       }
     },
     {
@@ -4033,13 +4033,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-359a01d6-4f55-472e-8c8d-4ebab9331842",
+          "page": "item-416c4dc5-b03b-4b15-86c7-5d4cb4690ccb",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231203
       }
     },
     {
@@ -4055,13 +4055,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-07eebaa2-6035-4e34-9f79-846ffe531f2c",
+          "page": "item-998244db-2951-4de5-89af-09aa7be71c84",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231204
       }
     },
     {
@@ -4079,7 +4079,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231204
       }
     },
     {
@@ -4095,13 +4095,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-214916bd-8081-4da6-96c5-4150b9557099",
+          "page": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231205
       }
     },
     {
@@ -4117,13 +4117,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-b0f1a124-1a38-4b19-b524-512d920a2df8",
+          "page": "item-6dfa64d0-58e5-4558-984f-3cf2cc70be5b",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231205
       }
     },
     {
@@ -4139,13 +4139,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-8a7ed1a0-1421-4db0-a304-2ec75c6821c9",
+          "page": "item-3e7fb899-774a-4887-978b-3af368995344",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231206
       }
     },
     {
@@ -4161,13 +4161,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-191b7972-b694-4b0d-aeaa-41e46b8abc7e",
+          "page": "item-341299c4-f6bd-4d88-a29c-7d01feba9326",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231207
       }
     },
     {
@@ -4183,13 +4183,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-dac12852-d5bd-485c-9864-76e4d79b7a29",
+          "page": "item-f2f28ce6-560f-40f0-9dab-8d8914039113",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231207
       }
     },
     {
@@ -4205,13 +4205,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-9aaa5437-60b4-488d-9f6a-b47fb8c06c2e",
+          "page": "item-ede3e259-78ef-4678-8d08-64d474ed55de",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231208
       }
     },
     {
@@ -4227,13 +4227,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-b9617d93-679b-4aa5-9f57-03a613478863",
+          "page": "item-e0f891be-3a01-4934-a16a-7e7a581a0560",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231208
       }
     },
     {
@@ -4249,13 +4249,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-0f602a16-90e6-4f44-b472-03810b2b2a40",
+          "page": "item-2e5e2871-545d-41a9-97e6-ef47e3617831",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231209
       }
     },
     {
@@ -4271,13 +4271,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-bf3a9f32-a8f5-420b-b4bb-3bf419338d51",
+          "page": "item-30297f65-89ed-4c1c-8ac8-30439fb6b760",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231210
       }
     },
     {
@@ -4293,13 +4293,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-b7e2e6b6-c048-4180-a444-65a7ebe3c9bd",
+          "page": "item-80817beb-57f0-45f5-9005-f2ff506243e4",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231210
       }
     },
     {
@@ -4315,13 +4315,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-b794dede-b614-4da5-9e17-d4a26f85bea0",
+          "page": "item-dc9bd020-ea18-4403-a37e-518676fbcee2",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231211
       }
     },
     {
@@ -4337,13 +4337,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-f3cd29e8-2c1f-44e3-93c8-b4874deced50",
+          "page": "item-647dd32d-9b06-4e77-a0a2-36505eebe602",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231211
       }
     },
     {
@@ -4359,13 +4359,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-0d8187a6-69dc-4214-a024-f5241b26dab6",
+          "page": "item-ed2878d8-7e31-4ed5-8682-a9c3e23c4e0e",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231212
       }
     },
     {
@@ -4383,7 +4383,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231213
       }
     },
     {
@@ -4399,13 +4399,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-afcad8ed-57f3-4d50-8ad4-251a13b7a493",
+          "page": "item-f11fc05c-6aa5-45b6-933e-6a4f9b1ba331",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231213
       }
     },
     {
@@ -4421,13 +4421,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-06f54e50-554a-4682-b55c-67fe38d20cdb",
+          "page": "item-642ba78e-fc41-498c-a4f3-9cf1d6205f1a",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231214
       }
     },
     {
@@ -4443,13 +4443,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-2097b6df-88f5-458d-8955-b9e8f447b3a1",
+          "page": "item-705d4b82-f266-4ba6-bee5-055353e394ee",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231214
       }
     },
     {
@@ -4465,13 +4465,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-2bd022f6-cabd-4ea0-a7b6-ffe7aa2b68df",
+          "page": "item-6834fc18-0c2c-41e9-bb0a-b50d3a198e29",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231215
       }
     },
     {
@@ -4487,13 +4487,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-2334b014-0e04-4987-aca1-8621b0beb863",
+          "page": "item-1bb8036a-5f47-45f7-b0b7-361f75bde03a",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231216
       }
     },
     {
@@ -4511,7 +4511,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231216
       }
     },
     {
@@ -4527,13 +4527,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-4ffa73d8-105e-4940-be7c-0604cc05856d",
+          "page": "item-4fe6a5c8-3c76-445e-93ed-0328f671609e",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231217
       }
     },
     {
@@ -4549,13 +4549,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-1f43618e-e0d6-43e3-b98f-558f2b20973b",
+          "page": "item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231217
       }
     },
     {
@@ -4571,13 +4571,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-1832bf3f-bcb2-4709-8292-ee22a330aee5",
+          "page": "item-81ff20b4-9904-4613-99c8-f3c754d398c0",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231218
       }
     },
     {
@@ -4595,7 +4595,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231219
       }
     },
     {
@@ -4611,13 +4611,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-8a15290b-85d4-44a5-99e6-8c5e3d185617",
+          "page": "item-1f13102f-c90b-4042-8883-a452fedcdd19",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231219
       }
     },
     {
@@ -4633,13 +4633,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-237a3972-8a59-412b-b293-496787d7ed88",
+          "page": "item-b78cf2a7-6e53-46cd-a39a-cd92c4997256",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231220
       }
     },
     {
@@ -4657,7 +4657,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231220
       }
     },
     {
@@ -4673,13 +4673,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-bbac8772-ac40-4198-a462-95fa370ea03f",
+          "page": "item-b51a37dc-15e0-4b9f-83de-6e6a51f8e9b2",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231221
       }
     },
     {
@@ -4697,7 +4697,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231222
       }
     },
     {
@@ -4713,13 +4713,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-ddf34976-f544-4570-ac96-5336fa29c4b4",
+          "page": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231222
       }
     },
     {
@@ -4735,13 +4735,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-0cde2be3-dc9e-484b-a3c8-f2f06abd9cf4",
+          "page": "item-ad8648a7-1a35-407f-8c63-7fbfaaf8727c",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231223
       }
     },
     {
@@ -4757,13 +4757,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-660502fe-b30c-4d64-a0df-044709246b35",
+          "page": "item-fa03ca68-4000-4420-998d-20da5dde7cc2",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231223
       }
     },
     {
@@ -4779,13 +4779,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-0e2412c6-7bc6-410e-b370-a54e345875c5",
+          "page": "item-8783aafb-0854-48ac-8d84-fb578f99726e",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231224
       }
     },
     {
@@ -4801,13 +4801,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-70703acd-6a27-4bb4-8c9e-d66151b3b04e",
+          "page": "item-7960dd53-d10e-4369-9f3a-63f5b8304d43",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231225
       }
     },
     {
@@ -4823,13 +4823,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-9f5bc060-63b6-48b6-abf7-0fb747949edb",
+          "page": "item-fdca5e87-bcec-46d2-953d-f604f9122e65",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231225
       }
     },
     {
@@ -4845,13 +4845,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-bc888232-5ba0-4e0f-8f9f-aaede98186f4",
+          "page": "item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231226
       }
     },
     {
@@ -4867,13 +4867,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-f95d03e8-6f8c-492f-b309-af9af8b68604",
+          "page": "item-0ed542f3-e821-4573-a59d-a996e8d6c198",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231226
       }
     },
     {
@@ -4889,13 +4889,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-0c76c6c0-9af9-4829-a710-0120790adbe0",
+          "page": "item-b7594c35-d2a8-4b7b-bac3-19835b98836a",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231227
       }
     },
     {
@@ -4911,13 +4911,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-39c0f290-697f-4be7-bd9a-bb18331327c6",
+          "page": "item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231228
       }
     },
     {
@@ -4933,13 +4933,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-df00ca1d-d577-4779-a38c-a2ceac7c25fc",
+          "page": "item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231228
       }
     },
     {
@@ -4955,13 +4955,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-09bbb889-3398-40e4-a135-b419226945c0",
+          "page": "item-672f840b-0875-4a5b-8e22-5767e2d63388",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231229
       }
     },
     {
@@ -4979,7 +4979,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231229
       }
     },
     {
@@ -4995,13 +4995,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-3c4f43d5-18ea-443a-8878-490fa6212b15",
+          "page": "item-ca04d480-251f-479e-9da9-d81f1a66c77c",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231230
       }
     },
     {
@@ -5017,13 +5017,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-b86ccc9d-6d7b-4d50-8ffc-5db144ebf588",
+          "page": "item-bc886f50-286c-4d44-a062-91ccb8ec362d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231231
       }
     },
     {
@@ -5039,13 +5039,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-a318d8e9-a05f-4c66-a48c-02eda88b5b9a",
+          "page": "item-b665fa90-97fd-4764-9e76-bd3bb305205c",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231231
       }
     },
     {
@@ -5061,13 +5061,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-aa9adb54-dff6-40fe-8f24-99471e920ee1",
+          "page": "item-119d3803-df98-4525-bac6-8b801cb4ec62",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231232
       }
     },
     {
@@ -5083,13 +5083,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-ceeff300-743f-4443-9959-060523b2ef73",
+          "page": "item-b92ee335-fd00-4a50-a3da-72f6a9f4e364",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231232
       }
     },
     {
@@ -5105,13 +5105,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-8da14274-061d-48e7-b0d5-4bfd28d0498b",
+          "page": "item-784c7ee1-79e2-4a95-993d-d8bd5b9900c2",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231233
       }
     },
     {
@@ -5127,13 +5127,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-386ee967-f14f-4bd8-aca6-8d3e3540a882",
+          "page": "item-8066c5db-5122-424f-bd13-e2e94a64b5eb",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231234
       }
     },
     {
@@ -5149,13 +5149,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-92ee7225-2693-481c-9302-f6916bbfea9e",
+          "page": "item-cbadbb24-7287-4c31-a49d-1e1bc17802a5",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231234
       }
     },
     {
@@ -5173,7 +5173,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231235
       }
     },
     {
@@ -5189,13 +5189,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-63ee2647-5066-42b8-98ae-16bd09bd9041",
+          "page": "item-dbbedc8e-48ca-45bf-a697-efe400a259f4",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231235
       }
     },
     {
@@ -5213,7 +5213,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231236
       }
     },
     {
@@ -5229,13 +5229,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-52a9bf42-9056-4eea-9daf-4bdde7ce0820",
+          "page": "item-0e39f06d-969d-4ee4-ba00-aa33514304ba",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231237
       }
     },
     {
@@ -5251,13 +5251,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-08406538-8be5-42b8-b9c0-e705c5ff7b81",
+          "page": "item-73f7f84a-b21c-4a11-b741-3e06a1dac59e",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231237
       }
     },
     {
@@ -5273,13 +5273,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-00d48275-cbff-4590-a387-04a54b147968",
+          "page": "item-f264e5ef-3a93-4457-91f9-cd035ee31eee",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231238
       }
     },
     {
@@ -5295,13 +5295,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-c362e41c-f10d-4461-87df-77c4ce07f3f2",
+          "page": "item-41d9b567-104d-4f03-a5b9-0194e4857e67",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231238
       }
     },
     {
@@ -5319,7 +5319,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231239
       }
     },
     {
@@ -5335,13 +5335,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-c69c42c5-97aa-456c-9240-67c6f12727b9",
+          "page": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231240
       }
     },
     {
@@ -5357,13 +5357,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-41e2a5f0-ea6b-4f95-b947-c00adccc28c0",
+          "page": "item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231240
       }
     },
     {
@@ -5379,13 +5379,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-3cb0f6aa-ac0b-4de7-b542-510fad899010",
+          "page": "item-9842aea6-97ed-4c64-8a6b-6df72c350bf2",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231241
       }
     },
     {
@@ -5401,13 +5401,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-acd7b140-f3a7-4920-8dff-8847c85de04b",
+          "page": "item-36c77843-db97-4386-80df-e6ede2349892",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231241
       }
     },
     {
@@ -5423,13 +5423,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-f4451ff1-fb68-421b-9eb2-9c5d68177c58",
+          "page": "item-27ac4b34-14e8-46ea-a26b-68cf75cd5192",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231242
       }
     },
     {
@@ -5445,13 +5445,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-0e7b4b2c-c58c-4a95-bbdd-609bcab3f251",
+          "page": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231243
       }
     },
     {
@@ -5467,13 +5467,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-4de80d6a-5a0a-4016-b968-008d12b9a8f7",
+          "page": "item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231243
       }
     },
     {
@@ -5489,13 +5489,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-5a4438c8-8f18-4a91-91c0-b44d643bb27a",
+          "page": "item-2835efa4-407b-4be6-baf7-358fc163ecd0",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231244
       }
     },
     {
@@ -5511,13 +5511,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-e87cf7be-67fe-4eb2-8d40-637cda3df763",
+          "page": "item-cccc9d32-dda2-4767-8335-4f937d93e87d",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231244
       }
     },
     {
@@ -5533,13 +5533,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-5fc2cccb-40c7-40c3-9d03-40f83e9b702d",
+          "page": "item-fd93cec2-ed41-412f-bf1d-aa863a4d7954",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231245
       }
     },
     {
@@ -5555,13 +5555,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-109d4043-ae65-4444-b6ec-9317ec716c90",
+          "page": "item-48d44e34-7a32-4027-9c2f-ade5bc1482a6",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231246
       }
     },
     {
@@ -5577,13 +5577,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-ee81f621-7580-4be7-a7d2-324cd5def9be",
+          "page": "item-1c0ca1c6-48a1-425c-8b4e-474eed3d49f4",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231246
       }
     },
     {
@@ -5601,7 +5601,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231247
       }
     },
     {
@@ -5617,13 +5617,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-a8292035-7d4b-40a7-817e-f3584a6f76f0",
+          "page": "item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231247
       }
     },
     {
@@ -5641,7 +5641,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231248
       }
     },
     {
@@ -5657,13 +5657,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-6e98f2a6-ce0c-4ebc-9aec-b98a7dad5b24",
+          "page": "item-f7548fe9-87c9-4c91-9756-57d12467daf6",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231249
       }
     },
     {
@@ -5679,13 +5679,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-94eba069-6c2e-47a7-af35-3f2895542892",
+          "page": "item-078a2883-72b8-4574-8f88-425a58c17295",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231249
       }
     },
     {
@@ -5703,7 +5703,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231250
       }
     },
     {
@@ -5719,13 +5719,13 @@
         "published": true,
         "pageType": "oer:exercise",
         "oerRef": {
-          "page": "item-089faede-33a0-4377-8c08-3696d7e6d258",
+          "page": "item-4b521d06-505c-4b00-b2e7-2ee1c2f7a806",
           "version": ""
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231250
       }
     },
     {
@@ -5748,7 +5748,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231251
       }
     },
     {
@@ -5766,7 +5766,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231251
       }
     },
     {
@@ -5782,13 +5782,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-bac0290a-1ddb-4598-a2c5-29c82d52c9fd",
+          "page": "item-221d1df2-4577-47bb-b3b2-0a24c16b2eb8",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231252
       }
     },
     {
@@ -5804,13 +5804,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-a7d1ec46-8014-41d0-93df-43ca3fc9e605",
+          "page": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231253
       }
     },
     {
@@ -5826,13 +5826,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-320ee20e-148a-405c-aa94-4f0324320328",
+          "page": "item-16859f3d-9abf-465d-9244-3c0dabaa8249",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231253
       }
     },
     {
@@ -5848,13 +5848,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-49421942-68f5-4593-beda-1fbeaa64c994",
+          "page": "item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231254
       }
     },
     {
@@ -5870,13 +5870,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-8b072fef-daf0-4df6-9060-4df5904dfee3",
+          "page": "item-3be4e105-7b16-455c-b935-9073eaf5f6c6",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231255
       }
     },
     {
@@ -5892,13 +5892,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-0ca9e6b0-bd22-4154-b638-dfd52ddc5566",
+          "page": "item-b7a3817a-2523-41ce-8647-5051c5d08b03",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231255
       }
     },
     {
@@ -5914,13 +5914,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-cd1aa3d9-26ed-443b-9c14-11c7dd668664",
+          "page": "item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231256
       }
     },
     {
@@ -5936,13 +5936,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-012703fe-c64b-483c-b151-c065f1789af6",
+          "page": "item-fa77b027-375b-41e4-ae94-8f8370cc2948",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231256
       }
     },
     {
@@ -5958,13 +5958,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-dd94ad18-8f1b-4422-8486-2fe4096294e7",
+          "page": "item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231257
       }
     },
     {
@@ -5982,7 +5982,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231258
       }
     },
     {
@@ -5998,13 +5998,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-8d06c941-5620-4d00-aaee-23406f001f28",
+          "page": "item-9aefed67-638b-467b-af95-4bff55882eed",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231258
       }
     },
     {
@@ -6022,7 +6022,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231259
       }
     },
     {
@@ -6038,13 +6038,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-2aefc0d2-b86a-4598-bd04-73d1a1ccb2dd",
+          "page": "item-4eabe903-019f-483e-9304-6331c374f085",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231259
       }
     },
     {
@@ -6060,13 +6060,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-3b1e70b9-7505-456f-8776-121a73c64f5b",
+          "page": "item-821a72b9-a898-42a9-8406-ad889d89e8d5",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231260
       }
     },
     {
@@ -6088,7 +6088,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231261
       }
     },
     {
@@ -6110,7 +6110,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231261
       }
     },
     {
@@ -6132,7 +6132,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231262
       }
     },
     {
@@ -6154,7 +6154,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231262
       }
     },
     {
@@ -6176,7 +6176,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231263
       }
     },
     {
@@ -6198,7 +6198,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231263
       }
     },
     {
@@ -6220,7 +6220,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231264
       }
     },
     {
@@ -6242,7 +6242,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231265
       }
     },
     {
@@ -6264,7 +6264,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231265
       }
     },
     {
@@ -6280,13 +6280,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-fe80edda-701f-412e-8db3-96577e99370b",
+          "page": "item-6cb6c229-dfbe-4948-a618-ee25655ffb19",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231266
       }
     },
     {
@@ -6308,7 +6308,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231266
       }
     },
     {
@@ -6330,7 +6330,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231267
       }
     },
     {
@@ -6346,13 +6346,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-895d3d98-cf57-461d-8fe5-99c5c89a8fee",
+          "page": "item-ca22d4dc-349f-4033-be11-cb671bb221ef",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231268
       }
     },
     {
@@ -6388,7 +6388,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231117
+        "updated": 1791231268
       }
     },
     {
@@ -6402,7 +6402,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791231117,
+        "updated": 1791231269,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -6474,7 +6474,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231270,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -6543,7 +6543,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231270,
         "status": ""
       }
     },
@@ -6575,7 +6575,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231271,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -6642,7 +6642,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231271,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -6709,7 +6709,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231272,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -6744,7 +6744,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231273,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -6771,7 +6771,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231273,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -6798,7 +6798,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231274,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -6853,7 +6853,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231274,
         "status": ""
       }
     },
@@ -6903,7 +6903,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231117,
+        "updated": 1791231275,
         "status": ""
       }
     },
@@ -6953,7 +6953,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231275,
         "status": ""
       }
     },
@@ -7002,7 +7002,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231276,
         "status": ""
       }
     },
@@ -7052,7 +7052,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231277,
         "status": ""
       }
     },
@@ -7103,7 +7103,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231277,
         "status": ""
       }
     },
@@ -7153,7 +7153,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231278,
         "status": ""
       }
     },
@@ -7203,7 +7203,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231278,
         "status": ""
       }
     },
@@ -7259,7 +7259,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231279,
         "status": ""
       }
     },
@@ -7309,7 +7309,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231280,
         "status": ""
       }
     },
@@ -7328,7 +7328,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231280,
         "published": true,
         "locked": false,
         "status": "",
@@ -7362,7 +7362,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231281
       }
     },
     {
@@ -7394,7 +7394,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231281
       }
     },
     {
@@ -7410,13 +7410,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-d87197c5-69f7-42d6-9f22-1e9ca600435f",
+          "page": "item-c0e5b1db-fe31-4d2f-befc-16ab18f681f7",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231282
       }
     },
     {
@@ -7432,13 +7432,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-68dcb454-4d15-40df-bb14-aa8fdd4d13dd",
+          "page": "item-d9fd9724-9897-434b-b159-3adb16cd8bc5",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231283
       }
     },
     {
@@ -7454,13 +7454,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-7a36c98d-cc86-43c7-8819-1340d6cfb7df",
+          "page": "item-581f4934-6d26-43ed-970a-3ecc3742a121",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231283
       }
     },
     {
@@ -7476,13 +7476,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-d27aecbc-3764-471b-9e96-55ca3e77349c",
+          "page": "item-e8ee9ef4-8e72-4485-99da-7d688a973f36",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231284
       }
     },
     {
@@ -7498,13 +7498,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-ff3e6bb0-ce36-4843-b593-91d4ceb90ec4",
+          "page": "item-5679b53b-ded7-45a8-a8fa-9beaacb1c892",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231284
       }
     },
     {
@@ -7520,13 +7520,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-384dc7e4-e77f-4e42-bf9b-abac2ac55964",
+          "page": "item-a9dd6e34-bc88-43f2-9d20-c7a8e0297113",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231285
       }
     },
     {
@@ -7542,13 +7542,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-d707a57d-0c20-41bb-95ff-bd2dc627b3be",
+          "page": "item-79b83e78-f4be-4db1-aeb2-d2cc5429bb2d",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231286
       }
     },
     {
@@ -7564,13 +7564,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-bbb355e1-9389-4c9f-9a74-a939b2421c92",
+          "page": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231286
       }
     },
     {
@@ -7586,13 +7586,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-c7f60718-cf0c-45fe-9dba-54aeeb711186",
+          "page": "item-288bd29f-6420-4173-806c-d13a5189ba1a",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231287
       }
     },
     {
@@ -7608,13 +7608,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-d6797158-a470-4711-b8ca-5f81d57f1795",
+          "page": "item-5c890ba9-e6e5-484c-9209-ce2593a41192",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231287
       }
     },
     {
@@ -7630,13 +7630,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-f97a1655-a749-49dc-88c1-9e37e45a949b",
+          "page": "item-0a77055d-f57c-427e-ad9f-39d690dc1013",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231288
       }
     },
     {
@@ -7652,13 +7652,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-f1e5d948-578d-463a-b1ee-beadb3d505f5",
+          "page": "item-619930bb-5049-4869-938c-d1b704ab44e5",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231289
       }
     },
     {
@@ -7674,13 +7674,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-4edefeb3-b603-4430-9302-5b2527d47c60",
+          "page": "item-16ef9db8-e360-40b2-9aa6-f7f4d6772930",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231289
       }
     },
     {
@@ -7696,13 +7696,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-5a980eff-dda8-4522-892b-d10274e9270f",
+          "page": "item-f95f0281-cd13-4056-8509-6e50954779e2",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231290
       }
     },
     {
@@ -7718,13 +7718,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-f99abb11-948e-4bca-8f2a-2bd94ca3010b",
+          "page": "item-8b84bc27-a812-4155-b8eb-ba4090cf7b60",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231291
       }
     },
     {
@@ -7740,13 +7740,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-99700b7e-35fa-42b7-b3cb-76cb2f73f381",
+          "page": "item-f049b912-bbcf-4b48-8ca9-620ec8eb502b",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231291
       }
     },
     {
@@ -7780,7 +7780,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231292
       }
     },
     {
@@ -7803,7 +7803,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231292
       }
     },
     {
@@ -7819,13 +7819,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-b0173484-bc6f-4c38-abad-2e0bd0df4338",
+          "page": "item-e457dda3-7a48-4922-a7a4-671dc7b1a1e7",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231293
       }
     },
     {
@@ -7841,13 +7841,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-5965abc0-8ace-4033-98ec-157f9906d7e6",
+          "page": "item-eb78596e-c7e0-4001-a35d-0877a9d4962d",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231294
       }
     },
     {
@@ -7865,7 +7865,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231294
       }
     },
     {
@@ -7887,7 +7887,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231295
       }
     },
     {
@@ -7909,7 +7909,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231295
       }
     },
     {
@@ -7931,7 +7931,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231296
       }
     },
     {
@@ -7953,7 +7953,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231297
       }
     },
     {
@@ -7975,7 +7975,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231297
       }
     },
     {
@@ -7997,7 +7997,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231298
       }
     },
     {
@@ -8019,7 +8019,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231298
       }
     },
     {
@@ -8041,7 +8041,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231299
       }
     },
     {
@@ -8063,7 +8063,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231300
       }
     },
     {
@@ -8079,13 +8079,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-4f832afc-8ceb-4aa3-a77c-c337056953dc",
+          "page": "item-c081bd1e-35e3-46c7-a8f1-d01b234717ef",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231300
       }
     },
     {
@@ -8107,7 +8107,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231301
       }
     },
     {
@@ -8155,7 +8155,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231118
+        "updated": 1791231301
       }
     },
     {
@@ -8220,7 +8220,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231302,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8294,7 +8294,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231303,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8341,7 +8341,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231303,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8394,7 +8394,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231304,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -8444,7 +8444,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231304,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8479,7 +8479,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231305,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -8506,7 +8506,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231118,
+        "updated": 1791231306,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -8533,7 +8533,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231306,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -8560,7 +8560,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231307,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -8587,7 +8587,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231307,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -8604,7 +8604,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791231119,
+        "updated": 1791231308,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -8676,7 +8676,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231309,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8750,7 +8750,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231309,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8819,7 +8819,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231310,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8897,7 +8897,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231310,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8968,7 +8968,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231311,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9038,7 +9038,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231312,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9107,7 +9107,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231312,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9175,7 +9175,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231313,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9263,7 +9263,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231313,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9337,7 +9337,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231314,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9400,7 +9400,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231315
       }
     },
     {
@@ -9441,7 +9441,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231315
       }
     },
     {
@@ -9482,7 +9482,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231316
       }
     },
     {
@@ -9523,7 +9523,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231316
       }
     },
     {
@@ -9554,7 +9554,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231317
       }
     },
     {
@@ -9585,7 +9585,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231318
       }
     },
     {
@@ -9616,7 +9616,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231318
       }
     },
     {
@@ -9647,7 +9647,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231319
       }
     },
     {
@@ -9678,7 +9678,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231319
       }
     },
     {
@@ -9710,7 +9710,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231320
       }
     },
     {
@@ -9742,7 +9742,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231321
       }
     },
     {
@@ -9774,7 +9774,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231321
       }
     },
     {
@@ -9815,7 +9815,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231322
       }
     },
     {
@@ -9856,7 +9856,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231322
       }
     },
     {
@@ -9897,7 +9897,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231323
       }
     },
     {
@@ -9938,7 +9938,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231324
       }
     },
     {
@@ -9979,7 +9979,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231324
       }
     },
     {
@@ -10020,7 +10020,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231325
       }
     },
     {
@@ -10061,7 +10061,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231325
       }
     },
     {
@@ -10102,7 +10102,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231326
       }
     },
     {
@@ -10135,7 +10135,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231327
       }
     },
     {
@@ -10167,7 +10167,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231327
       }
     },
     {
@@ -10183,13 +10183,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-2299f9f0-a17b-437f-b240-a9d896ed9739",
+          "page": "item-c0562384-ac21-41bd-b88b-daea22c1fba6",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231328
       }
     },
     {
@@ -10205,13 +10205,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-d9386bc1-22ed-4191-9217-77ca2e1bb40d",
+          "page": "item-d1a7f274-190f-4724-ae1d-37ae7a41f4c5",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231328
       }
     },
     {
@@ -10227,13 +10227,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-2563c9ff-4d12-4440-9199-60051c68518e",
+          "page": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231329
       }
     },
     {
@@ -10249,13 +10249,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-fc33a6c6-44eb-47c0-b98f-7b0da5aec89d",
+          "page": "item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231330
       }
     },
     {
@@ -10271,13 +10271,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-2f5ff460-cfce-4daa-bc72-ce977b568014",
+          "page": "item-27ca7119-a186-4605-9c09-02959c7b035b",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231330
       }
     },
     {
@@ -10293,13 +10293,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-58a9b734-9ed1-41e7-80c5-54b30ccd35ed",
+          "page": "item-42c443ea-48f3-496e-91cb-78b4df8362ea",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231331
       }
     },
     {
@@ -10315,13 +10315,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-d8321c42-dcda-4dfa-b48f-a60e722d4a9c",
+          "page": "item-edd3b50c-6ee7-4c17-b9ef-8666e4319996",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231331
       }
     },
     {
@@ -10337,13 +10337,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-597f968e-b6f7-4052-aba4-bada9dded4be",
+          "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231332
       }
     },
     {
@@ -10359,13 +10359,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-1794767c-36f7-4e2a-8fad-bebeffc0b145",
+          "page": "item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231333
       }
     },
     {
@@ -10381,13 +10381,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-e33b1a0c-0c22-4bd9-bf8e-dcd20df8d1ab",
+          "page": "item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231333
       }
     },
     {
@@ -10403,13 +10403,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-cbbb7837-4a39-4f79-b1e9-922e608df2b2",
+          "page": "item-d759a2b5-61e3-4423-a706-91c282cf8b12",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231334
       }
     },
     {
@@ -10425,13 +10425,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-7df00eae-20fb-4f9d-bb9f-45115dd1e20b",
+          "page": "item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231334
       }
     },
     {
@@ -10447,13 +10447,13 @@
         "published": true,
         "pageType": "oer:project",
         "oerRef": {
-          "page": "item-1e2f2652-a8b5-4869-a8b9-9dcf9156449a",
+          "page": "item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231335
       }
     },
     {
@@ -10469,13 +10469,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-cf21215f-0569-44f6-a9f5-3fa6835fb955",
+          "page": "item-efa37108-3a36-4157-87f0-d9ca6870e9c5",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231336
       }
     },
     {
@@ -10491,13 +10491,13 @@
         "published": true,
         "pageType": "oer:article",
         "oerRef": {
-          "page": "item-999e5ef4-0fe4-473d-bf71-bc4062baa52e",
+          "page": "item-83b2a116-ab24-48a3-91c8-69b6f79d387e",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231336
       }
     },
     {
@@ -10531,7 +10531,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231337
       }
     },
     {
@@ -10554,7 +10554,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231337
       }
     },
     {
@@ -10572,7 +10572,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231338
       }
     },
     {
@@ -10588,13 +10588,13 @@
         "published": true,
         "pageType": "oer:lesson",
         "oerRef": {
-          "page": "item-01b58d32-e627-4ef4-8bd8-46ca7ef148cb",
+          "page": "item-2043703c-eb71-4f74-9dba-85bc4cfe5ae2",
           "version": ""
         },
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231339
       }
     },
     {
@@ -10616,7 +10616,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231339
       }
     },
     {
@@ -10638,7 +10638,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231340
       }
     },
     {
@@ -10686,7 +10686,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231119
+        "updated": 1791231340
       }
     },
     {
@@ -10725,7 +10725,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231119,
+        "updated": 1791231341,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10778,7 +10778,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231342,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -10852,7 +10852,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231342,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -10887,7 +10887,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231343,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -10914,7 +10914,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231343,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -10936,7 +10936,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231344,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -10958,7 +10958,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231345,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -11018,7 +11018,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231345,
         "status": ""
       }
     },
@@ -11037,7 +11037,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231346,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -11073,7 +11073,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231346
       }
     },
     {
@@ -11106,7 +11106,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231347
       }
     },
     {
@@ -11137,7 +11137,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231348
       }
     },
     {
@@ -11155,7 +11155,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231348
       }
     },
     {
@@ -11173,7 +11173,7 @@
         "created": 1791231124,
         "images": [],
         "videos": [],
-        "updated": 1791231124
+        "updated": 1791231349
       }
     },
     {
@@ -11203,7 +11203,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231349
       }
     },
     {
@@ -11226,7 +11226,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231350
       }
     },
     {
@@ -11266,7 +11266,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231120
+        "updated": 1791231351
       }
     },
     {
@@ -14048,7 +14048,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231351,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14105,7 +14105,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231352,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14160,7 +14160,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231352,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14233,7 +14233,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231353,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -14277,7 +14277,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231354
       }
     },
     {
@@ -14300,7 +14300,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231354
       }
     },
     {
@@ -14318,7 +14318,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231355,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -14357,7 +14357,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231120
+        "updated": 1791231355
       }
     },
     {
@@ -14396,7 +14396,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231120,
+        "updated": 1791231356,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14451,7 +14451,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231357,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14500,7 +14500,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231357
       }
     },
     {
@@ -14533,7 +14533,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231358
       }
     },
     {
@@ -14556,7 +14556,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231358
       }
     },
     {
@@ -14600,7 +14600,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231121
+        "updated": 1791231359
       }
     },
     {
@@ -14639,7 +14639,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231360,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14714,7 +14714,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231360,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -14748,7 +14748,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231361
       }
     },
     {
@@ -14781,7 +14781,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231361
       }
     },
     {
@@ -14814,7 +14814,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231362
       }
     },
     {
@@ -14847,7 +14847,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231363
       }
     },
     {
@@ -14880,7 +14880,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231363
       }
     },
     {
@@ -14913,7 +14913,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231364
       }
     },
     {
@@ -14946,7 +14946,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231364
       }
     },
     {
@@ -14979,7 +14979,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231365
       }
     },
     {
@@ -15012,7 +15012,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231366
       }
     },
     {
@@ -15045,7 +15045,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231366
       }
     },
     {
@@ -15078,7 +15078,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231367
       }
     },
     {
@@ -15111,7 +15111,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231367
       }
     },
     {
@@ -15144,7 +15144,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231368
       }
     },
     {
@@ -15177,7 +15177,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231369
       }
     },
     {
@@ -15210,7 +15210,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231369
       }
     },
     {
@@ -15243,7 +15243,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231370
       }
     },
     {
@@ -15275,7 +15275,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231370
       }
     },
     {
@@ -15307,7 +15307,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231371
       }
     },
     {
@@ -15339,7 +15339,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231372
       }
     },
     {
@@ -15371,7 +15371,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231372
       }
     },
     {
@@ -15403,7 +15403,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231373
       }
     },
     {
@@ -15436,7 +15436,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231373
       }
     },
     {
@@ -15469,7 +15469,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231374
       }
     },
     {
@@ -15502,7 +15502,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231375
       }
     },
     {
@@ -15535,7 +15535,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231375
       }
     },
     {
@@ -15568,7 +15568,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231376
       }
     },
     {
@@ -15601,7 +15601,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231377
       }
     },
     {
@@ -15634,7 +15634,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231377
       }
     },
     {
@@ -15666,7 +15666,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231378
       }
     },
     {
@@ -15698,7 +15698,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231378
       }
     },
     {
@@ -15730,7 +15730,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231379
       }
     },
     {
@@ -15762,7 +15762,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231380
       }
     },
     {
@@ -15794,7 +15794,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231380
       }
     },
     {
@@ -15826,7 +15826,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231381
       }
     },
     {
@@ -15859,7 +15859,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231381
       }
     },
     {
@@ -15892,7 +15892,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231382
       }
     },
     {
@@ -15925,7 +15925,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231383
       }
     },
     {
@@ -15958,7 +15958,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231383
       }
     },
     {
@@ -15991,7 +15991,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231384
       }
     },
     {
@@ -16023,7 +16023,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231384
       }
     },
     {
@@ -16055,7 +16055,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231385
       }
     },
     {
@@ -16087,7 +16087,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231386
       }
     },
     {
@@ -16119,7 +16119,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231386
       }
     },
     {
@@ -16151,7 +16151,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231387
       }
     },
     {
@@ -16183,7 +16183,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231387
       }
     },
     {
@@ -16216,7 +16216,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231388
       }
     },
     {
@@ -16249,7 +16249,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231389
       }
     },
     {
@@ -16282,7 +16282,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231389
       }
     },
     {
@@ -16315,7 +16315,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231390
       }
     },
     {
@@ -16348,7 +16348,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231390
       }
     },
     {
@@ -16381,7 +16381,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231391
       }
     },
     {
@@ -16413,7 +16413,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231392
       }
     },
     {
@@ -16445,7 +16445,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231392
       }
     },
     {
@@ -16477,7 +16477,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231393
       }
     },
     {
@@ -16509,7 +16509,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231393
       }
     },
     {
@@ -16541,7 +16541,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231394
       }
     },
     {
@@ -16573,7 +16573,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231395
       }
     },
     {
@@ -16605,7 +16605,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231395
       }
     },
     {
@@ -16637,7 +16637,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231396
       }
     },
     {
@@ -16670,7 +16670,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231396
       }
     },
     {
@@ -16703,7 +16703,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231397
       }
     },
     {
@@ -16736,7 +16736,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231398
       }
     },
     {
@@ -16769,7 +16769,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231398
       }
     },
     {
@@ -16802,7 +16802,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231399
       }
     },
     {
@@ -16835,7 +16835,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231399
       }
     },
     {
@@ -16867,7 +16867,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231400
       }
     },
     {
@@ -16900,7 +16900,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231401
       }
     },
     {
@@ -16932,7 +16932,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231401
       }
     },
     {
@@ -16965,7 +16965,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231402
       }
     },
     {
@@ -16997,7 +16997,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231402
       }
     },
     {
@@ -17029,7 +17029,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231403
       }
     },
     {
@@ -17062,7 +17062,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231404
       }
     },
     {
@@ -17095,7 +17095,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231404
       }
     },
     {
@@ -17128,7 +17128,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231405
       }
     },
     {
@@ -17161,7 +17161,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231405
       }
     },
     {
@@ -17194,7 +17194,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231406
       }
     },
     {
@@ -17227,7 +17227,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231407
       }
     },
     {
@@ -17260,7 +17260,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231407
       }
     },
     {
@@ -17293,7 +17293,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231408
       }
     },
     {
@@ -17326,7 +17326,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231408
       }
     },
     {
@@ -17356,7 +17356,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231409
       }
     },
     {
@@ -17389,7 +17389,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231410
       }
     },
     {
@@ -17413,7 +17413,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231410
       }
     },
     {
@@ -17452,7 +17452,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231411,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -17497,7 +17497,7 @@
         "created": 1791229707,
         "images": [],
         "videos": [],
-        "updated": 1791231121
+        "updated": 1791231411
       }
     },
     {
@@ -17536,7 +17536,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231412,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -17585,7 +17585,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231413
       }
     },
     {
@@ -17603,7 +17603,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231413
       }
     },
     {
@@ -17626,7 +17626,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231414
       }
     },
     {
@@ -17649,7 +17649,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231414
       }
     },
     {
@@ -17672,7 +17672,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231415
       }
     },
     {
@@ -17695,7 +17695,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231416
       }
     },
     {
@@ -17718,7 +17718,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231416
       }
     },
     {
@@ -17741,7 +17741,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231417
       }
     },
     {
@@ -17764,7 +17764,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231417
       }
     },
     {
@@ -17787,7 +17787,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231418
       }
     },
     {
@@ -17810,7 +17810,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231419
       }
     },
     {
@@ -17833,7 +17833,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231419
       }
     },
     {
@@ -17856,7 +17856,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231420
       }
     },
     {
@@ -17879,7 +17879,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231420
       }
     },
     {
@@ -17902,7 +17902,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231421
       }
     },
     {
@@ -17925,7 +17925,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231422
       }
     },
     {
@@ -17948,7 +17948,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231422
       }
     },
     {
@@ -17971,7 +17971,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231423
       }
     },
     {
@@ -17995,7 +17995,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231423
       }
     },
     {
@@ -18019,7 +18019,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231424
       }
     },
     {
@@ -18043,7 +18043,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231425
       }
     },
     {
@@ -18067,7 +18067,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231425
       }
     },
     {
@@ -18091,7 +18091,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231426
       }
     },
     {
@@ -18115,7 +18115,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231426
       }
     },
     {
@@ -18139,7 +18139,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231427
       }
     },
     {
@@ -18163,7 +18163,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231428
       }
     },
     {
@@ -18186,7 +18186,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231428
       }
     },
     {
@@ -18209,7 +18209,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231429
       }
     },
     {
@@ -18227,7 +18227,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231430,
         "published": true,
         "locked": false,
         "status": "",
@@ -18270,7 +18270,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231430,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18315,7 +18315,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231121
+        "updated": 1791231431
       }
     },
     {
@@ -18352,7 +18352,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231431,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18395,7 +18395,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231432
       }
     },
     {
@@ -18409,7 +18409,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1791231121,
+        "updated": 1791231433,
         "images": [],
         "videos": [],
         "published": true,
@@ -18458,7 +18458,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231433,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18529,7 +18529,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231434,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18600,7 +18600,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231434,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18655,7 +18655,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231435,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18700,7 +18700,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231436
       }
     },
     {
@@ -18738,7 +18738,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231436,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18790,7 +18790,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231122
+        "updated": 1791231437
       }
     },
     {
@@ -18823,7 +18823,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231437
       }
     },
     {
@@ -18862,7 +18862,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231438,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -18914,7 +18914,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231122
+        "updated": 1791231439
       }
     },
     {
@@ -18932,7 +18932,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231439
       }
     },
     {
@@ -18965,7 +18965,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231440
       }
     },
     {
@@ -18983,7 +18983,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791231121,
+        "updated": 1791231440,
         "published": true,
         "locked": false,
         "status": "",
@@ -19026,7 +19026,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231441,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19078,7 +19078,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231122
+        "updated": 1791231442
       }
     },
     {
@@ -19111,7 +19111,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231442
       }
     },
     {
@@ -19125,7 +19125,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791231122,
+        "updated": 1791231443,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -19175,7 +19175,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231443,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19228,7 +19228,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231444,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19278,7 +19278,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231445,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19333,7 +19333,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231445,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19386,7 +19386,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231446,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19434,7 +19434,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231446,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19482,7 +19482,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231447
       }
     },
     {
@@ -19519,7 +19519,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231448
       }
     },
     {
@@ -19556,7 +19556,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231448
       }
     },
     {
@@ -19600,7 +19600,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231449
       }
     },
     {
@@ -19633,7 +19633,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231449
       }
     },
     {
@@ -19666,7 +19666,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231450
       }
     },
     {
@@ -19699,7 +19699,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231451
       }
     },
     {
@@ -19736,7 +19736,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231451
       }
     },
     {
@@ -19781,7 +19781,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231452
       }
     },
     {
@@ -19817,7 +19817,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231452
       }
     },
     {
@@ -19853,7 +19853,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231453
       }
     },
     {
@@ -19915,7 +19915,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231454
       }
     },
     {
@@ -19977,7 +19977,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231454
       }
     },
     {
@@ -20021,7 +20021,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231455
       }
     },
     {
@@ -20057,7 +20057,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231455
       }
     },
     {
@@ -20093,7 +20093,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231456
       }
     },
     {
@@ -20167,7 +20167,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231457
       }
     },
     {
@@ -20223,7 +20223,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231457
       }
     },
     {
@@ -20285,7 +20285,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231458
       }
     },
     {
@@ -20335,7 +20335,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231458
       }
     },
     {
@@ -20385,7 +20385,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231459
       }
     },
     {
@@ -20441,7 +20441,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231460
       }
     },
     {
@@ -20478,7 +20478,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231460
       }
     },
     {
@@ -20515,7 +20515,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231461
       }
     },
     {
@@ -20552,7 +20552,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231461
       }
     },
     {
@@ -20589,7 +20589,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231462
       }
     },
     {
@@ -20626,7 +20626,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231463
       }
     },
     {
@@ -20663,7 +20663,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231463
       }
     },
     {
@@ -20700,7 +20700,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231464
       }
     },
     {
@@ -20737,7 +20737,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231464
       }
     },
     {
@@ -20773,7 +20773,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231465
       }
     },
     {
@@ -20817,7 +20817,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231122
+        "updated": 1791231466
       }
     },
     {
@@ -20850,7 +20850,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231466
       }
     },
     {
@@ -20868,7 +20868,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231122,
+        "updated": 1791231467,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -20903,7 +20903,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231468
       }
     },
     {
@@ -20935,7 +20935,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231468
       }
     },
     {
@@ -20968,7 +20968,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231469
       }
     },
     {
@@ -21000,7 +21000,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231469
       }
     },
     {
@@ -21033,7 +21033,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231470
       }
     },
     {
@@ -21066,7 +21066,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231471
       }
     },
     {
@@ -21099,7 +21099,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231471
       }
     },
     {
@@ -21132,7 +21132,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231472
       }
     },
     {
@@ -21165,7 +21165,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231472
       }
     },
     {
@@ -21198,7 +21198,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231473
       }
     },
     {
@@ -21231,7 +21231,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231474
       }
     },
     {
@@ -21263,7 +21263,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231474
       }
     },
     {
@@ -21295,7 +21295,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231475
       }
     },
     {
@@ -21327,7 +21327,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231475
       }
     },
     {
@@ -21360,7 +21360,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231476
       }
     },
     {
@@ -21393,7 +21393,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231477
       }
     },
     {
@@ -21426,7 +21426,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231477
       }
     },
     {
@@ -21459,7 +21459,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231478
       }
     },
     {
@@ -21492,7 +21492,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231478
       }
     },
     {
@@ -21525,7 +21525,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231479
       }
     },
     {
@@ -21558,7 +21558,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231480
       }
     },
     {
@@ -21591,7 +21591,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231480
       }
     },
     {
@@ -21624,7 +21624,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231481
       }
     },
     {
@@ -21657,7 +21657,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231481
       }
     },
     {
@@ -21689,7 +21689,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231482
       }
     },
     {
@@ -21722,7 +21722,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231483
       }
     },
     {
@@ -21755,7 +21755,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231483
       }
     },
     {
@@ -21788,7 +21788,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231484
       }
     },
     {
@@ -21821,7 +21821,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231484
       }
     },
     {
@@ -21854,7 +21854,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231485
       }
     },
     {
@@ -21887,7 +21887,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231486
       }
     },
     {
@@ -21920,7 +21920,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231486
       }
     },
     {
@@ -21953,7 +21953,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231487
       }
     },
     {
@@ -21986,7 +21986,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231487
       }
     },
     {
@@ -22019,7 +22019,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231488
       }
     },
     {
@@ -22052,7 +22052,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231489
       }
     },
     {
@@ -22085,7 +22085,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231489
       }
     },
     {
@@ -22118,7 +22118,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231490
       }
     },
     {
@@ -22151,7 +22151,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231491
       }
     },
     {
@@ -22184,7 +22184,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231491
       }
     },
     {
@@ -22217,7 +22217,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231492
       }
     },
     {
@@ -22250,7 +22250,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231492
       }
     },
     {
@@ -22283,7 +22283,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231493
       }
     },
     {
@@ -22316,7 +22316,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231494
       }
     },
     {
@@ -22349,7 +22349,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231494
       }
     },
     {
@@ -22382,7 +22382,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231495
       }
     },
     {
@@ -22415,7 +22415,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231495
       }
     },
     {
@@ -22448,7 +22448,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231496
       }
     },
     {
@@ -22481,7 +22481,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231497
       }
     },
     {
@@ -22514,7 +22514,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231497
       }
     },
     {
@@ -22547,7 +22547,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231498
       }
     },
     {
@@ -22580,7 +22580,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231498
       }
     },
     {
@@ -22630,7 +22630,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231499
       }
     },
     {
@@ -22678,7 +22678,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231500
       }
     },
     {
@@ -22697,7 +22697,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231122
+        "updated": 1791231500
       }
     },
     {
@@ -22737,7 +22737,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231501
       }
     },
     {
@@ -22766,7 +22766,7 @@
         "created": 1791229731,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231501
       }
     },
     {
@@ -22795,7 +22795,7 @@
         "created": 1791229754,
         "images": [],
         "videos": [],
-        "updated": 1791231123
+        "updated": 1791231502
       }
     }
   ]

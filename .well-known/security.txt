@@ -1,7 +1,7 @@
 # https://www.rfc-editor.org/rfc/rfc9116
 Contact: https://github.com/haxtheweb/issues/security/advisories
 Contact: mailto:hax@psu.edu
-Expires: 2027-04-03T20:12:06.713Z
+Expires: 2027-04-03T20:18:23.176Z
 Canonical: https://localhost:3000/learning-materials/.well-known/security.txt
 Policy: https://github.com/haxtheweb/issues/blob/master/SECURITY.md
 Preferred-Languages: en
