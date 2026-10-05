@@ -2793,6 +2793,42 @@
       }
     },
     {
+      "id": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
+      "indent": 1,
+      "location": "pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.html",
+      "slug": "quizzes/real-time-engines-quiz",
+      "order": 0,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Real-time Engines quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
+      }
+    },
+    {
       "id": "item-ef8736da-f646-4540-b163-75a456866c7d",
       "indent": 2,
       "location": "pages/item-ef8736da-f646-4540-b163-75a456866c7d/index.html",
@@ -3274,32 +3310,6 @@
         "published": true,
         "oerImport": "decap-pathways",
         "pageType": "oer:unit",
-        "created": 1790830075,
-        "images": [],
-        "videos": [],
-        "updated": 1791229677,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
-      "id": "item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566",
-      "indent": 3,
-      "location": "pages/item-7fd8b1a1-81d3-490f-ae0e-00e400e8f566/index.html",
-      "slug": "pathways/game-artist-pathway/concept-blockout/creating-blockouts-for-games",
-      "order": 1,
-      "parent": "item-9023f478-1c92-4338-8aff-d094f339b5c3",
-      "title": "Creating Blockouts for Games",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "oer:tutorial",
-        "oerRef": {
-          "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
-          "version": ""
-        },
         "created": 1790830075,
         "images": [],
         "videos": [],
@@ -3970,6 +3980,42 @@
       }
     },
     {
+      "id": "item-9e3bacc6-5f86-471f-adc6-0349fc801452",
+      "indent": 1,
+      "location": "pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.html",
+      "slug": "quizzes/environment-design-for-real-time-quiz",
+      "order": 1,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Environment Design for Real-time quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
+      }
+    },
+    {
       "id": "item-260d48b5-92f7-4dac-9ab8-307e2859d680",
       "indent": 2,
       "location": "pages/item-260d48b5-92f7-4dac-9ab8-307e2859d680/index.html",
@@ -4551,6 +4597,42 @@
       }
     },
     {
+      "id": "item-706b8000-e39c-45d3-87c4-9aab5ae94482",
+      "indent": 1,
+      "location": "pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.html",
+      "slug": "quizzes/real-time-asset-budgets-quiz",
+      "order": 2,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Real-time Asset Budgets quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
+      }
+    },
+    {
       "id": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
       "indent": 2,
       "location": "pages/item-78cb5c5f-c643-4eaf-990f-33b1bc89f214/index.html",
@@ -4965,6 +5047,50 @@
         "images": [],
         "videos": [],
         "updated": 1791229680
+      }
+    },
+    {
+      "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
+      "indent": 1,
+      "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
+      "slug": "quizzes/drawing-for-3d-design-quiz",
+      "order": 3,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Drawing for 3D Design quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+              "version": ""
+            },
+            {
+              "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
+              "version": ""
+            },
+            {
+              "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
       }
     },
     {
@@ -8133,6 +8259,54 @@
       }
     },
     {
+      "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
+      "indent": 1,
+      "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.html",
+      "slug": "quizzes/hard-surface-modeling-quiz",
+      "order": 4,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Hard Surface Modeling quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+              "version": ""
+            },
+            {
+              "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
+              "version": ""
+            },
+            {
+              "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
+              "version": ""
+            },
+            {
+              "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
+      }
+    },
+    {
       "id": "item-21cc4009-8627-4071-b315-1a7e3dbb256b",
       "indent": 3,
       "location": "pages/item-21cc4009-8627-4071-b315-1a7e3dbb256b/index.html",
@@ -8427,6 +8601,46 @@
       }
     },
     {
+      "id": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
+      "indent": 1,
+      "location": "pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.html",
+      "slug": "quizzes/digital-sculpting-quiz",
+      "order": 5,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Digital Sculpting quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "quiz:item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+              "version": ""
+            },
+            {
+              "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
+      }
+    },
+    {
       "id": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
       "indent": 1,
       "location": "pages/item-685e56cc-c545-4d08-81c8-c724fe5cc33d/index.html",
@@ -8714,6 +8928,35 @@
         "readtime": 1,
         "icon": "",
         "pageType": ""
+      }
+    },
+    {
+      "id": "item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4",
+      "indent": 1,
+      "location": "pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.html",
+      "slug": "quizzes/game-artist-pathway-readiness-quiz",
+      "order": 6,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Game Artist Pathway readiness quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "readiness:item-72db2076-5252-4246-af1d-685903483097",
+        "oerFields": {
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791229683
       }
     },
     {
@@ -10140,275 +10383,6 @@
             "notes": ""
           }
         ]
-      }
-    },
-    {
-      "id": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
-      "indent": 1,
-      "location": "pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.html",
-      "slug": "quizzes/real-time-engines-quiz",
-      "order": 0,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Real-time Engines quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
-      }
-    },
-    {
-      "id": "item-9e3bacc6-5f86-471f-adc6-0349fc801452",
-      "indent": 1,
-      "location": "pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.html",
-      "slug": "quizzes/environment-design-for-real-time-quiz",
-      "order": 1,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Environment Design for Real-time quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
-      }
-    },
-    {
-      "id": "item-706b8000-e39c-45d3-87c4-9aab5ae94482",
-      "indent": 1,
-      "location": "pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.html",
-      "slug": "quizzes/real-time-asset-budgets-quiz",
-      "order": 2,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Real-time Asset Budgets quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
-      }
-    },
-    {
-      "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
-      "indent": 1,
-      "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
-      "slug": "quizzes/drawing-for-3d-design-quiz",
-      "order": 3,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Drawing for 3D Design quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-d22274ef-a811-4445-b5fa-132e70eab0f2",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
-              "version": ""
-            },
-            {
-              "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
-              "version": ""
-            },
-            {
-              "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
-      }
-    },
-    {
-      "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
-      "indent": 1,
-      "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.html",
-      "slug": "quizzes/hard-surface-modeling-quiz",
-      "order": 4,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Hard Surface Modeling quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
-              "version": ""
-            },
-            {
-              "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
-              "version": ""
-            },
-            {
-              "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
-              "version": ""
-            },
-            {
-              "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
-      }
-    },
-    {
-      "id": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
-      "indent": 1,
-      "location": "pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.html",
-      "slug": "quizzes/digital-sculpting-quiz",
-      "order": 5,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Digital Sculpting quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "quiz:item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-              "version": ""
-            },
-            {
-              "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
-      }
-    },
-    {
-      "id": "item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4",
-      "indent": 1,
-      "location": "pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.html",
-      "slug": "quizzes/game-artist-pathway-readiness-quiz",
-      "order": 6,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Game Artist Pathway readiness quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "readiness:item-72db2076-5252-4246-af1d-685903483097",
-        "oerFields": {
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791229683
       }
     }
   ]
