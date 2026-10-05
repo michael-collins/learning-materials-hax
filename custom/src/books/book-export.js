@@ -23,7 +23,10 @@ async function rawHtml(item) {
   const url = new URL(item.location, globalThis.document.baseURI);
   const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) return "";
-  return (await res.text()).replace(/<page-break\b[^>]*>(?:\s*<\/page-break>)?/gi, "");
+  return (await res.text())
+    .replace(/<page-break\b[^>]*>(?:\s*<\/page-break>)?/gi, "")
+    // drafts (oer-draft) are for authors only
+    .replace(/<oer-draft\b[^>]*>[\s\S]*?<\/oer-draft>/gi, "");
 }
 
 // replace <oer-include> with the content it shows (one level deep)

@@ -15,3 +15,4 @@ import "./pathways/oer-pathway.js";
 import "./blocks/oer-schematic.js";
 import "./blocks/oer-credit.js";
 import "./blocks/hax-learning-blocks.js";
+import "./blocks/oer-draft.js";
