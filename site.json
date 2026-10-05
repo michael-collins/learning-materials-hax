@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791232373
+      "updated": 1791232391
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -43,14 +43,13 @@
       "order": 0,
       "parent": null,
       "title": "Welcome to learning-materials",
-      "description": "What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.",
+      "description": "This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen",
       "metadata": {
         "created": 1790801562,
-        "updated": 1791232372,
+        "updated": 1791232390,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "av:art-track",
         "pageType": "",
         "version": "0.0.1",
         "oerVersions": [
@@ -60,7 +59,12 @@
             "notes": "Testing versions."
           }
         ],
-        "oerSaveTiming": ""
+        "oerSaveTiming": "",
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "readtime": 7,
+        "videos": [],
+        "images": []
       }
     },
     {
