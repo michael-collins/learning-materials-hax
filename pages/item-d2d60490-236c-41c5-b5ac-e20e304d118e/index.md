@@ -1,1 +1,0 @@
-Integrates CGI elements into live-action footage and blends them seamlessly.

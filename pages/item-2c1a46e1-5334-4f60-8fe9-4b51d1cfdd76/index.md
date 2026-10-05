@@ -1,1 +1,0 @@
-Lessons group lectures, tutorials and exercises around a set of learning objectives.

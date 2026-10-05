@@ -1,1 +1,0 @@
-Utilizes 3D printing or CNC machining to create physical objects from digital designs.
