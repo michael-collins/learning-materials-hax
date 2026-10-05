@@ -734,7 +734,8 @@ class OerPageFooter extends LitElement {
     const cc = ccLicense(f.license);
     const authors = this._authors;
     const hideAi = new URLSearchParams(globalThis.location.search).get("hideAILicense") === "true";
-    const aiCodes = hideAi ? [] : toList(f.aiLicense);
+    // one code each; older imports stored them joined ("AIUL-WA, AIUL-NA-3D")
+    const aiCodes = hideAi ? [] : toList(f.aiLicense).flatMap((c) => c.split(",")).map((c) => c.trim()).filter(Boolean);
     return html`
       <div class="top">
         <p class="license">

@@ -20,7 +20,8 @@ const lucide = (name, cls = "") =>
 
 const empty = (v) => v === undefined || v === null || v === "" || (Array.isArray(v) && !v.filter((x) => String(x).trim()).length);
 
-const toArray = (v) => (Array.isArray(v) ? v : v ? [v] : []);
+// a multiple choice's values; older imports stored them joined ("A, B")
+const toArray = (v) => (Array.isArray(v) ? v : v ? String(v).split(",").map((s) => s.trim()).filter(Boolean) : []);
 
 class OerPageDetails extends LitElement {
   static get tag() {
