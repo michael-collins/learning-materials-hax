@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791242287,
+      "updated": 1791242310,
       "version": "26.8.0"
     },
     "theme": {
@@ -106,7 +106,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791231635,
+        "updated": 1791242309,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -117,7 +117,9 @@
         "readtime": 1,
         "status": "",
         "icon": "hax:lesson",
-        "oerFields": {},
+        "oerFields": {
+          "date": "2026-01-12T12:00:00.000Z"
+        },
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -167,7 +169,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-1903f5ba-d051-49cf-9836-073992c93548",
@@ -180,7 +183,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231635,
+        "updated": 1791242309,
         "status": ""
       }
     },
