@@ -58,6 +58,7 @@ import { themeSkin } from "./theme-skin.js";
 import { learningSkin, installLearningBlocks } from "./learning-skin.js";
 import { installEditorChrome } from "./editor/index.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
+import { installFootnotes } from "./ui/footnotes.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -278,6 +279,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     super.connectedCallback();
     installEditorChrome();
     installLayoutBreakpoints();
+    installFootnotes();
     if (!themeSkinRegistered) {
       themeSkinRegistered = true;
       registerShadowStyles(themeSkin);
@@ -362,6 +364,74 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           height: auto;
           border: 1px solid var(--border);
           border-radius: var(--radius-lg);
+        }
+        /* footnotes (scripts/lib/footnotes.mjs): citations and references */
+        custom-oer-docs-theme sup.fn-ref {
+          line-height: 0;
+        }
+        custom-oer-docs-theme sup.fn-ref a {
+          padding: 0 0.15em;
+          font-size: 0.75em;
+          font-weight: 600;
+          text-decoration: none;
+          color: var(--link);
+        }
+        custom-oer-docs-theme sup.fn-ref a:hover {
+          text-decoration: underline;
+        }
+        custom-oer-docs-theme .footnotes {
+          margin-top: 2.5rem;
+          padding-top: 1rem;
+          border-top: 1px solid var(--border);
+          font-size: 0.875rem;
+          line-height: 1.6;
+          color: var(--muted-foreground);
+        }
+        custom-oer-docs-theme .footnotes h2 {
+          margin: 0 0 0.5rem;
+          font-size: 1rem;
+          color: var(--foreground);
+        }
+        custom-oer-docs-theme .footnotes ol {
+          margin: 0;
+          padding-left: 1.5rem;
+        }
+        custom-oer-docs-theme .footnotes li + li {
+          margin-top: 0.375rem;
+        }
+        custom-oer-docs-theme .footnotes li:target,
+        custom-oer-docs-theme sup.fn-ref:target {
+          background: color-mix(in srgb, var(--primary) 12%, transparent);
+          border-radius: var(--radius-sm);
+        }
+        custom-oer-docs-theme .fn-back {
+          text-decoration: none;
+          color: var(--link);
+        }
+        .oer-fn-tip {
+          position: fixed;
+          z-index: 10002;
+          max-width: min(26rem, calc(100vw - 1rem));
+          padding: 0.625rem 0.75rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          background: var(--popover, var(--background));
+          color: var(--popover-foreground, var(--foreground));
+          box-shadow: 0 8px 24px rgb(0 0 0 / 0.16);
+          font-family: var(--font-sans);
+          font-size: 0.8125rem;
+          line-height: 1.5;
+          text-align: start;
+        }
+        .oer-fn-tip[hidden] {
+          display: none;
+        }
+        .oer-fn-tip a {
+          color: var(--link);
+        }
+        .oer-fn-num {
+          font-weight: 600;
+          color: var(--muted-foreground);
         }
         custom-oer-docs-theme figcaption {
           margin-top: 0.5rem;

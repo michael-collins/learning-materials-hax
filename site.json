@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791232450
+      "updated": 1791233107
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -17240,7 +17240,7 @@
       "slug": "articles/interaction-design-ixd",
       "order": 36,
       "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Interaction Design \\(IxD\\)",
+      "title": "Interaction Design (IxD)",
       "description": "",
       "metadata": {
         "published": true,
@@ -17262,7 +17262,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231882
+        "updated": 1791233106
       }
     },
     {
@@ -24442,7 +24442,7 @@
       "slug": "projects/develop-hypertext-narrative-draft-1",
       "order": 21,
       "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Hypertext narrative \\(draft 1\\)",
+      "title": "Develop: Hypertext narrative (draft 1)",
       "description": "",
       "metadata": {
         "published": true,
@@ -24465,7 +24465,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231974
+        "updated": 1791233107
       }
     },
     {
