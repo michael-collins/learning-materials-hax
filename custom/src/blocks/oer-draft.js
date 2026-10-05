@@ -26,14 +26,20 @@ export class OerDraft extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     // shown to signed-in authors only; follows sign-in and edit mode
+    // (plain fields, not Lit properties: HAX would save those into the page)
     this.__stop = autorun(() => {
       this.toggleAttribute("data-author", !!store.isLoggedIn);
       this.toggleAttribute("data-editing", !!store.editMode);
+      this.requestUpdate();
     });
+    // HAX marks blocks with data-hax-ray while editing
+    this.__ray = new MutationObserver(() => this.requestUpdate());
+    this.__ray.observe(this, { attributes: true, attributeFilter: ["data-hax-ray"] });
   }
 
   disconnectedCallback() {
     this.__stop?.();
+    this.__ray?.disconnect();
     super.disconnectedCallback();
   }
 
