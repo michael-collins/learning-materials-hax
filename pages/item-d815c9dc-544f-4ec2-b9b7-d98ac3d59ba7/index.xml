@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d815c9dc-544f-4ec2-b9b7-d98ac3d59ba7</id>
+<indent>4</indent>
+<location>pages/item-d815c9dc-544f-4ec2-b9b7-d98ac3d59ba7/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/concept-pitch</slug>
+<order>0</order>
+<parent>item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3</parent>
+<title>Concept Pitch</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-dd94ad18-8f1b-4422-8486-2fe4096294e7</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-dd94ad18-8f1b-4422-8486-2fe4096294e7"></oer-include>]]></content>
+</item>

@@ -1,0 +1,23 @@
+{
+  "id": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
+  "indent": 4,
+  "location": "pages/item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/hypertext-narrative-introduction",
+  "order": 0,
+  "parent": "item-a9f78351-7500-44e9-bae7-d17feec5d5df",
+  "title": "Hypertext Narrative introduction",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-ddf34976-f544-4570-ac96-5336fa29c4b4",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-ddf34976-f544-4570-ac96-5336fa29c4b4\"></oer-include>"
+}

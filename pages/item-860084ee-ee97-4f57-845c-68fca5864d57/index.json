@@ -1,0 +1,23 @@
+{
+  "id": "item-860084ee-ee97-4f57-845c-68fca5864d57",
+  "indent": 4,
+  "location": "pages/item-860084ee-ee97-4f57-845c-68fca5864d57/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/orchestral-manoeuvres-in-design",
+  "order": 2,
+  "parent": "item-1c0b6b79-034b-48a7-bf88-c63e8570b13d",
+  "title": "Orchestral Manoeuvres in Design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-a318d8e9-a05f-4c66-a48c-02eda88b5b9a",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-a318d8e9-a05f-4c66-a48c-02eda88b5b9a\"></oer-include>"
+}

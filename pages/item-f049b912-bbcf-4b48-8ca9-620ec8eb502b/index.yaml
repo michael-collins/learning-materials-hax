@@ -1,0 +1,80 @@
+id: item-f049b912-bbcf-4b48-8ca9-620ec8eb502b
+indent: 1
+location: pages/item-f049b912-bbcf-4b48-8ca9-620ec8eb502b/index.yaml
+slug: articles/oer-license
+order: 78
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: OER License
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd300-license
+  tags: license
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-05'
+    courses:
+      - DMD 300
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>This OER book is licensed as <a
+  href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. Some
+  content is taken from other sources and cited throughout. However, this work
+  is a living draft, presented as is, and may be changed or updated without
+  notice.</p>
+
+  <h2>Attribution</h2>
+
+  <p>You are welcomed and encouraged to use the content in this book for your
+  own teaching needs.  At a minimum, please provide attribution via html source
+  schema, see below for usage. Use the <a
+  href="https://search.google.com/structured-data/testing-tool/u/0/">Google
+  Structured Data Testing tool</a> to test that the schema is functioning
+  properly. More information can be found on <a
+  href="http://oerschema.org">OERSchema.org</a>.</p>
+
+  <p>If your publishing method prohibits schema, please use the visible
+  attribution method provided.</p>
+
+  <h3>OER Schema metadata attribution:</h3>
+
+  <p>Add <a href="http://oerschema.org">OER Schema</a> and CC License to HTML
+  source:</p>
+
+  <pre><code>&lt;!-- Add OERSchema and CC schema vocabulary to object --&gt;
+
+  &lt;div prefix="oer: http://oerschema.org/ cc:http://creativecommons.org/ns
+  dc:http://purl.org/dc/terms/" resource="#oer-source"&gt;
+
+
+
+          &lt;!-- Add OER resource text and media here. --&gt;
+
+
+          &lt;!-- Link the license and attribution to the page --&gt;
+          &lt;link about="#oer-source" property="cc:license" content="https://creativecommons.org/licenses/by/4.0/"&gt;
+          &lt;meta about="#oer-source" property="cc:attributionUrl" content="https://www.gitbook.com/book/dmd-program/dmd-300-sp17"&gt;
+          &lt;meta about="#oer-source" property="cc:attributionName" typeof="oer:Resource" content="Michael Collins"&gt;
+
+  &lt;/div&gt;
+
+  </code></pre>
+
+  <h3>Visible attribution</h3>
+
+  <p>“<a
+  href="https://www.gitbook.com/book/dmd-program/dmd-300-sp19/details">DMD 300:
+  Digital Multimedia Design Studio</a>” by Michael Collins is licensed under <a
+  href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>."</p>
+
+  <p><code>&lt;a href="https://github.com/dmd-program/dmd-300-sp19"&gt;DMD 300:
+  Digital Multimedia Design Studio&lt;/a&gt;” by Michael Collins is licensed
+  under &lt;a
+  href="https://creativecommons.org/licenses/by/4.0/"&gt;CC-BY-4.0&lt;/a&gt;.</code></p>

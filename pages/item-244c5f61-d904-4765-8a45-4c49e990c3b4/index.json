@@ -1,0 +1,23 @@
+{
+  "id": "item-244c5f61-d904-4765-8a45-4c49e990c3b4",
+  "indent": 3,
+  "location": "pages/item-244c5f61-d904-4765-8a45-4c49e990c3b4/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-2-fundamentals/drawing-for-3d-design",
+  "order": 3,
+  "parent": "item-2e61b638-0bbe-4708-a00a-c523bcbb229c",
+  "title": "Drawing for 3D Design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-d22274ef-a811-4445-b5fa-132e70eab0f2\"></oer-include>"
+}

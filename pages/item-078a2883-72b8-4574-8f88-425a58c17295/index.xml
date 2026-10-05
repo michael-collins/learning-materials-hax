@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-078a2883-72b8-4574-8f88-425a58c17295</id>
+<indent>1</indent>
+<location>pages/item-078a2883-72b8-4574-8f88-425a58c17295/index.xml</location>
+<slug>articles/how-to-become-great-at-just-about-anything</slug>
+<order>66</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>How to Become Great at Just About Anything</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-lesson-5-listening-freakonomics-how-to-become-great-at-just-about-anything</oerSource>
+<tags>listening</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>In this Freakonomics podcast episode, Stephen Dubner explores how anyone can become really good at doing almost anything.</p>
+<p><a href="http://freakonomics.com/podcast/peak/">How to Become Great at Just About Anything</a> <strong>(51:51)</strong></p>
+]]></content>
+</item>

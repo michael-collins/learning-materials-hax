@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b08b34b4-e34a-4d85-a8e8-40cdf273d495</id>
+<indent>3</indent>
+<location>pages/item-b08b34b4-e34a-4d85-a8e8-40cdf273d495/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/capstone-project/11-explainer-video</slug>
+<order>10</order>
+<parent>item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041</parent>
+<title>11. Explainer video</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-7df00eae-20fb-4f9d-bb9f-45115dd1e20b</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-7df00eae-20fb-4f9d-bb9f-45115dd1e20b"></oer-include>]]></content>
+</item>

@@ -1,0 +1,166 @@
+id: item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83
+indent: 1
+location: pages/item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83/index.yaml
+slug: projects/develop-feedback
+order: 20
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: 'Develop: Feedback'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd100-lesson-3-narrative-develop-feedback
+  tags: Double diamond,Design thinking
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond
+  Develop Phase graphic"></p>
+
+  <p>You will now evaluate assigned peer work and provide feedback.</p>
+
+  <h2>Peer Feedback Guidelines</h2>
+
+  <ol>
+
+  <li>Write the URL to the Twine story</li>
+
+  <li>Include the following feedback.</li>
+
+  </ol>
+
+  <p>For this task, we will use Feldman’s Model for criticism of creative works.
+  Please use the following criteria to guide your feedback:</p>
+
+  <ol>
+
+  <li>Description
+
+  <ol>
+
+  <li>Who/what are the characters in the story?</li>
+
+  <li>What is occurring in the story?</li>
+
+  <li>In what Point of View (PoV) is the story being narrated?</li>
+
+  <li>Are there any tropes or techniques that you can identify?
+
+  <ul>
+
+  <li><a
+  href="http://tvtropes.org/pmwiki/pmwiki.php/Main/NarrativeTropes">Narrative
+  tropes</a></li>
+
+  <li><a
+  href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/List_of_narrative_techniques.html">Narrative
+  techniques</a></li>
+
+  </ul>
+
+  </li>
+
+  <li>What is the setting or environment?</li>
+
+  <li>What else did you notice?</li>
+
+  </ol>
+
+  </li>
+
+  <li>Analysis
+
+  <ol>
+
+  <li>How is interest created?</li>
+
+  <li>Where are the moments of dramatic tension?</li>
+
+  <li>Does the story use the "show, don't tell" principle?</li>
+
+  </ol>
+
+  </li>
+
+  <li>Interpretation
+
+  <ol>
+
+  <li>In general, how did the story make you feel?</li>
+
+  <li>Was the story about a positive future? How do you know?</li>
+
+  <li>What themes emerged in the story?</li>
+
+  <li>Who do you think the audience is?</li>
+
+  </ol>
+
+  </li>
+
+  <li>Judgement
+
+  <ol>
+
+  <li>How well do you think the story is working?</li>
+
+  <li>Does the story meet the requirements of the project?</li>
+
+  <li>What could be done to make the story better?</li>
+
+  </ol>
+
+  </li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Write feedback for your assigned draft(s) according to the Peer Feedback
+  Guidelines. Your group assignments are located on Canvas.</li>
+
+  </ol>
+
+  <h3>Troubleshooting:</h3>
+
+  <ul>
+
+  <li><strong>You must download submissions to view them</strong>; right-click
+  on the submitted file and choose "Save as."</li>
+
+  <li>If the person's submitted file is not a <code>.html</code> or
+  <code>.zip</code> file, they may have submitted the project incorrectly and
+  you should notify them or explain the issue to your instructor.</li>
+
+  <li>If you have trouble unzipping the story file, please use a more powerful
+  unzipping tool. See <a href="https://theunarchiver.com/">this tool for Mac</a>
+  and <a href="https://www.7-zip.org/">this tool for Windows</a>.</li>
+
+  </ul>
+
+  <h2>Post work</h2>
+
+  <p>Use the indicated file format. You must obtain prior approval to deviate
+  from these upload requirements.</p>
+
+  <ol>
+
+  <li>Post the corresponding feedback as a comment in the relevant discussion
+  thread.</li>
+
+  <li>Combine all the feedback you've written and upload to this assignment's
+  submission text field or upload an MS Word document.</li>
+
+  </ol>

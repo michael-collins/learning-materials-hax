@@ -1,0 +1,34 @@
+{
+  "id": "item-f2f28ce6-560f-40f0-9dab-8d8914039113",
+  "indent": 1,
+  "location": "pages/item-f2f28ce6-560f-40f0-9dab-8d8914039113/index.json",
+  "slug": "projects/define-how-might-we",
+  "order": 5,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Define: How Might We ...?",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-2-ritual-define-hmw",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-define-1200px@2x.png\" alt=\"Double Diamond Define Phase graphic\"></p>\n<p>A \"How might we\" (HMW) question is both an insight about what the core issue is as well as a focus aid for the design process. This question will serve as inspiration during the development and delivery phases of the project. If your development strays too far from the HMW question, the solution you deliver might be solving a different set of issues from the ones you set out to solve. Refer back to the HMW question often throughout the process.</p>\n<p>Use the following pattern for creating the sentence: How might we <strong>( positive action )</strong> <strong>( a description of specific challenge ) ( a specific context )</strong> ?</p>\n<h2>Materials</h2>\n<ul>\n<li>Pen or pencil</li>\n<li>Journal</li>\n</ul>\n<h2>Example Question</h2>\n<p>In this example, let's say that I discovered that a friend was anxious about socializing. The HMW question could be phrased like this:</p>\n<p>How might we <strong>( relieve the stress of social interaction from )</strong> <strong>( a person who has trouble feeling comfortable in groups )</strong> <strong>( when they socialize with friends )</strong>?</p>\n<h2>Instructions</h2>\n<ol>\n<li>Based on your interview insights, use the sentence template to write three possible HMW questions, one for each insight.</li>\n<li>Review your sentences and <em><strong>circle</strong></em> the one you think works best.</li>\n<li>Document your HMW question with a photograph or scan.</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the file format indicated in each step. You must obtain prior approval to deviate from these upload requirements. Please check that your work has uploaded properly.</p>\n<ol>\n<li>Upload the photograph or scan of your HMW questions in <code>.jpg</code> or <code>.png</code> format.</li>\n</ol>\n"
+}

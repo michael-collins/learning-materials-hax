@@ -1,0 +1,23 @@
+{
+  "id": "item-2a2912a0-78d2-49a7-a674-510929a0de44",
+  "indent": 4,
+  "location": "pages/item-2a2912a0-78d2-49a7-a674-510929a0de44/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/discover-toy-design-research",
+  "order": 1,
+  "parent": "item-afb9718c-7193-4e3f-b080-d20610e3d901",
+  "title": "Discover: Toy Design Research",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-41e2a5f0-ea6b-4f95-b947-c00adccc28c0",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-41e2a5f0-ea6b-4f95-b947-c00adccc28c0\"></oer-include>"
+}

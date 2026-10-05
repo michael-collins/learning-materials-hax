@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1c0ca1c6-48a1-425c-8b4e-474eed3d49f4</id>
+<indent>1</indent>
+<location>pages/item-1c0ca1c6-48a1-425c-8b4e-474eed3d49f4/index.xml</location>
+<slug>lessons/self-design</slug>
+<order>21</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Self design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/dmd100-lesson-5-self-design</oerSource>
+<oerFields>
+<courses>
+<item>DMD 100</item>
+</courses>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>In this short lesson, you will complete a Pathway Design Activity to help you start thinking strategically about your future learning and career goals. You will also read and submit a reflection of the final chapter of Design and Truth by Robert Grudin.</p>
+]]></content>
+</item>

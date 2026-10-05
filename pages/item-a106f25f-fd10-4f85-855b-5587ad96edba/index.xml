@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a106f25f-fd10-4f85-855b-5587ad96edba</id>
+<indent>2</indent>
+<location>pages/item-a106f25f-fd10-4f85-855b-5587ad96edba/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling</slug>
+<order>3</order>
+<parent>item-69d4e331-f13a-4ee4-9c2e-1bba82279d67</parent>
+<title>Lesson 3: Storytelling</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerRef>
+<page>item-0d8187a6-69dc-4214-a024-f5241b26dab6</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-0d8187a6-69dc-4214-a024-f5241b26dab6"></oer-include>]]></content>
+</item>

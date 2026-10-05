@@ -1,0 +1,23 @@
+{
+  "id": "item-6855d1f6-f20c-4a80-89c6-12977b86653c",
+  "indent": 4,
+  "location": "pages/item-6855d1f6-f20c-4a80-89c6-12977b86653c/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/topics/design-thinking",
+  "order": 1,
+  "parent": "item-c539b3d9-1ca7-4c2b-89a1-6dc9a50cf4c5",
+  "title": "Design thinking",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-f39d16b4-ee46-46f1-b3b3-1a044050ec2a",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-f39d16b4-ee46-46f1-b3b3-1a044050ec2a\"></oer-include>"
+}

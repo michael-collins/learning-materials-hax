@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f6372fdc-c8ff-4fd1-89e4-aeb31da5f60c</id>
+<indent>3</indent>
+<location>pages/item-f6372fdc-c8ff-4fd1-89e4-aeb31da5f60c/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-4-advanced-topics/camera-composition</slug>
+<order>1</order>
+<parent>item-c6e347ab-3d18-4b55-bbb7-e323d71a9704</parent>
+<title>Camera Composition</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerRef>
+<page>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41"></oer-include>]]></content>
+</item>

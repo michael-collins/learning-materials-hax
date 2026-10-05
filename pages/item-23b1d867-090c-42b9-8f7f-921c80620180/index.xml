@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-23b1d867-090c-42b9-8f7f-921c80620180</id>
+<indent>3</indent>
+<location>pages/item-23b1d867-090c-42b9-8f7f-921c80620180/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/capstone-project/1-project-proposal</slug>
+<order>0</order>
+<parent>item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041</parent>
+<title>1. Project proposal</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-8d06c941-5620-4d00-aaee-23406f001f28</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-8d06c941-5620-4d00-aaee-23406f001f28"></oer-include>]]></content>
+</item>

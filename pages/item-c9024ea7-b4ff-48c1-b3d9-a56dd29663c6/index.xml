@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c9024ea7-b4ff-48c1-b3d9-a56dd29663c6</id>
+<indent>4</indent>
+<location>pages/item-c9024ea7-b4ff-48c1-b3d9-a56dd29663c6/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/listen/99-percent-invisible-of-mice-and-men</slug>
+<order>0</order>
+<parent>item-6ebb6609-d47b-4807-a3eb-495dd02e6c1d</parent>
+<title>99 Percent Invisible: Of Mice and Men</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-bbac8772-ac40-4198-a462-95fa370ea03f</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-bbac8772-ac40-4198-a462-95fa370ea03f"></oer-include>]]></content>
+</item>

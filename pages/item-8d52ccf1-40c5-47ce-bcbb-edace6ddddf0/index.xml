@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8d52ccf1-40c5-47ce-bcbb-edace6ddddf0</id>
+<indent>3</indent>
+<location>pages/item-8d52ccf1-40c5-47ce-bcbb-edace6ddddf0/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/general-resources/documentation-resources</slug>
+<order>3</order>
+<parent>item-9f0b88c0-5762-46b0-a219-444663bfeae6</parent>
+<title>Documentation resources</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-ff3e6bb0-ce36-4843-b593-91d4ceb90ec4</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-ff3e6bb0-ce36-4843-b593-91d4ceb90ec4"></oer-include>]]></content>
+</item>

@@ -1,0 +1,37 @@
+{
+  "id": "item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d",
+  "indent": 1,
+  "location": "pages/item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d/index.json",
+  "slug": "exercises/share-one-completed-set",
+  "order": 48,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Share One Completed Set",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:exercise",
+    "oerSource": "exercises/share-one-completed-set",
+    "tags": "Blender",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "image": "files/rec3owIe1VzR0OffF_image_ian_brill_icon_chess_set_2.jpg",
+      "imageAlt": "ian brill icon chess set 2.jpg",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Kenneth Ian Brill",
+          "url": "https://www.ianbrill.com/"
+        }
+      ],
+      "allowEmbed": true
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>In this exercise, you will apply Image textures to a Chess board and pieces</p>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice rendering images for submissions</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>For this assignment,&nbsp;you will submit 3 total images.</strong>\n&lt;br&gt;<br>\nDevelop and refine a single chess set based on observation over time, peer and instructor feedback.\n&lt;br&gt;<br>\n<strong>Submit three renders of <em>this individual</em> set to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em>.</strong>&nbsp;\n&lt;br&gt;  Make sure that your assignment is titled in the following format:\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n&lt;br&gt;<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

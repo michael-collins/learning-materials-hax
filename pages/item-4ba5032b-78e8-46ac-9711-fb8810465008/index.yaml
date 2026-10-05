@@ -1,0 +1,93 @@
+id: item-4ba5032b-78e8-46ac-9711-fb8810465008
+indent: 1
+location: pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.yaml
+slug: exercises/modeling-a-rook
+order: 39
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a Rook
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-rook
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: files/recI5o36ru0BbxuCH_image_rook_image.png
+    imageAlt: rook image.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: Reference Image for the Side of a Basic Rook
+        url: files/rec1auFJfWa2Iqw8t_attachment_rook_side.jpg
+        description: Reference Image for the Side of a Basic Rook
+        alt: Reference Image for the Side of a Basic Rook
+      - title: 90 Degree Turned Reference Image for the Side of a Basic Rook
+        url: files/recK7fGyaYZ1yzD8M_attachment_fixed_rook_side.jpg
+        description: 90 Degree Turned Reference Image for the Side of a Basic Rook
+        alt: 90 Degree Turned Reference Image for the Side of a Basic Rook
+      - title: Reference Image for the Top of a Basic Rook
+        url: files/recZr6vSAvtZ4o7VU_attachment_rook_top.jpg
+        description: Reference Image for the Top of a Basic Rook
+        alt: Reference Image for the Top of a Basic Rook
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Ql40pEsctlh1xNHLDS8F0cb"
+  title="Modeling a Rook Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>For this assignment, recreate the steps in either of the two
+  <strong>demonstrations and submit your model to&nbsp;<em>Canvas and Open
+  Studio for review.</em></strong>&nbsp;You can begin either version with the
+  same reference images, linked on this page.
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Make sure that your assignment is titled in the following format:
+
+  <strong>Last name, First name,</strong>&nbsp;the
+  word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson
+  number,</strong>&nbsp;and the&nbsp;<strong>word
+  "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
+  number.</strong>
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

@@ -1,0 +1,23 @@
+{
+  "id": "item-38ada574-da86-4edc-8229-275273a1d080",
+  "indent": 5,
+  "location": "pages/item-38ada574-da86-4edc-8229-275273a1d080/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/tutorials/twine-tutorial-getting-started",
+  "order": 0,
+  "parent": "item-29eda1cc-b42b-48a8-bc9e-9fabbcb355ee",
+  "title": "Twine tutorial: Getting started",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-0c76c6c0-9af9-4829-a710-0120790adbe0",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-0c76c6c0-9af9-4829-a710-0120790adbe0\"></oer-include>"
+}

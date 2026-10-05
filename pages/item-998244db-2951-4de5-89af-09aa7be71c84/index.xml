@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-998244db-2951-4de5-89af-09aa7be71c84</id>
+<indent>1</indent>
+<location>pages/item-998244db-2951-4de5-89af-09aa7be71c84/index.xml</location>
+<slug>articles/99-percent-invisible-10-000-years</slug>
+<order>26</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>99 Percent Invisible: 10,000 years</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-lesson-2-listening-99-percent-invisible-10-000-years</oerSource>
+<tags>listening</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Communicating ideas through visual images can be difficult. Listen to this 99 Percent Invisible podcast episode called Ten Thousand Years, where designers attempt to warn future civilizations about the dangers of radioactive waste.</p>
+<p><a href="http://99percentinvisible.org/episode/ten-thousand-years/">99 Percent Invisible: 10,000 Years</a> ** (31:51 min)**</p>
+]]></content>
+</item>

@@ -1,0 +1,19 @@
+{
+  "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
+  "indent": 0,
+  "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.json",
+  "slug": "books",
+  "order": 10,
+  "parent": null,
+  "title": "Books",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Course books: chapters to read in order, to print or export for an LMS.</p>\n<oer-collection types=\"oer:book\" scope=\"site\" view=\"table\" sort=\"title\" per-page=\"20\" controls=\"full\"></oer-collection>"
+}

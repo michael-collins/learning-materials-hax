@@ -1,0 +1,93 @@
+id: item-ca22d4dc-349f-4033-be11-cb671bb221ef
+indent: 1
+location: pages/item-ca22d4dc-349f-4033-be11-cb671bb221ef/index.yaml
+slug: articles/3d-communities
+order: 1
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: 3D Communities
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/3d-communities
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    date: '2026-01-21T21:30:00.000Z'
+    license: CC BY 4.0
+    allowEmbed: true
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Find your people!</p>
+
+  <h2>Local Events</h2>
+
+  <p><a href="https://happyvalleyanimationfestival.org/"
+  title="https://happyvalleyanimationfestival.org/">Happy Valley Animation
+  Festival</a></p>
+
+  <h2>Conference Volunteering</h2>
+
+  <ul>
+
+  <li><a href="https://sv.siggraph.org/">SIGGRAPH SV Program</a></li>
+
+  <li><a href="https://igda.org/gdc2020-2/volunteer/">IDGA</a></li>
+
+  </ul>
+
+  <h2>Groups</h2>
+
+  <ul>
+
+  <li>Penn State University Park: <a
+  href="https://www.facebook.com/PSUDigitalMedia/">Penn State Digital Media
+  Group</a></li>
+
+  <li>Penn State World Campus: <a
+  href="https://www.facebook.com/psudmdclub/">DMD Program Club</a></li>
+
+  <li><a href="https://www.meetup.com/topics/3d-animation/">Meetup.com</a></li>
+
+  <li><a href="https://www.facebook.com/groups/3dmodelingandanimation/">3D
+  Modeling and Animation Facebook Group</a></li>
+
+  <li><a href="https://www.facebook.com/ACMSIGGRAPH/">ACM SIGGRAPH Facebook
+  Group</a></li>
+
+  <li><a href="https://www.facebook.com/ACMSIGGRAPHS3/">SIGGRAPH S3 Facebook
+  Group</a></li>
+
+  </ul>
+
+  <h2>Animtion societies</h2>
+
+  <ul>
+
+  <li><a href="https://www.facebook.com/ASIFAInternational/">ASIFA
+  International</a></li>
+
+  <li><a href="https://www.facebook.com/groups/asifasouth/">ASIFA South</a></li>
+
+  </ul>
+
+  <h2>Underrepresented groups</h2>
+
+  <ul>
+
+  <li><a href="https://www.facebook.com/wia.animation/">Women in
+  Animation:</a></li>
+
+  <li><a
+  href="http://greatwomenanimators.com/">http://greatwomenanimators.com/</a></li>
+
+  <li><a href="https://www.bwastudios.com/">Black Women Animate Studios</a></li>
+
+  <li><a href="http://www.panimation.tv/">Trans, Non-binary Motion Graphics
+  Artist Directory</a></li>
+
+  </ul>

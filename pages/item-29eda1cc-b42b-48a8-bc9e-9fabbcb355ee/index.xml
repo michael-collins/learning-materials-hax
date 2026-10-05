@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-29eda1cc-b42b-48a8-bc9e-9fabbcb355ee</id>
+<indent>4</indent>
+<location>pages/item-29eda1cc-b42b-48a8-bc9e-9fabbcb355ee/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/tutorials</slug>
+<order>7</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Tutorials</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-f95d03e8-6f8c-492f-b309-af9af8b68604</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f95d03e8-6f8c-492f-b309-af9af8b68604"></oer-include>]]></content>
+</item>

@@ -1,0 +1,20 @@
+id: item-1d77cbfd-d818-4bc0-a7d8-edc4d3afcbea
+indent: 4
+location: pages/item-1d77cbfd-d818-4bc0-a7d8-edc4d3afcbea/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/topics/design-process
+order: 4
+parent: item-c539b3d9-1ca7-4c2b-89a1-6dc9a50cf4c5
+title: Design process
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-30b32609-79cd-47ee-9355-c96b3e98f948
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-30b32609-79cd-47ee-9355-c96b3e98f948"></oer-include>

@@ -1,0 +1,20 @@
+id: item-e35927c7-fbff-4202-acae-05b304358c61
+indent: 3
+location: pages/item-e35927c7-fbff-4202-acae-05b304358c61/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/animation-principles
+order: 1
+parent: item-2e61b638-0bbe-4708-a00a-c523bcbb229c
+title: Animation Principles
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerRef:
+    page: item-1903f5ba-d051-49cf-9836-073992c93548
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-1903f5ba-d051-49cf-9836-073992c93548"></oer-include>

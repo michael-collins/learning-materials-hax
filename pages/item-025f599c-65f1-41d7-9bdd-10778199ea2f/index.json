@@ -1,0 +1,34 @@
+{
+  "id": "item-025f599c-65f1-41d7-9bdd-10778199ea2f",
+  "indent": 1,
+  "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.json",
+  "slug": "articles/designs-of-darkness",
+  "order": 31,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Designs of Darkness",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd100-lesson-2-readings-chapter-6-designs-of-darkness",
+    "tags": "reading",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-01",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Designs of Darkness (p. 55-61) in Design and Truth by Robert Grudin</p>\n<h2>Prompt</h2>\n<p>In this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the social design ideologies of Martin Heidegger and Sen no Rikyu.</p>\n<p>Can you identify contemporary people that may have similar contrasting design sensibilities? Their differences don't have to be political; artists and designers can have different sensibilities regarding cultural values, aesthetic taste, scale, technology, or other aspects of their work.</p>\n<p>Compare two or more creators with divergent sensibilities on opposite extremes. Support your claims with vivid descriptions and cited facts.</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p>&lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" target=\"_blank\" rel=\"license\"&gt;\n&lt;img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\" style=\"border-width:0; max-width:170px;\" /&gt;\n&lt;/a&gt;\n&lt;br /&gt;\nPlease see the &lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" target=\"_blank\" rel=\"license\"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>\n"
+}

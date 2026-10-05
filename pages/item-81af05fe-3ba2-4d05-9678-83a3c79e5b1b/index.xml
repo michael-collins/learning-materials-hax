@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-81af05fe-3ba2-4d05-9678-83a3c79e5b1b</id>
+<indent>2</indent>
+<location>pages/item-81af05fe-3ba2-4d05-9678-83a3c79e5b1b/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/introduction</slug>
+<order>1</order>
+<parent>item-ce739bdb-84f3-4797-9b76-5f951decba4e</parent>
+<title>Introduction</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-b0173484-bc6f-4c38-abad-2e0bd0df4338</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b0173484-bc6f-4c38-abad-2e0bd0df4338"></oer-include>]]></content>
+</item>

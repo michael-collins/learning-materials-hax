@@ -1,0 +1,20 @@
+id: item-2584abc2-b26c-42c2-985b-ba9b84f14d45
+indent: 4
+location: pages/item-2584abc2-b26c-42c2-985b-ba9b84f14d45/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/activities/daily-design-journal
+order: 0
+parent: item-c986abcf-e6c3-4aeb-b914-f2ddb3931cb1
+title: Daily design journal
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerRef:
+    page: item-ee712650-1b9b-4e4f-bfdf-4fdd079b0bf7
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-ee712650-1b9b-4e4f-bfdf-4fdd079b0bf7"></oer-include>

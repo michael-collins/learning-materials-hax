@@ -1,0 +1,20 @@
+id: item-8fd7eccf-b1e1-4971-aaeb-65590ed9484d
+indent: 4
+location: pages/item-8fd7eccf-b1e1-4971-aaeb-65590ed9484d/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/listen/99-percent-invisible-on-average
+order: 0
+parent: item-aa5b5154-07c2-4216-be85-f32f40e52993
+title: '99 Percent Invisible: On Average'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-359a01d6-4f55-472e-8c8d-4ebab9331842
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-359a01d6-4f55-472e-8c8d-4ebab9331842"></oer-include>

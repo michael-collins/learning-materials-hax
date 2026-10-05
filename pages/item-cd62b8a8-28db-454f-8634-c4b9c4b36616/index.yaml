@@ -1,0 +1,20 @@
+id: item-cd62b8a8-28db-454f-8634-c4b9c4b36616
+indent: 4
+location: pages/item-cd62b8a8-28db-454f-8634-c4b9c4b36616/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-5-self-design/listen/creative-mornings-creativity-and-the-freedom-to-fail
+order: 0
+parent: item-8da47bfb-a2e1-490a-a85f-3881ceb25a6c
+title: 'Creative Mornings: Creativity and the Freedom to Fail'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-6e98f2a6-ce0c-4ebc-9aec-b98a7dad5b24
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-6e98f2a6-ce0c-4ebc-9aec-b98a7dad5b24"></oer-include>

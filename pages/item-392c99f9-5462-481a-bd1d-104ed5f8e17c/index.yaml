@@ -1,0 +1,20 @@
+id: item-392c99f9-5462-481a-bd1d-104ed5f8e17c
+indent: 4
+location: pages/item-392c99f9-5462-481a-bd1d-104ed5f8e17c/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/listen/99-percent-invisible-lawn-order
+order: 1
+parent: item-bc5ca2d7-9ab0-4570-a60f-9bd171402ead
+title: '99 Percent Invisible: Lawn Order'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-95ac675e-94d7-414d-81ee-275b4aedc913
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-95ac675e-94d7-414d-81ee-275b4aedc913"></oer-include>

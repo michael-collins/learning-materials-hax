@@ -1,0 +1,33 @@
+id: item-728c455b-226f-433d-9978-17a476458a79
+indent: 1
+location: pages/item-728c455b-226f-433d-9978-17a476458a79/index.yaml
+slug: pathways/fundamentals
+order: 13
+parent: item-eedb63ad-5692-4b6b-842e-a09ce82b07ee
+title: Fundamentals
+description: ''
+metadata:
+  published: false
+  pageType: oer:pathway
+  oerSource: pathways/fundamentals
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: |
+  <oer-pathway layout="matrix"></oer-pathway>
+  <p>The essentials.</p>
+  <h2>Learning Objectives</h2>
+  <p>objective example</p>
+  <h2>Examples</h2>
+  <ul>
+  <li>Example artist or studio</li>
+  </ul>
+  <h2>Specializations</h2>
+  <p>This pathway includes the following specializations:</p>

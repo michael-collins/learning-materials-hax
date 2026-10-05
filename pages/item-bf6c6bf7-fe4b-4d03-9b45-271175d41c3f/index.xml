@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bf6c6bf7-fe4b-4d03-9b45-271175d41c3f</id>
+<indent>2</indent>
+<location>pages/item-bf6c6bf7-fe4b-4d03-9b45-271175d41c3f/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design</slug>
+<order>2</order>
+<parent>item-69d4e331-f13a-4ee4-9c2e-1bba82279d67</parent>
+<title>Lesson 2: Visual and interaction design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerRef>
+<page>item-b9d7b4eb-2b04-4cfd-88c2-8982abc7923e</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b9d7b4eb-2b04-4cfd-88c2-8982abc7923e"></oer-include>]]></content>
+</item>

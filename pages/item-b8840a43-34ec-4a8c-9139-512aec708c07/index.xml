@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b8840a43-34ec-4a8c-9139-512aec708c07</id>
+<indent>1</indent>
+<location>pages/item-b8840a43-34ec-4a8c-9139-512aec708c07/index.xml</location>
+<slug>resources/jesse-kanda</slug>
+<order>14</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Jesse Kanda</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/jesse-kanda</oerSource>
+<oerFields>
+<url>http://www.jessekanda.com/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

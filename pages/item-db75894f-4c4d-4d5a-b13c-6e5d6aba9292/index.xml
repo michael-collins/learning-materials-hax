@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-db75894f-4c4d-4d5a-b13c-6e5d6aba9292</id>
+<indent>4</indent>
+<location>pages/item-db75894f-4c4d-4d5a-b13c-6e5d6aba9292/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/define-hmw</slug>
+<order>4</order>
+<parent>item-37f45e8c-1f67-44cf-8615-146707d362e4</parent>
+<title>Define: HMW</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-dac12852-d5bd-485c-9864-76e4d79b7a29</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-dac12852-d5bd-485c-9864-76e4d79b7a29"></oer-include>]]></content>
+</item>

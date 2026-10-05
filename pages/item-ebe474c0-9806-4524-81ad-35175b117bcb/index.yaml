@@ -1,0 +1,20 @@
+id: item-ebe474c0-9806-4524-81ad-35175b117bcb
+indent: 4
+location: pages/item-ebe474c0-9806-4524-81ad-35175b117bcb/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/readings/chapter-3-what-design-and-truth-say-about-each-other
+order: 0
+parent: item-1583962c-54f8-48ec-b445-151a76f50494
+title: Chapter 3. What Design and Truth Say About Each Other
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-27710ed3-03f1-48a9-84a1-9e572ae45978
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-27710ed3-03f1-48a9-84a1-9e572ae45978"></oer-include>

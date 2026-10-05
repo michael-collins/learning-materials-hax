@@ -1,0 +1,34 @@
+{
+  "id": "item-7c30ea9a-fa18-4ad0-aeed-c4a4b6d9db7b",
+  "indent": 1,
+  "location": "pages/item-7c30ea9a-fa18-4ad0-aeed-c4a4b6d9db7b/index.json",
+  "slug": "articles/writing-guidelines",
+  "order": 17,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Writing Guidelines",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd100-introduction-writing-guidelines",
+    "tags": "introduction",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-01",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<blockquote>\n<p>\"Don't make the reader do the thinking you failed to do.\"</p>\n</blockquote>\n<h2>Drafts</h2>\n<p>When writing a draft, composition structure, grammar, and spelling are the least important. While it is always good to strive for perfection, that should be relegated to the editing phase of writing. A good drafting session means that you were able to get as many of your ideas out as rapidly as possible, even if they are fragments or tangents. Natural language is fine in this stage, and even desired for personal stories. When providing feedback on drafts, try not to nitpick on spelling and grammar, but rather the content, insights, and direction of the concepts.</p>\n<h2>Final deliverables</h2>\n<p>Typically, a final deliverable will be evaluated according to all possible metrics. Ensure that you leave time for editing — this will help you catch embarrassing spelling and grammar errors. You should always ask someone to give you feedback on your writing and to proofread before you submit. This will help you communicate your ideas free from the distraction of careless mistakes.</p>\n<h2>Proofreading checklist</h2>\n<ol>\n<li>Concepts\n<ul>\n<li>Ideas are organized and structured</li>\n<li>Support arguments with facts</li>\n<li>Avoid hyperbole and generalizations</li>\n<li>Use concise language and avoid filler</li>\n<li>Avoid awkward sentences</li>\n</ul>\n</li>\n<li>Writing style is appropriate for the audience</li>\n<li>Consistent voice, correct grammar and spelling</li>\n</ol>\n"
+}

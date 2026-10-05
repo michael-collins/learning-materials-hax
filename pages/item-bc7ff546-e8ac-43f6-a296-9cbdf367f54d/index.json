@@ -1,0 +1,34 @@
+{
+  "id": "item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d",
+  "indent": 1,
+  "location": "pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.json",
+  "slug": "projects/deliver-hypertext-narrative-draft-2",
+  "order": 18,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Deliver: Hypertext narrative (draft 2)",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-deliver-1200px@2x.png\" alt=\"Double Diamond Deliver Phase graphic\"></p>\n<p>Iterative improvement is the key to good design. Now that you have peer feedback, tweak, change, and improve your work. Re-read your story and identify where you might be able to further develop characters, increase tension and drama, introduce dialogue, alter story pacing, smooth out awkward transitions, etc.</p>\n<p>In this draft, consider the role of style and emerging techniques in your narrative. See examples <a href=\"https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/List_of_narrative_techniques.html\">here</a>.</p>\n<p><strong>Consider the following questions:</strong></p>\n<ul>\n<li>Is there are strong organizational structure to your story?</li>\n<li>Do the characters have motivations, challenges, and arcs?</li>\n<li>Is the technology or change you're inventing described in convincing detail?</li>\n<li>Is the story too long? Too short? Does every sentence matter?</li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>Review your feedback for the hypertext narrative.\n<ol>\n<li>If you are unsure about how feedback works, please see these <a href=\"/toolkit/feedback-and-critique.html\">guidelines</a>.</li>\n</ol>\n</li>\n<li>Reflect on how your work can be improved. Analyze, interpret, and apply relevant feedback to improve the project.</li>\n<li>Record the changes that you made to the hypertext narrative.</li>\n<li>Publish the HTML file.</li>\n</ol>\n<h2>Optional CSS Styling</h2>\n<p>As you finalize your story, you may use this time to customize the appearance of your Twine pages using CSS—the declarative programming language used in web development.</p>\n<p>This is an optional step, but it's a great skill to learn if you're interested in web design and a fun way to personalize your story's look.</p>\n<p><strong>Resources:</strong></p>\n<ul>\n<li><a href=\"http://twinery.org/wiki/twine2:change_the_font_colors_or_appearance\">How to add custom CSS to a Twine project</a></li>\n<li><a href=\"https://developers.google.com/web/tools/chrome-devtools/css/\">Tutorial on using the DevTools Inspector in Google Chrome</a> — Inspect elements in your Twine pages to figure out how to target them in CSS</li>\n<li><a href=\"https://developers.google.com/web/tools/chrome-devtools/beginners/css\">Basic tutorial on customizing a page with CSS</a></li>\n<li><a href=\"https://internetingishard.com/html-and-css/\">Interneting is Hard</a>\n— comprehensive tutorials about HTML and CSS</li>\n<li><a href=\"https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS\">General CSS reference from Mozilla</a></li>\n</ul>\n<h2>Post work</h2>\n<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>\n<ol>\n<li><strong>Change Log:</strong> Upload a short description about the changes and improvements that were made in <code>changelog.doc</code> format.</li>\n<li><strong>HTML:</strong> Upload the exported Twine <code>.html</code> file (or <code>.zip</code> file if you have multiple assets).</li>\n</ol>\n"
+}

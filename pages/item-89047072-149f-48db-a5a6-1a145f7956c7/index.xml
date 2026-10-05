@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-89047072-149f-48db-a5a6-1a145f7956c7</id>
+<indent>4</indent>
+<location>pages/item-89047072-149f-48db-a5a6-1a145f7956c7/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-5-document</slug>
+<order>5</order>
+<parent>item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8</parent>
+<title>Phase 5: Document</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-012703fe-c64b-483c-b151-c065f1789af6</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-012703fe-c64b-483c-b151-c065f1789af6"></oer-include>]]></content>
+</item>

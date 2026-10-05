@@ -1,0 +1,35 @@
+id: item-40d50c64-d53b-4267-8221-6f7bf3388db1
+indent: 1
+location: pages/item-40d50c64-d53b-4267-8221-6f7bf3388db1/index.yaml
+slug: lessons/post-effects-and-color-grading
+order: 29
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: Post Effects and Color Grading
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerSource: lessons/post-effects-color-grading
+  oerFields:
+    estimatedDuration: 4 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Apply color correction and grading
+      - Use effects like glow, blur, and grain
+      - Match colors across different elements
+      - Create consistent visual style
+      - Apply final polish and finishing touches
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Learn to apply post-production effects and color grading to create
+  polished, cohesive final images with professional visual quality.</p>

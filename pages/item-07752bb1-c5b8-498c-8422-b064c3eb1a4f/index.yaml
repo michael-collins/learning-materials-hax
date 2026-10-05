@@ -1,0 +1,20 @@
+id: item-07752bb1-c5b8-498c-8422-b064c3eb1a4f
+indent: 3
+location: pages/item-07752bb1-c5b8-498c-8422-b064c3eb1a4f/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals
+order: 2
+parent: item-2e61b638-0bbe-4708-a00a-c523bcbb229c
+title: 3D Modeling Fundamentals
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerRef:
+    page: item-d05396b9-88a6-4631-821f-40a2e9bd2d4f
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-d05396b9-88a6-4631-821f-40a2e9bd2d4f"></oer-include>

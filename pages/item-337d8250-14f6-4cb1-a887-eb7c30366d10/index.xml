@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-337d8250-14f6-4cb1-a887-eb7c30366d10</id>
+<indent>1</indent>
+<location>pages/item-337d8250-14f6-4cb1-a887-eb7c30366d10/index.xml</location>
+<slug>resources/eva-papamargariti</slug>
+<order>10</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Eva Papamargariti</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/eva-papamargariti</oerSource>
+<oerFields>
+<url>https://evapapamargariti.tumblr.com/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

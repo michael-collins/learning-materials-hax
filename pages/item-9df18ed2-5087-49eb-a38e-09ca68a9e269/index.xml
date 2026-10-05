@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9df18ed2-5087-49eb-a38e-09ca68a9e269</id>
+<indent>1</indent>
+<location>pages/item-9df18ed2-5087-49eb-a38e-09ca68a9e269/index.xml</location>
+<slug>resources/hdri-environment-textures</slug>
+<order>28</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>HDRI environment textures</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/hdri-environment-textures</oerSource>
+<tags>textures,lighting</tags>
+<oerFields>
+<url>https://hdrihaven.com/</url>
+<kind>assets</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

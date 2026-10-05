@@ -1,0 +1,23 @@
+{
+  "id": "item-cafd576b-c127-41f1-a177-a7e43cc608f3",
+  "indent": 4,
+  "location": "pages/item-cafd576b-c127-41f1-a177-a7e43cc608f3/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/readings/chapter-10-in-jefferson-s-footsteps",
+  "order": 2,
+  "parent": "item-655ab6bb-f47c-4064-bb59-3c5931f8cc5c",
+  "title": "Chapter 10. In Jefferson's Footsteps...",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-1832bf3f-bcb2-4709-8292-ee22a330aee5",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-1832bf3f-bcb2-4709-8292-ee22a330aee5\"></oer-include>"
+}

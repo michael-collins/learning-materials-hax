@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e312e0ac-3a4f-4b21-9249-5750fb35ce10</id>
+<indent>4</indent>
+<location>pages/item-e312e0ac-3a4f-4b21-9249-5750fb35ce10/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals/introduction-to-texturing</slug>
+<order>2</order>
+<parent>item-07752bb1-c5b8-498c-8422-b064c3eb1a4f</parent>
+<title>Introduction to Texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lecture</pageType>
+<oerRef>
+<page>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-be2fc5ef-ba1f-484b-be6a-2216a24314a2"></oer-include>]]></content>
+</item>

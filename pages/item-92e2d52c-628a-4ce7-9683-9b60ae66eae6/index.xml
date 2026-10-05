@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-92e2d52c-628a-4ce7-9683-9b60ae66eae6</id>
+<indent>4</indent>
+<location>pages/item-92e2d52c-628a-4ce7-9683-9b60ae66eae6/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers/introduction-to-texturing</slug>
+<order>2</order>
+<parent>item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8</parent>
+<title>Introduction to Texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lecture</pageType>
+<oerRef>
+<page>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-be2fc5ef-ba1f-484b-be6a-2216a24314a2"></oer-include>]]></content>
+</item>

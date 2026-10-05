@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-52791ff4-1396-4fe4-b913-218d0af53972</id>
+<indent>4</indent>
+<location>pages/item-52791ff4-1396-4fe4-b913-218d0af53972/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers/lighting-and-rendering-the-airline-chair</slug>
+<order>5</order>
+<parent>item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8</parent>
+<title>Lighting and Rendering the Airline Chair</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:exercise</pageType>
+<oerRef>
+<page>item-cfaff943-bb9c-4bb5-ba04-82a293c03f96</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-cfaff943-bb9c-4bb5-ba04-82a293c03f96"></oer-include>]]></content>
+</item>

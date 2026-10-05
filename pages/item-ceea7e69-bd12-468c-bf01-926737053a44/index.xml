@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ceea7e69-bd12-468c-bf01-926737053a44</id>
+<indent>4</indent>
+<location>pages/item-ceea7e69-bd12-468c-bf01-926737053a44/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/deliver-final-prototype</slug>
+<order>11</order>
+<parent>item-37f45e8c-1f67-44cf-8615-146707d362e4</parent>
+<title>Deliver: Final prototype</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-f3cd29e8-2c1f-44e3-93c8-b4874deced50</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f3cd29e8-2c1f-44e3-93c8-b4874deced50"></oer-include>]]></content>
+</item>

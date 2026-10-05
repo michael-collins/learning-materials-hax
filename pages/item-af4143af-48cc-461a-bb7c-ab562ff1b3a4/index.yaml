@@ -1,0 +1,96 @@
+id: item-af4143af-48cc-461a-bb7c-ab562ff1b3a4
+indent: 1
+location: pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.yaml
+slug: exercises/modeling-a-queen
+order: 38
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a Queen
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-queen
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: files/rec9QA33OJOpWtn9W_image_queen_image.png
+    imageAlt: queen image.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: Reference Image of the Top of a Queen Chess Piece
+        url: files/rec6RB7ybJX1eHN8N_attachment_queen_top.jpg
+        description: ''
+        alt: Reference Image of the Top of a Queen Chess Piece
+      - title: Reference Image of the Side of a Queen Chess Piece
+        url: files/recMOmgsJxuDlTZ8F_attachment_queen_side.jpg
+        description: Reference Image of the Side of a Queen Chess Piece
+        alt: Reference Image of the Side of a Queen Chess Piece
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QkznWA0SSvO8i2iMil7btof"
+  title="Modeling a Queen Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>For this assignment, recreate the steps
+  in&nbsp;basic&nbsp;<strong>Demonstration</strong>&nbsp;or try to make
+  something more refined or complex.
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  <strong>Submit three renders to both <em>Canvas</em> <em>and the corresponding
+  discussion thread for review</em></strong>.&nbsp;Make sure that your
+  assignment is titled in the following format:
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  <strong>Last name, First name,</strong>&nbsp;the
+  word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson
+  number,</strong>&nbsp;and the&nbsp;<strong>word
+  "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
+  number.</strong>
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x
+
+  &nbsp;</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

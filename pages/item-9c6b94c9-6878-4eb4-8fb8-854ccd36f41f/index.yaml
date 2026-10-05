@@ -1,0 +1,20 @@
+id: item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f
+indent: 3
+location: pages/item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-1-introduction/getting-started-in-3d-animation
+order: 0
+parent: item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913
+title: Getting Started in 3D Animation
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-2aefc0d2-b86a-4598-bd04-73d1a1ccb2dd
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-2aefc0d2-b86a-4598-bd04-73d1a1ccb2dd"></oer-include>

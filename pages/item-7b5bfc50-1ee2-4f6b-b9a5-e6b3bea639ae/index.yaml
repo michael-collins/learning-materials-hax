@@ -1,0 +1,38 @@
+id: item-7b5bfc50-1ee2-4f6b-b9a5-e6b3bea639ae
+indent: 1
+location: pages/item-7b5bfc50-1ee2-4f6b-b9a5-e6b3bea639ae/index.yaml
+slug: articles/introduction
+order: 9
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Introduction
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-introduction-open-design
+  tags: lesson-introduction
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p><img src="files/open-design-img@2x.jpg" alt="Excerpt from book, Open Design
+  Now"></p>
+
+  <p>In this lesson, you will be learning about <strong>open design</strong>, a
+  paradigm where design operates in a transparent, self-initiated, and
+  collaborative environment.</p>
+
+  <p>You will continue to practice the Double Diamond design process by creating
+  your third course project, where you will generate a physical prototype based
+  on some common open design principles. You will also continue reading and
+  responding to the writing prompts for <em>Design and Truth</em> book chapters,
+  and will have the opportunity to watch a lecture by Thomas Lommee.</p>

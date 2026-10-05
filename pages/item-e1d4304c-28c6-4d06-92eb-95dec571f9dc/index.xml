@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e1d4304c-28c6-4d06-92eb-95dec571f9dc</id>
+<indent>3</indent>
+<location>pages/item-e1d4304c-28c6-4d06-92eb-95dec571f9dc/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/capstone-project/2-project-advisor</slug>
+<order>1</order>
+<parent>item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041</parent>
+<title>2. Project advisor</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-5965abc0-8ace-4033-98ec-157f9906d7e6</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-5965abc0-8ace-4033-98ec-157f9906d7e6"></oer-include>]]></content>
+</item>

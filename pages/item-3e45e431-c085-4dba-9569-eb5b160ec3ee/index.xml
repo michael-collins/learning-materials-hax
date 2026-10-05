@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</id>
+<indent>0</indent>
+<location>pages/item-3e45e431-c085-4dba-9569-eb5b160ec3ee/index.xml</location>
+<slug>resources</slug>
+<order>7</order>
+<parent></parent>
+<title>Resources</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Artists, studios and other references the exercises and projects point to.</p>
+<oer-collection types="oer:resource" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+</item>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2255715b-3ce6-4e46-a64a-607615e8eefc</id>
+<indent>4</indent>
+<location>pages/item-2255715b-3ce6-4e46-a64a-607615e8eefc/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/develop-story-and-plot-elements</slug>
+<order>4</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Develop: Story and plot elements</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-70703acd-6a27-4bb4-8c9e-d66151b3b04e</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-70703acd-6a27-4bb4-8c9e-d66151b3b04e"></oer-include>]]></content>
+</item>

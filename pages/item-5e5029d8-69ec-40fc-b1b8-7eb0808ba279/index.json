@@ -1,0 +1,23 @@
+{
+  "id": "item-5e5029d8-69ec-40fc-b1b8-7eb0808ba279",
+  "indent": 4,
+  "location": "pages/item-5e5029d8-69ec-40fc-b1b8-7eb0808ba279/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/readings/chapter-8-giorgio-vasari",
+  "order": 0,
+  "parent": "item-655ab6bb-f47c-4064-bb59-3c5931f8cc5c",
+  "title": "Chapter 8. Giorgio Vasari...",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-4ffa73d8-105e-4940-be7c-0604cc05856d",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-4ffa73d8-105e-4940-be7c-0604cc05856d\"></oer-include>"
+}

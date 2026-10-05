@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f</id>
+<indent>3</indent>
+<location>pages/item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-1-introduction/getting-started-in-3d-animation</slug>
+<order>0</order>
+<parent>item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913</parent>
+<title>Getting Started in 3D Animation</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-2aefc0d2-b86a-4598-bd04-73d1a1ccb2dd</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-2aefc0d2-b86a-4598-bd04-73d1a1ccb2dd"></oer-include>]]></content>
+</item>

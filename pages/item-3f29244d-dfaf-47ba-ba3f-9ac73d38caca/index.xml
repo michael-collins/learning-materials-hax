@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3f29244d-dfaf-47ba-ba3f-9ac73d38caca</id>
+<indent>4</indent>
+<location>pages/item-3f29244d-dfaf-47ba-ba3f-9ac73d38caca/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/production-reports</slug>
+<order>2</order>
+<parent>item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3</parent>
+<title>Production Reports</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-d6797158-a470-4711-b8ca-5f81d57f1795</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d6797158-a470-4711-b8ca-5f81d57f1795"></oer-include>]]></content>
+</item>

@@ -1,0 +1,352 @@
+id: item-01f15874-da6a-4f93-855c-9ae0d4ec5dd9
+indent: 1
+location: pages/item-01f15874-da6a-4f93-855c-9ae0d4ec5dd9/index.yaml
+slug: tutorials/setting-up-ollama-for-local-ai
+order: 3
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: Setting Up Ollama for Local AI
+description: ''
+metadata:
+  published: true
+  pageType: oer:tutorial
+  oerSource: tutorials/setting-up-ollama
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    date: '2026-02-09T00:00:00.000Z'
+    difficulty: Beginner
+    allowEmbed: true
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <oer-iframe src="https://www.youtube.com/watch?v=8amsyT4NUrM" title="Setting
+  up Ollama for running AI models locally"></oer-iframe>
+
+  <h2>What is Ollama?</h2>
+
+  <p>Ollama is a free tool that runs AI models locally. It includes a desktop
+  app where you can download a model and chat with it, similar to other AI chat
+  products.</p>
+
+  <p><strong>Why run models locally?</strong></p>
+
+  <ul>
+
+  <li><strong>Privacy</strong> — your data never leaves your machine</li>
+
+  <li><strong>No usage costs</strong> — once downloaded, models run for
+  free</li>
+
+  <li><strong>Offline access</strong> — works without an internet
+  connection</li>
+
+  <li><strong>Experimentation</strong> — try many different models quickly</li>
+
+  </ul>
+
+  <h2>Prerequisites</h2>
+
+  <p>Before starting, make sure you have:</p>
+
+  <ul>
+
+  <li>A computer with at least <strong>8 GB of RAM</strong> is needed for
+  smaller models, though 16 GB or larger is recommended. The more RAM, the
+  better! This tends to be the hardware component that leads impact on what
+  models can be run, though GPU and CPU are also important.</li>
+
+  <li><strong>macOS</strong> or <strong>Windows</strong> (Linux works too, but
+  often involves more setup)</li>
+
+  <li>An internet connection (for downloading the app and a model)</li>
+
+  <li>Free disk space (many models are several GB in size)</li>
+
+  </ul>
+
+  <h2>Step 1: Install Ollama (the background engine)</h2>
+
+  <h3>macOS</h3>
+
+  <p>Download the installer from the official website:</p>
+
+  <ol>
+
+  <li>Visit <a
+  href="https://ollama.com/download">https://ollama.com/download</a></li>
+
+  <li>Click the <strong>macOS</strong> button</li>
+
+  <li>Open the downloaded <code>.dmg</code> file and drag Ollama to your
+  Applications folder</li>
+
+  <li>Launch Ollama from Applications — you'll see the llama icon appear in the
+  menu bar</li>
+
+  </ol>
+
+  <h3>Windows</h3>
+
+  <ol>
+
+  <li>Visit <a
+  href="https://ollama.com/download">https://ollama.com/download</a></li>
+
+  <li>Click the <strong>Windows</strong> download button</li>
+
+  <li>Run the installer and follow the prompts</li>
+
+  </ol>
+
+  <h3>Linux</h3>
+
+  <ol>
+
+  <li>Visit <a
+  href="https://ollama.com/download">https://ollama.com/download</a></li>
+
+  <li>Click the <strong>Linux</strong> button</li>
+
+  <li>Copy the installation command into the terminal</li>
+
+  </ol>
+
+  <p>Setup may vary by distribution.</p>
+
+  <h2>Step 2: Make sure Ollama is running</h2>
+
+  <p>Ollama usually runs quietly in the background.</p>
+
+  <ul>
+
+  <li><strong>macOS:</strong> Look for the Ollama (llama) icon in the
+  <strong>menu bar</strong>.</li>
+
+  <li><strong>Windows:</strong> Look for Ollama in the <strong>system
+  tray</strong> (near the clock) or in your Start menu.</li>
+
+  </ul>
+
+  <p>If you don't see it running, open Ollama from your Applications (macOS) or
+  Start menu (Windows).</p>
+
+  <h2>Step 3: Open the Ollama chat app</h2>
+
+  <p>Open the Ollama desktop app.</p>
+
+  <ul>
+
+  <li><strong>macOS:</strong> Open <strong>Ollama</strong> from
+  Applications.</li>
+
+  <li><strong>Windows:</strong> Open <strong>Ollama</strong> from the Start
+  menu.</li>
+
+  </ul>
+
+  <p>If you see a chat screen, you're in the right place.</p>
+
+  <h2>Step 4: Select and download a model</h2>
+
+  <p>In the Ollama app, there is a models drop-down in the chat bar. Choose one
+  already downloaded or select a new one to download and use the model.</p>
+
+  <h3>Models and descriptions (as of this writing)</h3>
+
+  <p>Models are updated frequently, so you may also want to do some research on
+  your own to identify the best model for your needs.</p>
+
+  <table>
+
+  <thead>
+
+  <tr>
+
+  <th>Model</th>
+
+  <th>Best for</th>
+
+  <th>Pros</th>
+
+  <th>Cons</th>
+
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+  <tr>
+
+  <td><code>phi3</code></td>
+
+  <td>Everyday Q&amp;A, quick drafts, basic help</td>
+
+  <td>Fast on most computers, smaller download, good "starter" model</td>
+
+  <td>Less accurate than larger models, not as strong for complex writing or
+  reasoning</td>
+
+  </tr>
+
+  <tr>
+
+  <td><code>llama3.2</code></td>
+
+  <td>General-purpose chat, writing help, study help</td>
+
+  <td>Strong all-around, better answers than very small models</td>
+
+  <td>Larger download, can feel slower on older laptops</td>
+
+  </tr>
+
+  <tr>
+
+  <td><code>gemma3</code></td>
+
+  <td>Great general chat, summarizing, (sometimes) image + text questions</td>
+
+  <td>Very capable for a wide range of tasks; available in multiple sizes</td>
+
+  <td>Some sizes are a bigger download; may feel slower on older machines</td>
+
+  </tr>
+
+  <tr>
+
+  <td><code>qwen3</code></td>
+
+  <td>Clear writing, structured answers, multi-step tasks</td>
+
+  <td>Strong instruction-following; lots of size options</td>
+
+  <td>Larger sizes can be heavy; smaller sizes may be less accurate</td>
+
+  </tr>
+
+  <tr>
+
+  <td><code>deepseek-r1</code></td>
+
+  <td>Reasoning-heavy questions (math, logic, planning)</td>
+
+  <td>Often stronger at "think it through" tasks</td>
+
+  <td>Can be slower; can produce longer answers than you want</td>
+
+  </tr>
+
+  <tr>
+
+  <td><code>mistral</code></td>
+
+  <td>Writing and summarization</td>
+
+  <td>Good balance of quality and speed</td>
+
+  <td>Older than some newer families; quality varies by use case</td>
+
+  </tr>
+
+  <tr>
+
+  <td><code>llama3.3</code></td>
+
+  <td>Highest-quality chat (if you have a powerful computer)</td>
+
+  <td>Excellent results when your hardware can handle it</td>
+
+  <td>Very large download and resource use; not recommended for most
+  laptops</td>
+
+  </tr>
+
+  </tbody>
+
+  </table>
+
+  <p>Tip: If you're not sure, start with <code>phi3</code>. If you want better
+  answers and your computer can handle it, try <code>llama3.2</code>,
+  <code>gemma3</code>, or <code>qwen3</code>.</p>
+
+  <p>Pick a beginner-friendly model, then download it:</p>
+
+  <ul>
+
+  <li><strong>Smaller / faster:</strong> <code>phi3</code></li>
+
+  <li><strong>Balanced:</strong> <code>llama3.2</code></li>
+
+  </ul>
+
+  <p>Notes:</p>
+
+  <ul>
+
+  <li>Model downloads can be several GB and may take a while.</li>
+
+  <li>If your computer feels slow or hot, choose a smaller model.</li>
+
+  </ul>
+
+  <h2>Step 5: Start a new chat</h2>
+
+  <p>Once a model is downloaded, select it in the app's chat bar.</p>
+
+  <p>Type your first message to create a new chat.</p>
+
+  <h2>Step 6: Try a quick chat</h2>
+
+  <p>In the Ollama app, try asking:</p>
+
+  <ul>
+
+  <li>"Summarize this paragraph in 3 bullet points: ..."</li>
+
+  <li>"Help me write a polite email."</li>
+
+  <li>"Explain photosynthesis like I'm 12."</li>
+
+  </ul>
+
+  <p>If responses are too slow, switch to a smaller model.</p>
+
+  <h2>Step 7 (Optional): Remove models to free up disk space (Terminal)</h2>
+
+  <p>Models can take up a lot of storage. If you want to remove a model you no
+  longer use, you can do it from the terminal.</p>
+
+  <p>Open a terminal:</p>
+
+  <ul>
+
+  <li><strong>macOS:</strong> Applications -&gt; Utilities -&gt; Terminal</li>
+
+  <li><strong>Windows:</strong> Start menu -&gt; Windows Terminal (or
+  PowerShell)</li>
+
+  </ul>
+
+  <p>List your installed models:</p>
+
+  <pre><code class="language-bash">ollama list
+
+  </code></pre>
+
+  <p>Remove a model:</p>
+
+  <pre><code class="language-bash">ollama rm phi3
+
+  </code></pre>
+
+  <p><strong>Note:</strong> You may be asked to enter your password. Just be
+  careful with the <code>rm</code> command, this permanently deletes files from
+  your computer.</p>
+
+  <p>If a model will not remove, make sure it is not currently selected or
+  running in the Ollama app, then try again. You may also need to restart your
+  computer.</p>

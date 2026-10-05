@@ -1,0 +1,23 @@
+{
+  "id": "item-4bff01e0-b57d-490c-8105-5009b6d273dd",
+  "indent": 4,
+  "location": "pages/item-4bff01e0-b57d-490c-8105-5009b6d273dd/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-5-self-design/readings/chapter-15-the-design-of-private-knowledge",
+  "order": 0,
+  "parent": "item-af8d89ae-0577-461e-8b55-96a987b41d3f",
+  "title": "Chapter 15. The Design of Private Knowledge",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-a8292035-7d4b-40a7-817e-f3584a6f76f0",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-a8292035-7d4b-40a7-817e-f3584a6f76f0\"></oer-include>"
+}

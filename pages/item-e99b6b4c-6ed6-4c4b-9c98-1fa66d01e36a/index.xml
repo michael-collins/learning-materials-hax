@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e99b6b4c-6ed6-4c4b-9c98-1fa66d01e36a</id>
+<indent>1</indent>
+<location>pages/item-e99b6b4c-6ed6-4c4b-9c98-1fa66d01e36a/index.xml</location>
+<slug>resources/3d-textures</slug>
+<order>26</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>3D Textures</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/3d-textures</oerSource>
+<tags>textures</tags>
+<oerFields>
+<url>https://3dtextures.me/tag/pbr/</url>
+<kind>assets</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

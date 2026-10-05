@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-cccc9d32-dda2-4767-8335-4f937d93e87d</id>
+<indent>1</indent>
+<location>pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.xml</location>
+<slug>projects/develop-iterate</slug>
+<order>31</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Develop: Iterate</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-4-open-design-develop-iterate</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
+<p>Review your notes from the user test and make adjustments, clarifications, and revisions to improve your kit and instructions. Whether your users have given you general feedback or specific feedback, it is your job to interpret what they are telling you. In an ideal product development scenario, there would be plenty of time to perform as many iterations as needed. If time allows, try testing another one or two participants to see if you can further improve the instructions.</p>
+<h2>Instructions</h2>
+<ol>
+<li>Make changes and improvements to your kit and instructions based on your feedback in the user test.</li>
+</ol>
+<h2>Post work</h2>
+<p>Use the indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>
+<ol>
+<li>Upload a <code>changelog.doc</code> file.</li>
+<li>Upload a <code>yourname-instructions-2.pdf</code> document. This should be a new and revised PDF document. Unrevised documents will not be graded.</li>
+</ol>
+]]></content>
+</item>

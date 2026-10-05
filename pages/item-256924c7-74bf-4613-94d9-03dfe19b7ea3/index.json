@@ -1,0 +1,23 @@
+{
+  "id": "item-256924c7-74bf-4613-94d9-03dfe19b7ea3",
+  "indent": 3,
+  "location": "pages/item-256924c7-74bf-4613-94d9-03dfe19b7ea3/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/introduction/requirements",
+  "order": 9,
+  "parent": "item-8153e6b4-28e8-4c08-ba68-ce087c804837",
+  "title": "Requirements",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-b1984c92-632e-464a-906a-eade21a5baf3",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-b1984c92-632e-464a-906a-eade21a5baf3\"></oer-include>"
+}

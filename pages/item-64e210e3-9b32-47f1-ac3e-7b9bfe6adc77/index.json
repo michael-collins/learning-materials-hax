@@ -1,0 +1,25 @@
+{
+  "id": "item-64e210e3-9b32-47f1-ac3e-7b9bfe6adc77",
+  "indent": 1,
+  "location": "pages/item-64e210e3-9b32-47f1-ac3e-7b9bfe6adc77/index.json",
+  "slug": "resources/physically-based",
+  "order": 29,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Physically Based",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/physically-based",
+    "tags": "database",
+    "oerFields": {
+      "url": "https://physicallybased.info/",
+      "kind": "reference"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

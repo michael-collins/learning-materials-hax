@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-97451758-ce0e-4625-851c-b3adc48a90ce</id>
+<indent>2</indent>
+<location>pages/item-97451758-ce0e-4625-851c-b3adc48a90ce/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/about</slug>
+<order>0</order>
+<parent>item-ce739bdb-84f3-4797-9b76-5f951decba4e</parent>
+<title>About</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

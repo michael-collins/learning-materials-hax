@@ -1,0 +1,24 @@
+<p>This OER book is licensed as <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. Some content is taken from other sources and cited throughout. However, this work is a living draft, presented as is, and may be changed or updated without notice.</p>
+<h2>Attribution</h2>
+<p>You are welcomed and encouraged to use the content in this book for your own teaching needs.  At a minimum, please provide attribution via html source schema, see below for usage. Use the <a href="https://search.google.com/structured-data/testing-tool/u/0/">Google Structured Data Testing tool</a> to test that the schema is functioning properly. More information can be found on <a href="http://oerschema.org">OERSchema.org</a>.</p>
+<p>If your publishing method prohibits schema, please use the visible attribution method provided.</p>
+<h3>OER Schema metadata attribution:</h3>
+<p>Add <a href="http://oerschema.org">OER Schema</a> and CC License to HTML source:</p>
+<pre><code>&lt;!-- Add OERSchema and CC schema vocabulary to object --&gt;
+&lt;div prefix="oer: http://oerschema.org/ cc:http://creativecommons.org/ns dc:http://purl.org/dc/terms/" resource="#oer-source"&gt;
+
+
+
+        &lt;!-- Add OER resource text and media here. --&gt;
+
+
+        &lt;!-- Link the license and attribution to the page --&gt;
+        &lt;link about="#oer-source" property="cc:license" content="https://creativecommons.org/licenses/by/4.0/"&gt;
+        &lt;meta about="#oer-source" property="cc:attributionUrl" content="https://www.gitbook.com/book/dmd-program/dmd-400-master"&gt;
+        &lt;meta about="#oer-source" property="cc:attributionName" typeof="oer:Resource" content="Michael Collins"&gt;
+
+&lt;/div&gt;
+</code></pre>
+<h3>Visible attribution</h3>
+<p>“<a href="https://www.gitbook.com/book/dmd-program/dmd-400-master/details">DMD 400: Digital Multimedia Design Capstone</a>” by Michael Collins is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>."</p>
+<p><code>&lt;a href="https://github.com/dmd-program/dmd-400-master"&gt;DMD 400: Digital Multimedia Design Capstone&lt;/a&gt;” by Michael Collins is licensed under &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC-BY-4.0&lt;/a&gt;.</code></p>

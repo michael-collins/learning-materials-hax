@@ -1,0 +1,23 @@
+{
+  "id": "item-5bf47e54-7e7f-46b1-b807-890541e5f4e3",
+  "indent": 4,
+  "location": "pages/item-5bf47e54-7e7f-46b1-b807-890541e5f4e3/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/identity-design",
+  "order": 5,
+  "parent": "item-8d24c121-2ffd-442f-9d30-d5da6d3f2565",
+  "title": "Identity design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-c2539732-3f41-432e-858d-18f5966e17f7",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-c2539732-3f41-432e-858d-18f5966e17f7\"></oer-include>"
+}

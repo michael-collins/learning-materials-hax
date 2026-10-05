@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6f2a410e-7cd4-4262-a7cb-17315a2e20b4</id>
+<indent>4</indent>
+<location>pages/item-6f2a410e-7cd4-4262-a7cb-17315a2e20b4/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/develop-storyboard</slug>
+<order>6</order>
+<parent>item-37f45e8c-1f67-44cf-8615-146707d362e4</parent>
+<title>Develop: Storyboard</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-b9617d93-679b-4aa5-9f57-03a613478863</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b9617d93-679b-4aa5-9f57-03a613478863"></oer-include>]]></content>
+</item>

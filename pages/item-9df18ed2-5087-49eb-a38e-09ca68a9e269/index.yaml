@@ -1,0 +1,21 @@
+id: item-9df18ed2-5087-49eb-a38e-09ca68a9e269
+indent: 1
+location: pages/item-9df18ed2-5087-49eb-a38e-09ca68a9e269/index.yaml
+slug: resources/hdri-environment-textures
+order: 28
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: HDRI environment textures
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/hdri-environment-textures
+  tags: textures,lighting
+  oerFields:
+    url: https://hdrihaven.com/
+    kind: assets
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-27995052-745d-4776-ada3-a9033b95a252</id>
+<indent>3</indent>
+<location>pages/item-27995052-745d-4776-ada3-a9033b95a252/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/introduction/writing-guidelines</slug>
+<order>8</order>
+<parent>item-8153e6b4-28e8-4c08-ba68-ce087c804837</parent>
+<title>Writing Guidelines</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-211da806-1505-4fac-87b7-33ce762c4b56</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-211da806-1505-4fac-87b7-33ce762c4b56"></oer-include>]]></content>
+</item>

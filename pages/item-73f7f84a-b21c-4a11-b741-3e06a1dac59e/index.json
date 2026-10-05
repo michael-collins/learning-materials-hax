@@ -1,0 +1,34 @@
+{
+  "id": "item-73f7f84a-b21c-4a11-b741-3e06a1dac59e",
+  "indent": 1,
+  "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.json",
+  "slug": "articles/liberty-as-knowledge-design",
+  "order": 53,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Liberty as Knowledge Design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd100-lesson-4-readings-chapter-12-liberty-as-knowledge-design",
+    "tags": "reading",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-01",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Liberty as Knowledge Design (p. 134 - 149) in Design and Truth by Robert Grudin.</p>\n<h2>Writing prompt</h2>\n<p>In this chapter, Grudin dissects the design challenges inherent in a society built on democratic values. He walks through the decline of intellectualism in Bagdad, the once preeminent hotspot for free thought on the planet, into the rise of liberty in other parts of the world. Grudin lays blame over the last 100 years of declining liberty in the United Sates to the failings of education to teach the value of liberty and civic leadership to its citizens.</p>\n<p>For this prompt, I'd like you to consider your thoughts on the link between intellectualism, education, and free expression. Have you ever felt a sense of civic duty? How have you expressed that in public society — or how might you? How could design play a bigger role in political discourse?</p>\n<p>Do you see a role for education in the conversation between civics and design?</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p>&lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" target=\"_blank\" rel=\"license\"&gt;\n&lt;img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\" style=\"border-width:0; max-width:170px;\" /&gt;\n&lt;/a&gt;\n&lt;br /&gt;\nPlease see the &lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" target=\"_blank\" rel=\"license\"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>\n"
+}

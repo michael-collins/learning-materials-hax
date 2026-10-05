@@ -1,0 +1,23 @@
+{
+  "id": "item-e563024c-8d7a-406f-aaec-4ed894234e07",
+  "indent": 3,
+  "location": "pages/item-e563024c-8d7a-406f-aaec-4ed894234e07/index.json",
+  "slug": "books/dmd-400-digital-multimedia-design-capstone/capstone-project/9-exhibition-statement",
+  "order": 8,
+  "parent": "item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041",
+  "title": "9. Exhibition statement",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-e33b1a0c-0c22-4bd9-bf8e-dcd20df8d1ab",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-e33b1a0c-0c22-4bd9-bf8e-dcd20df8d1ab\"></oer-include>"
+}

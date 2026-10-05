@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-90341f16-36b0-4f78-8877-f5cfb9bade8a</id>
+<indent>4</indent>
+<location>pages/item-90341f16-36b0-4f78-8877-f5cfb9bade8a/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/readings/chapter-13-corporate-redesign</slug>
+<order>2</order>
+<parent>item-2e49471e-8c7e-46a8-9e6f-2718e018f6f4</parent>
+<title>Chapter 13. Corporate Redesign...</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-00d48275-cbff-4590-a387-04a54b147968</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-00d48275-cbff-4590-a387-04a54b147968"></oer-include>]]></content>
+</item>

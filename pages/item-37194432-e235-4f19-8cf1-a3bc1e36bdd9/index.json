@@ -1,0 +1,24 @@
+{
+  "id": "item-37194432-e235-4f19-8cf1-a3bc1e36bdd9",
+  "indent": 1,
+  "location": "pages/item-37194432-e235-4f19-8cf1-a3bc1e36bdd9/index.json",
+  "slug": "resources/barry-doupe",
+  "order": 4,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Barry Doupe",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/barry-doupe",
+    "oerFields": {
+      "url": "http://www.barrydoupe.ca/",
+      "kind": "artist"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

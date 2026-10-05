@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2043703c-eb71-4f74-9dba-85bc4cfe5ae2</id>
+<indent>1</indent>
+<location>pages/item-2043703c-eb71-4f74-9dba-85bc4cfe5ae2/index.xml</location>
+<slug>lessons/deformers-and-shape-keys</slug>
+<order>16</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Deformers and Shape Keys</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/deformers-shape-keys</oerSource>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand deformer types and applications</item>
+<item>Create and manage shape keys</item>
+<item>Apply lattice and curve deformers</item>
+<item>Animate blend shapes and morph targets</item>
+<item>Combine deformers for complex effects</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Master deformation techniques including shape keys and various deformer types to create organic movement and facial animation.</p>
+]]></content>
+</item>

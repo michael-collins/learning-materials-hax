@@ -1,0 +1,23 @@
+{
+  "id": "item-879ac3a6-07f6-4e2c-a756-edbb6bfa1657",
+  "indent": 4,
+  "location": "pages/item-879ac3a6-07f6-4e2c-a756-edbb6bfa1657/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-1-gather-and-organize",
+  "order": 1,
+  "parent": "item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8",
+  "title": "Phase 1: Gather and organize",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-49421942-68f5-4593-beda-1fbeaa64c994",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-49421942-68f5-4593-beda-1fbeaa64c994\"></oer-include>"
+}

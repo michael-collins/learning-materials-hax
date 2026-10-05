@@ -1,0 +1,23 @@
+{
+  "id": "item-1a8284da-8895-4691-888f-c483c27a6aa6",
+  "indent": 4,
+  "location": "pages/item-1a8284da-8895-4691-888f-c483c27a6aa6/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/listen/99-percent-invisible-10-000-years",
+  "order": 1,
+  "parent": "item-aa5b5154-07c2-4216-be85-f32f40e52993",
+  "title": "99 Percent Invisible: 10,000 Years",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-07eebaa2-6035-4e34-9f79-846ffe531f2c",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-07eebaa2-6035-4e34-9f79-846ffe531f2c\"></oer-include>"
+}

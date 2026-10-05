@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ed2878d8-7e31-4ed5-8682-a9c3e23c4e0e</id>
+<indent>1</indent>
+<location>pages/item-ed2878d8-7e31-4ed5-8682-a9c3e23c4e0e/index.xml</location>
+<slug>lessons/storytelling</slug>
+<order>19</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Storytelling</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/dmd100-lesson-3-storytelling</oerSource>
+<oerFields>
+<courses>
+<item>DMD 100</item>
+</courses>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>We are surrounded by stories. These stories affect our attitudes, beliefs, and form our entire perception of reality. Historically, stories are how humans have transferred knowledge from generation to generation. Everything a designer does will be in support of telling stories and by extension, shape the world we inhabit.</p>
+<blockquote>
+<p>Storytelling has a long history as a mechanism of knowledge transfer and can be considered a rapid immersion in an experience: One cannot experience time travel, but one can gain knowledge about the act of time travel through a rich compelling, and highly experiential story.</p>
+<p>– Jon Kolko</p>
+</blockquote>
+<h2>Lesson Objective</h2>
+<p>The goal of this lesson is not to teach you every facet and application of storytelling. Mastering this subject, as with most subjects, will take quite a long time. Instead, you will learn about common elements of storytelling, structural models, and methods for building stories that you can apply as a framework for most of what you create and communicate as a designer.</p>
+<p><img src="files/narrative-lesson-diagram.png" alt="DMD Course Lesson Plot Diagram"></p>
+<p>In this lesson, you will complete the following:</p>
+<ol>
+<li>Read, watch, and listen to lesson topics and media</li>
+<li>Reading assignment short reflections</li>
+<li>Two activities</li>
+<li>Interactive story project</li>
+<li>End-of-lesson course-wide discussion</li>
+</ol>
+<h1>Citation</h1>
+<ol>
+<li>Kolko, Jon. Thoughts on Interaction Design: a collection of reflections / written and compiled by Jon Kolko. Second Edition. (2011) P.43 ISBN: 978-0-12-380930-8</li>
+</ol>
+]]></content>
+</item>

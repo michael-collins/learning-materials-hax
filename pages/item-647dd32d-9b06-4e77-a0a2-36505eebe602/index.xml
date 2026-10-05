@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-647dd32d-9b06-4e77-a0a2-36505eebe602</id>
+<indent>1</indent>
+<location>pages/item-647dd32d-9b06-4e77-a0a2-36505eebe602/index.xml</location>
+<slug>projects/deliver-final-prototype</slug>
+<order>7</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Deliver: Final Prototype</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-2-ritual-deliver-final-prototype</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-deliver-1200px@2x.png" alt="Double Diamond Deliver Phase graphic"></p>
+<p>Let's wrap up the project with one more round of iteration to refine your work.</p>
+<h2>Instructions:</h2>
+<ol>
+<li>Make changes based on the peer and instructor feedback. Submit only after recieving feedback and iterating upon your work.</li>
+<li>Write a description of the changes made to the prototype.</li>
+</ol>
+<h2>Submission</h2>
+<p>Use the file format indicated in each step. You must obtain prior approval to deviate from these upload requirements. Please check that your work has uploaded properly.</p>
+<ol>
+<li>Post a public link to the prototype.</li>
+<li>write a change log with all changes that were made.</li>
+</ol>
+]]></content>
+</item>

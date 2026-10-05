@@ -1,0 +1,24 @@
+{
+  "id": "item-5761aa2a-5c71-4eba-8565-7686533c9a66",
+  "indent": 1,
+  "location": "pages/item-5761aa2a-5c71-4eba-8565-7686533c9a66/index.json",
+  "slug": "resources/m_plummer-fern-ndez",
+  "order": 22,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "M_Plummer-Fernández",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/m-plummer-fernandez",
+    "oerFields": {
+      "url": "https://www.plummerfernandez.com/",
+      "kind": "artist"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813</id>
+<indent>1</indent>
+<location>pages/item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813/index.xml</location>
+<slug>projects/concept-pitch</slug>
+<order>38</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Concept pitch</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd300-design-project-2-project-2-concept-pitch</oerSource>
+<tags>project-deliverable</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 300</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>The concept pitch is a presentation document that serves as a both a communication tool and as a means of ensuring that you develop a project with that can be reasonably accomplished in the given timeframe. This project concept pitch should have no less than 10 slides. The basic structure is as follows:</p>
+<ol>
+<li><strong>Title slide</strong>
+<ol>
+<li>Title</li>
+<li>Name</li>
+<li>Date</li>
+<li>Course ("DMD 300: Digital Multimedia Design Studio")</li>
+<li>Semester (Example: "Spring 2019")</li>
+</ol>
+</li>
+<li><strong>Bio</strong>
+<ul>
+<li>Here you will list what you know, and what you are interested in. This should be related to the project concept. (IE - if you are skilled and interested in web development, it would be confusing to then propose an animation project.)</li>
+<li>List existing digital media skills and other relevant skills.</li>
+<li>List any skills you hope to obtain during this project.</li>
+</ul>
+</li>
+<li><strong>Concept</strong>
+<ul>
+<li>Concise description of the project idea.</li>
+<li>What’s interesting about it and or what is new/novel?</li>
+<li>What Digital media is used?</li>
+<li>What topics need to be researched?</li>
+<li>Who is the audience for the work?</li>
+<li>Which category</li>
+</ul>
+</li>
+<li><strong>Project Type</strong>
+<ul>
+<li>Specify which of the project categories and types your project falls under.</li>
+<li>Example: "2D Design, 3D Rendering, and Illustration: Typeface design"</li>
+<li>If nothing on the list matches your idea exactly, describe it as best you can and still choose the closest category.</li>
+</ul>
+</li>
+<li><strong>Production Scope</strong>
+<ul>
+<li>What are the deliverables to be completed or produced? (IE - storyboards, interviews, web application, website, wireframes, animatics, character designs, scripts, game executable, video, etc.)</li>
+</ul>
+</li>
+<li><strong>Production Pipeline</strong>
+<ul>
+<li>What tools will be used?</li>
+<li>What design processes and methods will be used?</li>
+<li>Who will be involved (list any collaborators, advisors, etc.)?</li>
+<li>Will you use management tools to keep on track?</li>
+</ul>
+</li>
+<li><strong>Required Capabilities</strong>
+<ul>
+<li>What capabilities and skills are required to complete the project?</li>
+</ul>
+</li>
+<li><strong>Existing Capabilities</strong>
+<ul>
+<li>Show past work that demonstrates your existing capabilities as related to the project concept.</li>
+</ul>
+</li>
+<li><strong>Needed Capabilities</strong>
+<ul>
+<li>List any items from the Required Capabilities slide that are not in your Existing Capabilities slide.</li>
+<li>Explain how you will you get up to speed in time.</li>
+</ul>
+</li>
+<li><strong>Timeline</strong></li>
+</ol>
+<ul>
+<li>List steps in the production timeline.</li>
+<li>Like we did in Project One, label the stages of your timeline with design objectives like "discovery" and "iteration" to describe <em>why you're doing each item</em> in the timeline.</li>
+</ul>
+<ol start="11">
+<li><strong>Research</strong>
+<ul>
+<li>What areas of research do you intend to pursue during the production of this project?</li>
+<li>What are your research resources?</li>
+</ul>
+</li>
+<li><strong>Questions for your project reviewers</strong>
+<ul>
+<li>List three questions that might help you better some aspect of the project. Avoid vague questions such as, “Is this a good project?” or “What should I do?”. Instead focus your questions on the specific areas of your project that could benefit from feedback.</li>
+</ul>
+</li>
+</ol>
+<h4>Submission details:</h4>
+<ol>
+<li>Export this presentation as a PDF.</li>
+<li>Submit the PDF presentation on canvas and your production blog by the deadline.</li>
+</ol>
+]]></content>
+</item>

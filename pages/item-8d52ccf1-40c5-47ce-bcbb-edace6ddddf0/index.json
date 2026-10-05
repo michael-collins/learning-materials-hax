@@ -1,0 +1,23 @@
+{
+  "id": "item-8d52ccf1-40c5-47ce-bcbb-edace6ddddf0",
+  "indent": 3,
+  "location": "pages/item-8d52ccf1-40c5-47ce-bcbb-edace6ddddf0/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/general-resources/documentation-resources",
+  "order": 3,
+  "parent": "item-9f0b88c0-5762-46b0-a219-444663bfeae6",
+  "title": "Documentation resources",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-ff3e6bb0-ce36-4843-b593-91d4ceb90ec4",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-ff3e6bb0-ce36-4843-b593-91d4ceb90ec4\"></oer-include>"
+}

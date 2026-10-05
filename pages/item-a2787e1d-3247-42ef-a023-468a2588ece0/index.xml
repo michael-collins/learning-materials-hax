@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a2787e1d-3247-42ef-a023-468a2588ece0</id>
+<indent>4</indent>
+<location>pages/item-a2787e1d-3247-42ef-a023-468a2588ece0/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/topics/why-stories</slug>
+<order>0</order>
+<parent>item-556f6f80-c90c-4f82-8a10-e2d80c9b6ef2</parent>
+<title>Why stories?</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-afcad8ed-57f3-4d50-8ad4-251a13b7a493</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-afcad8ed-57f3-4d50-8ad4-251a13b7a493"></oer-include>]]></content>
+</item>

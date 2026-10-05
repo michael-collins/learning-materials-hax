@@ -1,0 +1,20 @@
+id: item-b540863d-d5db-49cc-a65f-6e985bcae16a
+indent: 1
+location: pages/item-b540863d-d5db-49cc-a65f-6e985bcae16a/index.yaml
+slug: resources/jun-seo-hahm
+order: 17
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Jun Seo Hahm
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/jun-seo-hahm
+  oerFields:
+    url: https://vimeo.com/junseohahm
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

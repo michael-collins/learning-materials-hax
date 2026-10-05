@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-619930bb-5049-4869-938c-d1b704ab44e5</id>
+<indent>1</indent>
+<location>pages/item-619930bb-5049-4869-938c-d1b704ab44e5/index.xml</location>
+<slug>projects/documentation</slug>
+<order>39</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Documentation</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd300-design-project-2-project-2-documentation</oerSource>
+<tags>project-deliverable</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 300</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<ol>
+<li><strong>Title slide</strong>
+<ol>
+<li>Title</li>
+<li>Name</li>
+<li>Date</li>
+<li>Course ("DMD 300: Digital Multimedia Design Studio")</li>
+<li>Semester (Example: "Spring 2019")</li>
+</ol>
+</li>
+<li><strong>Bio</strong>
+<ul>
+<li>Include a bio that describes relevant interests, skills, and capabilities.</li>
+</ul>
+</li>
+<li><strong>Work Statement</strong>
+<ul>
+<li>A final draft of work statement language developed during Project 2.</li>
+</ul>
+</li>
+<li><strong>Design process overview</strong>
+<ul>
+<li>Timeline of events</li>
+<li>List methods used with brief descriptions</li>
+<li>Anticipated outcomes of each step and how they contributed to the project's development.</li>
+</ul>
+</li>
+<li><strong>Outcomes</strong>
+<ul>
+<li>Analyze and deconstruct central issues using <a href="https://www.core77.com/posts/69273/Book-Review-Notes-on-the-Synthesis-of-Form">form and context analysis</a>.</li>
+<li><a href="https://vimeo.com/10875362">Identify forces that impact form</a></li>
+<li>Are there any ethical considerations?</li>
+<li>Include figures and diagrams of conceptual relationships</li>
+<li>Describe media used in digital production. For example, print, web, info-graphics, game/interactive, animation, video/film, audio/sound, physical installation, etc.</li>
+</ul>
+</li>
+<li><strong>Images</strong>
+<ul>
+<li>Include 4–8 images that show key features of your work with short descriptions of each image.</li>
+</ul>
+</li>
+<li><strong>Bibliography</strong>
+<ul>
+<li>You can choose either APA or MLA format for document. See <a href="/articles/dmd300-documentation-resources">documentation resources</a> for help.</li>
+</ul>
+</li>
+</ol>
+<h4>Formatting requirements:</h4>
+<ol>
+<li>PDF document in US Letter size.</li>
+<li>Please see <a href="/articles/dmd300-documentation-resources">documentation resources</a> for guidance.</li>
+<li>Proofread and spellcheck</li>
+</ol>
+<h4>Submission details:</h4>
+<ol>
+<li>Upload the PDF document to the canvas assignment by the deadline.</li>
+<li>Upload PDF to production blog by the deadline.</li>
+</ol>
+]]></content>
+</item>

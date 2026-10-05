@@ -1,0 +1,20 @@
+id: item-60c1e400-122c-4ede-b2a8-4cf6381dbb8e
+indent: 3
+location: pages/item-60c1e400-122c-4ede-b2a8-4cf6381dbb8e/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/introduction/measuring-success
+order: 3
+parent: item-8153e6b4-28e8-4c08-ba68-ce087c804837
+title: Measuring success
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-f4603c46-6e1f-488d-ab4b-39c6a4786ee1
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-f4603c46-6e1f-488d-ab4b-39c6a4786ee1"></oer-include>

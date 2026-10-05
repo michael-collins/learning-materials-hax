@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-46c19f39-0603-46a0-8f4c-da7fd1836f4e</id>
+<indent>3</indent>
+<location>pages/item-46c19f39-0603-46a0-8f4c-da7fd1836f4e/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/introduction/feedback-and-critique</slug>
+<order>6</order>
+<parent>item-8153e6b4-28e8-4c08-ba68-ce087c804837</parent>
+<title>Feedback and critique</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-e00f02ed-d4c1-4751-8489-b4689069179d</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-e00f02ed-d4c1-4751-8489-b4689069179d"></oer-include>]]></content>
+</item>

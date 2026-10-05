@@ -1,0 +1,20 @@
+id: item-b843c334-6d2e-4cff-bc6f-b757ead58b6e
+indent: 4
+location: pages/item-b843c334-6d2e-4cff-bc6f-b757ead58b6e/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/develop-mvp-prototype
+order: 5
+parent: item-afb9718c-7193-4e3f-b080-d20610e3d901
+title: 'Develop: MVP Prototype'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-0e7b4b2c-c58c-4a95-bbdd-609bcab3f251
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-0e7b4b2c-c58c-4a95-bbdd-609bcab3f251"></oer-include>

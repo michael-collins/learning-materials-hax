@@ -1,0 +1,20 @@
+id: item-3e3552c2-1de0-4c2b-bf83-cf426b22cbaf
+indent: 4
+location: pages/item-3e3552c2-1de0-4c2b-bf83-cf426b22cbaf/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/topics/what-is-design
+order: 0
+parent: item-c539b3d9-1ca7-4c2b-89a1-6dc9a50cf4c5
+title: What is design?
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-a1471c97-2a83-4620-9234-f5ab8b33d7f2
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-a1471c97-2a83-4620-9234-f5ab8b33d7f2"></oer-include>

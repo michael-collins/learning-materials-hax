@@ -1,0 +1,20 @@
+id: item-18c1cc52-4078-4de1-9eb3-6588754ab199
+indent: 4
+location: pages/item-18c1cc52-4078-4de1-9eb3-6588754ab199/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/topics/narrative-media
+order: 4
+parent: item-556f6f80-c90c-4f82-8a10-e2d80c9b6ef2
+title: Narrative media
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-2334b014-0e04-4987-aca1-8621b0beb863
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-2334b014-0e04-4987-aca1-8621b0beb863"></oer-include>

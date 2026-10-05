@@ -1,0 +1,42 @@
+{
+  "id": "item-6cb6c229-dfbe-4948-a618-ee25655ffb19",
+  "indent": 1,
+  "location": "pages/item-6cb6c229-dfbe-4948-a618-ee25655ffb19/index.json",
+  "slug": "lessons/character-rigging",
+  "order": 14,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "Character Rigging",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerSource": "lessons/character-rigging",
+    "oerFields": {
+      "estimatedDuration": "5 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Understand rigging concepts and terminology",
+        "Create bone structures for characters",
+        "Set up IK and FK controls",
+        "Build custom control shapes",
+        "Test and refine rig functionality"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Develop skills in character rigging, learning how to create control systems that allow animators to pose and animate characters efficiently.</p>\n"
+}

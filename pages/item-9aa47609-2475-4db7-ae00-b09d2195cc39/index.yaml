@@ -1,0 +1,65 @@
+id: item-9aa47609-2475-4db7-ae00-b09d2195cc39
+indent: 1
+location: pages/item-9aa47609-2475-4db7-ae00-b09d2195cc39/index.yaml
+slug: books/dmd-300-digital-multimedia-design-studio
+order: 1
+parent: item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d
+title: 'DMD 300: Digital Multimedia Design Studio'
+description: ''
+metadata:
+  published: false
+  pageType: oer:book
+  oerSource: books/dmd-300-digital-multimedia-design-studio
+  tags: design,digital-multimedia,studio,dmd-300
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-05'
+    coverImage: files/dmd300-cover.jpg
+    theme: lambda
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>DMD 300 is the second of three spine courses in the Bachelor of Design in
+  Digital Multimedia Design (DMD) program at Penn State University. This program
+  is the first entirely online multi-college undergraduate bachelor's degree
+  program offered at Penn State.</p>
+
+  <p>Visit the <a href="http://dmd.psu.edu/">DMD Program Hub</a> for more
+  details.</p>
+
+  <h2>Contributors</h2>
+
+  <p><strong>Primary course author</strong></p>
+
+  <p>Michael Collins</p>
+
+  <p><strong>Instructional design</strong></p>
+
+  <p>Katrina Wehr</p>
+
+  <p><strong>Alterations and improvements</strong></p>
+
+  <p>Benjamin Andrew</p>
+
+  <p>Christine Shanks</p>
+
+  <h2>License</h2>
+
+  <p>This work is licensed as <a
+  href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. Some
+  content is taken from other sources and cited throughout. However, this work
+  is a living draft, presented as is, and may be changed or updated without
+  notice.</p>
+
+  <h2>Contributing</h2>
+
+  <p>Anyone can recommend additions or alterations. Please, submit a <a
+  href="https://github.com/dmd-program/dmd-300-master">pull request on
+  github.com</a> or file an issue in the <a
+  href="https://github.com/dmd-program/dmd-300-master/issues">issue
+  queue</a>.</p>

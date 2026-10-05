@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fd5bf593-ce8d-4978-9925-af183f05eb9e</id>
+<indent>4</indent>
+<location>pages/item-fd5bf593-ce8d-4978-9925-af183f05eb9e/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/develop-instructions</slug>
+<order>6</order>
+<parent>item-afb9718c-7193-4e3f-b080-d20610e3d901</parent>
+<title>Develop: Instructions</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-4de80d6a-5a0a-4016-b968-008d12b9a8f7</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-4de80d6a-5a0a-4016-b968-008d12b9a8f7"></oer-include>]]></content>
+</item>

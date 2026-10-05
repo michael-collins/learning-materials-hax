@@ -1,0 +1,20 @@
+id: item-d51de0e0-e0f4-43f8-8d5a-bf445808f399
+indent: 1
+location: pages/item-d51de0e0-e0f4-43f8-8d5a-bf445808f399/index.yaml
+slug: resources/mike-pelletier
+order: 20
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Mike Pelletier
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/mike-pelletier
+  oerFields:
+    url: http://mikepelletier.net/
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-cf30de3c-8a40-4c30-9abc-30dda2da47c7</id>
+<indent>3</indent>
+<location>pages/item-cf30de3c-8a40-4c30-9abc-30dda2da47c7/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/capstone-project/12-capstone-project-exhibition</slug>
+<order>11</order>
+<parent>item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041</parent>
+<title>12. Capstone project exhibition</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-1e2f2652-a8b5-4869-a8b9-9dcf9156449a</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-1e2f2652-a8b5-4869-a8b9-9dcf9156449a"></oer-include>]]></content>
+</item>

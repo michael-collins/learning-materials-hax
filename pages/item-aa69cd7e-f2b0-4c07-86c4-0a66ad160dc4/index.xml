@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4</id>
+<indent>4</indent>
+<location>pages/item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/open-design-project-introduction</slug>
+<order>0</order>
+<parent>item-afb9718c-7193-4e3f-b080-d20610e3d901</parent>
+<title>Open Design Project Introduction</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-c69c42c5-97aa-456c-9240-67c6f12727b9</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c69c42c5-97aa-456c-9240-67c6f12727b9"></oer-include>]]></content>
+</item>

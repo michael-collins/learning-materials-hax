@@ -1,0 +1,28 @@
+id: item-1c0ca1c6-48a1-425c-8b4e-474eed3d49f4
+indent: 1
+location: pages/item-1c0ca1c6-48a1-425c-8b4e-474eed3d49f4/index.yaml
+slug: lessons/self-design
+order: 21
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: Self design
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerSource: lessons/dmd100-lesson-5-self-design
+  oerFields:
+    courses:
+      - DMD 100
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this short lesson, you will complete a Pathway Design Activity to help
+  you start thinking strategically about your future learning and career goals.
+  You will also read and submit a reflection of the final chapter of Design and
+  Truth by Robert Grudin.</p>

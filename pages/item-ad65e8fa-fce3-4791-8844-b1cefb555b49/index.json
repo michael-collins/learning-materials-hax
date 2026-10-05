@@ -1,0 +1,24 @@
+{
+  "id": "item-ad65e8fa-fce3-4791-8844-b1cefb555b49",
+  "indent": 1,
+  "location": "pages/item-ad65e8fa-fce3-4791-8844-b1cefb555b49/index.json",
+  "slug": "resources/al-and-al",
+  "order": 1,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Al and Al",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/al-and-al",
+    "oerFields": {
+      "url": "http://www.alandal.co.uk/",
+      "kind": "artist"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

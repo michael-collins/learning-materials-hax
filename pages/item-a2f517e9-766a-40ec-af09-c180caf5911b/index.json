@@ -1,0 +1,34 @@
+{
+  "id": "item-a2f517e9-766a-40ec-af09-c180caf5911b",
+  "indent": 1,
+  "location": "pages/item-a2f517e9-766a-40ec-af09-c180caf5911b/index.json",
+  "slug": "articles/technology",
+  "order": 14,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Technology",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd100-introduction-technology",
+    "tags": "introduction",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-01",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/technology.jpg\" alt=\"Broken hard drive\"></p>\n<h2>Keep your data safe</h2>\n<p>Conspiring forces are working right now to destroy your data. The hard drives that data is stored on are only meant to last for a limited amount of time, and they will eventually stop working. Flash storage has made it easy to store data onto tiny objects that are nearly impossible not to lose. Yet another zero-day vulnerability has been found for your operating system that a 12 year old is exploiting to encrypt your hard drive to sell your data back to you — for which you will have to pay with a lot of BitCoins. Your cat is about to knock a glass of water onto your laptop, frying your motherboard. Your dog is about to knock your computer off of the bed. Your kid is two minutes away from holding a magnet too close to your hard disk. Some dude just takes your computer while you were picking up your latte.</p>\n<p>Right before your project is due, your computer will fail. It might not be this semester and it might not be next semester, but you should act as if it will happen this semester and next semester. Be paranoid. Backup your data in multiple places.</p>\n<p>You should now feel appropriately uncomfortable if your computer's data has never been backed up.</p>\n<h3>Backing up your data</h3>\n<p>Please purchase a dedicated back-up hard drive. Cloud backups like Google Drive and Dropbox, while wonderful, are not completely infallible on their own. The only way to ensure that your files are safe is to perform daily backups to an external hard drive and to backup to a third location. Please practice safe and redundant data storage.</p>\n<h3>Security recommendations (not required, but a good idea)</h3>\n<p>These practices and software are at your own risk. These recommendations are not supported by the course author, instructor, or other learning staff in any way.</p>\n<ol>\n<li>Use a password manager: <a href=\"https://1password.com/\">1Password</a> or <a href=\"https://lastpass.com/\">LastPass</a></li>\n<li>2FA - <a href=\"http://www.identity.psu.edu/services/authentication-services/two-factor/self-service-portal/\">Enable Two-Factor Authentication for your PSU account</a></li>\n<li>VPN Encryption - A service like <a href=\"https://www.privateinternetaccess.com\">Private Internet Access</a> will help keep you protected while using the Internet at airports and coffee shops. Penn State also <a href=\"https://www.work.psu.edu/access/vpn/\">provides VPN</a> to select services.</li>\n<li>Disk encryption - Wise, but also time consuming to run for the first time (up to 3 days to fully finish on some computers) and if you forget your password you will not be able to access your data.</li>\n<li>Update your Operating System on your computer and Phone as soon as updates are released for security vulnerabilities.</li>\n</ol>\n"
+}

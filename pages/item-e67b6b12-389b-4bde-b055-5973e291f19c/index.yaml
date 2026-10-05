@@ -1,0 +1,20 @@
+id: item-e67b6b12-389b-4bde-b055-5973e291f19c
+indent: 1
+location: pages/item-e67b6b12-389b-4bde-b055-5973e291f19c/index.yaml
+slug: resources/claudia-hart
+order: 5
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Claudia Hart
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/claudia-hart
+  oerFields:
+    url: https://claudiahart.com/
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

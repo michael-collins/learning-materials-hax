@@ -1,0 +1,20 @@
+id: item-5aa66ff1-506a-4b07-80d8-2897ca55c636
+indent: 4
+location: pages/item-5aa66ff1-506a-4b07-80d8-2897ca55c636/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/watch/vox-it-s-not-you-bad-doors-are-everywhere
+order: 0
+parent: item-6b9902f3-41c7-4683-bb28-fa80b626bf8d
+title: 'VOX: It''s not you. Bad doors are everywhere.'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-39988aaf-286a-455c-b75f-a1ee379852c7
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-39988aaf-286a-455c-b75f-a1ee379852c7"></oer-include>

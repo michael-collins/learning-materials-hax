@@ -1,0 +1,272 @@
+id: item-2e54ed99-775d-4139-b09b-dfe8ef20dfe3
+indent: 1
+location: pages/item-2e54ed99-775d-4139-b09b-dfe8ef20dfe3/index.yaml
+slug: articles/design-thinking
+order: 23
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Design thinking
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-lesson-1-topics-design-thinking
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p><img src="files/design-thinking@2x.jpg" alt="Photo of designers prototyping
+  ideas"></p>
+
+  <blockquote>
+
+  <p>"In an ambiguous situation, you don't know what you don't know."</p>
+
+  <p>– Udaya Patnaik, Co-Founder Jump Associates[^1]</p>
+
+  </blockquote>
+
+  <p>Design Thinking is the most current incarnation of terminology meant to
+  frame and ascribe value for the role of creative problem solving within a
+  larger system. Generally speaking, design thinking refers the methods used to
+  strategically guide a person or group to question underlying assumptions,
+  generate a large array of ideas, better understand user needs, synthesize
+  prototypes, propose or build viable solutions, and more. Its roots can be
+  traced to Participatory Design, User-Centered Design, Service Design, and
+  Human-Centered Design. Imagining a new idea, let alone 100 new ideas, is hard
+  and often comes with overcoming learned blocks to creative thinking. To make
+  this process easier, modern design thinking methods tend to incorporate
+  synectics, or methods that facilitate the connection of ideas through
+  unrelated phenomenon.</p>
+
+  <h2>Design blocks</h2>
+
+  <p>You can think of design blocks as a kind of enemy to good design. A design
+  block is a mental, cultural, or social hinderance to finding solutions that
+  stray from norms and assumed knowledge and ideas. Without a willingness to
+  push beyond what is assumed, change will be a very slow process. As Victor
+  Papanek writes in <em>Design for the Real World, Human Ecology and Social
+  Change</em>, "We live in a society that penalizes highly creative individuals
+  for their non-conformist autonomy. This makes the teaching of problem-solving
+  discouraging and difficult. A 22-two-year-old student arrives at school with
+  massive blocks against new ways of thinking, engendered by some 16 years of
+  miseducation, a heritage of childhood and pubescence of being "molded,"
+  "adjusted," "shaped." Meanwhile our society continuously evolves new social
+  patterns that promise a slight departure from the mainstream but without ever
+  endangering the patchwork of marginal groups that make up society as a
+  whole."</p>
+
+  <p>Whether they are a subject-matter expert or a layperson, everyone faces
+  implicit (unconscious) and explicit (conscious) biases that can cause
+  misinterpretations, false assumptions, and an over-reliance on common and
+  familiar paths to a solution. "That is the way it has always been done" or
+  "it's just common sense" are common expressions used by someone who is
+  operating with a common bias called Confirmation Bias. A bias, like a design
+  block, can undermine innovative problem solving and inhibit creative thinking.
+  Modern design processes attempt to identify where bias may exist and prevent
+  it from harming the outcome.</p>
+
+  <p>On page 158 in Victor Papanek's <em>Design for the Real World, Human
+  Ecology and Social  Change</em>, he lists seven types of blocks, some of which
+  are based on bias, and some of which are internal or external pressures:</p>
+
+  <blockquote>
+
+  <p>We can list the inhibitors that keep us from solving tasks in new and
+  innovative ways. They are:</p>
+
+  <ol>
+
+  <li>Perceptual</li>
+
+  <li>Emotional</li>
+
+  <li>Associational</li>
+
+  <li>Cultural</li>
+
+  <li>Professional</li>
+
+  <li>Intellectual</li>
+
+  <li>Environmental</li>
+
+  </ol>
+
+  </blockquote>
+
+  <h2>Beginner's mindset</h2>
+
+  <p>A designer's approach to questioning of assumptions, known as the beginners
+  mindset, is helpful for bypassing stereotypes and misconceptions that often
+  inhibit empathetic discoveries. How a person acquires the beginner's mindset
+  can vary. Here is an example from the Hasso Plattner Institute of Design at
+  Stanford: [^2]</p>
+
+  <ol>
+
+  <li><strong>Don’t judge.</strong> Just observe and engage users without the
+  influence of value judgments upon their actions, circumstances, decisions, or
+  “issues.”</li>
+
+  <li><strong>Question everything.</strong> Question even (and especially) the
+  things you think you already understand. Ask questions to learn about how the
+  user perceives the world. Follow up an answer to one “why” with a second
+  “why.”</li>
+
+  <li><strong>Be truly curious.</strong> Strive to assume a posture of wonder
+  and curiosity, especially in circumstances that seem either familiar or
+  uncomfortable.</li>
+
+  <li><strong>Find patterns.</strong> Look for interesting threads and themes
+  that emerge across interactions with users.</li>
+
+  <li><strong>Listen.</strong> Really.</li>
+
+  </ol>
+
+  <p>On page 172 in Victor Papanek's <em>Design for the Real World, Human
+  Ecology and Social  Change</em>, he lists eight methods to eliminate
+  blocks:</p>
+
+  <blockquote>
+
+  <p>Our job then becomes one of establishing methods of doing away with these
+  blocks. Although it is difficult to make a definitive list, since there is
+  enormous overlap between different methods, I shall list eight:</p>
+
+  <ol>
+
+  <li>Brainstorming</li>
+
+  <li>Synectics</li>
+
+  <li>Morphological analysis</li>
+
+  <li>Sliding Scales</li>
+
+  <li>Bisociation</li>
+
+  <li>Trisociation</li>
+
+  <li>Bionics and Biomechanics</li>
+
+  <li>Forcing New Thinking Patterns</li>
+
+  </ol>
+
+  </blockquote>
+
+  <p>We won't go into detail about what each of Papanek's methods are; however,
+  we will practice a few of them when completing course projects. There are
+  hundreds of quantitative and qualitative design and research methods to choose
+  from. The book, <em>Universal Methods of Design</em> by Bella Martin and Bruce
+  Hanington, is a good starting point.</p>
+
+  <h2>Embracing V.U.C.A.</h2>
+
+  <blockquote>
+
+  <p>Now change seems to be much more unpredictable; it exceeds what we have
+  known in the past. As we view the world, we realize organizations reflect
+  society and political needs, which accommodate expanding democracy and periods
+  of turmoil. Bureaucracies may remain the foundation for basic stability during
+  these periods of rapid change, but they will have to be more open and
+  adaptable to be effective – or even to survive. [^2]</p>
+
+  </blockquote>
+
+  <p>Critical design failures tend to occur when tried-and-true processes,
+  procedures, and policies are applied to solve a problem in an environment that
+  is undergoing change. In these environments, creative problem solving and
+  innovation are needed to address this change. The value of design thinking
+  comes from its ability to deal in uncertainty in a dynamic environment. The
+  acronym, V.U.C.A., created by the U.S. Army War College, describes this
+  phenomenon – volatility, uncertainty, complexity and ambiguity.</p>
+
+  <p><strong>Volatility</strong> refers to the anticipated type, speed, volume,
+  and scale of change. <strong>Uncertainty</strong> refers to the idea that due
+  to the volatile surroundings, future events can no longer be predicted.
+  <strong>Complexity</strong> is described as widespread confusion and seemingly
+  no clear connection between cause and effect. <strong>Ambiguity</strong>
+  arises from the existence of multiple meanings and misinterpretations of
+  reality.</p>
+
+  <h2>Role of Heuristics</h2>
+
+  <p>A <strong>heuristic</strong> is essentially a shortcut that helps you solve
+  a problem quickly. You can see an example of a heuristic device, originally
+  developed by renaissance master painters, implemented on modern digital
+  cameras. Typically, there is a setting to overlay a Rule of Thirds grid on the
+  camera screen, which displays two vertical and horizontal lines creating nine
+  equal rectangles. As it turns out, if you line up your subject on one of the
+  thirds lines, or place a high contrast object at one of the intersections, you
+  are more likely to take a picture with good composition. Just like a visual
+  design heuristic, there are also many cognitive heuristics to help you
+  remember facts, do math, and particularly relevant to a designer, generate new
+  ideas and interesting ideas. Many creative thinkers develop their own
+  heuristic rules or devices to help them produce work.</p>
+
+  <p>Design thinking processes equip designers with heuristic devices that help
+  us avoid implicit or explicit bias, form connections between new and existing
+  ideas, understand underlying issues and themes, be more inclusive and wider in
+  perspective, and get better outcomes and solutions. Without heuristic devices,
+  the act of design would be a very long and inefficient process, and we might
+  never be able to overcome the blocks to good design.</p>
+
+  <h2>The Business Case for Design Thinking</h2>
+
+  <p>Jess McMullin, founder of the Centre for Citizen Experience and Situ
+  Strategy, describes a continuum of design maturity for organizations in his
+  model, <em>A Rough Design Maturity Continuum.</em> There are five stages which
+  range from having no strategic design to using design for identifying and
+  framing central challenges and opportunities.</p>
+
+  <ol>
+
+  <li><strong>No conscious design:</strong> The organization has assigned no
+  value or priority to design. The product that results is deemed good
+  enough.</li>
+
+  <li><strong>Style:</strong> Design is considered a secondary cosmetic process
+  that makes a product more palatable for consumption. Aesthetic trends drive
+  products.</li>
+
+  <li><strong>Function and Form:</strong> Design is applied as part of an
+  iterative improvement process for product development. Metrics and methods
+  drive products.</li>
+
+  <li><strong>Problem solving:</strong> Design is used in strategic processes
+  for identifying opportunities, generating an array of ideas, and selecting
+  solutions for existing problems. Problems drive products.</li>
+
+  <li><strong>Framing:</strong> Design drives disruptive innovation. Design is
+  used to frame the organization's agenda, and to scope interest. Ideas drive
+  products.</li>
+
+  </ol>
+
+  <p>The organizations that incorporate design into the framing and problem
+  solving end of the design maturity continuum are highlighted in the <a
+  href="http://www.dmi.org/?page=2015DVIandOTW">Design Value Index (DVI)</a>.
+  [^3] The superior performance of the index in relation to the S&amp;P 500 is
+  used to make the case not only for investing in design-driven companies, but
+  as further evidence for why design should take a larger role within large
+  organizations.</p>
+
+  <p>[^1]: Design and Thinking. Dir. Mu-Ming Tsai. 2012. Film.
+
+  [^2]: James A. Lawrence and Earl N. Steck, Overview of Management Theory
+  (Carlisle Barracks, PA: U.S. Army War College, 1991), ii &amp; 34. <a
+  href="https://apps.dtic.mil/sti/tr/pdf/ADA235762.pdf">https://apps.dtic.mil/sti/tr/pdf/ADA235762.pdf</a>
+
+  [^3]: Design Management Institute, Design Value Index (DVI). <a
+  href="http://www.dmi.org/?page=2015DVIandOTW">http://www.dmi.org/?page=2015DVIandOTW</a></p>

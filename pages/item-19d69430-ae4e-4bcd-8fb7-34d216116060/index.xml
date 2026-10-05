@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-19d69430-ae4e-4bcd-8fb7-34d216116060</id>
+<indent>1</indent>
+<location>pages/item-19d69430-ae4e-4bcd-8fb7-34d216116060/index.xml</location>
+<slug>resources/flavourcel-animation-collective</slug>
+<order>31</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Flavourcel Animation Collective</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/flavourcel-animation-collective</oerSource>
+<oerFields>
+<url>https://flavourcel.com/manifesto</url>
+<kind>collective</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

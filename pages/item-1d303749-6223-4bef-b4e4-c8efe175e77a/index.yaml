@@ -1,0 +1,20 @@
+id: item-1d303749-6223-4bef-b4e4-c8efe175e77a
+indent: 4
+location: pages/item-1d303749-6223-4bef-b4e4-c8efe175e77a/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/interaction-design
+order: 2
+parent: item-8d24c121-2ffd-442f-9d30-d5da6d3f2565
+title: Interaction design
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-eeae23b8-5c99-410d-8683-c108f6137c0b
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-eeae23b8-5c99-410d-8683-c108f6137c0b"></oer-include>

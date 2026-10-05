@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2b92d536-34a9-4928-8dee-dcaf979b0b5b</id>
+<indent>1</indent>
+<location>pages/item-2b92d536-34a9-4928-8dee-dcaf979b0b5b/index.xml</location>
+<slug>tutorials/animation-color-grading</slug>
+<order>1</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Animation Color Grading</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:tutorial</pageType>
+<oerSource>tutorials/animation-color-grading</oerSource>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<date>2026-04-06T14:31:00.000Z</date>
+<difficulty>Beginner</difficulty>
+<courses>
+<item>DART 303</item>
+</courses>
+<license>CC BY 4.0</license>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Here is a collection of tutorials for color grading and exporting Blender animations using DaVinci Resolve.</p>
+<p><strong>Download (free):</strong> <a href="https://www.blackmagicdesign.com/products/davinciresolve">DaVinci Resolve</a></p>
+<oer-video src="https://www.youtube.com/watch?v=qfrseSxN6GU" title="Color Grade Your 3D Renders Like A Pro | Blender To DaVinci Resolve"></oer-video>
+<oer-video src="https://www.youtube.com/watch?v=sunTYl71hZs" title="80% Of COLOUR GRADING BASICS In ONLY 20 Minutes"></oer-video>
+<oer-video src="https://www.youtube.com/watch?v=otHE81syHI0" title="How To Export Videos in Davinci Resolve in 2025"></oer-video>
+]]></content>
+</item>

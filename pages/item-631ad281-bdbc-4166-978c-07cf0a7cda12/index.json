@@ -1,0 +1,38 @@
+{
+  "id": "item-631ad281-bdbc-4166-978c-07cf0a7cda12",
+  "indent": 1,
+  "location": "pages/item-631ad281-bdbc-4166-978c-07cf0a7cda12/index.json",
+  "slug": "exercises/sea-creature-texturing",
+  "order": 47,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Sea creature: Texturing",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:exercise",
+    "oerSource": "exercises/sea-creature-texturing",
+    "tags": "Blender,Substance Painter",
+    "oerFields": {
+      "difficulty": "Advanced",
+      "image": "files/recc827jhaiZue5as_image_sculpting-retopo-header-v2.png",
+      "imageAlt": "sculpting-retopo-header-v2.png",
+      "license": "CC BY 4.0",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "allowEmbed": true
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>In this exercise, you continue working on the sea creature. You will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Substance Painter and/or Photoshop.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrUU3MSAv9EfORij5j2E3uVv\" title=\"Sea creature: Texturing Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software interface and terminology.</li>\n<li>Use texturing workflows to add color and texture to your polygonal models.</li>\n<li>Perform fundamental UV unwrapping operations including UV unwrap, mark seams, and project from view.</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the tutorials in Learning Resources.</li>\n<li>Continue working from your model.</li>\n<li>Duplicate the sculpting assignment folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>\n<li>If you have not done so, retopologize the mesh.\n<ol>\n<li>Export the high-poly version of the mesh as FBX format (this is the non-optimized high-resolution mesh used for generating a normal map.)</li>\n<li>Export the retopologized low-poly version of the mesh as FBX format. (You will use the normal map baked from the other mesh)</li>\n</ol>\n</li>\n<li>Use Adobe Substance painter to create textures like the following.\n<ol>\n<li>BaseColor (Required)</li>\n<li>Height</li>\n<li>Roughness (Required)</li>\n<li>Metallic</li>\n<li>Normal (Required)</li>\n<li>Emissive</li>\n<li>Opacity</li>\n</ol>\n</li>\n<li>In Blender, set up the textures so they are visible on the model. You do not need to render an image.</li>\n<li>Save the 3D scene file as <code>LASTNAME-texturing-creature</code> in the project folder.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-texturing-creature.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

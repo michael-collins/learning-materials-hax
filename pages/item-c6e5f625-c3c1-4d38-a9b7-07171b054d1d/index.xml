@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d</id>
+<indent>0</indent>
+<location>pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.xml</location>
+<slug>books</slug>
+<order>10</order>
+<parent></parent>
+<title>Books</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Course books: chapters to read in order, to print or export for an LMS.</p>
+<oer-collection types="oer:book" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+</item>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1f13102f-c90b-4042-8883-a452fedcdd19</id>
+<indent>1</indent>
+<location>pages/item-1f13102f-c90b-4042-8883-a452fedcdd19/index.xml</location>
+<slug>articles/creative-mornings-jordan-tannahall</slug>
+<order>51</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Creative Mornings: Jordan Tannahall</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-lesson-3-watching-creative-mornings-jordan-tannahill</oerSource>
+<tags>watching</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Jordan Tannahill discusses storytelling and ethics related to misrepresentation and exploitation.</p>
+<p><a href="https://creativemornings.com/talks/jordan-tannahill/1">Creative Mornings: Jordan Tannahall</a> <strong>(38:57)</strong></p>
+]]></content>
+</item>

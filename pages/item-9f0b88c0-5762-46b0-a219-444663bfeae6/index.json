@@ -1,0 +1,23 @@
+{
+  "id": "item-9f0b88c0-5762-46b0-a219-444663bfeae6",
+  "indent": 2,
+  "location": "pages/item-9f0b88c0-5762-46b0-a219-444663bfeae6/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/general-resources",
+  "order": 2,
+  "parent": "item-9aa47609-2475-4db7-ae00-b09d2195cc39",
+  "title": "General Resources",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-68dcb454-4d15-40df-bb14-aa8fdd4d13dd",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-68dcb454-4d15-40df-bb14-aa8fdd4d13dd\"></oer-include>"
+}

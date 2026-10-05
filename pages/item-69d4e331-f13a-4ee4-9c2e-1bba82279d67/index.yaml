@@ -1,0 +1,91 @@
+id: item-69d4e331-f13a-4ee4-9c2e-1bba82279d67
+indent: 1
+location: pages/item-69d4e331-f13a-4ee4-9c2e-1bba82279d67/index.yaml
+slug: books/dmd-100-digital-multimedia-design-foundations
+order: 0
+parent: item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d
+title: 'DMD 100: Digital Multimedia Design Foundations'
+description: ''
+metadata:
+  published: false
+  pageType: oer:book
+  oerSource: books/dmd-100-digital-multimedia-design
+  tags: design,digital-multimedia,foundations,dmd-100
+  oerFields:
+    date: '2026-03-01'
+    coverImage: files/dmd-100-cover-mm8lvg0z.jpg
+    coverImageAlt: >-
+      Digital Multimedia Design Foundations book cover with a graphic depicting
+      a lattice made of 8 equilateral triangles.
+    introductionTitle: Overview
+    theme: lambda
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p><img src="files/dmd100-bg-compressed-cropped.jpg" alt="dmd 100 course
+  background art"></p>
+
+  <p>DMD 100 is the first of three spine courses in the Bachelor of Design in
+  Digital Multimedia Design (DMD) program at Penn State University. This program
+  is the <a
+  href="https://artsandarchitecture.psu.edu/news/e-learning-institute-launches-digital-multimedia-design-online-degree">first
+  entirely online multi-college undergraduate bachelor's degree program</a>
+  offered at Penn State.</p>
+
+  <p>Visit the <a href="http://dmd.psu.edu/">DMD Program Hub</a> for more
+  details.</p>
+
+  <h2>Downloads</h2>
+
+  <h3>Desktop background art</h3>
+
+  <p><strong>PNG - 2880x1800:</strong> (8.12MB)<br>
+
+  <a
+  href="https://github.com/dmd-program/dmd-course-graphics/blob/master/dmd-100-desktop-bg.png?raw=true">dmd-100-desktop-bg.png</a></p>
+
+  <h2>Contributors</h2>
+
+  <p><strong>Primary Course Author</strong></p>
+
+  <p>Michael Collins, Assistant Professor of Art, Penn State School of Visual
+  Arts</p>
+
+  <p><strong>E-Mail:</strong> msc227@psu.edu</p>
+
+  <p><strong>Instructional Design</strong></p>
+
+  <p>Kate Miffitt, Assistant Director of Strategic Initiatives, Penn State
+  College of Arts and Architecture</p>
+
+  <p><strong>Instructional Materials Contributor</strong></p>
+
+  <p>Benjamin Andrew, Assistant Teaching Professor, Penn State College of Arts
+  and Architecture</p>
+
+  <p><strong>Special thanks to:</strong></p>
+
+  <ul>
+
+  <li>Graeme Sullivan, Director of the Penn State School of Visual Arts, for the
+  inspiring conversations, book recommendations, and unwavering moral
+  support;</li>
+
+  <li>Linda Collins, for proofreading over 200 pages.</li>
+
+  </ul>
+
+  <h2>Contributing</h2>
+
+  <p>Anyone can recommend additions or alterations to this course. Please,
+  submit a <a href="https://github.com/dmd-program/dmd-100-master">pull request
+  on github.com</a> or file an issue in the <a
+  href="https://github.com/dmd-program/dmd-100-master/issues">issue
+  queue</a>.</p>
+
+  <h2>License</h2>
+
+  <p>See the <a href="/LICENSE.md">license</a> page for details.</p>

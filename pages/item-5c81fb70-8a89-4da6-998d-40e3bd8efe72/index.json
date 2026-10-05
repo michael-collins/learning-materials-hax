@@ -1,0 +1,19 @@
+{
+  "id": "item-5c81fb70-8a89-4da6-998d-40e3bd8efe72",
+  "indent": 3,
+  "location": "pages/item-5c81fb70-8a89-4da6-998d-40e3bd8efe72/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/watch",
+  "order": 2,
+  "parent": "item-a106f25f-fd10-4f85-855b-5587ad96edba",
+  "title": "Watch",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

@@ -1,0 +1,20 @@
+id: item-25147485-7148-4d97-9208-fcf669f045e8
+indent: 4
+location: pages/item-25147485-7148-4d97-9208-fcf669f045e8/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals/texturing-the-airline-chair
+order: 3
+parent: item-07752bb1-c5b8-498c-8422-b064c3eb1a4f
+title: Texturing the Airline Chair
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerRef:
+    page: item-1ac14915-a348-47d3-9ecc-a88e800d4bb9
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-1ac14915-a348-47d3-9ecc-a88e800d4bb9"></oer-include>

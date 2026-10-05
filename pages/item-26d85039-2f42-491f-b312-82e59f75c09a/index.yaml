@@ -1,0 +1,20 @@
+id: item-26d85039-2f42-491f-b312-82e59f75c09a
+indent: 4
+location: pages/item-26d85039-2f42-491f-b312-82e59f75c09a/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers/modeling-the-airline-chair
+order: 1
+parent: item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8
+title: Modeling the Airline Chair
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerRef:
+    page: item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7"></oer-include>

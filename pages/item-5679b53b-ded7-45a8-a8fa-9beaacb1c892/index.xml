@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5679b53b-ded7-45a8-a8fa-9beaacb1c892</id>
+<indent>1</indent>
+<location>pages/item-5679b53b-ded7-45a8-a8fa-9beaacb1c892/index.xml</location>
+<slug>articles/documentation-resources</slug>
+<order>76</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Documentation resources</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd300-documentation-resources</oerSource>
+<tags>resources</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-05</date>
+<courses>
+<item>DMD 300</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<ol>
+<li><a href="http://guides.libraries.psu.edu/CitationStyles/Tools">Citation tools</a></li>
+<li><a href="https://guides.libraries.psu.edu/apaquickguide">APA Guide</a></li>
+<li><a href="https://guides.libraries.psu.edu/mlacitation">MLA Citation Guide</a></li>
+</ol>
+]]></content>
+</item>

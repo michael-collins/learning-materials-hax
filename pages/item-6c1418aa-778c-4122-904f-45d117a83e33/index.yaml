@@ -1,0 +1,20 @@
+id: item-6c1418aa-778c-4122-904f-45d117a83e33
+indent: 1
+location: pages/item-6c1418aa-778c-4122-904f-45d117a83e33/index.yaml
+slug: resources/zeitguised
+order: 0
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Zeitguised
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/zeitguised
+  oerFields:
+    url: https://www.zeitguised.com/
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

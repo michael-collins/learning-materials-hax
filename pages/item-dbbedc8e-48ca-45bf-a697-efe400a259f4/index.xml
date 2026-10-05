@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-dbbedc8e-48ca-45bf-a697-efe400a259f4</id>
+<indent>1</indent>
+<location>pages/item-dbbedc8e-48ca-45bf-a697-efe400a259f4/index.xml</location>
+<slug>articles/open-structures-thomas-lommee</slug>
+<order>64</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Open Structures: Thomas Lommee</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-lesson-4-watching-open-structures-thomas-lommee</oerSource>
+<tags>watching</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>In this lecture, Thomas Lommee discusses modular systems and their implications for design.</p>
+<p>Youtube: <a href="https://www.youtube.com/watch?v=5FXTlOytJRI">Open Structures: Thomas Lommee at TEDxEutropolis</a> <strong>(12:10)</strong></p>
+]]></content>
+</item>

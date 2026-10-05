@@ -1,0 +1,20 @@
+id: item-add4e734-4d55-4a48-981c-99ae61460e8b
+indent: 4
+location: pages/item-add4e734-4d55-4a48-981c-99ae61460e8b/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/semiotics
+order: 0
+parent: item-8d24c121-2ffd-442f-9d30-d5da6d3f2565
+title: Semiotics
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-cd470f92-2195-4bfc-af80-06e980606814
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-cd470f92-2195-4bfc-af80-06e980606814"></oer-include>

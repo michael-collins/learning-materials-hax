@@ -1,0 +1,19 @@
+id: item-b413f87e-ad4a-43f4-aa0d-da11866fc9bb
+indent: 3
+location: pages/item-b413f87e-ad4a-43f4-aa0d-da11866fc9bb/index.yaml
+slug: books/dmd-300-digital-multimedia-design-studio/projects/writing-project
+order: 2
+parent: item-52f4f50f-0c7d-48a8-adca-c64310cc050a
+title: Writing Project
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-5a980eff-dda8-4522-892b-d10274e9270f
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-5a980eff-dda8-4522-892b-d10274e9270f"></oer-include>

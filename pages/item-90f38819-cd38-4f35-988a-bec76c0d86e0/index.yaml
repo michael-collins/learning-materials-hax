@@ -1,0 +1,20 @@
+id: item-90f38819-cd38-4f35-988a-bec76c0d86e0
+indent: 4
+location: pages/item-90f38819-cd38-4f35-988a-bec76c0d86e0/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/joris-laarman-s-experiments-with-open-source-design
+order: 7
+parent: item-1c0b6b79-034b-48a7-bf88-c63e8570b13d
+title: Joris Laarman's Experiments with Open Source Design
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-92ee7225-2693-481c-9302-f6916bbfea9e
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-92ee7225-2693-481c-9302-f6916bbfea9e"></oer-include>

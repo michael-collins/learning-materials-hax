@@ -1,0 +1,25 @@
+{
+  "id": "item-4a828ecd-beaf-462a-9062-bae6d5ddadd2",
+  "indent": 1,
+  "location": "pages/item-4a828ecd-beaf-462a-9062-bae6d5ddadd2/index.json",
+  "slug": "resources/textures-com",
+  "order": 27,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Textures.com",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/textures-com",
+    "tags": "textures",
+    "oerFields": {
+      "url": "https://www.textures.com/",
+      "kind": "assets"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

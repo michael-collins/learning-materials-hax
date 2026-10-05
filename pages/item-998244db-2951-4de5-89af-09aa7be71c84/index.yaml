@@ -1,0 +1,33 @@
+id: item-998244db-2951-4de5-89af-09aa7be71c84
+indent: 1
+location: pages/item-998244db-2951-4de5-89af-09aa7be71c84/index.yaml
+slug: articles/99-percent-invisible-10-000-years
+order: 26
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: '99 Percent Invisible: 10,000 years'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-lesson-2-listening-99-percent-invisible-10-000-years
+  tags: listening
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Communicating ideas through visual images can be difficult. Listen to this
+  99 Percent Invisible podcast episode called Ten Thousand Years, where
+  designers attempt to warn future civilizations about the dangers of
+  radioactive waste.</p>
+
+  <p><a href="http://99percentinvisible.org/episode/ten-thousand-years/">99
+  Percent Invisible: 10,000 Years</a> ** (31:51 min)**</p>

@@ -1,0 +1,19 @@
+id: item-81af05fe-3ba2-4d05-9678-83a3c79e5b1b
+indent: 2
+location: pages/item-81af05fe-3ba2-4d05-9678-83a3c79e5b1b/index.yaml
+slug: books/dmd-400-digital-multimedia-design-capstone/introduction
+order: 1
+parent: item-ce739bdb-84f3-4797-9b76-5f951decba4e
+title: Introduction
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-b0173484-bc6f-4c38-abad-2e0bd0df4338
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-b0173484-bc6f-4c38-abad-2e0bd0df4338"></oer-include>

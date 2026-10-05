@@ -1,0 +1,19 @@
+id: item-20af27df-b9df-4023-af5b-261aac57434f
+indent: 2
+location: pages/item-20af27df-b9df-4023-af5b-261aac57434f/index.yaml
+slug: books/dmd-400-digital-multimedia-design-capstone/license
+order: 6
+parent: item-ce739bdb-84f3-4797-9b76-5f951decba4e
+title: License
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-999e5ef4-0fe4-473d-bf71-bc4062baa52e
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-999e5ef4-0fe4-473d-bf71-bc4062baa52e"></oer-include>

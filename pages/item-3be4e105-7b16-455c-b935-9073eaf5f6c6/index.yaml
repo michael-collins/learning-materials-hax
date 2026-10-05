@@ -1,0 +1,140 @@
+id: item-3be4e105-7b16-455c-b935-9073eaf5f6c6
+indent: 1
+location: pages/item-3be4e105-7b16-455c-b935-9073eaf5f6c6/index.yaml
+slug: projects/phase-2-develop-a-design-sprint
+order: 47
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: 'Phase 2: Develop a design sprint'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd300-project-1-phase-2-develop-a-design-sprint
+  tags: project-deliverable,Group Project
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 300
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <h2>What's a Design Sprint?</h2>
+
+  <p>Developed by GV (Google Ventures, a subsidiary of Alphabet), a design
+  sprint is a specific format to quickly develop solutions to a design problem.
+  Check out the following resources that explain more about design sprints:</p>
+
+  <ul>
+
+  <li>Read their <a href="https://www.thesprintbook.com/how">explanation of the
+  process</a></li>
+
+  <li>Learn <a href="https://www.figma.com/blog/how-to-run-a-design-sprint/">how
+  to run a design sprint</a> from the Figma blog.</li>
+
+  <li>Watch a <a href="https://www.youtube.com/watch?v=K2vSQPh6MCE">90 second
+  video explainer</a>.</li>
+
+  </ul>
+
+  <p>The GV Design Sprint is supposed to be an accelerated design process that
+  packs brainstorming, prototyping, and user testing into five days. We won't
+  follow their methods exactly, but the links above may help guide you as you
+  design a process that works for your group and schedule.</p>
+
+  <p>For Phase 2 of this project, each group will:</p>
+
+  <ul>
+
+  <li>Evaluate your existing project ideas in a <a
+  href="http://sites.psu.edu">group blog post</a></li>
+
+  <li>Prepare a Design Sprint timeline based on your preferred idea.</li>
+
+  </ul>
+
+  <h2>Create a Blog:</h2>
+
+  <p>Your group's blog should be hosted using <a
+  href="http://sites.psu.edu">Sites at Penn State</a> (which uses Wordpress).
+  Your team should use this blog to track the progress of the project and to
+  show interesting project outcomes.</p>
+
+  <ul>
+
+  <li><a
+  href="https://www.wpbeginner.com/beginners-guide/how-to-add-new-users-and-authors-to-your-wordpress-blog/">You
+  can add multiple users</a> to a blog so everyone can edit and create
+  posts.</li>
+
+  <li>If any project team members are concerned about privacy, project members
+  may use a pseudonym (pen name) and in addition, the blog is able to be
+  password protected to Penn State WebAccess users. Please contact your
+  instructor if this is a concern and need help with blog configuration.</li>
+
+  </ul>
+
+  <h3>Your first post: <em>Ideation Scrimmage!</em></h3>
+
+  <p>Take the three project ideas generated in last week's "Gather &amp;
+  Organize" exercise and evaluate them based on the following criteria. For each
+  idea, copy and paste the text below and respond to the prompts:</p>
+
+  <p><strong>Abstract</strong>: One sentence summary (Media/subject/style)</p>
+
+  <p><strong>How does this address the prompt of inclusive design?</strong></p>
+
+  <p><strong>Minimum viable product:</strong> What is a simple deliverable that
+  you are 100% confident you could produce in the coming weeks?</p>
+
+  <p><strong>Stretch goals:</strong> What would be really cool, but you’re not
+  sure it’s feasible/possible?</p>
+
+  <p><strong>Unique value proposition:</strong> How does this project differ
+  from existing products or work? Or, What makes it stand out as something only
+  your group could make?</p>
+
+  <p><strong>Devil’s advocate</strong>: Describe a poor, boring, or problematic
+  result for this project — what would failure look like?</p>
+
+  <p><strong>Safeguards:</strong> How can you avoid the outcome described
+  above?</p>
+
+  <p><strong>Resources needed:</strong> What new skills or resources are
+  required for this, or things you want to learn more about?</p>
+
+  <p><strong>Rating:</strong> Rank your three ideas with a number 1–3 (with 1
+  being the idea your group likes best)</p>
+
+  <p>You are welcome to write more about your ideas or process as desired.</p>
+
+  <h2>Design Sprint Timeline</h2>
+
+  <p>After evaluating the three ideas, <strong>choose one</strong> to pursue for
+  the remainder of this project.</p>
+
+  <p>Use the <a
+  href="https://pennstateoffice365.sharepoint.com/:w:/s/SoVAOnlineFacultyHub/ETV8ePZvcPZIvLv4kAAUvO4BYxoaKWFAgurWBskB5RtA7g?e=sfERnN">document
+  template provided here</a>. You can copy the file into your shared Teams
+  workspace so your group mates can edit them.</p>
+
+  <p>This document is separate from the blog post, and will function as an
+  agreement among your partners and act as a roadmap for the next few weeks.</p>
+
+  <h2>Submission details:</h2>
+
+  <ol>
+
+  <li>Publish a link to the project blog on the classwide Canvas
+  discussion.</li>
+
+  <li>Submit a completed design sprint document (PDF or DOC) to the relevant
+  Canvas assignment.</li>
+
+  </ol>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d387e341-8f58-489f-8c56-eb5ddd615125</id>
+<indent>2</indent>
+<location>pages/item-d387e341-8f58-489f-8c56-eb5ddd615125/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/assessment</slug>
+<order>2</order>
+<parent>item-ce739bdb-84f3-4797-9b76-5f951decba4e</parent>
+<title>Assessment</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-2299f9f0-a17b-437f-b240-a9d896ed9739</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-2299f9f0-a17b-437f-b240-a9d896ed9739"></oer-include>]]></content>
+</item>

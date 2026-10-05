@@ -1,0 +1,23 @@
+{
+  "id": "item-57a1027b-5880-4649-8501-79b5841c45aa",
+  "indent": 3,
+  "location": "pages/item-57a1027b-5880-4649-8501-79b5841c45aa/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-5-resources/3d-communities",
+  "order": 0,
+  "parent": "item-d878fef2-5172-43c9-b620-c330d9e4d408",
+  "title": "3D Communities",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-895d3d98-cf57-461d-8fe5-99c5c89a8fee",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-895d3d98-cf57-461d-8fe5-99c5c89a8fee\"></oer-include>"
+}

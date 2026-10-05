@@ -1,0 +1,19 @@
+{
+  "id": "item-aa5b5154-07c2-4216-be85-f32f40e52993",
+  "indent": 3,
+  "location": "pages/item-aa5b5154-07c2-4216-be85-f32f40e52993/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/listen",
+  "order": 3,
+  "parent": "item-bf6c6bf7-fe4b-4d03-9b45-271175d41c3f",
+  "title": "Listen",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-30297f65-89ed-4c1c-8ac8-30439fb6b760</id>
+<indent>1</indent>
+<location>pages/item-30297f65-89ed-4c1c-8ac8-30439fb6b760/index.xml</location>
+<slug>projects/figma-tutorial</slug>
+<order>13</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Figma Tutorial</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-2-ritual-prototype-tutorial</oerSource>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Benjamin Andrew</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<h2>Figma account set up</h2>
+<p>Figma is a 2D design app that is popular for designing user interfaces, but is great for other creative work too. If you've used Adobe Illustrator before, you should feel right at home. Figma supports synchronous <a href="https://www.figma.com/collaboration/">multiplayer editing</a>, annotated comments, and other features to support online collaboration</p>
+<p>To get started, sign up for a <a href="https://www.figma.com/education/">free Figma education</a> account using your school email.</p>
+<p>You can use Figma in your web browser or install a <a href="https://www.figma.com/downloads/">dedicated desktop app</a>. Both versions are the same, with the desktop app making it a bit easier to use local fonts installed on your computer.</p>
+<p>Once you're logged in, note that you can create two types of files in Figma:</p>
+<ul>
+<li>Figma Design file: The fully featured design and prototyping tool we will use for this project.</li>
+<li>FigJam file: A simpler "whiteboard" app for brainstorming and notes.</li>
+</ul>
+<h2>Choose your workflow</h2>
+<p>As described on the previous page, we're going to use Figma to create an interactive prototype based on wireframe sketches. There are two ways to approach this, and either is valid:</p>
+<ol>
+<li>Create paper wireframes, photograph them, and make them interactive in Figma.</li>
+<li>Create the entire thing in Figma, using digital text and shapes. (Some tips appear below.)</li>
+</ol>
+<p>Because we are more concerned with designing an <em>experience</em> than a polished visual design, I'll focus on the "paper wireframe" approach first as that requires less mastery of the software.</p>
+<h2>Method 1: Paper Wireframes</h2>
+<p>See instructions on the previous page to prepare your wireframe images of each app "screen."</p>
+<h3>Getting started with Frames</h3>
+<p>Create a new "Design file" in Figma and select the <strong>Frame tool</strong> (<code>F</code>). In the right sidebar, labeled "Design", you should see a list of preset Frame sizes; click one of the Phone sizes and you should see a white rectangle appear in the main canvas area. (If you used the paper template, choose iPhone 14.)</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/1_add-frame.webm"
+type="local"
+caption="Adding a Frame"
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p><a href="https://help.figma.com/hc/en-us/articles/360041539473-Frames-in-Figma">Frames</a> display their name in the Canvas area, as well as in the lefthand "Layers" sidebar. After placing a Frame, you'll switch back to the default <strong>Move tool</strong> (<code>V</code>) that is accessible via the arrow icon in the toolbar. You can give the Frame a more descriptive name (e.g. "Welcome page") by double-clicking its name in the main Canvas area or the lefthand "Layers" panel.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/2_rename.webm"
+type="local"
+caption="Renaming a Frame in the Canvas and Layers panel."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<h3>Adding scanned images</h3>
+<p>With your Frame selected, look in the righthand "Design" panel for the "Fill", which, by default, is set to white. Click on the white square to the left of the text reading "FFFFFF" (that's the color code for pure white) to reveal a color picker.</p>
+<p>At the top of that panel, select the button for "Image" to upload one of your scanned images and apply it as a background-image to the Frame.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/3_add-image.webm"
+type="local"
+caption="Adding an image as a fill"
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>Depending on the <a href="https://www.uxpin.com/studio/blog/aspect-ratio/">aspect ratio</a> of your image, it may appear cropped in the Frame. With the Fill panel still open, select the dropdown menu that, by default, is set to "Fill." These are options for how the background image is displayed:</p>
+<ul>
+<li><strong>Fill</strong>: The image will fill the entire Frame, and crop it as needed.</li>
+<li><strong>Fit</strong>: The entire image will be displayed, and you may see empty areas in the margins (like letterboxing in a movie).</li>
+<li><strong>Crop</strong>: Manually crop and resize the image within the Frame.</li>
+</ul>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/4_resize.webm"
+type="local"
+caption="Cropping images"
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<h3>Resizing Frames</h3>
+<p>You can resize a Frame by clicking-and-dragging a corner, or by typing exact pixel dimensions into the Design sidebar while the Frame is selected.</p>
+<p>If you hold <code>⌘</code> (Mac) or <code>CTRL</code> (Windows) and drag the corners of the Frame, it will resize the Frame independently of the background image and functionally crop the image or reveal sections that are currently cropped.</p>
+<p>To duplicate a Frame, hold <code>Alt</code> (\Mac) or <code>Opt</code> (Windows), click on a Frame and <em>drag</em> a copy to a new location. (You can do this with any element!)</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/5_dupe-frame.webm"
+type="local"
+caption="Duplicating a Frame."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<h3>Help! My images aren't the right aspect ratio.</h3>
+<p>The preset "Phone" sizes available within the Frame tool use a variety of aspect ratios, so you can try a few and see if one is close to your scanned images.</p>
+<p>Alternatively, you can drag all your images into Figma at once, and then wrap them in Frames that match the image sizes.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/6_batch.webm"
+type="local"
+caption="Importing multiple images at once."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p><strong>Alternate batch import method:</strong></p>
+<ol>
+<li>Select multiple images in your OS file browser.</li>
+<li>Drag them into the Figma canvas area.</li>
+<li>Right-click one image at a time and "Frame Selection" (Mac: ⌥⌘G  | Win: Alt+Ctrl+G)</li>
+</ol>
+<p>Check the size of these Frames though — if your images are very large (e.g. 4000px tall) then the resulting Frames will also be very large, and could lead to some problems. If that's the case, select all the Frames/images and use the <strong>Scale Tool</strong> (K) to drag-and-resize them to something closer to a the size of a mobile phone (check the preset Frames for reference).</p>
+<h3>Check the Presentation view</h3>
+<p>Before we start adding interactions, let's check how our images look in the final Presentation view.</p>
+<p>Click the big ▶️&nbsp;Play button in the upper-right corner to launch a new tab displaying your Frames in a slideshow-like presentation. By default, you should see your images within an illustrated phone. If you used one of the preset Frame sizes, the image should fit the device pretty well (though you may discover some content is obscured by the camera notch).</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/7_test.webm"
+type="local"
+caption="Testing out Presentation View."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>If there's a big gap, meaning your image's aspect ratio doesn't match the phone's… Go back to the Design file and click the "Prototype" tab in the right sidebar. Here, you can change the device used to present the app. Scroll through the options to find "Custom Size (fit)" — this will remove the phone illustration and display your Frames as you've made them.</p>
+<h3>Adding click targets</h3>
+<p>You can make an app prototype in Powerpoint by simply displaying a sequence of screen images — but with Figma, we can create a nonlinear experience that lets users click on elements to navigate between screens as if using a real app. (As well as prototyping other interactions and animations.)</p>
+<p>If you're working with scanned paper wireframes, you'll need to add <em>additional</em> Frames <em>within</em> each screen to act as clickable targets.</p>
+<p>With the Frame tool (F) selected, click-and-drag over a button or UI element in one of your wireframe images. This will create a new Frame <em>inside</em> of the larger Frame; you should rename it to stay organized.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/8_inner-frame.webm"
+type="local"
+caption='Creating an "inner Frame" to act as a clickable target.'
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>Like our larger Frames, this Frame can have a Fill color or Stroke (border). To more easily keep track of your Frames while you work, you can either:</p>
+<ul>
+<li>Set a transparent Fill color by lowering the opacity in the color picker. (A solid fill color would obscure your drawing.)</li>
+<li>Add a <a href="https://help.figma.com/hc/en-us/articles/360049283914-Apply-and-adjust-stroke-properties">Stroke</a> (border) to your Frame.</li>
+</ul>
+<p>Give this frame a descriptive name if you want (e.g. "button").</p>
+<h3>Adding interactions</h3>
+<p>In the right sidebar, switch from the "Design" tab to "Prototype."
+If you hover your mouse over this edges of this new "overlay" Frame, you'll see little circles appear. Click on one of those circles, and drag a line towards another Frame.
+&lt;!-- --&gt;
+&lt;VideoEmbed
+src="/uploads/dmd100/videos/9_noodle.webm"
+type="local"
+caption="Adding an interaction."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>When you release the line, you'll see an interaction panel appear showing that you've created a "Navigate to" interaction, along with the name of the destination Frame. (An image needs to be in a Frame for this to work.)</p>
+<p>Now hit that Play button and view your app in the Presentation tab! Test your interaction by clicking the target and navigating to the second Frame.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/10_present.webm"
+type="local"
+caption="Testing interactions in Presentation view."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>Back in the design file, you can edit or delete an interaction by selecting the connection line, including options for transition speed and animation type.</p>
+<p>Go forth and create more more Frames and connections!</p>
+<p>ℹ️&nbsp;<strong>TIP</strong>: You can duplicate your "click target" Frames by holding Option/Alt and click-dragging on the Frame. But make sure you haven't added an interaction to that Frame, otherwise you'll duplicate that too!</p>
+<h2>Method 2: Make everything in Figma</h2>
+<p>You can follow the workflow above, but instead of scanned images, you'll need to use some additional tools to create your wireframe screens:</p>
+<ul>
+<li><a href="https://help.figma.com/hc/en-us/articles/360039956474-Create-and-edit-text">Text tool</a></li>
+<li><a href="https://help.figma.com/hc/en-us/articles/360040450133-Basic-shape-tools-in-Figma-design">Shape tools</a> (rectangles, ellipses, lines, etc.)</li>
+</ul>
+<p>Remember this is a wireframe! — Not a fully designed interface. Do not spend excessive time choosing fonts, colors, or making illustrations.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/11_digital-text.webm"
+type="local"
+caption="Adding digital text and interactions."
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>If you create digital text or shapes, you don't need to create "overlay" Frames as described above. <em>Any element can become a clickable target for interactions</em>; not just Frames.</p>
+<p>If you want an example of building a simple layout in Figma, see this tutorial on <a href="https://help.figma.com/hc/en-us/articles/13502530301207-Make-a-custom-profile-card">making a simple profile card</a>.</p>
+<p>The best way to create a typical "button" is by creating a Frame and placing text inside it; you can <a href="https://help.figma.com/hc/en-us/articles/360050986854-Adjust-corner-radius-and-smoothing">round the corners</a> of a Frame to make a pill-shape or a circle. In the example below, <a href="https://help.figma.com/hc/en-us/articles/5731482952599-Add-auto-layout-to-a-design">auto layout</a> is used to center the text within the Frame and control interior padding.</p>
+<p>&lt;VideoEmbed
+src="/uploads/dmd100/videos/12_auto-layout.webm"
+type="local"
+caption="Creating a button with auto layout"
+autoplay
+muted
+loop
+preload="none"
+/&gt;</p>
+<p>To add icons, follow the instructions above for adding images, or <a href="https://help.figma.com/hc/en-us/articles/360042532714-Use-plugins-in-files">use a plugin</a> like <a href="https://www.figma.com/community/plugin/744047966581015514/feather-icons">Feather Icons</a> to browse and add icons directly within Figma.</p>
+<h2>Advanced Interactions</h2>
+<h3>App-wide navigation menus</h3>
+<p>Does your app have a navigation menu, with the same buttons appearing on many screens? You <em>could</em> manually link every button to their respective pages, but there's a more efficient way! The following video shows this in full, but the steps are:</p>
+<ol>
+<li>Create a standalone Frame containing just the navigation menu.</li>
+<li>Turn it into a <a href="https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma">Component</a>.</li>
+<li>Add prototype connections to desired pages.</li>
+<li>Place an instance of that Component into each app screen.</li>
+</ol>
+<h3>Overlay Menus</h3>
+<p>Another common interface element is an <a href="https://bootcamp.uxdesign.cc/popups-dialogs-tooltips-and-popovers-ux-patterns-2-939da7a1ddcd">overlay</a>, which could be a large popup window or a little dropdown menu. You can create these by simply including additional screens, which is totally fine for a low-fidelity wireframe.</p>
+<p>But in some cases, you may wish to display content on top of the current screen without navigating to a new page.  This will also be shown in the video below, but the steps are:</p>
+<ol>
+<li>Create a standalone Frame with your overlay content (including a ✖&nbsp;close button).</li>
+<li>Select the trigger element in your main screen.</li>
+<li>Add interaction → On tap → Open overlay (and select your overlay Frame)</li>
+<li>Repeat for close action.</li>
+</ol>
+<p>&lt;VideoEmbed
+src="https://www.youtube.com/watch?v=gNECBQCxx0A"
+type="youtube"
+title="Figma Components and Overlays Tutorial"
+/&gt;</p>
+<h2>A note on file management</h2>
+<p>Figma lets you organize files in the following hierarchy: <a href="https://help.figma.com/hc/en-us/articles/360039484194-Create-and-explore-a-team">Teams</a> contain <a href="https://help.figma.com/hc/en-us/articles/1500005554982-Guide-to-files-and-projects">Projects</a>, which contain Files.</p>
+<p>Normal free accounts are limited to a single Team and 3 files (sad!) but with an Education account, you can create a <a href="https://help.figma.com/hc/en-us/articles/360041061214-Verify-education-status">free Education Team</a> and gain unlimited files, as well as some other features.</p>
+]]></content>
+</item>

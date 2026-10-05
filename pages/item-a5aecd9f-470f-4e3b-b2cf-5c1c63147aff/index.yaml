@@ -1,0 +1,20 @@
+id: item-a5aecd9f-470f-4e3b-b2cf-5c1c63147aff
+indent: 4
+location: pages/item-a5aecd9f-470f-4e3b-b2cf-5c1c63147aff/index.yaml
+slug: >-
+  books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-2-develop-a-design-sprint
+order: 2
+parent: item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8
+title: 'Phase 2: Develop a design sprint'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-8b072fef-daf0-4df6-9060-4df5904dfee3
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-8b072fef-daf0-4df6-9060-4df5904dfee3"></oer-include>

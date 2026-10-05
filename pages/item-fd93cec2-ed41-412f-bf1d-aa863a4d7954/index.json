@@ -1,0 +1,34 @@
+{
+  "id": "item-fd93cec2-ed41-412f-bf1d-aa863a4d7954",
+  "indent": 1,
+  "location": "pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.json",
+  "slug": "projects/develop-feedback-1",
+  "order": 29,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Develop: Feedback",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-4-open-design-develop-feedback",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-develop-1200px@2x.png\" alt=\"Double Diamond Develop Phase graphic\"></p>\n<p>You will now evaluate assigned peer work and provide feedback.</p>\n<h2>Peer Feedback Guidelines</h2>\n<p>Provide feedback on your classmates' open design projects. When providing feedback, think and address the following:&nbsp;</p>\n<ol>\n<li>Does the toy kit offer an opportunity for creative, novel, or compelling play?</li>\n<li>How does it compare to existing toys/kits you might know?&nbsp;</li>\n<li>Are the kit instructions clear, easy to follow, and engaging in their design?&nbsp;</li>\n<li>Is it truly modular, and can it be assembled into three distinctly different objects?</li>\n<li>Share any other comments/thoughts for improvements you may have.</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the indicated file format. You must obtain prior approval to deviate from these requirements.</p>\n<ol>\n<li>Post the corresponding feedback as a comment in the relevant discussion thread.</li>\n<li>Combine all the feedback you've written and upload to this assignment's submission text field or upload an MS Word document.</li>\n</ol>\n"
+}

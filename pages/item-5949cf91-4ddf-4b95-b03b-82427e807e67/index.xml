@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5949cf91-4ddf-4b95-b03b-82427e807e67</id>
+<indent>1</indent>
+<location>pages/item-5949cf91-4ddf-4b95-b03b-82427e807e67/index.xml</location>
+<slug>resources/geoffrey-lillemon</slug>
+<order>12</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Geoffrey Lillemon</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/geoffrey-lillemon</oerSource>
+<oerFields>
+<url>http://www.geoffreylillemon.com/website/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

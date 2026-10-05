@@ -1,0 +1,23 @@
+{
+  "id": "item-f85b1fc8-7671-46e5-8963-bc05adf69f3c",
+  "indent": 4,
+  "location": "pages/item-f85b1fc8-7671-46e5-8963-bc05adf69f3c/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/develop-iterate",
+  "order": 8,
+  "parent": "item-afb9718c-7193-4e3f-b080-d20610e3d901",
+  "title": "Develop: Iterate",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-e87cf7be-67fe-4eb2-8d40-637cda3df763",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-e87cf7be-67fe-4eb2-8d40-637cda3df763\"></oer-include>"
+}

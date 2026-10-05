@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9e6fbc03-13b6-4bab-bcf8-fcdfd7346371</id>
+<indent>4</indent>
+<location>pages/item-9e6fbc03-13b6-4bab-bcf8-fcdfd7346371/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/define-synopsis</slug>
+<order>3</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Define: Synopsis</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-0e2412c6-7bc6-410e-b370-a54e345875c5</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-0e2412c6-7bc6-410e-b370-a54e345875c5"></oer-include>]]></content>
+</item>

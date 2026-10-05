@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d51de0e0-e0f4-43f8-8d5a-bf445808f399</id>
+<indent>1</indent>
+<location>pages/item-d51de0e0-e0f4-43f8-8d5a-bf445808f399/index.xml</location>
+<slug>resources/mike-pelletier</slug>
+<order>20</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Mike Pelletier</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/mike-pelletier</oerSource>
+<oerFields>
+<url>http://mikepelletier.net/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

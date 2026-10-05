@@ -1,0 +1,24 @@
+{
+  "id": "item-19d69430-ae4e-4bcd-8fb7-34d216116060",
+  "indent": 1,
+  "location": "pages/item-19d69430-ae4e-4bcd-8fb7-34d216116060/index.json",
+  "slug": "resources/flavourcel-animation-collective",
+  "order": 31,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Flavourcel Animation Collective",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/flavourcel-animation-collective",
+    "oerFields": {
+      "url": "https://flavourcel.com/manifesto",
+      "kind": "collective"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

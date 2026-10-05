@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c76526c0-0af0-43c0-9201-3b477a943c7a</id>
+<indent>4</indent>
+<location>pages/item-c76526c0-0af0-43c0-9201-3b477a943c7a/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/open-design</slug>
+<order>0</order>
+<parent>item-1c0b6b79-034b-48a7-bf88-c63e8570b13d</parent>
+<title>Open Design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-3c4f43d5-18ea-443a-8878-490fa6212b15</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-3c4f43d5-18ea-443a-8878-490fa6212b15"></oer-include>]]></content>
+</item>

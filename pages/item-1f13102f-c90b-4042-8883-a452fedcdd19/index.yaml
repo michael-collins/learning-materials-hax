@@ -1,0 +1,31 @@
+id: item-1f13102f-c90b-4042-8883-a452fedcdd19
+indent: 1
+location: pages/item-1f13102f-c90b-4042-8883-a452fedcdd19/index.yaml
+slug: articles/creative-mornings-jordan-tannahall
+order: 51
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: 'Creative Mornings: Jordan Tannahall'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-lesson-3-watching-creative-mornings-jordan-tannahill
+  tags: watching
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Jordan Tannahill discusses storytelling and ethics related to
+  misrepresentation and exploitation.</p>
+
+  <p><a href="https://creativemornings.com/talks/jordan-tannahill/1">Creative
+  Mornings: Jordan Tannahall</a> <strong>(38:57)</strong></p>

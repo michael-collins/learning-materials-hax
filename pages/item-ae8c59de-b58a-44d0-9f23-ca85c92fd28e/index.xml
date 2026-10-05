@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ae8c59de-b58a-44d0-9f23-ca85c92fd28e</id>
+<indent>3</indent>
+<location>pages/item-ae8c59de-b58a-44d0-9f23-ca85c92fd28e/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-3-intermediate-skills/character-rigging</slug>
+<order>0</order>
+<parent>item-d52b8358-232b-4752-9c45-1923076e2be4</parent>
+<title>Character Rigging</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerRef>
+<page>item-fe80edda-701f-412e-8db3-96577e99370b</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-fe80edda-701f-412e-8db3-96577e99370b"></oer-include>]]></content>
+</item>

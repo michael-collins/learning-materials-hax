@@ -1,0 +1,23 @@
+{
+  "id": "item-5db330bb-88f5-4725-8752-e2ed538ce0e4",
+  "indent": 3,
+  "location": "pages/item-5db330bb-88f5-4725-8752-e2ed538ce0e4/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/general-resources/concept-development",
+  "order": 1,
+  "parent": "item-9f0b88c0-5762-46b0-a219-444663bfeae6",
+  "title": "Concept development",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-7a36c98d-cc86-43c7-8819-1340d6cfb7df",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-7a36c98d-cc86-43c7-8819-1340d6cfb7df\"></oer-include>"
+}

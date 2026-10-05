@@ -1,0 +1,23 @@
+{
+  "id": "item-7ec0b61d-e641-4a52-acfd-0a22d5ce8c81",
+  "indent": 4,
+  "location": "pages/item-7ec0b61d-e641-4a52-acfd-0a22d5ce8c81/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/develop-feedback",
+  "order": 8,
+  "parent": "item-a9f78351-7500-44e9-bae7-d17feec5d5df",
+  "title": "Develop: Feedback",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-39c0f290-697f-4be7-bd9a-bb18331327c6",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-39c0f290-697f-4be7-bd9a-bb18331327c6\"></oer-include>"
+}

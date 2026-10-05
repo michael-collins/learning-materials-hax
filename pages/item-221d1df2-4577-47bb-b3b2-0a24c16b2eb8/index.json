@@ -1,0 +1,33 @@
+{
+  "id": "item-221d1df2-4577-47bb-b3b2-0a24c16b2eb8",
+  "indent": 1,
+  "location": "pages/item-221d1df2-4577-47bb-b3b2-0a24c16b2eb8/index.json",
+  "slug": "articles/collaboration-tools",
+  "order": 72,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Collaboration tools",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd300-collaboration-tools",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-05",
+      "courses": [
+        "DMD 300"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<ol>\n<li><strong>Team communications</strong>\n<ol>\n<li>Video conferencing\n<ul>\n<li>Zoom (<a href=\"https://psu.zoom.us\">psu.zoom.us</a>)</li>\n<li>Skype</li>\n<li>Google Hangouts / Meet</li>\n<li>Slack (<a href=\"http://dmd-program.slack.com\">dmd-program.slack.com</a>)</li>\n<li>Discord</li>\n<li><a href=\"https://www.loom.com\">Loom</a> — record short video feedback on designs</li>\n</ul>\n</li>\n</ol>\n</li>\n<li><strong>Team management and tasks</strong>\n<ul>\n<li>Canvas group's page</li>\n<li>Mural: <a href=\"https://app.mural.co/invitation/team/dmd3007494?code=6c9320b6e2fe40b2b5f7bd0efed6a871&amp;sender=msc2278195\">Member invite link</a>\n<ul>\n<li>For group/team projects, one person from each group should join Mural.co via this link, create the murals, and invite the rest of the team as guests. This account is limited to 10 members, and we cannot add everyone as members unfortunately.</li>\n<li>For individual student projects, you may create your own mural.com education account, and invite your instructor as a member.</li>\n</ul>\n</li>\n<li><a href=\"https://trello.com\">Trello</a></li>\n<li><a href=\"https://basecamp.com/\">Basecamp</a></li>\n<li><a href=\"http://asana.com\">Asana</a></li>\n<li><a href=\"https://notion.so/\">Notion</a></li>\n</ul>\n</li>\n<li><strong>Collaborative writing tools</strong>\n<ol>\n<li>Google Docs\n<ul>\n<li>Features include track changes, comments, chat, export as pdf, etc.</li>\n</ul>\n</li>\n<li><a href=\"https://office365.psu.edu\">Office365</a> docs\n<ul>\n<li>Features include track changes, comments, chat, export as pdf, etc.</li>\n</ul>\n</li>\n<li><a href=\"https://www.gitbook.com\">Gitbook.com</a> and Github.com\n<ul>\n<li>Developer centric writing and collaboration.</li>\n<li>Can write in markdown and publish to HTML very easily.</li>\n</ul>\n</li>\n</ol>\n</li>\n<li><strong>Collaborative Design Tools</strong>\n<ul>\n<li><a href=\"https://www.invisionapp.com/\">InVision</a> collaborative image \"Boards\" and \"Freehand\" whiteboards.</li>\n<li>[Google Slides]\n<ul>\n<li>Simple way to share images and comments.</li>\n</ul>\n</li>\n<li><a href=\"https://www.figma.com/\">Figma</a>\n<ul>\n<li>Design app for UI design, featuring online collaborative projects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ol>\n"
+}

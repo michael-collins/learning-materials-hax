@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b413f87e-ad4a-43f4-aa0d-da11866fc9bb</id>
+<indent>3</indent>
+<location>pages/item-b413f87e-ad4a-43f4-aa0d-da11866fc9bb/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/projects/writing-project</slug>
+<order>2</order>
+<parent>item-52f4f50f-0c7d-48a8-adca-c64310cc050a</parent>
+<title>Writing Project</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-5a980eff-dda8-4522-892b-d10274e9270f</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-5a980eff-dda8-4522-892b-d10274e9270f"></oer-include>]]></content>
+</item>

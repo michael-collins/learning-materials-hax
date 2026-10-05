@@ -1,0 +1,20 @@
+id: item-3f29244d-dfaf-47ba-ba3f-9ac73d38caca
+indent: 4
+location: pages/item-3f29244d-dfaf-47ba-ba3f-9ac73d38caca/index.yaml
+slug: >-
+  books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/production-reports
+order: 2
+parent: item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3
+title: Production Reports
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-d6797158-a470-4711-b8ca-5f81d57f1795
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-d6797158-a470-4711-b8ca-5f81d57f1795"></oer-include>

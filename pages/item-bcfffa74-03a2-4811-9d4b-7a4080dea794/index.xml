@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bcfffa74-03a2-4811-9d4b-7a4080dea794</id>
+<indent>3</indent>
+<location>pages/item-bcfffa74-03a2-4811-9d4b-7a4080dea794/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/introduction/technology</slug>
+<order>7</order>
+<parent>item-8153e6b4-28e8-4c08-ba68-ce087c804837</parent>
+<title>Technology</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-311dc1f3-f001-4c36-9eab-3ebcdf9a50b8</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-311dc1f3-f001-4c36-9eab-3ebcdf9a50b8"></oer-include>]]></content>
+</item>

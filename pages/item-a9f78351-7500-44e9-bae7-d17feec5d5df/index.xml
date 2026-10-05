@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a9f78351-7500-44e9-bae7-d17feec5d5df</id>
+<indent>3</indent>
+<location>pages/item-a9f78351-7500-44e9-bae7-d17feec5d5df/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project</slug>
+<order>4</order>
+<parent>item-a106f25f-fd10-4f85-855b-5587ad96edba</parent>
+<title>Project</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

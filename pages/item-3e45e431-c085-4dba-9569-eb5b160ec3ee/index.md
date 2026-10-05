@@ -1,0 +1,1 @@
+Artists, studios and other references the exercises and projects point to.

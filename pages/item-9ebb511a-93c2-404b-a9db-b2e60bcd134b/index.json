@@ -1,0 +1,23 @@
+{
+  "id": "item-9ebb511a-93c2-404b-a9db-b2e60bcd134b",
+  "indent": 4,
+  "location": "pages/item-9ebb511a-93c2-404b-a9db-b2e60bcd134b/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/project-files",
+  "order": 5,
+  "parent": "item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3",
+  "title": "Project Files",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-4edefeb3-b603-4430-9302-5b2527d47c60",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-4edefeb3-b603-4430-9302-5b2527d47c60\"></oer-include>"
+}

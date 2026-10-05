@@ -1,0 +1,23 @@
+{
+  "id": "item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8",
+  "indent": 3,
+  "location": "pages/item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project",
+  "order": 0,
+  "parent": "item-52f4f50f-0c7d-48a8-adca-c64310cc050a",
+  "title": "Project 1: Group Design Project",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-a7d1ec46-8014-41d0-93df-43ca3fc9e605",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-a7d1ec46-8014-41d0-93df-43ca3fc9e605\"></oer-include>"
+}

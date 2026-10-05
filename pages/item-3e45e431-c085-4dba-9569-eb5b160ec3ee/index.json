@@ -1,0 +1,19 @@
+{
+  "id": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "indent": 0,
+  "location": "pages/item-3e45e431-c085-4dba-9569-eb5b160ec3ee/index.json",
+  "slug": "resources",
+  "order": 7,
+  "parent": null,
+  "title": "Resources",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Artists, studios and other references the exercises and projects point to.</p>\n<oer-collection types=\"oer:resource\" scope=\"site\" view=\"table\" sort=\"title\" per-page=\"20\" controls=\"full\"></oer-collection>"
+}

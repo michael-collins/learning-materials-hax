@@ -1,0 +1,20 @@
+id: item-63fa70e7-c2a0-490a-92cb-25430eb63dc0
+indent: 4
+location: pages/item-63fa70e7-c2a0-490a-92cb-25430eb63dc0/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/discover-modular-design-research
+order: 3
+parent: item-afb9718c-7193-4e3f-b080-d20610e3d901
+title: 'Discover: Modular Design Research'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-acd7b140-f3a7-4920-8dff-8847c85de04b
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-acd7b140-f3a7-4920-8dff-8847c85de04b"></oer-include>

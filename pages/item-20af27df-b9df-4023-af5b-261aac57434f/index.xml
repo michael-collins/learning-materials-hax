@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-20af27df-b9df-4023-af5b-261aac57434f</id>
+<indent>2</indent>
+<location>pages/item-20af27df-b9df-4023-af5b-261aac57434f/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/license</slug>
+<order>6</order>
+<parent>item-ce739bdb-84f3-4797-9b76-5f951decba4e</parent>
+<title>License</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-999e5ef4-0fe4-473d-bf71-bc4062baa52e</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-999e5ef4-0fe4-473d-bf71-bc4062baa52e"></oer-include>]]></content>
+</item>

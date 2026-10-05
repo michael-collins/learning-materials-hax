@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c1f1ca2e-14ca-4954-952e-f8ad25e52182</id>
+<indent>4</indent>
+<location>pages/item-c1f1ca2e-14ca-4954-952e-f8ad25e52182/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/readings/chapter-7-face-to-face-with-design</slug>
+<order>4</order>
+<parent>item-1583962c-54f8-48ec-b445-151a76f50494</parent>
+<title>Chapter 7. Face to Face with Design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-7394a9fe-bb6f-4420-affe-825e76cc78f2</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-7394a9fe-bb6f-4420-affe-825e76cc78f2"></oer-include>]]></content>
+</item>

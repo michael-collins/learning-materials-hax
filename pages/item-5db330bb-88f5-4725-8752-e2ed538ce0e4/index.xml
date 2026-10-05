@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5db330bb-88f5-4725-8752-e2ed538ce0e4</id>
+<indent>3</indent>
+<location>pages/item-5db330bb-88f5-4725-8752-e2ed538ce0e4/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/general-resources/concept-development</slug>
+<order>1</order>
+<parent>item-9f0b88c0-5762-46b0-a219-444663bfeae6</parent>
+<title>Concept development</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-7a36c98d-cc86-43c7-8819-1340d6cfb7df</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-7a36c98d-cc86-43c7-8819-1340d6cfb7df"></oer-include>]]></content>
+</item>

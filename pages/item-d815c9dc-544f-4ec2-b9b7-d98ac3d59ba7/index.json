@@ -1,0 +1,23 @@
+{
+  "id": "item-d815c9dc-544f-4ec2-b9b7-d98ac3d59ba7",
+  "indent": 4,
+  "location": "pages/item-d815c9dc-544f-4ec2-b9b7-d98ac3d59ba7/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/concept-pitch",
+  "order": 0,
+  "parent": "item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3",
+  "title": "Concept Pitch",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-dd94ad18-8f1b-4422-8486-2fe4096294e7",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-dd94ad18-8f1b-4422-8486-2fe4096294e7\"></oer-include>"
+}

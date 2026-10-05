@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2870f1e0-2fda-4aee-aa86-d55a3845cab0</id>
+<indent>1</indent>
+<location>pages/item-2870f1e0-2fda-4aee-aa86-d55a3845cab0/index.xml</location>
+<slug>resources/jacolby-satterwhite</slug>
+<order>13</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Jacolby Satterwhite</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/jacolby-satterwhite</oerSource>
+<oerFields>
+<url>http://jacolby.com/home.html</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

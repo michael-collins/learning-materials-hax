@@ -1,0 +1,20 @@
+id: item-0a34d844-1ebb-43d2-a259-db3bf9d8e436
+indent: 3
+location: pages/item-0a34d844-1ebb-43d2-a259-db3bf9d8e436/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/introduction/course-instructor
+order: 2
+parent: item-8153e6b4-28e8-4c08-ba68-ce087c804837
+title: Course instructor
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-140d89fe-034b-43da-b1f1-66c81e99a8bc
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-140d89fe-034b-43da-b1f1-66c81e99a8bc"></oer-include>

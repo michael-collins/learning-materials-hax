@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-75e7e07b-4ca8-47f7-ae50-718b696eccbe</id>
+<indent>2</indent>
+<location>pages/item-75e7e07b-4ca8-47f7-ae50-718b696eccbe/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/project-categories</slug>
+<order>5</order>
+<parent>item-ce739bdb-84f3-4797-9b76-5f951decba4e</parent>
+<title>Project categories</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-cf21215f-0569-44f6-a9f5-3fa6835fb955</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-cf21215f-0569-44f6-a9f5-3fa6835fb955"></oer-include>]]></content>
+</item>

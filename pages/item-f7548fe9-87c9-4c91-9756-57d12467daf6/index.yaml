@@ -1,0 +1,33 @@
+id: item-f7548fe9-87c9-4c91-9756-57d12467daf6
+indent: 1
+location: pages/item-f7548fe9-87c9-4c91-9756-57d12467daf6/index.yaml
+slug: articles/creative-mornings-creativity-and-the-freedom-to-fail
+order: 65
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: 'Creative Mornings: Creativity and the Freedom to Fail'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: >-
+    articles/dmd100-lesson-5-listening-creative-mornings-creativity-and-the-freedom-to-fa
+  tags: listening
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this creative mornings podcast, the musician Moby reflects on where he
+  grew up, how it influenced his creative process, and the importance of being
+  allowed to fail.</p>
+
+  <p><a href="https://creativemornings.com/podcast/episodes/moby">Creativity and
+  the Freedom to Fail</a> <strong>(50:05)</strong></p>

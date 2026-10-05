@@ -1,0 +1,19 @@
+id: item-d387e341-8f58-489f-8c56-eb5ddd615125
+indent: 2
+location: pages/item-d387e341-8f58-489f-8c56-eb5ddd615125/index.yaml
+slug: books/dmd-400-digital-multimedia-design-capstone/assessment
+order: 2
+parent: item-ce739bdb-84f3-4797-9b76-5f951decba4e
+title: Assessment
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-2299f9f0-a17b-437f-b240-a9d896ed9739
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-2299f9f0-a17b-437f-b240-a9d896ed9739"></oer-include>

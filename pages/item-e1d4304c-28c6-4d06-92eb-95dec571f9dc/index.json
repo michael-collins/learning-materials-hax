@@ -1,0 +1,23 @@
+{
+  "id": "item-e1d4304c-28c6-4d06-92eb-95dec571f9dc",
+  "indent": 3,
+  "location": "pages/item-e1d4304c-28c6-4d06-92eb-95dec571f9dc/index.json",
+  "slug": "books/dmd-400-digital-multimedia-design-capstone/capstone-project/2-project-advisor",
+  "order": 1,
+  "parent": "item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041",
+  "title": "2. Project advisor",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-5965abc0-8ace-4033-98ec-157f9906d7e6",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-5965abc0-8ace-4033-98ec-157f9906d7e6\"></oer-include>"
+}

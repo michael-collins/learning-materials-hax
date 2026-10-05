@@ -1,0 +1,20 @@
+id: item-f5e65688-55bf-4cc8-a597-da85745c25ce
+indent: 1
+location: pages/item-f5e65688-55bf-4cc8-a597-da85745c25ce/index.yaml
+slug: resources/kouhei-nakama
+order: 18
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Kouhei Nakama
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/kouhei-nakama
+  oerFields:
+    url: http://kouheinakama.com/
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

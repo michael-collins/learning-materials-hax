@@ -1,0 +1,20 @@
+id: item-421099b0-2450-4ca9-aa49-3b1552e9d2e4
+indent: 4
+location: pages/item-421099b0-2450-4ca9-aa49-3b1552e9d2e4/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/readings/chapter-14-designing-time
+order: 3
+parent: item-2e49471e-8c7e-46a8-9e6f-2718e018f6f4
+title: Chapter 14. Designing Time
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-c362e41c-f10d-4461-87df-77c4ce07f3f2
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-c362e41c-f10d-4461-87df-77c4ce07f3f2"></oer-include>

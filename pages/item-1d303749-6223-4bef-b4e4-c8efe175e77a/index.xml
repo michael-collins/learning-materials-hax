@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1d303749-6223-4bef-b4e4-c8efe175e77a</id>
+<indent>4</indent>
+<location>pages/item-1d303749-6223-4bef-b4e4-c8efe175e77a/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/interaction-design</slug>
+<order>2</order>
+<parent>item-8d24c121-2ffd-442f-9d30-d5da6d3f2565</parent>
+<title>Interaction design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-eeae23b8-5c99-410d-8683-c108f6137c0b</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-eeae23b8-5c99-410d-8683-c108f6137c0b"></oer-include>]]></content>
+</item>

@@ -1,0 +1,20 @@
+id: item-b222a21e-edeb-4812-ae00-6e067bae2888
+indent: 4
+location: pages/item-b222a21e-edeb-4812-ae00-6e067bae2888/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/discover-interview
+order: 2
+parent: item-37f45e8c-1f67-44cf-8615-146707d362e4
+title: 'Discover: Interview'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-8a7ed1a0-1421-4db0-a304-2ec75c6821c9
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-8a7ed1a0-1421-4db0-a304-2ec75c6821c9"></oer-include>

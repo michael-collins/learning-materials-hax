@@ -1,0 +1,19 @@
+{
+  "id": "item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913",
+  "indent": 2,
+  "location": "pages/item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-1-introduction",
+  "order": 0,
+  "parent": "item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e",
+  "title": "Chapter 1: Introduction",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<p></p>"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "item-36c77843-db97-4386-80df-e6ede2349892",
+  "indent": 1,
+  "location": "pages/item-36c77843-db97-4386-80df-e6ede2349892/index.json",
+  "slug": "projects/discover-modular-design-research",
+  "order": 34,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Discover: Modular design research",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-4-open-design-discover-modular-design-research",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-discover-1200px@2x.png\" alt=\"Double Diamond Discover Phase graphic\"></p>\n<p>This assignment asks you to look at objects not as whole \"things,\" but rather as a sum of parts. It also asks you to consider the user experience of the person involved with building a \"thing.\" To do this, explore and explain some aspects <strong>modular design</strong> by investigating why products and objects are designed and constructed the way they are. Areas of investigation could include architecture, engineering, product and furniture (industrial) design, and others.</p>\n<p>Find images of interesting or inspiring ways of making, attaching, and combining parts. You will create a presentation of your findings to help others understand how modular systems work.</p>\n<h2>Presentation</h2>\n<p><strong>Presentation format template:</strong> https://docs.google.com/presentation/d/1cwoQfh5y5k-A6tzx7rjda8tW8RR_XJ2H6k36OIU6nPY/edit?usp=sharing</p>\n<h3>Requirements</h3>\n<p>You will produce a presentation with the following elements:</p>\n<ol>\n<li>Title Page\n<ol>\n<li>Modular Design Research</li>\n<li>By: YOUR NAME</li>\n<li>Date</li>\n</ol>\n</li>\n<li>Definition\n<ol>\n<li>What is \"modular design\"?</li>\n</ol>\n</li>\n<li>What categories of modular design did you find? You can develop your own categories? Please include at least four categories.\n<ol>\n<li>Category name (you can invent this if there isn't a good one)</li>\n<li>What are the affordances and benefits of this category?</li>\n<li>What are the drawbacks and limitations of this system?</li>\n<li>What materials could be used or substituted from your resources research? Include images from your resources discovery.</li>\n</ol>\n</li>\n</ol>\n<p>Include between 6 to 20 slides. Pease include images where possible.</p>\n<h3>Exporting to a PDF format</h3>\n<p><strong>Tutorials for software applications:</strong></p>\n<ul>\n<li><a href=\"https://www.youtube.com/watch?v=D1WhvsQeY6w\">Google Slides</a></li>\n<li><a href=\"https://support.office.com/en-US/article/Save-PowerPoint-presentations-as-PDF-files-9B5C786B-9C6E-4FE6-81F6-9372F77C47C8\">Microsoft Powerpoint</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=AkWqdqOUUjk\">Keynote</a></li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>Conduct desktop and field research of modular design. Investigate websites and physical stores that sell parts for modular objects and systems.</li>\n<li>Produce the presentation according to the presentation requirements and export it to PDF format.</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>\n<ol>\n<li>Upload an exported <code>.pdf</code> file of the presentation.</li>\n</ol>\n"
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-117822a8-03c3-4ceb-9126-3d4ba3bdf07d</id>
+<indent>1</indent>
+<location>pages/item-117822a8-03c3-4ceb-9126-3d4ba3bdf07d/index.xml</location>
+<slug>articles/requirements</slug>
+<order>11</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Requirements</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-introduction-requirements</oerSource>
+<tags>introduction</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<h2>Course credit</h2>
+<p>This course is designated as a "c-required course." From the bulletin description of the progam, "To graduate, a student enrolled in the major must earn a grade of C or better in each course designated by the major as a C-required course, as specified by Senate Policy 82-44." For more information about degree requirements, see the <a href="https://bulletins.psu.edu/undergraduate/colleges/arts-architecture/digital-multimedia-design-bdes/#programrequirementstext">bulletin description</a>.</p>
+<h2>Hardware</h2>
+<ol>
+<li>Computer: This fully online course will require access to a computer that meets the minimum requirements set by World Campus.</li>
+<li>Internet: You will need broadband Internet to view videos and other media content.</li>
+<li>Camera or cameraphone: You will be asked to document various aspects of your work</li>
+<li>Printer/scanner: A printer will be helpful for printing out paper templates. A scanner is optional, but would be helpful.</li>
+</ol>
+<h2>Software</h2>
+<ol>
+<li>Web browser: You will need to have the latest version of either Google Chrome, Safari, Firefox, or Microsoft Edge.</li>
+<li>Accounts: In addition to general University account access, you will be required to create an account with InvisionApp.com</li>
+<li>Software installs: You will need to download and install an open-source desktop application called Twine from Twinery.org. It is possible to use a web version of this software if you cannot or wish not to install it on your computer.</li>
+</ol>
+<h2>Materials</h2>
+<ol>
+<li>Journal
+<ul>
+<li>Any journal is fine. I recommend the Moleskine Cahier Journal, Large, Squared, Kraft Brown, Soft Cover (5 x 8.25)</li>
+</ul>
+</li>
+<li>Pens, pencils, markers
+<ul>
+<li>Any that you already own are fine, you do not need to purchase special ones for this course. However, the following recommendations are professional grade if you are so inclined to invest in quality drawing tools.
+<ul>
+<li>Pencil: Palomino Blackwing 602</li>
+<li>Pen: Copic Multiliner Marker 0.5 - Black</li>
+<li>Marker: Copic N2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Scissors</li>
+<li>Post-it Notes</li>
+<li>Poster board (or large open wall space) for the post-its</li>
+</ol>
+<h2>Book</h2>
+<p>We will be reading <em>Design and Truth</em> by Robert Grudin. You will need to purchase a copy of this book.</p>
+]]></content>
+</item>

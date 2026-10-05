@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d8f85c1d-3a1b-4ac6-b3d4-1c7080908219</id>
+<indent>4</indent>
+<location>pages/item-d8f85c1d-3a1b-4ac6-b3d4-1c7080908219/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/develop-interactive-wireframes</slug>
+<order>7</order>
+<parent>item-37f45e8c-1f67-44cf-8615-146707d362e4</parent>
+<title>Develop: Interactive wireframes</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-0f602a16-90e6-4f44-b472-03810b2b2a40</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-0f602a16-90e6-4f44-b472-03810b2b2a40"></oer-include>]]></content>
+</item>

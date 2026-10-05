@@ -1,0 +1,34 @@
+{
+  "id": "item-16ef9db8-e360-40b2-9aa6-f7f4d6772930",
+  "indent": 1,
+  "location": "pages/item-16ef9db8-e360-40b2-9aa6-f7f4d6772930/index.json",
+  "slug": "projects/files",
+  "order": 43,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Files",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd300-design-project-2-project-2-project-files",
+    "tags": "project-deliverable",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 300"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>The following are examples of project file types:</p>\n<ol>\n<li>High resolution images</li>\n<li>photo documentation</li>\n<li>video</li>\n<li>Pre-press PDF documents</li>\n<li>executable game or app file for download (macOS and Windows compatible)</li>\n<li>Zip archive of files</li>\n<li>URL of live website (not a link to a paid web service such as InvisionApp)</li>\n</ol>\n<p>For archival purposes, the files must be as self-contained as possible. (I.E.–if I were to look at them without an Internet connection, would the project still work? This will not always be possible given the nature of certain projects.)</p>\n<h2>Submission details:</h2>\n<ol>\n<li>Upload to canvas by the deadline.</li>\n</ol>\n"
+}

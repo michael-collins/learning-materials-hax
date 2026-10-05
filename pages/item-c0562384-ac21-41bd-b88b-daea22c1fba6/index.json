@@ -1,0 +1,34 @@
+{
+  "id": "item-c0562384-ac21-41bd-b88b-daea22c1fba6",
+  "indent": 1,
+  "location": "pages/item-c0562384-ac21-41bd-b88b-daea22c1fba6/index.json",
+  "slug": "articles/assessment",
+  "order": 80,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Assessment",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd400-assessment",
+    "tags": "assessment",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-05",
+      "courses": [
+        "DMD 400"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>See Canvas for the course schedule.</p>\n<p>Students in DMD-400 are assessed on their ability to synthesize a feasible design project, produce deliverables on time, and engage with a design process they outlined for the project.</p>\n<p>To pass the course, students must meet the capstone requirements indicated in the capstone project section. Students will spend the entire course developing a single capstone project, including check-ins and development stages.</p>\n<h2>Final Project</h2>\n<p>By taking this course you are not guaranteed to pass it simply by turning in a final project and completing production reports and other projects. Your final project must incorporate feedback from your professor, external reviewers, and peers. You must document and show your efforts to explore feedback in your work and production reports.</p>\n<p>At the midterm and final review, your work will be reviewed by external reviewers. If you project is not meeting the DMD program requirements you will be given a warning at midterm. If this warning is not acted upon and you ignore your professor’s feedback leading up to your final you could fail the course and need to retake it. Your final project, once reviewed by external reviewers, will be deemed viable or not viable by the DMD program faculty. If your final project does not meet the requirements of the DMD program you will not pass the course.</p>\n<p>In order to pass this course you must earn a C or better. In order for your final project to be included in the exhibition your actual final project must earn a C or better.</p>\n<h2>Production Reports</h2>\n<p>Students will be required to post regular updates on a blog or similar online platform to document their research and progress throughout the semester. The points for these reports are not guaranteed and will not be awarded if your report does not meet the criteria.</p>\n<h2>Incremental Process Assignment</h2>\n<p>These include miscellaneous check-ins, drafts of writing, and required Zoom meetings with the instructor. The points for these assignments are not guaranteed and will not be awarded if your assignment does not meet the criteria.</p>\n"
+}

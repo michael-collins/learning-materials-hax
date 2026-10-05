@@ -1,0 +1,20 @@
+id: item-d7edd126-7a35-4c19-9eb1-08715a1c2b96
+indent: 1
+location: pages/item-d7edd126-7a35-4c19-9eb1-08715a1c2b96/index.yaml
+slug: resources/john-butler
+order: 15
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: John Butler
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/john-butler
+  oerFields:
+    url: https://vimeo.com/user3946359
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

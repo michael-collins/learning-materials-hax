@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a5aecd9f-470f-4e3b-b2cf-5c1c63147aff</id>
+<indent>4</indent>
+<location>pages/item-a5aecd9f-470f-4e3b-b2cf-5c1c63147aff/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-2-develop-a-design-sprint</slug>
+<order>2</order>
+<parent>item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8</parent>
+<title>Phase 2: Develop a design sprint</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-8b072fef-daf0-4df6-9060-4df5904dfee3</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-8b072fef-daf0-4df6-9060-4df5904dfee3"></oer-include>]]></content>
+</item>

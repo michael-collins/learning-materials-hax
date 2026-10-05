@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc</id>
+<indent>1</indent>
+<location>pages/item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc/index.xml</location>
+<slug>projects/agreement-form</slug>
+<order>54</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Agreement form</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd400-capstone-project-agreement-form</oerSource>
+<tags>project-deliverable</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 400</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Please fill out the form link in Canvas.</p>
+<h2>Grading Rubric</h2>
+<p>This assignment is pass/fail.</p>
+<p><strong>Passing:</strong> In order to get a passing mark, you will need to complete the agreement form.</p>
+<p><strong>Failing:</strong> A failing mark indicates that you have not submitted the agreement form.</p>
+]]></content>
+</item>

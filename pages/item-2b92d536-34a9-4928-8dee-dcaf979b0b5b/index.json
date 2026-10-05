@@ -1,0 +1,35 @@
+{
+  "id": "item-2b92d536-34a9-4928-8dee-dcaf979b0b5b",
+  "indent": 1,
+  "location": "pages/item-2b92d536-34a9-4928-8dee-dcaf979b0b5b/index.json",
+  "slug": "tutorials/animation-color-grading",
+  "order": 1,
+  "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+  "title": "Animation Color Grading",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:tutorial",
+    "oerSource": "tutorials/animation-color-grading",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "date": "2026-04-06T14:31:00.000Z",
+      "difficulty": "Beginner",
+      "courses": [
+        "DART 303"
+      ],
+      "license": "CC BY 4.0",
+      "allowEmbed": true
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Here is a collection of tutorials for color grading and exporting Blender animations using DaVinci Resolve.</p>\n<p><strong>Download (free):</strong> <a href=\"https://www.blackmagicdesign.com/products/davinciresolve\">DaVinci Resolve</a></p>\n<oer-video src=\"https://www.youtube.com/watch?v=qfrseSxN6GU\" title=\"Color Grade Your 3D Renders Like A Pro | Blender To DaVinci Resolve\"></oer-video>\n<oer-video src=\"https://www.youtube.com/watch?v=sunTYl71hZs\" title=\"80% Of COLOUR GRADING BASICS In ONLY 20 Minutes\"></oer-video>\n<oer-video src=\"https://www.youtube.com/watch?v=otHE81syHI0\" title=\"How To Export Videos in Davinci Resolve in 2025\"></oer-video>\n"
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5bc22eb2-f467-4292-a344-11e4e4598f90</id>
+<indent>1</indent>
+<location>pages/item-5bc22eb2-f467-4292-a344-11e4e4598f90/index.xml</location>
+<slug>exercises/daily-design-journal-1</slug>
+<order>23</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Daily Design Journal</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:exercise</pageType>
+<oerSource>exercises/dmd100-lesson-1-daily-design-journal-report-in</oerSource>
+<tags>activity</tags>
+<oerFields>
+<difficulty>beginner</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Now that you have documented at least one object each day for two weeks, it's time to talk about it, shown-and-tell style.</p>
+<h2>Prompt</h2>
+<ol>
+<li>From the 14 objects that you sketched, which are your favorite objects? Why?</li>
+<li>Select one object from your list. What role does this object play in your life? What would be the result if you did not have it anymore?</li>
+<li>Do you generally take these objects for granted or are they special?</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Respond to the prompt questions in Canvas.</li>
+<li>Upload all 14 of your sketches in JPG format.
+<ul>
+<li><strong>Please either use a scanner or take clear and well lit photographs.</strong></li>
+</ul>
+</li>
+<li>Write your responses to the prompt questions at the end of the two weeks.</li>
+</ol>
+]]></content>
+</item>

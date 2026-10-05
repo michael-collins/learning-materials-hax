@@ -1,0 +1,33 @@
+id: item-75316068-2181-48e7-8440-ffc741111abd
+indent: 1
+location: pages/item-75316068-2181-48e7-8440-ffc741111abd/index.yaml
+slug: articles/creative-mornings-design-is-magical
+order: 18
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: 'Creative Mornings: Design Is Magical'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-lesson-1-listening-creative-mornings-design-is-magical
+  tags: listening
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Listen to David Kelley, founder of IDEO and the d.school at Stanford
+  University, as he talks about how the role of design has changed over the
+  years.</p>
+
+  <p><a
+  href="https://creativemornings.com/podcast/episodes/david-kelley">Creative
+  Mornings: Design Is Magical by David Kelley</a> <strong>(55:55)</strong></p>

@@ -1,0 +1,20 @@
+id: item-478210b8-1c65-4125-b0ac-b92ebc464bee
+indent: 4
+location: pages/item-478210b8-1c65-4125-b0ac-b92ebc464bee/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/ritual-inspiration
+order: 1
+parent: item-37f45e8c-1f67-44cf-8615-146707d362e4
+title: Ritual Inspiration
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-b0f1a124-1a38-4b19-b524-512d920a2df8
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-b0f1a124-1a38-4b19-b524-512d920a2df8"></oer-include>

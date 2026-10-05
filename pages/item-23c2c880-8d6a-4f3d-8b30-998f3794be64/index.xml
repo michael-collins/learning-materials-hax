@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-23c2c880-8d6a-4f3d-8b30-998f3794be64</id>
+<indent>1</indent>
+<location>pages/item-23c2c880-8d6a-4f3d-8b30-998f3794be64/index.xml</location>
+<slug>articles/oer-license-cc-by-4-0</slug>
+<order>68</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>OER License (CC-BY-4.0)</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-license</oerSource>
+<tags>license</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>You are welcomed and encouraged to use the content in this book for your own teaching needs. At a minimum, please provide visible attribution. This work is a living draft, presented as is, and may be changed or updated without notice.</p>
+<h2>Attribution</h2>
+<p><a href="https://www.gitbook.com/book/dmd-program/dmd-100-book/details">”DMD 100: Digital Multimedia Design Foundations”</a> by Michael Collins is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.</p>
+<p><code>&lt;a href="https://github.com/dmd-program/dmd-100-book/"&gt;“DMD 100: Digital Multimedia Design Foundations”&lt;/a&gt; by Michael Collins is licensed under &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC-BY-4.0&lt;/a&gt;.</code></p>
+<p>Some pages have different authors, please see the license details in the footer for attribution requirements.</p>
+]]></content>
+</item>

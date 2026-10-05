@@ -1,0 +1,23 @@
+{
+  "id": "item-27995052-745d-4776-ada3-a9033b95a252",
+  "indent": 3,
+  "location": "pages/item-27995052-745d-4776-ada3-a9033b95a252/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/introduction/writing-guidelines",
+  "order": 8,
+  "parent": "item-8153e6b4-28e8-4c08-ba68-ce087c804837",
+  "title": "Writing Guidelines",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-211da806-1505-4fac-87b7-33ce762c4b56",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-211da806-1505-4fac-87b7-33ce762c4b56\"></oer-include>"
+}

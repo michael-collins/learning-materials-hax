@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-324bbe4f-1369-48a4-9035-7fa8b3a56677</id>
+<indent>1</indent>
+<location>pages/item-324bbe4f-1369-48a4-9035-7fa8b3a56677/index.xml</location>
+<slug>lessons/particle-simulation</slug>
+<order>27</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Particle Simulation</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/particle-simulation</oerSource>
+<oerFields>
+<estimatedDuration>5 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Create and configure particle systems</item>
+<item>Control particle behavior and appearance</item>
+<item>Simulate natural phenomena</item>
+<item>Optimize particle count for performance</item>
+<item>Render particles effectively</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Learn to create and control particle systems for generating a wide range of visual effects from fire and smoke to magical elements.</p>
+]]></content>
+</item>

@@ -1,0 +1,43 @@
+{
+  "id": "item-633c2d98-9f8a-4aaa-a06f-5078d355709e",
+  "indent": 1,
+  "location": "pages/item-633c2d98-9f8a-4aaa-a06f-5078d355709e/index.json",
+  "slug": "lessons/ar/vr-development",
+  "order": 13,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "AR/VR Development",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerSource": "lessons/ar-vr-development",
+    "oerFields": {
+      "estimatedDuration": "5 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Understand AR/VR design principles",
+        "Create VR-optimized content",
+        "Implement comfortable locomotion systems",
+        "Design intuitive VR interactions",
+        "Test and iterate VR experiences",
+        "Apply performance optimization for VR"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Learn the unique requirements and best practices for creating augmented and virtual reality experiences that are comfortable and engaging.</p>\n"
+}

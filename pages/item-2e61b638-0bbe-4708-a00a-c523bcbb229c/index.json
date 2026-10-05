@@ -1,0 +1,19 @@
+{
+  "id": "item-2e61b638-0bbe-4708-a00a-c523bcbb229c",
+  "indent": 2,
+  "location": "pages/item-2e61b638-0bbe-4708-a00a-c523bcbb229c/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-2-fundamentals",
+  "order": 1,
+  "parent": "item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e",
+  "title": "Chapter 2: Fundamentals",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<p></p>"
+}

@@ -1,0 +1,37 @@
+id: item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc
+indent: 1
+location: pages/item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc/index.yaml
+slug: projects/agreement-form
+order: 54
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: Agreement form
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd400-capstone-project-agreement-form
+  tags: project-deliverable
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 400
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Please fill out the form link in Canvas.</p>
+
+  <h2>Grading Rubric</h2>
+
+  <p>This assignment is pass/fail.</p>
+
+  <p><strong>Passing:</strong> In order to get a passing mark, you will need to
+  complete the agreement form.</p>
+
+  <p><strong>Failing:</strong> A failing mark indicates that you have not
+  submitted the agreement form.</p>

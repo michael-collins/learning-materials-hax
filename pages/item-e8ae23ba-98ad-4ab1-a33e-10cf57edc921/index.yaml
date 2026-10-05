@@ -1,0 +1,20 @@
+id: item-e8ae23ba-98ad-4ab1-a33e-10cf57edc921
+indent: 4
+location: pages/item-e8ae23ba-98ad-4ab1-a33e-10cf57edc921/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-5-self-design/activities/pathway-design
+order: 0
+parent: item-73c92d3c-84cd-4c19-a3c7-100997b9c91d
+title: Pathway design
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerRef:
+    page: item-089faede-33a0-4377-8c08-3696d7e6d258
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-089faede-33a0-4377-8c08-3696d7e6d258"></oer-include>

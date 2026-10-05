@@ -1,0 +1,20 @@
+id: item-d02b65a5-041a-4be3-9a43-eab7245348db
+indent: 4
+location: pages/item-d02b65a5-041a-4be3-9a43-eab7245348db/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/inclusive-design
+order: 1
+parent: item-8d24c121-2ffd-442f-9d30-d5da6d3f2565
+title: Inclusive design
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-9f2b256c-8f77-4d40-b927-4cb49ed19205
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-9f2b256c-8f77-4d40-b927-4cb49ed19205"></oer-include>

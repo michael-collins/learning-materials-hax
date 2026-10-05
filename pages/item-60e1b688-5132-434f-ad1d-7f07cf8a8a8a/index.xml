@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-60e1b688-5132-434f-ad1d-7f07cf8a8a8a</id>
+<indent>3</indent>
+<location>pages/item-60e1b688-5132-434f-ad1d-7f07cf8a8a8a/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/watch</slug>
+<order>1</order>
+<parent>item-63865273-a727-4a9a-85ca-fb4276bf2450</parent>
+<title>Watch</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

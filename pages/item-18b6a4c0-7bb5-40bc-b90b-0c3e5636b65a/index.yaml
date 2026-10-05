@@ -1,0 +1,20 @@
+id: item-18b6a4c0-7bb5-40bc-b90b-0c3e5636b65a
+indent: 4
+location: pages/item-18b6a4c0-7bb5-40bc-b90b-0c3e5636b65a/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/discussions/end-of-lesson-discussion
+order: 0
+parent: item-8fa96c86-f5a4-4a18-9428-9148f2c88e9e
+title: End of lesson discussion
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-b394d874-3ac5-4d63-bdc5-e5d03da9236d
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-b394d874-3ac5-4d63-bdc5-e5d03da9236d"></oer-include>

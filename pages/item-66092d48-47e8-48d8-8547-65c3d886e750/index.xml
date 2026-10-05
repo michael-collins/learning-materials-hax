@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-66092d48-47e8-48d8-8547-65c3d886e750</id>
+<indent>1</indent>
+<location>pages/item-66092d48-47e8-48d8-8547-65c3d886e750/index.xml</location>
+<slug>resources/rick-silva</slug>
+<order>21</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Rick Silva</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/rick-silva</oerSource>
+<oerFields>
+<url>http://ricksilva.net/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

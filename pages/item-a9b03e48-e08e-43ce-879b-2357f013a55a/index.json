@@ -1,0 +1,23 @@
+{
+  "id": "item-a9b03e48-e08e-43ce-879b-2357f013a55a",
+  "indent": 4,
+  "location": "pages/item-a9b03e48-e08e-43ce-879b-2357f013a55a/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/watch/creative-mornings-jordan-tannahill",
+  "order": 0,
+  "parent": "item-5c81fb70-8a89-4da6-998d-40e3bd8efe72",
+  "title": "Creative Mornings: Jordan Tannahill",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-8a15290b-85d4-44a5-99e6-8c5e3d185617",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-8a15290b-85d4-44a5-99e6-8c5e3d185617\"></oer-include>"
+}

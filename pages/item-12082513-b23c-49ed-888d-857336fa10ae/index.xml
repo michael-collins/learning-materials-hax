@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-12082513-b23c-49ed-888d-857336fa10ae</id>
+<indent>1</indent>
+<location>pages/item-12082513-b23c-49ed-888d-857336fa10ae/index.xml</location>
+<slug>exercises/introduction-to-rigging</slug>
+<order>26</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Introduction to rigging</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:exercise</pageType>
+<oerSource>exercises/introduction-to-rigging</oerSource>
+<tags>Blender</tags>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<image>files/recNVyB0NFX6Uu2Ln_image_ex-6-beginner-banner-compressed.jpg</image>
+<imageAlt>ex-6-beginner-banner-compressed.jpg</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+<attachments>
+<item>
+<title>Base character mesh</title>
+<url>files/recJjqlGeFw9C431Y_attachment_biped-base-mesh.fbx</url>
+<description>Starter character mesh</description>
+<alt></alt>
+</item>
+</attachments>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, students will practice correcting a character model's edge-flow and set up an armature rig to pose the character in a sitting position.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ" title="Introduction to rigging Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice setting up Inverse Kinematics (IK) bone constraints.</li>
+<li>Practice modeling to good edge flow for deformation.</li>
+<li>Become familiarized with creating and binding a character armature.</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Watch the rigging character rigging tutorials.</li>
+<li>Download the base mesh model FBX file.</li>
+<li><strong>File</strong> → <strong>Import</strong> the FBX file into a new Blender scene.</li>
+<li>Scale up the model.</li>
+<li>Model the T-pose for armature deformation. Do not model the character into a sitting pose, it must be modeled in a T pose, and posed in a seated position via the armature rig.</li>
+<li>Watch the demo video series to learn how to add and create good edge flow for deformation. Add geometry to articulate the head, torso, legs, and arms.</li>
+<li><strong>Object</strong> → <strong>Apply</strong> all transforms including scale, rotation, and location.</li>
+<li>Create an armature with bones for the pelvis, lower back, upper back, lower legs, upper legs, feet, shoulders, arms, hands, neck, and head. Name and number them for your reference. You must put a “.L” or “.R” at the end of your bones for them to symmetrize properly.</li>
+<li>Parent (bind) the mesh to the armature. Do this by selecting the mesh first, select the armature, and then press ‘CTRL-P,’ and choose “with automatic weights.” If you do not see this option, you have selected in the reverse order.</li>
+<li>If you are getting any unwanted deformation, watch the weight paint tutorials and use the weight painting tool to clean up the vertex weights.</li>
+<li>Pose the biped to be in a sitting pose on a prop like a bench or chair.</li>
+<li>Save as <code>LASTNAME-rigging.blend</code> and upload to the submission dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

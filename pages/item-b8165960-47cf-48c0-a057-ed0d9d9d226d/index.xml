@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b8165960-47cf-48c0-a057-ed0d9d9d226d</id>
+<indent>3</indent>
+<location>pages/item-b8165960-47cf-48c0-a057-ed0d9d9d226d/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/introduction/digital-multimedia-design</slug>
+<order>1</order>
+<parent>item-8153e6b4-28e8-4c08-ba68-ce087c804837</parent>
+<title>Digital Multimedia Design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-5161bc94-86bf-45f3-a8d2-2deb63e07ba6</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-5161bc94-86bf-45f3-a8d2-2deb63e07ba6"></oer-include>]]></content>
+</item>

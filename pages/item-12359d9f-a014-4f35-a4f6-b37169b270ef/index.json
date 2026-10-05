@@ -1,0 +1,23 @@
+{
+  "id": "item-12359d9f-a014-4f35-a4f6-b37169b270ef",
+  "indent": 4,
+  "location": "pages/item-12359d9f-a014-4f35-a4f6-b37169b270ef/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers/you-don-t-see-that-everyday-objects",
+  "order": 6,
+  "parent": "item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8",
+  "title": "You don't see that everyday objects",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-48ad9f94-3f8b-44e5-8416-316cff49f4d2",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-48ad9f94-3f8b-44e5-8416-316cff49f4d2\"></oer-include>"
+}

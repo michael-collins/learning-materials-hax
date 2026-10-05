@@ -1,0 +1,23 @@
+{
+  "id": "item-52f4f50f-0c7d-48a8-adca-c64310cc050a",
+  "indent": 2,
+  "location": "pages/item-52f4f50f-0c7d-48a8-adca-c64310cc050a/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects",
+  "order": 3,
+  "parent": "item-9aa47609-2475-4db7-ae00-b09d2195cc39",
+  "title": "Projects",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-d707a57d-0c20-41bb-95ff-bd2dc627b3be",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-d707a57d-0c20-41bb-95ff-bd2dc627b3be\"></oer-include>"
+}

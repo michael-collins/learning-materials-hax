@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bc5ca2d7-9ab0-4570-a60f-9bd171402ead</id>
+<indent>3</indent>
+<location>pages/item-bc5ca2d7-9ab0-4570-a60f-9bd171402ead/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/listen</slug>
+<order>3</order>
+<parent>item-deee6a07-9279-4b94-9a62-8b67d2c76694</parent>
+<title>Listen</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

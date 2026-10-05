@@ -1,0 +1,21 @@
+id: item-e99b6b4c-6ed6-4c4b-9c98-1fa66d01e36a
+indent: 1
+location: pages/item-e99b6b4c-6ed6-4c4b-9c98-1fa66d01e36a/index.yaml
+slug: resources/3d-textures
+order: 26
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: 3D Textures
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/3d-textures
+  tags: textures
+  oerFields:
+    url: https://3dtextures.me/tag/pbr/
+    kind: assets
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

@@ -1,0 +1,20 @@
+id: item-1b2107f5-71e0-4a37-87ae-ed35b2e47690
+indent: 3
+location: pages/item-1b2107f5-71e0-4a37-87ae-ed35b2e47690/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-3-intermediate-skills/constraints-and-animation-controls
+order: 1
+parent: item-d52b8358-232b-4752-9c45-1923076e2be4
+title: Constraints and Animation Controls
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerRef:
+    page: item-4f832afc-8ceb-4aa3-a77c-c337056953dc
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-4f832afc-8ceb-4aa3-a77c-c337056953dc"></oer-include>

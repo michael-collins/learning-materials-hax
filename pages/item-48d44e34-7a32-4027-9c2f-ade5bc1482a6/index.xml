@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-48d44e34-7a32-4027-9c2f-ade5bc1482a6</id>
+<indent>1</indent>
+<location>pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.xml</location>
+<slug>projects/deliver-project-documentation</slug>
+<order>28</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Deliver: Project documentation</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-4-open-design-deliver-open-design</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-deliver-1200px@2x.png" alt="Double Diamond Deliver Phase graphic"></p>
+<p>You will now take photos of the toy assemblies and make any needed adjustments to the instructions document.</p>
+<h2>Documentation</h2>
+<h3>Photograph documentation</h3>
+<ol>
+<li>Arrange all of the parts, <a href="https://en.wikipedia.org/wiki/Knolling">knolling style</a>.</li>
+<li>Photograph the kit parts from above on a flat, white background.</li>
+<li>Assemble the kit parts into at least three total object variations.</li>
+<li>Take photographs of the assembled kit toys demonstrating any modular or reconfigurable characteristics of the kit. If you are feeling ambitious, follow <a href="https://www.youtube.com/watch?v=T6fnHEvLyAE">this video tutorial</a> to set up a light box, or see this <a href="http://www.instructables.com/id/Super-Simple-Light-Tent/">instructables tutorial</a>.</li>
+</ol>
+<h3>Instructions document</h3>
+<ol>
+<li>Add the knolling-style image to the title page of the document. If used as a background, ensure all text is still legible.</li>
+<li>Add at least one of the other images to the end of the instructions to show the final result.</li>
+</ol>
+<h2>Post work</h2>
+<ol>
+<li>Submit a total of four to nine (4-9) <code>JPG</code> images:
+<ol>
+<li>Submit one (1) knolling style <code>JPG</code> image showing the various parts you have assembled for the toy kit.</li>
+<li>Submit three to eight (3-8) <code>JPG</code> images of the object variants.</li>
+</ol>
+</li>
+<li>In addition to the images, upload a revised PDF instructions document and name it <code>yourname-instructions.pdf</code>.</li>
+</ol>
+]]></content>
+</item>

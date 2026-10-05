@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de</id>
+<indent>1</indent>
+<location>pages/item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de/index.xml</location>
+<slug>resources/chris-landreth</slug>
+<order>6</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Chris Landreth</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/chris-landreth</oerSource>
+<tags>3d animation,film</tags>
+<oerFields>
+<url>http://www.chrislandreth.com/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

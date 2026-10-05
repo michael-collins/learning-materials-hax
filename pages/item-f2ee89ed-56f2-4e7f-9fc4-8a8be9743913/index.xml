@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913</id>
+<indent>2</indent>
+<location>pages/item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-1-introduction</slug>
+<order>0</order>
+<parent>item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e</parent>
+<title>Chapter 1: Introduction</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d</id>
+<indent>1</indent>
+<location>pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.xml</location>
+<slug>projects/deliver-hypertext-narrative-draft-2</slug>
+<order>18</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Deliver: Hypertext narrative (draft 2)</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-deliver-1200px@2x.png" alt="Double Diamond Deliver Phase graphic"></p>
+<p>Iterative improvement is the key to good design. Now that you have peer feedback, tweak, change, and improve your work. Re-read your story and identify where you might be able to further develop characters, increase tension and drama, introduce dialogue, alter story pacing, smooth out awkward transitions, etc.</p>
+<p>In this draft, consider the role of style and emerging techniques in your narrative. See examples <a href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/List_of_narrative_techniques.html">here</a>.</p>
+<p><strong>Consider the following questions:</strong></p>
+<ul>
+<li>Is there are strong organizational structure to your story?</li>
+<li>Do the characters have motivations, challenges, and arcs?</li>
+<li>Is the technology or change you're inventing described in convincing detail?</li>
+<li>Is the story too long? Too short? Does every sentence matter?</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Review your feedback for the hypertext narrative.
+<ol>
+<li>If you are unsure about how feedback works, please see these <a href="/toolkit/feedback-and-critique.html">guidelines</a>.</li>
+</ol>
+</li>
+<li>Reflect on how your work can be improved. Analyze, interpret, and apply relevant feedback to improve the project.</li>
+<li>Record the changes that you made to the hypertext narrative.</li>
+<li>Publish the HTML file.</li>
+</ol>
+<h2>Optional CSS Styling</h2>
+<p>As you finalize your story, you may use this time to customize the appearance of your Twine pages using CSS—the declarative programming language used in web development.</p>
+<p>This is an optional step, but it's a great skill to learn if you're interested in web design and a fun way to personalize your story's look.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="http://twinery.org/wiki/twine2:change_the_font_colors_or_appearance">How to add custom CSS to a Twine project</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/css/">Tutorial on using the DevTools Inspector in Google Chrome</a> — Inspect elements in your Twine pages to figure out how to target them in CSS</li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/beginners/css">Basic tutorial on customizing a page with CSS</a></li>
+<li><a href="https://internetingishard.com/html-and-css/">Interneting is Hard</a>
+— comprehensive tutorials about HTML and CSS</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">General CSS reference from Mozilla</a></li>
+</ul>
+<h2>Post work</h2>
+<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>
+<ol>
+<li><strong>Change Log:</strong> Upload a short description about the changes and improvements that were made in <code>changelog.doc</code> format.</li>
+<li><strong>HTML:</strong> Upload the exported Twine <code>.html</code> file (or <code>.zip</code> file if you have multiple assets).</li>
+</ol>
+]]></content>
+</item>

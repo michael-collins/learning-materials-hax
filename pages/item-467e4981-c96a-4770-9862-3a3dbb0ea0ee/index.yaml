@@ -1,0 +1,20 @@
+id: item-467e4981-c96a-4770-9862-3a3dbb0ea0ee
+indent: 1
+location: pages/item-467e4981-c96a-4770-9862-3a3dbb0ea0ee/index.yaml
+slug: resources/universal-everything
+order: 32
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Universal Everything
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/universal-everything
+  oerFields:
+    url: https://www.universaleverything.com/
+    kind: collective
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

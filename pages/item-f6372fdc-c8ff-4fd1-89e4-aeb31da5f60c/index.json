@@ -1,0 +1,23 @@
+{
+  "id": "item-f6372fdc-c8ff-4fd1-89e4-aeb31da5f60c",
+  "indent": 3,
+  "location": "pages/item-f6372fdc-c8ff-4fd1-89e4-aeb31da5f60c/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-4-advanced-topics/camera-composition",
+  "order": 1,
+  "parent": "item-c6e347ab-3d18-4b55-bbb7-e323d71a9704",
+  "title": "Camera Composition",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41\"></oer-include>"
+}

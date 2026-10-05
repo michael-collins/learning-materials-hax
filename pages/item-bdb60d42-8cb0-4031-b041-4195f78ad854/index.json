@@ -1,0 +1,23 @@
+{
+  "id": "item-bdb60d42-8cb0-4031-b041-4195f78ad854",
+  "indent": 4,
+  "location": "pages/item-bdb60d42-8cb0-4031-b041-4195f78ad854/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/topics/character",
+  "order": 3,
+  "parent": "item-556f6f80-c90c-4f82-8a10-e2d80c9b6ef2",
+  "title": "Character",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-2bd022f6-cabd-4ea0-a7b6-ffe7aa2b68df",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-2bd022f6-cabd-4ea0-a7b6-ffe7aa2b68df\"></oer-include>"
+}

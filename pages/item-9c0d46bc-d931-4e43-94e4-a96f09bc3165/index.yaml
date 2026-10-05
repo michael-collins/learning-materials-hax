@@ -1,0 +1,20 @@
+id: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+indent: 0
+location: pages/item-9c0d46bc-d931-4e43-94e4-a96f09bc3165/index.yaml
+slug: articles
+order: 6
+parent: null
+title: Articles
+description: ''
+metadata:
+  published: true
+  pageType: oer:section
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >-
+  <p>Readings: background, context and reference for the lessons.</p>
+
+  <oer-collection types="oer:article" scope="site" view="table" sort="title"
+  per-page="20" controls="full"></oer-collection>

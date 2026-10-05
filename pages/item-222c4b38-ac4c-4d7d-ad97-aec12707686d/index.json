@@ -1,0 +1,23 @@
+{
+  "id": "item-222c4b38-ac4c-4d7d-ad97-aec12707686d",
+  "indent": 3,
+  "location": "pages/item-222c4b38-ac4c-4d7d-ad97-aec12707686d/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/introduction/about-this-course",
+  "order": 0,
+  "parent": "item-8153e6b4-28e8-4c08-ba68-ce087c804837",
+  "title": "About this course",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-058b363f-dd3c-4978-a86d-389c397a9904",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-058b363f-dd3c-4978-a86d-389c397a9904\"></oer-include>"
+}

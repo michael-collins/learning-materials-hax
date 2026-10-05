@@ -1,0 +1,23 @@
+{
+  "id": "item-5e4334cc-892d-412d-a075-e9d302b42fdf",
+  "indent": 3,
+  "location": "pages/item-5e4334cc-892d-412d-a075-e9d302b42fdf/index.json",
+  "slug": "books/dmd-400-digital-multimedia-design-capstone/capstone-project/3-project-agreement-form",
+  "order": 2,
+  "parent": "item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041",
+  "title": "3. Project agreement form",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-fc33a6c6-44eb-47c0-b98f-7b0da5aec89d",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-fc33a6c6-44eb-47c0-b98f-7b0da5aec89d\"></oer-include>"
+}

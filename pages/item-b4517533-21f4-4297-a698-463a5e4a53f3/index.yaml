@@ -1,0 +1,20 @@
+id: item-b4517533-21f4-4297-a698-463a5e4a53f3
+indent: 4
+location: pages/item-b4517533-21f4-4297-a698-463a5e4a53f3/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals/lighting-and-rendering-the-airline-chair
+order: 5
+parent: item-07752bb1-c5b8-498c-8422-b064c3eb1a4f
+title: Lighting and Rendering the Airline Chair
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerRef:
+    page: item-cfaff943-bb9c-4bb5-ba04-82a293c03f96
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-cfaff943-bb9c-4bb5-ba04-82a293c03f96"></oer-include>

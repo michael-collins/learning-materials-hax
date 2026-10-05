@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-afb9718c-7193-4e3f-b080-d20610e3d901</id>
+<indent>3</indent>
+<location>pages/item-afb9718c-7193-4e3f-b080-d20610e3d901/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project</slug>
+<order>3</order>
+<parent>item-63865273-a727-4a9a-85ca-fb4276bf2450</parent>
+<title>Project</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

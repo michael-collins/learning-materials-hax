@@ -1,0 +1,30 @@
+id: item-de8742e0-d71d-4010-9dd9-6196e48f9772
+indent: 1
+location: pages/item-de8742e0-d71d-4010-9dd9-6196e48f9772/index.yaml
+slug: articles/projects
+order: 10
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Projects
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-introduction-projects
+  tags: introduction
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>DMD 100 has three projects, one in user experience and interface
+  prototyping, interactive storytelling, and open product design. These are
+  difficult projects and have been divided into achievable deliverables that
+  follow the Double Diamond design process.</p>

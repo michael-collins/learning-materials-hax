@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fa77b027-375b-41e4-ae94-8f8370cc2948</id>
+<indent>1</indent>
+<location>pages/item-fa77b027-375b-41e4-ae94-8f8370cc2948/index.xml</location>
+<slug>projects/phase-5-project-document</slug>
+<order>50</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Phase 5: Project document</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd300-project-1-phase-5</oerSource>
+<tags>project-deliverable,Group Project</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 300</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Each team should produce a single Project Document.</p>
+<h2>Requirements</h2>
+<ol>
+<li><strong>Cover/title page:</strong>
+<ul>
+<li>Project title</li>
+<li>Date</li>
+<li>Team members</li>
+<li>Course name</li>
+<li>Instructor(s)</li>
+<li>Link to Team blog</li>
+</ul>
+</li>
+<li><strong>Team</strong>
+<ul>
+<li>Member names and short bios that include relevant interests, skills, and capabilities.</li>
+</ul>
+</li>
+<li><strong>Summary</strong>
+<ul>
+<li>Concept statement: Brief description of topic or design challenge and how it will be approached in a concise opening sentence or paragraph.</li>
+<li>Find and include a quote that relates to the project in some way, particularly if it's from the project's research.</li>
+<li>Add details including the project's context, outstanding issues, and goals. Include aspects of how the topic is interesting, important, or novel, and how you (the team) arrived at these conclusions. What contributions does the project make or intend to make? Does it reimagine, reframe, refactor, re-contextualize, or otherwise perform remix or invention? (200 words minimum)</li>
+</ul>
+</li>
+<li><strong>Design process overview</strong>
+<ul>
+<li>Timeline of events, according to your chosen design methodology. For each stage of the design process, describe the following:
+<ul>
+<li>Anticipated outcomes</li>
+<li>Activities or work completed, and how they contributed to the project's development.</li>
+<li>Actual outcomes</li>
+</ul>
+</li>
+<li>No <em>not</em> simply list class assignments or a checklist of deliverables. Describe how you acted out the phases of your design process through decision making, testing, and creative work. Provide context and rationales for what you did.</li>
+</ul>
+</li>
+<li><strong>Final Product</strong>
+<ul>
+<li>Depending on the nature of your project, this could be:
+<ul>
+<li>Images of your final product or design</li>
+<li>Link to video, website, etc.</li>
+<li>Additional files such as a ZIP archive, executable app, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Final Outcomes</strong>
+<ul>
+<li>Analyze and deconstruct central issues of your project using <a href="https://www.core77.com/posts/69273/Book-Review-Notes-on-the-Synthesis-of-Form">form and context analysis</a>.
+<ul>
+<li>Why does your project look the way it does? What rationales affected its formal appearance?</li>
+<li>How successfully does your solution solve the problem? How do you know?</li>
+</ul>
+</li>
+<li><a href="https://vimeo.com/10875362">Identify forces that impact form</a></li>
+<li>Are there any ethical considerations?</li>
+<li>Include at least one figure or diagram related to your project, illustrating conceptual relationship, data, or findings. (E.g. venn diagrams, flowcharts, maps, bespoke data visualization, etc.) Visuals like this communicate your ideas in a different way than writing and help make these docuemnts fun! Browse chart and diagram types <a href="https://visualframeworks.com/">here</a> or <a href="https://datavizproject.com/">here</a>.</li>
+<li>Describe media used in digital production. For example, print, web, info-graphics, game/interactive, animation, video/film, audio/sound, physical installation, etc.</li>
+</ul>
+</li>
+<li><strong>Lessons learned</strong>
+<ul>
+<li>Assess how well your group's chosen design process worked (e.g. double diamond). How might it be improved upon in the future?</li>
+<li>Share your thoughts on the premise of a fast-paced "design sprint" and the steps prescribed by the class (sprint timeline, pitch video, blog posts, etc.)</li>
+<li>Reflect on the process of collaboration within your group. What were the biggest challenges you faced as a group? (e.g. meeting times, delegation, clashing visions, etc.) What strategies or advice might you use in future collaborative work?</li>
+</ul>
+</li>
+<li><strong>Bibliography</strong>
+<ul>
+<li>You can choose either APA, MLA , or Chicago format for document. See <a href="/articles/dmd300-documentation-resources">documentation resources</a> for help.</li>
+</ul>
+</li>
+</ol>
+<h2>Formatting requirements:</h2>
+<ul>
+<li>PDF document in US Letter size.</li>
+<li>Please see <a href="/articles/dmd300-documentation-resources">documentation resources</a> for guidance.</li>
+<li>Proofread and spellcheck</li>
+<li>Additional files if neccesary to show your completed work (e.g. video, execuatable app, ZIP archive, etc.)</li>
+</ul>
+<h2>Submission details:</h2>
+<p>Upload the PDF document to the canvas assignment by the due date and time listed (only one person in the group needs to submit the file to the group assignment).</p>
+]]></content>
+</item>

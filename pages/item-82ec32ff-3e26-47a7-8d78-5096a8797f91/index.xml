@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-82ec32ff-3e26-47a7-8d78-5096a8797f91</id>
+<indent>4</indent>
+<location>pages/item-82ec32ff-3e26-47a7-8d78-5096a8797f91/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/listen/creative-mornings-design-is-magical</slug>
+<order>0</order>
+<parent>item-bc5ca2d7-9ab0-4570-a60f-9bd171402ead</parent>
+<title>Creative Mornings: Design Is Magical</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-381cc69f-351b-4517-b667-7f5f1f933075</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-381cc69f-351b-4517-b667-7f5f1f933075"></oer-include>]]></content>
+</item>

@@ -1,0 +1,85 @@
+id: item-af9bc28d-d330-4bfe-ad53-59c160fef53a
+indent: 1
+location: pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.yaml
+slug: exercises/modeling-a-pawn
+order: 37
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a Pawn
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-pawn
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: files/recsOUAg8kJfB2Czp_image_pawn_image.png
+    imageAlt: pawn image.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: Illustration of the Top View of Pawn
+        url: files/recJUmokImdWO4AsY_attachment_pawn_top.jpg
+        description: Illustration of the Top View of a Pawn
+        alt: Illustration of the Top View of Pawn
+      - title: Illustration of the Side View of Pawn
+        url: files/recf9LNavOZ7IXufM_attachment_pawn_front_back_and_sides.jpg
+        description: Illustration of the Side View of Pawn
+        alt: Illustration of the Side View of Pawn
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QkyyjlPgk2ZmvzQih_Yk8Dx"
+  title="Modeling a Pawn Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>Using the two shared reference images, recreate the steps
+  in&nbsp;the&nbsp;<strong>Demonstration</strong>&nbsp;and <strong>submit three
+  renders to both <em>Canvas</em> <em>and the corresponding discussion thread
+  for review</em></strong>.&nbsp;
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Make sure that your assignment is titled in the following format:
+
+  <strong>Last name, First name,</strong>&nbsp;the
+  word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson
+  number,</strong>&nbsp;and the&nbsp;<strong>word
+  "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
+  number.</strong>
+
+  <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

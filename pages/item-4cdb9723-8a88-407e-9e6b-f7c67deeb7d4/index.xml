@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4cdb9723-8a88-407e-9e6b-f7c67deeb7d4</id>
+<indent>4</indent>
+<location>pages/item-4cdb9723-8a88-407e-9e6b-f7c67deeb7d4/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/teaching-attitudes-approaches-structures-and-skills</slug>
+<order>6</order>
+<parent>item-1c0b6b79-034b-48a7-bf88-c63e8570b13d</parent>
+<title>Teaching Attitudes, Approaches, Structures and Skills</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-386ee967-f14f-4bd8-aca6-8d3e3540a882</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-386ee967-f14f-4bd8-aca6-8d3e3540a882"></oer-include>]]></content>
+</item>

@@ -1,0 +1,23 @@
+{
+  "id": "item-717cb02b-337f-45b1-bf9a-0a2f8bef6744",
+  "indent": 2,
+  "location": "pages/item-717cb02b-337f-45b1-bf9a-0a2f8bef6744/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/project-categories-and-resources",
+  "order": 4,
+  "parent": "item-9aa47609-2475-4db7-ae00-b09d2195cc39",
+  "title": "Project Categories and Resources",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-f99abb11-948e-4bca-8f2a-2bd94ca3010b",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-f99abb11-948e-4bca-8f2a-2bd94ca3010b\"></oer-include>"
+}

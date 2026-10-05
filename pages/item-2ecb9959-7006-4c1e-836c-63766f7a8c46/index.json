@@ -1,0 +1,23 @@
+{
+  "id": "item-2ecb9959-7006-4c1e-836c-63766f7a8c46",
+  "indent": 4,
+  "location": "pages/item-2ecb9959-7006-4c1e-836c-63766f7a8c46/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/readings/chapter-5-edsel-s-law",
+  "order": 2,
+  "parent": "item-1583962c-54f8-48ec-b445-151a76f50494",
+  "title": "Chapter 5. Edsel's Law...",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-6ad59bbc-0216-4406-8765-4e0f9120f3b4",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-6ad59bbc-0216-4406-8765-4e0f9120f3b4\"></oer-include>"
+}

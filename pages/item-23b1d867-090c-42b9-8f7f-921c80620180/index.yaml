@@ -1,0 +1,20 @@
+id: item-23b1d867-090c-42b9-8f7f-921c80620180
+indent: 3
+location: pages/item-23b1d867-090c-42b9-8f7f-921c80620180/index.yaml
+slug: >-
+  books/dmd-400-digital-multimedia-design-capstone/capstone-project/1-project-proposal
+order: 0
+parent: item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041
+title: 1. Project proposal
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-8d06c941-5620-4d00-aaee-23406f001f28
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-8d06c941-5620-4d00-aaee-23406f001f28"></oer-include>

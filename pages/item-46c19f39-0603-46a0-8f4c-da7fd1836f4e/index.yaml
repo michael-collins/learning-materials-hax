@@ -1,0 +1,20 @@
+id: item-46c19f39-0603-46a0-8f4c-da7fd1836f4e
+indent: 3
+location: pages/item-46c19f39-0603-46a0-8f4c-da7fd1836f4e/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/introduction/feedback-and-critique
+order: 6
+parent: item-8153e6b4-28e8-4c08-ba68-ce087c804837
+title: Feedback and critique
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-e00f02ed-d4c1-4751-8489-b4689069179d
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-e00f02ed-d4c1-4751-8489-b4689069179d"></oer-include>

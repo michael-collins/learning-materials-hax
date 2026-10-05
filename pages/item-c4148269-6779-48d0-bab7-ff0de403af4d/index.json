@@ -1,0 +1,23 @@
+{
+  "id": "item-c4148269-6779-48d0-bab7-ff0de403af4d",
+  "indent": 4,
+  "location": "pages/item-c4148269-6779-48d0-bab7-ff0de403af4d/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/the-generative-bedrock-of-open-design",
+  "order": 4,
+  "parent": "item-1c0b6b79-034b-48a7-bf88-c63e8570b13d",
+  "title": "The Generative Bedrock of Open Design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-ceeff300-743f-4443-9959-060523b2ef73",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-ceeff300-743f-4443-9959-060523b2ef73\"></oer-include>"
+}

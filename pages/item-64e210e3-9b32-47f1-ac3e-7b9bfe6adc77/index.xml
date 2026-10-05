@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-64e210e3-9b32-47f1-ac3e-7b9bfe6adc77</id>
+<indent>1</indent>
+<location>pages/item-64e210e3-9b32-47f1-ac3e-7b9bfe6adc77/index.xml</location>
+<slug>resources/physically-based</slug>
+<order>29</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Physically Based</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/physically-based</oerSource>
+<tags>database</tags>
+<oerFields>
+<url>https://physicallybased.info/</url>
+<kind>reference</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

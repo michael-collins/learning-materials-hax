@@ -1,0 +1,34 @@
+id: item-d3027c62-0e16-43ba-a8f8-dedb3c474da6
+indent: 1
+location: pages/item-d3027c62-0e16-43ba-a8f8-dedb3c474da6/index.yaml
+slug: articles/introduction-1
+order: 15
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Introduction
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-introduction-visual-and-interaction-design
+  tags: lesson-introduction
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this lesson you will learn about design topics that expand your
+  understanding of the visual and conceptual nature of design.</p>
+
+  <p>You will put the Double Diamond design process into practice to produce the
+  first course project, where you will conduct design thinking exercises and
+  build an interactive mobile application prototype. You will also finish the
+  journal activity, continue <em>Design and Truth</em> book chapter reading
+  assignments, and have a chance to listen to some more design podcasts.</p>

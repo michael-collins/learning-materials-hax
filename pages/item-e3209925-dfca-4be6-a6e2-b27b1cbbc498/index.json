@@ -1,0 +1,25 @@
+{
+  "id": "item-e3209925-dfca-4be6-a6e2-b27b1cbbc498",
+  "indent": 1,
+  "location": "pages/item-e3209925-dfca-4be6-a6e2-b27b1cbbc498/index.json",
+  "slug": "resources/freepbr-com",
+  "order": 24,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "FreePBR.com",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/freepbr-com",
+    "tags": "textures",
+    "oerFields": {
+      "url": "https://freepbr.com/",
+      "kind": "assets"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

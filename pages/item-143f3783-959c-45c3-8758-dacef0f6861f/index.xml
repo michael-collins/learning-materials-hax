@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-143f3783-959c-45c3-8758-dacef0f6861f</id>
+<indent>1</indent>
+<location>pages/item-143f3783-959c-45c3-8758-dacef0f6861f/index.xml</location>
+<slug>lessons/what-is-design</slug>
+<order>17</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>What is design?</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/dmd100-lesson-1-what-is-design</oerSource>
+<oerFields>
+<courses>
+<item>DMD 100</item>
+</courses>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>In this lesson you will learn about how design thinking, systems thinking, and critical thinking play important roles in the process of design and the complex implications that design has for the world. The Double Diamond design process will be introduced and will be applied to projects in later lessons. You will have a daily design journal activity that spans two weeks, culminating in a personal reflection writing. Podcasts have been selected that talk about design issues from a range of perspectives. 99 Percent Invisible is one of my favorite design podcasts and covers a range of fascinating design issues.</p>
+<p><img src="files/design-and-truth-book@2x.jpg" alt="Photo of book, Design and Truth by Robert Grudin"></p>
+<p>You will begin reading the book, <em>Design and Truth</em>, by Robert Grudin. I chose this book because it's an easy read, introduces historical references, and talks about design at a very high level as it applies to multiple domains of study. Grudin attempts to describe what design is and connect it to philosophy, ethics, economics, governance, education, and notions of truth. I have assigned reading responses for each book chapter so you can begin connecting ideas from the book to your personal experiences and perceptions. These assignments are not meant to be book reports, 150-300 word concise responses will suffice.</p>
+]]></content>
+</item>

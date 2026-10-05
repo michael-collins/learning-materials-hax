@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fa01639b-4d42-4233-a180-5ca261a21b3c</id>
+<indent>4</indent>
+<location>pages/item-fa01639b-4d42-4233-a180-5ca261a21b3c/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/narrative-inspiration</slug>
+<order>1</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Narrative Inspiration</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-0cde2be3-dc9e-484b-a3c8-f2f06abd9cf4</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-0cde2be3-dc9e-484b-a3c8-f2f06abd9cf4"></oer-include>]]></content>
+</item>

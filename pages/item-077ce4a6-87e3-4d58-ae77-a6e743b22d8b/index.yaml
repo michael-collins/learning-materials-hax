@@ -1,0 +1,19 @@
+id: item-077ce4a6-87e3-4d58-ae77-a6e743b22d8b
+indent: 2
+location: pages/item-077ce4a6-87e3-4d58-ae77-a6e743b22d8b/index.yaml
+slug: books/dmd-300-digital-multimedia-design-studio/introduction
+order: 1
+parent: item-9aa47609-2475-4db7-ae00-b09d2195cc39
+title: Introduction
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-d87197c5-69f7-42d6-9f22-1e9ca600435f
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-d87197c5-69f7-42d6-9f22-1e9ca600435f"></oer-include>

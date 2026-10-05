@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d7edd126-7a35-4c19-9eb1-08715a1c2b96</id>
+<indent>1</indent>
+<location>pages/item-d7edd126-7a35-4c19-9eb1-08715a1c2b96/index.xml</location>
+<slug>resources/john-butler</slug>
+<order>15</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>John Butler</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/john-butler</oerSource>
+<oerFields>
+<url>https://vimeo.com/user3946359</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

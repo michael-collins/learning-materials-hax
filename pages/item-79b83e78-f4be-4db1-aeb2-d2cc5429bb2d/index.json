@@ -1,0 +1,33 @@
+{
+  "id": "item-79b83e78-f4be-4db1-aeb2-d2cc5429bb2d",
+  "indent": 1,
+  "location": "pages/item-79b83e78-f4be-4db1-aeb2-d2cc5429bb2d/index.json",
+  "slug": "lessons/projects",
+  "order": 23,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "Projects",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerSource": "lessons/dmd300-projects",
+    "tags": "lesson",
+    "oerFields": {
+      "courses": [
+        "DMD 300"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<h2>Problem spaces</h2>\n<ul>\n<li>Social and cultural organization and governance</li>\n<li>Labor, business, and entrepreneurship systems</li>\n<li>Environmental and biological systems</li>\n<li>Knowledge and informating systems</li>\n<li>Food systems</li>\n<li>Health systems</li>\n</ul>\n<h2>Format</h2>\n<ul>\n<li>Documentary or historical reflection</li>\n<li>Speculative fiction</li>\n<li>Aesthetic exploration and expression</li>\n<li>Campaign or event</li>\n<li>Visual taxonomy and vocabulary</li>\n</ul>\n<h2>Media</h2>\n<ul>\n<li>Book or poster</li>\n<li>Web informative or interactive</li>\n<li>3D Interactive (Games, VR, and AR)</li>\n<li>Sound and audio</li>\n<li>Video and film</li>\n<li>Animation or Gifs</li>\n<li>Social media</li>\n</ul>\n"
+}

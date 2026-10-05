@@ -1,0 +1,23 @@
+{
+  "id": "item-b97f0bbf-f7d6-4296-91cc-afbd3a812d23",
+  "indent": 4,
+  "location": "pages/item-b97f0bbf-f7d6-4296-91cc-afbd3a812d23/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-5-self-design/listen/freakonomics-how-to-become-great-at-just-about-anything",
+  "order": 1,
+  "parent": "item-8da47bfb-a2e1-490a-a85f-3881ceb25a6c",
+  "title": "Freakonomics: How to Become Great at Just About Anything",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-94eba069-6c2e-47a7-af35-3f2895542892",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-94eba069-6c2e-47a7-af35-3f2895542892\"></oer-include>"
+}

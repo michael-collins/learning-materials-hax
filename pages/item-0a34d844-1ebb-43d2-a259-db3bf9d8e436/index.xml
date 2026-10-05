@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0a34d844-1ebb-43d2-a259-db3bf9d8e436</id>
+<indent>3</indent>
+<location>pages/item-0a34d844-1ebb-43d2-a259-db3bf9d8e436/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/introduction/course-instructor</slug>
+<order>2</order>
+<parent>item-8153e6b4-28e8-4c08-ba68-ce087c804837</parent>
+<title>Course instructor</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-140d89fe-034b-43da-b1f1-66c81e99a8bc</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-140d89fe-034b-43da-b1f1-66c81e99a8bc"></oer-include>]]></content>
+</item>

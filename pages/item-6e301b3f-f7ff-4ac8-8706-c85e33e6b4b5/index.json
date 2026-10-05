@@ -1,0 +1,23 @@
+{
+  "id": "item-6e301b3f-f7ff-4ac8-8706-c85e33e6b4b5",
+  "indent": 2,
+  "location": "pages/item-6e301b3f-f7ff-4ac8-8706-c85e33e6b4b5/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-5-self-design",
+  "order": 5,
+  "parent": "item-69d4e331-f13a-4ee4-9c2e-1bba82279d67",
+  "title": "Lesson 5: Self design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-ee81f621-7580-4be7-a7d2-324cd5def9be",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-ee81f621-7580-4be7-a7d2-324cd5def9be\"></oer-include>"
+}

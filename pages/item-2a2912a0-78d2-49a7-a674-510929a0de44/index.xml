@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2a2912a0-78d2-49a7-a674-510929a0de44</id>
+<indent>4</indent>
+<location>pages/item-2a2912a0-78d2-49a7-a674-510929a0de44/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/discover-toy-design-research</slug>
+<order>1</order>
+<parent>item-afb9718c-7193-4e3f-b080-d20610e3d901</parent>
+<title>Discover: Toy Design Research</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-41e2a5f0-ea6b-4f95-b947-c00adccc28c0</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-41e2a5f0-ea6b-4f95-b947-c00adccc28c0"></oer-include>]]></content>
+</item>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-df443542-beef-4f82-be8c-7d078c774226</id>
+<indent>1</indent>
+<location>pages/item-df443542-beef-4f82-be8c-7d078c774226/index.xml</location>
+<slug>lessons/match-moving-and-camera-tracking</slug>
+<order>26</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Match Moving and Camera Tracking</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/match-moving-camera-tracking</oerSource>
+<oerFields>
+<estimatedDuration>4 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Track camera movement in footage</item>
+<item>Solve camera motion accurately</item>
+<item>Match CGI camera to tracked data</item>
+<item>Align CGI elements with footage</item>
+<item>Handle tracking challenges and errors</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Master camera tracking techniques to accurately match CGI cameras to live-action footage for seamless visual effects integration.</p>
+]]></content>
+</item>

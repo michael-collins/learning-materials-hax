@@ -1,0 +1,19 @@
+id: item-61dc6c26-b78f-401d-b97e-1643d2da165f
+indent: 2
+location: pages/item-61dc6c26-b78f-401d-b97e-1643d2da165f/index.yaml
+slug: books/dmd-400-digital-multimedia-design-capstone/concept-development
+order: 3
+parent: item-ce739bdb-84f3-4797-9b76-5f951decba4e
+title: Concept development
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-d9386bc1-22ed-4191-9217-77ca2e1bb40d
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-d9386bc1-22ed-4191-9217-77ca2e1bb40d"></oer-include>

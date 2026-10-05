@@ -1,0 +1,20 @@
+id: item-5ba05ecd-d0b6-4d5f-9667-2edda217d193
+indent: 4
+location: pages/item-5ba05ecd-d0b6-4d5f-9667-2edda217d193/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/readings/chapter-6-designs-of-darkness
+order: 3
+parent: item-1583962c-54f8-48ec-b445-151a76f50494
+title: Chapter 6. Designs of Darkness
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-5b111bd9-f16f-4465-ae9e-d0f31542c282
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-5b111bd9-f16f-4465-ae9e-d0f31542c282"></oer-include>

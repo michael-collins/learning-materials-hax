@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d</id>
+<indent>1</indent>
+<location>pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.xml</location>
+<slug>projects/develop-instructions</slug>
+<order>30</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Develop: Instructions</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-4-open-design-develop-instructions</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
+<p>Now you will make a set of instructions to teach another person to create and assemble the toy(s) you have designed.</p>
+<p><strong>Note:</strong> Remember, none of this is fiction. You are creating a real instruction manual with everything needed for the end user to do this on their own. If you are incorporating templates, they will be printing those templates out from your instructions.</p>
+<p>This project asks you to do something that has elements of novelty, to be resourceful, and to be produce a a modular system of parts. To check that you are on track before submitting, it may help to ask yourself the following questions:</p>
+<ol>
+<li>Is my project's core idea ambitious enough, or too ambitious?</li>
+<li>Does it do something that no one else has quite done before in the same way?</li>
+<li>Does it satisfy the project's reconfigurable modular system and kit of parts requirements?</li>
+<li>Can the documentation photos be better quality? (I.g. - We shouldn't be able to see your living room or kitchen in the background)</li>
+<li>Is the instructions document properly formatted and readable?</li>
+</ol>
+<h2>Document requirements</h2>
+<ol>
+<li>Title of your toy design</li>
+<li>By line with your name</li>
+<li>Brief description of the toy</li>
+<li>List any safety hazards and/or if adult supervision is required.</li>
+<li>Required materials</li>
+<li>Include a cost breakdown</li>
+<li>Required tools</li>
+<li>Estimated time to complete the assembly</li>
+<li>Parts manifest</li>
+<li>List and name each distinct part that will be constructed or used and how many will be needed.</li>
+<li>Step by step instructions for one object variant.</li>
+<li>Include photos, drawings, figures, diagrams, templates, and any other visual information that may aid the understanding of the instructions.</li>
+</ol>
+<h2>Submission instructions</h2>
+<ol>
+<li>If you do you not have skills to use advanced layout software like Adobe InDesign, use word processing software such as MS Word to create the instructions.</li>
+<li>Export the instructions in <code>.pdf</code> format.</li>
+</ol>
+<h2>Post work</h2>
+<ol>
+<li>Upload the instructions PDF document.</li>
+</ol>
+]]></content>
+</item>

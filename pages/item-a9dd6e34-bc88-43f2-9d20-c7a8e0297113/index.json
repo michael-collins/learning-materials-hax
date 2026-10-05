@@ -1,0 +1,33 @@
+{
+  "id": "item-a9dd6e34-bc88-43f2-9d20-c7a8e0297113",
+  "indent": 1,
+  "location": "pages/item-a9dd6e34-bc88-43f2-9d20-c7a8e0297113/index.json",
+  "slug": "articles/digital-design-project-types",
+  "order": 75,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Digital Design Project Types",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd300-digital-design-project-types",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-05",
+      "courses": [
+        "DMD 300"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>The following is a list of media that you might choose to work with in your projects for this class. This isn't comprehensive and people are always discovering new ways to create experiences and tell stories, but you can use this as a menu to browse and consider:</p>\n<ol>\n<li>What form (i.e. finished product) will work best for communicating your content?</li>\n<li>What skills or techniques do you want to master?</li>\n<li>What processes or raw materials relate to your conceptual research topic?</li>\n</ol>\n<p>Additional resources for learning these fields can be found at the end of this course book under <a href=\"/articles/dmd300-project-categories\">Project Categories</a>, but your learning path will be largely self-directed—with advice from your instructor of course!</p>\n<ul>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/animation.html\">2D and 3D Animation</a></strong>\n<ul>\n<li>Narrative short film</li>\n<li>Explainer animation (Vox makes a lot of fun infographic style videos)</li>\n<li>Motion graphics (bumper animations, commercials, titles, user interface elements in 3D environments)</li>\n<li>Experimental or non-narrative content: Examples on vimeo.com</li>\n<li>Scientific or data-driven simulations and visualizations</li>\n<li>VJ loops for live performances</li>\n<li>Projection mapping (projecting video onto structures or surfaces)</li>\n<li>Web-based animation (HTML/CSS/Javascript)</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/illustration-and-2d.html\">2D Design, 3D Rendering, and Illustration</a></strong>\n<ul>\n<li>Branding and/or print design\n<ul>\n<li>Design system or standards manual</li>\n<li>Logo design</li>\n<li>Stationary or merchandise design</li>\n</ul>\n</li>\n<li>Posters and Infographics</li>\n<li>Typeface design</li>\n<li>Digital illustrations\n<ul>\n<li>Concept art for pre-production (character, vehicle, environment design for comics, games, film, etc.)</li>\n<li>Sequential comics (print or web)</li>\n<li>Digital children's book (for iPad or mobile device)</li>\n</ul>\n</li>\n<li>Architectural renderings</li>\n<li>Product renderings</li>\n<li>App or website mockups (see those respective development pages for more)</li>\n<li>Data visualizations or Infographics</li>\n<li>2D or 3D assets for games including character design and environment design</li>\n<li>Code-generated art</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/apps-and-interactive.html\">Apps and Interactive Media</a></strong>\n<ul>\n<li>Augmented/Virtual Reality (AR/VR) games, visualizations, architecture, and journalism.</li>\n<li>Interactive 2D or 3D fiction or non-fiction story</li>\n<li>2D or 3D video game, ideally something creative or serious</li>\n<li>Physical game (printed boards, cards, and/or 3D objects)\\</li>\n<li>Projected or screen-based interactive installation art</li>\n<li>Physical computing project (Arduino, Raspberry Pi, etc.)</li>\n<li>Creative coding projects (e.g. Processing)</li>\n<li>Apps for mobile devices or desktop.</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/audio.html\">Audio Production</a></strong>\n<ul>\n<li>Podcast</li>\n<li>Audio tour or site-specific experience</li>\n<li>Experimental installation (something that explores the possibilities of sound and perception)</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/installations-and-objects.html\">Installations and Objects</a></strong>\n<ul>\n<li>Physical art object(s)</li>\n<li>Installation or exhibition</li>\n<li>Detailed proposal for an exhibition</li>\n<li>Speculative installation</li>\n<li>Design-based community event or festival</li>\n<li>Curation of an art or design exhibition</li>\n<li>Public art or intervention</li>\n<li>Fabricated designs or prototypes</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/products-services-ux.html\">Products, Services, and UX</a></strong>\n<ul>\n<li>Functional mobile or web app</li>\n<li>High fidelity interactive mockups (UI)</li>\n<li>Speculative or discursive design projects</li>\n<li>Comprehensive user Experience (UX) Research</li>\n<li>Instructional design product</li>\n<li>Digital fabrication products or prototypes (furniture, wearables, clothes, structures, etc.)</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/video-and-photo.html\">Video Production and Photography</a></strong>\n<ul>\n<li>Video\n<ul>\n<li>Narrative short film — Something with characters and a plot.</li>\n<li>Experimental film —  <a href=\"https://vimeo.com/categories/experimental\">Examples on vimeo.com</a></li>\n<li>Documentary short</li>\n<li>Animations — See Animation page 😉</li>\n</ul>\n</li>\n<li>Photography\n<ul>\n<li>Physical exhibition</li>\n<li>Virtual exhibition</li>\n<li>Digital/Print publication</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong><a href=\"https://dmd-program.github.io/art-design-course-resources/web-design.html\">Web Design</a></strong>\n<ul>\n<li>Landing page or informational site</li>\n<li>Business or eCommerce site</li>\n<li>Experimental site</li>\n<li>Net art</li>\n<li>Interactive storytelling</li>\n<li>Web app</li>\n</ul>\n</li>\n</ul>\n"
+}

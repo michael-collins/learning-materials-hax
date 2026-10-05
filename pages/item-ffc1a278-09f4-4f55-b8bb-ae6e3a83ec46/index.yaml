@@ -1,0 +1,72 @@
+id: item-ffc1a278-09f4-4f55-b8bb-ae6e3a83ec46
+indent: 1
+location: pages/item-ffc1a278-09f4-4f55-b8bb-ae6e3a83ec46/index.yaml
+slug: exercises/modeling-a-king
+order: 35
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a King
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-king
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: files/recqV87QKaWerduJM_image_king_image.png
+    imageAlt: king image.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: Reference Image for the Side of a King
+        url: files/recyxjprS7fsd9qV3_attachment_king_side.jpg
+        description: Reference Image for the Side of a King
+        alt: Reference Image for the Side of a King
+      - title: Reference Image for the Top of a King
+        url: files/recjjHSNrhLgiXumH_attachment_king_top.jpg
+        description: Reference Image for the Top of a King
+        alt: Reference Image for the Top of a King
+      - title: Reference Image for the Front and Back of a King
+        url: files/rec7xvBPAIevKVSWD_attachment_king_front_and_back.jpg
+        description: Reference Image for the Front and Back of a King
+        alt: Reference Image for the Front and Back of a King
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QmZ7dFmd7KeeCH5h9b3ZlGu"
+  title="Modeling a King Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>Instructions to be added</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

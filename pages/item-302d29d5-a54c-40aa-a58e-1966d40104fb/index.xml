@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-302d29d5-a54c-40aa-a58e-1966d40104fb</id>
+<indent>4</indent>
+<location>pages/item-302d29d5-a54c-40aa-a58e-1966d40104fb/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/interview</slug>
+<order>3</order>
+<parent>item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3</parent>
+<title>Interview</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-f97a1655-a749-49dc-88c1-9e37e45a949b</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f97a1655-a749-49dc-88c1-9e37e45a949b"></oer-include>]]></content>
+</item>

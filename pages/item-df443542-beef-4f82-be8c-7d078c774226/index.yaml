@@ -1,0 +1,35 @@
+id: item-df443542-beef-4f82-be8c-7d078c774226
+indent: 1
+location: pages/item-df443542-beef-4f82-be8c-7d078c774226/index.yaml
+slug: lessons/match-moving-and-camera-tracking
+order: 26
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: Match Moving and Camera Tracking
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerSource: lessons/match-moving-camera-tracking
+  oerFields:
+    estimatedDuration: 4 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Track camera movement in footage
+      - Solve camera motion accurately
+      - Match CGI camera to tracked data
+      - Align CGI elements with footage
+      - Handle tracking challenges and errors
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Master camera tracking techniques to accurately match CGI cameras to
+  live-action footage for seamless visual effects integration.</p>

@@ -1,0 +1,23 @@
+{
+  "id": "item-6f0053a2-178d-4189-af1c-f5d88446728d",
+  "indent": 4,
+  "location": "pages/item-6f0053a2-178d-4189-af1c-f5d88446728d/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/define-themes-and-insights",
+  "order": 3,
+  "parent": "item-37f45e8c-1f67-44cf-8615-146707d362e4",
+  "title": "Define: Themes and insights",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-191b7972-b694-4b0d-aeaa-41e46b8abc7e",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-191b7972-b694-4b0d-aeaa-41e46b8abc7e\"></oer-include>"
+}

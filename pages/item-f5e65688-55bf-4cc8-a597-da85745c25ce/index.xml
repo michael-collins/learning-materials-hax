@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f5e65688-55bf-4cc8-a597-da85745c25ce</id>
+<indent>1</indent>
+<location>pages/item-f5e65688-55bf-4cc8-a597-da85745c25ce/index.xml</location>
+<slug>resources/kouhei-nakama</slug>
+<order>18</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Kouhei Nakama</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/kouhei-nakama</oerSource>
+<oerFields>
+<url>http://kouheinakama.com/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

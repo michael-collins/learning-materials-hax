@@ -1,0 +1,20 @@
+id: item-e9831a8f-a76d-41d0-a82c-7625f2f55143
+indent: 4
+location: pages/item-e9831a8f-a76d-41d0-a82c-7625f2f55143/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/develop-characters
+order: 5
+parent: item-a9f78351-7500-44e9-bae7-d17feec5d5df
+title: 'Develop: Characters'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-9f5bc060-63b6-48b6-abf7-0fb747949edb
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-9f5bc060-63b6-48b6-abf7-0fb747949edb"></oer-include>

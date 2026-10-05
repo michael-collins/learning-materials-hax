@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-cdcc9014-1944-485b-b737-9b1bcf13411e</id>
+<indent>1</indent>
+<location>pages/item-cdcc9014-1944-485b-b737-9b1bcf13411e/index.xml</location>
+<slug>resources/cc0-textures</slug>
+<order>23</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>CC0 Textures</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/cc0-textures</oerSource>
+<tags>textures</tags>
+<oerFields>
+<url>https://cc0textures.com/</url>
+<kind>assets</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

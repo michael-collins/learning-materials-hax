@@ -1,0 +1,20 @@
+id: item-5949cf91-4ddf-4b95-b03b-82427e807e67
+indent: 1
+location: pages/item-5949cf91-4ddf-4b95-b03b-82427e807e67/index.yaml
+slug: resources/geoffrey-lillemon
+order: 12
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Geoffrey Lillemon
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/geoffrey-lillemon
+  oerFields:
+    url: http://www.geoffreylillemon.com/website/
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

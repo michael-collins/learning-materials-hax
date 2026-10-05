@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2e61b638-0bbe-4708-a00a-c523bcbb229c</id>
+<indent>2</indent>
+<location>pages/item-2e61b638-0bbe-4708-a00a-c523bcbb229c/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-2-fundamentals</slug>
+<order>1</order>
+<parent>item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e</parent>
+<title>Chapter 2: Fundamentals</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

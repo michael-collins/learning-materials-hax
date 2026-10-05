@@ -1,0 +1,36 @@
+id: item-416c4dc5-b03b-4b15-86c7-5d4cb4690ccb
+indent: 1
+location: pages/item-416c4dc5-b03b-4b15-86c7-5d4cb4690ccb/index.yaml
+slug: articles/99-percent-invisible-on-average
+order: 27
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: '99 Percent Invisible: On Average'
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-lesson-2-listening-99-percent-invisible-on-average
+  tags: listening
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>"In many ways, the built world was not designed for you. It was designed
+  for the average person. Standardized tests, building codes, insurance rates,
+  clothing sizes, The Dow Jones – all these measurements are based around the
+  concept of an “average.” The average person is a term that is thrown around
+  quite a lot, and design is often created for people who are average in some
+  way. But does the average person actually exist? Listen to this 99 Percent
+  Invisible Podcast as they investigate.</p>
+
+  <p><a href="http://99percentinvisible.org/episode/on-average/">On Average</a>
+  ** (20:50 min)**</p>

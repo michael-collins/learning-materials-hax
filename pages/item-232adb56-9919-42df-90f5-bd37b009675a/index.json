@@ -1,0 +1,23 @@
+{
+  "id": "item-232adb56-9919-42df-90f5-bd37b009675a",
+  "indent": 4,
+  "location": "pages/item-232adb56-9919-42df-90f5-bd37b009675a/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/topics/story-structure",
+  "order": 1,
+  "parent": "item-556f6f80-c90c-4f82-8a10-e2d80c9b6ef2",
+  "title": "Story structure",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-06f54e50-554a-4682-b55c-67fe38d20cdb",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-06f54e50-554a-4682-b55c-67fe38d20cdb\"></oer-include>"
+}

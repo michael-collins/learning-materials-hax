@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-7960dd53-d10e-4369-9f3a-63f5b8304d43</id>
+<indent>1</indent>
+<location>pages/item-7960dd53-d10e-4369-9f3a-63f5b8304d43/index.xml</location>
+<slug>projects/develop-story-and-plot-elements</slug>
+<order>22</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Develop: Story and plot elements</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-3-narrative-develop-story-and-plot</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
+<p>You will now write a fictional, yet <em><strong>plausible</strong></em> story that describes how this imagined future 30 years from now came to be. For example, Unicorns are not plausible to exist in 30 years (unless you make a compelling CRISPR argument), but autonomous flying cars are plausible.</p>
+<p>The story should describe the evolution of the world as it is now to the world 30 years in the future**,** using characters and dramatic story structure.</p>
+<h2>Requirements</h2>
+<ul>
+<li><strong>Positive content:</strong> The result of the plot must be of a positive future.</li>
+<li><strong>Plausible:</strong> The story must be in the realm of technological and scientific plausibility.</li>
+<li><strong>Conduct research:</strong> Find articles or books that help support the plausible nature of story. For instance, if some new technology is being used, find credible sources that help support it's use in your story.</li>
+</ul>
+<h3>Document guidelines</h3>
+<p>Produce a document with the following items:</p>
+<ol>
+<li><strong>Your name</strong></li>
+<li><strong>Date</strong></li>
+<li><strong>Title:</strong> Story and plot elements</li>
+<li><strong>Synopsis sentence</strong>
+<ul>
+<li>Write your synopsis sentence here.</li>
+</ul>
+</li>
+<li><strong>Story genre</strong>
+<ul>
+<li>In what genre would you like to tell the story? <strong>Ensure that the genre supports a story that is plausible and results in a positive future.</strong> Avoid fantasy, tragedy, dystopian, and erotica genres. There is an enormous variety of fiction genres. Start with the links below, and investigate further as needed:
+<ul>
+<li><strong>Wikipedia:</strong> <a href="https://en.wikipedia.org/wiki/List_of_writing_genres">List of writing genres</a></li>
+<li><a href="http://www.dailywritingtips.com/35-genres-and-other-varieties-of-fiction/">35 Genres and Other Varieties of Fiction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Narrative tropes</strong>
+<ul>
+<li>Search through this <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/NarrativeTropes">list of narrative tropes</a> to identify ones you are interested in using. Choose three or more tropes and write a short description for each.</li>
+</ul>
+</li>
+<li><strong>Settings and environment</strong>
+<ul>
+<li>Describe the sights, sounds, smells, etc. In what location are the characters?</li>
+</ul>
+</li>
+<li><strong>Bibliography</strong>
+<ul>
+<li>List any articles, books, websites, or other sources used in your topic research. Use a <a href="https://www.scribbr.com/apa-citation-generator/">citation generator</a> to create citations in either APA or MLA format.</li>
+</ul>
+</li>
+<li><strong>Character list</strong>
+<ul>
+<li>List the people who would need to see this story in order for it to become a reality? Who are the decision makers that can make this happen? Who are the organizers, supporters, proponents, and opponents? These people are your characters. Read the <a href="/topics/character.html">Character</a> for more details.</li>
+</ul>
+</li>
+<li><strong>Plot structure</strong>
+<ol>
+<li>The way it was</li>
+<li>And then one day...</li>
+<li>Raising the stakes</li>
+<li>Moment of change</li>
+<li>World as it is now</li>
+</ol>
+</li>
+</ol>
+<h2>Document instructions</h2>
+<ol>
+<li>Make a new text document in <code>.doc</code> format.</li>
+<li>Write the document according the document guidelines.</li>
+<li>Double-check that you've met all other listed requirements.</li>
+</ol>
+<h2>Post work</h2>
+<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>
+<ol>
+<li>Follow the document instructions.</li>
+<li>Upload the plot document in <code>.doc</code> format.</li>
+</ol>
+]]></content>
+</item>

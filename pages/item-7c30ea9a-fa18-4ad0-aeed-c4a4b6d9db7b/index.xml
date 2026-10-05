@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-7c30ea9a-fa18-4ad0-aeed-c4a4b6d9db7b</id>
+<indent>1</indent>
+<location>pages/item-7c30ea9a-fa18-4ad0-aeed-c4a4b6d9db7b/index.xml</location>
+<slug>articles/writing-guidelines</slug>
+<order>17</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Writing Guidelines</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-introduction-writing-guidelines</oerSource>
+<tags>introduction</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<blockquote>
+<p>"Don't make the reader do the thinking you failed to do."</p>
+</blockquote>
+<h2>Drafts</h2>
+<p>When writing a draft, composition structure, grammar, and spelling are the least important. While it is always good to strive for perfection, that should be relegated to the editing phase of writing. A good drafting session means that you were able to get as many of your ideas out as rapidly as possible, even if they are fragments or tangents. Natural language is fine in this stage, and even desired for personal stories. When providing feedback on drafts, try not to nitpick on spelling and grammar, but rather the content, insights, and direction of the concepts.</p>
+<h2>Final deliverables</h2>
+<p>Typically, a final deliverable will be evaluated according to all possible metrics. Ensure that you leave time for editing — this will help you catch embarrassing spelling and grammar errors. You should always ask someone to give you feedback on your writing and to proofread before you submit. This will help you communicate your ideas free from the distraction of careless mistakes.</p>
+<h2>Proofreading checklist</h2>
+<ol>
+<li>Concepts
+<ul>
+<li>Ideas are organized and structured</li>
+<li>Support arguments with facts</li>
+<li>Avoid hyperbole and generalizations</li>
+<li>Use concise language and avoid filler</li>
+<li>Avoid awkward sentences</li>
+</ul>
+</li>
+<li>Writing style is appropriate for the audience</li>
+<li>Consistent voice, correct grammar and spelling</li>
+</ol>
+]]></content>
+</item>

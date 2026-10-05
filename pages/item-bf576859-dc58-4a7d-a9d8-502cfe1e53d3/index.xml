@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bf576859-dc58-4a7d-a9d8-502cfe1e53d3</id>
+<indent>4</indent>
+<location>pages/item-bf576859-dc58-4a7d-a9d8-502cfe1e53d3/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/topics/critical-thinking</slug>
+<order>3</order>
+<parent>item-c539b3d9-1ca7-4c2b-89a1-6dc9a50cf4c5</parent>
+<title>Critical thinking</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-ac8bd5c0-10a0-4f8b-8ec8-e05985eb29d5</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-ac8bd5c0-10a0-4f8b-8ec8-e05985eb29d5"></oer-include>]]></content>
+</item>

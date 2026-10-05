@@ -1,0 +1,20 @@
+id: item-1b870626-a9fe-48f2-a204-5050284b70e0
+indent: 4
+location: pages/item-1b870626-a9fe-48f2-a204-5050284b70e0/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/develop-iterate-wireframes
+order: 10
+parent: item-37f45e8c-1f67-44cf-8615-146707d362e4
+title: 'Develop: Iterate wireframes'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-b794dede-b614-4da5-9e17-d4a26f85bea0
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-b794dede-b614-4da5-9e17-d4a26f85bea0"></oer-include>

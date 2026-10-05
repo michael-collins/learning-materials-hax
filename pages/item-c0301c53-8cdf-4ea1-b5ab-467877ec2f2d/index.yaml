@@ -1,0 +1,137 @@
+id: item-c0301c53-8cdf-4ea1-b5ab-467877ec2f2d
+indent: 1
+location: pages/item-c0301c53-8cdf-4ea1-b5ab-467877ec2f2d/index.yaml
+slug: exercises/animated-procedural-textures
+order: 18
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Animated procedural textures
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/animated-procedural-textures
+  tags: Blender,AfterEffects,Adobe Media Encoder
+  oerFields:
+    difficulty: Intermediate
+    image: files/recHfTCKlxhMVb30g_image_waterfall.png
+    imageAlt: waterfall.png
+    license: CC BY 4.0
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    allowEmbed: true
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will create a textured anime-style waterfall in
+  Blender, render a final Blender animation as an image sequence, and import it
+  into after effects. You will create a compressed video in a web streaming
+  format called H.264.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXtsipLP7DiUgZxSrwUp8uh"
+  title="Animated procedural textures Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Become familiarized with adding nodes to procedurally generate moving
+  textures on 3D geometry.</li>
+
+  <li>Practice rendering image sequences and producing video files capable to be
+  streamed online.</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>
+
+  <p>Watch the tutorials.</p>
+
+  </li>
+
+  <li>
+
+  <p>Create and set a project folder called
+  <code>LASTNAME-animated-procedural-textures</code> save your .blend file in
+  the project folder.</p>
+
+  </li>
+
+  <li>
+
+  <p>Download the image sequence ZIP file.</p>
+
+  </li>
+
+  <li>
+
+  <p>Create an animation with the following:</p>
+
+  <ul>
+
+  <li>EEVEE render engine</li>
+
+  <li>A polygonal model of a waterfall to use with the animated textures
+  produced with shader nodes.</li>
+
+  <li>~10 seconds (250 frames of animation) at 24 FPS</li>
+
+  </ul>
+
+  </li>
+
+  <li>
+
+  <p>Render your animation as an image sequence (not a video file) to a
+  folder.</p>
+
+  </li>
+
+  <li>
+
+  <p>Following the video importing and exporting tutorials. Import your image
+  sequence to After Effects. The sequence defaults at 30 FPS, which is
+  incorrect. Right click on the image sequence footage and choose
+  <strong>Interpret Footage</strong> → <strong>Main</strong>. Change the frame
+  rate to 24FPS.</p>
+
+  </li>
+
+  <li>
+
+  <p>Export an H.264 MP4 movie file with the Vimeo preset. (It should be well
+  under 1MB in total file size). (See tutorials).</p>
+
+  </li>
+
+  <li>
+
+  <p>Save your animation file as
+  <code>LASTNAME-animated-</code>procedural<code>-textures.mp4</code> and upload
+  to the submission dropbox. Do not upload your blend file and image sequence,
+  the files are too large in size.</p>
+
+  </li>
+
+  <li>
+
+  <p>Double check that you’ve included all files and that your files can be
+  downloaded and opened.</p>
+
+  </li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

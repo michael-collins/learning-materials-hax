@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-12e6d336-2f07-4b36-8b52-3dadd8f8766e</id>
+<indent>4</indent>
+<location>pages/item-12e6d336-2f07-4b36-8b52-3dadd8f8766e/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/define-product-pitch</slug>
+<order>4</order>
+<parent>item-afb9718c-7193-4e3f-b080-d20610e3d901</parent>
+<title>Define: Product pitch</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-f4451ff1-fb68-421b-9eb2-9c5d68177c58</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f4451ff1-fb68-421b-9eb2-9c5d68177c58"></oer-include>]]></content>
+</item>

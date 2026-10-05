@@ -1,0 +1,34 @@
+{
+  "id": "item-5bc22eb2-f467-4292-a344-11e4e4598f90",
+  "indent": 1,
+  "location": "pages/item-5bc22eb2-f467-4292-a344-11e4e4598f90/index.json",
+  "slug": "exercises/daily-design-journal-1",
+  "order": 23,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Daily Design Journal",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:exercise",
+    "oerSource": "exercises/dmd100-lesson-1-daily-design-journal-report-in",
+    "tags": "activity",
+    "oerFields": {
+      "difficulty": "beginner",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Now that you have documented at least one object each day for two weeks, it's time to talk about it, shown-and-tell style.</p>\n<h2>Prompt</h2>\n<ol>\n<li>From the 14 objects that you sketched, which are your favorite objects? Why?</li>\n<li>Select one object from your list. What role does this object play in your life? What would be the result if you did not have it anymore?</li>\n<li>Do you generally take these objects for granted or are they special?</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Respond to the prompt questions in Canvas.</li>\n<li>Upload all 14 of your sketches in JPG format.\n<ul>\n<li><strong>Please either use a scanner or take clear and well lit photographs.</strong></li>\n</ul>\n</li>\n<li>Write your responses to the prompt questions at the end of the two weeks.</li>\n</ol>\n"
+}

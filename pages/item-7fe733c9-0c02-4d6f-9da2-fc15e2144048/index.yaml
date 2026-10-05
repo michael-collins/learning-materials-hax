@@ -1,0 +1,144 @@
+id: item-7fe733c9-0c02-4d6f-9da2-fc15e2144048
+indent: 1
+location: pages/item-7fe733c9-0c02-4d6f-9da2-fc15e2144048/index.yaml
+slug: articles/measuring-success
+order: 8
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Measuring success
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd100-introduction-measuring-success
+  tags: introduction
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-01'
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>To measure success in a way that we can compare one to another, we must
+  have a common understanding about what we mean by success and what we mean by
+  measurement. Some key requirements of achieving success are not overtly
+  teachable, measurable, or relevant for everyone. Determining what success
+  looks like is difficult, as the qualities of a successful student can be
+  different in given contexts. Therefore, to have a universal measurement system
+  that works to any degree of accuracy often means that objective and
+  quantifiable metrics are chosen over subjective and qualitative metrics – and
+  the former of which may be poor indicators of success for a multifaceted
+  design program. In other words, the nature of real learning limits what we can
+  reasonably measure.</p>
+
+  <p>In many educational institutions, the grade point average (GPA) measures a
+  student's ability to meet the success metrics as set by an instructor or
+  governing assessment entity. There may be some correlation between GPA and
+  success post graduation, but a high GPA does not guarantee a person will get a
+  job or start a business, become well-rounded, or be prepared for the
+  unexpected challenges ahead. A student's attitude and grit are the best
+  indications of success after graduation.</p>
+
+  <p>I have assembled a list that attempts to describe the attitudes and
+  attributes that are likely to indicate success:</p>
+
+  <ol>
+
+  <li>Adaptability
+
+  <ul>
+
+  <li>Shift mental models to approach problems differently</li>
+
+  <li>Rapidly identify and learn required knowledge</li>
+
+  <li>Don't be too adaptable</li>
+
+  </ul>
+
+  </li>
+
+  <li>Understanding
+
+  <ul>
+
+  <li>Explore a wide array of perspectives</li>
+
+  <li>Deconstruct complexity into less complex parts</li>
+
+  <li>Contextualize issues within larger systems</li>
+
+  <li>Be curious</li>
+
+  <li>Don't take feedback personally or at face value</li>
+
+  </ul>
+
+  </li>
+
+  <li>Focus
+
+  <ul>
+
+  <li>Prioritize essential tasks</li>
+
+  <li>Be aware of capabilities and limitations</li>
+
+  <li>Identify and clear away distractions</li>
+
+  </ul>
+
+  </li>
+
+  <li>Perseverance (grit)
+
+  <ul>
+
+  <li>Don't give up; do what you can with what you have</li>
+
+  <li>Dedicate time and energy</li>
+
+  <li>Finish what you start</li>
+
+  <li>Practice unwavering optimism (self-effacacy)</li>
+
+  <li>Fail fast to eventually succeed</li>
+
+  </ul>
+
+  </li>
+
+  <li>Skill
+
+  <ul>
+
+  <li>Develop intellectual capabilities</li>
+
+  <li>Achieve technical mastery</li>
+
+  <li>Communicate appropriately with respective audiences</li>
+
+  </ul>
+
+  </li>
+
+  <li>Empathy
+
+  <ul>
+
+  <li>Put yourself in someone's shoes to better understand why we design</li>
+
+  <li>Talk to people you want to design for</li>
+
+  <li>Listen, question, and defer judgement</li>
+
+  </ul>
+
+  </li>
+
+  </ol>

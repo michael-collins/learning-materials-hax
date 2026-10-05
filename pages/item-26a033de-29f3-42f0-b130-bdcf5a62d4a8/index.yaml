@@ -1,0 +1,20 @@
+id: item-26a033de-29f3-42f0-b130-bdcf5a62d4a8
+indent: 4
+location: pages/item-26a033de-29f3-42f0-b130-bdcf5a62d4a8/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/topics/story-development
+order: 2
+parent: item-556f6f80-c90c-4f82-8a10-e2d80c9b6ef2
+title: Story development
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-2097b6df-88f5-458d-8955-b9e8f447b3a1
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-2097b6df-88f5-458d-8955-b9e8f447b3a1"></oer-include>

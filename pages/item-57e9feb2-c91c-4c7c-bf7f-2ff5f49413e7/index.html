@@ -1,0 +1,58 @@
+<p>This page demonstrates how to use different Creative Commons licenses on your VitePress pages.</p>
+<h2>How to Use</h2>
+<p>You can specify the license type and attribution in the front matter of any markdown file:</p>
+<pre><code class="language-md">---
+license: cc-by-sa
+attribution: Your Name or Organization
+---
+</code></pre>
+<h2>Available License Types</h2>
+<p>The following license types are supported:</p>
+<ul>
+<li><code>cc-by</code> - Creative Commons Attribution 4.0 (Default)</li>
+<li><code>cc-by-sa</code> - Creative Commons Attribution-ShareAlike 4.0</li>
+<li><code>cc-by-nc</code> - Creative Commons Attribution-NonCommercial 4.0</li>
+<li><code>cc-by-nc-sa</code> - Creative Commons Attribution-NonCommercial-ShareAlike 4.0</li>
+<li><code>cc-by-nd</code> - Creative Commons Attribution-NoDerivatives 4.0</li>
+<li><code>cc-by-nc-nd</code> - Creative Commons Attribution-NonCommercial-NoDerivatives 4.0</li>
+<li><code>custom</code> - Custom license (requires additional parameters)</li>
+</ul>
+<h2>Custom License Example</h2>
+<p>For a custom license, you can use the following front matter:</p>
+<pre><code class="language-md">---
+license: custom
+customLicenseText: "This work is licensed under a &lt;a href='https://example.com/license'&gt;Custom License&lt;/a&gt;."
+customLicenseImage: "/path/to/license/image.png"
+customLicenseAlt: "Custom License Logo"
+attribution: "Custom Attribution"
+---
+</code></pre>
+<p>&lt;!-- The LicenseFooter component will automatically be displayed here --&gt;
+&lt;LicenseFooter /&gt;</p>
+<hr>
+<h2>Examples of Different Licenses</h2>
+<h3>CC-BY-SA Example</h3>
+<p>This section uses a different license.</p>
+<p>&lt;div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;"&gt;
+&lt;h4&gt;ShareAlike Content&lt;/h4&gt;
+&lt;p&gt;This specific section demonstrates content with a ShareAlike license.&lt;/p&gt;
+&lt;LicenseFooter license="cc-by-sa" attribution="DMD Program Contributors" /&gt;
+&lt;/div&gt;</p>
+<h3>CC-BY-NC Example</h3>
+<p>&lt;div style="background-color: #f0f8ff; padding: 20px; border-radius: 5px;"&gt;
+&lt;h4&gt;NonCommercial Content&lt;/h4&gt;
+&lt;p&gt;This specific section demonstrates content with a NonCommercial license.&lt;/p&gt;
+&lt;LicenseFooter license="cc-by-nc" attribution="Penn State University" /&gt;
+&lt;/div&gt;</p>
+<h3>Custom License Example</h3>
+<p>&lt;div style="background-color: #fff8dc; padding: 20px; border-radius: 5px;"&gt;
+&lt;h4&gt;Custom License&lt;/h4&gt;
+&lt;p&gt;This specific section demonstrates content with a custom license.&lt;/p&gt;
+&lt;LicenseFooter
+license="custom"
+customText="This is a custom license text with &lt;a href='#'&gt;special terms&lt;/a&gt;."
+customImage="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png"
+customAlt="CC0 License"
+attribution="Public Domain Contributors"
+/&gt;
+&lt;/div&gt;</p>

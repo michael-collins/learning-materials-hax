@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-90845833-7efb-47d2-a389-fd50253d9b77</id>
+<indent>3</indent>
+<location>pages/item-90845833-7efb-47d2-a389-fd50253d9b77/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/capstone-project/4-proof-of-ability</slug>
+<order>3</order>
+<parent>item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041</parent>
+<title>4. Proof of ability</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-2f5ff460-cfce-4daa-bc72-ce977b568014</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-2f5ff460-cfce-4daa-bc72-ce977b568014"></oer-include>]]></content>
+</item>

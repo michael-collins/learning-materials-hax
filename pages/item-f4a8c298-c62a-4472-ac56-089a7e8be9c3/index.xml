@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f4a8c298-c62a-4472-ac56-089a7e8be9c3</id>
+<indent>1</indent>
+<location>pages/item-f4a8c298-c62a-4472-ac56-089a7e8be9c3/index.xml</location>
+<slug>exercises/introduction-to-animation</slug>
+<order>25</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<title>Introduction to animation</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:exercise</pageType>
+<oerSource>exercises/introduction-to-animation</oerSource>
+<tags>Blender</tags>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<image>files/recDaZ0H0qFz4iYlR_image_animation.png</image>
+<imageAlt>animation.png</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, level 1 students will practice keyframe animation, parenting, animating the camera with a target, and manipulating curves in the graph editor.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ" title="Introduction to animation Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice keyframe animation of translation, rotation, and scale properties.</li>
+<li>Become familiarized with keyframe animation.</li>
+<li>Become familiarized with the purpose of pivot points and parent objects.</li>
+<li>Practice applying camera constraints.</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Watch linked tutorials in Learning Resources from Blender Foundation and others to get acquainted with animation tools.</li>
+<li>Create a project folder on your computer and save a new <code>.blend</code> file called <code>LASTNAME-animation.blend</code>.</li>
+<li>Follow the video demonstrations to animate a camera, cube, and sphere.
+<ul>
+<li>The duration of the animation should be 120 frames.</li>
+<li>Create a centered cube.</li>
+<li>Create a sphere <a href="https://www.youtube.com/watch?v=kd1O0oqQ3Uw">parented</a> to the cube. The sphere should be 5 units away from the cube in the X or Y axis, and revolve concentrically around the cube. (HINT: Their <a href="https://www.versluis.com/2016/05/how-to-set-the-origin-pivot-point-in-blender/">pivot points</a> should be the same location: 0,0,0)</li>
+<li>Animate the sphere to rotate concentrically around the cube, twice(720 degrees).</li>
+<li>Go into the Graph Editor and set <strong>interpolation mode</strong> to <strong>linear</strong>.</li>
+<li>Your sphere should now loop seamlessly with linear motion. Press play in the timeline to see if it is looping seamlessly. The sphere should not be stopping at any point.</li>
+<li>Animate the cube to move from 0 to positive 10 units in the z-axis from frame 1 to 60, and move back to the origin from frame 61 to 120. (The sphere will follow the cube as it moves up and down if it parented correctly)</li>
+<li>Create a new perspective camera.</li>
+<li>Create an ‘empty’ and use it at as a <a href="https://www.youtube.com/watch?v=ageV_llb0Hk">camera tracking constraint</a>.</li>
+<li>Parent the ‘empty’ to the cube so the camera aims at the cube as it moves up and down.</li>
+<li>Select the camera and choose <strong>View</strong> ⟶ <strong>Camera</strong> ⟶ <strong>Set active object as camera</strong> and choose “Lock Camera to viewport .</li>
+</ul>
+</li>
+<li>Export a rendered video.
+<ul>
+<li>To create a video file, save the file and set the render settings output folder to the project folder.</li>
+<li>Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding format to <strong>MPEG-4</strong></li>
+<li>Under <strong>Codec,</strong> choose <strong>H.264</strong>.</li>
+<li>Choose <strong>Render</strong> ⟶ <strong>Render Animation</strong> to create the animation file.</li>
+</ul>
+</li>
+<li>Choose <strong>View</strong> ⟶ <strong>Viewport Render Animation</strong> to create the animation file.</li>
+<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-animation.zip</code>.</li>
+<li>Upload the .zip file to the assignment dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

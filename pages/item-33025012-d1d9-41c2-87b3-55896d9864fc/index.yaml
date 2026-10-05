@@ -1,0 +1,20 @@
+id: item-33025012-d1d9-41c2-87b3-55896d9864fc
+indent: 1
+location: pages/item-33025012-d1d9-41c2-87b3-55896d9864fc/index.yaml
+slug: resources/albert-omoss
+order: 2
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Albert Omoss
+description: ''
+metadata:
+  published: true
+  pageType: oer:resource
+  oerSource: resources/albert-omoss
+  oerFields:
+    url: https://omoss.io/
+    kind: artist
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

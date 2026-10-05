@@ -1,0 +1,23 @@
+{
+  "id": "item-a55bf30c-db0b-4c0b-a287-5f22e61dacd4",
+  "indent": 3,
+  "location": "pages/item-a55bf30c-db0b-4c0b-a287-5f22e61dacd4/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/introduction/projects",
+  "order": 5,
+  "parent": "item-8153e6b4-28e8-4c08-ba68-ce087c804837",
+  "title": "Projects",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-21700969-1e82-42f9-bb66-dee9ade13580",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-21700969-1e82-42f9-bb66-dee9ade13580\"></oer-include>"
+}

@@ -1,0 +1,19 @@
+id: item-75e7e07b-4ca8-47f7-ae50-718b696eccbe
+indent: 2
+location: pages/item-75e7e07b-4ca8-47f7-ae50-718b696eccbe/index.yaml
+slug: books/dmd-400-digital-multimedia-design-capstone/project-categories
+order: 5
+parent: item-ce739bdb-84f3-4797-9b76-5f951decba4e
+title: Project categories
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-cf21215f-0569-44f6-a9f5-3fa6835fb955
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-cf21215f-0569-44f6-a9f5-3fa6835fb955"></oer-include>

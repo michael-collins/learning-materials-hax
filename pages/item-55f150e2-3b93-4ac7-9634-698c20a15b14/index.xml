@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-55f150e2-3b93-4ac7-9634-698c20a15b14</id>
+<indent>2</indent>
+<location>pages/item-55f150e2-3b93-4ac7-9634-698c20a15b14/index.xml</location>
+<slug>books/dmd-300-digital-multimedia-design-studio/about</slug>
+<order>0</order>
+<parent>item-9aa47609-2475-4db7-ae00-b09d2195cc39</parent>
+<title>About</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

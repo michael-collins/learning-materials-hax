@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ed57126c-9498-4778-82f3-5b464298f3ee</id>
+<indent>4</indent>
+<location>pages/item-ed57126c-9498-4778-82f3-5b464298f3ee/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/watch/open-structures-thomas-lommee</slug>
+<order>0</order>
+<parent>item-60e1b688-5132-434f-ad1d-7f07cf8a8a8a</parent>
+<title>Open Structures: Thomas Lommee</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-63ee2647-5066-42b8-98ae-16bd09bd9041</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-63ee2647-5066-42b8-98ae-16bd09bd9041"></oer-include>]]></content>
+</item>

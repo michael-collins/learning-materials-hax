@@ -1,0 +1,85 @@
+id: item-db344687-9676-46da-9926-d0464ec57873
+indent: 1
+location: pages/item-db344687-9676-46da-9926-d0464ec57873/index.yaml
+slug: exercises/modeling-a-basic-knight
+order: 29
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a Basic Knight
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-basic-knight
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: files/recPXvg0DlanTkyO2_image_Simple_Knight.png
+    imageAlt: Simple Knight.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: Knight Side Reference
+        url: files/rec7UZcG6Ic2StuPB_attachment_knight_side.jpg
+        description: Knight Side Reference
+        alt: Knight Side Reference
+      - title: 'Knight Top Reference '
+        url: files/reciWQYtYaDynWpPM_attachment_knight_top.jpg
+        description: 'Knight Top Reference '
+        alt: 'Knight Top Reference '
+      - title: 'Knight Front Reference '
+        url: files/recTGi87fakDenf1c_attachment_knight_front.jpg
+        description: 'Knight Front Reference '
+        alt: 'Knight Front Reference '
+      - title: Knight Back Reference
+        url: files/recjZvvY8D39hkMz6_attachment_knight_back.jpg
+        description: Knight Back Reference
+        alt: Knight Back Reference
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QliQriwysglJwRIE6R8NP2f"
+  title="Modeling a Basic Knight Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>This is the most basic of four demonstrations on how to complete the Knight
+  assignment.&nbsp;
+
+  If you complete this version you will receive full credit for this week's
+  requirement to create a Knight for you Chess Set
+
+  However, you are expected to watch all three demonstrations.&nbsp;
+
+  They will show you how you might use new tools and methods to make your knight
+  more unique or figurative.</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

@@ -1,0 +1,25 @@
+id: item-d9fd9724-9897-434b-b159-3adb16cd8bc5
+indent: 1
+location: pages/item-d9fd9724-9897-434b-b159-3adb16cd8bc5/index.yaml
+slug: lessons/general-resources
+order: 22
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: General Resources
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerSource: lessons/dmd300-general-resources
+  tags: lesson
+  oerFields:
+    courses:
+      - DMD 300
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

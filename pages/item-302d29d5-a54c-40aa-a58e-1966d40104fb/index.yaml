@@ -1,0 +1,20 @@
+id: item-302d29d5-a54c-40aa-a58e-1966d40104fb
+indent: 4
+location: pages/item-302d29d5-a54c-40aa-a58e-1966d40104fb/index.yaml
+slug: >-
+  books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/interview
+order: 3
+parent: item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3
+title: Interview
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-f97a1655-a749-49dc-88c1-9e37e45a949b
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-f97a1655-a749-49dc-88c1-9e37e45a949b"></oer-include>

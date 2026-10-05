@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b3ec91b6-3725-4ad6-90ea-59984339a9ee</id>
+<indent>4</indent>
+<location>pages/item-b3ec91b6-3725-4ad6-90ea-59984339a9ee/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/readings/chapter-1-2-sen-rikyu</slug>
+<order>0</order>
+<parent>item-d03a6ade-66a6-49bb-80af-5e62069d19d0</parent>
+<title>Chapter 1&amp;2. Sen Rikyu...</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-c54ad01f-292b-4597-aec2-a7109176895c</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c54ad01f-292b-4597-aec2-a7109176895c"></oer-include>]]></content>
+</item>

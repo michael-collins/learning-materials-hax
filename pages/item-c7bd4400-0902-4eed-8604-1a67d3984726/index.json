@@ -1,0 +1,23 @@
+{
+  "id": "item-c7bd4400-0902-4eed-8604-1a67d3984726",
+  "indent": 3,
+  "location": "pages/item-c7bd4400-0902-4eed-8604-1a67d3984726/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-1-introduction/career-development-in-3d",
+  "order": 1,
+  "parent": "item-f2ee89ed-56f2-4e7f-9fc4-8a8be9743913",
+  "title": "Career Development in 3D",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-3b1e70b9-7505-456f-8776-121a73c64f5b",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-3b1e70b9-7505-456f-8776-121a73c64f5b\"></oer-include>"
+}

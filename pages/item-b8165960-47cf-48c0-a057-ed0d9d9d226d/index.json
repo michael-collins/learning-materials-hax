@@ -1,0 +1,23 @@
+{
+  "id": "item-b8165960-47cf-48c0-a057-ed0d9d9d226d",
+  "indent": 3,
+  "location": "pages/item-b8165960-47cf-48c0-a057-ed0d9d9d226d/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/introduction/digital-multimedia-design",
+  "order": 1,
+  "parent": "item-8153e6b4-28e8-4c08-ba68-ce087c804837",
+  "title": "Digital Multimedia Design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-5161bc94-86bf-45f3-a8d2-2deb63e07ba6",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-5161bc94-86bf-45f3-a8d2-2deb63e07ba6\"></oer-include>"
+}

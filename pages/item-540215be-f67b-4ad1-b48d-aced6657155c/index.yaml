@@ -1,0 +1,20 @@
+id: item-540215be-f67b-4ad1-b48d-aced6657155c
+indent: 4
+location: pages/item-540215be-f67b-4ad1-b48d-aced6657155c/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/visual-design
+order: 4
+parent: item-8d24c121-2ffd-442f-9d30-d5da6d3f2565
+title: Visual design
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-25a3fcf2-9193-4fab-a1fa-cd708ce2ca71
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-25a3fcf2-9193-4fab-a1fa-cd708ce2ca71"></oer-include>

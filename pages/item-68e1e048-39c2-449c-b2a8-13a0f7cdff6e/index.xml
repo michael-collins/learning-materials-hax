@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e</id>
+<indent>1</indent>
+<location>pages/item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e/index.xml</location>
+<slug>books/getting-started-with-3d-animation</slug>
+<order>3</order>
+<parent>item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d</parent>
+<title>Getting Started with 3D Animation</title>
+<description></description>
+<metadata>
+<published>false</published>
+<pageType>oer:book</pageType>
+<oerSource>books/getting-started-3d-animation</oerSource>
+<tags>3d animation,modeling,rigging,textbook</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2025-01-30</date>
+<theme>lambda</theme>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Welcome to <strong>Getting Started with 3D Animation</strong>, a curated open educational textbook that guides you through the fundamentals and intermediate concepts of 3D animation and design.</p>
+<p>This book pulls together lessons, articles, and tutorials from the OER Platform into a structured learning path. Each chapter references existing content that can also be explored independently.</p>
+<h2>How to Use This Book</h2>
+<p>Navigate through chapters using the sidebar or the prev/next buttons at the bottom of each page. The outline follows a progressive learning path, but you can jump to any chapter that interests you.</p>
+<h2>Prerequisites</h2>
+<p>No prior 3D experience is required. Basic computer skills and familiarity with creative software concepts will be helpful.</p>
+]]></content>
+</item>

@@ -1,0 +1,20 @@
+id: item-7f38beb5-ca86-4ee7-b046-9eedda3ded0b
+indent: 3
+location: pages/item-7f38beb5-ca86-4ee7-b046-9eedda3ded0b/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/introduction/learning-objectives
+order: 4
+parent: item-8153e6b4-28e8-4c08-ba68-ce087c804837
+title: Learning objectives
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-40aab875-b3c9-4014-b1fc-f62c9ad19a7b
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-40aab875-b3c9-4014-b1fc-f62c9ad19a7b"></oer-include>

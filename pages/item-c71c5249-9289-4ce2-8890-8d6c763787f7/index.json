@@ -1,0 +1,23 @@
+{
+  "id": "item-c71c5249-9289-4ce2-8890-8d6c763787f7",
+  "indent": 4,
+  "location": "pages/item-c71c5249-9289-4ce2-8890-8d6c763787f7/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/readings/chapter-4-design-as-tragedy",
+  "order": 1,
+  "parent": "item-1583962c-54f8-48ec-b445-151a76f50494",
+  "title": "Chapter 4. Design as Tragedy...",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-7c8822f9-910a-4c5c-98c0-d0a0b30f1476",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-7c8822f9-910a-4c5c-98c0-d0a0b30f1476\"></oer-include>"
+}

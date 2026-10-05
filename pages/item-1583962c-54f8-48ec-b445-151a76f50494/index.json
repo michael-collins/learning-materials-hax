@@ -1,0 +1,19 @@
+{
+  "id": "item-1583962c-54f8-48ec-b445-151a76f50494",
+  "indent": 3,
+  "location": "pages/item-1583962c-54f8-48ec-b445-151a76f50494/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/readings",
+  "order": 1,
+  "parent": "item-bf6c6bf7-fe4b-4d03-9b45-271175d41c3f",
+  "title": "Readings",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

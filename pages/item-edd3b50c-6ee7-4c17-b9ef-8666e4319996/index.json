@@ -1,0 +1,34 @@
+{
+  "id": "item-edd3b50c-6ee7-4c17-b9ef-8666e4319996",
+  "indent": 1,
+  "location": "pages/item-edd3b50c-6ee7-4c17-b9ef-8666e4319996/index.json",
+  "slug": "projects/capstone-project-production-reports",
+  "order": 58,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Capstone project production reports",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd400-capstone-project-production-report",
+    "tags": "project-deliverable",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 400"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>A production report is a comprehensive update about what progress has been made for of planning, research, and production — at times, all three. A report can consist of any visual documentation and text description including screenshot images, photographs of prototypes, video of working functionality, code snippets, production artwork, concept maps, research findings, work inspiration, storyboards and scripts, etc.</p>\n<p><strong>Each blog post should be a minimum of 500 words long, and include images or other media.</strong></p>\n<p>Reports will be due regularly throughout the course to document your progress.</p>\n<h2>What to include:</h2>\n<h3>Timesheet</h3>\n<p>Include an approximate breakdown of how much time you spent on your classwork. This is good practice for tracking your time in professional settings and helps your instructor assess your work. Aim for 8 hours each week, for example:</p>\n<ul>\n<li>Researching website platforms: 1 hour</li>\n<li>Writing content outline: 1 hour</li>\n<li>Collecting visual design inspiration: 1 hour</li>\n<li>Figma mockup: 3 hours</li>\n<li>Writing blog post: 1 hour</li>\n</ul>\n<p>You can get more specific if you want. Free apps like <a href=\"https://toggl.com/track/automated-time-tracker/\">Toggl</a> let you set timers on your computer and generate timesheets.</p>\n<h3>Reply to Feedback</h3>\n<p>Write a short response to recent feedback you received from your instructor, advisor, or classmates. (Aprox. 100 words)</p>\n<h3>Open-ended writing</h3>\n<p>Describe your research, process, goals, and so on for the bulk of the post. Include images and screenshots to document the state of your project.</p>\n<p>Make sure to include links to any online files or websites you've created. The more you share the better!</p>\n<h2>Platforms</h2>\n<p>The production blog can be hosted anywhere. If you already have a blog created, you may use your existing blog to track progress for this project.</p>\n<p>Recommended blog platforms:</p>\n<ul>\n<li><a href=\"https://sites.psu.edu\">sites.psu.edu</a></li>\n<li><a href=\"notion.so\">Notion</a> (a nice option to <a href=\"https://www.notion.com/help/guides/build-a-website-with-notion-in-seconds-no-coding-required\">create a public blog</a> alongside private notes)</li>\n<li><a href=\"https://spark.adobe.com/\">Adobe Spark</a></li>\n</ul>\n<h2>Submission details</h2>\n<p>Post a link to the relevant blog post in each week's Canvas discussion.</p>\n"
+}

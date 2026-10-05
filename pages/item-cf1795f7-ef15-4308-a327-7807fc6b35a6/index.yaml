@@ -1,0 +1,20 @@
+id: item-cf1795f7-ef15-4308-a327-7807fc6b35a6
+indent: 4
+location: pages/item-cf1795f7-ef15-4308-a327-7807fc6b35a6/index.yaml
+slug: >-
+  books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project/documentation
+order: 4
+parent: item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3
+title: Documentation
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-f1e5d948-578d-463a-b1ee-beadb3d505f5
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-f1e5d948-578d-463a-b1ee-beadb3d505f5"></oer-include>

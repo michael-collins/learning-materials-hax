@@ -1,0 +1,19 @@
+id: item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041
+indent: 2
+location: pages/item-f7cd0832-c5b5-48bb-a0ad-6c42aa7e8041/index.yaml
+slug: books/dmd-400-digital-multimedia-design-capstone/capstone-project
+order: 4
+parent: item-ce739bdb-84f3-4797-9b76-5f951decba4e
+title: Capstone project
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerRef:
+    page: item-2563c9ff-4d12-4440-9199-60051c68518e
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-2563c9ff-4d12-4440-9199-60051c68518e"></oer-include>

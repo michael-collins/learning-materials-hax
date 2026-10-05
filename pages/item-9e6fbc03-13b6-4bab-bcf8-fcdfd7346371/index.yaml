@@ -1,0 +1,20 @@
+id: item-9e6fbc03-13b6-4bab-bcf8-fcdfd7346371
+indent: 4
+location: pages/item-9e6fbc03-13b6-4bab-bcf8-fcdfd7346371/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/define-synopsis
+order: 3
+parent: item-a9f78351-7500-44e9-bae7-d17feec5d5df
+title: 'Define: Synopsis'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-0e2412c6-7bc6-410e-b370-a54e345875c5
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-0e2412c6-7bc6-410e-b370-a54e345875c5"></oer-include>

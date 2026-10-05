@@ -1,0 +1,20 @@
+id: item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4
+indent: 4
+location: pages/item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/project/open-design-project-introduction
+order: 0
+parent: item-afb9718c-7193-4e3f-b080-d20610e3d901
+title: Open Design Project Introduction
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-c69c42c5-97aa-456c-9240-67c6f12727b9
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-c69c42c5-97aa-456c-9240-67c6f12727b9"></oer-include>

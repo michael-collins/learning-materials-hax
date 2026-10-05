@@ -1,0 +1,34 @@
+{
+  "id": "item-27ac4b34-14e8-46ea-a26b-68cf75cd5192",
+  "indent": 1,
+  "location": "pages/item-27ac4b34-14e8-46ea-a26b-68cf75cd5192/index.json",
+  "slug": "projects/define-product-pitch",
+  "order": 27,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Define: Product pitch",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-4-open-design-define-product-pitch",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-define-1200px@2x.png\" alt=\"Double Diamond Define Phase graphic\"></p>\n<p>Now is a good time to re-read the project brief. After you reacquaint yourself with the project, choose a product that will form the basis for the project. To do this, you will describe an existing toy product and produce a one-sentence pitch to explain how you might alter or make design changes, particularly if you find aspects of the product problematic ecologically, culturally, etc. You will be building this project yourself and producing instructions for others. It must be feasible for someone without special skills to re-create.</p>\n<h2>Product pitch document</h2>\n<p>Create a document file with the following:</p>\n<ol>\n<li>Your Name</li>\n<li>Date</li>\n<li>Title</li>\n<li>Description of existing toy type:\n<ol>\n<li>Toy name or type (choose one)\n<ul>\n<li>Human or animal figures</li>\n<li>Architectural models</li>\n<li>Machines</li>\n<li>Structures and shapes</li>\n<li>Puzzle or game</li>\n<li>Integrated electronics</li>\n<li>other</li>\n</ul>\n</li>\n<li>Describe the basic function or of the toy.</li>\n<li>Who is the toy designed for?</li>\n<li>What does it do? How does it work?</li>\n<li>What materials is it made of?</li>\n<li>How much does it cost to make with the materials you have selected?</li>\n</ol>\n</li>\n<li>Design pitch\n<ol>\n<li>I will design a(n) <strong>(toy name)</strong> for <strong>(target user).</strong> The key changes include <strong>(list key changes)</strong>.\n<ul>\n<li>An example pitch might be, <strong>\"I will design a finger puppet game for older children. Key changes to finger puppets include a way to allow a child to alter the face of the puppet and the incorporation of game rules that foster conversational skills.\"</strong></li>\n<li>Note: This pitch will guide the direction for the rest of the project. This is not a speculative project, you will be creating this object and producing instructions for others to follow.</li>\n</ul>\n</li>\n<li>How will your project use principles of modular design so that your toy can be assembled, disassembled, and reconfigured?</li>\n</ol>\n</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Choose an existing toy that interests you.</li>\n<li>Write the description for this toy in the product pitch document using full sentences.</li>\n<li>Consider how you will change the toy to suit the requirements of the Open Design Project brief. If the existing toy is modular in nature, how will you alter it or use it in novel ways to make it your own? If the existing toy is not modular in nature, what aspects of it can become modular? <strong>Your user should be able to make three different objects from the same set of parts. Write a pitch and include a description of the attributes you will modify.</strong> Examples include:\n<ol>\n<li>Target audience (from child to adult for instance)</li>\n<li>Materials, fasteners</li>\n<li>Aesthetics</li>\n<li>Operation, assembly, use, or purpose</li>\n<li>Added variants or unconventional uses for an existing system.</li>\n</ol>\n</li>\n<li>As a vital part of the design process, this document should be well formatted and clearly written. Please do not copy and paste the assignment text into the document.</li>\n</ol>\n<h2>Post work</h2>\n<ol>\n<li>Export and upload the pitch document in <code>.pdf</code> format.</li>\n</ol>\n"
+}

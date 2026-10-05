@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ea66b132-36e5-47e7-a94b-13613afcc6b7</id>
+<indent>3</indent>
+<location>pages/item-ea66b132-36e5-47e7-a94b-13613afcc6b7/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-3-intermediate-skills/deformers-and-shape-keys</slug>
+<order>2</order>
+<parent>item-d52b8358-232b-4752-9c45-1923076e2be4</parent>
+<title>Deformers and Shape Keys</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerRef>
+<page>item-01b58d32-e627-4ef4-8bd8-46ca7ef148cb</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-01b58d32-e627-4ef4-8bd8-46ca7ef148cb"></oer-include>]]></content>
+</item>

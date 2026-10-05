@@ -1,0 +1,1 @@
+Master camera tracking techniques to accurately match CGI cameras to live-action footage for seamless visual effects integration.

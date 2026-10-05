@@ -1,0 +1,23 @@
+{
+  "id": "item-d6a488df-7c3e-4996-8099-5d4991939da7",
+  "indent": 3,
+  "location": "pages/item-d6a488df-7c3e-4996-8099-5d4991939da7/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/general-resources/collaboration-tools",
+  "order": 0,
+  "parent": "item-9f0b88c0-5762-46b0-a219-444663bfeae6",
+  "title": "Collaboration tools",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-bac0290a-1ddb-4598-a2c5-29c82d52c9fd",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-bac0290a-1ddb-4598-a2c5-29c82d52c9fd\"></oer-include>"
+}

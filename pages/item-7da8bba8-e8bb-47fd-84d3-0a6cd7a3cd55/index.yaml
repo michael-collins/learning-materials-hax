@@ -1,0 +1,20 @@
+id: item-7da8bba8-e8bb-47fd-84d3-0a6cd7a3cd55
+indent: 4
+location: pages/item-7da8bba8-e8bb-47fd-84d3-0a6cd7a3cd55/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals/you-don-t-see-that-everyday-objects
+order: 6
+parent: item-07752bb1-c5b8-498c-8422-b064c3eb1a4f
+title: You don't see that everyday objects
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-48ad9f94-3f8b-44e5-8416-316cff49f4d2
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-48ad9f94-3f8b-44e5-8416-316cff49f4d2"></oer-include>

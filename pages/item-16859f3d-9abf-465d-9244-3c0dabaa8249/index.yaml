@@ -1,0 +1,80 @@
+id: item-16859f3d-9abf-465d-9244-3c0dabaa8249
+indent: 1
+location: pages/item-16859f3d-9abf-465d-9244-3c0dabaa8249/index.yaml
+slug: projects/weekly-activity-reports
+order: 51
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: Weekly Activity Reports
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd300-project-1-weekly-activity-reports
+  tags: project-deliverable,Group Project
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 300
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>At the end of each week, each individual student will submit a short report
+  of group project activity. This shows that you understand what each member is
+  contributing and demonstrates your own contributions to the project.</p>
+
+  <h2>Requirements:</h2>
+
+  <ol>
+
+  <li><strong>Title:</strong> Weekly Report # (e.g. Weekly Report #3)</li>
+
+  <li><strong>Your Name</strong></li>
+
+  <li><strong>Group Members:</strong> (names)</li>
+
+  <li><strong>Activity description</strong>
+
+  <ul>
+
+  <li>Your contributions for the week</li>
+
+  <li>Describe contributions to the project from each member.</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>General comments:</strong>
+
+  <ul>
+
+  <li>Briefly talk about how things are going. This is the space to complain,
+  brag, comment on challenges you are facing, or talk about things that are
+  going really well.</li>
+
+  </ul>
+
+  </li>
+
+  </ol>
+
+  <h2>Rubric</h2>
+
+  <ol>
+
+  <li>Fullfilled all report requirements. (40%)</li>
+
+  <li>Demonstrated significant group or team project contributions. (60%)</li>
+
+  </ol>
+
+  <h2>Submission</h2>
+
+  <p>Please upload this to canvas as either a word document (<code>.doc</code>,
+  <code>.docx</code>), or written in the text submission field.</p>

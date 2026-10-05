@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-afdf0542-2ff5-46f4-b1c9-9e9077f80832</id>
+<indent>1</indent>
+<location>pages/item-afdf0542-2ff5-46f4-b1c9-9e9077f80832/index.xml</location>
+<slug>resources/alex-mcleod</slug>
+<order>3</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Alex McLeod</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/alex-mcleod</oerSource>
+<oerFields>
+<url>https://www.alxclub.com/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

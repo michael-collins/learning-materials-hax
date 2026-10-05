@@ -1,0 +1,23 @@
+{
+  "id": "item-ad4018c0-6d08-49fa-b463-192e39ad607b",
+  "indent": 4,
+  "location": "pages/item-ad4018c0-6d08-49fa-b463-192e39ad607b/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals/introduction-to-cameras-lighting-and-rendering",
+  "order": 4,
+  "parent": "item-07752bb1-c5b8-498c-8422-b064c3eb1a4f",
+  "title": "Introduction to Cameras, Lighting, and Rendering",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lecture",
+    "oerRef": {
+      "page": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-81dbd5a3-3e7f-447c-a522-630f6001a8f0\"></oer-include>"
+}

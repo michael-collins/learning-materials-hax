@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d759a2b5-61e3-4423-a706-91c282cf8b12</id>
+<indent>1</indent>
+<location>pages/item-d759a2b5-61e3-4423-a706-91c282cf8b12/index.xml</location>
+<slug>projects/capstone-project-document</slug>
+<order>55</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Capstone project document</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd400-capstone-project-document</oerSource>
+<tags>project-deliverable</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 400</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Develop a project document that gives readers a clear understanding of your project, from beginning to end. This may be very similar to a project explainer video, where you essentially cover all aspects of the project.</p>
+<p>Documents should be created in <strong>Adobe InDesign</strong> if possible. Documents produced in MS Word are less preferred, but acceptable. InDesign allows greater customization with layout and typography, to allow you to showcase your design abilities and ensure you are familiar with Adobe's industry standard publication software.</p>
+<h2>Example of excellent project documents</h2>
+<ul>
+<li><a href="https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/7/143171/files/formidable/2/2023-12-04/Brown_Project_Document-8da963.pdf">A world of our own, by Grace Brown</a></li>
+</ul>
+<h2>Format</h2>
+<ol>
+<li>Documentation must be provided as a PDF document.</li>
+<li>Letter size format, portrait (8.5 × 11 inches)</li>
+<li>Text: Left aligned</li>
+</ol>
+<h2>Document structure:</h2>
+<ol>
+<li><strong>Title page</strong>
+<ol>
+<li>Title of project</li>
+<li>Subtitle (type of media - eg. "An animated film" or "Web Application")</li>
+<li>Your Name (this will be public, if you are using a pseudonym, please use it here.)</li>
+<li>Semester and year (ie. FALL 2023)</li>
+<li>"Undergraduate capstone project documentation"</li>
+<li>Instructor name</li>
+</ol>
+</li>
+<li><strong>School information page</strong>
+<ol>
+<li>The Pennsylvania State University</li>
+<li>B.Des in Digital Multimedia Design</li>
+</ol>
+</li>
+<li><strong>Acknowledgements page</strong> (optional but recommended)
+<ol>
+<li>Acknowledge anyone who has had an impact on the success of your project. Typically this would be advisors, mentors, family, and friends who have helped you along the way.</li>
+</ol>
+</li>
+<li><strong>Table of contents</strong> &lt;-- Only include everything after the table of contents. Do not include the table of contents page in the table.</li>
+<li><strong>Project overview</strong>
+<ul>
+<li>Add your Exhibition Statement here.</li>
+</ul>
+</li>
+<li><strong>Concept development</strong>
+<ul>
+<li>Describe main issues, themes, and ideas explored during concept development.</li>
+<li>Include relevant images, quotations, diagrams, figures, etc.</li>
+</ul>
+</li>
+<li><strong>Research</strong> (These bullet points are meant to help you generate the document. It is not meant as a literal question and answer format. Please write this section formally)
+<ul>
+<li>What questions were investigated during the production of the project?</li>
+<li>Who are notable people, companies or institutions for your chosen project field?</li>
+<li>Are there market forces that impact your project? If so, describe the target market, project stakeholders, and other market related information pertinent to your project.</li>
+<li>What are the historical and contemporary issues related to the field in question?</li>
+<li>What are some related projects, events, objects, works of art or design that inspired your capstone work?</li>
+<li>Include citations according to bibliography format used (APA, MLA)</li>
+</ul>
+</li>
+<li><strong>Production</strong>
+<ul>
+<li>Production requirements will vary between projects. Outline your process here and include any images or documentation that might be helpful to communicate it.</li>
+</ul>
+</li>
+<li><strong>Conclusion</strong>
+<ul>
+<li>Summarize the results of the capstone project.</li>
+</ul>
+</li>
+<li><strong>Bibliography</strong>
+<ul>
+<li>List research materials that support the project with associated citations throughout the document.</li>
+<li>Choose either APA or MLA format. Be consistent throughout the document.</li>
+<li>See <a href="https://www.bibliography.com/how-to/how-to-write-a-bibliography-for-a-school-project/">this link</a> for more information about writing bibliographies.</li>
+<li>You can add a <strong>Citations</strong> and/or a <strong>References</strong> section as well if those are more appropriate to support your research and documentation. See <a href="https://www.bibliography.com/how-to/difference-between-citations-and-references/">this link</a> for more information.</li>
+</ul>
+</li>
+<li><strong>Image credits</strong> (optional)</li>
+<li><strong>Appendix</strong> (optional)</li>
+</ol>
+<h3>Submission details</h3>
+<p>The final document should be exported and uploaded in PDF format.</p>
+]]></content>
+</item>

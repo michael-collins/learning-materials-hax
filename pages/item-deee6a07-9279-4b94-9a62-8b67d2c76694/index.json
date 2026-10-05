@@ -1,0 +1,23 @@
+{
+  "id": "item-deee6a07-9279-4b94-9a62-8b67d2c76694",
+  "indent": 2,
+  "location": "pages/item-deee6a07-9279-4b94-9a62-8b67d2c76694/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design",
+  "order": 1,
+  "parent": "item-69d4e331-f13a-4ee4-9c2e-1bba82279d67",
+  "title": "Lesson 1: What is design?",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-48712468-759e-4620-b58b-b28327010442",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-48712468-759e-4620-b58b-b28327010442\"></oer-include>"
+}

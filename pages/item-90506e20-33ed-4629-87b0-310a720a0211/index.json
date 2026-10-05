@@ -1,0 +1,23 @@
+{
+  "id": "item-90506e20-33ed-4629-87b0-310a720a0211",
+  "indent": 4,
+  "location": "pages/item-90506e20-33ed-4629-87b0-310a720a0211/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/authors-and-owners",
+  "order": 3,
+  "parent": "item-1c0b6b79-034b-48a7-bf88-c63e8570b13d",
+  "title": "Authors and Owners",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-aa9adb54-dff6-40fe-8f24-99471e920ee1",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-aa9adb54-dff6-40fe-8f24-99471e920ee1\"></oer-include>"
+}

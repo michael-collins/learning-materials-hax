@@ -1,0 +1,23 @@
+{
+  "id": "item-cd4cf581-1ec1-431d-877d-bad425be4732",
+  "indent": 4,
+  "location": "pages/item-cd4cf581-1ec1-431d-877d-bad425be4732/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/activities/daily-design-journal-report-in",
+  "order": 1,
+  "parent": "item-c986abcf-e6c3-4aeb-b914-f2ddb3931cb1",
+  "title": "Daily design journal: Report in",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:exercise",
+    "oerRef": {
+      "page": "item-3fefc2f4-3534-4ef9-afd3-1b4478db761a",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-3fefc2f4-3534-4ef9-afd3-1b4478db761a\"></oer-include>"
+}

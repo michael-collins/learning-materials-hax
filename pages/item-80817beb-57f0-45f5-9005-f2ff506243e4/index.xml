@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-80817beb-57f0-45f5-9005-f2ff506243e4</id>
+<indent>1</indent>
+<location>pages/item-80817beb-57f0-45f5-9005-f2ff506243e4/index.xml</location>
+<slug>projects/develop-test-and-review</slug>
+<order>12</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Develop: Test and review</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-2-ritual-develop-test-and-review</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
+<p>Now that your prototype is done, it is time to participate in feedback. You will be assigned a few prototypes to review. Your prototype will also be reviewed by your classmates. This is an opportunity to practice receiving and interpreting feedback. A critique of your work might be stressful at first, but it is one of the most common, and useful processes in design.</p>
+<h2>Instructions</h2>
+<ol>
+<li><strong>Provide feedback</strong> to your assigned prototypes based on the following criteria:
+<ol>
+<li>Are you able to clearly understand the relationship between the app and the ritual? Why or why not?</li>
+<li>Does the app seem integral to the ritual? Why?</li>
+<li>What affordances does that app provide for a typical user.</li>
+</ol>
+</li>
+<li><strong>Read the feedback you have been given.</strong> To plan a course of action, you can categorize what was said in four categories: compliment, advice, criticism, and suggestion. Based on which category the feedback lands, you can analyze how to make decisions to improve your work.</li>
+</ol>
+<h2>Post work</h2>
+<p>Use the file format indicated in each step. You must obtain prior approval to deviate from these upload requirements. Please check that your work has uploaded properly.</p>
+<ol>
+<li>Post the corresponding feedback to your assigned feedback group member's assignment submission as a <strong>comment</strong>.</li>
+</ol>
+]]></content>
+</item>

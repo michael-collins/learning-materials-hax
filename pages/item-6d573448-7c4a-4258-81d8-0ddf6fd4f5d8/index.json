@@ -1,0 +1,23 @@
+{
+  "id": "item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8",
+  "indent": 3,
+  "location": "pages/item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8/index.json",
+  "slug": "books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers",
+  "order": 0,
+  "parent": "item-2e61b638-0bbe-4708-a00a-c523bcbb229c",
+  "title": "3D Modeling Fundamentals: A fundamental shift in how we do things virtually using computers.",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:lesson",
+    "oerRef": {
+      "page": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-d05396b9-88a6-4631-821f-40a2e9bd2d4f\"></oer-include>"
+}

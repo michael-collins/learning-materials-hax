@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3d6a9cc7-0fd9-4fe9-a635-19c83f02aa6a</id>
+<indent>4</indent>
+<location>pages/item-3d6a9cc7-0fd9-4fe9-a635-19c83f02aa6a/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/develop-hypertext-narrative-draft-1</slug>
+<order>6</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Develop: Hypertext narrative draft 1</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-bc888232-5ba0-4e0f-8f9f-aaede98186f4</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-bc888232-5ba0-4e0f-8f9f-aaede98186f4"></oer-include>]]></content>
+</item>

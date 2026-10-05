@@ -1,0 +1,35 @@
+id: item-416007a1-e0d5-49fa-975d-733cf40bc979
+indent: 1
+location: pages/item-416007a1-e0d5-49fa-975d-733cf40bc979/index.yaml
+slug: lessons/vfx-compositing-integration
+order: 32
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: VFX Compositing Integration
+description: ''
+metadata:
+  published: true
+  pageType: oer:lesson
+  oerSource: lessons/vfx-compositing-integration
+  oerFields:
+    estimatedDuration: 4 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Integrate simulated elements with footage
+      - Match lighting and atmosphere
+      - Add motion blur and depth effects
+      - Create realistic shadows and reflections
+      - Finalize VFX shots for delivery
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Master the integration of VFX elements with live-action footage, creating
+  seamless and believable final composites.</p>

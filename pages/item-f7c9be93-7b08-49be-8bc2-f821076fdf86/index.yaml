@@ -1,0 +1,20 @@
+id: item-f7c9be93-7b08-49be-8bc2-f821076fdf86
+indent: 4
+location: pages/item-f7c9be93-7b08-49be-8bc2-f821076fdf86/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/develop-test-and-review
+order: 9
+parent: item-37f45e8c-1f67-44cf-8615-146707d362e4
+title: 'Develop: Test and review'
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerRef:
+    page: item-b7e2e6b6-c048-4180-a444-65a7ebe3c9bd
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-b7e2e6b6-c048-4180-a444-65a7ebe3c9bd"></oer-include>

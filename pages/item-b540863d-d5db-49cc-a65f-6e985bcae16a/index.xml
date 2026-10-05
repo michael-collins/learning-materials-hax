@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b540863d-d5db-49cc-a65f-6e985bcae16a</id>
+<indent>1</indent>
+<location>pages/item-b540863d-d5db-49cc-a65f-6e985bcae16a/index.xml</location>
+<slug>resources/jun-seo-hahm</slug>
+<order>17</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Jun Seo Hahm</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/jun-seo-hahm</oerSource>
+<oerFields>
+<url>https://vimeo.com/junseohahm</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

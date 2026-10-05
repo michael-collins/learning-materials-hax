@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8f6e21d6-8025-49d0-b6a7-a5900e694661</id>
+<indent>1</indent>
+<location>pages/item-8f6e21d6-8025-49d0-b6a7-a5900e694661/index.xml</location>
+<slug>resources/dave-fothergill</slug>
+<order>8</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Dave Fothergill</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/dave-fothergill</oerSource>
+<oerFields>
+<url>https://vimeo.com/davefothergillvfx</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

@@ -1,0 +1,25 @@
+{
+  "id": "item-d731963f-657a-4bef-adcd-f7641aea2b81",
+  "indent": 1,
+  "location": "pages/item-d731963f-657a-4bef-adcd-f7641aea2b81/index.json",
+  "slug": "resources/cg-bookcase",
+  "order": 25,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "CG Bookcase",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/cg-bookcase",
+    "tags": "textures",
+    "oerFields": {
+      "url": "https://www.cgbookcase.com/",
+      "kind": "assets"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

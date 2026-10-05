@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-61dc6c26-b78f-401d-b97e-1643d2da165f</id>
+<indent>2</indent>
+<location>pages/item-61dc6c26-b78f-401d-b97e-1643d2da165f/index.xml</location>
+<slug>books/dmd-400-digital-multimedia-design-capstone/concept-development</slug>
+<order>3</order>
+<parent>item-ce739bdb-84f3-4797-9b76-5f951decba4e</parent>
+<title>Concept development</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-d9386bc1-22ed-4191-9217-77ca2e1bb40d</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d9386bc1-22ed-4191-9217-77ca2e1bb40d"></oer-include>]]></content>
+</item>

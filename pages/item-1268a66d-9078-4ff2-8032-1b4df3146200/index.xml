@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1268a66d-9078-4ff2-8032-1b4df3146200</id>
+<indent>4</indent>
+<location>pages/item-1268a66d-9078-4ff2-8032-1b4df3146200/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-3-intermediate-skills/texturing-and-uv-mapping/introduction-to-texturing</slug>
+<order>0</order>
+<parent>item-dc519d2c-b7e7-40de-a82b-21dac90dc77c</parent>
+<title>Introduction to Texturing</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lecture</pageType>
+<oerRef>
+<page>item-be2fc5ef-ba1f-484b-be6a-2216a24314a2</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-be2fc5ef-ba1f-484b-be6a-2216a24314a2"></oer-include>]]></content>
+</item>

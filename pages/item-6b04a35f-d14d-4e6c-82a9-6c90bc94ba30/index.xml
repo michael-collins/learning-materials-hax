@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30</id>
+<indent>1</indent>
+<location>pages/item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30/index.xml</location>
+<slug>projects/phase-1-gather-and-organize</slug>
+<order>46</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Phase 1: Gather and organize</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd300-project-1-phase-1-gather-and-organize</oerSource>
+<tags>project-deliverable,Group Project</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 300</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Communicate with your team and begin to brainstorm and establish a schedule or routine.</p>
+<p>Synchronous meetings can be very productive and are recommended for weekly check-ins with your group, but you can communicate with asynchronous text chat, or a combination, if you wish.</p>
+<h2>Recommended Tools</h2>
+<h3>Teams</h3>
+<p>Microsoft Teams solves many of the problems inherent in remote collaboration, and it’s included with your Penn State account.</p>
+<p>From your <a href="https://office365.psu.edu/">Microsoft 365 homepage</a>, select “Teams” and create a new Team:</p>
+<ol>
+<li>For the Template, choose “Other”</li>
+<li>For Privacy, choose “Private”</li>
+<li>Then add the emails of your partners to invite them to the Team.</li>
+</ol>
+<p>💬  Teams provides text chatting similar to Discord or Slack. You can respond to messages later, and review the history of your conversations.</p>
+<p>🧑‍💻  It also provides video conferencing similar to Zoom, including the ability to schedule a meeting with calendar events.</p>
+<p>🤝 It also gives you a place to share files, similar to Google Drive.</p>
+<p>📫 You can also privately message your instructor through Teams.</p>
+<h3>Figma</h3>
+<p>If you don’t have an account already, sign up for a <a href="https://www.figma.com/education/">free Education account</a> with Figma. This browser-based app lets you create two types of files:</p>
+<ul>
+<li><strong>FigJam files</strong>: Simple whiteboards for brainstorming and collecting images or links.</li>
+<li><strong>Design files</strong>: A more robust vector-based design tool for creating designs, interactions, and more.</li>
+</ul>
+<p>Figma is a popular choice for designing screen interfaces, but can be valuable for other project types as well, as it has great synchronous and asynchronous collaboration features.</p>
+<p>In a Design file, you can create multiple pages to organize different aspects of your project.</p>
+<p>You can even add Figma files as “tabs” in your Microsoft Team for easy access! Just click the ➕ plus button and search for Figma among compatible apps.</p>
+<p><img src="files/teams-screenshot.png" alt="Screenshot of Teams"></p>
+<h2>Create a Brainstorm document</h2>
+<p>Each group should prepare a brainstorm document using one of the following templates. This will help you share reactions to the prompt and articulate your interests, goals, and strengths.</p>
+<p>You can do this with either the visual whiteboard app FigJam (recommended) or a traditional text document.</p>
+<h3>FigJam (recommended)</h3>
+<p>For this option, you will need a Figma account (see above).</p>
+<p>View the <a href="https://www.figma.com/file/W5D1eDy4z4QJsIVHap8dfn/Group-Project-Brainstorm?type=whiteboard&amp;node-id=0%3A1&amp;t=bDFMwS76BJMRP5Nh-1">FigJam template file</a> (external link) and duplicate it to create your own copy (click the little 🔽&nbsp;arrow next to the filename or right-click the file in your dashboard).</p>
+<p>Then invite your teammates to the file or <a href="https://help.figma.com/hc/en-us/articles/1500007609322-Guide-to-sharing-and-permissions">send them a share link</a> with editing enabled.</p>
+<p>This file uses the simplified <a href="https://help.figma.com/hc/en-us/articles/15300412458647">FigJam</a> app, which is distinct from <a href="https://help.figma.com/hc/en-us/articles/15297425105303">Figma design files</a>. As you continue the project, you may want to create a Figma design file and collaborate with your peers on visual designs, interactive prototypes, and more. Within a single file, you can create multiple <a href="https://help.figma.com/hc/en-us/articles/360038511293-Create-and-manage-pages">pages</a> to organize your work. Groups have had success with this workflow in the past because it lets you keep everything in one place and easily comment and collaborate.</p>
+<p>Read more about <a href="https://help.figma.com/hc/en-us/sections/1500000700042-Meeting-tools">Figma's meeting tools</a>, including synchronous cursor chat, voting, timers, and asynchronous comments. Timers can be helpful to add structure and deadlines to your meetings, using the <a href="https://todoist.com/productivity-methods/pomodoro-technique">Pomodoro technique</a> to, for example, spend 10 minutes naming movies that could influence your animation project, or sketching logo ideas for a brand.</p>
+<h3>Text document (alternative)</h3>
+<p>If you would prefer not to use Figma, download the <a href="https://pennstateoffice365.sharepoint.com/:w:/s/SoVAOnlineFacultyHub/ER-a75XK4thJriG0RKIMa8EBGpVC9cVhdq2AMZU0XkDz5A?e=Q1Y5Y4">Word template file</a> (external link) and edit it as desired. You can paste the text into another text app like Google Docs or Notion, or edit the Word doc in the cloud through your PSU Microsoft account. Just make sure everyone can edit the file.</p>
+<h2>Submission</h2>
+<p>You will submit a file or share link to your instructor, but feel free to continue using this document throughout the project or to expand it as desired.</p>
+]]></content>
+</item>

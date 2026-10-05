@@ -1,0 +1,23 @@
+{
+  "id": "item-c9024ea7-b4ff-48c1-b3d9-a56dd29663c6",
+  "indent": 4,
+  "location": "pages/item-c9024ea7-b4ff-48c1-b3d9-a56dd29663c6/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/listen/99-percent-invisible-of-mice-and-men",
+  "order": 0,
+  "parent": "item-6ebb6609-d47b-4807-a3eb-495dd02e6c1d",
+  "title": "99 Percent Invisible: Of Mice and Men",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-bbac8772-ac40-4198-a462-95fa370ea03f",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-bbac8772-ac40-4198-a462-95fa370ea03f\"></oer-include>"
+}

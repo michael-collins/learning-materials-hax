@@ -1,0 +1,237 @@
+id: item-288bd29f-6420-4173-806c-d13a5189ba1a
+indent: 1
+location: pages/item-288bd29f-6420-4173-806c-d13a5189ba1a/index.yaml
+slug: projects/work-statement
+order: 44
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: Work Statement
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd300-design-project-2-project-2-work-statement
+  tags: project-deliverable
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 300
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Develop a 150–500 word work statement that thoughtfully employs relevant
+  and critical art and design language. This statement should be developed with
+  feedback from your instructor to adjust tone, terminology, and structure. You
+  will use MS Word tracked changes to refine and edit the statement over the
+  duration of the project.</p>
+
+  <p>The statement's use of language should seek a balance of accurate technical
+  terminology, concise statements about the work, and language that is
+  accessible to a diverse audience and is wholly descriptive. It is easy for
+  artists and designers to adopt opaque language when attempting to describe
+  abstract works. Developing playful language can be a fun exercise, but has the
+  tendency to confuse or shut out those with-out a strong grasp of obscure and
+  creatively applied vocabulary. There are really no rules with how language is
+  used, but ultimately the goal in a work statement is that the artist or
+  designer can clearly communicate their ideas, processes, and outcomes to a
+  wide audience.</p>
+
+  <p>👉 Write your statement in the <strong>past tense</strong>, as if the
+  project is complete. Imagine it as the plaque on the museum wall or a
+  published portfolio blurb.</p>
+
+  <h2>Structure of the work statement</h2>
+
+  <p>Please write the statement using proper grammar, sentence structure, and
+  with complete paragraphs. Do not include the requirements as sections, the
+  writing should flow as a single description of your project.</p>
+
+  <ol>
+
+  <li>Include your name, project title, semester and year (IE – Fall 2022).</li>
+
+  <li>Explain what the project is and how it works.
+
+  <ul>
+
+  <li>E.g. "This project is an online game for children that teaches players
+  living in war-torn countries how to avoid landmines."</li>
+
+  </ul>
+
+  </li>
+
+  <li>Describe the type of media used and why that choice is effective or
+  interesting.</li>
+
+  <li>Describe the design challenge that your work addresses (the provocation,
+  or existing problem you hope to tackle). Do not write about challenges <em>you
+  personally had</em> in producing the work.</li>
+
+  <li>Describe the process or how you approached solving for the design
+  challenge.</li>
+
+  <li>Describe the impact the work might have, the context in which it sits, why
+  it's interesting, etc.</li>
+
+  </ol>
+
+  <h3>Statement writing advice</h3>
+
+  <ul>
+
+  <li><a href="https://www.gyst-ink.com/artist-statement-guidelines">Artist
+  Statement Guidelines</a></li>
+
+  <li><a
+  href="https://www.uncsa.edu/admissions/how-to-write-an-artistic-statement/">UNSCA</a></li>
+
+  </ul>
+
+  <h3>Helpful terminology</h3>
+
+  <ul>
+
+  <li><a href="https://www.moma.org/learn/moma_learning/glossary/">Moma Art
+  Glossary</a></li>
+
+  <li><a
+  href="https://99designs.com/blog/tips/15-descriptive-design-words-you-should-know/">Technical
+  Design Terminology</a></li>
+
+  <li><a href="https://www.uni-due.de/ELE/LinguisticGlossary.html">Linguistic
+  Glossary</a></li>
+
+  <li><a
+  href="http://www.criticalthinking.org/pages/glossary-of-critical-thinking-terms/496">Critical
+  thinking terms</a></li>
+
+  <li><a href="http://artspeak.wtf/artists-statement/">Example of a needlessly
+  complex statement and it's translation</a></li>
+
+  </ul>
+
+  <h3>Artspeak</h3>
+
+  <ul>
+
+  <li><a
+  href="https://www.canopycanopycanopy.com/contents/international_art_english">International
+  Art English</a></li>
+
+  <li><a
+  href="https://www.e-flux.com/journal/45/60100/international-disco-latin/">International
+  Disco Latin</a></li>
+
+  <li><a href="https://artspeak.wtf/">artspeak.wtf</a></li>
+
+  <li><a
+  href="https://www.theguardian.com/artanddesign/2013/jan/27/users-guide-international-art-english">The
+  Guardian: A user's guide to artspeak</a></li>
+
+  </ul>
+
+  <h3>Artist Statements</h3>
+
+  <p>The Work Statement is specifically about this project, but artist
+  statements are a helpful analog. These are short, pithy statements that
+  summarize an artist's entire body of work. Good ones minimize "artspeak"
+  (above) in favor of intimate and provocative accompaniments to their work.</p>
+
+  <ul>
+
+  <li><a
+  href="https://thecreativeindependent.com/guides/how-to-write-an-artist-statement/">How
+  to Write an Artist Statement</a></li>
+
+  <li><a href="https://www.gyst-ink.com/sample-artist-statements">Sample Artist
+  Statements</a></li>
+
+  <li><a
+  href="https://www.theartleague.org/blog/2015/08/24/8-artist-statements-we-love/">Artist
+  Statements We Love</a></li>
+
+  </ul>
+
+  <h2>Example of Student Work</h2>
+
+  <p>View a <a
+  href="https://dmd-program.github.io/dmd-300-master/assets/sample-work-statment.pdf">sample
+  work statement (pdf)</a> from a previous student.</p>
+
+  <h2>AI-Assisted Revision</h2>
+
+  <p>As you explore the use of AI in design, it's worth seeing how AI can help
+  us with writing too.</p>
+
+  <p>Algorithms are not very interesting; they don't know what you know, and
+  they don't care about anything. But they are really good at regurgitating the
+  writing style of other people into a sort of average result. And you can
+  iterate and guide an AI to give you more interesting results, possibly editing
+  its suggestions into your own writing. This can be help align your writing
+  with the conventions and language of a particular industry.</p>
+
+  <p>For one draft of your Work Statement, you should use an AI assistant to
+  revise the text or generate feedback.</p>
+
+  <p>Use one of the AI resources listed under the Text section of the <a
+  href="/projects/dmd300-design-project-2-project-2-project-description">Resources
+  page</a>.</p>
+
+  <p>You can paste your entire statement into one of the tools, and say
+  something like:</p>
+
+  <ul>
+
+  <li>"Give me feedback on this design statement, considering writing style,
+  clarity of ideas, and professional context."</li>
+
+  <li>"Rewrite the following text in the style of a UX case study."</li>
+
+  </ul>
+
+  <p>Or you can start from scratch to see what it generates; this will produce
+  something super generic and lacking important details about <em>your</em>
+  work, but the language and structure may be useful reference:</p>
+
+  <ul>
+
+  <li>"Write an artist statement for someone who makes digital photo-collages of
+  body parts."</li>
+
+  </ul>
+
+  <p>👉 <strong>Remember:</strong> You are the primary author! Your voice and
+  ideas are paramount, and the AI is here as your editor. You shouldn't submit
+  the AI-generated text without editing it somewhat yourself, or integrating its
+  suggestions into your original draft.</p>
+
+  <h2>Submission details:</h2>
+
+  <ul>
+
+  <li>Upload the work statement as an MS Word Document to Canvas as indicated
+  deadlines.</li>
+
+  <li>For the AI-Assisted Draft:
+
+  <ul>
+
+  <li>Identify which AI program you used</li>
+
+  <li>Include your prompts</li>
+
+  <li>Include a brief reflection on the use of AI, such as describing its
+  strengths and weaknesses, or what percentage of the writing is yours vs. the
+  AI's.</li>
+
+  </ul>
+
+  </li>
+
+  </ul>

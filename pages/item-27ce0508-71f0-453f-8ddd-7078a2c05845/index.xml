@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-27ce0508-71f0-453f-8ddd-7078a2c05845</id>
+<indent>4</indent>
+<location>pages/item-27ce0508-71f0-453f-8ddd-7078a2c05845/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/readings/chapter-11-jefferson-s-gravestone</slug>
+<order>0</order>
+<parent>item-2e49471e-8c7e-46a8-9e6f-2718e018f6f4</parent>
+<title>Chapter 11. Jefferson&apos;s Gravestone...</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-52a9bf42-9056-4eea-9daf-4bdde7ce0820</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-52a9bf42-9056-4eea-9daf-4bdde7ce0820"></oer-include>]]></content>
+</item>

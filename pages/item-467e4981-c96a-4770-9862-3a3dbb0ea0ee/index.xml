@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-467e4981-c96a-4770-9862-3a3dbb0ea0ee</id>
+<indent>1</indent>
+<location>pages/item-467e4981-c96a-4770-9862-3a3dbb0ea0ee/index.xml</location>
+<slug>resources/universal-everything</slug>
+<order>32</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Universal Everything</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/universal-everything</oerSource>
+<oerFields>
+<url>https://www.universaleverything.com/</url>
+<kind>collective</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

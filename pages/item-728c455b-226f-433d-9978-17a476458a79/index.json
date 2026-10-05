@@ -1,0 +1,30 @@
+{
+  "id": "item-728c455b-226f-433d-9978-17a476458a79",
+  "indent": 1,
+  "location": "pages/item-728c455b-226f-433d-9978-17a476458a79/index.json",
+  "slug": "pathways/fundamentals",
+  "order": 13,
+  "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+  "title": "Fundamentals",
+  "description": "",
+  "metadata": {
+    "published": false,
+    "pageType": "oer:pathway",
+    "oerSource": "pathways/fundamentals",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-pathway layout=\"matrix\"></oer-pathway>\n<p>The essentials.</p>\n<h2>Learning Objectives</h2>\n<p>objective example</p>\n<h2>Examples</h2>\n<ul>\n<li>Example artist or studio</li>\n</ul>\n<h2>Specializations</h2>\n<p>This pathway includes the following specializations:</p>\n"
+}

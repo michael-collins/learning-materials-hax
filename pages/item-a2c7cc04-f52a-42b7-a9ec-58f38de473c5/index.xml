@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a2c7cc04-f52a-42b7-a9ec-58f38de473c5</id>
+<indent>4</indent>
+<location>pages/item-a2c7cc04-f52a-42b7-a9ec-58f38de473c5/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/discover-word-pairs</slug>
+<order>2</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Discover: Word-pairs</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-660502fe-b30c-4d64-a0df-044709246b35</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-660502fe-b30c-4d64-a0df-044709246b35"></oer-include>]]></content>
+</item>

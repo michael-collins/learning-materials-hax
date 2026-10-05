@@ -1,0 +1,152 @@
+id: item-eb78596e-c7e0-4001-a35d-0877a9d4962d
+indent: 1
+location: pages/item-eb78596e-c7e0-4001-a35d-0877a9d4962d/index.yaml
+slug: projects/project-advisor
+order: 53
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: Project advisor
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd400-capstone-project-advisor
+  tags: project-deliverable
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 400
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Capstone projects require one or more project advisors. You should meet
+  with this advisor at minimum <strong>three times</strong> throughout the
+  development of the capstone project. A project advisor can play a crucial role
+  in your project's development. While your instructors are often able to
+  provide insight into the majority of your project's challenges, having
+  feedback from someone working in the industry can give you more nuanced and
+  accurate perspectives, more up-to-date expectations, and pointed notes for
+  improvement. You can also use this opportunity to start building your
+  professional network, which makes future employment in the your creative field
+  of choice far easier.</p>
+
+  <p>Seeking out professionals in the field who are open to working with
+  students can be challenging. Often if students are not successful, the
+  capstone instructor may be able to provide a connection through their own
+  professional network. Sometimes students have someone already in their own
+  network, and sometimes students reach out to people they do not yet know
+  (LinkedIn or social media are great places for this). PSU faculty are often
+  available to act as project advisors as well, though they should be thought of
+  as a last resort.</p>
+
+  <p>While it would be nice to assume the everyone in the professional world
+  will be respectful and trustworthy, communicating with strangers that have not
+  been vetted can come with some risk. Please let your instructor know of any
+  issues that might arise. Some project advisors will give you very honest
+  (sometimes brutal) and direct feedback. Being able to listen and receive,
+  interpret, and apply feedback to your own work is part of the job of being a
+  design professional.</p>
+
+  <p>For students creating work for a realworld client, <strong>your client
+  should not be your advisor.</strong></p>
+
+  <p>A non-designer subject matter expert could potentially work — for example a
+  biologist if you are making a zine about marine animals — but a designer in
+  your field would be preferred.</p>
+
+  <p>Synchronous meetings over video chat or in person are preferred, but
+  asynchronous chats or emails can also be acceptable.</p>
+
+  <h2>Notes and Reporting</h2>
+
+  <p>You will be required to show evidence of your meetings later in this class,
+  so keep notes for each meeting and be prepared to show evidence of your
+  correspondence to your instructor (e.g. screenshots, shared files, etc.)</p>
+
+  <h2>Places to search for a project advisor</h2>
+
+  <ul>
+
+  <li><a href="https://www.linkedin.com/groups/12200300/">The DMD LinkedIn
+  Alumni Group</a>
+
+  <ul>
+
+  <li>Request to join if you are not already a member</li>
+
+  </ul>
+
+  </li>
+
+  <li>LinkedIn.com</li>
+
+  <li><a
+  href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYveFAl_GuvBo0iuy3EvgPm0fWAGci-Z8e5CZ6hoYz9n8gcoK4dgE0RML-x0pWqRNjGqte-V7phtqB/pubhtml">List
+  of Game Development professionals</a>
+
+  <ul>
+
+  <li>(3D art, audio, animation, art direction, character art, concept art,
+  story, production, VFX, programming, MoCap, lighting, level design,
+  environment artist, engineering, tech art, UI design, writing, etc.)</li>
+
+  </ul>
+
+  </li>
+
+  <li>Capstone instructor's professional network</li>
+
+  <li>DMD or other Penn State Faculty</li>
+
+  <li>Communities of practice (Facebook groups, forums, ArtStation.com,
+  Behance.net, core77.com, etc.)</li>
+
+  <li>Social Media connections or accounts you admire</li>
+
+  <li>Professional membership community chapters</li>
+
+  <li><a href="https://www.aiga.org/">AIGA</a></li>
+
+  <li><a href="https://www.siggraph.org/">ACM SIGGRAPH</a></li>
+
+  <li><a href="https://www.idsa.org/">IDSA</a></li>
+
+  <li><a href="https://adplist.org/">ADP List</a></li>
+
+  </ul>
+
+  <h2>Sending an email or direct message</h2>
+
+  <p>Here is an example of an email that you could write to someone to try to
+  elicit their feedback. I would recommend rewriting this in your own voice and
+  writing style.</p>
+
+  <pre><code>Dear [the name of the person],
+
+
+  I am a student in the Penn State Digital Multimedia Design capstone 
+
+  course, and I am developing a project this semester that I was hoping 
+
+  to get your perspective on. I am making a [type of media] project that
+
+  focuses on [why you are making the project]. Given your background
+
+  and expertise, your input would be really beneficial. I would love
+
+  the opportunity to discuss my project with you if you are interested.
+
+  Thanks so much for your time.
+
+
+  Sincerely,
+
+  [yournamehere]
+
+
+  </code></pre>

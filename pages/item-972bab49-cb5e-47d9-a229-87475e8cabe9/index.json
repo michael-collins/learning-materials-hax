@@ -1,0 +1,24 @@
+{
+  "id": "item-972bab49-cb5e-47d9-a229-87475e8cabe9",
+  "indent": 1,
+  "location": "pages/item-972bab49-cb5e-47d9-a229-87475e8cabe9/index.json",
+  "slug": "resources/cool-3d-world",
+  "order": 7,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Cool 3D World",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/cool-3d-world",
+    "oerFields": {
+      "url": "https://cool3dworld.com/",
+      "kind": "artist"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

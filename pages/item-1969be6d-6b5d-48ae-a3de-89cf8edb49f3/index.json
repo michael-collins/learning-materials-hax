@@ -1,0 +1,23 @@
+{
+  "id": "item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3",
+  "indent": 3,
+  "location": "pages/item-1969be6d-6b5d-48ae-a3de-89cf8edb49f3/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects/project-2-independent-design-project",
+  "order": 1,
+  "parent": "item-52f4f50f-0c7d-48a8-adca-c64310cc050a",
+  "title": "Project 2: Independent Design Project",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-bbb355e1-9389-4c9f-9a74-a939b2421c92",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-bbb355e1-9389-4c9f-9a74-a939b2421c92\"></oer-include>"
+}

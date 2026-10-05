@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6cb6c229-dfbe-4948-a618-ee25655ffb19</id>
+<indent>1</indent>
+<location>pages/item-6cb6c229-dfbe-4948-a618-ee25655ffb19/index.xml</location>
+<slug>lessons/character-rigging</slug>
+<order>14</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Character Rigging</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/character-rigging</oerSource>
+<oerFields>
+<estimatedDuration>5 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand rigging concepts and terminology</item>
+<item>Create bone structures for characters</item>
+<item>Set up IK and FK controls</item>
+<item>Build custom control shapes</item>
+<item>Test and refine rig functionality</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Develop skills in character rigging, learning how to create control systems that allow animators to pose and animate characters efficiently.</p>
+]]></content>
+</item>

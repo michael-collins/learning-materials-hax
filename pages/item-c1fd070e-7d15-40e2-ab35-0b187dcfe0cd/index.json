@@ -1,0 +1,34 @@
+{
+  "id": "item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd",
+  "indent": 1,
+  "location": "pages/item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd/index.json",
+  "slug": "projects/discover-toy-design-research",
+  "order": 36,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Discover: Toy design research",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-4-open-design-discover-toy-design-research",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-discover-1200px@2x.png\" alt=\"Double Diamond Discover Phase graphic\"></p>\n<p>This assignment will ask you to explore and explain some aspects the existing market for toys. To do this, first research toys on the Internet and in person at stores. You will create a presentation of your findings to help others understand how modular kits work.</p>\n<h2>Presentation</h2>\n<h3>Requirements</h3>\n<p>You will produce a presentation with the following elements:</p>\n<ol>\n<li>Title Page\n<ol>\n<li>Toy Research</li>\n<li>By: YOUR NAME</li>\n<li>Date</li>\n</ol>\n</li>\n<li>Definition\n<ol>\n<li>What exactly are toys and what are they for?</li>\n</ol>\n</li>\n<li>What toy categories did you find? You can identify your own categories. Please include at least four categories.\n<ol>\n<li>Category name (you can invent this if there isn't a good one)</li>\n<li>What materials are the toys made from?</li>\n<li>Who are the intended users?</li>\n</ol>\n</li>\n</ol>\n<p>Include between 6 to 20 slides. Pease include images where possible.</p>\n<h3>Exporting to a PDF format</h3>\n<p><strong>Tutorials for software applications:</strong></p>\n<ul>\n<li><a href=\"https://www.youtube.com/watch?v=D1WhvsQeY6w\">Google Slides</a></li>\n<li><a href=\"https://support.office.com/en-US/article/Save-PowerPoint-presentations-as-PDF-files-9B5C786B-9C6E-4FE6-81F6-9372F77C47C8\">Microsoft Powerpoint</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=AkWqdqOUUjk\">Keynote</a></li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>Conduct desktop and field research of toy kits and models. Investigate websites that sell toys and visit physical toy and hobby stores.</li>\n<li>Produce the presentation according to the presentation requirements and export it to PDF format.</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>\n<ol>\n<li>Upload an exported <code>.pdf</code> file of the presentation.</li>\n</ol>\n"
+}

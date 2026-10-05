@@ -1,0 +1,20 @@
+id: item-761aaa1f-cf44-4ac5-a4ba-4b5eeec33a4a
+indent: 4
+location: pages/item-761aaa1f-cf44-4ac5-a4ba-4b5eeec33a4a/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/topics/systems-thinking
+order: 2
+parent: item-c539b3d9-1ca7-4c2b-89a1-6dc9a50cf4c5
+title: Systems thinking
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-327aaada-40fa-4c3e-8d55-097afc080724
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-327aaada-40fa-4c3e-8d55-097afc080724"></oer-include>

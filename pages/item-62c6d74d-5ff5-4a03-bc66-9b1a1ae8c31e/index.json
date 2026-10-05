@@ -1,0 +1,23 @@
+{
+  "id": "item-62c6d74d-5ff5-4a03-bc66-9b1a1ae8c31e",
+  "indent": 4,
+  "location": "pages/item-62c6d74d-5ff5-4a03-bc66-9b1a1ae8c31e/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/topics/critical-design",
+  "order": 3,
+  "parent": "item-8d24c121-2ffd-442f-9d30-d5da6d3f2565",
+  "title": "Critical design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-9e30fd01-62ab-45ce-9bc0-841e0739e8af",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-9e30fd01-62ab-45ce-9bc0-841e0739e8af\"></oer-include>"
+}

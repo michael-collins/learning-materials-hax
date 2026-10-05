@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b222a21e-edeb-4812-ae00-6e067bae2888</id>
+<indent>4</indent>
+<location>pages/item-b222a21e-edeb-4812-ae00-6e067bae2888/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/discover-interview</slug>
+<order>2</order>
+<parent>item-37f45e8c-1f67-44cf-8615-146707d362e4</parent>
+<title>Discover: Interview</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-8a7ed1a0-1421-4db0-a304-2ec75c6821c9</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-8a7ed1a0-1421-4db0-a304-2ec75c6821c9"></oer-include>]]></content>
+</item>

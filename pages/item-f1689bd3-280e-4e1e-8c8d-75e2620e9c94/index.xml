@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94</id>
+<indent>1</indent>
+<location>pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.xml</location>
+<slug>articles/the-design-of-private-knowledge</slug>
+<order>67</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>The Design of Private Knowledge</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerSource>articles/dmd100-lesson-5-readings-chapter-15-the-design-of-private-knowledge</oerSource>
+<tags>reading</tags>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<date>2026-03-01</date>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert Grudin</p>
+<h2>Prompt</h2>
+<p>In this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experience into a narrative for the purpose of understanding the world and healing from a traumatic event. He also posits that subjectivity (bias) is a form of unconscious design. Narratives help us confront bias, assumptions, and preconceptions. Think of a time when you had to confront a bias of your own. Describe the event. Who was involved and what did you learn?</p>
+<h2>Writing guidelines</h2>
+<ol>
+<li>Length: (150-300 words)</li>
+<li>Reference the chapter content whenever possible</li>
+<li>Cite sources where applicable.</li>
+<li>Check for spelling and grammar.</li>
+<li>Avoid generalizing language. Choose clear and concise wording.</li>
+</ol>
+<h2>AI Policy</h2>
+<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>
+<p>&lt;a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" title="AIUL AIUL-NA-WR License: Not Allowed for Writing" target="_blank" rel="license"&gt;
+&lt;img alt="AIUL-NA-WR - Not Allowed for Writing" src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png" style="border-width:0; max-width:170px;" /&gt;
+&lt;/a&gt;
+&lt;br /&gt;
+Please see the &lt;a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" target="_blank" rel="license"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>
+]]></content>
+</item>

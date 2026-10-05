@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</id>
+<indent>0</indent>
+<location>pages/item-9c0d46bc-d931-4e43-94e4-a96f09bc3165/index.xml</location>
+<slug>articles</slug>
+<order>6</order>
+<parent></parent>
+<title>Articles</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:section</pageType>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Readings: background, context and reference for the lessons.</p>
+<oer-collection types="oer:article" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+</item>

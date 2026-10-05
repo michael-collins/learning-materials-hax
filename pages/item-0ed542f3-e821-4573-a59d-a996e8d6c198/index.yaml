@@ -1,0 +1,25 @@
+id: item-0ed542f3-e821-4573-a59d-a996e8d6c198
+indent: 1
+location: pages/item-0ed542f3-e821-4573-a59d-a996e8d6c198/index.yaml
+slug: projects/tutorials
+order: 26
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: Tutorials
+description: ''
+metadata:
+  published: true
+  pageType: oer:project
+  oerSource: projects/dmd100-lesson-3-narrative-tutorials
+  oerFields:
+    difficulty: intermediate
+    courses:
+      - DMD 100
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <p></p>

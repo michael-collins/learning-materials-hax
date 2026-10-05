@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3526fb1a-19c1-496f-bf6c-e853d59962c8</id>
+<indent>3</indent>
+<location>pages/item-3526fb1a-19c1-496f-bf6c-e853d59962c8/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-4-advanced-topics/digital-sculpting</slug>
+<order>0</order>
+<parent>item-c6e347ab-3d18-4b55-bbb7-e323d71a9704</parent>
+<title>Digital Sculpting</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerRef>
+<page>item-f783c8df-d3f9-4ec8-a056-501da8e75a61</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f783c8df-d3f9-4ec8-a056-501da8e75a61"></oer-include>]]></content>
+</item>

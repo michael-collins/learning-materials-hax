@@ -1,0 +1,72 @@
+id: item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1
+indent: 1
+location: pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.yaml
+slug: exercises/modeling-a-chavet-121-series-no-6-knight
+order: 31
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a Chavet 121 series no 6 Knight
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-chavet-121-series-no-6-knight
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: >-
+      files/recOJrvzE8GWdElPz_image_The_One_Called_Michael_Chavet_121_series_no_6_HORSE.png
+    imageAlt: The One Called Michael Chavet 121 series no 6 HORSE.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: 'Chavet 121 series no 6: Knight '
+        url: >-
+          files/recXzR8dSoAygYDHC_attachment_The_One_Called_Michael_Chavet_121_series_no_6.jpeg
+        description: 'Chavet 121 series no 6: Knight '
+        alt: 'Chavet 121 series no 6: Knight Reference Image'
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlafOnfBirWwtx83ZQ-6K4t"
+  title="Modeling a Chavet 121 series no 6 Knight Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>Use the attached reference Image by The One Called Michael, courtesy of
+  Chess.com of a Knight from the <strong>Chavet 121 series no 6</strong>.
+
+  &lt;BR&gt;<br>
+
+  The image I used was originally found at this link:
+  https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/TheOneCalledMichael/phpKothXC.jpeg</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

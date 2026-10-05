@@ -1,0 +1,23 @@
+{
+  "id": "item-19587a6c-c75e-4ee7-acf4-fb3925af24f2",
+  "indent": 4,
+  "location": "pages/item-19587a6c-c75e-4ee7-acf4-fb3925af24f2/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/weekly-activity-reports",
+  "order": 0,
+  "parent": "item-f0bfb90e-6330-4bb9-968c-d9c8cd2f22e8",
+  "title": "Weekly activity reports",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-320ee20e-148a-405c-aa94-4f0324320328",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-320ee20e-148a-405c-aa94-4f0324320328\"></oer-include>"
+}

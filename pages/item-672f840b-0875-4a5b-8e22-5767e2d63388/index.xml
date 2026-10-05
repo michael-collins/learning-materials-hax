@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-672f840b-0875-4a5b-8e22-5767e2d63388</id>
+<indent>1</indent>
+<location>pages/item-672f840b-0875-4a5b-8e22-5767e2d63388/index.xml</location>
+<slug>lessons/open-design</slug>
+<order>20</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Open design</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/dmd100-lesson-4-open-design</oerSource>
+<oerFields>
+<courses>
+<item>DMD 100</item>
+</courses>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/open-design-img@2x.jpg" alt="Excerpt from book, Open Design Now"></p>
+<p>In this lesson, you will be learning about <strong>open design</strong>, a paradigm where design operates in a transparent, self-initiated, and collaborative environment.</p>
+<p>You will continue to practice the Double Diamond design process by creating your third course project, where you will generate a physical prototype based on some common open design principles. You will also continue reading and responding to the writing prompts for <em>Design and Truth</em> book chapters, and will have the opportunity to watch a lecture by Thomas Lommee.</p>
+]]></content>
+</item>

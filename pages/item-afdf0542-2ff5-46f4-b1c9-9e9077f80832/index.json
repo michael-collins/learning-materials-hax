@@ -1,0 +1,24 @@
+{
+  "id": "item-afdf0542-2ff5-46f4-b1c9-9e9077f80832",
+  "indent": 1,
+  "location": "pages/item-afdf0542-2ff5-46f4-b1c9-9e9077f80832/index.json",
+  "slug": "resources/alex-mcleod",
+  "order": 3,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Alex McLeod",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/alex-mcleod",
+    "oerFields": {
+      "url": "https://www.alxclub.com/",
+      "kind": "artist"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

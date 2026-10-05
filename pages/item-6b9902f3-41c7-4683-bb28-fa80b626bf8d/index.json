@@ -1,0 +1,19 @@
+{
+  "id": "item-6b9902f3-41c7-4683-bb28-fa80b626bf8d",
+  "indent": 3,
+  "location": "pages/item-6b9902f3-41c7-4683-bb28-fa80b626bf8d/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/watch",
+  "order": 2,
+  "parent": "item-bf6c6bf7-fe4b-4d03-9b45-271175d41c3f",
+  "title": "Watch",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

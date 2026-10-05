@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4380d610-85e3-4397-8379-014b1e050206</id>
+<indent>4</indent>
+<location>pages/item-4380d610-85e3-4397-8379-014b1e050206/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/project/deliver-hypertext-narrative-draft-2</slug>
+<order>9</order>
+<parent>item-a9f78351-7500-44e9-bae7-d17feec5d5df</parent>
+<title>Deliver: Hypertext narrative draft 2</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerRef>
+<page>item-df00ca1d-d577-4779-a38c-a2ceac7c25fc</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-df00ca1d-d577-4779-a38c-a2ceac7c25fc"></oer-include>]]></content>
+</item>

@@ -1,0 +1,23 @@
+{
+  "id": "item-77951686-575a-4604-9f26-382112a258c7",
+  "indent": 4,
+  "location": "pages/item-77951686-575a-4604-9f26-382112a258c7/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/develop-brainstorm",
+  "order": 5,
+  "parent": "item-37f45e8c-1f67-44cf-8615-146707d362e4",
+  "title": "Develop: Brainstorm",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerRef": {
+      "page": "item-9aaa5437-60b4-488d-9f6a-b47fb8c06c2e",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-9aaa5437-60b4-488d-9f6a-b47fb8c06c2e\"></oer-include>"
+}

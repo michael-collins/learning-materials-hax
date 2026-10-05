@@ -1,0 +1,20 @@
+id: item-c76526c0-0af0-43c0-9201-3b477a943c7a
+indent: 4
+location: pages/item-c76526c0-0af0-43c0-9201-3b477a943c7a/index.yaml
+slug: >-
+  books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics/open-design
+order: 0
+parent: item-1c0b6b79-034b-48a7-bf88-c63e8570b13d
+title: Open Design
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerRef:
+    page: item-3c4f43d5-18ea-443a-8878-490fa6212b15
+    version: ''
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: <oer-include page="item-3c4f43d5-18ea-443a-8878-490fa6212b15"></oer-include>

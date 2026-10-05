@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-79b83e78-f4be-4db1-aeb2-d2cc5429bb2d</id>
+<indent>1</indent>
+<location>pages/item-79b83e78-f4be-4db1-aeb2-d2cc5429bb2d/index.xml</location>
+<slug>lessons/projects</slug>
+<order>23</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Projects</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/dmd300-projects</oerSource>
+<tags>lesson</tags>
+<oerFields>
+<courses>
+<item>DMD 300</item>
+</courses>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<h2>Problem spaces</h2>
+<ul>
+<li>Social and cultural organization and governance</li>
+<li>Labor, business, and entrepreneurship systems</li>
+<li>Environmental and biological systems</li>
+<li>Knowledge and informating systems</li>
+<li>Food systems</li>
+<li>Health systems</li>
+</ul>
+<h2>Format</h2>
+<ul>
+<li>Documentary or historical reflection</li>
+<li>Speculative fiction</li>
+<li>Aesthetic exploration and expression</li>
+<li>Campaign or event</li>
+<li>Visual taxonomy and vocabulary</li>
+</ul>
+<h2>Media</h2>
+<ul>
+<li>Book or poster</li>
+<li>Web informative or interactive</li>
+<li>3D Interactive (Games, VR, and AR)</li>
+<li>Sound and audio</li>
+<li>Video and film</li>
+<li>Animation or Gifs</li>
+<li>Social media</li>
+</ul>
+]]></content>
+</item>

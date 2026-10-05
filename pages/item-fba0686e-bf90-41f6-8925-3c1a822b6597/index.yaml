@@ -1,0 +1,92 @@
+id: item-fba0686e-bf90-41f6-8925-3c1a822b6597
+indent: 1
+location: pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.yaml
+slug: exercises/modeling-a-diamond
+order: 33
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Modeling a Diamond
+description: ''
+metadata:
+  published: true
+  pageType: oer:exercise
+  oerSource: exercises/modeling-a-diamond
+  tags: Blender
+  oerFields:
+    difficulty: Beginner
+    image: files/rec2Od2fcMVgDSQyg_image_diamond_image.png
+    imageAlt: diamond image.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>Model a Diamond</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Qnq4fsbvQw-IjrZd6EoMX1h"
+  title="Modeling a Diamond Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>For this assignment, create your own interpretation of a diamond, based on
+  observed techniques in the following videos.
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Make sure that your assignment is titled in the following format:
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Last name, First name, the word "Lesson" followed by the Lesson number, and
+  the word "Assignment" followed by the Assignment number.
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Example:
+
+  Brill Ian Lesson x Assignment x
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Be sure to provide screen grabs or renders from 3 angles and the original
+  blender file.
+
+  &lt;BR&gt;
+
+  &lt;BR&gt;<br>
+
+  Be sure to upload each file independently to facilitate ease of grading (so
+  that the reviewer only need to download files when necessary).</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

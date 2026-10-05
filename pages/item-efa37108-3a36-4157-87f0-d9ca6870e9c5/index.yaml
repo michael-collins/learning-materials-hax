@@ -1,0 +1,86 @@
+id: item-efa37108-3a36-4157-87f0-d9ca6870e9c5
+indent: 1
+location: pages/item-efa37108-3a36-4157-87f0-d9ca6870e9c5/index.yaml
+slug: articles/project-categories-and-resources-1
+order: 84
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Project Categories and Resources
+description: ''
+metadata:
+  published: true
+  pageType: oer:article
+  oerSource: articles/dmd400-project-categories
+  tags: project-categories
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    date: '2026-03-05'
+    courses:
+      - DMD 400
+    license: CC BY 4.0
+  created: 1791231123
+  images: []
+  videos: []
+  updated: 1791231123
+content: >
+  <p>A capstone project will fall into one of several possible media types.
+  These categories are not designed to limit your ideas, but to provide a menu
+  possible project outcomes. You can blend categories together and steer your
+  work into other areas if your instructor approves your plan.</p>
+
+  <h2>DMD Resource Hub</h2>
+
+  <p>Each of the categories below includes examples of specific project types,
+  recommended production requirements, and expectations for a proof of
+  concept.</p>
+
+  <p>Because these guides are used in both DMD-300 and DMD-400, the pages are
+  hosted a separate Gitbook that can be accessed by students in both
+  classes:</p>
+
+  <p><strong>Access Link:</strong> <a
+  href="https://dmd-program.github.io/art-design-course-resources">DMD Art and
+  Design Resources</a></p>
+
+  <h2>Categories</h2>
+
+  <ul>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/animation.html">2D
+  and 3D Animation</a></li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/apps-and-interactive.html">Apps
+  and Interactive Media</a> (VR, AR, and games)</li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/illustration-and-2d.html">2D
+  Design and Illustration</a></li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/web-design.html">Web
+  Design and Development</a></li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/video-and-photo">Video
+  Production and Photography</a></li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/audio.html">Audio
+  Production and Recording</a></li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/products-services-ux">Products,
+  Services, and UX</a></li>
+
+  <li><a
+  href="https://dmd-program.github.io/art-design-course-resources/installations-and-objects.html">Installations
+  and Objects</a> (digital fabrication, art objects, prototypes, and
+  exhibitions)</li>
+
+  </ul>
+
+  <p>If you're unsure of a direction to take or have suggestions for this
+  resource list, simply get in touch with your instructor.</p>

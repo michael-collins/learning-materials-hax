@@ -1,0 +1,23 @@
+{
+  "id": "item-176d52e0-2962-4e42-ad59-904a3ab9d26d",
+  "indent": 3,
+  "location": "pages/item-176d52e0-2962-4e42-ad59-904a3ab9d26d/index.json",
+  "slug": "books/dmd-300-digital-multimedia-design-studio/general-resources/digital-design-project-types",
+  "order": 4,
+  "parent": "item-9f0b88c0-5762-46b0-a219-444663bfeae6",
+  "title": "Digital Design Project Types",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-384dc7e4-e77f-4e42-bf9b-abac2ac55964",
+      "version": ""
+    },
+    "created": 1791231124,
+    "images": [],
+    "videos": [],
+    "updated": 1791231124
+  },
+  "content": "<oer-include page=\"item-384dc7e4-e77f-4e42-bf9b-abac2ac55964\"></oer-include>"
+}

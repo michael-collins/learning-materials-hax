@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-108fbde0-0965-4611-a406-099344b3799b</id>
+<indent>4</indent>
+<location>pages/item-108fbde0-0965-4611-a406-099344b3799b/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/watch/andrew-stanton-the-clues-to-a-great-story</slug>
+<order>1</order>
+<parent>item-5c81fb70-8a89-4da6-998d-40e3bd8efe72</parent>
+<title>Andrew Stanton: The clues to a great story</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:article</pageType>
+<oerRef>
+<page>item-237a3972-8a59-412b-b293-496787d7ed88</page>
+<version></version>
+</oerRef>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-237a3972-8a59-412b-b293-496787d7ed88"></oer-include>]]></content>
+</item>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8242206a-4b4e-4837-880e-0259e065edf2</id>
+<indent>1</indent>
+<location>pages/item-8242206a-4b4e-4837-880e-0259e065edf2/index.xml</location>
+<slug>lessons/physics-simulation-fundamentals</slug>
+<order>28</order>
+<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<title>Physics Simulation Fundamentals</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lesson</pageType>
+<oerSource>lessons/physics-simulation-fundamentals</oerSource>
+<oerFields>
+<estimatedDuration>4 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand physics simulation principles</item>
+<item>Set up rigid body simulations</item>
+<item>Configure collision properties</item>
+<item>Apply forces and constraints</item>
+<item>Optimize simulation performance</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p>Master the fundamentals of physics simulation to create realistic dynamic effects and destruction sequences.</p>
+]]></content>
+</item>

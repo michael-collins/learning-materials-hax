@@ -1,0 +1,34 @@
+{
+  "id": "item-cccc9d32-dda2-4767-8335-4f937d93e87d",
+  "indent": 1,
+  "location": "pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.json",
+  "slug": "projects/develop-iterate",
+  "order": 31,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Develop: Iterate",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd100-lesson-4-open-design-develop-iterate",
+    "tags": "Double diamond,Design thinking",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p><img src=\"files/dd-process-develop-1200px@2x.png\" alt=\"Double Diamond Develop Phase graphic\"></p>\n<p>Review your notes from the user test and make adjustments, clarifications, and revisions to improve your kit and instructions. Whether your users have given you general feedback or specific feedback, it is your job to interpret what they are telling you. In an ideal product development scenario, there would be plenty of time to perform as many iterations as needed. If time allows, try testing another one or two participants to see if you can further improve the instructions.</p>\n<h2>Instructions</h2>\n<ol>\n<li>Make changes and improvements to your kit and instructions based on your feedback in the user test.</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>\n<ol>\n<li>Upload a <code>changelog.doc</code> file.</li>\n<li>Upload a <code>yourname-instructions-2.pdf</code> document. This should be a new and revised PDF document. Unrevised documents will not be graded.</li>\n</ol>\n"
+}

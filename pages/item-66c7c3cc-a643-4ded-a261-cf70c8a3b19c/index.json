@@ -1,0 +1,45 @@
+{
+  "id": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
+  "indent": 1,
+  "location": "pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.json",
+  "slug": "exercises/applying-textures-to-3-unique-chess-sets",
+  "order": 21,
+  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "title": "Applying Textures to 3 Unique Chess Sets",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:exercise",
+    "oerSource": "exercises/applying-textures-to-3-unique-chess-sets",
+    "tags": "Blender",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "image": "files/rec0apDu2F1wTfIoq_image_ianbrill_chess_set.png",
+      "imageAlt": "ianbrill chess set.png",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Kenneth Ian Brill",
+          "url": "https://www.ianbrill.com/"
+        }
+      ],
+      "allowEmbed": true,
+      "attachments": [
+        {
+          "title": "Blue And White Water Splash: Pawel Czerwinski",
+          "url": "files/recoFF226YCX63HR5_attachment_pawel-czerwinski-oykbZuvajO0-unsplash.jpg",
+          "description": "Blue And White Water Splash: Pawel Czerwinski - https://unsplash.com/",
+          "alt": "A Texture Image: Blue And White Water Splash: Pawel Czerwinski"
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>In this exercise, you will apply Image textures to a Chess board and pieces</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlIH4xCkx3q86mJu84QpGOJ\" title=\"Applying Textures to 3 Unique Chess Sets Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice using texture images and the UV editor</li>\n<li>Short introduction to material nodes</li>\n<li>Practice appending objects and importing containers into different blender files</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>This week we will begin adding textures and potentially materials to our chess sets</strong>\n&lt;br&gt;\n&lt;br&gt;<br>\nThe following videos use a texture image found freely linked on this page.\nAdditional. Texture images can be acquired for free from various online sources. Here is a possible source:&nbsp;<a href=\"https://freepbr.com/\">https://freepbr.com/&nbsp;(Links to an external site.)</a>\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>The playlist videos for this week demonstrate:</strong>\n&lt;br&gt;\n• How to append / combine objects to a common blender file\n&lt;br&gt;\n• How to apply and manipulate textures on objects. I have included older videos that go over how to apply textures to some individual objects. These are considered additional viewing, in case they are helpful.\n&lt;br&gt;\n• Blender nodes are introduced in a practical manner, to demonstrate how textures can be used alongside materials.\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>For this assignment,&nbsp;you will submit 9 total images.</strong>\n&lt;br&gt;<br>\nCreate three unique chess sets based on the steps in Demonstrations 1, 2 and tutorials.\n&lt;br&gt;<br>\n<strong>Submit three renders of each set to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em>.</strong>&nbsp;\n&lt;br&gt;  Make sure that your assignment is titled in the following format:\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n&lt;br&gt;<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "item-e8ee9ef4-8e72-4485-99da-7d688a973f36",
+  "indent": 1,
+  "location": "pages/item-e8ee9ef4-8e72-4485-99da-7d688a973f36/index.json",
+  "slug": "articles/design-process-and-methods",
+  "order": 74,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Design process and methods",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd300-design-process-and-methods",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-05",
+      "courses": [
+        "DMD 300"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>There is a huge array of design thinking methods, design sprint frameworks, and other ideas about the design process available for you to draw from. It may seem overwhelming at first, but make note and gather only what seems useful for your own work. Spend some time looking through the following curated lists to get an idea of what's out there:</p>\n<h2>Web resources</h2>\n<ul>\n<li>IDEO's <a href=\"https://www.designkit.org/methods.html#filter\">human-centered-design methods</a> and <a href=\"https://www.designkit.org/resources/1.html\">Field Guide to Human-Centered Design (PDF)</a></li>\n<li>Google Ventures\n<ul>\n<li><a href=\"http://www.gv.com/sprint/\">The Design Sprint</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=Fc6A2WuEkZI&amp;list=PLQjb7PbWSDVZv_CEfvpK6UzC0vJhBGgGg\">Sprint Playlist</a></li>\n</ul>\n</li>\n<li>Dan Nessler: <a href=\"https://medium.com/digital-experience-design/how-to-apply-a-design-thinking-hcd-ux-or-any-creative-process-from-scratch-b8786efbf812\">How to apply a design thinking, HCD, UX or any creative process from scratch</a></li>\n<li><a href=\"https://dschool.stanford.edu/resources/design-thinking-bootleg\">Stanford D.School: Design Thinking Bootleg</a></li>\n<li><a href=\"https://www.circulardesignguide.com/methods\">Circular Design Methods</a></li>\n<li>The Design Council's <a href=\"https://www.designcouncil.org.uk/our-resources/framework-for-innovation/\">Double Diamond method</a></li>\n<li><a href=\"https://uxdesign.cc/beyond-the-double-diamond-thinking-about-a-better-design-process-model-de4fdb902cf\">Three Triangle method</a> (inspired by Double Diamond)</li>\n<li><a href=\"https://sjp.mitre.org/insights/designing-for-equity-starter-guide\">Designing for Equity Starter Guide</a></li>\n<li><a href=\"https://www.interaction-design.org/literature/topics/participatory-design\">Participatory Design</a></li>\n<li>LinkedIn Courses on Research and Project Management\n<ul>\n<li><a href=\"https://www.linkedin.com/learning/project-management-simplified-2/introduction-to-the-12-step-process?u=76811570\">Project Management Simplified </a></li>\n<li><a href=\"https://www.linkedin.com/learning/ux-research-for-agile-teams/welcome?u=76811570\">UX Research Methods for Agile</a></li>\n<li><a href=\"https://www.linkedin.com/learning/ux-foundations-research/welcome?u=76811570\">UX Foundations: Research</a></li>\n</ul>\n</li>\n</ul>\n<h2>Useful books:</h2>\n<ul>\n<li>Universal Methods of Design: 100 Ways to Research Complex Problems, Develop Innovative Ideas, and Design Effective Solutions\n<ul>\n<li><a href=\"https://ebookcentral.proquest.com/lib/pensu/detail.action?docID=3399583\">Read Penn State eBook</a></li>\n<li><a href=\"https://www.amazon.com/Universal-Methods-Design-Innovative-Effective/dp/1592537561\">Purchase on Amazon</a></li>\n</ul>\n</li>\n<li>Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days\n<ul>\n<li><a href=\"https://www.amazon.com/Sprint-Solve-Problems-Test-Ideas/dp/150112174X/\">Purchase on Amazon</a></li>\n</ul>\n</li>\n<li>Design Sprint\n<ul>\n<li><a href=\"https://ebookcentral.proquest.com/lib/pensu/detail.action?docID=4333774&amp;query=design+sprint\">Read Penn State eBook</a></li>\n<li><a href=\"https://www.amazon.com/Design-Sprint-Practical-Guidebook-Building/dp/1491923172\">Purchase on Amazon</a></li>\n</ul>\n</li>\n</ul>\n"
+}

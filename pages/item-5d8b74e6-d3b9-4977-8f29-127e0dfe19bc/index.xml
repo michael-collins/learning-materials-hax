@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5d8b74e6-d3b9-4977-8f29-127e0dfe19bc</id>
+<indent>4</indent>
+<location>pages/item-5d8b74e6-d3b9-4977-8f29-127e0dfe19bc/index.xml</location>
+<slug>books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers/introduction-to-modeling</slug>
+<order>0</order>
+<parent>item-6d573448-7c4a-4258-81d8-0ddf6fd4f5d8</parent>
+<title>Introduction to Modeling</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:lecture</pageType>
+<oerRef>
+<page>item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866</page>
+<version></version>
+</oerRef>
+<created>1791231124</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231124</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866"></oer-include>]]></content>
+</item>

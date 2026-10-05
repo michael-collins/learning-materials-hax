@@ -1,0 +1,34 @@
+{
+  "id": "item-41d9b567-104d-4f03-a5b9-0194e4857e67",
+  "indent": 1,
+  "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.json",
+  "slug": "articles/designing-time",
+  "order": 55,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Designing Time",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerSource": "articles/dmd100-lesson-4-readings-chapter-14-designing-time",
+    "tags": "reading",
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "date": "2026-03-01",
+      "courses": [
+        "DMD 100"
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>Designing Time (p.166 - 177 ) in Design and Truth by Robert Grudin</p>\n<h2>Writing prompt</h2>\n<p>In these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports, rhetoric, and marketing. He also speaks about contrast being the differentiator between <em>designing</em> one's time and <em>managing</em> one's time. Grudin again reflects on his \"intentional\" day and what it actually means to be intentional.</p>\n<p>Do you agree with assessment that modern institutions have given up satisfying needs that cannot be bought and sold? Think about what inspires, energizes, or brings you delight. What are those things? Suppose you are working in a design studio or company (you can choose which kind). You are the new hire and are asked to propose to your boss how they might incorporate some activity into the workplace that fulfills the need for delight, inspiration, or energy. What would you propose?</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p>&lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" target=\"_blank\" rel=\"license\"&gt;\n&lt;img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\" style=\"border-width:0; max-width:170px;\" /&gt;\n&lt;/a&gt;\n&lt;br /&gt;\nPlease see the &lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" target=\"_blank\" rel=\"license\"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>\n"
+}

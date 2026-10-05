@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5761aa2a-5c71-4eba-8565-7686533c9a66</id>
+<indent>1</indent>
+<location>pages/item-5761aa2a-5c71-4eba-8565-7686533c9a66/index.xml</location>
+<slug>resources/m_plummer-fern-ndez</slug>
+<order>22</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>M_Plummer-Fernández</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/m-plummer-fernandez</oerSource>
+<oerFields>
+<url>https://www.plummerfernandez.com/</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

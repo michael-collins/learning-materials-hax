@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9531c6cb-1dff-4c56-a9b5-2209a2f27556</id>
+<indent>1</indent>
+<location>pages/item-9531c6cb-1dff-4c56-a9b5-2209a2f27556/index.xml</location>
+<slug>resources/dave-stewart</slug>
+<order>9</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Dave Stewart</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:resource</pageType>
+<oerSource>resources/dave-stewart</oerSource>
+<oerFields>
+<url>https://vimeo.com/davegrafix</url>
+<kind>artist</kind>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

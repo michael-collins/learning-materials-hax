@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fdca5e87-bcec-46d2-953d-f604f9122e65</id>
+<indent>1</indent>
+<location>pages/item-fdca5e87-bcec-46d2-953d-f604f9122e65/index.xml</location>
+<slug>projects/develop-characters</slug>
+<order>19</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Develop: Characters</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd100-lesson-3-narrative-develop-characters</oerSource>
+<tags>Double diamond,Design thinking</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 100</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
+<h2>Tools</h2>
+<ul>
+<li>Pen or pencil</li>
+<li>Download: <a href="https://github.com/dmd-program/dmd-100-sp18/raw/master/assets/characterization.pdf">Characterization Sheet</a></li>
+<li>Printer</li>
+<li>Scanner or camera</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>In Synopsis activity, you listed <a href="/topics/character.html">characters</a> that would be involved in the story. Using your list as a starting point, find images and articles of people (or objects) to base your characters on. You can combine attributes of character references together to create your own characters.</li>
+<li>Fill out a <a href="https://github.com/dmd-program/dmd-100-sp18/raw/master/assets/characterization.pdf">Characterization Sheet</a> for each character in your story.</li>
+<li>Scan or photograph your worksheets</li>
+</ol>
+<h2>Post work</h2>
+<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>
+<ol>
+<li>Upload the finished characterization sheets in <code>.jpg</code>, <code>.png</code>, or <code>.pdf</code> format.</li>
+</ol>
+]]></content>
+</item>

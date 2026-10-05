@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</id>
+<indent>1</indent>
+<location>pages/item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae/index.xml</location>
+<slug>projects/capstone-project-production-report-discussions</slug>
+<order>59</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Capstone project production report discussions</title>
+<description></description>
+<metadata>
+<published>true</published>
+<pageType>oer:project</pageType>
+<oerSource>projects/dmd400-capstone-project-production-report-discussions</oerSource>
+<tags>project-deliverable</tags>
+<oerFields>
+<difficulty>intermediate</difficulty>
+<courses>
+<item>DMD 400</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791231123</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791231123</updated>
+</metadata>
+<content><![CDATA[<h2>Directions:</h2>
+<p>You will post step 1, and then you may have to return to complete part 2. Try to answer questions from you classmates, as this should be a two-way conversation.</p>
+<ol>
+<li><strong>(DUE at due date)</strong> Post a link&nbsp; to your production blog and write simple summary of your project. The summary should include:</li>
+</ol>
+<ul>
+<li>The type of project you are making</li>
+<li>Project timeline up to this point if it's not posted in the production blog</li>
+<li>What you intended to accomplish in the production report</li>
+<li>How it's going</li>
+<li>Problems, challenges, opportunities</li>
+<li>Respond to any questions that you may get from others.</li>
+</ul>
+<ol start="2">
+<li><strong>(DUE within 3 days after due date)</strong> Review at least 3 classmates' work and leave feedback. Pay attention to the following:</li>
+</ol>
+<ul>
+<li>You liking the project is nice, but not particularly helpful feedback. Try to help your classmate improve their work.</li>
+<li>Use art and design vocabulary where applicable</li>
+<li>Does the student's project seem like it's on track based on the timeline?</li>
+<li>Identify artists, designers, or related projects to recommend for inspiration.</li>
+<li>If there are visuals, or other production assets included in the production report, how well are they working? Do you have any suggestions for improvement?&nbsp;</li>
+<li>Make recommendations for improving either the work or the production reports. Ask clarifying questions if you are confused or unsure what is happening in the production.</li>
+</ul>
+<h2>Rubric:</h2>
+<p>You will be graded based on the completeness of your production report and your feedback and comments on peer work as described in the instructions.</p>
+<ol>
+<li>Posted a blog link and included the summary requirements on time.</li>
+<li>Commented on at least three peer reports on time. (Please choose another report to comment on if it already has three postings.)</li>
+</ol>
+]]></content>
+</item>

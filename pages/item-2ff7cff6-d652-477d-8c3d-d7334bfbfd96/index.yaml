@@ -1,0 +1,20 @@
+id: item-2ff7cff6-d652-477d-8c3d-d7334bfbfd96
+indent: 4
+location: pages/item-2ff7cff6-d652-477d-8c3d-d7334bfbfd96/index.yaml
+slug: >-
+  books/getting-started-with-3d-animation/chapter-2-fundamentals/3d-modeling-fundamentals/introduction-to-modeling
+order: 0
+parent: item-07752bb1-c5b8-498c-8422-b064c3eb1a4f
+title: Introduction to Modeling
+description: ''
+metadata:
+  published: true
+  pageType: oer:lecture
+  oerRef:
+    page: item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866
+    version: ''
+  created: 1791231124
+  images: []
+  videos: []
+  updated: 1791231124
+content: <oer-include page="item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866"></oer-include>

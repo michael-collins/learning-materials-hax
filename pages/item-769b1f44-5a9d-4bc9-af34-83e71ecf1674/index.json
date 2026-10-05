@@ -1,0 +1,23 @@
+{
+  "id": "item-769b1f44-5a9d-4bc9-af34-83e71ecf1674",
+  "indent": 4,
+  "location": "pages/item-769b1f44-5a9d-4bc9-af34-83e71ecf1674/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/readings/chapter-12-liberty-as-knowledge-design",
+  "order": 1,
+  "parent": "item-2e49471e-8c7e-46a8-9e6f-2718e018f6f4",
+  "title": "Chapter 12. Liberty as Knowledge Design",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:article",
+    "oerRef": {
+      "page": "item-08406538-8be5-42b8-b9c0-e705c5ff7b81",
+      "version": ""
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<oer-include page=\"item-08406538-8be5-42b8-b9c0-e705c5ff7b81\"></oer-include>"
+}

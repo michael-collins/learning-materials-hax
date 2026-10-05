@@ -1,0 +1,24 @@
+{
+  "id": "item-2870f1e0-2fda-4aee-aa86-d55a3845cab0",
+  "indent": 1,
+  "location": "pages/item-2870f1e0-2fda-4aee-aa86-d55a3845cab0/index.json",
+  "slug": "resources/jacolby-satterwhite",
+  "order": 13,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Jacolby Satterwhite",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:resource",
+    "oerSource": "resources/jacolby-satterwhite",
+    "oerFields": {
+      "url": "http://jacolby.com/home.html",
+      "kind": "artist"
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}

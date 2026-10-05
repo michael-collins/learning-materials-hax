@@ -1,0 +1,34 @@
+{
+  "id": "item-9aefed67-638b-467b-af95-4bff55882eed",
+  "indent": 1,
+  "location": "pages/item-9aefed67-638b-467b-af95-4bff55882eed/index.json",
+  "slug": "projects/capstone-project-proposal",
+  "order": 60,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Capstone Project Proposal",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:project",
+    "oerSource": "projects/dmd400-capstone-project-proposal",
+    "tags": "project-deliverable",
+    "oerFields": {
+      "difficulty": "intermediate",
+      "courses": [
+        "DMD 400"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p>The capstone project proposal is the first step in producing a capstone project for the Digital Multimedia Design degree program. It asks you to think through the entire production process of the upcoming project, and helps you identify what research you'll need to conduct.</p>\n<p>The following must be included in the proposal:</p>\n<ol>\n<li><strong>Title page</strong>\n<ol>\n<li>Project Title</li>\n<li>\"DMD Capstone Project Proposal\"</li>\n<li>Name</li>\n<li>Date</li>\n<li>\"DMD 400: Digital Multimedia Design Capstone\"</li>\n</ol>\n</li>\n<li><strong>Bio</strong>\n<ul>\n<li>Here you will list what you know, and what you are interested in. This should be related to the project concept. (IE - if you are skilled and interested in web development, it would be confusing to then propose an animation project.)</li>\n<li>List existing digital media skills and other relevant skills.</li>\n<li>List any skills you hope to obtain during this project.</li>\n</ul>\n</li>\n<li><strong><a href=\"/articles/dmd400-concept-development\">Concept</a></strong>\n<ul>\n<li>Concise description of the project ideas.</li>\n<li>What design methods will be used?</li>\n<li>What production tools will be used?</li>\n<li>What topics and theory need to be researched?</li>\n<li>Who is the intended audience?</li>\n</ul>\n</li>\n<li><strong><a href=\"/projects/dmd400-capstone-project-advisor\">Advisor</a></strong> (If you are unable to acquire a project advisor by the due date, please contact your instructor and list \"TBD\" in this section.)\n<ul>\n<li>Project advisor name and job title</li>\n<li>Advisor area of expertise\n<ul>\n<li>The advisor should not be a project client you are working with to develop the project. Find an industry professional that you will have at least three meetings with in order to facilitate the development of your project. This should be someone who is expert in the technical area of your project. If your project includes field specific knowledge outside of the digital arts, you may also want to find an expert in this field (IE – if your project attempts to teach about ).</li>\n</ul>\n</li>\n<li>Contact email address for advisor, mentor or client</li>\n<li>Background or qualifications for advisor, mentor or client</li>\n</ul>\n</li>\n<li><strong>Production scope</strong>\n<ul>\n<li>What are the deliverables to be completed or produced? (IE - storyboards, interviews, web application, website, wireframes, animatics, character designs, scripts, game executable, video, etc.)</li>\n<li>What is the culmination of the production? (EG - Animated video, interactive app prototype, video documentation of an installation, etc.)</li>\n</ul>\n</li>\n<li><strong>Production pipeline</strong>\n<ul>\n<li>What tools will be used?</li>\n<li>What design processes and methods will be used?</li>\n<li>Who will be involved (list any collaborators, advisors, etc.)?</li>\n<li>Will you use management tools to keep on track?</li>\n</ul>\n</li>\n<li><strong>Capabilities</strong>\n<ul>\n<li><strong>Necessary capabilities and skills</strong>\n<ul>\n<li>Describe all capabilities and skills necessary to complete the project?</li>\n</ul>\n</li>\n<li><strong>Existing capabilities and skills</strong>\n<ul>\n<li><em><strong>Show</strong></em> and <em><strong>describe</strong></em> past work that demonstrates your existing capabilities as related to the project concept. Use figures and appendices where necessary.</li>\n</ul>\n</li>\n<li><strong>Needed capabilities and skills</strong>\n<ul>\n<li>What required capabilities and skills do you not currently possess that are needed to complete the project.</li>\n<li>Explain how you will you get up to speed in time.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Timeline</strong>\n<ul>\n<li>Assign all steps anticipated in the production of the project <strong>by week</strong> and inlcude dates. The timeline can be graphic in nature so long as it is readable.</li>\n<li>Ensure the timeline is feasible.</li>\n<li>It's okay for your timeline to be updated as you progress to better serve the project or adjust for scope changes.</li>\n</ul>\n</li>\n<li><strong>Research</strong>\n<ul>\n<li>What areas of research do you intend to pursue during the production of this project? Examples include any technical or craft aspects of the project, required visual research, user research, design thinking or methods research, and others. Please see the <a href=\"/projects/dmd400-capstone-project-research\">research</a> page for more details.\n<ul>\n<li>Your project should either include a contemporary critical issue, explore critical theory, or relate the project to design methods and principles.</li>\n</ul>\n</li>\n<li>What research resources available to you?</li>\n</ul>\n</li>\n<li><strong>Questions for your proposal reviewers</strong></li>\n</ol>\n<ul>\n<li>List three questions that might help you better some aspect of the project. Avoid vague questions such as, “<em>Is this a good project</em>?” or “<em>What should I do?</em>”. Instead focus your questions on the specific areas of your project that could benefit from feedback.</li>\n</ul>\n<h2>Submission details</h2>\n<p>Does the proposal include all specified sections? Are all sections thoughtfully considered and fully developed? Is this proposal free from spelling and grammar errors? If so, submit the following:</p>\n<ol>\n<li>See submission format in canvas</li>\n</ol>\n"
+}

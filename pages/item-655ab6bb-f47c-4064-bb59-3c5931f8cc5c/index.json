@@ -1,0 +1,19 @@
+{
+  "id": "item-655ab6bb-f47c-4064-bb59-3c5931f8cc5c",
+  "indent": 3,
+  "location": "pages/item-655ab6bb-f47c-4064-bb59-3c5931f8cc5c/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/readings",
+  "order": 1,
+  "parent": "item-a106f25f-fd10-4f85-855b-5587ad96edba",
+  "title": "Readings",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "pageType": "oer:section",
+    "created": 1791231123,
+    "images": [],
+    "videos": [],
+    "updated": 1791231123
+  },
+  "content": "<p></p>"
+}
