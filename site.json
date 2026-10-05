@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231514
+      "updated": 1791231515
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -9908,7 +9908,7 @@
       "order": 28,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Physics Simulation Fundamentals",
-      "description": "",
+      "description": "Learn the fundamentals of physics simulation including rigid body dynamics, collisions, and force interactions.",
       "metadata": {
         "published": true,
         "pageType": "oer:lesson",
