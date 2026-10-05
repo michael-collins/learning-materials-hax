@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231507
+      "updated": 1791231508
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -11184,7 +11184,7 @@
       "order": 3,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Setting Up Ollama for Local AI",
-      "description": "",
+      "description": "A step-by-step tutorial on installing and running Ollama to use large language models locally on your machine.",
       "metadata": {
         "published": true,
         "pageType": "oer:tutorial",
