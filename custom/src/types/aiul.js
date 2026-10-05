@@ -4,8 +4,9 @@
  *
  * Names, links and badge images come from the AIUL API (api/licenses.json,
  * modifiers.json, combinations.json), falling back to the copy HAX ships in
- * @haxtheweb/ai-usage-license. The API has no descriptions, so the short
- * description, requirements and student guidelines are taken from the AIUL
+ * @haxtheweb/ai-usage-license. The short description, requirements and
+ * student guidelines come from the API when it has them (description,
+ * requirements, studentGuidelines); until then from this copy of the AIUL
  * license sources (_licenses/aiul-*.md: front matter and "Guidelines for
  * Students"), v1.0.0.
  */
@@ -139,7 +140,12 @@ export function aiulInfo(code, api) {
   const license = api?.licenses?.find((l) => l.code === L);
   const modifier = M ? api?.modifiers?.find((m) => m.code === M) : null;
   const combination = M ? api?.combinations?.find((c) => c.code === `${L}-${M}`) : null;
-  const details = AIUL_DETAILS[L] || { description: "", requirements: [], students: [] };
+  const own = AIUL_DETAILS[L] || { description: "", requirements: [], students: [] };
+  const details = {
+    description: license?.description || own.description,
+    requirements: license?.requirements?.length ? license.requirements : own.requirements,
+    students: license?.studentGuidelines?.length ? license.studentGuidelines : own.students,
+  };
   return {
     code,
     title: license?.title || (L ? `AIUL-${L}` : String(code)),
