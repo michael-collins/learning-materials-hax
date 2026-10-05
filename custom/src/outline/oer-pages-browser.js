@@ -3,7 +3,8 @@
  * navigation doesn't list: pages removed from the outline, archived
  * versions and linked copies. Authors can open a page, put a page back in
  * the navigation (where it was), or delete it with its sub-pages and
- * archived versions.
+ * archived versions. Pages can be selected (the selection survives search
+ * and filters) and appended to the end of the navigation together.
  *
  *   pagesBrowser().show()
  * @element oer-pages-browser
@@ -12,7 +13,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { isSystemItem, isHeading, contentTypes } from "../types/content-types.js";
-import { saveOutline, deletionSet, ancestors } from "./outline-model.js";
+import { saveOutline, deletionSet, ancestors, newItemId } from "./outline-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -35,6 +36,8 @@ class OerPagesBrowser extends LitElement {
       _query: { state: true },
       _confirm: { state: true },
       _busy: { state: true },
+      _selected: { state: true },
+      _status: { state: true },
     };
   }
 
@@ -43,6 +46,8 @@ class OerPagesBrowser extends LitElement {
     this.open = false;
     this._filter = "all";
     this._query = "";
+    this._selected = new Set();
+    this._status = "";
     this.__keys = (e) => {
       if (!this.open || e.key !== "Escape" || this._busy) return;
       e.preventDefault();
@@ -57,6 +62,8 @@ class OerPagesBrowser extends LitElement {
     this._query = "";
     this._confirm = null;
     this._busy = false;
+    this._selected = new Set();
+    this._status = "";
     this.open = true;
     // follow the manifest while open (saves here and elsewhere replace it)
     this.__stop?.();
@@ -102,6 +109,64 @@ class OerPagesBrowser extends LitElement {
     this._busy = false;
   }
 
+  _toggleSelect(id, on) {
+    const next = new Set(this._selected);
+    if (on) next.add(id);
+    else next.delete(id);
+    this._selected = next;
+    this._status = "";
+  }
+
+  /**
+   * Append the selected pages to the end of the top level of the navigation,
+   * in the order shown. A page that is out of the navigation moves there
+   * itself (with its sub-pages); a page already listed, an archived version
+   * or a page of a type the navigation hides gets a link that shows it.
+   */
+  async _appendSelected(order) {
+    const items = this._items;
+    const byId = new Map(items.map((i) => [i.id, i]));
+    const { types } = contentTypes(items);
+    const hiddenTypes = new Set(types.filter((t) => t.nav === false).map((t) => t.id));
+    let next = Math.max(-1, ...items.filter((i) => !i.parent).map((i) => Number(i.order) || 0)) + 1;
+    const changed = new Map();
+    const added = [];
+    for (const item of order) {
+      const why = this._whyHidden(item, byId, hiddenTypes);
+      if (why === "removed" || why === "parent") {
+        changed.set(item.id, { ...item, parent: null, order: next++, indent: 0, metadata: { ...item.metadata, hideInMenu: false }, modified: true });
+        continue;
+      }
+      const snapOf = item.metadata?.oerSnapshotOf;
+      const ref = snapOf ? { page: snapOf, version: item.metadata.version || "" } : item.metadata?.oerRef?.page ? item.metadata.oerRef : { page: item.id, version: "" };
+      const source = byId.get(ref.page) || item;
+      const type = source.metadata?.pageType || "";
+      added.push({
+        id: newItemId(),
+        title: source.title,
+        parent: null,
+        order: next++,
+        indent: 0,
+        location: "",
+        description: "",
+        metadata: {
+          ...(source.metadata?.icon ? { icon: source.metadata.icon } : {}),
+          // a type the navigation hides would hide the link too
+          ...(type && !hiddenTypes.has(type) ? { pageType: type } : {}),
+          oerRef: ref,
+        },
+        contents: `<oer-include page="${ref.page}"${ref.version ? ` version="${ref.version}"` : ""}></oer-include>`,
+        new: true,
+      });
+    }
+    this._busy = true;
+    await saveOutline([...items.map((i) => changed.get(i.id) || i), ...added]);
+    this._busy = false;
+    const n = order.length;
+    this._selected = new Set();
+    this._status = `Appended ${n} page${n === 1 ? "" : "s"} to the navigation.`;
+  }
+
   async _delete(ids) {
     this._busy = true;
     // HAX reload-loops on the URL of a page that no longer exists
@@ -110,6 +175,7 @@ class OerPagesBrowser extends LitElement {
       globalThis.dispatchEvent(new PopStateEvent("popstate"));
     }
     await saveOutline(this._items.map((i) => (ids.has(i.id) ? { ...i, delete: true } : i)));
+    this._selected = new Set([...this._selected].filter((id) => !ids.has(id)));
     this._confirm = null;
     this._busy = false;
   }
@@ -276,6 +342,35 @@ class OerPagesBrowser extends LitElement {
         padding: 0.625rem 1.25rem;
         border-bottom: 1px solid var(--border);
       }
+      li.selected {
+        background: color-mix(in srgb, var(--primary) 6%, transparent);
+      }
+      .pick {
+        flex: none;
+        width: 1rem;
+        height: 1rem;
+        margin: 0;
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      .selbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.8125rem;
+        background: color-mix(in srgb, var(--muted) 50%, transparent);
+      }
+      .selbar .count {
+        flex: 1;
+        color: var(--muted-foreground);
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: var(--primary-foreground);
+      }
       .main {
         flex: 1 1 16rem;
         min-width: 0;
@@ -403,7 +498,9 @@ class OerPagesBrowser extends LitElement {
     if (confirming) doomed = deletionSet(items, [item.id]);
     const extra = doomed ? doomed.size - 1 : 0;
     const links = doomed ? items.filter((i) => !doomed.has(i.id) && doomed.has(i.metadata?.oerRef?.page)).length : 0;
-    return html`<li>
+    const checked = this._selected.has(item.id);
+    return html`<li class="${checked ? "selected" : ""}">
+      <input type="checkbox" class="pick" aria-label="Select ${title}" .checked="${checked}" @change="${(e) => this._toggleSelect(item.id, e.target.checked)}" />
       <div class="main">
         <button class="title" @click="${() => this._go(item.slug)}">${title}</button>
         <span class="badges">
@@ -442,6 +539,44 @@ class OerPagesBrowser extends LitElement {
     </li>`;
   }
 
+  _renderSelectionBar(pages, shown) {
+    const n = this._selected.size;
+    const shownSelected = shown.filter((i) => this._selected.has(i.id)).length;
+    const allShown = shown.length > 0 && shownSelected === shown.length;
+    const offscreen = n - shownSelected;
+    const byTitle = (a, b) => (a.metadata?.oerSnapshotTitle || a.title).localeCompare(b.metadata?.oerSnapshotTitle || b.title);
+    const busy = this._busy ? "true" : "false";
+    return html`<div class="selbar">
+      <input
+        type="checkbox"
+        class="pick"
+        aria-label="Select all shown"
+        title="Select all shown"
+        .checked="${allShown}"
+        .indeterminate="${shownSelected > 0 && !allShown}"
+        @change="${(e) => {
+          const next = new Set(this._selected);
+          for (const i of shown) e.target.checked ? next.add(i.id) : next.delete(i.id);
+          this._selected = next;
+          this._status = "";
+        }}"
+      />
+      <span class="count" aria-live="polite">
+        ${this._status || (n ? `${n} selected${offscreen ? ` (${offscreen} not shown)` : ""}` : "Select pages to append them to the navigation.")}
+      </span>
+      ${n
+        ? html`<button class="btn ghost" @click="${() => (this._selected = new Set())}">Clear</button>
+            <button
+              class="btn primary"
+              aria-disabled="${busy}"
+              @click="${() => !this._busy && this._appendSelected(pages.filter((i) => this._selected.has(i.id)).sort(byTitle))}"
+            >
+              ${lucide("oer:plus", "sm")}${this._busy ? "Appending…" : "Append to navigation"}
+            </button>`
+        : ""}
+    </div>`;
+  }
+
   render() {
     if (!this.open) return html``;
     const items = this._items;
@@ -458,7 +593,7 @@ class OerPagesBrowser extends LitElement {
         if (this._filter === "versions") return why === "archived";
         return true;
       })
-      .filter((i) => !q || i.title.toLowerCase().includes(q) || (i.metadata?.oerSnapshotTitle || "").toLowerCase().includes(q))
+      .filter((i) => !q || i.title.toLowerCase().includes(q) || `${i.metadata?.oerSnapshotTitle || ""} v${i.metadata?.version || ""}`.toLowerCase().includes(q))
       .sort((a, b) => (a.metadata?.oerSnapshotTitle || a.title).localeCompare(b.metadata?.oerSnapshotTitle || b.title));
     return html`
       <div class="backdrop" @click="${() => !this._busy && this._close()}"></div>
@@ -481,6 +616,7 @@ class OerPagesBrowser extends LitElement {
             )}
           </div>
         </div>
+        ${this._renderSelectionBar(pages, shown)}
         <div class="body">
           ${shown.length
             ? html`<ul aria-label="Pages">
