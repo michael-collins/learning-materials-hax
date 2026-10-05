@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231513
+      "updated": 1791231514
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -9867,7 +9867,7 @@
       "order": 27,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Particle Simulation",
-      "description": "",
+      "description": "Master particle systems to create effects like fire, smoke, water splashes, and other dynamic phenomena.",
       "metadata": {
         "published": true,
         "pageType": "oer:lesson",
