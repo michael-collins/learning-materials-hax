@@ -1028,6 +1028,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 0.9375rem;
+          line-height: 1.35;
+          text-align: start;
           color: var(--foreground);
           text-decoration: none;
         }

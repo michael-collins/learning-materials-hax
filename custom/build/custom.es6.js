@@ -10023,6 +10023,8 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 0.9375rem;
+          line-height: 1.35;
+          text-align: start;
           color: var(--foreground);
           text-decoration: none;
         }
