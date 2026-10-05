@@ -586,6 +586,16 @@ export class OerPathway extends LitElement {
             : "Nothing — start here"}
         </dd>
       </div>
+      ${p.readiness?.length
+        ? html`<div>
+            <dt>Ready?</dt>
+            <dd>
+              ${p.readiness.map(
+                (r, n) => html`${n ? ", " : ""}<a href="${r.href}">${r.item.title}</a>${r.item.metadata?.published === false ? " (unpublished)" : ""}`,
+              )}
+            </dd>
+          </div>`
+        : ""}
     </dl>`;
   }
 

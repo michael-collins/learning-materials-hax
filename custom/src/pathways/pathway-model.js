@@ -182,6 +182,8 @@ export function resolvePathway(pathway, list = items(), types = contentTypes(lis
     objectives: toList(f.learningObjectives),
     testOut: toList(f.testOutCriteria),
     prerequisites: resolveLinks(f.prerequisites, list),
+    // self-check questions to take before starting (shown to readers once published)
+    readiness: resolveLinks(f.readinessQuiz, list).filter((r) => r.item && visibleTo(r.item)),
     modules,
     // pathways planned before they had modules list their specializations
     specializations: (kids.get(pathway.id) || []).filter((m) => m.metadata?.pageType === SPECIALIZATION_TYPE),
