@@ -23,6 +23,10 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { MOD, contentViewport } from "./stock.js";
 import { HANDLE_WIDTH, frameRect } from "./slots.js";
+import { insertCitation, pageReferences, linkReferenceToResource } from "./citations.js";
+import { citeDialog } from "./oer-cite-dialog.js";
+import { saveOutline } from "../outline/outline-model.js";
+import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
 const SEP = { sep: true };
 
@@ -131,6 +135,9 @@ const FORMAT = [
 ];
 
 const INSERT = [
+  // our own: a numbered citation and its entry in the page's References
+  { label: "Citation…", icon: "quote", action: "cite" },
+  SEP,
   { label: "Symbol…", icon: "omega", grid: "rich-text-editor-symbol-picker" },
   { label: "Emoji…", icon: "smile", grid: "rich-text-editor-emoji-picker", filter: true },
   SEP,
@@ -300,6 +307,10 @@ class OerBlockRail extends LitElement {
         }
         continue;
       }
+      if (spec.action === "cite") {
+        out.push({ label: spec.label, icon: spec.icon, run: () => this._cite() });
+        continue;
+      }
       if (spec.grid) {
         const el = els.find((e) => e.localName === spec.grid);
         if (!el) continue;
@@ -379,6 +390,61 @@ class OerBlockRail extends LitElement {
     }
     item.run();
     this._close();
+  }
+
+  // cite at the caret (or after the selection) in the active text block
+  async _cite() {
+    const hax = this._hax;
+    const body = hax?.activeHaxBody;
+    const node = hax?.activeNode;
+    if (!body || !node) return;
+    let range = hax.getRange?.();
+    if (!range || !node.contains(range.startContainer)) {
+      range = globalThis.document.createRange();
+      range.selectNodeContents(node);
+      range.collapse(false);
+    } else range = range.cloneRange();
+    const choice = await citeDialog().pick({ references: pageReferences(body) });
+    if (!choice) {
+      node.focus?.();
+      return;
+    }
+    const liId = insertCitation(body, range, choice);
+    node.focus?.();
+    if (choice.saveAsResource) this._saveResource(choice.data).then((id) => linkReferenceToResource(body, liId, id));
+  }
+
+  // a new source becomes a Resource page (in the Resources section)
+  async _saveResource(parts) {
+    const items = toJS(store.manifest?.items) || [];
+    const existing = items.find((i) => i.metadata?.pageType === "oer:resource" && i.title.toLowerCase() === parts.title.toLowerCase() && (i.metadata?.oerFields?.url || "") === (parts.url || ""));
+    if (existing) return existing.id;
+    const section = items.find((i) => !i.parent && i.title === "Resources" && i.metadata?.pageType === "oer:section");
+    const siblings = items.filter((i) => i.parent === (section?.id || null));
+    await saveOutline([
+      {
+        id: `new-resource-${Date.now()}`,
+        title: parts.title,
+        parent: section?.id || null,
+        order: siblings.length,
+        indent: section ? 1 : 0,
+        location: "",
+        description: "",
+        metadata: {
+          pageType: "oer:resource",
+          oerFields: {
+            ...(parts.url ? { url: parts.url } : {}),
+            ...(parts.authors?.length ? { authors: parts.authors.map((name) => ({ name, url: "" })) } : {}),
+            ...(parts.year ? { date: parts.year } : {}),
+            ...(parts.publisher ? { publisher: parts.publisher } : {}),
+          },
+        },
+        contents: "<p></p>",
+        new: true,
+      },
+    ]);
+    const after = toJS(store.manifest?.items) || [];
+    return after.find((i) => i.metadata?.pageType === "oer:resource" && i.title === parts.title && (i.metadata?.oerFields?.url || "") === (parts.url || ""))?.id || "";
   }
 
   _insertGlyph(opt) {

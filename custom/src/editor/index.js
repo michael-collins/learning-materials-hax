@@ -11,6 +11,7 @@ import { editorSkin } from "./editor-skin.js";
 import { installCommandPalette } from "./command-palette.js";
 import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
 import { installPageBreakDetails } from "./page-break-details.js";
+import { installCitationNormalizer } from "./citations.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -33,6 +34,7 @@ export function installEditorChrome() {
   installUxTweaks();
   installTrayEnhancer();
   installPageBreakDetails();
+  installCitationNormalizer();
   new MutationObserver(adoptStockBar).observe(globalThis.document.body, { childList: true });
   adoptStockBar();
 }

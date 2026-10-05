@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791233107
+      "updated": 1791238760
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -15317,6 +15317,23 @@
                   "kind": "text",
                   "header": true,
                   "help": "e.g. artist, studio, tool, reference"
+                },
+                {
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "help": "Who made it. Used when a page cites this resource."
+                },
+                {
+                  "name": "date",
+                  "label": "Year",
+                  "kind": "text",
+                  "header": true
+                },
+                {
+                  "name": "publisher",
+                  "label": "Publisher",
+                  "kind": "text"
                 }
               ],
               "nav": false,
@@ -15548,7 +15565,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791231853,
+        "updated": 1791238759,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",

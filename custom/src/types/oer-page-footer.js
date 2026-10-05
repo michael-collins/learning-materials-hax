@@ -113,7 +113,7 @@ class OerPageFooter extends LitElement {
       this.__creditsTimer = setTimeout(() => this._refreshCredits(), 150);
     });
     const content = this._contentRoot();
-    if (content) this.__credits.observe(content, { childList: true, subtree: true, attributes: true, attributeFilter: ["credit", "credit-url", "license", "title", "creator", "creator-url", "source", "note", "caption"] });
+    if (content) this.__credits.observe(content, { childList: true, subtree: true, attributes: true, attributeFilter: ["credit", "credit-url", "license", "title", "creator", "creator-url", "source", "note", "caption", "data-resource", "data-cite"] });
     this._refreshCredits();
   }
 
@@ -130,8 +130,22 @@ class OerPageFooter extends LitElement {
         ? { title: el.title || "", creator: el.creator || "", creatorUrl: el.creatorUrl || "", source: el.source || "", license: el.license || "" }
         : { title: el.caption || el.title || "", creator: el.credit || "", creatorUrl: "", source: el.creditUrl || "", license: el.license || "" },
     );
-    if (JSON.stringify(credits) === JSON.stringify(this._credits || [])) return;
+    // the page's References (footnotes): structured when a reference points
+    // to a Resource page or was entered with fields, plain text otherwise
+    const citations = [...(root?.querySelectorAll("section.footnotes li[id^='fn-']") || [])].map((li) => {
+      const copy = li.cloneNode(true);
+      copy.querySelectorAll("a.fn-back").forEach((b) => b.remove());
+      let data = null;
+      try {
+        data = li.dataset.cite ? JSON.parse(li.dataset.cite) : null;
+      } catch {
+        data = null;
+      }
+      return { text: copy.textContent.trim(), resource: li.dataset.resource || "", data, url: copy.querySelector("a[href^='http']")?.href || "" };
+    });
+    if (JSON.stringify(credits) === JSON.stringify(this._credits || []) && JSON.stringify(citations) === JSON.stringify(this._citations || [])) return;
     this._credits = credits;
+    this._citations = citations;
     this.requestUpdate();
     this._writeJsonLd();
   }
@@ -225,6 +239,25 @@ class OerPageFooter extends LitElement {
         ...(c.source ? { "schema:url": c.source } : {}),
         ...(c.license ? { "schema:license": ccLicense(c.license)?.url || c.license } : {}),
       }));
+    }
+    // works the page cites (its References)
+    if (this._citations?.length) {
+      const items = this._items || [];
+      data["schema:citation"] = this._citations.map((c) => {
+        const r = c.resource && items.find((i) => i.id === c.resource);
+        const rf = r?.metadata?.oerFields || {};
+        const d = c.data || {};
+        const name = r?.title || d.title || "";
+        const authors = r ? peopleOf(rf.authors).map((p) => p.name) : d.authors || [];
+        return {
+          "@type": "schema:CreativeWork",
+          ...(name ? { "schema:name": name } : { "schema:description": c.text }),
+          ...(authors.length ? { "schema:author": authors.map((a) => ({ "@type": "schema:Person", "schema:name": a })) } : {}),
+          ...((r ? rf.date : d.year) ? { "schema:datePublished": String(r ? rf.date : d.year) } : {}),
+          ...((r ? rf.publisher : d.publisher) ? { "schema:publisher": r ? rf.publisher : d.publisher } : {}),
+          ...((r ? rf.url : d.url) || c.url ? { "schema:url": (r ? rf.url : d.url) || c.url } : {}),
+        };
+      });
     }
     return data;
   }
