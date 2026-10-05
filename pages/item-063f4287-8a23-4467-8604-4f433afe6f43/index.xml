@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-063f4287-8a23-4467-8604-4f433afe6f43</id>
+<indent>1</indent>
+<location>pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.xml</location>
+<slug>quizzes/drawing-for-3d-design-quiz</slug>
+<order>3</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Drawing for 3D Design quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>quiz:item-d22274ef-a811-4445-b5fa-132e70eab0f2</oerTmpKey>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-d22274ef-a811-4445-b5fa-132e70eab0f2</page>
+<version></version>
+</item>
+<item>
+<page>item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f</page>
+<version></version>
+</item>
+<item>
+<page>item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e</page>
+<version></version>
+</item>
+</prerequisites>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791229683</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791229683</updated>
+</metadata>
+<content><![CDATA[<p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+<multiple-choice question="In two-point perspective, how many vanishing points sit on the horizon line?" single-option="" randomize="">
+  <input type="checkbox" value="Two" data-correct="true">
+  <input type="checkbox" value="One">
+  <input type="checkbox" value="Three">
+  <input type="checkbox" value="None">
+</multiple-choice>
+<true-false-question question="Orthographic views (front, side and top) are useful references for modeling to scale.">
+  <input type="checkbox" value="True" data-correct="true">
+  <input type="checkbox" value="False">
+</true-false-question>
+<self-check title="Think it through">
+  <p slot="question">How does sketching a concept before modeling save time in 3D?</p>
+  <p>Sketches let you explore shapes, proportions and silhouettes quickly, solve design problems before committing to geometry, and produce reference views to model from.</p>
+</self-check>
+]]></content>
+</item>

@@ -1,0 +1,37 @@
+{
+  "id": "item-706b8000-e39c-45d3-87c4-9aab5ae94482",
+  "indent": 1,
+  "location": "pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.json",
+  "slug": "quizzes/real-time-asset-budgets-quiz",
+  "order": 2,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "Real-time Asset Budgets quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "quiz:item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-c43a83f7-2300-4e9c-bd16-bf418744f1d9",
+          "version": ""
+        }
+      ],
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791229683,
+    "images": [],
+    "videos": [],
+    "updated": 1791229683
+  },
+  "content": "<p>Check your understanding of this lesson. Your answers aren't recorded.</p>\n<multiple-choice question=\"What is texel density?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"The number of texture pixels per unit of surface on a model\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"The number of polygons per object\">\n  <input type=\"checkbox\" value=\"The file size of a texture\">\n  <input type=\"checkbox\" value=\"The number of materials in a scene\">\n</multiple-choice>\n<true-false-question question=\"Combining several objects' textures into one atlas with a shared material can reduce draw calls.\">\n  <input type=\"checkbox\" value=\"True\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"False\">\n</true-false-question>\n<self-check title=\"Think it through\">\n  <p slot=\"question\">Why do real-time assets need tighter budgets than assets for an offline render?</p>\n  <p>A game has to draw each frame in a few milliseconds (about 16 ms at 60 fps) on players' hardware with limited memory, while an offline render can spend minutes per frame on a render farm. So polygon counts, texture memory and draw calls all have to be limited.</p>\n</self-check>\n"
+}

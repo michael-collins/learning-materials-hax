@@ -1,0 +1,48 @@
+id: item-cb64ff65-6e25-4782-9ea8-73848b37ed32
+indent: 1
+location: pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.yaml
+slug: quizzes/digital-sculpting-quiz
+order: 5
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Digital Sculpting quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-f783c8df-d3f9-4ec8-a056-501da8e75a61
+  oerFields:
+    prerequisites:
+      - page: item-f783c8df-d3f9-4ec8-a056-501da8e75a61
+        version: ''
+      - page: item-dbe4cef4-73d0-43d9-b532-46081fc2688c
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791229683
+  images: []
+  videos: []
+  updated: 1791229683
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="What is retopology?" single-option="" randomize="">
+    <input type="checkbox" value="Building a clean, lower-polygon mesh over a detailed sculpt" data-correct="true">
+    <input type="checkbox" value="Adding subdivision levels to a sculpt">
+    <input type="checkbox" value="Painting textures onto a model">
+    <input type="checkbox" value="Rigging a character for animation">
+  </multiple-choice>
+
+  <true-false-question question="It's good practice to establish large forms at
+  low subdivision levels before adding fine detail.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">Why might you bake the details of a high-resolution sculpt into a normal map?</p>
+    <p>So a lower-polygon mesh that can be animated or used in real time keeps the look of the fine detail, without the cost of the sculpt's millions of polygons.</p>
+  </self-check>

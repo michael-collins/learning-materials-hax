@@ -1,0 +1,49 @@
+{
+  "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
+  "indent": 1,
+  "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.json",
+  "slug": "quizzes/hard-surface-modeling-quiz",
+  "order": 4,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "Hard Surface Modeling quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "quiz:item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+          "version": ""
+        },
+        {
+          "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
+          "version": ""
+        },
+        {
+          "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
+          "version": ""
+        },
+        {
+          "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
+          "version": ""
+        }
+      ],
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791229683,
+    "images": [],
+    "videos": [],
+    "updated": 1791229683
+  },
+  "content": "<p>Check your understanding of this lesson. Your answers aren't recorded.</p>\n<multiple-choice question=\"Why add support (holding) edges near a hard edge before subdividing?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"To keep the edge sharp when the mesh is smoothed\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"To reduce the polygon count\">\n  <input type=\"checkbox\" value=\"To create UV seams\">\n  <input type=\"checkbox\" value=\"To make the object symmetrical\">\n</multiple-choice>\n<true-false-question question=\"Modifiers such as Bevel, Mirror and Boolean let you change a model without permanently altering its base mesh.\">\n  <input type=\"checkbox\" value=\"True\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"False\">\n</true-false-question>\n<self-check title=\"Think it through\">\n  <p slot=\"question\">When is a boolean operation a good choice, and what problems should you watch for?</p>\n  <p>Booleans are quick for cutting holes and combining shapes, especially while blocking out. Watch for messy n-gons, shading artifacts and non-manifold geometry, and clean up the topology or keep the boolean as a non-destructive modifier.</p>\n</self-check>\n"
+}

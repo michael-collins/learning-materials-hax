@@ -1,0 +1,47 @@
+id: item-3f07bd42-0776-4dec-a220-8a7b05c333e5
+indent: 1
+location: pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.yaml
+slug: quizzes/real-time-engines-quiz
+order: 0
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Real-time Engines quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-3c14822b-53dd-4a66-aac7-f8ec740bbea5
+  oerFields:
+    prerequisites:
+      - page: item-3c14822b-53dd-4a66-aac7-f8ec740bbea5
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791229683
+  images: []
+  videos: []
+  updated: 1791229683
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="Which of these is a common way to improve
+  performance in a real-time engine?" single-option="" randomize="">
+    <input type="checkbox" value="Using levels of detail (LODs) for distant objects" data-correct="true">
+    <input type="checkbox" value="Raising every texture to 8K">
+    <input type="checkbox" value="Turning off occlusion culling">
+    <input type="checkbox" value="Giving every object its own unique material">
+  </multiple-choice>
+
+  <true-false-question question="Baked lighting is calculated ahead of time, so
+  it costs little while the game runs but can't change during play.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">What would you check when importing a model from Blender into Unity or Unreal?</p>
+    <p>Scale and units, axis orientation, applied transforms, normals and smoothing, UVs (including lightmap UVs), material assignments, pivot placement, naming and collision.</p>
+  </self-check>

@@ -1,0 +1,51 @@
+id: item-063f4287-8a23-4467-8604-4f433afe6f43
+indent: 1
+location: pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.yaml
+slug: quizzes/drawing-for-3d-design-quiz
+order: 3
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Drawing for 3D Design quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-d22274ef-a811-4445-b5fa-132e70eab0f2
+  oerFields:
+    prerequisites:
+      - page: item-d22274ef-a811-4445-b5fa-132e70eab0f2
+        version: ''
+      - page: item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f
+        version: ''
+      - page: item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791229683
+  images: []
+  videos: []
+  updated: 1791229683
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="In two-point perspective, how many vanishing points
+  sit on the horizon line?" single-option="" randomize="">
+    <input type="checkbox" value="Two" data-correct="true">
+    <input type="checkbox" value="One">
+    <input type="checkbox" value="Three">
+    <input type="checkbox" value="None">
+  </multiple-choice>
+
+  <true-false-question question="Orthographic views (front, side and top) are
+  useful references for modeling to scale.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">How does sketching a concept before modeling save time in 3D?</p>
+    <p>Sketches let you explore shapes, proportions and silhouettes quickly, solve design problems before committing to geometry, and produce reference views to model from.</p>
+  </self-check>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4</id>
+<indent>1</indent>
+<location>pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.xml</location>
+<slug>quizzes/game-artist-pathway-readiness-quiz</slug>
+<order>6</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Game Artist Pathway readiness quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>readiness:item-72db2076-5252-4246-af1d-685903483097</oerTmpKey>
+<oerFields>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791229683</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791229683</updated>
+</metadata>
+<content><![CDATA[<p>Before you start Game Artist Pathway: can you answer these? Your answers aren't recorded.</p>
+<self-check title="Are you ready?">
+  <p slot="question">What makes a 3D asset game-ready?</p>
+  <p>Efficient topology within its polygon budget, clean UVs with consistent texel density, baked and PBR textures, levels of detail, correct scale and pivot, collision, and clear naming.</p>
+</self-check>
+<self-check title="Are you ready?">
+  <p slot="question">Name two technical limits you have to design within for a real-time game.</p>
+  <p>For example: the frame-time budget, polygon counts, draw calls, texture memory and the cost of dynamic lights and shadows.</p>
+</self-check>
+]]></content>
+</item>

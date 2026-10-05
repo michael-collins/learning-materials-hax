@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9e3bacc6-5f86-471f-adc6-0349fc801452</id>
+<indent>1</indent>
+<location>pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.xml</location>
+<slug>quizzes/environment-design-for-real-time-quiz</slug>
+<order>1</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Environment Design for Real-time quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>quiz:item-c9cb258f-d7f0-4668-a301-fff71e07b1d0</oerTmpKey>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-c9cb258f-d7f0-4668-a301-fff71e07b1d0</page>
+<version></version>
+</item>
+</prerequisites>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791229683</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791229683</updated>
+</metadata>
+<content><![CDATA[<p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+<multiple-choice question="What is the main benefit of building an environment from a modular kit?" single-option="" randomize="">
+  <input type="checkbox" value="Pieces can be reused and snapped together to build many layouts efficiently" data-correct="true">
+  <input type="checkbox" value="Every piece needs its own unique texture">
+  <input type="checkbox" value="It removes the need for level design">
+  <input type="checkbox" value="It increases draw calls, which improves quality">
+</multiple-choice>
+<true-false-question question="Modular pieces are easier to assemble when they are built to a consistent grid size.">
+  <input type="checkbox" value="True" data-correct="true">
+  <input type="checkbox" value="False">
+</true-false-question>
+<self-check title="Think it through">
+  <p slot="question">How can lighting and landmarks guide a player through an environment?</p>
+  <p>Brighter or contrasting light and color draw the eye toward the path, framing and leading lines point the way, and distinctive landmarks visible from a distance help players keep their bearings.</p>
+</self-check>
+]]></content>
+</item>
