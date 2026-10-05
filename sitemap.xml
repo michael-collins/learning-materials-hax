@@ -403,12 +403,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/modeling-game-assets/low-poly-non-photorealistic-rendering</loc>
-    <lastmod>2026-10-05T19:47:57.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/pathways/game-artist-pathway/texturing-for-real-time/texturing-random-objects</loc>
     <lastmod>2026-10-05T19:47:57.000Z</lastmod>
     <changefreq>daily</changefreq>
