@@ -1,0 +1,41 @@
+id: item-33b5c207-6cd0-45cf-8e39-26ddacad80c4
+indent: 2
+location: pages/item-33b5c207-6cd0-45cf-8e39-26ddacad80c4/index.yaml
+slug: lessons/vr-development/v0-9-0
+order: 1001
+parent: item-633c2d98-9f8a-4aaa-a06f-5078d355709e
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 5 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand AR/VR design principles
+      - Create VR-optimized content
+      - Implement comfortable locomotion systems
+      - Design intuitive VR interactions
+      - Test and iterate VR experiences
+      - Apply performance optimization for VR
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  oerSnapshotOf: item-633c2d98-9f8a-4aaa-a06f-5078d355709e
+  oerSnapshotTitle: AR/VR Development
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>Learn the unique requirements and best practices for creating augmented and
+  virtual reality experiences that are comfortable and engaging.</p>

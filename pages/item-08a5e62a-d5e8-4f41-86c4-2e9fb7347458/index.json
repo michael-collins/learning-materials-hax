@@ -1,0 +1,42 @@
+{
+  "id": "item-08a5e62a-d5e8-4f41-86c4-2e9fb7347458",
+  "indent": 2,
+  "location": "pages/item-08a5e62a-d5e8-4f41-86c4-2e9fb7347458/index.json",
+  "slug": "exercises/animating-virtual-creatures/v0-9-0",
+  "order": 1000,
+  "parent": "item-c8e30f6a-68fb-4e56-8f9f-b80dffec602c",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerFields": {
+      "difficulty": "Advanced",
+      "image": "files/rechgHKhLdlHzKX81_image_banner-creatures-compressed.jpg",
+      "imageAlt": "banner-creatures-compressed.jpg",
+      "license": "CC BY 4.0",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "allowEmbed": true
+    },
+    "oerSnapshotOf": "item-c8e30f6a-68fb-4e56-8f9f-b80dffec602c",
+    "oerSnapshotTitle": "Animating virtual creatures",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>In this exercise, you will practice animation techniques by recreating creatures from Evolved Virtual Creatures by Karl Sims.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVL5OApws44r45Oz65NJyEi\" title=\"Animating virtual creatures Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice applying the 12 principles of animation</li>\n<li>Practice keyframe animation of translation, rotation, and scale properties.</li>\n<li>Practice applying camera effects.</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>\n<p>Watch the animation tutorials.</p>\n</li>\n<li>\n<p>Create a creature animation using only primitives inspired by <a href=\"https://www.youtube.com/watch?v=JBgG_VSP7f8\">Evolved Virtual Creatures</a>. It must include the following:</p>\n<ul>\n<li>Armature rig</li>\n<li>At least 2 creatures with at least 3 moving pieces appendages</li>\n<li>Camera movement</li>\n<li>Easing applied to keyframes of moving objects (non-linear tangents in graph editor)</li>\n<li>At least 10 seconds of animation at 24 frames per second (240 frames)</li>\n</ul>\n</li>\n<li>\n<p>To create a “playblast” animation, you can capture the animation directly from the viewport. To create a video of the viewport’s animation, save the <code>.blend</code> file and set the render settings output folder to the project folder. Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding format to <strong>MPEG-4</strong>.</p>\n</li>\n<li>\n<p>No need to render using EEVEE, a viewport render is fine.</p>\n</li>\n<li>\n<p>Choose <strong>View</strong> ⟶ <strong>Viewport Render Animation</strong> to create the animation file. Check that the animation file was created.</p>\n</li>\n<li>\n<p>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-creatures.zip</code>.</p>\n</li>\n<li>\n<p>Upload the .zip file to the assignment dropbox.</p>\n</li>\n<li>\n<p>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</p>\n</li>\n</ol>\n<h2>Resources:</h2>\n<p>https://www.karlsims.com/evolved-virtual-creatures.html</p>\n<p>https://www.karlsims.com/papers/siggraph94.pdf</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

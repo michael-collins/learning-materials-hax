@@ -1,0 +1,74 @@
+id: item-13ee5c87-198e-415d-a9cf-4a548562f4f5
+indent: 2
+location: pages/item-13ee5c87-198e-415d-a9cf-4a548562f4f5/index.yaml
+slug: exercises/share-one-completed-set/v0-9-0
+order: 1000
+parent: item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerFields:
+    difficulty: Beginner
+    image: files/rec3owIe1VzR0OffF_image_ian_brill_icon_chess_set_2.jpg
+    imageAlt: ian brill icon chess set 2.jpg
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+  oerSnapshotOf: item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d
+  oerSnapshotTitle: Share One Completed Set
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>In this exercise, you will apply Image textures to a Chess board and
+  pieces</p>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice rendering images for submissions</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p><strong>For this assignment,&nbsp;you will submit 3 total images.</strong>
+
+  &lt;br&gt;<br>
+
+  Develop and refine a single chess set based on observation over time, peer and
+  instructor feedback.
+
+  &lt;br&gt;<br>
+
+  <strong>Submit three renders of <em>this individual</em> set to both
+  <em>Canvas</em> <em>and the corresponding discussion thread for
+  review</em>.</strong>&nbsp;
+
+  &lt;br&gt;  Make sure that your assignment is titled in the following format:
+
+  <strong>Last name, First name,</strong>&nbsp;the
+  word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson
+  number,</strong>&nbsp;and the&nbsp;<strong>word
+  "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
+  number.</strong>
+
+  &lt;br&gt;<br>
+
+  <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

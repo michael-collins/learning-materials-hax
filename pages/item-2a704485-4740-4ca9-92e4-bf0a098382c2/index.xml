@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2a704485-4740-4ca9-92e4-bf0a098382c2</id>
+<indent>2</indent>
+<location>pages/item-2a704485-4740-4ca9-92e4-bf0a098382c2/index.xml</location>
+<slug>exercises/modeling-a-metal-horse-head/v0-9-0</slug>
+<order>1000</order>
+<parent>item-13289971-852a-43b8-a9f8-da7e4d9b4015</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<image>files/recJa9PrmESgMr9Zw_image_METAL_KNIGHT_IMAGE.png</image>
+<imageAlt>METAL KNIGHT IMAGE.png</imageAlt>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<authors>
+<item>
+<name>Kenneth Ian Brill</name>
+<url>https://www.ianbrill.com/</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+<attachments>
+<item>
+<title>Metal Horse Front Reference Imagecfb vhg</title>
+<url>files/recaFPOVVtr8OO5Ad_attachment_HORSE_FRONT.jpeg</url>
+<description>Metal Horse Front Reference Image</description>
+<alt>Metal Horse Front Reference Image</alt>
+</item>
+<item>
+<title>Metal Horse Rear Reference Image</title>
+<url>files/recTCLCgvt1b7LKT5_attachment_HORSE_BACK.jpeg</url>
+<description>Metal Horse Rear Reference Image</description>
+<alt></alt>
+</item>
+<item>
+<title>Metal Horse Right Reference Image</title>
+<url>files/rec2wljYDjeqxgtUq_attachment_HORSE_RIGHT.jpeg</url>
+<description>Metal Horse Right Reference Image</description>
+<alt>Metal Horse Right Reference Image</alt>
+</item>
+<item>
+<title>Metal Horse Left Reference Image</title>
+<url>files/rectoIVjHo70ZPS2Q_attachment_HORSE_LEFT.jpeg</url>
+<description>Metal Horse Left Reference Image</description>
+<alt>Metal Horse Left Reference Image</alt>
+</item>
+</attachments>
+</oerFields>
+<oerSnapshotOf>item-13289971-852a-43b8-a9f8-da7e4d9b4015</oerSnapshotOf>
+<oerSnapshotTitle>Modeling a Metal Horse Head</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Qnmcpc_vs1RGJaQFm4EsuE9" title="Modeling a Metal Horse Head Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice working from reference images</li>
+<li>Practice using 3D software interface and terminology.</li>
+<li>Use modeling workflows to create high quality topology and edge flow.</li>
+<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>
+</ol>
+<h2>Instructions</h2>
+<p>This a demonstration of how to create a more complex Knight-like form that approximates a work by the artist, William Kofmehl III. You can download and use the attached reference images to complete this version of the Knight Chess Piece assignment.</p>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

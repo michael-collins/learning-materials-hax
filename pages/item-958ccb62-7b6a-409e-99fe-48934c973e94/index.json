@@ -1,0 +1,42 @@
+{
+  "id": "item-958ccb62-7b6a-409e-99fe-48934c973e94",
+  "indent": 2,
+  "location": "pages/item-958ccb62-7b6a-409e-99fe-48934c973e94/index.json",
+  "slug": "exercises/animating-tetris/v0-9-0",
+  "order": 1000,
+  "parent": "item-de45c810-3a55-4f18-9522-cf46b4508bfa",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerFields": {
+      "difficulty": "Intermediate",
+      "image": "files/recxOxvwqqUAVs2TK_image_banner-tetris-compressed.jpg",
+      "imageAlt": "banner-tetris-compressed.jpg",
+      "license": "CC BY 4.0",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "allowEmbed": true
+    },
+    "oerSnapshotOf": "item-de45c810-3a55-4f18-9522-cf46b4508bfa",
+    "oerSnapshotTitle": "Animating Tetris",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>In this exercise, students will creatively interpret the game, Tetris created in 1984 by Alexey Pajitnov, into a 10 seconds or longer animation.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrUEv-pnXBisI7G3yU_puFGv\" title=\"Animating Tetris Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice applying the 12 principles of animation</li>\n<li>Practice keyframe animation of translation, rotation, and scale properties.</li>\n<li>Practice applying camera effects.</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the animation tutorials.</li>\n<li>Create an animated scene inspired by <a href=\"https://www.youtube.com/watch?v=qIAAmaS9n0Q\">Tetris</a>. It must include the following:\n<ul>\n<li>At least 8 moving pieces</li>\n<li>Camera movement</li>\n<li>Easing applied to keyframes of moving objects (non-linear tangents in graph editor)</li>\n<li>Camera shake</li>\n<li>At least 10 seconds of animation at 24 frames per second (240 frames)</li>\n</ul>\n</li>\n<li>To create a “playblast” animation, you can capture the animation directly from the viewport. To create a video of the viewport’s animation, save the <code>.blend</code> file and set the render settings output folder to the project folder. Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding format to <strong>MPEG-4</strong>.</li>\n<li>Choose <strong>View</strong> ⟶ <strong>Viewport Render Animation</strong> to create the animation file. Check that the animation file was created.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-tetris.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>\n</ol>\n<h2>Resources:</h2>\n<ol>\n<li>https://www.cnn.com/style/article/tetris-video-game-history/index.html</li>\n<li>[The Story of Tetris]{https://www.youtube.com/watch?v=_fQtxKmgJC8}</li>\n<li>[2010 Classic Tetris World Championship-Final Round]{https://www.youtube.com/watch?v=qIAAmaS9n0Q}</li>\n<li>[The Classic Tetris World Championships Explained]{https://www.youtube.com/watch?v=9RaqVGzhQTM}</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

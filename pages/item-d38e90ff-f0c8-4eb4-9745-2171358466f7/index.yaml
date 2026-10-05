@@ -1,0 +1,431 @@
+id: item-d38e90ff-f0c8-4eb4-9745-2171358466f7
+indent: 2
+location: pages/item-d38e90ff-f0c8-4eb4-9745-2171358466f7/index.yaml
+slug: projects/ideas-in-motion/v0-9-0
+order: 1000
+parent: item-52fb5644-31ca-4c30-a426-3bd4a9182f3a
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:project
+  oerFields:
+    difficulty: Beginner
+    image: files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg
+    imageAlt: cycles-banner-compressed2.jpg
+    courses:
+      - Dart 303
+    license: CC BY 4.0
+    aiLicense:
+      - AIUL-WA
+      - AIUL-CD
+      - AIUL-NA-3D
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    allowEmbed: true
+    publishEmbed: true
+    attachments:
+      - title: Concept Development Worksheet (.docx)
+        url: /uploads/recWIZ9by8kdM9JEo_attachment_dart303-project-concepts.docx
+        description: Concept development worksheet
+        alt: Concept development worksheet
+      - title: Storyboard Template (pdf)
+        url: files/rec5yoxGObqGbFsIn_attachment_storyboard-template.pdf
+        description: Storyboard template
+        alt: Storyboard template
+  oerSnapshotOf: item-52fb5644-31ca-4c30-a426-3bd4a9182f3a
+  oerSnapshotTitle: Ideas In Motion
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>In this project, you will apply creative 3D production workflows to develop
+  a 30 second animation. You will pursue your own interests while balance
+  solving for the project's theme.</p>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Demonstrate understanding of 3D modeling, rendering, and animation
+  skills.</li>
+
+  <li>Apply animation principles.</li>
+
+  <li>Apply fundamental principles of color and composition theory.</li>
+
+  <li>Practice concept development and ideation skills.</li>
+
+  </ol>
+
+  <h2>Requirements</h2>
+
+  <p>For this the project, you will design, model, texture, animate, and render
+  a&nbsp;<strong>30 second animation</strong>&nbsp;solving for the project
+  theme. Once you have a project idea and storyboard created, locate sound that
+  you find on the audio resources tab that is licensed for remix (CC or Public
+  Domain). Pay special attention to the&nbsp;<strong><a
+  href="http://freemusicarchive.org/curator/Video/blog/Not_All_Music_on_FMA_is_Licensed_for_Video">audio
+  track’s licensing</a></strong>. You cannot use anything that states no
+  derivatives, indicated by “ND” in the license. If the license requires you to
+  give credit (CC-BY), you can give credit in the Vimeo.com description (where
+  you will be uploading your video). You are encouraged to edit, modify, and
+  combine different audio tracks to suit the needs of your animation.
+
+  &lt;br&gt;&lt;br&gt;
+
+  <strong>The video should contain 30 seconds of animation ±5
+  seconds.</strong>&nbsp;While this may not seem like a very long time for an
+  animation, it’s actually quite a lot of work to make 30 well crafted and
+  polished seconds in terms of animation, modeling and materials, and rendering
+  quality.
+
+  &lt;br&gt;&lt;br&gt;
+
+  You will also critically reflect on your work and the project theme in a 150
+  word work statement.
+
+  &lt;br&gt;&lt;br&gt;
+
+  A successful project will demonstrate understanding and mastery of 3D tools
+  and processes, application of&nbsp;<strong><a
+  href="https://www.getty.edu/education/teachers/building_lessons/principles_design.pdf">formal
+  design principles</a></strong>, attention to detail and composition, and lead
+  to discussion about your work during a critique.
+
+  &lt;br&gt;&lt;br&gt;</p>
+
+  <h2>Project Theme</h2>
+
+  <p>What will you make an animation about? What makes your animation
+  interesting? Go through the concept development process to identify a theme
+  for this project. A theme can be as simple as a single word or complex stories
+  derived from personal experiences. Try to identify the most simple version of
+  the story you are trying to tell.
+
+  &lt;br&gt;&lt;br&gt;</p>
+
+  <h2>Project format</h2>
+
+  <p>Choose a format that you can reasonable accomplish within the timeframe of
+  the project. Examples include:</p>
+
+  <ul>
+
+  <li>Narrative short film</li>
+
+  <li>Motion graphics
+
+  <ul>
+
+  <li>branding and identity</li>
+
+  <li>Product</li>
+
+  <li>Explainer animation</li>
+
+  <li>VJ loops for live performances</li>
+
+  <li>Experimental or non-narrative content:&nbsp;<a
+  href="https://vimeo.com/categories/experimental">Examples on
+  vimeo.com</a></li>
+
+  <li>Scientific or data-driven simulations and visualizations</li>
+
+  </ul>
+
+  </li>
+
+  <li>VFX/CFX Breakdown Reel
+
+  &lt;br&gt;&lt;br&gt;</li>
+
+  </ul>
+
+  <h2>Constraints</h2>
+
+  <p>Do not produce work that could be construed as ‘fan art’ for existing
+  intellectual properties. All assets used in the production of the work must be
+  created by you, be appropriately licensed for use, or be appropriated in a
+  transformative way that significantly alters the nature of the original asset.
+  For example, you can use a texture pack you downloaded from a texture website,
+  however, if you render an image of just a flat plane with the texture applied,
+  this is not really creative transformation since the entirety of the image is
+  work from someone else. Your transformation and contextualization is what’s
+  important. A render with a background that uses an image from Google image
+  search (please don’t do this) that comprises more than 50% of the work is also
+  not really enough creative transformation. If someone reviews your work and
+  says that the image’s background is their favorite part of the image, you’ll
+  have to then explain how you didn’t make the background, which is not a great
+  situation to be in.</p>
+
+  <h2>Instructions</h2>
+
+  <h3>Pre-production</h3>
+
+  <ol>
+
+  <li><strong>Concept(s):</strong>
+
+  <ul>
+
+  <li>Complete the concept development worksheet (see downloads).
+
+  <ul>
+
+  <li>Investigate three ideas that: identify themes, visually explore via
+  sketching or storyboarding, and finding reference images that support the
+  concept explanation.</li>
+
+  </ul>
+
+  </li>
+
+  <li>A completed worksheet will aid the discussion with your instructor.</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Storyboard</strong>
+
+  <ul>
+
+  <li>Use the storyboard template from the downloads section
+
+  <ul>
+
+  <li>Tutorial 1:&nbsp;<a
+  href="https://www.linkedin.com/learning-login/share?forceAccount=false&amp;redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fanimation-foundations-storyboarding%3Ftrk%3Dshare_ent_url&amp;account=76811570">LinkedIn
+  Learning</a></li>
+
+  <li>Tutorial 2:&nbsp;<a
+  href="https://www.youtube.com/watch?v=NPrkxj2MyZI">Storyboarding</a></li>
+
+  </ul>
+
+  </li>
+
+  <li>Requirements:
+
+  <ul>
+
+  <li>Complete the storyboard template. Use as many pages as necessary. View
+  tutorials if you are unsure how to do this.</li>
+
+  <li>Upload storyboards to assignment dropbox
+
+  &lt;br&gt;&lt;br&gt;</li>
+
+  </ul>
+
+  </li>
+
+  </ul>
+
+  </li>
+
+  </ol>
+
+  <h3>Production</h3>
+
+  <ol>
+
+  <li><strong>3D Scene Layouts (animatics)</strong>
+
+  <ul>
+
+  <li>Create a rough blocking of your 3D animation</li>
+
+  <li>Create viewport renders, edited with sound. <strong>See demo videos for
+  detailed instructions. DO NOT recreate the demo, this shows the skills and
+  workflows you should apply to your own work.</strong></li>
+
+  <li>Setting up shot compositions:&nbsp;<a
+  href="https://www.youtube.com/watch?v=cIvGRytmRaw">Shot composition
+  advice</a></li>
+
+  <li>Requirements:
+
+  <ul>
+
+  <li>Create a 15-30 second compressed .mp4 of your viewport animation videos
+  edited with sound. Please consider relevant aspects of camera, composition,
+  staging, pacing, and animation.</li>
+
+  <li>Resolution: 1080x1920</li>
+
+  </ul>
+
+  </li>
+
+  <li>Post your in-process work to the relevant discussion threads</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Test Renders</strong>
+
+  <ul>
+
+  <li>No screenshots permitted, you must save the rendered images to the hard
+  drive.</li>
+
+  <li><strong>Note:</strong> For reference, 20 second render times per frame
+  takes 4 hours for a computer to render 30 seconds worth of frames.</li>
+
+  <li>Requirements:
+
+  <ul>
+
+  <li>3 to 5 test renders, each from a different part of the animation.
+  <strong>See demo videos for detailed instructions.</strong></li>
+
+  <li>1080 HD preset</li>
+
+  </ul>
+
+  </li>
+
+  <li>Rendering times should be under a minute per frame (unless you plan to pay
+  for an online render farm)</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Preliminary Submission</strong>
+
+  <ul>
+
+  <li>Upload .mp4 video file in compressed H.264 format to discussion
+  thread</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Final Rendering</strong>
+
+  <ul>
+
+  <li>You will use either Cycles or EEVEE render engine in Blender to render
+  your animation.</li>
+
+  <li>30 seconds of frames is equal to 720 frames at 24 frames per second.</li>
+
+  <li>Try to render in EXR Half Float</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Editing and color grading</strong>
+
+  <ul>
+
+  <li>Beginner level: Use Adobe AfterEffects to color grade the animation.
+  <strong>See 3D Scene Layout demo videos for the tutorial.</strong></li>
+
+  <li>Intermediate: You can use the built in Blender compositor (Blender
+  Compositor: <a
+  href="https://www.youtube.com/watch?v=1DHL3nCoIhk">tutorial</a>).</li>
+
+  <li>Expert: Use EXR format for rendering images. Grade and edit within DaVinci
+  Resolve (EXR: <a
+  href="https://www.youtube.com/watch?v=aJE7dmgOo6s">tutorial</a>), (COLOR: <a
+  href="https://www.youtube.com/watch?v=1akgMT5us4Q">Grading tutorial</a>).
+
+  &lt;br&gt;&lt;br&gt;</li>
+
+  </ul>
+
+  </li>
+
+  </ol>
+
+  <h3>Finish Production</h3>
+
+  <ol>
+
+  <li><strong>Statement</strong>
+
+  <ul>
+
+  <li>Requirements:
+
+  <ul>
+
+  <li>Write and add upload a statement format named (min 150 words)
+  called&nbsp;<strong><em>statement.doc</em></strong></li>
+
+  </ul>
+
+  </li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Final Submission</strong>
+
+  <ul>
+
+  <li>Requirements:
+
+  <ul>
+
+  <li>Upload .mp4 video file in compressed H.264 format to Vimeo.com</li>
+
+  </ul>
+
+  </li>
+
+  <li><code>.txt</code>&nbsp;file containing
+
+  <ul>
+
+  <li>Link to Vimeo.com video (Do not use Youtube please)</li>
+
+  <li>List feedback you received and changes you implemented since the
+  preliminary submission.
+
+  &lt;br&gt;&lt;br&gt;</li>
+
+  </ul>
+
+  </li>
+
+  </ul>
+
+  </li>
+
+  </ol>
+
+  <h3>Critique and feedback</h3>
+
+  <ol>
+
+  <li><strong>Preliminary Submission Discussion thread</strong>
+
+  <ul>
+
+  <li>Contribute feedback to peer work and engage with a discussion about your
+  own work.</li>
+
+  </ul>
+
+  </li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="project"></oer-rubric>

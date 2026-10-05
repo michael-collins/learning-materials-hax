@@ -1,0 +1,42 @@
+{
+  "id": "item-c24211c3-c569-4165-a822-40f6849b1eec",
+  "indent": 2,
+  "location": "pages/item-c24211c3-c569-4165-a822-40f6849b1eec/index.json",
+  "slug": "exercises/rigging-a-human/v0-9-0",
+  "order": 1000,
+  "parent": "item-8d933674-82e9-443f-ad1b-c4d177ab91f9",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerFields": {
+      "difficulty": "Advanced",
+      "image": "files/recaLI7LYZgUjk4bg_image_human-rig-banner.png",
+      "imageAlt": "human-rig-banner.png",
+      "license": "CC BY 4.0",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "allowEmbed": true
+    },
+    "oerSnapshotOf": "item-8d933674-82e9-443f-ad1b-c4d177ab91f9",
+    "oerSnapshotTitle": "Rigging a human",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>In this exercise, students will practice modeling, rigging, and animating a human.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrWPKLLkM8oVibJ1aKHivoNl\" title=\"Rigging a human Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice setting up Inverse Kinematics (IK) bone constraints.</li>\n<li>Practice modeling to good edge flow for deformation.</li>\n<li>Become familiarized with creating and binding an armature using the Rigify add-on.</li>\n<li>Become familiarized with vertex weight painting workflows</li>\n<li>Practice keyframe animation</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the tutorials.</li>\n<li>Create a polygonal model a human-like character from scratch (two arms, two legs, and a head). You may use a model you've previously created if you wish.</li>\n<li>Use the Rigify add-on to add a human rig.</li>\n<li>Bind the character model to the rig.</li>\n<li>Adjust and paint vertex weights to create pleasing deformation as needed.</li>\n<li>Create an animated walk cycle for the character. (Do not use Mixamo or download a pre-made animation)</li>\n<li>Set up a camera to frame the shot.</li>\n<li>To create a video of the viewport’s animation, save the file and set the render settings output folder to the project folder. Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding format to <strong>MPEG-4</strong>.</li>\n<li>Choose <strong>View</strong> ⟶ <strong>Viewport Render Animation</strong> to create the animation.</li>\n<li>Save as <code>LASTNAME-human-rig-animation.zip</code> and upload to the submission dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened. This should include:\n<ul>\n<li><code>.blend</code> file</li>\n<li><code>.mp4</code> video file</li>\n</ul>\n</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

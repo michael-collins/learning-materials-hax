@@ -1,0 +1,41 @@
+{
+  "id": "item-dd026cce-5bed-4534-996e-8078f1c13157",
+  "indent": 2,
+  "location": "pages/item-dd026cce-5bed-4534-996e-8078f1c13157/index.json",
+  "slug": "exercises/modeling-a-chessboard/v0-9-0",
+  "order": 1000,
+  "parent": "item-45493816-b35c-457b-9581-8934b03dbac2",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "image": "files/recqqIknm5ebQaFmz_image_Chess_Board_Image.png",
+      "imageAlt": "Chess Board Image.png",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Kenneth Ian Brill",
+          "url": "https://www.ianbrill.com/"
+        }
+      ],
+      "allowEmbed": true
+    },
+    "oerSnapshotOf": "item-45493816-b35c-457b-9581-8934b03dbac2",
+    "oerSnapshotTitle": "Modeling a Chessboard",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>How to Make a Chess Board</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5QksJy4ZnxgWrbVFklAoOFvU\" title=\"Modeling a Chessboard Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice using 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>How to Make a Chess Board</strong>\n&lt;BR&gt;\n&lt;BR&gt;<br>\nThe Play list consists of two demonstrations. The First is a more recent and involved demonstration. It is expected that your assignment will at the very least look contain the elements and organization of the board in the earlier demonstration. That said you are encouraged to expand upon the design, thus the inclusion of both demonstrations.&nbsp;\n&lt;BR&gt;\n&lt;BR&gt;<br>\nFor this assignment, recreate the steps in the Demonstration and submit your images of your model to Canvas for review. Make sure that your assignment is titled in the following format:\n&lt;BR&gt;\n&lt;BR&gt;  Last name, First name, the word \"Lesson\" followed by the Lesson number, and the word \"Assignment\" followed by the Assignment number.\n&lt;BR&gt;\n&lt;BR&gt;  Example:\nBrill Ian Lesson x Assignment x\n&lt;BR&gt;\n&lt;BR&gt;  Be sure to provide screen grabs or renders from 3 angles and the original blender file. Be sure to upload each file independently to facilitate ease of grading (so that the reviewer only need to download files when necessary).</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

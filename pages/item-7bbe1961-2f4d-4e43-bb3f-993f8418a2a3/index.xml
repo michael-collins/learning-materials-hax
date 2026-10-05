@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-7bbe1961-2f4d-4e43-bb3f-993f8418a2a3</id>
+<indent>2</indent>
+<location>pages/item-7bbe1961-2f4d-4e43-bb3f-993f8418a2a3/index.xml</location>
+<slug>exercises/sea-creature-non-photorealistic-rendering/v0-9-0</slug>
+<order>1000</order>
+<parent>item-cbfb8ddf-311c-40ed-bbbb-f2049f9d355a</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<image>files/recEGCzExXCKxYoco_image_sculpting-retopo-rendering-header-v1.jpg</image>
+<imageAlt>sculpting-retopo-rendering-header-v1.jpg</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<oerSnapshotOf>item-cbfb8ddf-311c-40ed-bbbb-f2049f9d355a</oerSnapshotOf>
+<oerSnapshotTitle>Sea creature: Non-photorealistic rendering</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, you will model an environment for your creature from the previous exercises. You will also set up NPR shaders, Freestyle lines, and use the compositor to achieve a comic visual style.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrWh22nK2hfnGbeEaxMp3s_e" title="Sea creature: Non-photorealistic rendering Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Become familiarized rendering workflows for non-photorealistic rendering (NPR)</li>
+<li>Gain understanding of lighting and materials for NPR</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Continue using your creature from the previous exercise. Model an indoor or outdoor environment and props.</li>
+<li>Follow the tutorials to add NPR shaders to your creature and the environment.</li>
+<li>Create shaders, materials, and freestyle lines to create a manga or comic book visual style.</li>
+<li>Choose an interesting composition.</li>
+<li>Use the compositing system in Blender to use blending modes and post-effects to enhance the visual quality as seen in the tutorials.</li>
+<li>Save a 1920x1080 render as LASTNAME-npr-creature.png in the project folder.</li>
+<li>Save your file as <code>LASTNAME-npr-creature.blend</code> in the project folder.</li>
+<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-npr-creature.zip</code>.</li>
+<li>Upload the .zip file to the assignment dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

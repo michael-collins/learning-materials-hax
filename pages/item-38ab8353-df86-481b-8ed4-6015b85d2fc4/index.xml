@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-38ab8353-df86-481b-8ed4-6015b85d2fc4</id>
+<indent>2</indent>
+<location>pages/item-38ab8353-df86-481b-8ed4-6015b85d2fc4/index.xml</location>
+<slug>exercises/rigging-a-quadruped/v0-9-0</slug>
+<order>1000</order>
+<parent>item-8b5f9d0f-0493-43a9-9fb1-970c6796d2b4</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerFields>
+<difficulty>Advanced</difficulty>
+<image>files/recF6aLZmbNHI355u_image_ex-6-intermediate-banner-compressed.jpg</image>
+<imageAlt>ex-6-intermediate-banner-compressed.jpg</imageAlt>
+<license>CC BY 4.0</license>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<oerSnapshotOf>item-8b5f9d0f-0493-43a9-9fb1-970c6796d2b4</oerSnapshotOf>
+<oerSnapshotTitle>Rigging a quadruped</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>In this exercise, students will practice modeling, rigging, and animating a quadruped animal.</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1SRFV9WFkj605z0HzQLXS" title="Rigging a quadruped Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice setting up Inverse Kinematics (IK) bone constraints.</li>
+<li>Practice modeling to good edge flow for deformation.</li>
+<li>Become familiarized with creating and binding an armature using the Rigify add-on.</li>
+<li>Become familiarized with vertex weight painting workflows</li>
+<li>Practice keyframe animation</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Watch the tutorials.</li>
+<li>Create a polygonal model a quadruped (four-footed animal) from scratch. I suggest a variation of a cat or dog.</li>
+<li>Use the Rigify add-on to add an animal rig.</li>
+<li>Adjust and paint vertex weights to create pleasing deformation as needed.</li>
+<li>Create an animated walk cycle for the animal. Please use an animation reference video or a key pose guide image.</li>
+<li>Set up a camera to frame the shot.</li>
+<li>To create a video of the viewport’s animation, save the file and set the render settings output folder to the project folder. Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding format to <strong>MPEG-4</strong>.</li>
+<li>Choose <strong>View</strong> ⟶ <strong>Viewport Render Animation</strong> to create the animation.</li>
+<li>Save as <code>LASTNAME-animal-rig-animation.zip</code> and upload to the submission dropbox.</li>
+<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened. This should include:
+<ul>
+<li><code>.blend</code> file</li>
+<li><code>.mp4</code> video file</li>
+</ul>
+</li>
+</ol>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

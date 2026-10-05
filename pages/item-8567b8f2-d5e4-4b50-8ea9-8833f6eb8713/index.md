@@ -1,0 +1,1 @@
+Master the integration of VFX elements with live-action footage, creating seamless and believable final composites.

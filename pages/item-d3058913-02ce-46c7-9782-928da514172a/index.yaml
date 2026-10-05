@@ -1,0 +1,40 @@
+id: item-d3058913-02ce-46c7-9782-928da514172a
+indent: 2
+location: pages/item-d3058913-02ce-46c7-9782-928da514172a/index.yaml
+slug: lessons/render-layers-and-passes/v0-9-0
+order: 1001
+parent: item-6fc79952-8328-44db-b0ed-3ee00811072d
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 3 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand render pass types and uses
+      - Set up render layers in 3D software
+      - Combine passes effectively in compositing
+      - Use AOVs for maximum flexibility
+      - Troubleshoot pass-related issues
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  oerSnapshotOf: item-6fc79952-8328-44db-b0ed-3ee00811072d
+  oerSnapshotTitle: Render Layers and Passes
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>Master the use of render layers and passes to maintain maximum control and
+  flexibility when compositing 3D renders.</p>

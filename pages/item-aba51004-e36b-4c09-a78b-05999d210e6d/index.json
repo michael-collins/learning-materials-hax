@@ -1,0 +1,47 @@
+{
+  "id": "item-aba51004-e36b-4c09-a78b-05999d210e6d",
+  "indent": 2,
+  "location": "pages/item-aba51004-e36b-4c09-a78b-05999d210e6d/index.json",
+  "slug": "lessons/particle-simulation/v0-9-0",
+  "order": 1001,
+  "parent": "item-324bbe4f-1369-48a4-9035-7fa8b3a56677",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerFields": {
+      "estimatedDuration": "5 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Create and configure particle systems",
+        "Control particle behavior and appearance",
+        "Simulate natural phenomena",
+        "Optimize particle count for performance",
+        "Render particles effectively"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "oerSnapshotOf": "item-324bbe4f-1369-48a4-9035-7fa8b3a56677",
+    "oerSnapshotTitle": "Particle Simulation",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>Learn to create and control particle systems for generating a wide range of visual effects from fire and smoke to magical elements.</p>\n"
+}

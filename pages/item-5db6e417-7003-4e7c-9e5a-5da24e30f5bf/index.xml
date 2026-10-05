@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf</id>
+<indent>2</indent>
+<location>pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.xml</location>
+<slug>exercises/model-a-gem/v0-9-0</slug>
+<order>1000</order>
+<parent>item-ca98e9d2-a6bf-43da-af53-0ff978b5f684</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerFields>
+<difficulty>Beginner</difficulty>
+<image>files/rec14hI66d4Hl61SA_image_gem_image.png</image>
+<imageAlt>gem image.png</imageAlt>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<authors>
+<item>
+<name>Kenneth Ian Brill</name>
+<url>https://www.ianbrill.com/</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+</oerFields>
+<oerSnapshotOf>item-ca98e9d2-a6bf-43da-af53-0ff978b5f684</oerSnapshotOf>
+<oerSnapshotTitle>Model a Gem</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>model a Custom Gem</p>
+<oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Qn9XcneFk2URkb8MW1B4lQB" title="Model a Gem Tutorial"></oer-iframe>
+<h2>Learning Objectives</h2>
+<ol>
+<li>Practice using 3D software interface and terminology.</li>
+<li>Use modeling workflows to create high quality topology and edge flow.</li>
+<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>
+</ol>
+<h2>Instructions</h2>
+<p><strong>The Following Demonstrations Show Various Methods for Creating Gems and Diamonds of Varying Complexity</strong>
+&lt;BR&gt;
+&lt;BR&gt;<br>
+For this assignment, create your own interpretation of a gem, based on the steps in the demonstration and submit 3 images (from good angles) of your model to Canvas for review. Make sure that your assignment is titled in the following format:
+&lt;BR&gt;
+&lt;BR&gt;<br>
+Last name, First name, the word "Lesson" followed by the Lesson number, and the word "Assignment" followed by the Assignment number.
+&lt;BR&gt;
+&lt;BR&gt;<br>
+Example:
+Brill Ian Lesson x Assignment x
+&lt;BR&gt;
+&lt;BR&gt;<br>
+Be sure to provide screen grabs or renders from 3 angles and the original blender file. Be sure to upload each file independently to facilitate ease in grading (so that the reviewer only need to download files when necessary).</p>
+<h2>Grading Rubric</h2>
+<oer-rubric rubric-id="exercise"></oer-rubric>
+]]></content>
+</item>

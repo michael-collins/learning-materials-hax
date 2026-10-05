@@ -1,0 +1,101 @@
+id: item-0a5774a6-cc97-40b9-836d-a2ec2cea0f21
+indent: 2
+location: pages/item-0a5774a6-cc97-40b9-836d-a2ec2cea0f21/index.yaml
+slug: exercises/rendering-random-objects/v0-9-0
+order: 1000
+parent: item-ecba634e-1484-46f2-90b8-7d379784ba4f
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerFields:
+    difficulty: Intermediate
+    image: files/receipHXbIjwRD66T_image_texturing-objects-header.jpg
+    imageAlt: texturing-objects-header.jpg
+    license: CC BY 4.0
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    allowEmbed: true
+  oerSnapshotOf: item-ecba634e-1484-46f2-90b8-7d379784ba4f
+  oerSnapshotTitle: Rendering random objects
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>In this exercise, you will continue working on your objects and create a
+  lighting and background setup for final rendering.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrWaCwxTnu9yMGbqFudZtdls"
+  title="Rendering random objects Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice configuring render settings to create a high quality render in
+  Blender.</li>
+
+  <li>Practice setting up normal and specular maps to increase the realism for
+  principled rendering.</li>
+
+  <li>Gain familiarity with adding depth of field effects to renders</li>
+
+  <li>Understand how to set up 3-point studio lighting</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Watch the tutorials in Learning Resources.</li>
+
+  <li>Duplicate the modeling folder on your computer. <strong>This will be your
+  project folder.</strong> Save all files to this folder.</li>
+
+  <li>Create a 3-point lighting setup.</li>
+
+  <li>Create a backdrop to out render each object. If you would like to reuse
+  the backdrop, you can choose <strong>File</strong> → <strong>Append</strong>
+  and choose the Blend file with the backdrop. Navigate through the folders to
+  find the backdrop object to import bring it into the project file.</li>
+
+  <li>Create a new camera. Configure this camera as the render camera and adjust
+  the focal length and <strong>depth of field</strong> settings.</li>
+
+  <li>Rendering using <strong>Cycles</strong> and high <strong>sample</strong>
+  settings (500+) with <strong>adaptive sampling</strong> enabled.</li>
+
+  <li>Save the renders as <code>object1-render.png</code>,
+  <code>object2-render.png</code>, and <code>object3-render.png</code>, etc. in
+  the project folder. One render of each object is all that is required.</li>
+
+  <li>Compress the project folder once you’ve completed the tutorial and rename
+  it <code>LASTNAME-render-objects.zip</code><strong>.</strong></li>
+
+  <li>Upload the .zip file to the assignment dropbox.</li>
+
+  <li>Double check that you’ve included all files and that your
+  <code>.zip</code> file can be downloaded and opened.</li>
+
+  </ol>
+
+  <h2>Resources</h2>
+
+  <p>Random object generator website: <a
+  href="https://www.randomlists.com/things">randomlists.com/things</a></p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

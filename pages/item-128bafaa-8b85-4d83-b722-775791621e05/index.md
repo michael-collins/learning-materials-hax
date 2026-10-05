@@ -1,0 +1,1 @@
+Develop skills in character rigging, learning how to create control systems that allow animators to pose and animate characters efficiently.

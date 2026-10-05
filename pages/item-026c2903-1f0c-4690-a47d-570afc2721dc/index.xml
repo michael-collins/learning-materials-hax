@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-026c2903-1f0c-4690-a47d-570afc2721dc</id>
+<indent>2</indent>
+<location>pages/item-026c2903-1f0c-4690-a47d-570afc2721dc/index.xml</location>
+<slug>lessons/render-layers-and-passes/v0-0-1</slug>
+<order>1000</order>
+<parent>item-6fc79952-8328-44db-b0ed-3ee00811072d</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand render pass types and uses</item>
+<item>Set up render layers in 3D software</item>
+<item>Combine passes effectively in compositing</item>
+<item>Use AOVs for maximum flexibility</item>
+<item>Troubleshoot pass-related issues</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSnapshotOf>item-6fc79952-8328-44db-b0ed-3ee00811072d</oerSnapshotOf>
+<oerSnapshotTitle>Render Layers and Passes</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>Master the use of render layers and passes to maintain maximum control and flexibility when compositing 3D renders.</p>
+]]></content>
+</item>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-516620a0-e7c9-4eb5-be9c-76df19420ef9</id>
+<indent>2</indent>
+<location>pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.xml</location>
+<slug>pathways/fundamentals/v0-9-0</slug>
+<order>1000</order>
+<parent>item-728c455b-226f-433d-9978-17a476458a79</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:pathway</pageType>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSnapshotOf>item-728c455b-226f-433d-9978-17a476458a79</oerSnapshotOf>
+<oerSnapshotTitle>Fundamentals</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>false</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<oer-pathway layout="matrix"></oer-pathway>
+<p>The essentials.</p>
+<h2>Learning Objectives</h2>
+<p>objective example</p>
+<h2>Examples</h2>
+<ul>
+<li>Example artist or studio</li>
+</ul>
+<h2>Specializations</h2>
+<p>This pathway includes the following specializations:</p>
+]]></content>
+</item>

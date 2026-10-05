@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-19ba492b-58a2-4b1f-a22a-ecaf1cc04da9</id>
+<indent>2</indent>
+<location>pages/item-19ba492b-58a2-4b1f-a22a-ecaf1cc04da9/index.xml</location>
+<slug>lessons/exporting-and-delivery/v0-9-0</slug>
+<order>1001</order>
+<parent>item-fa670508-1a83-4d74-875b-be7c2d99587f</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>2 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand file formats and codecs</item>
+<item>Configure export settings appropriately</item>
+<item>Prepare files for different delivery platforms</item>
+<item>Manage file sizes and quality</item>
+<item>Create delivery packages and documentation</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSnapshotOf>item-fa670508-1a83-4d74-875b-be7c2d99587f</oerSnapshotOf>
+<oerSnapshotTitle>Exporting and Delivery</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>Learn proper export procedures and delivery workflows to ensure your composited work meets technical specifications and quality requirements.</p>
+]]></content>
+</item>

@@ -1,0 +1,47 @@
+{
+  "id": "item-ae608b88-3601-4de4-a289-2b7512f05406",
+  "indent": 2,
+  "location": "pages/item-ae608b88-3601-4de4-a289-2b7512f05406/index.json",
+  "slug": "lessons/procedural-compositing-workflows/v0-0-1",
+  "order": 1000,
+  "parent": "item-383cc93b-8187-45e6-81de-933498aca116",
+  "title": "v0.0.1",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerFields": {
+      "estimatedDuration": "4 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Understand node-based compositing principles",
+        "Build efficient compositing networks",
+        "Use procedural techniques for flexibility",
+        "Organize and document node graphs",
+        "Create reusable compositing setups"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "oerSnapshotOf": "item-383cc93b-8187-45e6-81de-933498aca116",
+    "oerSnapshotTitle": "Procedural Compositing Workflows",
+    "version": "0.0.1",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>Learn procedural, node-based compositing workflows that provide flexibility and efficiency in post-production work.</p>\n"
+}

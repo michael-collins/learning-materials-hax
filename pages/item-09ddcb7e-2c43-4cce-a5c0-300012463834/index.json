@@ -1,0 +1,67 @@
+{
+  "id": "item-09ddcb7e-2c43-4cce-a5c0-300012463834",
+  "indent": 2,
+  "location": "pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.json",
+  "slug": "exercises/modeling-a-bishop/v0-9-0",
+  "order": 1000,
+  "parent": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
+  "title": "v0.9.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerFields": {
+      "difficulty": "Beginner",
+      "image": "files/rectzJhf833zBC9T3_image_bishop_image.png",
+      "imageAlt": "bishop image.png",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "authors": [
+        {
+          "name": "Kenneth Ian Brill",
+          "url": "https://www.ianbrill.com/"
+        }
+      ],
+      "allowEmbed": true,
+      "attachments": [
+        {
+          "title": "Reference illustration of Bishop from additional front or back view",
+          "url": "files/recoyG0w7HAA9wb65_attachment_bishop_side.jpg",
+          "description": "Reference illustration of Bishop from additional front or back view",
+          "alt": "Reference illustration of Bishop from additional front or back view"
+        },
+        {
+          "title": "Reference illustration of Bishop from additional top view",
+          "url": "files/rec6SYnnD3RNzwulo_attachment_bishop_top.jpg",
+          "description": "Reference illustration of Bishop from additional top view",
+          "alt": "Reference illustration of Bishop from additional top view"
+        },
+        {
+          "title": "Reference illustration of Bishop from additional side view",
+          "url": "files/rec1LAWAkqQy58t4q_attachment_bishop_back.jpg",
+          "description": "Reference illustration of Bishop from additional side view",
+          "alt": "Reference illustration of Bishop from additional side view"
+        },
+        {
+          "title": "Reference illustration of a Bishop from side view",
+          "url": "files/recRVR3xWtgoMs6Zd_attachment_bishop_front.jpg",
+          "description": "Reference illustration of a Bishop from side view",
+          "alt": "Reference illustration of a Bishop from side view"
+        }
+      ]
+    },
+    "oerSnapshotOf": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
+    "oerSnapshotTitle": "Modeling a Bishop",
+    "version": "0.9.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5Qn9EwcL-Arvg3QWeQ_h-WVg\" title=\"Modeling a Bishop Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice using the boolean operator and fixing any irregularities it may create</li>\n<li>Practice working from reference images</li>\n<li>Practice using 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong><em>Please note: in some cases Blender will make the cut but not remove some geometry. In this case you will have to return to the edit mode to manually remove some geometry, before you can see the results of the boolean operation.</em></strong>\n&lt;BR&gt;\n&lt;BR&gt;<br>\nFor this assignment, download reference images from this page and recreate the steps in&nbsp;the&nbsp;<strong>Demonstration</strong>&nbsp;and <strong>submit three renders to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em></strong>.&nbsp;\n&lt;BR&gt;\n&lt;BR&gt;<br>\nMake sure that your assignment is titled in the following format:\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n&lt;BR&gt;\n&lt;BR&gt;<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+}

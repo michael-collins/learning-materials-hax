@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f0708890-0a87-4231-a73e-69be326b5f5d</id>
+<indent>2</indent>
+<location>pages/item-f0708890-0a87-4231-a73e-69be326b5f5d/index.xml</location>
+<slug>lessons/vr-development/v0-0-1</slug>
+<order>1000</order>
+<parent>item-633c2d98-9f8a-4aaa-a06f-5078d355709e</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>5 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Understand AR/VR design principles</item>
+<item>Create VR-optimized content</item>
+<item>Implement comfortable locomotion systems</item>
+<item>Design intuitive VR interactions</item>
+<item>Test and iterate VR experiences</item>
+<item>Apply performance optimization for VR</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSnapshotOf>item-633c2d98-9f8a-4aaa-a06f-5078d355709e</oerSnapshotOf>
+<oerSnapshotTitle>AR/VR Development</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>Learn the unique requirements and best practices for creating augmented and virtual reality experiences that are comfortable and engaging.</p>
+]]></content>
+</item>

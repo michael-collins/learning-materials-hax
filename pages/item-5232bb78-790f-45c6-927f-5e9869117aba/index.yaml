@@ -1,0 +1,90 @@
+id: item-5232bb78-790f-45c6-927f-5e9869117aba
+indent: 2
+location: pages/item-5232bb78-790f-45c6-927f-5e9869117aba/index.yaml
+slug: exercises/modeling-a-figurative-knight/v0-9-0
+order: 1000
+parent: item-b5c2804f-dc4a-4374-aae9-af4ab667a602
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerFields:
+    difficulty: Beginner
+    image: files/rec8Y2xjGTcAffTeB_image_Smooth_Knight.png
+    imageAlt: Smooth Knight.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+    attachments:
+      - title: Figurative Knight Left Side Reference Image
+        url: files/recUNFzWcDdGNGTA4_attachment_LEFT_KNIGHT.jpg
+        description: Figurative Knight Left Side Reference Image
+        alt: Figurative Knight Left Side Reference Image
+      - title: Figurative Knight Right Side Reference Image
+        url: files/recNmlfaKY3YkIHPe_attachment_RIGHT_KNIGHT.jpg
+        description: Figurative Knight Right Side Reference Image
+        alt: Figurative Knight Right Side Reference Image
+      - title: Figurative Knight Bottom Side Reference Image
+        url: files/recBuGV2k35ohfEGa_attachment_BOTTOM_KNIGHT.jpg
+        description: Figurative Knight Bottom Side Reference Image
+        alt: Figurative Knight Bottom Side Reference Image
+      - title: Figurative Knight Top Side Reference Image
+        url: files/recVR1Q6LEFqiXU5A_attachment_TOP_KNIGHT.jpg
+        description: Figurative Knight Top Side Reference Image
+        alt: Figurative Knight Top Side Reference Image
+      - title: Figurative Knight Back Side Reference Image
+        url: files/recZoXFEqXqma0fo6_attachment_REAR_KNIGHT.jpg
+        description: Figurative Knight Back Side Reference Image
+        alt: Figurative Knight Back Side Reference Image
+      - title: Figurative Knight Front Side Reference Image
+        url: files/recHT0fX4sR5gsUiC_attachment_FRONT_KNIGHT.jpg
+        description: Figurative Knight Front Side Reference Image
+        alt: Figurative Knight Front Side Reference Image
+  oerSnapshotOf: item-b5c2804f-dc4a-4374-aae9-af4ab667a602
+  oerSnapshotTitle: Modeling a Figurative Knight
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>In this exercise, you will practice polygonal modeling fundamentals and
+  using reference images to create a chess piece</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlEM8qkrx_rcHaAemZ3oHZH"
+  title="Modeling a Figurative Knight Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice working from reference images</li>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>This a demonstration of how to create a more complex Knight that looks more
+  like an actual horse. You can download and use these reference images to
+  complete this version of the Knight Chess Piece assignment.</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

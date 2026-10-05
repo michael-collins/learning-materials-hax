@@ -1,0 +1,162 @@
+id: item-16252b57-6115-47a0-958e-cf0ad631e9b8
+indent: 2
+location: pages/item-16252b57-6115-47a0-958e-cf0ad631e9b8/index.yaml
+slug: lectures/introduction-to-animation/v0-9-0
+order: 1000
+parent: item-13a858ad-9b6b-4d94-836f-69ca95bdadea
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lecture
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+    aiLicense:
+      - AIUL-WA
+    allowEmbed: true
+  oerSnapshotOf: item-13a858ad-9b6b-4d94-836f-69ca95bdadea
+  oerSnapshotTitle: Introduction to Animation
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <h2>Presentation</h2>
+
+  <h2>::google-slides-component</h2>
+
+  <h2>id:
+  2PACX-1vTKsgVUmLzY3WAx5o0e8ZipbwBfFSUzgYUBUccvInt9PjubvpIbqTR9QEJS6Yq6XfF5E7419MfNEAJn
+
+  title: Introduction to Animation</h2>
+
+  <p>::</p>
+
+  <h2>Topics Covered</h2>
+
+  <ul>
+
+  <li>
+
+  <ol>
+
+  <li><strong>Screenings</strong></li>
+
+  </ol>
+
+  <ul>
+
+  <li><a href="https://www.youtube.com/watch?v=Hk6SXggQ_QQ">Fairytales of motion
+  by Alan Warburton</a></li>
+
+  <li><a href="https://vimeo.com/93206523">Illusion of Life</a></li>
+
+  <li><a href="https://vimeo.com/159043081">Newton’s 3 laws of motion</a></li>
+
+  <li><a href="https://www.youtube.com/watch?v=CtRBOI0PVgI">Animation
+  Mentor</a></li>
+
+  <li><a href="https://www.youtube.com/watch?v=JBgG_VSP7f8">Karl Sims - Evolved
+  Virtual Creatures, Evolution Simulation, 1994</a></li>
+
+  <li><a href="https://vimeo.com/6736261">Berlin Tetris</a></li>
+
+  <li><a href="https://cloud.blender.org/p/spring/">Spring</a></li>
+
+  </ul>
+
+  </li>
+
+  </ul>
+
+  <ol start="2">
+
+  <li><strong>Short Animation Examples</strong>
+
+  <ul>
+
+  <li><a href="https://vimeo.com/155262093">Forms in Nature: Understanding Our
+  Universe</a></li>
+
+  <li><a href="https://youtu.be/PmPwU5ytgVw">Childhood (Adult Swim) by David
+  O’Reilly</a></li>
+
+  <li><a href="https://vimeo.com/100592289">Walk Cycles by David
+  O’Reilly</a></li>
+
+  <li><a href="https://vimeo.com/17411241">30 motion tests in 30
+  seconds</a></li>
+
+  <li><a href="https://vimeo.com/141974554">Bloom</a></li>
+
+  <li><a href="https://vimeo.com/143914234">FITC presents FORM // Chicago 2015
+  Titles</a></li>
+
+  <li><a href="https://vimeo.com/217314168">Squares 2017 Digital Invitation
+  </a></li>
+
+  <li><a href="https://vimeo.com/150824660">geist.xyz</a></li>
+
+  <li><a href="https://vimeo.com/150594088">Simple Shapes in Motion</a></li>
+
+  <li><a href="https://vimeo.com/39792837">Spherikal</a></li>
+
+  <li><a href="https://vimeo.com/130886893">30 Seconds / Edition One / Tomas
+  Garcia</a></li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Terminology</strong>
+
+  <ul>
+
+  <li><a href="https://en.wikipedia.org/wiki/Eadweard_Muybridge">Eadweard
+  Muybridge</a></li>
+
+  <li><a href="https://animeight.com/2018/02/21/3d-production-pipeline/">3D
+  Animation Pipeline</a></li>
+
+  <li>12 Principles of animation</li>
+
+  <li>Newton’s Laws of Motion</li>
+
+  <li>Graph Editor</li>
+
+  <li>Keyframe</li>
+
+  <li>Timeline</li>
+
+  <li>FPS</li>
+
+  <li>Dope Sheet</li>
+
+  </ul>
+
+  </li>
+
+  <li><strong>Books</strong>
+
+  <ul>
+
+  <li><a
+  href="https://www.amazon.com/Animators-Survival-Kit-Principles-Classical/dp/086547897X">Animators
+  Survival Kit</a></li>
+
+  <li><a
+  href="https://www.amazon.com/Illusion-Life-Disney-Animation/dp/0786860707/">Illusion
+  of Life</a></li>
+
+  </ul>
+
+  </li>
+
+  </ol>

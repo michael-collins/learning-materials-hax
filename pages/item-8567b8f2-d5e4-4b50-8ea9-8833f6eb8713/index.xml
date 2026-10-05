@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8567b8f2-d5e4-4b50-8ea9-8833f6eb8713</id>
+<indent>2</indent>
+<location>pages/item-8567b8f2-d5e4-4b50-8ea9-8833f6eb8713/index.xml</location>
+<slug>lessons/vfx-compositing-integration/v0-0-1</slug>
+<order>1000</order>
+<parent>item-416007a1-e0d5-49fa-975d-733cf40bc979</parent>
+<title>v0.0.1</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>4 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Integrate simulated elements with footage</item>
+<item>Match lighting and atmosphere</item>
+<item>Add motion blur and depth effects</item>
+<item>Create realistic shadows and reflections</item>
+<item>Finalize VFX shots for delivery</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSnapshotOf>item-416007a1-e0d5-49fa-975d-733cf40bc979</oerSnapshotOf>
+<oerSnapshotTitle>VFX Compositing Integration</oerSnapshotTitle>
+<version>0.0.1</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>Master the integration of VFX elements with live-action footage, creating seamless and believable final composites.</p>
+]]></content>
+</item>

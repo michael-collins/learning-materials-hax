@@ -1,0 +1,47 @@
+{
+  "id": "item-bb9742ea-618d-4f0d-86a8-57b806e92aa9",
+  "indent": 2,
+  "location": "pages/item-bb9742ea-618d-4f0d-86a8-57b806e92aa9/index.json",
+  "slug": "lessons/post-effects-and-color-grading/v0-0-1",
+  "order": 1000,
+  "parent": "item-40d50c64-d53b-4267-8221-6f7bf3388db1",
+  "title": "v0.0.1",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerFields": {
+      "estimatedDuration": "4 hours",
+      "courses": [
+        "DART 303"
+      ],
+      "learningObjectives": [
+        "Apply color correction and grading",
+        "Use effects like glow, blur, and grain",
+        "Match colors across different elements",
+        "Create consistent visual style",
+        "Apply final polish and finishing touches"
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "placeholder": true,
+      "allowEmbed": true,
+      "license": "CC BY 4.0"
+    },
+    "oerSnapshotOf": "item-40d50c64-d53b-4267-8221-6f7bf3388db1",
+    "oerSnapshotTitle": "Post Effects and Color Grading",
+    "version": "0.0.1",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791232004,
+    "images": [],
+    "videos": [],
+    "updated": 1791232004
+  },
+  "content": "<p>Learn to apply post-production effects and color grading to create polished, cohesive final images with professional visual quality.</p>\n"
+}

@@ -83,6 +83,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-ebf9ed4f-3a9c-4685-8ed2-d36fae325b07/index.md)
 - [CGI Foundations readiness quiz](https://localhost:3000/learning-materials/pages/item-72856b15-d616-43ca-bfa5-9378c364c2d1/index.md)
 - [3D Career Development](https://localhost:3000/learning-materials/pages/item-821a72b9-a898-42a9-8406-ad889d89e8d5/index.md): An overview of opportunities available in 3D fields.
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-23d8b769-4d8d-4f05-aea0-0eb720108f5e/index.md)
 - [DMD 100: Digital Multimedia Design Foundations](https://localhost:3000/learning-materials/pages/item-69d4e331-f13a-4ee4-9c2e-1bba82279d67/index.md): DMD 100 introduces design process and thinking skills to support and facilitate creative and reasoned approaches to ambiguous and ill-defined problem spaces. It is the first of three spine courses in the Bachelor of Design in Digital Multimedia Design program at Penn State University.
 - [Introduction](https://localhost:3000/learning-materials/pages/item-8153e6b4-28e8-4c08-ba68-ce087c804837/index.md)
 - [About this course](https://localhost:3000/learning-materials/pages/item-222c4b38-ac4c-4d7d-ad97-aec12707686d/index.md)
@@ -260,6 +261,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-e106ecce-bdda-42d1-9c5b-cde343b86d7b/index.md): Master organic modeling through digital sculpting techniques, creating detailed characters and organic forms.
 - [Library](https://localhost:3000/learning-materials/pages/item-fae18bf7-28d5-4bf9-9afc-a2f05e98ec5f/index.md)
 - [3D Communities](https://localhost:3000/learning-materials/pages/item-ca22d4dc-349f-4033-be11-cb671bb221ef/index.md): Get involved with communities of practice for 3D fields.
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-c2360b8c-6337-4aeb-9dc9-134f33c48400/index.md)
 - [DMD 300: Digital Multimedia Design Studio](https://localhost:3000/learning-materials/pages/item-9aa47609-2475-4db7-ae00-b09d2195cc39/index.md): DMD 300 is the second of three spine courses in the Bachelor of Design in Digital Multimedia Design (DMD) program at Penn State University. This program is the first entirely online multi-college u...
 - [Introduction](https://localhost:3000/learning-materials/pages/item-077ce4a6-87e3-4d58-ae77-a6e743b22d8b/index.md)
 - [General Resources](https://localhost:3000/learning-materials/pages/item-9f0b88c0-5762-46b0-a219-444663bfeae6/index.md)
@@ -316,9 +318,17 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Hard Surface Modeling](https://localhost:3000/learning-materials/pages/item-2388c81a-f80d-44c8-be9c-57c64c8b29ab/index.md): Master hard surface modeling techniques for creating mechanical objects, products, and architectural elements with clean geometry.
 - [Digital Sculpting](https://localhost:3000/learning-materials/pages/item-f783c8df-d3f9-4ec8-a056-501da8e75a61/index.md): Master organic modeling through digital sculpting techniques, creating detailed characters and organic forms.
 - [AR/VR Development](https://localhost:3000/learning-materials/pages/item-633c2d98-9f8a-4aaa-a06f-5078d355709e/index.md): Explore augmented and virtual reality development, creating immersive experiences with proper UX considerations.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-f0708890-0a87-4231-a73e-69be326b5f5d/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-33b5c207-6cd0-45cf-8e39-26ddacad80c4/index.md)
 - [Character Rigging](https://localhost:3000/learning-materials/pages/item-6cb6c229-dfbe-4948-a618-ee25655ffb19/index.md): Learn how to create control rigs for characters and objects, enabling efficient and intuitive animation workflows.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-9a3e6c4f-fd98-4b5b-8844-91d40e441f5a/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-128bafaa-8b85-4d83-b722-775791621e05/index.md)
 - [Constraints and Animation Controls](https://localhost:3000/learning-materials/pages/item-c081bd1e-35e3-46c7-a8f1-d01b234717ef/index.md): Master the use of constraints and control systems to create complex animations with efficient workflows.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-f8d493cc-d24c-407c-a727-e14ccd992ce6/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-2916df97-dbd7-49cf-a3ce-709a65d7b690/index.md)
 - [Deformers and Shape Keys](https://localhost:3000/learning-materials/pages/item-2043703c-eb71-4f74-9dba-85bc4cfe5ae2/index.md): Explore deformation techniques and shape keys for creating facial expressions, muscle movement, and organic deformations.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-f30e86e3-759c-4df2-85f3-7dc2eac6b682/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-6143e0f4-93aa-40f2-b269-5be0b2337dfc/index.md)
 - [What is design?](https://localhost:3000/learning-materials/pages/item-143f3783-959c-45c3-8758-dacef0f6861f/index.md)
 - [Visual and interaction design](https://localhost:3000/learning-materials/pages/item-a42cb179-b94a-4cd7-b36c-d2b352c1633d/index.md)
 - [Storytelling](https://localhost:3000/learning-materials/pages/item-ed2878d8-7e31-4ed5-8682-a9c3e23c4e0e/index.md)
@@ -328,13 +338,29 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Projects](https://localhost:3000/learning-materials/pages/item-79b83e78-f4be-4db1-aeb2-d2cc5429bb2d/index.md)
 - [Capstone project](https://localhost:3000/learning-materials/pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.md)
 - [Exporting and Delivery](https://localhost:3000/learning-materials/pages/item-fa670508-1a83-4d74-875b-be7c2d99587f/index.md): Master export settings, file formats, and delivery workflows for various output requirements and platforms.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-33bf4349-af4e-4b40-845a-9cacc94b3d95/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-19ba492b-58a2-4b1f-a22a-ecaf1cc04da9/index.md)
 - [Match Moving and Camera Tracking](https://localhost:3000/learning-materials/pages/item-df443542-beef-4f82-be8c-7d078c774226/index.md): Learn camera tracking and match moving techniques to integrate CGI elements seamlessly with live-action footage.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-533f1848-c461-467b-98b0-e80c095b70d0/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-ac0e29e4-c7c0-44fe-80b9-4fc598f1de9f/index.md)
 - [Particle Simulation](https://localhost:3000/learning-materials/pages/item-324bbe4f-1369-48a4-9035-7fa8b3a56677/index.md): Master particle systems to create effects like fire, smoke, water splashes, and other dynamic phenomena.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-cae7a267-c454-46a8-870a-113d0a562be2/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-aba51004-e36b-4c09-a78b-05999d210e6d/index.md)
 - [Physics Simulation Fundamentals](https://localhost:3000/learning-materials/pages/item-8242206a-4b4e-4837-880e-0259e065edf2/index.md): Learn the fundamentals of physics simulation including rigid body dynamics, collisions, and force interactions.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-d61b7fe0-ee66-4734-8981-edfef2e62b37/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-023bbe6c-d884-496b-89c6-b11644e9faac/index.md)
 - [Post Effects and Color Grading](https://localhost:3000/learning-materials/pages/item-40d50c64-d53b-4267-8221-6f7bf3388db1/index.md): Apply post-production effects and color grading techniques to enhance and finalize composited images.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-bb9742ea-618d-4f0d-86a8-57b806e92aa9/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-dc058453-1b28-437c-8496-3134cea3fbba/index.md)
 - [Procedural Compositing Workflows](https://localhost:3000/learning-materials/pages/item-383cc93b-8187-45e6-81de-933498aca116/index.md): Master node-based compositing workflows using software like Nuke, learning to build flexible and efficient compositing networks.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-ae608b88-3601-4de4-a289-2b7512f05406/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-82ad08e3-f886-4067-a95a-62011c2e5c86/index.md)
 - [Render Layers and Passes](https://localhost:3000/learning-materials/pages/item-6fc79952-8328-44db-b0ed-3ee00811072d/index.md): Learn to work with render layers and passes to maintain flexibility and control in the compositing process.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-026c2903-1f0c-4690-a47d-570afc2721dc/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-d3058913-02ce-46c7-9782-928da514172a/index.md)
 - [VFX Compositing Integration](https://localhost:3000/learning-materials/pages/item-416007a1-e0d5-49fa-975d-733cf40bc979/index.md): Learn to integrate simulated VFX elements with live-action footage through advanced compositing techniques.
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-8567b8f2-d5e4-4b50-8ea9-8833f6eb8713/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-c24e44b4-b80c-4dcb-a398-79eb426ab420/index.md)
 - [About this course](https://localhost:3000/learning-materials/pages/item-ef516882-f25b-4615-b7d6-4b0c0152f56f/index.md)
 - [DMD 400: Digital Multimedia Design Capstone](https://localhost:3000/learning-materials/pages/item-ce739bdb-84f3-4797-9b76-5f951decba4e/index.md): DMD 400 is the third of three spine courses in the Bachelor of Design in Digital Multimedia Design (DMD) program at Penn State University. This program is the first entirely online multi-college un...
 - [Assessment](https://localhost:3000/learning-materials/pages/item-d387e341-8f58-489f-8c56-eb5ddd615125/index.md)
@@ -369,6 +395,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-7c692ee1-da72-4ac2-8673-7edd58c2be8c/index.md): Become a skilled game artist capable of creating optimized 3D assets for real-time environments. This pathway covers the complete skillset needed for game development, from foundational CGI to advanced real-time optimization and interactive design.
 - [Lectures](https://localhost:3000/learning-materials/pages/item-05aef7c3-2829-4d60-abd5-49cf9a82382a/index.md)
 - [Introduction to Animation](https://localhost:3000/learning-materials/pages/item-13a858ad-9b6b-4d94-836f-69ca95bdadea/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-16252b57-6115-47a0-958e-cf0ad631e9b8/index.md)
 - [Digital Multimedia Design](https://localhost:3000/learning-materials/pages/item-a9215055-dc03-4b75-8115-ce7ede2a1a7f/index.md)
 - [Getting Started with 3D Animation](https://localhost:3000/learning-materials/pages/item-68e1e048-39c2-449c-b2a8-13a0f7cdff6e/index.md): A comprehensive guide to learning 3D animation, from modeling fundamentals to character rigging and beyond.
 - [Chapter 4: Advanced Topics](https://localhost:3000/learning-materials/pages/item-c6e347ab-3d18-4b55-bbb7-e323d71a9704/index.md)
@@ -473,6 +500,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [OER License](https://localhost:3000/learning-materials/pages/item-83b2a116-ab24-48a3-91c8-69b6f79d387e/index.md)
 - [Project Categories and Resources](https://localhost:3000/learning-materials/pages/item-efa37108-3a36-4157-87f0-d9ca6870e9c5/index.md)
 - [Getting started in 3D Animation](https://localhost:3000/learning-materials/pages/item-4eabe903-019f-483e-9304-6331c374f085/index.md): We discuss the hardware, software, and other aspects of understanding the long journey of learning 3D animation.
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-6e9a8fa3-4286-420e-8d25-d4ae2ef44dae/index.md)
 - [Define: Themes and insights](https://localhost:3000/learning-materials/pages/item-341299c4-f6bd-4d88-a29c-7d01feba9326/index.md)
 - [Chris Landreth](https://localhost:3000/learning-materials/pages/item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de/index.md)
 - [Motion graphics](https://localhost:3000/learning-materials/pages/item-831e27e4-94e4-43dc-b7e1-7b5039f802d9/index.md): Creates animated graphics for multimedia projects, often involving typography and visual effects.
@@ -517,6 +545,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Short Film Pathway](https://localhost:3000/learning-materials/pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.md): Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.
 - [Visual Effects (VFX)](https://localhost:3000/learning-materials/pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.md): Integrates CGI elements into live-action footage and blends them seamlessly.
 - [Fundamentals](https://localhost:3000/learning-materials/pages/item-728c455b-226f-433d-9978-17a476458a79/index.md): The essentials.
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.md)
 - [Modeling a Low Poly Animal and Introduction to Particles](https://localhost:3000/learning-materials/pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.md)
 - [Real-time Engines quiz](https://localhost:3000/learning-materials/pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.md)
 - [Develop: Iterate prototype](https://localhost:3000/learning-materials/pages/item-dc9bd020-ea18-4403-a37e-518676fbcee2/index.md)
@@ -536,36 +565,64 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Baking Normal Maps](https://localhost:3000/learning-materials/pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.md)
 - [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.md)
 - [Animated procedural textures](https://localhost:3000/learning-materials/pages/item-c0301c53-8cdf-4ea1-b5ab-467877ec2f2d/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-deeb289e-ee33-43ff-aece-64e9d6643bff/index.md)
 - [Animating Tetris](https://localhost:3000/learning-materials/pages/item-de45c810-3a55-4f18-9522-cf46b4508bfa/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-958ccb62-7b6a-409e-99fe-48934c973e94/index.md)
 - [Animating virtual creatures](https://localhost:3000/learning-materials/pages/item-c8e30f6a-68fb-4e56-8f9f-b80dffec602c/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-08a5e62a-d5e8-4f41-86c4-2e9fb7347458/index.md)
 - [Applying Textures to 3 Unique Chess Sets](https://localhost:3000/learning-materials/pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.md)
 - [Daily Design Journal](https://localhost:3000/learning-materials/pages/item-49f2ccad-d902-43b4-b984-b4df75bc02f8/index.md)
 - [Daily Design Journal](https://localhost:3000/learning-materials/pages/item-5bc22eb2-f467-4292-a344-11e4e4598f90/index.md)
 - [Pathway design activity](https://localhost:3000/learning-materials/pages/item-4b521d06-505c-4b00-b2e7-2ee1c2f7a806/index.md)
 - [Introduction to animation](https://localhost:3000/learning-materials/pages/item-f4a8c298-c62a-4472-ac56-089a7e8be9c3/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-f7a79487-066d-4b17-87f0-c498686b54a9/index.md)
 - [Introduction to rigging](https://localhost:3000/learning-materials/pages/item-12082513-b23c-49ed-888d-857336fa10ae/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-1ed67694-ba11-4262-987b-fd06e889dc55/index.md)
 - [Model a Gem](https://localhost:3000/learning-materials/pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.md)
 - [Model a Snowflake](https://localhost:3000/learning-materials/pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.md)
 - [Modeling a Basic Knight](https://localhost:3000/learning-materials/pages/item-db344687-9676-46da-9926-d0464ec57873/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-24b311fc-c1e2-4357-ae42-c0cf16f98a21/index.md)
 - [Modeling a Bishop](https://localhost:3000/learning-materials/pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.md)
 - [Modeling a Chavet 121 series no 6 Knight](https://localhost:3000/learning-materials/pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-c3f1f085-a6ba-46d2-a24d-85ed1099ae8b/index.md)
 - [Modeling a Chessboard](https://localhost:3000/learning-materials/pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-dd026cce-5bed-4534-996e-8078f1c13157/index.md)
 - [Modeling a Diamond](https://localhost:3000/learning-materials/pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-72ce78b9-ad84-40e8-a53f-010e1c1ef6c5/index.md)
 - [Modeling a Figurative Knight](https://localhost:3000/learning-materials/pages/item-b5c2804f-dc4a-4374-aae9-af4ab667a602/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-5232bb78-790f-45c6-927f-5e9869117aba/index.md)
 - [Modeling a King](https://localhost:3000/learning-materials/pages/item-ffc1a278-09f4-4f55-b8bb-ae6e3a83ec46/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-f1d290d9-3b47-4a25-9e6a-edf8f2d80fa8/index.md)
 - [Modeling a Metal Horse Head](https://localhost:3000/learning-materials/pages/item-13289971-852a-43b8-a9f8-da7e4d9b4015/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-2a704485-4740-4ca9-92e4-bf0a098382c2/index.md)
 - [Modeling a Pawn](https://localhost:3000/learning-materials/pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-754d5f70-bb63-4ee6-b2d8-26092b419ee2/index.md)
 - [Modeling a Queen](https://localhost:3000/learning-materials/pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-6311aaff-6ebe-4d66-87ae-4f0a803d435f/index.md)
 - [Modeling a Rook](https://localhost:3000/learning-materials/pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-c63df81e-6ef0-4fba-90c4-5e3749f6944f/index.md)
 - [Rendering random objects](https://localhost:3000/learning-materials/pages/item-ecba634e-1484-46f2-90b8-7d379784ba4f/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-0a5774a6-cc97-40b9-836d-a2ec2cea0f21/index.md)
 - [Rigging a human](https://localhost:3000/learning-materials/pages/item-8d933674-82e9-443f-ad1b-c4d177ab91f9/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-c24211c3-c569-4165-a822-40f6849b1eec/index.md)
 - [Rigging a quadruped](https://localhost:3000/learning-materials/pages/item-8b5f9d0f-0493-43a9-9fb1-970c6796d2b4/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-38ab8353-df86-481b-8ed4-6015b85d2fc4/index.md)
 - [Rigging a robot arm](https://localhost:3000/learning-materials/pages/item-4b52eb3e-cb90-4c42-ad75-aca69b169fe5/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-190901d6-a921-4fb2-836d-caf14810b820/index.md)
 - [Sculpture Garden](https://localhost:3000/learning-materials/pages/item-a65ae280-1634-42a4-99b6-964a32489f70/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-481175e0-e31d-418e-b024-84bf7430ce37/index.md)
 - [Sea creature: Lighting and rendering](https://localhost:3000/learning-materials/pages/item-ddfdc7a8-f5b2-4ffa-8b46-e95bc62c7530/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-de700ca2-a30d-4ed6-b6a0-86906b7b468a/index.md)
 - [Sea creature: Non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-cbfb8ddf-311c-40ed-bbbb-f2049f9d355a/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-7bbe1961-2f4d-4e43-bb3f-993f8418a2a3/index.md)
 - [Sea creature: Texturing](https://localhost:3000/learning-materials/pages/item-631ad281-bdbc-4166-978c-07cf0a7cda12/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-f5f91e5b-f365-420b-9840-606cda28effc/index.md)
 - [Share One Completed Set](https://localhost:3000/learning-materials/pages/item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-13ee5c87-198e-415d-a9cf-4a548562f4f5/index.md)
 - [Drawing for 3D Design quiz](https://localhost:3000/learning-materials/pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.md)
 - [Develop: Test and review](https://localhost:3000/learning-materials/pages/item-80817beb-57f0-45f5-9005-f2ff506243e4/index.md)
 - [Projects](https://localhost:3000/learning-materials/pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.md)
@@ -622,6 +679,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Project explainer video](https://localhost:3000/learning-materials/pages/item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7/index.md)
 - [Project midterm video](https://localhost:3000/learning-materials/pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.md)
 - [Ideas In Motion](https://localhost:3000/learning-materials/pages/item-52fb5644-31ca-4c30-a426-3bd4a9182f3a/index.md)
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-d38e90ff-f0c8-4eb4-9745-2171358466f7/index.md)
 - [Hard Surface Modeling quiz](https://localhost:3000/learning-materials/pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.md)
 - [Quizzes](https://localhost:3000/learning-materials/pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.md)
 - [Digital Sculpting quiz](https://localhost:3000/learning-materials/pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.md)

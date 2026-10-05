@@ -1,0 +1,40 @@
+id: item-f8d493cc-d24c-407c-a727-e14ccd992ce6
+indent: 2
+location: pages/item-f8d493cc-d24c-407c-a727-e14ccd992ce6/index.yaml
+slug: lessons/constraints-and-animation-controls/v0-0-1
+order: 1000
+parent: item-c081bd1e-35e3-46c7-a8f1-d01b234717ef
+title: v0.0.1
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 3 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Apply various constraint types effectively
+      - Use constraints to create mechanical animations
+      - Set up parent-child relationships
+      - Implement aim and track constraints
+      - Combine constraints for complex behaviors
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  oerSnapshotOf: item-c081bd1e-35e3-46c7-a8f1-d01b234717ef
+  oerSnapshotTitle: Constraints and Animation Controls
+  version: 0.0.1
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>Learn how to use constraints and control systems to create sophisticated
+  animations while maintaining efficient and flexible workflows.</p>

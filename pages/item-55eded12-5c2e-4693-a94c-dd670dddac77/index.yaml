@@ -1,0 +1,100 @@
+id: item-55eded12-5c2e-4693-a94c-dd670dddac77
+indent: 2
+location: pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.yaml
+slug: exercises/model-a-snowflake/v0-9-0
+order: 1000
+parent: item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerFields:
+    difficulty: Beginner
+    image: files/recorR58sjS22oVbk_image_snowflake_image.png
+    imageAlt: snowflake image.png
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+    allowEmbed: true
+  oerSnapshotOf: item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49
+  oerSnapshotTitle: Model a Snowflake
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>In this exercise, you will learn how to model 3 snowflakes</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlA1AFMxpkvj6JQwOxNygMy"
+  title="Model a Snowflake Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice using 3D software interface and terminology.</li>
+
+  <li>Use modeling workflows to create high quality topology and edge flow.</li>
+
+  <li>Familiarize yourself with a cumulative number of hotkeys and operations
+  (it's a good idea to keep a personal log of hotkeys and operators that you
+  will likely use again, as you go).</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <p>Welcome to the&nbsp;<strong>Blender 3D -Modeling Environment</strong>.
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  I provided a playlist of several different versions of the demonstration for
+  this assignment. I recommend checking out the two most recent ones to see a
+  variety of different approached that might be used.
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  For this assignment, create 3 unique snowflakes, based on the steps in the
+  demonstration and submit 3 images (from good angles) of your model to Canvas
+  and the <strong>corresponding discussion thread</strong> for review. Make sure
+  that your assignment is titled in the following format:
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  Last name, First name, the word "Lesson" followed by the Lesson number, and
+  the word "Assignment" followed by the Assignment number.
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  Example:
+
+  Brill Ian Lesson x Assignment x
+
+  &lt;br&gt;
+
+  &lt;br&gt;<br>
+
+  Be sure to provide screen grabs or renders from 3 angles and the original
+  blender file. Be sure to upload each file independently to facilitate ease in
+  grading (so that the reviewer only need to download files when necessary).</p>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

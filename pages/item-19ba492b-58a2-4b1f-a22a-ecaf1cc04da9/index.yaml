@@ -1,0 +1,40 @@
+id: item-19ba492b-58a2-4b1f-a22a-ecaf1cc04da9
+indent: 2
+location: pages/item-19ba492b-58a2-4b1f-a22a-ecaf1cc04da9/index.yaml
+slug: lessons/exporting-and-delivery/v0-9-0
+order: 1001
+parent: item-fa670508-1a83-4d74-875b-be7c2d99587f
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 2 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand file formats and codecs
+      - Configure export settings appropriately
+      - Prepare files for different delivery platforms
+      - Manage file sizes and quality
+      - Create delivery packages and documentation
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  oerSnapshotOf: item-fa670508-1a83-4d74-875b-be7c2d99587f
+  oerSnapshotTitle: Exporting and Delivery
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>Learn proper export procedures and delivery workflows to ensure your
+  composited work meets technical specifications and quality requirements.</p>

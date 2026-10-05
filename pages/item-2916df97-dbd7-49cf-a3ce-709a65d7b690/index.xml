@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2916df97-dbd7-49cf-a3ce-709a65d7b690</id>
+<indent>2</indent>
+<location>pages/item-2916df97-dbd7-49cf-a3ce-709a65d7b690/index.xml</location>
+<slug>lessons/constraints-and-animation-controls/v0-9-0</slug>
+<order>1001</order>
+<parent>item-c081bd1e-35e3-46c7-a8f1-d01b234717ef</parent>
+<title>v0.9.0</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerFields>
+<estimatedDuration>3 hours</estimatedDuration>
+<courses>
+<item>DART 303</item>
+</courses>
+<learningObjectives>
+<item>Apply various constraint types effectively</item>
+<item>Use constraints to create mechanical animations</item>
+<item>Set up parent-child relationships</item>
+<item>Implement aim and track constraints</item>
+<item>Combine constraints for complex behaviors</item>
+</learningObjectives>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+<allowEmbed>true</allowEmbed>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSnapshotOf>item-c081bd1e-35e3-46c7-a8f1-d01b234717ef</oerSnapshotOf>
+<oerSnapshotTitle>Constraints and Animation Controls</oerSnapshotTitle>
+<version>0.9.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791232004</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791232004</updated>
+</metadata>
+<content><![CDATA[<p>Learn how to use constraints and control systems to create sophisticated animations while maintaining efficient and flexible workflows.</p>
+]]></content>
+</item>

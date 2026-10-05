@@ -1,0 +1,110 @@
+id: item-190901d6-a921-4fb2-836d-caf14810b820
+indent: 2
+location: pages/item-190901d6-a921-4fb2-836d-caf14810b820/index.yaml
+slug: exercises/rigging-a-robot-arm/v0-9-0
+order: 1000
+parent: item-4b52eb3e-cb90-4c42-ad75-aca69b169fe5
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerFields:
+    difficulty: Intermediate
+    image: files/recdQolQv78RHunPj_image_ex-6-adv-banner-compressed.jpg
+    imageAlt: ex-6-adv-banner-compressed.jpg
+    license: CC BY 4.0
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    allowEmbed: true
+  oerSnapshotOf: item-4b52eb3e-cb90-4c42-ad75-aca69b169fe5
+  oerSnapshotTitle: Rigging a robot arm
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>In this exercise, students will practice modeling, rigging, and animating a
+  hard-surface robot arm.</p>
+
+  <oer-iframe
+  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX1grpUd5zHMGYJovRjPN69"
+  title="Rigging a robot arm Tutorial"></oer-iframe>
+
+  <h2>Learning Objectives</h2>
+
+  <ol>
+
+  <li>Practice setting up Inverse Kinematics (IK) bone constraints.</li>
+
+  <li>Practice hard surface modeling.</li>
+
+  <li>Become familiarized with creating and binding an armature for hard surface
+  models.</li>
+
+  </ol>
+
+  <h2>Instructions</h2>
+
+  <ol>
+
+  <li>Watch the tutorials.</li>
+
+  <li>Design a unique robot arm made of at least 4 main parts, including a
+  gripper, a forearm, an upper arm, and a piston. You may add additional
+  elements as you see fit.
+
+  <ul>
+
+  <li>Create a rig for hard objects (do not download an existing rig)</li>
+
+  <li>include at least one rigged piston.</li>
+
+  <li>Include and IK system to control and animate the arm.</li>
+
+  </ul>
+
+  </li>
+
+  <li>Create a short animation that shows off the capability of your robot arm
+  design and rig.</li>
+
+  <li>Set up a camera to frame the shot.</li>
+
+  <li>To create a video of the viewport’s animation, save the file and set the
+  render settings output folder to the project folder. Under <strong>File
+  Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding
+  format to <strong>MPEG-4</strong>.</li>
+
+  <li>Choose <strong>View</strong> ⟶ <strong>Viewport Render Animation</strong>
+  to create the animation.</li>
+
+  <li>Save as <code>LASTNAME-robot-rig-animation.zip</code> and upload to the
+  submission dropbox.</li>
+
+  <li>Double check that you’ve included all files and that your .zip file can be
+  downloaded and opened. This should include:
+
+  <ul>
+
+  <li><code>.blend</code> file</li>
+
+  <li><code>.mp4</code> video file</li>
+
+  </ul>
+
+  </li>
+
+  </ol>
+
+  <h2>Grading Rubric</h2>
+
+  <oer-rubric rubric-id="exercise"></oer-rubric>

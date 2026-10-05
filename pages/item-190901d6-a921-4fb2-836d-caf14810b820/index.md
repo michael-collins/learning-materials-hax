@@ -1,0 +1,28 @@
+In this exercise, students will practice modeling, rigging, and animating a hard-surface robot arm.
+
+Learning Objectives
+-------------------
+
+1.  Practice setting up Inverse Kinematics (IK) bone constraints.
+2.  Practice hard surface modeling.
+3.  Become familiarized with creating and binding an armature for hard surface models.
+
+Instructions
+------------
+
+1.  Watch the tutorials.
+2.  Design a unique robot arm made of at least 4 main parts, including a gripper, a forearm, an upper arm, and a piston. You may add additional elements as you see fit.
+    *   Create a rig for hard objects (do not download an existing rig)
+    *   include at least one rigged piston.
+    *   Include and IK system to control and animate the arm.
+3.  Create a short animation that shows off the capability of your robot arm design and rig.
+4.  Set up a camera to frame the shot.
+5.  To create a video of the viewport’s animation, save the file and set the render settings output folder to the project folder. Under **File Format**, choose **FFMpeg Video**, change the encoding format to **MPEG-4**.
+6.  Choose **View** ⟶ **Viewport Render Animation** to create the animation.
+7.  Save as `LASTNAME-robot-rig-animation.zip` and upload to the submission dropbox.
+8.  Double check that you’ve included all files and that your .zip file can be downloaded and opened. This should include:
+    *   `.blend` file
+    *   `.mp4` video file
+
+Grading Rubric
+--------------

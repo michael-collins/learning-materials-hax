@@ -1,0 +1,1 @@
+Master the fundamentals of physics simulation to create realistic dynamic effects and destruction sequences.

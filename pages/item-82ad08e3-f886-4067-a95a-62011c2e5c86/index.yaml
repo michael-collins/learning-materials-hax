@@ -1,0 +1,40 @@
+id: item-82ad08e3-f886-4067-a95a-62011c2e5c86
+indent: 2
+location: pages/item-82ad08e3-f886-4067-a95a-62011c2e5c86/index.yaml
+slug: lessons/procedural-compositing-workflows/v0-9-0
+order: 1001
+parent: item-383cc93b-8187-45e6-81de-933498aca116
+title: v0.9.0
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerFields:
+    estimatedDuration: 4 hours
+    courses:
+      - DART 303
+    learningObjectives:
+      - Understand node-based compositing principles
+      - Build efficient compositing networks
+      - Use procedural techniques for flexibility
+      - Organize and document node graphs
+      - Create reusable compositing setups
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    placeholder: true
+    allowEmbed: true
+    license: CC BY 4.0
+  oerSnapshotOf: item-383cc93b-8187-45e6-81de-933498aca116
+  oerSnapshotTitle: Procedural Compositing Workflows
+  version: 0.9.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791232004
+  images: []
+  videos: []
+  updated: 1791232004
+content: >
+  <p>Learn procedural, node-based compositing workflows that provide flexibility
+  and efficiency in post-production work.</p>
