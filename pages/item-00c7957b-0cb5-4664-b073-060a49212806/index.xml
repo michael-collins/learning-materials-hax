@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-00c7957b-0cb5-4664-b073-060a49212806</id>
+<indent>0</indent>
+<location>pages/item-00c7957b-0cb5-4664-b073-060a49212806/index.xml</location>
+<slug>welcome-to-learning-materials-1</slug>
+<order>0</order>
+<parent></parent>
+<title>Welcome to learning-materials</title>
+<description></description>
+<metadata>
+<icon>av:art-track</icon>
+<oerRef>
+<page>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</page>
+<version>0.0.1</version>
+</oerRef>
+<created>1791210255</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791210255</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-7cab202c-92ec-4555-a7a8-d6a1474198d7" version="0.0.1"></oer-include>]]></content>
+</item>

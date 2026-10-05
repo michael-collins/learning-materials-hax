@@ -10,8 +10,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [llms.txt](https://localhost:3000/learning-materials/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
 
 ## Pages
-- [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-7cab202c-92ec-4555-a7a8-d6a1474198d7/index.md): What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.
-- [v0.0.1](https://localhost:3000/learning-materials/pages/item-194f2951-b4f9-4861-a0fd-1442221585fb/index.md)
 - [Animation Principles](https://localhost:3000/learning-materials/pages/item-1903f5ba-d051-49cf-9836-073992c93548/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th
 - [v0.0.1](https://localhost:3000/learning-materials/pages/item-941036b0-0b0d-4094-aea4-ff7802399ff3/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-ef8736da-f646-4540-b163-75a456866c7d/index.md): Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.
@@ -91,6 +89,8 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-e901c265-41ed-46ad-bdf9-a6958641a350/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-0ecd661a-3e15-4eda-8a72-51762dba558f/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-ebf9ed4f-3a9c-4685-8ed2-d36fae325b07/index.md)
+- [v0.0.1](https://localhost:3000/learning-materials/pages/item-194f2951-b4f9-4861-a0fd-1442221585fb/index.md)
+- [Welcome to learning-materials](https://localhost:3000/learning-materials/pages/item-00c7957b-0cb5-4664-b073-060a49212806/index.md)
 - [Animated textures](https://localhost:3000/learning-materials/pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.md): In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v
 - [History of CGI](https://localhost:3000/learning-materials/pages/item-d20b5a98-dc5e-4ce8-b734-32490288d27c/index.md): Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-e2116614-ee77-4d42-be36-2231098b3e29/index.md): Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.

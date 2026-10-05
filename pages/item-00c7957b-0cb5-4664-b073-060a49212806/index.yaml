@@ -1,0 +1,20 @@
+id: item-00c7957b-0cb5-4664-b073-060a49212806
+indent: 0
+location: pages/item-00c7957b-0cb5-4664-b073-060a49212806/index.yaml
+slug: welcome-to-learning-materials-1
+order: 0
+parent: null
+title: Welcome to learning-materials
+description: ''
+metadata:
+  icon: av:art-track
+  oerRef:
+    page: item-7cab202c-92ec-4555-a7a8-d6a1474198d7
+    version: 0.0.1
+  created: 1791210255
+  images: []
+  videos: []
+  updated: 1791210255
+content: >-
+  <oer-include page="item-7cab202c-92ec-4555-a7a8-d6a1474198d7"
+  version="0.0.1"></oer-include>
