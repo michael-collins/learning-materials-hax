@@ -11,7 +11,6 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, SYSTEM_TYPE } from "./content-types.js";
 import { isSnapshot, latestOf } from "../versions/versioning.js";
-import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { bookPrint } from "../books/oer-book-print.js";
 import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
 import { resolveLinks, isImage, fileLabel } from "./relations.js";
@@ -100,27 +99,6 @@ class OerPageHeader extends LitElement {
         border-radius: 999px;
         font-size: 0.75rem;
         color: var(--muted-foreground);
-      }
-      .pill.version {
-        all: unset;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-        height: 1.5rem;
-        padding: 0 0.625rem;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-family: var(--font-mono, ui-monospace, monospace);
-        font-size: 0.75rem;
-        color: var(--foreground);
-        cursor: pointer;
-      }
-      .pill.version:hover {
-        background: var(--accent);
-      }
-      .pill.version:focus-visible {
-        outline: 2px solid var(--ring);
-        outline-offset: 1px;
       }
       .archived {
         display: flex;
@@ -411,12 +389,9 @@ class OerPageHeader extends LitElement {
       .filter((i) => i.parent === item.id && !i.metadata?.oerSnapshotOf && !i.metadata?.hideInMenu)
       .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))[0];
     // Embed and Page details live in the theme's page menu
-    if (!type && !version) return html``;
-    const versionPill = version
-      ? html`<button class="pill version" title="Versions" @click="${() => versionsDialog().show(snapshot ? latest?.id : item.id)}">
-          ${lucide("icons:history")}v${version}${snapshot ? " · archived" : ""}
-        </button>`
-      : "";
+    // the version is shown in the page footer; an archived copy still says
+    // so up here
+    if (!type && !snapshot) return html``;
     return html`
       ${snapshot && latest
         ? html`<div class="archived" role="status">
@@ -428,7 +403,6 @@ class OerPageHeader extends LitElement {
       <div class="meta">
         ${type ? html`<span class="type">${type.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type.label}</span>` : ""}
         ${values.placeholder ? inDevelopmentBadge("md") : ""}
-        ${versionPill}
         ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
           ${type?.reader && firstChild

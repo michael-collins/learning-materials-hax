@@ -512,7 +512,9 @@ class OerPageFooter extends LitElement {
 
   render() {
     const item = this._item;
-    if (!item?.metadata?.pageType || item.metadata.pageType === SYSTEM_TYPE) return html``;
+    if (item?.metadata?.pageType === SYSTEM_TYPE) return html``;
+    // an untyped page has no licence block, but a released one shows its version
+    if (!item?.metadata?.pageType) return item?.metadata?.version ? html`<dl>${this._renderVersion()}</dl>` : html``;
     const f = this._fields;
     const cc = ccLicense(f.license);
     const authors = this._authors;
