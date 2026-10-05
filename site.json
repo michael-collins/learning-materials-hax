@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791231517
+      "updated": 1791231518
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -18150,7 +18150,7 @@
       "order": 30,
       "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
       "title": "7 Tips to Make a More Realistic Rendering",
-      "description": "",
+      "description": "Rendering guide",
       "metadata": {
         "published": true,
         "pageType": "oer:resource",
