@@ -1,0 +1,49 @@
+{
+  "id": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
+  "indent": 1,
+  "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.json",
+  "slug": "quizzes/texturing-and-uv-mapping-quiz",
+  "order": 2,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "Texturing and UV Mapping quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "quiz:item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
+          "version": ""
+        },
+        {
+          "page": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
+          "version": ""
+        },
+        {
+          "page": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
+          "version": ""
+        },
+        {
+          "page": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
+          "version": ""
+        }
+      ],
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791228261,
+    "images": [],
+    "videos": [],
+    "updated": 1791228261
+  },
+  "content": "<p>Check your understanding of this lesson. Your answers aren't recorded.</p>\n<multiple-choice question=\"What does a UV map do?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"It maps each point on a 3D surface to a position on a 2D texture\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"It sets the color of the lights\">\n  <input type=\"checkbox\" value=\"It stores the model's polygon count\">\n  <input type=\"checkbox\" value=\"It controls the render resolution\">\n</multiple-choice>\n<true-false-question question=\"In a PBR metallic workflow, the roughness map controls how sharp or blurry reflections look.\">\n  <input type=\"checkbox\" value=\"True\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"False\">\n</true-false-question>\n<self-check title=\"Think it through\">\n  <p slot=\"question\">A brick texture looks stretched on one side of your model. What would you check, and how might you fix it?</p>\n  <p>Check the UV layout with a checker texture for stretched or distorted islands and uneven texel density. Fix it by adding or moving seams, re-unwrapping or relaxing those islands, and scaling them to a consistent density.</p>\n</self-check>\n"
+}

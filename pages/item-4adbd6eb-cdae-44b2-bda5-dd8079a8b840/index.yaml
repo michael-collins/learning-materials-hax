@@ -1,0 +1,47 @@
+id: item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840
+indent: 1
+location: pages/item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840/index.yaml
+slug: quizzes/camera-and-composition-quiz
+order: 4
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Camera and Composition quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41
+  oerFields:
+    prerequisites:
+      - page: item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791228261
+  images: []
+  videos: []
+  updated: 1791228261
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="Which change gives a shallower depth of field (more
+  background blur)?" single-option="" randomize="">
+    <input type="checkbox" value="A lower f-stop (a wider aperture)" data-correct="true">
+    <input type="checkbox" value="A higher f-stop">
+    <input type="checkbox" value="Moving the camera farther from the subject">
+    <input type="checkbox" value="Increasing the render resolution">
+  </multiple-choice>
+
+  <true-false-question question="A longer focal length (telephoto) compresses
+  the sense of depth between foreground and background.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">How would you use the rule of thirds to frame a product shot?</p>
+    <p>Place the product, or its most important feature, on one of the third lines or intersections, leave space in the direction it faces, and keep any horizon on a third line rather than in the middle, unless you want a deliberately symmetrical shot.</p>
+  </self-check>

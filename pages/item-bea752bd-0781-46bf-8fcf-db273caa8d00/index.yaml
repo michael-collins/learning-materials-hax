@@ -1,0 +1,51 @@
+id: item-bea752bd-0781-46bf-8fcf-db273caa8d00
+indent: 1
+location: pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.yaml
+slug: quizzes/rendering-techniques-quiz
+order: 5
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Rendering Techniques quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-685e56cc-c545-4d08-81c8-c724fe5cc33d
+  oerFields:
+    prerequisites:
+      - page: item-685e56cc-c545-4d08-81c8-c724fe5cc33d
+        version: ''
+      - page: item-cfaff943-bb9c-4bb5-ba04-82a293c03f96
+        version: ''
+      - page: item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791228261
+  images: []
+  videos: []
+  updated: 1791228261
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="What is the main purpose of render passes (AOVs)?"
+  single-option="" randomize="">
+    <input type="checkbox" value="To output separate components, such as diffuse, specular and shadows, for compositing" data-correct="true">
+    <input type="checkbox" value="To render faster at lower quality">
+    <input type="checkbox" value="To save the image in several file formats">
+    <input type="checkbox" value="To preview the scene in the viewport">
+  </multiple-choice>
+
+  <true-false-question question="In a path tracer, raising the sample count
+  usually reduces noise but increases render time.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">Your render takes too long. Name three changes that would shorten it, and what each one costs.</p>
+    <p>For example: fewer samples with a denoiser (can lose fine detail), fewer light bounces (less realistic indirect light), a lower resolution or render region (less image), or simpler geometry and smaller textures (less detail). Adaptive sampling and GPU rendering can also help.</p>
+  </self-check>

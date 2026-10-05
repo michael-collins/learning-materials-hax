@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bea752bd-0781-46bf-8fcf-db273caa8d00</id>
+<indent>1</indent>
+<location>pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.xml</location>
+<slug>quizzes/rendering-techniques-quiz</slug>
+<order>5</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Rendering Techniques quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>quiz:item-685e56cc-c545-4d08-81c8-c724fe5cc33d</oerTmpKey>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-685e56cc-c545-4d08-81c8-c724fe5cc33d</page>
+<version></version>
+</item>
+<item>
+<page>item-cfaff943-bb9c-4bb5-ba04-82a293c03f96</page>
+<version></version>
+</item>
+<item>
+<page>item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129</page>
+<version></version>
+</item>
+</prerequisites>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791228261</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791228261</updated>
+</metadata>
+<content><![CDATA[<p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+<multiple-choice question="What is the main purpose of render passes (AOVs)?" single-option="" randomize="">
+  <input type="checkbox" value="To output separate components, such as diffuse, specular and shadows, for compositing" data-correct="true">
+  <input type="checkbox" value="To render faster at lower quality">
+  <input type="checkbox" value="To save the image in several file formats">
+  <input type="checkbox" value="To preview the scene in the viewport">
+</multiple-choice>
+<true-false-question question="In a path tracer, raising the sample count usually reduces noise but increases render time.">
+  <input type="checkbox" value="True" data-correct="true">
+  <input type="checkbox" value="False">
+</true-false-question>
+<self-check title="Think it through">
+  <p slot="question">Your render takes too long. Name three changes that would shorten it, and what each one costs.</p>
+  <p>For example: fewer samples with a denoiser (can lose fine detail), fewer light bounces (less realistic indirect light), a lower resolution or render region (less image), or simpler geometry and smaller textures (less detail). Adaptive sampling and GPU rendering can also help.</p>
+</self-check>
+]]></content>
+</item>

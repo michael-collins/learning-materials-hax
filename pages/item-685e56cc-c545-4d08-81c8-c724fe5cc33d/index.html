@@ -1,19 +1,2 @@
 <p>Master the rendering process from setup to final output, learning how to configure render engines and optimize settings for professional results.</p>
 
-<oer-draft note="Suggested questions from the learning objectives" data-source="objectives">
-  <h2>Check your understanding</h2>
-  <multiple-choice question="What is the main purpose of render passes (AOVs)?" single-option randomize>
-    <input type="checkbox" value="To output separate components, such as diffuse, specular and shadows, for compositing" correct data-correct="true">
-    <input type="checkbox" value="To render faster at lower quality">
-    <input type="checkbox" value="To save the image in several file formats">
-    <input type="checkbox" value="To preview the scene in the viewport">
-  </multiple-choice>
-  <true-false-question question="In a path tracer, raising the sample count usually reduces noise but increases render time.">
-    <input type="checkbox" value="True" correct data-correct="true">
-    <input type="checkbox" value="False">
-  </true-false-question>
-  <self-check title="Think it through">
-    <p slot="question">Your render takes too long. Name three changes that would shorten it, and what each one costs.</p>
-    <p>For example: fewer samples with a denoiser (can lose fine detail), fewer light bounces (less realistic indirect light), a lower resolution or render region (less image), or simpler geometry and smaller textures (less detail). Adaptive sampling and GPU rendering can also help.</p>
-  </self-check>
-</oer-draft>

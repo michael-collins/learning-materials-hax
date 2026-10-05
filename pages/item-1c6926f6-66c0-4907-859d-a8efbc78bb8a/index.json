@@ -1,0 +1,20 @@
+{
+  "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "indent": 0,
+  "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.json",
+  "slug": "quizzes",
+  "order": 10,
+  "parent": null,
+  "title": "Quizzes",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:section",
+    "icon": "lrn:quiz",
+    "oerTmpKey": "quizzes",
+    "created": 1791228261,
+    "images": [],
+    "videos": [],
+    "updated": 1791228261
+  },
+  "content": "<oer-collection types=\"oer:quiz\"></oer-collection>"
+}

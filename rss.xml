@@ -92,7 +92,7 @@
     <item>
       <title>History of CGI</title>
       <link>https://localhost:3000/learning-materials/lessons/history-of-cgi</link>
-      <description>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries. Check your understanding Pick one industry: film, games or advertising. How did CGI change the way work is made in it? For example, in film CGI made creatures, environments and effects possible that were impossible or too costly to build or shoot, and moved much of the work from the set into post-production.</description>
+      <description>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</description>
       <guid>https://localhost:3000/learning-materials/lessons/history-of-cgi</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
@@ -114,7 +114,7 @@
     <item>
       <title>3D Modeling Fundamentals</title>
       <link>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</link>
-      <description>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation. Check your understanding Why is it useful to block out a model with few polygons first and add detail later? The overall form and proportions are easier to judge and change with few polygons, the topology stays clean, and detail or smoothness can be added later with extra loops or subdivision.</description>
+      <description>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</description>
       <guid>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
@@ -144,7 +144,7 @@
     <item>
       <title>Texturing and UV Mapping</title>
       <link>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</link>
-      <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials. Check your understanding A brick texture looks stretched on one side of your model. What would you check, and how might you fix it? Check the UV layout with a checker texture for stretched or distorted islands and uneven texel density. Fix it by adding or moving seams, re-unwrapping or relaxing those islands, and scaling them to a consistent density.</description>
+      <description>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</description>
       <guid>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
@@ -174,7 +174,7 @@
     <item>
       <title>Lighting Principles</title>
       <link>https://localhost:3000/learning-materials/lessons/lighting-principles</link>
-      <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes. Check your understanding How would you change a scene&apos;s lighting to make it feel tense or mysterious rather than cheerful? Raise the contrast between key and fill, use harder shadows and a low or side angle, shift to cooler or more saturated colors, and leave parts of the scene in darkness, lit only by motivated sources.</description>
+      <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</description>
       <guid>https://localhost:3000/learning-materials/lessons/lighting-principles</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>

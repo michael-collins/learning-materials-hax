@@ -1,0 +1,47 @@
+id: item-52e05a27-2c5e-4c3a-8f99-baffbb07d613
+indent: 1
+location: pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.yaml
+slug: quizzes/history-of-cgi-quiz
+order: 0
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: History of CGI quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-d20b5a98-dc5e-4ce8-b734-32490288d27c
+  oerFields:
+    prerequisites:
+      - page: item-d20b5a98-dc5e-4ce8-b734-32490288d27c
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791228261
+  images: []
+  videos: []
+  updated: 1791228261
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="Which 1995 film was the first feature-length film
+  made entirely with computer animation?" single-option="" randomize="">
+    <input type="checkbox" value="Toy Story" data-correct="true">
+    <input type="checkbox" value="Jurassic Park">
+    <input type="checkbox" value="Tron">
+    <input type="checkbox" value="The Abyss">
+  </multiple-choice>
+
+  <true-false-question question="Ivan Sutherland's Sketchpad (1963) is
+  considered a foundation of interactive computer graphics.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">Pick one industry: film, games or advertising. How did CGI change the way work is made in it?</p>
+    <p>For example, in film CGI made creatures, environments and effects possible that were impossible or too costly to build or shoot, and moved much of the work from the set into post-production.</p>
+  </self-check>

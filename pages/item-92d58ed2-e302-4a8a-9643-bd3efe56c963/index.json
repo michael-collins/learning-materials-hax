@@ -1,0 +1,49 @@
+{
+  "id": "item-92d58ed2-e302-4a8a-9643-bd3efe56c963",
+  "indent": 1,
+  "location": "pages/item-92d58ed2-e302-4a8a-9643-bd3efe56c963/index.json",
+  "slug": "quizzes/3d-modeling-fundamentals-quiz",
+  "order": 1,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "3D Modeling Fundamentals quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "quiz:item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+    "oerFields": {
+      "prerequisites": [
+        {
+          "page": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
+          "version": ""
+        },
+        {
+          "page": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
+          "version": ""
+        },
+        {
+          "page": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
+          "version": ""
+        },
+        {
+          "page": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
+          "version": ""
+        }
+      ],
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791228261,
+    "images": [],
+    "videos": [],
+    "updated": 1791228261
+  },
+  "content": "<p>Check your understanding of this lesson. Your answers aren't recorded.</p>\n<multiple-choice question=\"Which kind of face is generally preferred for clean topology that deforms and subdivides well?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"Quads (four-sided faces)\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"Triangles\">\n  <input type=\"checkbox\" value=\"N-gons (five or more sides)\">\n  <input type=\"checkbox\" value=\"It doesn't matter\">\n</multiple-choice>\n<true-false-question question=\"Edge loops should follow the form of a model, especially where it will bend or deform.\">\n  <input type=\"checkbox\" value=\"True\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"False\">\n</true-false-question>\n<self-check title=\"Think it through\">\n  <p slot=\"question\">Why is it useful to block out a model with few polygons first and add detail later?</p>\n  <p>The overall form and proportions are easier to judge and change with few polygons, the topology stays clean, and detail or smoothness can be added later with extra loops or subdivision.</p>\n</self-check>\n"
+}

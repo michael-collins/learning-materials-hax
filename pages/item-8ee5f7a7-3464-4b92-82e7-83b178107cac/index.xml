@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8ee5f7a7-3464-4b92-82e7-83b178107cac</id>
+<indent>1</indent>
+<location>pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.xml</location>
+<slug>quizzes/lighting-principles-quiz</slug>
+<order>3</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Lighting Principles quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>quiz:item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</oerTmpKey>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</page>
+<version></version>
+</item>
+<item>
+<page>item-81dbd5a3-3e7f-447c-a522-630f6001a8f0</page>
+<version></version>
+</item>
+</prerequisites>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791228261</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791228261</updated>
+</metadata>
+<content><![CDATA[<p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+<multiple-choice question="In three-point lighting, which light is the main source that defines the subject's form?" single-option="" randomize="">
+  <input type="checkbox" value="The key light" data-correct="true">
+  <input type="checkbox" value="The fill light">
+  <input type="checkbox" value="The rim (back) light">
+  <input type="checkbox" value="The ambient light">
+</multiple-choice>
+<true-false-question question="An HDRI can light a whole scene and also provide realistic reflections.">
+  <input type="checkbox" value="True" data-correct="true">
+  <input type="checkbox" value="False">
+</true-false-question>
+<self-check title="Think it through">
+  <p slot="question">How would you change a scene's lighting to make it feel tense or mysterious rather than cheerful?</p>
+  <p>Raise the contrast between key and fill, use harder shadows and a low or side angle, shift to cooler or more saturated colors, and leave parts of the scene in darkness, lit only by motivated sources.</p>
+</self-check>
+]]></content>
+</item>

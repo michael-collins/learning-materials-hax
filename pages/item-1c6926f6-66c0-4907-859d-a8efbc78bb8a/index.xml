@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</id>
+<indent>0</indent>
+<location>pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.xml</location>
+<slug>quizzes</slug>
+<order>10</order>
+<parent></parent>
+<title>Quizzes</title>
+<description></description>
+<metadata>
+<pageType>oer:section</pageType>
+<icon>lrn:quiz</icon>
+<oerTmpKey>quizzes</oerTmpKey>
+<created>1791228261</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791228261</updated>
+</metadata>
+<content><![CDATA[<oer-collection types="oer:quiz"></oer-collection>]]></content>
+</item>

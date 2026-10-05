@@ -1,0 +1,49 @@
+id: item-8ee5f7a7-3464-4b92-82e7-83b178107cac
+indent: 1
+location: pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.yaml
+slug: quizzes/lighting-principles-quiz
+order: 3
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Lighting Principles quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  icon: lrn:quiz
+  published: false
+  oerTmpKey: quiz:item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95
+  oerFields:
+    prerequisites:
+      - page: item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95
+        version: ''
+      - page: item-81dbd5a3-3e7f-447c-a522-630f6001a8f0
+        version: ''
+    estimatedDuration: 10 minutes
+    authors:
+      - name: Michael Collins
+        url: ''
+    license: CC BY 4.0
+  created: 1791228261
+  images: []
+  videos: []
+  updated: 1791228261
+content: >
+  <p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+
+  <multiple-choice question="In three-point lighting, which light is the main
+  source that defines the subject's form?" single-option="" randomize="">
+    <input type="checkbox" value="The key light" data-correct="true">
+    <input type="checkbox" value="The fill light">
+    <input type="checkbox" value="The rim (back) light">
+    <input type="checkbox" value="The ambient light">
+  </multiple-choice>
+
+  <true-false-question question="An HDRI can light a whole scene and also
+  provide realistic reflections.">
+    <input type="checkbox" value="True" data-correct="true">
+    <input type="checkbox" value="False">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">How would you change a scene's lighting to make it feel tense or mysterious rather than cheerful?</p>
+    <p>Raise the contrast between key and fill, use harder shadows and a low or side angle, shift to cooler or more saturated colors, and leave parts of the scene in darkness, lit only by motivated sources.</p>
+  </self-check>

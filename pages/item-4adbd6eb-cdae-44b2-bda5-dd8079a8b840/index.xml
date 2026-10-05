@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840</id>
+<indent>1</indent>
+<location>pages/item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840/index.xml</location>
+<slug>quizzes/camera-and-composition-quiz</slug>
+<order>4</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Camera and Composition quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>quiz:item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</oerTmpKey>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41</page>
+<version></version>
+</item>
+</prerequisites>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791228261</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791228261</updated>
+</metadata>
+<content><![CDATA[<p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+<multiple-choice question="Which change gives a shallower depth of field (more background blur)?" single-option="" randomize="">
+  <input type="checkbox" value="A lower f-stop (a wider aperture)" data-correct="true">
+  <input type="checkbox" value="A higher f-stop">
+  <input type="checkbox" value="Moving the camera farther from the subject">
+  <input type="checkbox" value="Increasing the render resolution">
+</multiple-choice>
+<true-false-question question="A longer focal length (telephoto) compresses the sense of depth between foreground and background.">
+  <input type="checkbox" value="True" data-correct="true">
+  <input type="checkbox" value="False">
+</true-false-question>
+<self-check title="Think it through">
+  <p slot="question">How would you use the rule of thirds to frame a product shot?</p>
+  <p>Place the product, or its most important feature, on one of the third lines or intersections, leave space in the direction it faces, and keep any horizon on a third line rather than in the middle, unless you want a deliberately symmetrical shot.</p>
+</self-check>
+]]></content>
+</item>

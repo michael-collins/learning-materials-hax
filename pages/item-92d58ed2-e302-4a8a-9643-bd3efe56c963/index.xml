@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-92d58ed2-e302-4a8a-9643-bd3efe56c963</id>
+<indent>1</indent>
+<location>pages/item-92d58ed2-e302-4a8a-9643-bd3efe56c963/index.xml</location>
+<slug>quizzes/3d-modeling-fundamentals-quiz</slug>
+<order>1</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>3D Modeling Fundamentals quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>quiz:item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</oerTmpKey>
+<oerFields>
+<prerequisites>
+<item>
+<page>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</page>
+<version></version>
+</item>
+<item>
+<page>item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866</page>
+<version></version>
+</item>
+<item>
+<page>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</page>
+<version></version>
+</item>
+<item>
+<page>item-dbf43915-8e34-4116-a6e7-67cd08a1316e</page>
+<version></version>
+</item>
+</prerequisites>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791228261</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791228261</updated>
+</metadata>
+<content><![CDATA[<p>Check your understanding of this lesson. Your answers aren't recorded.</p>
+<multiple-choice question="Which kind of face is generally preferred for clean topology that deforms and subdivides well?" single-option="" randomize="">
+  <input type="checkbox" value="Quads (four-sided faces)" data-correct="true">
+  <input type="checkbox" value="Triangles">
+  <input type="checkbox" value="N-gons (five or more sides)">
+  <input type="checkbox" value="It doesn't matter">
+</multiple-choice>
+<true-false-question question="Edge loops should follow the form of a model, especially where it will bend or deform.">
+  <input type="checkbox" value="True" data-correct="true">
+  <input type="checkbox" value="False">
+</true-false-question>
+<self-check title="Think it through">
+  <p slot="question">Why is it useful to block out a model with few polygons first and add detail later?</p>
+  <p>The overall form and proportions are easier to judge and change with few polygons, the topology stays clean, and detail or smoothness can be added later with extra loops or subdivision.</p>
+</self-check>
+]]></content>
+</item>
