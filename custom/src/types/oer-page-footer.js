@@ -372,8 +372,35 @@ class OerPageFooter extends LitElement {
         font-size: 0.6875rem;
         font-weight: 600;
       }
-      .sep {
+      .sep,
+      .muted {
         color: var(--muted-foreground);
+      }
+      /* the version chip opens the page's releases */
+      .pill.version {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        height: 1.5rem;
+        padding: 0 0.625rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: 0.75rem;
+        color: var(--foreground);
+        cursor: pointer;
+      }
+      .pill.version:hover {
+        background: var(--accent);
+      }
+      .pill.version:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .pill.version .lucide {
+        width: 0.875rem;
+        height: 0.875rem;
       }
       .link {
         all: unset;
@@ -470,13 +497,17 @@ class OerPageFooter extends LitElement {
     const date = updated ? updated.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
     return html`<dt>${version ? "Version" : "Updated"}</dt>
       <dd>
-        ${version ? html`<span>v${version}</span>` : ""}
-        ${version && date ? html`<span class="sep" aria-hidden="true">·</span>` : ""}
-        ${date ? html`<span>${version ? `Updated ${date}` : date}</span>` : ""}
         ${version
-          ? html`<span class="sep" aria-hidden="true">·</span
-              ><button class="link" @click="${() => versionsDialog().show(item.metadata?.oerSnapshotOf || item.id)}">All versions</button>`
+          ? html`<button
+              class="pill version"
+              title="All versions"
+              aria-label="Version ${version}${item.metadata?.oerSnapshotOf ? ", archived" : ""}. All versions"
+              @click="${() => versionsDialog().show(item.metadata?.oerSnapshotOf || item.id)}"
+            >
+              ${lucide("icons:history")}v${version}${item.metadata?.oerSnapshotOf ? " · archived" : ""}
+            </button>`
           : ""}
+        ${date ? html`<span class="${version ? "muted" : ""}">${version ? `Updated ${date}` : date}</span>` : ""}
       </dd>`;
   }
 
