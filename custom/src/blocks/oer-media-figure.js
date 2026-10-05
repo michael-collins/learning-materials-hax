@@ -10,6 +10,7 @@
  * embedded page.
  */
 import { html, css, LitElement } from "../lit.js";
+import { LICENSE_OPTIONS, ccLicense, ccIcon } from "../types/licenses.js";
 
 export const SIZES = { small: "Small", medium: "Medium", large: "Large (full column)" };
 
@@ -20,6 +21,7 @@ export class OerMediaFigure extends LitElement {
       caption: { type: String, reflect: true },
       credit: { type: String, reflect: true },
       creditUrl: { type: String, attribute: "credit-url", reflect: true },
+      license: { type: String, reflect: true },
       size: { type: String, reflect: true },
     };
   }
@@ -37,6 +39,7 @@ export class OerMediaFigure extends LitElement {
       { property: "caption", title: "Caption", inputMethod: "textarea" },
       { property: "credit", title: "Credit", description: "Who made it, shown after the caption.", inputMethod: "textfield" },
       { property: "creditUrl", title: "Credit link", description: "Link to the original source.", inputMethod: "textfield", validationType: "url" },
+      { property: "license", title: "License", description: "The media's own licence, if it differs from the page's. Listed in the page footer's credits.", inputMethod: "select", options: LICENSE_OPTIONS },
       { property: "size", title: "Size", inputMethod: "select", options: SIZES },
     ];
   }
@@ -92,6 +95,18 @@ export class OerMediaFigure extends LitElement {
       figcaption a {
         color: var(--link, var(--primary, #0060a8));
       }
+      .license {
+        white-space: nowrap;
+      }
+      .license img {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.125em;
+        vertical-align: -0.125em;
+      }
+      .license img:last-of-type {
+        margin-right: 0.3em;
+      }
       .empty {
         display: grid;
         place-items: center;
@@ -113,13 +128,24 @@ export class OerMediaFigure extends LitElement {
   }
 
   renderCaption() {
-    if (!this.caption && !this.credit) return "";
+    if (!this.caption && !this.credit && !this.license) return "";
     const credit = this.credit
       ? this.creditUrl
         ? html`<a href="${this.creditUrl}" target="_blank" rel="noopener noreferrer">${this.credit}</a>`
         : this.credit
       : "";
-    return html`<figcaption>${this.caption}${this.caption && credit ? html` &mdash; ` : ""}${credit}</figcaption>`;
+    const cc = ccLicense(this.license);
+    const license = this.license
+      ? cc?.url
+        ? html`<a class="license" href="${cc.url}" target="_blank" rel="license noopener noreferrer"
+            >${cc.parts.map((p) => html`<img src="${ccIcon(p)}" alt="" />`)}${cc.name}</a
+          >`
+        : html`<span class="license">${this.license}</span>`
+      : "";
+    // "Caption — Credit, CC BY 4.0"
+    return html`<figcaption>
+      ${this.caption}${this.caption && (credit || license) ? html` &mdash; ` : ""}${credit}${credit && license ? ", " : ""}${license}
+    </figcaption>`;
   }
 
   // subclasses: the iframe / viewer

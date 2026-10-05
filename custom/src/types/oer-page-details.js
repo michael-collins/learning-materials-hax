@@ -51,7 +51,9 @@ class OerPageDetails extends LitElement {
     };
   }
 
-  show(id) {
+  /** `onSaved({ pageType, description, fields })` runs after a save. */
+  show(id, { onSaved = null } = {}) {
+    this._onSaved = onSaved;
     const items = toJS(store.manifest?.items) || [];
     const item = items.find((i) => i.id === id);
     if (!item) return;
@@ -114,6 +116,7 @@ class OerPageDetails extends LitElement {
       if (!empty(v) || f.kind === "boolean") fields[f.name] = f.kind === "boolean" ? !!v : v;
     }
     await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields });
+    this._onSaved?.({ pageType: this._type, description: this._desc.trim(), fields });
     this._saving = false;
     this._close();
   }

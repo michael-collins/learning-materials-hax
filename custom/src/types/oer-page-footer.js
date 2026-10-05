@@ -26,6 +26,7 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, SYSTEM_TYPE, peopleOf } from "./content-types.js";
 import { usedIn } from "./relations.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
+import { ccLicense, ccIcon } from "./licenses.js";
 
 // the OER Schema logo, as the Decap site's OERSchemaBadge uses it
 const OER_LOGO = {
@@ -33,23 +34,16 @@ const OER_LOGO = {
   dark: "https://cdn.jsdelivr.net/gh/open-curriculum/oerschema@master/public/oerschema-logo-white.png",
 };
 
+// blocks that credit third-party material (media blocks with a credit or
+// licence, and credit blocks), listed under "Credits"
+const MEDIA_TAGS = ["oer-iframe", "oer-video", "oer-google-slides", "oer-sketchfab", "oer-3d-viewer", "oer-code-embed"];
+const CREDIT_SELECTOR = ["oer-credit", ...MEDIA_TAGS.flatMap((t) => [`${t}[credit]`, `${t}[license]`])].join(", ");
+
 // "Used in" shows this many pages per group before "and N more"
 const USED_PREVIEW = 3;
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
-
-// "CC BY-NC-SA 4.0" → url + badge parts
-function ccLicense(code) {
-  const c = String(code || "").trim();
-  if (!c || /all rights reserved/i.test(c)) return null;
-  if (/^cc0/i.test(c)) return { name: "CC0 1.0", url: "https://creativecommons.org/publicdomain/zero/1.0/", parts: ["cc", "zero"] };
-  const m = c.match(/^CC\s+([A-Z-]+)\s+(\d\.\d)$/i);
-  if (!m) return { name: c, url: "", parts: [] };
-  const terms = m[1].toLowerCase();
-  return { name: c, url: `https://creativecommons.org/licenses/${terms}/${m[2]}/`, parts: ["cc", ...terms.split("-")] };
-}
-const ccIcon = (part) => `https://mirrors.creativecommons.org/presskit/icons/${part}.svg`;
 
 // OER Schema class per type (the Decap site's schema builders)
 const SCHEMA_TYPES = {
@@ -118,10 +112,38 @@ class OerPageFooter extends LitElement {
       });
     });
     loadAiul().then((d) => (this._aiul = d));
+    // credits follow the page content as it renders or changes
+    this.__credits = new MutationObserver(() => {
+      clearTimeout(this.__creditsTimer);
+      this.__creditsTimer = setTimeout(() => this._refreshCredits(), 150);
+    });
+    const content = this._contentRoot();
+    if (content) this.__credits.observe(content, { childList: true, subtree: true, attributes: true, attributeFilter: ["credit", "credit-url", "license", "title", "creator", "creator-url", "source", "note", "caption"] });
+    this._refreshCredits();
+  }
+
+  // the theme element: page content is in its light DOM
+  _contentRoot() {
+    return this.getRootNode()?.host || null;
+  }
+
+  _refreshCredits() {
+    const root = this._contentRoot();
+    const els = root ? [...root.querySelectorAll(CREDIT_SELECTOR)] : [];
+    const credits = els.map((el) =>
+      el.localName === "oer-credit"
+        ? { title: el.title || "", creator: el.creator || "", creatorUrl: el.creatorUrl || "", source: el.source || "", license: el.license || "" }
+        : { title: el.caption || el.title || "", creator: el.credit || "", creatorUrl: "", source: el.creditUrl || "", license: el.license || "" },
+    );
+    if (JSON.stringify(credits) === JSON.stringify(this._credits || [])) return;
+    this._credits = credits;
+    this.requestUpdate();
+    this._writeJsonLd();
   }
 
   disconnectedCallback() {
     this.__dispose?.();
+    this.__credits?.disconnect();
     globalThis.document.getElementById("oer-schema-jsonld")?.remove();
     super.disconnectedCallback();
   }
@@ -183,6 +205,17 @@ class OerPageFooter extends LitElement {
     if (objectives.length) data["oer:hasLearningObjective"] = objectives.map((o) => ({ "@type": "oer:LearningObjective", "schema:description": o }));
     const tags = toList(String(item.metadata?.tags || "").split(","));
     if (tags.length) data["schema:keywords"] = tags.join(", ");
+    // third-party material on the page, each with its own credit and licence
+    const parts = (this._credits || []).filter((c) => c.title || c.creator || c.license);
+    if (parts.length) {
+      data["schema:hasPart"] = parts.map((c) => ({
+        "@type": "schema:CreativeWork",
+        ...(c.title ? { "schema:name": c.title } : {}),
+        ...(c.creator ? { "schema:creator": { "@type": "schema:Person", "schema:name": c.creator, ...(c.creatorUrl ? { "schema:url": c.creatorUrl } : {}) } } : {}),
+        ...(c.source ? { "schema:url": c.source } : {}),
+        ...(c.license ? { "schema:license": ccLicense(c.license)?.url || c.license } : {}),
+      }));
+    }
     return data;
   }
 
@@ -415,6 +448,14 @@ class OerPageFooter extends LitElement {
         text-underline-offset: 2px;
         cursor: pointer;
       }
+      .credits {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .credits li + li {
+        margin-top: 0.25rem;
+      }
       .used-group {
         display: inline;
       }
@@ -495,11 +536,34 @@ class OerPageFooter extends LitElement {
       </dd>`;
   }
 
-  // "A", "A and B", "A, B and C", each linked when it has a link
+  // third-party material on the page: "Title — Creator, CC BY 4.0"
+  _renderCredits() {
+    const credits = (this._credits || []).filter((c) => c.title || c.creator || c.license);
+    if (!credits.length) return "";
+    const link = (text, url) => (url ? html`<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>` : text);
+    return html`<dt>Credits</dt>
+      <dd>
+        <ul class="credits">
+          ${credits.map((c) => {
+            const cc = ccLicense(c.license);
+            return html`<li>
+              ${c.title ? link(c.title, c.source) : ""}${c.title && c.creator ? " — " : ""}${c.creator ? link(c.creator, c.creatorUrl || (c.title ? "" : c.source)) : ""}${(c.title || c.creator) && c.license ? ", " : ""}${c.license
+                ? cc?.url
+                  ? html`<a href="${cc.url}" target="_blank" rel="license noopener noreferrer">${cc.name}</a>`
+                  : c.license
+                : ""}
+            </li>`;
+          })}
+        </ul>
+      </dd>`;
+  }
+
+  // "A", "A and B", "A, B, and C", each linked when it has a link
   _renderPeople() {
     const people = this._people;
     return people.map((p, i) => {
-      const sep = i === 0 ? "" : i === people.length - 1 ? " and " : ", ";
+      const last = i === people.length - 1;
+      const sep = i === 0 ? "" : last ? (people.length > 2 ? ", and " : " and ") : ", ";
       return html`${sep}${p.url ? html`<a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.name}</a>` : p.name}`;
     });
   }
@@ -613,7 +677,7 @@ class OerPageFooter extends LitElement {
             <p style="margin:0.5rem 0 0">Published in the page as JSON-LD (<a href="https://oerschema.org/" target="_blank" rel="noopener noreferrer">OER Schema</a> and schema.org) for search engines and repositories.</p>
           </div>`
         : ""}
-      <dl>${this._renderAiul(aiCodes)}${this._renderVersion()}${this._renderUsedIn()}</dl>
+      <dl>${this._renderAiul(aiCodes)}${this._renderVersion()}${this._renderUsedIn()}${this._renderCredits()}</dl>
     `;
   }
 }

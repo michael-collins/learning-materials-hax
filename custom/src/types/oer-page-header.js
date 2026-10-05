@@ -9,7 +9,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, SYSTEM_TYPE, peopleOf } from "./content-types.js";
+import { contentTypes, SYSTEM_TYPE, peopleOf, joinNames } from "./content-types.js";
 import { isSnapshot, latestOf } from "../versions/versioning.js";
 import { bookPrint } from "../books/oer-book-print.js";
 import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
@@ -355,7 +355,7 @@ class OerPageHeader extends LitElement {
   }
 
   _short(f, v) {
-    if (f.kind === "people") return peopleOf(v).map((p) => p.name).join(", ");
+    if (f.kind === "people") return joinNames(peopleOf(v).map((p) => p.name));
     if (Array.isArray(v)) return v.map((x) => this._short(f, x)).join(", ");
     if (f.kind === "boolean") return v ? "Yes" : "No";
     if (f.kind === "select") return (f.options || []).find((o) => o.value === v)?.label || v;
@@ -404,7 +404,7 @@ class OerPageHeader extends LitElement {
       <div class="meta">
         ${type ? html`<span class="type">${type.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type.label}</span>` : ""}
         ${values.placeholder ? inDevelopmentBadge("md") : ""}
-        ${pills.map((f) => html`<span class="pill">${f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
+        ${pills.map((f) => html`<span class="pill">${f.kind === "people" && f.name === "authors" ? "By" : f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
           ${type?.reader && firstChild
             ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>

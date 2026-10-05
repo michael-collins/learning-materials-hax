@@ -57,6 +57,13 @@ const items = () => toJS(store.manifest?.items) || [];
  * A "people" field's value as [{ name, url }]: also reads a plain name or a
  * list of names (older single-author text fields).
  */
+/** "A", "A and B", "A, B, and C" */
+export function joinNames(names) {
+  const n = names.filter(Boolean);
+  if (n.length < 3) return n.join(" and ");
+  return `${n.slice(0, -1).join(", ")}, and ${n.at(-1)}`;
+}
+
 export function peopleOf(v) {
   const list = Array.isArray(v) ? v : v === undefined || v === null || v === "" ? [] : [v];
   return list

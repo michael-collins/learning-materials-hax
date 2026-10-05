@@ -10,6 +10,7 @@ import { installShadowStyles, registerShadowStyles } from "./shadow-styles.js";
 import { editorSkin } from "./editor-skin.js";
 import { installCommandPalette } from "./command-palette.js";
 import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
+import { installPageBreakDetails } from "./page-break-details.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -31,6 +32,7 @@ export function installEditorChrome() {
   installCommandPalette();
   installUxTweaks();
   installTrayEnhancer();
+  installPageBreakDetails();
   new MutationObserver(adoptStockBar).observe(globalThis.document.body, { childList: true });
   adoptStockBar();
 }
