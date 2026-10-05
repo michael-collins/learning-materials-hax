@@ -4947,32 +4947,6 @@
       }
     },
     {
-      "id": "item-8a1ef12a-0e47-451b-b37d-addb2da2e0cb",
-      "indent": 3,
-      "location": "pages/item-8a1ef12a-0e47-451b-b37d-addb2da2e0cb/index.html",
-      "slug": "pathways/cgi-foundations/lighting-camera-rendering/lighting-and-rendering-the-airline-chair",
-      "order": 4,
-      "parent": "item-78cb5c5f-c643-4eaf-990f-33b1bc89f214",
-      "title": "Lighting and Rendering the Airline Chair",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "oerImport": "decap-pathways",
-        "pageType": "oer:exercise",
-        "oerRef": {
-          "page": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
-          "version": ""
-        },
-        "created": 1790830075,
-        "images": [],
-        "videos": [],
-        "updated": 1791228253,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f",
       "indent": 2,
       "location": "pages/item-6de1b2ff-5ce3-4fab-81b1-a394ccb3825f/index.html",
