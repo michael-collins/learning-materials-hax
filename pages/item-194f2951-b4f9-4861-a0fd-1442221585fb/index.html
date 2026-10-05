@@ -1,0 +1,87 @@
+<p class="lead">This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licensing, plus an editor redesigned in the shadcn/ui style. This page explains what is new and where to find it.</p>
+<oer-callout type="tip" title="Where things are"><p>Most actions live in three places: the <strong>sidebar</strong> (Navigation and Site tabs), the <strong>page menu</strong> (the ⌄ beside a page title) and the <strong>top bar</strong> (search, command search and dark mode).</p></oer-callout>
+<h2>Getting around</h2>
+<ul>
+  <li><strong>Sidebar tabs.</strong> Signed-in authors see two tabs. <em>Navigation</em> shows the site's outline; <em>Site</em> holds Content types and Settings. Readers see the outline only.</li>
+  <li><strong>Outline headings.</strong> Uppercase labels such as Library, Curriculum and Assessments group the pages after them, like the categories of the Decap site. Headings never change a page's address.</li>
+  <li><strong>Icons in navigation.</strong> Page icons can be switched off for the whole site in the outline builder. Without icons the sidebar uses the Decap layout: roomier rows, bold top-level pages and pages indented under their heading.</li>
+  <li><strong>Breadcrumbs.</strong> The top bar shows where a page sits. On narrow screens the levels above collapse into a … menu so the trail stays on one line.</li>
+  <li><strong>Search.</strong> The magnifier (or ⌘K) searches the site. Signed-in authors also get a command search for pages and editor actions.</li>
+  <li><strong>Previous and Next</strong> at the foot of each page follow the outline. Inside a book they stay within the book.</li>
+</ul>
+<oer-schematic preset="sidebar" alt="Diagram of the sidebar: the Navigation tab, the headings Library and Curriculum with pages indented under them, an Add page row and the Edit outline button, highlighted." caption="The sidebar without icons: outline headings group the pages after them, and Edit outline sits at the foot."></oer-schematic>
+<oer-schematic preset="breadcrumb" alt="Diagram of the breadcrumb: the levels above the current page collapsed into a highlighted … button, with its menu open below." caption="On narrow screens the breadcrumb keeps to one line; the levels above open from the … menu."></oer-schematic>
+
+<h2>Editing pages</h2>
+<ul>
+  <li><strong>Edit page</strong> from the page menu, or press ⌘⇧E. Save and Cancel sit in the editing bar at the top.</li>
+  <li><strong>Block rail.</strong> The selected block gets a rail on its left with Block, Text, Format and Insert menus, in place of HAX's floating toolbars.</li>
+  <li><strong>Insert in place.</strong> Hover the space between blocks, including inside columns, to add a block from a searchable list with previews and templates.</li>
+  <li><strong>Block settings</strong> open in a dialog with a live preview. The HTML source view opens in a dialog too.</li>
+  <li>The editor is quiet and still: no sounds and no decorative animation, and every control works from the keyboard.</li>
+</ul>
+<oer-schematic preset="editor" alt="Diagram of the editor: Save and Cancel in the editing bar, a highlighted selected block with the block rail to its left, and an insert line with a plus button between blocks." caption="Editing: Save and Cancel at the top, the block rail beside the selected block, and an insert line between blocks."></oer-schematic>
+
+<h3>Blocks this theme adds</h3>
+<ul>
+  <li><strong>Callout</strong>: notes, tips, warnings, definitions and objectives.</li>
+  <li><strong>Embeds</strong>: embedded page, video, Google Slides, Sketchfab, 3D model viewer and code examples (CodePen, JSFiddle, CodeSandbox, StackBlitz, Replit, Glitch), each with a caption and credit.</li>
+  <li><strong>Page collection</strong>: lists pages by type and place as a filterable, sortable table, cards, a module outline or a pathways index.</li>
+  <li><strong>Pathway</strong>: a pathway's facts, its route by level (a level matrix or a list with a level switcher), objectives and test-out criteria, in three layouts.</li>
+  <li><strong>Include a page</strong>: shows another page here without copying it, optionally pinned to a released version.</li>
+  <li><strong>Rubric</strong>, <strong>divider with label</strong> and <strong>spacer</strong>.</li>
+</ul>
+<oer-schematic preset="collection" alt="Diagram of a page collection: a search box and filter above a table, with the Table view switch and a sortable column highlighted." caption="A page collection in table view, with search, a filter, sortable columns and the view switch."></oer-schematic>
+
+<h2>Content types and page details</h2>
+<p>Every page can have a <strong>content type</strong> (Lesson, Exercise, Pathway…) with its own fields, like the collections of the Decap site. Manage them in <em>Site → Content types</em>:</p>
+<ul>
+  <li><strong>Fields</strong> can be text, long text, number, choice (one or several), list, yes/no, date, image, link, <em>Link to pages</em> (prerequisites, resources; optionally limited to some types and pinned to a version) and <em>Files and links</em> (downloads with title, description and alt text).</li>
+  <li><strong>Show in page header</strong> on a field puts it in the header: short values as labels beside the type badge, lists, links and files as cards.</li>
+  <li><strong>Show in the navigation</strong> keeps pages of a type out of the sidebar, so it lists only the sections that hold them.</li>
+  <li><strong>Reader layout</strong> makes pages inside a type read like a book; <strong>starter content</strong> fills new pages of the type.</li>
+</ul>
+<oer-schematic preset="content-types" alt="Diagram of Site, Content types: a type selected in the list and its fields, one with the Show in page header switch turned on." caption="Site → Content types: each type’s settings, fields and what it can contain."></oer-schematic>
+
+<p>To edit a page's type, description and fields, open the page menu and choose <strong>Page details</strong>. A page's <em>image</em> field shows as a banner above its title. The menu also has Rename page, Change icon, Page media, Tags, Embed… and Versions….</p>
+<oer-schematic preset="page-menu" alt="Diagram of the page menu: the highlighted ⌄ button beside the page title and the menu open below it." caption="The page menu, opened from the ⌄ beside a page title."></oer-schematic>
+<oer-schematic preset="page-details" alt="Diagram of the Page details dialog over the page: content type, description and field inputs, with a Save button." caption="Page details: the page’s type, description and fields."></oer-schematic>
+
+<h2>The outline builder</h2>
+<p>Open it with <strong>Edit outline</strong> at the foot of the sidebar (or from a page's menu for its sub-pages). Nothing is written until <strong>Save outline</strong>.</p>
+<ul>
+  <li>Drag rows to reorder them: the top of a row puts a page before it, the middle makes it a child, the bottom puts it after, and dragging sideways changes its level.</li>
+  <li>Hover the space at the end of a level for <strong>Add page</strong>, <strong>Add existing</strong> (show an existing page here without copying it) and <strong>Add heading</strong>.</li>
+  <li>Each row's chip sets its content type. Inside a pathway with several levels, <kbd>L</kbd> sets an item's level. On a linked page, the link chip (or <kbd>V</kbd>) chooses the version it shows: the latest, or a released version.</li>
+  <li><strong>Edit icons</strong> shows the icon column; <strong>Icons in navigation</strong> switches icons on or off for the whole sidebar.</li>
+  <li>Keyboard: <kbd>Enter</kbd> rename, <kbd>Tab</kbd>/<kbd>Shift</kbd>+<kbd>Tab</kbd> indent and outdent, <kbd>Alt</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd> move, <kbd>←</kbd>/<kbd>→</kbd> collapse and expand, <kbd>Delete</kbd> remove, <kbd>T</kbd> type, <kbd>L</kbd> level, <kbd>V</kbd> version.</li>
+</ul>
+<oer-schematic preset="outline-builder" alt="Diagram of the outline builder: rows grouped under Library and Curriculum headings, a link chip showing version v1.2.0, the Icons switch and Save, and Add page, Add existing and Add heading buttons." caption="The outline builder: headings, a linked page showing its version, and the add buttons."></oer-schematic>
+
+<h2>Pathways</h2>
+<p>A pathway is a page of type Pathway whose sub-pages are its modules; each module's sub-pages are its items, usually linked from the library so they stay in one place. The Pathways page lists them in three groups: where to start, what builds on it, and what is still in development. On a pathway page you see the course, length, levels and what to do first, then the route: a matrix of modules by level, or a module list with a level switcher. Items without a level belong to every level.</p>
+<oer-schematic preset="pathways-index" alt="Diagram of the Pathways page: cards in three groups, Start here, Builds on and In development." caption="The Pathways index: where to start, what builds on it, and what is in development."></oer-schematic>
+<oer-schematic preset="pathway" alt="Diagram of a pathway page: a row of facts, then a matrix of modules against Beginner, Intermediate and Advanced levels." caption="A pathway page: the facts, then the route as a matrix of modules by level."></oer-schematic>
+
+<h2>Versions</h2>
+<ul>
+  <li>The version tag in a page's header, and <em>Versions…</em> in the page menu, open the page's releases. Authors publish a new release with a semver number (1.2.0) and notes; the page's content at that moment is kept as an archived copy.</li>
+  <li>Archived versions open with a banner pointing to the latest one. Links can be pinned to a version in the outline builder, in <em>Add existing</em>, in <em>Link to pages</em> fields, and with <code>?version=</code> in an address.</li>
+  <li>Version history from the Decap site was imported: current version numbers and every archived version.</li>
+</ul>
+<oer-schematic preset="versions" alt="Diagram of versions: a v1.2.0 tag in the page header and the Versions dialog listing v1.2.0, v1.1.0 and v1.0.0 with a Publish button." caption="Versions: publish a release, and open any archived version."></oer-schematic>
+
+<h2>Books, embedding and export</h2>
+<ul>
+  <li><strong>Books.</strong> A type with the reader layout gets a <em>Start reading</em> button, a sidebar of its chapters with a filter, and in-book Previous and Next. Books export to <strong>print or PDF</strong>, an <strong>HTML zip</strong> and <strong>IMS Common Cartridge</strong> for an LMS.</li>
+  <li><strong>Embedding.</strong> <em>Embed…</em> in the page menu gives the code to place a page in an LMS such as Canvas, with options to leave out the header, the title, the rubric or the AI licence. Embedded pages resize themselves the way Canvas expects.</li>
+</ul>
+<oer-schematic preset="embed" alt="Diagram of the Embed dialog: the embed code, checkboxes for what to leave out, and a Copy button." caption="Embed this page: choose what to leave out, then copy the code."></oer-schematic>
+
+<h2>The page footer</h2>
+<p>Typed pages end with their licence and credits: the Creative Commons licence with its icons, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, a <strong>Cite</strong> menu (APA, MLA, Chicago, BibTeX) and the <strong>OER Schema</strong> badge, which shows the structured data published with every page for search engines and repositories.</p>
+<oer-schematic preset="footer" alt="Diagram of the page footer: licence icons with Cite and OER Schema buttons, then rows for AI use, Version and Used in." caption="The page footer: licence, AI use, version and where the page is used."></oer-schematic>
+
+<h2>Accessibility</h2>
+<p>Colours meet WCAG AA contrast in light and dark mode, the layout works at phone width, every control has a keyboard path and a label, menus stay inside the window, and nothing moves for decoration.</p>
+<oer-callout type="info" title="Built on HAX"><p>The theme is a layer on top of stock HAXcms, with no changes to HAX itself. Fixes found along the way have been contributed back to HAX. If the site switches to another HAX theme, the editor returns to stock HAX while these blocks keep working.</p></oer-callout>
