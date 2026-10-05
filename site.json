@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791232304
+      "updated": 1791232373
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.",
       "metadata": {
         "created": 1790801562,
-        "updated": 1791232303,
+        "updated": 1791232372,
         "published": true,
         "locked": false,
         "status": "",
@@ -60,7 +60,7 @@
             "notes": "Testing versions."
           }
         ],
-        "oerSaveTiming": "1791232303697"
+        "oerSaveTiming": ""
       }
     },
     {

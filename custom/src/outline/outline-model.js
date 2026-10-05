@@ -92,7 +92,14 @@ export function createPage(title, parent = null, pageType = "") {
  */
 export function saveOutline(items) {
   const before = store.manifest;
-  siteEditor()?.saveOutline?.({ detail: items });
+  // Only new, changed and deleted items go to HAXcms. Its outline save
+  // processes every item it's sent, rewriting site.json and rebuilding the
+  // feeds and search index (which reads every page) once per item, so
+  // sending the whole outline took minutes on a large site; unchanged items
+  // need nothing, and each sent item is handled on its own.
+  const changed = (items || []).filter((i) => i && (i.new || i.modified || i.delete));
+  if (!changed.length) return Promise.resolve(false);
+  siteEditor()?.saveOutline?.({ detail: changed });
   return manifestChange(before);
 }
 
