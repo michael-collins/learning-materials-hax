@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e4e10eff-a688-4ead-8963-d36e02adc4e5</id>
+<indent>1</indent>
+<location>pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.xml</location>
+<slug>quizzes/short-film-and-vfx-pathway-readiness-quiz</slug>
+<order>0</order>
+<parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
+<title>Short Film and VFX Pathway readiness quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<icon>lrn:quiz</icon>
+<published>false</published>
+<oerTmpKey>readiness:item-5dabc762-d17b-4d08-80ac-3dae0557d0cb</oerTmpKey>
+<oerFields>
+<estimatedDuration>10 minutes</estimatedDuration>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+</oerFields>
+<created>1791229731</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791229731</updated>
+</metadata>
+<content><![CDATA[<p>Before you start Short Film and VFX Pathway: can you answer these? Your answers aren't recorded.</p>
+<self-check title="Are you ready?">
+  <p slot="question">Outline the main stages of a short-film pipeline, from pre-production to post-production.</p>
+  <p>Story and script, storyboards and animatic, design, modeling and rigging, layout, animation, effects and simulation, lighting, rendering, compositing, then edit, sound and grade.</p>
+</self-check>
+<self-check title="Are you ready?">
+  <p slot="question">How would you make a simulated effect, like smoke or debris, feel part of an animated shot?</p>
+  <p>Match its lighting, scale, timing and motion to the shot, make it interact with the characters and set, and render it in passes so it can be balanced in compositing.</p>
+</self-check>
+]]></content>
+</item>

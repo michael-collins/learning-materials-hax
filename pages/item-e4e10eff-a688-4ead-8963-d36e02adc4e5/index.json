@@ -1,0 +1,30 @@
+{
+  "id": "item-e4e10eff-a688-4ead-8963-d36e02adc4e5",
+  "indent": 1,
+  "location": "pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.json",
+  "slug": "quizzes/short-film-and-vfx-pathway-readiness-quiz",
+  "order": 0,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "Short Film and VFX Pathway readiness quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "readiness:item-5dabc762-d17b-4d08-80ac-3dae0557d0cb",
+    "oerFields": {
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791229731,
+    "images": [],
+    "videos": [],
+    "updated": 1791229731
+  },
+  "content": "<p>Before you start Short Film and VFX Pathway: can you answer these? Your answers aren't recorded.</p>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">Outline the main stages of a short-film pipeline, from pre-production to post-production.</p>\n  <p>Story and script, storyboards and animatic, design, modeling and rigging, layout, animation, effects and simulation, lighting, rendering, compositing, then edit, sound and grade.</p>\n</self-check>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">How would you make a simulated effect, like smoke or debris, feel part of an animated shot?</p>\n  <p>Match its lighting, scale, timing and motion to the shot, make it interact with the characters and set, and render it in passes so it can be balanced in compositing.</p>\n</self-check>\n"
+}

@@ -1,0 +1,3 @@
+Before you start Short Film and VFX Pathway: can you answer these? Your answers aren't recorded.
+
+<self-check title="Are you ready?"><p slot="question">Outline the main stages of a short-film pipeline, from pre-production to post-production.</p><p>Story and script, storyboards and animatic, design, modeling and rigging, layout, animation, effects and simulation, lighting, rendering, compositing, then edit, sound and grade.</p></self-check><self-check title="Are you ready?"><p slot="question">How would you make a simulated effect, like smoke or debris, feel part of an animated shot?</p><p>Match its lighting, scale, timing and motion to the shot, make it interact with the characters and set, and render it in passes so it can be balanced in compositing.</p></self-check>
