@@ -28,6 +28,8 @@ import { usedIn } from "./relations.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { ccLicense, ccIcon } from "./licenses.js";
 import { loadAiul, aiulInfo, AIUL_GUIDE } from "./aiul.js";
+import { permalinkFor } from "../ui/permalinks.js";
+import { versionsOf } from "../versions/versioning.js";
 
 // the OER Schema logo, as the Decap site's OERSchemaBadge uses it
 const OER_LOGO = {
@@ -154,6 +156,7 @@ class OerPageFooter extends LitElement {
     this.__dispose?.();
     this.__credits?.disconnect();
     globalThis.document.getElementById("oer-schema-jsonld")?.remove();
+    globalThis.document.head.querySelectorAll("meta[data-oer-cite]").forEach((m) => m.remove());
     super.disconnectedCallback();
   }
 
@@ -266,6 +269,7 @@ class OerPageFooter extends LitElement {
     const doc = globalThis.document;
     let el = doc.getElementById("oer-schema-jsonld");
     const data = this._item?.metadata?.pageType && this._item.metadata.pageType !== SYSTEM_TYPE ? this._schema() : null;
+    this._writeCitationMeta(!!this._item && this._item.metadata?.pageType !== SYSTEM_TYPE);
     if (!data) return el?.remove();
     if (!el) {
       el = Object.assign(doc.createElement("script"), { id: "oer-schema-jsonld", type: "application/ld+json" });
@@ -274,24 +278,183 @@ class OerPageFooter extends LitElement {
     el.textContent = JSON.stringify(data);
   }
 
-  _citation(style) {
+  // what a citation of this page names: the release it shows (an archived
+  // copy is that release; a live page cites its current release when a
+  // frozen copy of it exists), the date of that release, and a permanent link
+  get _citeInfo() {
     const item = this._item;
-    const authors = this._authors;
-    const year = new Date((item.metadata?.updated || item.metadata?.created || Date.now() / 1000) * 1000).getFullYear();
-    const site = this._site?.title || "";
-    const url = this._url();
-    const list = (sep, last) => (authors.length > 1 ? `${authors.slice(0, -1).join(sep)}${last}${authors.at(-1)}` : authors[0] || site);
+    const isSnapshot = !!item?.metadata?.oerSnapshotOf;
+    const pageId = item?.metadata?.oerSnapshotOf || item?.id;
+    const version = item?.metadata?.version || "";
+    const release = version ? versionsOf(pageId, this._items || []).find((v) => v.version === version) : null;
+    const pinned = isSnapshot || !!release?.snapshot;
+    // the release's date, else the page's own Date field, else when it was last updated
+    const fieldDate = this._fields?.date ? new Date(this._fields.date) : null;
+    const issued =
+      release?.date && Number(release.date)
+        ? new Date(Number(release.date) * 1000)
+        : fieldDate && !Number.isNaN(fieldDate.getTime())
+          ? fieldDate
+          : new Date((item?.metadata?.updated || item?.metadata?.created || Date.now() / 1000) * 1000);
+    const title = item?.metadata?.oerSnapshotTitle || item?.title || "";
+    return {
+      title,
+      version,
+      issued,
+      url: pinned ? permalinkFor(pageId, version) : permalinkFor(pageId),
+      site: this._site?.title || "",
+      authors: this._authors,
+      accessed: new Date(),
+      pinned,
+    };
+  }
+
+  _citation(style) {
+    const c = this._citeInfo;
+    const year = c.issued.getFullYear();
+    const authors = c.authors;
+    // "Michael Collins" → { family: "Collins", given: "Michael" } (a single word stays as is)
+    const split = (n) => {
+      const parts = String(n).trim().split(/\s+/);
+      return parts.length > 1 ? { family: parts.at(-1), given: parts.slice(0, -1).join(" ") } : { family: parts[0], given: "" };
+    };
+    const initials = (g) => g.split(/[\s-]+/).filter(Boolean).map((w) => `${w[0]}.`).join(" ");
+    const inverted = (n) => {
+      const { family, given } = split(n);
+      return given ? `${family}, ${given}` : family;
+    };
+    const apaName = (n) => {
+      const { family, given } = split(n);
+      return given ? `${family}, ${initials(given)}` : family;
+    };
+    // APA: everyone "Family, I."; MLA and Chicago: the first author inverted
+    const names = style === "APA" ? authors.map(apaName) : authors.map((n, i) => (i === 0 ? inverted(n) : n));
+    const list = (sep, last) => (names.length > 1 ? `${names.slice(0, -1).join(sep)}${last}${names.at(-1)}` : names[0] || c.site);
+    const v = c.version;
+    const long = (d) => d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    const mla = (d) => `${d.getDate()} ${d.toLocaleDateString("en-US", { month: "short" })}${d.getMonth() === 4 ? "" : "."} ${d.getFullYear()}`;
     switch (style) {
       case "APA":
-        return `${list(", ", ", & ")} (${year}). ${item.title}. ${site}. ${url}`;
+        // APA 7: content that changes gets a retrieval date; a fixed version doesn't
+        return `${list(", ", ", & ")} (${year}). ${c.title}${v ? ` (Version ${v})` : ""}. ${c.site}. ${c.pinned ? c.url : `Retrieved ${long(c.accessed)}, from ${c.url}`}`;
       case "MLA":
-        return `${list(", ", ", and ")}. "${item.title}." ${site}, ${year}, ${url}.`;
+        return `${list(", ", ", and ")}. "${c.title}." ${c.site}${v ? `, version ${v}` : ""}, ${mla(c.issued)}, ${c.url}. Accessed ${mla(c.accessed)}.`;
       case "Chicago":
-        return `${list(", ", ", and ")}. "${item.title}." ${site}, ${year}. ${url}.`;
+        return `${list(", ", ", and ")}. "${c.title}." ${c.site}${v ? `, version ${v}` : ""}. ${long(c.issued)}. Accessed ${long(c.accessed)}. ${c.url}.`;
       default: {
-        const key = `${(authors[0] || site).split(/\s+/).pop()}${year}`.replace(/[^A-Za-z0-9]/g, "");
-        return `@misc{${key},\n  author = {${authors.join(" and ") || site}},\n  title = {${item.title}},\n  year = {${year}},\n  publisher = {${site}},\n  url = {${url}}\n}`;
+        const key = `${(authors[0] || c.site).split(/\s+/).pop()}${year}`.replace(/[^A-Za-z0-9]/g, "");
+        return `@misc{${key},\n  author = {${authors.map(inverted).join(" and ") || c.site}},\n  title = {${c.title}},\n  year = {${year}},\n  publisher = {${c.site}},${v ? `\n  version = {${v}},` : ""}\n  url = {${c.url}},\n  urldate = {${c.accessed.toISOString().slice(0, 10)}}\n}`;
       }
+    }
+  }
+
+  // reference-manager files: RIS and CSL-JSON
+  _ris() {
+    const c = this._citeInfo;
+    const d = c.issued;
+    const pad = (n) => String(n).padStart(2, "0");
+    return [
+      "TY  - ELEC",
+      `TI  - ${c.title}`,
+      ...(c.authors.length ? c.authors.map((a) => `AU  - ${a}`) : [`AU  - ${c.site}`]),
+      `PY  - ${d.getFullYear()}`,
+      `DA  - ${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())}`,
+      `PB  - ${c.site}`,
+      ...(c.version ? [`ET  - ${c.version}`] : []),
+      `UR  - ${c.url}`,
+      `Y2  - ${c.accessed.toISOString().slice(0, 10)}`,
+      "ER  - ",
+      "",
+    ].join("\r\n");
+  }
+
+  _csl() {
+    const c = this._citeInfo;
+    const parts = (d) => [[d.getFullYear(), d.getMonth() + 1, d.getDate()]];
+    return JSON.stringify(
+      [
+        {
+          id: this._item?.metadata?.oerSnapshotOf || this._item?.id,
+          type: "webpage",
+          title: c.title,
+          author: (c.authors.length ? c.authors : [c.site]).map((literal) => ({ literal })),
+          issued: { "date-parts": parts(c.issued) },
+          accessed: { "date-parts": parts(c.accessed) },
+          publisher: c.site,
+          "container-title": c.site,
+          ...(c.version ? { version: c.version } : {}),
+          URL: c.url,
+        },
+      ],
+      null,
+      2,
+    );
+  }
+
+  _download(kind) {
+    const text = kind === "ris" ? this._ris() : kind === "csl" ? this._csl() : this._citation("BibTeX");
+    const ext = { ris: "ris", csl: "json", bib: "bib" }[kind];
+    const type = { ris: "application/x-research-info-systems", csl: "application/vnd.citationstyles.csl+json", bib: "application/x-bibtex" }[kind];
+    const slug = String(this._citeInfo.title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "citation";
+    const a = Object.assign(globalThis.document.createElement("a"), { href: URL.createObjectURL(new Blob([text], { type })), download: `${slug}.${ext}` });
+    globalThis.document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+
+  // citation meta tags (Highwire Press "citation_*", read by Google Scholar
+  // and reference managers, plus Dublin Core), kept in step with the page
+  _writeCitationMeta(enabled) {
+    const doc = globalThis.document;
+    doc.head.querySelectorAll("meta[data-oer-cite]").forEach((m) => m.remove());
+    if (!enabled) return;
+    const c = this._citeInfo;
+    const f = this._fields;
+    const cc = ccLicense(f.license);
+    const d = c.issued;
+    const pad = (n) => String(n).padStart(2, "0");
+    const ymd = `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())}`;
+    const updated = this._item?.metadata?.updated ? new Date(this._item.metadata.updated * 1000) : null;
+    const tags = String(this._item?.metadata?.tags || "").split(",").map((t) => t.trim()).filter(Boolean);
+    const pairs = [
+      ["citation_title", c.title],
+      ...(c.authors.length ? c.authors : [c.site]).map((a) => ["citation_author", a]),
+      ["citation_publication_date", ymd],
+      ...(updated ? [["citation_online_date", `${updated.getFullYear()}/${pad(updated.getMonth() + 1)}/${pad(updated.getDate())}`]] : []),
+      ["citation_publisher", c.site],
+      ["citation_public_url", c.url],
+      ["citation_abstract_html_url", this._url()],
+      ["citation_language", "en"],
+      ...(tags.length ? [["citation_keywords", tags.join("; ")]] : []),
+      ...(f.doi ? [["citation_doi", String(f.doi)]] : []),
+      ["DC.title", c.title],
+      ...(c.authors.length ? c.authors : [c.site]).map((a) => ["DC.creator", a]),
+      ["DC.date", ymd.replace(/\//g, "-")],
+      ["DC.publisher", c.site],
+      ["DC.identifier", c.url],
+      ["DC.language", "en"],
+      ["DC.type", "Text"],
+      ...(cc?.url ? [["DC.rights", cc.url]] : f.license ? [["DC.rights", String(f.license)]] : []),
+      ...(this._item?.description ? [["DC.description", this._item.description]] : []),
+    ];
+    for (const [name, content] of pairs) {
+      if (!content) continue;
+      const m = doc.createElement("meta");
+      m.name = name;
+      m.content = String(content);
+      m.dataset.oerCite = "";
+      doc.head.append(m);
+    }
+  }
+
+  async _copyText(key, text) {
+    try {
+      await globalThis.navigator.clipboard.writeText(text);
+      this._copied = key;
+      setTimeout(() => (this._copied = ""), 2000);
+    } catch {
+      this._copied = "";
     }
   }
 
@@ -606,6 +769,20 @@ class OerPageFooter extends LitElement {
         gap: 0.75rem;
         align-items: flex-start;
       }
+      .cite-note {
+        margin: -0.25rem 0 0.625rem;
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
+      .cite-dl {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.875rem;
+        margin-top: 0.75rem;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
       .cite-row + .cite-row {
         margin-top: 0.5rem;
       }
@@ -623,6 +800,7 @@ class OerPageFooter extends LitElement {
         font-size: 0.75rem;
         white-space: pre-wrap;
         word-break: break-word;
+        text-align: start;
         color: var(--foreground);
       }
       .copy {
@@ -825,12 +1003,29 @@ class OerPageFooter extends LitElement {
       </div>
       ${this._cite
         ? html`<div class="panel">
+            <div class="cite-row">
+              <b>Link</b><code>${this._citeInfo.url}</code>
+              <button class="copy" @click="${() => this._copyText("link", this._citeInfo.url)}">
+                ${lucide(this._copied === "link" ? "oer:check" : "icons:content-copy")}${this._copied === "link" ? "Copied" : "Copy"}
+              </button>
+            </div>
+            <p class="cite-note">
+              ${this._citeInfo.pinned
+                ? `A permanent link to version ${this._citeInfo.version} as released: it keeps working if the page is renamed or moved.`
+                : "A permanent link: it keeps working if the page is renamed or moved."}
+            </p>
             ${["APA", "MLA", "Chicago", "BibTeX"].map(
               (s) => html`<div class="cite-row">
                 <b>${s}</b><code>${this._citation(s)}</code>
                 <button class="copy" @click="${() => this._copy(s)}">${lucide(this._copied === s ? "oer:check" : "icons:content-copy")}${this._copied === s ? "Copied" : "Copy"}</button>
               </div>`,
             )}
+            <div class="cite-dl">
+              <span>Save to a reference manager:</span>
+              <button class="link" @click="${() => this._download("ris")}">RIS (Zotero, EndNote, Mendeley)</button>
+              <button class="link" @click="${() => this._download("csl")}">CSL-JSON</button>
+              <button class="link" @click="${() => this._download("bib")}">BibTeX</button>
+            </div>
           </div>`
         : ""}
       ${this._schemaOpen

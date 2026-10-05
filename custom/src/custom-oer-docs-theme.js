@@ -59,6 +59,7 @@ import { learningSkin, installLearningBlocks } from "./learning-skin.js";
 import { installEditorChrome } from "./editor/index.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 import { installFootnotes } from "./ui/footnotes.js";
+import { followPermalink } from "./ui/permalinks.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -218,6 +219,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         Promise.resolve().then(() => {
           this.siteTitle = title || "";
         });
+      }),
+    );
+    // permanent links (?p=<page id>): go to wherever the page lives now
+    this.__disposer.push(
+      autorun(() => {
+        const items = toJS(store.manifest?.items) || [];
+        if (items.length && new URLSearchParams(globalThis.location.search).has("p")) Promise.resolve().then(() => followPermalink(items));
       }),
     );
     // HAX's site builder can miss loading an unpublished page opened
