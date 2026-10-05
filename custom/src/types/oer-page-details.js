@@ -14,6 +14,12 @@ import { contentTypes, allowedChildTypes, savePageDetails, peopleOf } from "./co
 import { resolveLinks, uploadFile, isImage } from "./relations.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { versionsOf } from "../versions/versioning.js";
+import { loadAiul, aiulInfo } from "./aiul.js";
+
+// a multiple choice whose options are AI Usage License codes gets the AIUL
+// picker (licence + optional media) instead of one checkbox per code
+const isAiulField = (f) => f.kind === "select" && f.multiple && (f.options || []).length > 0 && f.options.every((o) => /^AIUL-/i.test(o.value));
+const AIUL_CODE = /^AIUL-([A-Z]+)(?:-([A-Z0-9]+))?$/i;
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -74,6 +80,11 @@ class OerPageDetails extends LitElement {
     }
     this._tried = false;
     this._saving = false;
+    // licence and media names for the AIUL picker
+    loadAiul().then((d) => {
+      this._aiul = d;
+      this.requestUpdate();
+    });
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
     this.updateComplete.then(() => this.shadowRoot.querySelector("select, input, textarea")?.focus());
@@ -289,6 +300,38 @@ class OerPageDetails extends LitElement {
         flex-direction: column;
         gap: 0.375rem;
       }
+      .aiul-picker {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        margin-top: 0.25rem;
+      }
+      .aiul-selects {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) auto;
+        gap: 0.375rem;
+        align-items: center;
+      }
+      @media (max-width: 480px) {
+        .aiul-selects {
+          grid-template-columns: minmax(0, 1fr) auto;
+        }
+        .aiul-selects select + select {
+          grid-row: 2;
+        }
+      }
+      .aiul-hint {
+        margin: 0.25rem 0 0 !important;
+      }
+      .aiul-hint code {
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--foreground);
+      }
+      .err-inline {
+        color: var(--destructive);
+      }
       .list-row {
         display: flex;
         gap: 0.375rem;
@@ -494,6 +537,12 @@ class OerPageDetails extends LitElement {
         control = html`<textarea id="${id}" class="${invalid ? "invalid" : ""}" .value="${v || ""}" @input="${(e) => this._set(f.name, e.target.value)}"></textarea>`;
         break;
       case "select":
+        if (isAiulField(f)) {
+          return html`<div>
+            <span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req" aria-hidden="true">*</span>` : ""}</span>
+            ${this._renderAiulPicker(f)}${help}${err}
+          </div>`;
+        }
         if (f.multiple) {
           const on = toArray(v);
           return html`<div>
@@ -575,6 +624,73 @@ class OerPageDetails extends LitElement {
       }
     }
     return html`<div>${label}${control}${help}${err}</div>`;
+  }
+
+  /* ---------- AI Usage Licenses: licence + optional media per row ---------- */
+
+  _renderAiulPicker(f) {
+    const id = `f-${f.name}`;
+    const codes = toArray(this._values[f.name]);
+    const valid = new Set((f.options || []).map((o) => o.value));
+    // the licences and media the field's options allow, in option order
+    const lics = [];
+    const mods = [];
+    for (const o of f.options) {
+      const [, l, m] = o.value.match(AIUL_CODE) || [];
+      if (l && !lics.includes(l.toUpperCase())) lics.push(l.toUpperCase());
+      if (m && !mods.includes(m.toUpperCase())) mods.push(m.toUpperCase());
+    }
+    const licName = (l) => aiulInfo(`AIUL-${l}`, this._aiul).name;
+    const modName = (m) => this._aiul?.modifiers?.find((x) => x.code === m)?.title || m;
+    const set = (next) => this._set(f.name, next);
+    const rows = codes.map((code) => {
+      const [, l = "", m = ""] = code.match(AIUL_CODE) || [];
+      return { code, l: l.toUpperCase(), m: m.toUpperCase() };
+    });
+    const build = (l, m) => `AIUL-${l}${m ? `-${m}` : ""}`;
+    const update = (i, l, m) => {
+      const next = [...codes];
+      next[i] = valid.has(build(l, m)) ? build(l, m) : build(l, "");
+      set(next);
+    };
+    const firstFree = () => {
+      for (const l of lics) if (!codes.includes(build(l, ""))) return build(l, "");
+      return build(lics[0], mods[0] || "");
+    };
+    return html`<div class="aiul-picker" role="group" aria-labelledby="${id}-l">
+      ${rows.map((r, i) => {
+        const info = aiulInfo(r.code, this._aiul);
+        const dup = codes.indexOf(r.code) !== i;
+        return html`<div class="aiul-row">
+          <div class="aiul-selects">
+            <select
+              id="${i === 0 ? id : `${id}-${i}`}"
+              aria-label="${f.label} ${i + 1}: license"
+              @change="${(e) => update(i, e.target.value, r.m)}"
+            >
+              ${lics.map((l) => html`<option value="${l}" ?selected="${l === r.l}">AIUL-${l}${licName(l) ? ` · ${licName(l)}` : ""}</option>`)}
+            </select>
+            <select aria-label="${f.label} ${i + 1}: media" @change="${(e) => update(i, r.l, e.target.value)}">
+              <option value="" ?selected="${!r.m}">All media</option>
+              ${mods.filter((m) => valid.has(build(r.l, m))).map((m) => html`<option value="${m}" ?selected="${m === r.m}">${modName(m)} only</option>`)}
+            </select>
+            <button class="icon-act" title="Remove" aria-label="Remove ${r.code}" @click="${() => set(codes.filter((_, j) => j !== i))}">${lucide("oer:x", "sm")}</button>
+          </div>
+          <p class="hint aiul-hint">
+            <code>${r.code}</code> ${info.description}${dup ? html` <span class="err-inline">Listed twice.</span>` : ""}
+          </p>
+        </div>`;
+      })}
+      <button
+        class="add-item"
+        @click="${() => {
+          set([...codes, firstFree()]);
+          this.updateComplete.then(() => this.shadowRoot.getElementById(`${id}-${codes.length}`)?.focus() || this.shadowRoot.getElementById(id)?.focus());
+        }}"
+      >
+        ${lucide("oer:plus", "sm")}Add AI usage license
+      </button>
+    </div>`;
   }
 
   /* ---------- relation: links to other pages ---------- */
