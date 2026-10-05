@@ -6,8 +6,8 @@
  *    with the Creative Commons icons, beside the Cite and OER Schema actions
  *    (citations in APA, MLA, Chicago and BibTeX; the page's JSON-LD)
  * 2. A short labelled list:
- *    - AI use: the page's AIUL licence(s) as pills, named and linked from
- *      the AIUL definitions HAX ships (@haxtheweb/ai-usage-license/lib/v1.json)
+ *    - AI use: the page's AIUL licence(s) as badge buttons (names and
+ *      badges from the AIUL API) that open what each one means (aiul.js)
  *    - Version: the released version, last update and all versions
  *    - Used in: pages that link here, grouped by how (Before you start,
  *      Includes it…), the first few shown with the rest a click away
@@ -27,6 +27,7 @@ import { contentTypes, SYSTEM_TYPE, peopleOf } from "./content-types.js";
 import { usedIn } from "./relations.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { ccLicense, ccIcon } from "./licenses.js";
+import { loadAiul, aiulInfo, AIUL_GUIDE } from "./aiul.js";
 
 // the OER Schema logo, as the Decap site's OERSchemaBadge uses it
 const OER_LOGO = {
@@ -60,16 +61,6 @@ const SCHEMA_TYPES = {
   section: "oer:Unit",
 };
 
-let aiulData = null;
-function loadAiul() {
-  if (!aiulData) {
-    const base = globalThis.WCGlobalBasePath || new URL("build/es6/node_modules/", globalThis.document.baseURI).href;
-    aiulData = fetch(`${base}@haxtheweb/ai-usage-license/lib/v1.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .catch(() => null);
-  }
-  return aiulData;
-}
 
 const toList = (v) => (Array.isArray(v) ? v : v ? [v] : []).map((x) => String(x).trim()).filter(Boolean);
 
@@ -82,6 +73,7 @@ class OerPageFooter extends LitElement {
     return {
       _item: { state: true },
       _aiul: { state: true },
+      _aiulOpen: { state: true },
       _cite: { state: true },
       _copied: { state: true },
       _schemaOpen: { state: true },
@@ -108,6 +100,7 @@ class OerPageFooter extends LitElement {
         this._cite = false;
         this._schemaOpen = false;
         this._usedAll = false;
+        this._aiulOpen = null;
         this._writeJsonLd();
       });
     });
@@ -448,6 +441,89 @@ class OerPageFooter extends LitElement {
         text-underline-offset: 2px;
         cursor: pointer;
       }
+      .aiul {
+        display: block;
+      }
+      .aiul-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+      }
+      .aiul-tag {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 1.75rem;
+        padding: 0.125rem 0.5rem 0.125rem 0.25rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        font-size: 0.8125rem;
+        color: var(--foreground);
+        cursor: pointer;
+      }
+      .aiul-tag:hover,
+      .aiul-tag[aria-expanded="true"] {
+        background: var(--accent);
+      }
+      .aiul-tag:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .aiul-tag img {
+        height: 1.375rem;
+        width: auto;
+        border-radius: 3px;
+      }
+      .aiul-tag code {
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: 0.6875rem;
+        font-weight: 600;
+        padding-left: 0.25rem;
+      }
+      .aiul-tag .lucide {
+        color: var(--muted-foreground);
+      }
+      .aiul-mod {
+        color: var(--muted-foreground);
+      }
+      .aiul-panel {
+        margin-top: 0.625rem;
+        padding: 0.875rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: color-mix(in srgb, var(--muted) 45%, transparent);
+        font-size: 0.875rem;
+        line-height: 1.55;
+        text-align: start;
+      }
+      .aiul-panel p {
+        margin: 0;
+      }
+      .aiul-panel h3 {
+        margin: 0.875rem 0 0.25rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+      }
+      .aiul-panel ul {
+        margin: 0;
+        padding-left: 1.125rem;
+      }
+      .aiul-panel li + li {
+        margin-top: 0.125rem;
+      }
+      .aiul-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1rem;
+        margin-top: 0.875rem !important;
+      }
+      .aiul-links a {
+        color: var(--link, var(--primary));
+      }
       .credits {
         margin: 0;
         padding: 0;
@@ -518,21 +594,50 @@ class OerPageFooter extends LitElement {
     `;
   }
 
+  // each licence is a button (badge + name) that opens what it means:
+  // the short description, requirements and guidelines for students
   _renderAiul(codes) {
     if (!codes.length) return "";
-    const data = this._aiul;
+    const infos = codes.map((code) => aiulInfo(code, this._aiul));
+    const open = infos.find((i) => i.code === this._aiulOpen);
+    const toggle = (code) => (this._aiulOpen = this._aiulOpen === code ? null : code);
     return html`<dt>AI use</dt>
-      <dd>
-        ${codes.map((code) => {
-          const [, lic, mod] = String(code).match(/^AIUL-([A-Z]+)(?:-([A-Z0-9]+))?$/i) || [];
-          const license = data?.licenses?.find((l) => l.code === lic?.toUpperCase());
-          const modifier = mod && data?.modifiers?.find((m) => m.code === mod.toUpperCase());
-          const name = license ? `${license.fullName || license.title}${modifier ? ` · ${modifier.title}` : ""}` : "";
-          const pill = html`<code>${code}</code>${name ? html`<span>${name}</span>` : ""}`;
-          return license?.url
-            ? html`<a class="pill" href="${license.url}" target="_blank" rel="noopener noreferrer" title="${license.description || name}">${pill}</a>`
-            : html`<span class="pill">${pill}</span>`;
-        })}
+      <dd class="aiul">
+        <div class="aiul-tags">
+          ${infos.map(
+            (i, n) => html`<button
+              class="aiul-tag"
+              aria-expanded="${open === i ? "true" : "false"}"
+              aria-controls="aiul-panel"
+              @click="${() => toggle(i.code)}"
+            >
+              ${i.image ? html`<img src="${i.image}" alt="" loading="lazy" @error="${(e) => e.target.remove()}" />` : html`<code>${i.title}</code>`}
+              <span class="aiul-name">${i.name || i.title}${i.modifier ? html`<span class="aiul-mod"> · ${i.modifier}</span>` : ""}</span>
+              ${lucide(open === i ? "oer:chevron-up" : "oer:chevron-down", "sm")}
+            </button>`,
+          )}
+        </div>
+        ${open
+          ? html`<div class="aiul-panel" id="aiul-panel" role="region" aria-label="${open.title}${open.name ? ` (${open.name})` : ""}">
+              <p class="aiul-desc"><b>${open.title}${open.name ? ` · ${open.name}` : ""}.</b> ${open.description}${open.modifier ? html` Applies to <b>${open.modifier}</b> work.` : ""}</p>
+              ${open.requirements.length
+                ? html`<h3>Requirements</h3>
+                    <ul>
+                      ${open.requirements.map((r) => html`<li>${r}</li>`)}
+                    </ul>`
+                : ""}
+              ${open.students.length
+                ? html`<h3>Guidelines for students</h3>
+                    <ul>
+                      ${open.students.map((r) => html`<li>${r}</li>`)}
+                    </ul>`
+                : ""}
+              <p class="aiul-links">
+                ${open.url ? html`<a href="${open.url}" target="_blank" rel="noopener noreferrer">Full ${open.title} license</a>` : ""}
+                <a href="${AIUL_GUIDE}" target="_blank" rel="noopener noreferrer">About AI Usage Licenses</a>
+              </p>
+            </div>`
+          : ""}
       </dd>`;
   }
 
