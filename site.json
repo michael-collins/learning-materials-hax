@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791242213,
+      "updated": 1791242287,
       "version": "26.8.0"
     },
     "theme": {
@@ -1240,7 +1240,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
@@ -1253,7 +1254,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231654,
+        "updated": 1791242253,
         "status": ""
       }
     },
@@ -1293,7 +1294,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
@@ -1306,7 +1308,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231654,
+        "updated": 1791242254,
         "status": ""
       }
     },
@@ -1343,7 +1345,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
@@ -1356,7 +1359,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231655,
+        "updated": 1791242255,
         "status": ""
       }
     },
@@ -1393,7 +1396,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
@@ -1406,7 +1410,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231655,
+        "updated": 1791242255,
         "status": ""
       }
     },
@@ -1442,7 +1446,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
@@ -1455,7 +1460,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231656,
+        "updated": 1791242256,
         "status": ""
       }
     },
@@ -1492,7 +1497,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
@@ -1505,7 +1511,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231657,
+        "updated": 1791242256,
         "status": ""
       }
     },
@@ -1543,7 +1549,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
@@ -1556,7 +1563,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231657,
+        "updated": 1791242257,
         "status": ""
       }
     },
@@ -1593,7 +1600,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
@@ -1606,7 +1614,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231658,
+        "updated": 1791242258,
         "status": ""
       }
     },
@@ -1643,7 +1651,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
@@ -1656,7 +1665,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231658,
+        "updated": 1791242258,
         "status": ""
       }
     },
@@ -1699,7 +1708,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
@@ -1712,7 +1722,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231659,
+        "updated": 1791242259,
         "status": ""
       }
     },
@@ -1749,7 +1759,8 @@
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
@@ -1762,7 +1773,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231660,
+        "updated": 1791242259,
         "status": ""
       }
     },
@@ -6519,12 +6530,13 @@
               "page": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231771,
+        "updated": 1791242260,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8777,12 +8789,13 @@
               "page": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231810,
+        "updated": 1791242261,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8851,12 +8864,13 @@
               "page": "item-8ee5f7a7-3464-4b92-82e7-83b178107cac",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231811,
+        "updated": 1791242261,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8920,12 +8934,13 @@
               "page": "item-4adbd6eb-cdae-44b2-bda5-dd8079a8b840",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231812,
+        "updated": 1791242262,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -8998,12 +9013,13 @@
               "page": "item-bea752bd-0781-46bf-8fcf-db273caa8d00",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231812,
+        "updated": 1791242262,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9069,12 +9085,13 @@
               "page": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231813,
+        "updated": 1791242263,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9139,12 +9156,13 @@
               "page": "item-9e3bacc6-5f86-471f-adc6-0349fc801452",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231813,
+        "updated": 1791242264,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9208,12 +9226,13 @@
               "page": "item-706b8000-e39c-45d3-87c4-9aab5ae94482",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-09-28T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231814,
+        "updated": 1791242264,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9276,12 +9295,13 @@
               "page": "item-063f4287-8a23-4467-8604-4f433afe6f43",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231815,
+        "updated": 1791242265,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9364,12 +9384,13 @@
               "page": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231815,
+        "updated": 1791242266,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9438,12 +9459,13 @@
               "page": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
               "version": ""
             }
-          ]
+          ],
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231816,
+        "updated": 1791242266,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -9501,12 +9523,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231817,
+        "updated": 1791242267,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -9559,7 +9582,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-633c2d98-9f8a-4aaa-a06f-5078d355709e",
         "oerSnapshotTitle": "AR/VR Development",
@@ -9571,7 +9595,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242267
       }
     },
     {
@@ -9654,12 +9678,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231817,
+        "updated": 1791242268,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -9711,7 +9736,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-6cb6c229-dfbe-4948-a618-ee25655ffb19",
         "oerSnapshotTitle": "Character Rigging",
@@ -9723,7 +9749,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242269
       }
     },
     {
@@ -9805,12 +9831,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231818,
+        "updated": 1791242269,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -9862,7 +9889,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-c081bd1e-35e3-46c7-a8f1-d01b234717ef",
         "oerSnapshotTitle": "Constraints and Animation Controls",
@@ -9874,7 +9902,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242270
       }
     },
     {
@@ -9956,12 +9984,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231818,
+        "updated": 1791242270,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10013,7 +10042,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-2043703c-eb71-4f74-9dba-85bc4cfe5ae2",
         "oerSnapshotTitle": "Deformers and Shape Keys",
@@ -10025,7 +10055,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242271
       }
     },
     {
@@ -10097,12 +10127,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-01T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231819
+        "updated": 1791242272
       }
     },
     {
@@ -10128,12 +10159,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-01T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231820
+        "updated": 1791242272
       }
     },
     {
@@ -10159,12 +10191,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-01T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231820
+        "updated": 1791242273
       }
     },
     {
@@ -10190,12 +10223,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-01T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231821
+        "updated": 1791242274
       }
     },
     {
@@ -10221,12 +10255,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-01T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231822
+        "updated": 1791242274
       }
     },
     {
@@ -10253,12 +10288,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-05T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231822
+        "updated": 1791242275
       }
     },
     {
@@ -10285,12 +10321,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-05T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231823
+        "updated": 1791242275
       }
     },
     {
@@ -10317,12 +10354,13 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-03-05T00:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231823
+        "updated": 1791242276
       }
     },
     {
@@ -10358,12 +10396,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231824,
+        "updated": 1791242277,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10415,7 +10454,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-fa670508-1a83-4d74-875b-be7c2d99587f",
         "oerSnapshotTitle": "Exporting and Delivery",
@@ -10427,7 +10467,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242277
       }
     },
     {
@@ -10509,12 +10549,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231825,
+        "updated": 1791242278,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10566,7 +10607,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-df443542-beef-4f82-be8c-7d078c774226",
         "oerSnapshotTitle": "Match Moving and Camera Tracking",
@@ -10578,7 +10620,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242278
       }
     },
     {
@@ -10660,12 +10702,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231825,
+        "updated": 1791242279,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10717,7 +10760,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-324bbe4f-1369-48a4-9035-7fa8b3a56677",
         "oerSnapshotTitle": "Particle Simulation",
@@ -10729,7 +10773,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242280
       }
     },
     {
@@ -10811,12 +10855,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231826,
+        "updated": 1791242280,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10868,7 +10913,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-8242206a-4b4e-4837-880e-0259e065edf2",
         "oerSnapshotTitle": "Physics Simulation Fundamentals",
@@ -10880,7 +10926,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242281
       }
     },
     {
@@ -10962,12 +11008,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231826,
+        "updated": 1791242282,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -11019,7 +11066,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-40d50c64-d53b-4267-8221-6f7bf3388db1",
         "oerSnapshotTitle": "Post Effects and Color Grading",
@@ -11031,7 +11079,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242282
       }
     },
     {
@@ -11113,12 +11161,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231827,
+        "updated": 1791242283,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -11170,7 +11219,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-383cc93b-8187-45e6-81de-933498aca116",
         "oerSnapshotTitle": "Procedural Compositing Workflows",
@@ -11182,7 +11232,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242283
       }
     },
     {
@@ -11264,12 +11314,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231828,
+        "updated": 1791242284,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -11321,7 +11372,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-6fc79952-8328-44db-b0ed-3ee00811072d",
         "oerSnapshotTitle": "Render Layers and Passes",
@@ -11333,7 +11385,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242285
       }
     },
     {
@@ -11415,12 +11467,13 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231828,
+        "updated": 1791242285,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -11472,7 +11525,8 @@
           ],
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "date": "2026-01-12T12:00:00.000Z"
         },
         "oerSnapshotOf": "item-416007a1-e0d5-49fa-975d-733cf40bc979",
         "oerSnapshotTitle": "VFX Compositing Integration",
@@ -11484,7 +11538,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791242286
       }
     },
     {
@@ -14992,6 +15046,12 @@
                   "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
+                  "name": "date",
+                  "label": "Date",
+                  "kind": "date",
+                  "help": "When the lesson was published. Used when it's cited."
+                },
+                {
                   "name": "placeholder",
                   "label": "In development",
                   "kind": "boolean",
@@ -15567,7 +15627,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791238759,
+        "updated": 1791242253,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",

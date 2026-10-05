@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/content-types</loc>
-    <lastmod>2026-10-05T22:19:19.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:33.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/history-of-cgi</loc>
-    <lastmod>2026-10-05T20:22:51.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping</loc>
-    <lastmod>2026-10-05T20:23:30.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -134,7 +134,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/lighting-principles</loc>
-    <lastmod>2026-10-05T20:23:31.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/camera-and-composition</loc>
-    <lastmod>2026-10-05T20:23:32.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/rendering-techniques</loc>
-    <lastmod>2026-10-05T20:23:32.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -182,7 +182,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/real-time-engines</loc>
-    <lastmod>2026-10-05T20:23:33.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:43.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/environment-design-for-real-time</loc>
-    <lastmod>2026-10-05T20:23:33.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -206,7 +206,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/real-time-asset-budgets</loc>
-    <lastmod>2026-10-05T20:23:34.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/drawing-for-3d-design</loc>
-    <lastmod>2026-10-05T20:23:35.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:45.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -230,7 +230,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/hard-surface-modeling</loc>
-    <lastmod>2026-10-05T20:23:35.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:46.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/digital-sculpting</loc>
-    <lastmod>2026-10-05T20:23:36.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:46.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -608,67 +608,67 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/history-of-cgi/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:54.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:33.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:54.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:55.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:35.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/lighting-principles/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:55.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:35.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/camera-and-composition/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:56.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/rendering-techniques/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:57.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/real-time-engines/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:57.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:37.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/environment-design-for-real-time/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:58.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:38.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/drawing-for-3d-design/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:58.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:38.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/hard-surface-modeling/v0-0-1</loc>
-    <lastmod>2026-10-05T20:20:59.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:39.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/digital-sculpting/v0-0-1</loc>
-    <lastmod>2026-10-05T20:21:00.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:39.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2042,7 +2042,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/ar/vr-development</loc>
-    <lastmod>2026-10-05T20:23:37.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2072,7 +2072,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/character-rigging</loc>
-    <lastmod>2026-10-05T20:23:37.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:48.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2096,7 +2096,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/constraints-and-animation-controls</loc>
-    <lastmod>2026-10-05T20:23:38.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:49.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2120,7 +2120,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/deformers-and-shape-keys</loc>
-    <lastmod>2026-10-05T20:23:38.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:50.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2144,7 +2144,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/what-is-design</loc>
-    <lastmod>2026-10-05T20:23:39.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:52.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2168,7 +2168,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/visual-and-interaction-design</loc>
-    <lastmod>2026-10-05T20:23:40.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:52.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2198,7 +2198,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/storytelling</loc>
-    <lastmod>2026-10-05T20:23:40.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2228,7 +2228,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/open-design</loc>
-    <lastmod>2026-10-05T20:23:41.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2258,7 +2258,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/self-design</loc>
-    <lastmod>2026-10-05T20:23:42.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2288,7 +2288,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/general-resources</loc>
-    <lastmod>2026-10-05T20:23:42.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2318,7 +2318,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/projects</loc>
-    <lastmod>2026-10-05T20:23:43.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2348,7 +2348,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/capstone-project</loc>
-    <lastmod>2026-10-05T20:23:43.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:56.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2378,7 +2378,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/exporting-and-delivery</loc>
-    <lastmod>2026-10-05T20:23:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2408,7 +2408,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/match-moving-and-camera-tracking</loc>
-    <lastmod>2026-10-05T20:23:45.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:58.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2438,7 +2438,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/particle-simulation</loc>
-    <lastmod>2026-10-05T20:23:45.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2468,7 +2468,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/physics-simulation-fundamentals</loc>
-    <lastmod>2026-10-05T20:23:46.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:00.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2498,7 +2498,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/post-effects-and-color-grading</loc>
-    <lastmod>2026-10-05T20:23:46.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2528,7 +2528,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/procedural-compositing-workflows</loc>
-    <lastmod>2026-10-05T20:23:47.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:03.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2558,7 +2558,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/render-layers-and-passes</loc>
-    <lastmod>2026-10-05T20:23:48.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:04.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2588,7 +2588,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/vfx-compositing-integration</loc>
-    <lastmod>2026-10-05T20:23:48.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:05.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3716,73 +3716,73 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/vr-development/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/character-rigging/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:49.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/constraints-and-animation-controls/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:50.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/deformers-and-shape-keys/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/exporting-and-delivery/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/match-moving-and-camera-tracking/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:17:58.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/particle-simulation/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:00.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/physics-simulation-fundamentals/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:01.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/post-effects-and-color-grading/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/procedural-compositing-workflows/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:03.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/render-layers-and-passes/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:05.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/vfx-compositing-integration/v0-0-1</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <lastmod>2026-10-05T23:18:06.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>

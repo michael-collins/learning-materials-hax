@@ -262,7 +262,7 @@ Become </summary>
   <entry>
     <title>Content types</title>
     <id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
-    <updated>2026-10-05T22:19:19.000Z</updated>
+    <updated>2026-10-05T23:17:33.000Z</updated>
     <published>2026-10-01T02:43:07.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/content-types"/>
@@ -504,7 +504,7 @@ Become </summary>
   <entry>
     <title>History of CGI</title>
     <id>item-d20b5a98-dc5e-4ce8-b734-32490288d27c</id>
-    <updated>2026-10-05T20:22:51.000Z</updated>
+    <updated>2026-10-05T23:17:40.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/history-of-cgi"/>
@@ -838,7 +838,7 @@ Become </summary>
   <entry>
     <title>Texturing and UV Mapping</title>
     <id>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</id>
-    <updated>2026-10-05T20:23:30.000Z</updated>
+    <updated>2026-10-05T23:17:41.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
@@ -927,7 +927,7 @@ Become </summary>
   <entry>
     <title>Lighting Principles</title>
     <id>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</id>
-    <updated>2026-10-05T20:23:31.000Z</updated>
+    <updated>2026-10-05T23:17:41.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore fundamental lighting principles and techniques for creating mood, atmosphere, and visual interest in 3D scenes.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/lighting-principles"/>
