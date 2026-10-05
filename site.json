@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791212345
+      "updated": 1791216236
     },
     "theme": {
       "element": "custom-oer-docs-theme",
@@ -46,7 +46,7 @@
       "description": "What this site's theme adds to HAX: navigation, editing, content types, the outline builder, pathways, versions, books, embedding and the page footer.",
       "metadata": {
         "created": 1790801562,
-        "updated": 1791212329,
+        "updated": 1791216221,
         "published": true,
         "locked": false,
         "status": "",
@@ -84,7 +84,7 @@
         "created": 1791210080,
         "images": [],
         "videos": [],
-        "updated": 1791212329,
+        "updated": 1791216221,
         "status": ""
       }
     },
@@ -99,7 +99,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791212330,
+        "updated": 1791216221,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -151,9 +151,16 @@
             "Create anticipation and follow-through in animations",
             "Develop strong poses and silhouettes"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-1903f5ba-d051-49cf-9836-073992c93548",
@@ -166,7 +173,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216221,
         "status": ""
       }
     },
@@ -204,7 +211,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216221,
         "status": ""
       }
     },
@@ -219,7 +226,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791212341,
+        "updated": 1791216221,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -290,8 +297,14 @@
           "difficulty": "Beginner",
           "image": "/uploads/recmjJ85mfZrRGRFu_image_viewport-render.png",
           "imageAlt": "viewport-render.png",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz"
+          "author": "",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-21d4a4b1-6588-4417-a049-a7a1a9d69626",
@@ -304,7 +317,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216222,
         "status": ""
       }
     },
@@ -322,14 +335,21 @@
         "pageType": "oer:lecture",
         "oerSource": "lectures/introduction-to-modeling",
         "oerFields": {
-          "author": "Michael Collins",
+          "author": "",
           "license": "CC BY 4.0",
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -360,9 +380,16 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerFields": {
-          "author": "Michael Collins",
+          "author": "",
           "license": "CC BY 4.0",
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
@@ -375,7 +402,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216222,
         "status": ""
       }
     },
@@ -402,8 +429,8 @@
           ],
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-CD, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "publishEmbed": true,
           "attachments": [
@@ -419,12 +446,18 @@
               "description": "Work statement worksheet",
               "alt": "Work statement worksheet"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -463,8 +496,8 @@
           ],
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-CD, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "publishEmbed": true,
           "attachments": [
@@ -480,6 +513,12 @@
               "description": "Work statement worksheet",
               "alt": "Work statement worksheet"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "icon": "hax:bulletin-board",
@@ -493,7 +532,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216222,
         "status": ""
       }
     },
@@ -522,7 +561,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -591,14 +630,21 @@
             "Blender",
             "Substance Painter"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -628,7 +674,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -654,7 +700,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -676,7 +722,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -702,7 +748,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216222,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -728,7 +774,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -754,7 +800,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -780,7 +826,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -802,7 +848,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -828,7 +874,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -854,7 +900,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -880,7 +926,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -906,7 +952,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -928,7 +974,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -954,7 +1000,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212335,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -980,7 +1026,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1006,7 +1052,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216223,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1032,7 +1078,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1058,7 +1104,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1084,7 +1130,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1106,7 +1152,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1132,7 +1178,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1158,7 +1204,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1180,7 +1226,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1206,7 +1252,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1232,7 +1278,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1258,7 +1304,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1284,7 +1330,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216224,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -1311,7 +1357,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216225,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1338,7 +1384,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216225,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1364,7 +1410,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216225,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -1391,7 +1437,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216225,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -1419,10 +1465,17 @@
             "Understand how CGI transformed various industries",
             "Recognize pioneering artists and studios in CGI development"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
@@ -1435,7 +1488,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1461,12 +1514,19 @@
             "Apply proper topology principles to models",
             "Develop efficient modeling techniques"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA",
-          "publishEmbed": true
+          "publishEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
@@ -1479,7 +1539,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1506,10 +1566,17 @@
             "Create and configure PBR materials",
             "Minimize texture stretching and distortion"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
@@ -1522,7 +1589,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1549,10 +1616,17 @@
             "Use HDRI and environmental lighting",
             "Balance light intensity and color"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
@@ -1565,7 +1639,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1591,10 +1665,17 @@
             "Create effective camera angles and movements",
             "Use focal length and depth of field creatively"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
@@ -1607,7 +1688,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1634,10 +1715,17 @@
             "Set up render layers and passes",
             "Export renders in appropriate formats"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
@@ -1650,7 +1738,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1678,10 +1766,17 @@
             "Create basic interactive elements",
             "Optimize performance and build settings"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
@@ -1694,7 +1789,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216225,
         "status": ""
       }
     },
@@ -1721,10 +1816,17 @@
             "Optimize environments for performance",
             "Implement efficient lighting strategies"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
@@ -1737,7 +1839,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1764,10 +1866,17 @@
             "Develop visual reference materials",
             "Translate 2D concepts into 3D designs"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
@@ -1780,7 +1889,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1813,10 +1922,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
@@ -1829,7 +1945,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1856,10 +1972,17 @@
             "Manage subdivision levels and detail",
             "Retopologize sculpts for animation"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
@@ -1872,7 +1995,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1888,9 +2011,16 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerFields": {
-          "author": "Michael Collins",
+          "author": "",
           "license": "CC BY 4.0",
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
@@ -1903,7 +2033,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1919,9 +2049,16 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerFields": {
-          "author": "Michael Collins",
+          "author": "",
           "license": "CC BY 4.0",
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
@@ -1934,7 +2071,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1961,10 +2098,17 @@
             "Deliver final outputs to professional specifications"
           ],
           "prerequisites": [],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-b10cae23-396d-4b8a-92dd-7472ae68a302",
@@ -1977,7 +2121,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -1999,10 +2143,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-b23b2fcb-9298-4a91-987e-c8c8ec6725a4",
@@ -2015,7 +2166,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -2037,10 +2188,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-427f67e4-123e-4f70-b632-4e18a8001777",
@@ -2053,7 +2211,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -2075,10 +2233,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9",
@@ -2091,7 +2256,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -2113,10 +2278,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a",
@@ -2129,7 +2301,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216226,
         "status": ""
       }
     },
@@ -2151,10 +2323,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-831e27e4-94e4-43dc-b7e1-7b5039f802d9",
@@ -2167,7 +2346,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2189,10 +2368,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
@@ -2205,7 +2391,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2227,10 +2413,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-50b4ae5c-4f84-43f3-9987-efb6b3428542",
@@ -2243,7 +2436,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2269,10 +2462,17 @@
             "Understand the full pipeline from pre-production to post-production"
           ],
           "prerequisites": [],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-5dabc762-d17b-4d08-80ac-3dae0557d0cb",
@@ -2285,7 +2485,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2311,10 +2511,17 @@
             "Understand animation production pipelines and workflows"
           ],
           "prerequisites": [],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
@@ -2327,7 +2534,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2349,10 +2556,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
@@ -2365,7 +2579,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2386,8 +2600,8 @@
           "imageAlt": "ex-7-intro-banner-compressed.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -2395,6 +2609,12 @@
               "url": "https://drive.google.com/file/d/1b76RfhJXkYOcGn4wCPtNed6XFYwjR6nG/view?usp=sharing",
               "description": "This is a link to a Google Drive folder where you can download the image sequence mentioned in the instructions.",
               "alt": ""
+            }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
             }
           ]
         },
@@ -2409,7 +2629,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2430,8 +2650,8 @@
           "imageAlt": "airline-chair-header-compressed.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -2446,6 +2666,12 @@
               "description": "Airline Chair designed by KEM Weber.",
               "alt": "Airline Chair"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "icon": "courseicons:learning-objectives",
@@ -2459,7 +2685,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2480,9 +2706,15 @@
           "imageAlt": "room-model.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
@@ -2495,7 +2727,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2516,8 +2748,8 @@
           "imageAlt": "airline-chair-texturing-header.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -2532,6 +2764,12 @@
               "description": "Airline Chair designed by KEM Weber.",
               "alt": "Airline Chair"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "icon": "courseicons:learning-objectives",
@@ -2545,7 +2783,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2566,9 +2804,15 @@
           "imageAlt": "interior-texture-banner.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
@@ -2581,7 +2825,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216227,
         "status": ""
       }
     },
@@ -2602,8 +2846,8 @@
           "imageAlt": "rendering-banner.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -2624,6 +2868,12 @@
               "description": "Airline Chair example render",
               "alt": "An example rendering of the KEM Weber Airline Chair"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "icon": "courseicons:learning-objectives",
@@ -2637,7 +2887,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2658,9 +2908,15 @@
           "imageAlt": "room-banner2.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
@@ -2673,7 +2929,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2693,9 +2949,15 @@
           "image": "files/recvUlgEohhluSnhU_image_OSTRICH.png",
           "imageAlt": "OSTRICH.png",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Kenneth Ian Brill",
-          "authorUrl": "https://www.ianbrill.com/",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
@@ -2708,7 +2970,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2729,9 +2991,15 @@
           "imageAlt": "t-pose-banner.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
@@ -2744,7 +3012,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2765,9 +3033,15 @@
           "imageAlt": "modeling-objects-header.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-b57b43a9-5427-445c-affe-80ce46848788",
@@ -2780,7 +3054,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2801,9 +3075,15 @@
           "imageAlt": "sculpting-retopo-header-v1.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
@@ -2816,7 +3096,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2837,9 +3117,15 @@
           "imageAlt": "texturing-objects-header-v2.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-a203e95e-0ddd-43af-9519-ee3df76a5b2d",
@@ -2852,7 +3138,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2873,9 +3159,15 @@
           "imageAlt": "sculpting-retopo-header-v2.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
@@ -2888,7 +3180,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -2903,7 +3195,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791212341,
+        "updated": 1791216228,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -2954,15 +3246,22 @@
             "Understand how CGI transformed various industries",
             "Recognize pioneering artists and studios in CGI development"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216228,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -3008,10 +3307,17 @@
             "Understand how CGI transformed various industries",
             "Recognize pioneering artists and studios in CGI development"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
@@ -3024,7 +3330,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216228,
         "status": ""
       }
     },
@@ -3042,14 +3348,21 @@
         "pageType": "oer:lecture",
         "oerSource": "lectures/introduction-to-texturing",
         "oerFields": {
-          "author": "Michael Collins",
+          "author": "",
           "license": "CC BY 4.0",
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3091,8 +3404,8 @@
           ],
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-CD, AIUL-DP-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "publishEmbed": true,
           "attachments": [
@@ -3102,12 +3415,18 @@
               "description": "The 5-step project production process",
               "alt": "A diagram of the project production process including pre-viz, intention statement, craft, work statement, and critique."
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -3153,15 +3472,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3196,7 +3522,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3222,7 +3548,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3248,7 +3574,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3275,7 +3601,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3302,7 +3628,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -3329,7 +3655,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216229,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -3357,12 +3683,19 @@
             "Apply proper topology principles to models",
             "Develop efficient modeling techniques"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA",
-          "publishEmbed": true
+          "publishEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
@@ -3375,7 +3708,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216229,
         "status": ""
       }
     },
@@ -3402,10 +3735,17 @@
             "Create and configure PBR materials",
             "Minimize texture stretching and distortion"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
@@ -3418,7 +3758,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216229,
         "status": ""
       }
     },
@@ -3445,10 +3785,17 @@
             "Use HDRI and environmental lighting",
             "Balance light intensity and color"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
@@ -3461,7 +3808,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216229,
         "status": ""
       }
     },
@@ -3487,10 +3834,17 @@
             "Create effective camera angles and movements",
             "Use focal length and depth of field creatively"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
@@ -3503,7 +3857,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3530,10 +3884,17 @@
             "Set up render layers and passes",
             "Export renders in appropriate formats"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
@@ -3546,7 +3907,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3574,10 +3935,17 @@
             "Create basic interactive elements",
             "Optimize performance and build settings"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
@@ -3590,7 +3958,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3617,10 +3985,17 @@
             "Optimize environments for performance",
             "Implement efficient lighting strategies"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
@@ -3633,7 +4008,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3660,10 +4035,17 @@
             "Develop visual reference materials",
             "Translate 2D concepts into 3D designs"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
@@ -3676,7 +4058,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3709,10 +4091,17 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
@@ -3725,7 +4114,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3752,10 +4141,17 @@
             "Manage subdivision levels and detail",
             "Retopologize sculpts for animation"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "hax:lesson",
         "oerSnapshotOf": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
@@ -3768,7 +4164,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216230,
         "status": ""
       }
     },
@@ -3787,7 +4183,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216230,
         "published": true,
         "locked": false,
         "status": "",
@@ -3819,17 +4215,24 @@
             "Apply proper topology principles to models",
             "Develop efficient modeling techniques"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA",
-          "publishEmbed": true
+          "publishEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212330,
+        "updated": 1791216230,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -3873,8 +4276,8 @@
           "imageAlt": "airline-chair-header-compressed.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -3889,12 +4292,18 @@
               "description": "Airline Chair designed by KEM Weber.",
               "alt": "Airline Chair"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216230,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3927,14 +4336,21 @@
         "pageType": "oer:lecture",
         "oerSource": "lectures/introduction-to-cameras-lighting-and-rendering",
         "oerFields": {
-          "author": "Michael Collins",
+          "author": "",
           "license": "CC BY 4.0",
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -3973,15 +4389,21 @@
             "DART 303"
           ],
           "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "placeholder": true,
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -4016,15 +4438,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212336,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4059,7 +4488,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4086,7 +4515,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -4113,7 +4542,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4140,7 +4569,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "hax:lesson"
@@ -4167,7 +4596,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4194,7 +4623,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -4221,7 +4650,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board"
@@ -4238,7 +4667,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791212330,
+        "updated": 1791216231,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -4277,15 +4706,22 @@
             "Create and configure PBR materials",
             "Minimize texture stretching and distortion"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216231,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4334,15 +4770,22 @@
             "Use HDRI and environmental lighting",
             "Balance light intensity and color"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4390,15 +4833,22 @@
             "Create effective camera angles and movements",
             "Use focal length and depth of field creatively"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4447,15 +4897,22 @@
             "Set up render layers and passes",
             "Export renders in appropriate formats"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212331,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4505,15 +4962,22 @@
             "Create basic interactive elements",
             "Optimize performance and build settings"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4562,15 +5026,22 @@
             "Optimize environments for performance",
             "Implement efficient lighting strategies"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4618,15 +5089,22 @@
             "Apply consistent texel density across a set of assets",
             "Reduce draw calls with shared materials and texture atlases"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4665,15 +5143,22 @@
             "Develop visual reference materials",
             "Translate 2D concepts into 3D designs"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212332,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4728,15 +5213,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4785,15 +5277,22 @@
             "Manage subdivision levels and detail",
             "Retopologize sculpts for animation"
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:lesson",
@@ -4837,14 +5336,20 @@
           "imageAlt": "room-model.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4883,15 +5388,21 @@
             "DART 303"
           ],
           "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "placeholder": true,
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216232,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -4945,14 +5456,21 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212337,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -4987,7 +5505,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212338,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5014,7 +5532,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5036,7 +5554,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5058,7 +5576,7 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5095,10 +5613,17 @@
           ],
           "targetRole": "Game Artist",
           "prerequisites": [],
-          "author": "Michael Collins",
+          "author": "",
           "allowEmbed": true,
           "license": "CC BY 4.0",
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "icon": "courseicons:learning-objectives",
         "oerSnapshotOf": "item-72db2076-5252-4246-af1d-685903483097",
@@ -5111,7 +5636,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216233,
         "status": ""
       }
     },
@@ -5130,7 +5655,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -5170,10 +5695,11 @@
               "children": [],
               "fields": [
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "date",
@@ -5273,10 +5799,11 @@
               "children": [],
               "fields": [
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "date",
@@ -5697,15 +6224,11 @@
                   "default": "AIUL-WA"
                 },
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
-                },
-                {
-                  "name": "authorUrl",
-                  "label": "Author URL (legacy)",
-                  "kind": "text"
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "placeholder",
@@ -6069,15 +6592,11 @@
                   "default": "AIUL-WA"
                 },
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
-                },
-                {
-                  "name": "authorUrl",
-                  "label": "Author URL (legacy)",
-                  "kind": "text"
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "placeholder",
@@ -6242,10 +6761,11 @@
                   "kind": "text"
                 },
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "allowEmbed",
@@ -6652,10 +7172,11 @@
                   "kind": "text"
                 },
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "placeholder",
@@ -6961,10 +7482,11 @@
                   "kind": "text"
                 },
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "license",
@@ -7321,10 +7843,11 @@
                   ]
                 },
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single author. Use the Authors list above for new content."
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "placeholder",
@@ -7658,15 +8181,11 @@
               ],
               "fields": [
                 {
-                  "name": "author",
-                  "label": "Author (legacy)",
-                  "kind": "text",
-                  "help": "Legacy single-author name. Use the Authors list above for new content."
-                },
-                {
-                  "name": "authorUrl",
-                  "label": "Author URL (legacy)",
-                  "kind": "text"
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": true,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
                   "name": "date",
@@ -7759,7 +8278,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791212333,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7786,8 +8305,8 @@
           "imageAlt": "airline-chair-texturing-header.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -7802,12 +8321,18 @@
               "description": "Airline Chair designed by KEM Weber.",
               "alt": "Airline Chair"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7847,15 +8372,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -7897,8 +8429,8 @@
           ],
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-CD, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "publishEmbed": true,
           "attachments": [
@@ -7914,12 +8446,18 @@
               "description": "",
               "alt": ""
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216233,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -7948,7 +8486,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
@@ -7974,14 +8512,20 @@
           "imageAlt": "interior-texture-banner.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8021,15 +8565,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212339,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8063,7 +8614,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791212334,
+        "updated": 1791216234,
         "published": true,
         "locked": false,
         "status": "",
@@ -8091,15 +8642,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8138,8 +8696,8 @@
           "imageAlt": "rendering-banner.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "allowEmbed": true,
           "attachments": [
             {
@@ -8160,12 +8718,18 @@
               "description": "Airline Chair example render",
               "alt": "An example rendering of the KEM Weber Airline Chair"
             }
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8195,7 +8759,7 @@
       "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
         "created": 1790827963,
-        "updated": 1791212334,
+        "updated": 1791216234,
         "images": [],
         "videos": [],
         "published": true,
@@ -8229,15 +8793,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8277,15 +8848,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8325,15 +8903,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8383,15 +8968,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212340,
+        "updated": 1791216234,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8441,15 +9033,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8489,15 +9088,22 @@
               "version": ""
             }
           ],
-          "author": "Michael Collins",
+          "author": "",
           "placeholder": true,
           "allowEmbed": true,
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
         },
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8536,14 +9142,20 @@
           "imageAlt": "room-banner2.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8577,7 +9189,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791212341,
+        "updated": 1791216235,
         "published": true,
         "locked": false,
         "status": "",
@@ -8604,15 +9216,21 @@
             "DART 303"
           ],
           "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "placeholder": true,
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212342,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8637,7 +9255,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791212341,
+        "updated": 1791216235,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -8670,14 +9288,20 @@
           "image": "files/recvUlgEohhluSnhU_image_OSTRICH.png",
           "imageAlt": "OSTRICH.png",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Kenneth Ian Brill",
-          "authorUrl": "https://www.ianbrill.com/",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8716,14 +9340,20 @@
           "imageAlt": "t-pose-banner.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8762,14 +9392,20 @@
           "imageAlt": "modeling-objects-header.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8808,14 +9444,20 @@
           "imageAlt": "sculpting-retopo-header-v1.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8854,15 +9496,21 @@
             "DART 303"
           ],
           "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "placeholder": true,
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216235,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8896,14 +9544,20 @@
           "imageAlt": "texturing-objects-header-v2.jpg",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212343,
+        "updated": 1791216236,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8942,14 +9596,20 @@
           "imageAlt": "sculpting-retopo-header-v2.png",
           "license": "CC BY 4.0",
           "aiLicense": "AIUL-WA, AIUL-NA-3D",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
-          "allowEmbed": true
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216236,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -8988,15 +9648,21 @@
             "DART 303"
           ],
           "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "placeholder": true,
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216236,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9030,15 +9696,21 @@
             "DART 303"
           ],
           "license": "CC BY 4.0",
-          "author": "Michael Collins",
-          "authorUrl": "https://michaelcollins.xyz",
+          "author": "",
+          "authorUrl": "",
           "placeholder": true,
-          "allowEmbed": true
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216236,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -9067,7 +9739,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791212344,
+        "updated": 1791216236,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
