@@ -219,6 +219,23 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         });
       }),
     );
+    // HAX's site builder can miss loading an unpublished page opened
+    // directly by its address (the page resolves only once sign-in is
+    // known, after the builder's load check ran). If the active page's
+    // content hasn't arrived shortly after the route settles, load it.
+    this.__disposer.push(
+      autorun(() => {
+        const active = toJS(store.activeId);
+        const loggedIn = !!store.isLoggedIn;
+        if (!active) return;
+        clearTimeout(this.__contentCheck);
+        this.__contentCheck = setTimeout(() => {
+          const sb = globalThis.document.querySelector("haxcms-site-builder");
+          if (!sb || sb.loading || !sb.activeItemLocation || sb.__pageContentOwner === active) return;
+          if (store.activeId === active) sb.loadPageData?.();
+        }, loggedIn ? 1200 : 2000);
+      }),
+    );
     // on every route change: close the mobile drawer, recompute prev/next
     this.__disposer.push(
       autorun(() => {
