@@ -220,7 +220,7 @@ export class OerSketchfab extends OerMediaFigure {
 
 // HAX ships Google's model-viewer (its own "3d Model" block uses it); load
 // the same file HAX's autoloader would, so the element is defined once
-function loadModelViewer() {
+export function loadModelViewer() {
   if (customElements.get("model-viewer") || loadModelViewer.started) return;
   loadModelViewer.started = true;
   const base = globalThis.WCGlobalBasePath || new URL("build/es6/node_modules/", globalThis.document.baseURI).href;

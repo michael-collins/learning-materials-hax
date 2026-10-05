@@ -14,6 +14,7 @@ import { isSnapshot, latestOf } from "../versions/versioning.js";
 import { bookPrint } from "../books/oer-book-print.js";
 import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
 import { resolveLinks, isImage, fileLabel } from "./relations.js";
+import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 
 const lucide = (name) =>
@@ -176,6 +177,31 @@ class OerPageHeader extends LitElement {
         border: 1px solid var(--border);
         background: var(--muted);
       }
+      .thumb {
+        all: unset;
+        flex: none;
+        display: inline-flex;
+        border-radius: var(--radius-sm);
+        cursor: zoom-in;
+      }
+      .thumb:focus-visible,
+      .name:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      .thumb:hover img,
+      .thumb:hover .kind {
+        border-color: var(--ring);
+      }
+      .name {
+        all: unset;
+        cursor: pointer;
+        text-align: start;
+      }
+      .name:hover b {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
       .att .kind {
         display: grid;
         place-items: center;
@@ -326,14 +352,26 @@ class OerPageHeader extends LitElement {
   }
 
   // attachments: thumbnail or file kind, title, description, download / open
+  // the thumbnail and title open a preview (lightbox for images; PDF,
+  // video, audio, text, 3D and Word viewers) when the file type has one
   _renderFiles(value) {
     const rows = (Array.isArray(value) ? value : []).filter((r) => r?.url);
+    const previewable = rows.filter((r) => previewKind(r.url));
     return html`<ul class="att">
       ${rows.map((r) => {
         const external = /^https?:\/\//i.test(r.url) && !r.url.startsWith(globalThis.location.origin);
+        const name = r.title || r.url.split("/").pop();
+        const thumb = isImage(r.url) ? html`<img src="${r.url}" alt="" loading="lazy" />` : html`<span class="kind">${fileLabel(r.url)}</span>`;
+        const preview = previewKind(r.url) ? () => filePreview().show(previewable, previewable.indexOf(r)) : null;
         return html`<li>
-          ${isImage(r.url) ? html`<img src="${r.url}" alt="${r.alt || ""}" loading="lazy" />` : html`<span class="kind">${fileLabel(r.url)}</span>`}
-          <span class="rel-text"><b>${r.title || r.url.split("/").pop()}</b>${r.description ? html`<small>${r.description}</small>` : ""}</span>
+          ${preview
+            ? html`<button class="thumb" aria-label="Preview ${name}" title="Preview" @click="${preview}">${thumb}</button>`
+            : thumb}
+          <span class="rel-text"
+            >${preview ? html`<button class="name" @click="${preview}"><b>${name}</b></button>` : html`<b>${name}</b>`}${r.description
+              ? html`<small>${r.description}</small>`
+              : ""}</span
+          >
           <a class="dl" href="${r.url}" ?download="${!external}" target="${external ? "_blank" : ""}" rel="${external ? "noopener noreferrer" : ""}" aria-label="${external ? "Open" : "Download"} ${r.title || "file"}">
             ${lucide(external ? "icons:open-in-new" : "icons:file-download")}
           </a>

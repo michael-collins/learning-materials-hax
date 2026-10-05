@@ -271,5 +271,7 @@
   "oer:circle-alert": "circle-alert",
   "oer:eye-off": "eye-off",
   "oer:eye": "eye",
-  "oer:files": "files"
+  "oer:files": "files",
+  "oer:chevron-left": "chevron-left",
+  "icons:insert-drive-file": "file"
 }
