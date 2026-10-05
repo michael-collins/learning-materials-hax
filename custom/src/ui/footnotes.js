@@ -76,16 +76,23 @@ export function installFootnotes() {
   if (installed) return;
   installed = true;
   const doc = globalThis.document;
-  doc.addEventListener("click", (e) => {
-    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    const a = e.target.closest?.("a[href^='#']");
-    if (!a || a.closest("[contenteditable], hax-body")) return;
-    const target = targetOf(a);
-    if (!target) return;
-    e.preventDefault();
-    hide(true);
-    jump(target);
-  });
+  // capture phase on window, ahead of HAX's router (which would resolve
+  // "#id" against <base href> and navigate to the home page)
+  globalThis.addEventListener(
+    "click",
+    (e) => {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.composedPath().find((n) => n?.localName === "a" && (n.getAttribute("href") || "").startsWith("#"));
+      if (!a || a.closest("[contenteditable], hax-body")) return;
+      const target = targetOf(a);
+      if (!target) return;
+      e.preventDefault();
+      e.stopPropagation();
+      hide(true);
+      jump(target);
+    },
+    true,
+  );
   doc.addEventListener("pointerover", (e) => {
     const a = e.target.closest?.("sup.fn-ref a");
     if (a) show(a);

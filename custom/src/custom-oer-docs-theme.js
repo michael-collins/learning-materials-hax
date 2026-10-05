@@ -404,7 +404,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           background: color-mix(in srgb, var(--primary) 12%, transparent);
           border-radius: var(--radius-sm);
         }
-        custom-oer-docs-theme .fn-back {
+        custom-oer-docs-theme .footnotes a.fn-back {
           text-decoration: none;
           color: var(--link);
         }
@@ -447,8 +447,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           letter-spacing: -0.015em;
           scroll-margin-top: calc(var(--topbar-height) + 1rem);
         }
+        /* DDD's global "a" rule gives every link an accent background and
+           bold text; links in page content read as plain links */
         custom-oer-docs-theme a:any-link {
+          background: transparent;
+          font-weight: inherit;
           color: var(--link);
+          text-decoration: underline;
           text-underline-offset: 3px;
         }
         custom-oer-docs-theme :not(pre) > code {
