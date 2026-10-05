@@ -1,0 +1,30 @@
+{
+  "id": "item-935c06ff-8c18-4192-9563-f8460f801fb9",
+  "indent": 1,
+  "location": "pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.json",
+  "slug": "quizzes/compositor-pathway-readiness-quiz",
+  "order": 0,
+  "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+  "title": "Compositor Pathway readiness quiz",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:quiz",
+    "icon": "lrn:quiz",
+    "published": false,
+    "oerTmpKey": "readiness:item-b10cae23-396d-4b8a-92dd-7472ae68a302",
+    "oerFields": {
+      "estimatedDuration": "10 minutes",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791229707,
+    "images": [],
+    "videos": [],
+    "updated": 1791229707
+  },
+  "content": "<p>Before you start Compositor Pathway: can you answer these? Your answers aren't recorded.</p>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">What does keying do, and when would you use rotoscoping instead?</p>\n  <p>Keying separates a subject from a uniform background, such as a green screen, by color. Rotoscoping draws animated mattes by hand where there is no clean key, for example when there was no green screen or the edges are hard to separate.</p>\n</self-check>\n<self-check title=\"Are you ready?\">\n  <p slot=\"question\">Why do CG elements need matched lighting, shadows and color to sit convincingly in live-action footage?</p>\n  <p>The eye notices when light direction, shadow softness, black levels, grain or color don't match the plate, and the element then looks pasted on. Matching them makes the CG element feel like part of the shot.</p>\n</self-check>\n"
+}
