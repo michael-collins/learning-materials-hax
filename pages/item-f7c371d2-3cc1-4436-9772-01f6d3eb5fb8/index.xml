@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-f7c371d2-3cc1-4436-9772-01f6d3eb5fb8</id>
-<indent>1</indent>
+<indent>0</indent>
 <location>pages/item-f7c371d2-3cc1-4436-9772-01f6d3eb5fb8/index.xml</location>
 <slug>resources/dilemmas-in-a-general-theory-of-planning</slug>
 <order>35</order>
 <parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
 <title>Dilemmas in a General Theory of Planning</title>
-<description></description>
+<description>
+</description>
 <metadata>
 <pageType>oer:resource</pageType>
 <oerFields>
-<kind>article</kind>
+<kind>reference</kind>
 <authors>
 <item>
 <name>Horst Rittel</name>
@@ -26,7 +27,17 @@
 </images>
 <videos>
 </videos>
-<updated>1791246400</updated>
+<updated>1791246885</updated>
+<published>true</published>
+<locked>false</locked>
+<status></status>
+<icon>courseicons:learning-objectives</icon>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<linkTarget>_self</linkTarget>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p></p>
+]]></content>
 </item>

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791246879,
+      "updated": 1791246886,
       "version": "26.8.0"
     },
     "theme": {
@@ -19932,13 +19932,13 @@
     },
     {
       "id": "item-f7c371d2-3cc1-4436-9772-01f6d3eb5fb8",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-f7c371d2-3cc1-4436-9772-01f6d3eb5fb8/index.html",
       "slug": "resources/dilemmas-in-a-general-theory-of-planning",
       "order": 35,
       "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
       "title": "Dilemmas in a General Theory of Planning",
-      "description": "",
+      "description": "\n",
       "metadata": {
         "pageType": "oer:resource",
         "oerFields": {
@@ -19955,11 +19955,15 @@
         "created": 1791246400,
         "images": [],
         "videos": [],
-        "updated": 1791246878,
+        "updated": 1791246885,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": "courseicons:learning-objectives",
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "linkTarget": "_self",
+        "readtime": 1
       }
     },
     {
