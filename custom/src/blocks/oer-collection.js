@@ -145,6 +145,8 @@ export class OerCollection extends LitElement {
     let pool = all.filter((i) => !isSystemItem(i) && !i.metadata?.oerSnapshotOf && !i.metadata?.hideInMenu);
     // readers do not see drafts
     if (!store.isLoggedIn) pool = pool.filter((i) => i.metadata?.published !== false);
+    // site-wide, a book's linked chapter is a copy of a page already listed
+    if (this.scope === "site") pool = pool.filter((i) => !i.metadata?.oerRef?.page);
     if (this.scope !== "site" && this._pageId) {
       if (this.scope === "children") pool = pool.filter((i) => i.parent === this._pageId);
       else {
