@@ -4050,4 +4050,10 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/resources/cradle-to-cradle-remaking-the-way-we-make-things</loc>
+    <lastmod>2026-10-06T00:24:25.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
