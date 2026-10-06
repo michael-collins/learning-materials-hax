@@ -13414,13 +13414,14 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         display: block;
         margin: 1.75rem 0;
       }
+      /* as wide as the drawing, so the caption lines up under it */
       figure {
-        margin: 0;
+        max-width: 28rem;
+        margin: 0 auto;
       }
+      /* the window outline sets the drawing apart; no panel behind it */
       .frame {
-        padding: clamp(0.75rem, 4%, 1.75rem);
-        border-radius: var(--radius-lg, 0.75rem);
-        background: color-mix(in oklch, var(--muted, #f4f4f5) 55%, transparent);
+        padding: 0.25rem 0;
       }
       svg {
         display: block;
