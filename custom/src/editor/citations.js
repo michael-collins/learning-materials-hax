@@ -17,6 +17,7 @@
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { saveOutline } from "../outline/outline-model.js";
+import { parseReference } from "./parse-reference.js";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -105,14 +106,14 @@ export function normalizeCitations(body, pageId = store.activeId) {
   return links.length;
 }
 
-/** References already on the page: [{ id, html, text, resource }]. */
+/** References already on the page: [{ id, html, text, resource, url, linkText, parts }]; parts are its citation fields, read from the text. */
 export function pageReferences(body) {
   const section = body?.querySelector(":scope > section.footnotes");
   return [...(section?.querySelectorAll("ol > li[id^='fn-']") || [])].map((li) => {
     const copy = li.cloneNode(true);
     copy.querySelectorAll("a.fn-back").forEach((b) => b.remove());
     const link = copy.querySelector("a[href^='http']");
-    return { id: li.id, html: copy.innerHTML.trim(), text: copy.textContent.trim(), resource: li.dataset.resource || "", url: link?.getAttribute("href") || "", linkText: link?.textContent.trim() || "" };
+    return { id: li.id, html: copy.innerHTML.trim(), text: copy.textContent.trim(), resource: li.dataset.resource || "", url: link?.getAttribute("href") || "", linkText: link?.textContent.trim() || "", parts: parseReference(li) };
   });
 }
 

@@ -482,10 +482,11 @@ class OerCiteDialog extends LitElement {
   }
 
   // turn an existing reference into a Resource: the New source form,
-  // filled in from the reference's link
+  // filled in from what the reference's text gives (editor/parse-reference.js)
   _addToResources(r) {
+    const p = r.parts || {};
     this._linkTarget = r.id;
-    this._form = { authors: "", year: (r.text.match(/\b(1[89]\d\d|20\d\d)\b/) || [])[1] || "", title: r.linkText || r.text.slice(0, 120), url: r.url, publisher: "" };
+    this._form = { authors: (p.authors || []).join("; "), year: String(p.year || ""), title: p.title || r.linkText || r.text.slice(0, 120), url: p.url || r.url, publisher: p.publisher || "" };
     this._free = "";
     this._tab = "new";
     this.updateComplete.then(() => this.shadowRoot.getElementById("c-title")?.focus());
