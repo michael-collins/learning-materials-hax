@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791246753,
+      "updated": 1791246879,
       "version": "26.8.0"
     },
     "theme": {
@@ -19942,7 +19942,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerFields": {
-          "kind": "article",
+          "kind": "reference",
           "authors": [
             {
               "name": "Horst Rittel",
@@ -19955,7 +19955,11 @@
         "created": 1791246400,
         "images": [],
         "videos": [],
-        "updated": 1791246400
+        "updated": 1791246878,
+        "published": true,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
