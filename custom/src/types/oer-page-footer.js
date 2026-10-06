@@ -30,6 +30,7 @@ import { ccLicense, ccIcon } from "./licenses.js";
 import { loadAiul, aiulInfo, AIUL_GUIDE } from "./aiul.js";
 import { permalinkFor } from "../ui/permalinks.js";
 import { versionsOf } from "../versions/versioning.js";
+import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
 
 // the OER Schema logo, as the Decap site's OERSchemaBadge uses it
 const OER_LOGO = {
@@ -53,6 +54,7 @@ const SCHEMA_TYPES = {
   lesson: "oer:LearningComponent",
   exercise: "oer:Practice",
   project: "oer:Project",
+  activity: "oer:Activity",
   quiz: "oer:Quiz",
   unit: "oer:Unit",
   pathway: "oer:Course",
@@ -230,6 +232,31 @@ class OerPageFooter extends LitElement {
         };
       });
     }
+    // projects and their activities (step and stage come from the outline)
+    const all = this._items || [];
+    const typeOf = (c) => {
+      const t = contentTypes(all).types.find((x) => x.id === c.metadata?.pageType);
+      return t?.schemaType || SCHEMA_TYPES[String(c.metadata?.pageType || "").replace(/^oer:/, "")] || "schema:CreativeWork";
+    };
+    const ref = (c) => ({ "@type": typeOf(c), "schema:name": c.title, "schema:url": new URL(c.slug, globalThis.document.baseURI).href });
+    if (typeId === PROJECT_TYPE) {
+      const parts = projectParts(item.id, all).filter((p) => p.item.metadata?.published !== false);
+      const acts = parts.filter((p) => p.activity);
+      const support = parts.filter((p) => !p.activity);
+      if (acts.length) data["oer:hasActivity"] = acts.map((p) => ({ ...ref(p.item), "oer:step": p.step, ...(p.stage ? { "oer:stage": p.stage } : {}) }));
+      if (support.length) data["oer:material"] = support.map((p) => ref(p.item));
+    }
+    const step = activityContext(item, all);
+    if (step) {
+      data["oer:activityOf"] = ref(step.project);
+      data["oer:step"] = step.step;
+      if (step.stage) data["oer:stage"] = step.stage;
+    }
+    // what to do first
+    const before = (Array.isArray(f.prerequisites) ? f.prerequisites : [])
+      .map((x) => all.find((i) => i.id === (x?.page || x)))
+      .filter((c) => c && c.metadata?.published !== false);
+    if (before.length) data["oer:prerequisite"] = before.map(ref);
     const tags = toList(String(item.metadata?.tags || "").split(","));
     if (tags.length) data["schema:keywords"] = tags.join(", ");
     // third-party material on the page, each with its own credit and licence

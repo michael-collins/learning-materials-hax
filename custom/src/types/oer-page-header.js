@@ -16,6 +16,7 @@ import { exportHtmlZip, exportCommonCartridge } from "../books/book-export.js";
 import { resolveLinks, isImage, fileLabel } from "./relations.js";
 import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
+import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -312,6 +313,64 @@ class OerPageHeader extends LitElement {
         font-weight: 600;
         letter-spacing: normal;
       }
+      .steps h3 {
+        margin: 0.75rem 0 0.25rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+      }
+      .steps h2 + h3 {
+        margin-top: 0;
+      }
+      .steps ul {
+        list-style: none;
+        padding: 0;
+      }
+      .steps li {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        padding: 0.125rem 0;
+      }
+      .steps .num {
+        flex: none;
+        display: inline-grid;
+        place-items: center;
+        min-width: 1.375rem;
+        height: 1.375rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+      }
+      .steps simple-icon-lite,
+      .steps .noicon {
+        flex: none;
+        width: 1.375rem;
+        --simple-icon-width: 0.875rem;
+        --simple-icon-height: 0.875rem;
+        color: var(--muted-foreground);
+        align-self: center;
+      }
+      .steps small {
+        color: var(--muted-foreground);
+        font-size: 0.75rem;
+      }
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      .pill a {
+        font-weight: 600;
+        color: inherit;
+      }
       .block ul {
         margin: 0;
         padding-left: 1.125rem;
@@ -350,6 +409,37 @@ class OerPageHeader extends LitElement {
         </li>`;
       })}
     </ul>`;
+  }
+
+  // a project's steps, grouped by stage, with its supporting pages in place
+  _renderSteps(projectId) {
+    const parts = projectParts(projectId, this._allItems || []).filter((p) => store.isLoggedIn || p.item.metadata?.published !== false);
+    if (!parts.some((p) => p.activity)) return "";
+    const groups = [];
+    for (const p of parts) {
+      if (!groups.length || groups.at(-1).stage !== p.stage) groups.push({ stage: p.stage, parts: [] });
+      groups.at(-1).parts.push(p);
+    }
+    return html`<section class="block steps" aria-labelledby="steps-h">
+      <h2 id="steps-h">Project steps</h2>
+      ${groups.map(
+        (g) => html`${g.stage ? html`<h3>${g.stage}</h3>` : ""}
+          <ul role="list">
+            ${g.parts.map((p) => {
+              const type = this._types.find((t) => t.id === p.item.metadata?.pageType);
+              return html`<li class="${p.activity ? "" : "support"}">
+                ${p.activity
+                  ? html`<span class="num" aria-hidden="true">${p.step}</span><span class="sr">Step ${p.step}: </span>`
+                  : type?.icon
+                    ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>`
+                    : html`<span class="noicon"></span>`}
+                <a href="${p.item.slug}">${p.item.title}</a>
+                ${p.activity ? "" : html`<small>${type?.label || "Page"}</small>`}
+              </li>`;
+            })}
+          </ul>`,
+      )}
+    </section>`;
   }
 
   // attachments: thumbnail or file kind, title, description, download / open
@@ -432,6 +522,10 @@ class OerPageHeader extends LitElement {
     // the version is shown in the page footer; an archived copy still says
     // so up here
     if (!type && !snapshot) return html``;
+    // an activity: its place in its project; a project: its steps
+    const subject = source || own;
+    const step = activityContext(subject, this._allItems);
+    const steps = typeId === PROJECT_TYPE ? this._renderSteps(subject.id) : "";
     return html`
       ${snapshot && latest
         ? html`<div class="archived" role="status">
@@ -443,6 +537,11 @@ class OerPageHeader extends LitElement {
       <div class="meta">
         ${type ? html`<span class="type">${type.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : ""}${type.label}</span>` : ""}
         ${values.placeholder ? inDevelopmentBadge("md") : ""}
+        ${step
+          ? html`<span class="pill">Step <b>${step.step} of ${step.total}</b></span>
+              ${step.stage ? html`<span class="pill">Stage <b>${step.stage}</b></span>` : ""}
+              <span class="pill">Part of <a href="${step.project.slug}">${step.project.title}</a></span>`
+          : ""}
         ${pills.map((f) => html`<span class="pill">${f.kind === "people" && f.name === "authors" ? "By" : f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
           ${type?.reader && firstChild
@@ -463,6 +562,7 @@ class OerPageHeader extends LitElement {
         </span>
       </div>
       ${type && item.description ? html`<p class="desc">${item.description}</p>` : ""}
+      ${steps ? html`<div class="blocks">${steps}</div>` : ""}
       ${blocks.length
         ? html`<div class="blocks">
             ${blocks.map((f) => {
