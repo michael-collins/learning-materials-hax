@@ -4056,4 +4056,10 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/resources/adam-curtis-and-the-secret-history-of-everything</loc>
+    <lastmod>2026-10-06T00:25:10.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
