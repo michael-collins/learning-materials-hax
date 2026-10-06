@@ -413,16 +413,16 @@ class OerBlockRail extends LitElement {
     if (choice.linkReference) {
       node.focus?.();
       if (choice.resource) linkReferenceToResource(body, choice.linkReference, choice.resource);
-      else this._saveResource(choice.data).then((id) => linkReferenceToResource(body, choice.linkReference, id));
+      else this._saveResource(choice.data, choice.resourceExtras).then((id) => linkReferenceToResource(body, choice.linkReference, id));
       return;
     }
     const liId = insertCitation(body, range, choice);
     node.focus?.();
-    if (choice.saveAsResource) this._saveResource(choice.data).then((id) => linkReferenceToResource(body, liId, id));
+    if (choice.saveAsResource) this._saveResource(choice.data, choice.resourceExtras).then((id) => linkReferenceToResource(body, liId, id));
   }
 
   // a new source becomes a Resource page (in the Resources section)
-  async _saveResource(parts) {
+  async _saveResource(parts, { kind = "", description = "" } = {}) {
     const items = toJS(store.manifest?.items) || [];
     const existing = items.find((i) => i.metadata?.pageType === "oer:resource" && i.title.toLowerCase() === parts.title.toLowerCase() && (i.metadata?.oerFields?.url || "") === (parts.url || ""));
     if (existing) return existing.id;
@@ -436,13 +436,15 @@ class OerBlockRail extends LitElement {
         order: siblings.length,
         indent: section ? 1 : 0,
         location: "",
-        description: "",
+        description,
         metadata: {
           pageType: "oer:resource",
           oerFields: {
             ...(parts.url ? { url: parts.url } : {}),
+            ...(kind ? { kind } : {}),
             ...(parts.authors?.length ? { authors: parts.authors.map((name) => ({ name, url: "" })) } : {}),
             ...(parts.year ? { date: parts.year } : {}),
+            ...(parts.container ? { container: parts.container } : {}),
             ...(parts.publisher ? { publisher: parts.publisher } : {}),
           },
         },

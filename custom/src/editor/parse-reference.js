@@ -6,7 +6,8 @@
  *   Sennett, R, <em>The Craftsman</em>. London, Penguin Books, 2009.
  *   James A. Lawrence and Earl N. Steck, Overview of Management Theory (Carlisle Barracks, PA: U.S. Army War College, 1991)
  *
- * Returns { authors: ["First Last"], year, title, url, publisher }, with
+ * Returns { authors: ["First Last"], year, title, container, url, publisher },
+ * container being the journal, magazine or book it appeared in, with
  * blanks for what it can't find; the author checks the form before saving.
  * References added through the Cite dialog carry their parts in data-cite.
  */
@@ -25,7 +26,8 @@ const looksLikeUrl = (s) => /^(https?:\/\/|www\.)|^[\w-]+(\.[\w-]+)+\/?\S*$/i.te
 const trimName = (s) => trimPunct(s) + (/\b\p{Lu}\.[\s,;]*$/u.test(s) ? "." : "");
 
 // ECO, UMBERTO → Eco, Umberto
-const unshout = (s) => (s === s.toUpperCase() && /[A-Z]{2}/.test(s) ? s.toLowerCase().replace(/(^|[\s'’-])\p{L}/gu, (m) => m.toUpperCase()) : s);
+// (two shouted words at least, so acronyms such as "CHI 2009" stay)
+const unshout = (s) => (s === s.toUpperCase() && (s.match(/\p{Lu}{2,}/gu) || []).length > 1 ? s.toLowerCase().replace(/(^|[\s'’-])\p{L}/gu, (m) => m.toUpperCase()) : s);
 
 const NAME_WORD = /^(\p{Lu}[\p{L}'’.-]*|de|van|von|der|da|di|la|le)$/u;
 function isName(s) {
@@ -66,8 +68,26 @@ function publisherIn(rest) {
   return seg || "";
 }
 
+// "Published in": what follows an article's title, e.g. ‘Title’, Information
+// Systems Journal, 19(4) / “Title” in_Vision and Design_ / Title. The New
+// York Times Magazine. October 27
+function containerIn(rest, publisher) {
+  let r = rest.replace(/_/g, " ").replace(/^[\s’”"»'.,;:]+/, "");
+  if (/^[(\[\d]/.test(r)) return "";
+  // "in Smith, T, French Gardening" / "in Louis Hébert (dir.), Signo"
+  r = r.replace(/^in\b\s*/i, "").replace(/^[^,()]+\((?:dir|eds?)\.?\)\s*,\s*/i, "");
+  const editor = r.match(/^([^,]+,\s*\p{Lu}\.?)\s*,\s*(.+)$/u);
+  if (editor && splitAuthors(editor[1])) r = editor[2];
+  const seg = trimPunct(r.split(/,\s|(?<!\b\p{Lu})\.\s|\(|\[/u)[0])
+    .replace(/\s*\b(vol\.?\s*)?\d+\s*\(\d+\)$/i, "")
+    .trim();
+  if (!seg || seg.length > 120 || !/^\p{Lu}/u.test(seg) || NOT_PUBLISHER.test(seg) || /dissertation|thesis/i.test(seg)) return "";
+  if (seg.includes(":") || looksLikeUrl(seg) || seg === publisher || seg.split(" ").length < 2) return "";
+  return unshout(seg);
+}
+
 export function parseReference(li) {
-  const empty = { authors: [], year: "", title: "", url: "", publisher: "" };
+  const empty = { authors: [], year: "", title: "", container: "", url: "", publisher: "" };
   if (!li) return empty;
   if (li.dataset?.cite) {
     try {
@@ -92,6 +112,10 @@ export function parseReference(li) {
   const italic = clean(copy.querySelector("em, i, cite")?.textContent);
   const quoted = clean((text.replace(/\([^)]*\)/g, (m) => " ".repeat(m.length)).match(/[‘“"«]\s*([^’”"»]{3,}?)\s*[’”"»]/) || [])[1]);
   let title = italic && quoted ? (text.indexOf(quoted) < text.indexOf(italic) ? quoted : italic) : italic || quoted;
+  // an italic title is the book or journal itself; a quoted one is a part
+  // of something, and an italic after it is what it's part of
+  const isPart = !!title && title !== italic;
+  let container = isPart && italic && text.indexOf(italic) > text.indexOf(title) ? italic.replace(/\s*\d+\s*\(\d+\)$/, "") : "";
   if (!title && linkText && !looksLikeUrl(linkText)) title = linkText;
   let authors = null;
   let rest = text;
@@ -136,5 +160,9 @@ export function parseReference(li) {
   title = unshout(trimPunct(title.replace(/\s*\([^)]*$/, "")));
   if (looksLikeUrl(title)) title = "";
   if (title.length > 200) title = `${title.slice(0, 197)}…`;
-  return { authors: authors || [], year, title: title || (looksLikeUrl(linkText) ? "" : linkText), url, publisher: publisherIn(rest.replace(/\S*(https?:|www\.)\S*/g, "")) };
+  const plain = rest.replace(/\S*(https?:|www\.)\S*/g, "");
+  const publisher = publisherIn(plain);
+  // only when the title was found for sure (quoted, or after its authors)
+  if (!container && title && title !== italic && (isPart || authors)) container = containerIn(plain, publisher);
+  return { authors: authors || [], year, title: title || (looksLikeUrl(linkText) ? "" : linkText), container, url, publisher };
 }

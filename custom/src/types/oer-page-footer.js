@@ -257,6 +257,7 @@ class OerPageFooter extends LitElement {
           ...(name ? { "schema:name": name } : { "schema:description": c.text }),
           ...(authors.length ? { "schema:author": authors.map((a) => ({ "@type": "schema:Person", "schema:name": a })) } : {}),
           ...((r ? rf.date : d.year) ? { "schema:datePublished": String(r ? rf.date : d.year) } : {}),
+          ...((r ? rf.container : d.container) ? { "schema:isPartOf": { "@type": "schema:CreativeWork", "schema:name": r ? rf.container : d.container } } : {}),
           ...((r ? rf.publisher : d.publisher) ? { "schema:publisher": r ? rf.publisher : d.publisher } : {}),
           ...((r ? rf.url : d.url) || c.url ? { "schema:url": (r ? rf.url : d.url) || c.url } : {}),
         };

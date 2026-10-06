@@ -40,10 +40,12 @@ export function matchResource(resources, { url = "", title = "" } = {}) {
   return (u && resources.find((r) => normUrl(r.metadata?.oerFields?.url) === u)) || (t.length > 3 && resources.find((r) => normTitle(r.title) === t)) || null;
 }
 
+const BLANK_FORM = { authors: "", year: "", title: "", container: "", url: "", publisher: "", kind: "reference", description: "" };
+
 // a Resource page's fields as citation parts
 export function resourceCitation(item) {
   const f = item?.metadata?.oerFields || {};
-  return { authors: peopleOf(f.authors).map((p) => p.name), year: f.date || "", title: item.title, url: f.url || "", publisher: f.publisher || "" };
+  return { authors: peopleOf(f.authors).map((p) => p.name), year: f.date || "", title: item.title, container: f.container || "", url: f.url || "", publisher: f.publisher || "" };
 }
 
 class OerCiteDialog extends LitElement {
@@ -81,7 +83,7 @@ class OerCiteDialog extends LitElement {
     this._tab = references.length ? "page" : "resources";
     this._query = "";
     this._chosen = null;
-    this._form = { authors: "", year: "", title: "", url: "", publisher: "" };
+    this._form = { ...BLANK_FORM };
     this._free = "";
     this._save = true;
     this._linkTarget = null;
@@ -111,9 +113,33 @@ class OerCiteDialog extends LitElement {
       .sort((a, b) => a.title.localeCompare(b.title));
   }
 
+  // the citation's parts (also stored on the reference as data-cite)
   get _newParts() {
     const f = this._form;
-    return { authors: f.authors.split(/;|\band\b|,(?=\s*[A-Z][a-z]+\s+[A-Z])/).map((s) => s.trim()).filter(Boolean), year: f.year.trim(), title: f.title.trim(), url: f.url.trim(), publisher: f.publisher.trim() };
+    return {
+      authors: f.authors.split(/;|\band\b|,(?=\s*[A-Z][a-z]+\s+[A-Z])/).map((s) => s.trim()).filter(Boolean),
+      year: f.year.trim(),
+      title: f.title.trim(),
+      container: f.container.trim(),
+      url: f.url.trim(),
+      publisher: f.publisher.trim(),
+    };
+  }
+
+  // what only the Resource page keeps
+  get _resourceExtras() {
+    return { kind: this._form.kind.trim(), description: this._form.description.trim() };
+  }
+
+  // kinds Resources already use, most used first
+  get _kinds() {
+    const count = new Map();
+    for (const r of this._allResources) {
+      const k = String(r.metadata?.oerFields?.kind || "").trim();
+      if (k) count.set(k, (count.get(k) || 0) + 1);
+    }
+    if (!count.has("reference")) count.set("reference", 0);
+    return [...count.keys()].sort((a, b) => count.get(b) - count.get(a) || a.localeCompare(b));
   }
 
   get _canCite() {
@@ -127,7 +153,7 @@ class OerCiteDialog extends LitElement {
     // adding an existing reference to Resources: no new citation
     if (this._linkTarget && this._tab === "new") {
       const parts = this._newParts;
-      return this._finish({ linkReference: this._linkTarget, data: parts, saveAsResource: true });
+      return this._finish({ linkReference: this._linkTarget, data: parts, resourceExtras: this._resourceExtras, saveAsResource: true });
     }
     if (this._tab === "page") return this._finish({ id: this._chosen });
     if (this._tab === "resources") {
@@ -136,7 +162,7 @@ class OerCiteDialog extends LitElement {
     }
     if (this._free.trim()) return this._finish({ html: esc(this._free.trim()) });
     const parts = this._newParts;
-    return this._finish({ html: formatCitation(parts), data: parts, saveAsResource: this._save && !!parts.title });
+    return this._finish({ html: formatCitation(parts), data: parts, resourceExtras: this._resourceExtras, saveAsResource: this._save && !!parts.title });
   }
 
   static get styles() {
@@ -399,6 +425,26 @@ class OerCiteDialog extends LitElement {
         padding: 0.5rem 0.75rem;
         resize: vertical;
       }
+      .field small {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
+      .resource-only {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border);
+      }
+      .group {
+        grid-column: 1 / -1;
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+      }
       .hint {
         margin: 0.25rem 0 0;
         font-size: 0.75rem;
@@ -486,7 +532,15 @@ class OerCiteDialog extends LitElement {
   _addToResources(r) {
     const p = r.parts || {};
     this._linkTarget = r.id;
-    this._form = { authors: (p.authors || []).join("; "), year: String(p.year || ""), title: p.title || r.linkText || r.text.slice(0, 120), url: p.url || r.url, publisher: p.publisher || "" };
+    this._form = {
+      ...BLANK_FORM,
+      authors: (p.authors || []).join("; "),
+      year: String(p.year || ""),
+      title: p.title || r.linkText || r.text.slice(0, 120),
+      container: p.container || "",
+      url: p.url || r.url,
+      publisher: p.publisher || "",
+    };
     this._free = "";
     this._tab = "new";
     this.updateComplete.then(() => this.shadowRoot.getElementById("c-title")?.focus());
@@ -542,6 +596,8 @@ class OerCiteDialog extends LitElement {
     const freeUrl = (this._free.match(/https?:\/\/\S+/) || [])[0] || "";
     const match = matchResource(this._allResources, this._free.trim() ? { url: freeUrl } : { url: f.url, title: f.title });
     const target = this._linkTarget && (this._references || []).findIndex((r) => r.id === this._linkTarget) + 1;
+    // Kind and Description only matter when a Resource page is made
+    const saving = !this._free.trim() && (this._linkTarget || this._save);
     return html`${target
         ? html`<p class="notice">Adding reference ${target} to Resources. The page's reference keeps its wording and links to the new Resource page.
             <button class="mini" @click="${() => ((this._linkTarget = null), (this._tab = "page"))}">Back</button></p>`
@@ -562,12 +618,34 @@ class OerCiteDialog extends LitElement {
         : ""}
       <div class="grid">
         <div class="field full"><label for="c-title">Title</label><input id="c-title" .value="${f.title}" @input="${set("title")}" /></div>
-        <div class="field"><label for="c-authors">Authors</label><input id="c-authors" .value="${f.authors}" @input="${set("authors")}" placeholder="e.g. William McDonough; Michael Braungart" /></div>
+        <div class="field">
+          <label for="c-authors">Authors</label
+          ><input id="c-authors" .value="${f.authors}" @input="${set("authors")}" aria-describedby="c-authors-help" placeholder="e.g. William McDonough; Michael Braungart" />
+          <small id="c-authors-help">Separate authors with a semicolon.</small>
+        </div>
         <div class="field"><label for="c-year">Year</label><input id="c-year" .value="${f.year}" @input="${set("year")}" inputmode="numeric" /></div>
         <div class="field full"><label for="c-url">Link</label><input id="c-url" type="url" .value="${f.url}" @input="${set("url")}" placeholder="https://" /></div>
+        <div class="field full">
+          <label for="c-container">Published in</label
+          ><input id="c-container" .value="${f.container}" @input="${set("container")}" aria-describedby="c-container-help" placeholder="e.g. Policy Sciences" />
+          <small id="c-container-help">The journal, magazine, book or site it appeared in, if any.</small>
+        </div>
         <div class="field full"><label for="c-pub">Publisher</label><input id="c-pub" .value="${f.publisher}" @input="${set("publisher")}" /></div>
       </div>
-      <p class="hint">Separate authors with a semicolon.</p>
+      ${saving
+        ? html`<div class="grid resource-only">
+            <p class="group">For the Resource page</p>
+            <div class="field">
+              <label for="c-kind">Kind</label
+              ><input id="c-kind" list="c-kinds" .value="${f.kind}" @input="${set("kind")}" />
+              <datalist id="c-kinds">${this._kinds.map((k) => html`<option value="${k}"></option>`)}</datalist>
+            </div>
+            <div class="field full">
+              <label for="c-desc">Description</label
+              ><textarea id="c-desc" rows="2" .value="${f.description}" @input="${set("description")}" placeholder="Optional: what it is and why it's useful"></textarea>
+            </div>
+          </div>`
+        : ""}
       ${this._linkTarget ? "" : html`<p class="or">Or write it yourself</p>`}
       <textarea ?hidden="${!!this._linkTarget}" aria-label="Citation text" .value="${this._free}" @input="${(e) => (this._free = e.target.value)}" placeholder="Rittel, Horst. “Dilemmas in a General Theory of Planning.” Policy Sciences, 1973: 155–169."></textarea>
       ${preview ? html`<div class="preview" aria-live="polite">${div}</div>` : ""}

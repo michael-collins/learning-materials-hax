@@ -29,12 +29,14 @@ const keyOf = (href) => {
   return m ? { prefix: m[1], key: m[2] } : null;
 };
 
-/** "Author, A. and B. (2002). Title. Publisher." with the title linked. */
-export function formatCitation({ authors = [], year = "", title = "", url = "", publisher = "" } = {}) {
+/** "Author, A. and B. (2002). Title. Published in. Publisher." with the title linked. */
+export function formatCitation({ authors = [], year = "", title = "", container = "", url = "", publisher = "" } = {}) {
   const names = authors.map((a) => (typeof a === "string" ? a : a?.name)).filter(Boolean);
   const who = names.length < 3 ? names.join(" and ") : `${names.slice(0, -1).join(", ")}, and ${names.at(-1)}`;
-  const t = title ? (url ? `<a href="${esc(url)}">${esc(title)}</a>` : `<cite>${esc(title)}</cite>`) : url ? `<a href="${esc(url)}">${esc(url)}</a>` : "";
-  return [who && `${esc(who)}${year ? ` (${esc(year)})` : ""}.`, !who && year ? `(${esc(year)}).` : "", t && `${t}.`, publisher && `${esc(publisher)}.`].filter(Boolean).join(" ");
+  // a work published in something is a part of it: the container is the
+  // italic title
+  const t = title ? (url ? `<a href="${esc(url)}">${esc(title)}</a>` : container ? esc(title) : `<cite>${esc(title)}</cite>`) : url ? `<a href="${esc(url)}">${esc(url)}</a>` : "";
+  return [who && `${esc(who)}${year ? ` (${esc(year)})` : ""}.`, !who && year ? `(${esc(year)}).` : "", t && `${t}.`, container && `<cite>${esc(container)}</cite>.`, publisher && `${esc(publisher)}.`].filter(Boolean).join(" ");
 }
 
 function referencesSection(body, P, create) {
