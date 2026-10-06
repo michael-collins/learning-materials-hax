@@ -10,7 +10,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, allowedChildTypes, savePageDetails, peopleOf } from "./content-types.js";
+import { contentTypes, allowedChildTypes, savePageDetails, peopleOf, tagsOf } from "./content-types.js";
 import { resolveLinks, uploadFile, isImage } from "./relations.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { versionsOf } from "../versions/versioning.js";
@@ -40,6 +40,8 @@ class OerPageDetails extends LitElement {
       open: { type: Boolean, reflect: true },
       _type: { state: true },
       _desc: { state: true },
+      _tags: { state: true },
+      _tagDraft: { state: true },
       _values: { state: true },
       _saving: { state: true },
       _tried: { state: true },
@@ -71,6 +73,12 @@ class OerPageDetails extends LitElement {
     this._allTypes = contentTypes(items).types;
     this._type = item.metadata?.pageType || "";
     this._desc = item.description || "";
+    this._tags = tagsOf(item);
+    this._tagDraft = "";
+    // tags used across the site, most used first (suggestions)
+    const count = new Map();
+    for (const i of items) for (const t of tagsOf(i)) count.set(t, (count.get(t) || 0) + 1);
+    this._tagsInUse = [...count.keys()].sort((a, b) => count.get(b) - count.get(a) || a.localeCompare(b));
     this._values = { ...(item.metadata?.oerFields || {}) };
     // empty fields start from their type's defaults
     const def = contentTypes(items).types.find((t) => t.id === item.metadata?.pageType);
@@ -104,6 +112,68 @@ class OerPageDetails extends LitElement {
     this._values = { ...this._values, [name]: value };
   }
 
+  // add a tag, in the spelling the site already uses if it has one
+  // ("blender" → "Blender"), never twice
+  _addTag(raw) {
+    const t = String(raw || "").replace(/,/g, " ").replace(/\s+/g, " ").trim();
+    this._tagDraft = "";
+    // the box's value, too (lit sees "" → "" as no change)
+    const box = this.shadowRoot?.getElementById("ptags");
+    if (box) box.value = "";
+    if (!t) return;
+    const known = (this._tagsInUse || []).find((x) => x.toLowerCase() === t.toLowerCase()) || t;
+    if (!this._tags.some((x) => x.toLowerCase() === known.toLowerCase())) this._tags = [...this._tags, known];
+  }
+
+  _removeTag(t) {
+    this._tags = this._tags.filter((x) => x !== t);
+    this.shadowRoot.getElementById("ptags")?.focus();
+  }
+
+  _renderTags() {
+    const lower = new Set(this._tags.map((t) => t.toLowerCase()));
+    return html`<div>
+      <label for="ptags">Tags</label>
+      ${this._tags.length
+        ? html`<ul class="tags" aria-label="Tags on this page">
+            ${this._tags.map(
+              (t) => html`<li class="tag">
+                <span>${t}</span
+                ><button type="button" class="tag-x" aria-label="Remove tag ${t}" title="Remove" @click="${() => this._removeTag(t)}">${lucide("oer:x", "sm")}</button>
+              </li>`,
+            )}
+          </ul>`
+        : ""}
+      <input
+        id="ptags"
+        class="input"
+        list="ptags-used"
+        autocomplete="off"
+        aria-describedby="ptags-help"
+        placeholder="${this._tags.length ? "Add another tag" : "Add a tag"}"
+        .value="${this._tagDraft}"
+        @input="${(e) => {
+          const v = e.target.value;
+          // a suggestion picked from the list arrives whole: add it
+          if (!e.inputType || e.inputType === "insertReplacementText") {
+            if ((this._tagsInUse || []).includes(v)) return this._addTag(v);
+          }
+          if (v.includes(",")) return v.split(",").forEach((t) => this._addTag(t));
+          this._tagDraft = v;
+        }}"
+        @keydown="${(e) => {
+          if (e.key === "Enter" && this._tagDraft.trim()) {
+            e.preventDefault();
+            e.stopPropagation();
+            this._addTag(this._tagDraft);
+          }
+        }}"
+      />
+      <datalist id="ptags-used">${(this._tagsInUse || []).filter((t) => !lower.has(t.toLowerCase())).map((t) => html`<option value="${t}"></option>`)}</datalist>
+      <p class="hint" id="ptags-help">Press Enter or type a comma to add a tag. Suggestions are tags other pages use. Used for filtering collections and in search.</p>
+    </div>`;
+  }
+
   _missing() {
     return (this._typeDef?.fields || []).filter((f) => f.required && empty(this._values[f.name]));
   }
@@ -128,8 +198,11 @@ class OerPageDetails extends LitElement {
       if (f.kind === "number" && v !== "" && v !== undefined) v = Number(v);
       if (!empty(v) || f.kind === "boolean") fields[f.name] = f.kind === "boolean" ? !!v : v;
     }
-    await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields });
-    this._onSaved?.({ pageType: this._type, description: this._desc.trim(), fields });
+    // a tag typed but not yet added still counts
+    this._addTag(this._tagDraft);
+    const tags = this._tags;
+    await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields, tags });
+    this._onSaved?.({ pageType: this._type, description: this._desc.trim(), fields, tags });
     this._saving = false;
     this._close();
   }
@@ -271,6 +344,42 @@ class OerPageDetails extends LitElement {
       }
       .invalid {
         border-color: var(--destructive);
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+        margin: 0 0 0.5rem;
+        padding: 0;
+        list-style: none;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.125rem;
+        padding: 0.125rem 0.125rem 0.125rem 0.625rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--muted);
+        color: var(--foreground);
+        font-size: 0.8125rem;
+        line-height: 1.5;
+      }
+      .tag-x {
+        display: inline-grid;
+        place-items: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .tag-x:hover {
+        background: var(--accent, var(--muted));
+        color: var(--foreground);
       }
       .choices {
         display: flex;
@@ -888,6 +997,7 @@ class OerPageDetails extends LitElement {
             <textarea id="pdesc" .value="${this._desc}" @input="${(e) => (this._desc = e.target.value)}"></textarea>
             <p class="hint">Shown under the title and in search results.</p>
           </div>
+          ${this._renderTags()}
           ${def
             ? html`<div class="sep" role="separator"></div>
                 ${def.fields.length ? def.fields.map((f) => this._renderField(f)) : html`<p class="notype">${def.label} has no fields of its own.</p>`}`

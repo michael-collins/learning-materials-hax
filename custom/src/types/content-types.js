@@ -181,7 +181,14 @@ function siteEditor() {
  * description if that changed (HAX keeps descriptions out of outline saves;
  * they go through the page-details operation instead).
  */
-export async function savePageDetails(id, { pageType, description, fields }) {
+/** A page's tags (HAX keeps them as one comma-separated string). */
+export const tagsOf = (item) =>
+  String(item?.metadata?.tags || "")
+    .split(",")
+    .map((t) => t.trim())
+    .filter(Boolean);
+
+export async function savePageDetails(id, { pageType, description, fields, tags }) {
   const list = items();
   const current = list.find((i) => i.id === id);
   const out = list.map((item) => {
@@ -194,6 +201,7 @@ export async function savePageDetails(id, { pageType, description, fields }) {
     }
     const metadata = { ...item.metadata, oerFields: { ...cleared, ...fields } };
     metadata.pageType = pageType || "";
+    if (Array.isArray(tags)) metadata.tags = tags.join(",");
     return { ...item, metadata, modified: true };
   });
   await saveOutline(out);
