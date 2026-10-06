@@ -28,13 +28,23 @@ const btn = (x, y, w, text, kind = "hi-o") => svg`${R(x, y, w, 18, kind, 9)}${T(
 const check = (x, y, on = true) => svg`${R(x, y, 10, 10, on ? "hi" : "card", 2.5)}${on ? P(`M${x + 2.5} ${y + 5.2} l2 2 l3.2 -4`, "tick") : ""}`;
 const chevron = (x, y, cls = "stroke hi-line") => P(`M${x} ${y} l3.5 3.5 l3.5 -3.5`, cls);
 
+// a rectangle with only some corners rounded ([top-left, top-right,
+// bottom-right, bottom-left]), so a panel inside a rounded frame follows
+// the frame's corners instead of poking out of them
+const RC = (x, y, w, h, [tl, tr, br, bl], cls) =>
+  svg`<path class=${cls} d=${`M${x + tl} ${y} H${x + w - tr} A${tr} ${tr} 0 0 1 ${x + w} ${y + tr} V${y + h - br} A${br} ${br} 0 0 1 ${x + w - br} ${y + h} H${x + bl} A${bl} ${bl} 0 0 1 ${x} ${y + h - bl} V${y + tl} A${tl} ${tl} 0 0 1 ${x + tl} ${y} Z`}></path>`;
+
 // the browser window: frame, top bar, optional sidebar
+const WIN_R = 10;
 const win = (sidebar = true) => svg`
-  ${R(0.5, 0.5, W - 1, H - 1, "win", 10)}
+  ${R(0.5, 0.5, W - 1, H - 1, "win", WIN_R)}
   ${HR(0.5, 28, W - 0.5)}
   ${C(14, 14, 3.5, "t2")}${C(25, 14, 3.5, "t2")}${C(36, 14, 3.5, "t2")}
   ${L(W - 74, 11.5, 40, "t2")}${C(W - 18, 14, 5, "t2")}
-  ${sidebar ? svg`${R(0.5, 28, 110, H - 28.5, "panel", 0)}${P(`M110.5 28 V${H - 0.5}`, "rule")}` : ""}`;
+  ${sidebar ? svg`${RC(1, 28.5, 109.5, H - 29.5, [0, 0, 0, WIN_R - 1], "panel")}${P(`M110.5 28 V${H - 0.5}`, "rule")}` : ""}`;
+
+// the page dimmed behind a dialog, inside the window's rounded corners
+const scrim = () => RC(1, 28.5, W - 2, H - 29.5, [0, 0, WIN_R - 1, WIN_R - 1], "scrim");
 
 // generic page content: title and paragraphs
 const page = (x, y, w, lines = 5) => svg`
@@ -129,13 +139,13 @@ const PRESETS = {
     ${win()}
     ${navLines(44, 10)}
     ${page(126, 44, 258, 9)}
-    ${R(0.5, 28, W - 1, H - 28.5, "scrim", 0)}
-    ${R(110, 46, 200, 182, "pop hi-line", 10)}
-    ${R(124, 60, 90, 10, "t", 3)}
-    ${L(124, 84, 30, "t2")}${R(124, 93, 172, 20, "card", 5)}${L(132, 100.5, 50)}${chevron(282, 101, "stroke")}
-    ${L(124, 124, 50, "t2")}${R(124, 133, 172, 34, "card", 5)}${L(132, 141, 120)}${L(132, 153, 90)}
-    ${L(124, 178, 40, "t2")}${R(124, 187, 172, 18, "card", 5)}${L(132, 193.5, 70)}
-    ${btn(246, 210, 50, "Save", "hi")}`,
+    ${scrim()}
+    ${R(110, 40, 200, 190, "pop hi-line", 10)}
+    ${R(124, 54, 90, 10, "t", 3)}
+    ${L(124, 76, 30, "t2")}${R(124, 85, 172, 18, "card", 5)}${L(132, 91.5, 50)}${chevron(282, 92, "stroke")}
+    ${L(124, 114, 50, "t2")}${R(124, 123, 172, 32, "card", 5)}${L(132, 131, 120)}${L(132, 143, 90)}
+    ${L(124, 166, 40, "t2")}${R(124, 175, 172, 18, "card", 5)}${L(132, 181.5, 70)}
+    ${btn(246, 202, 50, "Save", "hi")}`,
 
   "outline-builder": () => svg`
     ${win(false)}
@@ -213,13 +223,13 @@ const PRESETS = {
     ${win()}
     ${navLines(44, 10)}
     ${page(126, 44, 258, 9)}
-    ${R(0.5, 28, W - 1, H - 28.5, "scrim", 0)}
-    ${R(100, 44, 220, 184, "pop hi-line", 10)}
-    ${R(114, 58, 80, 10, "t", 3)}
-    ${R(114, 78, 192, 50, "code", 6)}
-    ${L(124, 88, 150, "t-code")}${L(124, 100, 170, "t-code")}${L(124, 112, 110, "t-code")}
-    ${[0, 1, 2, 3].map((i) => svg`${check(114, 140 + i * 16, i !== 2)}${L(132, 142.5 + i * 16, 80 + ((i * 21) % 40))}`)}
-    ${btn(248, 204, 58, "Copy", "hi")}`,
+    ${scrim()}
+    ${R(100, 40, 220, 190, "pop hi-line", 10)}
+    ${R(114, 54, 80, 10, "t", 3)}
+    ${R(114, 72, 192, 48, "code", 6)}
+    ${L(124, 82, 150, "t-code")}${L(124, 94, 170, "t-code")}${L(124, 106, 110, "t-code")}
+    ${[0, 1, 2, 3].map((i) => svg`${check(114, 132 + i * 16, i !== 2)}${L(132, 134.5 + i * 16, 80 + ((i * 21) % 40))}`)}
+    ${btn(248, 202, 58, "Copy", "hi")}`,
 
   footer: () => svg`
     ${win(false)}
@@ -270,9 +280,9 @@ const PRESETS = {
     ${win()}
     ${navLines(44, 10)}
     ${page(126, 44, 258, 9)}
-    ${R(0.5, 28, W - 1, H - 28.5, "scrim", 0)}
+    ${scrim()}
     ${R(18, 38, 364, 194, "pop hi-line", 10)}
-    ${R(18.5, 38.5, 120, 193, "panel", 0)}${P("M138.5 38.5 V231.5", "rule")}
+    ${RC(19.25, 39.25, 119.25, 191.5, [9, 0, 0, 9], "panel")}${P("M138.5 39 V231", "rule")}
     ${R(28, 50, 80, 9, "t", 3)}${L(28, 66, 96, "t2")}
     ${HR(18.5, 78, 138.5)}
     ${L(42, 88, 50)}
@@ -283,7 +293,7 @@ const PRESETS = {
     ${[0, 1, 2].map((i) => L(48, 148 + i * 12, 60 + ((i * 13) % 20), "t2"))}
     ${T(28, 196, "UNIT", "muted sm caps")}
     ${C(34, 207, 5, "card")}${L(44, 204.5, 64)}
-    ${L(152, 50, 120, "t2")}${btn(296, 44, 56, "Open page", "ghost")}${P("M362 48 l7 7 M369 48 l-7 7", "stroke")}
+    ${L(152, 50, 110, "t2")}${btn(284, 43, 62, "Open page", "ghost")}${P("M357 48.5 l6 6 M363 48.5 l-6 6", "stroke")}
     ${HR(138.5, 66, 381.5)}
     ${page(158, 80, 200, 7)}
     ${R(158, 204, 70, 18, "card", 5)}${R(290, 204, 70, 18, "card", 5)}`,
@@ -428,7 +438,7 @@ export class OerSchematic extends LitElement {
       }
       text {
         font-family: var(--font-sans, system-ui, sans-serif);
-        font-size: 11px;
+        font-size: 9.5px;
         font-weight: 600;
       }
       .lbl {
@@ -448,7 +458,7 @@ export class OerSchematic extends LitElement {
         font-weight: 400;
       }
       .sm {
-        font-size: 9.5px;
+        font-size: 8px;
       }
       .caps {
         letter-spacing: 0.06em;
