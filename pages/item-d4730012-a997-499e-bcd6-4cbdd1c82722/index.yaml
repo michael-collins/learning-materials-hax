@@ -1,11 +1,15 @@
 id: item-d4730012-a997-499e-bcd6-4cbdd1c82722
-indent: 1
+indent: 0
 location: pages/item-d4730012-a997-499e-bcd6-4cbdd1c82722/index.yaml
 slug: articles/systems-thinking
 order: 24
 parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
 title: Systems thinking
-description: ''
+description: >-
+
+  A design decision that considers the impact on an entire network of affected
+  systems, rather than a specific part, is known as systems thinking. Systems
+  are bounded, can be nested, overlap with othe
 metadata:
   published: true
   pageType: oer:article
@@ -21,8 +25,15 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791246405
+  overridePathauto: false
+  hideInMenu: false
+  icon: courseicons:learning-objectives
+  linkTarget: _self
+  locked: false
+  readtime: 8
 content: >
+
   <p><img src="files/DeathtoStock_Lonely_Commute-05@2x.jpg" alt="Aerial photo of
   a city intersection"></p>
 
@@ -47,7 +58,7 @@ content: >
   transdisciplinarian is a multi-systems worker and takes liberty to follow the
   networked paths for more holistic perspectives on problems and issues.</p>
 
-  <h2>Cradle to Cradle</h2>
+  <h2 id="h2--1565937861">Cradle to Cradle</h2>
 
   <p>When thinking about a model to aid sustainable design, the term
   <strong>Cradle to Cradle Design</strong> was coined by German chemist Michael
@@ -74,11 +85,15 @@ content: >
   conventional means; it is also a prototype for the book as a "technical
   nutrient," that is, as a product that can be broken down and circulated
   infinitely in industrial cycles–made and re-made as "paper" or other
-  products.[^1]</p>
+  products.<sup class="fn-ref" id="fnref-d4730012-1"><a
+  href="#fn-d4730012-1">1</a></sup>
+
+  </p>
+
 
   </blockquote>
 
-  <h2>The "S" word</h2>
+  <h2 id="h2-457640680">The "S" word</h2>
 
   <p>The <a href="http://designersaccord.org/">Designers Accord</a> was a
   five-year project that culminated in the development of guiding principles and
@@ -116,7 +131,11 @@ content: >
 
   <p>Focus on leadership skills, participation, transparency, engagement,
   networks, human centered design, respect, and active listening. Ask students
-  to rethink current paradigms and to envision a better future. [^2]</p>
+  to rethink current paradigms and to envision a better future. <sup
+  class="fn-ref" id="fnref-d4730012-2"><a href="#fn-d4730012-2">2</a></sup>
+
+  </p>
+
 
   </blockquote>
 
@@ -129,7 +148,7 @@ content: >
   designers thinking more systemically in terms of environmental and social
   impact.</p>
 
-  <h2>The problem of the ‘hyperobject’</h2>
+  <h2 id="h2--1531428418">The problem of the ‘hyperobject’</h2>
 
   <p>Now, let us consider the issue of large congregations of plastic in the
   sea, described on the website for the United States National Oceanic and
@@ -160,7 +179,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   <li>Business and economics: <strong>Business and Product Design</strong>
 
@@ -177,7 +198,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   <li>Public consensus:** Public Relations and Marketing design**
 
@@ -191,7 +214,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   <li>Waste management processes: <strong>Service Design</strong>
 
@@ -203,7 +228,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   <li>Government: <strong>Policy Design</strong>
 
@@ -218,7 +245,9 @@ content: >
 
   </ul>
 
+
   </li>
+
 
   </ol>
 
@@ -244,11 +273,14 @@ content: >
   too encompassing to think about. Global markets, too. But naming a hyperobject
   alone is of limited use; human cognition knows all too well how to file such
   imminent imponderables away, on a “to-do” list that’s never consulted again.
-  [^3]</p>
+  <sup class="fn-ref" id="fnref-d4730012-3"><a href="#fn-d4730012-3">3</a></sup>
+
+  </p>
+
 
   </blockquote>
 
-  <h2>‘Wicked’ problems</h2>
+  <h2 id="h2--518255700">‘Wicked’ problems</h2>
 
   <p>To adequately describe the difficulty of designing policies to fix complex
   social issues, UC Berkeley professors Horst Rittel and Melvin M. Webber
@@ -288,7 +320,10 @@ content: >
 
   </ol>
 
-  <p>[^4]</p>
+  <p><sup class="fn-ref" id="fnref-d4730012-4"><a
+  href="#fn-d4730012-4">4</a></sup>
+
+  </p>
 
   <p>This list might sound daunting, but don't despair – these are not
   necessarily unsolvable problems. Designers have been developing ways to attack
@@ -296,23 +331,41 @@ content: >
   and interdisciplinarian workers situate themselves. For some inspiration, see
   IDEO's open design community platform: https://www.openideo.com/</p>
 
-  <p>[^1]: McDonough, William; Braungart, Michael (2002). <a
+  <section class="footnotes" aria-labelledby="fn-d4730012-label">
+
+  <h2 id="fn-d4730012-label">References</h2>
+
+  <ol>
+    
+    
+    
+    
+  <li id="fn-d4730012-1">McDonough, William; Braungart, Michael (2002). <a
   href="https://books.google.com/books?id=KFX5RprPGQ0C">Cradle to Cradle:
   Remaking the Way We Make Things</a>. North Point Press. p. 193. <a
   href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">ISBN</a>
   <a
   href="https://en.wikipedia.org/wiki/Special:BookSources/0-86547-587-3">0-86547-587-3</a>.
-  Retrieved 28 December 2016.
+  Retrieved 28 December 2016.  <a class="fn-back" href="#fnref-d4730012-1"
+  aria-label="Back to citation 1">↩</a></li>
 
-  [^2]: <a
+  <li id="fn-d4730012-2"><a
   href="http://edutoolkit.designersaccord.org/how-can-we-create-a-common-language/">The
   Designers Accord: Integrating sustainability into design education: The
-  Toolkit</a>. (2009) Retrieved 28 December 2016.
+  Toolkit</a>. (2009) Retrieved 28 December 2016.  <a class="fn-back"
+  href="#fnref-d4730012-2" aria-label="Back to citation 2">↩</a></li>
 
-  [^3]: Lethem, Jonathan. <a
+  <li id="fn-d4730012-3">Lethem, Jonathan. <a
   href="http://www.nytimes.com/interactive/2016/10/30/magazine/adam-curtis-documentaries.html">Adam
   Curtis and the Secret History of Everything</a>. The New York Times Magazine.
-  October 27, 2016. Retrieved 28 December 2016.
+  October 27, 2016. Retrieved 28 December 2016.  <a class="fn-back"
+  href="#fnref-d4730012-3" aria-label="Back to citation 3">↩</a></li>
 
-  [^4]: Rittel, Horst. "Dilemmas in a General Theory of Planning." Policy
-  Sciences, 1973: 155-169.</p>
+  <li id="fn-d4730012-4">Rittel, Horst. "Dilemmas in a General Theory of
+  Planning." Policy Sciences, 1973: 155-169.  <a class="fn-back"
+  href="#fnref-d4730012-4" aria-label="Back to citation 4">↩</a></li>
+
+  </ol>
+
+
+  </section>

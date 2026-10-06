@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791246400,
+      "updated": 1791246405,
       "version": "26.8.0"
     },
     "theme": {
@@ -16932,13 +16932,13 @@
     },
     {
       "id": "item-d4730012-a997-499e-bcd6-4cbdd1c82722",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-d4730012-a997-499e-bcd6-4cbdd1c82722/index.html",
       "slug": "articles/systems-thinking",
       "order": 24,
       "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
       "title": "Systems thinking",
-      "description": "",
+      "description": "\nA design decision that considers the impact on an entire network of affected systems, rather than a specific part, is known as systems thinking. Systems are bounded, can be nested, overlap with othe",
       "metadata": {
         "published": true,
         "pageType": "oer:article",
@@ -16959,7 +16959,13 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231874
+        "updated": 1791246405,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "icon": "courseicons:learning-objectives",
+        "linkTarget": "_self",
+        "locked": false,
+        "readtime": 8
       }
     },
     {
