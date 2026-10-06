@@ -15,6 +15,7 @@ import { resolveLinks, uploadFile, isImage } from "./relations.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { versionsOf } from "../versions/versioning.js";
 import { loadAiul, aiulInfo } from "./aiul.js";
+import { valuesInUse } from "../ui/oer-choice-field.js";
 
 // a multiple choice whose options are AI Usage License codes gets the AIUL
 // picker (licence + optional media) instead of one checkbox per code
@@ -617,6 +618,19 @@ class OerPageDetails extends LitElement {
         </div>`;
         return html`<div><span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>${control}${help}${err}</div>`;
       }
+      case "text":
+        if (f.suggest) {
+          control = html`<oer-choice-field
+            field-id="${id}"
+            new-label="New ${f.label.toLowerCase()}…"
+            .options="${valuesInUse(toJS(store.manifest?.items), this._type, f.name)}"
+            .value="${v ?? ""}"
+            ?invalid="${common.invalid}"
+            @value-changed="${(e) => this._set(f.name, e.detail.value)}"
+          ></oer-choice-field>`;
+          break;
+        }
+      // falls through
       default: {
         const type = { number: "number", date: "date", url: "url", image: "url" }[f.kind] || "text";
         const val = f.kind === "date" && v ? String(v).slice(0, 10) : (v ?? "");

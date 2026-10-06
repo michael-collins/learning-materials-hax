@@ -15,6 +15,7 @@
  * @element oer-cite-dialog
  */
 import { html, css, LitElement } from "../lit.js";
+import { valuesInUse } from "../ui/oer-choice-field.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { formatCitation } from "./citations.js";
@@ -133,13 +134,7 @@ class OerCiteDialog extends LitElement {
 
   // kinds Resources already use, most used first
   get _kinds() {
-    const count = new Map();
-    for (const r of this._allResources) {
-      const k = String(r.metadata?.oerFields?.kind || "").trim();
-      if (k) count.set(k, (count.get(k) || 0) + 1);
-    }
-    if (!count.has("reference")) count.set("reference", 0);
-    return [...count.keys()].sort((a, b) => count.get(b) - count.get(a) || a.localeCompare(b));
+    return valuesInUse(this._allResources, "oer:resource", "kind", ["reference"]);
   }
 
   get _canCite() {
@@ -409,6 +404,7 @@ class OerCiteDialog extends LitElement {
         font-weight: 500;
       }
       .field input,
+      .field select,
       textarea {
         box-sizing: border-box;
         width: 100%;
@@ -637,8 +633,13 @@ class OerCiteDialog extends LitElement {
             <p class="group">For the Resource page</p>
             <div class="field">
               <label for="c-kind">Kind</label
-              ><input id="c-kind" list="c-kinds" .value="${f.kind}" @input="${set("kind")}" />
-              <datalist id="c-kinds">${this._kinds.map((k) => html`<option value="${k}"></option>`)}</datalist>
+              ><oer-choice-field
+                field-id="c-kind"
+                new-label="New kind…"
+                .options="${this._kinds}"
+                .value="${f.kind}"
+                @value-changed="${(e) => (this._form = { ...this._form, kind: e.detail.value })}"
+              ></oer-choice-field>
             </div>
             <div class="field full">
               <label for="c-desc">Description</label

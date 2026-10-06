@@ -941,6 +941,15 @@ class OerTypeEditor extends LitElement {
                   </label>
                 </div>`
               : ""}
+            ${f.kind === "text"
+              ? html`<div class="wide">
+                  <label class="check">
+                    <input type="checkbox" .checked="${!!f.suggest}" @change="${(e) => this._setField(i, { suggest: e.target.checked || undefined })}" />
+                    Pick from values other pages use
+                  </label>
+                  <p class="hint">A dropdown of the values already given, with a choice to add a new one (e.g. a resource's Kind).</p>
+                </div>`
+              : ""}
           </div>`
         : ""}`;
   }
