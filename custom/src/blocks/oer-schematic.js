@@ -237,6 +237,56 @@ const PRESETS = {
       ${pills
         ? Array.from({ length: pills }, (_, p) => R(110 + p * 54, 131 + i * 36, 48, 13, "pill", 6.5))
         : svg`${L(110, 135 + i * 36, i === 1 ? 120 : 170, "t")}${i === 1 ? L(240, 135 + i * 36, 48, "t-hi") : ""}`}`)}`,
+
+  // a project page: its steps by stage, numbered; a supporting page unnumbered
+  project: () => {
+    const rows = [
+      ["DISCOVER", [[1, 70]]],
+      ["DEFINE", [[2, 96], [3, 80]]],
+      ["DEVELOP", [[4, 64], [5, 88], [0, 72], [6, 92]]],
+    ];
+    let y = 95;
+    return svg`
+      ${win()}
+      ${navLines(44, 10)}
+      ${R(126, 40, 150, 11, "t", 3)}
+      ${R(126, 58, 40, 11, "hi-soft", 5.5)}${L(172, 61, 40, "t2")}
+      ${R(126, 76, 258, 156, "card hi-line", 8)}
+      ${T(138, 90, "Project steps", "lbl sm")}
+      ${rows.map(([stage, steps]) => {
+        const out = svg`${T(138, y + 8, stage, "muted sm caps")}${steps.map(([n, w], i) => {
+          const ry = y + 18 + i * 12;
+          return n
+            ? svg`${C(144, ry, 5, "hi-soft")}${T(144, ry + 2.5, String(n), "lbl sm", "middle")}${L(156, ry - 2.5, w, "t-hi")}`
+            : svg`${R(140, ry - 4, 8, 8, "t2", 2)}${L(156, ry - 2.5, w)}`;
+        })}`;
+        y += 16 + steps.length * 12;
+        return out;
+      })}`;
+  },
+
+  // the viewer: a two-column window over the page, the outline beside the page being read
+  viewer: () => svg`
+    ${win()}
+    ${navLines(44, 10)}
+    ${page(126, 44, 258, 9)}
+    ${R(0.5, 28, W - 1, H - 28.5, "scrim", 0)}
+    ${R(18, 38, 364, 194, "pop hi-line", 10)}
+    ${R(18.5, 38.5, 120, 193, "panel", 0)}${P("M138.5 38.5 V231.5", "rule")}
+    ${R(28, 50, 80, 9, "t", 3)}${L(28, 66, 96, "t2")}
+    ${HR(18.5, 78, 138.5)}
+    ${L(42, 88, 50)}
+    ${T(28, 106, "UNIT", "muted sm caps")}
+    ${C(34, 117, 5, "card")}${L(44, 114.5, 70)}
+    ${R(24, 126, 108, 14, "hi-soft", 4)}${C(34, 133, 5, "card")}${L(44, 130.5, 76, "t-hi")}
+    ${P("M40 144 V176", "rule")}
+    ${[0, 1, 2].map((i) => L(48, 148 + i * 12, 60 + ((i * 13) % 20), "t2"))}
+    ${T(28, 196, "UNIT", "muted sm caps")}
+    ${C(34, 207, 5, "card")}${L(44, 204.5, 64)}
+    ${L(152, 50, 120, "t2")}${btn(296, 44, 56, "Open page", "ghost")}${P("M362 48 l7 7 M369 48 l-7 7", "stroke")}
+    ${HR(138.5, 66, 381.5)}
+    ${page(158, 80, 200, 7)}
+    ${R(158, 204, 70, 18, "card", 5)}${R(290, 204, 70, 18, "card", 5)}`,
 };
 
 export const SCHEMATICS = Object.keys(PRESETS);
