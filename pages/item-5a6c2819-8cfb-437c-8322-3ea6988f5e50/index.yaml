@@ -1,0 +1,24 @@
+id: item-5a6c2819-8cfb-437c-8322-3ea6988f5e50
+indent: 1
+location: pages/item-5a6c2819-8cfb-437c-8322-3ea6988f5e50/index.yaml
+slug: resources/adam-curtis-and-the-secret-history-of-everything
+order: 34
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Adam Curtis and the Secret History of Everything
+description: ''
+metadata:
+  pageType: oer:resource
+  oerFields:
+    url: >-
+      http://www.nytimes.com/interactive/2016/10/30/magazine/adam-curtis-documentaries.html
+    kind: article
+    authors:
+      - name: Jonathan Lethem
+        url: ''
+    date: '2016'
+    container: The New York Times Magazine
+  created: 1791246310
+  images: []
+  videos: []
+  updated: 1791246310
+content: <p></p>
