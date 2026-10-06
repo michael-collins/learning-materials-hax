@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791246607,
+      "updated": 1791246617,
       "version": "26.8.0"
     },
     "theme": {
@@ -19786,7 +19786,7 @@
     },
     {
       "id": "item-da98cdb8-4133-4273-94dd-ca27fbee62bf",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-da98cdb8-4133-4273-94dd-ca27fbee62bf/index.html",
       "slug": "resources/7-tips-to-make-a-more-realistic-rendering",
       "order": 30,
@@ -19811,10 +19811,14 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791246606,
+        "updated": 1791246617,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": "courseicons:learning-objectives",
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "linkTarget": "_self",
+        "readtime": 1
       }
     },
     {

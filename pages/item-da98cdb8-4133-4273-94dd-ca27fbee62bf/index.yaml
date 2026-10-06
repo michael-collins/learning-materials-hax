@@ -1,11 +1,11 @@
 id: item-da98cdb8-4133-4273-94dd-ca27fbee62bf
-indent: 1
+indent: 0
 location: pages/item-da98cdb8-4133-4273-94dd-ca27fbee62bf/index.yaml
 slug: resources/7-tips-to-make-a-more-realistic-rendering
 order: 30
 parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
 title: 7 Tips to Make a More Realistic Rendering
-description: ''
+description: Rendering guide
 metadata:
   published: true
   pageType: oer:resource
@@ -13,9 +13,21 @@ metadata:
   tags: article
   oerFields:
     url: https://www.willgibbons.com/realistic-rendering/
-    kind: reference
+    kind: article
+    authors:
+      - name: Will Gibbons
+        url: ''
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: <p></p>
+  updated: 1791246617
+  locked: false
+  status: ''
+  icon: courseicons:learning-objectives
+  overridePathauto: false
+  hideInMenu: false
+  linkTarget: _self
+  readtime: 1
+content: |
+
+  <p></p>

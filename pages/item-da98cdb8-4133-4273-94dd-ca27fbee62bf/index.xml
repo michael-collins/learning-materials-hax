@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-da98cdb8-4133-4273-94dd-ca27fbee62bf</id>
-<indent>1</indent>
+<indent>0</indent>
 <location>pages/item-da98cdb8-4133-4273-94dd-ca27fbee62bf/index.xml</location>
 <slug>resources/7-tips-to-make-a-more-realistic-rendering</slug>
 <order>30</order>
 <parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
 <title>7 Tips to Make a More Realistic Rendering</title>
-<description></description>
+<description>Rendering guide</description>
 <metadata>
 <published>true</published>
 <pageType>oer:resource</pageType>
@@ -15,14 +15,29 @@
 <tags>article</tags>
 <oerFields>
 <url>https://www.willgibbons.com/realistic-rendering/</url>
-<kind>reference</kind>
+<kind>article</kind>
+<authors>
+<item>
+<name>Will Gibbons</name>
+<url></url>
+</item>
+</authors>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791246617</updated>
+<locked>false</locked>
+<status></status>
+<icon>courseicons:learning-objectives</icon>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<linkTarget>_self</linkTarget>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p></p>
+]]></content>
 </item>
