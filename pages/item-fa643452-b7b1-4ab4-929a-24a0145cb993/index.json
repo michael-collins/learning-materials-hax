@@ -1,0 +1,34 @@
+{
+  "id": "item-fa643452-b7b1-4ab4-929a-24a0145cb993",
+  "indent": 1,
+  "location": "pages/item-fa643452-b7b1-4ab4-929a-24a0145cb993/index.json",
+  "slug": "resources/cradle-to-cradle-remaking-the-way-we-make-things",
+  "order": 33,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Cradle to Cradle: Remaking the Way We Make Things",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerFields": {
+      "url": "https://books.google.com/books?id=KFX5RprPGQ0C",
+      "kind": "book",
+      "authors": [
+        {
+          "name": "William McDonough",
+          "url": ""
+        },
+        {
+          "name": "Michael Braungart",
+          "url": ""
+        }
+      ],
+      "date": "2002",
+      "publisher": "North Point Press"
+    },
+    "created": 1791246265,
+    "images": [],
+    "videos": [],
+    "updated": 1791246265
+  },
+  "content": "<p></p>"
+}
