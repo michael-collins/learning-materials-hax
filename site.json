@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791246405,
+      "updated": 1791246607,
       "version": "26.8.0"
     },
     "theme": {
@@ -19800,12 +19800,21 @@
         "tags": "article",
         "oerFields": {
           "url": "https://www.willgibbons.com/realistic-rendering/",
-          "kind": "reference"
+          "kind": "article",
+          "authors": [
+            {
+              "name": "Will Gibbons",
+              "url": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231930
+        "updated": 1791246606,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
