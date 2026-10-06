@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791242310,
+      "updated": 1791245906,
       "version": "26.8.0"
     },
     "theme": {
@@ -15396,6 +15396,12 @@
                   "header": true
                 },
                 {
+                  "name": "container",
+                  "label": "Published in",
+                  "kind": "text",
+                  "help": "The journal, magazine, book or site it appeared in, if any."
+                },
+                {
                   "name": "publisher",
                   "label": "Publisher",
                   "kind": "text"
@@ -15630,7 +15636,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791242253,
+        "updated": 1791245905,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
