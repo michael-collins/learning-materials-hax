@@ -1,7 +1,8 @@
 /**
- * `oer-outline-viewer` — look through a pathway or project without leaving
- * the page (after the Decap site's SpecializationViewerModal): its outline
- * on the left (units → lessons → materials, or stages → steps), the
+ * `oer-outline-viewer` — look through a pathway, unit, lesson or project
+ * without leaving the page (after the Decap site's
+ * SpecializationViewerModal): its outline on the left (units → lessons →
+ * materials, stages → steps, a book lesson's sections → readings), the
  * selected page on the right, read in place.
  *
  *   outlineViewer().show(pageId, { item })   // item: the entry to open at
@@ -28,18 +29,41 @@ const lucide = (name, cls = "") =>
 const allItems = () => toJS(store.manifest?.items) || [];
 const visible = (i) => i && !i.metadata?.oerSnapshotOf && (store.isLoggedIn || i.metadata?.published !== false);
 
-/** Pages the viewer can open: pathways and projects with something inside. */
-export const VIEWABLE_TYPES = [PATHWAY_TYPE, PROJECT_TYPE];
+export const UNIT_TYPE = "oer:unit";
+export const LESSON_TYPE = "oer:lesson";
+const SECTION_TYPE = "oer:section";
+const HEADING_TYPE = "oer:heading";
+
+/** Pages the viewer can open: pathways, units, lessons and projects with something inside. */
+export const VIEWABLE_TYPES = [PATHWAY_TYPE, UNIT_TYPE, LESSON_TYPE, PROJECT_TYPE];
+
+const sourceOf = (item, list) => (item?.metadata?.oerRef?.page && list.find((i) => i.id === item.metadata.oerRef.page)) || item;
+const kidsOf = (id, list) =>
+  list
+    .filter((i) => i.parent === id && visible(i) && (!i.metadata?.hideInMenu || i.metadata?.pageType === HEADING_TYPE))
+    .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0));
+
+/**
+ * The page whose outline the viewer shows for `item`: a book's linked
+ * chapter keeps its own sections and readings, so it's used when it has
+ * sub-pages; otherwise the original.
+ */
+export function viewerRoot(item, list = allItems()) {
+  if (!item) return null;
+  const src = sourceOf(item, list);
+  return src !== item && kidsOf(item.id, list).length ? item : src;
+}
+
 export function canView(item, list = allItems()) {
-  const type = item?.metadata?.oerRef?.page ? list.find((i) => i.id === item.metadata.oerRef.page)?.metadata?.pageType : item?.metadata?.pageType;
-  if (!VIEWABLE_TYPES.includes(type)) return false;
-  return list.some((i) => i.parent === (item.metadata?.oerRef?.page || item.id) && !i.metadata?.oerSnapshotOf);
+  const root = viewerRoot(item, list);
+  if (!VIEWABLE_TYPES.includes(sourceOf(root, list)?.metadata?.pageType)) return false;
+  return !!viewerOutline(root.id, list)?.sections.some((s) => s.entries.length || s.id);
 }
 
 /**
  * The outline as the viewer shows it:
  * { root, sections: [{ title, id?, entries: [{ id, title, typeLabel, icon,
- *   step, children: [{ id, title, typeLabel, icon }] }] }] }
+ *   step, children: [{ id, title, typeLabel, icon, step }] }] }] }
  * Every id is a page that can be opened (a linked chapter reads its source).
  */
 export function viewerOutline(rootId, list = allItems()) {
@@ -47,7 +71,30 @@ export function viewerOutline(rootId, list = allItems()) {
   const root = list.find((i) => i.id === rootId);
   if (!root) return null;
   const typeOf = (i) => types.find((t) => t.id === i?.metadata?.pageType);
-  const entry = (i, extra = {}) => ({ id: i.id, title: i.title, typeLabel: typeOf(i)?.label || "", icon: typeOf(i)?.icon || "", step: 0, children: [], ...extra });
+  const leaf = (i, extra = {}) => {
+    const t = typeOf(sourceOf(i, list));
+    return { id: i.id, title: i.title, typeLabel: t?.label || "", icon: t?.icon || "", step: 0, ...extra };
+  };
+  // what an entry opens to: a lesson's materials and quiz, a project's steps
+  const childrenOf = (i) => {
+    const src = sourceOf(i, list);
+    const type = src?.metadata?.pageType;
+    if (type === LESSON_TYPE) {
+      return (src.metadata?.oerFields?.components || [])
+        .map((c) => list.find((x) => x.id === c?.page))
+        .filter(visible)
+        .map((c) => leaf(c));
+    }
+    if (type === PROJECT_TYPE) {
+      return projectParts(src.id, list)
+        .filter((p) => visible(p.item))
+        .map((p) => leaf(p.item, { step: p.step, typeLabel: [typeOf(p.item)?.label, p.stage].filter(Boolean).join(" · ") }));
+    }
+    return [];
+  };
+  const entry = (i, extra = {}) => ({ ...leaf(i, extra), children: childrenOf(i) });
+
+  // a pathway: its units (modules), their lessons numbered
   if (root.metadata?.pageType === PATHWAY_TYPE) {
     const p = resolvePathway(root, list, types);
     return {
@@ -57,27 +104,39 @@ export function viewerOutline(rootId, list = allItems()) {
         id: m.href ? m.id : "",
         entries: m.items
           .filter((i) => !i.planned && !i.missing)
-          .map((i, n) => ({
-            id: i.id,
-            title: i.title,
-            typeLabel: i.typeLabel,
-            icon: i.type?.icon || "",
-            step: n + 1,
-            children: i.components.map((c) => ({ id: c.id, title: c.title, typeLabel: c.typeLabel, icon: c.type?.icon || "" })),
-          })),
+          .map((i, n) => {
+            const page = list.find((x) => x.id === i.id);
+            return { ...entry(page, { step: n + 1 }), typeLabel: i.typeLabel, title: i.title };
+          }),
       })),
     };
   }
+  // a project: its steps by stage
   if (root.metadata?.pageType === PROJECT_TYPE) {
     const sections = [];
     for (const p of projectParts(root.id, list).filter((x) => visible(x.item))) {
       if (!sections.length || sections.at(-1).title !== p.stage) sections.push({ title: p.stage, id: "", entries: [] });
-      sections.at(-1).entries.push(entry(p.item, { step: p.step }));
+      sections.at(-1).entries.push({ ...leaf(p.item, { step: p.step }), children: [] });
     }
     return { root, sections };
   }
-  const kids = list.filter((i) => i.parent === root.id && visible(i) && !i.metadata?.hideInMenu);
-  return { root, sections: [{ title: "", id: "", entries: kids.map((i) => entry(i)) }] };
+  // a unit, a book's lesson…: its sub-pages, with headings and sections as groups
+  const kids = kidsOf(root.id, list);
+  if (kids.length) {
+    const sections = [{ title: "", id: "", entries: [] }];
+    for (const k of kids) {
+      const type = k.metadata?.pageType;
+      const sub = kidsOf(k.id, list);
+      if (type === HEADING_TYPE) sections.push({ title: k.title, id: "", entries: [] });
+      else if ((type === SECTION_TYPE || !type) && sub.length && !k.metadata?.oerRef?.page) {
+        sections.push({ title: k.title, id: "", entries: sub.filter((x) => x.metadata?.pageType !== HEADING_TYPE).map((x) => entry(x)) });
+        sections.push({ title: "", id: "", entries: [] });
+      } else sections.at(-1).entries.push(entry(k));
+    }
+    return { root, sections: sections.filter((x) => x.entries.length) };
+  }
+  // a lesson: its materials and quiz
+  return { root, sections: [{ title: "", id: "", entries: childrenOf(root).map((c) => ({ ...c, children: [] })) }] };
 }
 
 class OerOutlineViewer extends LitElement {
@@ -465,8 +524,7 @@ class OerOutlineViewer extends LitElement {
   /** Open the viewer on a page (a pathway or project), at `item` if given. */
   show(rootId, { item = "", version = "" } = {}) {
     const list = allItems();
-    const page = list.find((i) => i.id === rootId);
-    const id = page?.metadata?.oerRef?.page || rootId;
+    const id = viewerRoot(list.find((i) => i.id === rootId), list)?.id || rootId;
     this._outline = viewerOutline(id, list);
     if (!this._outline) return;
     // the element that had focus, inside any shadow roots, to return to
@@ -622,8 +680,12 @@ class OerOutlineViewer extends LitElement {
             ${e.children.map(
               (c) => html`<li>
                 <button class="entry" aria-current="${this._current === c.id ? "true" : "false"}" @click="${() => this._select(c.id)}">
-                  ${c.icon ? html`<simple-icon-lite icon="${c.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
-                  <span class="label">${c.title}${c.typeLabel ? html`<small>${c.typeLabel}</small>` : ""}</span>
+                  ${c.step
+                    ? html`<span class="num" aria-hidden="true">${c.step}</span>`
+                    : c.icon
+                      ? html`<simple-icon-lite icon="${c.icon}"></simple-icon-lite>`
+                      : html`<span class="noicon"></span>`}
+                  <span class="label">${c.step ? html`<span class="sr">${c.step}. </span>` : ""}${c.title}${c.typeLabel ? html`<small>${c.typeLabel}</small>` : ""}</span>
                 </button>
               </li>`,
             )}

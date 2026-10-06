@@ -1047,11 +1047,11 @@ export class OerCollection extends LitElement {
     </div>`;
   }
 
-  // pathways and projects open in the outline viewer; a card is a link,
+  // pathways, units, lessons and projects open in the outline viewer; a card is a link,
   // so the button sits beside it (in its corner), as its own tab stop
   _preview(i, cls = "") {
     if (!canView(i, this._all)) return "";
-    return html`<button class="preview ${cls}" aria-label="Preview ${i.title}" @click="${() => outlineViewer().show(i.id)}">${lucide("oer:eye", "xs")}Preview</button>`;
+    return html`<button class="preview ${cls}" aria-label="Open ${i.title} in the viewer" @click="${() => outlineViewer().show(i.id)}">${lucide("oer:eye", "xs")}Viewer</button>`;
   }
 
   _renderCards(items) {

@@ -545,8 +545,8 @@ class OerPageHeader extends LitElement {
           : ""}
         ${pills.map((f) => html`<span class="pill">${f.kind === "people" && f.name === "authors" ? "By" : f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
-          ${canView(subject, this._allItems)
-            ? html`<button class="edit" @click="${() => outlineViewer().show(subject.id)}">${lucide("oer:book-a")}Browse</button>`
+          ${canView(own, this._allItems)
+            ? html`<button class="edit" aria-label="Open ${item.title} in the viewer" @click="${() => outlineViewer().show(own.id)}">${lucide("oer:eye")}Viewer</button>`
             : ""}
           ${type?.reader && firstChild
             ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>
