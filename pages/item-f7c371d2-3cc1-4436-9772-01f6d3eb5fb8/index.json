@@ -1,0 +1,29 @@
+{
+  "id": "item-f7c371d2-3cc1-4436-9772-01f6d3eb5fb8",
+  "indent": 1,
+  "location": "pages/item-f7c371d2-3cc1-4436-9772-01f6d3eb5fb8/index.json",
+  "slug": "resources/dilemmas-in-a-general-theory-of-planning",
+  "order": 35,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Dilemmas in a General Theory of Planning",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerFields": {
+      "kind": "article",
+      "authors": [
+        {
+          "name": "Horst Rittel",
+          "url": ""
+        }
+      ],
+      "date": "1973",
+      "container": "Policy Sciences"
+    },
+    "created": 1791246400,
+    "images": [],
+    "videos": [],
+    "updated": 1791246400
+  },
+  "content": "<p></p>"
+}
