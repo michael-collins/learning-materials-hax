@@ -44,11 +44,18 @@ export class OerPathway extends LitElement {
     this._level = null;
   }
 
+  // the page this block is on: the active page, or the page an outline
+  // viewer is showing it in (its reading pane says which)
+  _pageId() {
+    return this.closest?.("[data-oer-page]")?.dataset.oerPage || toJS(store.activeId);
+  }
+
   connectedCallback() {
     super.connectedCallback();
     this.__dispose = autorun(() => {
       const list = toJS(store.manifest?.items) || [];
-      const active = toJS(store.activeId);
+      toJS(store.activeId);
+      const active = this._pageId();
       // read so the view follows sign-in (drafts show to authors only)
       store.isLoggedIn;
       Promise.resolve().then(() => {
@@ -872,7 +879,7 @@ export class OerUnit extends OerPathway {
     if (!p) return null;
     const list = toJS(store.manifest?.items) || [];
     const byId = new Map(list.map((i) => [i.id, i]));
-    for (let cur = byId.get(toJS(store.activeId)); cur; cur = byId.get(cur.parent)) {
+    for (let cur = byId.get(this._pageId()); cur; cur = byId.get(cur.parent)) {
       const m = p.modules.find((x) => x.id === cur.id);
       if (m) return m;
     }

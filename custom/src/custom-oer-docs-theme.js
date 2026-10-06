@@ -60,6 +60,7 @@ import { installEditorChrome } from "./editor/index.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 import { installFootnotes } from "./ui/footnotes.js";
 import { followPermalink } from "./ui/permalinks.js";
+import { openViewerFromUrl } from "./ui/oer-outline-viewer.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -228,6 +229,15 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         if (items.length && new URLSearchParams(globalThis.location.search).has("p")) Promise.resolve().then(() => followPermalink(items));
       }),
     );
+    // a linked outline viewer (?view=<page>&item=<entry>): open it once
+    this.__disposer.push(
+      autorun(() => {
+        const items = toJS(store.manifest?.items) || [];
+        if (this.__viewerOpened || !items.length || !new URLSearchParams(globalThis.location.search).has("view")) return;
+        this.__viewerOpened = true;
+        Promise.resolve().then(() => openViewerFromUrl(items));
+      }),
+    );
     // HAX's site builder can miss loading an unpublished page opened
     // directly by its address (the page resolves only once sign-in is
     // known, after the builder's load check ran). If the active page's
@@ -334,7 +344,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
   /**
    * Light-DOM styles: tokens + DDD bridge must live outside the shadow root so
-   * every HAX element (and the editor chrome) inherits them.
+   * every HAX element (and the editor chrome) inherits them. Page content
+   * rules also cover .oer-reading, the outline viewer's reading pane.
    */
   HAXCMSGlobalStyleSheetContent() {
     return [
@@ -356,17 +367,17 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             overflow: clip;
           }
         }
-        custom-oer-docs-theme {
+        :is(custom-oer-docs-theme, .oer-reading) {
           line-height: 1.7;
         }
-        custom-oer-docs-theme :is(p, li) {
+        :is(custom-oer-docs-theme, .oer-reading) :is(p, li) {
           text-align: start;
         }
         /* screenshots and other figures in page content */
-        custom-oer-docs-theme figure {
+        :is(custom-oer-docs-theme, .oer-reading) figure {
           margin: 1.5rem 0;
         }
-        custom-oer-docs-theme figure img {
+        :is(custom-oer-docs-theme, .oer-reading) figure img {
           display: block;
           max-width: 100%;
           height: auto;
@@ -374,20 +385,20 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           border-radius: var(--radius-lg);
         }
         /* footnotes (scripts/lib/footnotes.mjs): citations and references */
-        custom-oer-docs-theme sup.fn-ref {
+        :is(custom-oer-docs-theme, .oer-reading) sup.fn-ref {
           line-height: 0;
         }
-        custom-oer-docs-theme sup.fn-ref a {
+        :is(custom-oer-docs-theme, .oer-reading) sup.fn-ref a {
           padding: 0 0.15em;
           font-size: 0.75em;
           font-weight: 600;
           text-decoration: none;
           color: var(--link);
         }
-        custom-oer-docs-theme sup.fn-ref a:hover {
+        :is(custom-oer-docs-theme, .oer-reading) sup.fn-ref a:hover {
           text-decoration: underline;
         }
-        custom-oer-docs-theme .footnotes {
+        :is(custom-oer-docs-theme, .oer-reading) .footnotes {
           margin-top: 2.5rem;
           padding-top: 1rem;
           border-top: 1px solid var(--border);
@@ -395,24 +406,24 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           line-height: 1.6;
           color: var(--muted-foreground);
         }
-        custom-oer-docs-theme .footnotes h2 {
+        :is(custom-oer-docs-theme, .oer-reading) .footnotes h2 {
           margin: 0 0 0.5rem;
           font-size: 1rem;
           color: var(--foreground);
         }
-        custom-oer-docs-theme .footnotes ol {
+        :is(custom-oer-docs-theme, .oer-reading) .footnotes ol {
           margin: 0;
           padding-left: 1.5rem;
         }
-        custom-oer-docs-theme .footnotes li + li {
+        :is(custom-oer-docs-theme, .oer-reading) .footnotes li + li {
           margin-top: 0.375rem;
         }
-        custom-oer-docs-theme .footnotes li:target,
-        custom-oer-docs-theme sup.fn-ref:target {
+        :is(custom-oer-docs-theme, .oer-reading) .footnotes li:target,
+        :is(custom-oer-docs-theme, .oer-reading) sup.fn-ref:target {
           background: color-mix(in srgb, var(--primary) 12%, transparent);
           border-radius: var(--radius-sm);
         }
-        custom-oer-docs-theme .footnotes a.fn-back {
+        :is(custom-oer-docs-theme, .oer-reading) .footnotes a.fn-back {
           text-decoration: none;
           color: var(--link);
         }
@@ -441,30 +452,30 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           font-weight: 600;
           color: var(--muted-foreground);
         }
-        custom-oer-docs-theme figcaption {
+        :is(custom-oer-docs-theme, .oer-reading) figcaption {
           margin-top: 0.5rem;
           font-size: 0.875rem;
           line-height: 1.5;
           color: var(--muted-foreground);
         }
-        custom-oer-docs-theme .lead {
+        :is(custom-oer-docs-theme, .oer-reading) .lead {
           font-size: 1.125rem;
           color: var(--muted-foreground);
         }
-        custom-oer-docs-theme :is(h2, h3, h4) {
+        :is(custom-oer-docs-theme, .oer-reading) :is(h2, h3, h4) {
           letter-spacing: -0.015em;
           scroll-margin-top: calc(var(--topbar-height) + 1rem);
         }
         /* DDD's global "a" rule gives every link an accent background and
            bold text; links in page content read as plain links */
-        custom-oer-docs-theme a:any-link {
+        :is(custom-oer-docs-theme, .oer-reading) a:any-link {
           background: transparent;
           font-weight: inherit;
           color: var(--link);
           text-decoration: underline;
           text-underline-offset: 3px;
         }
-        custom-oer-docs-theme :not(pre) > code {
+        :is(custom-oer-docs-theme, .oer-reading) :not(pre) > code {
           font-family: var(--font-mono);
           font-size: 0.875em;
           background: var(--muted);

@@ -28,6 +28,7 @@ import { contentTypes, isSystemItem } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
 import { resolveLinks } from "../types/relations.js";
 import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_TYPE } from "../pathways/pathway-model.js";
+import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -646,6 +647,44 @@ export class OerCollection extends LitElement {
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         gap: 1rem;
       }
+      .card-wrap {
+        position: relative;
+      }
+      .card-wrap > .card,
+      .card-wrap > .pw-card {
+        height: 100%;
+        box-sizing: border-box;
+      }
+      .preview {
+        position: absolute;
+        top: 0.625rem;
+        right: 0.625rem;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3125rem;
+        height: 1.75rem;
+        padding: 0 0.625rem;
+        border: 1px solid var(--border, #e5e5e5);
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--background, #fff);
+        color: var(--foreground, inherit);
+        font: inherit;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .preview:hover {
+        background: var(--accent, var(--muted, #f4f4f5));
+      }
+      .preview.inline {
+        position: static;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+      }
+      .has-preview .pw-title {
+        padding-right: 6rem;
+      }
       .card {
         display: flex;
         flex-direction: column;
@@ -947,7 +986,7 @@ export class OerCollection extends LitElement {
       }
       case "title":
         return html`<div class="title">
-            <a href="${item.slug}">${item.title}</a>${item.metadata?.published === false ? html`<span class="draft">Draft</span>` : ""}
+            <a href="${item.slug}">${item.title}</a>${item.metadata?.published === false ? html`<span class="draft">Draft</span>` : ""}${this._preview(item, "inline")}
           </div>
           ${item.description ? html`<div class="desc">${item.description}</div>` : ""}`;
       case "type": {
@@ -1008,12 +1047,20 @@ export class OerCollection extends LitElement {
     </div>`;
   }
 
+  // pathways and projects open in the outline viewer; a card is a link,
+  // so the button sits beside it (in its corner), as its own tab stop
+  _preview(i, cls = "") {
+    if (!canView(i, this._all)) return "";
+    return html`<button class="preview ${cls}" aria-label="Preview ${i.title}" @click="${() => outlineViewer().show(i.id)}">${lucide("oer:eye", "xs")}Preview</button>`;
+  }
+
   _renderCards(items) {
     return html`<div class="cards">
       ${items.map((i) => {
         const src = this._image(i);
         const t = this._type(i);
-        return html`<a class="card" href="${i.slug}">
+        const preview = this._preview(i);
+        return html`<div class="card-wrap">${preview}<a class="card" href="${i.slug}">
           ${src ? html`<img src="${src}" alt="" loading="lazy" />` : html`<div class="ph">${this._typeIcon(i)}</div>`}
           <div class="card-body">
             ${t ? html`<span class="eyebrow">${this._typeIcon(i)}${t.label}</span>` : ""}
@@ -1021,7 +1068,7 @@ export class OerCollection extends LitElement {
             ${i.description ? html`<span class="desc">${i.description}</span>` : ""}
             <span>${this._pills(i)}</span>
           </div>
-        </a>`;
+        </a></div>`;
       })}
     </div>`;
   }
@@ -1045,7 +1092,8 @@ export class OerCollection extends LitElement {
       const v = f(i);
       const levels = sortLevels(v.levels);
       const courses = toList(v.courses);
-      return html`<a class="pw-card" href="${i.slug}">
+      const preview = this._preview(i);
+      return html`<div class="card-wrap ${preview ? "has-preview" : ""}">${preview}<a class="pw-card" href="${i.slug}">
         <span class="pw-title"><strong>${i.title}</strong>${v.placeholder ? inDevelopmentBadge() : ""}${i.metadata?.published === false ? html`<span class="draft">Draft</span>` : ""}</span>
         ${i.description ? html`<p class="pw-desc">${i.description}</p>` : ""}
         <span class="pw-meta">
@@ -1054,7 +1102,7 @@ export class OerCollection extends LitElement {
           ${v.targetRole ? html`<span>Leads toward ${v.targetRole}</span>` : ""}
           ${lucide("oer:arrow-right", "go")}
         </span>
-      </a>`;
+      </a></div>`;
     };
     const section = (title, list, { featured = false, intro = "" } = {}) =>
       list.length

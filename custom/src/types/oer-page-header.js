@@ -17,6 +17,7 @@ import { resolveLinks, isImage, fileLabel } from "./relations.js";
 import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
+import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -544,6 +545,9 @@ class OerPageHeader extends LitElement {
           : ""}
         ${pills.map((f) => html`<span class="pill">${f.kind === "people" && f.name === "authors" ? "By" : f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
+          ${canView(subject, this._allItems)
+            ? html`<button class="edit" @click="${() => outlineViewer().show(subject.id)}">${lucide("oer:book-a")}Browse</button>`
+            : ""}
           ${type?.reader && firstChild
             ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>
                 <span class="menu-wrap">
