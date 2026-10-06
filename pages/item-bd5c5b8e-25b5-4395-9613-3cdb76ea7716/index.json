@@ -1,0 +1,19 @@
+{
+  "id": "item-bd5c5b8e-25b5-4395-9613-3cdb76ea7716",
+  "indent": 2,
+  "location": "pages/item-bd5c5b8e-25b5-4395-9613-3cdb76ea7716/index.json",
+  "slug": "projects/hypertext-narrative-project-civic-imagination/deliver",
+  "order": 11,
+  "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+  "title": "Deliver",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791251069,
+    "images": [],
+    "videos": [],
+    "updated": 1791251069
+  },
+  "content": "<p></p>"
+}

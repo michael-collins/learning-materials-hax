@@ -1,0 +1,19 @@
+{
+  "id": "item-3d6880b0-945d-4ec5-9246-2d00503f8f54",
+  "indent": 2,
+  "location": "pages/item-3d6880b0-945d-4ec5-9246-2d00503f8f54/index.json",
+  "slug": "projects/open-design-project/develop",
+  "order": 6,
+  "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+  "title": "Develop",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791251072,
+    "images": [],
+    "videos": [],
+    "updated": 1791251072
+  },
+  "content": "<p></p>"
+}

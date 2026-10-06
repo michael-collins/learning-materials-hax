@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-abc4f90f-9fe3-4f32-97dc-fe1662e70517</id>
+<indent>2</indent>
+<location>pages/item-abc4f90f-9fe3-4f32-97dc-fe1662e70517/index.xml</location>
+<slug>projects/ritual-project/develop</slug>
+<order>6</order>
+<parent>item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df</parent>
+<title>Develop</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251059</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251059</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

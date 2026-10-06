@@ -1,0 +1,19 @@
+{
+  "id": "item-0c67f743-84df-4477-8917-c614562fd9c0",
+  "indent": 2,
+  "location": "pages/item-0c67f743-84df-4477-8917-c614562fd9c0/index.json",
+  "slug": "projects/open-design-project/discover",
+  "order": 0,
+  "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+  "title": "Discover",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791251069,
+    "images": [],
+    "videos": [],
+    "updated": 1791251069
+  },
+  "content": "<p></p>"
+}

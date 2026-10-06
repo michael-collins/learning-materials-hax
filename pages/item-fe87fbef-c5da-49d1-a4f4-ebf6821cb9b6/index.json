@@ -1,0 +1,19 @@
+{
+  "id": "item-fe87fbef-c5da-49d1-a4f4-ebf6821cb9b6",
+  "indent": 2,
+  "location": "pages/item-fe87fbef-c5da-49d1-a4f4-ebf6821cb9b6/index.json",
+  "slug": "projects/open-design-project/define",
+  "order": 4,
+  "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+  "title": "Define",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791251071,
+    "images": [],
+    "videos": [],
+    "updated": 1791251071
+  },
+  "content": "<p></p>"
+}

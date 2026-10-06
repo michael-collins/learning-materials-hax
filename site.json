@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791246886,
+      "updated": 1791251096,
       "version": "26.8.0"
     },
     "theme": {
@@ -6420,6 +6420,187 @@
       }
     },
     {
+      "id": "item-6dfa64d0-58e5-4558-984f-3cf2cc70be5b",
+      "indent": 2,
+      "location": "pages/item-6dfa64d0-58e5-4558-984f-3cf2cc70be5b/index.html",
+      "slug": "projects/ritual-project/further-reading-and-relevant-rituals",
+      "order": 0,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Further reading and relevant rituals",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "projects/dmd100-lesson-2-ritual-ritual-inspiration",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251056
+      }
+    },
+    {
+      "id": "item-ad8648a7-1a35-407f-8c63-7fbfaaf8727c",
+      "indent": 2,
+      "location": "pages/item-ad8648a7-1a35-407f-8c63-7fbfaaf8727c/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/further-reading-and-relevant-work",
+      "order": 0,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Further reading and relevant work",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "projects/dmd100-lesson-3-narrative-narrative-inspiration",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251063
+      }
+    },
+    {
+      "id": "item-0c67f743-84df-4477-8917-c614562fd9c0",
+      "indent": 2,
+      "location": "pages/item-0c67f743-84df-4477-8917-c614562fd9c0/index.html",
+      "slug": "projects/open-design-project/discover",
+      "order": 0,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Discover",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251069,
+        "images": [],
+        "videos": [],
+        "updated": 1791251069
+      }
+    },
+    {
+      "id": "item-16859f3d-9abf-465d-9244-3c0dabaa8249",
+      "indent": 2,
+      "location": "pages/item-16859f3d-9abf-465d-9244-3c0dabaa8249/index.html",
+      "slug": "projects/project-1/weekly-activity-reports",
+      "order": 0,
+      "parent": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "title": "Weekly Activity Reports",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-project-1-weekly-activity-reports",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251076
+      }
+    },
+    {
+      "id": "item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813",
+      "indent": 2,
+      "location": "pages/item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813/index.html",
+      "slug": "projects/project-2/concept-pitch",
+      "order": 0,
+      "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "title": "Concept pitch",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-design-project-2-project-2-concept-pitch",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251080
+      }
+    },
+    {
+      "id": "item-9aefed67-638b-467b-af95-4bff55882eed",
+      "indent": 2,
+      "location": "pages/item-9aefed67-638b-467b-af95-4bff55882eed/index.html",
+      "slug": "projects/capstone-project/capstone-project-proposal",
+      "order": 0,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone Project Proposal",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-proposal",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251084
+      }
+    },
+    {
       "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
       "indent": 1,
       "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
@@ -8229,6 +8410,174 @@
         "images": [],
         "videos": [],
         "updated": 1791231803
+      }
+    },
+    {
+      "id": "item-551ab523-d69e-4a2c-83ee-32801c06202d",
+      "indent": 2,
+      "location": "pages/item-551ab523-d69e-4a2c-83ee-32801c06202d/index.html",
+      "slug": "projects/ritual-project/discover",
+      "order": 1,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Discover",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251057,
+        "images": [],
+        "videos": [],
+        "updated": 1791251057
+      }
+    },
+    {
+      "id": "item-6469968a-7cc1-4b48-a1b2-5079694a005d",
+      "indent": 2,
+      "location": "pages/item-6469968a-7cc1-4b48-a1b2-5079694a005d/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/discover",
+      "order": 1,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Discover",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251064,
+        "images": [],
+        "videos": [],
+        "updated": 1791251064
+      }
+    },
+    {
+      "id": "item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd",
+      "indent": 2,
+      "location": "pages/item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd/index.html",
+      "slug": "projects/open-design-project/discover-toy-design-research",
+      "order": 1,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Discover: Toy design research",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-discover-toy-design-research",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251069
+      }
+    },
+    {
+      "id": "item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30",
+      "indent": 2,
+      "location": "pages/item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30/index.html",
+      "slug": "projects/project-1/phase-1-gather-and-organize",
+      "order": 1,
+      "parent": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "title": "Phase 1: Gather and organize",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-project-1-phase-1-gather-and-organize",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251076
+      }
+    },
+    {
+      "id": "item-288bd29f-6420-4173-806c-d13a5189ba1a",
+      "indent": 2,
+      "location": "pages/item-288bd29f-6420-4173-806c-d13a5189ba1a/index.html",
+      "slug": "projects/project-2/work-statement",
+      "order": 1,
+      "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "title": "Work Statement",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-design-project-2-project-2-work-statement",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251080
+      }
+    },
+    {
+      "id": "item-eb78596e-c7e0-4001-a35d-0877a9d4962d",
+      "indent": 2,
+      "location": "pages/item-eb78596e-c7e0-4001-a35d-0877a9d4962d/index.html",
+      "slug": "projects/capstone-project/project-advisor",
+      "order": 1,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Project advisor",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-advisor",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251085
       }
     },
     {
@@ -10334,39 +10683,6 @@
       }
     },
     {
-      "id": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
-      "indent": 1,
-      "location": "pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.html",
-      "slug": "lessons/capstone-project",
-      "order": 24,
-      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
-      "title": "Capstone project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:lesson",
-        "oerSource": "lessons/dmd400-capstone-project",
-        "tags": "lesson",
-        "oerFields": {
-          "courses": [
-            "DMD 400"
-          ],
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "date": "2026-03-05T00:00:00.000Z"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791242276
-      }
-    },
-    {
       "id": "item-fa670508-1a83-4d74-875b-be7c2d99587f",
       "indent": 1,
       "location": "pages/item-fa670508-1a83-4d74-875b-be7c2d99587f/index.html",
@@ -12143,6 +12459,204 @@
       }
     },
     {
+      "id": "item-3e7fb899-774a-4887-978b-3af368995344",
+      "indent": 2,
+      "location": "pages/item-3e7fb899-774a-4887-978b-3af368995344/index.html",
+      "slug": "projects/ritual-project/discover-interview",
+      "order": 2,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Discover: Interview",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-ritual-interview",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251057
+      }
+    },
+    {
+      "id": "item-fa03ca68-4000-4420-998d-20da5dde7cc2",
+      "indent": 2,
+      "location": "pages/item-fa03ca68-4000-4420-998d-20da5dde7cc2/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/discover-word-pairs",
+      "order": 2,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Discover: Word-pairs",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-discover-focus-words",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251064
+      }
+    },
+    {
+      "id": "item-9842aea6-97ed-4c64-8a6b-6df72c350bf2",
+      "indent": 2,
+      "location": "pages/item-9842aea6-97ed-4c64-8a6b-6df72c350bf2/index.html",
+      "slug": "projects/open-design-project/discover-resources",
+      "order": 2,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Discover: Resources",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-discover-resources",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251070
+      }
+    },
+    {
+      "id": "item-3be4e105-7b16-455c-b935-9073eaf5f6c6",
+      "indent": 2,
+      "location": "pages/item-3be4e105-7b16-455c-b935-9073eaf5f6c6/index.html",
+      "slug": "projects/project-1/phase-2-develop-a-design-sprint",
+      "order": 2,
+      "parent": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "title": "Phase 2: Develop a design sprint",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-project-1-phase-2-develop-a-design-sprint",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251077
+      }
+    },
+    {
+      "id": "item-5c890ba9-e6e5-484c-9209-ce2593a41192",
+      "indent": 2,
+      "location": "pages/item-5c890ba9-e6e5-484c-9209-ce2593a41192/index.html",
+      "slug": "projects/project-2/production-reports",
+      "order": 2,
+      "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "title": "Production reports",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-design-project-2-project-2-production-reports",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251081
+      }
+    },
+    {
+      "id": "item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc",
+      "indent": 2,
+      "location": "pages/item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc/index.html",
+      "slug": "projects/capstone-project/agreement-form",
+      "order": 2,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Agreement form",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-agreement-form",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251085
+      }
+    },
+    {
       "id": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
       "indent": 1,
       "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.html",
@@ -12786,6 +13300,174 @@
         "images": [],
         "videos": [],
         "updated": 1791231852
+      }
+    },
+    {
+      "id": "item-8058faed-6675-4493-85ca-310a6e8be4c9",
+      "indent": 2,
+      "location": "pages/item-8058faed-6675-4493-85ca-310a6e8be4c9/index.html",
+      "slug": "projects/ritual-project/define",
+      "order": 3,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Define",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251058,
+        "images": [],
+        "videos": [],
+        "updated": 1791251058
+      }
+    },
+    {
+      "id": "item-1483e5ca-35d8-4d6e-a7ab-aa749f2544aa",
+      "indent": 2,
+      "location": "pages/item-1483e5ca-35d8-4d6e-a7ab-aa749f2544aa/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/define",
+      "order": 3,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Define",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251065,
+        "images": [],
+        "videos": [],
+        "updated": 1791251065
+      }
+    },
+    {
+      "id": "item-36c77843-db97-4386-80df-e6ede2349892",
+      "indent": 2,
+      "location": "pages/item-36c77843-db97-4386-80df-e6ede2349892/index.html",
+      "slug": "projects/open-design-project/discover-modular-design-research",
+      "order": 3,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Discover: Modular design research",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-discover-modular-design-research",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251071
+      }
+    },
+    {
+      "id": "item-b7a3817a-2523-41ce-8647-5051c5d08b03",
+      "indent": 2,
+      "location": "pages/item-b7a3817a-2523-41ce-8647-5051c5d08b03/index.html",
+      "slug": "projects/project-1/phase-3-pitch",
+      "order": 3,
+      "parent": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "title": "Phase 3: Pitch",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-project-1-phase-3-pitch",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251078
+      }
+    },
+    {
+      "id": "item-0a77055d-f57c-427e-ad9f-39d690dc1013",
+      "indent": 2,
+      "location": "pages/item-0a77055d-f57c-427e-ad9f-39d690dc1013/index.html",
+      "slug": "projects/project-2/feedback-interview",
+      "order": 3,
+      "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "title": "Feedback Interview",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-design-project-2-project-2-interview",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251082
+      }
+    },
+    {
+      "id": "item-27ca7119-a186-4605-9c09-02959c7b035b",
+      "indent": 2,
+      "location": "pages/item-27ca7119-a186-4605-9c09-02959c7b035b/index.html",
+      "slug": "projects/capstone-project/evidence-of-ability",
+      "order": 3,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Evidence of ability",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-evidence-of-ability",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251086
       }
     },
     {
@@ -13456,7 +14138,11 @@
               "label": "Project",
               "icon": "hax:bulletin-board",
               "description": "",
-              "children": [],
+              "children": [
+                "oer:activity",
+                "oer:article",
+                "oer:tutorial"
+              ],
               "fields": [
                 {
                   "name": "difficulty",
@@ -13826,6 +14512,376 @@
               ],
               "nav": false,
               "schemaType": "oer:Project"
+            },
+            {
+              "id": "oer:activity",
+              "label": "Activity",
+              "icon": "icons:assignment-turned-in",
+              "description": "A step or deliverable in a project, done and assessed on its own.",
+              "children": [],
+              "nav": false,
+              "schemaType": "oer:Activity",
+              "fields": [
+                {
+                  "name": "difficulty",
+                  "label": "Difficulty",
+                  "kind": "select",
+                  "options": [
+                    {
+                      "value": "Beginner",
+                      "label": "Beginner"
+                    },
+                    {
+                      "value": "Intermediate",
+                      "label": "Intermediate"
+                    },
+                    {
+                      "value": "Advanced",
+                      "label": "Advanced"
+                    }
+                  ],
+                  "header": true
+                },
+                {
+                  "name": "image",
+                  "label": "Featured Image",
+                  "kind": "image"
+                },
+                {
+                  "name": "imageAlt",
+                  "label": "Image Alt Text",
+                  "kind": "text"
+                },
+                {
+                  "name": "courses",
+                  "label": "Courses",
+                  "kind": "list",
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                },
+                {
+                  "name": "license",
+                  "label": "License",
+                  "kind": "select",
+                  "options": [
+                    {
+                      "value": "CC BY 4.0",
+                      "label": "CC BY 4.0"
+                    },
+                    {
+                      "value": "CC BY-SA 4.0",
+                      "label": "CC BY-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC 4.0",
+                      "label": "CC BY-NC 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-SA 4.0",
+                      "label": "CC BY-NC-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-ND 4.0",
+                      "label": "CC BY-ND 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-ND 4.0",
+                      "label": "CC BY-NC-ND 4.0"
+                    },
+                    {
+                      "value": "CC0 1.0",
+                      "label": "CC0 1.0"
+                    },
+                    {
+                      "value": "All Rights Reserved",
+                      "label": "All Rights Reserved"
+                    }
+                  ],
+                  "default": "CC BY 4.0"
+                },
+                {
+                  "name": "aiLicense",
+                  "label": "AI Usage Licenses",
+                  "kind": "select",
+                  "help": "Select one or more AI usage policies. Defaults: AIUL-WA (approval required) + AIUL-CD (conceptual ok) + AIUL-NA-3D (no AI for 3D)",
+                  "options": [
+                    {
+                      "value": "AIUL-NA",
+                      "label": "AIUL-NA"
+                    },
+                    {
+                      "value": "AIUL-NA-WR",
+                      "label": "AIUL-NA-WR"
+                    },
+                    {
+                      "value": "AIUL-NA-IM",
+                      "label": "AIUL-NA-IM"
+                    },
+                    {
+                      "value": "AIUL-NA-VD",
+                      "label": "AIUL-NA-VD"
+                    },
+                    {
+                      "value": "AIUL-NA-AU",
+                      "label": "AIUL-NA-AU"
+                    },
+                    {
+                      "value": "AIUL-NA-3D",
+                      "label": "AIUL-NA-3D"
+                    },
+                    {
+                      "value": "AIUL-NA-TR",
+                      "label": "AIUL-NA-TR"
+                    },
+                    {
+                      "value": "AIUL-NA-MX",
+                      "label": "AIUL-NA-MX"
+                    },
+                    {
+                      "value": "AIUL-NA-CO",
+                      "label": "AIUL-NA-CO"
+                    },
+                    {
+                      "value": "AIUL-WA",
+                      "label": "AIUL-WA"
+                    },
+                    {
+                      "value": "AIUL-WA-WR",
+                      "label": "AIUL-WA-WR"
+                    },
+                    {
+                      "value": "AIUL-WA-IM",
+                      "label": "AIUL-WA-IM"
+                    },
+                    {
+                      "value": "AIUL-WA-VD",
+                      "label": "AIUL-WA-VD"
+                    },
+                    {
+                      "value": "AIUL-WA-AU",
+                      "label": "AIUL-WA-AU"
+                    },
+                    {
+                      "value": "AIUL-WA-3D",
+                      "label": "AIUL-WA-3D"
+                    },
+                    {
+                      "value": "AIUL-WA-TR",
+                      "label": "AIUL-WA-TR"
+                    },
+                    {
+                      "value": "AIUL-WA-MX",
+                      "label": "AIUL-WA-MX"
+                    },
+                    {
+                      "value": "AIUL-WA-CO",
+                      "label": "AIUL-WA-CO"
+                    },
+                    {
+                      "value": "AIUL-CD",
+                      "label": "AIUL-CD"
+                    },
+                    {
+                      "value": "AIUL-CD-WR",
+                      "label": "AIUL-CD-WR"
+                    },
+                    {
+                      "value": "AIUL-CD-IM",
+                      "label": "AIUL-CD-IM"
+                    },
+                    {
+                      "value": "AIUL-CD-VD",
+                      "label": "AIUL-CD-VD"
+                    },
+                    {
+                      "value": "AIUL-CD-AU",
+                      "label": "AIUL-CD-AU"
+                    },
+                    {
+                      "value": "AIUL-CD-3D",
+                      "label": "AIUL-CD-3D"
+                    },
+                    {
+                      "value": "AIUL-CD-TR",
+                      "label": "AIUL-CD-TR"
+                    },
+                    {
+                      "value": "AIUL-CD-MX",
+                      "label": "AIUL-CD-MX"
+                    },
+                    {
+                      "value": "AIUL-CD-CO",
+                      "label": "AIUL-CD-CO"
+                    },
+                    {
+                      "value": "AIUL-TC",
+                      "label": "AIUL-TC"
+                    },
+                    {
+                      "value": "AIUL-TC-WR",
+                      "label": "AIUL-TC-WR"
+                    },
+                    {
+                      "value": "AIUL-TC-IM",
+                      "label": "AIUL-TC-IM"
+                    },
+                    {
+                      "value": "AIUL-TC-VD",
+                      "label": "AIUL-TC-VD"
+                    },
+                    {
+                      "value": "AIUL-TC-AU",
+                      "label": "AIUL-TC-AU"
+                    },
+                    {
+                      "value": "AIUL-TC-3D",
+                      "label": "AIUL-TC-3D"
+                    },
+                    {
+                      "value": "AIUL-TC-TR",
+                      "label": "AIUL-TC-TR"
+                    },
+                    {
+                      "value": "AIUL-TC-MX",
+                      "label": "AIUL-TC-MX"
+                    },
+                    {
+                      "value": "AIUL-TC-CO",
+                      "label": "AIUL-TC-CO"
+                    },
+                    {
+                      "value": "AIUL-DP",
+                      "label": "AIUL-DP"
+                    },
+                    {
+                      "value": "AIUL-DP-WR",
+                      "label": "AIUL-DP-WR"
+                    },
+                    {
+                      "value": "AIUL-DP-IM",
+                      "label": "AIUL-DP-IM"
+                    },
+                    {
+                      "value": "AIUL-DP-VD",
+                      "label": "AIUL-DP-VD"
+                    },
+                    {
+                      "value": "AIUL-DP-AU",
+                      "label": "AIUL-DP-AU"
+                    },
+                    {
+                      "value": "AIUL-DP-3D",
+                      "label": "AIUL-DP-3D"
+                    },
+                    {
+                      "value": "AIUL-DP-TR",
+                      "label": "AIUL-DP-TR"
+                    },
+                    {
+                      "value": "AIUL-DP-MX",
+                      "label": "AIUL-DP-MX"
+                    },
+                    {
+                      "value": "AIUL-DP-CO",
+                      "label": "AIUL-DP-CO"
+                    },
+                    {
+                      "value": "AIUL-IU",
+                      "label": "AIUL-IU"
+                    },
+                    {
+                      "value": "AIUL-IU-WR",
+                      "label": "AIUL-IU-WR"
+                    },
+                    {
+                      "value": "AIUL-IU-IM",
+                      "label": "AIUL-IU-IM"
+                    },
+                    {
+                      "value": "AIUL-IU-VD",
+                      "label": "AIUL-IU-VD"
+                    },
+                    {
+                      "value": "AIUL-IU-AU",
+                      "label": "AIUL-IU-AU"
+                    },
+                    {
+                      "value": "AIUL-IU-3D",
+                      "label": "AIUL-IU-3D"
+                    },
+                    {
+                      "value": "AIUL-IU-TR",
+                      "label": "AIUL-IU-TR"
+                    },
+                    {
+                      "value": "AIUL-IU-MX",
+                      "label": "AIUL-IU-MX"
+                    },
+                    {
+                      "value": "AIUL-IU-CO",
+                      "label": "AIUL-IU-CO"
+                    }
+                  ],
+                  "default": "AIUL-WA",
+                  "multiple": true
+                },
+                {
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": false,
+                  "help": "In order. Each with an optional link to their site or profile."
+                },
+                {
+                  "name": "placeholder",
+                  "label": "In development",
+                  "kind": "boolean",
+                  "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+                },
+                {
+                  "name": "allowEmbed",
+                  "label": "Allow Embedding",
+                  "kind": "boolean",
+                  "help": "Enable iframe embedding for this content"
+                },
+                {
+                  "name": "prerequisites",
+                  "label": "Before you start",
+                  "kind": "relation",
+                  "help": "Content to complete first",
+                  "header": true,
+                  "types": [
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
+                  ]
+                },
+                {
+                  "name": "resources",
+                  "label": "Learning resources",
+                  "kind": "relation",
+                  "types": [
+                    "oer:tutorial",
+                    "oer:lecture",
+                    "oer:article",
+                    "oer:resource"
+                  ],
+                  "header": true,
+                  "help": "Tutorials, lectures, readings and resources that support this"
+                },
+                {
+                  "name": "attachments",
+                  "label": "Files and links",
+                  "kind": "files",
+                  "header": true,
+                  "help": "Downloadable files or external links"
+                }
+              ]
             },
             {
               "id": "oer:specialization",
@@ -15637,7 +16693,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791246752,
+        "updated": 1791251056,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -15893,6 +16949,189 @@
       }
     },
     {
+      "id": "item-341299c4-f6bd-4d88-a29c-7d01feba9326",
+      "indent": 2,
+      "location": "pages/item-341299c4-f6bd-4d88-a29c-7d01feba9326/index.html",
+      "slug": "projects/ritual-project/define-themes-and-insights",
+      "order": 4,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Define: Themes and insights",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-define-insights",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251058
+      }
+    },
+    {
+      "id": "item-8783aafb-0854-48ac-8d84-fb578f99726e",
+      "indent": 2,
+      "location": "pages/item-8783aafb-0854-48ac-8d84-fb578f99726e/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/define-synopsis",
+      "order": 4,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Define: Synopsis",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-define-the-way-it-was",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251065
+      }
+    },
+    {
+      "id": "item-fe87fbef-c5da-49d1-a4f4-ebf6821cb9b6",
+      "indent": 2,
+      "location": "pages/item-fe87fbef-c5da-49d1-a4f4-ebf6821cb9b6/index.html",
+      "slug": "projects/open-design-project/define",
+      "order": 4,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Define",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251071,
+        "images": [],
+        "videos": [],
+        "updated": 1791251071
+      }
+    },
+    {
+      "id": "item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9",
+      "indent": 2,
+      "location": "pages/item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9/index.html",
+      "slug": "projects/project-1/phase-4-design-sprint",
+      "order": 4,
+      "parent": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "title": "Phase 4: Design sprint",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-project-1-phase-4-design-sprint",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251078
+      }
+    },
+    {
+      "id": "item-619930bb-5049-4869-938c-d1b704ab44e5",
+      "indent": 2,
+      "location": "pages/item-619930bb-5049-4869-938c-d1b704ab44e5/index.html",
+      "slug": "projects/project-2/documentation",
+      "order": 4,
+      "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "title": "Documentation",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-design-project-2-project-2-documentation",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251082
+      }
+    },
+    {
+      "id": "item-42c443ea-48f3-496e-91cb-78b4df8362ea",
+      "indent": 2,
+      "location": "pages/item-42c443ea-48f3-496e-91cb-78b4df8362ea/index.html",
+      "slug": "projects/capstone-project/project-research-expectations",
+      "order": 4,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Project research expectations",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-research",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251087
+      }
+    },
+    {
       "id": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "indent": 0,
       "location": "pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.html",
@@ -16094,16 +17333,16 @@
     },
     {
       "id": "item-f2f28ce6-560f-40f0-9dab-8d8914039113",
-      "indent": 1,
+      "indent": 2,
       "location": "pages/item-f2f28ce6-560f-40f0-9dab-8d8914039113/index.html",
-      "slug": "projects/define-how-might-we",
+      "slug": "projects/ritual-project/define-how-might-we",
       "order": 5,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
       "title": "Define: How Might We ...?",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "oer:project",
+        "pageType": "oer:activity",
         "oerSource": "projects/dmd100-lesson-2-ritual-define-hmw",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
@@ -16122,7 +17361,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231860
+        "updated": 1791251058
       }
     },
     {
@@ -16146,6 +17385,453 @@
         "images": [],
         "videos": [],
         "updated": 1791231861
+      }
+    },
+    {
+      "id": "item-0ddd0a67-662f-42b9-b407-e2e46526c915",
+      "indent": 2,
+      "location": "pages/item-0ddd0a67-662f-42b9-b407-e2e46526c915/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/develop",
+      "order": 5,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Develop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251065,
+        "images": [],
+        "videos": [],
+        "updated": 1791251065
+      }
+    },
+    {
+      "id": "item-27ac4b34-14e8-46ea-a26b-68cf75cd5192",
+      "indent": 2,
+      "location": "pages/item-27ac4b34-14e8-46ea-a26b-68cf75cd5192/index.html",
+      "slug": "projects/open-design-project/define-product-pitch",
+      "order": 5,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Define: Product pitch",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-define-product-pitch",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251071
+      }
+    },
+    {
+      "id": "item-fa77b027-375b-41e4-ae94-8f8370cc2948",
+      "indent": 2,
+      "location": "pages/item-fa77b027-375b-41e4-ae94-8f8370cc2948/index.html",
+      "slug": "projects/project-1/phase-5-project-document",
+      "order": 5,
+      "parent": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "title": "Phase 5: Project document",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-project-1-phase-5",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251079
+      }
+    },
+    {
+      "id": "item-16ef9db8-e360-40b2-9aa6-f7f4d6772930",
+      "indent": 2,
+      "location": "pages/item-16ef9db8-e360-40b2-9aa6-f7f4d6772930/index.html",
+      "slug": "projects/project-2/files",
+      "order": 5,
+      "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "title": "Files",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd300-design-project-2-project-2-project-files",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251083
+      }
+    },
+    {
+      "id": "item-edd3b50c-6ee7-4c17-b9ef-8666e4319996",
+      "indent": 2,
+      "location": "pages/item-edd3b50c-6ee7-4c17-b9ef-8666e4319996/index.html",
+      "slug": "projects/capstone-project/capstone-project-production-reports",
+      "order": 5,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone project production reports",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-production-report",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251087
+      }
+    },
+    {
+      "id": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "indent": 1,
+      "location": "pages/item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df/index.html",
+      "slug": "projects/ritual-project",
+      "order": 5,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Ritual Project",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd100-lesson-2-ritual-ritual-project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251092
+      }
+    },
+    {
+      "id": "item-abc4f90f-9fe3-4f32-97dc-fe1662e70517",
+      "indent": 2,
+      "location": "pages/item-abc4f90f-9fe3-4f32-97dc-fe1662e70517/index.html",
+      "slug": "projects/ritual-project/develop",
+      "order": 6,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Develop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251059,
+        "images": [],
+        "videos": [],
+        "updated": 1791251059
+      }
+    },
+    {
+      "id": "item-ede3e259-78ef-4678-8d08-64d474ed55de",
+      "indent": 2,
+      "location": "pages/item-ede3e259-78ef-4678-8d08-64d474ed55de/index.html",
+      "slug": "projects/ritual-project/brainstorm",
+      "order": 7,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Brainstorm",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-develop-brainstorm",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251059
+      }
+    },
+    {
+      "id": "item-e0f891be-3a01-4934-a16a-7e7a581a0560",
+      "indent": 2,
+      "location": "pages/item-e0f891be-3a01-4934-a16a-7e7a581a0560/index.html",
+      "slug": "projects/ritual-project/develop-storyboard",
+      "order": 8,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Develop: Storyboard",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-develop-storyboard",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251060
+      }
+    },
+    {
+      "id": "item-2e5e2871-545d-41a9-97e6-ef47e3617831",
+      "indent": 2,
+      "location": "pages/item-2e5e2871-545d-41a9-97e6-ef47e3617831/index.html",
+      "slug": "projects/ritual-project/develop-interactive-wireframes",
+      "order": 9,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Develop: Interactive Wireframes",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-develop-prototype",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251060
+      }
+    },
+    {
+      "id": "item-30297f65-89ed-4c1c-8ac8-30439fb6b760",
+      "indent": 2,
+      "location": "pages/item-30297f65-89ed-4c1c-8ac8-30439fb6b760/index.html",
+      "slug": "projects/ritual-project/figma-tutorial",
+      "order": 10,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Figma Tutorial",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:tutorial",
+        "oerSource": "projects/dmd100-lesson-2-ritual-prototype-tutorial",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Benjamin Andrew",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251061
+      }
+    },
+    {
+      "id": "item-80817beb-57f0-45f5-9005-f2ff506243e4",
+      "indent": 2,
+      "location": "pages/item-80817beb-57f0-45f5-9005-f2ff506243e4/index.html",
+      "slug": "projects/ritual-project/develop-test-and-review",
+      "order": 11,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Develop: Test and review",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-develop-test-and-review",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251062
+      }
+    },
+    {
+      "id": "item-dc9bd020-ea18-4403-a37e-518676fbcee2",
+      "indent": 2,
+      "location": "pages/item-dc9bd020-ea18-4403-a37e-518676fbcee2/index.html",
+      "slug": "projects/ritual-project/develop-iterate-prototype",
+      "order": 12,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Develop: Iterate prototype",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-develop-iterate-prototype",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251062
+      }
+    },
+    {
+      "id": "item-1d944d3e-e7af-4235-b291-643042cf4a32",
+      "indent": 2,
+      "location": "pages/item-1d944d3e-e7af-4235-b291-643042cf4a32/index.html",
+      "slug": "projects/ritual-project/deliver",
+      "order": 13,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251063,
+        "images": [],
+        "videos": [],
+        "updated": 1791251063
+      }
+    },
+    {
+      "id": "item-647dd32d-9b06-4e77-a0a2-36505eebe602",
+      "indent": 2,
+      "location": "pages/item-647dd32d-9b06-4e77-a0a2-36505eebe602/index.html",
+      "slug": "projects/ritual-project/deliver-final-prototype",
+      "order": 14,
+      "parent": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
+      "title": "Deliver: Final Prototype",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-2-ritual-deliver-final-prototype",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251063
       }
     },
     {
@@ -19003,39 +20689,6 @@
       }
     },
     {
-      "id": "item-341299c4-f6bd-4d88-a29c-7d01feba9326",
-      "indent": 1,
-      "location": "pages/item-341299c4-f6bd-4d88-a29c-7d01feba9326/index.html",
-      "slug": "projects/define-themes-and-insights",
-      "order": 6,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Define: Themes and insights",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-define-insights",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231912
-      }
-    },
-    {
       "id": "item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de",
       "indent": 1,
       "location": "pages/item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de/index.html",
@@ -19057,6 +20710,304 @@
         "images": [],
         "videos": [],
         "updated": 1791231912
+      }
+    },
+    {
+      "id": "item-7960dd53-d10e-4369-9f3a-63f5b8304d43",
+      "indent": 2,
+      "location": "pages/item-7960dd53-d10e-4369-9f3a-63f5b8304d43/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/develop-story-and-plot-elements",
+      "order": 6,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Develop: Story and plot elements",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-develop-story-and-plot",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251065
+      }
+    },
+    {
+      "id": "item-3d6880b0-945d-4ec5-9246-2d00503f8f54",
+      "indent": 2,
+      "location": "pages/item-3d6880b0-945d-4ec5-9246-2d00503f8f54/index.html",
+      "slug": "projects/open-design-project/develop",
+      "order": 6,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251072,
+        "images": [],
+        "videos": [],
+        "updated": 1791251072
+      }
+    },
+    {
+      "id": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+      "indent": 2,
+      "location": "pages/item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae/index.html",
+      "slug": "projects/capstone-project/capstone-project-production-report-discussions",
+      "order": 6,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone project production report discussions",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-production-report-discussions",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251088
+      }
+    },
+    {
+      "id": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "indent": 1,
+      "location": "pages/item-9401e020-db14-4652-9d7b-fc6a27557c2c/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination",
+      "order": 6,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Hypertext Narrative Project: Civic Imagination",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd100-lesson-3-narrative-hypertext-narrative-civic-imagination-project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251093
+      }
+    },
+    {
+      "id": "item-fdca5e87-bcec-46d2-953d-f604f9122e65",
+      "indent": 2,
+      "location": "pages/item-fdca5e87-bcec-46d2-953d-f604f9122e65/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/develop-characters",
+      "order": 7,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Develop: Characters",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-develop-characters",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251066
+      }
+    },
+    {
+      "id": "item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0",
+      "indent": 2,
+      "location": "pages/item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/develop-hypertext-narrative-draft-1",
+      "order": 8,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Develop: Hypertext narrative (draft 1)",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-develop-hypertext-narrative-draft-1",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251067
+      }
+    },
+    {
+      "id": "item-0ed542f3-e821-4573-a59d-a996e8d6c198",
+      "indent": 2,
+      "location": "pages/item-0ed542f3-e821-4573-a59d-a996e8d6c198/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/tutorials",
+      "order": 9,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Tutorials",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:tutorial",
+        "oerSource": "projects/dmd100-lesson-3-narrative-tutorials",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251067
+      }
+    },
+    {
+      "id": "item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83",
+      "indent": 2,
+      "location": "pages/item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/develop-feedback",
+      "order": 10,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Develop: Feedback",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-develop-feedback",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251068
+      }
+    },
+    {
+      "id": "item-bd5c5b8e-25b5-4395-9613-3cdb76ea7716",
+      "indent": 2,
+      "location": "pages/item-bd5c5b8e-25b5-4395-9613-3cdb76ea7716/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/deliver",
+      "order": 11,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251069,
+        "images": [],
+        "videos": [],
+        "updated": 1791251069
+      }
+    },
+    {
+      "id": "item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d",
+      "indent": 2,
+      "location": "pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/deliver-hypertext-narrative-draft-2",
+      "order": 12,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Deliver: Hypertext narrative (draft 2)",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251069
       }
     },
     {
@@ -19196,39 +21147,6 @@
             "notes": ""
           }
         ]
-      }
-    },
-    {
-      "id": "item-647dd32d-9b06-4e77-a0a2-36505eebe602",
-      "indent": 1,
-      "location": "pages/item-647dd32d-9b06-4e77-a0a2-36505eebe602/index.html",
-      "slug": "projects/deliver-final-prototype",
-      "order": 7,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Deliver: Final Prototype",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-deliver-final-prototype",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231915
       }
     },
     {
@@ -19967,6 +21885,287 @@
       }
     },
     {
+      "id": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
+      "indent": 2,
+      "location": "pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.html",
+      "slug": "projects/open-design-project/develop-mvp-prototype",
+      "order": 7,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: MVP Prototype",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-mvp-prototype",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251072
+      }
+    },
+    {
+      "id": "item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762",
+      "indent": 2,
+      "location": "pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.html",
+      "slug": "projects/capstone-project/project-midterm-video",
+      "order": 7,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Project midterm video",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-project-midterm-video",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251089
+      }
+    },
+    {
+      "id": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "indent": 1,
+      "location": "pages/item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85/index.html",
+      "slug": "projects/open-design-project",
+      "order": 7,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Open Design Project",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd100-lesson-4-open-design-open-design-project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251093
+      }
+    },
+    {
+      "id": "item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d",
+      "indent": 2,
+      "location": "pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.html",
+      "slug": "projects/open-design-project/develop-instructions",
+      "order": 8,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: Instructions",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-instructions",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251073
+      }
+    },
+    {
+      "id": "item-2835efa4-407b-4be6-baf7-358fc163ecd0",
+      "indent": 2,
+      "location": "pages/item-2835efa4-407b-4be6-baf7-358fc163ecd0/index.html",
+      "slug": "projects/open-design-project/develop-user-testing",
+      "order": 9,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: User testing",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-user-testing",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251073
+      }
+    },
+    {
+      "id": "item-cccc9d32-dda2-4767-8335-4f937d93e87d",
+      "indent": 2,
+      "location": "pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.html",
+      "slug": "projects/open-design-project/develop-iterate",
+      "order": 10,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: Iterate",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-iterate",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251074
+      }
+    },
+    {
+      "id": "item-fd93cec2-ed41-412f-bf1d-aa863a4d7954",
+      "indent": 2,
+      "location": "pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.html",
+      "slug": "projects/open-design-project/develop-feedback",
+      "order": 11,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: Feedback",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-feedback",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251074
+      }
+    },
+    {
+      "id": "item-ebd37034-40b3-4fee-a7f0-de4201746c75",
+      "indent": 2,
+      "location": "pages/item-ebd37034-40b3-4fee-a7f0-de4201746c75/index.html",
+      "slug": "projects/open-design-project/deliver",
+      "order": 12,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251075,
+        "images": [],
+        "videos": [],
+        "updated": 1791251075
+      }
+    },
+    {
+      "id": "item-48d44e34-7a32-4027-9c2f-ade5bc1482a6",
+      "indent": 2,
+      "location": "pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.html",
+      "slug": "projects/open-design-project/deliver-project-documentation",
+      "order": 13,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Deliver: Project documentation",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-deliver-open-design",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 100"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251075
+      }
+    },
+    {
       "id": "item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb",
       "indent": 0,
       "location": "pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.html",
@@ -20121,22 +22320,23 @@
       }
     },
     {
-      "id": "item-ede3e259-78ef-4678-8d08-64d474ed55de",
-      "indent": 1,
-      "location": "pages/item-ede3e259-78ef-4678-8d08-64d474ed55de/index.html",
-      "slug": "projects/brainstorm",
+      "id": "item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222",
+      "indent": 2,
+      "location": "pages/item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222/index.html",
+      "slug": "projects/capstone-project/capstone-project-exhibition-statement",
       "order": 8,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Brainstorm",
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone project exhibition statement",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-develop-brainstorm",
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-statement",
+        "tags": "project-deliverable",
         "oerFields": {
           "difficulty": "intermediate",
           "courses": [
-            "DMD 100"
+            "DMD 400"
           ],
           "license": "CC BY 4.0",
           "authors": [
@@ -20149,7 +22349,40 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231934
+        "updated": 1791251089
+      }
+    },
+    {
+      "id": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
+      "indent": 1,
+      "location": "pages/item-ba7ab274-d43f-4029-af9c-78edc5d3c484/index.html",
+      "slug": "projects/project-2",
+      "order": 8,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 2",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd300-design-project-2-project-2-project-description",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251094
       }
     },
     {
@@ -20595,23 +22828,23 @@
       }
     },
     {
-      "id": "item-dc9bd020-ea18-4403-a37e-518676fbcee2",
-      "indent": 1,
-      "location": "pages/item-dc9bd020-ea18-4403-a37e-518676fbcee2/index.html",
-      "slug": "projects/develop-iterate-prototype",
+      "id": "item-d759a2b5-61e3-4423-a706-91c282cf8b12",
+      "indent": 2,
+      "location": "pages/item-d759a2b5-61e3-4423-a706-91c282cf8b12/index.html",
+      "slug": "projects/capstone-project/capstone-project-document",
       "order": 9,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Iterate prototype",
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone project document",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-develop-iterate-prototype",
-        "tags": "Double diamond,Design thinking",
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-document",
+        "tags": "project-deliverable",
         "oerFields": {
           "difficulty": "intermediate",
           "courses": [
-            "DMD 100"
+            "DMD 400"
           ],
           "license": "CC BY 4.0",
           "authors": [
@@ -20624,7 +22857,40 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231939
+        "updated": 1791251090
+      }
+    },
+    {
+      "id": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "indent": 1,
+      "location": "pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.html",
+      "slug": "projects/project-1",
+      "order": 9,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 1",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd300-project-1",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251094
       }
     },
     {
@@ -20737,23 +23003,23 @@
       }
     },
     {
-      "id": "item-2e5e2871-545d-41a9-97e6-ef47e3617831",
-      "indent": 1,
-      "location": "pages/item-2e5e2871-545d-41a9-97e6-ef47e3617831/index.html",
-      "slug": "projects/develop-interactive-wireframes",
+      "id": "item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7",
+      "indent": 2,
+      "location": "pages/item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7/index.html",
+      "slug": "projects/capstone-project/project-explainer-video",
       "order": 10,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Interactive Wireframes",
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Project explainer video",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-develop-prototype",
-        "tags": "Double diamond,Design thinking",
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-project-explainer-video",
+        "tags": "project-deliverable",
         "oerFields": {
           "difficulty": "intermediate",
           "courses": [
-            "DMD 100"
+            "DMD 400"
           ],
           "license": "CC BY 4.0",
           "authors": [
@@ -20766,7 +23032,40 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231942
+        "updated": 1791251091
+      }
+    },
+    {
+      "id": "item-f95f0281-cd13-4056-8509-6e50954779e2",
+      "indent": 1,
+      "location": "pages/item-f95f0281-cd13-4056-8509-6e50954779e2/index.html",
+      "slug": "projects/writing-project",
+      "order": 10,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Writing Project",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd300-writing-project",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251095
       }
     },
     {
@@ -20883,23 +23182,23 @@
       }
     },
     {
-      "id": "item-e0f891be-3a01-4934-a16a-7e7a581a0560",
-      "indent": 1,
-      "location": "pages/item-e0f891be-3a01-4934-a16a-7e7a581a0560/index.html",
-      "slug": "projects/develop-storyboard",
+      "id": "item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b",
+      "indent": 2,
+      "location": "pages/item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b/index.html",
+      "slug": "projects/capstone-project/capstone-project-exhibition",
       "order": 11,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Storyboard",
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone project exhibition",
       "description": "",
       "metadata": {
         "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-develop-storyboard",
-        "tags": "Double diamond,Design thinking",
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-exhibition",
+        "tags": "project-deliverable",
         "oerFields": {
           "difficulty": "intermediate",
           "courses": [
-            "DMD 100"
+            "DMD 400"
           ],
           "license": "CC BY 4.0",
           "authors": [
@@ -20912,7 +23211,130 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231944
+        "updated": 1791251091
+      }
+    },
+    {
+      "id": "item-52fb5644-31ca-4c30-a426-3bd4a9182f3a",
+      "indent": 1,
+      "location": "pages/item-52fb5644-31ca-4c30-a426-3bd4a9182f3a/index.html",
+      "slug": "projects/ideas-in-motion",
+      "order": 11,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Ideas In Motion",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/ideas-in-motion",
+        "tags": "Blender,AfterEffects",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "image": "files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg",
+          "imageAlt": "cycles-banner-compressed2.jpg",
+          "courses": [
+            "Dart 303"
+          ],
+          "license": "CC BY 4.0",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-CD",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "allowEmbed": true,
+          "publishEmbed": true,
+          "attachments": [
+            {
+              "title": "Storyboard Template (pdf)",
+              "url": "files/rec5yoxGObqGbFsIn_attachment_storyboard-template.pdf",
+              "description": "Storyboard template",
+              "alt": "Storyboard template"
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251096,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": null,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-d38e90ff-f0c8-4eb4-9745-2171358466f7",
+      "indent": 2,
+      "location": "pages/item-d38e90ff-f0c8-4eb4-9745-2171358466f7/index.html",
+      "slug": "projects/ideas-in-motion/v0-9-0",
+      "order": 1000,
+      "parent": "item-52fb5644-31ca-4c30-a426-3bd4a9182f3a",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg",
+          "imageAlt": "cycles-banner-compressed2.jpg",
+          "courses": [
+            "Dart 303"
+          ],
+          "license": "CC BY 4.0",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-CD",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "allowEmbed": true,
+          "publishEmbed": true,
+          "attachments": [
+            {
+              "title": "Concept Development Worksheet (.docx)",
+              "url": "/uploads/recWIZ9by8kdM9JEo_attachment_dart303-project-concepts.docx",
+              "description": "Concept development worksheet",
+              "alt": "Concept development worksheet"
+            },
+            {
+              "title": "Storyboard Template (pdf)",
+              "url": "files/rec5yoxGObqGbFsIn_attachment_storyboard-template.pdf",
+              "description": "Storyboard template",
+              "alt": "Storyboard template"
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-52fb5644-31ca-4c30-a426-3bd4a9182f3a",
+        "oerSnapshotTitle": "Ideas In Motion",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
       }
     },
     {
@@ -24327,36 +26749,35 @@
       }
     },
     {
-      "id": "item-80817beb-57f0-45f5-9005-f2ff506243e4",
+      "id": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
       "indent": 1,
-      "location": "pages/item-80817beb-57f0-45f5-9005-f2ff506243e4/index.html",
-      "slug": "projects/develop-test-and-review",
+      "location": "pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.html",
+      "slug": "projects/capstone-project",
       "order": 12,
       "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Test and review",
+      "title": "Capstone project",
       "description": "",
       "metadata": {
         "published": true,
         "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-develop-test-and-review",
-        "tags": "Double diamond,Design thinking",
+        "oerSource": "lessons/dmd400-capstone-project",
+        "tags": "lesson",
         "oerFields": {
-          "difficulty": "intermediate",
           "courses": [
-            "DMD 100"
+            "DMD 400"
           ],
-          "license": "CC BY 4.0",
           "authors": [
             {
               "name": "Michael Collins",
               "url": ""
             }
-          ]
+          ],
+          "license": "CC BY 4.0"
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231968
+        "updated": 1791251084
       }
     },
     {
@@ -24378,1838 +26799,6 @@
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
-      "id": "item-30297f65-89ed-4c1c-8ac8-30439fb6b760",
-      "indent": 1,
-      "location": "pages/item-30297f65-89ed-4c1c-8ac8-30439fb6b760/index.html",
-      "slug": "projects/figma-tutorial",
-      "order": 13,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Figma Tutorial",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-prototype-tutorial",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Benjamin Andrew",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231969
-      }
-    },
-    {
-      "id": "item-6dfa64d0-58e5-4558-984f-3cf2cc70be5b",
-      "indent": 1,
-      "location": "pages/item-6dfa64d0-58e5-4558-984f-3cf2cc70be5b/index.html",
-      "slug": "projects/further-reading-and-relevant-rituals",
-      "order": 14,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Further reading and relevant rituals",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-ritual-inspiration",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231970
-      }
-    },
-    {
-      "id": "item-3e7fb899-774a-4887-978b-3af368995344",
-      "indent": 1,
-      "location": "pages/item-3e7fb899-774a-4887-978b-3af368995344/index.html",
-      "slug": "projects/discover-interview",
-      "order": 15,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Discover: Interview",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-ritual-interview",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231971
-      }
-    },
-    {
-      "id": "item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df",
-      "indent": 1,
-      "location": "pages/item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df/index.html",
-      "slug": "projects/ritual-project",
-      "order": 16,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Ritual Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-2-ritual-ritual-project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231971
-      }
-    },
-    {
-      "id": "item-8783aafb-0854-48ac-8d84-fb578f99726e",
-      "indent": 1,
-      "location": "pages/item-8783aafb-0854-48ac-8d84-fb578f99726e/index.html",
-      "slug": "projects/define-synopsis",
-      "order": 17,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Define: Synopsis",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-define-the-way-it-was",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231972
-      }
-    },
-    {
-      "id": "item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d",
-      "indent": 1,
-      "location": "pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.html",
-      "slug": "projects/deliver-hypertext-narrative-draft-2",
-      "order": 18,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Deliver: Hypertext narrative (draft 2)",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231972
-      }
-    },
-    {
-      "id": "item-fdca5e87-bcec-46d2-953d-f604f9122e65",
-      "indent": 1,
-      "location": "pages/item-fdca5e87-bcec-46d2-953d-f604f9122e65/index.html",
-      "slug": "projects/develop-characters",
-      "order": 19,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Characters",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-develop-characters",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231973
-      }
-    },
-    {
-      "id": "item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83",
-      "indent": 1,
-      "location": "pages/item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83/index.html",
-      "slug": "projects/develop-feedback",
-      "order": 20,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Feedback",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-develop-feedback",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231974
-      }
-    },
-    {
-      "id": "item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0",
-      "indent": 1,
-      "location": "pages/item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0/index.html",
-      "slug": "projects/develop-hypertext-narrative-draft-1",
-      "order": 21,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Hypertext narrative (draft 1)",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-develop-hypertext-narrative-draft-1",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791233107
-      }
-    },
-    {
-      "id": "item-7960dd53-d10e-4369-9f3a-63f5b8304d43",
-      "indent": 1,
-      "location": "pages/item-7960dd53-d10e-4369-9f3a-63f5b8304d43/index.html",
-      "slug": "projects/develop-story-and-plot-elements",
-      "order": 22,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Story and plot elements",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-develop-story-and-plot",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231975
-      }
-    },
-    {
-      "id": "item-fa03ca68-4000-4420-998d-20da5dde7cc2",
-      "indent": 1,
-      "location": "pages/item-fa03ca68-4000-4420-998d-20da5dde7cc2/index.html",
-      "slug": "projects/discover-word-pairs",
-      "order": 23,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Discover: Word-pairs",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-discover-focus-words",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231975
-      }
-    },
-    {
-      "id": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
-      "indent": 1,
-      "location": "pages/item-9401e020-db14-4652-9d7b-fc6a27557c2c/index.html",
-      "slug": "projects/hypertext-narrative-project-civic-imagination",
-      "order": 24,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Hypertext Narrative Project: Civic Imagination",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-hypertext-narrative-civic-imagination-project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231976
-      }
-    },
-    {
-      "id": "item-ad8648a7-1a35-407f-8c63-7fbfaaf8727c",
-      "indent": 1,
-      "location": "pages/item-ad8648a7-1a35-407f-8c63-7fbfaaf8727c/index.html",
-      "slug": "projects/further-reading-and-relevant-work",
-      "order": 25,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Further reading and relevant work",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-narrative-inspiration",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231977
-      }
-    },
-    {
-      "id": "item-0ed542f3-e821-4573-a59d-a996e8d6c198",
-      "indent": 1,
-      "location": "pages/item-0ed542f3-e821-4573-a59d-a996e8d6c198/index.html",
-      "slug": "projects/tutorials",
-      "order": 26,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Tutorials",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-3-narrative-tutorials",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231977
-      }
-    },
-    {
-      "id": "item-27ac4b34-14e8-46ea-a26b-68cf75cd5192",
-      "indent": 1,
-      "location": "pages/item-27ac4b34-14e8-46ea-a26b-68cf75cd5192/index.html",
-      "slug": "projects/define-product-pitch",
-      "order": 27,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Define: Product pitch",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-define-product-pitch",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231978
-      }
-    },
-    {
-      "id": "item-48d44e34-7a32-4027-9c2f-ade5bc1482a6",
-      "indent": 1,
-      "location": "pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.html",
-      "slug": "projects/deliver-project-documentation",
-      "order": 28,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Deliver: Project documentation",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-deliver-open-design",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231978
-      }
-    },
-    {
-      "id": "item-fd93cec2-ed41-412f-bf1d-aa863a4d7954",
-      "indent": 1,
-      "location": "pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.html",
-      "slug": "projects/develop-feedback-1",
-      "order": 29,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Feedback",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-feedback",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231979
-      }
-    },
-    {
-      "id": "item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d",
-      "indent": 1,
-      "location": "pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.html",
-      "slug": "projects/develop-instructions",
-      "order": 30,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Instructions",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-instructions",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231980
-      }
-    },
-    {
-      "id": "item-cccc9d32-dda2-4767-8335-4f937d93e87d",
-      "indent": 1,
-      "location": "pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.html",
-      "slug": "projects/develop-iterate",
-      "order": 31,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: Iterate",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-iterate",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231980
-      }
-    },
-    {
-      "id": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
-      "indent": 1,
-      "location": "pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.html",
-      "slug": "projects/develop-mvp-prototype",
-      "order": 32,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: MVP Prototype",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-mvp-prototype",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231981
-      }
-    },
-    {
-      "id": "item-2835efa4-407b-4be6-baf7-358fc163ecd0",
-      "indent": 1,
-      "location": "pages/item-2835efa4-407b-4be6-baf7-358fc163ecd0/index.html",
-      "slug": "projects/develop-user-testing",
-      "order": 33,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Develop: User testing",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-user-testing",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231981
-      }
-    },
-    {
-      "id": "item-36c77843-db97-4386-80df-e6ede2349892",
-      "indent": 1,
-      "location": "pages/item-36c77843-db97-4386-80df-e6ede2349892/index.html",
-      "slug": "projects/discover-modular-design-research",
-      "order": 34,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Discover: Modular design research",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-discover-modular-design-research",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231982
-      }
-    },
-    {
-      "id": "item-9842aea6-97ed-4c64-8a6b-6df72c350bf2",
-      "indent": 1,
-      "location": "pages/item-9842aea6-97ed-4c64-8a6b-6df72c350bf2/index.html",
-      "slug": "projects/discover-resources",
-      "order": 35,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Discover: Resources",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-discover-resources",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231983
-      }
-    },
-    {
-      "id": "item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd",
-      "indent": 1,
-      "location": "pages/item-c1fd070e-7d15-40e2-ab35-0b187dcfe0cd/index.html",
-      "slug": "projects/discover-toy-design-research",
-      "order": 36,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Discover: Toy design research",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-discover-toy-design-research",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231983
-      }
-    },
-    {
-      "id": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "indent": 1,
-      "location": "pages/item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85/index.html",
-      "slug": "projects/open-design-project",
-      "order": 37,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Open Design Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-open-design-project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 100"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231984
-      }
-    },
-    {
-      "id": "item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813",
-      "indent": 1,
-      "location": "pages/item-1e3be7c9-fc27-4c70-9a6f-cb5616d41813/index.html",
-      "slug": "projects/concept-pitch",
-      "order": 38,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Concept pitch",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-concept-pitch",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231984
-      }
-    },
-    {
-      "id": "item-619930bb-5049-4869-938c-d1b704ab44e5",
-      "indent": 1,
-      "location": "pages/item-619930bb-5049-4869-938c-d1b704ab44e5/index.html",
-      "slug": "projects/documentation",
-      "order": 39,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Documentation",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-documentation",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231985
-      }
-    },
-    {
-      "id": "item-0a77055d-f57c-427e-ad9f-39d690dc1013",
-      "indent": 1,
-      "location": "pages/item-0a77055d-f57c-427e-ad9f-39d690dc1013/index.html",
-      "slug": "projects/feedback-interview",
-      "order": 40,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Feedback Interview",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-interview",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231986
-      }
-    },
-    {
-      "id": "item-5c890ba9-e6e5-484c-9209-ce2593a41192",
-      "indent": 1,
-      "location": "pages/item-5c890ba9-e6e5-484c-9209-ce2593a41192/index.html",
-      "slug": "projects/production-reports",
-      "order": 41,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Production reports",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-production-reports",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231986
-      }
-    },
-    {
-      "id": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
-      "indent": 1,
-      "location": "pages/item-ba7ab274-d43f-4029-af9c-78edc5d3c484/index.html",
-      "slug": "projects/project-2",
-      "order": 42,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project 2",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-project-description",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231987
-      }
-    },
-    {
-      "id": "item-16ef9db8-e360-40b2-9aa6-f7f4d6772930",
-      "indent": 1,
-      "location": "pages/item-16ef9db8-e360-40b2-9aa6-f7f4d6772930/index.html",
-      "slug": "projects/files",
-      "order": 43,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Files",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-project-files",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231987
-      }
-    },
-    {
-      "id": "item-288bd29f-6420-4173-806c-d13a5189ba1a",
-      "indent": 1,
-      "location": "pages/item-288bd29f-6420-4173-806c-d13a5189ba1a/index.html",
-      "slug": "projects/work-statement",
-      "order": 44,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Work Statement",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-design-project-2-project-2-work-statement",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231988
-      }
-    },
-    {
-      "id": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
-      "indent": 1,
-      "location": "pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.html",
-      "slug": "projects/project-1",
-      "order": 45,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project 1",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231989
-      }
-    },
-    {
-      "id": "item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30",
-      "indent": 1,
-      "location": "pages/item-6b04a35f-d14d-4e6c-82a9-6c90bc94ba30/index.html",
-      "slug": "projects/phase-1-gather-and-organize",
-      "order": 46,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Phase 1: Gather and organize",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1-phase-1-gather-and-organize",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231989
-      }
-    },
-    {
-      "id": "item-3be4e105-7b16-455c-b935-9073eaf5f6c6",
-      "indent": 1,
-      "location": "pages/item-3be4e105-7b16-455c-b935-9073eaf5f6c6/index.html",
-      "slug": "projects/phase-2-develop-a-design-sprint",
-      "order": 47,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Phase 2: Develop a design sprint",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1-phase-2-develop-a-design-sprint",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231990
-      }
-    },
-    {
-      "id": "item-b7a3817a-2523-41ce-8647-5051c5d08b03",
-      "indent": 1,
-      "location": "pages/item-b7a3817a-2523-41ce-8647-5051c5d08b03/index.html",
-      "slug": "projects/phase-3-pitch",
-      "order": 48,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Phase 3: Pitch",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1-phase-3-pitch",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231990
-      }
-    },
-    {
-      "id": "item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9",
-      "indent": 1,
-      "location": "pages/item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9/index.html",
-      "slug": "projects/phase-4-design-sprint",
-      "order": 49,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Phase 4: Design sprint",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1-phase-4-design-sprint",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231991
-      }
-    },
-    {
-      "id": "item-fa77b027-375b-41e4-ae94-8f8370cc2948",
-      "indent": 1,
-      "location": "pages/item-fa77b027-375b-41e4-ae94-8f8370cc2948/index.html",
-      "slug": "projects/phase-5-project-document",
-      "order": 50,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Phase 5: Project document",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1-phase-5",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231992
-      }
-    },
-    {
-      "id": "item-16859f3d-9abf-465d-9244-3c0dabaa8249",
-      "indent": 1,
-      "location": "pages/item-16859f3d-9abf-465d-9244-3c0dabaa8249/index.html",
-      "slug": "projects/weekly-activity-reports",
-      "order": 51,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Weekly Activity Reports",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1-weekly-activity-reports",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231992
-      }
-    },
-    {
-      "id": "item-f95f0281-cd13-4056-8509-6e50954779e2",
-      "indent": 1,
-      "location": "pages/item-f95f0281-cd13-4056-8509-6e50954779e2/index.html",
-      "slug": "projects/writing-project",
-      "order": 52,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Writing Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-writing-project",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231993
-      }
-    },
-    {
-      "id": "item-eb78596e-c7e0-4001-a35d-0877a9d4962d",
-      "indent": 1,
-      "location": "pages/item-eb78596e-c7e0-4001-a35d-0877a9d4962d/index.html",
-      "slug": "projects/project-advisor",
-      "order": 53,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project advisor",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-advisor",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231993
-      }
-    },
-    {
-      "id": "item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc",
-      "indent": 1,
-      "location": "pages/item-83e9ec52-4680-4923-a84f-8b3b78c6bfdc/index.html",
-      "slug": "projects/agreement-form",
-      "order": 54,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Agreement form",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-agreement-form",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231994
-      }
-    },
-    {
-      "id": "item-d759a2b5-61e3-4423-a706-91c282cf8b12",
-      "indent": 1,
-      "location": "pages/item-d759a2b5-61e3-4423-a706-91c282cf8b12/index.html",
-      "slug": "projects/capstone-project-document",
-      "order": 55,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone project document",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-document",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231995
-      }
-    },
-    {
-      "id": "item-27ca7119-a186-4605-9c09-02959c7b035b",
-      "indent": 1,
-      "location": "pages/item-27ca7119-a186-4605-9c09-02959c7b035b/index.html",
-      "slug": "projects/evidence-of-ability",
-      "order": 56,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Evidence of ability",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-evidence-of-ability",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231995
-      }
-    },
-    {
-      "id": "item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b",
-      "indent": 1,
-      "location": "pages/item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b/index.html",
-      "slug": "projects/capstone-project-exhibition",
-      "order": 57,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone project exhibition",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-exhibition",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231996
-      }
-    },
-    {
-      "id": "item-edd3b50c-6ee7-4c17-b9ef-8666e4319996",
-      "indent": 1,
-      "location": "pages/item-edd3b50c-6ee7-4c17-b9ef-8666e4319996/index.html",
-      "slug": "projects/capstone-project-production-reports",
-      "order": 58,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone project production reports",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-production-report",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231997
-      }
-    },
-    {
-      "id": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
-      "indent": 1,
-      "location": "pages/item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae/index.html",
-      "slug": "projects/capstone-project-production-report-discussions",
-      "order": 59,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone project production report discussions",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-production-report-discussions",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231997
-      }
-    },
-    {
-      "id": "item-9aefed67-638b-467b-af95-4bff55882eed",
-      "indent": 1,
-      "location": "pages/item-9aefed67-638b-467b-af95-4bff55882eed/index.html",
-      "slug": "projects/capstone-project-proposal",
-      "order": 60,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone Project Proposal",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-proposal",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231998
-      }
-    },
-    {
-      "id": "item-42c443ea-48f3-496e-91cb-78b4df8362ea",
-      "indent": 1,
-      "location": "pages/item-42c443ea-48f3-496e-91cb-78b4df8362ea/index.html",
-      "slug": "projects/project-research-expectations",
-      "order": 61,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project research expectations",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-research",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231998
-      }
-    },
-    {
-      "id": "item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222",
-      "indent": 1,
-      "location": "pages/item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222/index.html",
-      "slug": "projects/capstone-project-exhibition-statement",
-      "order": 62,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone project exhibition statement",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-capstone-project-statement",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231999
-      }
-    },
-    {
-      "id": "item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7",
-      "indent": 1,
-      "location": "pages/item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7/index.html",
-      "slug": "projects/project-explainer-video",
-      "order": 63,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project explainer video",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-project-explainer-video",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791232000
-      }
-    },
-    {
-      "id": "item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762",
-      "indent": 1,
-      "location": "pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.html",
-      "slug": "projects/project-midterm-video",
-      "order": 64,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project midterm video",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd400-project-midterm-video",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791232000
-      }
-    },
-    {
-      "id": "item-52fb5644-31ca-4c30-a426-3bd4a9182f3a",
-      "indent": 1,
-      "location": "pages/item-52fb5644-31ca-4c30-a426-3bd4a9182f3a/index.html",
-      "slug": "projects/ideas-in-motion",
-      "order": 65,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Ideas In Motion",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/ideas-in-motion",
-        "tags": "Blender,AfterEffects",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "image": "files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg",
-          "imageAlt": "cycles-banner-compressed2.jpg",
-          "courses": [
-            "Dart 303"
-          ],
-          "license": "CC BY 4.0",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-CD",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": "https://michaelcollins.xyz"
-            }
-          ],
-          "allowEmbed": true,
-          "publishEmbed": true,
-          "attachments": [
-            {
-              "title": "Storyboard Template (pdf)",
-              "url": "files/rec5yoxGObqGbFsIn_attachment_storyboard-template.pdf",
-              "description": "Storyboard template",
-              "alt": "Storyboard template"
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791232001,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": null,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-d38e90ff-f0c8-4eb4-9745-2171358466f7",
-      "indent": 2,
-      "location": "pages/item-d38e90ff-f0c8-4eb4-9745-2171358466f7/index.html",
-      "slug": "projects/ideas-in-motion/v0-9-0",
-      "order": 1000,
-      "parent": "item-52fb5644-31ca-4c30-a426-3bd4a9182f3a",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:project",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg",
-          "imageAlt": "cycles-banner-compressed2.jpg",
-          "courses": [
-            "Dart 303"
-          ],
-          "license": "CC BY 4.0",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-CD",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": "https://michaelcollins.xyz"
-            }
-          ],
-          "allowEmbed": true,
-          "publishEmbed": true,
-          "attachments": [
-            {
-              "title": "Concept Development Worksheet (.docx)",
-              "url": "/uploads/recWIZ9by8kdM9JEo_attachment_dart303-project-concepts.docx",
-              "description": "Concept development worksheet",
-              "alt": "Concept development worksheet"
-            },
-            {
-              "title": "Storyboard Template (pdf)",
-              "url": "files/rec5yoxGObqGbFsIn_attachment_storyboard-template.pdf",
-              "description": "Storyboard template",
-              "alt": "Storyboard template"
-            }
-          ]
-        },
-        "oerSnapshotOf": "item-52fb5644-31ca-4c30-a426-3bd4a9182f3a",
-        "oerSnapshotTitle": "Ideas In Motion",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
       }
     },
     {

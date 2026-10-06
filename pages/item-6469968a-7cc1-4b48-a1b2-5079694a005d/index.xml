@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-6469968a-7cc1-4b48-a1b2-5079694a005d</id>
+<indent>2</indent>
+<location>pages/item-6469968a-7cc1-4b48-a1b2-5079694a005d/index.xml</location>
+<slug>projects/hypertext-narrative-project-civic-imagination/discover</slug>
+<order>1</order>
+<parent>item-9401e020-db14-4652-9d7b-fc6a27557c2c</parent>
+<title>Discover</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251064</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251064</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

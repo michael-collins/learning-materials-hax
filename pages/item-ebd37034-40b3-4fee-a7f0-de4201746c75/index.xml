@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ebd37034-40b3-4fee-a7f0-de4201746c75</id>
+<indent>2</indent>
+<location>pages/item-ebd37034-40b3-4fee-a7f0-de4201746c75/index.xml</location>
+<slug>projects/open-design-project/deliver</slug>
+<order>12</order>
+<parent>item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85</parent>
+<title>Deliver</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251075</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251075</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

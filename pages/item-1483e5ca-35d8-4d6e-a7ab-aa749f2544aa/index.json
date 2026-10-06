@@ -1,0 +1,19 @@
+{
+  "id": "item-1483e5ca-35d8-4d6e-a7ab-aa749f2544aa",
+  "indent": 2,
+  "location": "pages/item-1483e5ca-35d8-4d6e-a7ab-aa749f2544aa/index.json",
+  "slug": "projects/hypertext-narrative-project-civic-imagination/define",
+  "order": 3,
+  "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+  "title": "Define",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791251065,
+    "images": [],
+    "videos": [],
+    "updated": 1791251065
+  },
+  "content": "<p></p>"
+}

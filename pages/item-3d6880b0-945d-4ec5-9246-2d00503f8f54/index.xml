@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3d6880b0-945d-4ec5-9246-2d00503f8f54</id>
+<indent>2</indent>
+<location>pages/item-3d6880b0-945d-4ec5-9246-2d00503f8f54/index.xml</location>
+<slug>projects/open-design-project/develop</slug>
+<order>6</order>
+<parent>item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85</parent>
+<title>Develop</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251072</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251072</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

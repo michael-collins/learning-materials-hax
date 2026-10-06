@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8058faed-6675-4493-85ca-310a6e8be4c9</id>
+<indent>2</indent>
+<location>pages/item-8058faed-6675-4493-85ca-310a6e8be4c9/index.xml</location>
+<slug>projects/ritual-project/define</slug>
+<order>3</order>
+<parent>item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df</parent>
+<title>Define</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251058</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251058</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

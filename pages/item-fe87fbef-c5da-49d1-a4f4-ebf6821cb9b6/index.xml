@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fe87fbef-c5da-49d1-a4f4-ebf6821cb9b6</id>
+<indent>2</indent>
+<location>pages/item-fe87fbef-c5da-49d1-a4f4-ebf6821cb9b6/index.xml</location>
+<slug>projects/open-design-project/define</slug>
+<order>4</order>
+<parent>item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85</parent>
+<title>Define</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251071</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251071</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

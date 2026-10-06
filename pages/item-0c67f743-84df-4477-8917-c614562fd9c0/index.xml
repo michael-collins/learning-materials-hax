@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0c67f743-84df-4477-8917-c614562fd9c0</id>
+<indent>2</indent>
+<location>pages/item-0c67f743-84df-4477-8917-c614562fd9c0/index.xml</location>
+<slug>projects/open-design-project/discover</slug>
+<order>0</order>
+<parent>item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85</parent>
+<title>Discover</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251069</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251069</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

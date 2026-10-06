@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-551ab523-d69e-4a2c-83ee-32801c06202d</id>
+<indent>2</indent>
+<location>pages/item-551ab523-d69e-4a2c-83ee-32801c06202d/index.xml</location>
+<slug>projects/ritual-project/discover</slug>
+<order>1</order>
+<parent>item-1cc4fd7a-2f8c-4349-9397-eb09d497b6df</parent>
+<title>Discover</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791251057</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791251057</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>
