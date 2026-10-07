@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404511,
+      "updated": 1791404512,
       "version": "26.8.0"
     },
     "theme": {
@@ -29535,95 +29535,6 @@
       }
     },
     {
-      "id": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
-      "indent": 1,
-      "location": "pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.html",
-      "slug": "exercises/modeling-a-diamond",
-      "order": 33,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Diamond",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-diamond",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rec2Od2fcMVgDSQyg_image_diamond_image.png",
-          "imageAlt": "diamond image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231958,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-72ce78b9-ad84-40e8-a53f-010e1c1ef6c5",
-      "indent": 2,
-      "location": "pages/item-72ce78b9-ad84-40e8-a53f-010e1c1ef6c5/index.html",
-      "slug": "exercises/modeling-a-diamond/v0-9-0",
-      "order": 1000,
-      "parent": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rec2Od2fcMVgDSQyg_image_diamond_image.png",
-          "imageAlt": "diamond image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "oerSnapshotOf": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
-        "oerSnapshotTitle": "Modeling a Diamond",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-b5c2804f-dc4a-4374-aae9-af4ab667a602",
       "indent": 1,
       "location": "pages/item-b5c2804f-dc4a-4374-aae9-af4ab667a602/index.html",
@@ -32873,6 +32784,99 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
+      "indent": 1,
+      "location": "pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.html",
+      "slug": "modeling-a-diamond",
+      "order": 33,
+      "parent": null,
+      "title": "Modeling a Diamond",
+      "description": "Model a Diamond\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulative",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-diamond",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rec2Od2fcMVgDSQyg_image_diamond_image.png",
+          "imageAlt": "diamond image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404512,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-72ce78b9-ad84-40e8-a53f-010e1c1ef6c5",
+      "indent": 2,
+      "location": "pages/item-72ce78b9-ad84-40e8-a53f-010e1c1ef6c5/index.html",
+      "slug": "exercises/modeling-a-diamond/v0-9-0",
+      "order": 1000,
+      "parent": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rec2Od2fcMVgDSQyg_image_diamond_image.png",
+          "imageAlt": "diamond image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "oerSnapshotOf": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
+        "oerSnapshotTitle": "Modeling a Diamond",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
       }
     },
     {

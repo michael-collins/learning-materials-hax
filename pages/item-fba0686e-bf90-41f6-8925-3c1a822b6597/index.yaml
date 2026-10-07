@@ -1,11 +1,17 @@
 id: item-fba0686e-bf90-41f6-8925-3c1a822b6597
 indent: 1
 location: pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.yaml
-slug: exercises/modeling-a-diamond
+slug: modeling-a-diamond
 order: 33
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Modeling a Diamond
-description: ''
+description: |-
+  Model a Diamond
+  Learning Objectives
+
+  Practice using 3D software interface and terminology.
+  Use modeling workflows to create high quality topology and edge flow.
+  Familiarize yourself with a cumulative
 metadata:
   published: true
   pageType: oer:exercise
@@ -25,7 +31,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404512
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>Model a Diamond</p>
 
@@ -52,37 +70,37 @@ content: >
   <p>For this assignment, create your own interpretation of a diamond, based on
   observed techniques in the following videos.
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Make sure that your assignment is titled in the following format:
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Last name, First name, the word "Lesson" followed by the Lesson number, and
   the word "Assignment" followed by the Assignment number.
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Example:
 
   Brill Ian Lesson x Assignment x
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Be sure to provide screen grabs or renders from 3 angles and the original
   blender file.
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Be sure to upload each file independently to facilitate ease of grading (so
   that the reviewer only need to download files when necessary).</p>
