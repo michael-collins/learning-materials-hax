@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384032,
+      "updated": 1791384033,
       "version": "26.8.0"
     },
     "theme": {
@@ -30918,7 +30918,7 @@
       "order": 55,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Documentation portfolio",
-      "description": "",
+      "description": "A single site or PDF documenting every exercise and project: photographs, files, settings, failures, and what you would do differently.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A11",

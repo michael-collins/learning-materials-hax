@@ -833,7 +833,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Print iteration: one object, three revisions](https://localhost:3000/learning-materials/pages/item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21/index.md): Design a small object with a fit (a lid, a snap, a hinge) and print it three times, changing one thing each time in response to what failed.
 - [Parametric family](https://localhost:3000/learning-materials/pages/item-f5669ca1-8a62-4854-908c-925e14b7eecb/index.md): Build a parametric model with at least three exposed parameters and generate a family of five variants.
 - [CNC relief tile](https://localhost:3000/learning-materials/pages/item-70652b2f-07b2-489b-a0fa-e1f7f341ec91/index.md): Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut.
-- [Documentation portfolio](https://localhost:3000/learning-materials/pages/item-da8b8213-908b-455f-8501-0bc929cf3b05/index.md)
+- [Documentation portfolio](https://localhost:3000/learning-materials/pages/item-da8b8213-908b-455f-8501-0bc929cf3b05/index.md): A single site or PDF documenting every exercise and project: photographs, files, settings, failures, and what you would do differently.
 - [Reading responses](https://localhost:3000/learning-materials/pages/item-5117d4e6-e938-41a9-b976-858e75347ae5/index.md)
 - [Critique participation](https://localhost:3000/learning-materials/pages/item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180/index.md)
 - [Precedent presentation](https://localhost:3000/learning-materials/pages/item-bdd37b96-f590-4a7b-aad8-5a32e85230ad/index.md)
