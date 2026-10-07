@@ -1,11 +1,16 @@
 id: item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49
 indent: 1
 location: pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.yaml
-slug: exercises/model-a-snowflake
+slug: model-a-snowflake
 order: 28
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Model a Snowflake
-description: ''
+description: |-
+  In this exercise, you will learn how to model 3 snowflakes
+  Learning Objectives
+
+  Practice using 3D software interface and terminology.
+  Use modeling workflows to create high quality topology and edge f
 metadata:
   published: true
   pageType: oer:exercise
@@ -25,7 +30,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404508
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>In this exercise, you will learn how to model 3 snowflakes</p>
 
@@ -51,41 +68,41 @@ content: >
 
   <p>Welcome to the&nbsp;<strong>Blender 3D -Modeling Environment</strong>.
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   I provided a playlist of several different versions of the demonstration for
   this assignment. I recommend checking out the two most recent ones to see a
   variety of different approached that might be used.
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   For this assignment, create 3 unique snowflakes, based on the steps in the
   demonstration and submit 3 images (from good angles) of your model to Canvas
   and the <strong>corresponding discussion thread</strong> for review. Make sure
   that your assignment is titled in the following format:
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   Last name, First name, the word "Lesson" followed by the Lesson number, and
   the word "Assignment" followed by the Assignment number.
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   Example:
 
   Brill Ian Lesson x Assignment x
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   Be sure to provide screen grabs or renders from 3 angles and the original
   blender file. Be sure to upload each file independently to facilitate ease in

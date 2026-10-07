@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404508,
+      "updated": 1791404509,
       "version": "26.8.0"
     },
     "theme": {
@@ -29394,95 +29394,6 @@
       }
     },
     {
-      "id": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
-      "indent": 1,
-      "location": "pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.html",
-      "slug": "exercises/model-a-snowflake",
-      "order": 28,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Model a Snowflake",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/model-a-snowflake",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recorR58sjS22oVbk_image_snowflake_image.png",
-          "imageAlt": "snowflake image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231955,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-55eded12-5c2e-4693-a94c-dd670dddac77",
-      "indent": 2,
-      "location": "pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.html",
-      "slug": "exercises/model-a-snowflake/v0-9-0",
-      "order": 1000,
-      "parent": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recorR58sjS22oVbk_image_snowflake_image.png",
-          "imageAlt": "snowflake image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "oerSnapshotOf": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
-        "oerSnapshotTitle": "Model a Snowflake",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-db344687-9676-46da-9926-d0464ec57873",
       "indent": 1,
       "location": "pages/item-db344687-9676-46da-9926-d0464ec57873/index.html",
@@ -32648,6 +32559,99 @@
         },
         "oerSnapshotOf": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
         "oerSnapshotTitle": "Model a Gem",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
+      "indent": 1,
+      "location": "pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.html",
+      "slug": "model-a-snowflake",
+      "order": 28,
+      "parent": null,
+      "title": "Model a Snowflake",
+      "description": "In this exercise, you will learn how to model 3 snowflakes\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge f",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/model-a-snowflake",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recorR58sjS22oVbk_image_snowflake_image.png",
+          "imageAlt": "snowflake image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404508,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-55eded12-5c2e-4693-a94c-dd670dddac77",
+      "indent": 2,
+      "location": "pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.html",
+      "slug": "exercises/model-a-snowflake/v0-9-0",
+      "order": 1000,
+      "parent": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recorR58sjS22oVbk_image_snowflake_image.png",
+          "imageAlt": "snowflake image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "oerSnapshotOf": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
+        "oerSnapshotTitle": "Model a Snowflake",
         "version": "0.9.0",
         "versionStatus": "archived",
         "hideInMenu": true,

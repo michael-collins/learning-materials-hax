@@ -2989,16 +2989,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/model-a-gem</loc>
-    <lastmod>2026-10-07T20:21:47.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/model-a-snowflake</loc>
+    <lastmod>2026-10-07T20:21:48.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/exercises/model-a-snowflake</loc>
-    <lastmod>2026-10-05T20:25:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/modeling-a-basic-knight</loc>
@@ -3123,6 +3117,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/applying-textures-to-3-unique-chess-sets</loc>
     <lastmod>2026-10-07T20:21:46.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/model-a-gem</loc>
+    <lastmod>2026-10-07T20:21:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3877,12 +3877,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/exercises/model-a-gem/v0-9-0</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/exercises/model-a-snowflake/v0-9-0</loc>
     <lastmod>2026-10-05T20:26:44.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -4010,6 +4004,12 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/applying-textures-to-3-unique-chess-sets/v0-9-0</loc>
+    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/exercises/model-a-gem/v0-9-0</loc>
     <lastmod>2026-10-05T20:26:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
