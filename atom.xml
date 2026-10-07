@@ -81,6 +81,10 @@
 </ul>
 <oer-schematic preset="outline-builder" alt="Diagram of the outline builder: rows grouped under Library and Curriculum headings, a link chip showing version v1.2.0, the Icons switch and Save, and Add page, Add existing and Add heading buttons." caption="The outline builder: headings, a linked page showing its version, and the add buttons."></oer-schematic>
 
+<h2>Courses</h2>
+<p>Each course in the catalog has a page under <em>Curriculum → Courses</em>: its code and credits, a link to its bulletin entry, its prerequisites (linked to their course pages, with the bulletin's wording), delivery, the pathways and books built for it, and links to student work hosted elsewhere. Below that, the page lists <strong>everything taught in the course</strong> by itself, grouped by type: every lesson, lecture, reading, exercise, project and quiz whose <em>Courses</em> field holds the course's code. To add a page to a course, pick the course in its Page details; the Courses field offers the codes of the course pages. A page collection placed anywhere can also be limited to one course in its settings.</p>
+<oer-schematic preset="course" alt="Diagram of a course page: the course code and credits, cards for the bulletin and prerequisites, then a highlighted list of what is taught in the course, grouped into lessons, readings and projects." caption="A course page: the catalog details, then everything taught in the course, grouped by type."></oer-schematic>
+
 <h2>Pathways</h2>
 <p>A pathway is a page of type Pathway whose sub-pages are its modules; each module's sub-pages are its items, usually linked from the library so they stay in one place. The Pathways page lists them in three groups: where to start, what builds on it, and what is still in development. On a pathway page you see the course, length, levels and what to do first, then the route: a matrix of modules by level, or a module list with a level switcher. Items without a level belong to every level.</p>
 <oer-schematic preset="pathways-index" alt="Diagram of the Pathways page: cards in three groups, Start here, Builds on and In development." caption="The Pathways index: where to start, what builds on it, and what is in development."></oer-schematic>
@@ -270,7 +274,7 @@ Become </summary>
   <entry>
     <title>Content types</title>
     <id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
-    <updated>2026-10-07T15:01:06.000Z</updated>
+    <updated>2026-10-07T15:15:44.000Z</updated>
     <published>2026-10-01T02:43:07.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/content-types"/>
@@ -361,7 +365,7 @@ Become </summary>
   <entry>
     <title>You don&apos;t see that everyday objects</title>
     <id>item-48ad9f94-3f8b-44e5-8416-316cff49f4d2</id>
-    <updated>2026-10-07T15:01:07.000Z</updated>
+    <updated>2026-10-07T15:15:49.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-objects"/>
@@ -497,7 +501,7 @@ Become </summary>
   <entry>
     <title>Creating Blockouts for Games</title>
     <id>item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f</id>
-    <updated>2026-10-05T20:20:40.000Z</updated>
+    <updated>2026-10-07T15:15:51.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/tutorials/creating-blockouts-for-games"/>
@@ -512,7 +516,7 @@ Become </summary>
   <entry>
     <title>History of CGI</title>
     <id>item-d20b5a98-dc5e-4ce8-b734-32490288d27c</id>
-    <updated>2026-10-05T23:17:40.000Z</updated>
+    <updated>2026-10-07T15:16:04.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/history-of-cgi"/>
@@ -583,7 +587,7 @@ Become </summary>
   <entry>
     <title>You don&apos;t see that everyday object posters</title>
     <id>item-930abc68-c77e-479c-b2ff-220e4714c712</id>
-    <updated>2026-10-07T15:01:07.000Z</updated>
+    <updated>2026-10-07T15:16:06.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters"/>
@@ -688,7 +692,7 @@ Become </summary>
   <entry>
     <title>3D Modeling Fundamentals</title>
     <id>item-d05396b9-88a6-4631-821f-40a2e9bd2d4f</id>
-    <updated>2026-10-05T20:23:24.000Z</updated>
+    <updated>2026-10-07T15:16:17.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals"/>
@@ -826,7 +830,7 @@ Become </summary>
   <entry>
     <title>Stylized Prop Set</title>
     <id>item-0166883b-7fd8-465a-a98b-74f4f9b02cb0</id>
-    <updated>2026-10-05T20:23:26.000Z</updated>
+    <updated>2026-10-07T15:16:18.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/stylized-prop-set"/>
@@ -846,7 +850,7 @@ Become </summary>
   <entry>
     <title>Texturing and UV Mapping</title>
     <id>item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4</id>
-    <updated>2026-10-05T23:17:41.000Z</updated>
+    <updated>2026-10-07T15:16:18.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
@@ -903,7 +907,7 @@ Become </summary>
   <entry>
     <title>Modular Environment Kit</title>
     <id>item-e09e22f7-6a97-4fed-bd10-2cde35349b24</id>
-    <updated>2026-10-05T20:24:04.000Z</updated>
+    <updated>2026-10-07T15:17:12.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/modular-environment-kit"/>
@@ -935,7 +939,7 @@ Become </summary>
   <entry>
     <title>Lighting Principles</title>
     <id>item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95</id>
-    <updated>2026-10-05T23:17:41.000Z</updated>
+    <updated>2026-10-07T15:16:19.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore fundamental lighting principles and techniques for creating mood, atmosphere, and visual interest in 3D scenes.</summary>
     <link href="https://localhost:3000/learning-materials/lessons/lighting-principles"/>
@@ -991,7 +995,7 @@ Become </summary>
   <entry>
     <title>Realtime Game Environment</title>
     <id>item-55d4ea63-f507-4470-b2c8-e8b11b1c499b</id>
-    <updated>2026-10-07T15:01:08.000Z</updated>
+    <updated>2026-10-07T15:17:21.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
     <link href="https://localhost:3000/learning-materials/projects/realtime-game-environment"/>
