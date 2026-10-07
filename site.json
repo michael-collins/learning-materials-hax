@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384023,
+      "updated": 1791384024,
       "version": "26.8.0"
     },
     "theme": {
@@ -30726,7 +30726,7 @@
       "order": 49,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Object autopsy",
-      "description": "",
+      "description": "Choose a manufactured object you own.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A01",
