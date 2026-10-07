@@ -504,6 +504,17 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :is(custom-oer-docs-theme, .oer-reading) figure {
           margin: 1.5rem 0;
         }
+        /* AI Usage License badges (dmd-program.github.io/aiul) sit at badge
+           size; their embed's own max-width is an inline style, which HAX
+           strips when it saves a page */
+        :is(custom-oer-docs-theme, .oer-reading) img[src*="/aiul/assets/images/licenses/"] {
+          width: auto;
+          max-width: 100%;
+          height: 2rem;
+          border: 0;
+          border-radius: 0;
+          vertical-align: middle;
+        }
         :is(custom-oer-docs-theme, .oer-reading) figure img {
           display: block;
           max-width: 100%;

@@ -10896,6 +10896,17 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         :is(custom-oer-docs-theme, .oer-reading) figure {
           margin: 1.5rem 0;
         }
+        /* AI Usage License badges (dmd-program.github.io/aiul) sit at badge
+           size; their embed's own max-width is an inline style, which HAX
+           strips when it saves a page */
+        :is(custom-oer-docs-theme, .oer-reading) img[src*="/aiul/assets/images/licenses/"] {
+          width: auto;
+          max-width: 100%;
+          height: 2rem;
+          border: 0;
+          border-radius: 0;
+          vertical-align: middle;
+        }
         :is(custom-oer-docs-theme, .oer-reading) figure img {
           display: block;
           max-width: 100%;
@@ -13513,6 +13524,15 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         max-width: 100%;
         height: auto;
         border-radius: var(--radius-md, 0.5rem);
+      }
+      /* AI Usage License badges (dmd-program.github.io/aiul) sit at badge
+         size; their embed's own max-width is an inline style, which HAX
+         strips when it saves a page */
+      .content img[src*="/aiul/assets/images/licenses/"] {
+        width: auto;
+        height: 2rem;
+        border-radius: 0;
+        vertical-align: middle;
       }
       .content table {
         width: 100%;

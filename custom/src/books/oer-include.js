@@ -142,6 +142,15 @@ export class OerInclude extends LitElement {
         height: auto;
         border-radius: var(--radius-md, 0.5rem);
       }
+      /* AI Usage License badges (dmd-program.github.io/aiul) sit at badge
+         size; their embed's own max-width is an inline style, which HAX
+         strips when it saves a page */
+      .content img[src*="/aiul/assets/images/licenses/"] {
+        width: auto;
+        height: 2rem;
+        border-radius: 0;
+        vertical-align: middle;
+      }
       .content table {
         width: 100%;
         border-collapse: collapse;
