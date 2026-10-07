@@ -2341,16 +2341,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/designs-of-darkness</loc>
-    <lastmod>2026-10-07T20:21:36.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/face-to-face-with-design</loc>
+    <lastmod>2026-10-07T20:21:37.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/articles/face-to-face-with-design</loc>
-    <lastmod>2026-10-07T15:17:59.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/critical-design</loc>
@@ -3200,6 +3194,12 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/edsel-s-law-how-bad-design-happens</loc>
+    <lastmod>2026-10-07T20:21:36.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/designs-of-darkness</loc>
     <lastmod>2026-10-07T20:21:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>

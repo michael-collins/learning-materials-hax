@@ -2,11 +2,11 @@
   "id": "item-8791fde3-3e35-4a01-bd33-2064ed777616",
   "indent": 1,
   "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.json",
-  "slug": "articles/face-to-face-with-design",
+  "slug": "face-to-face-with-design",
   "order": 32,
-  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "parent": null,
   "title": "Face to Face with Design",
-  "description": "",
+  "description": "Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No",
   "metadata": {
     "published": true,
     "pageType": "oer:article",
@@ -21,14 +21,21 @@
       ],
       "date": "2026-03-01",
       "courses": [
-        "DMD 100"
+        {
+          "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0"
     },
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791404497,
+    "overridePathauto": false,
+    "hideInMenu": false,
+    "locked": false,
+    "readtime": 1
   },
-  "content": "<p>Face to Face with Design (p. 62-82) in Design and Truth by Robert Grudin</p>\n<h2>Writing prompt</h2>\n<p>In this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. Now think of a time that you designed or fixed something when you had a meaningful connection with. Describe the specific design choices you made and what they reveal about you and the experience. What specifically created a strong connection with this object or subject?</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p>&lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" target=\"_blank\" rel=\"license\"&gt;\n&lt;img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\" style=\"border-width:0; max-width:170px;\" /&gt;\n&lt;/a&gt;\n&lt;br /&gt;\nPlease see the &lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" target=\"_blank\" rel=\"license\"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>\n"
+  "content": "<p>Face to Face with Design (p. 62-82) in Design and Truth by Robert Grudin</p>\n<h2>Writing prompt</h2>\n<p>In this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. Now think of a time that you designed or fixed something when you had a meaningful connection with. Describe the specific design choices you made and what they reveal about you and the experience. What specifically created a strong connection with this object or subject?</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p><a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" rel=\"license\">\n<img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\">\n</a>\n<br>\nPlease see the <a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" rel=\"license\">AI Usage License AIUL-NA-WR</a> for AI usage information.</p>\n"
 }

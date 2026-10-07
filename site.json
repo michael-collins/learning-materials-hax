@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404497,
+      "updated": 1791404498,
       "version": "26.8.0"
     },
     "theme": {
@@ -22912,42 +22912,6 @@
       }
     },
     {
-      "id": "item-8791fde3-3e35-4a01-bd33-2064ed777616",
-      "indent": 1,
-      "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.html",
-      "slug": "articles/face-to-face-with-design",
-      "order": 32,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Face to Face with Design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-2-readings-chapter-7-face-to-face-with-design",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386279
-      }
-    },
-    {
       "id": "item-e58e3e63-4a83-4880-9750-a8c990bbdc86",
       "indent": 1,
       "location": "pages/item-e58e3e63-4a83-4880-9750-a8c990bbdc86/index.html",
@@ -33129,6 +33093,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404496,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-8791fde3-3e35-4a01-bd33-2064ed777616",
+      "indent": 1,
+      "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.html",
+      "slug": "face-to-face-with-design",
+      "order": 32,
+      "parent": null,
+      "title": "Face to Face with Design",
+      "description": "Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-2-readings-chapter-7-face-to-face-with-design",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404497,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
