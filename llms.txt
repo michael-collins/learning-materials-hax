@@ -604,7 +604,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [What is Design?](https://localhost:3000/learning-materials/pages/item-7ffaac6d-dc2c-4d1e-beba-590d1527324b/index.md)
 - [99 Percent Invisible: 10,000 years](https://localhost:3000/learning-materials/pages/item-998244db-2951-4de5-89af-09aa7be71c84/index.md)
 - [99 Percent Invisible: On Average](https://localhost:3000/learning-materials/pages/item-416c4dc5-b03b-4b15-86c7-5d4cb4690ccb/index.md)
-- [Designs of Darkness](https://localhost:3000/learning-materials/pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.md)
 - [Face to Face with Design](https://localhost:3000/learning-materials/pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.md)
 - [Critical design](https://localhost:3000/learning-materials/pages/item-e58e3e63-4a83-4880-9750-a8c990bbdc86/index.md)
 - [Identity design](https://localhost:3000/learning-materials/pages/item-34704e11-d9fc-424f-bc28-3a43396014ff/index.md)
@@ -865,6 +864,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [What Design and Truth Say about Each Other](https://localhost:3000/learning-materials/pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.md): What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt In this chapter, Grudin talks about the transition of design from close dialogue with natural systems
 - [Design as Tragedy: The Rise and Fall of the Twin Towers](https://localhost:3000/learning-materials/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md): Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may
 - [Edsel's Law: How Bad Design Happens](https://localhost:3000/learning-materials/pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.md): Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin describes the Edsel scale for measuring the quality of a design: Photograph an objec
+- [Designs of Darkness](https://localhost:3000/learning-materials/pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.md): Designs of Darkness (p. 55-61) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the soci
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404496,
+      "updated": 1791404497,
       "version": "26.8.0"
     },
     "theme": {
@@ -22912,42 +22912,6 @@
       }
     },
     {
-      "id": "item-025f599c-65f1-41d7-9bdd-10778199ea2f",
-      "indent": 1,
-      "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.html",
-      "slug": "articles/designs-of-darkness",
-      "order": 31,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Designs of Darkness",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-2-readings-chapter-6-designs-of-darkness",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386278
-      }
-    },
-    {
       "id": "item-8791fde3-3e35-4a01-bd33-2064ed777616",
       "indent": 1,
       "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.html",
@@ -33104,6 +33068,46 @@
         "published": true,
         "pageType": "oer:article",
         "oerSource": "articles/dmd100-lesson-2-readings-chapter-5-edsels-law-how-bad-design-happens",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404496,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-025f599c-65f1-41d7-9bdd-10778199ea2f",
+      "indent": 1,
+      "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.html",
+      "slug": "designs-of-darkness",
+      "order": 31,
+      "parent": null,
+      "title": "Designs of Darkness",
+      "description": "Designs of Darkness (p. 55-61) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the soci",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-2-readings-chapter-6-designs-of-darkness",
         "tags": "reading",
         "oerFields": {
           "authors": [
