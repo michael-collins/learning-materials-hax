@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404493,
+      "updated": 1791404494,
       "version": "26.8.0"
     },
     "theme": {
@@ -22912,42 +22912,6 @@
       }
     },
     {
-      "id": "item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d",
-      "indent": 1,
-      "location": "pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.html",
-      "slug": "articles/what-design-and-truth-say-about-each-other",
-      "order": 28,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "What Design and Truth Say about Each Other",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-2-readings-chapter-3-what-design-and-truth-say-about-each-other",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386276
-      }
-    },
-    {
       "id": "item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24",
       "indent": 1,
       "location": "pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.html",
@@ -33117,6 +33081,46 @@
         "images": [],
         "videos": [],
         "updated": 1791386371
+      }
+    },
+    {
+      "id": "item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d",
+      "indent": 1,
+      "location": "pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.html",
+      "slug": "what-design-and-truth-say-about-each-other",
+      "order": 28,
+      "parent": null,
+      "title": "What Design and Truth Say about Each Other",
+      "description": "What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt\nIn this chapter, Grudin talks about the transition of design from close dialogue with natural systems",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-2-readings-chapter-3-what-design-and-truth-say-about-each-other",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404494,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
       }
     }
   ]

@@ -2221,12 +2221,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/license-examples</loc>
-    <lastmod>2026-10-07T20:21:33.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/articles/measuring-success</loc>
     <lastmod>2026-10-07T15:17:42.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2347,10 +2341,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/articles/what-design-and-truth-say-about-each-other</loc>
-    <lastmod>2026-10-07T15:17:56.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/what-design-and-truth-say-about-each-other</loc>
+    <lastmod>2026-10-07T20:21:34.000Z</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/design-as-tragedy-the-rise-and-fall-of-the-twin-towers</loc>
@@ -2741,6 +2735,12 @@
     <lastmod>2026-10-07T15:18:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/license-examples</loc>
+    <lastmod>2026-10-07T20:21:33.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources</loc>
