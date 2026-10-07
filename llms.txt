@@ -424,7 +424,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Sheet to form: sectioning, folding, joinery](https://localhost:3000/learning-materials/pages/item-3c61c343-9aaa-4257-b871-355930bdcd69/index.md): Getting 3D from 2D sheets: stacked sections, waffle/egg-crate, slotted assemblies, press-fit, living hinges, scoring and folding.
 - [Project 1 launch: Sheet to form](https://localhost:3000/learning-materials/pages/item-86df4055-aee6-4e3c-aa9c-5e291791c8ef/index.md): Project 1 brief; theme introduction; precedents; sketching and prototyping in chipboard; the crit protocol.
 - [Project 1 production + crit](https://localhost:3000/learning-materials/pages/item-b2b1aa00-e58f-483e-8649-84526b67110a/index.md): Production; troubleshooting cut files; finishing laser-cut work; documentation basics; Project 1 crit.
-- [Additive: 3D printing fundamentals](https://localhost:3000/learning-materials/pages/item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a/index.md)
+- [Additive: 3D printing fundamentals](https://localhost:3000/learning-materials/pages/item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a/index.md): How FDM works; slicing; orientation, supports, overhangs, wall thickness, infill; materials (PLA/PETG); mesh hygiene (manifold, normals, STL/3MF); the print queue.
 - [Modeling for fabrication: parametric and sculptural](https://localhost:3000/learning-materials/pages/item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a/index.md)
 - [Project 2 launch: Multiples and variation](https://localhost:3000/learning-materials/pages/item-23bfc330-baae-4c57-b782-7da696b33431/index.md)
 - [Subtractive: CNC routing](https://localhost:3000/learning-materials/pages/item-29ccdd18-d451-48e3-b92a-ee97be5e062f/index.md)

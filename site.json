@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384040,
+      "updated": 1791384041,
       "version": "26.8.0"
     },
     "theme": {
@@ -13320,7 +13320,7 @@
       "order": 38,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Additive: 3D printing fundamentals",
-      "description": "",
+      "description": "How FDM works; slicing; orientation, supports, overhangs, wall thickness, infill; materials (PLA/PETG); mesh hygiene (manifold, normals, STL/3MF); the print queue.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerPlan": "DART 413:M06",
