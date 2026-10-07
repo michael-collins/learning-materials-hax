@@ -3,11 +3,16 @@
 <id>item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d</id>
 <indent>1</indent>
 <location>pages/item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d/index.xml</location>
-<slug>exercises/share-one-completed-set</slug>
+<slug>share-one-completed-set</slug>
 <order>48</order>
-<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<parent></parent>
 <title>Share One Completed Set</title>
-<description></description>
+<description>In this exercise, you will apply Image textures to a Chess board and piecesLearning Objectives
+
+Practice rendering images for submissions
+
+Instructions
+For this assignment, you will submit 3 total im</description>
 <metadata>
 <published>true</published>
 <pageType>oer:exercise</pageType>
@@ -34,7 +39,24 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791404515</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will apply Image textures to a Chess board and pieces</p>
 <h2>Learning Objectives</h2>
@@ -43,13 +65,13 @@
 </ol>
 <h2>Instructions</h2>
 <p><strong>For this assignment,&nbsp;you will submit 3 total images.</strong>
-&lt;br&gt;<br>
+<br><br>
 Develop and refine a single chess set based on observation over time, peer and instructor feedback.
-&lt;br&gt;<br>
+<br><br>
 <strong>Submit three renders of <em>this individual</em> set to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em>.</strong>&nbsp;
-&lt;br&gt;  Make sure that your assignment is titled in the following format:
+<br>  Make sure that your assignment is titled in the following format:
 <strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>
-&lt;br&gt;<br>
+<br><br>
 <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="exercise"></oer-rubric>
