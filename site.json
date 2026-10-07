@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385281,
+      "updated": 1791385282,
       "version": "26.8.0"
     },
     "theme": {
@@ -16146,7 +16146,7 @@
       "order": 3,
       "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
       "title": "DART 203: 3D Digital Art & Design Fundamentals",
-      "description": "",
+      "description": "3D Digital Art & Design Fundamentals, 3 credits.",
       "metadata": {
         "pageType": "oer:course",
         "published": true,
