@@ -533,12 +533,55 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           text-decoration: underline;
           text-underline-offset: 3px;
         }
+        /* code, after shadcn's typography. DDD styles every code element
+           as an inline-block box with a groove border, tight line height,
+           margins and a transition; reset all of it here */
         :is(custom-oer-docs-theme, .oer-reading) :not(pre) > code {
+          display: inline;
+          margin: 0;
+          border: 0;
+          padding: 0.125rem 0.375rem;
+          border-radius: var(--radius-sm);
+          background: var(--muted);
+          color: var(--foreground);
           font-family: var(--font-mono);
           font-size: 0.875em;
+          line-height: inherit;
+          transition: none;
+          /* long snippets wrap, each line keeping its padding and corners */
+          overflow-wrap: anywhere;
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+        }
+        :is(custom-oer-docs-theme, .oer-reading) pre {
+          /* DDD makes pre an inline box sized to its text */
+          display: block;
+          box-sizing: border-box;
+          width: auto;
+          max-width: 100%;
+          margin: 1rem 0;
+          padding: 0.875rem 1rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
           background: var(--muted);
-          border-radius: var(--radius-sm);
-          padding: 0.125rem 0.375rem;
+          color: var(--foreground);
+          font-family: var(--font-mono);
+          font-size: 0.875rem;
+          line-height: 1.6;
+          overflow-x: auto;
+          tab-size: 2;
+        }
+        :is(custom-oer-docs-theme, .oer-reading) pre > code {
+          display: block;
+          margin: 0;
+          border: 0;
+          padding: 0;
+          background: transparent;
+          color: inherit;
+          font: inherit;
+          line-height: inherit;
+          white-space: pre;
+          transition: none;
         }
       `,
     ];
