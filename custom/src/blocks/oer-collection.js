@@ -91,7 +91,7 @@ export class OerCollection extends LitElement {
     this.controls = "full";
     this._items = [];
     this._defs = [];
-    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, view: null, hidden: [], perPage: 0 };
+    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, activeGroup: "", view: null, hidden: [], perPage: 0 };
     this._columnsOpen = false;
   }
 
@@ -150,7 +150,9 @@ export class OerCollection extends LitElement {
   }
 
   _setState(patch) {
-    if (patch.page === 1 && !("groupPages" in patch)) patch = { ...patch, groupPages: {} };
+    // a new search, filter, sort or grouping starts every group over, and
+    // no group is the one being paged
+    if (patch.page === 1 && !("groupPages" in patch)) patch = { ...patch, groupPages: {}, activeGroup: "" };
     this._state = { ...this._state, ...patch };
     const { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage } = this._state;
     writeStore(this._storageKey, { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage });
@@ -742,6 +744,20 @@ export class OerCollection extends LitElement {
       /* groups */
       .group + .group {
         margin-top: 1.25rem;
+      }
+      /* paging scrolls a group to the top: clear of the top bar, with room
+         for the current group's outline */
+      .group {
+        scroll-margin-top: calc(var(--topbar-height, 3.5rem) + 1.25rem);
+      }
+      /* the group being paged: outlined and tinted, drawn outside its box so
+         nothing moves; it stays until another group is paged */
+      .group.current {
+        border-radius: var(--radius-lg, 0.75rem);
+        background: color-mix(in srgb, var(--primary, #0071b6) 6%, transparent);
+        box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 6%, transparent);
+        outline: 2px solid var(--primary, #0071b6);
+        outline-offset: 0.625rem;
       }
       .group h3 {
         display: flex;
@@ -1438,7 +1454,7 @@ export class OerCollection extends LitElement {
       scrollTo?.scrollIntoView?.({ block: "start", behavior: "auto" });
     };
     return html`<nav class="pager" aria-label="${label}">
-      <span class="pager-status">Showing ${(page - 1) * per + 1}–${Math.min(page * per, total)} of ${total}</span>
+      <span class="pager-status" aria-live="polite">Showing ${(page - 1) * per + 1}–${Math.min(page * per, total)} of ${total}</span>
       ${sizes ? this._renderPerPage() : ""}
       ${pages > 1
         ? html`<div class="pages">
@@ -1479,7 +1495,9 @@ export class OerCollection extends LitElement {
         : grouped
           ? groups.map((g) => {
               const p = groupPage(g);
-              return html`<section class="group" data-group="${g.key}">
+              // the group being paged stays marked, so it's easy to find again
+              const current = this._state.activeGroup === g.key;
+              return html`<section class="group ${current ? "current" : ""}" data-group="${g.key}">
                 <h3>${g.key}<span class="count">${g.items.length}</span></h3>
                 ${body(g.items.slice((p - 1) * per, p * per))}
                 ${this._renderPager(g.items.length, p, {
@@ -1487,7 +1505,7 @@ export class OerCollection extends LitElement {
                   sizes: false,
                   scrollTo: null,
                   go: (n) => {
-                    this._setState({ groupPages: { ...(this._state.groupPages || {}), [g.key]: n } });
+                    this._setState({ groupPages: { ...(this._state.groupPages || {}), [g.key]: n }, activeGroup: g.key });
                     this.updateComplete.then(() => this.shadowRoot.querySelector(`section.group[data-group="${CSS.escape(g.key)}"]`)?.scrollIntoView({ block: "start", behavior: "auto" }));
                   },
                 })}
