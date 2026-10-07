@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385280,
+      "updated": 1791385281,
       "version": "26.8.0"
     },
     "theme": {
@@ -14991,7 +14991,7 @@
       "order": 2,
       "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
       "title": "DMD 400: Digital Multimedia Design Capstone",
-      "description": "",
+      "description": "Digital Multimedia Design Capstone, 3 (maximum of 6) credits.",
       "metadata": {
         "pageType": "oer:course",
         "published": true,
