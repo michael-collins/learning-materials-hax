@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384030,
+      "updated": 1791384031,
       "version": "26.8.0"
     },
     "theme": {
@@ -6608,7 +6608,7 @@
       "order": 0,
       "parent": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
       "title": "Final project proposal",
-      "description": "",
+      "description": "Using the template: the idea, the theme it answers, the processes and machines, a week-by-week production plan with machine time, the materials and cost, and what you don't yet know.",
       "metadata": {
         "pageType": "oer:activity",
         "oerPlan": "DART 413:A09",
