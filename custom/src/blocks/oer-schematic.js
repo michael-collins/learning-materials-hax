@@ -322,6 +322,37 @@ const PRESETS = {
     ${HR(138.5, 66, 381.5)}
     ${page(158, 80, 200, 7)}
     ${R(158, 204, 70, 18, "card", 5)}${R(290, 204, 70, 18, "card", 5)}`,
+
+  // Reader mode: no sidebar, a slim bar (Contents, Text, the page count with
+  // arrows, Exit), the page in a narrow column, and the Text panel open
+  reader: () => {
+    // a segmented control: n options, one chosen (text sizes in px, optional)
+    const seg = (y, labels, on, sizes = []) => {
+      const w = 112 / labels.length;
+      return svg`${R(82, y, 112, 14, "box", 4)}${labels.map(
+        (l, i) =>
+          svg`${i === on ? R(84 + i * w, y + 2, w - 4, 10, "card", 3) : ""}<text x=${82 + i * w + w / 2} y=${y + 10} class=${i === on ? "lbl sm" : "muted sm"} text-anchor="middle" style=${sizes[i] ? `font-size:${sizes[i]}px` : ""}>${l}</text>`,
+      )}`;
+    };
+    return svg`
+      ${win(false)}
+      ${HR(0.5, 56, W - 0.5)}
+      ${R(1, 55, 52, 2, "hi", 1)}
+      ${btn(10, 33, 56, "Contents", "ghost")}${btn(72, 33, 30, "Aa")}
+      ${L(146, 40, 58, "t2")}${P("M218 38.5 l-3.5 3.5 l3.5 3.5", "stroke")}${T(234, 45, "3 / 30", "muted sm", "middle")}${P("M250 38.5 l3.5 3.5 l-3.5 3.5", "stroke")}
+      ${btn(332, 33, 58, "Exit", "ghost")}${P("M341 39.5 l5 5 M346 39.5 l-5 5", "stroke")}
+      ${R(150, 72, 120, 10, "t", 3)}
+      ${[0, 1, 2, 3, 4].map((i) => L(150, 94 + i * 11, i === 4 ? 110 : 160))}
+      ${R(150, 152, 72, 7, "t", 3)}
+      ${[0, 1, 2, 3, 4, 5].map((i) => L(150, 168 + i * 11, i === 5 ? 96 : 160))}
+      ${R(72, 62, 132, 142, "pop hi-line", 8)}
+      ${T(82, 76, "Text size", "muted sm")}${seg(80, ["A", "A", "A", "A"], 1, [6.5, 8, 9.5, 11])}
+      ${T(82, 108, "Typeface", "muted sm")}${seg(112, ["Serif", "Sans"], 0)}
+      ${T(82, 140, "Line width", "muted sm")}${seg(144, ["Narrow", "Medium", "Wide"], 1)}
+      ${T(82, 172, "Page", "muted sm")}
+      ${R(82, 176, 36, 16, "card", 4)}${R(120, 176, 36, 16, "box", 4)}${R(158, 176, 36, 16, "t-strong", 4)}
+      ${R(119, 175, 38, 18, "ghost hi-line", 5)}`;
+  },
 };
 
 export const SCHEMATICS = Object.keys(PRESETS);
