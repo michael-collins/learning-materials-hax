@@ -11,7 +11,7 @@ description: >-
   pathways, versions, books, embedding and open licen
 metadata:
   created: 1790801562
-  updated: 1791401166
+  updated: 1791403577
   published: true
   locked: false
   status: ''
@@ -255,8 +255,9 @@ content: >
   <p><strong>Text</strong> sets the text size, a serif or sans typeface, the
   line width, the line spacing, the page colour (light, paper, sepia or dark,
   separate from the site's dark mode) and <strong>Texture</strong>, a fine paper
-  grain over any of them. The settings are each reader's own, remembered on
-  their device.</p>
+  grain over any of them, with a strength slider since screens show it
+  differently. The settings are each reader's own, remembered on their
+  device.</p>
 
   <oer-schematic preset="reader" alt="Diagram of Reader mode: no sidebar; a slim
   bar with Contents, a highlighted Aa button, the page count 3 / 30 between

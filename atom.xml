@@ -3,7 +3,7 @@
   <title>Digital Arts OER</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-10-07T19:16:34.000Z</updated>
+  <updated>2026-10-07T19:26:07.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>D.Arts OER Overview</title>
     <id>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</id>
-    <updated>2026-10-07T19:26:06.000Z</updated>
+    <updated>2026-10-07T20:06:17.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen</summary>
     <link href="https://localhost:3000/learning-materials/d-arts-oer-overview"/>
@@ -101,7 +101,7 @@
 
 <h2>Reader mode</h2>
 <p><strong>Reader mode</strong> is a quieter way to read through a book. The sidebar and site controls go and the chapter sits in one column under a slim bar: <strong>Contents</strong> (the book's outline) and <strong>Text</strong> on the left, the book and page count with previous and next arrows in the middle, and <strong>Exit reader</strong> on the right. Start it with <em>Reader mode</em> on the book's page, or <em>Reader</em> in the top bar on any page of a book. The ← and → keys also turn pages. It lasts the visit: following a link out of the book shows the site as usual, and Back returns to Reader mode.</p>
-<p><strong>Text</strong> sets the text size, a serif or sans typeface, the line width, the line spacing, the page colour (light, paper, sepia or dark, separate from the site's dark mode) and <strong>Texture</strong>, a fine paper grain over any of them. The settings are each reader's own, remembered on their device.</p>
+<p><strong>Text</strong> sets the text size, a serif or sans typeface, the line width, the line spacing, the page colour (light, paper, sepia or dark, separate from the site's dark mode) and <strong>Texture</strong>, a fine paper grain over any of them, with a strength slider since screens show it differently. The settings are each reader's own, remembered on their device.</p>
 <oer-schematic preset="reader" alt="Diagram of Reader mode: no sidebar; a slim bar with Contents, a highlighted Aa button, the page count 3 / 30 between arrows, and Exit; the Text panel open over a narrow column of text, with text size, typeface, line width and a choice of light, paper, sepia or dark page, paper selected, and Texture switched on." caption="Reader mode with the Text panel open: text size, typeface, line width and page colour."></oer-schematic>
 
 <h2>Browse pages</h2>
