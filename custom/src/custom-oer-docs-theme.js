@@ -255,6 +255,34 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }, loggedIn ? 1200 : 2000);
       }),
     );
+    // scroll on navigation. On desktop the page scrolls inside <main>, which
+    // HAX's router doesn't know about, so a new page kept the last one's
+    // scroll. Following a link starts the new page at the top (or at its
+    // #anchor); Back and Forward return to where you were on that page.
+    this.__scrollPositions = new Map();
+    // HAX's router switches pages while the popstate event is still being
+    // dispatched, before this listener runs: note when it happened, and
+    // decide once the event is over
+    this.__onPopState = () => (this.__historyNavAt = Date.now());
+    globalThis.addEventListener("popstate", this.__onPopState, true);
+    this.__disposer.push(
+      autorun(() => {
+        const active = toJS(store.activeId);
+        if (!active) return;
+        const previous = this.__scrolledFor;
+        this.__scrolledFor = active;
+        // where the reader was on the page they're leaving
+        if (previous && previous !== active) this.__scrollPositions.set(previous, this._scrollTop());
+        if (!previous || previous === active) return;
+        setTimeout(() => {
+          if (store.activeId !== active) return;
+          const back = Date.now() - (this.__historyNavAt || 0) < 1000;
+          this.__historyNavAt = 0;
+          if (back && this.__scrollPositions.has(active)) this._restoreScroll(this.__scrollPositions.get(active));
+          else if (!globalThis.location.hash) this._scrollTo(0);
+        });
+      }),
+    );
     // on every route change: close the mobile drawer, recompute prev/next
     this.__disposer.push(
       autorun(() => {
@@ -334,7 +362,37 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.style.setProperty("--editor-bar-height", `${Math.round(h)}px`);
   }
 
+  // the page's scroll: <main> on desktop, the window on narrow screens
+  _scroller() {
+    const main = this.shadowRoot?.querySelector("main");
+    return main && main.scrollHeight > main.clientHeight && getComputedStyle(main).overflowY !== "visible" ? main : null;
+  }
+
+  _scrollTop() {
+    return this._scroller()?.scrollTop ?? globalThis.scrollY;
+  }
+
+  _scrollTo(top) {
+    const main = this.shadowRoot?.querySelector("main");
+    if (main) main.scrollTop = top;
+    if (globalThis.scrollY) globalThis.scrollTo(0, top);
+  }
+
+  // back to a position once the page is long enough to have it again
+  // (its content and collections arrive after the route changes)
+  _restoreScroll(top) {
+    const started = Date.now();
+    const attempt = () => {
+      const el = this._scroller();
+      const room = el ? el.scrollHeight - el.clientHeight : globalThis.document.documentElement.scrollHeight - globalThis.innerHeight;
+      if (room >= top || Date.now() - started > 2000) return this._scrollTo(Math.min(top, Math.max(0, room)));
+      setTimeout(attempt, 100);
+    };
+    requestAnimationFrame(attempt);
+  }
+
   disconnectedCallback() {
+    globalThis.removeEventListener("popstate", this.__onPopState, true);
     this.__editorBarObserver.disconnect();
     this.__bodyObserver.disconnect();
     globalThis.removeEventListener("keydown", this.__keyHandler);
