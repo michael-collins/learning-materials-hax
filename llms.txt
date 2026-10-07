@@ -834,7 +834,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Parametric family](https://localhost:3000/learning-materials/pages/item-f5669ca1-8a62-4854-908c-925e14b7eecb/index.md): Build a parametric model with at least three exposed parameters and generate a family of five variants.
 - [CNC relief tile](https://localhost:3000/learning-materials/pages/item-70652b2f-07b2-489b-a0fa-e1f7f341ec91/index.md): Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut.
 - [Documentation portfolio](https://localhost:3000/learning-materials/pages/item-da8b8213-908b-455f-8501-0bc929cf3b05/index.md): A single site or PDF documenting every exercise and project: photographs, files, settings, failures, and what you would do differently.
-- [Reading responses](https://localhost:3000/learning-materials/pages/item-5117d4e6-e938-41a9-b976-858e75347ae5/index.md)
+- [Reading responses](https://localhost:3000/learning-materials/pages/item-5117d4e6-e938-41a9-b976-858e75347ae5/index.md): For each required reading, a 200–300-word response that connects one idea in the text to something you made or saw in the shop that week.
 - [Critique participation](https://localhost:3000/learning-materials/pages/item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180/index.md)
 - [Precedent presentation](https://localhost:3000/learning-materials/pages/item-bdd37b96-f590-4a7b-aad8-5a32e85230ad/index.md)
 - [Drawing for 3D Design quiz](https://localhost:3000/learning-materials/pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.md)
