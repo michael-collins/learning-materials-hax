@@ -1051,6 +1051,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/narrative-inspiration</loc>
+    <lastmod>2026-10-07T18:30:34.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/topics</loc>
     <lastmod>2026-10-07T18:20:08.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1099,12 +1105,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/narrative-inspiration</loc>
-    <lastmod>2026-10-07T18:30:34.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/about-this-course</loc>
     <lastmod>2026-10-07T18:20:34.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1131,6 +1131,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design</loc>
     <lastmod>2026-10-07T18:20:08.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover-toy-design-research</loc>
+    <lastmod>2026-10-07T18:30:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1189,12 +1195,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover-toy-design-research</loc>
-    <lastmod>2026-10-07T18:30:40.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/digital-multimedia-design</loc>
     <lastmod>2026-10-07T18:20:35.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1213,14 +1213,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/discover-interview</loc>
+    <lastmod>2026-10-07T18:30:24.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/story-structure</loc>
     <lastmod>2026-10-07T18:19:50.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover-word-pairs</loc>
+    <lastmod>2026-10-07T18:30:35.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/into-the-open</loc>
     <lastmod>2026-10-07T18:20:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover-resources</loc>
+    <lastmod>2026-10-07T18:30:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1291,24 +1309,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/discover-interview</loc>
-    <lastmod>2026-10-07T18:30:24.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover-word-pairs</loc>
-    <lastmod>2026-10-07T18:30:35.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover-resources</loc>
-    <lastmod>2026-10-07T18:30:41.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/course-instructor</loc>
     <lastmod>2026-10-07T18:20:36.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1335,6 +1335,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/orchestral-manoeuvres-in-design</loc>
     <lastmod>2026-10-07T18:20:10.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover-modular-design-research</loc>
+    <lastmod>2026-10-07T18:30:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1399,12 +1405,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover-modular-design-research</loc>
-    <lastmod>2026-10-07T18:30:41.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/measuring-success</loc>
     <lastmod>2026-10-07T18:20:36.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1423,8 +1423,20 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/define-themes-and-insights</loc>
+    <lastmod>2026-10-07T18:30:25.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/character</loc>
     <lastmod>2026-10-07T18:19:51.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/define-synopsis</loc>
+    <lastmod>2026-10-07T18:30:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1483,18 +1495,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/define-themes-and-insights</loc>
-    <lastmod>2026-10-07T18:30:25.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/define-synopsis</loc>
-    <lastmod>2026-10-07T18:30:36.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/learning-objectives</loc>
     <lastmod>2026-10-07T18:20:37.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1513,6 +1513,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/define-hmw</loc>
+    <lastmod>2026-10-07T18:30:26.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/narrative-media</loc>
     <lastmod>2026-10-07T18:19:52.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1521,6 +1527,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/the-generative-bedrock-of-open-design</loc>
     <lastmod>2026-10-07T18:20:11.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/define-product-pitch</loc>
+    <lastmod>2026-10-07T18:30:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1579,18 +1591,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/define-hmw</loc>
-    <lastmod>2026-10-07T18:30:26.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/define-product-pitch</loc>
-    <lastmod>2026-10-07T18:30:42.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/projects</loc>
     <lastmod>2026-10-07T18:20:38.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1611,6 +1611,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/readings</loc>
     <lastmod>2026-10-07T18:19:52.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-story-and-plot-elements</loc>
+    <lastmod>2026-10-07T18:30:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1663,12 +1669,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-story-and-plot-elements</loc>
-    <lastmod>2026-10-07T18:30:36.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/feedback-and-critique</loc>
     <lastmod>2026-10-07T18:20:39.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1687,14 +1687,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-brainstorm</loc>
+    <lastmod>2026-10-07T18:30:27.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/chapter-8-giorgio-vasari</loc>
     <lastmod>2026-10-07T18:19:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-characters</loc>
+    <lastmod>2026-10-07T18:30:37.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/teaching-attitudes-approaches-structures-and-skills</loc>
     <lastmod>2026-10-07T18:20:13.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-mvp-prototype</loc>
+    <lastmod>2026-10-07T18:30:43.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1747,24 +1765,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-brainstorm</loc>
-    <lastmod>2026-10-07T18:30:27.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-characters</loc>
-    <lastmod>2026-10-07T18:30:37.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-mvp-prototype</loc>
-    <lastmod>2026-10-07T18:30:43.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/technology</loc>
     <lastmod>2026-10-07T18:20:39.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1783,14 +1783,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-storyboard</loc>
+    <lastmod>2026-10-07T18:30:27.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/chapter-9-the-lady-in-the-picture</loc>
     <lastmod>2026-10-07T18:19:56.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-hypertext-narrative-draft-1</loc>
+    <lastmod>2026-10-07T18:30:38.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/joris-laarman-s-experiments-with-open-source-design</loc>
     <lastmod>2026-10-07T18:20:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-instructions</loc>
+    <lastmod>2026-10-07T18:30:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1837,30 +1855,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-storyboard</loc>
-    <lastmod>2026-10-07T18:30:27.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-hypertext-narrative-draft-1</loc>
-    <lastmod>2026-10-07T18:30:38.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-instructions</loc>
-    <lastmod>2026-10-07T18:30:44.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/twine-tutorial-getting-started</loc>
-    <lastmod>2026-10-07T18:30:33.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/writing-guidelines</loc>
     <lastmod>2026-10-07T18:20:40.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1879,14 +1873,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-interactive-wireframes</loc>
+    <lastmod>2026-10-07T18:30:28.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/chapter-10-in-jefferson-s-footsteps</loc>
     <lastmod>2026-10-07T18:19:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/twine-tutorial-getting-started</loc>
+    <lastmod>2026-10-07T18:30:33.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/watch</loc>
     <lastmod>2026-10-07T18:20:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-test</loc>
+    <lastmod>2026-10-07T18:30:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1927,18 +1939,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-interactive-wireframes</loc>
-    <lastmod>2026-10-07T18:30:28.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-test</loc>
-    <lastmod>2026-10-07T18:30:44.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/requirements</loc>
     <lastmod>2026-10-07T18:20:41.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1957,14 +1957,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/figma-tutorial</loc>
+    <lastmod>2026-10-07T18:30:29.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/watch</loc>
     <lastmod>2026-10-07T18:19:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-feedback</loc>
+    <lastmod>2026-10-07T18:30:38.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-structures-thomas-lommee</loc>
     <lastmod>2026-10-07T18:20:16.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-iterate</loc>
+    <lastmod>2026-10-07T18:30:45.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2011,24 +2029,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/figma-tutorial</loc>
-    <lastmod>2026-10-07T18:30:29.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop-feedback</loc>
-    <lastmod>2026-10-07T18:30:38.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-iterate</loc>
-    <lastmod>2026-10-07T18:30:45.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design</loc>
     <lastmod>2026-10-07T18:20:42.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2047,6 +2047,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-test-and-review</loc>
+    <lastmod>2026-10-07T18:30:30.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/creative-mornings-jordan-tannahill</loc>
     <lastmod>2026-10-07T18:19:57.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2055,6 +2061,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/readings</loc>
     <lastmod>2026-10-07T18:20:15.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-feedback</loc>
+    <lastmod>2026-10-07T18:30:46.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2101,18 +2113,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-test-and-review</loc>
-    <lastmod>2026-10-07T18:30:30.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop-feedback</loc>
-    <lastmod>2026-10-07T18:30:46.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/creative-mornings-design-is-magical</loc>
     <lastmod>2026-10-07T18:19:24.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2131,8 +2131,20 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-iterate-wireframes</loc>
+    <lastmod>2026-10-07T18:30:30.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/andrew-stanton-the-clues-to-a-great-story</loc>
     <lastmod>2026-10-07T18:19:58.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/deliver-hypertext-narrative-draft-2</loc>
+    <lastmod>2026-10-07T18:30:39.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2173,18 +2185,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop-iterate-wireframes</loc>
-    <lastmod>2026-10-07T18:30:30.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/deliver-hypertext-narrative-draft-2</loc>
-    <lastmod>2026-10-07T18:30:39.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/99-percent-invisible-lawn-order</loc>
     <lastmod>2026-10-07T18:19:25.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2211,6 +2211,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/chapter-12-liberty-as-knowledge-design</loc>
     <lastmod>2026-10-07T18:20:18.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/deliver-project-documentation</loc>
+    <lastmod>2026-10-07T18:30:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2245,12 +2251,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/deliver-project-documentation</loc>
-    <lastmod>2026-10-07T18:30:47.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/discussions</loc>
     <lastmod>2026-10-07T18:19:21.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2259,6 +2259,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/vox-it-s-not-you-bad-doors-are-everywhere</loc>
     <lastmod>2026-10-07T18:19:37.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver-final-prototype</loc>
+    <lastmod>2026-10-07T18:30:31.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2301,12 +2307,6 @@
   <url>
     <loc>https://localhost:3000/learning-materials/resources/jesse-kanda</loc>
     <lastmod>2026-10-05T20:25:20.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver-final-prototype</loc>
-    <lastmod>2026-10-07T18:30:31.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3373,16 +3373,16 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/capstone-project/3-project-agreement-form</loc>
-    <lastmod>2026-10-07T18:30:58.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/concept-development</loc>
     <lastmod>2026-10-07T18:31:06.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/capstone-project/3-project-agreement-form</loc>
+    <lastmod>2026-10-07T18:30:58.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-3-pitch</loc>
@@ -3409,6 +3409,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/capstone-project</loc>
+    <lastmod>2026-10-07T18:31:07.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/capstone-project/4-proof-of-ability</loc>
     <lastmod>2026-10-07T18:30:58.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -3431,12 +3437,6 @@
     <lastmod>2026-10-07T18:21:01.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/capstone-project</loc>
-    <lastmod>2026-10-07T18:31:07.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-4-sprint</loc>
@@ -3469,6 +3469,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/project-categories</loc>
+    <lastmod>2026-10-07T18:31:08.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/getting-started-with-3d-animation/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers</loc>
     <lastmod>2026-10-07T18:20:51.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -3485,12 +3491,6 @@
     <lastmod>2026-10-07T18:21:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/project-categories</loc>
-    <lastmod>2026-10-07T18:31:08.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-300-digital-multimedia-design-studio/projects/project-1-group-design-project/phase-5-document</loc>
@@ -3517,6 +3517,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/license</loc>
+    <lastmod>2026-10-07T18:31:08.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/getting-started-with-3d-animation/3d-modeling-fundamentals-a-fundamental-shift-in-how-we-do-things-virtually-using-computers/lighting-and-rendering-the-airline-chair</loc>
     <lastmod>2026-10-07T18:20:57.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -3533,12 +3539,6 @@
     <lastmod>2026-10-07T18:21:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/license</loc>
-    <lastmod>2026-10-07T18:31:08.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-400-digital-multimedia-design-capstone/capstone-project/7-production-report-discussions</loc>
