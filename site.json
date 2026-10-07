@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385283,
+      "updated": 1791385308,
       "version": "26.8.0"
     },
     "theme": {
@@ -25677,12 +25677,15 @@
             }
           ],
           "date": "2012",
-          "container": "Foreign Affairs"
+          "container": "Foreign Affairs",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385292
       }
     },
     {
@@ -25708,12 +25711,15 @@
             }
           ],
           "date": "2005",
-          "publisher": "Basic Books"
+          "publisher": "Basic Books",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385293
       }
     },
     {
@@ -25739,12 +25745,15 @@
             }
           ],
           "date": "1968",
-          "publisher": "Cambridge University Press"
+          "publisher": "Cambridge University Press",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385293
       }
     },
     {
@@ -25770,12 +25779,15 @@
             }
           ],
           "date": "1996",
-          "publisher": "MIT Press"
+          "publisher": "MIT Press",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385294
       }
     },
     {
@@ -25801,12 +25813,15 @@
             }
           ],
           "date": "2008",
-          "publisher": "Yale University Press"
+          "publisher": "Yale University Press",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385295
       }
     },
     {
@@ -25832,12 +25847,15 @@
             }
           ],
           "date": "2009",
-          "publisher": "Princeton Architectural Press"
+          "publisher": "Princeton Architectural Press",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385295
       }
     },
     {
@@ -25862,12 +25880,15 @@
               "url": ""
             }
           ],
-          "publisher": "How to design parts for FDM"
+          "publisher": "How to design parts for FDM",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385296
       }
     },
     {
@@ -25892,12 +25913,15 @@
               "url": ""
             }
           ],
-          "publisher": "print quality troubleshooting"
+          "publisher": "print quality troubleshooting",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385297
       }
     },
     {
@@ -25923,12 +25947,15 @@
             }
           ],
           "date": "2011",
-          "publisher": "MIT Press"
+          "publisher": "MIT Press",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385298
       }
     },
     {
@@ -25958,12 +25985,15 @@
             }
           ],
           "date": "2010",
-          "publisher": "Parameterize"
+          "publisher": "Parameterize",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385298
       }
     },
     {
@@ -25989,12 +26019,15 @@
           ],
           "date": "2015",
           "container": "Thames & Hudson",
-          "publisher": "Craftsmanship in the New Industrial Revolution"
+          "publisher": "Craftsmanship in the New Industrial Revolution",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385299
       }
     },
     {
@@ -26020,12 +26053,15 @@
             }
           ],
           "date": "2011",
-          "publisher": "The Information Society"
+          "publisher": "The Information Society",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385300
       }
     },
     {
@@ -26051,12 +26087,15 @@
             }
           ],
           "date": "2014",
-          "publisher": "Pick up a spot welder and join the revolution"
+          "publisher": "Pick up a spot welder and join the revolution",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385300
       }
     },
     {
@@ -26081,12 +26120,15 @@
             }
           ],
           "date": "2012",
-          "container": "Crown Business"
+          "container": "Crown Business",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385301
       }
     },
     {
@@ -26112,12 +26154,15 @@
             }
           ],
           "date": "2007",
-          "container": "Archaeological Dialogues"
+          "container": "Archaeological Dialogues",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385302
       }
     },
     {
@@ -26141,12 +26186,15 @@
               "url": ""
             }
           ],
-          "date": "2007"
+          "date": "2007",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385302
       }
     },
     {
@@ -26171,12 +26219,15 @@
             }
           ],
           "date": "2005",
-          "publisher": "MIT Press"
+          "publisher": "MIT Press",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385303
       }
     },
     {
@@ -26201,12 +26252,15 @@
               "url": ""
             }
           ],
-          "publisher": "How to Make"
+          "publisher": "How to Make",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385304
       }
     },
     {
@@ -26234,12 +26288,15 @@
               "name": "Jesse Louis-Rosenberg",
               "url": ""
             }
+          ],
+          "courses": [
+            "DART 413"
           ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385305
       }
     },
     {
@@ -26268,12 +26325,15 @@
               "url": ""
             }
           ],
-          "date": "2015"
+          "date": "2015",
+          "courses": [
+            "DART 413"
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791385305
       }
     },
     {
@@ -31862,12 +31922,15 @@
               "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
               "version": ""
             }
+          ],
+          "courses": [
+            "DART 413"
           ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791384003
+        "updated": 1791385306
       }
     },
     {
@@ -31910,12 +31973,15 @@
               "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
               "version": ""
             }
+          ],
+          "courses": [
+            "DART 413"
           ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791384004
+        "updated": 1791385307
       }
     },
     {
@@ -31954,12 +32020,15 @@
               "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
               "version": ""
             }
+          ],
+          "courses": [
+            "DART 413"
           ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791384004
+        "updated": 1791385307
       }
     }
   ]
