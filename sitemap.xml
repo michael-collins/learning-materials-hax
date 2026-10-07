@@ -2557,12 +2557,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/tutorials</loc>
-    <lastmod>2026-10-07T18:30:33.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/lessons/projects</loc>
     <lastmod>2026-10-07T15:16:38.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -5059,7 +5053,19 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/discover</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover</loc>
     <lastmod>2026-10-07T18:31:09.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -5071,49 +5077,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/projects/hypertext-narrative-project-civic-imagination/twine-tutorial-getting-started-with-twine</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/define</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/deliver</loc>
-    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover</loc>
     <lastmod>2026-10-07T18:31:09.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -5125,13 +5089,43 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop</loc>
     <lastmod>2026-10-07T18:31:09.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/projects/hypertext-narrative-project-civic-imagination/twine-tutorial-getting-started-with-twine</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/deliver</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/deliver</loc>
+    <lastmod>2026-10-07T18:31:09.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver</loc>
     <lastmod>2026-10-07T18:31:09.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

@@ -4016,6 +4016,24 @@
       }
     },
     {
+      "id": "item-cc593268-4f98-466e-81fb-b122e1e2f937",
+      "indent": 4,
+      "location": "pages/item-cc593268-4f98-466e-81fb-b122e1e2f937/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover",
+      "order": 0,
+      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
+      "title": "Discover",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
       "id": "item-ef8736da-f646-4540-b163-75a456866c7d",
       "indent": 2,
       "location": "pages/item-ef8736da-f646-4540-b163-75a456866c7d/index.html",
@@ -6323,6 +6341,42 @@
         "images": [],
         "videos": [],
         "updated": 1791397866
+      }
+    },
+    {
+      "id": "item-a33367af-4830-48db-8130-867600c3a6bf",
+      "indent": 4,
+      "location": "pages/item-a33367af-4830-48db-8130-867600c3a6bf/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/discover",
+      "order": 1,
+      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
+      "title": "Discover",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
+      "id": "item-1495d001-9151-4a4b-a6b7-3aa18cde440b",
+      "indent": 4,
+      "location": "pages/item-1495d001-9151-4a4b-a6b7-3aa18cde440b/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover",
+      "order": 1,
+      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
+      "title": "Discover",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
       }
     },
     {
@@ -9350,6 +9404,42 @@
         "images": [],
         "videos": [],
         "updated": 1791397867
+      }
+    },
+    {
+      "id": "item-94835ff5-8f47-4e6a-bb96-3fbb51206529",
+      "indent": 4,
+      "location": "pages/item-94835ff5-8f47-4e6a-bb96-3fbb51206529/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/define",
+      "order": 3,
+      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
+      "title": "Define",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
+      "id": "item-60a3029d-b2a7-4ff4-9c9d-9940cda947c8",
+      "indent": 4,
+      "location": "pages/item-60a3029d-b2a7-4ff4-9c9d-9940cda947c8/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/define",
+      "order": 3,
+      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
+      "title": "Define",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
       }
     },
     {
@@ -14015,6 +14105,24 @@
       }
     },
     {
+      "id": "item-296ae1dd-6731-42ef-9674-0826b24bad3c",
+      "indent": 4,
+      "location": "pages/item-296ae1dd-6731-42ef-9674-0826b24bad3c/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/define",
+      "order": 4,
+      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
+      "title": "Define",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
       "id": "item-7f38beb5-ca86-4ee7-b046-9eedda3ded0b",
       "indent": 2,
       "location": "pages/item-7f38beb5-ca86-4ee7-b046-9eedda3ded0b/index.html",
@@ -15063,6 +15171,24 @@
       }
     },
     {
+      "id": "item-ebf9b300-8380-48b5-b718-18febfa65e99",
+      "indent": 4,
+      "location": "pages/item-ebf9b300-8380-48b5-b718-18febfa65e99/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop",
+      "order": 5,
+      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
+      "title": "Develop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
       "id": "item-a55bf30c-db0b-4c0b-a287-5f22e61dacd4",
       "indent": 2,
       "location": "pages/item-a55bf30c-db0b-4c0b-a287-5f22e61dacd4/index.html",
@@ -15927,6 +16053,42 @@
         "images": [],
         "videos": [],
         "updated": 1791397836
+      }
+    },
+    {
+      "id": "item-2eaa0921-b5a2-4afb-a13a-9a7a2c1c0c4f",
+      "indent": 4,
+      "location": "pages/item-2eaa0921-b5a2-4afb-a13a-9a7a2c1c0c4f/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop",
+      "order": 6,
+      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
+      "title": "Develop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
+      "id": "item-17f053f7-5f22-46f0-9514-15e60c4d1ffd",
+      "indent": 4,
+      "location": "pages/item-17f053f7-5f22-46f0-9514-15e60c4d1ffd/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop",
+      "order": 6,
+      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
+      "title": "Develop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
       }
     },
     {
@@ -18191,6 +18353,28 @@
       }
     },
     {
+      "id": "item-eea37850-f3a5-460e-b498-d949fb2f3758",
+      "indent": 2,
+      "location": "pages/item-eea37850-f3a5-460e-b498-d949fb2f3758/index.html",
+      "slug": "projects/hypertext-narrative-project-civic-imagination/twine-tutorial-getting-started-with-twine",
+      "order": 9,
+      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
+      "title": "Twine tutorial: Getting started with Twine",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerRef": {
+          "page": "item-b7594c35-d2a8-4b7b-bac3-19835b98836a",
+          "version": ""
+        },
+        "published": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
       "id": "item-256924c7-74bf-4613-94d9-03dfe19b7ea3",
       "indent": 2,
       "location": "pages/item-256924c7-74bf-4613-94d9-03dfe19b7ea3/index.html",
@@ -19675,6 +19859,24 @@
       }
     },
     {
+      "id": "item-c57dbb7a-05eb-47a3-9f4c-616a71505a51",
+      "indent": 4,
+      "location": "pages/item-c57dbb7a-05eb-47a3-9f4c-616a71505a51/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/deliver",
+      "order": 11,
+      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
       "id": "item-82ec32ff-3e26-47a7-8d78-5096a8797f91",
       "indent": 3,
       "location": "pages/item-82ec32ff-3e26-47a7-8d78-5096a8797f91/index.html",
@@ -20312,6 +20514,24 @@
       }
     },
     {
+      "id": "item-4fb0bb25-11d2-4f11-8403-6106b01f03c8",
+      "indent": 4,
+      "location": "pages/item-4fb0bb25-11d2-4f11-8403-6106b01f03c8/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/deliver",
+      "order": 12,
+      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
+      }
+    },
+    {
       "id": "item-392c99f9-5462-481a-bd1d-104ed5f8e17c",
       "indent": 3,
       "location": "pages/item-392c99f9-5462-481a-bd1d-104ed5f8e17c/index.html",
@@ -20855,6 +21075,24 @@
         "images": [],
         "videos": [],
         "updated": 1791397847
+      }
+    },
+    {
+      "id": "item-e06c50db-578b-4952-8e30-c1979470a2bd",
+      "indent": 4,
+      "location": "pages/item-e06c50db-578b-4952-8e30-c1979470a2bd/index.html",
+      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver",
+      "order": 13,
+      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791397869,
+        "images": [],
+        "videos": [],
+        "updated": 1791397869
       }
     },
     {
@@ -23190,28 +23428,6 @@
         "images": [],
         "videos": [],
         "updated": 1791386358
-      }
-    },
-    {
-      "id": "item-29eda1cc-b42b-48a8-bc9e-9fabbcb355ee",
-      "indent": 3,
-      "location": "pages/item-29eda1cc-b42b-48a8-bc9e-9fabbcb355ee/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/tutorials",
-      "order": 23,
-      "parent": "item-a106f25f-fd10-4f85-855b-5587ad96edba",
-      "title": "Tutorials",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:tutorial",
-        "oerRef": {
-          "page": "item-0ed542f3-e821-4573-a59d-a996e8d6c198",
-          "version": ""
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791397833
       }
     },
     {
@@ -32897,244 +33113,6 @@
         "images": [],
         "videos": [],
         "updated": 1791386215
-      }
-    },
-    {
-      "id": "item-a33367af-4830-48db-8130-867600c3a6bf",
-      "indent": 4,
-      "location": "pages/item-a33367af-4830-48db-8130-867600c3a6bf/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/discover",
-      "order": 1,
-      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
-      "title": "Discover",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-94835ff5-8f47-4e6a-bb96-3fbb51206529",
-      "indent": 4,
-      "location": "pages/item-94835ff5-8f47-4e6a-bb96-3fbb51206529/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/define",
-      "order": 3,
-      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
-      "title": "Define",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-2eaa0921-b5a2-4afb-a13a-9a7a2c1c0c4f",
-      "indent": 4,
-      "location": "pages/item-2eaa0921-b5a2-4afb-a13a-9a7a2c1c0c4f/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/develop",
-      "order": 6,
-      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
-      "title": "Develop",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-e06c50db-578b-4952-8e30-c1979470a2bd",
-      "indent": 4,
-      "location": "pages/item-e06c50db-578b-4952-8e30-c1979470a2bd/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver",
-      "order": 13,
-      "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
-      "title": "Deliver",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-eea37850-f3a5-460e-b498-d949fb2f3758",
-      "indent": 2,
-      "location": "pages/item-eea37850-f3a5-460e-b498-d949fb2f3758/index.html",
-      "slug": "projects/hypertext-narrative-project-civic-imagination/twine-tutorial-getting-started-with-twine",
-      "order": 9,
-      "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
-      "title": "Twine tutorial: Getting started with Twine",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:tutorial",
-        "oerRef": {
-          "page": "item-b7594c35-d2a8-4b7b-bac3-19835b98836a",
-          "version": ""
-        },
-        "published": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-1495d001-9151-4a4b-a6b7-3aa18cde440b",
-      "indent": 4,
-      "location": "pages/item-1495d001-9151-4a4b-a6b7-3aa18cde440b/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover",
-      "order": 1,
-      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
-      "title": "Discover",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-60a3029d-b2a7-4ff4-9c9d-9940cda947c8",
-      "indent": 4,
-      "location": "pages/item-60a3029d-b2a7-4ff4-9c9d-9940cda947c8/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/define",
-      "order": 3,
-      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
-      "title": "Define",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-ebf9b300-8380-48b5-b718-18febfa65e99",
-      "indent": 4,
-      "location": "pages/item-ebf9b300-8380-48b5-b718-18febfa65e99/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop",
-      "order": 5,
-      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
-      "title": "Develop",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-c57dbb7a-05eb-47a3-9f4c-616a71505a51",
-      "indent": 4,
-      "location": "pages/item-c57dbb7a-05eb-47a3-9f4c-616a71505a51/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/deliver",
-      "order": 11,
-      "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
-      "title": "Deliver",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-cc593268-4f98-466e-81fb-b122e1e2f937",
-      "indent": 4,
-      "location": "pages/item-cc593268-4f98-466e-81fb-b122e1e2f937/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover",
-      "order": 0,
-      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
-      "title": "Discover",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-296ae1dd-6731-42ef-9674-0826b24bad3c",
-      "indent": 4,
-      "location": "pages/item-296ae1dd-6731-42ef-9674-0826b24bad3c/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/define",
-      "order": 4,
-      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
-      "title": "Define",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-17f053f7-5f22-46f0-9514-15e60c4d1ffd",
-      "indent": 4,
-      "location": "pages/item-17f053f7-5f22-46f0-9514-15e60c4d1ffd/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/develop",
-      "order": 6,
-      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
-      "title": "Develop",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
-      }
-    },
-    {
-      "id": "item-4fb0bb25-11d2-4f11-8403-6106b01f03c8",
-      "indent": 4,
-      "location": "pages/item-4fb0bb25-11d2-4f11-8403-6106b01f03c8/index.html",
-      "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/deliver",
-      "order": 12,
-      "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
-      "title": "Deliver",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791397869,
-        "images": [],
-        "videos": [],
-        "updated": 1791397869
       }
     }
   ]
