@@ -1,11 +1,11 @@
 id: item-e09826f0-d716-4612-807a-2bbfcff22b36
-indent: 1
+indent: 0
 location: pages/item-e09826f0-d716-4612-807a-2bbfcff22b36/index.yaml
 slug: courses/dart-413-digital-fabrication-studio
 order: 5
 parent: item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5
 title: 'DART 413: Digital Fabrication Studio'
-description: ''
+description: Digital Fabrication Studio, 4 credits.
 metadata:
   pageType: oer:course
   published: false
@@ -24,13 +24,25 @@ metadata:
       - page: item-69dddfb7-34fb-48ff-b038-f1429191de9b
         version: ''
     license: CC BY 4.0
+    coursePrerequisites:
+      - page: item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87
+        version: ''
+    institution: Penn State University
+    institutionUrl: https://www.psu.edu/
   created: 1791385274
   images: []
   videos: []
-  updated: 1791385274
-content: >-
+  updated: 1791386768
+  overridePathauto: false
+  hideInMenu: false
+  icon: courseicons:learning-objectives
+  linkTarget: _self
+  locked: false
+  readtime: 1
+content: >
+
   <oer-draft note="Course description from the DART 413 course plan. Revise it,
-  then Publish to show it to readers.">
+  then Publish to show it to readers." data-author="">
 
   <p>Digital Fabrication Studio explores how a diverse range of technologies can
   translate digital designs and data into the physical world. Through hands-on
@@ -49,7 +61,7 @@ content: >-
 
   </oer-draft>
 
-  <h2>Taught in this course</h2>
+  <h2 id="h2--993097993">Taught in this course</h2>
 
-  <oer-collection scope="site" view="table" sort="title" per-page="50"
+  <oer-collection scope="site" view="table" sort="title" per-page="20"
   controls="full" group="type"></oer-collection>

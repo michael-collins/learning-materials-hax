@@ -1,12 +1,12 @@
 {
   "id": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-  "indent": 1,
+  "indent": 0,
   "location": "pages/item-e09826f0-d716-4612-807a-2bbfcff22b36/index.json",
   "slug": "courses/dart-413-digital-fabrication-studio",
   "order": 5,
   "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
   "title": "DART 413: Digital Fabrication Studio",
-  "description": "",
+  "description": "Digital Fabrication Studio, 4 credits.",
   "metadata": {
     "pageType": "oer:course",
     "published": false,
@@ -28,12 +28,26 @@
           "version": ""
         }
       ],
-      "license": "CC BY 4.0"
+      "license": "CC BY 4.0",
+      "coursePrerequisites": [
+        {
+          "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+          "version": ""
+        }
+      ],
+      "institution": "Penn State University",
+      "institutionUrl": "https://www.psu.edu/"
     },
     "created": 1791385274,
     "images": [],
     "videos": [],
-    "updated": 1791385274
+    "updated": 1791386768,
+    "overridePathauto": false,
+    "hideInMenu": false,
+    "icon": "courseicons:learning-objectives",
+    "linkTarget": "_self",
+    "locked": false,
+    "readtime": 1
   },
-  "content": "<oer-draft note=\"Course description from the DART 413 course plan. Revise it, then Publish to show it to readers.\">\n<p>Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world. Through hands-on experience, we will work with laser cutting, CNC routing, 3D modeling, and 3D printing in a range of materials, to realize creative projects. An understanding of the tools, workflows, materials, and interdisciplinary possibilities surrounding computer-aided design and manufacturing will emerge throughout the course. We will become skilled in the appropriate hardware and 2D/3D software through in-class exercises, one-on-one instruction, and video tutorials. Students are encouraged to consider a hybrid, analog-digital art practice that embraces both traditional craft and emerging technologies. Frequent in-progress critiques will encourage iterative processes and guide making. Assigned readings and class discussions will ask questions about the role these technologies play in the present, while prompting us to imagine their future potential.</p>\n</oer-draft>\n<h2>Taught in this course</h2>\n<oer-collection scope=\"site\" view=\"table\" sort=\"title\" per-page=\"50\" controls=\"full\" group=\"type\"></oer-collection>"
+  "content": "\n<oer-draft note=\"Course description from the DART 413 course plan. Revise it, then Publish to show it to readers.\" data-author=\"\">\n<p>Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world. Through hands-on experience, we will work with laser cutting, CNC routing, 3D modeling, and 3D printing in a range of materials, to realize creative projects. An understanding of the tools, workflows, materials, and interdisciplinary possibilities surrounding computer-aided design and manufacturing will emerge throughout the course. We will become skilled in the appropriate hardware and 2D/3D software through in-class exercises, one-on-one instruction, and video tutorials. Students are encouraged to consider a hybrid, analog-digital art practice that embraces both traditional craft and emerging technologies. Frequent in-progress critiques will encourage iterative processes and guide making. Assigned readings and class discussions will ask questions about the role these technologies play in the present, while prompting us to imagine their future potential.</p>\n</oer-draft>\n<h2 id=\"h2--993097993\">Taught in this course</h2>\n<oer-collection scope=\"site\" view=\"table\" sort=\"title\" per-page=\"20\" controls=\"full\" group=\"type\"></oer-collection>\n"
 }
