@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404507,
+      "updated": 1791404508,
       "version": "26.8.0"
     },
     "theme": {
@@ -29394,95 +29394,6 @@
       }
     },
     {
-      "id": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
-      "indent": 1,
-      "location": "pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.html",
-      "slug": "exercises/model-a-gem",
-      "order": 27,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Model a Gem",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/model-a-gem",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rec14hI66d4Hl61SA_image_gem_image.png",
-          "imageAlt": "gem image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231954,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf",
-      "indent": 2,
-      "location": "pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.html",
-      "slug": "exercises/model-a-gem/v0-9-0",
-      "order": 1000,
-      "parent": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rec14hI66d4Hl61SA_image_gem_image.png",
-          "imageAlt": "gem image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "oerSnapshotOf": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
-        "oerSnapshotTitle": "Model a Gem",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
       "indent": 1,
       "location": "pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.html",
@@ -32644,6 +32555,99 @@
         },
         "oerSnapshotOf": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
         "oerSnapshotTitle": "Applying Textures to 3 Unique Chess Sets",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
+      "indent": 1,
+      "location": "pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.html",
+      "slug": "model-a-gem",
+      "order": 27,
+      "parent": null,
+      "title": "Model a Gem",
+      "description": "model a Custom Gem\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulat",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/model-a-gem",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rec14hI66d4Hl61SA_image_gem_image.png",
+          "imageAlt": "gem image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404507,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf",
+      "indent": 2,
+      "location": "pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.html",
+      "slug": "exercises/model-a-gem/v0-9-0",
+      "order": 1000,
+      "parent": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rec14hI66d4Hl61SA_image_gem_image.png",
+          "imageAlt": "gem image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "oerSnapshotOf": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
+        "oerSnapshotTitle": "Model a Gem",
         "version": "0.9.0",
         "versionStatus": "archived",
         "hideInMenu": true,

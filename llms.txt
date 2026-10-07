@@ -784,8 +784,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-f7a79487-066d-4b17-87f0-c498686b54a9/index.md)
 - [Introduction to rigging](https://localhost:3000/learning-materials/pages/item-12082513-b23c-49ed-888d-857336fa10ae/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-1ed67694-ba11-4262-987b-fd06e889dc55/index.md)
-- [Model a Gem](https://localhost:3000/learning-materials/pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.md)
-- [v0.9.0](https://localhost:3000/learning-materials/pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.md)
 - [Model a Snowflake](https://localhost:3000/learning-materials/pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.md)
 - [Modeling a Basic Knight](https://localhost:3000/learning-materials/pages/item-db344687-9676-46da-9926-d0464ec57873/index.md)
@@ -852,6 +850,8 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [CNC routing quiz](https://localhost:3000/learning-materials/pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.md): Self-check questions on CNC routing.
 - [Applying Textures to 3 Unique Chess Sets](https://localhost:3000/learning-materials/pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.md): In this exercise, you will apply Image textures to a Chess board and pieces Learning Objectives Practice using texture images and the UV editor Short introduction to material nodes Practice appendin
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.md)
+- [Model a Gem](https://localhost:3000/learning-materials/pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.md): model a Custom Gem Learning Objectives Practice using 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Familiarize yourself with a cumulat
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.md)
 - [What Design and Truth Say about Each Other](https://localhost:3000/learning-materials/pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.md): What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt In this chapter, Grudin talks about the transition of design from close dialogue with natural systems
 - [Design as Tragedy: The Rise and Fall of the Twin Towers](https://localhost:3000/learning-materials/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md): Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may
 - [Edsel's Law: How Bad Design Happens](https://localhost:3000/learning-materials/pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.md): Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin describes the Edsel scale for measuring the quality of a design: Photograph an objec

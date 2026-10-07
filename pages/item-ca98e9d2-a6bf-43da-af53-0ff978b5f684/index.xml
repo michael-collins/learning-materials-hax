@@ -3,11 +3,16 @@
 <id>item-ca98e9d2-a6bf-43da-af53-0ff978b5f684</id>
 <indent>1</indent>
 <location>pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.xml</location>
-<slug>exercises/model-a-gem</slug>
+<slug>model-a-gem</slug>
 <order>27</order>
-<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<parent></parent>
 <title>Model a Gem</title>
-<description></description>
+<description>model a Custom Gem
+Learning Objectives
+
+Practice using 3D software interface and terminology.
+Use modeling workflows to create high quality topology and edge flow.
+Familiarize yourself with a cumulat</description>
 <metadata>
 <published>true</published>
 <pageType>oer:exercise</pageType>
@@ -34,7 +39,24 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791404507</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
 <content><![CDATA[<p>model a Custom Gem</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Qn9XcneFk2URkb8MW1B4lQB" title="Model a Gem Tutorial"></oer-iframe>
@@ -46,18 +68,18 @@
 </ol>
 <h2>Instructions</h2>
 <p><strong>The Following Demonstrations Show Various Methods for Creating Gems and Diamonds of Varying Complexity</strong>
-&lt;BR&gt;
-&lt;BR&gt;<br>
+<br>
+<br>
 For this assignment, create your own interpretation of a gem, based on the steps in the demonstration and submit 3 images (from good angles) of your model to Canvas for review. Make sure that your assignment is titled in the following format:
-&lt;BR&gt;
-&lt;BR&gt;<br>
+<br>
+<br>
 Last name, First name, the word "Lesson" followed by the Lesson number, and the word "Assignment" followed by the Assignment number.
-&lt;BR&gt;
-&lt;BR&gt;<br>
+<br>
+<br>
 Example:
 Brill Ian Lesson x Assignment x
-&lt;BR&gt;
-&lt;BR&gt;<br>
+<br>
+<br>
 Be sure to provide screen grabs or renders from 3 angles and the original blender file. Be sure to upload each file independently to facilitate ease in grading (so that the reviewer only need to download files when necessary).</p>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="exercise"></oer-rubric>
