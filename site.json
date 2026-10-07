@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384048,
+      "updated": 1791384049,
       "version": "26.8.0"
     },
     "theme": {
@@ -13844,7 +13844,7 @@
       "order": 47,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Final crit, exhibition, documentation portfolio",
-      "description": "",
+      "description": "Final critique / exhibition; documentation portfolio due; course reflection.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerPlan": "DART 413:M15",
