@@ -113,7 +113,11 @@ class OerPageFooter extends LitElement {
         this._writeJsonLd();
       });
     });
-    loadAiul().then((d) => (this._aiul = d));
+    // the AIUL list names each licence's page, for the structured data too
+    loadAiul().then((d) => {
+      this._aiul = d;
+      this._writeJsonLd();
+    });
     // credits follow the page content as it renders or changes
     this.__credits = new MutationObserver(() => {
       clearTimeout(this.__creditsTimer);
@@ -212,6 +216,17 @@ class OerPageFooter extends LitElement {
     };
     if (item.description) data["schema:description"] = item.description;
     if (cc?.url) data["schema:license"] = cc.url;
+    // AI use: OER Schema's aiUsageConstraint, each AIUL licence by its page
+    // (the machine-readable form OER Schema prefers), or by its code when the
+    // AIUL list doesn't know it. OER Schema puts the property on Task
+    // (exercises and projects); here AIUL also governs work set in articles
+    // (reading responses), lessons and lectures, so it goes on any page with
+    // one, as OER Schema's own VitePress plugin puts it on Assessment
+    const aiCodes = toList(f.aiLicense).flatMap((c) => c.split(",")).map((c) => c.trim()).filter(Boolean);
+    if (aiCodes.length) {
+      const constraints = [...new Set(aiCodes.map((code) => aiulInfo(code, this._aiul).url || code))];
+      data["oer:aiUsageConstraint"] = constraints.length === 1 ? constraints[0] : constraints;
+    }
     const authors = this._authors;
     if (authors.length) {
       data["schema:author"] = this._people.map((p) => ({
