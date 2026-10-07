@@ -11,7 +11,7 @@ description: >-
   pathways, versions, books, embedding and open licen
 metadata:
   created: 1790801562
-  updated: 1791400593
+  updated: 1791401166
   published: true
   locked: false
   status: ''
@@ -253,16 +253,17 @@ content: >
   Reader mode.</p>
 
   <p><strong>Text</strong> sets the text size, a serif or sans typeface, the
-  line width, the line spacing and the page: light, dark, or paper, a warm white
-  with a faint paper texture. The page is separate from the site's dark mode.
-  The settings are each reader's own, remembered on their device.</p>
+  line width, the line spacing, the page colour (light, paper, sepia or dark,
+  separate from the site's dark mode) and <strong>Texture</strong>, a fine paper
+  grain over any of them. The settings are each reader's own, remembered on
+  their device.</p>
 
   <oer-schematic preset="reader" alt="Diagram of Reader mode: no sidebar; a slim
   bar with Contents, a highlighted Aa button, the page count 3 / 30 between
   arrows, and Exit; the Text panel open over a narrow column of text, with text
-  size, typeface, line width and a choice of light, paper or dark page, paper
-  selected." caption="Reader mode with the Text panel open: text size, typeface,
-  line width and page colour."></oer-schematic>
+  size, typeface, line width and a choice of light, paper, sepia or dark page,
+  paper selected, and Texture switched on." caption="Reader mode with the Text
+  panel open: text size, typeface, line width and page colour."></oer-schematic>
 
 
   <h2>Browse pages</h2>

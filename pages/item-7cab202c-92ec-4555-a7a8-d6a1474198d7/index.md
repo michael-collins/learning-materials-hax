@@ -83,7 +83,7 @@ Reader mode
 
 **Reader mode** is a quieter way to read through a book. The sidebar and site controls go and the chapter sits in one column under a slim bar: **Contents** (the book's outline) and **Text** on the left, the book and page count with previous and next arrows in the middle, and **Exit reader** on the right. Start it with _Reader mode_ on the book's page, or _Reader_ in the top bar on any page of a book. The ← and → keys also turn pages. It lasts the visit: following a link out of the book shows the site as usual, and Back returns to Reader mode.
 
-**Text** sets the text size, a serif or sans typeface, the line width, the line spacing and the page: light, dark, or paper, a warm white with a faint paper texture. The page is separate from the site's dark mode. The settings are each reader's own, remembered on their device.
+**Text** sets the text size, a serif or sans typeface, the line width, the line spacing, the page colour (light, paper, sepia or dark, separate from the site's dark mode) and **Texture**, a fine paper grain over any of them. The settings are each reader's own, remembered on their device.
 
 Browse pages
 ------------
