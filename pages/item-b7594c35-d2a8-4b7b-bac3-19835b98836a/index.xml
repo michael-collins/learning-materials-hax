@@ -58,12 +58,12 @@
 <li>Publish the story to HTML by clicking on the story's name at the bottom left and choosing publish from the menu.</li>
 </ol>
 <h2>Using Twinery's grid to visualize a the story's shape</h2>
-<p><img src="/uploads/dmd100/images/lesson-3/twinery-grid-plot.png" alt="Twine grid plot"></p>
+<p><img src="files/twinery-grid-plot.png" alt="Twine grid plot"></p>
 <ol>
 <li>Write out the main plot points of the story on paper or a text editor.</li>
 <li>In <a href="https://twinery.org">Twinery.org's editor</a>, create a new passage for each major plot point horizontally across the screen.</li>
 <li>Move the passages vertically up and down to create a visualization for rising and falling action. If you run out of space on the screen, you can decrease the size of the grid by choosing one of the other grid/block icons on the bottom menu bar.<br>
-<img src="/uploads/dmd100/images/lesson-3/twinery-btns.png" alt="twine grid buttons"></li>
+<img src="files/twinery-btns.png" alt="twine grid buttons"></li>
 <li>Edit each passage and write in the passage details and links.</li>
 <li>Read through your story to see if the plot points match the intended rising and falling action. Make adjustments accordingly.</li>
 </ol>

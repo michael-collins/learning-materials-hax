@@ -69,7 +69,7 @@
 </ol>
 <h4>Three Act Plot Diagram</h4>
 <p>The following Plot Diagram shows the Five Act plot points laid over a Three Act structure.</p>
-<p><img src="/uploads/dmd100/images/lesson-3/plot_diagram_reverse2.png" alt="Plot diagram"></p>
+<p><img src="files/plot_diagram_reverse2.png" alt="Plot diagram"></p>
 <h3>Four Act</h3>
 <ol>
 <li>Inciting incident</li>
@@ -116,7 +116,7 @@
 <p>The story you experience in an interactive narrative work is not predetermined. The story path is chosen based on a viewer's choices. In video games, the number of story events that can be chosen through interaction can be quite high, making subsequent play-throughs unique. Newer games rely on generative algorithms and artificial intelligence to create the environment around these choices.</p>
 <h4>Decision nodes</h4>
 <p>An interactive narrative is comprised of decision or action points called nodes, where the user impacts the unfolding of the narrative by making a choice or performing an action. The choice the user makes can determine which branching narrative path is taken. The decisions themselves are part of the plot, which handles dramatization of the events.</p>
-<p><img src="/uploads/dmd100/images/lesson-3/interactive-narrative-branching-paths.png" alt="Branching paths"></p>
+<p><img src="files/interactive-narrative-branching-paths.png" alt="Branching paths"></p>
 <p>For example, let's say you are playing a hypertext narrative, and your character is a young woman who sees a hooded figure shoplifting. The options to proceed include a) tell the shopkeeper, b) follow the shoplifter, or c) do nothing. Depending on which choice you select, the story will progress through on one of three branching paths.</p>
 <h4>Critical story path</h4>
 <p>A critical story path can be thought of as the shortest path possible through a series of decision nodes to complete the interactive story.</p>
@@ -129,25 +129,25 @@
 <h4>Linear narrative structural models</h4>
 <h5>Branching</h5>
 <p>The branching structure is the structure used in "choose your own adventure" books and most interactive narratives. One problem with branching structures is the tendency to create overly complicated story paths.</p>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-branching-structure.png" alt="Branching structure"></p>
+<p><img src="files/narrative-branching-structure.png" alt="Branching structure"></p>
 <h5>String of pearls</h5>
 <p>In this linear structure, a user must complete node's requirements to continue to the next node.</p>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-string-of-pearls-structure.png" alt="String of pearls structure"></p>
+<p><img src="files/narrative-string-of-pearls-structure.png" alt="String of pearls structure"></p>
 <h5>Hero's journey</h5>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-journey-structure.png" alt="Heros Journey Strucutre"><br>
+<p><img src="files/narrative-journey-structure.png" alt="Heros Journey Strucutre"><br>
 In this linear structure, a user would follow the 12 stages of the hero's journey. However, there can be fewer or additional stages and still be considered a journey structure. Some stories continue around this path, creating a continuous.</p>
 <h5>Parallel worlds</h5>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-parallel-structure.png" alt="Parallel Structure"></p>
+<p><img src="files/narrative-parallel-structure.png" alt="Parallel Structure"></p>
 <p>In this quasi-linear structure, users are given the opportunity to explore multiple storylines running in parallel. There is typically no way to experience all of the stories at once, though they may intersect at opportune times.</p>
 <h5>Drill-down</h5>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-drill-down-structure.png" alt="Drill-down structure"></p>
+<p><img src="files/narrative-drill-down-structure.png" alt="Drill-down structure"></p>
 <p>The drill-down is a bi-linear structure and encourages users to move through a story vertically and laterally, where lateral movement represents plot points and vertical movement represents the gathering additional details about the plot.</p>
 <h4>Non-linear structural models</h4>
 <h5>Sandbox or open-world</h5>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-sandbox-structure.png" alt="Sandbox Structure"></p>
+<p><img src="files/narrative-sandbox-structure.png" alt="Sandbox Structure"></p>
 <p>A sandbox structure is one where the story unfolds based on how a player chooses to interact in what is typically a large, open environment. This is a loose structure where the setting of the story often becomes central to the experience.</p>
 <h5>Graph</h5>
-<p><img src="/uploads/dmd100/images/lesson-3/narrative-graph-structure.png" alt="Graph structure"><br>
+<p><img src="files/narrative-graph-structure.png" alt="Graph structure"><br>
 A graph structure is where all nodes simultaneously connect with every other node bi-bidirectionally. Discerning a plot causality in such a structure can be difficult.</p>
 <h4>Creating your own structural model</h4>
 <p>Quite often, no perfect model exists for the kind of story that needs to be told. Part of the creative process for writing a narrative is producing the model that can best support the story.</p>

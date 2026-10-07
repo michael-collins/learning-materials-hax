@@ -89,7 +89,7 @@ content: >
 
   <h2>Using Twinery's grid to visualize a the story's shape</h2>
 
-  <p><img src="/uploads/dmd100/images/lesson-3/twinery-grid-plot.png" alt="Twine
+  <p><img src="files/twinery-grid-plot.png" alt="Twine
   grid plot"></p>
 
   <ol>
@@ -105,7 +105,7 @@ content: >
   decrease the size of the grid by choosing one of the other grid/block icons on
   the bottom menu bar.<br>
 
-  <img src="/uploads/dmd100/images/lesson-3/twinery-btns.png" alt="twine grid
+  <img src="files/twinery-btns.png" alt="twine grid
   buttons"></li>
 
   <li>Edit each passage and write in the passage details and links.</li>

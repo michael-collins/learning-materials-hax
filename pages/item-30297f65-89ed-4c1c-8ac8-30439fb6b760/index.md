@@ -31,11 +31,11 @@ See instructions on the previous page to prepare your wireframe images of each a
 
 Create a new "Design file" in Figma and select the **Frame tool** (`F`). In the right sidebar, labeled "Design", you should see a list of preset Frame sizes; click one of the Phone sizes and you should see a white rectangle appear in the main canvas area. (If you used the paper template, choose iPhone 14.)
 
-<VideoEmbed src="/uploads/dmd100/videos/1\_add-frame.webm" type="local" caption="Adding a Frame" autoplay muted loop preload="none" />
+<VideoEmbed src="files/1_add-frame.webm" type="local" caption="Adding a Frame" autoplay muted loop preload="none" />
 
 [Frames](https://help.figma.com/hc/en-us/articles/360041539473-Frames-in-Figma) display their name in the Canvas area, as well as in the lefthand "Layers" sidebar. After placing a Frame, you'll switch back to the default **Move tool** (`V`) that is accessible via the arrow icon in the toolbar. You can give the Frame a more descriptive name (e.g. "Welcome page") by double-clicking its name in the main Canvas area or the lefthand "Layers" panel.
 
-<VideoEmbed src="/uploads/dmd100/videos/2\_rename.webm" type="local" caption="Renaming a Frame in the Canvas and Layers panel." autoplay muted loop preload="none" />
+<VideoEmbed src="files/2_rename.webm" type="local" caption="Renaming a Frame in the Canvas and Layers panel." autoplay muted loop preload="none" />
 
 ### Adding scanned images
 
@@ -43,7 +43,7 @@ With your Frame selected, look in the righthand "Design" panel for the "Fill", w
 
 At the top of that panel, select the button for "Image" to upload one of your scanned images and apply it as a background-image to the Frame.
 
-<VideoEmbed src="/uploads/dmd100/videos/3\_add-image.webm" type="local" caption="Adding an image as a fill" autoplay muted loop preload="none" />
+<VideoEmbed src="files/3_add-image.webm" type="local" caption="Adding an image as a fill" autoplay muted loop preload="none" />
 
 Depending on the [aspect ratio](https://www.uxpin.com/studio/blog/aspect-ratio/) of your image, it may appear cropped in the Frame. With the Fill panel still open, select the dropdown menu that, by default, is set to "Fill." These are options for how the background image is displayed:
 
@@ -51,7 +51,7 @@ Depending on the [aspect ratio](https://www.uxpin.com/studio/blog/aspect-ratio/)
 *   **Fit**: The entire image will be displayed, and you may see empty areas in the margins (like letterboxing in a movie).
 *   **Crop**: Manually crop and resize the image within the Frame.
 
-<VideoEmbed src="/uploads/dmd100/videos/4\_resize.webm" type="local" caption="Cropping images" autoplay muted loop preload="none" />
+<VideoEmbed src="files/4_resize.webm" type="local" caption="Cropping images" autoplay muted loop preload="none" />
 
 ### Resizing Frames
 
@@ -61,7 +61,7 @@ If you hold `⌘` (Mac) or `CTRL` (Windows) and drag the corners of the Frame, i
 
 To duplicate a Frame, hold `Alt` (\\Mac) or `Opt` (Windows), click on a Frame and _drag_ a copy to a new location. (You can do this with any element!)
 
-<VideoEmbed src="/uploads/dmd100/videos/5\_dupe-frame.webm" type="local" caption="Duplicating a Frame." autoplay muted loop preload="none" />
+<VideoEmbed src="files/5_dupe-frame.webm" type="local" caption="Duplicating a Frame." autoplay muted loop preload="none" />
 
 ### Help! My images aren't the right aspect ratio.
 
@@ -69,7 +69,7 @@ The preset "Phone" sizes available within the Frame tool use a variety of aspect
 
 Alternatively, you can drag all your images into Figma at once, and then wrap them in Frames that match the image sizes.
 
-<VideoEmbed src="/uploads/dmd100/videos/6\_batch.webm" type="local" caption="Importing multiple images at once." autoplay muted loop preload="none" />
+<VideoEmbed src="files/6_batch.webm" type="local" caption="Importing multiple images at once." autoplay muted loop preload="none" />
 
 **Alternate batch import method:**
 
@@ -85,7 +85,7 @@ Before we start adding interactions, let's check how our images look in the fina
 
 Click the big ▶️ Play button in the upper-right corner to launch a new tab displaying your Frames in a slideshow-like presentation. By default, you should see your images within an illustrated phone. If you used one of the preset Frame sizes, the image should fit the device pretty well (though you may discover some content is obscured by the camera notch).
 
-<VideoEmbed src="/uploads/dmd100/videos/7\_test.webm" type="local" caption="Testing out Presentation View." autoplay muted loop preload="none" />
+<VideoEmbed src="files/7_test.webm" type="local" caption="Testing out Presentation View." autoplay muted loop preload="none" />
 
 If there's a big gap, meaning your image's aspect ratio doesn't match the phone's… Go back to the Design file and click the "Prototype" tab in the right sidebar. Here, you can change the device used to present the app. Scroll through the options to find "Custom Size (fit)" — this will remove the phone illustration and display your Frames as you've made them.
 
@@ -97,7 +97,7 @@ If you're working with scanned paper wireframes, you'll need to add _additional_
 
 With the Frame tool (F) selected, click-and-drag over a button or UI element in one of your wireframe images. This will create a new Frame _inside_ of the larger Frame; you should rename it to stay organized.
 
-<VideoEmbed src="/uploads/dmd100/videos/8\_inner-frame.webm" type="local" caption='Creating an "inner Frame" to act as a clickable target.' autoplay muted loop preload="none" />
+<VideoEmbed src="files/8_inner-frame.webm" type="local" caption='Creating an "inner Frame" to act as a clickable target.' autoplay muted loop preload="none" />
 
 Like our larger Frames, this Frame can have a Fill color or Stroke (border). To more easily keep track of your Frames while you work, you can either:
 
@@ -108,13 +108,13 @@ Give this frame a descriptive name if you want (e.g. "button").
 
 ### Adding interactions
 
-In the right sidebar, switch from the "Design" tab to "Prototype." If you hover your mouse over this edges of this new "overlay" Frame, you'll see little circles appear. Click on one of those circles, and drag a line towards another Frame. <!-- --> <VideoEmbed src="/uploads/dmd100/videos/9\_noodle.webm" type="local" caption="Adding an interaction." autoplay muted loop preload="none" />
+In the right sidebar, switch from the "Design" tab to "Prototype." If you hover your mouse over this edges of this new "overlay" Frame, you'll see little circles appear. Click on one of those circles, and drag a line towards another Frame. <!-- --> <VideoEmbed src="files/9_noodle.webm" type="local" caption="Adding an interaction." autoplay muted loop preload="none" />
 
 When you release the line, you'll see an interaction panel appear showing that you've created a "Navigate to" interaction, along with the name of the destination Frame. (An image needs to be in a Frame for this to work.)
 
 Now hit that Play button and view your app in the Presentation tab! Test your interaction by clicking the target and navigating to the second Frame.
 
-<VideoEmbed src="/uploads/dmd100/videos/10\_present.webm" type="local" caption="Testing interactions in Presentation view." autoplay muted loop preload="none" />
+<VideoEmbed src="files/10_present.webm" type="local" caption="Testing interactions in Presentation view." autoplay muted loop preload="none" />
 
 Back in the design file, you can edit or delete an interaction by selecting the connection line, including options for transition speed and animation type.
 
@@ -132,7 +132,7 @@ You can follow the workflow above, but instead of scanned images, you'll need to
 
 Remember this is a wireframe! — Not a fully designed interface. Do not spend excessive time choosing fonts, colors, or making illustrations.
 
-<VideoEmbed src="/uploads/dmd100/videos/11\_digital-text.webm" type="local" caption="Adding digital text and interactions." autoplay muted loop preload="none" />
+<VideoEmbed src="files/11_digital-text.webm" type="local" caption="Adding digital text and interactions." autoplay muted loop preload="none" />
 
 If you create digital text or shapes, you don't need to create "overlay" Frames as described above. _Any element can become a clickable target for interactions_; not just Frames.
 
@@ -140,7 +140,7 @@ If you want an example of building a simple layout in Figma, see this tutorial o
 
 The best way to create a typical "button" is by creating a Frame and placing text inside it; you can [round the corners](https://help.figma.com/hc/en-us/articles/360050986854-Adjust-corner-radius-and-smoothing) of a Frame to make a pill-shape or a circle. In the example below, [auto layout](https://help.figma.com/hc/en-us/articles/5731482952599-Add-auto-layout-to-a-design) is used to center the text within the Frame and control interior padding.
 
-<VideoEmbed src="/uploads/dmd100/videos/12\_auto-layout.webm" type="local" caption="Creating a button with auto layout" autoplay muted loop preload="none" />
+<VideoEmbed src="files/12_auto-layout.webm" type="local" caption="Creating a button with auto layout" autoplay muted loop preload="none" />
 
 To add icons, follow the instructions above for adding images, or [use a plugin](https://help.figma.com/hc/en-us/articles/360042532714-Use-plugins-in-files) like [Feather Icons](https://www.figma.com/community/plugin/744047966581015514/feather-icons) to browse and add icons directly within Figma.
 

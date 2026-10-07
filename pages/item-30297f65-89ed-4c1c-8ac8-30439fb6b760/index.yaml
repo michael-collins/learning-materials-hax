@@ -87,7 +87,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/1_add-frame.webm"
+  src="files/1_add-frame.webm"
 
   type="local"
 
@@ -114,7 +114,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/2_rename.webm"
+  src="files/2_rename.webm"
 
   type="local"
 
@@ -142,7 +142,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/3_add-image.webm"
+  src="files/3_add-image.webm"
 
   type="local"
 
@@ -179,7 +179,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/4_resize.webm"
+  src="files/4_resize.webm"
 
   type="local"
 
@@ -212,7 +212,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/5_dupe-frame.webm"
+  src="files/5_dupe-frame.webm"
 
   type="local"
 
@@ -239,7 +239,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/6_batch.webm"
+  src="files/6_batch.webm"
 
   type="local"
 
@@ -287,7 +287,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/7_test.webm"
+  src="files/7_test.webm"
 
   type="local"
 
@@ -327,7 +327,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/8_inner-frame.webm"
+  src="files/8_inner-frame.webm"
 
   type="local"
 
@@ -372,7 +372,7 @@ content: >
 
   &lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/9_noodle.webm"
+  src="files/9_noodle.webm"
 
   type="local"
 
@@ -398,7 +398,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/10_present.webm"
+  src="files/10_present.webm"
 
   type="local"
 
@@ -447,7 +447,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/11_digital-text.webm"
+  src="files/11_digital-text.webm"
 
   type="local"
 
@@ -483,7 +483,7 @@ content: >
 
   <p>&lt;VideoEmbed
 
-  src="/uploads/dmd100/videos/12_auto-layout.webm"
+  src="files/12_auto-layout.webm"
 
   type="local"
 

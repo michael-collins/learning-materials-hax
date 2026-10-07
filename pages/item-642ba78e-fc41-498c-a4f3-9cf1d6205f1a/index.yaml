@@ -152,7 +152,7 @@ content: >
   <p>The following Plot Diagram shows the Five Act plot points laid over a Three
   Act structure.</p>
 
-  <p><img src="/uploads/dmd100/images/lesson-3/plot_diagram_reverse2.png"
+  <p><img src="files/plot_diagram_reverse2.png"
   alt="Plot diagram"></p>
 
   <h3>Four Act</h3>
@@ -260,7 +260,7 @@ content: >
   plot, which handles dramatization of the events.</p>
 
   <p><img
-  src="/uploads/dmd100/images/lesson-3/interactive-narrative-branching-paths.png"
+  src="files/interactive-narrative-branching-paths.png"
   alt="Branching paths"></p>
 
   <p>For example, let's say you are playing a hypertext narrative, and your
@@ -296,7 +296,7 @@ content: >
   structures is the tendency to create overly complicated story paths.</p>
 
   <p><img
-  src="/uploads/dmd100/images/lesson-3/narrative-branching-structure.png"
+  src="files/narrative-branching-structure.png"
   alt="Branching structure"></p>
 
   <h5>String of pearls</h5>
@@ -305,12 +305,12 @@ content: >
   continue to the next node.</p>
 
   <p><img
-  src="/uploads/dmd100/images/lesson-3/narrative-string-of-pearls-structure.png"
+  src="files/narrative-string-of-pearls-structure.png"
   alt="String of pearls structure"></p>
 
   <h5>Hero's journey</h5>
 
-  <p><img src="/uploads/dmd100/images/lesson-3/narrative-journey-structure.png"
+  <p><img src="files/narrative-journey-structure.png"
   alt="Heros Journey Strucutre"><br>
 
   In this linear structure, a user would follow the 12 stages of the hero's
@@ -320,7 +320,7 @@ content: >
 
   <h5>Parallel worlds</h5>
 
-  <p><img src="/uploads/dmd100/images/lesson-3/narrative-parallel-structure.png"
+  <p><img src="files/narrative-parallel-structure.png"
   alt="Parallel Structure"></p>
 
   <p>In this quasi-linear structure, users are given the opportunity to explore
@@ -331,7 +331,7 @@ content: >
   <h5>Drill-down</h5>
 
   <p><img
-  src="/uploads/dmd100/images/lesson-3/narrative-drill-down-structure.png"
+  src="files/narrative-drill-down-structure.png"
   alt="Drill-down structure"></p>
 
   <p>The drill-down is a bi-linear structure and encourages users to move
@@ -343,7 +343,7 @@ content: >
 
   <h5>Sandbox or open-world</h5>
 
-  <p><img src="/uploads/dmd100/images/lesson-3/narrative-sandbox-structure.png"
+  <p><img src="files/narrative-sandbox-structure.png"
   alt="Sandbox Structure"></p>
 
   <p>A sandbox structure is one where the story unfolds based on how a player
@@ -353,7 +353,7 @@ content: >
 
   <h5>Graph</h5>
 
-  <p><img src="/uploads/dmd100/images/lesson-3/narrative-graph-structure.png"
+  <p><img src="files/narrative-graph-structure.png"
   alt="Graph structure"><br>
 
   A graph structure is where all nodes simultaneously connect with every other
