@@ -880,26 +880,55 @@ export class OerCollection extends LitElement {
       .card:hover {
         border-color: color-mix(in srgb, var(--primary, #2563eb) 50%, var(--border, #e5e5e5));
       }
-      .card img,
-      .card .ph {
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        background: var(--muted, #f4f4f5);
-      }
-      .card .ph {
+      .card .media {
         display: grid;
         place-items: center;
-        color: var(--muted-foreground, #555);
-        --simple-icon-height: 2rem;
-        --simple-icon-width: 2rem;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: var(--muted, #f4f4f5);
+      }
+      .card .media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card .media.ph {
+        background: color-mix(in srgb, var(--primary, #0071b6) 7%, var(--background, #fff));
+        color: color-mix(in srgb, var(--primary, #0071b6) 55%, var(--background, #fff));
+        --simple-icon-height: 2.25rem;
+        --simple-icon-width: 2.25rem;
+      }
+      /* covers: the whole book cover, in portrait (the Decap site's 1800 × 2360) */
+      .card.cover .media {
+        aspect-ratio: 1800 / 2360;
+      }
+      .cards.covers {
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: 1.25rem;
       }
       .card-body {
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 0.375rem;
         padding: 0.875rem 1rem 1rem;
+        border-top: 1px solid var(--border, #e5e5e5);
+        background: color-mix(in srgb, var(--muted, #f4f4f5) 40%, var(--card, var(--background, #fff)));
+      }
+      .card-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.375rem;
+        margin-top: auto;
+        padding-top: 0.25rem;
+        font-size: 0.75rem;
+        color: var(--muted-foreground, #555);
+      }
+      .card:not(.cover) .card-meta {
+        justify-content: flex-start;
       }
       .card-title {
         font-weight: 600;
@@ -1268,19 +1297,49 @@ export class OerCollection extends LitElement {
     return html`<button class="preview ${cls}" aria-label="Open ${i.title} in the viewer" @click="${() => outlineViewer().show(i.id)}">${lucide("oer:eye", "xs")}Viewer</button>`;
   }
 
+  // a book (or anything with a cover image) shows its whole cover, in portrait
+  _isCover(item) {
+    return item.metadata?.pageType === "oer:book" || !!item.metadata?.oerFields?.coverImage;
+  }
+
+  // a book's chapters: the pages inside it (not its section headings)
+  _chapterCount(item) {
+    const kids = childrenMap(this._all || []);
+    let n = 0;
+    const walk = (id) =>
+      (kids.get(id) || []).forEach((c) => {
+        if (c.metadata?.oerSnapshotOf || c.metadata?.hideInMenu) return;
+        if (!["oer:section", "oer:heading"].includes(c.metadata?.pageType)) n++;
+        walk(c.id);
+      });
+    walk(item.id);
+    return n;
+  }
+
+  // cards, after the Decap site's: the image (a book's whole cover), then
+  // the title, a two-line description and a row of facts on a quiet panel
   _renderCards(items) {
-    return html`<div class="cards">
+    const oneType = new Set(items.map((i) => i.metadata?.pageType)).size === 1;
+    const covers = items.length > 0 && items.every((i) => this._isCover(i));
+    return html`<div class="cards ${covers ? "covers" : ""}">
       ${items.map((i) => {
+        const cover = this._isCover(i);
         const src = this._image(i);
         const t = this._type(i);
-        const preview = this._preview(i);
-        return html`<div class="card-wrap">${preview}<a class="card" href="${i.slug}">
-          ${src ? html`<img src="${src}" alt="" loading="lazy" />` : html`<div class="ph">${this._typeIcon(i)}</div>`}
+        const f = i.metadata?.oerFields || {};
+        const license = f.license || t?.fields?.find((x) => x.name === "license")?.default || "";
+        const chapters = cover ? this._chapterCount(i) : 0;
+        return html`<div class="card-wrap">${this._preview(i)}<a class="card ${cover ? "cover" : ""}" href="${i.slug}">
+          <div class="media ${src ? "" : "ph"}">${src ? html`<img src="${src}" alt="" loading="lazy" />` : this._typeIcon(i)}</div>
           <div class="card-body">
-            ${t ? html`<span class="eyebrow">${this._typeIcon(i)}${t.label}</span>` : ""}
+            ${t && !oneType ? html`<span class="eyebrow">${this._typeIcon(i)}${t.label}</span>` : ""}
             <span class="card-title">${i.title}${i.metadata?.published === false ? html`<span class="draft">Draft</span>` : ""}</span>
             ${i.description ? html`<span class="desc">${i.description}</span>` : ""}
-            <span>${this._pills(i)}</span>
+            <span class="card-meta">
+              ${cover
+                ? html`<span>${chapters ? `${chapters} chapter${chapters === 1 ? "" : "s"}` : ""}</span><span>${license}</span>`
+                : this._pills(i)}
+            </span>
           </div>
         </a></div>`;
       })}
