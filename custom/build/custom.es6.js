@@ -4707,6 +4707,22 @@ import{SimpleIconsetStore as ho}from"@haxtheweb/simple-icon/lib/simple-iconset.j
         text-transform: uppercase;
         color: var(--muted-foreground);
       }
+      /* a heading inside a page's sub-pages: closer to its pages, no extra
+         gap above when it opens the list, sentence case at a lower weight
+         than the top-level labels */
+      li.heading.nested {
+        margin-top: 0.5rem;
+      }
+      li.heading.nested:first-child {
+        margin-top: 0.125rem;
+      }
+      li.heading.nested .group-label {
+        min-height: 1.375rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-transform: none;
+      }
 
       /* icons off: the Decap sidebar's hierarchy, with text alone doing the
          work. Roomier rows, medium-weight top level, regular sub-pages,
@@ -4745,6 +4761,9 @@ import{SimpleIconsetStore as ho}from"@haxtheweb/simple-icon/lib/simple-iconset.j
       }
       :host([no-icons]) li.heading:not(:first-child) {
         margin-top: 1.5rem;
+      }
+      :host([no-icons]) li.heading.nested:not(:first-child) {
+        margin-top: 0.75rem;
       }
       :host([no-icons]) .has-kids > .row > a {
         padding-right: 2rem;
@@ -4812,7 +4831,7 @@ import{SimpleIconsetStore as ho}from"@haxtheweb/simple-icon/lib/simple-iconset.j
         ${Wr("oer:plus")}Add page
       </button>
     </li>`}_renderLevel(e,t,r){const i=e.get(t)||[];let o=!1;return s`<ul role="list">
-      ${i.map(n=>{if(ve(n))return o=!0,s`<li class="heading"><span class="group-label" role="heading" aria-level="2">${n.title}</span></li>`;const l=(e.get(n.id)||[]).length>0,d=this.__forceOpen||this._open.has(n.id),c=n.metadata?.icon;return s`<li class="${[l?"has-kids":"",o?"grouped":""].join(" ")}">
+      ${i.map(n=>{if(ve(n))return o=!0,s`<li class="heading ${r?"nested":""}"><span class="group-label" role="heading" aria-level="${Math.min(6,r+2)}">${n.title}</span></li>`;const l=(e.get(n.id)||[]).length>0,d=this.__forceOpen||this._open.has(n.id),c=n.metadata?.icon;return s`<li class="${[l?"has-kids":"",o?"grouped":""].join(" ")}">
           <div class="row">
             <a
               href="${this._href(n)}"

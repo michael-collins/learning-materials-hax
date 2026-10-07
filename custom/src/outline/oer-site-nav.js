@@ -309,6 +309,22 @@ class OerSiteNav extends LitElement {
         text-transform: uppercase;
         color: var(--muted-foreground);
       }
+      /* a heading inside a page's sub-pages: closer to its pages, no extra
+         gap above when it opens the list, sentence case at a lower weight
+         than the top-level labels */
+      li.heading.nested {
+        margin-top: 0.5rem;
+      }
+      li.heading.nested:first-child {
+        margin-top: 0.125rem;
+      }
+      li.heading.nested .group-label {
+        min-height: 1.375rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-transform: none;
+      }
 
       /* icons off: the Decap sidebar's hierarchy, with text alone doing the
          work. Roomier rows, medium-weight top level, regular sub-pages,
@@ -347,6 +363,9 @@ class OerSiteNav extends LitElement {
       }
       :host([no-icons]) li.heading:not(:first-child) {
         margin-top: 1.5rem;
+      }
+      :host([no-icons]) li.heading.nested:not(:first-child) {
+        margin-top: 0.75rem;
       }
       :host([no-icons]) .has-kids > .row > a {
         padding-right: 2rem;
@@ -441,7 +460,9 @@ class OerSiteNav extends LitElement {
       ${list.map((item) => {
         if (isHeading(item)) {
           grouped = true;
-          return html`<li class="heading"><span class="group-label" role="heading" aria-level="2">${item.title}</span></li>`;
+          // a heading inside a page (a lesson's "Readings") is a level below
+          // one at the top of the outline
+          return html`<li class="heading ${depth ? "nested" : ""}"><span class="group-label" role="heading" aria-level="${Math.min(6, depth + 2)}">${item.title}</span></li>`;
         }
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
