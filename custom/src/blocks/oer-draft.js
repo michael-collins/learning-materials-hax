@@ -119,7 +119,7 @@ export class OerDraft extends LitElement {
     return html`<div class="bar">
         <span class="label">${lucide("icons:visibility-off")}Draft for review</span>
         <span class="note"
-          >${this.note ? `${this.note}. ` : ""}Only signed-in authors see this.${editing ? "" : " Edit the page to review and publish it."}</span
+          >${this.note ? `${this.note}${/[.!?]$/.test(this.note.trim()) ? "" : "."} ` : ""}Only signed-in authors see this.${editing ? "" : " Edit the page to review and publish it."}</span
         >
         ${editing ? html`<button @click="${this._publish}">${lucide("oer:check")}Publish</button>` : ""}
       </div>

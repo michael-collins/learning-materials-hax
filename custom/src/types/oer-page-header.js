@@ -307,6 +307,8 @@ class OerPageHeader extends LitElement {
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
         background: var(--card, var(--background));
+        /* the page body may be justified; card lists read ragged-right */
+        text-align: start;
       }
       .block h2 {
         margin: 0 0 0.5rem;

@@ -8722,6 +8722,8 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
         background: var(--card, var(--background));
+        /* the page body may be justified; card lists read ragged-right */
+        text-align: start;
       }
       .block h2 {
         margin: 0 0 0.5rem;
@@ -13652,7 +13654,7 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
     `}_publish(){const e=this.parentNode;if(!e)return;const t=[...this.childNodes];for(const r of t)e.insertBefore(r,this);this.remove()}render(){const e=this.hasAttribute("data-editing")||this.hasAttribute("data-hax-ray");return s`<div class="bar">
         <span class="label">${no("icons:visibility-off")}Draft for review</span>
         <span class="note"
-          >${this.note?`${this.note}. `:""}Only signed-in authors see this.${e?"":" Edit the page to review and publish it."}</span
+          >${this.note?`${this.note}${/[.!?]$/.test(this.note.trim())?"":"."} `:""}Only signed-in authors see this.${e?"":" Edit the page to review and publish it."}</span
         >
         ${e?s`<button @click="${this._publish}">${no("oer:check")}Publish</button>`:""}
       </div>
