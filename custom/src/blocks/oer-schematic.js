@@ -325,6 +325,7 @@ const PRESETS = {
 
   // Reader mode: no sidebar, a slim bar (Contents, Text, the page count with
   // arrows, Exit), the page in a narrow column, and the Text panel open
+  // (page colours, Texture switched on)
   reader: () => {
     // a segmented control: n options, one chosen (text sizes in px, optional)
     const seg = (y, labels, on, sizes = []) => {
@@ -345,13 +346,14 @@ const PRESETS = {
       ${[0, 1, 2, 3, 4].map((i) => L(150, 94 + i * 11, i === 4 ? 110 : 160))}
       ${R(150, 152, 72, 7, "t", 3)}
       ${[0, 1, 2, 3, 4, 5].map((i) => L(150, 168 + i * 11, i === 5 ? 96 : 160))}
-      ${R(72, 62, 132, 142, "pop hi-line", 8)}
+      ${R(72, 62, 132, 164, "pop hi-line", 8)}
       ${T(82, 76, "Text size", "muted sm")}${seg(80, ["A", "A", "A", "A"], 1, [6.5, 8, 9.5, 11])}
       ${T(82, 108, "Typeface", "muted sm")}${seg(112, ["Serif", "Sans"], 0)}
       ${T(82, 140, "Line width", "muted sm")}${seg(144, ["Narrow", "Medium", "Wide"], 1)}
       ${T(82, 172, "Page", "muted sm")}
-      ${R(82, 176, 36, 16, "card", 4)}${R(120, 176, 36, 16, "box", 4)}${R(158, 176, 36, 16, "t-strong", 4)}
-      ${R(119, 175, 38, 18, "ghost hi-line", 5)}`;
+      ${R(82, 176, 26, 16, "card", 4)}${R(110, 176, 26, 16, "box", 4)}${R(138, 176, 26, 16, "t2", 4)}${R(166, 176, 28, 16, "t-strong", 4)}
+      ${R(109, 175, 28, 18, "ghost hi-line", 5)}
+      ${T(82, 212, "Texture", "muted sm")}${R(170, 204, 24, 12, "hi", 6)}${C(188, 210, 4.5, "knob")}`;
   },
 };
 

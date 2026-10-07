@@ -3,7 +3,7 @@
  * sidebar and site chrome, sets the chapter in a comfortable column, and
  * shows this bar instead of the top bar: Exit, the book and where you are
  * in it, Contents (the book's outline) and Text (size, typeface, line
- * width, line spacing, page: light, paper or dark). Each chapter is still a real page, so
+ * width, line spacing, page colour, texture). Each chapter is still a real page, so
  * links, Back, footnotes and quizzes work as usual.
  *
  *   <oer-reader-bar .book=${item} .position=${{ index, total }} .prev=${item} .next=${item}
@@ -19,7 +19,7 @@ import "../outline/oer-site-nav.js";
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
-export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light" };
+export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light", texture: false };
 const SIZES = [17, 19, 21, 24]; // px
 const WIDTHS = { narrow: "60ch", medium: "68ch", wide: "80ch" };
 const SPACINGS = { normal: 1.7, relaxed: 1.95 };
@@ -30,22 +30,25 @@ const FONTS = {
 const SERIF_CSS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap";
 const KEY = "oer-reader-settings";
 
-// the Paper page: a fine grain over a warm white, drawn by SVG noise (no
-// image file). Faint enough that text keeps AA contrast on its darkest
-// pixel (text 11.1:1, muted 5.3:1, links 6.4:1)
-const PAPER_SVG =
-  "<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'>" +
-  "<filter id='g' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='5' stitchTiles='stitch'/>" +
-  "<feColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.3 0 0 0 0 0.2 0.34 0 0 0 -0.115'/></filter>" +
-  "<rect width='100%' height='100%' filter='url(#g)'/></svg>";
-export const PAPER_TEXTURE = `url("data:image/svg+xml,${encodeURIComponent(PAPER_SVG)}")`;
+// Texture: a fine paper grain over any page colour, drawn by SVG noise (no
+// image file): dark specks on the light pages, light specks on Dark. Faint
+// enough that every page keeps AA contrast on the grain's worst pixel (see
+// the page palettes in the theme)
+const grain = (rgb, alpha, offset) =>
+  `url("data:image/svg+xml,${encodeURIComponent(
+    "<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'>" +
+      "<filter id='g' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='5' stitchTiles='stitch'/>" +
+      `<feColorMatrix values='0 0 0 0 ${rgb[0]} 0 0 0 0 ${rgb[1]} 0 0 0 0 ${rgb[2]} ${alpha} 0 0 0 ${offset}'/></filter>` +
+      "<rect width='100%' height='100%' filter='url(#g)'/></svg>",
+  )}")`;
+export const TEXTURES = { onLight: grain([0.36, 0.3, 0.2], 0.34, -0.115), onDark: grain([0.92, 0.9, 0.86], 0.2, -0.07) };
 
 export function loadReaderSettings() {
   try {
-    const saved = { ...READER_DEFAULTS, ...JSON.parse(globalThis.localStorage.getItem(KEY) || "{}") };
-    // Sepia became Paper
-    if (saved.colour === "sepia") saved.colour = "paper";
-    return saved;
+    const stored = JSON.parse(globalThis.localStorage.getItem(KEY) || "{}");
+    // Paper came textured before Texture was its own setting
+    if (stored.colour === "paper" && !("texture" in stored)) stored.texture = true;
+    return { ...READER_DEFAULTS, ...stored };
   } catch {
     return { ...READER_DEFAULTS };
   }
@@ -59,7 +62,7 @@ export function saveReaderSettings(settings) {
   }
 }
 
-/** The theme's reader variables for a set of settings. */
+/** The theme's reader variables for a set of settings (page colour resolved). */
 export function readerVars(s) {
   if (s.font === "serif" && !globalThis.document.getElementById("oer-reader-serif")) {
     const link = Object.assign(globalThis.document.createElement("link"), { id: "oer-reader-serif", rel: "stylesheet", href: SERIF_CSS });
@@ -70,7 +73,7 @@ export function readerVars(s) {
     "--reader-measure": WIDTHS[s.width] || WIDTHS.medium,
     "--reader-leading": String(SPACINGS[s.spacing] || SPACINGS.normal),
     "--reader-font": FONTS[s.font] || FONTS.serif,
-    "--reader-texture": s.colour === "paper" ? PAPER_TEXTURE : "",
+    "--reader-texture": s.texture ? (s.colour === "dark" ? TEXTURES.onDark : TEXTURES.onLight) : "",
   };
 }
 
@@ -138,10 +141,10 @@ class OerReaderBar extends LitElement {
     this.dispatchEvent(new CustomEvent("reader-settings", { detail: settings, bubbles: true, composed: true }));
   }
 
-  _seg(label, key, options) {
+  _seg(label, key, options, cls = "") {
     return html`<div class="setting">
       <span class="setting-label" id="lbl-${key}">${label}</span>
-      <div class="seg" role="group" aria-labelledby="lbl-${key}">
+      <div class="seg ${cls}" role="group" aria-labelledby="lbl-${key}">
         ${options.map(
           ([value, text, extra]) =>
             html`<button aria-pressed="${this.settings[key] === value ? "true" : "false"}" class="${extra || ""}" @click="${() => this._set(key, value)}">${text}</button>`,
@@ -213,11 +216,29 @@ class OerReaderBar extends LitElement {
               ["normal", "Normal"],
               ["relaxed", "Relaxed"],
             ])}
-            ${this._seg("Page", "colour", [
-              ["light", "Light", "c-light"],
-              ["paper", "Paper", "c-paper"],
-              ["dark", "Dark", "c-dark"],
-            ])}
+            ${this._seg(
+              "Page",
+              "colour",
+              [
+                ["light", "Light", "c-light"],
+                ["paper", "Paper", "c-paper"],
+                ["sepia", "Sepia", "c-sepia"],
+                ["dark", "Dark", "c-dark"],
+              ],
+              this.settings.texture ? "textured" : "",
+            )}
+            <div class="setting row">
+              <span class="setting-label" id="lbl-texture">Texture</span>
+              <button
+                class="switch"
+                role="switch"
+                aria-checked="${this.settings.texture ? "true" : "false"}"
+                aria-labelledby="lbl-texture"
+                @click="${() => this._set("texture", !this.settings.texture)}"
+              >
+                <span class="knob"></span>
+              </button>
+            </div>
             <p class="hint">Turn pages with <kbd>←</kbd> and <kbd>→</kbd>. Settings are remembered on this device.</p>
           </div>`
         : ""}`;
@@ -424,29 +445,71 @@ class OerReaderBar extends LitElement {
       .seg .serif {
         font-family: ${unsafeCSS(FONTS.serif)};
       }
-      /* page colours show as themselves */
+      /* page colours show as themselves, with the texture when it's on */
       .seg .c-light {
         background: #fff;
         color: #1f2328;
       }
       .seg .c-paper {
-        background: #f8f5ec ${unsafeCSS(PAPER_TEXTURE)};
+        background: #f8f5ec;
         color: #2f2a22;
+      }
+      .seg .c-sepia {
+        background: #f6efe1;
+        color: #3a2e20;
       }
       .seg .c-dark {
         background: #16181d;
-        color: #e8e6e3;
+        color: #e3e1dc;
       }
-      .seg .c-light,
-      .seg .c-paper,
-      .seg .c-dark {
+      .seg.textured :is(.c-light, .c-paper, .c-sepia) {
+        background-image: ${unsafeCSS(TEXTURES.onLight)};
+      }
+      .seg.textured .c-dark {
+        background-image: ${unsafeCSS(TEXTURES.onDark)};
+      }
+      .seg :is(.c-light, .c-paper, .c-sepia, .c-dark) {
         margin: 0 0.0625rem;
         outline: 1px solid rgb(0 0 0 / 0.08);
       }
-      .seg .c-light[aria-pressed="true"],
-      .seg .c-paper[aria-pressed="true"],
-      .seg .c-dark[aria-pressed="true"] {
+      .seg :is(.c-light, .c-paper, .c-sepia, .c-dark)[aria-pressed="true"] {
         outline: 2px solid var(--primary);
+      }
+      /* Texture: shadcn Switch; the track's outline meets 3:1 when off */
+      .setting.row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .switch {
+        position: relative;
+        flex: none;
+        box-sizing: border-box;
+        width: 2.25rem;
+        height: 1.25rem;
+        padding: 0;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: 999px;
+        background: var(--muted);
+        cursor: pointer;
+      }
+      .switch[aria-checked="true"] {
+        border-color: var(--primary);
+        background: var(--primary);
+      }
+      .switch .knob {
+        position: absolute;
+        top: 0.0625rem;
+        left: 0.0625rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 999px;
+        background: var(--background);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+      }
+      .switch[aria-checked="true"] .knob {
+        left: auto;
+        right: 0.0625rem;
       }
       .hint {
         margin: 0;

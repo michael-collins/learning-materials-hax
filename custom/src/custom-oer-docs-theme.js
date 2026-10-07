@@ -1543,8 +1543,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
            page in one column set in the reader's type, at their size, line
            width and spacing (--reader-*, set on the host), on their page
            colour. Light and dark resolve the site's tokens in that scheme;
-           dark and paper have their own palettes; paper adds a texture
-           (--reader-texture, ui/oer-reader.js) on the page and the bar */
+           paper, sepia and dark have their own palettes. Texture lays a fine
+           grain (--reader-texture, ui/oer-reader.js) on the page and the bar;
+           contrast below is measured on the grain's worst pixel */
         :host([reader]) {
           background-color: var(--background);
           background-image: var(--reader-texture, none);
@@ -1602,11 +1603,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             font-size: 1.5em;
           }
         }
+        /* a deeper link blue than the site's, for AA on the grain (5.4:1) */
         :host([reader-colour="light"]) {
           color-scheme: only light;
+          --link: #0062a3;
         }
         /* a softer dark than the site's black, easier over long reading
-           (AA: text 13.6:1, muted 7.4:1, links 8.2:1) */
+           (AA with texture: text 10.1:1, muted 5.5:1, links 6.1:1, ring 4:1) */
         :host([reader-colour="dark"]) {
           color-scheme: only dark;
           --background: #16181d;
@@ -1626,8 +1629,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --link: #7cb4f0;
           --ring: #5b8fd0;
         }
-        /* warm white under ink-blue links (AA on the grain's darkest
-           pixel: text 11.1:1, muted 5.3:1, links 6.4:1, focus ring 4.0:1) */
+        /* warm white under ink-blue links (AA with texture: text 11.1:1,
+           muted 5.3:1, links 6.4:1, focus ring 4:1) */
         :host([reader-colour="paper"]) {
           color-scheme: only light;
           --background: #f8f5ec;
@@ -1646,6 +1649,26 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --primary-foreground: #ffffff;
           --link: #1d4f91;
           --ring: #4a6fa5;
+        }
+        /* AA with texture: text 9.9:1, muted 5.3:1, links 5.7:1, ring 3.5:1 */
+        :host([reader-colour="sepia"]) {
+          color-scheme: only light;
+          --background: #f6efe1;
+          --foreground: #3a2e20;
+          --card: #efe6d3;
+          --card-foreground: #3a2e20;
+          --popover: #fbf7ee;
+          --popover-foreground: #3a2e20;
+          --muted: #ebe1cc;
+          --muted-foreground: #675642;
+          --accent: #ebe1cc;
+          --accent-foreground: #3a2e20;
+          --border: #d9c9ab;
+          --input-border: #8f7a5c;
+          --primary: #7a4a1c;
+          --primary-foreground: #ffffff;
+          --link: #0f5596;
+          --ring: #9a6a36;
         }
 
         /* embed mode (?embed=1): only the page itself */
@@ -2126,7 +2149,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     // editing a page leaves Reader mode (it comes back on the next visit to the book)
     if (changed.has("editMode") && this.editMode && this.reader) this.reader = false;
     if (changed.has("reader") || changed.has("_readerSettings") || changed.has("dark")) {
-      const vars = this.reader ? readerVars(this._readerSettings) : {};
+      const vars = this.reader ? readerVars(this._effectiveReaderSettings()) : {};
       for (const name of ["--reader-size", "--reader-measure", "--reader-leading", "--reader-font", "--reader-texture"]) {
         if (vars[name]) this.style.setProperty(name, vars[name]);
         else this.style.removeProperty(name);
