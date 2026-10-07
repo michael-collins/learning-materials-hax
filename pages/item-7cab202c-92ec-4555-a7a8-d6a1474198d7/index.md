@@ -1,6 +1,6 @@
 This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licensing, plus an editor redesigned in the shadcn/ui style. This page explains what is new and where to find it.
 
-<oer-callout type="tip" title="Where things are"><p>Most actions live in three places: the <strong>sidebar</strong> (Navigation and Site tabs), the <strong>page menu</strong> (the ⌄ beside a page title) and the <strong>top bar</strong> (search, command search and dark mode).</p></oer-callout>
+<oer-callout type="tip" title="Where things are"><p>Most actions live in three places: the <strong>sidebar</strong> (Navigation and Site tabs, with the light and dark switch at the bottom), the <strong>page menu</strong> (the ⌄ beside a page title) and the <strong>top bar</strong> (search, command search and, in a book, Reader mode).</p></oer-callout>
 
 Getting around
 --------------
@@ -18,6 +18,7 @@ Editing pages
 *   **Edit page** from the page menu, or press ⌘⇧E. Save and Cancel sit in the editing bar at the top.
 *   **Block rail.** The selected block gets a rail on its left with Block, Text, Format and Insert menus, in place of HAX's floating toolbars.
 *   **Insert in place.** Hover the space between blocks, including inside columns, to add a block from a searchable list with previews and templates.
+*   **Citations.** In a text block, _Insert inline → Citation…_ adds a numbered citation at the cursor: cite a reference already on the page, one of the site's Resources, or a new source (author, year, title, link, publisher, or free text), which can be saved to Resources for other pages. A new source that's already in Resources is spotted (same link or title) and offered instead; references not linked to a Resource can be linked to a matching one or added to Resources from the dialog's _On this page_ tab. Each page records the Resources it cites when you save, and a Resource page lists them under _Used in → Cited by_. The page's References list is numbered in reading order and kept in step when you save; readers can hover or focus a number to see the reference.
 *   **Block settings** open in a dialog with a live preview. The HTML source view opens in a dialog too.
 *   The editor is quiet and still: no sounds and no decorative animation, and every control works from the keyboard.
 
@@ -55,10 +56,34 @@ Open it with **Edit outline** under the sidebar's pages (or from a page's menu f
 *   **Edit icons** shows the icon column; **Icons in navigation** switches icons on or off for the whole sidebar.
 *   Keyboard: Enter rename, Tab/Shift+Tab indent and outdent, Alt+↑/↓ move, ←/→ collapse and expand, Delete remove from navigation, Shift+Delete delete page, T type, L level, V version.
 
+Courses
+-------
+
+Each course has a page under _Curriculum → Courses_: its code, credits and university, a link to its bulletin entry, its prerequisites (linked to their course pages, with the bulletin's wording), delivery, the pathways and books built for it, and links to student work hosted elsewhere. The Courses index groups courses by university, so several universities can teach from the same materials. Below the details, a course page lists **everything taught in the course** by itself, grouped by type: every lesson, lecture, reading, exercise, project and quiz linked to it.
+
+To put a page in a course, add the course in the page's _Courses_ field in Page details. A page can be in any number of courses, at any university; each is a link to its course page, so the same course code at two universities stays two courses. Authors can name their university too, which the page credits beside their name. A page collection placed anywhere can be limited to one course in its settings.
+
 Pathways
 --------
 
 A pathway is a page of type Pathway whose sub-pages are its modules; each module's sub-pages are its items, usually linked from the library so they stay in one place. The Pathways page lists them in three groups: where to start, what builds on it, and what is still in development. On a pathway page you see the course, length, levels and what to do first, then the route: a matrix of modules by level, or a module list with a level switcher. Items without a level belong to every level.
+
+Projects and activities
+-----------------------
+
+A project made of several deliverables keeps them as its sub-pages of type **Activity**, in the order students do them. Headings between them name the project's stages (Discover, Define, Develop and Deliver, or a research stage, a concept stage…), and supporting pages such as articles and tutorials can sit among the steps. A project page opens with its **Project steps**, numbered and grouped by stage; an activity page shows its step, its stage and the project it's part of. Steps and stages come from the outline, so moving a page in the outline builder renumbers them. The page data uses the OER Schema properties `hasActivity`, `activityOf`, `step` and `stage`.
+
+The viewer
+----------
+
+The **Viewer** opens a pathway, unit, lesson or project in a two-column window without leaving the page: its outline on the left (units, lessons and their materials, a book lesson's sections and readings, or a project's stages and steps) and the selected page on the right, read in place with Previous and Next, the version menu and Open page. Open it with the **Viewer** button on a card in a collection or in a page's header. The address records what's open, so a link to it opens the viewer at the same place. Esc closes it; on phones the outline is under **Contents**.
+
+Reader mode
+-----------
+
+**Reader mode** is a quieter way to read through a book. The sidebar and site controls go and the chapter sits in one column under a slim bar: **Contents** (the book's outline) and **Text** on the left, the book and page count with previous and next arrows in the middle, and **Exit reader** on the right. Start it with _Reader mode_ on the book's page, or _Reader_ in the top bar on any page of a book. The ← and → keys also turn pages. It lasts the visit: following a link out of the book shows the site as usual, and Back returns to Reader mode.
+
+**Text** sets the text size, a serif or sans typeface, the line width, the line spacing and a light, sepia or dark page, separate from the site's dark mode. The settings are each reader's own, remembered on their device.
 
 Browse pages
 ------------
@@ -75,17 +100,22 @@ Versions
 Books, embedding and export
 ---------------------------
 
-*   **Books.** A type with the reader layout gets a _Start reading_ button, a sidebar of its chapters with a filter, and in-book Previous and Next. Books export to **print or PDF**, an **HTML zip** and **IMS Common Cartridge** for an LMS.
+*   **Books.** A type with the reader layout gets a sidebar of its chapters with a filter, in-book Previous and Next, and Reader mode. Books export to **print or PDF**, an **HTML zip** and **IMS Common Cartridge** for an LMS.
 *   **Embedding.** _Embed…_ in the page menu gives the code to place a page in an LMS such as Canvas, with options to leave out the header, the title, the rubric or the AI licence. Embedded pages resize themselves the way Canvas expects.
 
 The page footer
 ---------------
 
-Typed pages end with their licence and credits: the Creative Commons licence with its icons and the authors, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, **Credits** for third-party material (from Credit blocks and media with a credit or licence), a **Cite** menu (APA, MLA, Chicago, BibTeX) and the **OER Schema** badge, which shows the structured data published with every page for search engines and repositories.
+Typed pages end with their licence and credits: the Creative Commons licence with its icons and the authors, the AI Usage License (AIUL) as linked labels, the version and last update, the pages that use this one, **Credits** for third-party material (from Credit blocks and media with a credit or licence), a **Cite** menu (APA, MLA, Chicago and BibTeX, naming the version, with a permanent link and RIS and CSL-JSON files for reference managers) and the **OER Schema** badge, which shows the structured data published with every page for search engines and repositories.
+
+Citing and finding pages
+------------------------
+
+Every page has a **permanent link** (`?p=` and the page's id, plus `&version=` for a release) that keeps working when a page is renamed or moved. Pages carry citation metadata (`citation_*` and Dublin Core tags) so Google Scholar and reference managers such as Zotero pick up the title, authors, date, publisher and licence, alongside the OER Schema data.
 
 Accessibility
 -------------
 
-Colours meet WCAG AA contrast in light and dark mode, the layout works at phone width, every control has a keyboard path and a label, menus stay inside the window, and nothing moves for decoration.
+Colours meet WCAG AA contrast in light and dark mode and on each of Reader mode's pages, the layout works at phone width, every control has a keyboard path and a label, menus stay inside the window, and nothing moves for decoration.
 
 <oer-callout type="info" title="Built on HAX"><p>The theme is a layer on top of stock HAXcms, with no changes to HAX itself. Fixes found along the way have been contributed back to HAX. If the site switches to another HAX theme, the editor returns to stock HAX while these blocks keep working.</p></oer-callout>

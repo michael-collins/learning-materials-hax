@@ -1,5 +1,5 @@
 <p class="lead">This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licensing, plus an editor redesigned in the shadcn/ui style. This page explains what is new and where to find it.</p>
-<oer-callout type="tip" title="Where things are"><p>Most actions live in three places: the <strong>sidebar</strong> (Navigation and Site tabs), the <strong>page menu</strong> (the ⌄ beside a page title) and the <strong>top bar</strong> (search, command search and dark mode).</p></oer-callout>
+<oer-callout type="tip" title="Where things are"><p>Most actions live in three places: the <strong>sidebar</strong> (Navigation and Site tabs, with the light and dark switch at the bottom), the <strong>page menu</strong> (the ⌄ beside a page title) and the <strong>top bar</strong> (search, command search and, in a book, Reader mode).</p></oer-callout>
 <h2>Getting around</h2>
 <ul>
   <li><strong>Sidebar tabs.</strong> Signed-in authors see two tabs. <em>Navigation</em> shows the site's outline; <em>Site</em> holds Browse pages, Content types and Settings. Readers see the outline only.</li>
@@ -79,6 +79,11 @@
 <p>The <strong>Viewer</strong> opens a pathway, unit, lesson or project in a two-column window without leaving the page: its outline on the left (units, lessons and their materials, a book lesson's sections and readings, or a project's stages and steps) and the selected page on the right, read in place with Previous and Next, the version menu and Open page. Open it with the <strong>Viewer</strong> button on a card in a collection or in a page's header. The address records what's open, so a link to it opens the viewer at the same place. Esc closes it; on phones the outline is under <strong>Contents</strong>.</p>
 <oer-schematic preset="viewer" alt="Diagram of the viewer over the page: an outline column on the left with units and a highlighted lesson expanded to its materials, and the selected page with Open page and a close button on the right." caption="The viewer: the outline beside the page being read."></oer-schematic>
 
+<h2>Reader mode</h2>
+<p><strong>Reader mode</strong> is a quieter way to read through a book. The sidebar and site controls go and the chapter sits in one column under a slim bar: <strong>Contents</strong> (the book's outline) and <strong>Text</strong> on the left, the book and page count with previous and next arrows in the middle, and <strong>Exit reader</strong> on the right. Start it with <em>Reader mode</em> on the book's page, or <em>Reader</em> in the top bar on any page of a book. The ← and → keys also turn pages. It lasts the visit: following a link out of the book shows the site as usual, and Back returns to Reader mode.</p>
+<p><strong>Text</strong> sets the text size, a serif or sans typeface, the line width, the line spacing and a light, sepia or dark page, separate from the site's dark mode. The settings are each reader's own, remembered on their device.</p>
+<oer-schematic preset="reader" alt="Diagram of Reader mode: no sidebar; a slim bar with Contents, a highlighted Aa button, the page count 3 / 30 between arrows, and Exit; the Text panel open over a narrow column of text, with text size, typeface, line width and a choice of light, sepia or dark page, sepia selected." caption="Reader mode with the Text panel open: text size, typeface, line width and page colour."></oer-schematic>
+
 <h2>Browse pages</h2>
 <p><em>Site → Browse pages</em> lists every page, including pages the navigation doesn't show: pages removed from the outline, archived versions and linked copies. Search or filter them, open one, put a page back in the navigation with <strong>Show in navigation</strong>, or delete it.</p>
 <h2>Versions</h2>
@@ -91,7 +96,7 @@
 
 <h2>Books, embedding and export</h2>
 <ul>
-  <li><strong>Books.</strong> A type with the reader layout gets a <em>Start reading</em> button, a sidebar of its chapters with a filter, and in-book Previous and Next. Books export to <strong>print or PDF</strong>, an <strong>HTML zip</strong> and <strong>IMS Common Cartridge</strong> for an LMS.</li>
+  <li><strong>Books.</strong> A type with the reader layout gets a sidebar of its chapters with a filter, in-book Previous and Next, and Reader mode. Books export to <strong>print or PDF</strong>, an <strong>HTML zip</strong> and <strong>IMS Common Cartridge</strong> for an LMS.</li>
   <li><strong>Embedding.</strong> <em>Embed…</em> in the page menu gives the code to place a page in an LMS such as Canvas, with options to leave out the header, the title, the rubric or the AI licence. Embedded pages resize themselves the way Canvas expects.</li>
 </ul>
 <oer-schematic preset="embed" alt="Diagram of the Embed dialog: the embed code, checkboxes for what to leave out, and a Copy button." caption="Embed this page: choose what to leave out, then copy the code."></oer-schematic>
@@ -103,5 +108,5 @@
 <h2>Citing and finding pages</h2>
 <p>Every page has a <strong>permanent link</strong> (<code>?p=</code> and the page's id, plus <code>&amp;version=</code> for a release) that keeps working when a page is renamed or moved. Pages carry citation metadata (<code>citation_*</code> and Dublin Core tags) so Google Scholar and reference managers such as Zotero pick up the title, authors, date, publisher and licence, alongside the OER Schema data.</p>
 <h2>Accessibility</h2>
-<p>Colours meet WCAG AA contrast in light and dark mode, the layout works at phone width, every control has a keyboard path and a label, menus stay inside the window, and nothing moves for decoration.</p>
+<p>Colours meet WCAG AA contrast in light and dark mode and on each of Reader mode's pages, the layout works at phone width, every control has a keyboard path and a label, menus stay inside the window, and nothing moves for decoration.</p>
 <oer-callout type="info" title="Built on HAX"><p>The theme is a layer on top of stock HAXcms, with no changes to HAX itself. Fixes found along the way have been contributed back to HAX. If the site switches to another HAX theme, the editor returns to stock HAX while these blocks keep working.</p></oer-callout>
