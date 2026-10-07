@@ -29535,95 +29535,6 @@
       }
     },
     {
-      "id": "item-45493816-b35c-457b-9581-8934b03dbac2",
-      "indent": 1,
-      "location": "pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.html",
-      "slug": "exercises/modeling-a-chessboard",
-      "order": 32,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Chessboard",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-chessboard",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recqqIknm5ebQaFmz_image_Chess_Board_Image.png",
-          "imageAlt": "Chess Board Image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231957,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-dd026cce-5bed-4534-996e-8078f1c13157",
-      "indent": 2,
-      "location": "pages/item-dd026cce-5bed-4534-996e-8078f1c13157/index.html",
-      "slug": "exercises/modeling-a-chessboard/v0-9-0",
-      "order": 1000,
-      "parent": "item-45493816-b35c-457b-9581-8934b03dbac2",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recqqIknm5ebQaFmz_image_Chess_Board_Image.png",
-          "imageAlt": "Chess Board Image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true
-        },
-        "oerSnapshotOf": "item-45493816-b35c-457b-9581-8934b03dbac2",
-        "oerSnapshotTitle": "Modeling a Chessboard",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
       "indent": 1,
       "location": "pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.html",
@@ -32829,6 +32740,99 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-45493816-b35c-457b-9581-8934b03dbac2",
+      "indent": 1,
+      "location": "pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.html",
+      "slug": "modeling-a-chessboard",
+      "order": 32,
+      "parent": null,
+      "title": "Modeling a Chessboard",
+      "description": "How to Make a Chess Board\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a ",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-chessboard",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recqqIknm5ebQaFmz_image_Chess_Board_Image.png",
+          "imageAlt": "Chess Board Image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404511,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-dd026cce-5bed-4534-996e-8078f1c13157",
+      "indent": 2,
+      "location": "pages/item-dd026cce-5bed-4534-996e-8078f1c13157/index.html",
+      "slug": "exercises/modeling-a-chessboard/v0-9-0",
+      "order": 1000,
+      "parent": "item-45493816-b35c-457b-9581-8934b03dbac2",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recqqIknm5ebQaFmz_image_Chess_Board_Image.png",
+          "imageAlt": "Chess Board Image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true
+        },
+        "oerSnapshotOf": "item-45493816-b35c-457b-9581-8934b03dbac2",
+        "oerSnapshotTitle": "Modeling a Chessboard",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
       }
     },
     {

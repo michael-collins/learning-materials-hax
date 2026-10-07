@@ -10,9 +10,17 @@ Learning Objectives
 Instructions
 ------------
 
-**How to Make a Chess Board** <BR> <BR>  
-The Play list consists of two demonstrations. The First is a more recent and involved demonstration. It is expected that your assignment will at the very least look contain the elements and organization of the board in the earlier demonstration. That said you are encouraged to expand upon the design, thus the inclusion of both demonstrations.  <BR> <BR>  
-For this assignment, recreate the steps in the Demonstration and submit your images of your model to Canvas for review. Make sure that your assignment is titled in the following format: <BR> <BR> Last name, First name, the word "Lesson" followed by the Lesson number, and the word "Assignment" followed by the Assignment number. <BR> <BR> Example: Brill Ian Lesson x Assignment x <BR> <BR> Be sure to provide screen grabs or renders from 3 angles and the original blender file. Be sure to upload each file independently to facilitate ease of grading (so that the reviewer only need to download files when necessary).
+**How to Make a Chess Board**  
+  
+The Play list consists of two demonstrations. The First is a more recent and involved demonstration. It is expected that your assignment will at the very least look contain the elements and organization of the board in the earlier demonstration. That said you are encouraged to expand upon the design, thus the inclusion of both demonstrations.   
+  
+For this assignment, recreate the steps in the Demonstration and submit your images of your model to Canvas for review. Make sure that your assignment is titled in the following format:  
+  
+Last name, First name, the word "Lesson" followed by the Lesson number, and the word "Assignment" followed by the Assignment number.  
+  
+Example: Brill Ian Lesson x Assignment x  
+  
+Be sure to provide screen grabs or renders from 3 angles and the original blender file. Be sure to upload each file independently to facilitate ease of grading (so that the reviewer only need to download files when necessary).
 
 Grading Rubric
 --------------

@@ -2995,16 +2995,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/modeling-a-chavet-121-series-no-6-knight</loc>
-    <lastmod>2026-10-07T20:21:50.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/modeling-a-chessboard</loc>
+    <lastmod>2026-10-07T20:21:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/exercises/modeling-a-chessboard</loc>
-    <lastmod>2026-10-05T20:25:57.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/modeling-a-diamond</loc>
@@ -3141,6 +3135,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/edsel-s-law-how-bad-design-happens</loc>
     <lastmod>2026-10-07T20:21:36.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/modeling-a-chavet-121-series-no-6-knight</loc>
+    <lastmod>2026-10-07T20:21:50.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3883,12 +3883,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/exercises/modeling-a-chavet-121-series-no-6-knight/v0-9-0</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/exercises/modeling-a-chessboard/v0-9-0</loc>
     <lastmod>2026-10-05T20:26:44.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -4010,6 +4004,12 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/modeling-a-bishop/v0-9-0</loc>
+    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/exercises/modeling-a-chavet-121-series-no-6-knight/v0-9-0</loc>
     <lastmod>2026-10-05T20:26:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
