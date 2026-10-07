@@ -22,6 +22,7 @@ import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElemen
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { flatten, saveOutline, newItemId, starterContent, childrenMap, deletionSet } from "./outline-model.js";
 import { isSystemItem, systemItem, contentTypes, navIconsOn, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
+import { pageIcon } from "../types/page-icon.js";
 import { isSnapshot, versionsOf } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
@@ -102,7 +103,7 @@ class OerOutlineBuilder extends LitElement {
     this._rows = flatten(items.filter((i) => !isSystemItem(i) && !isSnapshot(i) && !outOfNav(i)), rootId).map(({ item, depth }) => ({
       id: item.id,
       title: item.title,
-      icon: item.metadata?.icon || "",
+      icon: pageIcon(item),
       type: item.metadata?.pageType || "",
       ref: item.metadata?.oerRef?.page ? item.metadata.oerRef : null,
       navVersion: item.metadata?.oerNavVersion || "",
@@ -169,7 +170,7 @@ class OerOutlineBuilder extends LitElement {
           Number(o.order) !== order ||
           Number(o.indent) !== indent ||
           o.title !== title ||
-          (o.metadata?.icon || "") !== row.icon ||
+          pageIcon(o) !== row.icon ||
           (o.metadata?.pageType || "") !== row.type ||
           (o.metadata?.oerLevel || "") !== (row.level || "") ||
           (o.metadata?.oerRef?.version || "") !== (row.ref?.version || "") ||
@@ -391,7 +392,7 @@ class OerOutlineBuilder extends LitElement {
     const linked = (page, d, version = "") => ({
       id: newItemId(),
       title: page.title,
-      icon: page.metadata?.icon || "",
+      icon: pageIcon(page),
       type: page.metadata?.pageType || "",
       ref: { page: page.id, version },
       depth: Math.min(d, MAX_DEPTH),
@@ -406,7 +407,7 @@ class OerOutlineBuilder extends LitElement {
       const own = (item, d) => ({
         id: item.id,
         title: item.title,
-        icon: item.metadata?.icon || "",
+        icon: pageIcon(item),
         type: item.metadata?.pageType || "",
         ref: item.metadata?.oerRef?.page ? item.metadata.oerRef : null,
         navVersion: item.id === page.id ? choice.version || "" : item.metadata?.oerNavVersion || "",

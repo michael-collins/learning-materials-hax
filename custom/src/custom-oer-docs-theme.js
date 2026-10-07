@@ -62,6 +62,7 @@ import { installFootnotes } from "./ui/footnotes.js";
 import { followPermalink } from "./ui/permalinks.js";
 import { openViewerFromUrl } from "./ui/oer-outline-viewer.js";
 import { loadReaderSettings, saveReaderSettings, readerVars } from "./ui/oer-reader.js";
+import { HAX_GUESSED_ICON } from "./types/page-icon.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -177,6 +178,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       this.__readerBook = "";
     }
     this.__onReader = () => this._enterReader();
+    // HAX's page save writes the page-break's icon to the page; in the
+    // editor that's HAX's guess from the page type, never a chosen icon
+    // (types/page-icon.js). Runs first: a capture listener on the target
+    this.__beforeSave = () => {
+      const pb = this.querySelector("page-break");
+      if (pb?.icon === HAX_GUESSED_ICON) pb.icon = null;
+    };
     // ?embed=1: chrome-less page for LMS iframes; decided once, so following
     // links inside the frame stays embedded
     const params = new URLSearchParams(globalThis.location.search);
@@ -356,6 +364,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
     globalThis.addEventListener("oer-reader", this.__onReader);
+    globalThis.addEventListener("haxcms-save-node", this.__beforeSave, true);
     this.__bodyObserver.observe(globalThis.document.body, { childList: true });
     this._watchEditorBar();
     // fonts can't be @import-ed from constructable stylesheets
@@ -420,6 +429,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.removeEventListener("keydown", this.__keyHandler);
     globalThis.removeEventListener("pointerdown", this.__outsideMenu);
     globalThis.removeEventListener("oer-reader", this.__onReader);
+    globalThis.removeEventListener("haxcms-save-node", this.__beforeSave, true);
     super.disconnectedCallback();
   }
 
@@ -953,6 +963,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --simple-icon-height: 1.5rem;
           --simple-icon-width: 1.5rem;
           color: var(--muted-foreground);
+        }
+        /* HAX's guess from the page type is not the page's icon
+           (types/page-icon.js): pages have none unless one is chosen */
+        site-active-title .site-active-title-icon[icon="courseicons:learning-objectives"] {
+          display: none;
         }
         :host([edit-mode]) #slot {
           display: none;

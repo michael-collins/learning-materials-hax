@@ -12,6 +12,7 @@
  *   HTML at release time
  */
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { pageIcon } from "../types/page-icon.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
 
 export const isSnapshot = (item) => !!item?.metadata?.oerSnapshotOf;
@@ -91,7 +92,7 @@ export async function publishVersion(pageId, version, notes = "") {
     metadata: {
       pageType: page.metadata?.pageType,
       oerFields: page.metadata?.oerFields || {},
-      icon: page.metadata?.icon,
+      icon: pageIcon(page),
       oerSnapshotOf: pageId,
       oerSnapshotTitle: page.title,
       version,

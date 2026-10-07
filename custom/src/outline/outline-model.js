@@ -6,6 +6,7 @@
  * manifest afterwards.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { HAX_GUESSED_ICON } from "../types/page-icon.js";
 
 const byOrder = (a, b) => (Number(a.order) || 0) - (Number(b.order) || 0);
 
@@ -97,7 +98,10 @@ export function saveOutline(items) {
   // feeds and search index (which reads every page) once per item, so
   // sending the whole outline took minutes on a large site; unchanged items
   // need nothing, and each sent item is handled on its own.
-  const changed = (items || []).filter((i) => i && (i.new || i.modified || i.delete));
+  const changed = (items || [])
+    .filter((i) => i && (i.new || i.modified || i.delete))
+    // pages keep no icon unless one was chosen (types/page-icon.js)
+    .map((i) => (i.metadata?.icon === HAX_GUESSED_ICON ? { ...i, metadata: { ...i.metadata, icon: "" } } : i));
   if (!changed.length) return Promise.resolve(false);
   siteEditor()?.saveOutline?.({ detail: changed });
   return manifestChange(before);

@@ -24,6 +24,7 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { childrenMap, ancestors, createPage } from "./outline-model.js";
 import { allowedChildTypes, contentTypes, isHeading, navIconsOn } from "../types/content-types.js";
+import { pageIcon } from "../types/page-icon.js";
 
 const STORAGE_KEY = "oer-site-nav-open";
 
@@ -467,7 +468,7 @@ class OerSiteNav extends LitElement {
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
         const open = this.__forceOpen || this._open.has(item.id);
-        const iconName = item.metadata?.icon;
+        const iconName = pageIcon(item);
         return html`<li class="${[hasKids ? "has-kids" : "", grouped ? "grouped" : ""].join(" ")}">
           <div class="row">
             <a

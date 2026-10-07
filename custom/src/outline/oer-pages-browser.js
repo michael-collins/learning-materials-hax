@@ -12,6 +12,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
+import { pageIcon } from "../types/page-icon.js";
 import { isSystemItem, isHeading, contentTypes } from "../types/content-types.js";
 import { saveOutline, deletionSet, ancestors, newItemId } from "./outline-model.js";
 
@@ -156,7 +157,7 @@ class OerPagesBrowser extends LitElement {
         location: "",
         description: "",
         metadata: {
-          ...(source.metadata?.icon ? { icon: source.metadata.icon } : {}),
+          ...(pageIcon(source) ? { icon: pageIcon(source) } : {}),
           // a type the navigation hides would hide the link too
           ...(type && !hiddenTypes.has(type) ? { pageType: type } : {}),
           oerRef: ref,
