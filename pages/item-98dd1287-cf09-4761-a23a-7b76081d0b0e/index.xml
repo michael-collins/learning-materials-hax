@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</id>
+<indent>1</indent>
+<location>pages/item-98dd1287-cf09-4761-a23a-7b76081d0b0e/index.xml</location>
+<slug>courses/dart-303-3d-studio</slug>
+<order>4</order>
+<parent>item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5</parent>
+<title>DART 303: 3D Studio</title>
+<description></description>
+<metadata>
+<pageType>oer:course</pageType>
+<published>true</published>
+<oerCourse>DART 303</oerCourse>
+<oerFields>
+<code>DART 303</code>
+<credits>4 (maximum of 8)</credits>
+<bulletin>https://bulletins.psu.edu/search/?P=DART%20303</bulletin>
+<prerequisiteNote>Enforced prerequisite: DART 202, and enrollment in the ARTBA_BA, ARBFA_BFA, AED_BS, DIGMD_BDES, IDS_BDES, PHOTO_BDES or ARTAB_BA degree program.</prerequisiteNote>
+<pathways>
+<item>
+<page>item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e</page>
+<version></version>
+</item>
+<item>
+<page>item-72db2076-5252-4246-af1d-685903483097</page>
+<version></version>
+</item>
+</pathways>
+<license>CC BY 4.0</license>
+</oerFields>
+<created>1791385274</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791385274</updated>
+</metadata>
+<content><![CDATA[<p>3D Studio is a 4-credit course. The bulletin entry linked above has its official description and requirements.</p>
+<h2>Taught in this course</h2>
+<oer-collection scope="site" view="table" sort="title" per-page="50" controls="full" group="type"></oer-collection>]]></content>
+</item>

@@ -1,0 +1,35 @@
+{
+  "id": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+  "indent": 1,
+  "location": "pages/item-07277897-84d2-4708-b7ff-7c5d0505a9b0/index.json",
+  "slug": "courses/dmd-400-digital-multimedia-design-capstone",
+  "order": 2,
+  "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+  "title": "DMD 400: Digital Multimedia Design Capstone",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:course",
+    "published": true,
+    "oerCourse": "DMD 400",
+    "oerFields": {
+      "code": "DMD 400",
+      "credits": "3 (maximum of 6)",
+      "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20400",
+      "program": "Digital Multimedia Design (B.Des.)",
+      "delivery": "Online",
+      "prerequisiteNote": "Enforced prerequisite: DMD 100 and DMD 300.",
+      "books": [
+        {
+          "page": "item-ce739bdb-84f3-4797-9b76-5f951decba4e",
+          "version": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791385274,
+    "images": [],
+    "videos": [],
+    "updated": 1791385274
+  },
+  "content": "<p>Digital Multimedia Design Capstone is a 3-credit course. The bulletin entry linked above has its official description and requirements.</p>\n<h2>Taught in this course</h2>\n<oer-collection scope=\"site\" view=\"table\" sort=\"title\" per-page=\"50\" controls=\"full\" group=\"type\"></oer-collection>"
+}

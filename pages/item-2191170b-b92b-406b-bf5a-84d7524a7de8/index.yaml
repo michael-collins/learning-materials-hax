@@ -1,0 +1,34 @@
+id: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+indent: 1
+location: pages/item-2191170b-b92b-406b-bf5a-84d7524a7de8/index.yaml
+slug: courses/dmd-100-digital-multimedia-design-foundations
+order: 0
+parent: item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5
+title: 'DMD 100: Digital Multimedia Design Foundations'
+description: ''
+metadata:
+  pageType: oer:course
+  published: true
+  oerCourse: DMD 100
+  oerFields:
+    code: DMD 100
+    credits: '3'
+    bulletin: https://bulletins.psu.edu/search/?P=DMD%20100
+    program: Digital Multimedia Design (B.Des.)
+    delivery: Online
+    books:
+      - page: item-69d4e331-f13a-4ee4-9c2e-1bba82279d67
+        version: ''
+    license: CC BY 4.0
+  created: 1791385274
+  images: []
+  videos: []
+  updated: 1791385274
+content: >-
+  <p>Digital Multimedia Design Foundations is a 3-credit course. The bulletin
+  entry linked above has its official description and requirements.</p>
+
+  <h2>Taught in this course</h2>
+
+  <oer-collection scope="site" view="table" sort="title" per-page="50"
+  controls="full" group="type"></oer-collection>

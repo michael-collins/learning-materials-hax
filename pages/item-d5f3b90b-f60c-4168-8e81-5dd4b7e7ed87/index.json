@@ -1,0 +1,32 @@
+{
+  "id": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+  "indent": 1,
+  "location": "pages/item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87/index.json",
+  "slug": "courses/dart-203-3d-digital-art-design-fundamentals",
+  "order": 3,
+  "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+  "title": "DART 203: 3D Digital Art & Design Fundamentals",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:course",
+    "published": true,
+    "oerCourse": "DART 203",
+    "oerFields": {
+      "code": "DART 203",
+      "credits": "3",
+      "bulletin": "https://bulletins.psu.edu/search/?P=DART%20203",
+      "pathways": [
+        {
+          "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+          "version": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791385274,
+    "images": [],
+    "videos": [],
+    "updated": 1791385274
+  },
+  "content": "<p>3D Digital Art &amp; Design Fundamentals is a 3-credit course. The bulletin entry linked above has its official description and requirements.</p>\n<h2>Taught in this course</h2>\n<oer-collection scope=\"site\" view=\"table\" sort=\"title\" per-page=\"50\" controls=\"full\" group=\"type\"></oer-collection>"
+}

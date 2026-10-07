@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5</id>
+<indent>0</indent>
+<location>pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.xml</location>
+<slug>courses</slug>
+<order>9</order>
+<parent></parent>
+<title>Courses</title>
+<description></description>
+<metadata>
+<pageType>oer:section</pageType>
+<icon>oer:graduation-cap</icon>
+<published>true</published>
+<created>1791385274</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791385274</updated>
+</metadata>
+<content><![CDATA[<p>The courses these materials are taught in. Each course page links to its bulletin entry and lists every lesson, reading, exercise and project taught in it.</p>
+<oer-collection types="oer:course" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+</item>

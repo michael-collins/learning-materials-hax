@@ -1,0 +1,35 @@
+{
+  "id": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
+  "indent": 1,
+  "location": "pages/item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985/index.json",
+  "slug": "courses/dmd-300-digital-multimedia-design-studio",
+  "order": 1,
+  "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+  "title": "DMD 300: Digital Multimedia Design Studio",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:course",
+    "published": true,
+    "oerCourse": "DMD 300",
+    "oerFields": {
+      "code": "DMD 300",
+      "credits": "3",
+      "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20300",
+      "program": "Digital Multimedia Design (B.Des.)",
+      "delivery": "Online",
+      "prerequisiteNote": "Enforced prerequisite at enrollment: DART 100 and DMD 100 and 9 credits from the following list: ART 211Y, COMM 215, COMM 230W, DART 202, IST 140, IST 250.",
+      "books": [
+        {
+          "page": "item-9aa47609-2475-4db7-ae00-b09d2195cc39",
+          "version": ""
+        }
+      ],
+      "license": "CC BY 4.0"
+    },
+    "created": 1791385274,
+    "images": [],
+    "videos": [],
+    "updated": 1791385274
+  },
+  "content": "<p>Digital Multimedia Design Studio is a 3-credit course. The bulletin entry linked above has its official description and requirements.</p>\n<h2>Taught in this course</h2>\n<oer-collection scope=\"site\" view=\"table\" sort=\"title\" per-page=\"50\" controls=\"full\" group=\"type\"></oer-collection>"
+}

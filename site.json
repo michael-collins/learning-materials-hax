@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384054,
+      "updated": 1791385274,
       "version": "26.8.0"
     },
     "theme": {
@@ -440,7 +440,7 @@
           "image": "files/rec67LSQtsxBgHxxE_image_youdontseethateveryday-banner-comp2.jpg",
           "imageAlt": "youdontseethateveryday-banner-comp2.jpg",
           "courses": [
-            "Dart 303"
+            "DART 303"
           ],
           "license": "CC BY 4.0",
           "aiLicense": [
@@ -476,7 +476,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231639,
+        "updated": 1791385267,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -7207,6 +7207,39 @@
       }
     },
     {
+      "id": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+      "indent": 1,
+      "location": "pages/item-2191170b-b92b-406b-bf5a-84d7524a7de8/index.html",
+      "slug": "courses/dmd-100-digital-multimedia-design-foundations",
+      "order": 0,
+      "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "title": "DMD 100: Digital Multimedia Design Foundations",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course",
+        "published": true,
+        "oerCourse": "DMD 100",
+        "oerFields": {
+          "code": "DMD 100",
+          "credits": "3",
+          "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20100",
+          "program": "Digital Multimedia Design (B.Des.)",
+          "delivery": "Online",
+          "books": [
+            {
+              "page": "item-69d4e331-f13a-4ee4-9c2e-1bba82279d67",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
+      }
+    },
+    {
       "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
       "indent": 1,
       "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
@@ -7465,7 +7498,7 @@
           "image": "files/object-poster-banner-mmabf552.png",
           "imageAlt": "Banner image of posters depicting rendered objects.",
           "courses": [
-            "Dart 303"
+            "DART 303"
           ],
           "license": "CC BY 4.0",
           "aiLicense": [
@@ -7494,7 +7527,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231773,
+        "updated": 1791385267,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -9666,6 +9699,40 @@
         "images": [],
         "videos": [],
         "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
+      "indent": 1,
+      "location": "pages/item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985/index.html",
+      "slug": "courses/dmd-300-digital-multimedia-design-studio",
+      "order": 1,
+      "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "title": "DMD 300: Digital Multimedia Design Studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course",
+        "published": true,
+        "oerCourse": "DMD 300",
+        "oerFields": {
+          "code": "DMD 300",
+          "credits": "3",
+          "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20300",
+          "program": "Digital Multimedia Design (B.Des.)",
+          "delivery": "Online",
+          "prerequisiteNote": "Enforced prerequisite at enrollment: DART 100 and DMD 100 and 9 credits from the following list: ART 211Y, COMM 215, COMM 230W, DART 202, IST 140, IST 250.",
+          "books": [
+            {
+              "page": "item-9aa47609-2475-4db7-ae00-b09d2195cc39",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
       }
     },
     {
@@ -14911,6 +14978,40 @@
       }
     },
     {
+      "id": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+      "indent": 1,
+      "location": "pages/item-07277897-84d2-4708-b7ff-7c5d0505a9b0/index.html",
+      "slug": "courses/dmd-400-digital-multimedia-design-capstone",
+      "order": 2,
+      "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "title": "DMD 400: Digital Multimedia Design Capstone",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course",
+        "published": true,
+        "oerCourse": "DMD 400",
+        "oerFields": {
+          "code": "DMD 400",
+          "credits": "3 (maximum of 6)",
+          "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20400",
+          "program": "Digital Multimedia Design (B.Des.)",
+          "delivery": "Online",
+          "prerequisiteNote": "Enforced prerequisite: DMD 100 and DMD 300.",
+          "books": [
+            {
+              "page": "item-ce739bdb-84f3-4797-9b76-5f951decba4e",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
+      }
+    },
+    {
       "id": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
       "indent": 1,
       "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.html",
@@ -16022,6 +16123,37 @@
       }
     },
     {
+      "id": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+      "indent": 1,
+      "location": "pages/item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87/index.html",
+      "slug": "courses/dart-203-3d-digital-art-design-fundamentals",
+      "order": 3,
+      "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "title": "DART 203: 3D Digital Art & Design Fundamentals",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course",
+        "published": true,
+        "oerCourse": "DART 203",
+        "oerFields": {
+          "code": "DART 203",
+          "credits": "3",
+          "bulletin": "https://bulletins.psu.edu/search/?P=DART%20203",
+          "pathways": [
+            {
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
+      }
+    },
+    {
       "id": "item-8ee5f7a7-3464-4b92-82e7-83b178107cac",
       "indent": 1,
       "location": "pages/item-8ee5f7a7-3464-4b92-82e7-83b178107cac/index.html",
@@ -16110,7 +16242,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "license",
@@ -16234,7 +16368,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "license",
@@ -16356,7 +16492,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "license",
@@ -16729,7 +16867,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "license",
@@ -17107,7 +17247,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "license",
@@ -17474,7 +17616,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "whoItsFor",
@@ -17820,6 +17964,155 @@
               "nav": false
             },
             {
+              "id": "oer:course",
+              "label": "Course",
+              "icon": "oer:graduation-cap",
+              "description": "A course in the catalog: its code, bulletin entry and prerequisites, and every page taught in it.",
+              "schemaType": "oer:Course",
+              "nav": false,
+              "children": [],
+              "fields": [
+                {
+                  "name": "code",
+                  "label": "Course code",
+                  "kind": "text",
+                  "required": true,
+                  "header": true,
+                  "help": "As in the bulletin, e.g. DART 413. Pages whose Courses field holds this code are listed on the course page."
+                },
+                {
+                  "name": "credits",
+                  "label": "Credits",
+                  "kind": "text",
+                  "header": true
+                },
+                {
+                  "name": "bulletin",
+                  "label": "Bulletin",
+                  "kind": "url",
+                  "header": true,
+                  "help": "The course's entry in the university bulletin. Link to it rather than copying its description."
+                },
+                {
+                  "name": "program",
+                  "label": "Program",
+                  "kind": "text",
+                  "suggest": true
+                },
+                {
+                  "name": "delivery",
+                  "label": "Delivery",
+                  "kind": "select",
+                  "header": true,
+                  "options": [
+                    {
+                      "value": "In person",
+                      "label": "In person"
+                    },
+                    {
+                      "value": "Online",
+                      "label": "Online"
+                    },
+                    {
+                      "value": "Hybrid",
+                      "label": "Hybrid"
+                    }
+                  ]
+                },
+                {
+                  "name": "termsOffered",
+                  "label": "Terms offered",
+                  "kind": "list"
+                },
+                {
+                  "name": "coursePrerequisites",
+                  "label": "Prerequisites",
+                  "kind": "relation",
+                  "header": true,
+                  "types": [
+                    "oer:course"
+                  ],
+                  "help": "Course pages on this site. Put the bulletin's full wording in Prerequisite details."
+                },
+                {
+                  "name": "prerequisiteNote",
+                  "label": "Prerequisite details",
+                  "kind": "longtext",
+                  "header": true
+                },
+                {
+                  "name": "instructors",
+                  "label": "Instructors",
+                  "kind": "people"
+                },
+                {
+                  "name": "pathways",
+                  "label": "Pathways",
+                  "kind": "relation",
+                  "header": true,
+                  "types": [
+                    "oer:pathway"
+                  ]
+                },
+                {
+                  "name": "books",
+                  "label": "Books",
+                  "kind": "relation",
+                  "header": true,
+                  "types": [
+                    "oer:book"
+                  ]
+                },
+                {
+                  "name": "studentWork",
+                  "label": "Student work",
+                  "kind": "files",
+                  "header": true,
+                  "help": "Links to student work hosted elsewhere (an exhibition site, a portfolio). Share work only with each student's written permission, credited as they choose."
+                },
+                {
+                  "name": "license",
+                  "label": "License",
+                  "kind": "select",
+                  "options": [
+                    {
+                      "value": "CC BY 4.0",
+                      "label": "CC BY 4.0"
+                    },
+                    {
+                      "value": "CC BY-SA 4.0",
+                      "label": "CC BY-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC 4.0",
+                      "label": "CC BY-NC 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-SA 4.0",
+                      "label": "CC BY-NC-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-ND 4.0",
+                      "label": "CC BY-ND 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-ND 4.0",
+                      "label": "CC BY-NC-ND 4.0"
+                    },
+                    {
+                      "value": "CC0 1.0",
+                      "label": "CC0 1.0"
+                    },
+                    {
+                      "value": "All Rights Reserved",
+                      "label": "All Rights Reserved"
+                    }
+                  ],
+                  "default": "CC BY 4.0"
+                }
+              ]
+            },
+            {
               "id": "oer:pathway",
               "label": "Pathway",
               "icon": "hax:unit",
@@ -17863,7 +18156,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "learningObjectives",
@@ -18258,7 +18553,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "image",
@@ -18607,7 +18904,9 @@
                   "name": "courses",
                   "label": "Courses",
                   "kind": "list",
-                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported."
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 },
                 {
                   "name": "learningObjectives",
@@ -19023,6 +19322,14 @@
                   "name": "publisher",
                   "label": "Publisher",
                   "kind": "text"
+                },
+                {
+                  "name": "courses",
+                  "label": "Courses",
+                  "kind": "list",
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 }
               ],
               "nav": false,
@@ -19246,6 +19553,14 @@
                   "name": "placeholder",
                   "label": "In development",
                   "kind": "boolean"
+                },
+                {
+                  "name": "courses",
+                  "label": "Courses",
+                  "kind": "list",
+                  "help": "Course codes associated with this content (e.g., DART 303). Multiple courses are supported.",
+                  "suggest": true,
+                  "suggestFrom": "oer:course:code"
                 }
               ]
             }
@@ -19254,7 +19569,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791383987,
+        "updated": 1791385266,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -19404,7 +19719,7 @@
           "image": "files/game-environment-banner-mmaenefy.jpg",
           "imageAlt": "Banner image of a game environment.",
           "courses": [
-            "Dart 303"
+            "DART 303"
           ],
           "license": "CC BY 4.0",
           "aiLicense": [
@@ -19439,7 +19754,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231855,
+        "updated": 1791385268,
         "locked": false,
         "status": "",
         "icon": "hax:bulletin-board",
@@ -20072,6 +20387,42 @@
         "images": [],
         "videos": [],
         "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+      "indent": 1,
+      "location": "pages/item-98dd1287-cf09-4761-a23a-7b76081d0b0e/index.html",
+      "slug": "courses/dart-303-3d-studio",
+      "order": 4,
+      "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "title": "DART 303: 3D Studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course",
+        "published": true,
+        "oerCourse": "DART 303",
+        "oerFields": {
+          "code": "DART 303",
+          "credits": "4 (maximum of 8)",
+          "bulletin": "https://bulletins.psu.edu/search/?P=DART%20303",
+          "prerequisiteNote": "Enforced prerequisite: DART 202, and enrollment in the ARTBA_BA, ARBFA_BFA, AED_BS, DIGMD_BDES, IDS_BDES, PHOTO_BDES or ARTAB_BA degree program.",
+          "pathways": [
+            {
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+              "version": ""
+            },
+            {
+              "page": "item-72db2076-5252-4246-af1d-685903483097",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
       }
     },
     {
@@ -20935,6 +21286,44 @@
         "images": [],
         "videos": [],
         "updated": 1791251063
+      }
+    },
+    {
+      "id": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+      "indent": 1,
+      "location": "pages/item-e09826f0-d716-4612-807a-2bbfcff22b36/index.html",
+      "slug": "courses/dart-413-digital-fabrication-studio",
+      "order": 5,
+      "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "title": "DART 413: Digital Fabrication Studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course",
+        "published": false,
+        "oerCourse": "DART 413",
+        "oerFields": {
+          "code": "DART 413",
+          "credits": "4",
+          "bulletin": "https://bulletins.psu.edu/search/?P=DART%20413",
+          "prerequisiteNote": "Enforced prerequisite: DART 203 or DART 213 or ART 230 or ART 280 or ART 110 or ART 111.",
+          "pathways": [
+            {
+              "page": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+              "version": ""
+            }
+          ],
+          "books": [
+            {
+              "page": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
       }
     },
     {
@@ -26367,30 +26756,6 @@
       }
     },
     {
-      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "indent": 0,
-      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
-      "slug": "pathways",
-      "order": 9,
-      "parent": null,
-      "title": "Pathways",
-      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
-      "metadata": {
-        "created": 1790827963,
-        "updated": 1791231935,
-        "images": [],
-        "videos": [],
-        "published": true,
-        "locked": false,
-        "status": "",
-        "overridePathauto": false,
-        "hideInMenu": false,
-        "readtime": 1,
-        "icon": "",
-        "pageType": ""
-      }
-    },
-    {
       "id": "item-50b4ae5c-4f84-43f3-9987-efb6b3428542",
       "indent": 1,
       "location": "pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.html",
@@ -26443,6 +26808,205 @@
             "notes": ""
           }
         ]
+      }
+    },
+    {
+      "id": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
+      "indent": 1,
+      "location": "pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.html",
+      "slug": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
+      "order": 9,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Modeling a Low Poly Animal and Introduction to Particles",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recvUlgEohhluSnhU_image_OSTRICH.png",
+          "imageAlt": "OSTRICH.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "author": "",
+          "authorUrl": "",
+          "allowEmbed": true,
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ]
+        },
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1791231938,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives",
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
+      "indent": 1,
+      "location": "pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.html",
+      "slug": "quizzes/real-time-engines-quiz",
+      "order": 9,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Real-time Engines quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791231939
+      }
+    },
+    {
+      "id": "item-d759a2b5-61e3-4423-a706-91c282cf8b12",
+      "indent": 2,
+      "location": "pages/item-d759a2b5-61e3-4423-a706-91c282cf8b12/index.html",
+      "slug": "projects/capstone-project/capstone-project-document",
+      "order": 9,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Capstone project document",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-capstone-project-document",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 400"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251090
+      }
+    },
+    {
+      "id": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
+      "indent": 1,
+      "location": "pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.html",
+      "slug": "projects/project-1",
+      "order": 9,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 1",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd300-project-1",
+        "tags": "project-deliverable,Group Project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            "DMD 300"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251094
+      }
+    },
+    {
+      "id": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "indent": 0,
+      "location": "pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.html",
+      "slug": "courses",
+      "order": 9,
+      "parent": null,
+      "title": "Courses",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "icon": "oer:graduation-cap",
+        "published": true,
+        "created": 1791385274,
+        "images": [],
+        "videos": [],
+        "updated": 1791385274
+      }
+    },
+    {
+      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "indent": 0,
+      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
+      "slug": "pathways",
+      "order": 10,
+      "parent": null,
+      "title": "Pathways",
+      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
+      "metadata": {
+        "created": 1790827963,
+        "updated": 1791385269,
+        "images": [],
+        "videos": [],
+        "published": true,
+        "locked": false,
+        "status": "",
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "readtime": 1,
+        "icon": "",
+        "pageType": ""
       }
     },
     {
@@ -26752,162 +27316,6 @@
       }
     },
     {
-      "id": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
-      "indent": 1,
-      "location": "pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.html",
-      "slug": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
-      "order": 9,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Low Poly Animal and Introduction to Particles",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-low-poly-animal-and-introduction-to-particles",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recvUlgEohhluSnhU_image_OSTRICH.png",
-          "imageAlt": "OSTRICH.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "author": "",
-          "authorUrl": "",
-          "allowEmbed": true,
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ]
-        },
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1791231938,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives",
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-3f07bd42-0776-4dec-a220-8a7b05c333e5",
-      "indent": 1,
-      "location": "pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.html",
-      "slug": "quizzes/real-time-engines-quiz",
-      "order": 9,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Real-time Engines quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791231939
-      }
-    },
-    {
-      "id": "item-d759a2b5-61e3-4423-a706-91c282cf8b12",
-      "indent": 2,
-      "location": "pages/item-d759a2b5-61e3-4423-a706-91c282cf8b12/index.html",
-      "slug": "projects/capstone-project/capstone-project-document",
-      "order": 9,
-      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
-      "title": "Capstone project document",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd400-capstone-project-document",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 400"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791251090
-      }
-    },
-    {
-      "id": "item-aef9003a-aac3-4a77-a874-48276f2cf152",
-      "indent": 1,
-      "location": "pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.html",
-      "slug": "projects/project-1",
-      "order": 9,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project 1",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd300-project-1",
-        "tags": "project-deliverable,Group Project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            "DMD 300"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791251094
-      }
-    },
-    {
       "id": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
       "indent": 1,
       "location": "pages/item-cbff549d-e8f9-4804-b2ec-059cf0863101/index.html",
@@ -26999,24 +27407,6 @@
       }
     },
     {
-      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
-      "indent": 0,
-      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
-      "slug": "books",
-      "order": 10,
-      "parent": null,
-      "title": "Books",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231941
-      }
-    },
-    {
       "id": "item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7",
       "indent": 2,
       "location": "pages/item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7/index.html",
@@ -27083,25 +27473,21 @@
       }
     },
     {
-      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
+      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
       "indent": 0,
-      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
-      "slug": "assessments",
+      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
+      "slug": "books",
       "order": 11,
       "parent": null,
-      "title": "Assessments",
+      "title": "Books",
       "description": "",
       "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1790878969,
+        "published": true,
+        "pageType": "oer:section",
+        "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231942,
-        "published": true,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
+        "updated": 1791385270
       }
     },
     {
@@ -27247,7 +27633,7 @@
           "image": "files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg",
           "imageAlt": "cycles-banner-compressed2.jpg",
           "courses": [
-            "Dart 303"
+            "DART 303"
           ],
           "license": "CC BY 4.0",
           "aiLicense": [
@@ -27275,7 +27661,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791251096,
+        "updated": 1791385269,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -27352,28 +27738,25 @@
       }
     },
     {
-      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
       "indent": 0,
-      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
-      "slug": "exercises",
+      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
+      "slug": "assessments",
       "order": 12,
       "parent": null,
-      "title": "Exercises",
-      "description": "Formative practice focused on a narrow set of competencies.",
+      "title": "Assessments",
+      "description": "",
       "metadata": {
-        "created": 1790802192,
-        "updated": 1791231945,
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1790878969,
         "images": [],
         "videos": [],
-        "overridePathauto": false,
+        "updated": 1791385271,
         "published": true,
-        "pageType": "oer:section",
-        "hideInMenu": false,
         "locked": false,
-        "readtime": 1,
         "status": "",
-        "icon": "courseicons:learning-objectives",
-        "linkTarget": "_self"
+        "icon": "courseicons:learning-objectives"
       }
     },
     {
@@ -27429,6 +27812,107 @@
             "notes": ""
           }
         ]
+      }
+    },
+    {
+      "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
+      "indent": 1,
+      "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
+      "slug": "quizzes/drawing-for-3d-design-quiz",
+      "order": 12,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Drawing for 3D Design quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "lrn:quiz",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
+              "version": ""
+            },
+            {
+              "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
+              "version": ""
+            },
+            {
+              "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791231968
+      }
+    },
+    {
+      "id": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "indent": 1,
+      "location": "pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.html",
+      "slug": "projects/capstone-project",
+      "order": 12,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Capstone project",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "lessons/dmd400-capstone-project",
+        "tags": "lesson",
+        "oerFields": {
+          "courses": [
+            "DMD 400"
+          ],
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791251084
+      }
+    },
+    {
+      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "indent": 0,
+      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
+      "slug": "exercises",
+      "order": 13,
+      "parent": null,
+      "title": "Exercises",
+      "description": "Formative practice focused on a narrow set of competencies.",
+      "metadata": {
+        "created": 1790802192,
+        "updated": 1791385271,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "oer:section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "courseicons:learning-objectives",
+        "linkTarget": "_self"
       }
     },
     {
@@ -31039,103 +31523,6 @@
       }
     },
     {
-      "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
-      "indent": 1,
-      "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
-      "slug": "quizzes/drawing-for-3d-design-quiz",
-      "order": 12,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Drawing for 3D Design quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
-              "version": ""
-            },
-            {
-              "page": "item-36eb6e19-a3c3-47bd-b25e-9bb34e79967f",
-              "version": ""
-            },
-            {
-              "page": "item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791231968
-      }
-    },
-    {
-      "id": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
-      "indent": 1,
-      "location": "pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.html",
-      "slug": "projects/capstone-project",
-      "order": 12,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Capstone project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "lessons/dmd400-capstone-project",
-        "tags": "lesson",
-        "oerFields": {
-          "courses": [
-            "DMD 400"
-          ],
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791251084
-      }
-    },
-    {
-      "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "indent": 0,
-      "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
-      "slug": "projects",
-      "order": 13,
-      "parent": null,
-      "title": "Projects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1791231969,
-        "locked": false,
-        "status": "",
-        "icon": "courseicons:learning-objectives"
-      }
-    },
-    {
       "id": "item-59547add-790e-4255-a3f0-962065b0064f",
       "indent": 1,
       "location": "pages/item-59547add-790e-4255-a3f0-962065b0064f/index.html",
@@ -31147,70 +31534,6 @@
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:A04",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            "DART 413"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791383988
-      }
-    },
-    {
-      "id": "item-e8448268-7180-455f-ba52-360dd73d16f6",
-      "indent": 1,
-      "location": "pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.html",
-      "slug": "projects/project-2-multiples-and-variation",
-      "order": 14,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project 2: Multiples and variation",
-      "description": "Produce a series of at least five objects in which variation is designed — parametric, generative, or rule-based — and the series says something the single object cannot.",
-      "metadata": {
-        "pageType": "oer:project",
-        "oerPlan": "DART 413:A07",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            "DART 413"
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791383988
-      }
-    },
-    {
-      "id": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
-      "indent": 1,
-      "location": "pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.html",
-      "slug": "projects/final-project",
-      "order": 15,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Final project",
-      "description": "A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition.",
-      "metadata": {
-        "pageType": "oer:project",
-        "oerPlan": "DART 413:A10",
         "published": false,
         "oerFields": {
           "courses": [
@@ -31280,22 +31603,88 @@
       }
     },
     {
-      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
       "indent": 0,
-      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
-      "slug": "quizzes",
+      "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
+      "slug": "projects",
       "order": 14,
       "parent": null,
-      "title": "Quizzes",
+      "title": "Projects",
       "description": "",
       "metadata": {
+        "published": true,
         "pageType": "oer:section",
-        "icon": "lrn:quiz",
-        "oerTmpKey": "",
-        "created": 1791228261,
+        "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791232002
+        "updated": 1791385272,
+        "locked": false,
+        "status": "",
+        "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+      "indent": 1,
+      "location": "pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.html",
+      "slug": "projects/project-2-multiples-and-variation",
+      "order": 14,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 2: Multiples and variation",
+      "description": "Produce a series of at least five objects in which variation is designed — parametric, generative, or rule-based — and the series says something the single object cannot.",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A07",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+      "indent": 1,
+      "location": "pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.html",
+      "slug": "projects/final-project",
+      "order": 15,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Final project",
+      "description": "A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition.",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A10",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
       }
     },
     {
@@ -31336,6 +31725,25 @@
         "images": [],
         "videos": [],
         "updated": 1791232002
+      }
+    },
+    {
+      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "indent": 0,
+      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
+      "slug": "quizzes",
+      "order": 15,
+      "parent": null,
+      "title": "Quizzes",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "icon": "lrn:quiz",
+        "oerTmpKey": "",
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791385273
       }
     },
     {

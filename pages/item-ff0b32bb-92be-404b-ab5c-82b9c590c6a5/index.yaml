@@ -1,0 +1,23 @@
+id: item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5
+indent: 0
+location: pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.yaml
+slug: courses
+order: 9
+parent: null
+title: Courses
+description: ''
+metadata:
+  pageType: oer:section
+  icon: oer:graduation-cap
+  published: true
+  created: 1791385274
+  images: []
+  videos: []
+  updated: 1791385274
+content: >-
+  <p>The courses these materials are taught in. Each course page links to its
+  bulletin entry and lists every lesson, reading, exercise and project taught in
+  it.</p>
+
+  <oer-collection types="oer:course" scope="site" view="table" sort="title"
+  per-page="20" controls="full"></oer-collection>
