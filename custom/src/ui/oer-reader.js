@@ -31,17 +31,23 @@ const SERIF_CSS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,
 const KEY = "oer-reader-settings";
 
 // Texture: a fine paper grain over any page colour, drawn by SVG noise (no
-// image file): dark specks on the light pages, light specks on Dark. Faint
-// enough that every page keeps AA contrast on the grain's worst pixel (see
-// the page palettes in the theme)
-const grain = (rgb, alpha, offset) =>
+// image file), each page with its own: a cool grain on Light, neutral on
+// Paper, warm on Sepia, light specks on Dark. Tuned in the Reader Grain
+// Tuner; every page keeps AA contrast on the grain's worst pixel (see the
+// page palettes in the theme)
+const grain = ({ rgb, alpha, offset, baseFrequency, numOctaves }) =>
   `url("data:image/svg+xml,${encodeURIComponent(
     "<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'>" +
-      "<filter id='g' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='5' stitchTiles='stitch'/>" +
+      `<filter id='g' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='${baseFrequency}' numOctaves='${numOctaves}' seed='5' stitchTiles='stitch'/>` +
       `<feColorMatrix values='0 0 0 0 ${rgb[0]} 0 0 0 0 ${rgb[1]} 0 0 0 0 ${rgb[2]} ${alpha} 0 0 0 ${offset}'/></filter>` +
       "<rect width='100%' height='100%' filter='url(#g)'/></svg>",
   )}")`;
-export const TEXTURES = { onLight: grain([0.36, 0.3, 0.2], 0.34, -0.115), onDark: grain([0.92, 0.9, 0.86], 0.2, -0.07) };
+export const TEXTURES = {
+  light: grain({ rgb: [0.235, 0.282, 0.349], alpha: 0.27, offset: -0.119, baseFrequency: 0.61, numOctaves: 3 }),
+  paper: grain({ rgb: [0.302, 0.302, 0.302], alpha: 0.34, offset: -0.167, baseFrequency: 0.66, numOctaves: 4 }),
+  sepia: grain({ rgb: [0.361, 0.302, 0.2], alpha: 0.34, offset: -0.115, baseFrequency: 0.75, numOctaves: 2 }),
+  dark: grain({ rgb: [0.922, 0.902, 0.859], alpha: 0.32, offset: -0.16, baseFrequency: 0.88, numOctaves: 3 }),
+};
 
 export function loadReaderSettings() {
   try {
@@ -73,7 +79,7 @@ export function readerVars(s) {
     "--reader-measure": WIDTHS[s.width] || WIDTHS.medium,
     "--reader-leading": String(SPACINGS[s.spacing] || SPACINGS.normal),
     "--reader-font": FONTS[s.font] || FONTS.serif,
-    "--reader-texture": s.texture ? (s.colour === "dark" ? TEXTURES.onDark : TEXTURES.onLight) : "",
+    "--reader-texture": s.texture ? TEXTURES[s.colour] || "" : "",
   };
 }
 
@@ -462,11 +468,17 @@ class OerReaderBar extends LitElement {
         background: #16181d;
         color: #e3e1dc;
       }
-      .seg.textured :is(.c-light, .c-paper, .c-sepia) {
-        background-image: ${unsafeCSS(TEXTURES.onLight)};
+      .seg.textured .c-light {
+        background-image: ${unsafeCSS(TEXTURES.light)};
+      }
+      .seg.textured .c-paper {
+        background-image: ${unsafeCSS(TEXTURES.paper)};
+      }
+      .seg.textured .c-sepia {
+        background-image: ${unsafeCSS(TEXTURES.sepia)};
       }
       .seg.textured .c-dark {
-        background-image: ${unsafeCSS(TEXTURES.onDark)};
+        background-image: ${unsafeCSS(TEXTURES.dark)};
       }
       .seg :is(.c-light, .c-paper, .c-sepia, .c-dark) {
         margin: 0 0.0625rem;

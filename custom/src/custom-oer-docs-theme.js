@@ -1603,13 +1603,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             font-size: 1.5em;
           }
         }
-        /* a deeper link blue than the site's, for AA on the grain (5.4:1) */
+        /* a deeper link blue than the site's, for AA on the grain (5.6:1) */
         :host([reader-colour="light"]) {
           color-scheme: only light;
           --link: #0062a3;
         }
         /* a softer dark than the site's black, easier over long reading
-           (AA with texture: text 10.1:1, muted 5.5:1, links 6.1:1, ring 4:1) */
+           (AA with texture: text 9.5:1, muted 5.2:1, links 5.7:1, ring 3.7:1) */
         :host([reader-colour="dark"]) {
           color-scheme: only dark;
           --background: #16181d;
@@ -1629,8 +1629,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --link: #7cb4f0;
           --ring: #5b8fd0;
         }
-        /* warm white under ink-blue links (AA with texture: text 11.1:1,
-           muted 5.3:1, links 6.4:1, focus ring 4:1) */
+        /* warm white under ink-blue links (AA with texture: text 11.4:1,
+           muted 5.4:1, links 6.5:1, focus ring 4.1:1) */
         :host([reader-colour="paper"]) {
           color-scheme: only light;
           --background: #f8f5ec;
