@@ -604,7 +604,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [What is Design?](https://localhost:3000/learning-materials/pages/item-7ffaac6d-dc2c-4d1e-beba-590d1527324b/index.md)
 - [99 Percent Invisible: 10,000 years](https://localhost:3000/learning-materials/pages/item-998244db-2951-4de5-89af-09aa7be71c84/index.md)
 - [99 Percent Invisible: On Average](https://localhost:3000/learning-materials/pages/item-416c4dc5-b03b-4b15-86c7-5d4cb4690ccb/index.md)
-- [Design as Tragedy: The Rise and Fall of the Twin Towers](https://localhost:3000/learning-materials/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md)
 - [Edsel's Law: How Bad Design Happens](https://localhost:3000/learning-materials/pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.md)
 - [Designs of Darkness](https://localhost:3000/learning-materials/pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.md)
 - [Face to Face with Design](https://localhost:3000/learning-materials/pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.md)
@@ -865,6 +864,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [3D printing quiz](https://localhost:3000/learning-materials/pages/item-ab1c8916-1374-44a6-8872-b62dcea82770/index.md): Self-check questions on 3D printing.
 - [CNC routing quiz](https://localhost:3000/learning-materials/pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.md): Self-check questions on CNC routing.
 - [What Design and Truth Say about Each Other](https://localhost:3000/learning-materials/pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.md): What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt In this chapter, Grudin talks about the transition of design from close dialogue with natural systems
+- [Design as Tragedy: The Rise and Fall of the Twin Towers](https://localhost:3000/learning-materials/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md): Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

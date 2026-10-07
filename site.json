@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404494,
+      "updated": 1791404495,
       "version": "26.8.0"
     },
     "theme": {
@@ -22912,42 +22912,6 @@
       }
     },
     {
-      "id": "item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24",
-      "indent": 1,
-      "location": "pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.html",
-      "slug": "articles/design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
-      "order": 29,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Design as Tragedy: The Rise and Fall of the Twin Towers",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-2-readings-chapter-4-design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386277
-      }
-    },
-    {
       "id": "item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb",
       "indent": 1,
       "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.html",
@@ -33117,6 +33081,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404494,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24",
+      "indent": 1,
+      "location": "pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.html",
+      "slug": "design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
+      "order": 29,
+      "parent": null,
+      "title": "Design as Tragedy: The Rise and Fall of the Twin Towers",
+      "description": "Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-2-readings-chapter-4-design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404495,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
