@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384028,
+      "updated": 1791384029,
       "version": "26.8.0"
     },
     "theme": {
@@ -30854,7 +30854,7 @@
       "order": 53,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Parametric family",
-      "description": "",
+      "description": "Build a parametric model with at least three exposed parameters and generate a family of five variants.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A06",
