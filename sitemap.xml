@@ -2437,16 +2437,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/jefferson-s-gravestone-metaphorical-extensions-of-design</loc>
-    <lastmod>2026-10-07T20:21:41.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/liberty-as-knowledge-design</loc>
+    <lastmod>2026-10-07T20:21:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/articles/liberty-as-knowledge-design</loc>
-    <lastmod>2026-10-07T15:18:14.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/corporate-redesign-and-the-business-of-knowledge</loc>
@@ -3201,6 +3195,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/the-lady-in-the-picture-design-and-revelation-in-renaissance-art</loc>
     <lastmod>2026-10-07T20:21:40.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/jefferson-s-gravestone-metaphorical-extensions-of-design</loc>
+    <lastmod>2026-10-07T20:21:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

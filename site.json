@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404502,
+      "updated": 1791404503,
       "version": "26.8.0"
     },
     "theme": {
@@ -23482,42 +23482,6 @@
       }
     },
     {
-      "id": "item-73f7f84a-b21c-4a11-b741-3e06a1dac59e",
-      "indent": 1,
-      "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.html",
-      "slug": "articles/liberty-as-knowledge-design",
-      "order": 53,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Liberty as Knowledge Design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-4-readings-chapter-12-liberty-as-knowledge-design",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386294
-      }
-    },
-    {
       "id": "item-f264e5ef-3a93-4457-91f9-cd035ee31eee",
       "indent": 1,
       "location": "pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.html",
@@ -33149,6 +33113,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404501,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-73f7f84a-b21c-4a11-b741-3e06a1dac59e",
+      "indent": 1,
+      "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.html",
+      "slug": "liberty-as-knowledge-design",
+      "order": 53,
+      "parent": null,
+      "title": "Liberty as Knowledge Design",
+      "description": "Liberty as Knowledge Design (p. 134 - 149) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin dissects the design challenges inherent in a society built on democratic values.",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-4-readings-chapter-12-liberty-as-knowledge-design",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404502,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
