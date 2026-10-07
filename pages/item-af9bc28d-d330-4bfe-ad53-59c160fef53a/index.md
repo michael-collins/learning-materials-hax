@@ -11,7 +11,8 @@ Learning Objectives
 Instructions
 ------------
 
-Using the two shared reference images, recreate the steps in the **Demonstration** and **submit three renders to both _Canvas_ _and the corresponding discussion thread for review_**.  <BR> <BR>  
+Using the two shared reference images, recreate the steps in the **Demonstration** and **submit three renders to both _Canvas_ _and the corresponding discussion thread for review_**.   
+  
 Make sure that your assignment is titled in the following format: **Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.** **Example:** Brill Ian Lesson x Assignment x
 
 Grading Rubric

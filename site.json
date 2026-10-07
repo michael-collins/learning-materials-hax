@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404512,
+      "updated": 1791404513,
       "version": "26.8.0"
     },
     "theme": {
@@ -29970,123 +29970,6 @@
       }
     },
     {
-      "id": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
-      "indent": 1,
-      "location": "pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.html",
-      "slug": "exercises/modeling-a-pawn",
-      "order": 37,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Pawn",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-pawn",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recsOUAg8kJfB2Czp_image_pawn_image.png",
-          "imageAlt": "pawn image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Illustration of the Top View of Pawn",
-              "url": "files/recJUmokImdWO4AsY_attachment_pawn_top.jpg",
-              "description": "Illustration of the Top View of a Pawn",
-              "alt": "Illustration of the Top View of Pawn"
-            },
-            {
-              "title": "Illustration of the Side View of Pawn",
-              "url": "files/recf9LNavOZ7IXufM_attachment_pawn_front_back_and_sides.jpg",
-              "description": "Illustration of the Side View of Pawn",
-              "alt": "Illustration of the Side View of Pawn"
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231960,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-754d5f70-bb63-4ee6-b2d8-26092b419ee2",
-      "indent": 2,
-      "location": "pages/item-754d5f70-bb63-4ee6-b2d8-26092b419ee2/index.html",
-      "slug": "exercises/modeling-a-pawn/v0-9-0",
-      "order": 1000,
-      "parent": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recsOUAg8kJfB2Czp_image_pawn_image.png",
-          "imageAlt": "pawn image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Illustration of the Top View of Pawn",
-              "url": "files/recJUmokImdWO4AsY_attachment_pawn_top.jpg",
-              "description": "Illustration of the Top View of a Pawn",
-              "alt": "Illustration of the Top View of Pawn"
-            },
-            {
-              "title": "Illustration of the Side View of Pawn",
-              "url": "files/recf9LNavOZ7IXufM_attachment_pawn_front_back_and_sides.jpg",
-              "description": "Illustration of the Side View of Pawn",
-              "alt": "Illustration of the Side View of Pawn"
-            }
-          ]
-        },
-        "oerSnapshotOf": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
-        "oerSnapshotTitle": "Modeling a Pawn",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-af4143af-48cc-461a-bb7c-ab562ff1b3a4",
       "indent": 1,
       "location": "pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.html",
@@ -32868,6 +32751,127 @@
         },
         "oerSnapshotOf": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
         "oerSnapshotTitle": "Modeling a Diamond",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
+      "indent": 1,
+      "location": "pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.html",
+      "slug": "modeling-a-pawn",
+      "order": 37,
+      "parent": null,
+      "title": "Modeling a Pawn",
+      "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-pawn",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recsOUAg8kJfB2Czp_image_pawn_image.png",
+          "imageAlt": "pawn image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Illustration of the Top View of Pawn",
+              "url": "files/recJUmokImdWO4AsY_attachment_pawn_top.jpg",
+              "description": "Illustration of the Top View of a Pawn",
+              "alt": "Illustration of the Top View of Pawn"
+            },
+            {
+              "title": "Illustration of the Side View of Pawn",
+              "url": "files/recf9LNavOZ7IXufM_attachment_pawn_front_back_and_sides.jpg",
+              "description": "Illustration of the Side View of Pawn",
+              "alt": "Illustration of the Side View of Pawn"
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404513,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-754d5f70-bb63-4ee6-b2d8-26092b419ee2",
+      "indent": 2,
+      "location": "pages/item-754d5f70-bb63-4ee6-b2d8-26092b419ee2/index.html",
+      "slug": "exercises/modeling-a-pawn/v0-9-0",
+      "order": 1000,
+      "parent": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recsOUAg8kJfB2Czp_image_pawn_image.png",
+          "imageAlt": "pawn image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Illustration of the Top View of Pawn",
+              "url": "files/recJUmokImdWO4AsY_attachment_pawn_top.jpg",
+              "description": "Illustration of the Top View of a Pawn",
+              "alt": "Illustration of the Top View of Pawn"
+            },
+            {
+              "title": "Illustration of the Side View of Pawn",
+              "url": "files/recf9LNavOZ7IXufM_attachment_pawn_front_back_and_sides.jpg",
+              "description": "Illustration of the Side View of Pawn",
+              "alt": "Illustration of the Side View of Pawn"
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
+        "oerSnapshotTitle": "Modeling a Pawn",
         "version": "0.9.0",
         "versionStatus": "archived",
         "hideInMenu": true,

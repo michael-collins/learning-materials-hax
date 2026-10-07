@@ -1,11 +1,20 @@
 id: item-af9bc28d-d330-4bfe-ad53-59c160fef53a
 indent: 1
 location: pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.yaml
-slug: exercises/modeling-a-pawn
+slug: modeling-a-pawn
 order: 37
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Modeling a Pawn
-description: ''
+description: >-
+  In this exercise, you will practice polygonal modeling fundamentals and using
+  reference images to create a chess piece
+
+  Learning Objectives
+
+
+  Practice working from reference images
+
+  Practice using 3D so
 metadata:
   published: true
   pageType: oer:exercise
@@ -34,7 +43,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404513
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   using reference images to create a chess piece</p>
@@ -66,9 +87,9 @@ content: >
   renders to both <em>Canvas</em> <em>and the corresponding discussion thread
   for review</em></strong>.&nbsp;
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Make sure that your assignment is titled in the following format:
 
