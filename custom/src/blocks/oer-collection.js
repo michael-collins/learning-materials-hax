@@ -91,7 +91,7 @@ export class OerCollection extends LitElement {
     this.controls = "full";
     this._items = [];
     this._defs = [];
-    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, view: null, hidden: [], perPage: 0 };
+    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, view: null, hidden: [], perPage: 0 };
     this._columnsOpen = false;
   }
 
@@ -150,6 +150,7 @@ export class OerCollection extends LitElement {
   }
 
   _setState(patch) {
+    if (patch.page === 1 && !("groupPages" in patch)) patch = { ...patch, groupPages: {} };
     this._state = { ...this._state, ...patch };
     const { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage } = this._state;
     writeStore(this._storageKey, { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage });
@@ -910,12 +911,6 @@ export class OerCollection extends LitElement {
         min-width: 1.25rem;
         text-align: center;
       }
-      .group h3 .continued {
-        margin-left: 0.5rem;
-        font-size: 0.75rem;
-        font-weight: 400;
-        color: var(--muted-foreground, #555);
-      }
       .pages button {
         all: unset;
         display: inline-flex;
@@ -1124,7 +1119,19 @@ export class OerCollection extends LitElement {
   }
 
   _renderTable(items) {
-    const cols = this._columns.filter((c) => c.fixed || !this._state.hidden.includes(c.key));
+    // only columns with something to show for these rows: a group of
+    // articles needs no Type column, nor lesson-only fields
+    const has = (c) => {
+      if (c.fixed) return true;
+      if (c.key === "type") return new Set(items.map((i) => i.metadata?.pageType)).size > 1;
+      if (c.key === "image") return items.some((i) => this._image(i));
+      if (c.key === "tags") return items.some((i) => toList(i.metadata?.tags).length);
+      return items.some((i) => {
+        const v = this._value(i, c.key);
+        return v !== undefined && v !== null && v !== "" && !(Array.isArray(v) && !v.length);
+      });
+    };
+    const cols = this._columns.filter((c) => c.fixed || (!this._state.hidden.includes(c.key) && has(c)));
     const key = this._state.sortKey || this.sort;
     return html`<div class="table-wrap">
       <table>
@@ -1314,6 +1321,7 @@ export class OerCollection extends LitElement {
               <button aria-pressed="${!s.groupBy}" @click="${() => this._setState({ groupBy: "", page: 1 })}">None</button>
               ${groupable.map((g) => html`<button aria-pressed="${s.groupBy === g.key}" @click="${() => this._setState({ groupBy: g.key, page: 1 })}">${g.label}</button>`)}
             </div>
+            ${s.groupBy ? this._renderPerPage() : ""}
           </div>`
         : ""}
       <div class="status" aria-live="polite">
@@ -1342,37 +1350,45 @@ export class OerCollection extends LitElement {
     return out;
   }
 
-  _renderPager(total, page) {
+  get _sizes() {
+    return [...new Set([10, 20, 50, 100, Number(this.perPage) || 20])].sort((a, b) => a - b);
+  }
+
+  _renderPerPage() {
+    const per = this._per;
+    return html`<label class="per-page">
+      Per page
+      <select @change="${(e) => this._setState({ perPage: Number(e.target.value), page: 1 })}">
+        ${this._sizes.map((n) => html`<option value="${n}" ?selected="${n === per}">${n}</option>`)}
+      </select>
+    </label>`;
+  }
+
+  /**
+   * Under a list: "Showing 21–40 of 72", page numbers and (optionally) the
+   * page size. `go(p)` shows page p; `label` names the list for screen readers.
+   */
+  _renderPager(total, page, { go, label = "Pages", sizes = true, scrollTo = this } = {}) {
     const per = this._per;
     const pages = Math.max(1, Math.ceil(total / per));
-    const sizes = [...new Set([10, 20, 50, 100, Number(this.perPage) || 20])].sort((a, b) => a - b);
     // nothing to page through, and too few to choose a page size for
-    if (pages <= 1 && total <= sizes[0]) return "";
-    const go = (p) => {
-      this._setState({ page: p });
-      this.scrollIntoView({ block: "start", behavior: "auto" });
+    if (pages <= 1 && (!sizes || total <= this._sizes[0])) return "";
+    const show = (p) => {
+      go(p);
+      scrollTo?.scrollIntoView?.({ block: "start", behavior: "auto" });
     };
-    return html`<nav class="pager" aria-label="Pages">
+    return html`<nav class="pager" aria-label="${label}">
       <span class="pager-status">Showing ${(page - 1) * per + 1}–${Math.min(page * per, total)} of ${total}</span>
-      <label class="per-page">
-        Per page
-        <select
-          @change="${(e) => {
-            this._setState({ perPage: Number(e.target.value), page: 1 });
-          }}"
-        >
-          ${sizes.map((n) => html`<option value="${n}" ?selected="${n === per}">${n}</option>`)}
-        </select>
-      </label>
+      ${sizes ? this._renderPerPage() : ""}
       ${pages > 1
         ? html`<div class="pages">
-            <button ?disabled="${page === 1}" aria-label="Previous page" @click="${() => go(page - 1)}">${lucide("icons:chevron-left", "sm")}</button>
+            <button ?disabled="${page === 1}" aria-label="Previous page" @click="${() => show(page - 1)}">${lucide("icons:chevron-left", "sm")}</button>
             ${this._pageList(page, pages).map((p) =>
               p === "…"
                 ? html`<span class="gap" aria-hidden="true">…</span>`
-                : html`<button aria-current="${p === page ? "page" : "false"}" aria-label="Page ${p}" @click="${() => go(p)}">${p}</button>`,
+                : html`<button aria-current="${p === page ? "page" : "false"}" aria-label="Page ${p}" @click="${() => show(p)}">${p}</button>`,
             )}
-            <button ?disabled="${page === pages}" aria-label="Next page" @click="${() => go(page + 1)}">${lucide("icons:chevron-right", "sm")}</button>
+            <button ?disabled="${page === pages}" aria-label="Next page" @click="${() => show(page + 1)}">${lucide("icons:chevron-right", "sm")}</button>
           </div>`
         : ""}
     </nav>`;
@@ -1388,16 +1404,10 @@ export class OerCollection extends LitElement {
     const per = this._per;
     const groups = this._groups(sorted);
     const grouped = groups.length > 1 || !!this._state.groupBy;
-    // one page of the list, groups included: a group can run onto the next page
-    const entries = grouped ? groups.flatMap((g) => g.items.map((item) => ({ g, item }))) : sorted.map((item) => ({ g: null, item }));
-    const pages = Math.max(1, Math.ceil(entries.length / per));
-    const page = Math.min(this._state.page, pages);
-    const slice = entries.slice((page - 1) * per, page * per);
-    const pageGroups = [];
-    for (const e of slice) {
-      if (!pageGroups.length || pageGroups.at(-1).g !== e.g) pageGroups.push({ g: e.g, items: [] });
-      pageGroups.at(-1).items.push(e.item);
-    }
+    // a list's page: the whole list, or (grouped) each group on its own
+    const pageOf = (total, wanted) => Math.min(Math.max(1, wanted || 1), Math.max(1, Math.ceil(total / per)));
+    const page = pageOf(sorted.length, this._state.page);
+    const groupPage = (g) => pageOf(g.items.length, this._state.groupPages?.[g.key]);
     const body = (list) => (view === "cards" ? this._renderCards(list) : this._renderTable(list));
     return html`
       ${heading}
@@ -1407,13 +1417,23 @@ export class OerCollection extends LitElement {
             ${this._items.length ? html`Nothing matches. <button class="link" @click="${this._clear}">Clear filters</button>` : "Nothing here yet."}
           </div>`
         : grouped
-          ? html`${pageGroups.map(
-                (pg) => html`<section class="group">
-                  <h3>${pg.g.key}<span class="count">${pg.g.items.length}</span>${pg.g.items[0] !== pg.items[0] ? html`<span class="continued">continued</span>` : ""}</h3>
-                  ${body(pg.items)}
-                </section>`,
-              )}${this._renderPager(entries.length, page)}`
-          : html`${body(slice.map((e) => e.item))}${this._renderPager(entries.length, page)}`}
+          ? groups.map((g) => {
+              const p = groupPage(g);
+              return html`<section class="group" data-group="${g.key}">
+                <h3>${g.key}<span class="count">${g.items.length}</span></h3>
+                ${body(g.items.slice((p - 1) * per, p * per))}
+                ${this._renderPager(g.items.length, p, {
+                  label: `Pages of ${g.key}`,
+                  sizes: false,
+                  scrollTo: null,
+                  go: (n) => {
+                    this._setState({ groupPages: { ...(this._state.groupPages || {}), [g.key]: n } });
+                    this.updateComplete.then(() => this.shadowRoot.querySelector(`section.group[data-group="${CSS.escape(g.key)}"]`)?.scrollIntoView({ block: "start", behavior: "auto" }));
+                  },
+                })}
+              </section>`;
+            })
+          : html`${body(sorted.slice((page - 1) * per, page * per))}${this._renderPager(sorted.length, page, { go: (n) => this._setState({ page: n }) })}`}
     `;
   }
 
