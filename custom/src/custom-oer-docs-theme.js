@@ -1603,6 +1603,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             font-size: 1.5em;
           }
         }
+        /* desktop: the grain is on the scrolling <main> (see the inset
+           layout); the host's would show through beneath it, doubling it */
+        @media (min-width: 768px) {
+          :host([reader]) {
+            background-image: none;
+          }
+        }
         /* a deeper link blue than the site's, for AA on the grain (5.6:1) */
         :host([reader-colour="light"]) {
           color-scheme: only light;
