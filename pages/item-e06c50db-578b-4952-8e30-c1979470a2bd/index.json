@@ -1,0 +1,19 @@
+{
+  "id": "item-e06c50db-578b-4952-8e30-c1979470a2bd",
+  "indent": 4,
+  "location": "pages/item-e06c50db-578b-4952-8e30-c1979470a2bd/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/deliver",
+  "order": 13,
+  "parent": "item-927c172a-3b45-4e99-b847-b9a5f81ad1ab",
+  "title": "Deliver",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791397869,
+    "images": [],
+    "videos": [],
+    "updated": 1791397869
+  },
+  "content": "<p></p>"
+}

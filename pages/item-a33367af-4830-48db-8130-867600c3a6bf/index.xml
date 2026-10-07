@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a33367af-4830-48db-8130-867600c3a6bf</id>
+<indent>4</indent>
+<location>pages/item-a33367af-4830-48db-8130-867600c3a6bf/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction/discover</slug>
+<order>1</order>
+<parent>item-927c172a-3b45-4e99-b847-b9a5f81ad1ab</parent>
+<title>Discover</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791397869</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791397869</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

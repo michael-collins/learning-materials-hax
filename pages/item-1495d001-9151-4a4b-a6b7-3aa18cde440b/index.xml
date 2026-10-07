@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1495d001-9151-4a4b-a6b7-3aa18cde440b</id>
+<indent>4</indent>
+<location>pages/item-1495d001-9151-4a4b-a6b7-3aa18cde440b/index.xml</location>
+<slug>books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/discover</slug>
+<order>1</order>
+<parent>item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b</parent>
+<title>Discover</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<created>1791397869</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791397869</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

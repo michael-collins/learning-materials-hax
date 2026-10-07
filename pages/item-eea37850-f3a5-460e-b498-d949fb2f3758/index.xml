@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-eea37850-f3a5-460e-b498-d949fb2f3758</id>
+<indent>2</indent>
+<location>pages/item-eea37850-f3a5-460e-b498-d949fb2f3758/index.xml</location>
+<slug>projects/hypertext-narrative-project-civic-imagination/twine-tutorial-getting-started-with-twine</slug>
+<order>9</order>
+<parent>item-9401e020-db14-4652-9d7b-fc6a27557c2c</parent>
+<title>Twine tutorial: Getting started with Twine</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerRef>
+<page>item-b7594c35-d2a8-4b7b-bac3-19835b98836a</page>
+<version></version>
+</oerRef>
+<published>true</published>
+<created>1791397869</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791397869</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b7594c35-d2a8-4b7b-bac3-19835b98836a"></oer-include>]]></content>
+</item>

@@ -1,0 +1,19 @@
+{
+  "id": "item-ebf9b300-8380-48b5-b718-18febfa65e99",
+  "indent": 4,
+  "location": "pages/item-ebf9b300-8380-48b5-b718-18febfa65e99/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-3-storytelling/hypertext-narrative-introduction/develop",
+  "order": 5,
+  "parent": "item-7b9f66a2-fea3-4391-9f8d-ee6826abbc1b",
+  "title": "Develop",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791397869,
+    "images": [],
+    "videos": [],
+    "updated": 1791397869
+  },
+  "content": "<p></p>"
+}

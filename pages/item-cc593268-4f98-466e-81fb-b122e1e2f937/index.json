@@ -1,0 +1,19 @@
+{
+  "id": "item-cc593268-4f98-466e-81fb-b122e1e2f937",
+  "indent": 4,
+  "location": "pages/item-cc593268-4f98-466e-81fb-b122e1e2f937/index.json",
+  "slug": "books/dmd-100-digital-multimedia-design-foundations/lesson-4-open-design/open-design-project-introduction/discover",
+  "order": 0,
+  "parent": "item-aa69cd7e-f2b0-4c07-86c4-0a66ad160dc4",
+  "title": "Discover",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:heading",
+    "hideInMenu": true,
+    "created": 1791397869,
+    "images": [],
+    "videos": [],
+    "updated": 1791397869
+  },
+  "content": "<p></p>"
+}
