@@ -259,16 +259,16 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/projects</loc>
-    <lastmod>2026-10-07T15:01:12.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/exercises/texturing-random-objects</loc>
     <lastmod>2026-10-05T20:25:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/projects</loc>
+    <lastmod>2026-10-07T15:01:12.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/sculpting-retopo-and-texturing</loc>
@@ -2275,12 +2275,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books</loc>
-    <lastmod>2026-10-07T15:01:10.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/project/deliver-final-prototype</loc>
     <lastmod>2026-10-06T01:46:55.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2309,6 +2303,12 @@
     <lastmod>2026-10-06T01:44:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books</loc>
+    <lastmod>2026-10-07T15:01:10.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/capstone-project/capstone-project-exhibition</loc>
@@ -5045,5 +5045,47 @@
     <lastmod>2026-10-07T14:39:50.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses/dmd-100-digital-multimedia-design-foundations</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses/dmd-300-digital-multimedia-design-studio</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses/dmd-400-digital-multimedia-design-capstone</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses/dart-203-3d-digital-art-design-fundamentals</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses/dart-303-3d-studio</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses/dart-413-digital-fabrication-studio</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/courses</loc>
+    <lastmod>2026-10-07T15:01:14.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>
