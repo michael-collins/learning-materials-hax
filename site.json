@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384029,
+      "updated": 1791384030,
       "version": "26.8.0"
     },
     "theme": {
@@ -30886,7 +30886,7 @@
       "order": 54,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "CNC relief tile",
-      "description": "",
+      "description": "Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A08",
