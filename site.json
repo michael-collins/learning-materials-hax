@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384041,
+      "updated": 1791384042,
       "version": "26.8.0"
     },
     "theme": {
@@ -13394,7 +13394,7 @@
       "order": 39,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Modeling for fabrication: parametric and sculptural",
-      "description": "",
+      "description": "Two modeling attitudes: parametric CAD (Fusion 360) and mesh/sculptural (Blender); parameters, constraints, families of objects; scanning as input (photogrammetry).",
       "metadata": {
         "pageType": "oer:lesson",
         "oerPlan": "DART 413:M07",
