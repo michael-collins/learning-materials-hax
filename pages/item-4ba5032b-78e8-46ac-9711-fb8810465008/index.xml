@@ -3,11 +3,15 @@
 <id>item-4ba5032b-78e8-46ac-9711-fb8810465008</id>
 <indent>1</indent>
 <location>pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.xml</location>
-<slug>exercises/modeling-a-rook</slug>
+<slug>modeling-a-rook</slug>
 <order>39</order>
-<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<parent></parent>
 <title>Modeling a Rook</title>
-<description></description>
+<description>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece
+Learning Objectives
+
+Practice working from reference images
+Practice using 3D so</description>
 <metadata>
 <published>true</published>
 <pageType>oer:exercise</pageType>
@@ -54,7 +58,24 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791404515</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Ql40pEsctlh1xNHLDS8F0cb" title="Modeling a Rook Tutorial"></oer-iframe>
@@ -67,12 +88,12 @@
 </ol>
 <h2>Instructions</h2>
 <p>For this assignment, recreate the steps in either of the two <strong>demonstrations and submit your model to&nbsp;<em>Canvas and Open Studio for review.</em></strong>&nbsp;You can begin either version with the same reference images, linked on this page.
-&lt;BR&gt;
-&lt;BR&gt;<br>
+<br>
+<br>
 Make sure that your assignment is titled in the following format:
 <strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>
-&lt;BR&gt;
-&lt;BR&gt;<br>
+<br>
+<br>
 <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="exercise"></oer-rubric>

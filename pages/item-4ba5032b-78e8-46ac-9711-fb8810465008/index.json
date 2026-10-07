@@ -2,11 +2,11 @@
   "id": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
   "indent": 1,
   "location": "pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.json",
-  "slug": "exercises/modeling-a-rook",
+  "slug": "modeling-a-rook",
   "order": 39,
-  "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+  "parent": null,
   "title": "Modeling a Rook",
-  "description": "",
+  "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
   "metadata": {
     "published": true,
     "pageType": "oer:exercise",
@@ -51,7 +51,24 @@
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791404515,
+    "version": "1.0.0",
+    "oerVersions": [
+      {
+        "version": "1.0.0",
+        "date": 1768219200,
+        "notes": ""
+      },
+      {
+        "version": "0.9.0",
+        "date": null,
+        "notes": ""
+      }
+    ],
+    "overridePathauto": false,
+    "hideInMenu": false,
+    "locked": false,
+    "readtime": 1
   },
-  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5Ql40pEsctlh1xNHLDS8F0cb\" title=\"Modeling a Rook Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice working from reference images</li>\n<li>Practice using 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>\n</ol>\n<h2>Instructions</h2>\n<p>For this assignment, recreate the steps in either of the two <strong>demonstrations and submit your model to&nbsp;<em>Canvas and Open Studio for review.</em></strong>&nbsp;You can begin either version with the same reference images, linked on this page.\n&lt;BR&gt;\n&lt;BR&gt;<br>\nMake sure that your assignment is titled in the following format:\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n&lt;BR&gt;\n&lt;BR&gt;<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5Ql40pEsctlh1xNHLDS8F0cb\" title=\"Modeling a Rook Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice working from reference images</li>\n<li>Practice using 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>\n</ol>\n<h2>Instructions</h2>\n<p>For this assignment, recreate the steps in either of the two <strong>demonstrations and submit your model to&nbsp;<em>Canvas and Open Studio for review.</em></strong>&nbsp;You can begin either version with the same reference images, linked on this page.\n<br>\n<br>\nMake sure that your assignment is titled in the following format:\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n<br>\n<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
 }

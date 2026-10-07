@@ -11,8 +11,10 @@ Learning Objectives
 Instructions
 ------------
 
-For this assignment, recreate the steps in either of the two **demonstrations and submit your model to _Canvas and Open Studio for review._** You can begin either version with the same reference images, linked on this page. <BR> <BR>  
-Make sure that your assignment is titled in the following format: **Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.** <BR> <BR>  
+For this assignment, recreate the steps in either of the two **demonstrations and submit your model to _Canvas and Open Studio for review._** You can begin either version with the same reference images, linked on this page.  
+  
+Make sure that your assignment is titled in the following format: **Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.**  
+  
 **Example:** Brill Ian Lesson x Assignment x
 
 Grading Rubric

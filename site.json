@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404514,
+      "updated": 1791404515,
       "version": "26.8.0"
     },
     "theme": {
@@ -29970,135 +29970,6 @@
       }
     },
     {
-      "id": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
-      "indent": 1,
-      "location": "pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.html",
-      "slug": "exercises/modeling-a-rook",
-      "order": 39,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Rook",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-rook",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recI5o36ru0BbxuCH_image_rook_image.png",
-          "imageAlt": "rook image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Reference Image for the Side of a Basic Rook",
-              "url": "files/rec1auFJfWa2Iqw8t_attachment_rook_side.jpg",
-              "description": "Reference Image for the Side of a Basic Rook",
-              "alt": "Reference Image for the Side of a Basic Rook"
-            },
-            {
-              "title": "90 Degree Turned Reference Image for the Side of a Basic Rook",
-              "url": "files/recK7fGyaYZ1yzD8M_attachment_fixed_rook_side.jpg",
-              "description": "90 Degree Turned Reference Image for the Side of a Basic Rook",
-              "alt": "90 Degree Turned Reference Image for the Side of a Basic Rook"
-            },
-            {
-              "title": "Reference Image for the Top of a Basic Rook",
-              "url": "files/recZr6vSAvtZ4o7VU_attachment_rook_top.jpg",
-              "description": "Reference Image for the Top of a Basic Rook",
-              "alt": "Reference Image for the Top of a Basic Rook"
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231962,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-c63df81e-6ef0-4fba-90c4-5e3749f6944f",
-      "indent": 2,
-      "location": "pages/item-c63df81e-6ef0-4fba-90c4-5e3749f6944f/index.html",
-      "slug": "exercises/modeling-a-rook/v0-9-0",
-      "order": 1000,
-      "parent": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recI5o36ru0BbxuCH_image_rook_image.png",
-          "imageAlt": "rook image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Reference Image for the Side of a Basic Rook",
-              "url": "files/rec1auFJfWa2Iqw8t_attachment_rook_side.jpg",
-              "description": "Reference Image for the Side of a Basic Rook",
-              "alt": "Reference Image for the Side of a Basic Rook"
-            },
-            {
-              "title": "90 Degree Turned Reference Image for the Side of a Basic Rook",
-              "url": "files/recK7fGyaYZ1yzD8M_attachment_fixed_rook_side.jpg",
-              "description": "90 Degree Turned Reference Image for the Side of a Basic Rook",
-              "alt": "90 Degree Turned Reference Image for the Side of a Basic Rook"
-            },
-            {
-              "title": "Reference Image for the Top of a Basic Rook",
-              "url": "files/recZr6vSAvtZ4o7VU_attachment_rook_top.jpg",
-              "description": "Reference Image for the Top of a Basic Rook",
-              "alt": "Reference Image for the Top of a Basic Rook"
-            }
-          ]
-        },
-        "oerSnapshotOf": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
-        "oerSnapshotTitle": "Modeling a Rook",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-ecba634e-1484-46f2-90b8-7d379784ba4f",
       "indent": 1,
       "location": "pages/item-ecba634e-1484-46f2-90b8-7d379784ba4f/index.html",
@@ -32876,6 +32747,139 @@
         },
         "oerSnapshotOf": "item-af4143af-48cc-461a-bb7c-ab562ff1b3a4",
         "oerSnapshotTitle": "Modeling a Queen",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
+      "indent": 1,
+      "location": "pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.html",
+      "slug": "modeling-a-rook",
+      "order": 39,
+      "parent": null,
+      "title": "Modeling a Rook",
+      "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-rook",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recI5o36ru0BbxuCH_image_rook_image.png",
+          "imageAlt": "rook image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Reference Image for the Side of a Basic Rook",
+              "url": "files/rec1auFJfWa2Iqw8t_attachment_rook_side.jpg",
+              "description": "Reference Image for the Side of a Basic Rook",
+              "alt": "Reference Image for the Side of a Basic Rook"
+            },
+            {
+              "title": "90 Degree Turned Reference Image for the Side of a Basic Rook",
+              "url": "files/recK7fGyaYZ1yzD8M_attachment_fixed_rook_side.jpg",
+              "description": "90 Degree Turned Reference Image for the Side of a Basic Rook",
+              "alt": "90 Degree Turned Reference Image for the Side of a Basic Rook"
+            },
+            {
+              "title": "Reference Image for the Top of a Basic Rook",
+              "url": "files/recZr6vSAvtZ4o7VU_attachment_rook_top.jpg",
+              "description": "Reference Image for the Top of a Basic Rook",
+              "alt": "Reference Image for the Top of a Basic Rook"
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404515,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-c63df81e-6ef0-4fba-90c4-5e3749f6944f",
+      "indent": 2,
+      "location": "pages/item-c63df81e-6ef0-4fba-90c4-5e3749f6944f/index.html",
+      "slug": "exercises/modeling-a-rook/v0-9-0",
+      "order": 1000,
+      "parent": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recI5o36ru0BbxuCH_image_rook_image.png",
+          "imageAlt": "rook image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Reference Image for the Side of a Basic Rook",
+              "url": "files/rec1auFJfWa2Iqw8t_attachment_rook_side.jpg",
+              "description": "Reference Image for the Side of a Basic Rook",
+              "alt": "Reference Image for the Side of a Basic Rook"
+            },
+            {
+              "title": "90 Degree Turned Reference Image for the Side of a Basic Rook",
+              "url": "files/recK7fGyaYZ1yzD8M_attachment_fixed_rook_side.jpg",
+              "description": "90 Degree Turned Reference Image for the Side of a Basic Rook",
+              "alt": "90 Degree Turned Reference Image for the Side of a Basic Rook"
+            },
+            {
+              "title": "Reference Image for the Top of a Basic Rook",
+              "url": "files/recZr6vSAvtZ4o7VU_attachment_rook_top.jpg",
+              "description": "Reference Image for the Top of a Basic Rook",
+              "alt": "Reference Image for the Top of a Basic Rook"
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
+        "oerSnapshotTitle": "Modeling a Rook",
         "version": "0.9.0",
         "versionStatus": "archived",
         "hideInMenu": true,

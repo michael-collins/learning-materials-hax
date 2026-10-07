@@ -1,11 +1,20 @@
 id: item-4ba5032b-78e8-46ac-9711-fb8810465008
 indent: 1
 location: pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.yaml
-slug: exercises/modeling-a-rook
+slug: modeling-a-rook
 order: 39
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Modeling a Rook
-description: ''
+description: >-
+  In this exercise, you will practice polygonal modeling fundamentals and using
+  reference images to create a chess piece
+
+  Learning Objectives
+
+
+  Practice working from reference images
+
+  Practice using 3D so
 metadata:
   published: true
   pageType: oer:exercise
@@ -38,7 +47,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404515
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   using reference images to create a chess piece</p>
@@ -70,9 +91,9 @@ content: >
   Studio for review.</em></strong>&nbsp;You can begin either version with the
   same reference images, linked on this page.
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Make sure that your assignment is titled in the following format:
 
@@ -82,9 +103,9 @@ content: >
   "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
   number.</strong>
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 
