@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384025,
+      "updated": 1791384026,
       "version": "26.8.0"
     },
     "theme": {
@@ -30790,7 +30790,7 @@
       "order": 51,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Press-fit construction kit",
-      "description": "",
+      "description": "Design a kit of no more than three part types that press-fit into at least two different structures.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A03",
