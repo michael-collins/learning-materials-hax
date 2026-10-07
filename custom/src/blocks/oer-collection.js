@@ -24,7 +24,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { registerBlocks } from "./register.js";
-import { contentTypes, isSystemItem } from "../types/content-types.js";
+import { contentTypes, isSystemItem, coursesOf } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
 import { resolveLinks } from "../types/relations.js";
 import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_TYPE } from "../pathways/pathway-model.js";
@@ -129,11 +129,12 @@ export class OerCollection extends LitElement {
     return this.closest?.("[data-oer-page]")?.dataset.oerPage || active || null;
   }
 
-  // the course code this collection is limited to, if any
-  _courseCode(all = this._all || []) {
-    if (this.course) return this.course.trim();
+  // the course this collection is limited to, if any: the Course page it
+  // sits on, or a course code (that code at any university)
+  _course(all = this._all || []) {
+    if (this.course) return { id: "", code: this.course.trim().toUpperCase() };
     const page = all.find((i) => i.id === this._pageId);
-    return page?.metadata?.pageType === COURSE_TYPE ? String(page.metadata?.oerFields?.code || "").trim() : "";
+    return page?.metadata?.pageType === COURSE_TYPE ? { id: page.id, code: "" } : null;
   }
 
   get _storageKey() {
@@ -178,9 +179,16 @@ export class OerCollection extends LitElement {
         pool = pool.filter((i) => under.has(i.id));
       }
     }
-    // a course's materials: pages whose Courses field holds its code
-    const code = this._courseCode(all).toUpperCase();
-    if (code) pool = pool.filter((i) => i.id !== this._pageId && !i.metadata?.oerRef?.page && toList(i.metadata?.oerFields?.courses).some((c) => String(c).trim().toUpperCase() === code));
+    // a course's materials: pages whose Courses field links to it
+    const course = this._course(all);
+    if (course) {
+      pool = pool.filter(
+        (i) =>
+          i.id !== this._pageId &&
+          !i.metadata?.oerRef?.page &&
+          coursesOf(i.metadata?.oerFields?.courses, all).some((c) => (course.id ? c.id === course.id : c.code.toUpperCase() === course.code)),
+      );
+    }
     if (wanted.size) pool = pool.filter((i) => wanted.has(i.metadata?.pageType));
     else if (this.view === "pathways") pool = pool.filter((i) => i.metadata?.pageType === PATHWAY_TYPE);
     else if (this.view !== "outline" && this.scope === "site") pool = pool.filter((i) => i.metadata?.pageType);
@@ -193,7 +201,10 @@ export class OerCollection extends LitElement {
 
   _value(item, name) {
     if (name === "tags") return toList(item.metadata?.tags);
-    return item.metadata?.oerFields?.[name];
+    const v = item.metadata?.oerFields?.[name];
+    // links: the linked pages' ids (filters and groups compare those)
+    if (this._fields.find((f) => f.name === name)?.kind === "relation") return toList(v).map((x) => (x && typeof x === "object" ? x.page : x)).filter(Boolean);
+    return v;
   }
 
   // a field value as words: linked page titles, file titles, choice labels
@@ -222,9 +233,10 @@ export class OerCollection extends LitElement {
     return [...out.values()];
   }
 
-  // choice fields with 2+ values among the items: offered as filters
+  // choice fields, and fields marked as categories (filter: Courses,
+  // University), with 2+ values among the items: offered as filters
   get _filterFields() {
-    return this._fields.filter((f) => (f.kind === "select" || f.kind === "list") && this._distinct(f.name).length > 1 && f.name !== "learningObjectives");
+    return this._fields.filter((f) => (f.kind === "select" || f.kind === "list" || f.filter) && this._distinct(f.name).length > 1 && f.name !== "learningObjectives");
   }
 
   _distinct(name) {
@@ -235,6 +247,15 @@ export class OerCollection extends LitElement {
   }
 
   _label(field, value) {
+    if (field?.kind === "relation") {
+      const page = (this._all || []).find((i) => i.id === value);
+      // a course reads as its code and university
+      if (page?.metadata?.pageType === COURSE_TYPE) {
+        const f = page.metadata.oerFields || {};
+        return [f.code || page.title, f.institution].filter(Boolean).join(" · ");
+      }
+      return page?.title || value;
+    }
     return (field?.options || []).find((o) => o.value === value)?.label || value;
   }
 
@@ -298,7 +319,8 @@ export class OerCollection extends LitElement {
     if (!by) return [{ key: "", items: list }];
     const map = new Map();
     for (const i of list) {
-      const keys = by === "type" ? [this._type(i)?.label || "No type"] : toList(this._value(i, by));
+      const field = this._fields.find((f) => f.name === by);
+      const keys = by === "type" ? [this._type(i)?.label || "No type"] : toList(this._value(i, by)).map((v) => (field ? this._label(field, v) : v));
       for (const k of keys.length ? keys : ["—"]) {
         if (!map.has(k)) map.set(k, []);
         map.get(k).push(i);
@@ -1035,7 +1057,7 @@ export class OerCollection extends LitElement {
         if (v === undefined || v === "" || (Array.isArray(v) && !v.length)) return "";
         const kind = col.field?.kind;
         if (kind === "relation") {
-          return resolveLinks(v, this._all || [])
+          return resolveLinks(item.metadata?.oerFields?.[col.key], this._all || [])
             .filter((r) => !r.missing)
             .map((r, n) => html`${n ? ", " : ""}<a class="cell-link" href="${r.href}">${r.item.title}</a>${r.version ? ` v${r.version}` : ""}`);
         }
@@ -1124,7 +1146,7 @@ export class OerCollection extends LitElement {
     const card = (i) => {
       const v = f(i);
       const levels = sortLevels(v.levels);
-      const courses = toList(v.courses);
+      const courses = coursesOf(v.courses, this._all || []).map((c) => c.code);
       const preview = this._preview(i);
       return html`<div class="card-wrap ${preview ? "has-preview" : ""}">${preview}<a class="pw-card" href="${i.slug}">
         <span class="pw-title"><strong>${i.title}</strong>${v.placeholder ? inDevelopmentBadge() : ""}${i.metadata?.published === false ? html`<span class="draft">Draft</span>` : ""}</span>
@@ -1190,7 +1212,7 @@ export class OerCollection extends LitElement {
     const tags = this._distinct("tags");
     const groupable = [
       ...(new Set(this._items.map((i) => i.metadata?.pageType)).size > 1 ? [{ key: "type", label: "Type" }] : []),
-      ...filterFields.filter((f) => f.kind === "select").map((f) => ({ key: f.name, label: f.label })),
+      ...filterFields.filter((f) => f.kind === "select" || f.filter).map((f) => ({ key: f.name, label: f.label })),
       ...(tags.length ? [{ key: "tags", label: "Tag" }] : []),
     ];
     const active = [

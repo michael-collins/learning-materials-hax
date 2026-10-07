@@ -10,7 +10,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, allowedChildTypes, savePageDetails, peopleOf, tagsOf } from "./content-types.js";
+import { contentTypes, allowedChildTypes, savePageDetails, peopleOf, tagsOf, institutionsOf } from "./content-types.js";
 import { resolveLinks, uploadFile, isImage } from "./relations.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { versionsOf } from "../versions/versioning.js";
@@ -194,7 +194,11 @@ class OerPageDetails extends LitElement {
           .map((x) => ({ title: (x.title || "").trim(), url: (x.url || "").trim(), description: (x.description || "").trim(), alt: (x.alt || "").trim() }))
           .filter((x) => x.url || x.title);
       }
-      if (f.kind === "people") v = peopleOf(v).map((x) => ({ name: x.name.trim(), url: (x.url || "").trim() })).filter((x) => x.name);
+      if (f.kind === "people") {
+        v = peopleOf(v)
+          .map((x) => ({ name: x.name.trim(), url: (x.url || "").trim(), ...(x.affiliation?.trim() ? { affiliation: x.affiliation.trim() } : {}) }))
+          .filter((x) => x.name);
+      }
       if (f.kind === "number" && v !== "" && v !== undefined) v = Number(v);
       if (!empty(v) || f.kind === "boolean") fields[f.name] = f.kind === "boolean" ? !!v : v;
     }
@@ -611,6 +615,10 @@ class OerPageDetails extends LitElement {
         gap: 0.375rem;
         align-items: center;
       }
+      /* the affiliation sits under the name and link */
+      .person-row .affiliation {
+        grid-column: 1 / 3;
+      }
       @media (max-width: 480px) {
         .person-row {
           grid-template-columns: minmax(0, 1fr) auto auto;
@@ -618,6 +626,10 @@ class OerPageDetails extends LitElement {
         .person-row input[type="url"] {
           grid-column: 1;
           grid-row: 2;
+        }
+        .person-row .affiliation {
+          grid-column: 1;
+          grid-row: 3;
         }
       }
       .btn.outline {
@@ -899,6 +911,8 @@ class OerPageDetails extends LitElement {
     const id = `f-${f.name}`;
     const stored = peopleOf(this._values[f.name]);
     const rows = stored.length ? stored : [{ name: "", url: "" }];
+    // optional, for materials contributed from more than one university
+    const institutions = institutionsOf(toJS(store.manifest?.items) || []);
     const update = (fn) => {
       const next = rows.map((r) => ({ ...r }));
       fn(next);
@@ -927,6 +941,14 @@ class OerPageDetails extends LitElement {
             ${lucide("icons:arrow-upward", "sm")}
           </button>
           <button class="icon-act" title="Remove" aria-label="Remove ${r.name || `person ${i + 1}`}" @click="${() => update((n) => n.splice(i, 1))}">${lucide("oer:x", "sm")}</button>
+          <oer-choice-field
+            class="affiliation"
+            label="${f.label} ${i + 1}: university or affiliation"
+            new-label="Other university…"
+            .options="${institutions}"
+            .value="${r.affiliation || ""}"
+            @value-changed="${(e) => update((n) => (n[i].affiliation = e.detail.value))}"
+          ></oer-choice-field>
         </div>`,
       )}
       <button

@@ -23,7 +23,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, SYSTEM_TYPE, peopleOf } from "./content-types.js";
+import { contentTypes, SYSTEM_TYPE, peopleOf, coursesOf } from "./content-types.js";
 import { usedIn } from "./relations.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { ccLicense, ccIcon } from "./licenses.js";
@@ -211,7 +211,14 @@ class OerPageFooter extends LitElement {
     if (item.description) data["schema:description"] = item.description;
     if (cc?.url) data["schema:license"] = cc.url;
     const authors = this._authors;
-    if (authors.length) data["schema:author"] = this._people.map((p) => ({ "@type": "schema:Person", "schema:name": p.name, ...(p.url ? { "schema:url": p.url } : {}) }));
+    if (authors.length) {
+      data["schema:author"] = this._people.map((p) => ({
+        "@type": "schema:Person",
+        "schema:name": p.name,
+        ...(p.url ? { "schema:url": p.url } : {}),
+        ...(p.affiliation ? { "schema:affiliation": { "@type": "schema:CollegeOrUniversity", "schema:name": p.affiliation } } : {}),
+      }));
+    }
     if (item.metadata?.updated) data["schema:dateModified"] = new Date(item.metadata.updated * 1000).toISOString();
     if (item.metadata?.version) data["schema:version"] = item.metadata.version;
     if (f.difficulty) data["schema:educationalLevel"] = f.difficulty;
@@ -259,9 +266,11 @@ class OerPageFooter extends LitElement {
       .filter((c) => c && c.metadata?.published !== false);
     if (before.length) data["oer:prerequisite"] = before.map(ref);
     // courses: a Course page's code and prerequisites; a material's course(s)
-    const courses = all.filter((i) => i.metadata?.pageType === "oer:course" && !i.metadata?.oerSnapshotOf);
     if (typeId === "oer:course") {
       if (f.code) data["oer:courseIdentifier"] = f.code;
+      if (f.institution) {
+        data["oer:institution"] = { "@type": "schema:CollegeOrUniversity", "schema:name": f.institution, ...(f.institutionUrl ? { "schema:url": f.institutionUrl } : {}) };
+      }
       if (f.bulletin) data["schema:sameAs"] = f.bulletin;
       const req = (Array.isArray(f.coursePrerequisites) ? f.coursePrerequisites : []).map((x) => all.find((i) => i.id === (x?.page || x))).filter(Boolean);
       if (req.length || f.prerequisiteNote) {
@@ -271,12 +280,13 @@ class OerPageFooter extends LitElement {
         ];
       }
     }
-    const codes = toList(f.courses);
-    if (codes.length) {
-      data["oer:forCourse"] = codes.map((code) => {
-        const page = courses.find((c) => String(c.metadata?.oerFields?.code || "").trim().toUpperCase() === String(code).trim().toUpperCase());
-        return page ? { ...ref(page), "oer:courseIdentifier": code } : { "@type": "oer:Course", "oer:courseIdentifier": code };
-      });
+    const taughtIn = coursesOf(f.courses, all);
+    if (taughtIn.length) {
+      data["oer:forCourse"] = taughtIn.map((c) => ({
+        ...(c.item ? ref(c.item) : { "@type": "oer:Course" }),
+        "oer:courseIdentifier": c.code,
+        ...(c.institution ? { "oer:institution": { "@type": "schema:CollegeOrUniversity", "schema:name": c.institution } } : {}),
+      }));
     }
     const tags = toList(String(item.metadata?.tags || "").split(","));
     if (tags.length) data["schema:keywords"] = tags.join(", ");
@@ -946,7 +956,7 @@ class OerPageFooter extends LitElement {
     return people.map((p, i) => {
       const last = i === people.length - 1;
       const sep = i === 0 ? "" : last ? (people.length > 2 ? ", and " : " and ") : ", ";
-      return html`${sep}${p.url ? html`<a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.name}</a>` : p.name}`;
+      return html`${sep}${p.url ? html`<a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.name}</a>` : p.name}${p.affiliation ? ` (${p.affiliation})` : ""}`;
     });
   }
 

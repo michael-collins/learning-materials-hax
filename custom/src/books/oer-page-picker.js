@@ -299,7 +299,7 @@ class OerPagePicker extends LitElement {
                   ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : lucide("lrn:page")}
                   <div class="info">
                     <div class="title">${i.title}</div>
-                    <div class="meta">${[type?.label, parent ? `in ${parent.title}` : ""].filter(Boolean).join(" · ")}</div>
+                    <div class="meta">${[type?.label, i.metadata?.oerFields?.institution, parent ? `in ${parent.title}` : ""].filter(Boolean).join(" · ")}</div>
                   </div>
                   ${releases.length
                     ? html`<select aria-label="Version of ${i.title}" @change="${(e) => (this._versions = { ...this._versions, [i.id]: e.target.value })}">

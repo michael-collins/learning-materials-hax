@@ -17,7 +17,7 @@
 import { html, css } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, isSystemItem, SECTION_TYPE } from "../types/content-types.js";
+import { coursesOf, contentTypes, isSystemItem, SECTION_TYPE } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
 import { resolveLinks } from "../types/relations.js";
 
@@ -175,7 +175,7 @@ export function resolvePathway(pathway, list = items(), types = contentTypes(lis
     item: pathway,
     fields: f,
     levels: sortLevels(f.levels),
-    courses: toList(f.courses),
+    courses: coursesOf(f.courses, list).map((c) => c.code),
     targetRole: f.targetRole || "",
     duration: f.estimatedDuration || "",
     placeholder: !!f.placeholder,

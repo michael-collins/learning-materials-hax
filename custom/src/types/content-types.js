@@ -67,8 +67,49 @@ export function joinNames(names) {
 export function peopleOf(v) {
   const list = Array.isArray(v) ? v : v === undefined || v === null || v === "" ? [] : [v];
   return list
-    .map((x) => (x && typeof x === "object" ? { name: String(x.name || ""), url: String(x.url || "") } : { name: String(x), url: "" }))
+    .map((x) =>
+      x && typeof x === "object"
+        ? { name: String(x.name || ""), url: String(x.url || ""), ...(x.affiliation ? { affiliation: String(x.affiliation) } : {}) }
+        : { name: String(x), url: "" },
+    )
     .filter((x) => x.name || x.url);
+}
+
+export const COURSE_TYPE = "oer:course";
+const courseCode = (page) => String(page?.metadata?.oerFields?.code || page?.title || "").trim();
+
+/**
+ * A Courses value as courses: [{ id, code, title, institution, item }].
+ * Courses are links to Course pages (a page per course, per university);
+ * plain course codes from before that also resolve, by code.
+ */
+export function coursesOf(value, list = items()) {
+  const pages = list.filter((i) => i.metadata?.pageType === COURSE_TYPE && !i.metadata?.oerSnapshotOf);
+  const entries = Array.isArray(value) ? value : typeof value === "string" && value ? value.split(",") : [];
+  const out = [];
+  for (const x of entries) {
+    const id = x && typeof x === "object" ? x.page : "";
+    const page = id ? pages.find((c) => c.id === id) : pages.find((c) => courseCode(c).toUpperCase() === String(x).trim().toUpperCase());
+    if (page) out.push({ id: page.id, code: courseCode(page), title: page.title, institution: String(page.metadata?.oerFields?.institution || ""), item: page });
+    else if (!id && String(x).trim()) out.push({ id: "", code: String(x).trim(), title: String(x).trim(), institution: "", item: null });
+  }
+  return out;
+}
+
+/** Universities the site knows: course pages' and authors' affiliations, most used first. */
+export function institutionsOf(list = items()) {
+  const count = new Map();
+  const add = (v) => {
+    const name = String(v || "").trim();
+    if (name) count.set(name, (count.get(name) || 0) + 1);
+  };
+  for (const i of list) {
+    if (i.metadata?.oerSnapshotOf) continue;
+    const f = i.metadata?.oerFields || {};
+    add(f.institution);
+    for (const v of Object.values(f)) if (Array.isArray(v)) for (const p of v) if (p && typeof p === "object" && "affiliation" in p) add(p.affiliation);
+  }
+  return [...count.keys()].sort((a, b) => count.get(b) - count.get(a) || a.localeCompare(b));
 }
 
 export const isSystemItem = (item) => item?.metadata?.pageType === SYSTEM_TYPE;
