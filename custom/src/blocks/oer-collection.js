@@ -31,6 +31,8 @@ import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_T
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 
 const COURSE_TYPE = "oer:course";
+// grouping by type follows how a course runs
+const TYPE_ORDER = ["oer:course", "oer:pathway", "oer:unit", "oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:project", "oer:activity", "oer:quiz", "oer:book"];
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -302,7 +304,17 @@ export class OerCollection extends LitElement {
         map.get(k).push(i);
       }
     }
-    return [...map.entries()].map(([key, items]) => ({ key, items }));
+    const groups = [...map.entries()].map(([key, items]) => ({ key, items }));
+    // by type: in the order a course runs, not alphabetically
+    if (by === "type") {
+      const rank = (label) => {
+        const id = this._defs.find((t) => t.label === label)?.id;
+        const at = TYPE_ORDER.indexOf(id);
+        return at < 0 ? TYPE_ORDER.length : at;
+      };
+      groups.sort((a, b) => rank(a.key) - rank(b.key));
+    }
+    return groups;
   }
 
   /* ---------- actions ---------- */

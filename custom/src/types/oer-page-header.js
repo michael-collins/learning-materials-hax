@@ -22,6 +22,14 @@ import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
+// a link's address as words: no protocol or "www.", %20 as spaces
+const readableUrl = (v) => {
+  try {
+    return decodeURI(String(v)).replace(/^https?:\/\/(www\.)?/i, "").replace(/\/$/, "");
+  } catch {
+    return String(v);
+  }
+};
 const hasValue = (v) => v !== undefined && v !== null && v !== "" && !(Array.isArray(v) && !v.length);
 
 class OerPageHeader extends LitElement {
@@ -584,7 +592,7 @@ class OerPageHeader extends LitElement {
                   : f.kind === "image"
                     ? html`<img src="${v}" alt="" />`
                     : f.kind === "url"
-                      ? html`<p><a href="${v}">${v}</a></p>`
+                      ? html`<p><a href="${v}">${readableUrl(v)}</a></p>`
                       : html`<p>${v}</p>`}
               </section>`;
             })}

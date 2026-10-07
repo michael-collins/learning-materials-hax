@@ -275,6 +275,31 @@ const PRESETS = {
       })}`;
   },
 
+  // a course page: code and credits, bulletin and prerequisites, then
+  // everything taught in it, grouped by type (highlighted)
+  course: () => svg`
+    ${win()}
+    ${navLines(44, 10)}
+    ${R(126, 40, 170, 11, "t", 3)}
+    ${R(126, 58, 40, 11, "hi-soft", 5.5)}${R(172, 58, 48, 11, "pill", 5.5)}${R(226, 58, 34, 11, "pill", 5.5)}
+    ${R(126, 76, 124, 34, "card", 6)}${L(134, 84, 40, "t2")}${L(134, 97, 90, "t-code")}
+    ${R(258, 76, 126, 34, "card", 6)}${L(266, 84, 50, "t2")}${L(266, 97, 96)}
+    ${R(126, 120, 258, 112, "card hi-line", 8)}
+    ${T(138, 134, "Taught in this course", "lbl sm")}
+    ${[
+      ["LESSONS", 2],
+      ["READINGS", 2],
+      ["PROJECTS", 1],
+    ].reduce(
+      (acc, [label, n]) => {
+        const y = acc.y;
+        acc.out.push(svg`${T(138, y + 8, label, "muted sm caps")}${Array.from({ length: n }, (_, i) => svg`${R(138, y + 13 + i * 10, 6, 6, "t2", 1.5)}${L(150, y + 13.5 + i * 10, 80 + ((i * 23) % 50), "t-hi")}`)}`);
+        acc.y += 14 + n * 10;
+        return acc;
+      },
+      { y: 138, out: [] },
+    ).out}`,
+
   // the viewer: a two-column window over the page, the outline beside the page being read
   viewer: () => svg`
     ${win()}
