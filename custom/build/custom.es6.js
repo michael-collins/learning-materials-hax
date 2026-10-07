@@ -12165,14 +12165,48 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
       .group {
         scroll-margin-top: calc(var(--topbar-height, 3.5rem) + 1.25rem);
       }
-      /* the group being paged: outlined and tinted, drawn outside its box so
-         nothing moves; it stays until another group is paged */
+      /* the group being paged: outlined (drawn outside its box, so nothing
+         moves) until another group is paged; a tint marks the moment of
+         paging and fades. Two identical fades alternate so each page
+         change starts it again. */
       .group.current {
         border-radius: var(--radius-lg, 0.75rem);
-        background: color-mix(in srgb, var(--primary, #0071b6) 6%, transparent);
-        box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 6%, transparent);
         outline: 2px solid var(--primary, #0071b6);
         outline-offset: 0.625rem;
+      }
+      .group.current.flash-0 {
+        animation: oer-paged-0 2s ease-out forwards;
+      }
+      .group.current.flash-1 {
+        animation: oer-paged-1 2s ease-out forwards;
+      }
+      @keyframes oer-paged-0 {
+        0%,
+        30% {
+          background: color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+          box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+        }
+        100% {
+          background: transparent;
+          box-shadow: 0 0 0 0.625rem transparent;
+        }
+      }
+      @keyframes oer-paged-1 {
+        0%,
+        30% {
+          background: color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+          box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+        }
+        100% {
+          background: transparent;
+          box-shadow: 0 0 0 0.625rem transparent;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .group.current.flash-0,
+        .group.current.flash-1 {
+          animation: none;
+        }
       }
       .group h3 {
         display: flex;
@@ -12631,10 +12665,10 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
     </nav>`}render(){const e=this.heading?s`<h2 class="heading">${this.heading}</h2>`:"";if(this.view==="outline")return s`${e}${this._renderOutline(this._items)}`;if(this.view==="pathways")return s`${e}${this._renderPathways(this._items)}`;const t=this.controls==="full"?this._state.view||this.view:this.view,r=this.controls==="full"?this._filtered:this._items,i=this._sorted(r),o=this._per,n=this._groups(i),l=n.length>1||!!this._state.groupBy,d=(m,v)=>Math.min(Math.max(1,v||1),Math.max(1,Math.ceil(m/o))),c=d(i.length,this._state.page),p=m=>d(m.items.length,this._state.groupPages?.[m.key]),h=m=>t==="cards"?this._renderCards(m):this._renderTable(m);return s`
       ${e}
       ${this.controls==="full"?this._renderControls(this._items.length,r.length):""}
-      ${i.length?l?n.map(m=>{const v=p(m),u=this._state.activeGroup===m.key;return s`<section class="group ${u?"current":""}" data-group="${m.key}">
+      ${i.length?l?n.map(m=>{const v=p(m),u=this._state.activeGroup===m.key;return s`<section class="group ${u?`current flash-${(this._state.pagedCount||0)%2}`:""}" data-group="${m.key}">
                 <h3>${m.key}<span class="count">${m.items.length}</span></h3>
                 ${h(m.items.slice((v-1)*o,v*o))}
-                ${this._renderPager(m.items.length,v,{label:`Pages of ${m.key}`,sizes:!1,scrollTo:null,go:f=>{this._setState({groupPages:{...this._state.groupPages||{},[m.key]:f},activeGroup:m.key}),this.updateComplete.then(()=>this.shadowRoot.querySelector(`section.group[data-group="${CSS.escape(m.key)}"]`)?.scrollIntoView({block:"start",behavior:"auto"}))}})}
+                ${this._renderPager(m.items.length,v,{label:`Pages of ${m.key}`,sizes:!1,scrollTo:null,go:f=>{this._setState({groupPages:{...this._state.groupPages||{},[m.key]:f},activeGroup:m.key,pagedCount:(this._state.pagedCount||0)+1}),this.updateComplete.then(()=>this.shadowRoot.querySelector(`section.group[data-group="${CSS.escape(m.key)}"]`)?.scrollIntoView({block:"start",behavior:"auto"}))}})}
               </section>`}):s`${h(i.slice((c-1)*o,c*o))}${this._renderPager(i.length,c,{go:m=>this._setState({page:m})})}`:s`<div class="empty">
             ${this._items.length?s`Nothing matches. <button class="link" @click="${this._clear}">Clear filters</button>`:"Nothing here yet."}
           </div>`}

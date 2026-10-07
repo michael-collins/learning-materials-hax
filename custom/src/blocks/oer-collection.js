@@ -750,14 +750,48 @@ export class OerCollection extends LitElement {
       .group {
         scroll-margin-top: calc(var(--topbar-height, 3.5rem) + 1.25rem);
       }
-      /* the group being paged: outlined and tinted, drawn outside its box so
-         nothing moves; it stays until another group is paged */
+      /* the group being paged: outlined (drawn outside its box, so nothing
+         moves) until another group is paged; a tint marks the moment of
+         paging and fades. Two identical fades alternate so each page
+         change starts it again. */
       .group.current {
         border-radius: var(--radius-lg, 0.75rem);
-        background: color-mix(in srgb, var(--primary, #0071b6) 6%, transparent);
-        box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 6%, transparent);
         outline: 2px solid var(--primary, #0071b6);
         outline-offset: 0.625rem;
+      }
+      .group.current.flash-0 {
+        animation: oer-paged-0 2s ease-out forwards;
+      }
+      .group.current.flash-1 {
+        animation: oer-paged-1 2s ease-out forwards;
+      }
+      @keyframes oer-paged-0 {
+        0%,
+        30% {
+          background: color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+          box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+        }
+        100% {
+          background: transparent;
+          box-shadow: 0 0 0 0.625rem transparent;
+        }
+      }
+      @keyframes oer-paged-1 {
+        0%,
+        30% {
+          background: color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+          box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+        }
+        100% {
+          background: transparent;
+          box-shadow: 0 0 0 0.625rem transparent;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .group.current.flash-0,
+        .group.current.flash-1 {
+          animation: none;
+        }
       }
       .group h3 {
         display: flex;
@@ -1497,7 +1531,7 @@ export class OerCollection extends LitElement {
               const p = groupPage(g);
               // the group being paged stays marked, so it's easy to find again
               const current = this._state.activeGroup === g.key;
-              return html`<section class="group ${current ? "current" : ""}" data-group="${g.key}">
+              return html`<section class="group ${current ? `current flash-${(this._state.pagedCount || 0) % 2}` : ""}" data-group="${g.key}">
                 <h3>${g.key}<span class="count">${g.items.length}</span></h3>
                 ${body(g.items.slice((p - 1) * per, p * per))}
                 ${this._renderPager(g.items.length, p, {
@@ -1505,7 +1539,7 @@ export class OerCollection extends LitElement {
                   sizes: false,
                   scrollTo: null,
                   go: (n) => {
-                    this._setState({ groupPages: { ...(this._state.groupPages || {}), [g.key]: n }, activeGroup: g.key });
+                    this._setState({ groupPages: { ...(this._state.groupPages || {}), [g.key]: n }, activeGroup: g.key, pagedCount: (this._state.pagedCount || 0) + 1 });
                     this.updateComplete.then(() => this.shadowRoot.querySelector(`section.group[data-group="${CSS.escape(g.key)}"]`)?.scrollIntoView({ block: "start", behavior: "auto" }));
                   },
                 })}
