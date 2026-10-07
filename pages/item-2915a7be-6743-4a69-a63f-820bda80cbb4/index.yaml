@@ -1,11 +1,18 @@
 id: item-2915a7be-6743-4a69-a63f-820bda80cbb4
 indent: 1
 location: pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.yaml
-slug: exercises/modeling-a-bishop
+slug: modeling-a-bishop
 order: 30
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Modeling a Bishop
-description: ''
+description: >-
+  In this exercise, you will practice polygonal modeling fundamentals and using
+  reference images to create a chess piece
+
+  Learning Objectives
+
+
+  Practice using the boolean operator and fixing any irregula
 metadata:
   published: true
   pageType: oer:exercise
@@ -42,7 +49,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404509
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   using reference images to create a chess piece</p>
@@ -77,18 +96,18 @@ content: >
   manually remove some geometry, before you can see the results of the boolean
   operation.</em></strong>
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   For this assignment, download reference images from this page and recreate the
   steps in&nbsp;the&nbsp;<strong>Demonstration</strong>&nbsp;and <strong>submit
   three renders to both <em>Canvas</em> <em>and the corresponding discussion
   thread for review</em></strong>.&nbsp;
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   Make sure that your assignment is titled in the following format:
 
@@ -98,9 +117,9 @@ content: >
   "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
   number.</strong>
 
-  &lt;BR&gt;
+  <br>
 
-  &lt;BR&gt;<br>
+  <br>
 
   <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 

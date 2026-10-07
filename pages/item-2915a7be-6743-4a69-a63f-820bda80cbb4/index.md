@@ -12,9 +12,12 @@ Learning Objectives
 Instructions
 ------------
 
-**_Please note: in some cases Blender will make the cut but not remove some geometry. In this case you will have to return to the edit mode to manually remove some geometry, before you can see the results of the boolean operation._** <BR> <BR>  
-For this assignment, download reference images from this page and recreate the steps in the **Demonstration** and **submit three renders to both _Canvas_ _and the corresponding discussion thread for review_**.  <BR> <BR>  
-Make sure that your assignment is titled in the following format: **Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.** <BR> <BR>  
+**_Please note: in some cases Blender will make the cut but not remove some geometry. In this case you will have to return to the edit mode to manually remove some geometry, before you can see the results of the boolean operation._**  
+  
+For this assignment, download reference images from this page and recreate the steps in the **Demonstration** and **submit three renders to both _Canvas_ _and the corresponding discussion thread for review_**.   
+  
+Make sure that your assignment is titled in the following format: **Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.**  
+  
 **Example:** Brill Ian Lesson x Assignment x
 
 Grading Rubric

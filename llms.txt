@@ -786,8 +786,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-1ed67694-ba11-4262-987b-fd06e889dc55/index.md)
 - [Modeling a Basic Knight](https://localhost:3000/learning-materials/pages/item-db344687-9676-46da-9926-d0464ec57873/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-24b311fc-c1e2-4357-ae42-c0cf16f98a21/index.md)
-- [Modeling a Bishop](https://localhost:3000/learning-materials/pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.md)
-- [v0.9.0](https://localhost:3000/learning-materials/pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.md)
 - [Modeling a Chavet 121 series no 6 Knight](https://localhost:3000/learning-materials/pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-c3f1f085-a6ba-46d2-a24d-85ed1099ae8b/index.md)
 - [Modeling a Chessboard](https://localhost:3000/learning-materials/pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.md)
@@ -854,6 +852,8 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.md)
 - [What Design and Truth Say about Each Other](https://localhost:3000/learning-materials/pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.md): What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt In this chapter, Grudin talks about the transition of design from close dialogue with natural systems
 - [Design as Tragedy: The Rise and Fall of the Twin Towers](https://localhost:3000/learning-materials/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md): Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may
+- [Modeling a Bishop](https://localhost:3000/learning-materials/pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.md): In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece Learning Objectives Practice using the boolean operator and fixing any irregula
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.md)
 - [Edsel's Law: How Bad Design Happens](https://localhost:3000/learning-materials/pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.md): Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin describes the Edsel scale for measuring the quality of a design: Photograph an objec
 - [Designs of Darkness](https://localhost:3000/learning-materials/pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.md): Designs of Darkness (p. 55-61) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the soci
 - [Face to Face with Design](https://localhost:3000/learning-materials/pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.md): Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt In this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No

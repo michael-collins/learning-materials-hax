@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404509,
+      "updated": 1791404510,
       "version": "26.8.0"
     },
     "theme": {
@@ -29535,147 +29535,6 @@
       }
     },
     {
-      "id": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
-      "indent": 1,
-      "location": "pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.html",
-      "slug": "exercises/modeling-a-bishop",
-      "order": 30,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Bishop",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-bishop",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rectzJhf833zBC9T3_image_bishop_image.png",
-          "imageAlt": "bishop image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Reference illustration of Bishop from additional front or back view",
-              "url": "files/recoyG0w7HAA9wb65_attachment_bishop_side.jpg",
-              "description": "Reference illustration of Bishop from additional front or back view",
-              "alt": "Reference illustration of Bishop from additional front or back view"
-            },
-            {
-              "title": "Reference illustration of Bishop from additional top view",
-              "url": "files/rec6SYnnD3RNzwulo_attachment_bishop_top.jpg",
-              "description": "Reference illustration of Bishop from additional top view",
-              "alt": "Reference illustration of Bishop from additional top view"
-            },
-            {
-              "title": "Reference illustration of Bishop from additional side view",
-              "url": "files/rec1LAWAkqQy58t4q_attachment_bishop_back.jpg",
-              "description": "Reference illustration of Bishop from additional side view",
-              "alt": "Reference illustration of Bishop from additional side view"
-            },
-            {
-              "title": "Reference illustration of a Bishop from side view",
-              "url": "files/recRVR3xWtgoMs6Zd_attachment_bishop_front.jpg",
-              "description": "Reference illustration of a Bishop from side view",
-              "alt": "Reference illustration of a Bishop from side view"
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231956,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-09ddcb7e-2c43-4cce-a5c0-300012463834",
-      "indent": 2,
-      "location": "pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.html",
-      "slug": "exercises/modeling-a-bishop/v0-9-0",
-      "order": 1000,
-      "parent": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rectzJhf833zBC9T3_image_bishop_image.png",
-          "imageAlt": "bishop image.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Reference illustration of Bishop from additional front or back view",
-              "url": "files/recoyG0w7HAA9wb65_attachment_bishop_side.jpg",
-              "description": "Reference illustration of Bishop from additional front or back view",
-              "alt": "Reference illustration of Bishop from additional front or back view"
-            },
-            {
-              "title": "Reference illustration of Bishop from additional top view",
-              "url": "files/rec6SYnnD3RNzwulo_attachment_bishop_top.jpg",
-              "description": "Reference illustration of Bishop from additional top view",
-              "alt": "Reference illustration of Bishop from additional top view"
-            },
-            {
-              "title": "Reference illustration of Bishop from additional side view",
-              "url": "files/rec1LAWAkqQy58t4q_attachment_bishop_back.jpg",
-              "description": "Reference illustration of Bishop from additional side view",
-              "alt": "Reference illustration of Bishop from additional side view"
-            },
-            {
-              "title": "Reference illustration of a Bishop from side view",
-              "url": "files/recRVR3xWtgoMs6Zd_attachment_bishop_front.jpg",
-              "description": "Reference illustration of a Bishop from side view",
-              "alt": "Reference illustration of a Bishop from side view"
-            }
-          ]
-        },
-        "oerSnapshotOf": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
-        "oerSnapshotTitle": "Modeling a Bishop",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
       "indent": 1,
       "location": "pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.html",
@@ -32741,6 +32600,151 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
+      "indent": 1,
+      "location": "pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.html",
+      "slug": "modeling-a-bishop",
+      "order": 30,
+      "parent": null,
+      "title": "Modeling a Bishop",
+      "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice using the boolean operator and fixing any irregula",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-bishop",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rectzJhf833zBC9T3_image_bishop_image.png",
+          "imageAlt": "bishop image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Reference illustration of Bishop from additional front or back view",
+              "url": "files/recoyG0w7HAA9wb65_attachment_bishop_side.jpg",
+              "description": "Reference illustration of Bishop from additional front or back view",
+              "alt": "Reference illustration of Bishop from additional front or back view"
+            },
+            {
+              "title": "Reference illustration of Bishop from additional top view",
+              "url": "files/rec6SYnnD3RNzwulo_attachment_bishop_top.jpg",
+              "description": "Reference illustration of Bishop from additional top view",
+              "alt": "Reference illustration of Bishop from additional top view"
+            },
+            {
+              "title": "Reference illustration of Bishop from additional side view",
+              "url": "files/rec1LAWAkqQy58t4q_attachment_bishop_back.jpg",
+              "description": "Reference illustration of Bishop from additional side view",
+              "alt": "Reference illustration of Bishop from additional side view"
+            },
+            {
+              "title": "Reference illustration of a Bishop from side view",
+              "url": "files/recRVR3xWtgoMs6Zd_attachment_bishop_front.jpg",
+              "description": "Reference illustration of a Bishop from side view",
+              "alt": "Reference illustration of a Bishop from side view"
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404509,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-09ddcb7e-2c43-4cce-a5c0-300012463834",
+      "indent": 2,
+      "location": "pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.html",
+      "slug": "exercises/modeling-a-bishop/v0-9-0",
+      "order": 1000,
+      "parent": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rectzJhf833zBC9T3_image_bishop_image.png",
+          "imageAlt": "bishop image.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Reference illustration of Bishop from additional front or back view",
+              "url": "files/recoyG0w7HAA9wb65_attachment_bishop_side.jpg",
+              "description": "Reference illustration of Bishop from additional front or back view",
+              "alt": "Reference illustration of Bishop from additional front or back view"
+            },
+            {
+              "title": "Reference illustration of Bishop from additional top view",
+              "url": "files/rec6SYnnD3RNzwulo_attachment_bishop_top.jpg",
+              "description": "Reference illustration of Bishop from additional top view",
+              "alt": "Reference illustration of Bishop from additional top view"
+            },
+            {
+              "title": "Reference illustration of Bishop from additional side view",
+              "url": "files/rec1LAWAkqQy58t4q_attachment_bishop_back.jpg",
+              "description": "Reference illustration of Bishop from additional side view",
+              "alt": "Reference illustration of Bishop from additional side view"
+            },
+            {
+              "title": "Reference illustration of a Bishop from side view",
+              "url": "files/recRVR3xWtgoMs6Zd_attachment_bishop_front.jpg",
+              "description": "Reference illustration of a Bishop from side view",
+              "alt": "Reference illustration of a Bishop from side view"
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
+        "oerSnapshotTitle": "Modeling a Bishop",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
       }
     },
     {
