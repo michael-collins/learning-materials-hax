@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384052,
+      "updated": 1791384053,
       "version": "26.8.0"
     },
     "theme": {
@@ -26726,7 +26726,7 @@
       "order": 14,
       "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "title": "Digital Fabrication Studio",
-      "description": "",
+      "description": "Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.",
       "metadata": {
         "pageType": "oer:pathway",
         "oerPlan": "DART 413:pathway",
