@@ -3,11 +3,12 @@
 <id>item-4fe6a5c8-3c76-445e-93ed-0328f671609e</id>
 <indent>1</indent>
 <location>pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.xml</location>
-<slug>articles/giorgio-vasari-and-the-permutations-of-design</slug>
+<slug>giorgio-vasari-and-the-permutations-of-design</slug>
 <order>42</order>
-<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<parent></parent>
 <title>Giorgio Vasari and the Permutations of Design</title>
-<description></description>
+<description>Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert GrudinWriting prompt
+In this chapter, Grudin explores implications resulting from Vasari helping to establish th</description>
 <metadata>
 <published>true</published>
 <pageType>oer:article</pageType>
@@ -22,7 +23,10 @@
 </authors>
 <date>2026-03-01</date>
 <courses>
-<item>DMD 100</item>
+<item>
+<page>item-2191170b-b92b-406b-bf5a-84d7524a7de8</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 </oerFields>
@@ -31,7 +35,11 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791404499</updated>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
 <content><![CDATA[<p>Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert Grudin</p>
 <h2>Writing prompt</h2>
@@ -47,10 +55,10 @@
 </ol>
 <h2>AI Policy</h2>
 <p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>
-<p>&lt;a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" title="AIUL AIUL-NA-WR License: Not Allowed for Writing" target="_blank" rel="license"&gt;
-&lt;img alt="AIUL-NA-WR - Not Allowed for Writing" src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png" style="border-width:0; max-width:170px;" /&gt;
-&lt;/a&gt;
-&lt;br /&gt;
-Please see the &lt;a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" target="_blank" rel="license"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>
+<p><a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" title="AIUL AIUL-NA-WR License: Not Allowed for Writing" rel="license">
+<img alt="AIUL-NA-WR - Not Allowed for Writing" src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png">
+</a>
+<br>
+Please see the <a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" rel="license">AI Usage License AIUL-NA-WR</a> for AI usage information.</p>
 ]]></content>
 </item>
