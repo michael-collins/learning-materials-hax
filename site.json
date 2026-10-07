@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384050,
+      "updated": 1791384051,
       "version": "26.8.0"
     },
     "theme": {
@@ -31448,7 +31448,7 @@
       "order": 18,
       "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "title": "3D printing quiz",
-      "description": "",
+      "description": "Self-check questions on 3D printing.",
       "metadata": {
         "pageType": "oer:quiz",
         "oerPlan": "DART 413:quiz:M06",
