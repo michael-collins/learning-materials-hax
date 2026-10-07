@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384026,
+      "updated": 1791384027,
       "version": "26.8.0"
     },
     "theme": {
@@ -31143,7 +31143,7 @@
       "order": 13,
       "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
       "title": "Project 1: Sheet to form",
-      "description": "",
+      "description": "Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme.",
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:A04",
