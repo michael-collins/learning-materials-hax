@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791403578,
+      "updated": 1791404489,
       "version": "26.8.0"
     },
     "theme": {
@@ -80,7 +80,7 @@
       "description": "",
       "metadata": {
         "oerFields": {},
-        "icon": "av:art-track",
+        "icon": "",
         "oerSnapshotOf": "item-7cab202c-92ec-4555-a7a8-d6a1474198d7",
         "oerSnapshotTitle": "Welcome to learning-materials",
         "version": "0.0.1",
@@ -91,7 +91,7 @@
         "created": 1791210080,
         "images": [],
         "videos": [],
-        "updated": 1791231634,
+        "updated": 1791404367,
         "status": ""
       }
     },
@@ -106,7 +106,7 @@
       "description": "Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791242309,
+        "updated": 1791404368,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -116,7 +116,7 @@
         "locked": false,
         "readtime": 1,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "oerFields": {
           "date": "2026-01-12T12:00:00.000Z"
         },
@@ -172,7 +172,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-1903f5ba-d051-49cf-9836-073992c93548",
         "oerSnapshotTitle": "Animation Principles",
         "version": "0.0.1",
@@ -183,7 +183,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791242309,
+        "updated": 1791404368,
         "status": ""
       }
     },
@@ -210,7 +210,7 @@
           "allowEmbed": true,
           "license": "CC BY 4.0"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-1903f5ba-d051-49cf-9836-073992c93548",
         "oerSnapshotTitle": "Animation Principles",
         "version": "0.9.0",
@@ -221,7 +221,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231636,
+        "updated": 1791404369,
         "status": ""
       }
     },
@@ -236,7 +236,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791231636,
+        "updated": 1791404370,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -247,7 +247,7 @@
         "locked": false,
         "readtime": 1,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -321,7 +321,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-21d4a4b1-6588-4417-a049-a7a1a9d69626",
         "oerSnapshotTitle": "Animating a bouncing ball",
         "version": "0.9.0",
@@ -332,7 +332,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231637,
+        "updated": 1791404371,
         "status": ""
       }
     },
@@ -364,10 +364,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231638,
+        "updated": 1791404371,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -406,7 +406,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-1cf78d9c-eb3c-4ba7-bef8-086cc6de1866",
         "oerSnapshotTitle": "Introduction to Modeling",
         "version": "0.9.0",
@@ -417,7 +417,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231638,
+        "updated": 1791404372,
         "status": ""
       }
     },
@@ -479,10 +479,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386149,
+        "updated": 1791404373,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -550,7 +550,7 @@
             }
           ]
         },
-        "icon": "hax:bulletin-board",
+        "icon": "",
         "oerSnapshotOf": "item-48ad9f94-3f8b-44e5-8416-316cff49f4d2",
         "oerSnapshotTitle": "You don't see that everyday objects",
         "version": "0.9.0",
@@ -561,7 +561,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386150,
+        "updated": 1791404373,
         "status": ""
       }
     },
@@ -593,10 +593,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386151,
+        "updated": 1791404374,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -688,10 +688,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791386151,
+        "updated": 1791404375,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -718,10 +718,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231641,
+        "updated": 1791404376,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -744,10 +744,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231642,
+        "updated": 1791404376,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -766,10 +766,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231642,
+        "updated": 1791404377,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -792,10 +792,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231643,
+        "updated": 1791404378,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -814,10 +814,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231643,
+        "updated": 1791404378,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -840,10 +840,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231644,
+        "updated": 1791404379,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -862,10 +862,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231645,
+        "updated": 1791404380,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -888,10 +888,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231645,
+        "updated": 1791404381,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -914,10 +914,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231646,
+        "updated": 1791404381,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -940,10 +940,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231646,
+        "updated": 1791404382,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -962,10 +962,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231647,
+        "updated": 1791404383,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -988,10 +988,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231648,
+        "updated": 1791404383,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board"
+        "icon": ""
       }
     },
     {
@@ -1014,10 +1014,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231648,
+        "updated": 1791404384,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board"
+        "icon": ""
       }
     },
     {
@@ -1036,10 +1036,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231649,
+        "updated": 1791404385,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -1062,10 +1062,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231649,
+        "updated": 1791404386,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -1088,10 +1088,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231650,
+        "updated": 1791404386,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -1114,10 +1114,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231651,
+        "updated": 1791404387,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -1140,10 +1140,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231651,
+        "updated": 1791404388,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -1167,10 +1167,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231652,
+        "updated": 1791404388,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -1193,10 +1193,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231652,
+        "updated": 1791404389,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -1220,10 +1220,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231653,
+        "updated": 1791404390,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board"
+        "icon": ""
       }
     },
     {
@@ -1264,7 +1264,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
         "oerSnapshotTitle": "History of CGI",
         "version": "0.0.1",
@@ -1275,7 +1275,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386152,
+        "updated": 1791404390,
         "status": ""
       }
     },
@@ -1321,7 +1321,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
         "oerSnapshotTitle": "3D Modeling Fundamentals",
         "version": "0.0.1",
@@ -1332,7 +1332,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386153,
+        "updated": 1791404391,
         "status": ""
       }
     },
@@ -1375,7 +1375,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
         "oerSnapshotTitle": "Texturing and UV Mapping",
         "version": "0.0.1",
@@ -1386,7 +1386,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386154,
+        "updated": 1791404392,
         "status": ""
       }
     },
@@ -1429,7 +1429,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
         "oerSnapshotTitle": "Lighting Principles",
         "version": "0.0.1",
@@ -1440,7 +1440,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386154,
+        "updated": 1791404393,
         "status": ""
       }
     },
@@ -1482,7 +1482,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
         "oerSnapshotTitle": "Camera and Composition",
         "version": "0.0.1",
@@ -1493,7 +1493,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386155,
+        "updated": 1791404393,
         "status": ""
       }
     },
@@ -1536,7 +1536,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
         "oerSnapshotTitle": "Rendering Techniques",
         "version": "0.0.1",
@@ -1547,7 +1547,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386156,
+        "updated": 1791404394,
         "status": ""
       }
     },
@@ -1591,7 +1591,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
         "oerSnapshotTitle": "Real-time Engines",
         "version": "0.0.1",
@@ -1602,7 +1602,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386156,
+        "updated": 1791404395,
         "status": ""
       }
     },
@@ -1645,7 +1645,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
         "oerSnapshotTitle": "Environment Design for Real-time",
         "version": "0.0.1",
@@ -1656,7 +1656,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386157,
+        "updated": 1791404395,
         "status": ""
       }
     },
@@ -1699,7 +1699,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
         "oerSnapshotTitle": "Drawing for 3D Design",
         "version": "0.0.1",
@@ -1710,7 +1710,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386158,
+        "updated": 1791404396,
         "status": ""
       }
     },
@@ -1759,7 +1759,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
         "oerSnapshotTitle": "Hard Surface Modeling",
         "version": "0.0.1",
@@ -1770,7 +1770,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386159,
+        "updated": 1791404397,
         "status": ""
       }
     },
@@ -1813,7 +1813,7 @@
           ],
           "date": "2026-01-12T12:00:00.000Z"
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
         "oerSnapshotTitle": "Digital Sculpting",
         "version": "0.0.1",
@@ -1824,7 +1824,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386159,
+        "updated": 1791404397,
         "status": ""
       }
     },
@@ -1851,7 +1851,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-be2fc5ef-ba1f-484b-be6a-2216a24314a2",
         "oerSnapshotTitle": "Introduction to Texturing",
         "version": "0.9.0",
@@ -1862,7 +1862,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231660,
+        "updated": 1791404398,
         "status": ""
       }
     },
@@ -1889,7 +1889,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-81dbd5a3-3e7f-447c-a522-630f6001a8f0",
         "oerSnapshotTitle": "Introduction to Cameras, Lighting, and Rendering",
         "version": "0.9.0",
@@ -1900,7 +1900,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231661,
+        "updated": 1791404399,
         "status": ""
       }
     },
@@ -1939,7 +1939,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-b10cae23-396d-4b8a-92dd-7472ae68a302",
         "oerSnapshotTitle": "Compositor Pathway",
         "version": "0.9.0",
@@ -1950,7 +1950,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231661,
+        "updated": 1791404400,
         "status": ""
       }
     },
@@ -1984,7 +1984,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-427f67e4-123e-4f70-b632-4e18a8001777",
         "oerSnapshotTitle": "Game design and development",
         "version": "0.9.0",
@@ -1995,7 +1995,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231663,
+        "updated": 1791404400,
         "status": ""
       }
     },
@@ -2029,7 +2029,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-59ae474f-2a35-4c1b-9b15-5f15f591cbe9",
         "oerSnapshotTitle": "Illustration and visualization",
         "version": "0.9.0",
@@ -2040,7 +2040,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231663,
+        "updated": 1791404401,
         "status": ""
       }
     },
@@ -2074,7 +2074,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-57c9f78e-e01a-493a-9a5f-4bf5d62aa39a",
         "oerSnapshotTitle": "Lighting and cinematography",
         "version": "0.9.0",
@@ -2085,7 +2085,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231664,
+        "updated": 1791404402,
         "status": ""
       }
     },
@@ -2119,7 +2119,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-831e27e4-94e4-43dc-b7e1-7b5039f802d9",
         "oerSnapshotTitle": "Motion graphics",
         "version": "0.9.0",
@@ -2130,7 +2130,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231664,
+        "updated": 1791404402,
         "status": ""
       }
     },
@@ -2164,7 +2164,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
         "oerSnapshotTitle": "Product design",
         "version": "0.9.0",
@@ -2175,7 +2175,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231665,
+        "updated": 1791404403,
         "status": ""
       }
     },
@@ -2209,7 +2209,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-50b4ae5c-4f84-43f3-9987-efb6b3428542",
         "oerSnapshotTitle": "Production management",
         "version": "0.9.0",
@@ -2220,7 +2220,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231666,
+        "updated": 1791404404,
         "status": ""
       }
     },
@@ -2258,7 +2258,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-5dabc762-d17b-4d08-80ac-3dae0557d0cb",
         "oerSnapshotTitle": "Short Film and VFX Pathway",
         "version": "0.9.0",
@@ -2269,7 +2269,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231666,
+        "updated": 1791404404,
         "status": ""
       }
     },
@@ -2307,7 +2307,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
         "oerSnapshotTitle": "Short Film Pathway",
         "version": "0.9.0",
@@ -2318,7 +2318,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231667,
+        "updated": 1791404405,
         "status": ""
       }
     },
@@ -2352,7 +2352,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
         "oerSnapshotTitle": "Visual Effects (VFX)",
         "version": "0.9.0",
@@ -2363,7 +2363,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231667,
+        "updated": 1791404406,
         "status": ""
       }
     },
@@ -2405,7 +2405,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171",
         "oerSnapshotTitle": "Animated textures",
         "version": "0.9.0",
@@ -2416,7 +2416,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231668,
+        "updated": 1791404407,
         "status": ""
       }
     },
@@ -2464,7 +2464,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7",
         "oerSnapshotTitle": "Modeling the Airline Chair",
         "version": "0.9.0",
@@ -2475,7 +2475,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231669,
+        "updated": 1791404407,
         "status": ""
       }
     },
@@ -2509,7 +2509,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
         "oerSnapshotTitle": "Modeling a room",
         "version": "0.9.0",
@@ -2520,7 +2520,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231669,
+        "updated": 1791404408,
         "status": ""
       }
     },
@@ -2568,7 +2568,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-1ac14915-a348-47d3-9ecc-a88e800d4bb9",
         "oerSnapshotTitle": "Texturing the Airline Chair",
         "version": "0.9.0",
@@ -2579,7 +2579,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231670,
+        "updated": 1791404409,
         "status": ""
       }
     },
@@ -2613,7 +2613,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-d069ea51-73ec-4db0-b27a-612dbfd77bcf",
         "oerSnapshotTitle": "Texturing a room",
         "version": "0.9.0",
@@ -2624,7 +2624,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231670,
+        "updated": 1791404409,
         "status": ""
       }
     },
@@ -2678,7 +2678,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
         "oerSnapshotTitle": "Lighting and Rendering the Airline Chair",
         "version": "0.9.0",
@@ -2689,7 +2689,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231671,
+        "updated": 1791404410,
         "status": ""
       }
     },
@@ -2723,7 +2723,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129",
         "oerSnapshotTitle": "Rendering a room",
         "version": "0.9.0",
@@ -2734,7 +2734,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231672,
+        "updated": 1791404411,
         "status": ""
       }
     },
@@ -2767,7 +2767,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
         "oerSnapshotTitle": "Modeling a Low Poly Animal and Introduction to Particles",
         "version": "0.9.0",
@@ -2778,7 +2778,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231672,
+        "updated": 1791404412,
         "status": ""
       }
     },
@@ -2812,7 +2812,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
         "oerSnapshotTitle": "Low poly non-photorealistic rendering",
         "version": "0.9.0",
@@ -2823,7 +2823,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231673,
+        "updated": 1791404412,
         "status": ""
       }
     },
@@ -2857,7 +2857,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-b57b43a9-5427-445c-affe-80ce46848788",
         "oerSnapshotTitle": "Modeling random objects",
         "version": "0.9.0",
@@ -2868,7 +2868,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231673,
+        "updated": 1791404413,
         "status": ""
       }
     },
@@ -2902,7 +2902,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
         "oerSnapshotTitle": "Modeling and sculpting a sea creature",
         "version": "0.9.0",
@@ -2913,7 +2913,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231674,
+        "updated": 1791404414,
         "status": ""
       }
     },
@@ -2947,7 +2947,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-a203e95e-0ddd-43af-9519-ee3df76a5b2d",
         "oerSnapshotTitle": "Texturing random objects",
         "version": "0.9.0",
@@ -2958,7 +2958,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231675,
+        "updated": 1791404414,
         "status": ""
       }
     },
@@ -2992,7 +2992,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
         "oerSnapshotTitle": "Sculpting, retopo, and texturing",
         "version": "0.9.0",
@@ -3003,7 +3003,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791231675,
+        "updated": 1791404415,
         "status": ""
       }
     },
@@ -3018,7 +3018,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -3033,7 +3033,7 @@
         "created": 1791229659,
         "images": [],
         "videos": [],
-        "updated": 1791231676
+        "updated": 1791404416
       }
     },
     {
@@ -7257,7 +7257,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -7279,7 +7279,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231770
+        "updated": 1791404416
       }
     },
     {
@@ -7293,7 +7293,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791231771,
+        "updated": 1791404417,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -7304,7 +7304,7 @@
         "locked": false,
         "readtime": 1,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -7369,10 +7369,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386164,
+        "updated": 1791404418,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -7430,7 +7430,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-d20b5a98-dc5e-4ce8-b734-32490288d27c",
         "oerSnapshotTitle": "History of CGI",
         "version": "0.9.0",
@@ -7441,7 +7441,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386165,
+        "updated": 1791404419,
         "status": ""
       }
     },
@@ -7473,10 +7473,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231773,
+        "updated": 1791404419,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -7543,10 +7543,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386166,
+        "updated": 1791404420,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -7610,10 +7610,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231774,
+        "updated": 1791404421,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -7645,10 +7645,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231774,
+        "updated": 1791404421,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -7672,10 +7672,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231775,
+        "updated": 1791404422,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -7699,10 +7699,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231776,
+        "updated": 1791404423,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board"
+        "icon": ""
       }
     },
     {
@@ -7746,7 +7746,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-d05396b9-88a6-4631-821f-40a2e9bd2d4f",
         "oerSnapshotTitle": "3D Modeling Fundamentals",
         "version": "0.9.0",
@@ -7757,7 +7757,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386166,
+        "updated": 1791404423,
         "status": ""
       }
     },
@@ -7799,7 +7799,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-e2c4dbd6-350a-4e34-9e66-f1d6026571f4",
         "oerSnapshotTitle": "Texturing and UV Mapping",
         "version": "0.9.0",
@@ -7810,7 +7810,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386167,
+        "updated": 1791404424,
         "status": ""
       }
     },
@@ -7852,7 +7852,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-be3a3daf-59d9-4b45-a628-61dc6e2f6f95",
         "oerSnapshotTitle": "Lighting Principles",
         "version": "0.9.0",
@@ -7863,7 +7863,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386168,
+        "updated": 1791404425,
         "status": ""
       }
     },
@@ -7904,7 +7904,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-c7f6d04b-618f-4ec9-beb9-bb7d27bbed41",
         "oerSnapshotTitle": "Camera and Composition",
         "version": "0.9.0",
@@ -7915,7 +7915,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386168,
+        "updated": 1791404426,
         "status": ""
       }
     },
@@ -7957,7 +7957,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-685e56cc-c545-4d08-81c8-c724fe5cc33d",
         "oerSnapshotTitle": "Rendering Techniques",
         "version": "0.9.0",
@@ -7968,7 +7968,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386169,
+        "updated": 1791404426,
         "status": ""
       }
     },
@@ -8011,7 +8011,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-3c14822b-53dd-4a66-aac7-f8ec740bbea5",
         "oerSnapshotTitle": "Real-time Engines",
         "version": "0.9.0",
@@ -8022,7 +8022,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386170,
+        "updated": 1791404427,
         "status": ""
       }
     },
@@ -8064,7 +8064,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-c9cb258f-d7f0-4668-a301-fff71e07b1d0",
         "oerSnapshotTitle": "Environment Design for Real-time",
         "version": "0.9.0",
@@ -8075,7 +8075,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386171,
+        "updated": 1791404428,
         "status": ""
       }
     },
@@ -8117,7 +8117,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-d22274ef-a811-4445-b5fa-132e70eab0f2",
         "oerSnapshotTitle": "Drawing for 3D Design",
         "version": "0.9.0",
@@ -8128,7 +8128,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386171,
+        "updated": 1791404428,
         "status": ""
       }
     },
@@ -8176,7 +8176,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
         "oerSnapshotTitle": "Hard Surface Modeling",
         "version": "0.9.0",
@@ -8187,7 +8187,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386172,
+        "updated": 1791404429,
         "status": ""
       }
     },
@@ -8229,7 +8229,7 @@
             }
           ]
         },
-        "icon": "hax:lesson",
+        "icon": "",
         "oerSnapshotOf": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
         "oerSnapshotTitle": "Digital Sculpting",
         "version": "0.9.0",
@@ -8240,7 +8240,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386173,
+        "updated": 1791404430,
         "status": ""
       }
     },
@@ -8259,11 +8259,11 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791231782,
+        "updated": 1791404430,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -9643,7 +9643,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -9677,7 +9677,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231803
+        "updated": 1791404431
       }
     },
     {
@@ -9745,10 +9745,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386177,
+        "updated": 1791404432,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.1",
         "oerVersions": [
           {
@@ -9819,10 +9819,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231804,
+        "updated": 1791404433,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -9866,10 +9866,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231805,
+        "updated": 1791404433,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -9922,10 +9922,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386178,
+        "updated": 1791404434,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -9952,10 +9952,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231807,
+        "updated": 1791404435,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -9979,10 +9979,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231807,
+        "updated": 1791404435,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -10006,10 +10006,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231808,
+        "updated": 1791404436,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson"
+        "icon": ""
       }
     },
     {
@@ -10033,10 +10033,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231809,
+        "updated": 1791404437,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -10060,10 +10060,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231809,
+        "updated": 1791404438,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board"
+        "icon": ""
       }
     },
     {
@@ -10077,7 +10077,7 @@
       "description": "Lessons group lectures, tutorials and exercises around a set of learning objectives.",
       "metadata": {
         "created": 1790802191,
-        "updated": 1791231810,
+        "updated": 1791404438,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -10087,7 +10087,7 @@
         "locked": false,
         "readtime": 1,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "linkTarget": "_self"
       }
     },
@@ -10153,10 +10153,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386178,
+        "updated": 1791404439,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10231,10 +10231,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386179,
+        "updated": 1791404440,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10304,10 +10304,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386180,
+        "updated": 1791404440,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10386,10 +10386,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386180,
+        "updated": 1791404441,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10461,10 +10461,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386181,
+        "updated": 1791404442,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10535,10 +10535,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386182,
+        "updated": 1791404442,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10608,10 +10608,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386183,
+        "updated": 1791404443,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10680,10 +10680,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386183,
+        "updated": 1791404444,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10772,10 +10772,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386184,
+        "updated": 1791404445,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -10850,10 +10850,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386185,
+        "updated": 1791404445,
         "locked": false,
         "status": "",
-        "icon": "hax:lesson",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -15067,7 +15067,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -15101,7 +15101,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231843
+        "updated": 1791404446
       }
     },
     {
@@ -15140,10 +15140,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231843,
+        "updated": 1791404447,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -15196,10 +15196,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386232,
+        "updated": 1791404447,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -15273,10 +15273,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791386233,
+        "updated": 1791404448,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -15308,10 +15308,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231845,
+        "updated": 1791404449,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -15335,10 +15335,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231846,
+        "updated": 1791404450,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -15357,10 +15357,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231846,
+        "updated": 1791404450,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -15379,10 +15379,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231847,
+        "updated": 1791404451,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -15431,7 +15431,7 @@
             }
           ]
         },
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerSnapshotOf": "item-72db2076-5252-4246-af1d-685903483097",
         "oerSnapshotTitle": "Game Artist Pathway",
         "version": "0.9.0",
@@ -15442,7 +15442,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791386234,
+        "updated": 1791404452,
         "status": ""
       }
     },
@@ -15461,10 +15461,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231848,
+        "updated": 1791404452,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -16667,7 +16667,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -16693,7 +16693,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231853
+        "updated": 1791404453
       }
     },
     {
@@ -20108,10 +20108,10 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791386144,
+        "updated": 1791404454,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "oerNavIcons": false
       }
     },
@@ -20165,10 +20165,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231854,
+        "updated": 1791404455,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -20220,10 +20220,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231855,
+        "updated": 1791404455,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -20296,10 +20296,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386241,
+        "updated": 1791404456,
         "locked": false,
         "status": "",
-        "icon": "hax:bulletin-board",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -21005,10 +21005,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231857,
+        "updated": 1791404457,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -21197,7 +21197,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -21219,7 +21219,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231858
+        "updated": 1791404457
       }
     },
     {
@@ -21258,10 +21258,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231858,
+        "updated": 1791404458,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -21313,10 +21313,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231859,
+        "updated": 1791404459,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -21953,10 +21953,10 @@
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791386768,
+        "updated": 1791404460,
         "overridePathauto": false,
         "hideInMenu": false,
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "linkTarget": "_self",
         "locked": false,
         "readtime": 1
@@ -21973,7 +21973,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -22003,7 +22003,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791231861
+        "updated": 1791404460
       }
     },
     {
@@ -22042,10 +22042,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231862,
+        "updated": 1791404461,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -22117,10 +22117,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231862,
+        "updated": 1791404462,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -22831,10 +22831,10 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386273,
+        "updated": 1791404462,
         "overridePathauto": false,
         "hideInMenu": false,
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "linkTarget": "_self",
         "locked": false,
         "readtime": 8
@@ -23726,10 +23726,10 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791389331,
+        "updated": 1791404463,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "tags": ""
       }
     },
@@ -25708,10 +25708,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231913,
+        "updated": 1791404464,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -25738,7 +25738,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -25753,7 +25753,7 @@
         "created": 1791229707,
         "images": [],
         "videos": [],
-        "updated": 1791231914
+        "updated": 1791404465
       }
     },
     {
@@ -25792,10 +25792,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231914,
+        "updated": 1791404465,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -26392,10 +26392,10 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791246617,
+        "updated": 1791404466,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "overridePathauto": false,
         "hideInMenu": false,
         "linkTarget": "_self",
@@ -26535,11 +26535,11 @@
         "created": 1791246400,
         "images": [],
         "videos": [],
-        "updated": 1791246885,
+        "updated": 1791404467,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "overridePathauto": false,
         "hideInMenu": false,
         "linkTarget": "_self",
@@ -27608,11 +27608,11 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791231932,
+        "updated": 1791404467,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -27651,10 +27651,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231932,
+        "updated": 1791404468,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -27681,7 +27681,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -27696,7 +27696,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231933
+        "updated": 1791404469
       }
     },
     {
@@ -27736,10 +27736,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386348,
+        "updated": 1791404470,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -27858,10 +27858,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231935,
+        "updated": 1791404470,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -27912,10 +27912,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231938,
+        "updated": 1791404471,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -27942,7 +27942,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -27964,7 +27964,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231939
+        "updated": 1791404472
       }
     },
     {
@@ -28050,12 +28050,12 @@
       "description": "Each course, its bulletin entry and what's taught in it.",
       "metadata": {
         "pageType": "oer:section",
-        "icon": "oer:graduation-cap",
+        "icon": "",
         "published": true,
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791385274
+        "updated": 1791404473
       }
     },
     {
@@ -28134,10 +28134,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231936,
+        "updated": 1791404473,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -28205,10 +28205,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231936,
+        "updated": 1791404474,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -28260,10 +28260,10 @@
         "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791231937,
+        "updated": 1791404475,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -28433,10 +28433,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231940,
+        "updated": 1791404475,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -28463,7 +28463,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -28485,7 +28485,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231941
+        "updated": 1791404476
       }
     },
     {
@@ -28614,10 +28614,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231943,
+        "updated": 1791404477,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -28644,7 +28644,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -28666,7 +28666,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231944
+        "updated": 1791404478
       }
     },
     {
@@ -28849,11 +28849,11 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791385271,
+        "updated": 1791404478,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -28892,10 +28892,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231945,
+        "updated": 1791404479,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -28922,7 +28922,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -28952,7 +28952,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791231968
+        "updated": 1791404480
       }
     },
     {
@@ -29001,7 +29001,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791385271,
+        "updated": 1791404481,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -29011,7 +29011,7 @@
         "locked": false,
         "readtime": 1,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "linkTarget": "_self"
       }
     },
@@ -29052,10 +29052,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386356,
+        "updated": 1791404481,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -29102,10 +29102,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231947,
+        "updated": 1791404482,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -29157,10 +29157,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791231947,
+        "updated": 1791404483,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -29213,10 +29213,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386357,
+        "updated": 1791404483,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -29264,10 +29264,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791386358,
+        "updated": 1791404484,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives",
+        "icon": "",
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32716,7 +32716,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -32750,7 +32750,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791232001
+        "updated": 1791404485
       }
     },
     {
@@ -32768,10 +32768,10 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791385272,
+        "updated": 1791404486,
         "locked": false,
         "status": "",
-        "icon": "courseicons:learning-objectives"
+        "icon": ""
       }
     },
     {
@@ -32855,7 +32855,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -32881,7 +32881,7 @@
         "created": 1791229683,
         "images": [],
         "videos": [],
-        "updated": 1791232002
+        "updated": 1791404486
       }
     },
     {
@@ -32895,12 +32895,12 @@
       "description": "",
       "metadata": {
         "pageType": "oer:section",
-        "icon": "lrn:quiz",
+        "icon": "",
         "oerTmpKey": "",
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791385273
+        "updated": 1791404487
       }
     },
     {
@@ -32914,7 +32914,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -32929,7 +32929,7 @@
         "created": 1791229731,
         "images": [],
         "videos": [],
-        "updated": 1791232003
+        "updated": 1791404488
       }
     },
     {
@@ -32943,7 +32943,7 @@
       "description": "",
       "metadata": {
         "pageType": "oer:quiz",
-        "icon": "lrn:quiz",
+        "icon": "",
         "published": false,
         "oerTmpKey": "",
         "oerFields": {
@@ -32958,7 +32958,7 @@
         "created": 1791229754,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791404488
       }
     },
     {
