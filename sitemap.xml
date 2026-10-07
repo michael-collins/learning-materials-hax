@@ -2503,12 +2503,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/the-design-of-private-knowledge</loc>
-    <lastmod>2026-10-07T20:21:45.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/articles/oer-license-cc-by-4-0</loc>
     <lastmod>2026-10-07T15:18:24.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2965,10 +2959,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/exercises/applying-textures-to-3-unique-chess-sets</loc>
-    <lastmod>2026-10-05T20:25:51.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/applying-textures-to-3-unique-chess-sets</loc>
+    <lastmod>2026-10-07T20:21:46.000Z</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/daily-design-journal</loc>
@@ -3201,6 +3195,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/designing-time</loc>
     <lastmod>2026-10-07T20:21:44.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/the-design-of-private-knowledge</loc>
+    <lastmod>2026-10-07T20:21:45.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

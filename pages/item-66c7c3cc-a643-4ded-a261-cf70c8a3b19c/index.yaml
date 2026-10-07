@@ -1,11 +1,17 @@
 id: item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c
 indent: 1
 location: pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.yaml
-slug: exercises/applying-textures-to-3-unique-chess-sets
+slug: applying-textures-to-3-unique-chess-sets
 order: 21
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Applying Textures to 3 Unique Chess Sets
-description: ''
+description: |-
+  In this exercise, you will apply Image textures to a Chess board and pieces
+  Learning Objectives
+
+  Practice using texture images and the UV editor
+  Short introduction to material nodes
+  Practice appendin
 metadata:
   published: true
   pageType: oer:exercise
@@ -31,7 +37,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404506
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>In this exercise, you will apply Image textures to a Chess board and
   pieces</p>
@@ -58,9 +76,9 @@ content: >
   <p><strong>This week we will begin adding textures and potentially materials
   to our chess sets</strong>
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   The following videos use a texture image found freely linked on this page.
 
@@ -69,44 +87,44 @@ content: >
   href="https://freepbr.com/">https://freepbr.com/&nbsp;(Links to an external
   site.)</a>
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   <strong>The playlist videos for this week demonstrate:</strong>
 
-  &lt;br&gt;
+  <br>
 
   • How to append / combine objects to a common blender file
 
-  &lt;br&gt;
+  <br>
 
   • How to apply and manipulate textures on objects. I have included older
   videos that go over how to apply textures to some individual objects. These
   are considered additional viewing, in case they are helpful.
 
-  &lt;br&gt;
+  <br>
 
   • Blender nodes are introduced in a practical manner, to demonstrate how
   textures can be used alongside materials.
 
-  &lt;br&gt;
+  <br>
 
-  &lt;br&gt;<br>
+  <br>
 
   <strong>For this assignment,&nbsp;you will submit 9 total images.</strong>
 
-  &lt;br&gt;<br>
+  <br><br>
 
   Create three unique chess sets based on the steps in Demonstrations 1, 2 and
   tutorials.
 
-  &lt;br&gt;<br>
+  <br><br>
 
   <strong>Submit three renders of each set to both <em>Canvas</em> <em>and the
   corresponding discussion thread for review</em>.</strong>&nbsp;
 
-  &lt;br&gt;  Make sure that your assignment is titled in the following format:
+  <br>  Make sure that your assignment is titled in the following format:
 
   <strong>Last name, First name,</strong>&nbsp;the
   word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson
@@ -114,7 +132,7 @@ content: >
   "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment
   number.</strong>
 
-  &lt;br&gt;<br>
+  <br><br>
 
   <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 

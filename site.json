@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404506,
+      "updated": 1791404507,
       "version": "26.8.0"
     },
     "theme": {
@@ -29088,111 +29088,6 @@
       }
     },
     {
-      "id": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
-      "indent": 1,
-      "location": "pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.html",
-      "slug": "exercises/applying-textures-to-3-unique-chess-sets",
-      "order": 21,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Applying Textures to 3 Unique Chess Sets",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/applying-textures-to-3-unique-chess-sets",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rec0apDu2F1wTfIoq_image_ianbrill_chess_set.png",
-          "imageAlt": "ianbrill chess set.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Blue And White Water Splash: Pawel Czerwinski",
-              "url": "files/recoFF226YCX63HR5_attachment_pawel-czerwinski-oykbZuvajO0-unsplash.jpg",
-              "description": "Blue And White Water Splash: Pawel Czerwinski - https://unsplash.com/",
-              "alt": "A Texture Image: Blue And White Water Splash: Pawel Czerwinski"
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231951,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-656e93f2-644f-47ec-b6f0-160ddaf215fd",
-      "indent": 2,
-      "location": "pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.html",
-      "slug": "exercises/applying-textures-to-3-unique-chess-sets/v0-9-0",
-      "order": 1000,
-      "parent": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/rec0apDu2F1wTfIoq_image_ianbrill_chess_set.png",
-          "imageAlt": "ianbrill chess set.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Blue And White Water Splash: Pawel Czerwinski",
-              "url": "files/recoFF226YCX63HR5_attachment_pawel-czerwinski-oykbZuvajO0-unsplash.jpg",
-              "description": "Blue And White Water Splash: Pawel Czerwinski - https://unsplash.com/",
-              "alt": "A Texture Image: Blue And White Water Splash: Pawel Czerwinski"
-            }
-          ]
-        },
-        "oerSnapshotOf": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
-        "oerSnapshotTitle": "Applying Textures to 3 Unique Chess Sets",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-49f2ccad-d902-43b4-b984-b4df75bc02f8",
       "indent": 1,
       "location": "pages/item-49f2ccad-d902-43b4-b984-b4df75bc02f8/index.html",
@@ -32649,6 +32544,115 @@
         "images": [],
         "videos": [],
         "updated": 1791386371
+      }
+    },
+    {
+      "id": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
+      "indent": 1,
+      "location": "pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.html",
+      "slug": "applying-textures-to-3-unique-chess-sets",
+      "order": 21,
+      "parent": null,
+      "title": "Applying Textures to 3 Unique Chess Sets",
+      "description": "In this exercise, you will apply Image textures to a Chess board and pieces\nLearning Objectives\n\nPractice using texture images and the UV editor\nShort introduction to material nodes\nPractice appendin",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/applying-textures-to-3-unique-chess-sets",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rec0apDu2F1wTfIoq_image_ianbrill_chess_set.png",
+          "imageAlt": "ianbrill chess set.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Blue And White Water Splash: Pawel Czerwinski",
+              "url": "files/recoFF226YCX63HR5_attachment_pawel-czerwinski-oykbZuvajO0-unsplash.jpg",
+              "description": "Blue And White Water Splash: Pawel Czerwinski - https://unsplash.com/",
+              "alt": "A Texture Image: Blue And White Water Splash: Pawel Czerwinski"
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404506,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-656e93f2-644f-47ec-b6f0-160ddaf215fd",
+      "indent": 2,
+      "location": "pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.html",
+      "slug": "exercises/applying-textures-to-3-unique-chess-sets/v0-9-0",
+      "order": 1000,
+      "parent": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/rec0apDu2F1wTfIoq_image_ianbrill_chess_set.png",
+          "imageAlt": "ianbrill chess set.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Blue And White Water Splash: Pawel Czerwinski",
+              "url": "files/recoFF226YCX63HR5_attachment_pawel-czerwinski-oykbZuvajO0-unsplash.jpg",
+              "description": "Blue And White Water Splash: Pawel Czerwinski - https://unsplash.com/",
+              "alt": "A Texture Image: Blue And White Water Splash: Pawel Czerwinski"
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
+        "oerSnapshotTitle": "Applying Textures to 3 Unique Chess Sets",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
       }
     },
     {

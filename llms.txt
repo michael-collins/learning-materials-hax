@@ -777,8 +777,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-958ccb62-7b6a-409e-99fe-48934c973e94/index.md)
 - [Animating virtual creatures](https://localhost:3000/learning-materials/pages/item-c8e30f6a-68fb-4e56-8f9f-b80dffec602c/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-08a5e62a-d5e8-4f41-86c4-2e9fb7347458/index.md)
-- [Applying Textures to 3 Unique Chess Sets](https://localhost:3000/learning-materials/pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.md)
-- [v0.9.0](https://localhost:3000/learning-materials/pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.md)
 - [Daily Design Journal](https://localhost:3000/learning-materials/pages/item-49f2ccad-d902-43b4-b984-b4df75bc02f8/index.md)
 - [Daily Design Journal](https://localhost:3000/learning-materials/pages/item-5bc22eb2-f467-4292-a344-11e4e4598f90/index.md)
 - [Pathway design activity](https://localhost:3000/learning-materials/pages/item-4b521d06-505c-4b00-b2e7-2ee1c2f7a806/index.md)
@@ -852,6 +850,8 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Laser cutting quiz](https://localhost:3000/learning-materials/pages/item-9be5b661-faea-45de-a5d7-75725ac645c8/index.md): Self-check questions on laser cutting.
 - [3D printing quiz](https://localhost:3000/learning-materials/pages/item-ab1c8916-1374-44a6-8872-b62dcea82770/index.md): Self-check questions on 3D printing.
 - [CNC routing quiz](https://localhost:3000/learning-materials/pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.md): Self-check questions on CNC routing.
+- [Applying Textures to 3 Unique Chess Sets](https://localhost:3000/learning-materials/pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.md): In this exercise, you will apply Image textures to a Chess board and pieces Learning Objectives Practice using texture images and the UV editor Short introduction to material nodes Practice appendin
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.md)
 - [What Design and Truth Say about Each Other](https://localhost:3000/learning-materials/pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.md): What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt In this chapter, Grudin talks about the transition of design from close dialogue with natural systems
 - [Design as Tragedy: The Rise and Fall of the Twin Towers](https://localhost:3000/learning-materials/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md): Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may
 - [Edsel's Law: How Bad Design Happens](https://localhost:3000/learning-materials/pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.md): Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin describes the Edsel scale for measuring the quality of a design: Photograph an objec
