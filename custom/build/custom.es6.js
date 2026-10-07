@@ -12165,30 +12165,32 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
       .group {
         scroll-margin-top: calc(var(--topbar-height, 3.5rem) + 1.25rem);
       }
-      /* the group being paged: outlined (drawn outside its box, so nothing
-         moves) until another group is paged; a tint marks the moment of
-         paging and fades. Two identical fades alternate so each page
-         change starts it again. */
+      /* the group being paged: outlined and tinted (drawn outside its box,
+         so nothing moves), both fading after a moment. Two identical fades
+         alternate so each page change starts it again. With reduced motion
+         nothing fades: the outline stays until another group is paged. */
       .group.current {
         border-radius: var(--radius-lg, 0.75rem);
         outline: 2px solid var(--primary, #0071b6);
         outline-offset: 0.625rem;
       }
       .group.current.flash-0 {
-        animation: oer-paged-0 2s ease-out forwards;
+        animation: oer-paged-0 2.5s ease-out forwards;
       }
       .group.current.flash-1 {
-        animation: oer-paged-1 2s ease-out forwards;
+        animation: oer-paged-1 2.5s ease-out forwards;
       }
       @keyframes oer-paged-0 {
         0%,
         30% {
           background: color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
           box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+          outline-color: var(--primary, #0071b6);
         }
         100% {
           background: transparent;
           box-shadow: 0 0 0 0.625rem transparent;
+          outline-color: transparent;
         }
       }
       @keyframes oer-paged-1 {
@@ -12196,10 +12198,12 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         30% {
           background: color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
           box-shadow: 0 0 0 0.625rem color-mix(in srgb, var(--primary, #0071b6) 8%, transparent);
+          outline-color: var(--primary, #0071b6);
         }
         100% {
           background: transparent;
           box-shadow: 0 0 0 0.625rem transparent;
+          outline-color: transparent;
         }
       }
       @media (prefers-reduced-motion: reduce) {
