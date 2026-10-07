@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404495,
+      "updated": 1791404496,
       "version": "26.8.0"
     },
     "theme": {
@@ -22912,42 +22912,6 @@
       }
     },
     {
-      "id": "item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb",
-      "indent": 1,
-      "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.html",
-      "slug": "articles/edsel-s-law-how-bad-design-happens",
-      "order": 30,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Edsel's Law: How Bad Design Happens",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-2-readings-chapter-5-edsels-law-how-bad-design-happens",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386277
-      }
-    },
-    {
       "id": "item-025f599c-65f1-41d7-9bdd-10778199ea2f",
       "indent": 1,
       "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.html",
@@ -33121,6 +33085,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404495,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb",
+      "indent": 1,
+      "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.html",
+      "slug": "edsel-s-law-how-bad-design-happens",
+      "order": 30,
+      "parent": null,
+      "title": "Edsel's Law: How Bad Design Happens",
+      "description": "Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin describes the Edsel scale for measuring the quality of a design:\n\nPhotograph an objec",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-2-readings-chapter-5-edsels-law-how-bad-design-happens",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404496,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,

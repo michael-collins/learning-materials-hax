@@ -2,11 +2,11 @@
   "id": "item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb",
   "indent": 1,
   "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.json",
-  "slug": "articles/edsel-s-law-how-bad-design-happens",
+  "slug": "edsel-s-law-how-bad-design-happens",
   "order": 30,
-  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "parent": null,
   "title": "Edsel's Law: How Bad Design Happens",
-  "description": "",
+  "description": "Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin describes the Edsel scale for measuring the quality of a design:\n\nPhotograph an objec",
   "metadata": {
     "published": true,
     "pageType": "oer:article",
@@ -21,14 +21,21 @@
       ],
       "date": "2026-03-01",
       "courses": [
-        "DMD 100"
+        {
+          "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0"
     },
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791404496,
+    "overridePathauto": false,
+    "hideInMenu": false,
+    "locked": false,
+    "readtime": 1
   },
-  "content": "<p>Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert Grudin</p>\n<h2>Prompt</h2>\n<p>In this chapter, Grudin describes the Edsel scale for measuring the quality of a design:</p>\n<ol>\n<li>Photograph an object not mentioned in the book that would earn <strong>low negative</strong> points. Write a detailed description of why you've allotted the object's points.</li>\n<li>Photograph an object not mentioned in the book that would earn <strong>high positive</strong> points. Write a description of why this would receive high positive points.</li>\n</ol>\n<p>Please keep in mind, the Edsel scale is not intuitive. Please make sure you fully understand how it works before proceeding. Post these examples and descriptions in this discussion board for conversation.</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p>&lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" target=\"_blank\" rel=\"license\"&gt;\n&lt;img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\" style=\"border-width:0; max-width:170px;\" /&gt;\n&lt;/a&gt;\n&lt;br /&gt;\nPlease see the &lt;a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" target=\"_blank\" rel=\"license\"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI usage information.</p>\n"
+  "content": "<p>Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert Grudin</p>\n<h2>Prompt</h2>\n<p>In this chapter, Grudin describes the Edsel scale for measuring the quality of a design:</p>\n<ol>\n<li>Photograph an object not mentioned in the book that would earn <strong>low negative</strong> points. Write a detailed description of why you've allotted the object's points.</li>\n<li>Photograph an object not mentioned in the book that would earn <strong>high positive</strong> points. Write a description of why this would receive high positive points.</li>\n</ol>\n<p>Please keep in mind, the Edsel scale is not intuitive. Please make sure you fully understand how it works before proceeding. Post these examples and descriptions in this discussion board for conversation.</p>\n<h2>Writing guidelines</h2>\n<ol>\n<li>Length: (150-300 words)</li>\n<li>Reference the chapter content whenever possible</li>\n<li>Cite sources where applicable.</li>\n<li>Check for spelling and grammar.</li>\n<li>Avoid generalizing language. Choose clear and concise wording.</li>\n</ol>\n<h2>AI Policy</h2>\n<p>This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.</p>\n<p><a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" title=\"AIUL AIUL-NA-WR License: Not Allowed for Writing\" rel=\"license\">\n<img alt=\"AIUL-NA-WR - Not Allowed for Writing\" src=\"https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png\">\n</a>\n<br>\nPlease see the <a href=\"https://dmd-program.github.io/aiul/combinations/na-wr.html\" rel=\"license\">AI Usage License AIUL-NA-WR</a> for AI usage information.</p>\n"
 }

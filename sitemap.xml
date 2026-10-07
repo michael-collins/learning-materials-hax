@@ -2341,16 +2341,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/design-as-tragedy-the-rise-and-fall-of-the-twin-towers</loc>
-    <lastmod>2026-10-07T20:21:35.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/edsel-s-law-how-bad-design-happens</loc>
+    <lastmod>2026-10-07T20:21:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/articles/edsel-s-law-how-bad-design-happens</loc>
-    <lastmod>2026-10-07T15:17:57.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/designs-of-darkness</loc>
@@ -3201,6 +3195,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/what-design-and-truth-say-about-each-other</loc>
     <lastmod>2026-10-07T20:21:34.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/design-as-tragedy-the-rise-and-fall-of-the-twin-towers</loc>
+    <lastmod>2026-10-07T20:21:35.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
