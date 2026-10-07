@@ -3,7 +3,7 @@
  * sidebar and site chrome, sets the chapter in a comfortable column, and
  * shows this bar instead of the top bar: Exit, the book and where you are
  * in it, Contents (the book's outline) and Text (size, typeface, line
- * width, line spacing, page colour). Each chapter is still a real page, so
+ * width, line spacing, page: light, paper or dark). Each chapter is still a real page, so
  * links, Back, footnotes and quizzes work as usual.
  *
  *   <oer-reader-bar .book=${item} .position=${{ index, total }} .prev=${item} .next=${item}
@@ -30,9 +30,24 @@ const FONTS = {
 const SERIF_CSS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap";
 const KEY = "oer-reader-settings";
 
+// the Paper page: soft, even cloudiness and a fine grain over a warm white,
+// drawn by SVG noise (no image file). Faint enough that text keeps AA
+// contrast on its darkest pixel (text 10.6:1, muted 5.0:1, links 6.1:1)
+const PAPER_SVG =
+  "<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'>" +
+  "<filter id='m' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.016' numOctaves='3' seed='11' stitchTiles='stitch'/>" +
+  "<feColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.37 0 0 0 0 0.25 0.2 0 0 0 -0.075'/></filter>" +
+  "<filter id='g' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='5' stitchTiles='stitch'/>" +
+  "<feColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.3 0 0 0 0 0.2 0.34 0 0 0 -0.115'/></filter>" +
+  "<rect width='100%' height='100%' filter='url(#m)'/><rect width='100%' height='100%' filter='url(#g)'/></svg>";
+export const PAPER_TEXTURE = `url("data:image/svg+xml,${encodeURIComponent(PAPER_SVG)}")`;
+
 export function loadReaderSettings() {
   try {
-    return { ...READER_DEFAULTS, ...JSON.parse(globalThis.localStorage.getItem(KEY) || "{}") };
+    const saved = { ...READER_DEFAULTS, ...JSON.parse(globalThis.localStorage.getItem(KEY) || "{}") };
+    // Sepia became Paper
+    if (saved.colour === "sepia") saved.colour = "paper";
+    return saved;
   } catch {
     return { ...READER_DEFAULTS };
   }
@@ -57,6 +72,7 @@ export function readerVars(s) {
     "--reader-measure": WIDTHS[s.width] || WIDTHS.medium,
     "--reader-leading": String(SPACINGS[s.spacing] || SPACINGS.normal),
     "--reader-font": FONTS[s.font] || FONTS.serif,
+    "--reader-texture": s.colour === "paper" ? PAPER_TEXTURE : "",
   };
 }
 
@@ -201,7 +217,7 @@ class OerReaderBar extends LitElement {
             ])}
             ${this._seg("Page", "colour", [
               ["light", "Light", "c-light"],
-              ["sepia", "Sepia", "c-sepia"],
+              ["paper", "Paper", "c-paper"],
               ["dark", "Dark", "c-dark"],
             ])}
             <p class="hint">Turn pages with <kbd>←</kbd> and <kbd>→</kbd>. Settings are remembered on this device.</p>
@@ -229,7 +245,8 @@ class OerReaderBar extends LitElement {
         height: var(--topbar-height, 3.5rem);
         padding: 0 1rem;
         border-bottom: 1px solid var(--border);
-        background: var(--background);
+        background-color: var(--background);
+        background-image: var(--reader-texture, none);
       }
       /* the tools either side take equal room, so the book stays centred */
       .tools {
@@ -414,22 +431,22 @@ class OerReaderBar extends LitElement {
         background: #fff;
         color: #1f2328;
       }
-      .seg .c-sepia {
-        background: #f5ecdc;
-        color: #3d2f1f;
+      .seg .c-paper {
+        background: #f8f5ec ${unsafeCSS(PAPER_TEXTURE)};
+        color: #2f2a22;
       }
       .seg .c-dark {
         background: #16181d;
         color: #e8e6e3;
       }
       .seg .c-light,
-      .seg .c-sepia,
+      .seg .c-paper,
       .seg .c-dark {
         margin: 0 0.0625rem;
         outline: 1px solid rgb(0 0 0 / 0.08);
       }
       .seg .c-light[aria-pressed="true"],
-      .seg .c-sepia[aria-pressed="true"],
+      .seg .c-paper[aria-pressed="true"],
       .seg .c-dark[aria-pressed="true"] {
         outline: 2px solid var(--primary);
       }
