@@ -527,10 +527,6 @@ class OerPageHeader extends LitElement {
     const snapshot = isSnapshot(item);
     const latest = snapshot ? latestOf(item, this._allItems) : null;
     const version = item.metadata?.version;
-    // books: the first chapter, for "Start reading"
-    const firstChild = (this._allItems || [])
-      .filter((i) => i.parent === item.id && !i.metadata?.oerSnapshotOf && !i.metadata?.hideInMenu)
-      .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))[0];
     // Embed and Page details live in the theme's page menu
     // the version is shown in the page footer; an archived copy still says
     // so up here
@@ -560,8 +556,8 @@ class OerPageHeader extends LitElement {
           ${canView(own, this._allItems)
             ? html`<button class="edit" aria-label="Open ${item.title} in the viewer" @click="${() => outlineViewer().show(own.id)}">${lucide("oer:eye")}Viewer</button>`
             : ""}
-          ${type?.reader && firstChild
-            ? html`<a class="edit start" href="${firstChild.slug}">${lucide("hax:lesson")}Start reading</a>
+          ${type?.reader
+            ? html`<button class="edit start" @click="${() => globalThis.dispatchEvent(new CustomEvent("oer-reader"))}">${lucide("hax:lesson")}Reader mode</button>
                 <span class="menu-wrap">
                   <button class="edit" aria-haspopup="menu" aria-expanded="${!!this._exportOpen}" @click="${() => (this._exportOpen = !this._exportOpen)}">
                     ${lucide("icons:file-download")}${this._exporting ? "Exporting…" : "Export"}

@@ -94,35 +94,41 @@ export class OerInclude extends LitElement {
       :host {
         display: block;
       }
-      /* the included page reads like the page around it */
+      /* the included page reads like the page around it: ragged-right
+         (DDD justifies the theme), and in Reader mode at the reader's size
+         and spacing (--reader-*, from the theme) */
       .content {
-        font-size: var(--ddd-theme-body-font-size, 1.125rem);
-        line-height: 1.6;
+        font-size: var(--reader-size, var(--ddd-theme-body-font-size, 1.125rem));
+        line-height: var(--reader-leading, 1.6);
+        text-align: start;
       }
       .content > :first-child {
         margin-top: 0;
       }
+      .content :is(h2, h3, h4) {
+        line-height: 1.3;
+      }
       .content h2 {
         margin: 2rem 0 0.75rem;
-        font-size: 1.75rem;
+        font-size: var(--reader-h2, 1.75rem);
         font-weight: 700;
         letter-spacing: -0.02em;
         line-height: 1.25;
       }
       .content h3 {
         margin: 1.5rem 0 0.5rem;
-        font-size: 1.375rem;
+        font-size: var(--reader-h3, 1.375rem);
         font-weight: 600;
       }
       .content h4 {
         margin: 1.25rem 0 0.5rem;
-        font-size: 1.125rem;
+        font-size: var(--reader-h4, 1.125rem);
         font-weight: 600;
       }
       .content p,
       .content ul,
       .content ol {
-        margin: 0 0 1rem;
+        margin: 0 0 var(--reader-gap, 1rem);
       }
       .content li {
         margin: 0.25rem 0;
@@ -140,7 +146,7 @@ export class OerInclude extends LitElement {
         width: 100%;
         border-collapse: collapse;
         margin: 0 0 1rem;
-        font-size: 0.9375rem;
+        font-size: var(--reader-table, 0.9375rem);
       }
       .content th,
       .content td {
@@ -161,7 +167,7 @@ export class OerInclude extends LitElement {
         color: var(--muted-foreground);
       }
       .source {
-        display: flex;
+        display: var(--oer-include-source, flex);
         flex-wrap: wrap;
         gap: 0.375rem;
         align-items: center;

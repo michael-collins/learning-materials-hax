@@ -78,6 +78,8 @@ class OerPageFooter extends LitElement {
 
   static get properties() {
     return {
+      // Reader mode: only the licence line
+      compact: { type: Boolean, reflect: true },
       _item: { state: true },
       _aiul: { state: true },
       _aiulOpen: { state: true },
@@ -540,6 +542,9 @@ class OerPageFooter extends LitElement {
         font-size: 0.8125rem;
         line-height: 1.6;
         color: var(--muted-foreground);
+      }
+      :host([compact]) :is(.actions, .panel, dl) {
+        display: none;
       }
       :host([hidden]) {
         display: none;

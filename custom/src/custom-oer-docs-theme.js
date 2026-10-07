@@ -61,6 +61,7 @@ import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 import { installFootnotes } from "./ui/footnotes.js";
 import { followPermalink } from "./ui/permalinks.js";
 import { openViewerFromUrl } from "./ui/oer-outline-viewer.js";
+import { loadReaderSettings, saveReaderSettings, readerVars } from "./ui/oer-reader.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -83,6 +84,7 @@ const icon = {
   search: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   sun: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></svg>`,
   moon: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+  bookOpen: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>`,
   // editor/admin controls reuse the generated Lucide set
   undo: lucide("icons:undo"),
   redo: lucide("icons:redo"),
@@ -140,6 +142,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _userMenuOpen: { state: true },
       _book: { state: true },
       _bookFilter: { state: true },
+      // Reader mode (ui/oer-reader.js): a quieter layout for reading a book
+      reader: { type: Boolean, reflect: true },
+      readerColour: { type: String, reflect: true, attribute: "reader-colour" },
+      _readerSettings: { state: true },
+      _readerPos: { state: true },
       embed: { type: Boolean, reflect: true },
       hideHeader: { type: Boolean, reflect: true, attribute: "hide-header" },
       hideTitle: { type: Boolean, reflect: true, attribute: "hide-title" },
@@ -158,6 +165,18 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__keyHandler = this._onKeydown.bind(this);
     this._loggedIn = false;
     this._pageMenuOpen = false;
+    this.reader = false;
+    this.readerColour = "";
+    this._readerSettings = loadReaderSettings();
+    this._readerPos = null;
+    // reading a book in Reader mode lasts the visit: following a link out of
+    // the book shows the site as usual, and coming back resumes it
+    try {
+      this.__readerBook = globalThis.sessionStorage.getItem("oer-reader-book") || "";
+    } catch {
+      this.__readerBook = "";
+    }
+    this.__onReader = () => this._enterReader();
     // ?embed=1: chrome-less page for LMS iframes; decided once, so following
     // links inside the frame stays embedded
     const params = new URLSearchParams(globalThis.location.search);
@@ -313,6 +332,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           this.mobileOpen = false;
           if (book?.id !== this._book?.id) this._bookFilter = "";
           this._book = book;
+          this._readerPos = book ? { index: Math.max(0, idx), total: items.length } : null;
+          this.reader = !!book && !this.embed && !this.editMode && book.id === this.__readerBook;
           this._followVersionParam(active);
           this._prev = idx > 0 ? stop(items[idx - 1]) : null;
           this._next = idx >= 0 && idx < items.length - 1 ? stop(items[idx + 1]) : null;
@@ -334,6 +355,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
+    globalThis.addEventListener("oer-reader", this.__onReader);
     this.__bodyObserver.observe(globalThis.document.body, { childList: true });
     this._watchEditorBar();
     // fonts can't be @import-ed from constructable stylesheets
@@ -397,6 +419,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__bodyObserver.disconnect();
     globalThis.removeEventListener("keydown", this.__keyHandler);
     globalThis.removeEventListener("pointerdown", this.__outsideMenu);
+    globalThis.removeEventListener("oer-reader", this.__onReader);
     super.disconnectedCallback();
   }
 
@@ -427,6 +450,42 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         :is(custom-oer-docs-theme, .oer-reading) {
           line-height: 1.7;
+        }
+        /* Reader mode: the page's text in the reader's type (DDD sizes p, li
+           and headings itself); headings, tables and code scale with it */
+        custom-oer-docs-theme[reader] :is(p, li, dd, dt, blockquote) {
+          font-family: inherit;
+          font-size: inherit;
+          line-height: inherit;
+        }
+        custom-oer-docs-theme[reader] :is(h2, h3, h4, h5, h6) {
+          font-family: inherit;
+          line-height: 1.3;
+        }
+        custom-oer-docs-theme[reader] h2 {
+          font-size: 1.5em;
+        }
+        custom-oer-docs-theme[reader] h3 {
+          font-size: 1.25em;
+        }
+        custom-oer-docs-theme[reader] :is(h4, h5, h6) {
+          font-size: 1.05em;
+        }
+        custom-oer-docs-theme[reader] .lead {
+          font-size: 1.1em;
+        }
+        custom-oer-docs-theme[reader] table {
+          font-size: 0.85em;
+        }
+        custom-oer-docs-theme[reader] pre {
+          font-size: 0.8em;
+        }
+        custom-oer-docs-theme[reader] :is(figcaption, .footnotes) {
+          font-size: 0.8em;
+        }
+        /* HAX's editor bar would sit above the reader; editing leaves Reader mode */
+        body:has(custom-oer-docs-theme[reader]) haxcms-site-editor-ui {
+          display: none;
         }
         :is(custom-oer-docs-theme, .oer-reading) :is(p, li) {
           text-align: start;
@@ -1401,6 +1460,14 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             scrollbar-width: thin;
             scrollbar-color: var(--border) transparent;
           }
+          :host([reader]) .main-col {
+            height: 100vh;
+            height: 100dvh;
+          }
+          oer-reader-bar {
+            position: relative;
+            top: 0;
+          }
         }
 
         /* mobile: sidebar becomes an overlay drawer */
@@ -1435,6 +1502,142 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           site-active-title h1 {
             font-size: 1.75rem;
           }
+        }
+
+        /* sidebar footer: the account menu, then the light/dark switch */
+        .footer-row {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 0.25rem;
+        }
+        .footer-row .user-wrap {
+          flex: 1;
+          min-width: 0;
+        }
+        .theme-toggle {
+          flex: none;
+        }
+        .reader-btn {
+          flex: none;
+        }
+        @media (max-width: 479px) {
+          .reader-btn {
+            padding: 0 0.5rem;
+          }
+          .reader-label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+          }
+        }
+
+        /* Reader mode (ui/oer-reader.js): no sidebar or site chrome, the
+           page in one column set in the reader's type, at their size, line
+           width and spacing (--reader-*, set on the host), on their page
+           colour. Light and dark resolve the site's tokens in that scheme;
+           dark and sepia have their own palettes (sepia AA: text 11.5:1, muted
+           6.2:1, links 6.7:1) */
+        :host([reader]) {
+          background: var(--background);
+          /* for blocks with their own type styles (oer-include) */
+          --reader-h2: 1.5em;
+          --reader-h3: 1.25em;
+          --reader-h4: 1.05em;
+          --reader-gap: 1em;
+          --reader-table: 0.85em;
+          --oer-include-source: none;
+        }
+        :host([reader]) .shell,
+        :host([reader][collapsed]) .shell {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        :host([reader]) .sidebar,
+        :host([reader]) .scrim,
+        :host([reader]) oer-page-header {
+          display: none;
+        }
+        :host([reader]) .main-col {
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+          background: var(--background);
+        }
+        :host([reader]) main {
+          padding-top: 3rem;
+          padding-bottom: 5rem;
+        }
+        :host([reader]) article {
+          max-width: var(--reader-measure, 68ch);
+          font-family: var(--reader-font, var(--font-sans));
+          font-size: var(--reader-size, 19px);
+          line-height: var(--reader-leading, 1.7);
+        }
+        :host([reader]) :is(.pager, oer-page-footer) {
+          font-family: var(--font-sans);
+          line-height: 1.5;
+        }
+        :host([reader]) site-active-title h1 {
+          font-family: var(--reader-font, var(--font-sans));
+          font-size: 1.85em;
+          letter-spacing: -0.01em;
+        }
+        oer-reader-bar {
+          position: sticky;
+          top: var(--editor-bar-height, 0px);
+        }
+        @media (max-width: 767px) {
+          :host([reader]) main {
+            padding-top: 2rem;
+          }
+          :host([reader]) site-active-title h1 {
+            font-size: 1.5em;
+          }
+        }
+        :host([reader-colour="light"]) {
+          color-scheme: only light;
+        }
+        /* a softer dark than the site's black, easier over long reading
+           (AA: text 13.6:1, muted 7.4:1, links 8.2:1) */
+        :host([reader-colour="dark"]) {
+          color-scheme: only dark;
+          --background: #16181d;
+          --foreground: #e3e1dc;
+          --card: #1d2026;
+          --card-foreground: #e3e1dc;
+          --popover: #1d2026;
+          --popover-foreground: #e3e1dc;
+          --muted: #23262d;
+          --muted-foreground: #a3a7ae;
+          --accent: #262a31;
+          --accent-foreground: #e3e1dc;
+          --border: #30343c;
+          --input-border: #6b717b;
+          --primary: #7cb4f0;
+          --primary-foreground: #0b1a2b;
+          --link: #7cb4f0;
+          --ring: #5b8fd0;
+        }
+        :host([reader-colour="sepia"]) {
+          color-scheme: only light;
+          --background: #f6efe1;
+          --foreground: #3a2e20;
+          --card: #efe6d3;
+          --card-foreground: #3a2e20;
+          --popover: #fbf7ee;
+          --popover-foreground: #3a2e20;
+          --muted: #ebe1cc;
+          --muted-foreground: #675642;
+          --accent: #ebe1cc;
+          --accent-foreground: #3a2e20;
+          --border: #d9c9ab;
+          --input-border: #8f7a5c;
+          --primary: #7a4a1c;
+          --primary-foreground: #ffffff;
+          --link: #0f5596;
+          --ring: #9a6a36;
         }
 
         /* embed mode (?embed=1): only the page itself */
@@ -1490,7 +1693,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         class="sidebar"
         aria-label="Site navigation"
         part="sidebar"
-        ?inert="${!drawerOpen || this.editMode}"
+        ?inert="${!drawerOpen || this.editMode || this.reader}"
       >
         <div class="sidebar-header">
           <a class="brand" href="${store.homeLink || "./"}">
@@ -1530,25 +1733,48 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`
           : ""}
-        ${this._loggedIn
-          ? html`<div class="sidebar-footer">${this.renderUser()}</div>`
-          : ""}
+        <div class="sidebar-footer">
+          <div class="footer-row">
+            ${this._loggedIn ? this.renderUser() : ""}
+            <button
+              class="icon-btn theme-toggle"
+              @click="${this.toggleDark}"
+              aria-label="Dark mode"
+              title="${this.dark ? "Switch to light mode" : "Switch to dark mode"}"
+              aria-pressed="${this.dark}"
+            >
+              ${this.dark ? icon.sun : icon.moon}
+            </button>
+          </div>
+        </div>
       </aside>
       <div class="scrim" role="presentation" @click="${this._closeMobile}"></div>
 
       <div class="main-col">
-        ${this.editMode ? this.renderEditorHeader(drawerOpen) : this.renderTopbar(drawerOpen)}
+        ${this.editMode
+          ? this.renderEditorHeader(drawerOpen)
+          : this.reader
+            ? html`<oer-reader-bar
+                .book="${this._book}"
+                .position="${this._readerPos}"
+                .prev="${this._prev}"
+                .next="${this._next}"
+                .settings="${this._effectiveReaderSettings()}"
+                @reader-exit="${() => this._exitReader()}"
+                @reader-settings="${(e) => this._setReaderSettings(e.detail)}"
+              ></oer-reader-bar>`
+            : this.renderTopbar(drawerOpen)}
 
         <main id="main">
           <article id="contentcontainer">
             ${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
             <div class="page-header">
               <site-active-title part="page-title"></site-active-title>
-              ${!this.editMode && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
+              ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
             </div>
             <oer-page-header></oer-page-header>
             <section id="slot"><slot></slot></section>
-            ${this.editMode ? "" : html`<oer-page-footer></oer-page-footer>`}
+            ${this.editMode ? "" : html`<oer-page-footer ?compact="${this.reader}"></oer-page-footer>`}
             <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
               ${this._prev
                 ? html`<a class="pager-link prev" href="${this._prev.slug}">
@@ -1591,14 +1817,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           <site-search></site-search>
         </site-modal>
         ${this._loggedIn ? html`<oer-command-search></oer-command-search>` : ""}
-        <button
-          class="icon-btn"
-          @click="${this.toggleDark}"
-          title="${this.dark ? "Switch to light mode" : "Switch to dark mode"}"
-          aria-pressed="${this.dark}"
-        >
-          ${this.dark ? icon.sun : icon.moon}
-        </button>
+        ${this._book
+          ? html`<button class="btn btn-outline reader-btn" @click="${() => this._enterReader()}" title="Read this book in Reader mode">
+              ${icon.bookOpen}<span class="reader-label">Reader</span>
+            </button>`
+          : ""}
       </header>
     `;
   }
@@ -1851,6 +2074,59 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     store.darkMode = !store.darkMode;
   }
 
+  // Reader mode: for the book being read, until Exit
+  _enterReader() {
+    if (!this._book || this.editMode || this.embed) return;
+    this.__readerBook = this._book.id;
+    try {
+      globalThis.sessionStorage.setItem("oer-reader-book", this._book.id);
+    } catch {
+      // without storage it lasts until the page reloads
+    }
+    this.reader = true;
+    // the button pressed is gone with the top bar: Exit takes its place
+    this.updateComplete.then(() => this.shadowRoot.querySelector("oer-reader-bar")?.updateComplete).then(() => {
+      this.shadowRoot.querySelector("oer-reader-bar")?.shadowRoot?.querySelector(".exit")?.focus();
+    });
+  }
+
+  _exitReader() {
+    this.__readerBook = "";
+    try {
+      globalThis.sessionStorage.removeItem("oer-reader-book");
+    } catch {
+      // nothing stored
+    }
+    const wasReading = this.reader;
+    this.reader = false;
+    if (wasReading) this.updateComplete.then(() => this.shadowRoot.querySelector(".reader-btn")?.focus());
+  }
+
+  // a page colour not chosen yet follows the site's light or dark mode
+  _effectiveReaderSettings() {
+    const s = this._readerSettings;
+    return { ...s, colour: s.colour || (this.dark ? "dark" : "light") };
+  }
+
+  _setReaderSettings(settings) {
+    this._readerSettings = settings;
+    saveReaderSettings(settings);
+  }
+
+  updated(changed) {
+    super.updated?.(changed);
+    // editing a page leaves Reader mode (it comes back on the next visit to the book)
+    if (changed.has("editMode") && this.editMode && this.reader) this.reader = false;
+    if (changed.has("reader") || changed.has("_readerSettings") || changed.has("dark")) {
+      const vars = this.reader ? readerVars(this._readerSettings) : {};
+      for (const name of ["--reader-size", "--reader-measure", "--reader-leading", "--reader-font"]) {
+        if (vars[name]) this.style.setProperty(name, vars[name]);
+        else this.style.removeProperty(name);
+      }
+      this.readerColour = this.reader ? this._effectiveReaderSettings().colour : "";
+    }
+  }
+
   async _loadSearch() {
     await import("@haxtheweb/haxcms-elements/lib/ui-components/site/site-search.js");
     setTimeout(() => {
@@ -1872,6 +2148,15 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       this.openSearch();
     } else if (e.key === "Escape" && this.mobileOpen) {
       this.mobileOpen = false;
+    } else if (this.reader && (e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.altKey && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.defaultPrevented) {
+      // ← and → turn the page, unless the keys belong to something focused
+      // (a field, a control, a scrolling table or code block)
+      const owns = 'input, textarea, select, dialog, audio, video, pre, table, [role="slider"], [role="tablist"], [role="radiogroup"], [role="menu"], [role="listbox"], [role="dialog"]';
+      if (e.composedPath().some((el) => el.isContentEditable || el.matches?.(owns))) return;
+      const link = this.shadowRoot.querySelector(e.key === "ArrowLeft" ? ".pager-link.prev" : ".pager-link.next");
+      if (!link) return;
+      e.preventDefault();
+      link.click();
     }
   }
 }
