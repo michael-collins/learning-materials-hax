@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384027,
+      "updated": 1791384028,
       "version": "26.8.0"
     },
     "theme": {
@@ -30822,7 +30822,7 @@
       "order": 52,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Print iteration: one object, three revisions",
-      "description": "",
+      "description": "Design a small object with a fit (a lid, a snap, a hinge) and print it three times, changing one thing each time in response to what failed.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A05",
