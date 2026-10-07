@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404526,
+      "updated": 1791409954,
       "version": "26.8.0"
     },
     "theme": {
@@ -18539,12 +18539,20 @@
                       "label": "In person"
                     },
                     {
-                      "value": "Online",
-                      "label": "Online"
-                    },
-                    {
                       "value": "Hybrid",
                       "label": "Hybrid"
+                    },
+                    {
+                      "value": "Online (synchronous)",
+                      "label": "Online (synchronous)"
+                    },
+                    {
+                      "value": "Online (asynchronous)",
+                      "label": "Online (asynchronous)"
+                    },
+                    {
+                      "value": "Online",
+                      "label": "Online (choose synchronous or asynchronous)"
                     }
                   ]
                 },
@@ -20108,7 +20116,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791404454,
+        "updated": 1791409953,
         "locked": false,
         "status": "",
         "icon": "",
