@@ -7,7 +7,7 @@ In this chapter, Grudin talks briefly about humanity's departure from synergy wi
 
 Grudin suggests that a 40 hour work week is not a universally applicable working paradigm, and that designing an intentional day to include mechanisms of growth can teach us each to expand our own nature. For this writing prompt, I would like you to examine what Grudin means by self-design and to design your own **Intentional Day Schedule**. What would be in your day? What mechanisms of growth would you include? How would you balance social and work interactions? Be specific! You can also design this visually as well as typing it out.
 
-![What good shall I do this day? - Benjamin Franklin's Daily Productivity Planner](https://github.com/user-attachments/assets/0ab9a2b5-d6b9-4a86-a787-e321269d2d84) \[^1\]
+![What good shall I do this day? - Benjamin Franklin's Daily Productivity Planner](https://github.com/user-attachments/assets/0ab9a2b5-d6b9-4a86-a787-e321269d2d84) [1](#fn-81ff20b4-1)
 
 Writing guidelines
 ------------------
@@ -23,6 +23,10 @@ AI Policy
 
 This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.
 
-<a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" title="AIUL AIUL-NA-WR License: Not Allowed for Writing" target="\_blank" rel="license"> <img alt="AIUL-NA-WR - Not Allowed for Writing" src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png" style="border-width:0; max-width:170px;" /> </a> <br /> Please see the <a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" target="\_blank" rel="license">AI Usage License AIUL-NA-WR</a> for AI usage information.
+[![AIUL-NA-WR - Not Allowed for Writing](https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png)](https://dmd-program.github.io/aiul/combinations/na-wr.html "AIUL AIUL-NA-WR License: Not Allowed for Writing")  
+Please see the [AI Usage License AIUL-NA-WR](https://dmd-program.github.io/aiul/combinations/na-wr.html) for AI usage information.
 
-\[^1\]: "What good shall I do this day?" - Benjamin Franklin's Daily Productivity Planner. Photo by Ben Matthews, licensed as CC BY-NC-SA 2.0
+References
+----------
+
+1.  "What good shall I do this day?" - Benjamin Franklin's Daily Productivity Planner. Photo by Ben Matthews, licensed as CC BY-NC-SA 2.0 [↩](#fnref-81ff20b4-1)

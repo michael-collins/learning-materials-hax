@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404498,
+      "updated": 1791404499,
       "version": "26.8.0"
     },
     "theme": {
@@ -23194,42 +23194,6 @@
       }
     },
     {
-      "id": "item-81ff20b4-9904-4613-99c8-f3c754d398c0",
-      "indent": 1,
-      "location": "pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.html",
-      "slug": "articles/in-jefferson-s-footsteps-modes-of-self-design",
-      "order": 41,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "In Jefferson's Footsteps: Modes of Self-Design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-3-readings-chapter-10-in-jeffersons-footsteps-modes-of-self-design",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386285
-      }
-    },
-    {
       "id": "item-4fe6a5c8-3c76-445e-93ed-0328f671609e",
       "indent": 1,
       "location": "pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.html",
@@ -33133,6 +33097,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404497,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-81ff20b4-9904-4613-99c8-f3c754d398c0",
+      "indent": 1,
+      "location": "pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.html",
+      "slug": "in-jefferson-s-footsteps-modes-of-self-design",
+      "order": 41,
+      "parent": null,
+      "title": "In Jefferson's Footsteps: Modes of Self-Design",
+      "description": "In Jefferson's Footsteps: Modes of Self-Design (p. 105-116) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin talks briefly about humanity's departure from synergy with the ",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-3-readings-chapter-10-in-jeffersons-footsteps-modes-of-self-design",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404498,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
