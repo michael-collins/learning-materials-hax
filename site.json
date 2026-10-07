@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384035,
+      "updated": 1791384036,
       "version": "26.8.0"
     },
     "theme": {
@@ -31014,7 +31014,7 @@
       "order": 58,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Precedent presentation",
-      "description": "",
+      "description": "Each student presents one artist, designer, or studio and one specific work made with digital fabrication: how it was made (process, machine, material), why that process, and what it argues.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A14",
