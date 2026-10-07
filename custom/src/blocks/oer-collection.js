@@ -1061,6 +1061,14 @@ export class OerCollection extends LitElement {
             .filter((r) => !r.missing)
             .map((r, n) => html`${n ? ", " : ""}<a class="cell-link" href="${r.href}">${r.item.title}</a>${r.version ? ` v${r.version}` : ""}`);
         }
+        // a link: its site's name, so the table stays narrow
+        if (kind === "url") {
+          let host = String(v);
+          try {
+            host = new URL(v).hostname.replace(/^www\./, "");
+          } catch {}
+          return html`<a class="cell-link" href="${v}" title="${v}">${host}</a>`;
+        }
         if (kind === "files") {
           return toFiles(v).map(
             (f, n) => html`${n ? ", " : ""}${f.url ? html`<a class="cell-link" href="${f.url}" download>${f.title || fileName(f.url)}</a>` : f.title}`,

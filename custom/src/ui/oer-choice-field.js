@@ -24,6 +24,8 @@ export class OerChoiceField extends LitElement {
       newLabel: { type: String, attribute: "new-label" },
       // the select's accessible name when no <label for> points at it
       label: { type: String },
+      // what the empty choice says ("—" by default)
+      emptyLabel: { type: String, attribute: "empty-label" },
       invalid: { type: Boolean },
       _adding: { state: true },
     };
@@ -36,6 +38,7 @@ export class OerChoiceField extends LitElement {
     this.fieldId = "";
     this.newLabel = "New…";
     this.label = "";
+    this.emptyLabel = "—";
     this.invalid = false;
     this._adding = false;
   }
@@ -70,7 +73,7 @@ export class OerChoiceField extends LitElement {
     const cls = this.invalid ? "invalid" : "";
     return html`<span class="choice-field" style="display:flex;flex-wrap:wrap;gap:0.5rem">
       <select id="${this.fieldId}" .ariaLabel="${this.label || null}" class="${cls}" style="flex:1 1 10rem;min-width:0" @change="${this._pick}">
-        <option value="" ?selected="${!typing && !this.value}">—</option>
+        <option value="" ?selected="${!typing && !this.value}">${this.emptyLabel || "—"}</option>
         ${(this.options || []).map((o) => html`<option value="${o}" ?selected="${!typing && o === this.value}">${o}</option>`)}
         <option value="${NEW}" ?selected="${typing}">${this.newLabel}</option>
       </select>

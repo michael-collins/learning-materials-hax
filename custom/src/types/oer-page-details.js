@@ -945,6 +945,7 @@ class OerPageDetails extends LitElement {
             class="affiliation"
             label="${f.label} ${i + 1}: university or affiliation"
             new-label="Other university…"
+            empty-label="University (optional)"
             .options="${institutions}"
             .value="${r.affiliation || ""}"
             @value-changed="${(e) => update((n) => (n[i].affiliation = e.detail.value))}"
