@@ -426,7 +426,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Project 1 production + crit](https://localhost:3000/learning-materials/pages/item-b2b1aa00-e58f-483e-8649-84526b67110a/index.md): Production; troubleshooting cut files; finishing laser-cut work; documentation basics; Project 1 crit.
 - [Additive: 3D printing fundamentals](https://localhost:3000/learning-materials/pages/item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a/index.md): How FDM works; slicing; orientation, supports, overhangs, wall thickness, infill; materials (PLA/PETG); mesh hygiene (manifold, normals, STL/3MF); the print queue.
 - [Modeling for fabrication: parametric and sculptural](https://localhost:3000/learning-materials/pages/item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a/index.md): Two modeling attitudes: parametric CAD (Fusion 360) and mesh/sculptural (Blender); parameters, constraints, families of objects; scanning as input (photogrammetry).
-- [Project 2 launch: Multiples and variation](https://localhost:3000/learning-materials/pages/item-23bfc330-baae-4c57-b782-7da696b33431/index.md)
+- [Project 2 launch: Multiples and variation](https://localhost:3000/learning-materials/pages/item-23bfc330-baae-4c57-b782-7da696b33431/index.md): Project 2 brief; series, editions, variation; precedents; mid-term review of process documentation.
 - [Subtractive: CNC routing](https://localhost:3000/learning-materials/pages/item-29ccdd18-d451-48e3-b92a-ee97be5e062f/index.md)
 - [CNC production + Project 2 crit](https://localhost:3000/learning-materials/pages/item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0/index.md)
 - [Hybrid processes and finishing](https://localhost:3000/learning-materials/pages/item-bf575694-a7b5-42c8-9527-0e8704d50077/index.md)
