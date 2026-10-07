@@ -941,7 +941,7 @@ class OerTypeEditor extends LitElement {
                   </label>
                 </div>`
               : ""}
-            ${f.kind === "text"
+            ${f.kind === "text" || f.kind === "list"
               ? html`<div class="wide">
                   <label class="check">
                     <input type="checkbox" .checked="${!!f.suggest}" @change="${(e) => this._setField(i, { suggest: e.target.checked || undefined })}" />

@@ -56,6 +56,7 @@ const SCHEMA_TYPES = {
   project: "oer:Project",
   activity: "oer:Activity",
   quiz: "oer:Quiz",
+  course: "oer:Course",
   unit: "oer:Unit",
   pathway: "oer:Course",
   specialization: "oer:InstructionalPattern",
@@ -257,6 +258,26 @@ class OerPageFooter extends LitElement {
       .map((x) => all.find((i) => i.id === (x?.page || x)))
       .filter((c) => c && c.metadata?.published !== false);
     if (before.length) data["oer:prerequisite"] = before.map(ref);
+    // courses: a Course page's code and prerequisites; a material's course(s)
+    const courses = all.filter((i) => i.metadata?.pageType === "oer:course" && !i.metadata?.oerSnapshotOf);
+    if (typeId === "oer:course") {
+      if (f.code) data["oer:courseIdentifier"] = f.code;
+      if (f.bulletin) data["schema:sameAs"] = f.bulletin;
+      const req = (Array.isArray(f.coursePrerequisites) ? f.coursePrerequisites : []).map((x) => all.find((i) => i.id === (x?.page || x))).filter(Boolean);
+      if (req.length || f.prerequisiteNote) {
+        data["oer:coursePrerequisites"] = [
+          ...req.map((c) => ({ ...ref(c), "oer:courseIdentifier": c.metadata?.oerFields?.code || "" })),
+          ...(f.prerequisiteNote ? [f.prerequisiteNote] : []),
+        ];
+      }
+    }
+    const codes = toList(f.courses);
+    if (codes.length) {
+      data["oer:forCourse"] = codes.map((code) => {
+        const page = courses.find((c) => String(c.metadata?.oerFields?.code || "").trim().toUpperCase() === String(code).trim().toUpperCase());
+        return page ? { ...ref(page), "oer:courseIdentifier": code } : { "@type": "oer:Course", "oer:courseIdentifier": code };
+      });
+    }
     const tags = toList(String(item.metadata?.tags || "").split(","));
     if (tags.length) data["schema:keywords"] = tags.join(", ");
     // third-party material on the page, each with its own credit and licence

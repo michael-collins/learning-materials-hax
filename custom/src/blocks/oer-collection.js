@@ -30,6 +30,8 @@ import { resolveLinks } from "../types/relations.js";
 import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_TYPE } from "../pathways/pathway-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 
+const COURSE_TYPE = "oer:course";
+
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
@@ -71,6 +73,10 @@ export class OerCollection extends LitElement {
       sort: { type: String, reflect: true },
       perPage: { type: Number, attribute: "per-page", reflect: true },
       controls: { type: String, reflect: true }, // "full" | "none"
+      // only pages for this course code (their Courses field); empty on a
+      // Course page means that page's course
+      course: { type: String, reflect: true },
+      group: { type: String, reflect: true }, // grouping to start with: "" | "type"
     };
   }
 
@@ -97,6 +103,10 @@ export class OerCollection extends LitElement {
         this._defs = contentTypes(items).types;
         this._pageId = this._ownerPageId(items, active);
         this._items = this._select(items);
+        if (this.group && !this.__grouped) {
+          this.__grouped = true;
+          this._state = { ...this._state, groupBy: this.group };
+        }
         this._restore();
       });
     });
@@ -108,12 +118,20 @@ export class OerCollection extends LitElement {
   }
 
   updated(changed) {
-    if (["types", "scope", "sort"].some((k) => changed.has(k)) && this._all) this._items = this._select(this._all);
+    if (["types", "scope", "sort", "course"].some((k) => changed.has(k)) && this._all) this._items = this._select(this._all);
   }
 
-  // the page this block sits on (the active page while it is displayed)
+  // the page this block sits on (the active page while it is displayed, or
+  // the page an outline viewer is showing it in)
   _ownerPageId(items, active) {
-    return active || null;
+    return this.closest?.("[data-oer-page]")?.dataset.oerPage || active || null;
+  }
+
+  // the course code this collection is limited to, if any
+  _courseCode(all = this._all || []) {
+    if (this.course) return this.course.trim();
+    const page = all.find((i) => i.id === this._pageId);
+    return page?.metadata?.pageType === COURSE_TYPE ? String(page.metadata?.oerFields?.code || "").trim() : "";
   }
 
   get _storageKey() {
@@ -158,6 +176,9 @@ export class OerCollection extends LitElement {
         pool = pool.filter((i) => under.has(i.id));
       }
     }
+    // a course's materials: pages whose Courses field holds its code
+    const code = this._courseCode(all).toUpperCase();
+    if (code) pool = pool.filter((i) => i.id !== this._pageId && !i.metadata?.oerRef?.page && toList(i.metadata?.oerFields?.courses).some((c) => String(c).trim().toUpperCase() === code));
     if (wanted.size) pool = pool.filter((i) => wanted.has(i.metadata?.pageType));
     else if (this.view === "pathways") pool = pool.filter((i) => i.metadata?.pageType === PATHWAY_TYPE);
     else if (this.view !== "outline" && this.scope === "site") pool = pool.filter((i) => i.metadata?.pageType);
@@ -1300,6 +1321,8 @@ export class OerCollection extends LitElement {
             options: types,
           },
           { property: "scope", title: "From", inputMethod: "select", options: SCOPES },
+          { property: "course", title: "Course", description: "Only pages for this course code (e.g. DART 413). On a Course page, leave empty for that course.", inputMethod: "textfield" },
+          { property: "group", title: "Group by", inputMethod: "select", options: { "": "None", type: "Content type" } },
           { property: "view", title: "View", inputMethod: "select", options: VIEWS },
           { property: "sort", title: "Sort by", inputMethod: "select", options: SORTS },
           { property: "perPage", title: "Items per page", inputMethod: "number" },

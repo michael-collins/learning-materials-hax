@@ -22,6 +22,8 @@ export class OerChoiceField extends LitElement {
       options: { type: Array },
       fieldId: { type: String, attribute: "field-id" },
       newLabel: { type: String, attribute: "new-label" },
+      // the select's accessible name when no <label for> points at it
+      label: { type: String },
       invalid: { type: Boolean },
       _adding: { state: true },
     };
@@ -33,6 +35,7 @@ export class OerChoiceField extends LitElement {
     this.options = [];
     this.fieldId = "";
     this.newLabel = "New…";
+    this.label = "";
     this.invalid = false;
     this._adding = false;
   }
@@ -66,7 +69,7 @@ export class OerChoiceField extends LitElement {
     const typing = this._adding || (!!this.value && !this._known);
     const cls = this.invalid ? "invalid" : "";
     return html`<span class="choice-field" style="display:flex;flex-wrap:wrap;gap:0.5rem">
-      <select id="${this.fieldId}" class="${cls}" style="flex:1 1 10rem;min-width:0" @change="${this._pick}">
+      <select id="${this.fieldId}" .ariaLabel="${this.label || null}" class="${cls}" style="flex:1 1 10rem;min-width:0" @change="${this._pick}">
         <option value="" ?selected="${!typing && !this.value}">—</option>
         ${(this.options || []).map((o) => html`<option value="${o}" ?selected="${!typing && o === this.value}">${o}</option>`)}
         <option value="${NEW}" ?selected="${typing}">${this.newLabel}</option>
@@ -86,13 +89,19 @@ export class OerChoiceField extends LitElement {
 
 if (!customElements.get(OerChoiceField.tag)) customElements.define(OerChoiceField.tag, OerChoiceField);
 
-/** The values a field holds across pages of a type, most used first. */
+/**
+ * The values a field holds across pages of a type (any type when pageType
+ * is empty), most used first; list fields count each entry.
+ */
 export function valuesInUse(items, pageType, name, extra = []) {
   const count = new Map();
   for (const i of items || []) {
-    if (i.metadata?.pageType !== pageType || i.metadata?.oerSnapshotOf) continue;
-    const v = String(i.metadata?.oerFields?.[name] ?? "").trim();
-    if (v) count.set(v, (count.get(v) || 0) + 1);
+    if ((pageType && i.metadata?.pageType !== pageType) || i.metadata?.oerSnapshotOf || i.metadata?.oerRef?.page) continue;
+    const raw = i.metadata?.oerFields?.[name];
+    for (const x of Array.isArray(raw) ? raw : [raw]) {
+      const v = String(x ?? "").trim();
+      if (v) count.set(v, (count.get(v) || 0) + 1);
+    }
   }
   for (const v of extra) if (!count.has(v)) count.set(v, 0);
   return [...count.keys()].sort((a, b) => count.get(b) - count.get(a) || a.localeCompare(b));

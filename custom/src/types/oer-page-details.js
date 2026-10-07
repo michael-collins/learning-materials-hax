@@ -446,6 +446,10 @@ class OerPageDetails extends LitElement {
         display: flex;
         gap: 0.375rem;
       }
+      .list-row oer-choice-field {
+        flex: 1;
+        min-width: 0;
+      }
       .icon-act {
         all: unset;
         flex: none;
@@ -633,6 +637,18 @@ class OerPageDetails extends LitElement {
     `;
   }
 
+  // a list field's choices: values other pages use, plus a source field's
+  // values (suggestFrom "oer:course:code": the codes of the Course pages)
+  _listChoices(f) {
+    const items = toJS(store.manifest?.items) || [];
+    const extra = [];
+    if (f.suggestFrom) {
+      const at = f.suggestFrom.lastIndexOf(":");
+      extra.push(...valuesInUse(items, f.suggestFrom.slice(0, at), f.suggestFrom.slice(at + 1)));
+    }
+    return [...new Set([...extra, ...valuesInUse(items, "", f.name)])];
+  }
+
   _renderField(f) {
     const id = `f-${f.name}`;
     const v = this._values[f.name];
@@ -690,10 +706,25 @@ class OerPageDetails extends LitElement {
       case "list": {
         const list = Array.isArray(v) ? v : v ? [v] : [];
         const rows = list.length ? list : [""];
+        // "pick from values other pages use": each entry is a dropdown
+        const choices = f.suggest ? this._listChoices(f) : null;
         control = html`<div class="list" role="group" aria-labelledby="${id}-l">
           ${rows.map(
             (x, i) => html`<div class="list-row">
-              <input
+              ${choices
+                ? html`<oer-choice-field
+                    field-id="${i === 0 ? id : `${id}-${i}`}"
+                    label="${f.label} ${i + 1}"
+                    new-label="New ${f.label.toLowerCase().replace(/s$/, "")}…"
+                    .options="${choices}"
+                    .value="${x}"
+                    @value-changed="${(e) => {
+                      const next = [...rows];
+                      next[i] = e.detail.value;
+                      this._set(f.name, next);
+                    }}"
+                  ></oer-choice-field>`
+                : html`<input
                 class="input ${invalid ? "invalid" : ""}"
                 id="${i === 0 ? id : `${id}-${i}`}"
                 aria-label="${f.label} ${i + 1}"
@@ -712,7 +743,7 @@ class OerPageDetails extends LitElement {
                     this.updateComplete.then(() => this.shadowRoot.getElementById(`${id}-${i + 1}`)?.focus());
                   }
                 }}"
-              />
+              />`}
               <button
                 class="icon-act"
                 title="Remove"
