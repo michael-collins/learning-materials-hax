@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384046,
+      "updated": 1791384047,
       "version": "26.8.0"
     },
     "theme": {
@@ -13751,7 +13751,7 @@
       "order": 45,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Final production I: workshops on demand",
-      "description": "",
+      "description": "Production; targeted workshops by request (advanced slicing, Grasshopper basics, 3D CAM, casting); documentation practices.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerPlan": "DART 413:M13",
