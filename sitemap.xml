@@ -2437,16 +2437,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/corporate-redesign-and-the-business-of-knowledge</loc>
-    <lastmod>2026-10-07T20:21:43.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/designing-time</loc>
+    <lastmod>2026-10-07T20:21:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/articles/designing-time</loc>
-    <lastmod>2026-10-07T15:18:15.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/authors-and-owners-/-andrew-katz</loc>
@@ -3201,6 +3195,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/liberty-as-knowledge-design</loc>
     <lastmod>2026-10-07T20:21:42.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/corporate-redesign-and-the-business-of-knowledge</loc>
+    <lastmod>2026-10-07T20:21:43.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

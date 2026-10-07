@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404504,
+      "updated": 1791404505,
       "version": "26.8.0"
     },
     "theme": {
@@ -23482,42 +23482,6 @@
       }
     },
     {
-      "id": "item-41d9b567-104d-4f03-a5b9-0194e4857e67",
-      "indent": 1,
-      "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.html",
-      "slug": "articles/designing-time",
-      "order": 55,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Designing Time",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-4-readings-chapter-14-designing-time",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386295
-      }
-    },
-    {
       "id": "item-119d3803-df98-4525-bac6-8b801cb4ec62",
       "indent": 1,
       "location": "pages/item-119d3803-df98-4525-bac6-8b801cb4ec62/index.html",
@@ -33157,6 +33121,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404503,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-41d9b567-104d-4f03-a5b9-0194e4857e67",
+      "indent": 1,
+      "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.html",
+      "slug": "designing-time",
+      "order": 55,
+      "parent": null,
+      "title": "Designing Time",
+      "description": "Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting prompt\nIn these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-4-readings-chapter-14-designing-time",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404504,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,

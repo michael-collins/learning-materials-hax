@@ -1,11 +1,16 @@
 id: item-41d9b567-104d-4f03-a5b9-0194e4857e67
 indent: 1
 location: pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.yaml
-slug: articles/designing-time
+slug: designing-time
 order: 55
-parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+parent: null
 title: Designing Time
-description: ''
+description: >-
+  Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting
+  prompt
+
+  In these chapters, Grudin discusses the dimensionality of temporal design from
+  examples of storytelling, music, sports
 metadata:
   published: true
   pageType: oer:article
@@ -17,12 +22,17 @@ metadata:
         url: ''
     date: '2026-03-01'
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404504
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>Designing Time (p.166 - 177 ) in Design and Truth by Robert Grudin</p>
 
@@ -64,19 +74,16 @@ content: >
   no AI tools are permitted. All work must be entirely your own without
   assistance from AI tools. This applies specifically to writing.</p>
 
-  <p>&lt;a href="https://dmd-program.github.io/aiul/combinations/na-wr.html"
-  title="AIUL AIUL-NA-WR License: Not Allowed for Writing" target="_blank"
-  rel="license"&gt;
+  <p><a href="https://dmd-program.github.io/aiul/combinations/na-wr.html"
+  title="AIUL AIUL-NA-WR License: Not Allowed for Writing" rel="license">
 
-  &lt;img alt="AIUL-NA-WR - Not Allowed for Writing"
-  src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png"
-  style="border-width:0; max-width:170px;" /&gt;
+  <img alt="AIUL-NA-WR - Not Allowed for Writing"
+  src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png">
 
-  &lt;/a&gt;
+  </a>
 
-  &lt;br /&gt;
+  <br>
 
-  Please see the &lt;a
+  Please see the <a
   href="https://dmd-program.github.io/aiul/combinations/na-wr.html"
-  target="_blank" rel="license"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI
-  usage information.</p>
+  rel="license">AI Usage License AIUL-NA-WR</a> for AI usage information.</p>
