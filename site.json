@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385274,
+      "updated": 1791385277,
       "version": "26.8.0"
     },
     "theme": {
@@ -9727,12 +9727,18 @@
               "version": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "coursePrerequisites": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791385274
+        "updated": 1791385275
       }
     },
     {
@@ -15003,12 +15009,22 @@
               "version": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "coursePrerequisites": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            },
+            {
+              "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
+              "version": ""
+            }
+          ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791385274
+        "updated": 1791385276
       }
     },
     {
@@ -21318,12 +21334,18 @@
               "version": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "coursePrerequisites": [
+            {
+              "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+              "version": ""
+            }
+          ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791385274
+        "updated": 1791385276
       }
     },
     {
