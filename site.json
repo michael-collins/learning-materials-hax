@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384012,
+      "updated": 1791384013,
       "version": "26.8.0"
     },
     "theme": {
@@ -25467,7 +25467,7 @@
       "order": 43,
       "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
       "title": "Prusa Knowledge Base — print quality troubleshooting and slicing basics",
-      "description": "",
+      "description": "Recommended: diagnosing failed prints; replace with the shop's own slicer documentation once known.",
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B08",
