@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384034,
+      "updated": 1791384035,
       "version": "26.8.0"
     },
     "theme": {
@@ -30982,7 +30982,7 @@
       "order": 57,
       "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Critique participation",
-      "description": "",
+      "description": "Prepared, specific, and generous participation in the four crits, following the protocol.",
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A13",
