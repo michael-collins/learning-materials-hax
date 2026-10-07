@@ -1,0 +1,21 @@
+id: item-f6d40188-b7ad-4569-9d35-a23aa3b78079
+indent: 3
+location: pages/item-f6d40188-b7ad-4569-9d35-a23aa3b78079/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/rubric-project-rubric-template
+order: 1
+parent: item-6350d49e-b9e6-47aa-ac01-9a50e438ad68
+title: 'Rubric: Project rubric template'
+description: ''
+metadata:
+  pageType: oer:article
+  oerPlan: DART 413:book:M04:L19
+  published: false
+  oerRef:
+    page: item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944"></oer-include>

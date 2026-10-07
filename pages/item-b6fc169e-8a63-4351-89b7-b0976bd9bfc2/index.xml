@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b6fc169e-8a63-4351-89b7-b0976bd9bfc2</id>
+<indent>3</indent>
+<location>pages/item-b6fc169e-8a63-4351-89b7-b0976bd9bfc2/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/worksheet-object-autopsy</slug>
+<order>1</order>
+<parent>item-ad0fed20-95ae-4050-a323-f8eacc261ed9</parent>
+<title>Worksheet: Object autopsy</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M01:L21</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-cf74e241-cda4-4eff-a5d1-14b9cf701571</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-cf74e241-cda4-4eff-a5d1-14b9cf701571"></oer-include>]]></content>
+</item>

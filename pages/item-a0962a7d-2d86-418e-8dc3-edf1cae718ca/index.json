@@ -1,0 +1,24 @@
+{
+  "id": "item-a0962a7d-2d86-418e-8dc3-edf1cae718ca",
+  "indent": 3,
+  "location": "pages/item-a0962a7d-2d86-418e-8dc3-edf1cae718ca/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-5-project-1-production-crit/critique-participation",
+  "order": 1,
+  "parent": "item-9e676df8-ed56-4d59-bfa7-1ad0fa52387d",
+  "title": "Critique participation",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerPlan": "DART 413:book:M05:A13",
+    "published": false,
+    "oerRef": {
+      "page": "item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180\"></oer-include>"
+}

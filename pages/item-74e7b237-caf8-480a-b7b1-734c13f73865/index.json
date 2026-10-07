@@ -1,0 +1,24 @@
+{
+  "id": "item-74e7b237-caf8-480a-b7b1-734c13f73865",
+  "indent": 3,
+  "location": "pages/item-74e7b237-caf8-480a-b7b1-734c13f73865/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/press-fit-joinery-tolerance-test-kit",
+  "order": 0,
+  "parent": "item-0df22ec2-f325-4e7b-970f-86440a9297ad",
+  "title": "Press-fit joinery + tolerance test kit",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "oerPlan": "DART 413:book:M03:L06",
+    "published": false,
+    "oerRef": {
+      "page": "item-273da091-602a-4824-86cc-a45fc9346115",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-273da091-602a-4824-86cc-a45fc9346115\"></oer-include>"
+}

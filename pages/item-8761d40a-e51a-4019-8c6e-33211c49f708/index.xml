@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8761d40a-e51a-4019-8c6e-33211c49f708</id>
+<indent>2</indent>
+<location>pages/item-8761d40a-e51a-4019-8c6e-33211c49f708/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural</slug>
+<order>6</order>
+<parent>item-69dddfb7-34fb-48ff-b038-f1429191de9b</parent>
+<title>Week 7: Modeling for fabrication: parametric and sculptural</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:book:M07</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a"></oer-include>]]></content>
+</item>

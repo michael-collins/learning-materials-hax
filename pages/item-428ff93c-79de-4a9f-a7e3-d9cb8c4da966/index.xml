@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-428ff93c-79de-4a9f-a7e3-d9cb8c4da966</id>
+<indent>3</indent>
+<location>pages/item-428ff93c-79de-4a9f-a7e3-d9cb8c4da966/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-13-final-production-i-workshops-on-demand/documentation-portfolio</slug>
+<order>1</order>
+<parent>item-02d6c11e-d1ca-4259-b298-d06cf199342f</parent>
+<title>Documentation portfolio</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerPlan>DART 413:book:M13:A11</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-da8b8213-908b-455f-8501-0bc929cf3b05</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-da8b8213-908b-455f-8501-0bc929cf3b05"></oer-include>]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fe9eab46-86ac-4456-8904-49abd2355137</id>
+<indent>3</indent>
+<location>pages/item-fe9eab46-86ac-4456-8904-49abd2355137/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/cnc-routing-quiz</slug>
+<order>3</order>
+<parent>item-03a03c64-0796-4c2c-b43f-11419b7805c3</parent>
+<title>CNC routing quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<oerPlan>DART 413:book:M09:quiz:M09</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-6d67a392-9c2e-4070-bb24-8fed224e3774</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-6d67a392-9c2e-4070-bb24-8fed224e3774"></oer-include>]]></content>
+</item>

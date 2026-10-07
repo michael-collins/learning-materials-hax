@@ -1,0 +1,24 @@
+{
+  "id": "item-00113cf3-e1a0-4505-8dce-15cfacbd2d74",
+  "indent": 3,
+  "location": "pages/item-00113cf3-e1a0-4505-8dce-15cfacbd2d74/index.json",
+  "slug": "pathways/digital-fabrication-studio/additive-and-parametric/additive-3d-printing-fundamentals",
+  "order": 0,
+  "parent": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+  "title": "Additive: 3D printing fundamentals",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerPlan": "DART 413:unit:3:M06",
+    "published": false,
+    "oerRef": {
+      "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a\"></oer-include>"
+}

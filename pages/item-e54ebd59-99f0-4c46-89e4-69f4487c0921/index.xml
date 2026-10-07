@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e54ebd59-99f0-4c46-89e4-69f4487c0921</id>
+<indent>3</indent>
+<location>pages/item-e54ebd59-99f0-4c46-89e4-69f4487c0921/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/print-iteration-one-object-three-revisions</slug>
+<order>3</order>
+<parent>item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3</parent>
+<title>Print iteration: one object, three revisions</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerPlan>DART 413:book:M06:A05</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21"></oer-include>]]></content>
+</item>

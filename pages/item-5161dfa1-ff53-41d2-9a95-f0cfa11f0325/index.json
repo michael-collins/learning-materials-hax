@@ -1,0 +1,24 @@
+{
+  "id": "item-5161dfa1-ff53-41d2-9a95-f0cfa11f0325",
+  "indent": 3,
+  "location": "pages/item-5161dfa1-ff53-41d2-9a95-f0cfa11f0325/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/rubric-project-rubric-template",
+  "order": 1,
+  "parent": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+  "title": "Rubric: Project rubric template",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:book:M12:L19",
+    "published": false,
+    "oerRef": {
+      "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944\"></oer-include>"
+}

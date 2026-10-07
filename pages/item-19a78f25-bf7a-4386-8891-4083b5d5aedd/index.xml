@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-19a78f25-bf7a-4386-8891-4083b5d5aedd</id>
+<indent>3</indent>
+<location>pages/item-19a78f25-bf7a-4386-8891-4083b5d5aedd/index.xml</location>
+<slug>pathways/digital-fabrication-studio/foundations/bits-to-atoms-what-digital-fabrication-is</slug>
+<order>0</order>
+<parent>item-d274633a-77d4-45bc-92a4-f6e1acdb8ad5</parent>
+<title>Bits to atoms: what digital fabrication is</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:1:M01</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-79caedc2-9d9c-4828-bd1e-81545cc458a8</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-79caedc2-9d9c-4828-bd1e-81545cc458a8"></oer-include>]]></content>
+</item>

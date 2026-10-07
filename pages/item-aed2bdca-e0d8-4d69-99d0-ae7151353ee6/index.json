@@ -1,0 +1,24 @@
+{
+  "id": "item-aed2bdca-e0d8-4d69-99d0-ae7151353ee6",
+  "indent": 3,
+  "location": "pages/item-aed2bdca-e0d8-4d69-99d0-ae7151353ee6/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-14-final-production-ii-work-in-progress-crit/crit-protocol",
+  "order": 0,
+  "parent": "item-84d0f35e-a9f3-4c14-94a8-d2e787124f5c",
+  "title": "Crit protocol",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:book:M14:L08",
+    "published": false,
+    "oerRef": {
+      "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-389a18e8-e515-4482-ae7b-9a56687cb460\"></oer-include>"
+}

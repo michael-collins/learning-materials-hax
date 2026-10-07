@@ -1,0 +1,21 @@
+id: item-077eb755-108d-4225-93da-09fd1e4697af
+indent: 2
+location: pages/item-077eb755-108d-4225-93da-09fd1e4697af/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-15-final-crit-exhibition-documentation-portfolio
+order: 14
+parent: item-69dddfb7-34fb-48ff-b038-f1429191de9b
+title: 'Week 15: Final crit, exhibition, documentation portfolio'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:book:M15
+  published: false
+  oerRef:
+    page: item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af"></oer-include>

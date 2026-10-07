@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-794631aa-df0e-4ac1-bf99-9f5005531ef0</id>
+<indent>3</indent>
+<location>pages/item-794631aa-df0e-4ac1-bf99-9f5005531ef0/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/reading-responses</slug>
+<order>3</order>
+<parent>item-ad0fed20-95ae-4050-a323-f8eacc261ed9</parent>
+<title>Reading responses</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerPlan>DART 413:book:M01:A12</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-5117d4e6-e938-41a9-b976-858e75347ae5</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-5117d4e6-e938-41a9-b976-858e75347ae5"></oer-include>]]></content>
+</item>

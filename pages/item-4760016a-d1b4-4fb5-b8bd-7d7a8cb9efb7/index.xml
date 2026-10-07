@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4760016a-d1b4-4fb5-b8bd-7d7a8cb9efb7</id>
+<indent>3</indent>
+<location>pages/item-4760016a-d1b4-4fb5-b8bd-7d7a8cb9efb7/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/project-1-sheet-to-form</slug>
+<order>2</order>
+<parent>item-6350d49e-b9e6-47aa-ac01-9a50e438ad68</parent>
+<title>Project 1: Sheet to form</title>
+<description></description>
+<metadata>
+<pageType>oer:project</pageType>
+<oerPlan>DART 413:book:M04:A04</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-59547add-790e-4255-a3f0-962065b0064f</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-59547add-790e-4255-a3f0-962065b0064f"></oer-include>]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-03a03c64-0796-4c2c-b43f-11419b7805c3</id>
+<indent>2</indent>
+<location>pages/item-03a03c64-0796-4c2c-b43f-11419b7805c3/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing</slug>
+<order>8</order>
+<parent>item-69dddfb7-34fb-48ff-b038-f1429191de9b</parent>
+<title>Week 9: Subtractive: CNC routing</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:book:M09</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-29ccdd18-d451-48e3-b92a-ee97be5e062f</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-29ccdd18-d451-48e3-b92a-ee97be5e062f"></oer-include>]]></content>
+</item>

@@ -1,0 +1,24 @@
+{
+  "id": "item-2022379f-ead9-4577-bb5d-ae97a9c7ba49",
+  "indent": 3,
+  "location": "pages/item-2022379f-ead9-4577-bb5d-ae97a9c7ba49/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-15-final-crit-exhibition-documentation-portfolio/documentation-guide-photographing-work-process-docs-publishing-files",
+  "order": 1,
+  "parent": "item-077eb755-108d-4225-93da-09fd1e4697af",
+  "title": "Documentation guide — photographing work, process docs, publishing files",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:book:M15:L18",
+    "published": false,
+    "oerRef": {
+      "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1\"></oer-include>"
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2febc2dd-68b2-45ff-9c6f-e3d9a94e36ad</id>
+<indent>3</indent>
+<location>pages/item-2febc2dd-68b2-45ff-9c6f-e3d9a94e36ad/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/critical-making-the-maker-movement-and-its-critics</slug>
+<order>0</order>
+<parent>item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb</parent>
+<title>Critical making — the maker movement and its critics</title>
+<description></description>
+<metadata>
+<pageType>oer:lecture</pageType>
+<oerPlan>DART 413:book:M12:L17</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-d691e847-ed22-40ee-8b49-1f409a0dc0c2</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d691e847-ed22-40ee-8b49-1f409a0dc0c2"></oer-include>]]></content>
+</item>

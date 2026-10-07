@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-dacf8088-d1b7-48a7-b3ee-84b5b44d7eaf</id>
+<indent>3</indent>
+<location>pages/item-dacf8088-d1b7-48a7-b3ee-84b5b44d7eaf/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/variable-identical-differential-the-multiple</slug>
+<order>0</order>
+<parent>item-f03e8a28-72d2-4d83-9943-92bb2c3dc054</parent>
+<title>Variable, identical, differential — the multiple</title>
+<description></description>
+<metadata>
+<pageType>oer:lecture</pageType>
+<oerPlan>DART 413:book:M08:L13</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-f570ed6c-e171-4a20-af0f-58c5e61fceb7</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f570ed6c-e171-4a20-af0f-58c5e61fceb7"></oer-include>]]></content>
+</item>

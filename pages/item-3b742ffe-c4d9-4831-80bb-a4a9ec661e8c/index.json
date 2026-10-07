@@ -1,0 +1,24 @@
+{
+  "id": "item-3b742ffe-c4d9-4831-80bb-a4a9ec661e8c",
+  "indent": 3,
+  "location": "pages/item-3b742ffe-c4d9-4831-80bb-a4a9ec661e8c/index.json",
+  "slug": "pathways/digital-fabrication-studio/additive-and-parametric/modeling-for-fabrication-parametric-and-sculptural",
+  "order": 1,
+  "parent": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+  "title": "Modeling for fabrication: parametric and sculptural",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerPlan": "DART 413:unit:3:M07",
+    "published": false,
+    "oerRef": {
+      "page": "item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a\"></oer-include>"
+}

@@ -1,0 +1,21 @@
+id: item-02d6c11e-d1ca-4259-b298-d06cf199342f
+indent: 2
+location: pages/item-02d6c11e-d1ca-4259-b298-d06cf199342f/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-13-final-production-i-workshops-on-demand
+order: 12
+parent: item-69dddfb7-34fb-48ff-b038-f1429191de9b
+title: 'Week 13: Final production I: workshops on demand'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:book:M13
+  published: false
+  oerRef:
+    page: item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d"></oer-include>

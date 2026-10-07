@@ -1,0 +1,19 @@
+id: item-d274633a-77d4-45bc-92a4-f6e1acdb8ad5
+indent: 2
+location: pages/item-d274633a-77d4-45bc-92a4-f6e1acdb8ad5/index.yaml
+slug: pathways/digital-fabrication-studio/foundations
+order: 0
+parent: item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a
+title: Foundations
+description: ''
+metadata:
+  pageType: oer:unit
+  oerPlan: DART 413:unit:1
+  published: false
+  oerFields:
+    estimatedDuration: 1 week
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-unit></oer-unit>

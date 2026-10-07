@@ -1,0 +1,24 @@
+{
+  "id": "item-dfefb1f5-dbde-4cb7-93cf-4b477c02eff8",
+  "indent": 3,
+  "location": "pages/item-dfefb1f5-dbde-4cb7-93cf-4b477c02eff8/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/cnc-materials-bits-feeds-and-speeds-fixturing",
+  "order": 1,
+  "parent": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+  "title": "CNC materials, bits, feeds and speeds, fixturing",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:book:M09:L15",
+    "published": false,
+    "oerRef": {
+      "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-304740f9-f09f-4e1c-94dd-84eead792e87\"></oer-include>"
+}

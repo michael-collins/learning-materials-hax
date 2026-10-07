@@ -1,0 +1,19 @@
+id: item-4b332768-66e7-4a69-be71-e87c03beba00
+indent: 2
+location: pages/item-4b332768-66e7-4a69-be71-e87c03beba00/index.yaml
+slug: pathways/digital-fabrication-studio/additive-and-parametric
+order: 2
+parent: item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a
+title: Additive and parametric
+description: ''
+metadata:
+  pageType: oer:unit
+  oerPlan: DART 413:unit:3
+  published: false
+  oerFields:
+    estimatedDuration: 3 weeks
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-unit></oer-unit>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-84d0f35e-a9f3-4c14-94a8-d2e787124f5c</id>
+<indent>2</indent>
+<location>pages/item-84d0f35e-a9f3-4c14-94a8-d2e787124f5c/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-14-final-production-ii-work-in-progress-crit</slug>
+<order>13</order>
+<parent>item-69dddfb7-34fb-48ff-b038-f1429191de9b</parent>
+<title>Week 14: Final production II + work-in-progress crit</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:book:M14</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-87e4ca8e-509e-4062-9a59-8c8d003e0665</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-87e4ca8e-509e-4062-9a59-8c8d003e0665"></oer-include>]]></content>
+</item>

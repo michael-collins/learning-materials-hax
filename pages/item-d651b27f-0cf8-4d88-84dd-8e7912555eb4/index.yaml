@@ -1,0 +1,21 @@
+id: item-d651b27f-0cf8-4d88-84dd-8e7912555eb4
+indent: 3
+location: pages/item-d651b27f-0cf8-4d88-84dd-8e7912555eb4/index.yaml
+slug: >-
+  pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/final-project-launch-critical-making
+order: 1
+parent: item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8
+title: Final project launch + critical making
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:unit:5:M12
+  published: false
+  oerRef:
+    page: item-665fac95-9a12-4f05-a7cd-e9264f010b6f
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-665fac95-9a12-4f05-a7cd-e9264f010b6f"></oer-include>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1bf1d5f8-e3dd-4bf3-913a-a263282e2e62</id>
+<indent>3</indent>
+<location>pages/item-1bf1d5f8-e3dd-4bf3-913a-a263282e2e62/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/rubric-project-rubric-template</slug>
+<order>1</order>
+<parent>item-f03e8a28-72d2-4d83-9943-92bb2c3dc054</parent>
+<title>Rubric: Project rubric template</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M08:L19</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944"></oer-include>]]></content>
+</item>

@@ -1,0 +1,24 @@
+{
+  "id": "item-5da73eb5-c8b7-4187-b063-4e2cc7c7c959",
+  "indent": 3,
+  "location": "pages/item-5da73eb5-c8b7-4187-b063-4e2cc7c7c959/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/bits-to-atoms-the-digital-physical-loop",
+  "order": 0,
+  "parent": "item-ad0fed20-95ae-4050-a323-f8eacc261ed9",
+  "title": "Bits to atoms — the digital–physical loop",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lecture",
+    "oerPlan": "DART 413:book:M01:L02",
+    "published": false,
+    "oerRef": {
+      "page": "item-13e7589e-e8ee-48ab-84d2-286c92ebfd73",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-13e7589e-e8ee-48ab-84d2-286c92ebfd73\"></oer-include>"
+}

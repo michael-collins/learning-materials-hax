@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8</id>
+<indent>2</indent>
+<location>pages/item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8/index.xml</location>
+<slug>pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project</slug>
+<order>4</order>
+<parent>item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a</parent>
+<title>Hybrid processes and the final project</title>
+<description></description>
+<metadata>
+<pageType>oer:unit</pageType>
+<oerPlan>DART 413:unit:5</oerPlan>
+<published>false</published>
+<oerFields>
+<estimatedDuration>5 weeks</estimatedDuration>
+</oerFields>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-unit></oer-unit>]]></content>
+</item>

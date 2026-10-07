@@ -1,0 +1,21 @@
+id: item-beabf028-07bb-47f0-a745-1065a26fa1ce
+indent: 3
+location: pages/item-beabf028-07bb-47f0-a745-1065a26fa1ce/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/sheet-to-form-sectioning-folding-joinery
+order: 1
+parent: item-0df22ec2-f325-4e7b-970f-86440a9297ad
+title: Sheet to form — sectioning, folding, joinery
+description: ''
+metadata:
+  pageType: oer:lecture
+  oerPlan: DART 413:book:M03:L07
+  published: false
+  oerRef:
+    page: item-4876f604-977f-4e7d-a5c3-cc6b37063ec8
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-4876f604-977f-4e7d-a5c3-cc6b37063ec8"></oer-include>

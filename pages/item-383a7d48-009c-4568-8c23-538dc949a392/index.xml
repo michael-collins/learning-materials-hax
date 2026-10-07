@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-383a7d48-009c-4568-8c23-538dc949a392</id>
+<indent>3</indent>
+<location>pages/item-383a7d48-009c-4568-8c23-538dc949a392/index.xml</location>
+<slug>pathways/digital-fabrication-studio/subtractive/subtractive-cnc-routing</slug>
+<order>0</order>
+<parent>item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55</parent>
+<title>Subtractive: CNC routing</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:4:M09</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-29ccdd18-d451-48e3-b92a-ee97be5e062f</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-29ccdd18-d451-48e3-b92a-ee97be5e062f"></oer-include>]]></content>
+</item>

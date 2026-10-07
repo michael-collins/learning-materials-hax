@@ -1,0 +1,24 @@
+{
+  "id": "item-1bf1d5f8-e3dd-4bf3-913a-a263282e2e62",
+  "indent": 3,
+  "location": "pages/item-1bf1d5f8-e3dd-4bf3-913a-a263282e2e62/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/rubric-project-rubric-template",
+  "order": 1,
+  "parent": "item-f03e8a28-72d2-4d83-9943-92bb2c3dc054",
+  "title": "Rubric: Project rubric template",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:book:M08:L19",
+    "published": false,
+    "oerRef": {
+      "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944\"></oer-include>"
+}

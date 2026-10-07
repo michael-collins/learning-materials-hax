@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-bb5eae8f-d5ca-43f2-90b8-59f73d1a1add</id>
+<indent>3</indent>
+<location>pages/item-bb5eae8f-d5ca-43f2-90b8-59f73d1a1add/index.xml</location>
+<slug>pathways/digital-fabrication-studio/laser-and-sheet/project-1-production-crit</slug>
+<order>3</order>
+<parent>item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333</parent>
+<title>Project 1 production + crit</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:2:M05</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-b2b1aa00-e58f-483e-8649-84526b67110a</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-b2b1aa00-e58f-483e-8649-84526b67110a"></oer-include>]]></content>
+</item>

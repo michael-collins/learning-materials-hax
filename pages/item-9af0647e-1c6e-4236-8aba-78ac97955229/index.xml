@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-9af0647e-1c6e-4236-8aba-78ac97955229</id>
+<indent>3</indent>
+<location>pages/item-9af0647e-1c6e-4236-8aba-78ac97955229/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/design-for-fdm-checklist</slug>
+<order>1</order>
+<parent>item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3</parent>
+<title>Design for FDM checklist</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M06:L10</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0"></oer-include>]]></content>
+</item>

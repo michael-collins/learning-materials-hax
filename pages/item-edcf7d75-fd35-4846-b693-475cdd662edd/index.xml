@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-edcf7d75-fd35-4846-b693-475cdd662edd</id>
+<indent>3</indent>
+<location>pages/item-edcf7d75-fd35-4846-b693-475cdd662edd/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-11-hybrid-processes-and-finishing/demo-rotation-molds-and-casting-vacuum-forming-vinyl</slug>
+<order>0</order>
+<parent>item-5e20783e-c8f4-4ac1-a9b9-deff784b203f</parent>
+<title>Demo rotation: molds and casting, vacuum forming, vinyl</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:book:M11:L16</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9"></oer-include>]]></content>
+</item>

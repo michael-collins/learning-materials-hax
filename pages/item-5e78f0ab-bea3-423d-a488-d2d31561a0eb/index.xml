@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5e78f0ab-bea3-423d-a488-d2d31561a0eb</id>
+<indent>3</indent>
+<location>pages/item-5e78f0ab-bea3-423d-a488-d2d31561a0eb/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/laser-cutting-quiz</slug>
+<order>3</order>
+<parent>item-47f00279-5ecb-4168-bf4d-dde129df6f16</parent>
+<title>Laser cutting quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<oerPlan>DART 413:book:M02:quiz:M02</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-9be5b661-faea-45de-a5d7-75725ac645c8</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-9be5b661-faea-45de-a5d7-75725ac645c8"></oer-include>]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-efe78136-0bad-4465-855c-a5b77e4d33fa</id>
+<indent>3</indent>
+<location>pages/item-efe78136-0bad-4465-855c-a5b77e4d33fa/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/template-final-project-proposal</slug>
+<order>2</order>
+<parent>item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb</parent>
+<title>Template: Final project proposal</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M12:L20</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-eceae826-36f2-4e2c-b626-3c2136ab261b</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-eceae826-36f2-4e2c-b626-3c2136ab261b"></oer-include>]]></content>
+</item>

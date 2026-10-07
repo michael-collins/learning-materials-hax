@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-30661167-2070-4860-84e8-2233ef6e50d9</id>
+<indent>3</indent>
+<location>pages/item-30661167-2070-4860-84e8-2233ef6e50d9/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/crit-protocol</slug>
+<order>0</order>
+<parent>item-6350d49e-b9e6-47aa-ac01-9a50e438ad68</parent>
+<title>Crit protocol</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M04:L08</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-389a18e8-e515-4482-ae7b-9a56687cb460</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-389a18e8-e515-4482-ae7b-9a56687cb460"></oer-include>]]></content>
+</item>

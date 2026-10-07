@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-006d133d-0ded-43ba-a828-74c27d8b6802</id>
+<indent>3</indent>
+<location>pages/item-006d133d-0ded-43ba-a828-74c27d8b6802/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural/variable-identical-differential-the-multiple</slug>
+<order>1</order>
+<parent>item-8761d40a-e51a-4019-8c6e-33211c49f708</parent>
+<title>Variable, identical, differential — the multiple</title>
+<description></description>
+<metadata>
+<pageType>oer:lecture</pageType>
+<oerPlan>DART 413:book:M07:L13</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-f570ed6c-e171-4a20-af0f-58c5e61fceb7</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-f570ed6c-e171-4a20-af0f-58c5e61fceb7"></oer-include>]]></content>
+</item>

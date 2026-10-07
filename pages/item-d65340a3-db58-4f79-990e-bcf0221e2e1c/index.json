@@ -1,0 +1,24 @@
+{
+  "id": "item-d65340a3-db58-4f79-990e-bcf0221e2e1c",
+  "indent": 3,
+  "location": "pages/item-d65340a3-db58-4f79-990e-bcf0221e2e1c/index.json",
+  "slug": "pathways/digital-fabrication-studio/laser-and-sheet/sheet-to-form-sectioning-folding-joinery",
+  "order": 1,
+  "parent": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+  "title": "Sheet to form: sectioning, folding, joinery",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerPlan": "DART 413:unit:2:M03",
+    "published": false,
+    "oerRef": {
+      "page": "item-3c61c343-9aaa-4257-b871-355930bdcd69",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-3c61c343-9aaa-4257-b871-355930bdcd69\"></oer-include>"
+}

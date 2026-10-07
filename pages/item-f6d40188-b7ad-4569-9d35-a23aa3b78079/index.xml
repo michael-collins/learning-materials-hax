@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f6d40188-b7ad-4569-9d35-a23aa3b78079</id>
+<indent>3</indent>
+<location>pages/item-f6d40188-b7ad-4569-9d35-a23aa3b78079/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/rubric-project-rubric-template</slug>
+<order>1</order>
+<parent>item-6350d49e-b9e6-47aa-ac01-9a50e438ad68</parent>
+<title>Rubric: Project rubric template</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M04:L19</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944"></oer-include>]]></content>
+</item>

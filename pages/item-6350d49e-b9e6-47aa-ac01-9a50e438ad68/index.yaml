@@ -1,0 +1,21 @@
+id: item-6350d49e-b9e6-47aa-ac01-9a50e438ad68
+indent: 2
+location: pages/item-6350d49e-b9e6-47aa-ac01-9a50e438ad68/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form
+order: 3
+parent: item-69dddfb7-34fb-48ff-b038-f1429191de9b
+title: 'Week 4: Project 1 launch: Sheet to form'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:book:M04
+  published: false
+  oerRef:
+    page: item-86df4055-aee6-4e3c-aa9c-5e291791c8ef
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-86df4055-aee6-4e3c-aa9c-5e291791c8ef"></oer-include>

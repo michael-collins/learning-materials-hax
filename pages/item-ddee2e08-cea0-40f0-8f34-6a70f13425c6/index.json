@@ -1,0 +1,24 @@
+{
+  "id": "item-ddee2e08-cea0-40f0-8f34-6a70f13425c6",
+  "indent": 3,
+  "location": "pages/item-ddee2e08-cea0-40f0-8f34-6a70f13425c6/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/cnc-relief-tile",
+  "order": 2,
+  "parent": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+  "title": "CNC relief tile",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:exercise",
+    "oerPlan": "DART 413:book:M09:A08",
+    "published": false,
+    "oerRef": {
+      "page": "item-70652b2f-07b2-489b-a0fa-e1f7f341ec91",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-70652b2f-07b2-489b-a0fa-e1f7f341ec91\"></oer-include>"
+}

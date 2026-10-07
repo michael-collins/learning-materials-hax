@@ -1,0 +1,21 @@
+id: item-7f2b3258-826a-4dd8-9333-68d2db7ba566
+indent: 3
+location: pages/item-7f2b3258-826a-4dd8-9333-68d2db7ba566/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/laser-material-test-kerf-swatch
+order: 2
+parent: item-47f00279-5ecb-4168-bf4d-dde129df6f16
+title: Laser material test + kerf swatch
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerPlan: DART 413:book:M02:A02
+  published: false
+  oerRef:
+    page: item-e57bcbe5-efcd-42a7-a223-b05dea0dc123
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-e57bcbe5-efcd-42a7-a223-b05dea0dc123"></oer-include>

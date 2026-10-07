@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5da73eb5-c8b7-4187-b063-4e2cc7c7c959</id>
+<indent>3</indent>
+<location>pages/item-5da73eb5-c8b7-4187-b063-4e2cc7c7c959/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/bits-to-atoms-the-digital-physical-loop</slug>
+<order>0</order>
+<parent>item-ad0fed20-95ae-4050-a323-f8eacc261ed9</parent>
+<title>Bits to atoms — the digital–physical loop</title>
+<description></description>
+<metadata>
+<pageType>oer:lecture</pageType>
+<oerPlan>DART 413:book:M01:L02</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-13e7589e-e8ee-48ab-84d2-286c92ebfd73</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-13e7589e-e8ee-48ab-84d2-286c92ebfd73"></oer-include>]]></content>
+</item>

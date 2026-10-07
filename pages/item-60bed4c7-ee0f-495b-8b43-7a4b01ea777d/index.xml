@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-60bed4c7-ee0f-495b-8b43-7a4b01ea777d</id>
+<indent>3</indent>
+<location>pages/item-60bed4c7-ee0f-495b-8b43-7a4b01ea777d/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/demo-cnc-cam-setup-to-cut-with-the-lab-tech</slug>
+<order>0</order>
+<parent>item-03a03c64-0796-4c2c-b43f-11419b7805c3</parent>
+<title>Demo: CNC — CAM setup to cut, with the lab tech</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:book:M09:L14</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e"></oer-include>]]></content>
+</item>

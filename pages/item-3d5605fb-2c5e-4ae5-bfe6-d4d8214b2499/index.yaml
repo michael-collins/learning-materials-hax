@@ -1,0 +1,21 @@
+id: item-3d5605fb-2c5e-4ae5-bfe6-d4d8214b2499
+indent: 3
+location: pages/item-3d5605fb-2c5e-4ae5-bfe6-d4d8214b2499/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural/parametric-family
+order: 2
+parent: item-8761d40a-e51a-4019-8c6e-33211c49f708
+title: Parametric family
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerPlan: DART 413:book:M07:A06
+  published: false
+  oerRef:
+    page: item-f5669ca1-8a62-4854-908c-925e14b7eecb
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-f5669ca1-8a62-4854-908c-925e14b7eecb"></oer-include>

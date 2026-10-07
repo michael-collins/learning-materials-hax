@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-1642df6f-a954-4518-9f81-e02e999b7864</id>
+<indent>3</indent>
+<location>pages/item-1642df6f-a954-4518-9f81-e02e999b7864/index.xml</location>
+<slug>pathways/digital-fabrication-studio/subtractive/cnc-production-project-2-crit</slug>
+<order>1</order>
+<parent>item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55</parent>
+<title>CNC production + Project 2 crit</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:4:M10</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0"></oer-include>]]></content>
+</item>

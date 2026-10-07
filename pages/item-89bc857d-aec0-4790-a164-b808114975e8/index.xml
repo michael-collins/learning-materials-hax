@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-89bc857d-aec0-4790-a164-b808114975e8</id>
+<indent>3</indent>
+<location>pages/item-89bc857d-aec0-4790-a164-b808114975e8/index.xml</location>
+<slug>pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/hybrid-processes-and-finishing</slug>
+<order>0</order>
+<parent>item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8</parent>
+<title>Hybrid processes and finishing</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:5:M11</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-bf575694-a7b5-42c8-9527-0e8704d50077</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-bf575694-a7b5-42c8-9527-0e8704d50077"></oer-include>]]></content>
+</item>

@@ -1,0 +1,21 @@
+id: item-46098700-be09-4c89-a1a4-2ba9e7014a05
+indent: 3
+location: pages/item-46098700-be09-4c89-a1a4-2ba9e7014a05/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural/a-parametric-object-in-fusion-360
+order: 0
+parent: item-8761d40a-e51a-4019-8c6e-33211c49f708
+title: A parametric object in Fusion 360
+description: ''
+metadata:
+  pageType: oer:tutorial
+  oerPlan: DART 413:book:M07:L12
+  published: false
+  oerRef:
+    page: item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f"></oer-include>

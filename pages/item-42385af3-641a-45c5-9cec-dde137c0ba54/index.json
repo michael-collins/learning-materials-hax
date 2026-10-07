@@ -1,0 +1,24 @@
+{
+  "id": "item-42385af3-641a-45c5-9cec-dde137c0ba54",
+  "indent": 3,
+  "location": "pages/item-42385af3-641a-45c5-9cec-dde137c0ba54/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/additive-thinking-layers-orientation-anisotropy",
+  "order": 2,
+  "parent": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+  "title": "Additive thinking — layers, orientation, anisotropy",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lecture",
+    "oerPlan": "DART 413:book:M06:L11",
+    "published": false,
+    "oerRef": {
+      "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad\"></oer-include>"
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a0962a7d-2d86-418e-8dc3-edf1cae718ca</id>
+<indent>3</indent>
+<location>pages/item-a0962a7d-2d86-418e-8dc3-edf1cae718ca/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-5-project-1-production-crit/critique-participation</slug>
+<order>1</order>
+<parent>item-9e676df8-ed56-4d59-bfa7-1ad0fa52387d</parent>
+<title>Critique participation</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerPlan>DART 413:book:M05:A13</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180"></oer-include>]]></content>
+</item>

@@ -1,0 +1,20 @@
+id: item-383a7d48-009c-4568-8c23-538dc949a392
+indent: 3
+location: pages/item-383a7d48-009c-4568-8c23-538dc949a392/index.yaml
+slug: pathways/digital-fabrication-studio/subtractive/subtractive-cnc-routing
+order: 0
+parent: item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55
+title: 'Subtractive: CNC routing'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:unit:4:M09
+  published: false
+  oerRef:
+    page: item-29ccdd18-d451-48e3-b92a-ee97be5e062f
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-29ccdd18-d451-48e3-b92a-ee97be5e062f"></oer-include>

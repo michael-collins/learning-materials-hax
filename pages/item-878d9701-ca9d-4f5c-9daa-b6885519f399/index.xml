@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-878d9701-ca9d-4f5c-9daa-b6885519f399</id>
+<indent>3</indent>
+<location>pages/item-878d9701-ca9d-4f5c-9daa-b6885519f399/index.xml</location>
+<slug>pathways/digital-fabrication-studio/additive-and-parametric/project-2-launch-multiples-and-variation</slug>
+<order>2</order>
+<parent>item-4b332768-66e7-4a69-be71-e87c03beba00</parent>
+<title>Project 2 launch: Multiples and variation</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:3:M08</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-23bfc330-baae-4c57-b782-7da696b33431</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-23bfc330-baae-4c57-b782-7da696b33431"></oer-include>]]></content>
+</item>

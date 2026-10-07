@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-ac91c022-2b71-4ab2-90b4-014b5b12f7fd</id>
+<indent>3</indent>
+<location>pages/item-ac91c022-2b71-4ab2-90b4-014b5b12f7fd/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/3d-printing-quiz</slug>
+<order>4</order>
+<parent>item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3</parent>
+<title>3D printing quiz</title>
+<description></description>
+<metadata>
+<pageType>oer:quiz</pageType>
+<oerPlan>DART 413:book:M06:quiz:M06</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-ab1c8916-1374-44a6-8872-b62dcea82770</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-ab1c8916-1374-44a6-8872-b62dcea82770"></oer-include>]]></content>
+</item>

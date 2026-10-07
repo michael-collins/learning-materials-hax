@@ -1,0 +1,19 @@
+id: item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55
+indent: 2
+location: pages/item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55/index.yaml
+slug: pathways/digital-fabrication-studio/subtractive
+order: 3
+parent: item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a
+title: Subtractive
+description: ''
+metadata:
+  pageType: oer:unit
+  oerPlan: DART 413:unit:4
+  published: false
+  oerFields:
+    estimatedDuration: 2 weeks
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-unit></oer-unit>

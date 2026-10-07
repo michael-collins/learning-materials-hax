@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-659e3d31-7f58-430e-a54e-485b68453986</id>
+<indent>3</indent>
+<location>pages/item-659e3d31-7f58-430e-a54e-485b68453986/index.xml</location>
+<slug>pathways/digital-fabrication-studio/laser-and-sheet/vectors-for-machines-the-laser-cutter</slug>
+<order>0</order>
+<parent>item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333</parent>
+<title>Vectors for machines: the laser cutter</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:2:M02</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-926d32cd-5f1d-4cad-b882-89c65ffaad5d</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-926d32cd-5f1d-4cad-b882-89c65ffaad5d"></oer-include>]]></content>
+</item>

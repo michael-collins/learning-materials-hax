@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5e20783e-c8f4-4ac1-a9b9-deff784b203f</id>
+<indent>2</indent>
+<location>pages/item-5e20783e-c8f4-4ac1-a9b9-deff784b203f/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-11-hybrid-processes-and-finishing</slug>
+<order>10</order>
+<parent>item-69dddfb7-34fb-48ff-b038-f1429191de9b</parent>
+<title>Week 11: Hybrid processes and finishing</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:book:M11</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-bf575694-a7b5-42c8-9527-0e8704d50077</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-bf575694-a7b5-42c8-9527-0e8704d50077"></oer-include>]]></content>
+</item>

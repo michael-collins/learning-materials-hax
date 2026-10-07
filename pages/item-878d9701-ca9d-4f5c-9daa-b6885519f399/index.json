@@ -1,0 +1,24 @@
+{
+  "id": "item-878d9701-ca9d-4f5c-9daa-b6885519f399",
+  "indent": 3,
+  "location": "pages/item-878d9701-ca9d-4f5c-9daa-b6885519f399/index.json",
+  "slug": "pathways/digital-fabrication-studio/additive-and-parametric/project-2-launch-multiples-and-variation",
+  "order": 2,
+  "parent": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+  "title": "Project 2 launch: Multiples and variation",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerPlan": "DART 413:unit:3:M08",
+    "published": false,
+    "oerRef": {
+      "page": "item-23bfc330-baae-4c57-b782-7da696b33431",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-23bfc330-baae-4c57-b782-7da696b33431\"></oer-include>"
+}

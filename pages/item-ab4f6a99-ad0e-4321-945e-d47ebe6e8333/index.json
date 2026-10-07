@@ -1,0 +1,23 @@
+{
+  "id": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+  "indent": 2,
+  "location": "pages/item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333/index.json",
+  "slug": "pathways/digital-fabrication-studio/laser-and-sheet",
+  "order": 1,
+  "parent": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+  "title": "Laser and sheet",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:unit",
+    "oerPlan": "DART 413:unit:2",
+    "published": false,
+    "oerFields": {
+      "estimatedDuration": "4 weeks"
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-unit></oer-unit>"
+}

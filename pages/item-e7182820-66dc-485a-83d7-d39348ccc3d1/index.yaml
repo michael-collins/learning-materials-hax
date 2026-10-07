@@ -1,0 +1,21 @@
+id: item-e7182820-66dc-485a-83d7-d39348ccc3d1
+indent: 3
+location: pages/item-e7182820-66dc-485a-83d7-d39348ccc3d1/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/project-2-multiples-and-variation
+order: 2
+parent: item-f03e8a28-72d2-4d83-9943-92bb2c3dc054
+title: 'Project 2: Multiples and variation'
+description: ''
+metadata:
+  pageType: oer:project
+  oerPlan: DART 413:book:M08:A07
+  published: false
+  oerRef:
+    page: item-e8448268-7180-455f-ba52-360dd73d16f6
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-e8448268-7180-455f-ba52-360dd73d16f6"></oer-include>

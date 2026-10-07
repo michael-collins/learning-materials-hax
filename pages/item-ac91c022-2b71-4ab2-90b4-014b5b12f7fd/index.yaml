@@ -1,0 +1,21 @@
+id: item-ac91c022-2b71-4ab2-90b4-014b5b12f7fd
+indent: 3
+location: pages/item-ac91c022-2b71-4ab2-90b4-014b5b12f7fd/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/3d-printing-quiz
+order: 4
+parent: item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3
+title: 3D printing quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  oerPlan: DART 413:book:M06:quiz:M06
+  published: false
+  oerRef:
+    page: item-ab1c8916-1374-44a6-8872-b62dcea82770
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-ab1c8916-1374-44a6-8872-b62dcea82770"></oer-include>

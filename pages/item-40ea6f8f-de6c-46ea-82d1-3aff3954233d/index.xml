@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-40ea6f8f-de6c-46ea-82d1-3aff3954233d</id>
+<indent>3</indent>
+<location>pages/item-40ea6f8f-de6c-46ea-82d1-3aff3954233d/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-13-final-production-i-workshops-on-demand/documentation-guide-photographing-work-process-docs-publishing-files</slug>
+<order>0</order>
+<parent>item-02d6c11e-d1ca-4259-b298-d06cf199342f</parent>
+<title>Documentation guide — photographing work, process docs, publishing files</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M13:L18</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1"></oer-include>]]></content>
+</item>

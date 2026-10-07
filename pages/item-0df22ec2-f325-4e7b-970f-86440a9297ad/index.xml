@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0df22ec2-f325-4e7b-970f-86440a9297ad</id>
+<indent>2</indent>
+<location>pages/item-0df22ec2-f325-4e7b-970f-86440a9297ad/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery</slug>
+<order>2</order>
+<parent>item-69dddfb7-34fb-48ff-b038-f1429191de9b</parent>
+<title>Week 3: Sheet to form: sectioning, folding, joinery</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:book:M03</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-3c61c343-9aaa-4257-b871-355930bdcd69</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-3c61c343-9aaa-4257-b871-355930bdcd69"></oer-include>]]></content>
+</item>

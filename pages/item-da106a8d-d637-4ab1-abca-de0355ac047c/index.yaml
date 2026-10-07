@@ -1,0 +1,21 @@
+id: item-da106a8d-d637-4ab1-abca-de0355ac047c
+indent: 2
+location: pages/item-da106a8d-d637-4ab1-abca-de0355ac047c/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-10-cnc-production-project-2-crit
+order: 9
+parent: item-69dddfb7-34fb-48ff-b038-f1429191de9b
+title: 'Week 10: CNC production + Project 2 crit'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:book:M10
+  published: false
+  oerRef:
+    page: item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0"></oer-include>

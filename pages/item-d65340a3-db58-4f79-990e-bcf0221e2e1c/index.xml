@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d65340a3-db58-4f79-990e-bcf0221e2e1c</id>
+<indent>3</indent>
+<location>pages/item-d65340a3-db58-4f79-990e-bcf0221e2e1c/index.xml</location>
+<slug>pathways/digital-fabrication-studio/laser-and-sheet/sheet-to-form-sectioning-folding-joinery</slug>
+<order>1</order>
+<parent>item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333</parent>
+<title>Sheet to form: sectioning, folding, joinery</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:2:M03</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-3c61c343-9aaa-4257-b871-355930bdcd69</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-3c61c343-9aaa-4257-b871-355930bdcd69"></oer-include>]]></content>
+</item>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b3eba63a-8eca-4c7f-a1b6-d6d6b1dc803b</id>
+<indent>3</indent>
+<location>pages/item-b3eba63a-8eca-4c7f-a1b6-d6d6b1dc803b/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/demo-3d-printing-workflow-mesh-slicer-print</slug>
+<order>0</order>
+<parent>item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3</parent>
+<title>Demo: 3D printing workflow — mesh → slicer → print</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:book:M06:L09</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6"></oer-include>]]></content>
+</item>

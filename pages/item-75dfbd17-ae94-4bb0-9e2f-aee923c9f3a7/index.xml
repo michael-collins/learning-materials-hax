@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-75dfbd17-ae94-4bb0-9e2f-aee923c9f3a7</id>
+<indent>3</indent>
+<location>pages/item-75dfbd17-ae94-4bb0-9e2f-aee923c9f3a7/index.xml</location>
+<slug>pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/final-production-i-workshops-on-demand</slug>
+<order>2</order>
+<parent>item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8</parent>
+<title>Final production I: workshops on demand</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:5:M13</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d"></oer-include>]]></content>
+</item>

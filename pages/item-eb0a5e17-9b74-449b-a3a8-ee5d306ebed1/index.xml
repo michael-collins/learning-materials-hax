@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-eb0a5e17-9b74-449b-a3a8-ee5d306ebed1</id>
+<indent>3</indent>
+<location>pages/item-eb0a5e17-9b74-449b-a3a8-ee5d306ebed1/index.xml</location>
+<slug>pathways/digital-fabrication-studio/laser-and-sheet/project-1-launch-sheet-to-form</slug>
+<order>2</order>
+<parent>item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333</parent>
+<title>Project 1 launch: Sheet to form</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:2:M04</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-86df4055-aee6-4e3c-aa9c-5e291791c8ef</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-86df4055-aee6-4e3c-aa9c-5e291791c8ef"></oer-include>]]></content>
+</item>

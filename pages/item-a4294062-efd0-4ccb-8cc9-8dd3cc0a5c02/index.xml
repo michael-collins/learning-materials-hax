@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a4294062-efd0-4ccb-8cc9-8dd3cc0a5c02</id>
+<indent>3</indent>
+<location>pages/item-a4294062-efd0-4ccb-8cc9-8dd3cc0a5c02/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/demo-laser-cutter-workflow-file-job-cleanup</slug>
+<order>0</order>
+<parent>item-47f00279-5ecb-4168-bf4d-dde129df6f16</parent>
+<title>Demo: Laser cutter workflow — file → job → cleanup</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:book:M02:L04</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-d243f14d-7a76-437f-b519-3d8b112aac59</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-d243f14d-7a76-437f-b519-3d8b112aac59"></oer-include>]]></content>
+</item>

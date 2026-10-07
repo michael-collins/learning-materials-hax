@@ -1,0 +1,21 @@
+id: item-9cf520ca-92fe-44b2-8aa0-f7d4e5ace772
+indent: 3
+location: pages/item-9cf520ca-92fe-44b2-8aa0-f7d4e5ace772/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/object-autopsy
+order: 2
+parent: item-ad0fed20-95ae-4050-a323-f8eacc261ed9
+title: Object autopsy
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerPlan: DART 413:book:M01:A01
+  published: false
+  oerRef:
+    page: item-4de26b66-7085-448a-ac92-f32fbf38f8f9
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-4de26b66-7085-448a-ac92-f32fbf38f8f9"></oer-include>

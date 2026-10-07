@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-00113cf3-e1a0-4505-8dce-15cfacbd2d74</id>
+<indent>3</indent>
+<location>pages/item-00113cf3-e1a0-4505-8dce-15cfacbd2d74/index.xml</location>
+<slug>pathways/digital-fabrication-studio/additive-and-parametric/additive-3d-printing-fundamentals</slug>
+<order>0</order>
+<parent>item-4b332768-66e7-4a69-be71-e87c03beba00</parent>
+<title>Additive: 3D printing fundamentals</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:unit:3:M06</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a"></oer-include>]]></content>
+</item>

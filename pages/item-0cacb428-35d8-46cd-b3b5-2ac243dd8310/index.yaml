@@ -1,0 +1,21 @@
+id: item-0cacb428-35d8-46cd-b3b5-2ac243dd8310
+indent: 3
+location: pages/item-0cacb428-35d8-46cd-b3b5-2ac243dd8310/index.yaml
+slug: >-
+  books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/press-fit-construction-kit
+order: 2
+parent: item-0df22ec2-f325-4e7b-970f-86440a9297ad
+title: Press-fit construction kit
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerPlan: DART 413:book:M03:A03
+  published: false
+  oerRef:
+    page: item-a16965e6-def0-4f61-b884-a46300037a08
+    version: ''
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-include page="item-a16965e6-def0-4f61-b884-a46300037a08"></oer-include>

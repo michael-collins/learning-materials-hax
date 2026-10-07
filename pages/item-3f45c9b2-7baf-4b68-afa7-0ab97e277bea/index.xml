@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3f45c9b2-7baf-4b68-afa7-0ab97e277bea</id>
+<indent>3</indent>
+<location>pages/item-3f45c9b2-7baf-4b68-afa7-0ab97e277bea/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/vector-file-prep-for-the-laser</slug>
+<order>1</order>
+<parent>item-47f00279-5ecb-4168-bf4d-dde129df6f16</parent>
+<title>Vector file prep for the laser</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:book:M02:L05</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf"></oer-include>]]></content>
+</item>

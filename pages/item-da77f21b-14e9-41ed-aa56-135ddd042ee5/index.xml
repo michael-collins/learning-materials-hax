@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-da77f21b-14e9-41ed-aa56-135ddd042ee5</id>
+<indent>3</indent>
+<location>pages/item-da77f21b-14e9-41ed-aa56-135ddd042ee5/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/precedent-presentation</slug>
+<order>3</order>
+<parent>item-0df22ec2-f325-4e7b-970f-86440a9297ad</parent>
+<title>Precedent presentation</title>
+<description></description>
+<metadata>
+<pageType>oer:exercise</pageType>
+<oerPlan>DART 413:book:M03:A14</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-bdd37b96-f590-4a7b-aad8-5a32e85230ad</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-bdd37b96-f590-4a7b-aad8-5a32e85230ad"></oer-include>]]></content>
+</item>

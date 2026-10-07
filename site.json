@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791383989,
+      "updated": 1791383991,
       "version": "26.8.0"
     },
     "theme": {
@@ -6633,6 +6633,580 @@
       }
     },
     {
+      "id": "item-d274633a-77d4-45bc-92a4-f6e1acdb8ad5",
+      "indent": 2,
+      "location": "pages/item-d274633a-77d4-45bc-92a4-f6e1acdb8ad5/index.html",
+      "slug": "pathways/digital-fabrication-studio/foundations",
+      "order": 0,
+      "parent": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "title": "Foundations",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:unit",
+        "oerPlan": "DART 413:unit:1",
+        "published": false,
+        "oerFields": {
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-19a78f25-bf7a-4386-8891-4083b5d5aedd",
+      "indent": 3,
+      "location": "pages/item-19a78f25-bf7a-4386-8891-4083b5d5aedd/index.html",
+      "slug": "pathways/digital-fabrication-studio/foundations/bits-to-atoms-what-digital-fabrication-is",
+      "order": 0,
+      "parent": "item-d274633a-77d4-45bc-92a4-f6e1acdb8ad5",
+      "title": "Bits to atoms: what digital fabrication is",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:1:M01",
+        "published": false,
+        "oerRef": {
+          "page": "item-79caedc2-9d9c-4828-bd1e-81545cc458a8",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-ad0fed20-95ae-4050-a323-f8eacc261ed9",
+      "indent": 2,
+      "location": "pages/item-ad0fed20-95ae-4050-a323-f8eacc261ed9/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is",
+      "order": 0,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 1: Bits to atoms: what digital fabrication is",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M01",
+        "published": false,
+        "oerRef": {
+          "page": "item-79caedc2-9d9c-4828-bd1e-81545cc458a8",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-5da73eb5-c8b7-4187-b063-4e2cc7c7c959",
+      "indent": 3,
+      "location": "pages/item-5da73eb5-c8b7-4187-b063-4e2cc7c7c959/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/bits-to-atoms-the-digital-physical-loop",
+      "order": 0,
+      "parent": "item-ad0fed20-95ae-4050-a323-f8eacc261ed9",
+      "title": "Bits to atoms — the digital–physical loop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:book:M01:L02",
+        "published": false,
+        "oerRef": {
+          "page": "item-13e7589e-e8ee-48ab-84d2-286c92ebfd73",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-b6fc169e-8a63-4351-89b7-b0976bd9bfc2",
+      "indent": 3,
+      "location": "pages/item-b6fc169e-8a63-4351-89b7-b0976bd9bfc2/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/worksheet-object-autopsy",
+      "order": 1,
+      "parent": "item-ad0fed20-95ae-4050-a323-f8eacc261ed9",
+      "title": "Worksheet: Object autopsy",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M01:L21",
+        "published": false,
+        "oerRef": {
+          "page": "item-cf74e241-cda4-4eff-a5d1-14b9cf701571",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-9cf520ca-92fe-44b2-8aa0-f7d4e5ace772",
+      "indent": 3,
+      "location": "pages/item-9cf520ca-92fe-44b2-8aa0-f7d4e5ace772/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/object-autopsy",
+      "order": 2,
+      "parent": "item-ad0fed20-95ae-4050-a323-f8eacc261ed9",
+      "title": "Object autopsy",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M01:A01",
+        "published": false,
+        "oerRef": {
+          "page": "item-4de26b66-7085-448a-ac92-f32fbf38f8f9",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-794631aa-df0e-4ac1-bf99-9f5005531ef0",
+      "indent": 3,
+      "location": "pages/item-794631aa-df0e-4ac1-bf99-9f5005531ef0/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-1-bits-to-atoms-what-digital-fabrication-is/reading-responses",
+      "order": 3,
+      "parent": "item-ad0fed20-95ae-4050-a323-f8eacc261ed9",
+      "title": "Reading responses",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M01:A12",
+        "published": false,
+        "oerRef": {
+          "page": "item-5117d4e6-e938-41a9-b976-858e75347ae5",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-659e3d31-7f58-430e-a54e-485b68453986",
+      "indent": 3,
+      "location": "pages/item-659e3d31-7f58-430e-a54e-485b68453986/index.html",
+      "slug": "pathways/digital-fabrication-studio/laser-and-sheet/vectors-for-machines-the-laser-cutter",
+      "order": 0,
+      "parent": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+      "title": "Vectors for machines: the laser cutter",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:2:M02",
+        "published": false,
+        "oerRef": {
+          "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-00113cf3-e1a0-4505-8dce-15cfacbd2d74",
+      "indent": 3,
+      "location": "pages/item-00113cf3-e1a0-4505-8dce-15cfacbd2d74/index.html",
+      "slug": "pathways/digital-fabrication-studio/additive-and-parametric/additive-3d-printing-fundamentals",
+      "order": 0,
+      "parent": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+      "title": "Additive: 3D printing fundamentals",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:3:M06",
+        "published": false,
+        "oerRef": {
+          "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-383a7d48-009c-4568-8c23-538dc949a392",
+      "indent": 3,
+      "location": "pages/item-383a7d48-009c-4568-8c23-538dc949a392/index.html",
+      "slug": "pathways/digital-fabrication-studio/subtractive/subtractive-cnc-routing",
+      "order": 0,
+      "parent": "item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55",
+      "title": "Subtractive: CNC routing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:4:M09",
+        "published": false,
+        "oerRef": {
+          "page": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-89bc857d-aec0-4790-a164-b808114975e8",
+      "indent": 3,
+      "location": "pages/item-89bc857d-aec0-4790-a164-b808114975e8/index.html",
+      "slug": "pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/hybrid-processes-and-finishing",
+      "order": 0,
+      "parent": "item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8",
+      "title": "Hybrid processes and finishing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:5:M11",
+        "published": false,
+        "oerRef": {
+          "page": "item-bf575694-a7b5-42c8-9527-0e8704d50077",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-a4294062-efd0-4ccb-8cc9-8dd3cc0a5c02",
+      "indent": 3,
+      "location": "pages/item-a4294062-efd0-4ccb-8cc9-8dd3cc0a5c02/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/demo-laser-cutter-workflow-file-job-cleanup",
+      "order": 0,
+      "parent": "item-47f00279-5ecb-4168-bf4d-dde129df6f16",
+      "title": "Demo: Laser cutter workflow — file → job → cleanup",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:book:M02:L04",
+        "published": false,
+        "oerRef": {
+          "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-74e7b237-caf8-480a-b7b1-734c13f73865",
+      "indent": 3,
+      "location": "pages/item-74e7b237-caf8-480a-b7b1-734c13f73865/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/press-fit-joinery-tolerance-test-kit",
+      "order": 0,
+      "parent": "item-0df22ec2-f325-4e7b-970f-86440a9297ad",
+      "title": "Press-fit joinery + tolerance test kit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:book:M03:L06",
+        "published": false,
+        "oerRef": {
+          "page": "item-273da091-602a-4824-86cc-a45fc9346115",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-30661167-2070-4860-84e8-2233ef6e50d9",
+      "indent": 3,
+      "location": "pages/item-30661167-2070-4860-84e8-2233ef6e50d9/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/crit-protocol",
+      "order": 0,
+      "parent": "item-6350d49e-b9e6-47aa-ac01-9a50e438ad68",
+      "title": "Crit protocol",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M04:L08",
+        "published": false,
+        "oerRef": {
+          "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-010dafda-4e66-435f-9e1e-17cb64478ee8",
+      "indent": 3,
+      "location": "pages/item-010dafda-4e66-435f-9e1e-17cb64478ee8/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-5-project-1-production-crit/crit-protocol",
+      "order": 0,
+      "parent": "item-9e676df8-ed56-4d59-bfa7-1ad0fa52387d",
+      "title": "Crit protocol",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M05:L08",
+        "published": false,
+        "oerRef": {
+          "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-b3eba63a-8eca-4c7f-a1b6-d6d6b1dc803b",
+      "indent": 3,
+      "location": "pages/item-b3eba63a-8eca-4c7f-a1b6-d6d6b1dc803b/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/demo-3d-printing-workflow-mesh-slicer-print",
+      "order": 0,
+      "parent": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+      "title": "Demo: 3D printing workflow — mesh → slicer → print",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:book:M06:L09",
+        "published": false,
+        "oerRef": {
+          "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-46098700-be09-4c89-a1a4-2ba9e7014a05",
+      "indent": 3,
+      "location": "pages/item-46098700-be09-4c89-a1a4-2ba9e7014a05/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural/a-parametric-object-in-fusion-360",
+      "order": 0,
+      "parent": "item-8761d40a-e51a-4019-8c6e-33211c49f708",
+      "title": "A parametric object in Fusion 360",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:book:M07:L12",
+        "published": false,
+        "oerRef": {
+          "page": "item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-dacf8088-d1b7-48a7-b3ee-84b5b44d7eaf",
+      "indent": 3,
+      "location": "pages/item-dacf8088-d1b7-48a7-b3ee-84b5b44d7eaf/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/variable-identical-differential-the-multiple",
+      "order": 0,
+      "parent": "item-f03e8a28-72d2-4d83-9943-92bb2c3dc054",
+      "title": "Variable, identical, differential — the multiple",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:book:M08:L13",
+        "published": false,
+        "oerRef": {
+          "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-60bed4c7-ee0f-495b-8b43-7a4b01ea777d",
+      "indent": 3,
+      "location": "pages/item-60bed4c7-ee0f-495b-8b43-7a4b01ea777d/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/demo-cnc-cam-setup-to-cut-with-the-lab-tech",
+      "order": 0,
+      "parent": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+      "title": "Demo: CNC — CAM setup to cut, with the lab tech",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:book:M09:L14",
+        "published": false,
+        "oerRef": {
+          "page": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-d4b5178a-5811-4585-b04f-e0632c16d5a7",
+      "indent": 3,
+      "location": "pages/item-d4b5178a-5811-4585-b04f-e0632c16d5a7/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-10-cnc-production-project-2-crit/crit-protocol",
+      "order": 0,
+      "parent": "item-da106a8d-d637-4ab1-abca-de0355ac047c",
+      "title": "Crit protocol",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M10:L08",
+        "published": false,
+        "oerRef": {
+          "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-edcf7d75-fd35-4846-b693-475cdd662edd",
+      "indent": 3,
+      "location": "pages/item-edcf7d75-fd35-4846-b693-475cdd662edd/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-11-hybrid-processes-and-finishing/demo-rotation-molds-and-casting-vacuum-forming-vinyl",
+      "order": 0,
+      "parent": "item-5e20783e-c8f4-4ac1-a9b9-deff784b203f",
+      "title": "Demo rotation: molds and casting, vacuum forming, vinyl",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:book:M11:L16",
+        "published": false,
+        "oerRef": {
+          "page": "item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-2febc2dd-68b2-45ff-9c6f-e3d9a94e36ad",
+      "indent": 3,
+      "location": "pages/item-2febc2dd-68b2-45ff-9c6f-e3d9a94e36ad/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/critical-making-the-maker-movement-and-its-critics",
+      "order": 0,
+      "parent": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+      "title": "Critical making — the maker movement and its critics",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:book:M12:L17",
+        "published": false,
+        "oerRef": {
+          "page": "item-d691e847-ed22-40ee-8b49-1f409a0dc0c2",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-40ea6f8f-de6c-46ea-82d1-3aff3954233d",
+      "indent": 3,
+      "location": "pages/item-40ea6f8f-de6c-46ea-82d1-3aff3954233d/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-13-final-production-i-workshops-on-demand/documentation-guide-photographing-work-process-docs-publishing-files",
+      "order": 0,
+      "parent": "item-02d6c11e-d1ca-4259-b298-d06cf199342f",
+      "title": "Documentation guide — photographing work, process docs, publishing files",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M13:L18",
+        "published": false,
+        "oerRef": {
+          "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-aed2bdca-e0d8-4d69-99d0-ae7151353ee6",
+      "indent": 3,
+      "location": "pages/item-aed2bdca-e0d8-4d69-99d0-ae7151353ee6/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-14-final-production-ii-work-in-progress-crit/crit-protocol",
+      "order": 0,
+      "parent": "item-84d0f35e-a9f3-4c14-94a8-d2e787124f5c",
+      "title": "Crit protocol",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M14:L08",
+        "published": false,
+        "oerRef": {
+          "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-41b470a2-1c25-48a0-bae0-a211a04e72d4",
+      "indent": 3,
+      "location": "pages/item-41b470a2-1c25-48a0-bae0-a211a04e72d4/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-15-final-crit-exhibition-documentation-portfolio/crit-protocol",
+      "order": 0,
+      "parent": "item-077eb755-108d-4225-93da-09fd1e4697af",
+      "title": "Crit protocol",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M15:L08",
+        "published": false,
+        "oerRef": {
+          "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
       "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
       "indent": 1,
       "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
@@ -8610,6 +9184,488 @@
         "images": [],
         "videos": [],
         "updated": 1791251085
+      }
+    },
+    {
+      "id": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+      "indent": 2,
+      "location": "pages/item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333/index.html",
+      "slug": "pathways/digital-fabrication-studio/laser-and-sheet",
+      "order": 1,
+      "parent": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "title": "Laser and sheet",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:unit",
+        "oerPlan": "DART 413:unit:2",
+        "published": false,
+        "oerFields": {
+          "estimatedDuration": "4 weeks"
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-d65340a3-db58-4f79-990e-bcf0221e2e1c",
+      "indent": 3,
+      "location": "pages/item-d65340a3-db58-4f79-990e-bcf0221e2e1c/index.html",
+      "slug": "pathways/digital-fabrication-studio/laser-and-sheet/sheet-to-form-sectioning-folding-joinery",
+      "order": 1,
+      "parent": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+      "title": "Sheet to form: sectioning, folding, joinery",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:2:M03",
+        "published": false,
+        "oerRef": {
+          "page": "item-3c61c343-9aaa-4257-b871-355930bdcd69",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-eb0a5e17-9b74-449b-a3a8-ee5d306ebed1",
+      "indent": 3,
+      "location": "pages/item-eb0a5e17-9b74-449b-a3a8-ee5d306ebed1/index.html",
+      "slug": "pathways/digital-fabrication-studio/laser-and-sheet/project-1-launch-sheet-to-form",
+      "order": 2,
+      "parent": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+      "title": "Project 1 launch: Sheet to form",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:2:M04",
+        "published": false,
+        "oerRef": {
+          "page": "item-86df4055-aee6-4e3c-aa9c-5e291791c8ef",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-bb5eae8f-d5ca-43f2-90b8-59f73d1a1add",
+      "indent": 3,
+      "location": "pages/item-bb5eae8f-d5ca-43f2-90b8-59f73d1a1add/index.html",
+      "slug": "pathways/digital-fabrication-studio/laser-and-sheet/project-1-production-crit",
+      "order": 3,
+      "parent": "item-ab4f6a99-ad0e-4321-945e-d47ebe6e8333",
+      "title": "Project 1 production + crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:2:M05",
+        "published": false,
+        "oerRef": {
+          "page": "item-b2b1aa00-e58f-483e-8649-84526b67110a",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-47f00279-5ecb-4168-bf4d-dde129df6f16",
+      "indent": 2,
+      "location": "pages/item-47f00279-5ecb-4168-bf4d-dde129df6f16/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter",
+      "order": 1,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 2: Vectors for machines: the laser cutter",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M02",
+        "published": false,
+        "oerRef": {
+          "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-3f45c9b2-7baf-4b68-afa7-0ab97e277bea",
+      "indent": 3,
+      "location": "pages/item-3f45c9b2-7baf-4b68-afa7-0ab97e277bea/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/vector-file-prep-for-the-laser",
+      "order": 1,
+      "parent": "item-47f00279-5ecb-4168-bf4d-dde129df6f16",
+      "title": "Vector file prep for the laser",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M02:L05",
+        "published": false,
+        "oerRef": {
+          "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-7f2b3258-826a-4dd8-9333-68d2db7ba566",
+      "indent": 3,
+      "location": "pages/item-7f2b3258-826a-4dd8-9333-68d2db7ba566/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/laser-material-test-kerf-swatch",
+      "order": 2,
+      "parent": "item-47f00279-5ecb-4168-bf4d-dde129df6f16",
+      "title": "Laser material test + kerf swatch",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M02:A02",
+        "published": false,
+        "oerRef": {
+          "page": "item-e57bcbe5-efcd-42a7-a223-b05dea0dc123",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-5e78f0ab-bea3-423d-a488-d2d31561a0eb",
+      "indent": 3,
+      "location": "pages/item-5e78f0ab-bea3-423d-a488-d2d31561a0eb/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-2-vectors-for-machines-the-laser-cutter/laser-cutting-quiz",
+      "order": 3,
+      "parent": "item-47f00279-5ecb-4168-bf4d-dde129df6f16",
+      "title": "Laser cutting quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:book:M02:quiz:M02",
+        "published": false,
+        "oerRef": {
+          "page": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-3b742ffe-c4d9-4831-80bb-a4a9ec661e8c",
+      "indent": 3,
+      "location": "pages/item-3b742ffe-c4d9-4831-80bb-a4a9ec661e8c/index.html",
+      "slug": "pathways/digital-fabrication-studio/additive-and-parametric/modeling-for-fabrication-parametric-and-sculptural",
+      "order": 1,
+      "parent": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+      "title": "Modeling for fabrication: parametric and sculptural",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:3:M07",
+        "published": false,
+        "oerRef": {
+          "page": "item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-1642df6f-a954-4518-9f81-e02e999b7864",
+      "indent": 3,
+      "location": "pages/item-1642df6f-a954-4518-9f81-e02e999b7864/index.html",
+      "slug": "pathways/digital-fabrication-studio/subtractive/cnc-production-project-2-crit",
+      "order": 1,
+      "parent": "item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55",
+      "title": "CNC production + Project 2 crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:4:M10",
+        "published": false,
+        "oerRef": {
+          "page": "item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-d651b27f-0cf8-4d88-84dd-8e7912555eb4",
+      "indent": 3,
+      "location": "pages/item-d651b27f-0cf8-4d88-84dd-8e7912555eb4/index.html",
+      "slug": "pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/final-project-launch-critical-making",
+      "order": 1,
+      "parent": "item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8",
+      "title": "Final project launch + critical making",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:5:M12",
+        "published": false,
+        "oerRef": {
+          "page": "item-665fac95-9a12-4f05-a7cd-e9264f010b6f",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-beabf028-07bb-47f0-a745-1065a26fa1ce",
+      "indent": 3,
+      "location": "pages/item-beabf028-07bb-47f0-a745-1065a26fa1ce/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/sheet-to-form-sectioning-folding-joinery",
+      "order": 1,
+      "parent": "item-0df22ec2-f325-4e7b-970f-86440a9297ad",
+      "title": "Sheet to form — sectioning, folding, joinery",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:book:M03:L07",
+        "published": false,
+        "oerRef": {
+          "page": "item-4876f604-977f-4e7d-a5c3-cc6b37063ec8",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-f6d40188-b7ad-4569-9d35-a23aa3b78079",
+      "indent": 3,
+      "location": "pages/item-f6d40188-b7ad-4569-9d35-a23aa3b78079/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/rubric-project-rubric-template",
+      "order": 1,
+      "parent": "item-6350d49e-b9e6-47aa-ac01-9a50e438ad68",
+      "title": "Rubric: Project rubric template",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M04:L19",
+        "published": false,
+        "oerRef": {
+          "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-a0962a7d-2d86-418e-8dc3-edf1cae718ca",
+      "indent": 3,
+      "location": "pages/item-a0962a7d-2d86-418e-8dc3-edf1cae718ca/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-5-project-1-production-crit/critique-participation",
+      "order": 1,
+      "parent": "item-9e676df8-ed56-4d59-bfa7-1ad0fa52387d",
+      "title": "Critique participation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M05:A13",
+        "published": false,
+        "oerRef": {
+          "page": "item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-9af0647e-1c6e-4236-8aba-78ac97955229",
+      "indent": 3,
+      "location": "pages/item-9af0647e-1c6e-4236-8aba-78ac97955229/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/design-for-fdm-checklist",
+      "order": 1,
+      "parent": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+      "title": "Design for FDM checklist",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M06:L10",
+        "published": false,
+        "oerRef": {
+          "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-006d133d-0ded-43ba-a828-74c27d8b6802",
+      "indent": 3,
+      "location": "pages/item-006d133d-0ded-43ba-a828-74c27d8b6802/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural/variable-identical-differential-the-multiple",
+      "order": 1,
+      "parent": "item-8761d40a-e51a-4019-8c6e-33211c49f708",
+      "title": "Variable, identical, differential — the multiple",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:book:M07:L13",
+        "published": false,
+        "oerRef": {
+          "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-1bf1d5f8-e3dd-4bf3-913a-a263282e2e62",
+      "indent": 3,
+      "location": "pages/item-1bf1d5f8-e3dd-4bf3-913a-a263282e2e62/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/rubric-project-rubric-template",
+      "order": 1,
+      "parent": "item-f03e8a28-72d2-4d83-9943-92bb2c3dc054",
+      "title": "Rubric: Project rubric template",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M08:L19",
+        "published": false,
+        "oerRef": {
+          "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-dfefb1f5-dbde-4cb7-93cf-4b477c02eff8",
+      "indent": 3,
+      "location": "pages/item-dfefb1f5-dbde-4cb7-93cf-4b477c02eff8/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/cnc-materials-bits-feeds-and-speeds-fixturing",
+      "order": 1,
+      "parent": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+      "title": "CNC materials, bits, feeds and speeds, fixturing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M09:L15",
+        "published": false,
+        "oerRef": {
+          "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-5161dfa1-ff53-41d2-9a95-f0cfa11f0325",
+      "indent": 3,
+      "location": "pages/item-5161dfa1-ff53-41d2-9a95-f0cfa11f0325/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/rubric-project-rubric-template",
+      "order": 1,
+      "parent": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+      "title": "Rubric: Project rubric template",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M12:L19",
+        "published": false,
+        "oerRef": {
+          "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-428ff93c-79de-4a9f-a7e3-d9cb8c4da966",
+      "indent": 3,
+      "location": "pages/item-428ff93c-79de-4a9f-a7e3-d9cb8c4da966/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-13-final-production-i-workshops-on-demand/documentation-portfolio",
+      "order": 1,
+      "parent": "item-02d6c11e-d1ca-4259-b298-d06cf199342f",
+      "title": "Documentation portfolio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M13:A11",
+        "published": false,
+        "oerRef": {
+          "page": "item-da8b8213-908b-455f-8501-0bc929cf3b05",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-2022379f-ead9-4577-bb5d-ae97a9c7ba49",
+      "indent": 3,
+      "location": "pages/item-2022379f-ead9-4577-bb5d-ae97a9c7ba49/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-15-final-crit-exhibition-documentation-portfolio/documentation-guide-photographing-work-process-docs-publishing-files",
+      "order": 1,
+      "parent": "item-077eb755-108d-4225-93da-09fd1e4697af",
+      "title": "Documentation guide — photographing work, process docs, publishing files",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M15:L18",
+        "published": false,
+        "oerRef": {
+          "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
       }
     },
     {
@@ -13259,6 +14315,281 @@
       }
     },
     {
+      "id": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+      "indent": 2,
+      "location": "pages/item-4b332768-66e7-4a69-be71-e87c03beba00/index.html",
+      "slug": "pathways/digital-fabrication-studio/additive-and-parametric",
+      "order": 2,
+      "parent": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "title": "Additive and parametric",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:unit",
+        "oerPlan": "DART 413:unit:3",
+        "published": false,
+        "oerFields": {
+          "estimatedDuration": "3 weeks"
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-878d9701-ca9d-4f5c-9daa-b6885519f399",
+      "indent": 3,
+      "location": "pages/item-878d9701-ca9d-4f5c-9daa-b6885519f399/index.html",
+      "slug": "pathways/digital-fabrication-studio/additive-and-parametric/project-2-launch-multiples-and-variation",
+      "order": 2,
+      "parent": "item-4b332768-66e7-4a69-be71-e87c03beba00",
+      "title": "Project 2 launch: Multiples and variation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:3:M08",
+        "published": false,
+        "oerRef": {
+          "page": "item-23bfc330-baae-4c57-b782-7da696b33431",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-0df22ec2-f325-4e7b-970f-86440a9297ad",
+      "indent": 2,
+      "location": "pages/item-0df22ec2-f325-4e7b-970f-86440a9297ad/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery",
+      "order": 2,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 3: Sheet to form: sectioning, folding, joinery",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M03",
+        "published": false,
+        "oerRef": {
+          "page": "item-3c61c343-9aaa-4257-b871-355930bdcd69",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-0cacb428-35d8-46cd-b3b5-2ac243dd8310",
+      "indent": 3,
+      "location": "pages/item-0cacb428-35d8-46cd-b3b5-2ac243dd8310/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/press-fit-construction-kit",
+      "order": 2,
+      "parent": "item-0df22ec2-f325-4e7b-970f-86440a9297ad",
+      "title": "Press-fit construction kit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M03:A03",
+        "published": false,
+        "oerRef": {
+          "page": "item-a16965e6-def0-4f61-b884-a46300037a08",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-da77f21b-14e9-41ed-aa56-135ddd042ee5",
+      "indent": 3,
+      "location": "pages/item-da77f21b-14e9-41ed-aa56-135ddd042ee5/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-3-sheet-to-form-sectioning-folding-joinery/precedent-presentation",
+      "order": 3,
+      "parent": "item-0df22ec2-f325-4e7b-970f-86440a9297ad",
+      "title": "Precedent presentation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M03:A14",
+        "published": false,
+        "oerRef": {
+          "page": "item-bdd37b96-f590-4a7b-aad8-5a32e85230ad",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-75dfbd17-ae94-4bb0-9e2f-aee923c9f3a7",
+      "indent": 3,
+      "location": "pages/item-75dfbd17-ae94-4bb0-9e2f-aee923c9f3a7/index.html",
+      "slug": "pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/final-production-i-workshops-on-demand",
+      "order": 2,
+      "parent": "item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8",
+      "title": "Final production I: workshops on demand",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:5:M13",
+        "published": false,
+        "oerRef": {
+          "page": "item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-4760016a-d1b4-4fb5-b8bd-7d7a8cb9efb7",
+      "indent": 3,
+      "location": "pages/item-4760016a-d1b4-4fb5-b8bd-7d7a8cb9efb7/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form/project-1-sheet-to-form",
+      "order": 2,
+      "parent": "item-6350d49e-b9e6-47aa-ac01-9a50e438ad68",
+      "title": "Project 1: Sheet to form",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:book:M04:A04",
+        "published": false,
+        "oerRef": {
+          "page": "item-59547add-790e-4255-a3f0-962065b0064f",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-42385af3-641a-45c5-9cec-dde137c0ba54",
+      "indent": 3,
+      "location": "pages/item-42385af3-641a-45c5-9cec-dde137c0ba54/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/additive-thinking-layers-orientation-anisotropy",
+      "order": 2,
+      "parent": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+      "title": "Additive thinking — layers, orientation, anisotropy",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:book:M06:L11",
+        "published": false,
+        "oerRef": {
+          "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-3d5605fb-2c5e-4ae5-bfe6-d4d8214b2499",
+      "indent": 3,
+      "location": "pages/item-3d5605fb-2c5e-4ae5-bfe6-d4d8214b2499/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural/parametric-family",
+      "order": 2,
+      "parent": "item-8761d40a-e51a-4019-8c6e-33211c49f708",
+      "title": "Parametric family",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M07:A06",
+        "published": false,
+        "oerRef": {
+          "page": "item-f5669ca1-8a62-4854-908c-925e14b7eecb",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-e7182820-66dc-485a-83d7-d39348ccc3d1",
+      "indent": 3,
+      "location": "pages/item-e7182820-66dc-485a-83d7-d39348ccc3d1/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation/project-2-multiples-and-variation",
+      "order": 2,
+      "parent": "item-f03e8a28-72d2-4d83-9943-92bb2c3dc054",
+      "title": "Project 2: Multiples and variation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:book:M08:A07",
+        "published": false,
+        "oerRef": {
+          "page": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-ddee2e08-cea0-40f0-8f34-6a70f13425c6",
+      "indent": 3,
+      "location": "pages/item-ddee2e08-cea0-40f0-8f34-6a70f13425c6/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/cnc-relief-tile",
+      "order": 2,
+      "parent": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+      "title": "CNC relief tile",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M09:A08",
+        "published": false,
+        "oerRef": {
+          "page": "item-70652b2f-07b2-489b-a0fa-e1f7f341ec91",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-efe78136-0bad-4465-855c-a5b77e4d33fa",
+      "indent": 3,
+      "location": "pages/item-efe78136-0bad-4465-855c-a5b77e4d33fa/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/template-final-project-proposal",
+      "order": 2,
+      "parent": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+      "title": "Template: Final project proposal",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:book:M12:L20",
+        "published": false,
+        "oerRef": {
+          "page": "item-eceae826-36f2-4e2c-b626-3c2136ab261b",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
       "id": "item-3241015f-e72d-4b1d-b879-4957dbb52bf4",
       "indent": 1,
       "location": "pages/item-3241015f-e72d-4b1d-b879-4957dbb52bf4/index.html",
@@ -14230,6 +15561,143 @@
         "images": [],
         "videos": [],
         "updated": 1791251086
+      }
+    },
+    {
+      "id": "item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55",
+      "indent": 2,
+      "location": "pages/item-44a2cc69-8cc4-49fb-9559-af1a8e83dd55/index.html",
+      "slug": "pathways/digital-fabrication-studio/subtractive",
+      "order": 3,
+      "parent": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "title": "Subtractive",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:unit",
+        "oerPlan": "DART 413:unit:4",
+        "published": false,
+        "oerFields": {
+          "estimatedDuration": "2 weeks"
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-6350d49e-b9e6-47aa-ac01-9a50e438ad68",
+      "indent": 2,
+      "location": "pages/item-6350d49e-b9e6-47aa-ac01-9a50e438ad68/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-4-project-1-launch-sheet-to-form",
+      "order": 3,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 4: Project 1 launch: Sheet to form",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M04",
+        "published": false,
+        "oerRef": {
+          "page": "item-86df4055-aee6-4e3c-aa9c-5e291791c8ef",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-02507891-c1e6-40f0-a521-3e1a7ac9c7cb",
+      "indent": 3,
+      "location": "pages/item-02507891-c1e6-40f0-a521-3e1a7ac9c7cb/index.html",
+      "slug": "pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/final-production-ii-work-in-progress-crit",
+      "order": 3,
+      "parent": "item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8",
+      "title": "Final production II + work-in-progress crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:5:M14",
+        "published": false,
+        "oerRef": {
+          "page": "item-87e4ca8e-509e-4062-9a59-8c8d003e0665",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-e54ebd59-99f0-4c46-89e4-69f4487c0921",
+      "indent": 3,
+      "location": "pages/item-e54ebd59-99f0-4c46-89e4-69f4487c0921/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/print-iteration-one-object-three-revisions",
+      "order": 3,
+      "parent": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+      "title": "Print iteration: one object, three revisions",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:book:M06:A05",
+        "published": false,
+        "oerRef": {
+          "page": "item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-fe9eab46-86ac-4456-8904-49abd2355137",
+      "indent": 3,
+      "location": "pages/item-fe9eab46-86ac-4456-8904-49abd2355137/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing/cnc-routing-quiz",
+      "order": 3,
+      "parent": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+      "title": "CNC routing quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:book:M09:quiz:M09",
+        "published": false,
+        "oerRef": {
+          "page": "item-6d67a392-9c2e-4070-bb24-8fed224e3774",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-677e948e-cb57-4b11-930e-efe263e6e709",
+      "indent": 3,
+      "location": "pages/item-677e948e-cb57-4b11-930e-efe263e6e709/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/final-project",
+      "order": 3,
+      "parent": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+      "title": "Final project",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:book:M12:A10",
+        "published": false,
+        "oerRef": {
+          "page": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
       }
     },
     {
@@ -17962,6 +19430,327 @@
         "images": [],
         "videos": [],
         "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-9e676df8-ed56-4d59-bfa7-1ad0fa52387d",
+      "indent": 2,
+      "location": "pages/item-9e676df8-ed56-4d59-bfa7-1ad0fa52387d/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-5-project-1-production-crit",
+      "order": 4,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 5: Project 1 production + crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M05",
+        "published": false,
+        "oerRef": {
+          "page": "item-b2b1aa00-e58f-483e-8649-84526b67110a",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+      "indent": 2,
+      "location": "pages/item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals",
+      "order": 5,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 6: Additive: 3D printing fundamentals",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M06",
+        "published": false,
+        "oerRef": {
+          "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-ac91c022-2b71-4ab2-90b4-014b5b12f7fd",
+      "indent": 3,
+      "location": "pages/item-ac91c022-2b71-4ab2-90b4-014b5b12f7fd/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-6-additive-3d-printing-fundamentals/3d-printing-quiz",
+      "order": 4,
+      "parent": "item-c44ce2a8-cd70-43e1-bcd6-b28547f7cfe3",
+      "title": "3D printing quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:book:M06:quiz:M06",
+        "published": false,
+        "oerRef": {
+          "page": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-8761d40a-e51a-4019-8c6e-33211c49f708",
+      "indent": 2,
+      "location": "pages/item-8761d40a-e51a-4019-8c6e-33211c49f708/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-7-modeling-for-fabrication-parametric-and-sculptural",
+      "order": 6,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 7: Modeling for fabrication: parametric and sculptural",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M07",
+        "published": false,
+        "oerRef": {
+          "page": "item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-f03e8a28-72d2-4d83-9943-92bb2c3dc054",
+      "indent": 2,
+      "location": "pages/item-f03e8a28-72d2-4d83-9943-92bb2c3dc054/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation",
+      "order": 7,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 8: Project 2 launch: Multiples and variation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M08",
+        "published": false,
+        "oerRef": {
+          "page": "item-23bfc330-baae-4c57-b782-7da696b33431",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+      "indent": 2,
+      "location": "pages/item-03a03c64-0796-4c2c-b43f-11419b7805c3/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing",
+      "order": 8,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 9: Subtractive: CNC routing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M09",
+        "published": false,
+        "oerRef": {
+          "page": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-da106a8d-d637-4ab1-abca-de0355ac047c",
+      "indent": 2,
+      "location": "pages/item-da106a8d-d637-4ab1-abca-de0355ac047c/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-10-cnc-production-project-2-crit",
+      "order": 9,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 10: CNC production + Project 2 crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M10",
+        "published": false,
+        "oerRef": {
+          "page": "item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-5e20783e-c8f4-4ac1-a9b9-deff784b203f",
+      "indent": 2,
+      "location": "pages/item-5e20783e-c8f4-4ac1-a9b9-deff784b203f/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-11-hybrid-processes-and-finishing",
+      "order": 10,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 11: Hybrid processes and finishing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M11",
+        "published": false,
+        "oerRef": {
+          "page": "item-bf575694-a7b5-42c8-9527-0e8704d50077",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+      "indent": 2,
+      "location": "pages/item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making",
+      "order": 11,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 12: Final project launch + critical making",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M12",
+        "published": false,
+        "oerRef": {
+          "page": "item-665fac95-9a12-4f05-a7cd-e9264f010b6f",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-02d6c11e-d1ca-4259-b298-d06cf199342f",
+      "indent": 2,
+      "location": "pages/item-02d6c11e-d1ca-4259-b298-d06cf199342f/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-13-final-production-i-workshops-on-demand",
+      "order": 12,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 13: Final production I: workshops on demand",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M13",
+        "published": false,
+        "oerRef": {
+          "page": "item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-84d0f35e-a9f3-4c14-94a8-d2e787124f5c",
+      "indent": 2,
+      "location": "pages/item-84d0f35e-a9f3-4c14-94a8-d2e787124f5c/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-14-final-production-ii-work-in-progress-crit",
+      "order": 13,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 14: Final production II + work-in-progress crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M14",
+        "published": false,
+        "oerRef": {
+          "page": "item-87e4ca8e-509e-4062-9a59-8c8d003e0665",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-077eb755-108d-4225-93da-09fd1e4697af",
+      "indent": 2,
+      "location": "pages/item-077eb755-108d-4225-93da-09fd1e4697af/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio/week-15-final-crit-exhibition-documentation-portfolio",
+      "order": 14,
+      "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "title": "Week 15: Final crit, exhibition, documentation portfolio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:book:M15",
+        "published": false,
+        "oerRef": {
+          "page": "item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8",
+      "indent": 2,
+      "location": "pages/item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8/index.html",
+      "slug": "pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project",
+      "order": 4,
+      "parent": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "title": "Hybrid processes and the final project",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:unit",
+        "oerPlan": "DART 413:unit:5",
+        "published": false,
+        "oerFields": {
+          "estimatedDuration": "5 weeks"
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
+      }
+    },
+    {
+      "id": "item-5836358a-134b-45e1-800e-66319c8bac7c",
+      "indent": 3,
+      "location": "pages/item-5836358a-134b-45e1-800e-66319c8bac7c/index.html",
+      "slug": "pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project/final-crit-exhibition-documentation-portfolio",
+      "order": 4,
+      "parent": "item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8",
+      "title": "Final crit, exhibition, documentation portfolio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:unit:5:M15",
+        "published": false,
+        "oerRef": {
+          "page": "item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af",
+          "version": ""
+        },
+        "created": 1791383990,
+        "images": [],
+        "videos": [],
+        "updated": 1791383990
       }
     },
     {

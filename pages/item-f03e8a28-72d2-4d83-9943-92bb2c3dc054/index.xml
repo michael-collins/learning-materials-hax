@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f03e8a28-72d2-4d83-9943-92bb2c3dc054</id>
+<indent>2</indent>
+<location>pages/item-f03e8a28-72d2-4d83-9943-92bb2c3dc054/index.xml</location>
+<slug>books/dart-413-digital-fabrication-studio/week-8-project-2-launch-multiples-and-variation</slug>
+<order>7</order>
+<parent>item-69dddfb7-34fb-48ff-b038-f1429191de9b</parent>
+<title>Week 8: Project 2 launch: Multiples and variation</title>
+<description></description>
+<metadata>
+<pageType>oer:lesson</pageType>
+<oerPlan>DART 413:book:M08</oerPlan>
+<published>false</published>
+<oerRef>
+<page>item-23bfc330-baae-4c57-b782-7da696b33431</page>
+<version></version>
+</oerRef>
+<created>1791383990</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383990</updated>
+</metadata>
+<content><![CDATA[<oer-include page="item-23bfc330-baae-4c57-b782-7da696b33431"></oer-include>]]></content>
+</item>

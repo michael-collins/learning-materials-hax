@@ -1,0 +1,24 @@
+{
+  "id": "item-677e948e-cb57-4b11-930e-efe263e6e709",
+  "indent": 3,
+  "location": "pages/item-677e948e-cb57-4b11-930e-efe263e6e709/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-12-final-project-launch-critical-making/final-project",
+  "order": 3,
+  "parent": "item-bd61a7bf-1be8-4563-b7c3-97ffd9127ccb",
+  "title": "Final project",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:project",
+    "oerPlan": "DART 413:book:M12:A10",
+    "published": false,
+    "oerRef": {
+      "page": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-c64e34a7-5763-4e28-b1e2-e9b87814daf8\"></oer-include>"
+}

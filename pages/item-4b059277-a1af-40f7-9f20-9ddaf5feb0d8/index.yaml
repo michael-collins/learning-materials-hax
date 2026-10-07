@@ -1,0 +1,19 @@
+id: item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8
+indent: 2
+location: pages/item-4b059277-a1af-40f7-9f20-9ddaf5feb0d8/index.yaml
+slug: pathways/digital-fabrication-studio/hybrid-processes-and-the-final-project
+order: 4
+parent: item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a
+title: Hybrid processes and the final project
+description: ''
+metadata:
+  pageType: oer:unit
+  oerPlan: DART 413:unit:5
+  published: false
+  oerFields:
+    estimatedDuration: 5 weeks
+  created: 1791383990
+  images: []
+  videos: []
+  updated: 1791383990
+content: <oer-unit></oer-unit>

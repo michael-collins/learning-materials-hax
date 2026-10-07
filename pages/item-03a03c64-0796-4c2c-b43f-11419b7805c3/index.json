@@ -1,0 +1,24 @@
+{
+  "id": "item-03a03c64-0796-4c2c-b43f-11419b7805c3",
+  "indent": 2,
+  "location": "pages/item-03a03c64-0796-4c2c-b43f-11419b7805c3/index.json",
+  "slug": "books/dart-413-digital-fabrication-studio/week-9-subtractive-cnc-routing",
+  "order": 8,
+  "parent": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+  "title": "Week 9: Subtractive: CNC routing",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerPlan": "DART 413:book:M09",
+    "published": false,
+    "oerRef": {
+      "page": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+      "version": ""
+    },
+    "created": 1791383990,
+    "images": [],
+    "videos": [],
+    "updated": 1791383990
+  },
+  "content": "<oer-include page=\"item-29ccdd18-d451-48e3-b92a-ee97be5e062f\"></oer-include>"
+}
