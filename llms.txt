@@ -584,7 +584,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Lighting and Rendering the Airline Chair](https://localhost:3000/learning-materials/pages/item-cfaff943-bb9c-4bb5-ba04-82a293c03f96/index.md)
 - [Articles](https://localhost:3000/learning-materials/pages/item-9c0d46bc-d931-4e43-94e4-a96f09bc3165/index.md)
 - [Learning Objectives](https://localhost:3000/learning-materials/pages/item-ae0a99b9-2eeb-4096-b4dc-cb4aabe83fe5/index.md)
-- [License Examples](https://localhost:3000/learning-materials/pages/item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7/index.md)
 - [Measuring success](https://localhost:3000/learning-materials/pages/item-7fe733c9-0c02-4d6f-9da2-fc15e2144048/index.md)
 - [Introduction](https://localhost:3000/learning-materials/pages/item-7b5bfc50-1ee2-4f6b-b9a5-e6b3bea639ae/index.md)
 - [Projects](https://localhost:3000/learning-materials/pages/item-de8742e0-d71d-4010-9dd9-6196e48f9772/index.md)
@@ -683,6 +682,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Develop: Feedback](https://localhost:3000/learning-materials/pages/item-d1d2cd99-8bdc-4b3e-80ca-58480ae0ca83/index.md)
 - [Deliver](https://localhost:3000/learning-materials/pages/item-bd5c5b8e-25b5-4395-9613-3cdb76ea7716/index.md)
 - [Deliver: Hypertext narrative (draft 2)](https://localhost:3000/learning-materials/pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.md)
+- [License Examples](https://localhost:3000/learning-materials/pages/item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7/index.md): This page demonstrates how to use different Creative Commons licenses on your VitePress pages.How to Use You can specify the license type and attribution in the front matter of any markdown file: ---
 - [Motion graphics](https://localhost:3000/learning-materials/pages/item-831e27e4-94e4-43dc-b7e1-7b5039f802d9/index.md): Creates animated graphics for multimedia projects, often involving typography and visual effects.
 - [Compositor Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.md)
 - [Rendering a room](https://localhost:3000/learning-materials/pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.md)

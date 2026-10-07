@@ -49,12 +49,24 @@ Examples of Different Licenses
 
 This section uses a different license.
 
-<div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px;"> <h4>ShareAlike Content</h4> <p>This specific section demonstrates content with a ShareAlike license.</p> <LicenseFooter license="cc-by-sa" attribution="DMD Program Contributors" /> </div>
+#### ShareAlike Content
+
+This specific section demonstrates content with a ShareAlike license.
+
+<LicenseFooter license="cc-by-sa" attribution="DMD Program Contributors" />
 
 ### CC-BY-NC Example
 
-<div style="background-color: #f0f8ff; padding: 20px; border-radius: 5px;"> <h4>NonCommercial Content</h4> <p>This specific section demonstrates content with a NonCommercial license.</p> <LicenseFooter license="cc-by-nc" attribution="Penn State University" /> </div>
+#### NonCommercial Content
+
+This specific section demonstrates content with a NonCommercial license.
+
+<LicenseFooter license="cc-by-nc" attribution="Penn State University" />
 
 ### Custom License Example
 
-<div style="background-color: #fff8dc; padding: 20px; border-radius: 5px;"> <h4>Custom License</h4> <p>This specific section demonstrates content with a custom license.</p> <LicenseFooter license="custom" customText="This is a custom license text with <a href='#'>special terms</a>." customImage="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" customAlt="CC0 License" attribution="Public Domain Contributors" /> </div>
+#### Custom License
+
+This specific section demonstrates content with a custom license.
+
+<LicenseFooter license="custom" customText="This is a custom license text with [special terms](#)." customImage="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" customAlt="CC0 License" attribution="Public Domain Contributors" />

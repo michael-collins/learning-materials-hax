@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404489,
+      "updated": 1791404493,
       "version": "26.8.0"
     },
     "theme": {
@@ -22191,42 +22191,6 @@
       }
     },
     {
-      "id": "item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7",
-      "indent": 1,
-      "location": "pages/item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7/index.html",
-      "slug": "articles/license-examples",
-      "order": 7,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "License Examples",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-introduction-license-examples",
-        "tags": "introduction",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386261
-      }
-    },
-    {
       "id": "item-7fe733c9-0c02-4d6f-9da2-fc15e2144048",
       "indent": 1,
       "location": "pages/item-7fe733c9-0c02-4d6f-9da2-fc15e2144048/index.html",
@@ -25670,6 +25634,46 @@
         "images": [],
         "videos": [],
         "updated": 1791386327
+      }
+    },
+    {
+      "id": "item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7",
+      "indent": 1,
+      "location": "pages/item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7/index.html",
+      "slug": "license-examples",
+      "order": 7,
+      "parent": null,
+      "title": "License Examples",
+      "description": "This page demonstrates how to use different Creative Commons licenses on your VitePress pages.How to Use\nYou can specify the license type and attribution in the front matter of any markdown file:\n---",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-introduction-license-examples",
+        "tags": "introduction",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404493,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
       }
     },
     {
