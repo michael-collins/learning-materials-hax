@@ -3094,24 +3094,6 @@
       }
     },
     {
-      "id": "item-97451758-ce0e-4625-851c-b3adc48a90ce",
-      "indent": 2,
-      "location": "pages/item-97451758-ce0e-4625-851c-b3adc48a90ce/index.html",
-      "slug": "books/dmd-400-digital-multimedia-design-capstone/about",
-      "order": 0,
-      "parent": "item-ce739bdb-84f3-4797-9b76-5f951decba4e",
-      "title": "About",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1791231124,
-        "images": [],
-        "videos": [],
-        "updated": 1791397271
-      }
-    },
-    {
       "id": "item-23b1d867-090c-42b9-8f7f-921c80620180",
       "indent": 3,
       "location": "pages/item-23b1d867-090c-42b9-8f7f-921c80620180/index.html",
