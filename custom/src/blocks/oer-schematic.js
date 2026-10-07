@@ -377,6 +377,8 @@ export class OerSchematic extends LitElement {
       :host {
         display: block;
         margin: 1.75rem 0;
+        /* DDD justifies the theme; captions read ragged-right */
+        text-align: start;
       }
       /* as wide as the drawing, so the caption lines up under it */
       figure {

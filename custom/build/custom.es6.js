@@ -14364,6 +14364,8 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
       :host {
         display: block;
         margin: 1.75rem 0;
+        /* DDD justifies the theme; captions read ragged-right */
+        text-align: start;
       }
       /* as wide as the drawing, so the caption lines up under it */
       figure {
