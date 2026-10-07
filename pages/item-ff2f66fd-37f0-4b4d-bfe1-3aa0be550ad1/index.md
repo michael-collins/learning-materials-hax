@@ -11,7 +11,8 @@ Learning Objectives
 Instructions
 ------------
 
-Use the attached reference Image by The One Called Michael, courtesy of Chess.com of a Knight from the **Chavet 121 series no 6**. <BR>  
+Use the attached reference Image by The One Called Michael, courtesy of Chess.com of a Knight from the **Chavet 121 series no 6**.  
+  
 The image I used was originally found at this link: https://images.chesscomfiles.com/uploads/v1/images\_users/tiny\_mce/TheOneCalledMichael/phpKothXC.jpeg
 
 Grading Rubric

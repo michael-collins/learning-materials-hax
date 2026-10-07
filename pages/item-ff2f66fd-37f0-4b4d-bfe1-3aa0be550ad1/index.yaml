@@ -1,11 +1,20 @@
 id: item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1
 indent: 1
 location: pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.yaml
-slug: exercises/modeling-a-chavet-121-series-no-6-knight
+slug: modeling-a-chavet-121-series-no-6-knight
 order: 31
-parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+parent: null
 title: Modeling a Chavet 121 series no 6 Knight
-description: ''
+description: >-
+  In this exercise, you will practice polygonal modeling fundamentals and using
+  reference images to create a chess piece
+
+  Learning Objectives
+
+
+  Practice working from reference images
+
+  Practice using 3D so
 metadata:
   published: true
   pageType: oer:exercise
@@ -32,7 +41,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404510
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   using reference images to create a chess piece</p>
@@ -62,7 +83,7 @@ content: >
   <p>Use the attached reference Image by The One Called Michael, courtesy of
   Chess.com of a Knight from the <strong>Chavet 121 series no 6</strong>.
 
-  &lt;BR&gt;<br>
+  <br><br>
 
   The image I used was originally found at this link:
   https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/TheOneCalledMichael/phpKothXC.jpeg</p>

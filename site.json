@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404510,
+      "updated": 1791404511,
       "version": "26.8.0"
     },
     "theme": {
@@ -29535,111 +29535,6 @@
       }
     },
     {
-      "id": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
-      "indent": 1,
-      "location": "pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.html",
-      "slug": "exercises/modeling-a-chavet-121-series-no-6-knight",
-      "order": 31,
-      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
-      "title": "Modeling a Chavet 121 series no 6 Knight",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:exercise",
-        "oerSource": "exercises/modeling-a-chavet-121-series-no-6-knight",
-        "tags": "Blender",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recOJrvzE8GWdElPz_image_The_One_Called_Michael_Chavet_121_series_no_6_HORSE.png",
-          "imageAlt": "The One Called Michael Chavet 121 series no 6 HORSE.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Chavet 121 series no 6: Knight ",
-              "url": "files/recXzR8dSoAygYDHC_attachment_The_One_Called_Michael_Chavet_121_series_no_6.jpeg",
-              "description": "Chavet 121 series no 6: Knight ",
-              "alt": "Chavet 121 series no 6: Knight Reference Image"
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231957,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-c3f1f085-a6ba-46d2-a24d-85ed1099ae8b",
-      "indent": 2,
-      "location": "pages/item-c3f1f085-a6ba-46d2-a24d-85ed1099ae8b/index.html",
-      "slug": "exercises/modeling-a-chavet-121-series-no-6-knight/v0-9-0",
-      "order": 1000,
-      "parent": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:exercise",
-        "oerFields": {
-          "difficulty": "Beginner",
-          "image": "files/recOJrvzE8GWdElPz_image_The_One_Called_Michael_Chavet_121_series_no_6_HORSE.png",
-          "imageAlt": "The One Called Michael Chavet 121 series no 6 HORSE.png",
-          "aiLicense": [
-            "AIUL-WA",
-            "AIUL-NA-3D"
-          ],
-          "authors": [
-            {
-              "name": "Kenneth Ian Brill",
-              "url": "https://www.ianbrill.com/"
-            }
-          ],
-          "allowEmbed": true,
-          "attachments": [
-            {
-              "title": "Chavet 121 series no 6: Knight ",
-              "url": "files/recXzR8dSoAygYDHC_attachment_The_One_Called_Michael_Chavet_121_series_no_6.jpeg",
-              "description": "Chavet 121 series no 6: Knight ",
-              "alt": "Chavet 121 series no 6: Knight Reference Image"
-            }
-          ]
-        },
-        "oerSnapshotOf": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
-        "oerSnapshotTitle": "Modeling a Chavet 121 series no 6 Knight",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": true,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
       "id": "item-45493816-b35c-457b-9581-8934b03dbac2",
       "indent": 1,
       "location": "pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.html",
@@ -32785,6 +32680,115 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
+      "indent": 1,
+      "location": "pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.html",
+      "slug": "modeling-a-chavet-121-series-no-6-knight",
+      "order": 31,
+      "parent": null,
+      "title": "Modeling a Chavet 121 series no 6 Knight",
+      "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:exercise",
+        "oerSource": "exercises/modeling-a-chavet-121-series-no-6-knight",
+        "tags": "Blender",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recOJrvzE8GWdElPz_image_The_One_Called_Michael_Chavet_121_series_no_6_HORSE.png",
+          "imageAlt": "The One Called Michael Chavet 121 series no 6 HORSE.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Chavet 121 series no 6: Knight ",
+              "url": "files/recXzR8dSoAygYDHC_attachment_The_One_Called_Michael_Chavet_121_series_no_6.jpeg",
+              "description": "Chavet 121 series no 6: Knight ",
+              "alt": "Chavet 121 series no 6: Knight Reference Image"
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404510,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ],
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-c3f1f085-a6ba-46d2-a24d-85ed1099ae8b",
+      "indent": 2,
+      "location": "pages/item-c3f1f085-a6ba-46d2-a24d-85ed1099ae8b/index.html",
+      "slug": "exercises/modeling-a-chavet-121-series-no-6-knight/v0-9-0",
+      "order": 1000,
+      "parent": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerFields": {
+          "difficulty": "Beginner",
+          "image": "files/recOJrvzE8GWdElPz_image_The_One_Called_Michael_Chavet_121_series_no_6_HORSE.png",
+          "imageAlt": "The One Called Michael Chavet 121 series no 6 HORSE.png",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "authors": [
+            {
+              "name": "Kenneth Ian Brill",
+              "url": "https://www.ianbrill.com/"
+            }
+          ],
+          "allowEmbed": true,
+          "attachments": [
+            {
+              "title": "Chavet 121 series no 6: Knight ",
+              "url": "files/recXzR8dSoAygYDHC_attachment_The_One_Called_Michael_Chavet_121_series_no_6.jpeg",
+              "description": "Chavet 121 series no 6: Knight ",
+              "alt": "Chavet 121 series no 6: Knight Reference Image"
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
+        "oerSnapshotTitle": "Modeling a Chavet 121 series no 6 Knight",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
       }
     },
     {
