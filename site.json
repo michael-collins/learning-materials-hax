@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384038,
+      "updated": 1791384039,
       "version": "26.8.0"
     },
     "theme": {
@@ -13201,7 +13201,7 @@
       "order": 36,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Project 1 launch: Sheet to form",
-      "description": "",
+      "description": "Project 1 brief; theme introduction; precedents; sketching and prototyping in chipboard; the crit protocol.",
       "metadata": {
         "pageType": "oer:lesson",
         "oerPlan": "DART 413:M04",
