@@ -612,7 +612,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Visual Design](https://localhost:3000/learning-materials/pages/item-db5f9459-47f5-4d25-9988-3703db22f4b9/index.md)
 - [VOX: It's not you. Bad doors are everywhere](https://localhost:3000/learning-materials/pages/item-a607168c-6d0e-4926-bb54-fc098878b27d/index.md)
 - [99 Percent Invisible: Of mice and men](https://localhost:3000/learning-materials/pages/item-b51a37dc-15e0-4b9f-83de-6e6a51f8e9b2/index.md)
-- [The Lady in the Picture: Design and Revelation in Renaissance Art](https://localhost:3000/learning-materials/pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.md)
 - [Character](https://localhost:3000/learning-materials/pages/item-6834fc18-0c2c-41e9-bb0a-b50d3a198e29/index.md)
 - [Why stories?](https://localhost:3000/learning-materials/pages/item-f11fc05c-6aa5-45b6-933e-6a4f9b1ba331/index.md)
 - [Narrative media](https://localhost:3000/learning-materials/pages/item-1bb8036a-5f47-45f7-b0b7-361f75bde03a/index.md)
@@ -865,6 +864,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Face to Face with Design](https://localhost:3000/learning-materials/pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.md): Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt In this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No
 - [In Jefferson's Footsteps: Modes of Self-Design](https://localhost:3000/learning-materials/pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.md): In Jefferson's Footsteps: Modes of Self-Design (p. 105-116) in Design and Truth by Robert Grudin.Writing prompt In this chapter, Grudin talks briefly about humanity's departure from synergy with the
 - [Giorgio Vasari and the Permutations of Design](https://localhost:3000/learning-materials/pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.md): Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert GrudinWriting prompt In this chapter, Grudin explores implications resulting from Vasari helping to establish th
+- [The Lady in the Picture: Design and Revelation in Renaissance Art](https://localhost:3000/learning-materials/pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.md): The Lady in the Picture: Design and Revelation in Renaissance Art (p. 88-104) in Design and Truth by Robert GrudinWriting prompt In this chapter, Grudin gives us a glimpse into specific moments of kn
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

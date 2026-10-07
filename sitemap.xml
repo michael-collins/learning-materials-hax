@@ -2389,16 +2389,10 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/giorgio-vasari-and-the-permutations-of-design</loc>
-    <lastmod>2026-10-07T20:21:39.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/the-lady-in-the-picture-design-and-revelation-in-renaissance-art</loc>
+    <lastmod>2026-10-07T20:21:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/articles/the-lady-in-the-picture-design-and-revelation-in-renaissance-art</loc>
-    <lastmod>2026-10-07T15:18:07.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/character</loc>
@@ -3201,6 +3195,12 @@
   <url>
     <loc>https://localhost:3000/learning-materials/in-jefferson-s-footsteps-modes-of-self-design</loc>
     <lastmod>2026-10-07T20:21:38.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/giorgio-vasari-and-the-permutations-of-design</loc>
+    <lastmod>2026-10-07T20:21:39.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

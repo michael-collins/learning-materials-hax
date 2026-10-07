@@ -1,11 +1,15 @@
 id: item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d
 indent: 1
 location: pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.yaml
-slug: articles/the-lady-in-the-picture-design-and-revelation-in-renaissance-art
+slug: the-lady-in-the-picture-design-and-revelation-in-renaissance-art
 order: 43
-parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+parent: null
 title: 'The Lady in the Picture: Design and Revelation in Renaissance Art'
-description: ''
+description: >-
+  The Lady in the Picture: Design and Revelation in Renaissance Art (p. 88-104)
+  in Design and Truth by Robert GrudinWriting prompt
+
+  In this chapter, Grudin gives us a glimpse into specific moments of kn
 metadata:
   published: true
   pageType: oer:article
@@ -18,12 +22,17 @@ metadata:
         url: ''
     date: '2026-03-01'
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791404500
+  overridePathauto: false
+  hideInMenu: false
+  locked: false
+  readtime: 1
 content: >
   <p>The Lady in the Picture: Design and Revelation in Renaissance Art (p.
   88-104) in Design and Truth by Robert Grudin</p>
@@ -64,19 +73,16 @@ content: >
   no AI tools are permitted. All work must be entirely your own without
   assistance from AI tools. This applies specifically to writing.</p>
 
-  <p>&lt;a href="https://dmd-program.github.io/aiul/combinations/na-wr.html"
-  title="AIUL AIUL-NA-WR License: Not Allowed for Writing" target="_blank"
-  rel="license"&gt;
+  <p><a href="https://dmd-program.github.io/aiul/combinations/na-wr.html"
+  title="AIUL AIUL-NA-WR License: Not Allowed for Writing" rel="license">
 
-  &lt;img alt="AIUL-NA-WR - Not Allowed for Writing"
-  src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png"
-  style="border-width:0; max-width:170px;" /&gt;
+  <img alt="AIUL-NA-WR - Not Allowed for Writing"
+  src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png">
 
-  &lt;/a&gt;
+  </a>
 
-  &lt;br /&gt;
+  <br>
 
-  Please see the &lt;a
+  Please see the <a
   href="https://dmd-program.github.io/aiul/combinations/na-wr.html"
-  target="_blank" rel="license"&gt;AI Usage License AIUL-NA-WR&lt;/a&gt; for AI
-  usage information.</p>
+  rel="license">AI Usage License AIUL-NA-WR</a> for AI usage information.</p>
