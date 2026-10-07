@@ -3,11 +3,15 @@
 <id>item-af4143af-48cc-461a-bb7c-ab562ff1b3a4</id>
 <indent>1</indent>
 <location>pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.xml</location>
-<slug>exercises/modeling-a-queen</slug>
+<slug>modeling-a-queen</slug>
 <order>38</order>
-<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
+<parent></parent>
 <title>Modeling a Queen</title>
-<description></description>
+<description>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece
+Learning Objectives
+
+Practice working from reference images
+Practice using 3D so</description>
 <metadata>
 <published>true</published>
 <pageType>oer:exercise</pageType>
@@ -48,7 +52,24 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791404514</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<overridePathauto>false</overridePathauto>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QkznWA0SSvO8i2iMil7btof" title="Modeling a Queen Tutorial"></oer-iframe>
@@ -61,14 +82,14 @@
 </ol>
 <h2>Instructions</h2>
 <p>For this assignment, recreate the steps in&nbsp;basic&nbsp;<strong>Demonstration</strong>&nbsp;or try to make something more refined or complex.
-&lt;br&gt;
-&lt;br&gt;<br>
+<br>
+<br>
 <strong>Submit three renders to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em></strong>.&nbsp;Make sure that your assignment is titled in the following format:
-&lt;br&gt;
-&lt;br&gt;<br>
+<br>
+<br>
 <strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>"Lesson"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word "Assignment"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>
-&lt;br&gt;
-&lt;br&gt;<br>
+<br>
+<br>
 <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x
 &nbsp;</p>
 <h2>Grading Rubric</h2>

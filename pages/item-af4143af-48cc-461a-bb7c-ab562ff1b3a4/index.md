@@ -11,9 +11,12 @@ Learning Objectives
 Instructions
 ------------
 
-For this assignment, recreate the steps in basic **Demonstration** or try to make something more refined or complex. <br> <br>  
-**Submit three renders to both _Canvas_ _and the corresponding discussion thread for review_**. Make sure that your assignment is titled in the following format: <br> <br>  
-**Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.** <br> <br>  
+For this assignment, recreate the steps in basic **Demonstration** or try to make something more refined or complex.  
+  
+**Submit three renders to both _Canvas_ _and the corresponding discussion thread for review_**. Make sure that your assignment is titled in the following format:  
+  
+**Last name, First name,** the word **"Lesson"** followed by the **Lesson number,** and the **word "Assignment"** followed by the **Assignment number.**  
+  
 **Example:** Brill Ian Lesson x Assignment x  
 
 Grading Rubric
