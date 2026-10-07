@@ -4244,43 +4244,43 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/quizzes/laser-cutting-quiz</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:03.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/quizzes/3d-printing-quiz</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:04.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/quizzes/cnc-routing-quiz</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:04.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/bits-to-atoms-what-digital-fabrication-is</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:52.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/vectors-for-machines-the-laser-cutter</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/sheet-to-form-sectioning-folding-joinery</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/project-1-launch-sheet-to-form</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4292,7 +4292,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/project-1-production-crit</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4304,7 +4304,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/additive-3d-printing-fundamentals</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:56.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4316,7 +4316,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/modeling-for-fabrication-parametric-and-sculptural</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:56.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4328,7 +4328,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/project-2-launch-multiples-and-variation</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4340,7 +4340,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/subtractive-cnc-routing</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:58.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4352,7 +4352,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/cnc-production-project-2-crit</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4364,7 +4364,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/hybrid-processes-and-finishing</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:39:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4376,7 +4376,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/final-project-launch-critical-making</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:00.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4388,7 +4388,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/final-production-i-workshops-on-demand</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:01.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4400,7 +4400,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/final-production-ii-work-in-progress-crit</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:01.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4412,7 +4412,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lessons/final-crit-exhibition-documentation-portfolio</loc>
-    <lastmod>2026-10-07T14:39:48.000Z</lastmod>
+    <lastmod>2026-10-07T14:40:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

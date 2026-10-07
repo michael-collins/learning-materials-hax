@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791383991,
+      "updated": 1791384005,
       "version": "26.8.0"
     },
     "theme": {
@@ -13025,12 +13025,52 @@
             "Identify the safety requirements for shop access",
             "Articulate a personal question about making to pursue this term"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-13e7589e-e8ee-48ab-84d2-286c92ebfd73",
+              "version": ""
+            },
+            {
+              "page": "item-cf74e241-cda4-4eff-a5d1-14b9cf701571",
+              "version": ""
+            },
+            {
+              "page": "item-4de26b66-7085-448a-ac92-f32fbf38f8f9",
+              "version": ""
+            },
+            {
+              "page": "item-5117d4e6-e938-41a9-b976-858e75347ae5",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-d0317d85-4720-45de-8f9c-8a3e62c39921",
+              "version": ""
+            },
+            {
+              "page": "item-eb4ae497-5473-486b-8f0f-77d8446b5f8c",
+              "version": ""
+            },
+            {
+              "page": "item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d",
+              "version": ""
+            },
+            {
+              "page": "item-d987aef1-4873-4380-86a5-4a902fea309d",
+              "version": ""
+            },
+            {
+              "page": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383992
       }
     },
     {
@@ -13064,12 +13104,31 @@
             "Run a laser job end to end (or hand it off correctly)",
             "Read a material test grid"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+              "version": ""
+            },
+            {
+              "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+              "version": ""
+            },
+            {
+              "page": "item-e57bcbe5-efcd-42a7-a223-b05dea0dc123",
+              "version": ""
+            },
+            {
+              "page": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383993
       }
     },
     {
@@ -13102,12 +13161,36 @@
             "Convert a 3D form into sections",
             "Choose a joinery strategy for a given material"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-273da091-602a-4824-86cc-a45fc9346115",
+              "version": ""
+            },
+            {
+              "page": "item-4876f604-977f-4e7d-a5c3-cc6b37063ec8",
+              "version": ""
+            },
+            {
+              "page": "item-a16965e6-def0-4f61-b884-a46300037a08",
+              "version": ""
+            },
+            {
+              "page": "item-bdd37b96-f590-4a7b-aad8-5a32e85230ad",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-c9e4c050-9edb-485b-8ee3-5a5b0a659965",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383994
       }
     },
     {
@@ -13140,12 +13223,27 @@
             "Plan a prototyping sequence",
             "Give and receive critique using the protocol"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+              "version": ""
+            },
+            {
+              "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+              "version": ""
+            },
+            {
+              "page": "item-59547add-790e-4255-a3f0-962065b0064f",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383994
       }
     },
     {
@@ -13178,12 +13276,40 @@
             "Photograph work for documentation",
             "Critique peers' work on technical and conceptual terms"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+              "version": ""
+            },
+            {
+              "page": "item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d",
+              "version": ""
+            },
+            {
+              "page": "item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2",
+              "version": ""
+            },
+            {
+              "page": "item-2ffcd551-9b63-4336-835e-7dd0155cb5cf",
+              "version": ""
+            },
+            {
+              "page": "item-24c20753-b4ef-41f4-acd4-60df13259c87",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383995
       }
     },
     {
@@ -13216,12 +13342,48 @@
             "Slice with appropriate settings and justify them",
             "Diagnose a failed print"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
+              "version": ""
+            },
+            {
+              "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
+              "version": ""
+            },
+            {
+              "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+              "version": ""
+            },
+            {
+              "page": "item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21",
+              "version": ""
+            },
+            {
+              "page": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919",
+              "version": ""
+            },
+            {
+              "page": "item-3475b882-a15e-43ce-b226-750a59efa486",
+              "version": ""
+            },
+            {
+              "page": "item-60e4b429-b224-4257-bf91-839210d305a3",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383996
       }
     },
     {
@@ -13254,12 +13416,36 @@
             "Generate a family of variants",
             "Capture and clean a scanned form"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f",
+              "version": ""
+            },
+            {
+              "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+              "version": ""
+            },
+            {
+              "page": "item-f5669ca1-8a62-4854-908c-925e14b7eecb",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-a736e35a-581d-40fb-8d77-eb137a06c7e7",
+              "version": ""
+            },
+            {
+              "page": "item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383996
       }
     },
     {
@@ -13292,12 +13478,40 @@
             "Plan print time and a material budget",
             "Present process documentation"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+              "version": ""
+            },
+            {
+              "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+              "version": ""
+            },
+            {
+              "page": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-a736e35a-581d-40fb-8d77-eb137a06c7e7",
+              "version": ""
+            },
+            {
+              "page": "item-5898b795-f4da-441d-aa3b-929668d03a7d",
+              "version": ""
+            },
+            {
+              "page": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383997
       }
     },
     {
@@ -13330,12 +13544,31 @@
             "Choose bits and feeds for a material",
             "Explain fixturing and safety for CNC"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
+              "version": ""
+            },
+            {
+              "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+              "version": ""
+            },
+            {
+              "page": "item-70652b2f-07b2-489b-a0fa-e1f7f341ec91",
+              "version": ""
+            },
+            {
+              "page": "item-6d67a392-9c2e-4070-bb24-8fed224e3774",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383998
       }
     },
     {
@@ -13368,12 +13601,19 @@
             "Present a printed series with process documentation",
             "Critique for variation and intent"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383999
       }
     },
     {
@@ -13406,12 +13646,24 @@
             "Make a simple mold or vacuum-formed part from a fabricated master",
             "Finish a fabricated surface"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-526d73e9-2873-4210-b492-2888ab24f533",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791383999
       }
     },
     {
@@ -13443,12 +13695,52 @@
             "Write a final project proposal with a fabrication plan and timeline",
             "Position your work relative to critical debates about making"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-d691e847-ed22-40ee-8b49-1f409a0dc0c2",
+              "version": ""
+            },
+            {
+              "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+              "version": ""
+            },
+            {
+              "page": "item-eceae826-36f2-4e2c-b626-3c2136ab261b",
+              "version": ""
+            },
+            {
+              "page": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+              "version": ""
+            }
+          ],
+          "readings": [
+            {
+              "page": "item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62",
+              "version": ""
+            },
+            {
+              "page": "item-37be7178-7d0e-47aa-9515-852942e1101f",
+              "version": ""
+            },
+            {
+              "page": "item-de3020be-052d-4ec8-a11d-414dc295423b",
+              "version": ""
+            },
+            {
+              "page": "item-0a2a466e-a69a-45e3-b4b6-53c7493455b5",
+              "version": ""
+            },
+            {
+              "page": "item-60e4b429-b224-4257-bf91-839210d305a3",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384000
       }
     },
     {
@@ -13481,12 +13773,23 @@
             "Document process as it happens",
             "Choose a license and platform for sharing files"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+              "version": ""
+            },
+            {
+              "page": "item-da8b8213-908b-455f-8501-0bc929cf3b05",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384001
       }
     },
     {
@@ -13518,12 +13821,19 @@
             "Respond to in-progress critique",
             "Plan the presentation of the work"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384001
       }
     },
     {
@@ -13556,12 +13866,23 @@
             "Submit a complete documentation portfolio",
             "Reflect on process and learning"
           ],
-          "estimatedDuration": "1 week"
+          "estimatedDuration": "1 week",
+          "components": [
+            {
+              "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+              "version": ""
+            },
+            {
+              "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+              "version": ""
+            }
+          ],
+          "readings": []
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384002
       }
     },
     {
@@ -31097,12 +31418,26 @@
             }
           ],
           "placeholder": true,
-          "estimatedDuration": "10 minutes"
+          "estimatedDuration": "10 minutes",
+          "prerequisites": [
+            {
+              "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+              "version": ""
+            },
+            {
+              "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+              "version": ""
+            },
+            {
+              "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384003
       }
     },
     {
@@ -31127,12 +31462,30 @@
             }
           ],
           "placeholder": true,
-          "estimatedDuration": "10 minutes"
+          "estimatedDuration": "10 minutes",
+          "prerequisites": [
+            {
+              "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+              "version": ""
+            },
+            {
+              "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
+              "version": ""
+            },
+            {
+              "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
+              "version": ""
+            },
+            {
+              "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384004
       }
     },
     {
@@ -31157,12 +31510,26 @@
             }
           ],
           "placeholder": true,
-          "estimatedDuration": "10 minutes"
+          "estimatedDuration": "10 minutes",
+          "prerequisites": [
+            {
+              "page": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+              "version": ""
+            },
+            {
+              "page": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
+              "version": ""
+            },
+            {
+              "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+              "version": ""
+            }
+          ]
         },
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791384004
       }
     }
   ]
