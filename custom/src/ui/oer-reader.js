@@ -19,7 +19,7 @@ import "../outline/oer-site-nav.js";
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
-export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light", texture: false };
+export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light", texture: false, textureStrength: 1 };
 const SIZES = [17, 19, 21, 24]; // px
 const WIDTHS = { narrow: "60ch", medium: "68ch", wide: "80ch" };
 const SPACINGS = { normal: 1.7, relaxed: 1.95 };
@@ -32,9 +32,20 @@ const KEY = "oer-reader-settings";
 
 // Texture: a fine paper grain over any page colour, drawn by SVG noise (no
 // image file), each page with its own: a cool grain on Light, neutral on
-// Paper, warm on Sepia, light specks on Dark. Tuned in the Reader Grain
-// Tuner; every page keeps AA contrast on the grain's worst pixel (see the
-// page palettes in the theme)
+// Paper, warm on Sepia, light specks on Dark (tuned in nu-hax's
+// tools/reader-grain-tuner.html). Readers can make it fainter or stronger
+// for their screen, up to the strength where every page still keeps AA
+// contrast on the grain's worst pixel, measured at 1x, 2x and 3x: 150% on
+// the light pages, and Dark only fainter (its muted text is at 4.6:1 at full
+// strength on a phone)
+const FILTERS = {
+  light: { rgb: [0.235, 0.282, 0.349], alpha: 0.27, offset: -0.119, baseFrequency: 0.61, numOctaves: 3 },
+  paper: { rgb: [0.302, 0.302, 0.302], alpha: 0.34, offset: -0.167, baseFrequency: 0.66, numOctaves: 4 },
+  sepia: { rgb: [0.361, 0.302, 0.2], alpha: 0.34, offset: -0.115, baseFrequency: 0.75, numOctaves: 2 },
+  dark: { rgb: [0.922, 0.902, 0.859], alpha: 0.32, offset: -0.16, baseFrequency: 0.88, numOctaves: 3 },
+};
+const STRENGTH_MIN = 0.25;
+export const STRENGTH_MAX = { light: 1.5, paper: 1.5, sepia: 1.5, dark: 1 };
 const grain = ({ rgb, alpha, offset, baseFrequency, numOctaves }) =>
   `url("data:image/svg+xml,${encodeURIComponent(
     "<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'>" +
@@ -42,12 +53,20 @@ const grain = ({ rgb, alpha, offset, baseFrequency, numOctaves }) =>
       `<feColorMatrix values='0 0 0 0 ${rgb[0]} 0 0 0 0 ${rgb[1]} 0 0 0 0 ${rgb[2]} ${alpha} 0 0 0 ${offset}'/></filter>` +
       "<rect width='100%' height='100%' filter='url(#g)'/></svg>",
   )}")`;
-export const TEXTURES = {
-  light: grain({ rgb: [0.235, 0.282, 0.349], alpha: 0.27, offset: -0.119, baseFrequency: 0.61, numOctaves: 3 }),
-  paper: grain({ rgb: [0.302, 0.302, 0.302], alpha: 0.34, offset: -0.167, baseFrequency: 0.66, numOctaves: 4 }),
-  sepia: grain({ rgb: [0.361, 0.302, 0.2], alpha: 0.34, offset: -0.115, baseFrequency: 0.75, numOctaves: 2 }),
-  dark: grain({ rgb: [0.922, 0.902, 0.859], alpha: 0.32, offset: -0.16, baseFrequency: 0.88, numOctaves: 3 }),
-};
+
+/** A page colour's strength, kept within its limits. */
+export const textureStrength = (colour, strength = 1) => Math.min(Math.max(Number(strength) || 1, STRENGTH_MIN), STRENGTH_MAX[colour] ?? 1);
+
+// strength scales the specks' opacity (alpha and offset together)
+const textureCache = new Map();
+export function textureFor(colour, strength = 1) {
+  const f = FILTERS[colour];
+  if (!f) return "";
+  const m = textureStrength(colour, strength);
+  const key = `${colour}:${m}`;
+  if (!textureCache.has(key)) textureCache.set(key, grain({ ...f, alpha: +(f.alpha * m).toFixed(4), offset: +(f.offset * m).toFixed(4) }));
+  return textureCache.get(key);
+}
 
 export function loadReaderSettings() {
   try {
@@ -79,7 +98,7 @@ export function readerVars(s) {
     "--reader-measure": WIDTHS[s.width] || WIDTHS.medium,
     "--reader-leading": String(SPACINGS[s.spacing] || SPACINGS.normal),
     "--reader-font": FONTS[s.font] || FONTS.serif,
-    "--reader-texture": s.texture ? TEXTURES[s.colour] || "" : "",
+    "--reader-texture": s.texture ? textureFor(s.colour, s.textureStrength) : "",
   };
 }
 
@@ -152,10 +171,33 @@ class OerReaderBar extends LitElement {
       <span class="setting-label" id="lbl-${key}">${label}</span>
       <div class="seg ${cls}" role="group" aria-labelledby="lbl-${key}">
         ${options.map(
-          ([value, text, extra]) =>
-            html`<button aria-pressed="${this.settings[key] === value ? "true" : "false"}" class="${extra || ""}" @click="${() => this._set(key, value)}">${text}</button>`,
+          ([value, text, extra, style]) =>
+            html`<button aria-pressed="${this.settings[key] === value ? "true" : "false"}" class="${extra || ""}" style="${style || ""}" @click="${() => this._set(key, value)}">${text}</button>`,
         )}
       </div>
+    </div>`;
+  }
+
+  // texture strength, for screens that show the grain lighter or heavier:
+  // up to the page's limit for AA contrast (Dark only fainter)
+  _renderStrength() {
+    const colour = this.settings.colour;
+    const max = Math.round((STRENGTH_MAX[colour] ?? 1) * 100);
+    const value = Math.round(textureStrength(colour, this.settings.textureStrength) * 100);
+    return html`<div class="setting">
+      <span class="setting-label row"><label for="texture-strength">Texture strength</label><output for="texture-strength">${value}%</output></span>
+      <input
+        id="texture-strength"
+        class="range"
+        type="range"
+        min="25"
+        max="${max}"
+        step="5"
+        .value="${String(value)}"
+        aria-valuetext="${value}%"
+        @input="${(e) => this._set("textureStrength", Number(e.target.value) / 100)}"
+      />
+      ${max <= 100 ? html`<span class="hint">On Dark it can only be fainter, so text keeps its contrast.</span>` : ""}
     </div>`;
   }
 
@@ -225,13 +267,13 @@ class OerReaderBar extends LitElement {
             ${this._seg(
               "Page",
               "colour",
-              [
-                ["light", "Light", "c-light"],
-                ["paper", "Paper", "c-paper"],
-                ["sepia", "Sepia", "c-sepia"],
-                ["dark", "Dark", "c-dark"],
-              ],
-              this.settings.texture ? "textured" : "",
+              // each swatch shows its page's grain, at the reader's strength
+              ["light", "paper", "sepia", "dark"].map((c) => [
+                c,
+                c[0].toUpperCase() + c.slice(1),
+                `c-${c}`,
+                this.settings.texture ? `background-image: ${textureFor(c, this.settings.textureStrength)}` : "",
+              ]),
             )}
             <div class="setting row">
               <span class="setting-label" id="lbl-texture">Texture</span>
@@ -245,6 +287,7 @@ class OerReaderBar extends LitElement {
                 <span class="knob"></span>
               </button>
             </div>
+            ${this.settings.texture ? this._renderStrength() : ""}
             <p class="hint">Turn pages with <kbd>←</kbd> and <kbd>→</kbd>. Settings are remembered on this device.</p>
           </div>`
         : ""}`;
@@ -468,24 +511,26 @@ class OerReaderBar extends LitElement {
         background: #16181d;
         color: #e3e1dc;
       }
-      .seg.textured .c-light {
-        background-image: ${unsafeCSS(TEXTURES.light)};
-      }
-      .seg.textured .c-paper {
-        background-image: ${unsafeCSS(TEXTURES.paper)};
-      }
-      .seg.textured .c-sepia {
-        background-image: ${unsafeCSS(TEXTURES.sepia)};
-      }
-      .seg.textured .c-dark {
-        background-image: ${unsafeCSS(TEXTURES.dark)};
-      }
       .seg :is(.c-light, .c-paper, .c-sepia, .c-dark) {
         margin: 0 0.0625rem;
         outline: 1px solid rgb(0 0 0 / 0.08);
       }
       .seg :is(.c-light, .c-paper, .c-sepia, .c-dark)[aria-pressed="true"] {
         outline: 2px solid var(--primary);
+      }
+      .setting-label.row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .setting-label output {
+        color: var(--muted-foreground);
+        font-variant-numeric: tabular-nums;
+      }
+      .range {
+        width: 100%;
+        margin: 0;
+        accent-color: var(--primary);
       }
       /* Texture: shadcn Switch; the track's outline meets 3:1 when off */
       .setting.row {

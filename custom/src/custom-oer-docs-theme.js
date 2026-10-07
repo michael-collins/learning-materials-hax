@@ -1545,7 +1545,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
            colour. Light and dark resolve the site's tokens in that scheme;
            paper, sepia and dark have their own palettes. Texture lays a fine
            grain (--reader-texture, ui/oer-reader.js) on the page and the bar;
-           contrast below is measured on the grain's worst pixel */
+           contrast below is measured on the grain's worst pixel at the
+           strongest the reader can set it */
         :host([reader]) {
           background-color: var(--background);
           background-image: var(--reader-texture, none);
@@ -1610,13 +1611,15 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             background-image: none;
           }
         }
-        /* a deeper link blue than the site's, for AA on the grain (5.6:1) */
+        /* a deeper link blue than the site's, for AA on the grain (5.2:1 at
+           its strongest) */
         :host([reader-colour="light"]) {
           color-scheme: only light;
           --link: #0062a3;
         }
         /* a softer dark than the site's black, easier over long reading
-           (AA with texture: text 9.5:1, muted 5.2:1, links 5.7:1, ring 3.7:1) */
+           (AA with texture, at 1x to 3x: text 8.6:1, muted 4.6:1, links
+           5.1:1, ring 3.4:1) */
         :host([reader-colour="dark"]) {
           color-scheme: only dark;
           --background: #16181d;
@@ -1636,8 +1639,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --link: #7cb4f0;
           --ring: #5b8fd0;
         }
-        /* warm white under ink-blue links (AA with texture: text 11.4:1,
-           muted 5.4:1, links 6.5:1, focus ring 4.1:1) */
+        /* warm white under ink-blue links (AA with texture at its strongest,
+           1x to 3x: text 10.4:1, muted 4.9:1, links 5.9:1, ring 3.7:1) */
         :host([reader-colour="paper"]) {
           color-scheme: only light;
           --background: #f8f5ec;
@@ -1657,7 +1660,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --link: #1d4f91;
           --ring: #4a6fa5;
         }
-        /* AA with texture: text 9.9:1, muted 5.3:1, links 5.7:1, ring 3.5:1 */
+        /* AA with texture at its strongest, 1x to 3x: text 9:1, muted 4.8:1,
+           links 5.2:1, ring 3.2:1 */
         :host([reader-colour="sepia"]) {
           color-scheme: only light;
           --background: #f6efe1;
