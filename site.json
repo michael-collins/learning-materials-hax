@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385282,
+      "updated": 1791385283,
       "version": "26.8.0"
     },
     "theme": {
@@ -20413,7 +20413,7 @@
       "order": 4,
       "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
       "title": "DART 303: 3D Studio",
-      "description": "",
+      "description": "3D Studio, 4 (maximum of 8) credits.",
       "metadata": {
         "pageType": "oer:course",
         "published": true,
