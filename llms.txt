@@ -620,7 +620,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Twine tutorial: Getting started with Twine](https://localhost:3000/learning-materials/pages/item-b7594c35-d2a8-4b7b-bac3-19835b98836a/index.md)
 - [Andrew Stanton: The clues to a great story](https://localhost:3000/learning-materials/pages/item-b78cf2a7-6e53-46cd-a39a-cd92c4997256/index.md)
 - [Creative Mornings: Jordan Tannahall](https://localhost:3000/learning-materials/pages/item-1f13102f-c90b-4042-8883-a452fedcdd19/index.md)
-- [Jefferson's Gravestone: Metaphorical Extensions of Design](https://localhost:3000/learning-materials/pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.md)
 - [Liberty as Knowledge Design](https://localhost:3000/learning-materials/pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.md)
 - [Corporate Redesign and the Business of Knowledge](https://localhost:3000/learning-materials/pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.md)
 - [Designing Time](https://localhost:3000/learning-materials/pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.md)
@@ -865,6 +864,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [In Jefferson's Footsteps: Modes of Self-Design](https://localhost:3000/learning-materials/pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.md): In Jefferson's Footsteps: Modes of Self-Design (p. 105-116) in Design and Truth by Robert Grudin.Writing prompt In this chapter, Grudin talks briefly about humanity's departure from synergy with the
 - [Giorgio Vasari and the Permutations of Design](https://localhost:3000/learning-materials/pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.md): Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert GrudinWriting prompt In this chapter, Grudin explores implications resulting from Vasari helping to establish th
 - [The Lady in the Picture: Design and Revelation in Renaissance Art](https://localhost:3000/learning-materials/pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.md): The Lady in the Picture: Design and Revelation in Renaissance Art (p. 88-104) in Design and Truth by Robert GrudinWriting prompt In this chapter, Grudin gives us a glimpse into specific moments of kn
+- [Jefferson's Gravestone: Metaphorical Extensions of Design](https://localhost:3000/learning-materials/pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.md): Jefferson's Gravestone: Metaphorical Extensions of Design (p. 117-133) in Design and Truth by Robert Grudin.Writing prompt In this chapter, Grudin takes us on a foray through literary design, social
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

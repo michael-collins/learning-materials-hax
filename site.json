@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404501,
+      "updated": 1791404502,
       "version": "26.8.0"
     },
     "theme": {
@@ -23482,42 +23482,6 @@
       }
     },
     {
-      "id": "item-0e39f06d-969d-4ee4-ba00-aa33514304ba",
-      "indent": 1,
-      "location": "pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.html",
-      "slug": "articles/jefferson-s-gravestone-metaphorical-extensions-of-design",
-      "order": 52,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "Jefferson's Gravestone: Metaphorical Extensions of Design",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-4-readings-chapter-11-jeffersons-gravestone-metaphorical-extensions-of-d",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386293
-      }
-    },
-    {
       "id": "item-73f7f84a-b21c-4a11-b741-3e06a1dac59e",
       "indent": 1,
       "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.html",
@@ -33145,6 +33109,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404500,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-0e39f06d-969d-4ee4-ba00-aa33514304ba",
+      "indent": 1,
+      "location": "pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.html",
+      "slug": "jefferson-s-gravestone-metaphorical-extensions-of-design",
+      "order": 52,
+      "parent": null,
+      "title": "Jefferson's Gravestone: Metaphorical Extensions of Design",
+      "description": "Jefferson's Gravestone: Metaphorical Extensions of Design (p. 117-133) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin takes us on a foray through literary design, social ",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-4-readings-chapter-11-jeffersons-gravestone-metaphorical-extensions-of-d",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404501,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
