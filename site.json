@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384019,
+      "updated": 1791384020,
       "version": "26.8.0"
     },
     "theme": {
@@ -25717,7 +25717,7 @@
       "order": 51,
       "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
       "title": "Thinking Through Craft — Introduction",
-      "description": "",
+      "description": "Recommended: craft as a set of positions (supplemental, material, skilled, pastoral, amateur) rather than a category of objects.",
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B16",
