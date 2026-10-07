@@ -548,10 +548,64 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           font-size: 0.875em;
           line-height: inherit;
           transition: none;
-          /* long snippets wrap, each line keeping its padding and corners */
-          overflow-wrap: anywhere;
+          /* long snippets wrap at spaces, each line keeping its padding and
+             corners; a word breaks only when it can't fit at all */
+          overflow-wrap: break-word;
           -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
+        }
+        /* tables in page content, after shadcn's: an outer rounded border,
+           lines between rows only, a quiet header, room in each cell, a faint
+           stripe to follow a row across; wide tables scroll sideways. DDD
+           gives every cell a border on all sides (its color !important,
+           inherited: set on the table), no padding and middle alignment. */
+        :is(custom-oer-docs-theme, .oer-reading) table {
+          display: block;
+          box-sizing: border-box;
+          width: auto;
+          max-width: 100%;
+          margin: 1.5rem 0;
+          overflow-x: auto;
+          border: 1px solid var(--border);
+          border-color: var(--border);
+          border-radius: var(--radius-lg);
+          border-collapse: separate;
+          border-spacing: 0;
+          font-size: 0.9375rem;
+          line-height: 1.55;
+        }
+        :is(custom-oer-docs-theme, .oer-reading) :is(th, td) {
+          padding: 0.625rem 0.875rem;
+          border: 0;
+          border-bottom: 1px solid;
+          font-family: inherit;
+          font-size: inherit;
+          text-align: start;
+          vertical-align: top;
+        }
+        :is(custom-oer-docs-theme, .oer-reading) th {
+          background: color-mix(in srgb, var(--muted) 45%, transparent);
+          color: var(--muted-foreground);
+          font-size: 0.875rem;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+        :is(custom-oer-docs-theme, .oer-reading) tbody tr:nth-child(even) > * {
+          background: color-mix(in srgb, var(--muted) 30%, transparent);
+        }
+        :is(custom-oer-docs-theme, .oer-reading) tr:last-child > td {
+          border-bottom: 0;
+        }
+        /* a cell that's only a name in code (a model, a command) keeps it whole */
+        :is(custom-oer-docs-theme, .oer-reading) :is(th, td) > code:only-child {
+          white-space: nowrap;
+        }
+        :is(custom-oer-docs-theme, .oer-reading) caption {
+          caption-side: bottom;
+          padding: 0.5rem 0.875rem;
+          font-size: 0.875rem;
+          color: var(--muted-foreground);
+          text-align: start;
         }
         :is(custom-oer-docs-theme, .oer-reading) pre {
           /* DDD makes pre an inline box sized to its text */
