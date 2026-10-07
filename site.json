@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384045,
+      "updated": 1791384046,
       "version": "26.8.0"
     },
     "theme": {
@@ -13624,7 +13624,7 @@
       "order": 43,
       "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
       "title": "Hybrid processes and finishing",
-      "description": "",
+      "description": "Combining processes: molds and casting from printed or cut masters; vacuum forming; vinyl cutting for graphics; finishing (sanding, priming, paint, sealing); embedding hardware and light (optional).",
       "metadata": {
         "pageType": "oer:lesson",
         "oerPlan": "DART 413:M11",
