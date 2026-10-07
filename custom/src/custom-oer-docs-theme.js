@@ -1626,8 +1626,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --link: #7cb4f0;
           --ring: #5b8fd0;
         }
-        /* warm white under ink-blue links (AA on the texture's darkest
-           pixel: text 10.6:1, muted 5.0:1, links 6.1:1, focus ring 3.8:1) */
+        /* warm white under ink-blue links (AA on the grain's darkest
+           pixel: text 11.1:1, muted 5.3:1, links 6.4:1, focus ring 4.0:1) */
         :host([reader-colour="paper"]) {
           color-scheme: only light;
           --background: #f8f5ec;

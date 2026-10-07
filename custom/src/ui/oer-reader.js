@@ -30,16 +30,14 @@ const FONTS = {
 const SERIF_CSS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap";
 const KEY = "oer-reader-settings";
 
-// the Paper page: soft, even cloudiness and a fine grain over a warm white,
-// drawn by SVG noise (no image file). Faint enough that text keeps AA
-// contrast on its darkest pixel (text 10.6:1, muted 5.0:1, links 6.1:1)
+// the Paper page: a fine grain over a warm white, drawn by SVG noise (no
+// image file). Faint enough that text keeps AA contrast on its darkest
+// pixel (text 11.1:1, muted 5.3:1, links 6.4:1)
 const PAPER_SVG =
-  "<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'>" +
-  "<filter id='m' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.016' numOctaves='3' seed='11' stitchTiles='stitch'/>" +
-  "<feColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.37 0 0 0 0 0.25 0.2 0 0 0 -0.075'/></filter>" +
+  "<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'>" +
   "<filter id='g' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='5' stitchTiles='stitch'/>" +
   "<feColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.3 0 0 0 0 0.2 0.34 0 0 0 -0.115'/></filter>" +
-  "<rect width='100%' height='100%' filter='url(#m)'/><rect width='100%' height='100%' filter='url(#g)'/></svg>";
+  "<rect width='100%' height='100%' filter='url(#g)'/></svg>";
 export const PAPER_TEXTURE = `url("data:image/svg+xml,${encodeURIComponent(PAPER_SVG)}")`;
 
 export function loadReaderSettings() {
