@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791404505,
+      "updated": 1791404506,
       "version": "26.8.0"
     },
     "theme": {
@@ -23870,42 +23870,6 @@
       }
     },
     {
-      "id": "item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94",
-      "indent": 1,
-      "location": "pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.html",
-      "slug": "articles/the-design-of-private-knowledge",
-      "order": 67,
-      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
-      "title": "The Design of Private Knowledge",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:article",
-        "oerSource": "articles/dmd100-lesson-5-readings-chapter-15-the-design-of-private-knowledge",
-        "tags": "reading",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "date": "2026-03-01",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386304
-      }
-    },
-    {
       "id": "item-23c2c880-8d6a-4f3d-8b30-998f3794be64",
       "indent": 1,
       "location": "pages/item-23c2c880-8d6a-4f3d-8b30-998f3794be64/index.html",
@@ -33161,6 +33125,46 @@
         "images": [],
         "videos": [],
         "updated": 1791404504,
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
+      }
+    },
+    {
+      "id": "item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94",
+      "indent": 1,
+      "location": "pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.html",
+      "slug": "the-design-of-private-knowledge",
+      "order": 67,
+      "parent": null,
+      "title": "The Design of Private Knowledge",
+      "description": "The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experien",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:article",
+        "oerSource": "articles/dmd100-lesson-5-readings-chapter-15-the-design-of-private-knowledge",
+        "tags": "reading",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "date": "2026-03-01",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791404505,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,

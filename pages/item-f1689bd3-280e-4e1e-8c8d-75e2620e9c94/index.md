@@ -19,4 +19,5 @@ AI Policy
 
 This assignment is tagged AIUL-NA-WR (Not Allowed for Writing), which means no AI tools are permitted. All work must be entirely your own without assistance from AI tools. This applies specifically to writing.
 
-<a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" title="AIUL AIUL-NA-WR License: Not Allowed for Writing" target="\_blank" rel="license"> <img alt="AIUL-NA-WR - Not Allowed for Writing" src="https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png" style="border-width:0; max-width:170px;" /> </a> <br /> Please see the <a href="https://dmd-program.github.io/aiul/combinations/na-wr.html" target="\_blank" rel="license">AI Usage License AIUL-NA-WR</a> for AI usage information.
+[![AIUL-NA-WR - Not Allowed for Writing](https://dmd-program.github.io/aiul/assets/images/licenses/aiul-na-wr.png)](https://dmd-program.github.io/aiul/combinations/na-wr.html "AIUL AIUL-NA-WR License: Not Allowed for Writing")  
+Please see the [AI Usage License AIUL-NA-WR](https://dmd-program.github.io/aiul/combinations/na-wr.html) for AI usage information.

@@ -631,7 +631,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Open Structures: Thomas Lommee](https://localhost:3000/learning-materials/pages/item-dbbedc8e-48ca-45bf-a697-efe400a259f4/index.md)
 - [Creative Mornings: Creativity and the Freedom to Fail](https://localhost:3000/learning-materials/pages/item-f7548fe9-87c9-4c91-9756-57d12467daf6/index.md)
 - [How to Become Great at Just About Anything](https://localhost:3000/learning-materials/pages/item-078a2883-72b8-4574-8f88-425a58c17295/index.md)
-- [The Design of Private Knowledge](https://localhost:3000/learning-materials/pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.md)
 - [OER License (CC-BY-4.0)](https://localhost:3000/learning-materials/pages/item-23c2c880-8d6a-4f3d-8b30-998f3794be64/index.md)
 - [Feedback and critique](https://localhost:3000/learning-materials/pages/item-5470a3fd-3220-4be6-a9a7-1d0db257ce74/index.md)
 - [Character](https://localhost:3000/learning-materials/pages/item-30bf4867-df49-4e53-80d0-7e47c6f266b3/index.md)
@@ -865,6 +864,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Liberty as Knowledge Design](https://localhost:3000/learning-materials/pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.md): Liberty as Knowledge Design (p. 134 - 149) in Design and Truth by Robert Grudin.Writing prompt In this chapter, Grudin dissects the design challenges inherent in a society built on democratic values.
 - [Corporate Redesign and the Business of Knowledge](https://localhost:3000/learning-materials/pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.md): Corporate Redesign and the Business of Knowledge (p. 150-165) in Design and Truth by Robert Grudin.Writing prompt In this chapter, Grudin describes arguments over imbuing corporate free market endeav
 - [Designing Time](https://localhost:3000/learning-materials/pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.md): Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting prompt In these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports
+- [The Design of Private Knowledge](https://localhost:3000/learning-materials/pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.md): The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experien
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
