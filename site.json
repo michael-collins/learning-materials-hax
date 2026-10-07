@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384031,
+      "updated": 1791384032,
       "version": "26.8.0"
     },
     "theme": {
@@ -31207,7 +31207,7 @@
       "order": 15,
       "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
       "title": "Final project",
-      "description": "",
+      "description": "A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition.",
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:A10",
