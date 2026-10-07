@@ -419,19 +419,74 @@ export class OerCollection extends LitElement {
         font-weight: 700;
         letter-spacing: -0.02em;
       }
+      /* toolbar: one control scale, after shadcn's data table (size sm:
+         2rem tall, 0.875rem text, labels outside their controls) */
       .bar {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.5rem 0.75rem;
         margin-bottom: 0.75rem;
+        font-size: 0.875rem;
+        color: var(--foreground, #111);
+      }
+      .bar-end {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: auto;
+      }
+      .field {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .field-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--foreground, #111);
+        white-space: nowrap;
+      }
+      .select {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .select select {
+        appearance: none;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        height: 2rem;
+        max-width: 16rem;
+        padding: 0 2rem 0 0.75rem;
+        border: 1px solid var(--input-border, var(--border, #ddd));
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--background, #fff);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+        color: var(--foreground, #111);
+        font: inherit;
+        font-size: 0.875rem;
+        text-overflow: ellipsis;
+        cursor: pointer;
+      }
+      .select .lucide {
+        position: absolute;
+        right: 0.625rem;
+        pointer-events: none;
+        opacity: 0.5;
       }
       .search {
-        flex: 1 1 14rem;
+        /* a set width, as shadcn's: filters and the view controls share the row */
+        flex: 0 1 16rem;
+        min-width: 10rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        height: 2.25rem;
+        box-sizing: border-box;
+        height: 2rem;
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
         padding: 0 0.75rem;
         border: 1px solid var(--input-border, var(--border, #ddd));
         border-radius: var(--radius-md, 0.5rem);
@@ -451,25 +506,20 @@ export class OerCollection extends LitElement {
         color: var(--foreground, #111);
         font-size: 0.875rem;
       }
-      select.filter {
-        height: 2.25rem;
-        padding: 0 2rem 0 0.75rem;
-        border: 1px solid var(--input-border, var(--border, #ddd));
-        border-radius: var(--radius-md, 0.5rem);
-        background: var(--background, #fff);
-        font-size: 0.875rem;
-      }
       .btn {
         all: unset;
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
-        height: 2.25rem;
+        box-sizing: border-box;
+        height: 2rem;
         padding: 0 0.75rem;
         border: 1px solid var(--input-border, var(--border, #ddd));
         border-radius: var(--radius-md, 0.5rem);
         background: var(--background, #fff);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
         font-size: 0.875rem;
+        font-weight: 500;
         cursor: pointer;
         white-space: nowrap;
       }
@@ -478,6 +528,8 @@ export class OerCollection extends LitElement {
       }
       .seg {
         display: inline-flex;
+        box-sizing: border-box;
+        height: 2rem;
         padding: 0.1875rem;
         gap: 0.125rem;
         border-radius: var(--radius-md, 0.5rem);
@@ -488,10 +540,11 @@ export class OerCollection extends LitElement {
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
-        height: 1.75rem;
+        height: 100%;
         padding: 0 0.625rem;
         border-radius: calc(var(--radius-md, 0.5rem) - 2px);
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
+        font-weight: 500;
         color: var(--muted-foreground, #555);
         cursor: pointer;
       }
@@ -882,26 +935,13 @@ export class OerCollection extends LitElement {
         align-items: center;
         gap: 0.5rem 1rem;
         margin-top: 0.75rem;
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
         color: var(--muted-foreground, #555);
       }
       .pager-status {
         margin-right: auto;
       }
-      .per-page {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-      }
-      .per-page select {
-        height: 2rem;
-        padding: 0 0.375rem;
-        border: 1px solid var(--input-border, var(--border, #e5e5e5));
-        border-radius: var(--radius-md, 0.5rem);
-        background: var(--background, #fff);
-        color: var(--foreground, #111);
-        font: inherit;
-      }
+
       .pages {
         display: flex;
         align-items: center;
@@ -916,9 +956,12 @@ export class OerCollection extends LitElement {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
         min-width: 2rem;
         height: 2rem;
         border-radius: var(--radius-md, 0.5rem);
+        color: var(--foreground, #111);
+        font-weight: 500;
         cursor: pointer;
       }
       .pages button:hover {
@@ -1278,12 +1321,15 @@ export class OerCollection extends LitElement {
           ${lucide("icons:search", "sm")}
           <input type="search" placeholder="Search…" aria-label="Search" .value="${s.q}" @input="${(e) => this._setState({ q: e.target.value, page: 1 })}" />
         </label>
-        ${filterFields.map(
-          (f) => html`<select class="filter" aria-label="${f.label}" @change="${(e) => this._setFilter(f.name, e.target.value)}">
-            <option value="" ?selected="${!s.filters[f.name]}">${f.label}: all</option>
-            ${this._distinct(f.name).map((v) => html`<option value="${v}" ?selected="${s.filters[f.name] === v}">${this._label(f, v)}</option>`)}
-          </select>`,
+        ${filterFields.map((f) =>
+          this._dropdown({
+            label: f.label,
+            value: s.filters[f.name] || "",
+            options: [{ value: "", label: "All" }, ...this._distinct(f.name).map((v) => ({ value: v, label: this._label(f, v) }))],
+            onChange: (v) => this._setFilter(f.name, v),
+          }),
         )}
+        <span class="bar-end">
         ${view === "table"
           ? html`<div class="cols-wrap">
               <button class="btn" aria-expanded="${this._columnsOpen}" @click="${() => (this._columnsOpen = !this._columnsOpen)}">${lucide("oer:columns-2", "sm")}Columns</button>
@@ -1308,6 +1354,7 @@ export class OerCollection extends LitElement {
           <button aria-pressed="${view === "table"}" @click="${() => this._setState({ view: "table" })}">${lucide("editor:border-all", "sm")}Table</button>
           <button aria-pressed="${view === "cards"}" @click="${() => this._setState({ view: "cards" })}">${lucide("icons:view-module", "sm")}Cards</button>
         </div>
+        </span>
       </div>
       ${tags.length > 1
         ? html`<div class="chips" role="group" aria-label="Tags">
@@ -1316,12 +1363,12 @@ export class OerCollection extends LitElement {
         : ""}
       ${groupable.length
         ? html`<div class="bar">
-            <span class="status" style="margin:0">${lucide("icons:view-module", "xs")}Group by</span>
-            <div class="seg" role="group" aria-label="Group by">
+            <span class="field-label" id="group-by-label">Group by</span>
+            <div class="seg" role="group" aria-labelledby="group-by-label">
               <button aria-pressed="${!s.groupBy}" @click="${() => this._setState({ groupBy: "", page: 1 })}">None</button>
               ${groupable.map((g) => html`<button aria-pressed="${s.groupBy === g.key}" @click="${() => this._setState({ groupBy: g.key, page: 1 })}">${g.label}</button>`)}
             </div>
-            ${s.groupBy ? this._renderPerPage() : ""}
+            ${s.groupBy ? html`<span class="bar-end">${this._renderPerPage()}</span>` : ""}
           </div>`
         : ""}
       <div class="status" aria-live="polite">
@@ -1350,18 +1397,31 @@ export class OerCollection extends LitElement {
     return out;
   }
 
+  // a dropdown with its label outside it (shadcn Label + Select): the same
+  // look for filters and the page size
+  _dropdown({ label, value, options, onChange }) {
+    return html`<label class="field">
+      <span class="field-label">${label}</span>
+      <span class="select">
+        <select @change="${(e) => onChange(e.target.value)}">
+          ${options.map((o) => html`<option value="${o.value}" ?selected="${String(o.value) === String(value)}">${o.label}</option>`)}
+        </select>
+        ${lucide("oer:chevron-down", "sm")}
+      </span>
+    </label>`;
+  }
+
   get _sizes() {
     return [...new Set([10, 20, 50, 100, Number(this.perPage) || 20])].sort((a, b) => a - b);
   }
 
   _renderPerPage() {
-    const per = this._per;
-    return html`<label class="per-page">
-      Per page
-      <select @change="${(e) => this._setState({ perPage: Number(e.target.value), page: 1 })}">
-        ${this._sizes.map((n) => html`<option value="${n}" ?selected="${n === per}">${n}</option>`)}
-      </select>
-    </label>`;
+    return this._dropdown({
+      label: "Per page",
+      value: this._per,
+      options: this._sizes.map((n) => ({ value: n, label: String(n) })),
+      onChange: (v) => this._setState({ perPage: Number(v), page: 1 }),
+    });
   }
 
   /**

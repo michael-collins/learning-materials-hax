@@ -11836,19 +11836,74 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         font-weight: 700;
         letter-spacing: -0.02em;
       }
+      /* toolbar: one control scale, after shadcn's data table (size sm:
+         2rem tall, 0.875rem text, labels outside their controls) */
       .bar {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.5rem 0.75rem;
         margin-bottom: 0.75rem;
+        font-size: 0.875rem;
+        color: var(--foreground, #111);
+      }
+      .bar-end {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: auto;
+      }
+      .field {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .field-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--foreground, #111);
+        white-space: nowrap;
+      }
+      .select {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .select select {
+        appearance: none;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        height: 2rem;
+        max-width: 16rem;
+        padding: 0 2rem 0 0.75rem;
+        border: 1px solid var(--input-border, var(--border, #ddd));
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--background, #fff);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+        color: var(--foreground, #111);
+        font: inherit;
+        font-size: 0.875rem;
+        text-overflow: ellipsis;
+        cursor: pointer;
+      }
+      .select .lucide {
+        position: absolute;
+        right: 0.625rem;
+        pointer-events: none;
+        opacity: 0.5;
       }
       .search {
-        flex: 1 1 14rem;
+        /* a set width, as shadcn's: filters and the view controls share the row */
+        flex: 0 1 16rem;
+        min-width: 10rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        height: 2.25rem;
+        box-sizing: border-box;
+        height: 2rem;
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
         padding: 0 0.75rem;
         border: 1px solid var(--input-border, var(--border, #ddd));
         border-radius: var(--radius-md, 0.5rem);
@@ -11868,25 +11923,20 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         color: var(--foreground, #111);
         font-size: 0.875rem;
       }
-      select.filter {
-        height: 2.25rem;
-        padding: 0 2rem 0 0.75rem;
-        border: 1px solid var(--input-border, var(--border, #ddd));
-        border-radius: var(--radius-md, 0.5rem);
-        background: var(--background, #fff);
-        font-size: 0.875rem;
-      }
       .btn {
         all: unset;
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
-        height: 2.25rem;
+        box-sizing: border-box;
+        height: 2rem;
         padding: 0 0.75rem;
         border: 1px solid var(--input-border, var(--border, #ddd));
         border-radius: var(--radius-md, 0.5rem);
         background: var(--background, #fff);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
         font-size: 0.875rem;
+        font-weight: 500;
         cursor: pointer;
         white-space: nowrap;
       }
@@ -11895,6 +11945,8 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
       }
       .seg {
         display: inline-flex;
+        box-sizing: border-box;
+        height: 2rem;
         padding: 0.1875rem;
         gap: 0.125rem;
         border-radius: var(--radius-md, 0.5rem);
@@ -11905,10 +11957,11 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
-        height: 1.75rem;
+        height: 100%;
         padding: 0 0.625rem;
         border-radius: calc(var(--radius-md, 0.5rem) - 2px);
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
+        font-weight: 500;
         color: var(--muted-foreground, #555);
         cursor: pointer;
       }
@@ -12299,26 +12352,13 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         align-items: center;
         gap: 0.5rem 1rem;
         margin-top: 0.75rem;
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
         color: var(--muted-foreground, #555);
       }
       .pager-status {
         margin-right: auto;
       }
-      .per-page {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-      }
-      .per-page select {
-        height: 2rem;
-        padding: 0 0.375rem;
-        border: 1px solid var(--input-border, var(--border, #e5e5e5));
-        border-radius: var(--radius-md, 0.5rem);
-        background: var(--background, #fff);
-        color: var(--foreground, #111);
-        font: inherit;
-      }
+
       .pages {
         display: flex;
         align-items: center;
@@ -12333,9 +12373,12 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
         min-width: 2rem;
         height: 2rem;
         border-radius: var(--radius-md, 0.5rem);
+        color: var(--foreground, #111);
+        font-weight: 500;
         cursor: pointer;
       }
       .pages button:hover {
@@ -12519,10 +12562,8 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           ${Y("icons:search","sm")}
           <input type="search" placeholder="Search…" aria-label="Search" .value="${r.q}" @input="${c=>this._setState({q:c.target.value,page:1})}" />
         </label>
-        ${o.map(c=>s`<select class="filter" aria-label="${c.label}" @change="${p=>this._setFilter(c.name,p.target.value)}">
-            <option value="" ?selected="${!r.filters[c.name]}">${c.label}: all</option>
-            ${this._distinct(c.name).map(p=>s`<option value="${p}" ?selected="${r.filters[c.name]===p}">${this._label(c,p)}</option>`)}
-          </select>`)}
+        ${o.map(c=>this._dropdown({label:c.label,value:r.filters[c.name]||"",options:[{value:"",label:"All"},...this._distinct(c.name).map(p=>({value:p,label:this._label(c,p)}))],onChange:p=>this._setFilter(c.name,p)}))}
+        <span class="bar-end">
         ${i==="table"?s`<div class="cols-wrap">
               <button class="btn" aria-expanded="${this._columnsOpen}" @click="${()=>this._columnsOpen=!this._columnsOpen}">${Y("oer:columns-2","sm")}Columns</button>
               ${this._columnsOpen?s`<div class="cols-pop" role="group" aria-label="Columns">
@@ -12539,29 +12580,33 @@ nav a{display:block;padding:.15rem 0}.meta{color:#555;font-size:.9rem}a{color:#0
           <button aria-pressed="${i==="table"}" @click="${()=>this._setState({view:"table"})}">${Y("editor:border-all","sm")}Table</button>
           <button aria-pressed="${i==="cards"}" @click="${()=>this._setState({view:"cards"})}">${Y("icons:view-module","sm")}Cards</button>
         </div>
+        </span>
       </div>
       ${n.length>1?s`<div class="chips" role="group" aria-label="Tags">
             ${n.map(c=>s`<button class="chip" aria-pressed="${r.tags.includes(c)}" @click="${()=>this._toggleTag(c)}">${c}</button>`)}
           </div>`:""}
       ${l.length?s`<div class="bar">
-            <span class="status" style="margin:0">${Y("icons:view-module","xs")}Group by</span>
-            <div class="seg" role="group" aria-label="Group by">
+            <span class="field-label" id="group-by-label">Group by</span>
+            <div class="seg" role="group" aria-labelledby="group-by-label">
               <button aria-pressed="${!r.groupBy}" @click="${()=>this._setState({groupBy:"",page:1})}">None</button>
               ${l.map(c=>s`<button aria-pressed="${r.groupBy===c.key}" @click="${()=>this._setState({groupBy:c.key,page:1})}">${c.label}</button>`)}
             </div>
-            ${r.groupBy?this._renderPerPage():""}
+            ${r.groupBy?s`<span class="bar-end">${this._renderPerPage()}</span>`:""}
           </div>`:""}
       <div class="status" aria-live="polite">
         ${d.map(c=>s`<button class="chip active" @click="${c.clear}" aria-label="Remove filter ${c.label}">${Y("image:tune","xs")}${c.label}${Y("oer:x","xs")}</button>`)}
         <span>${t===e?`${e} item${e===1?"":"s"}`:`${t} of ${e}`}</span>
         ${d.length||r.q?s`<button class="link" @click="${this._clear}">Clear all</button>`:""}
       </div>
-    `}get _per(){return Math.max(1,Number(this._state.perPage)||Number(this.perPage)||20)}_pageList(e,t){if(t<=7)return Array.from({length:t},(o,n)=>n+1);const r=[...new Set([1,2,e-1,e,e+1,t-1,t])].filter(o=>o>=1&&o<=t).sort((o,n)=>o-n),i=[];return r.forEach((o,n)=>{n&&o-r[n-1]>1&&i.push("\u2026"),i.push(o)}),i}get _sizes(){return[...new Set([10,20,50,100,Number(this.perPage)||20])].sort((e,t)=>e-t)}_renderPerPage(){const e=this._per;return s`<label class="per-page">
-      Per page
-      <select @change="${t=>this._setState({perPage:Number(t.target.value),page:1})}">
-        ${this._sizes.map(t=>s`<option value="${t}" ?selected="${t===e}">${t}</option>`)}
-      </select>
-    </label>`}_renderPager(e,t,{go:r,label:i="Pages",sizes:o=!0,scrollTo:n=this}={}){const l=this._per,d=Math.max(1,Math.ceil(e/l));if(d<=1&&(!o||e<=this._sizes[0]))return"";const c=p=>{r(p),n?.scrollIntoView?.({block:"start",behavior:"auto"})};return s`<nav class="pager" aria-label="${i}">
+    `}get _per(){return Math.max(1,Number(this._state.perPage)||Number(this.perPage)||20)}_pageList(e,t){if(t<=7)return Array.from({length:t},(o,n)=>n+1);const r=[...new Set([1,2,e-1,e,e+1,t-1,t])].filter(o=>o>=1&&o<=t).sort((o,n)=>o-n),i=[];return r.forEach((o,n)=>{n&&o-r[n-1]>1&&i.push("\u2026"),i.push(o)}),i}_dropdown({label:e,value:t,options:r,onChange:i}){return s`<label class="field">
+      <span class="field-label">${e}</span>
+      <span class="select">
+        <select @change="${o=>i(o.target.value)}">
+          ${r.map(o=>s`<option value="${o.value}" ?selected="${String(o.value)===String(t)}">${o.label}</option>`)}
+        </select>
+        ${Y("oer:chevron-down","sm")}
+      </span>
+    </label>`}get _sizes(){return[...new Set([10,20,50,100,Number(this.perPage)||20])].sort((e,t)=>e-t)}_renderPerPage(){return this._dropdown({label:"Per page",value:this._per,options:this._sizes.map(e=>({value:e,label:String(e)})),onChange:e=>this._setState({perPage:Number(e),page:1})})}_renderPager(e,t,{go:r,label:i="Pages",sizes:o=!0,scrollTo:n=this}={}){const l=this._per,d=Math.max(1,Math.ceil(e/l));if(d<=1&&(!o||e<=this._sizes[0]))return"";const c=p=>{r(p),n?.scrollIntoView?.({block:"start",behavior:"auto"})};return s`<nav class="pager" aria-label="${i}">
       <span class="pager-status">Showing ${(t-1)*l+1}–${Math.min(t*l,e)} of ${e}</span>
       ${o?this._renderPerPage():""}
       ${d>1?s`<div class="pages">
