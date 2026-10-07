@@ -10,7 +10,7 @@
 <description>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen</description>
 <metadata>
 <created>1790801562</created>
-<updated>1791399897</updated>
+<updated>1791400593</updated>
 <published>true</published>
 <locked>false</locked>
 <status></status>
@@ -115,8 +115,8 @@
 
 <h2>Reader mode</h2>
 <p><strong>Reader mode</strong> is a quieter way to read through a book. The sidebar and site controls go and the chapter sits in one column under a slim bar: <strong>Contents</strong> (the book's outline) and <strong>Text</strong> on the left, the book and page count with previous and next arrows in the middle, and <strong>Exit reader</strong> on the right. Start it with <em>Reader mode</em> on the book's page, or <em>Reader</em> in the top bar on any page of a book. The ← and → keys also turn pages. It lasts the visit: following a link out of the book shows the site as usual, and Back returns to Reader mode.</p>
-<p><strong>Text</strong> sets the text size, a serif or sans typeface, the line width, the line spacing and a light, sepia or dark page, separate from the site's dark mode. The settings are each reader's own, remembered on their device.</p>
-<oer-schematic preset="reader" alt="Diagram of Reader mode: no sidebar; a slim bar with Contents, a highlighted Aa button, the page count 3 / 30 between arrows, and Exit; the Text panel open over a narrow column of text, with text size, typeface, line width and a choice of light, sepia or dark page, sepia selected." caption="Reader mode with the Text panel open: text size, typeface, line width and page colour."></oer-schematic>
+<p><strong>Text</strong> sets the text size, a serif or sans typeface, the line width, the line spacing and the page: light, dark, or paper, a warm white with a faint paper texture. The page is separate from the site's dark mode. The settings are each reader's own, remembered on their device.</p>
+<oer-schematic preset="reader" alt="Diagram of Reader mode: no sidebar; a slim bar with Contents, a highlighted Aa button, the page count 3 / 30 between arrows, and Exit; the Text panel open over a narrow column of text, with text size, typeface, line width and a choice of light, paper or dark page, paper selected." caption="Reader mode with the Text panel open: text size, typeface, line width and page colour."></oer-schematic>
 
 <h2>Browse pages</h2>
 <p><em>Site → Browse pages</em> lists every page, including pages the navigation doesn't show: pages removed from the outline, archived versions and linked copies. Search or filter them, open one, put a page back in the navigation with <strong>Show in navigation</strong>, or delete it.</p>
