@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f</id>
+<indent>1</indent>
+<location>pages/item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f/index.xml</location>
+<slug>tutorials/a-parametric-object-in-fusion-360</slug>
+<order>7</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>A parametric object in Fusion 360</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:L12</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

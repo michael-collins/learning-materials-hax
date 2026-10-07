@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c</id>
+<indent>1</indent>
+<location>pages/item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c/index.xml</location>
+<slug>resources/form-code-in-design-art-and-architecture-parameterize</slug>
+<order>45</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Form+Code in Design, Art, and Architecture — Parameterize</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B10</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://formandcode.com/</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Casey Reas</name>
+<url></url>
+</item>
+<item>
+<name>Chandler McWilliams (with LUST)</name>
+<url></url>
+</item>
+</authors>
+<date>2010</date>
+<publisher>Parameterize</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Reas, C., McWilliams, C., &amp; LUST. (2010). Form+Code in design, art, and architecture. Princeton Architectural Press. ISBN 978-1-56898-937-2. Section: Parameterize.</p>
+<p>Pages: Parameterize (≈20 pp)</p>
+]]></content>
+</item>

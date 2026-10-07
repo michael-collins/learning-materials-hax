@@ -1,0 +1,31 @@
+{
+  "id": "item-d987aef1-4873-4380-86a5-4a902fea309d",
+  "indent": 1,
+  "location": "pages/item-d987aef1-4873-4380-86a5-4a902fea309d/index.json",
+  "slug": "resources/fab-academy-how-to-make-almost-anything-class-archive",
+  "order": 53,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Fab Academy — How to Make (Almost) Anything class archive",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B19",
+    "published": false,
+    "oerFields": {
+      "url": "https://fabacademy.org/",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Fab Foundation",
+          "url": ""
+        }
+      ],
+      "publisher": "How to Make"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Fab Foundation. Fab Academy: How to Make (Almost) Anything — class archive. https://fabacademy.org/</p>\n"
+}

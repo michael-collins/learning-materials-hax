@@ -1,0 +1,32 @@
+{
+  "id": "item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2",
+  "indent": 1,
+  "location": "pages/item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2/index.json",
+  "slug": "resources/abstracting-craft-the-practiced-digital-hand-ch-1-hands",
+  "order": 39,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Abstracting Craft: The Practiced Digital Hand — ch. 1, Hands",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B04",
+    "published": false,
+    "oerFields": {
+      "url": "https://mitpress.mit.edu/9780262631891/abstracting-craft/",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Malcolm McCullough",
+          "url": ""
+        }
+      ],
+      "date": "1996",
+      "publisher": "MIT Press"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>McCullough, M. (1996). Abstracting craft: The practiced digital hand. MIT Press. ISBN 0-262-13326-1 (hc); 0-262-63189-X (pbk, 1998). Ch. 1, 'Hands,' pp. 1–30.</p>\n<p>Pages: 1–30 (30 pp)</p>\n"
+}

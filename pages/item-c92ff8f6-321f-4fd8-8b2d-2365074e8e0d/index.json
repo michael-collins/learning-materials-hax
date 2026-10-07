@@ -1,0 +1,32 @@
+{
+  "id": "item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d",
+  "indent": 1,
+  "location": "pages/item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d/index.json",
+  "slug": "resources/the-nature-and-art-of-workmanship-the-workmanship-of-risk-and-of-certainty",
+  "order": 38,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "The Nature and Art of Workmanship — the workmanship of risk and of certainty",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B03",
+    "published": false,
+    "oerFields": {
+      "url": "https://archive.org/details/natureartofwor00pyed",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "David Pye",
+          "url": ""
+        }
+      ],
+      "date": "1968",
+      "publisher": "Cambridge University Press"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Pye, D. (1968). The nature and art of workmanship. Cambridge University Press. Ch. 2, 'The workmanship of risk and the workmanship of certainty.' (Reissued Herbert Press, 2008, ISBN 978-0-7136-8931-0.)</p>\n<p>Pages: ch. 2 (≈6 pp; pagination varies by edition)</p>\n"
+}

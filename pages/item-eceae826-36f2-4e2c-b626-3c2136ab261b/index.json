@@ -1,0 +1,33 @@
+{
+  "id": "item-eceae826-36f2-4e2c-b626-3c2136ab261b",
+  "indent": 1,
+  "location": "pages/item-eceae826-36f2-4e2c-b626-3c2136ab261b/index.json",
+  "slug": "articles/template-final-project-proposal",
+  "order": 92,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Template: Final project proposal",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:L20",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

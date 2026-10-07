@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a736e35a-581d-40fb-8d77-eb137a06c7e7</id>
+<indent>1</indent>
+<location>pages/item-a736e35a-581d-40fb-8d77-eb137a06c7e7/index.xml</location>
+<slug>resources/the-alphabet-and-the-algorithm-ch-1-variable-identical-differential</slug>
+<order>44</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>The Alphabet and the Algorithm — ch. 1, Variable, Identical, Differential</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B09</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://archive.org/details/alphabetalgorith0000carp</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Mario Carpo</name>
+<url></url>
+</item>
+</authors>
+<date>2011</date>
+<publisher>MIT Press</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Carpo, M. (2011). The alphabet and the algorithm (Writing Architecture). MIT Press. ISBN 978-0-262-51580-1. Ch. 1, 'Variable, identical, differential.'</p>
+<p>Pages: ch. 1 (≈50 pp; assign the first four sub-sections ≈25)</p>
+]]></content>
+</item>

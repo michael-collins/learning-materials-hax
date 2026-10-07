@@ -1,0 +1,1 @@
+Hubs (Protolabs). Knowledge base: How to design parts for FDM 3D printing. https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/

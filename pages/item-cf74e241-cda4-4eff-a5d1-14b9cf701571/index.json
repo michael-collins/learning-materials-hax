@@ -1,0 +1,33 @@
+{
+  "id": "item-cf74e241-cda4-4eff-a5d1-14b9cf701571",
+  "indent": 1,
+  "location": "pages/item-cf74e241-cda4-4eff-a5d1-14b9cf701571/index.json",
+  "slug": "articles/worksheet-object-autopsy",
+  "order": 93,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Worksheet: Object autopsy",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:L21",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

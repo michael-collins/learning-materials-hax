@@ -1,0 +1,25 @@
+id: item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6
+indent: 1
+location: pages/item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6/index.yaml
+slug: tutorials/demo-3d-printing-workflow-mesh-slicer-print
+order: 6
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: 'Demo: 3D printing workflow — mesh → slicer → print'
+description: ''
+metadata:
+  pageType: oer:tutorial
+  oerPlan: DART 413:L09
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: <p></p>

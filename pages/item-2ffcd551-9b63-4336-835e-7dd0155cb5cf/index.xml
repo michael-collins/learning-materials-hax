@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2ffcd551-9b63-4336-835e-7dd0155cb5cf</id>
+<indent>1</indent>
+<location>pages/item-2ffcd551-9b63-4336-835e-7dd0155cb5cf/index.xml</location>
+<slug>resources/the-craftsman-prologue-man-as-his-own-maker</slug>
+<order>40</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>The Craftsman — Prologue: Man as His Own Maker</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B05</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://yalebooks.yale.edu/book/9780300151190/the-craftsman/</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Richard Sennett</name>
+<url></url>
+</item>
+</authors>
+<date>2008</date>
+<publisher>Yale University Press</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Sennett, R. (2008). The craftsman. Yale University Press. ISBN 978-0-300-11909-1 (hc); 978-0-300-15119-0 (pbk, 2009). Prologue, 'Man as his own maker.'</p>
+<p>Pages: Prologue (≈15 pp)</p>
+]]></content>
+</item>

@@ -1,0 +1,25 @@
+id: item-f570ed6c-e171-4a20-af0f-58c5e61fceb7
+indent: 1
+location: pages/item-f570ed6c-e171-4a20-af0f-58c5e61fceb7/index.yaml
+slug: lectures/variable-identical-differential-the-multiple
+order: 7
+parent: item-05aef7c3-2829-4d60-abd5-49cf9a82382a
+title: Variable, identical, differential — the multiple
+description: ''
+metadata:
+  pageType: oer:lecture
+  oerPlan: DART 413:L13
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: <p></p>

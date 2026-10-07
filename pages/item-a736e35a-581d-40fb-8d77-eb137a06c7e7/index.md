@@ -1,0 +1,3 @@
+Carpo, M. (2011). The alphabet and the algorithm (Writing Architecture). MIT Press. ISBN 978-0-262-51580-1. Ch. 1, 'Variable, identical, differential.'
+
+Pages: ch. 1 (≈50 pp; assign the first four sub-sections ≈25)

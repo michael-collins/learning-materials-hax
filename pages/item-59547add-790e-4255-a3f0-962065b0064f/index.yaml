@@ -1,0 +1,55 @@
+id: item-59547add-790e-4255-a3f0-962065b0064f
+indent: 1
+location: pages/item-59547add-790e-4255-a3f0-962065b0064f/index.yaml
+slug: projects/project-1-sheet-to-form
+order: 13
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: 'Project 1: Sheet to form'
+description: ''
+metadata:
+  pageType: oer:project
+  oerPlan: DART 413:A04
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish
+  to show it to readers.">
+
+  <p>Make a three-dimensional object from flat sheet material using sectioning,
+  folding, or joinery, responding to the theme. It must stand, hold together
+  without adhesive where possible, and be finished. Iterate through at least two
+  prototypes in chipboard before the final cut.</p>
+
+  <h2>Theme: Sheet to form</h2>
+
+  <p>Turning flat sheet material into three-dimensional objects: sections,
+  folds, slots, press-fit, living hinges. The classic 2D→3D problem of laser
+  cutting.</p>
+
+  <p>Techniques: Laser cutting; vector drawing; sectioning and joinery;
+  finishing</p>
+
+  <h2>What to hand in</h2>
+
+  <ul><li>The object</li><li>Two prototypes (or photos of them)</li><li>Process
+  documentation: sketches, files, settings, failures</li></ul>
+
+  <h2>What you'll practise</h2>
+
+  <ul><li>Move from 2D drawing to 3D form deliberately</li><li>Iterate with
+  prototypes</li><li>Finish and document a fabricated object</li></ul>
+
+  <p>Time: 2 weeks + crit</p>
+
+  </oer-draft>

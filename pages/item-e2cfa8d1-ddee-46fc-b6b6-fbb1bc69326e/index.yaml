@@ -1,0 +1,25 @@
+id: item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e
+indent: 1
+location: pages/item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e/index.yaml
+slug: tutorials/demo-cnc-cam-setup-to-cut-with-the-lab-tech
+order: 8
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: 'Demo: CNC — CAM setup to cut, with the lab tech'
+description: ''
+metadata:
+  pageType: oer:tutorial
+  oerPlan: DART 413:L14
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: <p></p>

@@ -1,0 +1,57 @@
+id: item-6d67a392-9c2e-4070-bb24-8fed224e3774
+indent: 1
+location: pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.yaml
+slug: quizzes/cnc-routing-quiz
+order: 19
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: CNC routing quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  oerPlan: DART 413:quiz:M09
+  published: false
+  oerFields:
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+    estimatedDuration: 10 minutes
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Suggested questions, written from the week's objectives.
+  Check them, then Publish.">
+
+  <p>Check your understanding of CNC routing. Your answers aren't recorded.</p>
+
+  <multiple-choice question="In 2.5D milling, what can't a straight end mill
+  cut, whatever the toolpath?" single-option="" randomize="">
+    <input type="checkbox" value="An inside corner sharper than the bit's radius" data-correct="true">
+    <input type="checkbox" value="A pocket deeper than half the stock">
+    <input type="checkbox" value="A curved outline">
+    <input type="checkbox" value="Lettering">
+  </multiple-choice>
+
+  <multiple-choice question="What are tabs for in a profile cut?"
+  single-option="" randomize="">
+    <input type="checkbox" value="They hold the part to the stock so it can't shift or fly loose as the cut finishes" data-correct="true">
+    <input type="checkbox" value="They mark where the cut starts">
+    <input type="checkbox" value="They cool the bit">
+    <input type="checkbox" value="They stop tear-out on the top face">
+  </multiple-choice>
+
+  <true-false-question question="Feeds and speeds only change how long a job
+  takes, not the quality or safety of the cut.">
+    <input type="checkbox" value="False" data-correct="true">
+    <input type="checkbox" value="True">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">Before you start a CNC job, what do you check about zero?</p>
+    <p>That X and Y zero are where the CAM setup expects them (a corner or the centre of the stock), and that Z zero is set to the surface the CAM used (the top of the stock or the spoilboard). A mismatch cuts air, or cuts into the spoilboard.</p>
+  </self-check>
+
+  </oer-draft>

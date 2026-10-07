@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919</id>
+<indent>1</indent>
+<location>pages/item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919/index.xml</location>
+<slug>resources/design-for-3d-printing-knowledge-base</slug>
+<order>42</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Design for 3D printing — knowledge base</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B07</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Hubs</name>
+<url></url>
+</item>
+</authors>
+<publisher>How to design parts for FDM</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Hubs (Protolabs). Knowledge base: How to design parts for FDM 3D printing. https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/</p>
+]]></content>
+</item>

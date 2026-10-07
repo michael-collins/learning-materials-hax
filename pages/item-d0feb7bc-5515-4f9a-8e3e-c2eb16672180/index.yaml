@@ -1,0 +1,42 @@
+id: item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180
+indent: 1
+location: pages/item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180/index.yaml
+slug: exercises/critique-participation
+order: 57
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: Critique participation
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerPlan: DART 413:A13
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish
+  to show it to readers.">
+
+  <p>Prepared, specific, and generous participation in the four crits, following
+  the protocol.</p>
+
+  <h2>What to hand in</h2>
+
+  <ul><li>Presence and contribution at each crit</li></ul>
+
+  <h2>What you'll practise</h2>
+
+  <ul><li>Critique on technical and conceptual terms</li></ul>
+
+  <p>Time: recurring</p>
+
+  </oer-draft>

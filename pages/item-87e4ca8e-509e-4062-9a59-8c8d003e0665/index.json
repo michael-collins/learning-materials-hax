@@ -1,0 +1,38 @@
+{
+  "id": "item-87e4ca8e-509e-4062-9a59-8c8d003e0665",
+  "indent": 1,
+  "location": "pages/item-87e4ca8e-509e-4062-9a59-8c8d003e0665/index.json",
+  "slug": "lessons/final-production-ii-work-in-progress-crit",
+  "order": 46,
+  "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+  "title": "Final production II + work-in-progress crit",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lesson",
+    "oerPlan": "DART 413:M14",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true,
+      "learningObjectives": [
+        "Respond to in-progress critique",
+        "Plan the presentation of the work"
+      ],
+      "estimatedDuration": "1 week"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<oer-draft note=\"Week 14 from the DART 413 course plan. Revise it, then Publish to show it to readers.\">\n<p>Production; in-progress crit; exhibition planning.</p>\n<h2>Ideas</h2>\n<p>Editing a body of work; presenting fabricated objects (plinth, light, context).</p>\n<h2>In class</h2>\n<ul><li>Production (110)</li><li>WIP crit (60)</li></ul>\n</oer-draft>\n"
+}

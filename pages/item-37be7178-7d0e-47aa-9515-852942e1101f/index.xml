@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-37be7178-7d0e-47aa-9515-852942e1101f</id>
+<indent>1</indent>
+<location>pages/item-37be7178-7d0e-47aa-9515-852942e1101f/index.xml</location>
+<slug>resources/making-it-pick-up-a-spot-welder-and-join-the-revolution</slug>
+<order>48</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Making It: Pick up a spot welder and join the revolution</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B13</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://www.newyorker.com/magazine/2014/01/13/making-it-2</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Evgeny Morozov</name>
+<url></url>
+</item>
+</authors>
+<date>2014</date>
+<publisher>Pick up a spot welder and join the revolution</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Morozov, E. (2014, January 13). Making it: Pick up a spot welder and join the revolution. The New Yorker (A Critic at Large). https://www.newyorker.com/magazine/2014/01/13/making-it-2</p>
+<p>Pages: ≈6 print pp (not verified)</p>
+]]></content>
+</item>

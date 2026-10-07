@@ -1,0 +1,33 @@
+{
+  "id": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+  "indent": 1,
+  "location": "pages/item-304740f9-f09f-4e1c-94dd-84eead792e87/index.json",
+  "slug": "articles/cnc-materials-bits-feeds-and-speeds-fixturing",
+  "order": 89,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "CNC materials, bits, feeds and speeds, fixturing",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:L15",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

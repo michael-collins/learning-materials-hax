@@ -1,0 +1,33 @@
+{
+  "id": "item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9",
+  "indent": 1,
+  "location": "pages/item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9/index.json",
+  "slug": "tutorials/demo-rotation-molds-and-casting-vacuum-forming-vinyl",
+  "order": 9,
+  "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+  "title": "Demo rotation: molds and casting, vacuum forming, vinyl",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "oerPlan": "DART 413:L16",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

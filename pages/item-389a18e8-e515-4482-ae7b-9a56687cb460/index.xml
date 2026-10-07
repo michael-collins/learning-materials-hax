@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-389a18e8-e515-4482-ae7b-9a56687cb460</id>
+<indent>1</indent>
+<location>pages/item-389a18e8-e515-4482-ae7b-9a56687cb460/index.xml</location>
+<slug>articles/crit-protocol</slug>
+<order>87</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Crit protocol</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:L08</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<oer-draft note="Outline from the DART 413 course plan. Revise it, then Publish to show it to readers.">
+<p>Describe → analyze (technical) → interpret → suggest; time limits; the maker speaks last.</p>
+
+</oer-draft>
+]]></content>
+</item>

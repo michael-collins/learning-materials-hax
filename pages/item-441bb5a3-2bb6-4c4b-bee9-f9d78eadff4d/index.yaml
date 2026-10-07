@@ -1,0 +1,46 @@
+id: item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d
+indent: 1
+location: pages/item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d/index.yaml
+slug: lessons/final-production-i-workshops-on-demand
+order: 45
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: 'Final production I: workshops on demand'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:M13
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+    learningObjectives:
+      - Execute a production plan
+      - Document process as it happens
+      - Choose a license and platform for sharing files
+    estimatedDuration: 1 week
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Week 13 from the DART 413 course plan. Revise it, then
+  Publish to show it to readers.">
+
+  <p>Production; targeted workshops by request (advanced slicing, Grasshopper
+  basics, 3D CAM, casting); documentation practices.</p>
+
+  <h2>Ideas</h2>
+
+  <p>Documentation as part of the work; files as publications
+  (Printables/Thingiverse/GitHub); licensing and attribution.</p>
+
+  <h2>In class</h2>
+
+  <ul><li>Workshops (60)</li><li>production (110)</li></ul>
+
+  </oer-draft>

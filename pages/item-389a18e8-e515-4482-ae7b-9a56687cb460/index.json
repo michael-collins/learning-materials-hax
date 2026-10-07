@@ -1,0 +1,33 @@
+{
+  "id": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+  "indent": 1,
+  "location": "pages/item-389a18e8-e515-4482-ae7b-9a56687cb460/index.json",
+  "slug": "articles/crit-protocol",
+  "order": 87,
+  "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+  "title": "Crit protocol",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:article",
+    "oerPlan": "DART 413:L08",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<oer-draft note=\"Outline from the DART 413 course plan. Revise it, then Publish to show it to readers.\">\n<p>Describe → analyze (technical) → interpret → suggest; time limits; the maker speaks last.</p>\n\n</oer-draft>\n"
+}

@@ -1,0 +1,3 @@
+McCullough, M. (1996). Abstracting craft: The practiced digital hand. MIT Press. ISBN 0-262-13326-1 (hc); 0-262-63189-X (pbk, 1998). Ch. 1, 'Hands,' pp. 1–30.
+
+Pages: 1–30 (30 pp)

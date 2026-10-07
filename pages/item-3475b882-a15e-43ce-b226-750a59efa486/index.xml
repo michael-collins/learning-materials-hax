@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3475b882-a15e-43ce-b226-750a59efa486</id>
+<indent>1</indent>
+<location>pages/item-3475b882-a15e-43ce-b226-750a59efa486/index.xml</location>
+<slug>resources/prusa-knowledge-base-print-quality-troubleshooting-and-slicing-basics</slug>
+<order>43</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Prusa Knowledge Base — print quality troubleshooting and slicing basics</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B08</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://help.prusa3d.com/</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Prusa Research</name>
+<url></url>
+</item>
+</authors>
+<publisher>print quality troubleshooting</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Prusa Research. Prusa Knowledge Base: print quality troubleshooting; PrusaSlicer basics. https://help.prusa3d.com/</p>
+]]></content>
+</item>

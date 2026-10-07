@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6</id>
+<indent>1</indent>
+<location>pages/item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6/index.xml</location>
+<slug>tutorials/demo-3d-printing-workflow-mesh-slicer-print</slug>
+<order>6</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Demo: 3D printing workflow — mesh → slicer → print</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:L09</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

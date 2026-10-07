@@ -1,0 +1,31 @@
+{
+  "id": "item-de3020be-052d-4ec8-a11d-414dc295423b",
+  "indent": 1,
+  "location": "pages/item-de3020be-052d-4ec8-a11d-414dc295423b/index.json",
+  "slug": "resources/makers-the-new-industrial-revolution-ch-1",
+  "order": 49,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Makers: The New Industrial Revolution — ch. 1",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B14",
+    "published": false,
+    "oerFields": {
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Chris Anderson",
+          "url": ""
+        }
+      ],
+      "date": "2012",
+      "container": "Crown Business"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Anderson, C. (2012). Makers: The new industrial revolution. Crown Business. ISBN 978-0-307-72095-5. Ch. 1, 'The invention revolution.'</p>\n<p>Pages: ch. 1 (≈15 pp)</p>\n"
+}

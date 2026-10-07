@@ -1,0 +1,3 @@
+Gershenfeld, N. (2005). Fab: The coming revolution on your desktop — from personal computers to personal fabrication. Basic Books. ISBN 978-0-465-02745-3 (hc); pbk 2007 ISBN 978-0-465-02746-0.
+
+Pages: 278 (whole book; background)

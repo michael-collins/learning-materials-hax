@@ -1,0 +1,32 @@
+id: item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0
+indent: 1
+location: pages/item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0/index.yaml
+slug: articles/design-for-fdm-checklist
+order: 88
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Design for FDM checklist
+description: ''
+metadata:
+  pageType: oer:article
+  oerPlan: DART 413:L10
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Outline from the DART 413 course plan. Revise it, then
+  Publish to show it to readers.">
+
+  <p>Draft via R007.</p>
+
+
+  </oer-draft>

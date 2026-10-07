@@ -1,0 +1,33 @@
+{
+  "id": "item-d691e847-ed22-40ee-8b49-1f409a0dc0c2",
+  "indent": 1,
+  "location": "pages/item-d691e847-ed22-40ee-8b49-1f409a0dc0c2/index.json",
+  "slug": "lectures/critical-making-the-maker-movement-and-its-critics",
+  "order": 8,
+  "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+  "title": "Critical making — the maker movement and its critics",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lecture",
+    "oerPlan": "DART 413:L17",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

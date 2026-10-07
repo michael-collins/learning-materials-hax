@@ -1,0 +1,33 @@
+{
+  "id": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+  "indent": 1,
+  "location": "pages/item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad/index.json",
+  "slug": "lectures/additive-thinking-layers-orientation-anisotropy",
+  "order": 6,
+  "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+  "title": "Additive thinking — layers, orientation, anisotropy",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lecture",
+    "oerPlan": "DART 413:L11",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

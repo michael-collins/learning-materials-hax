@@ -1,0 +1,32 @@
+{
+  "id": "item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62",
+  "indent": 1,
+  "location": "pages/item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62/index.json",
+  "slug": "resources/critical-making-conceptual-and-material-studies-in-technology-and-social-life",
+  "order": 47,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Critical Making: Conceptual and Material Studies in Technology and Social Life",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B12",
+    "published": false,
+    "oerFields": {
+      "url": "https://doi.org/10.1080/01972243.2011.583819",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Matt Ratto",
+          "url": ""
+        }
+      ],
+      "date": "2011",
+      "publisher": "The Information Society"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Ratto, M. (2011). Critical making: Conceptual and material studies in technology and social life. The Information Society, 27(4), 252–260. https://doi.org/10.1080/01972243.2011.583819</p>\n<p>Pages: 252–260 (9 pp)</p>\n"
+}

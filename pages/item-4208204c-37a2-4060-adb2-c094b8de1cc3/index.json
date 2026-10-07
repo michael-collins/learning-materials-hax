@@ -1,0 +1,34 @@
+{
+  "id": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+  "indent": 1,
+  "location": "pages/item-4208204c-37a2-4060-adb2-c094b8de1cc3/index.json",
+  "slug": "resources/nervous-system-studio-project-pages",
+  "order": 54,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Nervous System — studio project pages",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B20",
+    "published": false,
+    "oerFields": {
+      "url": "https://n-e-r-v-o-u-s.com/",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Jessica Rosenkrantz",
+          "url": ""
+        },
+        {
+          "name": "Jesse Louis-Rosenberg",
+          "url": ""
+        }
+      ]
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Rosenkrantz, J., &amp; Louis-Rosenberg, J. Nervous System — studio project pages. https://n-e-r-v-o-u-s.com/</p>\n"
+}

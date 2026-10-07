@@ -1,0 +1,32 @@
+{
+  "id": "item-d0317d85-4720-45de-8f9c-8a3e62c39921",
+  "indent": 1,
+  "location": "pages/item-d0317d85-4720-45de-8f9c-8a3e62c39921/index.json",
+  "slug": "resources/how-to-make-almost-anything-the-digital-fabrication-revolution",
+  "order": 36,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "How to Make Almost Anything: The Digital Fabrication Revolution",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B01",
+    "published": false,
+    "oerFields": {
+      "url": "https://cba.mit.edu/docs/papers/12.09.FA.pdf",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Neil Gershenfeld",
+          "url": ""
+        }
+      ],
+      "date": "2012",
+      "container": "Foreign Affairs"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Gershenfeld, N. (2012). How to make almost anything: The digital fabrication revolution. Foreign Affairs, 91(6), 43–57.</p>\n<p>Pages: 43–57 (15 pp)</p>\n"
+}

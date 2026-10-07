@@ -1,0 +1,28 @@
+id: item-0a2a466e-a69a-45e3-b4b6-53c7493455b5
+indent: 1
+location: pages/item-0a2a466e-a69a-45e3-b4b6-53c7493455b5/index.yaml
+slug: resources/shaping-things
+order: 52
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Shaping Things
+description: ''
+metadata:
+  pageType: oer:resource
+  oerPlan: DART 413:B18
+  published: false
+  oerFields:
+    kind: reading
+    authors:
+      - name: Bruce Sterling
+        url: ''
+    date: '2005'
+    publisher: MIT Press
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <p>Sterling, B. (2005). Shaping things (Mediawork Pamphlets). MIT Press, 152
+  pp. ISBN 978-0-262-69326-4.</p>
+
+  <p>Pages: 152 (choose an excerpt)</p>

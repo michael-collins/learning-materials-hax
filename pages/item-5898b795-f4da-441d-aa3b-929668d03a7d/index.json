@@ -1,0 +1,32 @@
+{
+  "id": "item-5898b795-f4da-441d-aa3b-929668d03a7d",
+  "indent": 1,
+  "location": "pages/item-5898b795-f4da-441d-aa3b-929668d03a7d/index.json",
+  "slug": "resources/digital-handmade-craftsmanship-and-the-new-industrial-revolution",
+  "order": 46,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Digital Handmade: Craftsmanship and the New Industrial Revolution",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B11",
+    "published": false,
+    "oerFields": {
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Lucy Johnston",
+          "url": ""
+        }
+      ],
+      "date": "2015",
+      "container": "Thames & Hudson",
+      "publisher": "Craftsmanship in the New Industrial Revolution"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Johnston, L. (2015). Digital handmade: Craftsmanship and the new industrial revolution. Thames &amp; Hudson. ISBN 978-0-500-51785-7 (hc, 288 pp.); pbk 2017 retitled Digital Handmade: Craftsmanship in the New Industrial Revolution, ISBN 978-0-500-29313-3.</p>\n<p>Pages: 288 (precedent browsing)</p>\n"
+}

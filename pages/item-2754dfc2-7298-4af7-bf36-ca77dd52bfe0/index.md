@@ -1,0 +1,1 @@
+<oer-draft note="Week 10 from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>CNC relief/tile production; Project 2 crit; documentation of series work.</p><h2>Ideas</h2><p>Surface, relief, and scale; the object series as an argument.</p><h2>In class</h2><ul><li>Work (90)</li><li>crit (80)</li></ul></oer-draft>

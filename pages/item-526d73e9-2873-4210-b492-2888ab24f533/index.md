@@ -1,0 +1,3 @@
+Ingold, T. (2007). Materials against materiality. Archaeological Dialogues, 14(1), 1–16. https://doi.org/10.1017/S1380203807002127
+
+Pages: 1–16 (16 pp)

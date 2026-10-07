@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-de3020be-052d-4ec8-a11d-414dc295423b</id>
+<indent>1</indent>
+<location>pages/item-de3020be-052d-4ec8-a11d-414dc295423b/index.xml</location>
+<slug>resources/makers-the-new-industrial-revolution-ch-1</slug>
+<order>49</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Makers: The New Industrial Revolution — ch. 1</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B14</oerPlan>
+<published>false</published>
+<oerFields>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Chris Anderson</name>
+<url></url>
+</item>
+</authors>
+<date>2012</date>
+<container>Crown Business</container>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Anderson, C. (2012). Makers: The new industrial revolution. Crown Business. ISBN 978-0-307-72095-5. Ch. 1, 'The invention revolution.'</p>
+<p>Pages: ch. 1 (≈15 pp)</p>
+]]></content>
+</item>

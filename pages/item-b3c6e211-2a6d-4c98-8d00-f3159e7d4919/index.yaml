@@ -1,0 +1,26 @@
+id: item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919
+indent: 1
+location: pages/item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919/index.yaml
+slug: resources/design-for-3d-printing-knowledge-base
+order: 42
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: Design for 3D printing — knowledge base
+description: ''
+metadata:
+  pageType: oer:resource
+  oerPlan: DART 413:B07
+  published: false
+  oerFields:
+    url: https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/
+    kind: reading
+    authors:
+      - name: Hubs
+        url: ''
+    publisher: How to design parts for FDM
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <p>Hubs (Protolabs). Knowledge base: How to design parts for FDM 3D printing.
+  https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/</p>

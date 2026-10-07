@@ -1,0 +1,50 @@
+id: item-926d32cd-5f1d-4cad-b882-89c65ffaad5d
+indent: 1
+location: pages/item-926d32cd-5f1d-4cad-b882-89c65ffaad5d/index.yaml
+slug: lessons/vectors-for-machines-the-laser-cutter
+order: 34
+parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+title: 'Vectors for machines: the laser cutter'
+description: ''
+metadata:
+  pageType: oer:lesson
+  oerPlan: DART 413:M02
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+    learningObjectives:
+      - Prepare a cut-ready vector file
+      - Explain kerf and compensate for it
+      - Run a laser job end to end (or hand it off correctly)
+      - Read a material test grid
+    estimatedDuration: 1 week
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Week 2 from the DART 413 course plan. Revise it, then Publish
+  to show it to readers.">
+
+  <p>Vector drawing for fabrication (Illustrator); cut / score / engrave; line
+  weight and color conventions; units and scale; kerf; nesting; the laser
+  workflow and certification.</p>
+
+  <h2>Ideas</h2>
+
+  <p>Vector vs. raster; the toolpath as a drawing; kerf and material loss;
+  power/speed/frequency as design variables; material behavior under heat;
+  approved and forbidden materials.</p>
+
+  <h2>In class</h2>
+
+  <ul><li>Lecture (30)</li><li>laser demo + certification (60)</li><li>material
+  test cut (60)</li></ul>
+
+  </oer-draft>

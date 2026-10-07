@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f570ed6c-e171-4a20-af0f-58c5e61fceb7</id>
+<indent>1</indent>
+<location>pages/item-f570ed6c-e171-4a20-af0f-58c5e61fceb7/index.xml</location>
+<slug>lectures/variable-identical-differential-the-multiple</slug>
+<order>7</order>
+<parent>item-05aef7c3-2829-4d60-abd5-49cf9a82382a</parent>
+<title>Variable, identical, differential — the multiple</title>
+<description></description>
+<metadata>
+<pageType>oer:lecture</pageType>
+<oerPlan>DART 413:L13</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

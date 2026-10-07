@@ -1,0 +1,32 @@
+{
+  "id": "item-526d73e9-2873-4210-b492-2888ab24f533",
+  "indent": 1,
+  "location": "pages/item-526d73e9-2873-4210-b492-2888ab24f533/index.json",
+  "slug": "resources/materials-against-materiality",
+  "order": 50,
+  "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+  "title": "Materials against materiality",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:resource",
+    "oerPlan": "DART 413:B15",
+    "published": false,
+    "oerFields": {
+      "url": "https://doi.org/10.1017/S1380203807002127",
+      "kind": "reading",
+      "authors": [
+        {
+          "name": "Tim Ingold",
+          "url": ""
+        }
+      ],
+      "date": "2007",
+      "container": "Archaeological Dialogues"
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p>Ingold, T. (2007). Materials against materiality. Archaeological Dialogues, 14(1), 1–16. https://doi.org/10.1017/S1380203807002127</p>\n<p>Pages: 1–16 (16 pp)</p>\n"
+}

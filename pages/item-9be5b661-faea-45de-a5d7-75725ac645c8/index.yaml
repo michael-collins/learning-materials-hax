@@ -1,0 +1,57 @@
+id: item-9be5b661-faea-45de-a5d7-75725ac645c8
+indent: 1
+location: pages/item-9be5b661-faea-45de-a5d7-75725ac645c8/index.yaml
+slug: quizzes/laser-cutting-quiz
+order: 17
+parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
+title: Laser cutting quiz
+description: ''
+metadata:
+  pageType: oer:quiz
+  oerPlan: DART 413:quiz:M02
+  published: false
+  oerFields:
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+    estimatedDuration: 10 minutes
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Suggested questions, written from the week's objectives.
+  Check them, then Publish.">
+
+  <p>Check your understanding of laser cutting. Your answers aren't
+  recorded.</p>
+
+  <multiple-choice question="What is kerf?" single-option="" randomize="">
+    <input type="checkbox" value="The width of material the laser removes along a cut" data-correct="true">
+    <input type="checkbox" value="The depth of an engraved area">
+    <input type="checkbox" value="A gap left between parts on purpose">
+    <input type="checkbox" value="The speed setting for vector cuts">
+  </multiple-choice>
+
+  <multiple-choice question="Why is PVC (vinyl) on every laser cutter's list of
+  forbidden materials?" single-option="" randomize="">
+    <input type="checkbox" value="Cutting it releases chlorine gas, which harms people and corrodes the machine" data-correct="true">
+    <input type="checkbox" value="It is too hard for the laser to cut">
+    <input type="checkbox" value="It can't be engraved">
+    <input type="checkbox" value="It warps the bed">
+  </multiple-choice>
+
+  <true-false-question question="A press-fit slot should be drawn exactly as
+  wide as the material is thick.">
+    <input type="checkbox" value="False" data-correct="true">
+    <input type="checkbox" value="True">
+  </true-false-question>
+
+  <self-check title="Think it through">
+    <p slot="question">Your file cuts some lines and engraves others. How does the laser know which is which?</p>
+    <p>From the drawing's conventions: hairline strokes in the cut colour are cut, other stroke colours are scored, and filled shapes or images are engraved. The studio's handout gives its exact colours and line weight.</p>
+  </self-check>
+
+  </oer-draft>

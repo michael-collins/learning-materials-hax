@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c9e4c050-9edb-485b-8ee3-5a5b0a659965</id>
+<indent>1</indent>
+<location>pages/item-c9e4c050-9edb-485b-8ee3-5a5b0a659965/index.xml</location>
+<slug>resources/digital-fabrications-architectural-and-material-techniques-introduction-sectioning-folding</slug>
+<order>41</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Digital Fabrications: Architectural and Material Techniques — Introduction; Sectioning; Folding</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B06</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://archive.org/details/digitalfabricati0000iwam</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Lisa Iwamoto</name>
+<url></url>
+</item>
+</authors>
+<date>2009</date>
+<publisher>Princeton Architectural Press</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Iwamoto, L. (2009). Digital fabrications: Architectural and material techniques (Architecture Briefs). Princeton Architectural Press. ISBN 978-1-56898-790-3; ebook 978-1-61689-178-7. Introduction; Sectioning; Folding.</p>
+<p>Pages: Intro + Sectioning + Folding (≈50 pp; section ranges not verified)</p>
+]]></content>
+</item>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-24c20753-b4ef-41f4-acd4-60df13259c87</id>
+<indent>1</indent>
+<location>pages/item-24c20753-b4ef-41f4-acd4-60df13259c87/index.xml</location>
+<slug>resources/thinking-through-craft-introduction</slug>
+<order>51</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Thinking Through Craft — Introduction</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B16</oerPlan>
+<published>false</published>
+<oerFields>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Glenn Adamson</name>
+<url></url>
+</item>
+</authors>
+<date>2007</date>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Adamson, G. (2007). Thinking through craft. Berg (Oxford/New York), x + 209 pp. ISBN 978-1-84520-647-5 (pbk). Introduction.</p>
+<p>Pages: Introduction (≈8 pp)</p>
+]]></content>
+</item>

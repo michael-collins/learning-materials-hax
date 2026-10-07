@@ -1,0 +1,1 @@
+Allahyari, M., & Rourke, D. (2015). The 3D Additivist Manifesto. https://additivism.org/manifesto (CC BY-NC-SA 4.0).

@@ -1,0 +1,25 @@
+id: item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1
+indent: 1
+location: pages/item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1/index.yaml
+slug: articles/documentation-guide-photographing-work-process-docs-publishing-files
+order: 90
+parent: item-9c0d46bc-d931-4e43-94e4-a96f09bc3165
+title: Documentation guide — photographing work, process docs, publishing files
+description: ''
+metadata:
+  pageType: oer:article
+  oerPlan: DART 413:L18
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: <p></p>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0</id>
+<indent>1</indent>
+<location>pages/item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0/index.xml</location>
+<slug>articles/design-for-fdm-checklist</slug>
+<order>88</order>
+<parent>item-9c0d46bc-d931-4e43-94e4-a96f09bc3165</parent>
+<title>Design for FDM checklist</title>
+<description></description>
+<metadata>
+<pageType>oer:article</pageType>
+<oerPlan>DART 413:L10</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<oer-draft note="Outline from the DART 413 course plan. Revise it, then Publish to show it to readers.">
+<p>Draft via R007.</p>
+
+</oer-draft>
+]]></content>
+</item>

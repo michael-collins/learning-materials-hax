@@ -1,0 +1,25 @@
+id: item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f
+indent: 1
+location: pages/item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f/index.yaml
+slug: tutorials/a-parametric-object-in-fusion-360
+order: 7
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: A parametric object in Fusion 360
+description: ''
+metadata:
+  pageType: oer:tutorial
+  oerPlan: DART 413:L12
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: <p></p>

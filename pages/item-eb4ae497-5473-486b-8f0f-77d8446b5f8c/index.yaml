@@ -1,0 +1,30 @@
+id: item-eb4ae497-5473-486b-8f0f-77d8446b5f8c
+indent: 1
+location: pages/item-eb4ae497-5473-486b-8f0f-77d8446b5f8c/index.yaml
+slug: resources/fab-the-coming-revolution-on-your-desktop
+order: 37
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: 'Fab: The Coming Revolution on Your Desktop'
+description: ''
+metadata:
+  pageType: oer:resource
+  oerPlan: DART 413:B02
+  published: false
+  oerFields:
+    url: https://archive.org/details/fabcomingrevolut00gers
+    kind: reading
+    authors:
+      - name: Neil Gershenfeld
+        url: ''
+    date: '2005'
+    publisher: Basic Books
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <p>Gershenfeld, N. (2005). Fab: The coming revolution on your desktop — from
+  personal computers to personal fabrication. Basic Books. ISBN
+  978-0-465-02745-3 (hc); pbk 2007 ISBN 978-0-465-02746-0.</p>
+
+  <p>Pages: 278 (whole book; background)</p>

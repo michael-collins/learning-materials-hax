@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d987aef1-4873-4380-86a5-4a902fea309d</id>
+<indent>1</indent>
+<location>pages/item-d987aef1-4873-4380-86a5-4a902fea309d/index.xml</location>
+<slug>resources/fab-academy-how-to-make-almost-anything-class-archive</slug>
+<order>53</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Fab Academy — How to Make (Almost) Anything class archive</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<oerPlan>DART 413:B19</oerPlan>
+<published>false</published>
+<oerFields>
+<url>https://fabacademy.org/</url>
+<kind>reading</kind>
+<authors>
+<item>
+<name>Fab Foundation</name>
+<url></url>
+</item>
+</authors>
+<publisher>How to Make</publisher>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p>Fab Foundation. Fab Academy: How to Make (Almost) Anything — class archive. https://fabacademy.org/</p>
+]]></content>
+</item>

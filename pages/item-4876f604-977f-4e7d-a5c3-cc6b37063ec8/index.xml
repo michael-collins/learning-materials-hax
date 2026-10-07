@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4876f604-977f-4e7d-a5c3-cc6b37063ec8</id>
+<indent>1</indent>
+<location>pages/item-4876f604-977f-4e7d-a5c3-cc6b37063ec8/index.xml</location>
+<slug>lectures/sheet-to-form-sectioning-folding-joinery</slug>
+<order>5</order>
+<parent>item-05aef7c3-2829-4d60-abd5-49cf9a82382a</parent>
+<title>Sheet to form — sectioning, folding, joinery</title>
+<description></description>
+<metadata>
+<pageType>oer:lecture</pageType>
+<oerPlan>DART 413:L07</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

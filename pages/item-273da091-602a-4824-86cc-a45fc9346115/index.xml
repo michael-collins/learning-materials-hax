@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-273da091-602a-4824-86cc-a45fc9346115</id>
+<indent>1</indent>
+<location>pages/item-273da091-602a-4824-86cc-a45fc9346115/index.xml</location>
+<slug>tutorials/press-fit-joinery-tolerance-test-kit</slug>
+<order>5</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Press-fit joinery + tolerance test kit</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<oerPlan>DART 413:L06</oerPlan>
+<published>false</published>
+<oerFields>
+<courses>
+<item>DART 413</item>
+</courses>
+<license>CC BY 4.0</license>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<placeholder>true</placeholder>
+</oerFields>
+<created>1791383988</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791383988</updated>
+</metadata>
+<content><![CDATA[<oer-draft note="Outline from the DART 413 course plan. Revise it, then Publish to show it to readers.">
+<p>A slot-width test comb per material thickness; how to read it; how to parameterize slots. Draft via R006.</p>
+
+</oer-draft>
+]]></content>
+</item>

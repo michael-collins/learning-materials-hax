@@ -1,0 +1,33 @@
+{
+  "id": "item-4876f604-977f-4e7d-a5c3-cc6b37063ec8",
+  "indent": 1,
+  "location": "pages/item-4876f604-977f-4e7d-a5c3-cc6b37063ec8/index.json",
+  "slug": "lectures/sheet-to-form-sectioning-folding-joinery",
+  "order": 5,
+  "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+  "title": "Sheet to form — sectioning, folding, joinery",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:lecture",
+    "oerPlan": "DART 413:L07",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

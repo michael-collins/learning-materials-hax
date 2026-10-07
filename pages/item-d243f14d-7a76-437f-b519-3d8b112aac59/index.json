@@ -1,0 +1,33 @@
+{
+  "id": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+  "indent": 1,
+  "location": "pages/item-d243f14d-7a76-437f-b519-3d8b112aac59/index.json",
+  "slug": "tutorials/demo-laser-cutter-workflow-file-job-cleanup",
+  "order": 4,
+  "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+  "title": "Demo: Laser cutter workflow — file → job → cleanup",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "oerPlan": "DART 413:L04",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        "DART 413"
+      ],
+      "license": "CC BY 4.0",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "placeholder": true
+    },
+    "created": 1791383988,
+    "images": [],
+    "videos": [],
+    "updated": 1791383988
+  },
+  "content": "<p></p>"
+}

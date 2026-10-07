@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791298093,
+      "updated": 1791383989,
       "version": "26.8.0"
     },
     "theme": {
@@ -6601,6 +6601,38 @@
       }
     },
     {
+      "id": "item-0909a197-4405-4d6b-8959-cc5b95196e13",
+      "indent": 2,
+      "location": "pages/item-0909a197-4405-4d6b-8959-cc5b95196e13/index.html",
+      "slug": "projects/final-project/final-project-proposal",
+      "order": 0,
+      "parent": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+      "title": "Final project proposal",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "oerPlan": "DART 413:A09",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
       "id": "item-52e05a27-2c5e-4c3a-8f99-baffbb07d613",
       "indent": 1,
       "location": "pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.html",
@@ -11907,6 +11939,576 @@
       }
     },
     {
+      "id": "item-79caedc2-9d9c-4828-bd1e-81545cc458a8",
+      "indent": 1,
+      "location": "pages/item-79caedc2-9d9c-4828-bd1e-81545cc458a8/index.html",
+      "slug": "lessons/bits-to-atoms-what-digital-fabrication-is",
+      "order": 33,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Bits to atoms: what digital fabrication is",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M01",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Describe the three process families and name a machine for each",
+            "Explain the CAD → CAM → machine pipeline",
+            "Identify the safety requirements for shop access",
+            "Articulate a personal question about making to pursue this term"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+      "indent": 1,
+      "location": "pages/item-926d32cd-5f1d-4cad-b882-89c65ffaad5d/index.html",
+      "slug": "lessons/vectors-for-machines-the-laser-cutter",
+      "order": 34,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Vectors for machines: the laser cutter",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M02",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Prepare a cut-ready vector file",
+            "Explain kerf and compensate for it",
+            "Run a laser job end to end (or hand it off correctly)",
+            "Read a material test grid"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-3c61c343-9aaa-4257-b871-355930bdcd69",
+      "indent": 1,
+      "location": "pages/item-3c61c343-9aaa-4257-b871-355930bdcd69/index.html",
+      "slug": "lessons/sheet-to-form-sectioning-folding-joinery",
+      "order": 35,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Sheet to form: sectioning, folding, joinery",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M03",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Build a press-fit connection with a measured tolerance",
+            "Convert a 3D form into sections",
+            "Choose a joinery strategy for a given material"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-86df4055-aee6-4e3c-aa9c-5e291791c8ef",
+      "indent": 1,
+      "location": "pages/item-86df4055-aee6-4e3c-aa9c-5e291791c8ef/index.html",
+      "slug": "lessons/project-1-launch-sheet-to-form",
+      "order": 36,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Project 1 launch: Sheet to form",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M04",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Propose a project responding to the brief and theme",
+            "Plan a prototyping sequence",
+            "Give and receive critique using the protocol"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-b2b1aa00-e58f-483e-8649-84526b67110a",
+      "indent": 1,
+      "location": "pages/item-b2b1aa00-e58f-483e-8649-84526b67110a/index.html",
+      "slug": "lessons/project-1-production-crit",
+      "order": 37,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Project 1 production + crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M05",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Produce and finish a laser-cut object",
+            "Photograph work for documentation",
+            "Critique peers' work on technical and conceptual terms"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+      "indent": 1,
+      "location": "pages/item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a/index.html",
+      "slug": "lessons/additive-3d-printing-fundamentals",
+      "order": 38,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Additive: 3D printing fundamentals",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M06",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Prepare a watertight mesh",
+            "Slice with appropriate settings and justify them",
+            "Diagnose a failed print"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a",
+      "indent": 1,
+      "location": "pages/item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a/index.html",
+      "slug": "lessons/modeling-for-fabrication-parametric-and-sculptural",
+      "order": 39,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Modeling for fabrication: parametric and sculptural",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M07",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Build a parametric model whose dimensions change without remodeling",
+            "Generate a family of variants",
+            "Capture and clean a scanned form"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-23bfc330-baae-4c57-b782-7da696b33431",
+      "indent": 1,
+      "location": "pages/item-23bfc330-baae-4c57-b782-7da696b33431/index.html",
+      "slug": "lessons/project-2-launch-multiples-and-variation",
+      "order": 40,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Project 2 launch: Multiples and variation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M08",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Propose a series that uses variation meaningfully",
+            "Plan print time and a material budget",
+            "Present process documentation"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+      "indent": 1,
+      "location": "pages/item-29ccdd18-d451-48e3-b92a-ee97be5e062f/index.html",
+      "slug": "lessons/subtractive-cnc-routing",
+      "order": 41,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Subtractive: CNC routing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M09",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Set up a CAM job for a 2.5D part",
+            "Choose bits and feeds for a material",
+            "Explain fixturing and safety for CNC"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0",
+      "indent": 1,
+      "location": "pages/item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0/index.html",
+      "slug": "lessons/cnc-production-project-2-crit",
+      "order": 42,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "CNC production + Project 2 crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M10",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Complete a CNC-cut part",
+            "Present a printed series with process documentation",
+            "Critique for variation and intent"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-bf575694-a7b5-42c8-9527-0e8704d50077",
+      "indent": 1,
+      "location": "pages/item-bf575694-a7b5-42c8-9527-0e8704d50077/index.html",
+      "slug": "lessons/hybrid-processes-and-finishing",
+      "order": 43,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Hybrid processes and finishing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M11",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Plan a multi-process object",
+            "Make a simple mold or vacuum-formed part from a fabricated master",
+            "Finish a fabricated surface"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-665fac95-9a12-4f05-a7cd-e9264f010b6f",
+      "indent": 1,
+      "location": "pages/item-665fac95-9a12-4f05-a7cd-e9264f010b6f/index.html",
+      "slug": "lessons/final-project-launch-critical-making",
+      "order": 44,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Final project launch + critical making",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M12",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Write a final project proposal with a fabrication plan and timeline",
+            "Position your work relative to critical debates about making"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d",
+      "indent": 1,
+      "location": "pages/item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d/index.html",
+      "slug": "lessons/final-production-i-workshops-on-demand",
+      "order": 45,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Final production I: workshops on demand",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M13",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Execute a production plan",
+            "Document process as it happens",
+            "Choose a license and platform for sharing files"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-87e4ca8e-509e-4062-9a59-8c8d003e0665",
+      "indent": 1,
+      "location": "pages/item-87e4ca8e-509e-4062-9a59-8c8d003e0665/index.html",
+      "slug": "lessons/final-production-ii-work-in-progress-crit",
+      "order": 46,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Final production II + work-in-progress crit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M14",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Respond to in-progress critique",
+            "Plan the presentation of the work"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af",
+      "indent": 1,
+      "location": "pages/item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af/index.html",
+      "slug": "lessons/final-crit-exhibition-documentation-portfolio",
+      "order": 47,
+      "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
+      "title": "Final crit, exhibition, documentation portfolio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lesson",
+        "oerPlan": "DART 413:M15",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "learningObjectives": [
+            "Present finished work",
+            "Submit a complete documentation portfolio",
+            "Reflect on process and learning"
+          ],
+          "estimatedDuration": "1 week"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
       "id": "item-ef516882-f25b-4615-b7d6-4b0c0152f56f",
       "indent": 1,
       "location": "pages/item-ef516882-f25b-4615-b7d6-4b0c0152f56f/index.html",
@@ -13139,6 +13741,166 @@
         "images": [],
         "videos": [],
         "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-13e7589e-e8ee-48ab-84d2-286c92ebfd73",
+      "indent": 1,
+      "location": "pages/item-13e7589e-e8ee-48ab-84d2-286c92ebfd73/index.html",
+      "slug": "lectures/bits-to-atoms-the-digital-physical-loop",
+      "order": 4,
+      "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+      "title": "Bits to atoms — the digital–physical loop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:L02",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-4876f604-977f-4e7d-a5c3-cc6b37063ec8",
+      "indent": 1,
+      "location": "pages/item-4876f604-977f-4e7d-a5c3-cc6b37063ec8/index.html",
+      "slug": "lectures/sheet-to-form-sectioning-folding-joinery",
+      "order": 5,
+      "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+      "title": "Sheet to form — sectioning, folding, joinery",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:L07",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+      "indent": 1,
+      "location": "pages/item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad/index.html",
+      "slug": "lectures/additive-thinking-layers-orientation-anisotropy",
+      "order": 6,
+      "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+      "title": "Additive thinking — layers, orientation, anisotropy",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:L11",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+      "indent": 1,
+      "location": "pages/item-f570ed6c-e171-4a20-af0f-58c5e61fceb7/index.html",
+      "slug": "lectures/variable-identical-differential-the-multiple",
+      "order": 7,
+      "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+      "title": "Variable, identical, differential — the multiple",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:L13",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-d691e847-ed22-40ee-8b49-1f409a0dc0c2",
+      "indent": 1,
+      "location": "pages/item-d691e847-ed22-40ee-8b49-1f409a0dc0c2/index.html",
+      "slug": "lectures/critical-making-the-maker-movement-and-its-critics",
+      "order": 8,
+      "parent": "item-05aef7c3-2829-4d60-abd5-49cf9a82382a",
+      "title": "Critical making — the maker movement and its critics",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:lecture",
+        "oerPlan": "DART 413:L17",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
       }
     },
     {
@@ -16080,6 +16842,16 @@
                   ]
                 },
                 {
+                  "name": "readings",
+                  "label": "Readings",
+                  "kind": "relation",
+                  "header": true,
+                  "types": [
+                    "oer:resource"
+                  ],
+                  "help": "What to read for this lesson, from Resources."
+                },
+                {
                   "name": "prerequisites",
                   "label": "Before you start",
                   "kind": "relation",
@@ -16693,7 +17465,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791251056,
+        "updated": 1791383987,
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives",
@@ -17132,6 +17904,67 @@
       }
     },
     {
+      "id": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+      "indent": 1,
+      "location": "pages/item-d243f14d-7a76-437f-b519-3d8b112aac59/index.html",
+      "slug": "tutorials/demo-laser-cutter-workflow-file-job-cleanup",
+      "order": 4,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Demo: Laser cutter workflow — file → job → cleanup",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:L04",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+      "indent": 1,
+      "location": "pages/item-69dddfb7-34fb-48ff-b038-f1429191de9b/index.html",
+      "slug": "books/dart-413-digital-fabrication-studio",
+      "order": 4,
+      "parent": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
+      "title": "DART 413: Digital Fabrication Studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:book",
+        "oerPlan": "DART 413:book",
+        "published": false,
+        "oerFields": {
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "introductionTitle": "Overview"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
       "id": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "indent": 0,
       "location": "pages/item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea/index.html",
@@ -17150,6 +17983,166 @@
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-273da091-602a-4824-86cc-a45fc9346115",
+      "indent": 1,
+      "location": "pages/item-273da091-602a-4824-86cc-a45fc9346115/index.html",
+      "slug": "tutorials/press-fit-joinery-tolerance-test-kit",
+      "order": 5,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Press-fit joinery + tolerance test kit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:L06",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
+      "indent": 1,
+      "location": "pages/item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6/index.html",
+      "slug": "tutorials/demo-3d-printing-workflow-mesh-slicer-print",
+      "order": 6,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Demo: 3D printing workflow — mesh → slicer → print",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:L09",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f",
+      "indent": 1,
+      "location": "pages/item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f/index.html",
+      "slug": "tutorials/a-parametric-object-in-fusion-360",
+      "order": 7,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "A parametric object in Fusion 360",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:L12",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
+      "indent": 1,
+      "location": "pages/item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e/index.html",
+      "slug": "tutorials/demo-cnc-cam-setup-to-cut-with-the-lab-tech",
+      "order": 8,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Demo: CNC — CAM setup to cut, with the lab tech",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:L14",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9",
+      "indent": 1,
+      "location": "pages/item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9/index.html",
+      "slug": "tutorials/demo-rotation-molds-and-casting-vacuum-forming-vinyl",
+      "order": 9,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Demo rotation: molds and casting, vacuum forming, vinyl",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "oerPlan": "DART 413:L16",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
       }
     },
     {
@@ -20689,6 +21682,262 @@
       }
     },
     {
+      "id": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+      "indent": 1,
+      "location": "pages/item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf/index.html",
+      "slug": "articles/vector-file-prep-for-the-laser",
+      "order": 86,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Vector file prep for the laser",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L05",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+      "indent": 1,
+      "location": "pages/item-389a18e8-e515-4482-ae7b-9a56687cb460/index.html",
+      "slug": "articles/crit-protocol",
+      "order": 87,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Crit protocol",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L08",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
+      "indent": 1,
+      "location": "pages/item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0/index.html",
+      "slug": "articles/design-for-fdm-checklist",
+      "order": 88,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Design for FDM checklist",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L10",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+      "indent": 1,
+      "location": "pages/item-304740f9-f09f-4e1c-94dd-84eead792e87/index.html",
+      "slug": "articles/cnc-materials-bits-feeds-and-speeds-fixturing",
+      "order": 89,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "CNC materials, bits, feeds and speeds, fixturing",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L15",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+      "indent": 1,
+      "location": "pages/item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1/index.html",
+      "slug": "articles/documentation-guide-photographing-work-process-docs-publishing-files",
+      "order": 90,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Documentation guide — photographing work, process docs, publishing files",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L18",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+      "indent": 1,
+      "location": "pages/item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944/index.html",
+      "slug": "articles/rubric-project-rubric-template",
+      "order": 91,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Rubric: Project rubric template",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L19",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-eceae826-36f2-4e2c-b626-3c2136ab261b",
+      "indent": 1,
+      "location": "pages/item-eceae826-36f2-4e2c-b626-3c2136ab261b/index.html",
+      "slug": "articles/template-final-project-proposal",
+      "order": 92,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Template: Final project proposal",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L20",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-cf74e241-cda4-4eff-a5d1-14b9cf701571",
+      "indent": 1,
+      "location": "pages/item-cf74e241-cda4-4eff-a5d1-14b9cf701571/index.html",
+      "slug": "articles/worksheet-object-autopsy",
+      "order": 93,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
+      "title": "Worksheet: Object autopsy",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:article",
+        "oerPlan": "DART 413:L21",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
       "id": "item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de",
       "indent": 1,
       "location": "pages/item-b2d2064e-cfd2-4f64-a6bf-6bbb18e9d7de/index.html",
@@ -21885,6 +23134,628 @@
       }
     },
     {
+      "id": "item-d0317d85-4720-45de-8f9c-8a3e62c39921",
+      "indent": 1,
+      "location": "pages/item-d0317d85-4720-45de-8f9c-8a3e62c39921/index.html",
+      "slug": "resources/how-to-make-almost-anything-the-digital-fabrication-revolution",
+      "order": 36,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "How to Make Almost Anything: The Digital Fabrication Revolution",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B01",
+        "published": false,
+        "oerFields": {
+          "url": "https://cba.mit.edu/docs/papers/12.09.FA.pdf",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Neil Gershenfeld",
+              "url": ""
+            }
+          ],
+          "date": "2012",
+          "container": "Foreign Affairs"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-eb4ae497-5473-486b-8f0f-77d8446b5f8c",
+      "indent": 1,
+      "location": "pages/item-eb4ae497-5473-486b-8f0f-77d8446b5f8c/index.html",
+      "slug": "resources/fab-the-coming-revolution-on-your-desktop",
+      "order": 37,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Fab: The Coming Revolution on Your Desktop",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B02",
+        "published": false,
+        "oerFields": {
+          "url": "https://archive.org/details/fabcomingrevolut00gers",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Neil Gershenfeld",
+              "url": ""
+            }
+          ],
+          "date": "2005",
+          "publisher": "Basic Books"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d",
+      "indent": 1,
+      "location": "pages/item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d/index.html",
+      "slug": "resources/the-nature-and-art-of-workmanship-the-workmanship-of-risk-and-of-certainty",
+      "order": 38,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "The Nature and Art of Workmanship — the workmanship of risk and of certainty",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B03",
+        "published": false,
+        "oerFields": {
+          "url": "https://archive.org/details/natureartofwor00pyed",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "David Pye",
+              "url": ""
+            }
+          ],
+          "date": "1968",
+          "publisher": "Cambridge University Press"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2",
+      "indent": 1,
+      "location": "pages/item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2/index.html",
+      "slug": "resources/abstracting-craft-the-practiced-digital-hand-ch-1-hands",
+      "order": 39,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Abstracting Craft: The Practiced Digital Hand — ch. 1, Hands",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B04",
+        "published": false,
+        "oerFields": {
+          "url": "https://mitpress.mit.edu/9780262631891/abstracting-craft/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Malcolm McCullough",
+              "url": ""
+            }
+          ],
+          "date": "1996",
+          "publisher": "MIT Press"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-2ffcd551-9b63-4336-835e-7dd0155cb5cf",
+      "indent": 1,
+      "location": "pages/item-2ffcd551-9b63-4336-835e-7dd0155cb5cf/index.html",
+      "slug": "resources/the-craftsman-prologue-man-as-his-own-maker",
+      "order": 40,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "The Craftsman — Prologue: Man as His Own Maker",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B05",
+        "published": false,
+        "oerFields": {
+          "url": "https://yalebooks.yale.edu/book/9780300151190/the-craftsman/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Richard Sennett",
+              "url": ""
+            }
+          ],
+          "date": "2008",
+          "publisher": "Yale University Press"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-c9e4c050-9edb-485b-8ee3-5a5b0a659965",
+      "indent": 1,
+      "location": "pages/item-c9e4c050-9edb-485b-8ee3-5a5b0a659965/index.html",
+      "slug": "resources/digital-fabrications-architectural-and-material-techniques-introduction-sectioning-folding",
+      "order": 41,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Digital Fabrications: Architectural and Material Techniques — Introduction; Sectioning; Folding",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B06",
+        "published": false,
+        "oerFields": {
+          "url": "https://archive.org/details/digitalfabricati0000iwam",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Lisa Iwamoto",
+              "url": ""
+            }
+          ],
+          "date": "2009",
+          "publisher": "Princeton Architectural Press"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919",
+      "indent": 1,
+      "location": "pages/item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919/index.html",
+      "slug": "resources/design-for-3d-printing-knowledge-base",
+      "order": 42,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Design for 3D printing — knowledge base",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B07",
+        "published": false,
+        "oerFields": {
+          "url": "https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Hubs",
+              "url": ""
+            }
+          ],
+          "publisher": "How to design parts for FDM"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-3475b882-a15e-43ce-b226-750a59efa486",
+      "indent": 1,
+      "location": "pages/item-3475b882-a15e-43ce-b226-750a59efa486/index.html",
+      "slug": "resources/prusa-knowledge-base-print-quality-troubleshooting-and-slicing-basics",
+      "order": 43,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Prusa Knowledge Base — print quality troubleshooting and slicing basics",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B08",
+        "published": false,
+        "oerFields": {
+          "url": "https://help.prusa3d.com/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Prusa Research",
+              "url": ""
+            }
+          ],
+          "publisher": "print quality troubleshooting"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-a736e35a-581d-40fb-8d77-eb137a06c7e7",
+      "indent": 1,
+      "location": "pages/item-a736e35a-581d-40fb-8d77-eb137a06c7e7/index.html",
+      "slug": "resources/the-alphabet-and-the-algorithm-ch-1-variable-identical-differential",
+      "order": 44,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "The Alphabet and the Algorithm — ch. 1, Variable, Identical, Differential",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B09",
+        "published": false,
+        "oerFields": {
+          "url": "https://archive.org/details/alphabetalgorith0000carp",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Mario Carpo",
+              "url": ""
+            }
+          ],
+          "date": "2011",
+          "publisher": "MIT Press"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c",
+      "indent": 1,
+      "location": "pages/item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c/index.html",
+      "slug": "resources/form-code-in-design-art-and-architecture-parameterize",
+      "order": 45,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Form+Code in Design, Art, and Architecture — Parameterize",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B10",
+        "published": false,
+        "oerFields": {
+          "url": "https://formandcode.com/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Casey Reas",
+              "url": ""
+            },
+            {
+              "name": "Chandler McWilliams (with LUST)",
+              "url": ""
+            }
+          ],
+          "date": "2010",
+          "publisher": "Parameterize"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-5898b795-f4da-441d-aa3b-929668d03a7d",
+      "indent": 1,
+      "location": "pages/item-5898b795-f4da-441d-aa3b-929668d03a7d/index.html",
+      "slug": "resources/digital-handmade-craftsmanship-and-the-new-industrial-revolution",
+      "order": 46,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Digital Handmade: Craftsmanship and the New Industrial Revolution",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B11",
+        "published": false,
+        "oerFields": {
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Lucy Johnston",
+              "url": ""
+            }
+          ],
+          "date": "2015",
+          "container": "Thames & Hudson",
+          "publisher": "Craftsmanship in the New Industrial Revolution"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62",
+      "indent": 1,
+      "location": "pages/item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62/index.html",
+      "slug": "resources/critical-making-conceptual-and-material-studies-in-technology-and-social-life",
+      "order": 47,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Critical Making: Conceptual and Material Studies in Technology and Social Life",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B12",
+        "published": false,
+        "oerFields": {
+          "url": "https://doi.org/10.1080/01972243.2011.583819",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Matt Ratto",
+              "url": ""
+            }
+          ],
+          "date": "2011",
+          "publisher": "The Information Society"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-37be7178-7d0e-47aa-9515-852942e1101f",
+      "indent": 1,
+      "location": "pages/item-37be7178-7d0e-47aa-9515-852942e1101f/index.html",
+      "slug": "resources/making-it-pick-up-a-spot-welder-and-join-the-revolution",
+      "order": 48,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Making It: Pick up a spot welder and join the revolution",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B13",
+        "published": false,
+        "oerFields": {
+          "url": "https://www.newyorker.com/magazine/2014/01/13/making-it-2",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Evgeny Morozov",
+              "url": ""
+            }
+          ],
+          "date": "2014",
+          "publisher": "Pick up a spot welder and join the revolution"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-de3020be-052d-4ec8-a11d-414dc295423b",
+      "indent": 1,
+      "location": "pages/item-de3020be-052d-4ec8-a11d-414dc295423b/index.html",
+      "slug": "resources/makers-the-new-industrial-revolution-ch-1",
+      "order": 49,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Makers: The New Industrial Revolution — ch. 1",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B14",
+        "published": false,
+        "oerFields": {
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Chris Anderson",
+              "url": ""
+            }
+          ],
+          "date": "2012",
+          "container": "Crown Business"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-526d73e9-2873-4210-b492-2888ab24f533",
+      "indent": 1,
+      "location": "pages/item-526d73e9-2873-4210-b492-2888ab24f533/index.html",
+      "slug": "resources/materials-against-materiality",
+      "order": 50,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Materials against materiality",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B15",
+        "published": false,
+        "oerFields": {
+          "url": "https://doi.org/10.1017/S1380203807002127",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Tim Ingold",
+              "url": ""
+            }
+          ],
+          "date": "2007",
+          "container": "Archaeological Dialogues"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-24c20753-b4ef-41f4-acd4-60df13259c87",
+      "indent": 1,
+      "location": "pages/item-24c20753-b4ef-41f4-acd4-60df13259c87/index.html",
+      "slug": "resources/thinking-through-craft-introduction",
+      "order": 51,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Thinking Through Craft — Introduction",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B16",
+        "published": false,
+        "oerFields": {
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Glenn Adamson",
+              "url": ""
+            }
+          ],
+          "date": "2007"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-0a2a466e-a69a-45e3-b4b6-53c7493455b5",
+      "indent": 1,
+      "location": "pages/item-0a2a466e-a69a-45e3-b4b6-53c7493455b5/index.html",
+      "slug": "resources/shaping-things",
+      "order": 52,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Shaping Things",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B18",
+        "published": false,
+        "oerFields": {
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Bruce Sterling",
+              "url": ""
+            }
+          ],
+          "date": "2005",
+          "publisher": "MIT Press"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-d987aef1-4873-4380-86a5-4a902fea309d",
+      "indent": 1,
+      "location": "pages/item-d987aef1-4873-4380-86a5-4a902fea309d/index.html",
+      "slug": "resources/fab-academy-how-to-make-almost-anything-class-archive",
+      "order": 53,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Fab Academy — How to Make (Almost) Anything class archive",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B19",
+        "published": false,
+        "oerFields": {
+          "url": "https://fabacademy.org/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Fab Foundation",
+              "url": ""
+            }
+          ],
+          "publisher": "How to Make"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+      "indent": 1,
+      "location": "pages/item-4208204c-37a2-4060-adb2-c094b8de1cc3/index.html",
+      "slug": "resources/nervous-system-studio-project-pages",
+      "order": 54,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Nervous System — studio project pages",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B20",
+        "published": false,
+        "oerFields": {
+          "url": "https://n-e-r-v-o-u-s.com/",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Jessica Rosenkrantz",
+              "url": ""
+            },
+            {
+              "name": "Jesse Louis-Rosenberg",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-60e4b429-b224-4257-bf91-839210d305a3",
+      "indent": 1,
+      "location": "pages/item-60e4b429-b224-4257-bf91-839210d305a3/index.html",
+      "slug": "resources/the-3d-additivist-manifesto",
+      "order": 55,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "The 3D Additivist Manifesto",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "oerPlan": "DART 413:B24",
+        "published": false,
+        "oerFields": {
+          "url": "https://additivism.org/manifesto",
+          "kind": "reading",
+          "authors": [
+            {
+              "name": "Morehshin Allahyari",
+              "url": ""
+            },
+            {
+              "name": "Daniel Rourke",
+              "url": ""
+            }
+          ],
+          "date": "2015"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
       "id": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
       "indent": 2,
       "location": "pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.html",
@@ -22735,6 +24606,39 @@
         "images": [],
         "videos": [],
         "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "indent": 1,
+      "location": "pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.html",
+      "slug": "pathways/digital-fabrication-studio",
+      "order": 14,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Digital Fabrication Studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:pathway",
+        "oerPlan": "DART 413:pathway",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "One course run (15 weeks)"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
       }
     },
     {
@@ -26705,6 +28609,326 @@
       }
     },
     {
+      "id": "item-4de26b66-7085-448a-ac92-f32fbf38f8f9",
+      "indent": 1,
+      "location": "pages/item-4de26b66-7085-448a-ac92-f32fbf38f8f9/index.html",
+      "slug": "exercises/object-autopsy",
+      "order": 49,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Object autopsy",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A01",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-e57bcbe5-efcd-42a7-a223-b05dea0dc123",
+      "indent": 1,
+      "location": "pages/item-e57bcbe5-efcd-42a7-a223-b05dea0dc123/index.html",
+      "slug": "exercises/laser-material-test-kerf-swatch",
+      "order": 50,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Laser material test + kerf swatch",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A02",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-a16965e6-def0-4f61-b884-a46300037a08",
+      "indent": 1,
+      "location": "pages/item-a16965e6-def0-4f61-b884-a46300037a08/index.html",
+      "slug": "exercises/press-fit-construction-kit",
+      "order": 51,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Press-fit construction kit",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A03",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21",
+      "indent": 1,
+      "location": "pages/item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21/index.html",
+      "slug": "exercises/print-iteration-one-object-three-revisions",
+      "order": 52,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Print iteration: one object, three revisions",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A05",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-f5669ca1-8a62-4854-908c-925e14b7eecb",
+      "indent": 1,
+      "location": "pages/item-f5669ca1-8a62-4854-908c-925e14b7eecb/index.html",
+      "slug": "exercises/parametric-family",
+      "order": 53,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Parametric family",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A06",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-70652b2f-07b2-489b-a0fa-e1f7f341ec91",
+      "indent": 1,
+      "location": "pages/item-70652b2f-07b2-489b-a0fa-e1f7f341ec91/index.html",
+      "slug": "exercises/cnc-relief-tile",
+      "order": 54,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "CNC relief tile",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A08",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-da8b8213-908b-455f-8501-0bc929cf3b05",
+      "indent": 1,
+      "location": "pages/item-da8b8213-908b-455f-8501-0bc929cf3b05/index.html",
+      "slug": "exercises/documentation-portfolio",
+      "order": 55,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Documentation portfolio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A11",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-5117d4e6-e938-41a9-b976-858e75347ae5",
+      "indent": 1,
+      "location": "pages/item-5117d4e6-e938-41a9-b976-858e75347ae5/index.html",
+      "slug": "exercises/reading-responses",
+      "order": 56,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Reading responses",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A12",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180",
+      "indent": 1,
+      "location": "pages/item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180/index.html",
+      "slug": "exercises/critique-participation",
+      "order": 57,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Critique participation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A13",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-bdd37b96-f590-4a7b-aad8-5a32e85230ad",
+      "indent": 1,
+      "location": "pages/item-bdd37b96-f590-4a7b-aad8-5a32e85230ad/index.html",
+      "slug": "exercises/precedent-presentation",
+      "order": 58,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "title": "Precedent presentation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:exercise",
+        "oerPlan": "DART 413:A14",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
       "id": "item-063f4287-8a23-4467-8604-4f433afe6f43",
       "indent": 1,
       "location": "pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.html",
@@ -26799,6 +29023,102 @@
         "locked": false,
         "status": "",
         "icon": "courseicons:learning-objectives"
+      }
+    },
+    {
+      "id": "item-59547add-790e-4255-a3f0-962065b0064f",
+      "indent": 1,
+      "location": "pages/item-59547add-790e-4255-a3f0-962065b0064f/index.html",
+      "slug": "projects/project-1-sheet-to-form",
+      "order": 13,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 1: Sheet to form",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A04",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+      "indent": 1,
+      "location": "pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.html",
+      "slug": "projects/project-2-multiples-and-variation",
+      "order": 14,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 2: Multiples and variation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A07",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+      "indent": 1,
+      "location": "pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.html",
+      "slug": "projects/final-project",
+      "order": 15,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Final project",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A10",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            "DART 413"
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
       }
     },
     {
@@ -26964,6 +29284,96 @@
         "images": [],
         "videos": [],
         "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
+      "indent": 1,
+      "location": "pages/item-9be5b661-faea-45de-a5d7-75725ac645c8/index.html",
+      "slug": "quizzes/laser-cutting-quiz",
+      "order": 17,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Laser cutting quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:quiz:M02",
+        "published": false,
+        "oerFields": {
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "10 minutes"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
+      "indent": 1,
+      "location": "pages/item-ab1c8916-1374-44a6-8872-b62dcea82770/index.html",
+      "slug": "quizzes/3d-printing-quiz",
+      "order": 18,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "3D printing quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:quiz:M06",
+        "published": false,
+        "oerFields": {
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "10 minutes"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
+      }
+    },
+    {
+      "id": "item-6d67a392-9c2e-4070-bb24-8fed224e3774",
+      "indent": 1,
+      "location": "pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.html",
+      "slug": "quizzes/cnc-routing-quiz",
+      "order": 19,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "CNC routing quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:quiz:M09",
+        "published": false,
+        "oerFields": {
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "10 minutes"
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791383988
       }
     }
   ]

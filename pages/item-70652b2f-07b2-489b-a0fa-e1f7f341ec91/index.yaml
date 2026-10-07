@@ -1,0 +1,44 @@
+id: item-70652b2f-07b2-489b-a0fa-e1f7f341ec91
+indent: 1
+location: pages/item-70652b2f-07b2-489b-a0fa-e1f7f341ec91/index.yaml
+slug: exercises/cnc-relief-tile
+order: 54
+parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
+title: CNC relief tile
+description: ''
+metadata:
+  pageType: oer:exercise
+  oerPlan: DART 413:A08
+  published: false
+  oerFields:
+    courses:
+      - DART 413
+    license: CC BY 4.0
+    authors:
+      - name: Michael Collins
+        url: ''
+    placeholder: true
+  created: 1791383988
+  images: []
+  videos: []
+  updated: 1791383988
+content: >
+  <oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish
+  to show it to readers.">
+
+  <p>Design a 2.5D relief tile from a heightmap or modeled surface, set up the
+  CAM job, and have it cut. Fallback if CNC time is unavailable: laser-cut
+  stacked contours of the same surface.</p>
+
+  <h2>What to hand in</h2>
+
+  <ul><li>The tile</li><li>CAM setup screenshots with bit/feeds/speeds
+  justified</li></ul>
+
+  <h2>What you'll practise</h2>
+
+  <ul><li>Set up a CAM job</li><li>Think in 2.5D</li></ul>
+
+  <p>Time: 2 weeks (tech-run)</p>
+
+  </oer-draft>
