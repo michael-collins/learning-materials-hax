@@ -101,9 +101,18 @@ export class OerCollection extends LitElement {
       const items = toJS(store.manifest?.items) || [];
       const active = toJS(store.activeId);
       Promise.resolve().then(() => {
+        // the page this block is on is set when it first renders. After a
+        // navigation the block is about to be replaced, so it mustn't rebuild
+        // for the next page: on a course page that meant listing the whole
+        // site (seconds of work) just before being thrown away
+        const inViewer = this.closest?.("[data-oer-page]")?.dataset.oerPage;
+        if (!inViewer) {
+          if (!this.__owner) this.__owner = active;
+          else if (active !== this.__owner) return;
+        }
         this._all = items;
         this._defs = contentTypes(items).types;
-        this._pageId = this._ownerPageId(items, active);
+        this._pageId = inViewer || this.__owner || this._ownerPageId(items, active);
         this._items = this._select(items);
         if (this.group && !this.__grouped) {
           this.__grouped = true;
