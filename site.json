@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385278,
+      "updated": 1791385279,
       "version": "26.8.0"
     },
     "theme": {
@@ -7214,7 +7214,7 @@
       "order": 0,
       "parent": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
       "title": "DMD 100: Digital Multimedia Design Foundations",
-      "description": "",
+      "description": "Digital Multimedia Design Foundations, 3 credits.",
       "metadata": {
         "pageType": "oer:course",
         "published": true,
