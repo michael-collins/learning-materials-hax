@@ -91,7 +91,7 @@ export class OerCollection extends LitElement {
     this.controls = "full";
     this._items = [];
     this._defs = [];
-    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, view: null, hidden: [] };
+    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, view: null, hidden: [], perPage: 0 };
     this._columnsOpen = false;
   }
 
@@ -151,8 +151,8 @@ export class OerCollection extends LitElement {
 
   _setState(patch) {
     this._state = { ...this._state, ...patch };
-    const { q, filters, tags, sortKey, sortDir, groupBy, view, hidden } = this._state;
-    writeStore(this._storageKey, { q, filters, tags, sortKey, sortDir, groupBy, view, hidden });
+    const { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage } = this._state;
+    writeStore(this._storageKey, { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage });
   }
 
   /* ---------- data ---------- */
@@ -375,6 +375,8 @@ export class OerCollection extends LitElement {
     return [pathwayChipStyles, css`
       :host {
         display: block;
+        /* the page body may be justified; lists and tables read ragged-right */
+        text-align: start;
         text-align: start;
         margin: 2rem 0;
         font-family: var(--font-sans, system-ui, sans-serif);
@@ -605,6 +607,14 @@ export class OerCollection extends LitElement {
         padding: 0.625rem 0.75rem;
         vertical-align: middle;
         border-bottom: 1px solid var(--border, #e5e5e5);
+      }
+      /* titles stay readable as columns are added: the table scrolls
+         sideways instead of squeezing them */
+      .col-title {
+        min-width: 14rem;
+      }
+      td.col-title .title {
+        min-width: 13rem;
       }
       tr:last-child td {
         border-bottom: 0;
@@ -867,16 +877,44 @@ export class OerCollection extends LitElement {
       /* pagination */
       .pager {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
+        gap: 0.5rem 1rem;
         margin-top: 0.75rem;
         font-size: 0.8125rem;
         color: var(--muted-foreground, #555);
       }
+      .pager-status {
+        margin-right: auto;
+      }
+      .per-page {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+      }
+      .per-page select {
+        height: 2rem;
+        padding: 0 0.375rem;
+        border: 1px solid var(--input-border, var(--border, #e5e5e5));
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--background, #fff);
+        color: var(--foreground, #111);
+        font: inherit;
+      }
       .pages {
         display: flex;
+        align-items: center;
         gap: 0.25rem;
+      }
+      .pages .gap {
+        min-width: 1.25rem;
+        text-align: center;
+      }
+      .group h3 .continued {
+        margin-left: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: var(--muted-foreground, #555);
       }
       .pages button {
         all: unset;
@@ -1093,9 +1131,9 @@ export class OerCollection extends LitElement {
         <thead>
           <tr>
             ${cols.map((c) => {
-              if (!c.sortable) return html`<th scope="col">${c.key === "image" ? html`<span class="sr" style="position:absolute;clip-path:inset(50%)">Image</span>` : c.label}</th>`;
+              if (!c.sortable) return html`<th scope="col" class="col-${c.key}">${c.key === "image" ? html`<span class="sr" style="position:absolute;clip-path:inset(50%)">Image</span>` : c.label}</th>`;
               const on = key === c.key;
-              return html`<th scope="col" aria-sort="${on ? (this._state.sortDir > 0 ? "ascending" : "descending") : "none"}">
+              return html`<th scope="col" class="col-${c.key}" aria-sort="${on ? (this._state.sortDir > 0 ? "ascending" : "descending") : "none"}">
                 <button @click="${() => this._toggleSort(c.key)}">
                   ${c.label}${lucide(on ? (this._state.sortDir > 0 ? "icons:arrow-upward" : "icons:arrow-downward") : "icons:swap-vert", "xs")}
                 </button>
@@ -1104,7 +1142,7 @@ export class OerCollection extends LitElement {
           </tr>
         </thead>
         <tbody>
-          ${items.map((i) => html`<tr>${cols.map((c) => html`<td>${this._cell(c, i)}</td>`)}</tr>`)}
+          ${items.map((i) => html`<tr>${cols.map((c) => html`<td class="col-${c.key}">${this._cell(c, i)}</td>`)}</tr>`)}
         </tbody>
       </table>
     </div>`;
@@ -1286,24 +1324,57 @@ export class OerCollection extends LitElement {
     `;
   }
 
-  _renderPager(total) {
-    const per = Math.max(1, Number(this.perPage) || 20);
-    const pages = Math.ceil(total / per);
-    if (pages <= 1) return "";
-    const page = Math.min(this._state.page, pages);
+  // items per page: the reader's choice, else the block's setting
+  get _per() {
+    return Math.max(1, Number(this._state.perPage) || Number(this.perPage) || 20);
+  }
+
+  // page numbers to show: all of a few, else the ends and the current page's
+  // neighbours, with gaps ("…") between
+  _pageList(page, pages) {
+    if (pages <= 7) return Array.from({ length: pages }, (_, i) => i + 1);
+    const keep = [...new Set([1, 2, page - 1, page, page + 1, pages - 1, pages])].filter((p) => p >= 1 && p <= pages).sort((a, b) => a - b);
+    const out = [];
+    keep.forEach((p, i) => {
+      if (i && p - keep[i - 1] > 1) out.push("…");
+      out.push(p);
+    });
+    return out;
+  }
+
+  _renderPager(total, page) {
+    const per = this._per;
+    const pages = Math.max(1, Math.ceil(total / per));
+    const sizes = [...new Set([10, 20, 50, 100, Number(this.perPage) || 20])].sort((a, b) => a - b);
+    // nothing to page through, and too few to choose a page size for
+    if (pages <= 1 && total <= sizes[0]) return "";
     const go = (p) => {
       this._setState({ page: p });
       this.scrollIntoView({ block: "start", behavior: "auto" });
     };
     return html`<nav class="pager" aria-label="Pages">
-      <span>Showing ${(page - 1) * per + 1} to ${Math.min(page * per, total)} of ${total}</span>
-      <div class="pages">
-        <button ?disabled="${page === 1}" aria-label="Previous page" @click="${() => go(page - 1)}">${lucide("icons:chevron-left", "sm")}</button>
-        ${Array.from({ length: pages }, (_, i) => i + 1).map(
-          (p) => html`<button aria-current="${p === page ? "page" : "false"}" @click="${() => go(p)}">${p}</button>`,
-        )}
-        <button ?disabled="${page === pages}" aria-label="Next page" @click="${() => go(page + 1)}">${lucide("icons:chevron-right", "sm")}</button>
-      </div>
+      <span class="pager-status">Showing ${(page - 1) * per + 1}–${Math.min(page * per, total)} of ${total}</span>
+      <label class="per-page">
+        Per page
+        <select
+          @change="${(e) => {
+            this._setState({ perPage: Number(e.target.value), page: 1 });
+          }}"
+        >
+          ${sizes.map((n) => html`<option value="${n}" ?selected="${n === per}">${n}</option>`)}
+        </select>
+      </label>
+      ${pages > 1
+        ? html`<div class="pages">
+            <button ?disabled="${page === 1}" aria-label="Previous page" @click="${() => go(page - 1)}">${lucide("icons:chevron-left", "sm")}</button>
+            ${this._pageList(page, pages).map((p) =>
+              p === "…"
+                ? html`<span class="gap" aria-hidden="true">…</span>`
+                : html`<button aria-current="${p === page ? "page" : "false"}" aria-label="Page ${p}" @click="${() => go(p)}">${p}</button>`,
+            )}
+            <button ?disabled="${page === pages}" aria-label="Next page" @click="${() => go(page + 1)}">${lucide("icons:chevron-right", "sm")}</button>
+          </div>`
+        : ""}
     </nav>`;
   }
 
@@ -1314,12 +1385,19 @@ export class OerCollection extends LitElement {
     const view = this.controls === "full" ? this._state.view || this.view : this.view;
     const filtered = this.controls === "full" ? this._filtered : this._items;
     const sorted = this._sorted(filtered);
-    const per = Math.max(1, Number(this.perPage) || 20);
+    const per = this._per;
     const groups = this._groups(sorted);
-    const paged = (list) => {
-      const page = Math.min(this._state.page, Math.max(1, Math.ceil(list.length / per)));
-      return list.slice((page - 1) * per, page * per);
-    };
+    const grouped = groups.length > 1 || !!this._state.groupBy;
+    // one page of the list, groups included: a group can run onto the next page
+    const entries = grouped ? groups.flatMap((g) => g.items.map((item) => ({ g, item }))) : sorted.map((item) => ({ g: null, item }));
+    const pages = Math.max(1, Math.ceil(entries.length / per));
+    const page = Math.min(this._state.page, pages);
+    const slice = entries.slice((page - 1) * per, page * per);
+    const pageGroups = [];
+    for (const e of slice) {
+      if (!pageGroups.length || pageGroups.at(-1).g !== e.g) pageGroups.push({ g: e.g, items: [] });
+      pageGroups.at(-1).items.push(e.item);
+    }
     const body = (list) => (view === "cards" ? this._renderCards(list) : this._renderTable(list));
     return html`
       ${heading}
@@ -1328,14 +1406,14 @@ export class OerCollection extends LitElement {
         ? html`<div class="empty">
             ${this._items.length ? html`Nothing matches. <button class="link" @click="${this._clear}">Clear filters</button>` : "Nothing here yet."}
           </div>`
-        : groups.length > 1 || this._state.groupBy
-          ? groups.map(
-              (g) => html`<section class="group">
-                <h3>${g.key}<span class="count">${g.items.length}</span></h3>
-                ${body(g.items.slice(0, per))}
-              </section>`,
-            )
-          : html`${body(paged(sorted))}${this._renderPager(sorted.length)}`}
+        : grouped
+          ? html`${pageGroups.map(
+                (pg) => html`<section class="group">
+                  <h3>${pg.g.key}<span class="count">${pg.g.items.length}</span>${pg.g.items[0] !== pg.items[0] ? html`<span class="continued">continued</span>` : ""}</h3>
+                  ${body(pg.items)}
+                </section>`,
+              )}${this._renderPager(entries.length, page)}`
+          : html`${body(slice.map((e) => e.item))}${this._renderPager(entries.length, page)}`}
     `;
   }
 

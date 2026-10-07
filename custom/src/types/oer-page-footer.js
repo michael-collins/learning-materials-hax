@@ -532,6 +532,8 @@ class OerPageFooter extends LitElement {
     return css`
       :host {
         display: block;
+        /* the page body may be justified; lists and tables read ragged-right */
+        text-align: start;
         margin-top: 3rem;
         padding-top: 1.25rem;
         border-top: 1px solid var(--border);

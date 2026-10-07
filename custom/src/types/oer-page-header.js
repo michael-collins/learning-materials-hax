@@ -75,6 +75,8 @@ class OerPageHeader extends LitElement {
     return [pathwayChipStyles, css`
       :host {
         display: block;
+        /* the page body may be justified; lists and tables read ragged-right */
+        text-align: start;
       }
       :host([hidden]) {
         display: none;
