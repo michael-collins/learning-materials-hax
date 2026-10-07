@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791384013,
+      "updated": 1791384014,
       "version": "26.8.0"
     },
     "theme": {
@@ -25528,7 +25528,7 @@
       "order": 45,
       "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
       "title": "Form+Code in Design, Art, and Architecture — Parameterize",
-      "description": "",
+      "description": "Recommended: parametric thinking with art/design examples; a bridge from the program's code-based work to fabrication.",
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B10",
