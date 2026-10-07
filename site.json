@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791385277,
+      "updated": 1791385278,
       "version": "26.8.0"
     },
     "theme": {
@@ -26996,7 +26996,7 @@
       "order": 9,
       "parent": null,
       "title": "Courses",
-      "description": "",
+      "description": "Each course, its bulletin entry and what's taught in it.",
       "metadata": {
         "pageType": "oer:section",
         "icon": "oer:graduation-cap",
