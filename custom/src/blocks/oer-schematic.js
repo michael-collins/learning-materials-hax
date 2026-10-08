@@ -275,27 +275,37 @@ const PRESETS = {
       })}`;
   },
 
-  // the sequence builder: pages to add, weeks as modules, and the selected
-  // assignment's LMS settings (highlighted), with Export to Canvas
-  sequence: () => svg`
+  // the sequence builder: the outline (weekly modules, their items indented
+  // under them, an add row closing each), the selected assignment
+  // (highlighted) with its LMS settings above a preview of its page, and
+  // Course settings at the top
+  sequence: () => {
+    const item = (y, w, chip = true) => svg`${P(`M22 ${y} H30`, "rule")}${L(34, y - 2.5, w, "t2")}${chip ? R(164, y - 4, 26, 8, "pill", 4) : ""}`;
+    const module = (y, w) => svg`${chevron(13, y - 2, "stroke")}${L(26, y - 2.5, w, "t")}${R(160, y - 5, 30, 10, "pill", 5)}`;
+    return svg`
     ${win(false)}
-    ${R(14, 38, 150, 10, "t", 3)}${btn(294, 34, 92, "Export to Canvas", "hi")}
+    ${R(14, 38, 140, 10, "t", 3)}${btn(290, 34, 96, "Course settings")}
     ${HR(0.5, 58, W - 0.5)}
-    ${R(10, 66, 96, 14, "card", 4)}
-    ${[0, 1, 2, 3, 4, 5].map((i) => svg`${L(12, 90 + i * 20, 60 + ((i * 11) % 22), "t2")}${T(98, 95 + i * 20, "+", "muted sm", "middle")}`)}
-    ${P("M114 58 V239", "rule")}
-    ${R(122, 66, 156, 78, "card", 6)}${R(130, 72, 70, 8, "t", 3)}
-    ${L(130, 90, 110)}${L(130, 103, 96)}
-    ${R(126, 113, 148, 14, "hi-soft", 4)}${L(132, 117.5, 70, "t-hi")}${T(268, 123, "30 pts · wk 2", "lbl sm", "end")}
-    ${L(130, 133, 88)}
-    ${R(122, 152, 156, 58, "card", 6)}${R(130, 158, 70, 8, "t", 3)}${L(130, 176, 104)}${L(130, 189, 92)}${T(268, 194, "Quiz", "muted sm", "end")}
-    ${P("M286 58 V239", "rule")}
-    ${R(292, 66, 100, 150, "pop hi-line", 6)}
-    ${T(300, 80, "Becomes", "muted sm")}${R(300, 84, 84, 13, "card", 3)}${T(304, 93.5, "Assignment", "lbl sm")}
-    ${T(300, 112, "Points", "muted sm")}${R(300, 116, 38, 13, "card", 3)}${T(304, 125.5, "30", "lbl sm")}
-    ${T(346, 112, "Due week", "muted sm")}${R(346, 116, 38, 13, "card", 3)}${T(350, 125.5, "2", "lbl sm")}
-    ${T(300, 144, "Rubric", "muted sm")}${R(300, 148, 84, 13, "card", 3)}${L(304, 152, 50, "t2")}
-    ${T(300, 176, "Students submit", "muted sm")}${check(300, 182)}${L(314, 184.5, 44, "t2")}${check(300, 198, false)}${L(314, 200.5, 40, "t2")}`,
+    ${module(72, 96)}
+    ${P("M22 78 V156", "rule")}
+    ${item(86, 92)}${item(100, 76)}
+    ${R(12, 107, 184, 14, "hi-soft", 4)}${P("M22 114 H30", "rule")}${L(34, 111.5, 66, "t-hi")}${T(190, 117, "30 pts · wk 2", "lbl sm", "end")}
+    ${P("M22 128 H30", "rule")}${T(34, 131, "READINGS", "muted sm caps")}
+    ${P("M38 134 V142 H46", "rule")}${L(50, 139.5, 84, "t2")}
+    ${P("M22 156 H30", "rule")}${T(34, 159, "+ Add pages", "muted sm")}
+    ${module(180, 112)}
+    ${P("M22 186 V208", "rule")}
+    ${item(194, 84)}${item(208, 98)}
+    ${T(14, 228, "+ Add module", "muted sm")}
+    ${P("M204 58 V239", "rule")}
+    ${T(212, 74, "Becomes", "muted sm")}${R(212, 78, 84, 13, "card", 3)}${T(216, 87.5, "Assignment", "lbl sm")}
+    ${T(304, 74, "Points", "muted sm")}${R(304, 78, 36, 13, "card", 3)}${T(308, 87.5, "30", "lbl sm")}
+    ${T(348, 74, "Due week", "muted sm")}${R(348, 78, 38, 13, "card", 3)}${T(352, 87.5, "2", "lbl sm")}
+    ${T(212, 108, "Rubric", "muted sm")}${R(212, 112, 174, 13, "card", 3)}${L(216, 116, 64, "t2")}
+    ${HR(204.5, 136, W - 0.5)}
+    ${R(212, 144, 174, 88, "card", 6)}
+    ${page(222, 154, 150, 4)}`;
+  },
 
   // a course page: code and credits, bulletin and prerequisites, then
   // everything taught in it, grouped by type (highlighted)

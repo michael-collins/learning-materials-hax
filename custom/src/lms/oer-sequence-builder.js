@@ -1,26 +1,43 @@
 /**
- * `oer-sequence-builder` — build a course sequence (oer:sequence page):
- * its modules (weeks or units) and what's in each, picked from the site's
- * pages, and how each item works in an LMS: a page (the live page,
- * embedded), an assignment (due week and day, points, submission types,
- * allowed files, rubric, grade group, peer reviews, group work), a
+ * `oer-sequence-builder` — build a course sequence (oer:sequence page) in
+ * the outline builder's UI: the outline on the left, the selected item on
+ * the right (how it works in the LMS, then the page itself), and the
+ * sequence's course settings in a sheet from the right.
+ *
+ * The outline: modules at the top level, their items below. An item's depth
+ * under its module is its indent in the LMS, so Tab / Shift+Tab and dragging
+ * sideways set it. Everything else works as in the outline builder
+ * (outline/oer-outline-builder.js, which this extends): drag and drop,
+ * Alt+↑/↓ (an item at a module's edge moves into the next module), ↑/↓,
+ * ←/→, Enter (rename modules, headers and links), Delete (take it out of the
+ * sequence; pages are never deleted), T (the item's role). Add rows close
+ * every level: Add module at the top; Add pages (the page picker, with a
+ * page's sub-pages indented under it if you like), Add header and Add link
+ * inside modules. An item keeps its due date relative to its module: move
+ * it to a module two weeks later (or move the module) and it's due two weeks
+ * later too.
+ *
+ * Items: a page (the live page, embedded), an assignment (due week and day,
+ * points, submissions, rubric, grade group, peer reviews, group work), a
  * discussion (an open thread; graded ones with points, a due date,
- * requirements and a rubric), a quiz, a link or a file; plus links to any
- * address and text headers, each item with an indent level. With nothing
- * selected, the sequence's grade groups and weights and
- * its rubric point scale. Problems to fix before exporting show at the
- * bottom. Term dates come at export (lms/oer-sequence-export.js).
+ * requirements and a rubric), a quiz, a link, a file; text headers and links
+ * to any address. Course settings: length, delivery, grade groups and
+ * weights, the rubric point scale. Term dates come at export
+ * (lms/oer-sequence-export.js).
  *
  *   sequenceBuilder().show(pageId)
  * @element oer-sequence-builder
  */
-import { html, css, LitElement } from "../lit.js";
+import { html, css } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes } from "../types/content-types.js";
-import { saveOutline } from "../outline/outline-model.js";
-import { isSnapshot } from "../versions/versioning.js";
-import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, sequenceCourses, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
+import { OerOutlineBuilder, MAX_DEPTH } from "../outline/oer-outline-builder.js";
+import { saveOutline, newItemId, childrenMap } from "../outline/outline-model.js";
+import { isSystemItem, contentTypes, HEADING_TYPE } from "../types/content-types.js";
+import { isSnapshot, versionsOf } from "../versions/versioning.js";
+import { pagePicker } from "../books/oer-page-picker.js";
+import { embedUrl } from "../embed/embed-mode.js";
+import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -37,26 +54,26 @@ const DAYS = [
   ["Sun", "Sunday"],
 ];
 const DELIVERY = ["In person", "Hybrid", "Online (synchronous)", "Online (asynchronous)"];
-const LIBRARY_TYPES = ["oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:exercise", "oer:project", "oer:activity", "oer:quiz", "oer:resource", "oer:book", "oer:course"];
-
+const PREVIEW_DELAY_MS = 300;
 const clone = (o) => JSON.parse(JSON.stringify(o));
-const items = () => toJS(store.manifest?.items) || [];
 const uid = () => `m${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+const isHeader = (item) => item?.header !== undefined;
+const isUrl = (item) => item?.as === "url";
 
-class OerSequenceBuilder extends LitElement {
+class OerSequenceBuilder extends OerOutlineBuilder {
   static get tag() {
     return "oer-sequence-builder";
   }
 
   static get properties() {
     return {
-      open: { type: Boolean, reflect: true },
-      _seq: { state: true },
+      ...super.properties,
+      _selId: { state: true },
+      _previewId: { state: true },
+      _groups: { state: true },
+      _scale: { state: true },
       _fields: { state: true },
-      _sel: { state: true },
-      _query: { state: true },
-      _typeFilter: { state: true },
-      _confirmDiscard: { state: true },
+      _sheet: { state: true },
       _showChecks: { state: true },
       _saving: { state: true },
     };
@@ -64,34 +81,48 @@ class OerSequenceBuilder extends LitElement {
 
   constructor() {
     super();
-    this.open = false;
-    this._seq = null;
-    this._sel = null;
-    this._query = "";
-    this._typeFilter = "";
+    this._showIcons = false;
+    this._selId = null;
+    this._previewId = null;
+    this._sheet = false;
     this._rubrics = [];
-    this.__keys = (e) => {
-      if (this.open && e.key === "Escape") {
-        e.preventDefault();
-        e.stopPropagation();
-        this._requestClose();
-      }
-    };
+    this._groups = [];
+    this._scale = [];
+    this._fields = { weeks: 15, delivery: "In person" };
   }
 
+  /* ---------- open / save ---------- */
+
   async show(pageId) {
-    const page = items().find((i) => i.id === pageId);
+    const items = toJS(store.manifest?.items) || [];
+    const page = items.find((i) => i.id === pageId);
     if (!page) return;
+    this._items = items;
+    this._byId = new Map(items.map((i) => [i.id, i]));
     this._pageId = pageId;
-    this._seq = clone(sequenceOf(page));
+    this._root = null;
+    this._rootItem = null;
+    this._types = [];
+    const seq = sequenceOf(page);
+    this._groups = clone(seq.groups);
+    this._scale = clone(seq.rubricScale);
     const f = page.metadata?.oerFields || {};
-    this._fields = { weeks: Number(f.weeks) || Math.max(0, ...this._seq.modules.map((m) => m.week || 0)) || 15, delivery: f.delivery || "In person" };
-    this._snapshot = JSON.stringify([this._seq, this._fields]);
-    this._sel = null;
+    this._fields = { weeks: Number(f.weeks) || Math.max(0, ...seq.modules.map((m) => Number(m.week) || 0)) || 15, delivery: f.delivery || "In person" };
+    this._rows = this._rowsOf(seq);
+    this._deleted = new Map();
+    this._hidden = new Map();
+    this._collapsed = new Set();
+    this._editing = null;
+    this._typeMenu = null;
     this._confirmDiscard = false;
+    this._sheet = false;
     this._showChecks = false;
+    this._saving = false;
+    this._selId = this._previewId = this._rows[0]?.id || null;
+    this._snapshot = this._signature();
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
+    this.updateComplete.then(() => this.shadowRoot.querySelector("[role=treeitem], .empty button")?.focus());
     try {
       const res = await fetch(new URL("files/data/rubrics.json", globalThis.document.baseURI), { cache: "no-cache" });
       const data = res.ok ? await res.json() : [];
@@ -100,941 +131,1270 @@ class OerSequenceBuilder extends LitElement {
       this._rubrics = [];
     }
     this.requestUpdate();
-    this.updateComplete.then(() => this.shadowRoot.querySelector("#q")?.focus());
+  }
+
+  // the sequence as outline rows: modules at depth 0, items at 1 + indent
+  _rowsOf(seq) {
+    const rows = [];
+    for (const m of seq.modules) {
+      rows.push({ id: m.id || uid(), kind: "module", title: m.title || "", week: Number(m.week) || "", depth: 0, orig: true });
+      for (const it of m.items || []) {
+        const { indent, ...item } = it;
+        rows.push(this._itemRow(item, 1 + indentOf(it), true));
+      }
+    }
+    return rows;
+  }
+
+  _itemRow(item, depth, orig = null) {
+    const title = isHeader(item) ? item.header : isUrl(item) ? item.title || "" : this._byId?.get(item.page)?.title || "";
+    return { id: newItemId(), kind: "item", item, title, type: isHeader(item) ? HEADING_TYPE : "", depth: Math.min(depth, MAX_DEPTH), orig };
+  }
+
+  // rows back into the sequence's modules (blank headers are dropped)
+  _toModules(rows = this._rows) {
+    const modules = [];
+    for (const r of rows) {
+      if (r.kind === "module") modules.push({ id: r.id, title: r.title, week: Number(r.week) || "", items: [] });
+      else if (modules.length) {
+        const item = clone(r.item);
+        if (isHeader(item)) {
+          if (!r.title.trim()) continue;
+          item.header = r.title.trim();
+        }
+        if (isUrl(item)) item.title = r.title;
+        modules.at(-1).items.push({ ...item, indent: Math.max(0, r.depth - 1) });
+      }
+    }
+    return modules;
+  }
+
+  _sequence() {
+    return { version: 1, modules: this._toModules(), groups: this._groups, rubricScale: this._scale };
+  }
+
+  _signature() {
+    return JSON.stringify([this._sequence(), this._fields]);
   }
 
   get _page() {
-    return items().find((i) => i.id === this._pageId);
-  }
-
-  get _dirty() {
-    return JSON.stringify([this._seq, this._fields]) !== this._snapshot;
+    return this._byId?.get(this._pageId);
   }
 
   _requestClose() {
-    if (this._dirty && !this._confirmDiscard) {
-      this._confirmDiscard = true;
-      return;
-    }
-    this._close();
+    if (this._sheet) this._closeSheet();
+    else super._requestClose();
   }
 
   _close() {
-    this.open = false;
-    globalThis.removeEventListener("keydown", this.__keys, true);
+    clearTimeout(this.__preview);
+    this._sheet = false;
+    super._close();
   }
 
   async _save() {
-    const page = this._page;
+    const page = (toJS(store.manifest?.items) || []).find((i) => i.id === this._pageId);
     if (!page) return;
     this._saving = true;
-    const out = {
-      ...page,
-      metadata: {
-        ...page.metadata,
-        oerSequence: this._seq,
-        oerFields: { ...(page.metadata?.oerFields || {}), weeks: Number(this._fields.weeks) || "", delivery: this._fields.delivery },
+    await saveOutline([
+      {
+        ...page,
+        metadata: {
+          ...page.metadata,
+          oerSequence: this._sequence(),
+          oerFields: { ...(page.metadata?.oerFields || {}), weeks: Number(this._fields.weeks) || "", delivery: this._fields.delivery },
+        },
+        modified: true,
       },
-      modified: true,
-    };
-    await saveOutline([out]);
+    ]);
     this._saving = false;
     this._close();
   }
 
-  /* ---------- editing ---------- */
+  /* ---------- the outline's rules ---------- */
 
-  _change(fn) {
-    const seq = clone(this._seq);
-    fn(seq);
-    this._seq = seq;
+  // modules stay at the top; items stay inside a module, at most one level
+  // deeper than the row above; items above the first module join it
+  _normalize(rows) {
+    const out = [];
+    const leading = [];
+    const place = (r) => {
+      const depth = Math.max(1, Math.min(r.depth, out.at(-1).depth + 1, MAX_DEPTH));
+      out.push(depth === r.depth ? r : { ...r, depth });
+    };
+    for (const r of rows) {
+      if (r.kind === "module") {
+        out.push(r.depth === 0 ? r : { ...r, depth: 0 });
+        leading.splice(0).forEach(place);
+      } else if (out.length) place(r);
+      else leading.push(r);
+    }
+    return [...out, ...leading];
   }
 
-  _addModule() {
-    const week = Math.max(0, ...this._seq.modules.map((m) => Number(m.week) || 0)) + 1;
-    this._change((s) => s.modules.push({ id: uid(), title: `Week ${week}`, week, items: [] }));
-    this._sel = { m: this._seq.modules.length - 1, i: null };
+  // each item's module week
+  _weeksOf(rows) {
+    const out = new Map();
+    let week = null;
+    for (const r of rows) {
+      if (r.kind === "module") week = Number(r.week) || null;
+      else out.set(r.id, week);
+    }
+    return out;
   }
 
-  _moveModule(m, by) {
-    const to = m + by;
-    if (to < 0 || to >= this._seq.modules.length) return;
-    this._change((s) => s.modules.splice(to, 0, s.modules.splice(m, 1)[0]));
-    this._sel = { m: to, i: null };
+  // an item keeps its due week relative to its module's week, when it moves
+  // to another module or the module's week changes
+  _commit(rows = [...this._rows]) {
+    const next = this._normalize(rows);
+    const before = this._weeksOf(this._rows);
+    const after = this._weeksOf(next);
+    super._commit(
+      next.map((r) => {
+        const was = before.get(r.id);
+        const now = after.get(r.id);
+        const due = Number(r.item?.due?.week);
+        if (r.kind !== "item" || !due || !was || !now || was === now) return r;
+        return { ...r, item: { ...r.item, due: { ...r.item.due, week: Math.max(1, due + now - was) } } };
+      }),
+    );
   }
 
-  _removeModule(m) {
-    this._change((s) => s.modules.splice(m, 1));
-    this._sel = null;
+  _indent(id) {
+    if (this._rows[this._index(id)]?.kind === "item") super._indent(id);
   }
 
-  _addPage(page) {
-    if (!this._seq.modules.length) this._addModule();
-    const m = this._sel?.m ?? this._seq.modules.length - 1;
-    const mod = this._seq.modules[m];
-    this._change((s) => s.modules[m].items.push(newItem(page, Number(mod.week) || 1)));
-    this._sel = { m, i: this._seq.modules[m].items.length - 1 };
+  _outdent(id) {
+    const row = this._rows[this._index(id)];
+    if (row?.kind === "item" && row.depth > 1) super._outdent(id);
   }
 
-  _addLink(m) {
-    this._change((s) => s.modules[m].items.push({ as: "url", title: "", url: "", newTab: true }));
-    this._sel = { m, i: this._seq.modules[m].items.length - 1 };
+  // a dragged module stays at the top; an item stays inside a module
+  _previewDepth(d, targetId) {
+    const depth = super._previewDepth(d, targetId);
+    return this._rows[this._index(d.id)]?.kind === "module" ? 0 : Math.max(1, depth);
   }
 
-  _indent(m, i, by) {
-    this._change((s) => {
-      const it = s.modules[m].items[i];
-      it.indent = Math.max(0, Math.min(5, indentOf(it) + by));
-    });
-  }
-
-  // a new role keeps what still applies and fills in the rest
-  _setRole(as) {
-    const { m, i } = this._sel;
-    const week = Number(this._seq.modules[m].week) || 1;
-    this._change((s) => {
-      const it = s.modules[m].items[i];
-      it.as = as;
-      if (as === "assignment" || as === "discussion") {
-        it.due ||= { week };
-        if (it.points === undefined) it.points = 20;
-      }
-      if (as === "discussion") {
-        if (it.replies === undefined) it.replies = 2;
-        it.requirements ||= [];
-        it.rubric ??= "task";
-      }
-      if (as === "file" && !it.file) it.file = attachmentsOf(items().find((x) => x.id === it.page))[0]?.url || "";
-    });
-  }
-
-  _addHeader(m) {
-    this._change((s) => s.modules[m].items.push({ header: "Readings" }));
-    this._sel = { m, i: this._seq.modules[m].items.length - 1 };
-  }
-
-  _moveItem(m, i, by) {
-    const list = this._seq.modules[m].items;
-    const to = i + by;
-    if (to >= 0 && to < list.length) {
-      this._change((s) => s.modules[m].items.splice(to, 0, s.modules[m].items.splice(i, 1)[0]));
-      this._sel = { m, i: to };
+  // Alt+↑ on a module's first item moves it to the end of the module before
+  _moveUp(id) {
+    const idx = this._index(id);
+    const row = this._rows[idx];
+    if (row?.kind === "item" && row.depth === 1 && this._rows[idx - 1]?.kind === "module") {
+      if (!this._rows.slice(0, idx - 1).some((r) => r.kind === "module")) return;
+      const rows = [...this._rows];
+      const { start, end } = this._subtree(idx);
+      const sub = rows.splice(start, end - start);
+      rows.splice(idx - 1, 0, ...sub);
+      this._commit(rows);
+      this._focusRow(id);
       return;
     }
-    // past either end: into the neighbouring module
-    const target = m + by;
-    if (target < 0 || target >= this._seq.modules.length) return;
-    this._change((s) => {
-      const [it] = s.modules[m].items.splice(i, 1);
-      if (by < 0) s.modules[target].items.push(it);
-      else s.modules[target].items.unshift(it);
-    });
-    this._sel = { m: target, i: by < 0 ? this._seq.modules[target].items.length - 1 : 0 };
+    super._moveUp(id);
   }
 
-  _removeItem(m, i) {
-    this._change((s) => s.modules[m].items.splice(i, 1));
-    this._sel = { m, i: null };
+  // Alt+↓ on a module's last item moves it to the start of the next module
+  _moveDown(id) {
+    const idx = this._index(id);
+    const row = this._rows[idx];
+    if (row?.kind === "item" && row.depth === 1) {
+      const { start, end } = this._subtree(idx);
+      if (end < this._rows.length && this._rows[end].kind === "module") {
+        const rows = [...this._rows];
+        const sub = rows.splice(start, end - start);
+        rows.splice(start + 1, 0, ...sub);
+        const c = new Set(this._collapsed);
+        c.delete(rows[start].id);
+        this._collapsed = c;
+        this._commit(rows);
+        this._focusRow(id);
+        return;
+      }
+    }
+    super._moveDown(id);
+  }
+
+  _invalid(idx) {
+    const r = this._rows[idx];
+    return r?.kind === "item" && !!r.item.page && !this._byId?.get(r.item.page);
+  }
+
+  _levelsFor() {
+    return [];
+  }
+
+  _pinnable() {
+    return [];
+  }
+
+  _canRename(row) {
+    return row.kind === "module" || isHeader(row.item) || isUrl(row.item);
+  }
+
+  _placeholder(row) {
+    if (row.kind === "module") return "Module title…";
+    if (isHeader(row.item)) return "Header…";
+    return "Link title…";
+  }
+
+  _rowCurrent(row) {
+    return row.id === this._selId;
+  }
+
+  // the panel follows the focused row; the page preview catches up once
+  // the focus settles, so arrowing through the outline doesn't load each page
+  _select(id) {
+    this._selId = id;
+    clearTimeout(this.__preview);
+    this.__preview = setTimeout(() => (this._previewId = id), PREVIEW_DELAY_MS);
+  }
+
+  _rowFocused(row) {
+    if (row.id !== this._selId) this._select(row.id);
+  }
+
+  // Delete takes rows out of the sequence; a page is never deleted
+  _remove(id) {
+    const idx = this._index(id);
+    if (idx < 0) return;
+    const { start, end } = this._subtree(idx);
+    const rows = [...this._rows];
+    const prev = idx > 0 ? rows[idx - 1].id : rows[end]?.id || null;
+    rows.splice(start, end - start);
+    this._commit(rows);
+    if (!this._rows.some((r) => r.id === this._selId)) this._select(prev);
+    if (prev) this._focusRow(prev);
+  }
+
+  // the week of the module a row is in
+  _weekAt(index) {
+    for (let i = Math.min(index, this._rows.length - 1); i >= 0; i--) if (this._rows[i].kind === "module") return Number(this._rows[i].week) || 1;
+    return 1;
+  }
+
+  _insertAfter(afterId, rows) {
+    const list = [...this._rows];
+    const idx = this._index(afterId);
+    list.splice(idx < 0 ? list.length : this._subtree(idx).end, 0, ...rows);
+    this._commit(list);
+  }
+
+  _addModule(afterId) {
+    const week = Math.max(0, ...this._rows.filter((r) => r.kind === "module").map((r) => Number(r.week) || 0)) + 1;
+    const row = { id: uid(), kind: "module", title: `Week ${week}`, week, depth: 0, orig: null };
+    this._insertAfter(afterId, [row]);
+    this._select(row.id);
+    this._startEdit(row.id);
+  }
+
+  async _addPages(afterId, depth) {
+    const choice = await pagePicker().pick({ exclude: [this._pageId], title: "Add pages to the sequence" });
+    if (!choice) {
+      this._focusRow(afterId);
+      return;
+    }
+    const all = toJS(store.manifest?.items) || [];
+    this._items = all;
+    this._byId = new Map(all.map((i) => [i.id, i]));
+    const kids = childrenMap(all.filter((i) => !isSystemItem(i) && !isSnapshot(i)));
+    const week = this._weekAt(this._index(afterId));
+    const row = (page, d, version = "") => {
+      const item = newItem(page, week);
+      if (version) item.version = version;
+      return this._itemRow(item, d);
+    };
+    const rows = [row(choice.page, depth, choice.version)];
+    if (choice.withChildren) {
+      const walk = (id, d) => (kids.get(id) || []).forEach((c) => (rows.push(row(c, d)), walk(c.id, d + 1)));
+      walk(choice.page.id, depth + 1);
+    }
+    this._insertAfter(afterId, rows);
+    this._select(rows[0].id);
+    this._focusRow(rows[0].id);
+  }
+
+  _addItem(afterId, depth, item) {
+    const row = this._itemRow(item, depth);
+    this._insertAfter(afterId, [row]);
+    this._select(row.id);
+    this._startEdit(row.id);
   }
 
   _setItem(patch) {
-    const { m, i } = this._sel;
-    this._change((s) => Object.assign(s.modules[m].items[i], patch));
+    this._commit(this._rows.map((r) => (r.id === this._selId ? { ...r, item: { ...r.item, ...patch } } : r)));
   }
 
-  _setModule(m, patch) {
-    this._change((s) => Object.assign(s.modules[m], patch));
+  _setRow(patch) {
+    this._commit(this._rows.map((r) => (r.id === this._selId ? { ...r, ...patch } : r)));
   }
 
-  /* ---------- library ---------- */
-
-  _library() {
-    const all = items().filter((i) => !isSnapshot(i) && !i.metadata?.oerRef?.page && LIBRARY_TYPES.includes(i.metadata?.pageType));
-    const page = this._page;
-    const courseIds = new Set(sequenceCourses(page, items()).map((c) => c.id));
-    const inCourse = (i) => [].concat(i.metadata?.oerFields?.courses || []).some((c) => courseIds.has(typeof c === "string" ? c : c?.page));
-    const q = this._query.trim().toLowerCase();
-    return all
-      .filter((i) => (!this._typeFilter || i.metadata?.pageType === this._typeFilter) && (!q || i.title.toLowerCase().includes(q)))
-      .map((i) => ({ item: i, course: inCourse(i) }))
-      .sort((a, b) => Number(b.course) - Number(a.course) || a.item.title.localeCompare(b.item.title))
-      .slice(0, 200);
+  // a new role keeps what still applies and fills in the rest
+  _setRole(id, as, refocus = true) {
+    this._typeMenu = null;
+    const idx = this._index(id);
+    if (idx < 0) return;
+    const week = this._weekAt(idx);
+    const page = this._byId?.get(this._rows[idx].item.page);
+    this._commit(
+      this._rows.map((r) => {
+        if (r.id !== id) return r;
+        const it = { ...r.item, as };
+        if (as === "assignment" || as === "discussion") {
+          it.due ||= { week };
+          if (it.points === undefined) it.points = page?.metadata?.pageType === "oer:project" ? 100 : 20;
+        }
+        if (as === "assignment") it.submission ||= ["online_upload"];
+        if (as === "discussion") {
+          if (it.replies === undefined) it.replies = 2;
+          it.requirements ||= [];
+          it.rubric ??= "task";
+        }
+        if (as === "quiz") it.quizType ||= "practice";
+        if (as === "file" && !it.file) it.file = attachmentsOf(page)[0]?.url || "";
+        return { ...r, item: it };
+      }),
+    );
+    if (refocus) this._focusRow(id);
   }
 
-  _placement(pageId) {
-    for (const m of this._seq.modules) if ((m.items || []).some((it) => it.page === pageId)) return m.title;
-    return "";
+  /* ---------- the outline's rows ---------- */
+
+  _summary(item) {
+    const graded = item.graded !== false;
+    if (isHeader(item)) return "Header";
+    if (isUrl(item)) return "Link";
+    if (item.as === "assignment") return graded ? [`${item.points || 0} pts`, item.due?.week ? `wk ${item.due.week}` : "no due week"].join(" · ") : "Ungraded";
+    if (item.as === "discussion") return ["Discussion", graded && item.points ? `${item.points} pts` : "", graded && item.due?.week ? `wk ${item.due.week}` : ""].filter(Boolean).join(" · ");
+    if (item.as === "quiz") return item.quizType === "graded" ? "Graded quiz" : "Practice quiz";
+    return ROLES[item.as]?.label || "Page";
+  }
+
+  _renderRowChips(row, index) {
+    if (row.kind === "module") {
+      const empty = !this._hasChildren(index);
+      return html`${empty ? html`<span class="chip quiet">Empty</span>` : ""}<span class="chip week" title="Teaching week">Week ${row.week || "?"}</span>`;
+    }
+    const item = row.item;
+    if (isHeader(item)) return "";
+    if (isUrl(item)) return html`<span class="chip quiet">${lucide("icons:link", "sm")}Link</span>`;
+    const label = this._summary(item);
+    const graded = ["assignment", "discussion"].includes(item.as) || (item.as === "quiz" && item.quizType === "graded");
+    return html`${item.version ? html`<span class="chip quiet" title="Pinned to version ${item.version}">v${item.version}</span>` : ""}
+      <button
+        class="type-chip ${graded ? "graded" : ""}"
+        tabindex="-1"
+        title="How this works in the LMS. Change (T)"
+        aria-label="${ROLES[item.as]?.label || "Page"}: ${label}. Change"
+        @mousedown="${(e) => e.preventDefault()}"
+        @click="${(e) => {
+          e.stopPropagation();
+          this._select(row.id);
+          this._openMenu(row, index, "type", e.currentTarget);
+        }}"
+      >
+        ${label}
+      </button>`;
+  }
+
+  _renderRowActions(row) {
+    return html`<div class="hover-only">
+      <button
+        class="act danger"
+        tabindex="-1"
+        title="${row.kind === "module" ? "Remove the module and its items (Delete)" : "Remove from the sequence (Delete). The page is kept."}"
+        aria-label="Remove ${row.title || "item"} from the sequence"
+        @click="${(e) => {
+          e.stopPropagation();
+          this._remove(row.id);
+        }}"
+      >
+        ${lucide("oer:x", "sm")}
+      </button>
+    </div>`;
+  }
+
+  _renderTypeMenu() {
+    const m = this._typeMenu;
+    const row = this._rows[this._index(m.id)];
+    if (!row || row.kind !== "item" || m.kind !== "type" || isHeader(row.item) || isUrl(row.item)) return "";
+    const keys = (e) => {
+      const items = [...e.currentTarget.querySelectorAll("[role=menuitemradio]")];
+      const i = items.indexOf(this.shadowRoot.activeElement);
+      if (e.key === "ArrowDown") items[(i + 1) % items.length]?.focus();
+      else if (e.key === "ArrowUp") items[(i - 1 + items.length) % items.length]?.focus();
+      else if (e.key === "Escape") {
+        this._typeMenu = null;
+        this._focusRow(row.id);
+      } else return;
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    return html`<div class="menu-layer" @click="${() => (this._typeMenu = null)}">
+      <div class="type-menu" role="menu" aria-label="Becomes" style="left:${m.x}px;top:${m.y}px" @click="${(e) => e.stopPropagation()}" @keydown="${keys}">
+        <div class="menu-label">Becomes</div>
+        ${Object.entries(ROLES).map(
+          ([v, r]) => html`<button role="menuitemradio" aria-checked="${row.item.as === v ? "true" : "false"}" @click="${() => this._setRole(row.id, v)}">
+            <span class="check">${row.item.as === v ? lucide("oer:check", "sm") : ""}</span>${r.label}
+          </button>`,
+        )}
+      </div>
+    </div>`;
+  }
+
+  // add rows: a module at the top level; pages, a header or a link in one
+  _renderAddRows(add, vis, vIdx) {
+    if (add.depth === 0) {
+      return html`<div class="add-wrap">
+        ${this._renderAddRow(add, vis, vIdx, { label: "Add module", title: "Add a module: a week or unit", action: () => this._addModule(add.afterId) })}
+      </div>`;
+    }
+    const extra = (icon, label, title, fn) => html`<button
+      class="add-existing"
+      title="${title}"
+      @mouseenter="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
+      @mouseleave="${() => (this._hoverAdd = null)}"
+      @click="${() => {
+        this._hoverAdd = null;
+        fn();
+      }}"
+    >
+      ${lucide(icon, "sm")}${label}
+    </button>`;
+    return html`<div class="add-wrap">
+      ${this._renderAddRow(add, vis, vIdx, {
+        label: "Add pages",
+        title: "Add pages from the site here (with their sub-pages, if you like)",
+        action: () => this._addPages(add.afterId, add.depth),
+      })}
+      ${extra("oer:heading-2", "Add header", "Add a text header to the module", () => this._addItem(add.afterId, add.depth, { header: "" }))}
+      ${extra("icons:link", "Add link", "Add a link to any web address, such as a video call", () => this._addItem(add.afterId, add.depth, { as: "url", title: "", url: "", newTab: true }))}
+    </div>`;
+  }
+
+  _renderEmpty() {
+    return html`<div class="empty">
+      ${lucide("icons:date-range")}
+      <p>No modules yet. Add one for each week or unit, then add pages to it.</p>
+      <button class="btn outline" @click="${() => this._addModule(null)}">${lucide("oer:plus", "sm")}Add module</button>
+    </div>`;
+  }
+
+  /* ---------- the selected item ---------- */
+
+  // the page as the item shows it: its pinned release, else the latest
+  _shownPage(item) {
+    const page = this._byId?.get(item.page);
+    if (!page || !item.version) return page;
+    return versionsOf(page.id, this._items || []).find((v) => v.version === item.version)?.snapshot || page;
+  }
+
+  _renderDetail() {
+    const row = this._rows.find((r) => r.id === this._selId);
+    if (!row) return html`<div class="detail-empty">${lucide("icons:date-range")}<p>Select a module or an item to see it here.</p></div>`;
+    if (row.kind === "module") return this._renderModuleDetail(row);
+    const item = row.item;
+    if (isHeader(item)) {
+      return html`<div class="detail-pad settings">
+        <div>
+          <p class="eyebrow">Header</p>
+          <h3 class="dtitle">${row.title || "Untitled header"}</h3>
+        </div>
+        <p class="hint">A text header in the module. Items indented under it are grouped with it in the LMS. Rename it in the outline (Enter).</p>
+      </div>`;
+    }
+    if (isUrl(item)) {
+      return html`<div class="detail-pad settings">
+        <p class="eyebrow">Link</p>
+        <label class="field">Title<input class="input" placeholder="Live session (Zoom)" .value="${row.title || ""}" @input="${(e) => this._setRow({ title: e.target.value })}" /></label>
+        <label class="field">Web address<input class="input" type="url" placeholder="https://…" .value="${item.url || ""}" @input="${(e) => this._setItem({ url: e.target.value.trim() })}" /></label>
+        <label class="check"><input type="checkbox" .checked="${item.newTab !== false}" @change="${(e) => this._setItem({ newTab: e.target.checked })}" />Open in a new tab</label>
+        <p class="hint">For anything that isn't a page on this site: a video call, a tool, another site.</p>
+      </div>`;
+    }
+    const page = this._byId?.get(item.page);
+    const type = page ? contentTypes(this._items).types.find((t) => t.id === page.metadata?.pageType) : null;
+    return html`<div class="detail-split">
+      <div class="detail-pad settings">
+        <div>
+          <p class="eyebrow">${type?.label || "Page"}${item.version ? ` · pinned to v${item.version}` : ""}</p>
+          <h3 class="dtitle">${page?.title || "This page isn't on the site any more"}</h3>
+        </div>
+        ${page ? this._renderItemSettings(row, item, page) : html`<p class="hint">Remove it from the sequence (Delete), or add the page again.</p>`}
+      </div>
+      ${page ? this._renderPreview(row, item, page) : ""}
+    </div>`;
+  }
+
+  _renderPreview(row, item, page) {
+    const shown = this._shownPage(item);
+    const ready = this._previewId === row.id;
+    return html`<div class="preview">
+      <div class="preview-bar">
+        <span>Page${item.version ? ` (v${item.version})` : ""}</span>
+        <a href="${shown.slug}" target="_blank">${lucide("icons:open-in-new", "sm")}Open in a new tab</a>
+      </div>
+      ${ready ? html`<iframe src="${embedUrl(shown.slug)}" title="${page.title}"></iframe>` : html`<div class="frame-wait"></div>`}
+    </div>`;
+  }
+
+  _renderModuleDetail(row) {
+    const idx = this._index(row.id);
+    const items = this._rows.slice(idx + 1, this._subtree(idx).end);
+    const graded = items.filter((r) => ["assignment", "discussion"].includes(r.item.as) && r.item.graded !== false);
+    const points = graded.reduce((s, r) => s + (Number(r.item.points) || 0), 0);
+    return html`<div class="detail-pad settings">
+      <p class="eyebrow">Module</p>
+      <label class="field">Title<input class="input" .value="${row.title}" @input="${(e) => this._setRow({ title: e.target.value })}" /></label>
+      <label class="field"
+        >Teaching week
+        <input
+          class="input num"
+          type="number"
+          min="1"
+          .value="${String(row.week || "")}"
+          @change="${(e) => Number(e.target.value) > 0 && this._setRow({ week: Number(e.target.value) })}"
+        />
+        <span class="hint">Its items' due weeks move with it. Asynchronous courses open the module on this week's Monday.</span>
+      </label>
+      <p class="stat">${items.length} item${items.length === 1 ? "" : "s"}${graded.length ? `, ${graded.length} graded (${points} points)` : ""}</p>
+      ${graded.length
+        ? html`<ul class="due-list">
+            ${graded.map((r) => html`<li><span>${r.title}</span><small>${this._summary(r.item)}</small></li>`)}
+          </ul>`
+        : ""}
+    </div>`;
+  }
+
+  _group(item) {
+    return html`<label class="field"
+      >Grade group
+      <select @change="${(e) => this._setItem({ group: e.target.value })}">
+        <option value="" ?selected="${!item.group}">None</option>
+        ${this._groups.map((g) => html`<option value="${g.id}" ?selected="${item.group === g.id}">${g.name}</option>`)}
+      </select>
+    </label>`;
+  }
+
+  _rubric(item) {
+    return html`<label class="field"
+      >Rubric
+      <select @change="${(e) => this._setItem({ rubric: e.target.value })}">
+        <option value="" ?selected="${!item.rubric}">None</option>
+        ${this._rubrics.map((r) => html`<option value="${r.slug}" ?selected="${item.rubric === r.slug}">${r.name} (${r.criteria?.length || 0} criteria)</option>`)}
+      </select>
+    </label>`;
+  }
+
+  _due(item, label = "Due week") {
+    const due = item.due || {};
+    const dayValue = due.day || (due.rule === "first-class" ? "first-class" : "");
+    const setDue = (patch) => this._setItem({ due: { ...due, ...patch } });
+    return html`<div class="pair">
+        <label class="field">${label}<input class="input" type="number" min="1" .value="${String(due.week ?? "")}" @input="${(e) => setDue({ week: Number(e.target.value) || "" })}" /></label>
+        <label class="field">Time <span class="hint">optional</span><input class="input" type="time" .value="${due.time || ""}" @input="${(e) => setDue({ time: e.target.value || undefined })}" /></label>
+      </div>
+      <label class="field"
+        >Due on
+        <select @change="${(e) => (e.target.value === "first-class" ? setDue({ day: undefined, rule: "first-class" }) : setDue({ day: e.target.value || undefined, rule: undefined }))}">
+          ${DAYS.map(([v, l]) => html`<option value="${v}" ?selected="${dayValue === v}">${l}</option>`)}
+        </select>
+        <span class="hint">The term's usual day and time are chosen at export (Sunday 11:59 pm unless changed).</span>
+      </label>`;
+  }
+
+  _renderItemSettings(row, item, page) {
+    const graded = item.graded !== false;
+    const note = ROLES[item.as]?.note || "";
+    return html`<label class="field"
+        >Becomes
+        <select @change="${(e) => this._setRole(row.id, e.target.value, false)}">
+          ${Object.entries(ROLES).map(([v, r]) => html`<option value="${v}" ?selected="${item.as === v}">${r.label}</option>`)}
+        </select>
+        <span class="hint">${note ? `${note[0].toUpperCase()}${note.slice(1)}.` : ""}</span>
+      </label>
+      ${item.as === "assignment" ? this._renderAssignment(item, graded) : ""}
+      ${item.as === "discussion" ? this._renderDiscussion(item, graded) : ""}
+      ${item.as === "quiz"
+        ? html`<label class="field"
+              >Quiz
+              <select @change="${(e) => this._setItem({ quizType: e.target.value })}">
+                <option value="practice" ?selected="${item.quizType !== "graded"}">Practice (not graded)</option>
+                <option value="graded" ?selected="${item.quizType === "graded"}">Graded</option>
+              </select>
+            </label>
+            ${item.quizType === "graded" ? html`${this._due(item)}${this._group(item)}` : ""}
+            <p class="hint">Built from the page's multiple-choice and true/false questions (a point each); self-checks become ungraded questions with their answer as feedback. Draft questions stay out until they're published.</p>`
+        : ""}
+      ${item.as === "file"
+        ? attachmentsOf(page).length
+          ? html`<label class="field"
+              >File
+              <select @change="${(e) => this._setItem({ file: e.target.value })}">
+                ${attachmentsOf(page).map((f) => html`<option value="${f.url}" ?selected="${item.file === f.url}">${f.title || f.url.split("/").pop()}</option>`)}
+              </select>
+              <span class="hint">Copied into the course's files.</span>
+            </label>`
+          : html`<p class="hint">This page has no attachments. Add files to its Attachments field in Page details, then choose one here.</p>`
+        : ""}`;
+  }
+
+  _renderAssignment(item, graded) {
+    const subs = item.submission || [];
+    return html`<label class="check"><input type="checkbox" .checked="${graded}" @change="${(e) => this._setItem({ graded: e.target.checked })}" />Graded</label>
+      ${graded
+        ? html`<div class="pair">
+              <label class="field">Points<input class="input" type="number" min="0" .value="${String(item.points ?? "")}" @input="${(e) => this._setItem({ points: Number(e.target.value) || 0 })}" /></label>
+              ${this._group(item)}
+            </div>
+            ${this._rubric(item)}`
+        : ""}
+      ${this._due(item)}
+      <fieldset class="checks">
+        <legend>Students submit</legend>
+        ${Object.entries(SUBMISSION_TYPES).map(
+          ([v, l]) =>
+            html`<label class="check"
+              ><input type="checkbox" .checked="${subs.includes(v)}" @change="${(e) => this._setItem({ submission: e.target.checked ? [...new Set([...subs, v])] : subs.filter((x) => x !== v) })}" />${l}</label
+            >`,
+        )}
+      </fieldset>
+      ${subs.includes("online_upload")
+        ? html`<label class="field"
+            >Allowed file types <span class="hint">optional, separated by commas</span
+            ><input
+              class="input"
+              placeholder="pdf, jpg, stl"
+              .value="${(item.extensions || []).join(", ")}"
+              @change="${(e) => this._setItem({ extensions: e.target.value.split(/[\s,]+/).map((x) => x.replace(/^\./, "").toLowerCase()).filter(Boolean) })}"
+          /></label>`
+        : ""}
+      ${graded
+        ? html`<label class="check"><input type="checkbox" .checked="${!!item.peerReviews}" @change="${(e) => this._setItem({ peerReviews: e.target.checked ? { count: 2, anonymous: false } : undefined })}" />Peer reviews</label>
+            ${item.peerReviews
+              ? html`<div class="pair">
+                  <label class="field"
+                    >Reviews each<input class="input" type="number" min="1" .value="${String(item.peerReviews.count ?? 2)}" @input="${(e) => this._setItem({ peerReviews: { ...item.peerReviews, count: Math.max(1, Number(e.target.value) || 1) } })}"
+                  /></label>
+                  <label class="check end"><input type="checkbox" .checked="${!!item.peerReviews.anonymous}" @change="${(e) => this._setItem({ peerReviews: { ...item.peerReviews, anonymous: e.target.checked } })}" />Anonymous</label>
+                </div>`
+              : ""}`
+        : ""}
+      <label class="check"><input type="checkbox" .checked="${!!item.groupSet}" @change="${(e) => this._setItem({ groupSet: e.target.checked ? "Project groups" : undefined, gradeIndividually: undefined })}" />Group assignment</label>
+      ${item.groupSet
+        ? html`<label class="field">Group set<input class="input" .value="${item.groupSet}" @input="${(e) => this._setItem({ groupSet: e.target.value })}" /></label>
+            <label class="check"><input type="checkbox" .checked="${!!item.gradeIndividually}" @change="${(e) => this._setItem({ gradeIndividually: e.target.checked })}" />Grade each student individually</label>`
+        : ""}`;
+  }
+
+  _renderDiscussion(item, graded) {
+    return html`<label class="check"><input type="checkbox" .checked="${graded}" @change="${(e) => this._setItem({ graded: e.target.checked })}" />Graded</label>
+      ${graded
+        ? html`<div class="pair">
+              <label class="field">Points<input class="input" type="number" min="0" .value="${String(item.points ?? "")}" @input="${(e) => this._setItem({ points: Number(e.target.value) || 0 })}" /></label>
+              ${this._group(item)}
+            </div>
+            ${this._rubric(item)}`
+        : ""}
+      ${this._due(item, graded ? "Posts due week" : "Week")}
+      <label class="field"
+        >Replies required<input class="input num" type="number" min="0" .value="${String(item.replies ?? 0)}" @input="${(e) => this._setItem({ replies: Math.max(0, Number(e.target.value) || 0) })}"
+      /></label>
+      <label class="field"
+        >More requirements <span class="hint">one per line</span>
+        <textarea
+          class="input"
+          rows="3"
+          placeholder="Name what's working and one change you'd try"
+          .value="${(item.requirements || []).join("\n")}"
+          @change="${(e) => this._setItem({ requirements: e.target.value.split("\n").map((l) => l.trim()).filter(Boolean) })}"
+        ></textarea>
+      </label>
+      <label class="check"><input type="checkbox" .checked="${!!item.requireInitialPost}" @change="${(e) => this._setItem({ requireInitialPost: e.target.checked })}" />Students post before they see others' replies</label>
+      <label class="check"><input type="checkbox" .checked="${!!item.groupSet}" @change="${(e) => this._setItem({ groupSet: e.target.checked ? "Critique groups" : undefined })}" />Group discussion</label>
+      ${item.groupSet ? html`<label class="field">Group set<input class="input" .value="${item.groupSet}" @input="${(e) => this._setItem({ groupSet: e.target.value })}" /></label>` : ""}
+      <p class="hint">The prompt opens with the requirements (posting by the due date, the replies, these lines, the rubric), then the page.</p>`;
+  }
+
+  /* ---------- course settings: a sheet from the right ---------- */
+
+  _openSheet() {
+    this._typeMenu = null;
+    this._sheet = true;
+    this.updateComplete.then(() => this.shadowRoot.querySelector(".sheet input, .sheet select")?.focus());
+  }
+
+  _closeSheet() {
+    this._sheet = false;
+    this.updateComplete.then(() => this.shadowRoot.querySelector(".settings-btn")?.focus());
+  }
+
+  // Tab stays inside the sheet while it's open
+  _sheetKeys(e) {
+    if (e.key !== "Tab") return;
+    const all = [...e.currentTarget.querySelectorAll("button, input, select, textarea")].filter((el) => !el.disabled);
+    const first = all[0];
+    const last = all.at(-1);
+    const active = this.shadowRoot.activeElement;
+    if (e.shiftKey && active === first) {
+      last?.focus();
+      e.preventDefault();
+    } else if (!e.shiftKey && active === last) {
+      first?.focus();
+      e.preventDefault();
+    }
+  }
+
+  _renderSheet() {
+    const total = this._groups.reduce((s, g) => s + (Number(g.weight) || 0), 0);
+    const setGroups = (fn) => {
+      const g = clone(this._groups);
+      fn(g);
+      this._groups = g;
+    };
+    const setScale = (fn) => {
+      const s = clone(this._scale);
+      fn(s);
+      this._scale = s;
+    };
+    return html`<div class="sheet-layer" @click="${this._closeSheet}">
+      <aside class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-t" @click="${(e) => e.stopPropagation()}" @keydown="${this._sheetKeys}">
+        <header class="sheet-head">
+          <div>
+            <h3 id="sheet-t">Course settings</h3>
+            <p class="sub">For every term this sequence runs. Term dates are chosen at export.</p>
+          </div>
+          <button class="x" aria-label="Close course settings" title="Close (Esc)" @click="${this._closeSheet}">${lucide("oer:x")}</button>
+        </header>
+        <div class="sheet-body settings">
+          <div class="pair">
+            <label class="field"
+              >Length (weeks)<input class="input" type="number" min="1" .value="${String(this._fields.weeks)}" @input="${(e) => (this._fields = { ...this._fields, weeks: Number(e.target.value) || "" })}"
+            /></label>
+            <label class="field"
+              >Delivery
+              <select @change="${(e) => (this._fields = { ...this._fields, delivery: e.target.value })}">
+                ${DELIVERY.map((d) => html`<option value="${d}" ?selected="${this._fields.delivery === d}">${d}</option>`)}
+              </select>
+            </label>
+          </div>
+          <section aria-labelledby="groups-t">
+            <h4 id="groups-t">Grade groups</h4>
+            <div class="rows">
+              ${this._groups.map(
+                (g, gi) => html`<div class="entry">
+                  <input class="input" aria-label="Group name" .value="${g.name}" @input="${(e) => setGroups((x) => (x[gi].name = e.target.value))}" />
+                  <input class="input num" type="number" min="0" max="100" aria-label="${g.name} weight (%)" .value="${String(g.weight ?? "")}" @input="${(e) => setGroups((x) => (x[gi].weight = Number(e.target.value) || 0))}" />
+                  <span class="unit">%</span>
+                  <button class="icon" aria-label="Remove ${g.name}" title="Remove" @click="${() => setGroups((x) => x.splice(gi, 1))}">${lucide("oer:x", "sm")}</button>
+                </div>`,
+              )}
+            </div>
+            <p class="total ${this._groups.length && Math.round(total) !== 100 ? "off" : ""}">Total ${Math.round(total * 10) / 10}%${this._groups.length && Math.round(total) !== 100 ? " (should be 100%)" : ""}</p>
+            <button class="btn outline small" @click="${() => setGroups((x) => x.push({ id: uid(), name: "New group", weight: 0 }))}">${lucide("oer:plus", "sm")}Add group</button>
+            <p class="hint">The LMS weights groups, not single assignments. Within a group, points set each assignment's share.</p>
+          </section>
+          <section aria-labelledby="scale-t">
+            <h4 id="scale-t">Rubric point scale</h4>
+            <div class="rows">
+              ${this._scale.map(
+                (l, li) => html`<div class="entry">
+                  <input class="input" aria-label="Rating name" .value="${l.name}" @input="${(e) => setScale((x) => (x[li].name = e.target.value))}" />
+                  <input
+                    class="input num"
+                    type="number"
+                    min="0"
+                    max="100"
+                    aria-label="${l.name} (% of the criterion's points)"
+                    .value="${String(Math.round((l.share ?? 0) * 100))}"
+                    @input="${(e) => setScale((x) => (x[li].share = (Number(e.target.value) || 0) / 100))}"
+                  />
+                  <span class="unit">%</span>
+                  <button class="icon" aria-label="Remove ${l.name}" title="Remove" @click="${() => setScale((x) => x.splice(li, 1))}">${lucide("oer:x", "sm")}</button>
+                </div>`,
+              )}
+            </div>
+            <button class="btn outline small" @click="${() => setScale((x) => x.push({ name: "New rating", share: 0.5 }))}">${lucide("oer:plus", "sm")}Add rating</button>
+            <p class="hint">Every rubric criterion gets these ratings, as a share of its points. An assignment's points are split evenly across its rubric's criteria.</p>
+          </section>
+        </div>
+        <footer class="sheet-foot"><button class="btn primary" @click="${this._closeSheet}">Done</button></footer>
+      </aside>
+    </div>`;
   }
 
   /* ---------- render ---------- */
 
   static get styles() {
-    return css`
-      :host {
-        position: fixed;
-        inset: 0;
-        z-index: 10000;
-        display: none;
-        font-family: var(--font-sans, system-ui, sans-serif);
-        color: var(--foreground);
-        text-align: start;
-      }
-      :host([open]) {
-        display: grid;
-        place-items: center;
-      }
-      .backdrop {
-        position: absolute;
-        inset: 0;
-        background: rgb(0 0 0 / 0.5);
-      }
-      .dialog {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: min(84rem, calc(100vw - 1.5rem));
-        height: calc(100dvh - 1.5rem);
-        background: var(--background);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        box-shadow: 0 16px 48px rgb(0 0 0 / 0.24);
-        overflow: hidden;
-      }
-      button,
-      input,
-      select {
-        font: inherit;
-        color: inherit;
-      }
-      :focus-visible {
-        outline: 2px solid var(--ring);
-        outline-offset: 1px;
-      }
-      .lucide {
-        flex: none;
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        background: currentColor;
-        -webkit-mask: var(--src) center / contain no-repeat;
-        mask: var(--src) center / contain no-repeat;
-      }
-      .lucide.sm {
-        width: 0.875rem;
-        height: 0.875rem;
-      }
-      header {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.875rem 0.75rem 0.875rem 1.25rem;
-        border-bottom: 1px solid var(--border);
-      }
-      .heading {
-        flex: 1 1 18rem;
-        min-width: 0;
-      }
-      h2 {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-      .sub {
-        margin: 0.125rem 0 0;
-        font-size: 0.8125rem;
-        color: var(--muted-foreground);
-      }
-      .headfields {
-        display: flex;
-        align-items: flex-end;
-        gap: 0.75rem;
-      }
-      .x,
-      .icon {
-        all: unset;
-        flex: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        border-radius: var(--radius-md);
-        color: var(--muted-foreground);
-        cursor: pointer;
-      }
-      .icon.sm {
-        width: 1.75rem;
-        height: 1.75rem;
-      }
-      .icon[disabled] {
-        opacity: 0.35;
-        cursor: default;
-      }
-      .x:hover,
-      .icon:not([disabled]):hover {
-        background: var(--accent);
-        color: var(--foreground);
-      }
-      .body {
-        flex: 1;
-        min-height: 0;
-        display: grid;
-        grid-template-columns: 19rem minmax(0, 1fr) 21rem;
-      }
-      .col {
-        min-height: 0;
-        overflow-y: auto;
-        padding: 1rem;
-      }
-      .col + .col {
-        border-left: 1px solid var(--border);
-      }
-      h3 {
-        margin: 0 0 0.5rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-      }
-      label.field {
-        display: flex;
-        flex-direction: column;
-        gap: 0.3125rem;
-        font-size: 0.8125rem;
-        font-weight: 500;
-      }
-      .input,
-      select {
-        box-sizing: border-box;
-        width: 100%;
-        height: 2.125rem;
-        padding: 0 0.625rem;
-        border: 1px solid var(--input-border, var(--border));
-        border-radius: var(--radius-md);
-        background: var(--background);
-        font-size: 0.875rem;
-      }
-      .input.num {
-        width: 5rem;
-      }
-      .hint {
-        margin: 0;
-        font-size: 0.75rem;
-        font-weight: 400;
-        color: var(--muted-foreground);
-      }
-      /* library */
-      .search {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-bottom: 0.75rem;
-      }
-      .lib {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-      }
-      .lib li {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.375rem 0.25rem;
-        border-bottom: 1px solid var(--border);
-      }
-      .lib .t {
-        flex: 1;
-        min-width: 0;
-        font-size: 0.8125rem;
-      }
-      .lib .t small {
-        display: block;
-        color: var(--muted-foreground);
-        font-size: 0.6875rem;
-      }
-      .lib .course {
-        color: var(--primary);
-      }
-      /* modules */
-      .module {
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        margin-bottom: 0.75rem;
-        background: var(--card, var(--background));
-      }
-      .module[aria-current="true"] {
-        border-color: var(--ring);
-      }
-      .mhead {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.375rem;
-        padding: 0.5rem 0.5rem 0.5rem 0.75rem;
-        border-bottom: 1px solid var(--border);
-      }
-      .mhead .title {
-        flex: 1 1 14rem;
-        min-width: 0;
-        height: 2rem;
-        font-weight: 600;
-      }
-      .mhead .week {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        font-size: 0.75rem;
-        color: var(--muted-foreground);
-      }
-      .mhead .week .input {
-        width: 3.75rem;
-        height: 2rem;
-      }
-      .rows {
-        list-style: none;
-        margin: 0;
-        padding: 0.25rem;
-      }
-      .row {
-        display: flex;
-        align-items: center;
-        gap: 0.375rem;
-        padding: 0.125rem 0.25rem 0.125rem 0.5rem;
-        border-radius: var(--radius-md);
-      }
-      .row[aria-selected="true"] {
-        background: var(--accent);
-      }
-      .row .pick {
-        all: unset;
-        flex: 1;
-        min-width: 0;
-        display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-        padding: 0.375rem 0;
-        cursor: pointer;
-        font-size: 0.8125rem;
-      }
-      .row .pick .name {
-        flex: 1;
-        min-width: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .row .pick small {
-        flex: none;
-        color: var(--muted-foreground);
-        font-size: 0.75rem;
-      }
-      .row.header .pick {
-        font-weight: 600;
-        color: var(--muted-foreground);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-      .row .tools {
-        display: none;
-        gap: 0.125rem;
-      }
-      .row:hover .tools,
-      .row:focus-within .tools,
-      .row[aria-selected="true"] .tools {
-        display: flex;
-      }
-      .madd {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0.25rem 0.5rem 0.5rem;
-      }
-      .btn {
-        all: unset;
-        box-sizing: border-box;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-        height: 2.125rem;
-        padding: 0 0.75rem;
-        border-radius: var(--radius-md);
-        font-size: 0.8125rem;
-        font-weight: 500;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-      .btn.small {
-        height: 1.875rem;
-        padding: 0 0.5rem;
-        font-size: 0.75rem;
-      }
-      .btn.primary {
-        background: var(--primary);
-        color: var(--primary-foreground);
-      }
-      .btn.primary[aria-disabled="true"] {
-        opacity: 0.55;
-        cursor: default;
-      }
-      .btn.outline {
-        border: 1px solid var(--input-border, var(--border));
-      }
-      .btn.ghost {
-        color: var(--muted-foreground);
-      }
-      .btn.outline:hover,
-      .btn.ghost:hover {
-        background: var(--accent);
-        color: var(--foreground);
-      }
-      .btn.destructive {
-        background: var(--destructive);
-        color: var(--destructive-foreground, #fff);
-      }
-      .empty {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 3rem 1rem;
-        color: var(--muted-foreground);
-        text-align: center;
-      }
-      /* settings */
-      .settings {
-        display: flex;
-        flex-direction: column;
-        gap: 0.875rem;
-      }
-      .settings .pagelink {
-        font-size: 0.8125rem;
-        color: var(--link, var(--primary));
-      }
-      .pair {
-        display: flex;
-        gap: 0.5rem;
-      }
-      .pair > * {
-        flex: 1;
-      }
-      .checks {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-      .check {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.8125rem;
-        font-weight: 400;
-      }
-      .check input {
-        accent-color: var(--primary);
-      }
-      .groups {
-        display: flex;
-        flex-direction: column;
-        gap: 0.375rem;
-      }
-      .group {
-        display: flex;
-        align-items: center;
-        gap: 0.375rem;
-      }
-      .group .input:first-child {
-        flex: 1;
-      }
-      .group .num {
-        width: 4.25rem;
-      }
-      .total {
-        font-size: 0.75rem;
-        color: var(--muted-foreground);
-        font-variant-numeric: tabular-nums;
-      }
-      .total.off {
-        color: var(--destructive);
-      }
-      /* footer */
-      footer {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.25rem;
-        border-top: 1px solid var(--border);
-      }
-      footer .status {
-        flex: 1;
-        min-width: 0;
-        font-size: 0.8125rem;
-      }
-      .warn {
-        color: var(--foreground);
-      }
-      .checklist {
-        max-height: 9rem;
-        overflow-y: auto;
-        margin: 0;
-        padding: 0.5rem 1.25rem 0.75rem 2.5rem;
-        border-top: 1px solid var(--border);
-        font-size: 0.8125rem;
-        background: var(--muted);
-      }
-      .checklist li + li {
-        margin-top: 0.25rem;
-      }
-      .linkbtn {
-        all: unset;
-        color: var(--link, var(--primary));
-        text-decoration: underline;
-        cursor: pointer;
-      }
-      @media (max-width: 1000px) {
-        .body {
-          grid-template-columns: minmax(0, 1fr);
-          grid-auto-rows: minmax(14rem, auto);
+    return [
+      super.styles,
+      css`
+        .dialog {
+          width: min(90rem, calc(100vw - 1.5rem));
+          height: calc(100dvh - 1.5rem);
+        }
+        .headtools {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .split {
+          flex: 1;
+          min-height: 0;
+          display: grid;
+          grid-template-columns: minmax(22rem, 1fr) minmax(24rem, 1.2fr);
+        }
+        .left {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+          border-right: 1px solid var(--border);
+        }
+        .right {
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+        /* the item shown on the right */
+        .row.current {
+          background: color-mix(in oklch, var(--primary) 9%, transparent);
+          box-shadow: inset 3px 0 0 var(--primary);
+          color: var(--foreground);
+        }
+        .row.current:focus-visible {
+          box-shadow:
+            inset 3px 0 0 var(--primary),
+            inset 0 0 0 2px var(--ring);
+        }
+        .chip {
+          flex: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          height: 1.25rem;
+          margin-right: 0.25rem;
+          padding: 0 0.5rem;
+          border-radius: 999px;
+          font-size: 0.6875rem;
+          font-weight: 500;
+          white-space: nowrap;
+          color: var(--muted-foreground);
+        }
+        .chip.week {
+          background: var(--muted);
+          color: var(--foreground);
+        }
+        .chip.quiet {
+          border: 1px dashed var(--border);
+        }
+        .type-chip {
+          white-space: nowrap;
+        }
+        .type-chip.graded {
+          color: var(--foreground);
+          background: transparent;
+          box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--primary) 50%, var(--border));
+        }
+        .detail-empty {
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 2rem;
+          color: var(--muted-foreground);
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        .detail-empty .lucide {
+          width: 1.5rem;
+          height: 1.5rem;
+          opacity: 0.5;
+        }
+        .detail-split {
+          flex: 1;
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+        }
+        .detail-pad {
+          padding: 1rem 1.25rem 1.25rem;
           overflow-y: auto;
         }
-        .col {
-          overflow: visible;
+        .detail-split > .detail-pad {
+          flex: 0 1 auto;
+          max-height: 50%;
+          border-bottom: 1px solid var(--border);
         }
-        .col + .col {
-          border-left: 0;
+        .eyebrow {
+          margin: 0;
+          font-size: 0.75rem;
+          font-weight: 500;
+          color: var(--muted-foreground);
+        }
+        .dtitle {
+          margin: 0.125rem 0 0;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .settings {
+          display: flex;
+          flex-direction: column;
+          gap: 0.875rem;
+        }
+        label.field {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          font-size: 0.8125rem;
+          font-weight: 500;
+        }
+        .input,
+        .settings select {
+          box-sizing: border-box;
+          width: 100%;
+          height: 2.25rem;
+          padding: 0 0.75rem;
+          border: 1px solid var(--input-border, var(--border));
+          border-radius: var(--radius-md);
+          background: var(--background);
+          color: inherit;
+          font: inherit;
+          font-size: 0.875rem;
+        }
+        .input:focus-visible,
+        .settings select:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        textarea.input {
+          height: auto;
+          padding: 0.5rem 0.75rem;
+          resize: vertical;
+        }
+        .input.num {
+          width: 5.5rem;
+          flex: none;
+        }
+        .hint {
+          margin: 0;
+          font-size: 0.75rem;
+          font-weight: 400;
+          color: var(--muted-foreground);
+        }
+        .pair {
+          display: flex;
+          gap: 0.75rem;
+        }
+        .pair > * {
+          flex: 1;
+          min-width: 0;
+        }
+        .check {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.875rem;
+        }
+        .check.end {
+          align-self: end;
+          padding-bottom: 0.5rem;
+        }
+        .check input {
+          width: 1rem;
+          height: 1rem;
+          margin: 0;
+          accent-color: var(--primary);
+        }
+        fieldset.checks {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          margin: 0;
+          padding: 0;
+          border: 0;
+        }
+        fieldset.checks legend {
+          margin-bottom: 0.375rem;
+          padding: 0;
+          font-size: 0.8125rem;
+          font-weight: 500;
+        }
+        .stat {
+          margin: 0;
+          font-size: 0.875rem;
+        }
+        .due-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          font-size: 0.875rem;
+        }
+        .due-list li {
+          display: flex;
+          justify-content: space-between;
+          gap: 0.75rem;
+          padding: 0.375rem 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .due-list small {
+          font-size: 0.75rem;
+          color: var(--muted-foreground);
+          white-space: nowrap;
+        }
+        .preview {
+          flex: 1 1 0;
+          min-height: 14rem;
+          display: flex;
+          flex-direction: column;
+          background: var(--muted);
+        }
+        .preview-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          padding: 0.5rem 1.25rem;
+          font-size: 0.75rem;
+          font-weight: 500;
+          color: var(--muted-foreground);
+        }
+        .preview-bar a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          color: var(--link, var(--primary));
+        }
+        .preview iframe,
+        .frame-wait {
+          flex: 1;
+          margin: 0 1.25rem 1.25rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          background: var(--background);
+        }
+        /* shadcn Sheet: course settings, from the right */
+        .settings-btn {
+          height: 2rem;
+          padding: 0 0.75rem;
+          font-size: 0.8125rem;
+        }
+        .sheet-layer {
+          position: absolute;
+          inset: 0;
+          z-index: 20;
+          background: rgb(0 0 0 / 0.35);
+        }
+        .sheet {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: min(28rem, 100%);
+          display: flex;
+          flex-direction: column;
+          background: var(--background);
+          border-left: 1px solid var(--border);
+          box-shadow: -16px 0 40px rgb(0 0 0 / 0.18);
+        }
+        .sheet-head {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 0.5rem;
+          padding: 1rem 0.75rem 1rem 1.25rem;
+          border-bottom: 1px solid var(--border);
+        }
+        .sheet-head h3 {
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .sheet-body {
+          flex: 1;
+          overflow-y: auto;
+          padding: 1.25rem;
+          gap: 1.5rem;
+        }
+        .sheet-body section {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .sheet-body h4 {
+          margin: 0;
+          font-size: 0.875rem;
+          font-weight: 600;
+        }
+        .sheet-body .rows {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+        }
+        .sheet-body .entry {
+          display: flex;
+          align-items: center;
+          gap: 0.375rem;
+        }
+        .sheet-body .entry .input:first-child {
+          flex: 1;
+          min-width: 0;
+        }
+        .unit {
+          font-size: 0.8125rem;
+          color: var(--muted-foreground);
+        }
+        .btn.small {
+          align-self: flex-start;
+          height: 2rem;
+          padding: 0 0.75rem;
+          font-size: 0.8125rem;
+        }
+        .sheet-foot {
+          justify-content: flex-end;
+        }
+        .icon {
+          all: unset;
+          flex: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          border-radius: var(--radius-md);
+          color: var(--muted-foreground);
+          cursor: pointer;
+        }
+        .icon:hover {
+          background: var(--accent);
+          color: var(--foreground);
+        }
+        .icon:focus-visible,
+        .x:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .total {
+          margin: 0;
+          font-size: 0.8125rem;
+          color: var(--muted-foreground);
+          font-variant-numeric: tabular-nums;
+        }
+        .total.off {
+          color: var(--destructive);
+        }
+        /* things to check before exporting */
+        .checklist {
+          flex: none;
+          max-height: 10rem;
+          overflow-y: auto;
+          margin: 0;
+          padding: 0.625rem 1.25rem 0.75rem 2.5rem;
           border-top: 1px solid var(--border);
+          background: var(--muted);
+          font-size: 0.8125rem;
         }
-      }
-    `;
-  }
-
-  _renderLibrary() {
-    const types = contentTypes(items()).types;
-    const label = (id) => types.find((t) => t.id === id)?.label || id;
-    const list = this._library();
-    const target = this._seq.modules[this._sel?.m ?? this._seq.modules.length - 1];
-    return html`<section class="col" aria-labelledby="lib-h">
-      <h3 id="lib-h">Add pages</h3>
-      <div class="search">
-        <input id="q" class="input" type="search" placeholder="Search pages" aria-label="Search pages" .value="${this._query}" @input="${(e) => (this._query = e.target.value)}" />
-        <select aria-label="Type" .value="${this._typeFilter}" @change="${(e) => (this._typeFilter = e.target.value)}">
-          <option value="">All types</option>
-          ${LIBRARY_TYPES.map((t) => html`<option value="${t}" ?selected="${this._typeFilter === t}">${label(t)}</option>`)}
-        </select>
-        <p class="hint">${target ? html`Adds to <b>${target.title}</b>. Select a module to add there.` : "Adds a first module."} This course's pages come first.</p>
-      </div>
-      <ul class="lib" role="list">
-        ${list.map(({ item, course }) => {
-          const placed = this._placement(item.id);
-          return html`<li>
-            <span class="t">${item.title}<small>${label(item.metadata?.pageType)}${course ? html` · <span class="course">this course</span>` : ""}${placed ? ` · in ${placed}` : ""}</small></span>
-            <button class="icon sm" aria-label="Add ${item.title}" title="Add" @click="${() => this._addPage(item)}">${lucide("oer:plus", "sm")}</button>
-          </li>`;
-        })}
-      </ul>
-    </section>`;
-  }
-
-  _summary(it) {
-    const graded = it.graded !== false;
-    if (it.as === "assignment") return [graded ? `${it.points || 0} pts` : "Ungraded", it.due?.week ? `week ${it.due.week}` : "no due week", it.peerReviews ? "peer review" : "", it.groupSet ? "group" : ""].filter(Boolean).join(" · ");
-    if (it.as === "discussion") return ["Discussion", graded ? `${it.points || 0} pts` : "", it.due?.week ? `week ${it.due.week}` : ""].filter(Boolean).join(" · ");
-    if (it.as === "quiz") return it.quizType === "graded" ? "Graded quiz" : "Practice quiz";
-    if (it.as === "url") return "Link";
-    return ROLES[it.as]?.label || "Page";
-  }
-
-  _renderModules() {
-    const byId = new Map(items().map((i) => [i.id, i]));
-    const mods = this._seq.modules;
-    return html`<section class="col" aria-labelledby="mods-h">
-      <h3 id="mods-h">Modules</h3>
-      ${mods.length
-        ? mods.map(
-            (m, mi) => html`<div class="module" aria-current="${this._sel?.m === mi ? "true" : "false"}">
-              <div class="mhead" @click="${(e) => e.target === e.currentTarget && (this._sel = { m: mi, i: null })}">
-                <input class="input title" aria-label="Module title" .value="${m.title}" @focus="${() => (this._sel = { m: mi, i: null })}" @input="${(e) => this._setModule(mi, { title: e.target.value })}" />
-                <label class="week">Week<input class="input" type="number" min="1" aria-label="Week of ${m.title}" .value="${String(m.week || "")}" @input="${(e) => this._setModule(mi, { week: Number(e.target.value) || "" })}" /></label>
-                <button class="icon sm" aria-label="Move ${m.title} up" title="Move up" @click="${() => this._moveModule(mi, -1)}">${lucide("oer:arrow-up", "sm")}</button>
-                <button class="icon sm" aria-label="Move ${m.title} down" title="Move down" @click="${() => this._moveModule(mi, 1)}">${lucide("oer:arrow-down", "sm")}</button>
-                <button class="icon sm" aria-label="Remove ${m.title}" title="Remove module" @click="${() => this._removeModule(mi)}">${lucide("icons:delete", "sm")}</button>
-              </div>
-              <ul class="rows" role="listbox" aria-label="${m.title}">
-                ${(m.items || []).map((it, ii) => {
-                  const selected = this._sel?.m === mi && this._sel?.i === ii;
-                  const page = byId.get(it.page);
-                  const name = it.header || (it.as === "url" ? it.title || it.url || "New link" : page?.title) || "(missing page)";
-                  const level = indentOf(it);
-                  return html`<li class="row ${it.header ? "header" : ""}" role="option" aria-selected="${selected ? "true" : "false"}" style="padding-left: ${0.5 + level * 1.25}rem">
-                    <button class="pick" @click="${() => (this._sel = { m: mi, i: ii })}"><span class="name">${name}</span>${it.header ? "" : html`<small>${this._summary(it)}</small>`}</button>
-                    <span class="tools">
-                      <button class="icon sm" aria-label="Outdent ${name}" title="Outdent" ?disabled="${level === 0}" @click="${() => this._indent(mi, ii, -1)}">${lucide("oer:indent-decrease", "sm")}</button>
-                      <button class="icon sm" aria-label="Indent ${name}" title="Indent" ?disabled="${level >= 5}" @click="${() => this._indent(mi, ii, 1)}">${lucide("oer:indent-increase", "sm")}</button>
-                      <button class="icon sm" aria-label="Move ${name} up" title="Move up" @click="${() => this._moveItem(mi, ii, -1)}">${lucide("oer:arrow-up", "sm")}</button>
-                      <button class="icon sm" aria-label="Move ${name} down" title="Move down" @click="${() => this._moveItem(mi, ii, 1)}">${lucide("oer:arrow-down", "sm")}</button>
-                      <button class="icon sm" aria-label="Remove ${name}" title="Remove" @click="${() => this._removeItem(mi, ii)}">${lucide("oer:x", "sm")}</button>
-                    </span>
-                  </li>`;
-                })}
-              </ul>
-              <div class="madd">
-                <button class="btn ghost small" @click="${() => (this._sel = { m: mi, i: null })}">${lucide("oer:plus", "sm")}Add pages here</button>
-                <button class="btn ghost small" @click="${() => this._addHeader(mi)}">${lucide("editor:title", "sm")}Add a header</button>
-                <button class="btn ghost small" @click="${() => this._addLink(mi)}">${lucide("oer:link", "sm")}Add a link</button>
-              </div>
-            </div>`,
-          )
-        : html`<div class="empty"><p>No modules yet. Add one per week or unit, then add pages to it.</p></div>`}
-      <button class="btn outline" @click="${this._addModule}">${lucide("oer:plus", "sm")}Add a module</button>
-    </section>`;
-  }
-
-  _renderItemSettings(it) {
-    const page = items().find((i) => i.id === it.page);
-    if (it.header) {
-      return html`<div class="settings">
-        <h3>Header</h3>
-        <label class="field">Text<input class="input" .value="${it.header}" @input="${(e) => this._setItem({ header: e.target.value })}" /></label>
-        <p class="hint">A text header in the Canvas module, grouping the items under it. Indent items beneath it to show they belong to it.</p>
-      </div>`;
-    }
-    if (it.as === "url") {
-      return html`<div class="settings">
-        <h3>Link</h3>
-        <label class="field">Title<input class="input" placeholder="Live session (Zoom)" .value="${it.title || ""}" @input="${(e) => this._setItem({ title: e.target.value })}" /></label>
-        <label class="field">Web address<input class="input" type="url" placeholder="https://…" .value="${it.url || ""}" @input="${(e) => this._setItem({ url: e.target.value.trim() })}" /></label>
-        <label class="check"><input type="checkbox" .checked="${it.newTab !== false}" @change="${(e) => this._setItem({ newTab: e.target.checked })}" />Open in a new tab</label>
-        <p class="hint">For anything that isn't a page on this site: a video call, a tool, another site.</p>
-      </div>`;
-    }
-    const due = it.due || {};
-    const dayValue = due.day || (due.rule === "first-class" ? "first-class" : "");
-    const setDue = (patch) => this._setItem({ due: { ...due, ...patch } });
-    return html`<div class="settings">
-      <h3>${page?.title || "Missing page"}</h3>
-      ${page ? html`<a class="pagelink" href="${page.slug}" target="_blank">Open the page</a>` : ""}
-      <label class="field">Becomes
-        <select @change="${(e) => this._setRole(e.target.value)}">
-          ${Object.entries(ROLES).map(([v, r]) => html`<option value="${v}" ?selected="${it.as === v}">${r.label}</option>`)}
-        </select>
-        <span class="hint">${ROLES[it.as]?.note ? `${ROLES[it.as].note[0].toUpperCase()}${ROLES[it.as].note.slice(1)}.` : ""}</span>
-      </label>
-      ${it.as === "assignment"
-        ? html`<label class="check"><input type="checkbox" .checked="${it.graded !== false}" @change="${(e) => this._setItem({ graded: e.target.checked })}" />Graded</label>
-            ${it.graded !== false
-              ? html`<div class="pair">
-                    <label class="field">Points<input class="input" type="number" min="0" .value="${String(it.points ?? "")}" @input="${(e) => this._setItem({ points: Number(e.target.value) || 0 })}" /></label>
-                    <label class="field">Grade group
-                      <select @change="${(e) => this._setItem({ group: e.target.value })}">
-                        <option value="" ?selected="${!it.group}">None</option>
-                        ${this._seq.groups.map((g) => html`<option value="${g.id}" ?selected="${it.group === g.id}">${g.name}</option>`)}
-                      </select>
-                    </label>
-                  </div>
-                  <label class="field">Rubric
-                    <select @change="${(e) => this._setItem({ rubric: e.target.value })}">
-                      <option value="" ?selected="${!it.rubric}">None</option>
-                      ${this._rubrics.map((r) => html`<option value="${r.slug}" ?selected="${it.rubric === r.slug}">${r.name} (${r.criteria?.length || 0} criteria)</option>`)}
-                    </select>
-                  </label>`
-              : ""}
-            <div class="pair">
-              <label class="field">Due week<input class="input" type="number" min="1" .value="${String(due.week ?? "")}" @input="${(e) => setDue({ week: Number(e.target.value) || "" })}" /></label>
-              <label class="field">Time <span class="hint">optional</span><input class="input" type="time" .value="${due.time || ""}" @input="${(e) => setDue({ time: e.target.value || undefined })}" /></label>
-            </div>
-            <label class="field">Due on
-              <select @change="${(e) => (e.target.value === "first-class" ? setDue({ day: undefined, rule: "first-class" }) : setDue({ day: e.target.value || undefined, rule: undefined }))}">
-                ${DAYS.map(([v, l]) => html`<option value="${v}" ?selected="${dayValue === v}">${l}</option>`)}
-              </select>
-              <span class="hint">The term's usual day and time are chosen at export, Sunday 11:59 pm unless changed.</span>
-            </label>
-            <fieldset class="checks" style="border:0;margin:0;padding:0">
-              <legend class="field" style="font-size:0.8125rem;font-weight:500;margin-bottom:0.25rem">Students submit</legend>
-              ${Object.entries(SUBMISSION_TYPES).map(
-                ([v, l]) => html`<label class="check"><input type="checkbox" .checked="${(it.submission || []).includes(v)}" @change="${(e) => this._setItem({ submission: e.target.checked ? [...new Set([...(it.submission || []), v])] : (it.submission || []).filter((x) => x !== v) })}" />${l}</label>`,
-              )}
-            </fieldset>
-            ${(it.submission || []).includes("online_upload")
-              ? html`<label class="field">Allowed file types <span class="hint">optional, comma-separated</span><input class="input" placeholder="pdf, jpg, stl" .value="${(it.extensions || []).join(", ")}" @input="${(e) => this._setItem({ extensions: e.target.value.split(/[\s,]+/).map((x) => x.replace(/^\./, "").toLowerCase()).filter(Boolean) })}" /></label>`
-              : ""}
-            ${it.graded !== false
-              ? html`<label class="check"><input type="checkbox" .checked="${!!it.peerReviews}" @change="${(e) => this._setItem({ peerReviews: e.target.checked ? { count: 2, anonymous: false } : undefined })}" />Peer reviews</label>
-                  ${it.peerReviews
-                    ? html`<div class="pair">
-                        <label class="field">Reviews each<input class="input" type="number" min="1" .value="${String(it.peerReviews.count ?? 2)}" @input="${(e) => this._setItem({ peerReviews: { ...it.peerReviews, count: Math.max(1, Number(e.target.value) || 1) } })}" /></label>
-                        <label class="check" style="align-self:end;padding-bottom:0.5rem"><input type="checkbox" .checked="${!!it.peerReviews.anonymous}" @change="${(e) => this._setItem({ peerReviews: { ...it.peerReviews, anonymous: e.target.checked } })}" />Anonymous</label>
-                      </div>
-                      <p class="hint">Canvas assigns reviewers automatically when the assignment is due.</p>`
-                    : ""}`
-              : ""}
-            <label class="check"><input type="checkbox" .checked="${!!it.groupSet}" @change="${(e) => this._setItem({ groupSet: e.target.checked ? "Project groups" : undefined, gradeIndividually: undefined })}" />Group assignment</label>
-            ${it.groupSet
-              ? html`<label class="field">Group set<input class="input" .value="${it.groupSet}" @input="${(e) => this._setItem({ groupSet: e.target.value })}" /><span class="hint">Canvas makes this group set if the course doesn't have it; put students in groups there.</span></label>
-                  <label class="check"><input type="checkbox" .checked="${!!it.gradeIndividually}" @change="${(e) => this._setItem({ gradeIndividually: e.target.checked })}" />Grade each student individually</label>`
-              : ""}`
-        : ""}
-      ${it.as === "discussion" ? this._renderDiscussionSettings(it, due, dayValue, setDue) : ""}
-      ${it.as === "file" ? this._renderFileSettings(it, page) : ""}
-      ${it.as === "quiz"
-        ? html`<label class="field">Quiz
-              <select @change="${(e) => this._setItem({ quizType: e.target.value })}">
-                <option value="practice" ?selected="${it.quizType !== "graded"}">Practice (not graded)</option>
-                <option value="graded" ?selected="${it.quizType === "graded"}">Graded</option>
-              </select>
-            </label>
-            ${it.quizType === "graded"
-              ? html`<div class="pair">
-                  <label class="field">Due week<input class="input" type="number" min="1" .value="${String(due.week ?? "")}" @input="${(e) => setDue({ week: Number(e.target.value) || "" })}" /></label>
-                  <label class="field">Grade group
-                    <select @change="${(e) => this._setItem({ group: e.target.value })}">
-                      <option value="" ?selected="${!it.group}">None</option>
-                      ${this._seq.groups.map((g) => html`<option value="${g.id}" ?selected="${it.group === g.id}">${g.name}</option>`)}
-                    </select>
-                  </label>
-                </div>`
-              : ""}
-            <p class="hint">Built from the page's multiple-choice and true/false questions (a point each); self-checks become ungraded questions with their answer as feedback. Draft questions stay out until published.</p>`
-        : ""}
-      ${it.as === "page" ? html`<p class="hint">Shows the live page in Canvas, so edits on the site appear there.</p>` : ""}
-      ${it.as === "link" ? html`<p class="hint">Opens the page, or for a resource its source, in a new tab.</p>` : ""}
-    </div>`;
-  }
-
-  _renderDiscussionSettings(it, due, dayValue, setDue) {
-    const graded = it.graded !== false;
-    return html`<label class="check"><input type="checkbox" .checked="${graded}" @change="${(e) => this._setItem({ graded: e.target.checked })}" />Graded</label>
-      ${graded
-        ? html`<div class="pair">
-              <label class="field">Points<input class="input" type="number" min="0" .value="${String(it.points ?? "")}" @input="${(e) => this._setItem({ points: Number(e.target.value) || 0 })}" /></label>
-              <label class="field">Grade group
-                <select @change="${(e) => this._setItem({ group: e.target.value })}">
-                  <option value="" ?selected="${!it.group}">None</option>
-                  ${this._seq.groups.map((g) => html`<option value="${g.id}" ?selected="${it.group === g.id}">${g.name}</option>`)}
-                </select>
-              </label>
-            </div>
-            <label class="field">Rubric
-              <select @change="${(e) => this._setItem({ rubric: e.target.value })}">
-                <option value="" ?selected="${!it.rubric}">None</option>
-                ${this._rubrics.map((r) => html`<option value="${r.slug}" ?selected="${it.rubric === r.slug}">${r.name} (${r.criteria?.length || 0} criteria)</option>`)}
-              </select>
-            </label>`
-        : ""}
-      <div class="pair">
-        <label class="field">${graded ? "Posts due week" : "Week"}<input class="input" type="number" min="1" .value="${String(due.week ?? "")}" @input="${(e) => setDue({ week: Number(e.target.value) || "" })}" /></label>
-        <label class="field">Time <span class="hint">optional</span><input class="input" type="time" .value="${due.time || ""}" @input="${(e) => setDue({ time: e.target.value || undefined })}" /></label>
-      </div>
-      <label class="field">Due on
-        <select @change="${(e) => (e.target.value === "first-class" ? setDue({ day: undefined, rule: "first-class" }) : setDue({ day: e.target.value || undefined, rule: undefined }))}">
-          ${DAYS.map(([v, l]) => html`<option value="${v}" ?selected="${dayValue === v}">${l}</option>`)}
-        </select>
-      </label>
-      <label class="field">Replies required<input class="input num" type="number" min="0" .value="${String(it.replies ?? 0)}" @input="${(e) => this._setItem({ replies: Math.max(0, Number(e.target.value) || 0) })}" /></label>
-      <label class="field">More requirements <span class="hint">one per line</span>
-        <textarea class="input" rows="3" style="height:auto;padding:0.5rem 0.625rem" placeholder="Name what's working and one change you'd try" .value="${(it.requirements || []).join("\n")}" @input="${(e) => this._setItem({ requirements: e.target.value.split("\n").map((l) => l.trim()).filter(Boolean) })}"></textarea>
-      </label>
-      <label class="check"><input type="checkbox" .checked="${!!it.requireInitialPost}" @change="${(e) => this._setItem({ requireInitialPost: e.target.checked })}" />Students post before they see others' replies</label>
-      <label class="check"><input type="checkbox" .checked="${!!it.groupSet}" @change="${(e) => this._setItem({ groupSet: e.target.checked ? "Critique groups" : undefined })}" />Group discussion</label>
-      ${it.groupSet ? html`<label class="field">Group set<input class="input" .value="${it.groupSet}" @input="${(e) => this._setItem({ groupSet: e.target.value })}" /></label>` : ""}
-      <p class="hint">The prompt shows the requirements (posting by the due date, the replies, these lines, the rubric), then the page's instructions, embedded.</p>`;
-  }
-
-  _renderFileSettings(it, page) {
-    const files = attachmentsOf(page);
-    if (!files.length) return html`<p class="hint">This page has no attachments. Add files to its Attachments field in Page details, then choose one here.</p>`;
-    return html`<label class="field">File
-        <select @change="${(e) => this._setItem({ file: e.target.value })}">
-          ${files.map((f) => html`<option value="${f.url}" ?selected="${it.file === f.url}">${f.title || f.url.split("/").pop()}</option>`)}
-        </select>
-      </label>
-      <p class="hint">Copied into the Canvas course's files. A file on another site that can't be copied becomes a link to it.</p>`;
-  }
-
-  _renderSequenceSettings() {
-    const total = this._seq.groups.reduce((s, g) => s + (Number(g.weight) || 0), 0);
-    return html`<div class="settings">
-      <h3>Grade groups</h3>
-      <div class="groups">
-        ${this._seq.groups.map(
-          (g, gi) => html`<div class="group">
-            <input class="input" aria-label="Group name" .value="${g.name}" @input="${(e) => this._change((s) => (s.groups[gi].name = e.target.value))}" />
-            <input class="input num" type="number" min="0" max="100" aria-label="${g.name} weight (%)" .value="${String(g.weight ?? "")}" @input="${(e) => this._change((s) => (s.groups[gi].weight = Number(e.target.value) || 0))}" />
-            <span class="hint">%</span>
-            <button class="icon sm" aria-label="Remove ${g.name}" title="Remove" @click="${() => this._change((s) => s.groups.splice(gi, 1))}">${lucide("oer:x", "sm")}</button>
-          </div>`,
-        )}
-      </div>
-      <p class="total ${this._seq.groups.length && Math.round(total) !== 100 ? "off" : ""}">Total ${Math.round(total * 10) / 10}%</p>
-      <button class="btn outline small" style="align-self:flex-start" @click="${() => this._change((s) => s.groups.push({ id: uid(), name: "New group", weight: 0 }))}">${lucide("oer:plus", "sm")}Add a group</button>
-      <p class="hint">Canvas weights groups, not single assignments. Within a group, points set each assignment's share.</p>
-      <h3>Rubric point scale</h3>
-      <div class="groups">
-        ${this._seq.rubricScale.map(
-          (l, li) => html`<div class="group">
-            <input class="input" aria-label="Level name" .value="${l.name}" @input="${(e) => this._change((s) => (s.rubricScale[li].name = e.target.value))}" />
-            <input class="input num" type="number" min="0" max="100" aria-label="${l.name} (% of the criterion's points)" .value="${String(Math.round((l.share ?? 0) * 100))}" @input="${(e) => this._change((s) => (s.rubricScale[li].share = (Number(e.target.value) || 0) / 100))}" />
-            <span class="hint">%</span>
-            <button class="icon sm" aria-label="Remove ${l.name}" title="Remove" @click="${() => this._change((s) => s.rubricScale.splice(li, 1))}">${lucide("oer:x", "sm")}</button>
-          </div>`,
-        )}
-      </div>
-      <button class="btn outline small" style="align-self:flex-start" @click="${() => this._change((s) => s.rubricScale.push({ name: "New level", share: 0.5 }))}">${lucide("oer:plus", "sm")}Add a level</button>
-      <p class="hint">Every rubric criterion gets these ratings, as a share of its points (an assignment's points are split evenly across its rubric's criteria).</p>
-    </div>`;
+        .checklist li + li {
+          margin-top: 0.25rem;
+        }
+        .status {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+          font-size: 0.8125rem;
+          white-space: nowrap;
+        }
+        .linkbtn {
+          all: unset;
+          color: var(--link, var(--primary));
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          cursor: pointer;
+        }
+        .linkbtn:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 2px;
+        }
+        @media (max-width: 960px) {
+          .split {
+            grid-template-columns: minmax(0, 1fr);
+            grid-template-rows: minmax(14rem, 1fr) minmax(18rem, 1.2fr);
+          }
+          .left {
+            border-right: 0;
+            border-bottom: 1px solid var(--border);
+          }
+          .hints {
+            display: none;
+          }
+        }
+      `,
+    ];
   }
 
   render() {
-    if (!this.open || !this._seq) return html``;
+    if (!this.open) return html``;
+    const vis = this._visible();
     const page = this._page;
     const dirty = this._dirty;
-    const sel = this._sel;
-    const item = sel && sel.i !== null && sel.i !== undefined ? this._seq.modules[sel.m]?.items?.[sel.i] : null;
-    const draft = page ? { ...page, metadata: { ...page.metadata, oerSequence: this._seq, oerFields: { ...(page.metadata?.oerFields || {}), weeks: this._fields.weeks } } } : null;
-    const checks = draft ? readiness(draft, items()) : [];
+    const draft = page
+      ? { ...page, metadata: { ...page.metadata, oerSequence: this._sequence(), oerFields: { ...(page.metadata?.oerFields || {}), weeks: this._fields.weeks } } }
+      : null;
+    const checks = draft ? readiness(draft, this._items || []) : [];
+    const modules = this._rows.filter((r) => r.kind === "module").length;
+    const itemCount = this._rows.length - modules;
+    const anyKids = this._rows.some((_, i) => this._hasChildren(i));
     return html`
       <div class="backdrop" @click="${this._requestClose}"></div>
       <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="t">
         <header>
           <div class="heading">
             <h2 id="t">${lucide("icons:date-range")}${page?.title || "Course sequence"}</h2>
-            <p class="sub">Modules, what's in them, and how each works in an LMS. Term dates are chosen at export.</p>
+            <p class="sub">${this._fields.weeks || "?"} weeks, ${String(this._fields.delivery).toLowerCase()}. Changes apply when you save.</p>
           </div>
-          <div class="headfields">
-            <label class="field">Length (weeks)<input class="input num" type="number" min="1" .value="${String(this._fields.weeks)}" @input="${(e) => (this._fields = { ...this._fields, weeks: Number(e.target.value) || "" })}" /></label>
-            <label class="field">Delivery
-              <select @change="${(e) => (this._fields = { ...this._fields, delivery: e.target.value })}">
-                ${DELIVERY.map((d) => html`<option value="${d}" ?selected="${this._fields.delivery === d}">${d}</option>`)}
-              </select>
-            </label>
+          <div class="headtools">
+            <button class="btn outline settings-btn" aria-haspopup="dialog" aria-expanded="${this._sheet ? "true" : "false"}" @click="${this._openSheet}">
+              ${lucide("oer:sliders-horizontal", "sm")}Course settings
+            </button>
+            <button class="x" aria-label="Close" title="Close (Esc)" @click="${this._requestClose}">${lucide("oer:x")}</button>
           </div>
-          <button class="x" aria-label="Close" title="Close (Esc)" @click="${this._requestClose}">${lucide("oer:x")}</button>
         </header>
-        <div class="body">
-          ${this._renderLibrary()}
-          ${this._renderModules()}
-          <section class="col" aria-label="Settings">
-            ${item ? this._renderItemSettings(item) : this._renderSequenceSettings()}
-            ${item ? html`<p style="margin-top:1rem"><button class="linkbtn" @click="${() => (this._sel = null)}">Grade groups and rubric scale</button></p>` : ""}
+        <div class="split">
+          <section class="left" aria-label="Outline">
+            <div class="tools">
+              ${anyKids
+                ? html`<button class="tool" @click="${this._collapseAll}">${lucide("oer:chevron-right", "sm")}Collapse all</button>
+                    <button class="tool" @click="${() => (this._collapsed = new Set())}">${lucide("oer:chevron-down", "sm")}Expand all</button>`
+                : ""}
+              <span class="count">${modules} module${modules === 1 ? "" : "s"} · ${itemCount} item${itemCount === 1 ? "" : "s"}</span>
+            </div>
+            <div class="body">${this._renderTree(vis, "Modules")}</div>
           </section>
+          <section class="right" aria-label="Selected item">${this._renderDetail()}</section>
         </div>
-        ${this._showChecks && checks.length ? html`<ul class="checklist">${checks.map((c) => html`<li>${c.text}</li>`)}</ul>` : ""}
+        ${this._showChecks && checks.length ? html`<ul class="checklist" id="checks">${checks.map((c) => html`<li>${c.text}</li>`)}</ul>` : ""}
         <footer>
           ${this._confirmDiscard
-            ? html`<span class="status warn">Discard your changes to this sequence?</span>
+            ? html`<span class="warn">Discard your changes to this sequence?</span>
                 <button class="btn outline" @click="${() => (this._confirmDiscard = false)}">Keep editing</button>
                 <button class="btn destructive" @click="${this._close}">Discard</button>`
             : html`<span class="status">
                   ${checks.length
-                    ? html`<button class="linkbtn" aria-expanded="${this._showChecks ? "true" : "false"}" @click="${() => (this._showChecks = !this._showChecks)}">${checks.length} thing${checks.length === 1 ? "" : "s"} to check before exporting</button>`
-                    : html`${lucide("oer:check", "sm")} Ready to export`}
+                    ? html`${lucide("oer:circle-alert", "sm")}<button class="linkbtn" aria-expanded="${this._showChecks ? "true" : "false"}" aria-controls="checks" @click="${() => (this._showChecks = !this._showChecks)}">
+                          ${checks.length} thing${checks.length === 1 ? "" : "s"} to check before exporting
+                        </button>`
+                    : html`${lucide("oer:check", "sm")}Ready to export`}
                 </span>
+                <div class="hints" aria-hidden="true">
+                  <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span><span><kbd>⌥↑↓</kbd> move</span><span><kbd>↑↓</kbd> navigate</span><span><kbd>T</kbd> role</span><span><kbd>Del</kbd> remove</span>
+                  <span>drag ↔ to indent</span>
+                </div>
                 <button class="btn outline" @click="${this._requestClose}">Cancel</button>
-                <button class="btn primary" aria-disabled="${dirty && !this._saving ? "false" : "true"}" @click="${() => dirty && !this._saving && this._save()}">${this._saving ? "Saving…" : "Save sequence"}</button>`}
+                <button class="btn primary" aria-disabled="${dirty && !this._saving ? "false" : "true"}" @click="${() => dirty && !this._saving && this._save()}">
+                  ${this._saving ? "Saving…" : "Save sequence"}
+                </button>`}
         </footer>
+        ${this._typeMenu ? this._renderTypeMenu() : ""}
+        ${this._sheet ? this._renderSheet() : ""}
       </div>
     `;
   }

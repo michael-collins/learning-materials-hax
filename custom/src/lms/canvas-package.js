@@ -367,11 +367,15 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         counts.links++;
         continue;
       }
-      const page = byId.get(entry.page);
-      if (!page) {
+      const latest = byId.get(entry.page);
+      if (!latest) {
         warnings.push(`${mod.title}: a page in this module isn't on the site any more (${entry.page}).`);
         continue;
       }
+      // a page pinned to a release shows that release's frozen snapshot
+      const pinned = entry.version ? items.find((i) => i.metadata?.oerSnapshotOf === latest.id && i.metadata?.version === entry.version) : null;
+      if (entry.version && !pinned) warnings.push(`${latest.title}: version ${entry.version} wasn't found, so the latest version is used.`);
+      const page = pinned || latest;
       // the live page shows in Canvas only once it's published on the site
       if (!["link", "file"].includes(entry.as) && page.metadata?.published === false) unpublished.add(page.title);
       const title = entry.title && entry.as === "page" && entry.title !== "Overview" ? entry.title : page.title;

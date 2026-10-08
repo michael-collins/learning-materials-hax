@@ -142,7 +142,7 @@ export function readiness(page, items, run = null) {
   for (const m of sequence.modules) {
     if (m.week > weeks) out.push({ level: "warning", text: `${m.title} is in week ${m.week}, after the sequence's ${weeks} weeks.` });
     for (const it of m.items || []) {
-      if (it.header) continue;
+      if (it.header !== undefined) continue;
       if (it.as === "url") {
         if (!/^https?:\/\//.test(String(it.url || ""))) out.push({ level: "warning", text: `${m.title}: the link “${it.title || "untitled"}” needs a full web address (https://…).` });
         continue;

@@ -76,7 +76,8 @@ class OerOutlineBuilder extends LitElement {
     this._confirmDiscard = false;
     this.__keys = (e) => {
       if (!this.open || e.key !== "Escape") return;
-      if (globalThis.document.querySelector("oer-icon-picker[open]")) return;
+      // Esc in a picker opened from here closes the picker, not the builder
+      if (globalThis.document.querySelector("oer-icon-picker[open], oer-page-picker[open]")) return;
       if (this._typeMenu) this._typeMenu = null;
       else if (this._editing) this._editing = null;
       else this._requestClose();
@@ -622,7 +623,9 @@ class OerOutlineBuilder extends LitElement {
       if (e.shiftKey) this._outdent(row.id);
       else this._indent(row.id);
       this._focusRow(row.id);
-    } else if (e.key === "Enter" || e.key === "F2") this._startEdit(row.id);
+    } else if (e.key === "Enter" || e.key === "F2") {
+      if (this._canRename(row)) this._startEdit(row.id);
+    }
     else if (e.altKey && e.key === "ArrowUp") this._moveUp(row.id);
     else if (e.altKey && e.key === "ArrowDown") this._moveDown(row.id);
     else if (e.key === "ArrowUp") go(v - 1);
@@ -1813,17 +1816,20 @@ class OerOutlineBuilder extends LitElement {
       d?.overId === row.id && d.id !== row.id && d.position === "child" ? "child-target" : "",
       this._longPress === row.id ? "pressing" : "",
       this._invalid(index) ? "invalid" : "",
+      this._rowCurrent(row) ? "current" : "",
     ].join(" ");
     return html`<div
       class="${classes}"
       role="treeitem"
       tabindex="0"
       data-id="${row.id}"
+      aria-current="${this._rowCurrent(row) ? "true" : "false"}"
       aria-level="${row.depth + 1}"
       aria-expanded="${hasKids ? String(!collapsed) : ""}"
       aria-label="${row.title || "Untitled page"}"
       draggable="${editing ? "false" : "true"}"
       @keydown="${(e) => this._rowKeys(e, row, index, vis)}"
+      @focus="${() => this._rowFocused(row, index)}"
       @pointerdown="${() => this._pointerDown(row, index)}"
       @pointerup="${this._cancelLongPress}"
       @pointerleave="${this._cancelLongPress}"
@@ -1874,19 +1880,20 @@ class OerOutlineBuilder extends LitElement {
             class="edit"
             data-edit="${row.id}"
             .value="${row.title}"
-            placeholder="${row.type === HEADING_TYPE ? "Heading…" : row.depth === 0 ? "Page title…" : "Sub-page title…"}"
+            placeholder="${this._placeholder(row)}"
             aria-label="Page title"
             @input="${(e) => this._rename(row.id, e.target.value)}"
             @keydown="${(e) => this._editKeys(e, row)}"
             @blur="${() => this._editing === row.id && this._stopEdit(false)}"
           />`
-        : html`<div class="title" @dblclick="${() => this._startEdit(row.id)}">
+        : html`<div class="title" @dblclick="${() => this._canRename(row) && this._startEdit(row.id)}">
             ${row.title
               ? html`<span class="${row.type === HEADING_TYPE ? "heading-title" : row.depth === 0 ? "top" : "nested"}">${row.title}</span>`
-              : html`<span class="placeholder">${row.type === HEADING_TYPE ? "Heading…" : row.depth === 0 ? "Page title…" : "Sub-page title…"}</span>`}
+              : html`<span class="placeholder">${this._placeholder(row)}</span>`}
             ${row.orig ? "" : html`<span class="new-badge">New</span>`}
           </div>`}
-      <button
+      ${this._canRename(row)
+        ? html`<button
         class="act ${editing ? "always" : "hover-only"}"
         tabindex="-1"
         title="${editing ? "Done" : "Rename"}"
@@ -1899,11 +1906,40 @@ class OerOutlineBuilder extends LitElement {
         }}"
       >
         ${lucide(editing ? "oer:check" : "icons:create", "sm")}
-      </button>
-      ${row.ref ? this._renderRef(row, index) : this._pinnable(row.id).length ? this._renderNavVersion(row, index) : ""}
-      ${this._renderTypeChip(row, index)}
+      </button>`
+        : ""}
+      ${this._renderRowChips(row, index)}
       ${kidsCount > 0 ? html`<span class="badge">${kidsCount}</span>` : ""}
-      <div class="hover-only">
+      ${this._renderRowActions(row, index)}
+    </div>`;
+  }
+
+  /* ---------- row hooks (a subclass, like the sequence builder, overrides these) ---------- */
+
+  // a page's version link or pin, and its content type
+  _renderRowChips(row, index) {
+    return html`${row.ref ? this._renderRef(row, index) : this._pinnable(row.id).length ? this._renderNavVersion(row, index) : ""}
+      ${this._renderTypeChip(row, index)}`;
+  }
+
+  _placeholder(row) {
+    return row.type === HEADING_TYPE ? "Heading…" : row.depth === 0 ? "Page title…" : "Sub-page title…";
+  }
+
+  _canRename() {
+    return true;
+  }
+
+  // a row took focus (keyboard or click)
+  _rowFocused() {}
+
+  // the row shown beside the outline, if the builder has such a panel
+  _rowCurrent() {
+    return false;
+  }
+
+  _renderRowActions(row) {
+    return html`<div class="hover-only">
         ${row.depth < MAX_DEPTH && !this._allowedUnder(row.type || null).none
           ? html`<button
               class="act"
@@ -1942,11 +1978,10 @@ class OerOutlineBuilder extends LitElement {
         >
           ${lucide("oer:trash-2", "sm")}
         </button>
-      </div>
-    </div>`;
+      </div>`;
   }
 
-  _renderAddRow(add, vis, vIdx) {
+  _renderAddRow(add, vis, vIdx, { label = "Add page", title = "Add a page here", action = () => this._addAfter(add.afterId, add.depth) } = {}) {
     const closing = this._closingRows(vis, vIdx);
     const cols = [];
     for (let d = 1; d <= add.depth; d++) {
@@ -1959,14 +1994,14 @@ class OerOutlineBuilder extends LitElement {
     }
     return html`<button
       class="add"
-      title="Add a page here"
+      title="${title}"
       @mouseenter="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
       @mouseleave="${() => (this._hoverAdd = null)}"
       @focus="${() => (this._hoverAdd = { afterId: add.afterId, depth: add.depth })}"
       @blur="${() => (this._hoverAdd = null)}"
       @click="${() => {
         this._hoverAdd = null;
-        this._addAfter(add.afterId, add.depth);
+        action();
       }}"
     >
       <div class="indent" style="width:${add.depth * INDENT_PX}px">${cols}</div>
@@ -1974,7 +2009,7 @@ class OerOutlineBuilder extends LitElement {
         <div class="leaf"></div>
         <span class="plus">${lucide("oer:plus", "sm")}</span>
       </div>
-      <span class="label">Add page</span>
+      <span class="label">${label}</span>
     </button>`;
   }
 
@@ -2005,6 +2040,29 @@ class OerOutlineBuilder extends LitElement {
       >
         ${lucide("oer:heading-2", "sm")}Add heading
       </button>
+    </div>`;
+  }
+
+  // the tree with its add rows, or the empty state
+  _renderTree(vis = this._visible(), label = "Pages") {
+    return this._rows.length
+      ? html`<div class="tree" role="tree" aria-label="${label}">
+          ${vis.map(
+            ({ row, index }, vIdx) => html`${this._renderRow(row, index, vis, vIdx)}
+            ${this._closingRows(vis, vIdx)
+              .filter((add) => !this._levelClosed(add))
+              .map((add) => this._renderAddRows(add, vis, vIdx))}`,
+          )}
+        </div>`
+      : this._renderEmpty();
+  }
+
+  _renderEmpty() {
+    return html`<div class="empty">
+      ${lucide("hax:site-map")}
+      <p>No pages yet</p>
+      <button class="btn outline" @click="${this._addFirst}">${lucide("oer:plus", "sm")}Add page</button>
+      <button class="btn outline" @click="${() => this._addExisting(null, 0)}">${lucide("icons:link", "sm")}Add existing</button>
     </div>`;
   }
 
@@ -2051,23 +2109,7 @@ class OerOutlineBuilder extends LitElement {
                 </label>`}
             <span class="count">${top} top-level · ${this._rows.length} page${this._rows.length === 1 ? "" : "s"}</span>
         </div>
-        <div class="body">
-          ${this._rows.length
-            ? html`<div class="tree" role="tree" aria-label="Pages">
-                ${vis.map(
-                  ({ row, index }, vIdx) => html`${this._renderRow(row, index, vis, vIdx)}
-                  ${this._closingRows(vis, vIdx)
-                    .filter((add) => !this._levelClosed(add))
-                    .map((add) => this._renderAddRows(add, vis, vIdx))}`,
-                )}
-              </div>`
-            : html`<div class="empty">
-                ${lucide("hax:site-map")}
-                <p>No pages yet</p>
-                <button class="btn outline" @click="${this._addFirst}">${lucide("oer:plus", "sm")}Add page</button>
-                <button class="btn outline" @click="${() => this._addExisting(null, 0)}">${lucide("icons:link", "sm")}Add existing</button>
-              </div>`}
-        </div>
+        <div class="body">${this._renderTree(vis)}</div>
         <footer>
           ${this._confirmDiscard
             ? html`<span class="warn">Discard your outline changes?</span>
@@ -2102,6 +2144,7 @@ class OerOutlineBuilder extends LitElement {
   }
 }
 customElements.define(OerOutlineBuilder.tag, OerOutlineBuilder);
+export { OerOutlineBuilder, INDENT_PX, MAX_DEPTH };
 
 /** The page-wide outline builder, created on first use. */
 export function outlineBuilder() {
