@@ -1,0 +1,31 @@
+{
+  "id": "item-7fb4ddb1-f890-47d1-9c37-76587f1dd698",
+  "indent": 1,
+  "location": "pages/item-7fb4ddb1-f890-47d1-9c37-76587f1dd698/index.json",
+  "slug": "projects/mid-capstone-project-assessment",
+  "order": 21,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Mid-capstone project assessment",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:activity",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ]
+    },
+    "oerCanvasImport": {
+      "batch": "canvas-muzzavh1",
+      "id": "g9ad7e640eb0457e51ee1691af62438f8"
+    },
+    "created": 1791490691,
+    "images": [],
+    "videos": [],
+    "updated": 1791490691
+  },
+  "content": "<p>Your instructor will leave capstone project feedback here based on your external reviews, progress to date, implementation of feedback, and the pdf for the mid-term progress report.</p>\n<ol>\n<li>Export a PDF of the mid-term progress report. (upload formats have been restricted to jpg, png, mp4, mov, pdf)\n<ul>\n<li>Download the <a href=\"files/Midterm_progress_report_v2.docx\">Mid-term Progress Report Word Document template</a></li>\n</ul>\n</li>\n</ol>"
+}

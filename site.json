@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791488699,
+      "updated": 1791490691,
       "version": "26.8.0"
     },
     "theme": {
@@ -29038,6 +29038,42 @@
       }
     },
     {
+      "id": "item-0052d02f-a00e-41a8-949f-ef0137a44fbb",
+      "indent": 1,
+      "location": "pages/item-0052d02f-a00e-41a8-949f-ef0137a44fbb/index.html",
+      "slug": "resources/download-midterm-progress-report-template",
+      "order": 56,
+      "parent": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "title": "Download: Midterm Progress Report Template",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:resource",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ],
+          "attachments": [
+            {
+              "title": "Midterm Progress Report Template",
+              "url": "files/Midterm_progress_report_v2.docx"
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g61205c0a16e9949f7256ea22880d842e"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
       "id": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
       "indent": 1,
       "location": "pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.html",
@@ -33340,6 +33376,216 @@
         "locked": false,
         "status": "",
         "icon": ""
+      }
+    },
+    {
+      "id": "item-b65c405c-3d53-442e-9b92-cf54bd89d151",
+      "indent": 1,
+      "location": "pages/item-b65c405c-3d53-442e-9b92-cf54bd89d151/index.html",
+      "slug": "projects/class-introductions",
+      "order": 16,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Class Introductions",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g9404c1d9828484c35f8f793ed64ea395"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-cfbc00e8-0248-4d0d-9b54-fc02ca9eb9d7",
+      "indent": 1,
+      "location": "pages/item-cfbc00e8-0248-4d0d-9b54-fc02ca9eb9d7/index.html",
+      "slug": "projects/discussion-pathway-reflection",
+      "order": 17,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Discussion: Pathway Reflection",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g9bcc7229e5db4383e7c483b83c33ce8c"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-b54ccf5c-be8c-4477-8193-4692faf8c8bf",
+      "indent": 1,
+      "location": "pages/item-b54ccf5c-be8c-4477-8193-4692faf8c8bf/index.html",
+      "slug": "projects/zoom-meeting-1-proposal",
+      "order": 18,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Zoom Meeting #1 (Proposal)",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g21923614db1a215c36888500bd1b0234"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-176073ba-2e94-4870-9c7c-512a0d013b7d",
+      "indent": 1,
+      "location": "pages/item-176073ba-2e94-4870-9c7c-512a0d013b7d/index.html",
+      "slug": "projects/capstone-project-agreement-form",
+      "order": 19,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Capstone project agreement form",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g24e119f1a1c2436d08040b7536f6ece9"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-5c7841d6-767a-41d2-ae53-238f0806b2b7",
+      "indent": 1,
+      "location": "pages/item-5c7841d6-767a-41d2-ae53-238f0806b2b7/index.html",
+      "slug": "projects/advisor-help",
+      "order": 20,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Advisor help",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g6182a675985e6c7b962bf764466319bc"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-7fb4ddb1-f890-47d1-9c37-76587f1dd698",
+      "indent": 1,
+      "location": "pages/item-7fb4ddb1-f890-47d1-9c37-76587f1dd698/index.html",
+      "slug": "projects/mid-capstone-project-assessment",
+      "order": 21,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Mid-capstone project assessment",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g9ad7e640eb0457e51ee1691af62438f8"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-2cd6e694-d66b-4ab1-b61d-06f525c6e423",
+      "indent": 1,
+      "location": "pages/item-2cd6e694-d66b-4ab1-b61d-06f525c6e423/index.html",
+      "slug": "projects/notes-from-midterm-feedback",
+      "order": 22,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Notes from midterm feedback",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g748b1ed7ff0f760a9fb0115c2f43bd55"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
       }
     },
     {

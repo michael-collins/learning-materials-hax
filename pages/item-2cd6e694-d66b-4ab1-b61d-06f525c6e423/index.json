@@ -1,0 +1,31 @@
+{
+  "id": "item-2cd6e694-d66b-4ab1-b61d-06f525c6e423",
+  "indent": 1,
+  "location": "pages/item-2cd6e694-d66b-4ab1-b61d-06f525c6e423/index.json",
+  "slug": "projects/notes-from-midterm-feedback",
+  "order": 22,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Notes from midterm feedback",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:activity",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ]
+    },
+    "oerCanvasImport": {
+      "batch": "canvas-muzzavh1",
+      "id": "g748b1ed7ff0f760a9fb0115c2f43bd55"
+    },
+    "created": 1791490691,
+    "images": [],
+    "videos": [],
+    "updated": 1791490691
+  },
+  "content": "<p>Include a MS Word Doc that contains the following:</p>\n<ol>\n<li>After reviewing your feedback, please summarize the feedback that you were given.</li>\n<li>How will you be addressing the feedback you were given?</li>\n<li>Did the reviewers misinterpret or misunderstand the work? If so, how might this be prevented from happening in the future?</li>\n<li>(Optional) Do you have any recommendations to improve the review process for future students?</li>\n</ol>"
+}

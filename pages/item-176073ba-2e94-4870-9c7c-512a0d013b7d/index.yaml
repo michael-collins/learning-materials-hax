@@ -1,0 +1,45 @@
+id: item-176073ba-2e94-4870-9c7c-512a0d013b7d
+indent: 1
+location: pages/item-176073ba-2e94-4870-9c7c-512a0d013b7d/index.yaml
+slug: projects/capstone-project-agreement-form
+order: 19
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+title: Capstone project agreement form
+description: ''
+metadata:
+  pageType: oer:activity
+  published: false
+  oerFields:
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+  oerCanvasImport:
+    batch: canvas-muzzavh1
+    id: g24e119f1a1c2436d08040b7536f6ece9
+  created: 1791490691
+  images: []
+  videos: []
+  updated: 1791490691
+content: >-
+  <ol>
+
+  <li>Please download, fill out, the project agreement form.
+
+  <ul>
+
+  <li>Do not submit this form until after you have discussed the project
+  proposal with your instructor.&nbsp;</li>
+
+  <li>Download: <a title="DMD400_Capstone_Project_Agreement_Form.docx"
+  href="files/DMD400_Capstone_Project_Agreement_Form.docx">Project agreement
+  form</a>
+
+  </li>
+
+  </ul>
+
+  </li>
+
+  <li>Upload the project agreement form in PDF format.</li>
+
+  </ol>

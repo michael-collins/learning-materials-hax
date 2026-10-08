@@ -1,0 +1,1 @@
+If you need help finding an advisor for your project, please leave a comment below with the type of advisor you need (IE - UX, graphic designer, illustrator, 3D modeler, game designer, etc.). If you already have an advisor, then no need to leave a comment.

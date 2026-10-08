@@ -1,0 +1,31 @@
+{
+  "id": "item-b54ccf5c-be8c-4477-8193-4692faf8c8bf",
+  "indent": 1,
+  "location": "pages/item-b54ccf5c-be8c-4477-8193-4692faf8c8bf/index.json",
+  "slug": "projects/zoom-meeting-1-proposal",
+  "order": 18,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Zoom Meeting #1 (Proposal)",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:activity",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ]
+    },
+    "oerCanvasImport": {
+      "batch": "canvas-muzzavh1",
+      "id": "g21923614db1a215c36888500bd1b0234"
+    },
+    "created": 1791490691,
+    "images": [],
+    "videos": [],
+    "updated": 1791490691
+  },
+  "content": "<ol>\n<li>Please find a time on my calendar to meet via zoom: <a href=\"https://calendly.com/msc227\">https://calendly.com/msc227</a>\n</li>\n<li>You can access the following Zoom room for the meeting: <a href=\"https://psu.zoom.us/my/michaelcollins\">https://psu.zoom.us/my/michaelcollins</a>\n<ul>\n<li>Always take written or typed notes during meetings. You will likely not remember every detail of the discussion, particularly after a week or two.</li>\n<li>If you set a meeting less than 24 hours from when you are setting the meeting, send me an email confirmation. If you have to miss the meeting that you set, please cancel it, and send me an email notification. I may have a conflict not noted on my calendar, and I may choose to reschedule meetings as needed.</li>\n</ul>\n</li>\n<li>Submit a word document of your notes taken during our discussion. If we require a followup discussion, you can wait until after that second discussion to upload your notes.</li>\n</ol>"
+}

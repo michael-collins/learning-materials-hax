@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-b65c405c-3d53-442e-9b92-cf54bd89d151</id>
+<indent>1</indent>
+<location>pages/item-b65c405c-3d53-442e-9b92-cf54bd89d151/index.xml</location>
+<slug>projects/class-introductions</slug>
+<order>16</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Class Introductions</title>
+<description></description>
+<metadata>
+<pageType>oer:activity</pageType>
+<published>false</published>
+<oerFields>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+</oerFields>
+<oerCanvasImport>
+<batch>canvas-muzzavh1</batch>
+<id>g9404c1d9828484c35f8f793ed64ea395</id>
+</oerCanvasImport>
+<created>1791490691</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791490691</updated>
+</metadata>
+<content><![CDATA[<div><p>Time to get acquainted. Please share the following so we can all get to know each other:</p><ol><li>What is your preferred name? If you are comfortable you can also provide your preferred pronoun.</li><li>Where are you in the world? (As specific or vague as you'd like)</li><li>What kind of work are you hoping to create in this class?</li><li>What piece of art, design, media, or technology has been an inspiration to you lately? Embed a link or image and cite ownership of the piece.</li></ol></div>]]></content>
+</item>

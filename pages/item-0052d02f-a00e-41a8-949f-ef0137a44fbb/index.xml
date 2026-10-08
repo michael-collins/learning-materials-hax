@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0052d02f-a00e-41a8-949f-ef0137a44fbb</id>
+<indent>1</indent>
+<location>pages/item-0052d02f-a00e-41a8-949f-ef0137a44fbb/index.xml</location>
+<slug>resources/download-midterm-progress-report-template</slug>
+<order>56</order>
+<parent>item-3e45e431-c085-4dba-9569-eb5b160ec3ee</parent>
+<title>Download: Midterm Progress Report Template</title>
+<description></description>
+<metadata>
+<pageType>oer:resource</pageType>
+<published>false</published>
+<oerFields>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+<attachments>
+<item>
+<title>Midterm Progress Report Template</title>
+<url>files/Midterm_progress_report_v2.docx</url>
+</item>
+</attachments>
+</oerFields>
+<oerCanvasImport>
+<batch>canvas-muzzavh1</batch>
+<id>g61205c0a16e9949f7256ea22880d842e</id>
+</oerCanvasImport>
+<created>1791490691</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791490691</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

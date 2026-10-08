@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-7fb4ddb1-f890-47d1-9c37-76587f1dd698</id>
+<indent>1</indent>
+<location>pages/item-7fb4ddb1-f890-47d1-9c37-76587f1dd698/index.xml</location>
+<slug>projects/mid-capstone-project-assessment</slug>
+<order>21</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Mid-capstone project assessment</title>
+<description></description>
+<metadata>
+<pageType>oer:activity</pageType>
+<published>false</published>
+<oerFields>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+</oerFields>
+<oerCanvasImport>
+<batch>canvas-muzzavh1</batch>
+<id>g9ad7e640eb0457e51ee1691af62438f8</id>
+</oerCanvasImport>
+<created>1791490691</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791490691</updated>
+</metadata>
+<content><![CDATA[<p>Your instructor will leave capstone project feedback here based on your external reviews, progress to date, implementation of feedback, and the pdf for the mid-term progress report.</p>
+<ol>
+<li>Export a PDF of the mid-term progress report. (upload formats have been restricted to jpg, png, mp4, mov, pdf)
+<ul>
+<li>Download the <a href="files/Midterm_progress_report_v2.docx">Mid-term Progress Report Word Document template</a></li>
+</ul>
+</li>
+</ol>]]></content>
+</item>

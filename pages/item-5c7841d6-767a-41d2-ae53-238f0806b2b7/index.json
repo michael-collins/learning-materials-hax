@@ -1,0 +1,31 @@
+{
+  "id": "item-5c7841d6-767a-41d2-ae53-238f0806b2b7",
+  "indent": 1,
+  "location": "pages/item-5c7841d6-767a-41d2-ae53-238f0806b2b7/index.json",
+  "slug": "projects/advisor-help",
+  "order": 20,
+  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "title": "Advisor help",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:activity",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ]
+    },
+    "oerCanvasImport": {
+      "batch": "canvas-muzzavh1",
+      "id": "g6182a675985e6c7b962bf764466319bc"
+    },
+    "created": 1791490691,
+    "images": [],
+    "videos": [],
+    "updated": 1791490691
+  },
+  "content": "<p>If you need help finding an advisor for your project, please leave a comment below with the type of advisor you need (IE - UX, graphic designer, illustrator, 3D modeler, game designer, etc.). If you already have an advisor, then no need to leave a comment.</p>"
+}

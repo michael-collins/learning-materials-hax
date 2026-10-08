@@ -1,0 +1,26 @@
+id: item-0052d02f-a00e-41a8-949f-ef0137a44fbb
+indent: 1
+location: pages/item-0052d02f-a00e-41a8-949f-ef0137a44fbb/index.yaml
+slug: resources/download-midterm-progress-report-template
+order: 56
+parent: item-3e45e431-c085-4dba-9569-eb5b160ec3ee
+title: 'Download: Midterm Progress Report Template'
+description: ''
+metadata:
+  pageType: oer:resource
+  published: false
+  oerFields:
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+    attachments:
+      - title: Midterm Progress Report Template
+        url: files/Midterm_progress_report_v2.docx
+  oerCanvasImport:
+    batch: canvas-muzzavh1
+    id: g61205c0a16e9949f7256ea22880d842e
+  created: 1791490691
+  images: []
+  videos: []
+  updated: 1791490691
+content: <p></p>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5c7841d6-767a-41d2-ae53-238f0806b2b7</id>
+<indent>1</indent>
+<location>pages/item-5c7841d6-767a-41d2-ae53-238f0806b2b7/index.xml</location>
+<slug>projects/advisor-help</slug>
+<order>20</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<title>Advisor help</title>
+<description></description>
+<metadata>
+<pageType>oer:activity</pageType>
+<published>false</published>
+<oerFields>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+</oerFields>
+<oerCanvasImport>
+<batch>canvas-muzzavh1</batch>
+<id>g6182a675985e6c7b962bf764466319bc</id>
+</oerCanvasImport>
+<created>1791490691</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791490691</updated>
+</metadata>
+<content><![CDATA[<p>If you need help finding an advisor for your project, please leave a comment below with the type of advisor you need (IE - UX, graphic designer, illustrator, 3D modeler, game designer, etc.). If you already have an advisor, then no need to leave a comment.</p>]]></content>
+</item>

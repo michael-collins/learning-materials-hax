@@ -1,0 +1,5 @@
+1.  Please find a time on my calendar to meet via zoom: [https://calendly.com/msc227](https://calendly.com/msc227)
+2.  You can access the following Zoom room for the meeting: [https://psu.zoom.us/my/michaelcollins](https://psu.zoom.us/my/michaelcollins)
+    *   Always take written or typed notes during meetings. You will likely not remember every detail of the discussion, particularly after a week or two.
+    *   If you set a meeting less than 24 hours from when you are setting the meeting, send me an email confirmation. If you have to miss the meeting that you set, please cancel it, and send me an email notification. I may have a conflict not noted on my calendar, and I may choose to reschedule meetings as needed.
+3.  Submit a word document of your notes taken during our discussion. If we require a followup discussion, you can wait until after that second discussion to upload your notes.
