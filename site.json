@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791465732,
+      "updated": 1791465733,
       "version": "26.8.0"
     },
     "theme": {
@@ -28972,7 +28972,7 @@
       "order": 11,
       "parent": null,
       "title": "Sequences",
-      "description": "",
+      "description": "Week-by-week plans for running a course, ready to export to Canvas.",
       "metadata": {
         "pageType": "oer:section",
         "published": true,
