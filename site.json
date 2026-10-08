@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791473476,
+      "updated": 1791473477,
       "version": "26.8.0"
     },
     "theme": {
@@ -10564,7 +10564,7 @@
       "order": 1000,
       "parent": "item-e925a1e5-1a8f-4a37-a75e-606911de7a70",
       "title": "v1.0.0",
-      "description": "",
+      "description": "Demonstration: Low Poly Animal\nThis week I want you to make a low poly animal. Ideally, you will have more than one reference image.\n\nBelow is a demonstration of how I would approach resolving a low poly model with only a profile image. \n\nFor your assignment I encourage you to work from multiple reference images instead. However, some of the techniques I use to calculate volume and resolve topological flow may be of help.\n\nThere is an additional video in the playlist that demonstrates the use of particles as a means of generating feathers on my Ostrich.",
       "metadata": {
         "pageType": "oer:rubric",
         "oerFields": {},
