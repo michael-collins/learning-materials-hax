@@ -1,0 +1,1 @@
+Plans for running a course, week by week: what students read, do and hand in, when it's due and how it's graded. Open one to see its schedule, or export it to Canvas with your term's dates.

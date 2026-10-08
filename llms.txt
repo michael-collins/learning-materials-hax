@@ -269,6 +269,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Crit protocol](https://localhost:3000/learning-materials/pages/item-41b470a2-1c25-48a0-bae0-a211a04e72d4/index.md)
 - [DMD 100: Digital Multimedia Design Foundations](https://localhost:3000/learning-materials/pages/item-2191170b-b92b-406b-bf5a-84d7524a7de8/index.md): Digital Multimedia Design Foundations, 3 credits.
 - [Introduction](https://localhost:3000/learning-materials/pages/item-81af05fe-3ba2-4d05-9678-83a3c79e5b1b/index.md)
+- [DART 413: 15-week studio](https://localhost:3000/learning-materials/pages/item-5d023c48-b512-4408-8d80-d9e87d05f781/index.md)
 - [Getting Started in 3D Animation](https://localhost:3000/learning-materials/pages/item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f/index.md)
 - [Modeling the Airline Chair](https://localhost:3000/learning-materials/pages/item-26d85039-2f42-491f-b312-82e59f75c09a/index.md)
 - [History of CGI quiz](https://localhost:3000/learning-materials/pages/item-52e05a27-2c5e-4c3a-8f99-baffbb07d613/index.md)
@@ -673,8 +674,17 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Motion graphics](https://localhost:3000/learning-materials/pages/item-831e27e4-94e4-43dc-b7e1-7b5039f802d9/index.md): Creates animated graphics for multimedia projects, often involving typography and visual effects.
 - [Compositor Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-935c06ff-8c18-4192-9563-f8460f801fb9/index.md)
 - [Rendering a room](https://localhost:3000/learning-materials/pages/item-b9ca34aa-a438-41a3-a5a7-1bcb3367d129/index.md)
-- [Resources](https://localhost:3000/learning-materials/pages/item-3e45e431-c085-4dba-9569-eb5b160ec3ee/index.md)
 - [Cool 3D World](https://localhost:3000/learning-materials/pages/item-972bab49-cb5e-47d9-a229-87475e8cabe9/index.md)
+- [Develop: MVP Prototype](https://localhost:3000/learning-materials/pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.md)
+- [Project midterm video](https://localhost:3000/learning-materials/pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.md)
+- [Open Design Project](https://localhost:3000/learning-materials/pages/item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85/index.md)
+- [Develop: Instructions](https://localhost:3000/learning-materials/pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.md)
+- [Develop: User testing](https://localhost:3000/learning-materials/pages/item-2835efa4-407b-4be6-baf7-358fc163ecd0/index.md)
+- [Develop: Iterate](https://localhost:3000/learning-materials/pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.md)
+- [Develop: Feedback](https://localhost:3000/learning-materials/pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.md)
+- [Deliver](https://localhost:3000/learning-materials/pages/item-ebd37034-40b3-4fee-a7f0-de4201746c75/index.md)
+- [Deliver: Project documentation](https://localhost:3000/learning-materials/pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.md)
+- [Resources](https://localhost:3000/learning-materials/pages/item-3e45e431-c085-4dba-9569-eb5b160ec3ee/index.md)
 - [Dave Fothergill](https://localhost:3000/learning-materials/pages/item-8f6e21d6-8025-49d0-b6a7-a5900e694661/index.md)
 - [Dave Stewart](https://localhost:3000/learning-materials/pages/item-9531c6cb-1dff-4c56-a9b5-2209a2f27556/index.md)
 - [Eva Papamargariti](https://localhost:3000/learning-materials/pages/item-337d8250-14f6-4cb1-a887-eb7c30366d10/index.md)
@@ -723,51 +733,47 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Fab Academy — How to Make (Almost) Anything class archive](https://localhost:3000/learning-materials/pages/item-d987aef1-4873-4380-86a5-4a902fea309d/index.md): Reference: the global fab-lab curriculum with weekly process pages; a source for demos and a model for documentation.
 - [Nervous System — studio project pages](https://localhost:3000/learning-materials/pages/item-4208204c-37a2-4060-adb2-c094b8de1cc3/index.md): Reference precedent for generative multiples across printing, cutting, and casting. Also cited on slide 9 (Kinematics Dress, 2014) as the course's first additive example — students meet the studio on day one and return to it in.
 - [The 3D Additivist Manifesto](https://localhost:3000/learning-materials/pages/item-60e4b429-b224-4257-bf91-839210d305a3/index.md): Short, open, 3D-printing-specific, and deliberately provocative — the counterweight to the design-guide readings in the print week; returns in as a critical-making text. Assigned at UNT.
-- [Develop: MVP Prototype](https://localhost:3000/learning-materials/pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.md)
-- [Project midterm video](https://localhost:3000/learning-materials/pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.md)
-- [Open Design Project](https://localhost:3000/learning-materials/pages/item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85/index.md)
-- [Develop: Instructions](https://localhost:3000/learning-materials/pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.md)
-- [Develop: User testing](https://localhost:3000/learning-materials/pages/item-2835efa4-407b-4be6-baf7-358fc163ecd0/index.md)
-- [Develop: Iterate](https://localhost:3000/learning-materials/pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.md)
-- [Develop: Feedback](https://localhost:3000/learning-materials/pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.md)
-- [Deliver](https://localhost:3000/learning-materials/pages/item-ebd37034-40b3-4fee-a7f0-de4201746c75/index.md)
-- [Deliver: Project documentation](https://localhost:3000/learning-materials/pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.md)
-- [Curriculum](https://localhost:3000/learning-materials/pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.md)
 - [Product design](https://localhost:3000/learning-materials/pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.md): Designs consumer products in 3D for manufacturing or visualization purposes.
 - [Game Artist Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-c8bdeb61-3f9c-4c02-bdf3-99809856f1d4/index.md)
 - [Blocking Out a Game Space](https://localhost:3000/learning-materials/pages/item-6e1b4a6f-0c8d-4d4a-b955-d2a7c260269e/index.md)
 - [Capstone project exhibition statement](https://localhost:3000/learning-materials/pages/item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222/index.md)
 - [Project 2](https://localhost:3000/learning-materials/pages/item-ba7ab274-d43f-4029-af9c-78edc5d3c484/index.md)
+- [Curriculum](https://localhost:3000/learning-materials/pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.md)
 - [Production management](https://localhost:3000/learning-materials/pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.md): Oversees the planning and execution of 3D projects, ensuring deadlines and budgets are met.
 - [Modeling a Low Poly Animal and Introduction to Particles](https://localhost:3000/learning-materials/pages/item-e43ae2ca-dce1-4f71-8356-b6538830ed65/index.md)
 - [Real-time Engines quiz](https://localhost:3000/learning-materials/pages/item-3f07bd42-0776-4dec-a220-8a7b05c333e5/index.md)
 - [Capstone project document](https://localhost:3000/learning-materials/pages/item-d759a2b5-61e3-4423-a706-91c282cf8b12/index.md)
 - [Project 1](https://localhost:3000/learning-materials/pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.md)
 - [Courses](https://localhost:3000/learning-materials/pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.md): Each course, its bulletin entry and what's taught in it.
-- [Pathways](https://localhost:3000/learning-materials/pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.md): A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r
 - [Short Film and VFX Pathway](https://localhost:3000/learning-materials/pages/item-5dabc762-d17b-4d08-80ac-3dae0557d0cb/index.md): A comprehensive pathway for creating animated short films with visual effects. This pathway combines traditional animation techniques with advanced simulation and compositing skills to produce cinematic CGI content with professional VFX elements.
-- [Short Film Pathway](https://localhost:3000/learning-materials/pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.md): Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.
-- [Visual Effects (VFX)](https://localhost:3000/learning-materials/pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.md): Integrates CGI elements into live-action footage and blends them seamlessly.
-- [Fundamentals](https://localhost:3000/learning-materials/pages/item-728c455b-226f-433d-9978-17a476458a79/index.md): The essentials.
-- [v0.9.0](https://localhost:3000/learning-materials/pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.md)
-- [Digital Fabrication Studio](https://localhost:3000/learning-materials/pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.md): Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.
 - [Low poly non-photorealistic rendering](https://localhost:3000/learning-materials/pages/item-cbff549d-e8f9-4804-b2ec-059cf0863101/index.md)
 - [Environment Design for Real-time quiz](https://localhost:3000/learning-materials/pages/item-9e3bacc6-5f86-471f-adc6-0349fc801452/index.md)
 - [Project explainer video](https://localhost:3000/learning-materials/pages/item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7/index.md)
 - [Writing Project](https://localhost:3000/learning-materials/pages/item-f95f0281-cd13-4056-8509-6e50954779e2/index.md)
-- [Books](https://localhost:3000/learning-materials/pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.md)
+- [Short Film Pathway](https://localhost:3000/learning-materials/pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.md): Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.
 - [Modeling random objects](https://localhost:3000/learning-materials/pages/item-b57b43a9-5427-445c-affe-80ce46848788/index.md)
 - [Real-time Asset Budgets quiz](https://localhost:3000/learning-materials/pages/item-706b8000-e39c-45d3-87c4-9aab5ae94482/index.md)
 - [Capstone project exhibition](https://localhost:3000/learning-materials/pages/item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b/index.md)
 - [Ideas In Motion](https://localhost:3000/learning-materials/pages/item-52fb5644-31ca-4c30-a426-3bd4a9182f3a/index.md)
 - [v0.9.0](https://localhost:3000/learning-materials/pages/item-d38e90ff-f0c8-4eb4-9745-2171358466f7/index.md)
-- [Assessments](https://localhost:3000/learning-materials/pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.md)
+- [Sequences](https://localhost:3000/learning-materials/pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.md)
+- [Pathways](https://localhost:3000/learning-materials/pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.md): A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r
+- [Visual Effects (VFX)](https://localhost:3000/learning-materials/pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.md): Integrates CGI elements into live-action footage and blends them seamlessly.
+- [Fundamentals](https://localhost:3000/learning-materials/pages/item-728c455b-226f-433d-9978-17a476458a79/index.md): The essentials.
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.md)
+- [Digital Fabrication Studio](https://localhost:3000/learning-materials/pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.md): Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.
 - [Modeling and sculpting a sea creature](https://localhost:3000/learning-materials/pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.md)
 - [Drawing for 3D Design quiz](https://localhost:3000/learning-materials/pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.md)
 - [Capstone project](https://localhost:3000/learning-materials/pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.md)
-- [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
+- [Books](https://localhost:3000/learning-materials/pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.md)
 - [Texturing Low-poly Assets with a Palette Texture](https://localhost:3000/learning-materials/pages/item-69bfd6d5-f0f3-4e6e-83bb-ca219d10803b/index.md)
+- [Project 1: Sheet to form](https://localhost:3000/learning-materials/pages/item-59547add-790e-4255-a3f0-962065b0064f/index.md): Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme.
+- [Hard Surface Modeling quiz](https://localhost:3000/learning-materials/pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.md)
+- [Assessments](https://localhost:3000/learning-materials/pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.md)
 - [Texturing random objects](https://localhost:3000/learning-materials/pages/item-a203e95e-0ddd-43af-9519-ee3df76a5b2d/index.md)
+- [Project 2: Multiples and variation](https://localhost:3000/learning-materials/pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.md): Produce a series of at least five objects in which variation is designed — parametric, generative, or rule-based — and the series says something the single object cannot.
+- [Digital Sculpting quiz](https://localhost:3000/learning-materials/pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.md)
+- [Exercises](https://localhost:3000/learning-materials/pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.md): Formative practice focused on a narrow set of competencies.
 - [Sculpting, retopo, and texturing](https://localhost:3000/learning-materials/pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.md)
 - [Baking Normal Maps](https://localhost:3000/learning-materials/pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.md)
 - [Importing Assets into PlayCanvas](https://localhost:3000/learning-materials/pages/item-a92f242a-b30b-4685-b277-c205bd49ca90/index.md)
@@ -818,15 +824,11 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Reading responses](https://localhost:3000/learning-materials/pages/item-5117d4e6-e938-41a9-b976-858e75347ae5/index.md): For each required reading, a 200–300-word response that connects one idea in the text to something you made or saw in the shop that week.
 - [Critique participation](https://localhost:3000/learning-materials/pages/item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180/index.md): Prepared, specific, and generous participation in the four crits, following the protocol.
 - [Precedent presentation](https://localhost:3000/learning-materials/pages/item-bdd37b96-f590-4a7b-aad8-5a32e85230ad/index.md): Each student presents one artist, designer, or studio and one specific work made with digital fabrication: how it was made (process, machine, material), why that process, and what it argues.
-- [Project 1: Sheet to form](https://localhost:3000/learning-materials/pages/item-59547add-790e-4255-a3f0-962065b0064f/index.md): Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme.
-- [Hard Surface Modeling quiz](https://localhost:3000/learning-materials/pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.md)
-- [Projects](https://localhost:3000/learning-materials/pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.md)
-- [Project 2: Multiples and variation](https://localhost:3000/learning-materials/pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.md): Produce a series of at least five objects in which variation is designed — parametric, generative, or rule-based — and the series says something the single object cannot.
 - [Final project](https://localhost:3000/learning-materials/pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.md): A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition.
-- [Digital Sculpting quiz](https://localhost:3000/learning-materials/pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.md)
-- [Quizzes](https://localhost:3000/learning-materials/pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.md)
 - [Short Film and VFX Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.md)
+- [Projects](https://localhost:3000/learning-materials/pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.md)
 - [Short Film Pathway readiness quiz](https://localhost:3000/learning-materials/pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.md)
+- [Quizzes](https://localhost:3000/learning-materials/pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.md)
 - [Laser cutting quiz](https://localhost:3000/learning-materials/pages/item-9be5b661-faea-45de-a5d7-75725ac645c8/index.md): Self-check questions on laser cutting.
 - [3D printing quiz](https://localhost:3000/learning-materials/pages/item-ab1c8916-1374-44a6-8872-b62dcea82770/index.md): Self-check questions on 3D printing.
 - [CNC routing quiz](https://localhost:3000/learning-materials/pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.md): Self-check questions on CNC routing.

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791465284,
+      "updated": 1791465730,
       "version": "26.8.0"
     },
     "theme": {
@@ -7200,6 +7200,700 @@
         "images": [],
         "videos": [],
         "updated": 1791397865
+      }
+    },
+    {
+      "id": "item-5d023c48-b512-4408-8d80-d9e87d05f781",
+      "indent": 1,
+      "location": "pages/item-5d023c48-b512-4408-8d80-d9e87d05f781/index.html",
+      "slug": "sequences/dart-413-15-week-studio",
+      "order": 0,
+      "parent": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
+      "title": "DART 413: 15-week studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:sequence",
+        "published": false,
+        "oerPlan": "DART 413:sequence:15",
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ],
+          "weeks": 15,
+          "delivery": "In person",
+          "license": "CC BY 4.0"
+        },
+        "oerSequence": {
+          "version": 1,
+          "modules": [
+            {
+              "id": "m01",
+              "title": "Week 1: Bits to atoms: what digital fabrication is",
+              "week": 1,
+              "items": [
+                {
+                  "page": "item-79caedc2-9d9c-4828-bd1e-81545cc458a8",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-13e7589e-e8ee-48ab-84d2-286c92ebfd73",
+                  "as": "page"
+                },
+                {
+                  "page": "item-cf74e241-cda4-4eff-a5d1-14b9cf701571",
+                  "as": "page"
+                },
+                {
+                  "page": "item-4de26b66-7085-448a-ac92-f32fbf38f8f9",
+                  "as": "assignment",
+                  "due": {
+                    "week": 2
+                  },
+                  "points": 30,
+                  "group": "exercise",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "exercise"
+                },
+                {
+                  "page": "item-5117d4e6-e938-41a9-b976-858e75347ae5",
+                  "as": "assignment",
+                  "due": {
+                    "week": 15
+                  },
+                  "points": 50,
+                  "group": "reflection",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "written-statement"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-d0317d85-4720-45de-8f9c-8a3e62c39921",
+                  "as": "link"
+                },
+                {
+                  "page": "item-eb4ae497-5473-486b-8f0f-77d8446b5f8c",
+                  "as": "link"
+                },
+                {
+                  "page": "item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d",
+                  "as": "link"
+                },
+                {
+                  "page": "item-d987aef1-4873-4380-86a5-4a902fea309d",
+                  "as": "link"
+                },
+                {
+                  "page": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m02",
+              "title": "Week 2: Vectors for machines: the laser cutter",
+              "week": 2,
+              "items": [
+                {
+                  "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+                  "as": "page"
+                },
+                {
+                  "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+                  "as": "page"
+                },
+                {
+                  "page": "item-e57bcbe5-efcd-42a7-a223-b05dea0dc123",
+                  "as": "assignment",
+                  "due": {
+                    "week": 3
+                  },
+                  "points": 40,
+                  "group": "exercise",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "exercise"
+                },
+                {
+                  "page": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
+                  "as": "quiz",
+                  "quizType": "practice"
+                }
+              ]
+            },
+            {
+              "id": "m03",
+              "title": "Week 3: Sheet to form: sectioning, folding, joinery",
+              "week": 3,
+              "items": [
+                {
+                  "page": "item-3c61c343-9aaa-4257-b871-355930bdcd69",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-273da091-602a-4824-86cc-a45fc9346115",
+                  "as": "page"
+                },
+                {
+                  "page": "item-4876f604-977f-4e7d-a5c3-cc6b37063ec8",
+                  "as": "page"
+                },
+                {
+                  "page": "item-a16965e6-def0-4f61-b884-a46300037a08",
+                  "as": "assignment",
+                  "due": {
+                    "week": 4
+                  },
+                  "points": 50,
+                  "group": "exercise",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "exercise"
+                },
+                {
+                  "page": "item-bdd37b96-f590-4a7b-aad8-5a32e85230ad",
+                  "as": "assignment",
+                  "due": {
+                    "week": 13
+                  },
+                  "points": 0,
+                  "graded": false,
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "task"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-c9e4c050-9edb-485b-8ee3-5a5b0a659965",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m04",
+              "title": "Week 4: Project 1 launch: Sheet to form",
+              "week": 4,
+              "items": [
+                {
+                  "page": "item-86df4055-aee6-4e3c-aa9c-5e291791c8ef",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+                  "as": "page"
+                },
+                {
+                  "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+                  "as": "page"
+                },
+                {
+                  "page": "item-59547add-790e-4255-a3f0-962065b0064f",
+                  "as": "assignment",
+                  "due": {
+                    "week": 5
+                  },
+                  "points": 100,
+                  "group": "projects-15",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "project"
+                }
+              ]
+            },
+            {
+              "id": "m05",
+              "title": "Week 5: Project 1 production + crit",
+              "week": 5,
+              "items": [
+                {
+                  "page": "item-b2b1aa00-e58f-483e-8649-84526b67110a",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+                  "as": "page"
+                },
+                {
+                  "page": "item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180",
+                  "as": "assignment",
+                  "due": {
+                    "week": 15
+                  },
+                  "points": 20,
+                  "group": "critique",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "task"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d",
+                  "as": "link"
+                },
+                {
+                  "page": "item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2",
+                  "as": "link"
+                },
+                {
+                  "page": "item-2ffcd551-9b63-4336-835e-7dd0155cb5cf",
+                  "as": "link"
+                },
+                {
+                  "page": "item-24c20753-b4ef-41f4-acd4-60df13259c87",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m06",
+              "title": "Week 6: Additive: 3D printing fundamentals",
+              "week": 6,
+              "items": [
+                {
+                  "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
+                  "as": "page"
+                },
+                {
+                  "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
+                  "as": "page"
+                },
+                {
+                  "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+                  "as": "page"
+                },
+                {
+                  "page": "item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21",
+                  "as": "assignment",
+                  "due": {
+                    "week": 7
+                  },
+                  "points": 50,
+                  "group": "exercise",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "exercise"
+                },
+                {
+                  "page": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
+                  "as": "quiz",
+                  "quizType": "practice"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919",
+                  "as": "link"
+                },
+                {
+                  "page": "item-3475b882-a15e-43ce-b226-750a59efa486",
+                  "as": "link"
+                },
+                {
+                  "page": "item-60e4b429-b224-4257-bf91-839210d305a3",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m07",
+              "title": "Week 7: Modeling for fabrication: parametric and sculptural",
+              "week": 7,
+              "items": [
+                {
+                  "page": "item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f",
+                  "as": "page"
+                },
+                {
+                  "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+                  "as": "page"
+                },
+                {
+                  "page": "item-f5669ca1-8a62-4854-908c-925e14b7eecb",
+                  "as": "assignment",
+                  "due": {
+                    "week": 8
+                  },
+                  "points": 50,
+                  "group": "exercise",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "exercise"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-a736e35a-581d-40fb-8d77-eb137a06c7e7",
+                  "as": "link"
+                },
+                {
+                  "page": "item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m08",
+              "title": "Week 8: Project 2 launch: Multiples and variation",
+              "week": 8,
+              "items": [
+                {
+                  "page": "item-23bfc330-baae-4c57-b782-7da696b33431",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+                  "as": "page"
+                },
+                {
+                  "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+                  "as": "page"
+                },
+                {
+                  "page": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+                  "as": "assignment",
+                  "due": {
+                    "week": 10
+                  },
+                  "points": 100,
+                  "group": "projects-15",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "project"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-a736e35a-581d-40fb-8d77-eb137a06c7e7",
+                  "as": "link"
+                },
+                {
+                  "page": "item-5898b795-f4da-441d-aa3b-929668d03a7d",
+                  "as": "link"
+                },
+                {
+                  "page": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m09",
+              "title": "Week 9: Subtractive: CNC routing",
+              "week": 9,
+              "items": [
+                {
+                  "page": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
+                  "as": "page"
+                },
+                {
+                  "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+                  "as": "page"
+                },
+                {
+                  "page": "item-70652b2f-07b2-489b-a0fa-e1f7f341ec91",
+                  "as": "assignment",
+                  "due": {
+                    "week": 10
+                  },
+                  "points": 50,
+                  "group": "exercise",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "exercise"
+                },
+                {
+                  "page": "item-6d67a392-9c2e-4070-bb24-8fed224e3774",
+                  "as": "quiz",
+                  "quizType": "practice"
+                }
+              ]
+            },
+            {
+              "id": "m10",
+              "title": "Week 10: CNC production + Project 2 crit",
+              "week": 10,
+              "items": [
+                {
+                  "page": "item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+                  "as": "page"
+                }
+              ]
+            },
+            {
+              "id": "m11",
+              "title": "Week 11: Hybrid processes and finishing",
+              "week": 11,
+              "items": [
+                {
+                  "page": "item-bf575694-a7b5-42c8-9527-0e8704d50077",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9",
+                  "as": "page"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-526d73e9-2873-4210-b492-2888ab24f533",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m12",
+              "title": "Week 12: Final project launch + critical making",
+              "week": 12,
+              "items": [
+                {
+                  "page": "item-665fac95-9a12-4f05-a7cd-e9264f010b6f",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-d691e847-ed22-40ee-8b49-1f409a0dc0c2",
+                  "as": "page"
+                },
+                {
+                  "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+                  "as": "page"
+                },
+                {
+                  "page": "item-eceae826-36f2-4e2c-b626-3c2136ab261b",
+                  "as": "page"
+                },
+                {
+                  "page": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+                  "as": "assignment",
+                  "due": {
+                    "week": 15
+                  },
+                  "points": 100,
+                  "group": "projects-20",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "project"
+                },
+                {
+                  "page": "item-0909a197-4405-4d6b-8959-cc5b95196e13",
+                  "as": "assignment",
+                  "due": {
+                    "week": 12
+                  },
+                  "points": 20,
+                  "group": "presentation",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "task"
+                },
+                {
+                  "header": "Readings"
+                },
+                {
+                  "page": "item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62",
+                  "as": "link"
+                },
+                {
+                  "page": "item-37be7178-7d0e-47aa-9515-852942e1101f",
+                  "as": "link"
+                },
+                {
+                  "page": "item-de3020be-052d-4ec8-a11d-414dc295423b",
+                  "as": "link"
+                },
+                {
+                  "page": "item-0a2a466e-a69a-45e3-b4b6-53c7493455b5",
+                  "as": "link"
+                },
+                {
+                  "page": "item-60e4b429-b224-4257-bf91-839210d305a3",
+                  "as": "link"
+                }
+              ]
+            },
+            {
+              "id": "m13",
+              "title": "Week 13: Final production I: workshops on demand",
+              "week": 13,
+              "items": [
+                {
+                  "page": "item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+                  "as": "page"
+                },
+                {
+                  "page": "item-da8b8213-908b-455f-8501-0bc929cf3b05",
+                  "as": "assignment",
+                  "due": {
+                    "week": 15
+                  },
+                  "points": 100,
+                  "group": "reflection",
+                  "submission": [
+                    "online_upload"
+                  ],
+                  "rubric": "written-statement"
+                }
+              ]
+            },
+            {
+              "id": "m14",
+              "title": "Week 14: Final production II + work-in-progress crit",
+              "week": 14,
+              "items": [
+                {
+                  "page": "item-87e4ca8e-509e-4062-9a59-8c8d003e0665",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+                  "as": "page"
+                }
+              ]
+            },
+            {
+              "id": "m15",
+              "title": "Week 15: Final crit, exhibition, documentation portfolio",
+              "week": 15,
+              "items": [
+                {
+                  "page": "item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af",
+                  "as": "page",
+                  "title": "Overview"
+                },
+                {
+                  "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
+                  "as": "page"
+                },
+                {
+                  "page": "item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1",
+                  "as": "page"
+                }
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "id": "exercise",
+              "name": "Exercises",
+              "weight": 27
+            },
+            {
+              "id": "projects-15",
+              "name": "Projects (15% each)",
+              "weight": 30
+            },
+            {
+              "id": "projects-20",
+              "name": "Final project",
+              "weight": 20
+            },
+            {
+              "id": "presentation",
+              "name": "Presentations",
+              "weight": 3
+            },
+            {
+              "id": "reflection",
+              "name": "Reflections",
+              "weight": 15
+            },
+            {
+              "id": "critique",
+              "name": "Critique",
+              "weight": 5
+            }
+          ],
+          "rubricScale": [
+            {
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "name": "Missing",
+              "share": 0
+            }
+          ]
+        },
+        "created": 1791465730,
+        "images": [],
+        "videos": [],
+        "updated": 1791465730
       }
     },
     {
@@ -25463,24 +26157,6 @@
       }
     },
     {
-      "id": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
-      "indent": 0,
-      "location": "pages/item-3e45e431-c085-4dba-9569-eb5b160ec3ee/index.html",
-      "slug": "resources",
-      "order": 7,
-      "parent": null,
-      "title": "Resources",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231915
-      }
-    },
-    {
       "id": "item-972bab49-cb5e-47d9-a229-87475e8cabe9",
       "indent": 1,
       "location": "pages/item-972bab49-cb5e-47d9-a229-87475e8cabe9/index.html",
@@ -25501,6 +26177,329 @@
         "images": [],
         "videos": [],
         "updated": 1791231916
+      }
+    },
+    {
+      "id": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
+      "indent": 2,
+      "location": "pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.html",
+      "slug": "projects/open-design-project/develop-mvp-prototype",
+      "order": 7,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: MVP Prototype",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-mvp-prototype",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386342
+      }
+    },
+    {
+      "id": "item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762",
+      "indent": 2,
+      "location": "pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.html",
+      "slug": "projects/capstone-project/project-midterm-video",
+      "order": 7,
+      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+      "title": "Project midterm video",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd400-project-midterm-video",
+        "tags": "project-deliverable",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386343
+      }
+    },
+    {
+      "id": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "indent": 1,
+      "location": "pages/item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85/index.html",
+      "slug": "projects/open-design-project",
+      "order": 7,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Open Design Project",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:project",
+        "oerSource": "projects/dmd100-lesson-4-open-design-open-design-project",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386343
+      }
+    },
+    {
+      "id": "item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d",
+      "indent": 2,
+      "location": "pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.html",
+      "slug": "projects/open-design-project/develop-instructions",
+      "order": 8,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: Instructions",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-instructions",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386344
+      }
+    },
+    {
+      "id": "item-2835efa4-407b-4be6-baf7-358fc163ecd0",
+      "indent": 2,
+      "location": "pages/item-2835efa4-407b-4be6-baf7-358fc163ecd0/index.html",
+      "slug": "projects/open-design-project/develop-user-testing",
+      "order": 9,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: User testing",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-user-testing",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386345
+      }
+    },
+    {
+      "id": "item-cccc9d32-dda2-4767-8335-4f937d93e87d",
+      "indent": 2,
+      "location": "pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.html",
+      "slug": "projects/open-design-project/develop-iterate",
+      "order": 10,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: Iterate",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-iterate",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386345
+      }
+    },
+    {
+      "id": "item-fd93cec2-ed41-412f-bf1d-aa863a4d7954",
+      "indent": 2,
+      "location": "pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.html",
+      "slug": "projects/open-design-project/develop-feedback",
+      "order": 11,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Develop: Feedback",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-develop-feedback",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386346
+      }
+    },
+    {
+      "id": "item-ebd37034-40b3-4fee-a7f0-de4201746c75",
+      "indent": 2,
+      "location": "pages/item-ebd37034-40b3-4fee-a7f0-de4201746c75/index.html",
+      "slug": "projects/open-design-project/deliver",
+      "order": 12,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Deliver",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1791251075,
+        "images": [],
+        "videos": [],
+        "updated": 1791251075
+      }
+    },
+    {
+      "id": "item-48d44e34-7a32-4027-9c2f-ade5bc1482a6",
+      "indent": 2,
+      "location": "pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.html",
+      "slug": "projects/open-design-project/deliver-project-documentation",
+      "order": 13,
+      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
+      "title": "Deliver: Project documentation",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:activity",
+        "oerSource": "projects/dmd100-lesson-4-open-design-deliver-open-design",
+        "tags": "Double diamond,Design thinking",
+        "oerFields": {
+          "difficulty": "intermediate",
+          "courses": [
+            {
+              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791386347
+      }
+    },
+    {
+      "id": "item-3e45e431-c085-4dba-9569-eb5b160ec3ee",
+      "indent": 0,
+      "location": "pages/item-3e45e431-c085-4dba-9569-eb5b160ec3ee/index.html",
+      "slug": "resources",
+      "order": 8,
+      "parent": null,
+      "title": "Resources",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:section",
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791465707
       }
     },
     {
@@ -26940,333 +27939,6 @@
       }
     },
     {
-      "id": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
-      "indent": 2,
-      "location": "pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.html",
-      "slug": "projects/open-design-project/develop-mvp-prototype",
-      "order": 7,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Develop: MVP Prototype",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-mvp-prototype",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386342
-      }
-    },
-    {
-      "id": "item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762",
-      "indent": 2,
-      "location": "pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.html",
-      "slug": "projects/capstone-project/project-midterm-video",
-      "order": 7,
-      "parent": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
-      "title": "Project midterm video",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd400-project-midterm-video",
-        "tags": "project-deliverable",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386343
-      }
-    },
-    {
-      "id": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "indent": 1,
-      "location": "pages/item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85/index.html",
-      "slug": "projects/open-design-project",
-      "order": 7,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Open Design Project",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:project",
-        "oerSource": "projects/dmd100-lesson-4-open-design-open-design-project",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386343
-      }
-    },
-    {
-      "id": "item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d",
-      "indent": 2,
-      "location": "pages/item-fc9f0b67-d6a8-4568-83ac-532cab03ff2d/index.html",
-      "slug": "projects/open-design-project/develop-instructions",
-      "order": 8,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Develop: Instructions",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-instructions",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386344
-      }
-    },
-    {
-      "id": "item-2835efa4-407b-4be6-baf7-358fc163ecd0",
-      "indent": 2,
-      "location": "pages/item-2835efa4-407b-4be6-baf7-358fc163ecd0/index.html",
-      "slug": "projects/open-design-project/develop-user-testing",
-      "order": 9,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Develop: User testing",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-user-testing",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386345
-      }
-    },
-    {
-      "id": "item-cccc9d32-dda2-4767-8335-4f937d93e87d",
-      "indent": 2,
-      "location": "pages/item-cccc9d32-dda2-4767-8335-4f937d93e87d/index.html",
-      "slug": "projects/open-design-project/develop-iterate",
-      "order": 10,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Develop: Iterate",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-iterate",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386345
-      }
-    },
-    {
-      "id": "item-fd93cec2-ed41-412f-bf1d-aa863a4d7954",
-      "indent": 2,
-      "location": "pages/item-fd93cec2-ed41-412f-bf1d-aa863a4d7954/index.html",
-      "slug": "projects/open-design-project/develop-feedback",
-      "order": 11,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Develop: Feedback",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd100-lesson-4-open-design-develop-feedback",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386346
-      }
-    },
-    {
-      "id": "item-ebd37034-40b3-4fee-a7f0-de4201746c75",
-      "indent": 2,
-      "location": "pages/item-ebd37034-40b3-4fee-a7f0-de4201746c75/index.html",
-      "slug": "projects/open-design-project/deliver",
-      "order": 12,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Deliver",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1791251075,
-        "images": [],
-        "videos": [],
-        "updated": 1791251075
-      }
-    },
-    {
-      "id": "item-48d44e34-7a32-4027-9c2f-ade5bc1482a6",
-      "indent": 2,
-      "location": "pages/item-48d44e34-7a32-4027-9c2f-ade5bc1482a6/index.html",
-      "slug": "projects/open-design-project/deliver-project-documentation",
-      "order": 13,
-      "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
-      "title": "Deliver: Project documentation",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:activity",
-        "oerSource": "projects/dmd100-lesson-4-open-design-deliver-open-design",
-        "tags": "Double diamond,Design thinking",
-        "oerFields": {
-          "difficulty": "intermediate",
-          "courses": [
-            {
-              "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791386347
-      }
-    },
-    {
-      "id": "item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb",
-      "indent": 0,
-      "location": "pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.html",
-      "slug": "curriculum",
-      "order": 8,
-      "parent": null,
-      "title": "Curriculum",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1790878969,
-        "images": [],
-        "videos": [],
-        "updated": 1791404467,
-        "published": true,
-        "locked": false,
-        "status": "",
-        "icon": ""
-      }
-    },
-    {
       "id": "item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9",
       "indent": 1,
       "location": "pages/item-4df2e3fc-cc71-406b-9ee1-07b7c714e6b9/index.html",
@@ -27471,6 +28143,28 @@
         "images": [],
         "videos": [],
         "updated": 1791386349
+      }
+    },
+    {
+      "id": "item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb",
+      "indent": 0,
+      "location": "pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.html",
+      "slug": "curriculum",
+      "order": 9,
+      "parent": null,
+      "title": "Curriculum",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1790878969,
+        "images": [],
+        "videos": [],
+        "updated": 1791465708,
+        "published": true,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -27695,7 +28389,7 @@
       "indent": 0,
       "location": "pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.html",
       "slug": "courses",
-      "order": 9,
+      "order": 10,
       "parent": null,
       "title": "Courses",
       "description": "Each course, its bulletin entry and what's taught in it.",
@@ -27706,31 +28400,7 @@
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791404473
-      }
-    },
-    {
-      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "indent": 0,
-      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
-      "slug": "pathways",
-      "order": 10,
-      "parent": null,
-      "title": "Pathways",
-      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
-      "metadata": {
-        "created": 1790827963,
-        "updated": 1791385269,
-        "images": [],
-        "videos": [],
-        "published": true,
-        "locked": false,
-        "status": "",
-        "overridePathauto": false,
-        "hideInMenu": false,
-        "readtime": 1,
-        "icon": "",
-        "pageType": ""
+        "updated": 1791465708
       }
     },
     {
@@ -27802,250 +28472,6 @@
             "notes": ""
           }
         ]
-      }
-    },
-    {
-      "id": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
-      "indent": 1,
-      "location": "pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.html",
-      "slug": "pathways/short-film-pathway",
-      "order": 11,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Short Film Pathway",
-      "description": "Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/short-film",
-        "tags": "Animation,Short Film,Storytelling,Production Pipeline",
-        "oerFields": {
-          "difficulty": "Intermediate",
-          "estimatedDuration": "24 weeks",
-          "learningObjectives": [
-            "Develop strong storytelling and narrative skills for animation",
-            "Create character performances that convey emotion and personality",
-            "Produce complete animated short films from concept to completion",
-            "Apply professional compositing and finishing techniques",
-            "Understand animation production pipelines and workflows"
-          ],
-          "prerequisites": [
-            {
-              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
-              "version": ""
-            }
-          ],
-          "author": "",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0",
-          "authorUrl": "",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "readinessQuiz": [
-            {
-              "page": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
-              "version": ""
-            }
-          ]
-        },
-        "created": 1790830075,
-        "images": [],
-        "videos": [],
-        "updated": 1791404474,
-        "locked": false,
-        "status": "",
-        "icon": "",
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
-      "indent": 1,
-      "location": "pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.html",
-      "slug": "pathways/visual-effects-vfx",
-      "order": 12,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Visual Effects (VFX)",
-      "description": "Integrates CGI elements into live-action footage and blends them seamlessly.",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:pathway",
-        "oerImport": "decap-pathways",
-        "oerSource": "pathways/visual-effects-vfx",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
-              "version": ""
-            }
-          ],
-          "author": "",
-          "placeholder": true,
-          "allowEmbed": true,
-          "license": "CC BY 4.0",
-          "authorUrl": "",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1790830075,
-        "images": [],
-        "videos": [],
-        "updated": 1791404475,
-        "locked": false,
-        "status": "",
-        "icon": "",
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-728c455b-226f-433d-9978-17a476458a79",
-      "indent": 1,
-      "location": "pages/item-728c455b-226f-433d-9978-17a476458a79/index.html",
-      "slug": "pathways/fundamentals",
-      "order": 13,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Fundamentals",
-      "description": "The essentials.",
-      "metadata": {
-        "published": false,
-        "pageType": "oer:pathway",
-        "oerSource": "pathways/fundamentals",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": "https://michaelcollins.xyz"
-            }
-          ],
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "created": 1791231123,
-        "images": [],
-        "videos": [],
-        "updated": 1791231938,
-        "version": "1.0.0",
-        "oerVersions": [
-          {
-            "version": "1.0.0",
-            "date": 1768219200,
-            "notes": ""
-          },
-          {
-            "version": "0.9.0",
-            "date": null,
-            "notes": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-516620a0-e7c9-4eb5-be9c-76df19420ef9",
-      "indent": 2,
-      "location": "pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.html",
-      "slug": "pathways/fundamentals/v0-9-0",
-      "order": 1000,
-      "parent": "item-728c455b-226f-433d-9978-17a476458a79",
-      "title": "v0.9.0",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:pathway",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": "https://michaelcollins.xyz"
-            }
-          ],
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "oerSnapshotOf": "item-728c455b-226f-433d-9978-17a476458a79",
-        "oerSnapshotTitle": "Fundamentals",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": false,
-        "created": 1791232004,
-        "images": [],
-        "videos": [],
-        "updated": 1791232004
-      }
-    },
-    {
-      "id": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
-      "indent": 1,
-      "location": "pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.html",
-      "slug": "pathways/digital-fabrication-studio",
-      "order": 14,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Digital Fabrication Studio",
-      "description": "Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.",
-      "metadata": {
-        "pageType": "oer:pathway",
-        "oerPlan": "DART 413:pathway",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true,
-          "estimatedDuration": "One course run (15 weeks)",
-          "prerequisites": [
-            {
-              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
-              "version": ""
-            }
-          ]
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791386351
       }
     },
     {
@@ -28212,21 +28638,74 @@
       }
     },
     {
-      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
-      "indent": 0,
-      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
-      "slug": "books",
+      "id": "item-160073d5-d962-4ed9-afcf-7b93ad2b4c77",
+      "indent": 1,
+      "location": "pages/item-160073d5-d962-4ed9-afcf-7b93ad2b4c77/index.html",
+      "slug": "pathways/short-film-pathway",
       "order": 11,
-      "parent": null,
-      "title": "Books",
-      "description": "",
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Short Film Pathway",
+      "description": "Create compelling animated short films from concept to final render. This pathway covers the essential skills for producing narrative-driven CGI films with professional quality animation and compositing.",
       "metadata": {
         "published": true,
-        "pageType": "oer:section",
-        "created": 1791231123,
+        "pageType": "oer:pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/short-film",
+        "tags": "Animation,Short Film,Storytelling,Production Pipeline",
+        "oerFields": {
+          "difficulty": "Intermediate",
+          "estimatedDuration": "24 weeks",
+          "learningObjectives": [
+            "Develop strong storytelling and narrative skills for animation",
+            "Create character performances that convey emotion and personality",
+            "Produce complete animated short films from concept to completion",
+            "Apply professional compositing and finishing techniques",
+            "Understand animation production pipelines and workflows"
+          ],
+          "prerequisites": [
+            {
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+              "version": ""
+            }
+          ],
+          "author": "",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "readinessQuiz": [
+            {
+              "page": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1790830075,
         "images": [],
         "videos": [],
-        "updated": 1791385270
+        "updated": 1791404474,
+        "locked": false,
+        "status": "",
+        "icon": "",
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ]
       }
     },
     {
@@ -28486,25 +28965,218 @@
       }
     },
     {
-      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
+      "id": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
       "indent": 0,
-      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
-      "slug": "assessments",
-      "order": 12,
+      "location": "pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.html",
+      "slug": "sequences",
+      "order": 11,
       "parent": null,
-      "title": "Assessments",
+      "title": "Sequences",
       "description": "",
       "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1790878969,
+        "pageType": "oer:section",
+        "published": true,
+        "created": 1791465730,
         "images": [],
         "videos": [],
-        "updated": 1791404478,
+        "updated": 1791465730
+      }
+    },
+    {
+      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "indent": 0,
+      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
+      "slug": "pathways",
+      "order": 12,
+      "parent": null,
+      "title": "Pathways",
+      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
+      "metadata": {
+        "created": 1790827963,
+        "updated": 1791465709,
+        "images": [],
+        "videos": [],
         "published": true,
         "locked": false,
         "status": "",
-        "icon": ""
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "readtime": 1,
+        "icon": "",
+        "pageType": ""
+      }
+    },
+    {
+      "id": "item-1dba3ce1-6791-4d78-860d-bf8d6f338579",
+      "indent": 1,
+      "location": "pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.html",
+      "slug": "pathways/visual-effects-vfx",
+      "order": 12,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Visual Effects (VFX)",
+      "description": "Integrates CGI elements into live-action footage and blends them seamlessly.",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:pathway",
+        "oerImport": "decap-pathways",
+        "oerSource": "pathways/visual-effects-vfx",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+              "version": ""
+            }
+          ],
+          "author": "",
+          "placeholder": true,
+          "allowEmbed": true,
+          "license": "CC BY 4.0",
+          "authorUrl": "",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1790830075,
+        "images": [],
+        "videos": [],
+        "updated": 1791404475,
+        "locked": false,
+        "status": "",
+        "icon": "",
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-728c455b-226f-433d-9978-17a476458a79",
+      "indent": 1,
+      "location": "pages/item-728c455b-226f-433d-9978-17a476458a79/index.html",
+      "slug": "pathways/fundamentals",
+      "order": 13,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Fundamentals",
+      "description": "The essentials.",
+      "metadata": {
+        "published": false,
+        "pageType": "oer:pathway",
+        "oerSource": "pathways/fundamentals",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791231938,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1768219200,
+            "notes": ""
+          },
+          {
+            "version": "0.9.0",
+            "date": null,
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-516620a0-e7c9-4eb5-be9c-76df19420ef9",
+      "indent": 2,
+      "location": "pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.html",
+      "slug": "pathways/fundamentals/v0-9-0",
+      "order": 1000,
+      "parent": "item-728c455b-226f-433d-9978-17a476458a79",
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:pathway",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "oerSnapshotOf": "item-728c455b-226f-433d-9978-17a476458a79",
+        "oerSnapshotTitle": "Fundamentals",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": false,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791232004
+      }
+    },
+    {
+      "id": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "indent": 1,
+      "location": "pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.html",
+      "slug": "pathways/digital-fabrication-studio",
+      "order": 14,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Digital Fabrication Studio",
+      "description": "Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.",
+      "metadata": {
+        "pageType": "oer:pathway",
+        "oerPlan": "DART 413:pathway",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "One course run (15 weeks)",
+          "prerequisites": [
+            {
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791386351
       }
     },
     {
@@ -28642,28 +29314,21 @@
       }
     },
     {
-      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
       "indent": 0,
-      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
-      "slug": "exercises",
+      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
+      "slug": "books",
       "order": 13,
       "parent": null,
-      "title": "Exercises",
-      "description": "Formative practice focused on a narrow set of competencies.",
+      "title": "Books",
+      "description": "",
       "metadata": {
-        "created": 1790802192,
-        "updated": 1791404481,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
         "published": true,
         "pageType": "oer:section",
-        "hideInMenu": false,
-        "locked": false,
-        "readtime": 1,
-        "status": "",
-        "icon": "",
-        "linkTarget": "_self"
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791465710
       }
     },
     {
@@ -28715,6 +29380,111 @@
             "notes": ""
           }
         ]
+      }
+    },
+    {
+      "id": "item-59547add-790e-4255-a3f0-962065b0064f",
+      "indent": 1,
+      "location": "pages/item-59547add-790e-4255-a3f0-962065b0064f/index.html",
+      "slug": "projects/project-1-sheet-to-form",
+      "order": 13,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 1: Sheet to form",
+      "description": "Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme.",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A04",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791386367
+      }
+    },
+    {
+      "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
+      "indent": 1,
+      "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.html",
+      "slug": "quizzes/hard-surface-modeling-quiz",
+      "order": 13,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Hard Surface Modeling quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
+              "version": ""
+            },
+            {
+              "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
+              "version": ""
+            },
+            {
+              "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
+              "version": ""
+            },
+            {
+              "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791404485
+      }
+    },
+    {
+      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
+      "indent": 0,
+      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
+      "slug": "assessments",
+      "order": 14,
+      "parent": null,
+      "title": "Assessments",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1790878969,
+        "images": [],
+        "videos": [],
+        "updated": 1791465711,
+        "published": true,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -28770,6 +29540,106 @@
             "notes": ""
           }
         ]
+      }
+    },
+    {
+      "id": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+      "indent": 1,
+      "location": "pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.html",
+      "slug": "projects/project-2-multiples-and-variation",
+      "order": 14,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Project 2: Multiples and variation",
+      "description": "Produce a series of at least five objects in which variation is designed — parametric, generative, or rule-based — and the series says something the single object cannot.",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A07",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791386368
+      }
+    },
+    {
+      "id": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
+      "indent": 1,
+      "location": "pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.html",
+      "slug": "quizzes/digital-sculpting-quiz",
+      "order": 14,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Digital Sculpting quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "prerequisites": [
+            {
+              "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
+              "version": ""
+            },
+            {
+              "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
+              "version": ""
+            }
+          ],
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "license": "CC BY 4.0"
+        },
+        "created": 1791229683,
+        "images": [],
+        "videos": [],
+        "updated": 1791404486
+      }
+    },
+    {
+      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "indent": 0,
+      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
+      "slug": "exercises",
+      "order": 15,
+      "parent": null,
+      "title": "Exercises",
+      "description": "Formative practice focused on a narrow set of competencies.",
+      "metadata": {
+        "created": 1790802192,
+        "updated": 1791465711,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "oer:section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "",
+        "linkTarget": "_self"
       }
     },
     {
@@ -31163,145 +32033,6 @@
       }
     },
     {
-      "id": "item-59547add-790e-4255-a3f0-962065b0064f",
-      "indent": 1,
-      "location": "pages/item-59547add-790e-4255-a3f0-962065b0064f/index.html",
-      "slug": "projects/project-1-sheet-to-form",
-      "order": 13,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project 1: Sheet to form",
-      "description": "Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme.",
-      "metadata": {
-        "pageType": "oer:project",
-        "oerPlan": "DART 413:A04",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791386367
-      }
-    },
-    {
-      "id": "item-7f16b8ca-e724-486f-a014-a711ee3c549d",
-      "indent": 1,
-      "location": "pages/item-7f16b8ca-e724-486f-a014-a711ee3c549d/index.html",
-      "slug": "quizzes/hard-surface-modeling-quiz",
-      "order": 13,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Hard Surface Modeling quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-2388c81a-f80d-44c8-be9c-57c64c8b29ab",
-              "version": ""
-            },
-            {
-              "page": "item-e43ae2ca-dce1-4f71-8356-b6538830ed65",
-              "version": ""
-            },
-            {
-              "page": "item-cbff549d-e8f9-4804-b2ec-059cf0863101",
-              "version": ""
-            },
-            {
-              "page": "item-b57b43a9-5427-445c-affe-80ce46848788",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791404485
-      }
-    },
-    {
-      "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "indent": 0,
-      "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
-      "slug": "projects",
-      "order": 14,
-      "parent": null,
-      "title": "Projects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1791404486,
-        "locked": false,
-        "status": "",
-        "icon": ""
-      }
-    },
-    {
-      "id": "item-e8448268-7180-455f-ba52-360dd73d16f6",
-      "indent": 1,
-      "location": "pages/item-e8448268-7180-455f-ba52-360dd73d16f6/index.html",
-      "slug": "projects/project-2-multiples-and-variation",
-      "order": 14,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Project 2: Multiples and variation",
-      "description": "Produce a series of at least five objects in which variation is designed — parametric, generative, or rule-based — and the series says something the single object cannot.",
-      "metadata": {
-        "pageType": "oer:project",
-        "oerPlan": "DART 413:A07",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791386368
-      }
-    },
-    {
       "id": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
       "indent": 1,
       "location": "pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.html",
@@ -31337,65 +32068,6 @@
       }
     },
     {
-      "id": "item-cb64ff65-6e25-4782-9ea8-73848b37ed32",
-      "indent": 1,
-      "location": "pages/item-cb64ff65-6e25-4782-9ea8-73848b37ed32/index.html",
-      "slug": "quizzes/digital-sculpting-quiz",
-      "order": 14,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Digital Sculpting quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "prerequisites": [
-            {
-              "page": "item-f783c8df-d3f9-4ec8-a056-501da8e75a61",
-              "version": ""
-            },
-            {
-              "page": "item-dbe4cef4-73d0-43d9-b532-46081fc2688c",
-              "version": ""
-            }
-          ],
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "license": "CC BY 4.0"
-        },
-        "created": 1791229683,
-        "images": [],
-        "videos": [],
-        "updated": 1791404486
-      }
-    },
-    {
-      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "indent": 0,
-      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
-      "slug": "quizzes",
-      "order": 15,
-      "parent": null,
-      "title": "Quizzes",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:section",
-        "icon": "",
-        "oerTmpKey": "",
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791404487
-      }
-    },
-    {
       "id": "item-e4e10eff-a688-4ead-8963-d36e02adc4e5",
       "indent": 1,
       "location": "pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.html",
@@ -31425,6 +32097,27 @@
       }
     },
     {
+      "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "indent": 0,
+      "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
+      "slug": "projects",
+      "order": 16,
+      "parent": null,
+      "title": "Projects",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:section",
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1791465712,
+        "locked": false,
+        "status": "",
+        "icon": ""
+      }
+    },
+    {
       "id": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
       "indent": 1,
       "location": "pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.html",
@@ -31451,6 +32144,25 @@
         "images": [],
         "videos": [],
         "updated": 1791404488
+      }
+    },
+    {
+      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "indent": 0,
+      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
+      "slug": "quizzes",
+      "order": 17,
+      "parent": null,
+      "title": "Quizzes",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "icon": "",
+        "oerTmpKey": "",
+        "created": 1791228261,
+        "images": [],
+        "videos": [],
+        "updated": 1791465713
       }
     },
     {
@@ -31609,10 +32321,10 @@
     },
     {
       "id": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.html",
       "slug": "applying-textures-to-3-unique-chess-sets",
-      "order": 21,
+      "order": 18,
       "parent": null,
       "title": "Applying Textures to 3 Unique Chess Sets",
       "description": "In this exercise, you will apply Image textures to a Chess board and pieces\nLearning Objectives\n\nPractice using texture images and the UV editor\nShort introduction to material nodes\nPractice appendin",
@@ -31648,7 +32360,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404506,
+        "updated": 1791465713,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -31718,10 +32430,10 @@
     },
     {
       "id": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.html",
       "slug": "model-a-gem",
-      "order": 27,
+      "order": 19,
       "parent": null,
       "title": "Model a Gem",
       "description": "model a Custom Gem\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulat",
@@ -31749,7 +32461,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404507,
+        "updated": 1791465714,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -31811,10 +32523,10 @@
     },
     {
       "id": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.html",
       "slug": "model-a-snowflake",
-      "order": 28,
+      "order": 20,
       "parent": null,
       "title": "Model a Snowflake",
       "description": "In this exercise, you will learn how to model 3 snowflakes\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge f",
@@ -31842,7 +32554,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404508,
+        "updated": 1791465715,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -31907,7 +32619,7 @@
       "indent": 0,
       "location": "pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.html",
       "slug": "what-design-and-truth-say-about-each-other",
-      "order": 28,
+      "order": 21,
       "parent": null,
       "title": "What Design and Truth Say about Each Other",
       "description": "What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt\nIn this chapter, Grudin talks about the transition of design from close dialogue with natural systems",
@@ -31938,7 +32650,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404516,
+        "updated": 1791465715,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -31950,7 +32662,7 @@
       "indent": 0,
       "location": "pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.html",
       "slug": "design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
-      "order": 29,
+      "order": 22,
       "parent": null,
       "title": "Design as Tragedy: The Rise and Fall of the Twin Towers",
       "description": "Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may",
@@ -31981,7 +32693,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404517,
+        "updated": 1791465716,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -31990,10 +32702,10 @@
     },
     {
       "id": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.html",
       "slug": "modeling-a-bishop",
-      "order": 30,
+      "order": 23,
       "parent": null,
       "title": "Modeling a Bishop",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice using the boolean operator and fixing any irregula",
@@ -32047,7 +32759,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404509,
+        "updated": 1791465717,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32138,7 +32850,7 @@
       "indent": 0,
       "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.html",
       "slug": "edsel-s-law-how-bad-design-happens",
-      "order": 30,
+      "order": 24,
       "parent": null,
       "title": "Edsel's Law: How Bad Design Happens",
       "description": "Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin describes the Edsel scale for measuring the quality of a design:\n\nPhotograph an objec",
@@ -32169,7 +32881,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404518,
+        "updated": 1791465718,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32178,10 +32890,10 @@
     },
     {
       "id": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.html",
       "slug": "modeling-a-chavet-121-series-no-6-knight",
-      "order": 31,
+      "order": 25,
       "parent": null,
       "title": "Modeling a Chavet 121 series no 6 Knight",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -32217,7 +32929,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404510,
+        "updated": 1791465718,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32290,7 +33002,7 @@
       "indent": 0,
       "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.html",
       "slug": "designs-of-darkness",
-      "order": 31,
+      "order": 26,
       "parent": null,
       "title": "Designs of Darkness",
       "description": "Designs of Darkness (p. 55-61) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the soci",
@@ -32321,7 +33033,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404519,
+        "updated": 1791465719,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32330,10 +33042,10 @@
     },
     {
       "id": "item-45493816-b35c-457b-9581-8934b03dbac2",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.html",
       "slug": "modeling-a-chessboard",
-      "order": 32,
+      "order": 27,
       "parent": null,
       "title": "Modeling a Chessboard",
       "description": "How to Make a Chess Board\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a ",
@@ -32361,7 +33073,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404511,
+        "updated": 1791465720,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32426,7 +33138,7 @@
       "indent": 0,
       "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.html",
       "slug": "face-to-face-with-design",
-      "order": 32,
+      "order": 28,
       "parent": null,
       "title": "Face to Face with Design",
       "description": "Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No",
@@ -32457,7 +33169,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404519,
+        "updated": 1791465720,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32466,10 +33178,10 @@
     },
     {
       "id": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.html",
       "slug": "modeling-a-diamond",
-      "order": 33,
+      "order": 29,
       "parent": null,
       "title": "Modeling a Diamond",
       "description": "Model a Diamond\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulative",
@@ -32497,7 +33209,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404512,
+        "updated": 1791465721,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32559,10 +33271,10 @@
     },
     {
       "id": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.html",
       "slug": "modeling-a-pawn",
-      "order": 37,
+      "order": 30,
       "parent": null,
       "title": "Modeling a Pawn",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -32604,7 +33316,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404513,
+        "updated": 1791465722,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32680,10 +33392,10 @@
     },
     {
       "id": "item-af4143af-48cc-461a-bb7c-ab562ff1b3a4",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.html",
       "slug": "modeling-a-queen",
-      "order": 38,
+      "order": 31,
       "parent": null,
       "title": "Modeling a Queen",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -32725,7 +33437,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404514,
+        "updated": 1791465722,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32801,10 +33513,10 @@
     },
     {
       "id": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.html",
       "slug": "modeling-a-rook",
-      "order": 39,
+      "order": 32,
       "parent": null,
       "title": "Modeling a Rook",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -32852,7 +33564,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404515,
+        "updated": 1791465723,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32937,7 +33649,7 @@
       "indent": 0,
       "location": "pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.html",
       "slug": "in-jefferson-s-footsteps-modes-of-self-design",
-      "order": 41,
+      "order": 33,
       "parent": null,
       "title": "In Jefferson's Footsteps: Modes of Self-Design",
       "description": "In Jefferson's Footsteps: Modes of Self-Design (p. 105-116) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin talks briefly about humanity's departure from synergy with the ",
@@ -32968,7 +33680,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404520,
+        "updated": 1791465724,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32980,7 +33692,7 @@
       "indent": 0,
       "location": "pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.html",
       "slug": "giorgio-vasari-and-the-permutations-of-design",
-      "order": 42,
+      "order": 34,
       "parent": null,
       "title": "Giorgio Vasari and the Permutations of Design",
       "description": "Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin explores implications resulting from Vasari helping to establish th",
@@ -33011,7 +33723,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404521,
+        "updated": 1791465725,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33023,7 +33735,7 @@
       "indent": 0,
       "location": "pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.html",
       "slug": "the-lady-in-the-picture-design-and-revelation-in-renaissance-art",
-      "order": 43,
+      "order": 35,
       "parent": null,
       "title": "The Lady in the Picture: Design and Revelation in Renaissance Art",
       "description": "The Lady in the Picture: Design and Revelation in Renaissance Art (p. 88-104) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin gives us a glimpse into specific moments of kn",
@@ -33054,7 +33766,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404521,
+        "updated": 1791465725,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33063,10 +33775,10 @@
     },
     {
       "id": "item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d/index.html",
       "slug": "share-one-completed-set",
-      "order": 48,
+      "order": 36,
       "parent": null,
       "title": "Share One Completed Set",
       "description": "In this exercise, you will apply Image textures to a Chess board and piecesLearning Objectives\n\nPractice rendering images for submissions\n\nInstructions\nFor this assignment, you will submit 3 total im",
@@ -33094,7 +33806,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404515,
+        "updated": 1791465726,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33159,7 +33871,7 @@
       "indent": 0,
       "location": "pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.html",
       "slug": "jefferson-s-gravestone-metaphorical-extensions-of-design",
-      "order": 52,
+      "order": 37,
       "parent": null,
       "title": "Jefferson's Gravestone: Metaphorical Extensions of Design",
       "description": "Jefferson's Gravestone: Metaphorical Extensions of Design (p. 117-133) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin takes us on a foray through literary design, social ",
@@ -33190,7 +33902,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404522,
+        "updated": 1791465727,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33202,7 +33914,7 @@
       "indent": 0,
       "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.html",
       "slug": "liberty-as-knowledge-design",
-      "order": 53,
+      "order": 38,
       "parent": null,
       "title": "Liberty as Knowledge Design",
       "description": "Liberty as Knowledge Design (p. 134 - 149) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin dissects the design challenges inherent in a society built on democratic values.",
@@ -33233,7 +33945,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404523,
+        "updated": 1791465728,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33245,7 +33957,7 @@
       "indent": 0,
       "location": "pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.html",
       "slug": "corporate-redesign-and-the-business-of-knowledge",
-      "order": 54,
+      "order": 39,
       "parent": null,
       "title": "Corporate Redesign and the Business of Knowledge",
       "description": "Corporate Redesign and the Business of Knowledge (p. 150-165) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin describes arguments over imbuing corporate free market endeav",
@@ -33276,7 +33988,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404524,
+        "updated": 1791465728,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33288,7 +34000,7 @@
       "indent": 0,
       "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.html",
       "slug": "designing-time",
-      "order": 55,
+      "order": 40,
       "parent": null,
       "title": "Designing Time",
       "description": "Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting prompt\nIn these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports",
@@ -33319,7 +34031,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404524,
+        "updated": 1791465729,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33331,7 +34043,7 @@
       "indent": 0,
       "location": "pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.html",
       "slug": "the-design-of-private-knowledge",
-      "order": 67,
+      "order": 41,
       "parent": null,
       "title": "The Design of Private Knowledge",
       "description": "The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experien",
@@ -33362,7 +34074,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404525,
+        "updated": 1791465730,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,

@@ -1,0 +1,410 @@
+id: item-5d023c48-b512-4408-8d80-d9e87d05f781
+indent: 1
+location: pages/item-5d023c48-b512-4408-8d80-d9e87d05f781/index.yaml
+slug: sequences/dart-413-15-week-studio
+order: 0
+parent: item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639
+title: 'DART 413: 15-week studio'
+description: ''
+metadata:
+  pageType: oer:sequence
+  published: false
+  oerPlan: DART 413:sequence:15
+  oerFields:
+    courses:
+      - page: item-e09826f0-d716-4612-807a-2bbfcff22b36
+        version: ''
+    weeks: 15
+    delivery: In person
+    license: CC BY 4.0
+  oerSequence:
+    version: 1
+    modules:
+      - id: m01
+        title: 'Week 1: Bits to atoms: what digital fabrication is'
+        week: 1
+        items:
+          - page: item-79caedc2-9d9c-4828-bd1e-81545cc458a8
+            as: page
+            title: Overview
+          - page: item-13e7589e-e8ee-48ab-84d2-286c92ebfd73
+            as: page
+          - page: item-cf74e241-cda4-4eff-a5d1-14b9cf701571
+            as: page
+          - page: item-4de26b66-7085-448a-ac92-f32fbf38f8f9
+            as: assignment
+            due:
+              week: 2
+            points: 30
+            group: exercise
+            submission:
+              - online_upload
+            rubric: exercise
+          - page: item-5117d4e6-e938-41a9-b976-858e75347ae5
+            as: assignment
+            due:
+              week: 15
+            points: 50
+            group: reflection
+            submission:
+              - online_upload
+            rubric: written-statement
+          - header: Readings
+          - page: item-d0317d85-4720-45de-8f9c-8a3e62c39921
+            as: link
+          - page: item-eb4ae497-5473-486b-8f0f-77d8446b5f8c
+            as: link
+          - page: item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d
+            as: link
+          - page: item-d987aef1-4873-4380-86a5-4a902fea309d
+            as: link
+          - page: item-4208204c-37a2-4060-adb2-c094b8de1cc3
+            as: link
+      - id: m02
+        title: 'Week 2: Vectors for machines: the laser cutter'
+        week: 2
+        items:
+          - page: item-926d32cd-5f1d-4cad-b882-89c65ffaad5d
+            as: page
+            title: Overview
+          - page: item-d243f14d-7a76-437f-b519-3d8b112aac59
+            as: page
+          - page: item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf
+            as: page
+          - page: item-e57bcbe5-efcd-42a7-a223-b05dea0dc123
+            as: assignment
+            due:
+              week: 3
+            points: 40
+            group: exercise
+            submission:
+              - online_upload
+            rubric: exercise
+          - page: item-9be5b661-faea-45de-a5d7-75725ac645c8
+            as: quiz
+            quizType: practice
+      - id: m03
+        title: 'Week 3: Sheet to form: sectioning, folding, joinery'
+        week: 3
+        items:
+          - page: item-3c61c343-9aaa-4257-b871-355930bdcd69
+            as: page
+            title: Overview
+          - page: item-273da091-602a-4824-86cc-a45fc9346115
+            as: page
+          - page: item-4876f604-977f-4e7d-a5c3-cc6b37063ec8
+            as: page
+          - page: item-a16965e6-def0-4f61-b884-a46300037a08
+            as: assignment
+            due:
+              week: 4
+            points: 50
+            group: exercise
+            submission:
+              - online_upload
+            rubric: exercise
+          - page: item-bdd37b96-f590-4a7b-aad8-5a32e85230ad
+            as: assignment
+            due:
+              week: 13
+            points: 0
+            graded: false
+            submission:
+              - online_upload
+            rubric: task
+          - header: Readings
+          - page: item-c9e4c050-9edb-485b-8ee3-5a5b0a659965
+            as: link
+      - id: m04
+        title: 'Week 4: Project 1 launch: Sheet to form'
+        week: 4
+        items:
+          - page: item-86df4055-aee6-4e3c-aa9c-5e291791c8ef
+            as: page
+            title: Overview
+          - page: item-389a18e8-e515-4482-ae7b-9a56687cb460
+            as: page
+          - page: item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944
+            as: page
+          - page: item-59547add-790e-4255-a3f0-962065b0064f
+            as: assignment
+            due:
+              week: 5
+            points: 100
+            group: projects-15
+            submission:
+              - online_upload
+            rubric: project
+      - id: m05
+        title: 'Week 5: Project 1 production + crit'
+        week: 5
+        items:
+          - page: item-b2b1aa00-e58f-483e-8649-84526b67110a
+            as: page
+            title: Overview
+          - page: item-389a18e8-e515-4482-ae7b-9a56687cb460
+            as: page
+          - page: item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180
+            as: assignment
+            due:
+              week: 15
+            points: 20
+            group: critique
+            submission:
+              - online_upload
+            rubric: task
+          - header: Readings
+          - page: item-c92ff8f6-321f-4fd8-8b2d-2365074e8e0d
+            as: link
+          - page: item-ea1c3fc5-4560-4503-93d0-2bbf116f4bf2
+            as: link
+          - page: item-2ffcd551-9b63-4336-835e-7dd0155cb5cf
+            as: link
+          - page: item-24c20753-b4ef-41f4-acd4-60df13259c87
+            as: link
+      - id: m06
+        title: 'Week 6: Additive: 3D printing fundamentals'
+        week: 6
+        items:
+          - page: item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a
+            as: page
+            title: Overview
+          - page: item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6
+            as: page
+          - page: item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0
+            as: page
+          - page: item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad
+            as: page
+          - page: item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21
+            as: assignment
+            due:
+              week: 7
+            points: 50
+            group: exercise
+            submission:
+              - online_upload
+            rubric: exercise
+          - page: item-ab1c8916-1374-44a6-8872-b62dcea82770
+            as: quiz
+            quizType: practice
+          - header: Readings
+          - page: item-b3c6e211-2a6d-4c98-8d00-f3159e7d4919
+            as: link
+          - page: item-3475b882-a15e-43ce-b226-750a59efa486
+            as: link
+          - page: item-60e4b429-b224-4257-bf91-839210d305a3
+            as: link
+      - id: m07
+        title: 'Week 7: Modeling for fabrication: parametric and sculptural'
+        week: 7
+        items:
+          - page: item-2d373830-ce82-4cb9-a217-5d6ba17e8a6a
+            as: page
+            title: Overview
+          - page: item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f
+            as: page
+          - page: item-f570ed6c-e171-4a20-af0f-58c5e61fceb7
+            as: page
+          - page: item-f5669ca1-8a62-4854-908c-925e14b7eecb
+            as: assignment
+            due:
+              week: 8
+            points: 50
+            group: exercise
+            submission:
+              - online_upload
+            rubric: exercise
+          - header: Readings
+          - page: item-a736e35a-581d-40fb-8d77-eb137a06c7e7
+            as: link
+          - page: item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c
+            as: link
+      - id: m08
+        title: 'Week 8: Project 2 launch: Multiples and variation'
+        week: 8
+        items:
+          - page: item-23bfc330-baae-4c57-b782-7da696b33431
+            as: page
+            title: Overview
+          - page: item-f570ed6c-e171-4a20-af0f-58c5e61fceb7
+            as: page
+          - page: item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944
+            as: page
+          - page: item-e8448268-7180-455f-ba52-360dd73d16f6
+            as: assignment
+            due:
+              week: 10
+            points: 100
+            group: projects-15
+            submission:
+              - online_upload
+            rubric: project
+          - header: Readings
+          - page: item-a736e35a-581d-40fb-8d77-eb137a06c7e7
+            as: link
+          - page: item-5898b795-f4da-441d-aa3b-929668d03a7d
+            as: link
+          - page: item-4208204c-37a2-4060-adb2-c094b8de1cc3
+            as: link
+      - id: m09
+        title: 'Week 9: Subtractive: CNC routing'
+        week: 9
+        items:
+          - page: item-29ccdd18-d451-48e3-b92a-ee97be5e062f
+            as: page
+            title: Overview
+          - page: item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e
+            as: page
+          - page: item-304740f9-f09f-4e1c-94dd-84eead792e87
+            as: page
+          - page: item-70652b2f-07b2-489b-a0fa-e1f7f341ec91
+            as: assignment
+            due:
+              week: 10
+            points: 50
+            group: exercise
+            submission:
+              - online_upload
+            rubric: exercise
+          - page: item-6d67a392-9c2e-4070-bb24-8fed224e3774
+            as: quiz
+            quizType: practice
+      - id: m10
+        title: 'Week 10: CNC production + Project 2 crit'
+        week: 10
+        items:
+          - page: item-2754dfc2-7298-4af7-bf36-ca77dd52bfe0
+            as: page
+            title: Overview
+          - page: item-389a18e8-e515-4482-ae7b-9a56687cb460
+            as: page
+      - id: m11
+        title: 'Week 11: Hybrid processes and finishing'
+        week: 11
+        items:
+          - page: item-bf575694-a7b5-42c8-9527-0e8704d50077
+            as: page
+            title: Overview
+          - page: item-ffce6e97-37ca-44a1-ada5-afc73b34cbe9
+            as: page
+          - header: Readings
+          - page: item-526d73e9-2873-4210-b492-2888ab24f533
+            as: link
+      - id: m12
+        title: 'Week 12: Final project launch + critical making'
+        week: 12
+        items:
+          - page: item-665fac95-9a12-4f05-a7cd-e9264f010b6f
+            as: page
+            title: Overview
+          - page: item-d691e847-ed22-40ee-8b49-1f409a0dc0c2
+            as: page
+          - page: item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944
+            as: page
+          - page: item-eceae826-36f2-4e2c-b626-3c2136ab261b
+            as: page
+          - page: item-c64e34a7-5763-4e28-b1e2-e9b87814daf8
+            as: assignment
+            due:
+              week: 15
+            points: 100
+            group: projects-20
+            submission:
+              - online_upload
+            rubric: project
+          - page: item-0909a197-4405-4d6b-8959-cc5b95196e13
+            as: assignment
+            due:
+              week: 12
+            points: 20
+            group: presentation
+            submission:
+              - online_upload
+            rubric: task
+          - header: Readings
+          - page: item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62
+            as: link
+          - page: item-37be7178-7d0e-47aa-9515-852942e1101f
+            as: link
+          - page: item-de3020be-052d-4ec8-a11d-414dc295423b
+            as: link
+          - page: item-0a2a466e-a69a-45e3-b4b6-53c7493455b5
+            as: link
+          - page: item-60e4b429-b224-4257-bf91-839210d305a3
+            as: link
+      - id: m13
+        title: 'Week 13: Final production I: workshops on demand'
+        week: 13
+        items:
+          - page: item-441bb5a3-2bb6-4c4b-bee9-f9d78eadff4d
+            as: page
+            title: Overview
+          - page: item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1
+            as: page
+          - page: item-da8b8213-908b-455f-8501-0bc929cf3b05
+            as: assignment
+            due:
+              week: 15
+            points: 100
+            group: reflection
+            submission:
+              - online_upload
+            rubric: written-statement
+      - id: m14
+        title: 'Week 14: Final production II + work-in-progress crit'
+        week: 14
+        items:
+          - page: item-87e4ca8e-509e-4062-9a59-8c8d003e0665
+            as: page
+            title: Overview
+          - page: item-389a18e8-e515-4482-ae7b-9a56687cb460
+            as: page
+      - id: m15
+        title: 'Week 15: Final crit, exhibition, documentation portfolio'
+        week: 15
+        items:
+          - page: item-a5a99c13-0a17-48b6-a761-2b02f2aaa9af
+            as: page
+            title: Overview
+          - page: item-389a18e8-e515-4482-ae7b-9a56687cb460
+            as: page
+          - page: item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1
+            as: page
+    groups:
+      - id: exercise
+        name: Exercises
+        weight: 27
+      - id: projects-15
+        name: Projects (15% each)
+        weight: 30
+      - id: projects-20
+        name: Final project
+        weight: 20
+      - id: presentation
+        name: Presentations
+        weight: 3
+      - id: reflection
+        name: Reflections
+        weight: 15
+      - id: critique
+        name: Critique
+        weight: 5
+    rubricScale:
+      - name: Exemplary
+        share: 1
+      - name: Proficient
+        share: 0.85
+      - name: Developing
+        share: 0.7
+      - name: Beginning
+        share: 0.5
+      - name: Missing
+        share: 0
+  created: 1791465730
+  images: []
+  videos: []
+  updated: 1791465730
+content: >-
+  <p>The 15-week in person run of DART 413: Digital Fabrication Studio, week by
+  week. Export it to Canvas to set up a course for your term: you choose the
+  dates, breaks and when assignments are due.</p>

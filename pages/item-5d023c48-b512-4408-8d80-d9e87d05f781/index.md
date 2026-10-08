@@ -1,0 +1,1 @@
+The 15-week in person run of DART 413: Digital Fabrication Studio, week by week. Export it to Canvas to set up a course for your term: you choose the dates, breaks and when assignments are due.

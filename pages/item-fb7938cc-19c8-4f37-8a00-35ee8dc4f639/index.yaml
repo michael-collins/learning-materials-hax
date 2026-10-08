@@ -1,0 +1,22 @@
+id: item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639
+indent: 0
+location: pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.yaml
+slug: sequences
+order: 11
+parent: null
+title: Sequences
+description: ''
+metadata:
+  pageType: oer:section
+  published: true
+  created: 1791465730
+  images: []
+  videos: []
+  updated: 1791465730
+content: >-
+  <p>Plans for running a course, week by week: what students read, do and hand
+  in, when it's due and how it's graded. Open one to see its schedule, or export
+  it to Canvas with your term's dates.</p>
+
+  <oer-collection types="oer:sequence" scope="site" view="table" sort="title"
+  per-page="20" controls="full"></oer-collection>
