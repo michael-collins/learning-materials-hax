@@ -33,7 +33,7 @@
  *   → { files: [{ name, data }], report: { warnings, counts } }
  */
 import { classMeetings, dueAt, termEnd, toUtc, unlockAt, DELIVERY_MODES } from "./offering-schedule.js";
-import { findRubric, rubricAt, rubricOf, criterionPoints } from "../rubrics/rubric-model.js";
+import { findRubric, rubricAt, rubricOf, criterionPoints, itemRubric } from "../rubrics/rubric-model.js";
 
 /* ---------- helpers ---------- */
 
@@ -64,15 +64,18 @@ const htmlPage = (title, body, meta = {}) =>
 /* ---------- the live page, embedded ---------- */
 
 const pageUrl = (siteUrl, item) => (siteUrl ? new URL(item.slug, siteUrl).href : item.slug);
-const embedSrc = (siteUrl, item) => {
+// hideRubric: Canvas attaches the rubric it grades with, so the page's own
+// Rubric block (perhaps another rubric) stays out of the frame
+const embedSrc = (siteUrl, item, hideRubric = false) => {
   const u = new URL(item.slug, siteUrl || "https://example.invalid/");
   u.searchParams.set("embed", "1");
-  return siteUrl ? u.href : `${item.slug}?embed=1`;
+  if (hideRubric) u.searchParams.set("hideRubric", "true");
+  return siteUrl ? u.href : `${item.slug}?embed=1${hideRubric ? "&hideRubric=true" : ""}`;
 };
 // iframe sizing uses only CSS Canvas keeps (no aspect-ratio); the embedded
 // page resizes its frame the way Canvas expects (embed/embed-mode.js)
-const embed = (siteUrl, item, siteName) =>
-  `<p><iframe src="${esc(embedSrc(siteUrl, item))}" title="${esc(item.title)}" width="100%" height="900" style="width: 100%; height: 900px; border: 0;" allow="fullscreen; clipboard-write" allowfullscreen="allowfullscreen" loading="lazy"></iframe></p>\n<p><a href="${esc(pageUrl(siteUrl, item))}" target="_blank">Open “${esc(item.title)}” on ${esc(siteName)}</a></p>`;
+const embed = (siteUrl, item, siteName, hideRubric = false) =>
+  `<p><iframe src="${esc(embedSrc(siteUrl, item, hideRubric))}" title="${esc(item.title)}" width="100%" height="900" style="width: 100%; height: 900px; border: 0;" allow="fullscreen; clipboard-write" allowfullscreen="allowfullscreen" loading="lazy"></iframe></p>\n<p><a href="${esc(pageUrl(siteUrl, item))}" target="_blank">Open “${esc(item.title)}” on ${esc(siteName)}</a></p>`;
 
 /* ---------- quizzes from the page's questions ---------- */
 
@@ -461,8 +464,12 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         const aId = key("assignment", page.id, ...use);
         listed.push({ title, href: `$CANVAS_OBJECT_REFERENCE$/assignments/${aId}`, due: entry.due });
         const slug = slugify(title);
-        add(`${aId}/${slug}.html`, htmlPage(`Assignment: ${title}`, `${instructionsIntro(page)}\n${embed(siteUrl, page, siteName)}`));
-        add(`${aId}/assignment_settings.xml`, `${XML_HEAD}<assignment identifier="${aId}" ${CCC}>\n${assignmentBody(entry, title, (graded) => (graded ? entry.submission || ["online_upload"] : ["not_graded"]).join(","))}\n</assignment>\n`);
+        // its rubric: its own, or the one its page shows
+        const r = itemRubric(entry, page);
+        const graded = entry.graded !== false && Number(entry.points) > 0;
+        const withRubric = { ...entry, rubric: r.ref || undefined, rubricVersion: r.version || undefined };
+        add(`${aId}/${slug}.html`, htmlPage(`Assignment: ${title}`, `${instructionsIntro(page)}\n${embed(siteUrl, page, siteName, graded && !!r.ref)}`));
+        add(`${aId}/assignment_settings.xml`, `${XML_HEAD}<assignment identifier="${aId}" ${CCC}>\n${assignmentBody(withRubric, title, (g) => (g ? entry.submission || ["online_upload"] : ["not_graded"]).join(","))}\n</assignment>\n`);
         resources.push(`<resource identifier="${aId}" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="${aId}/${slug}.html"><file href="${aId}/${slug}.html"/><file href="${aId}/assignment_settings.xml"/></resource>`);
         itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Assignment</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${aId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
         orgItems.push(`<item identifier="${tagId}" identifierref="${aId}"><title>${esc(title)}</title></item>`);
@@ -476,9 +483,12 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         const graded = entry.graded !== false && Number(entry.points) > 0;
         const groupSet = String(entry.groupSet || "").trim();
         const due = utc(dueAt(offering, entry.due), tz);
-        const rubricShown = graded && entry.rubric ? rubricAt(items, entry.rubric, entry.rubricVersion).shown : null;
+        // its rubric: its own, or the one its page shows
+        const r = itemRubric(entry, page);
+        const withRubric = { ...entry, rubric: r.ref || undefined, rubricVersion: r.version || undefined };
+        const rubricShown = graded && r.ref ? rubricAt(items, r.ref, r.version).shown : null;
         const rubricName = rubricShown ? rubricOf(rubricShown).name : "";
-        const prompt = [instructionsIntro(page), requirementsHtml(entry, readableDate(dueAt(offering, entry.due)), rubricName), embed(siteUrl, page, siteName)].filter(Boolean).join("\n");
+        const prompt = [instructionsIntro(page), requirementsHtml(entry, readableDate(dueAt(offering, entry.due)), rubricName), embed(siteUrl, page, siteName, graded && !!r.ref)].filter(Boolean).join("\n");
         add(`${tId}.xml`, `${XML_HEAD}<topic xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1  http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imsdt_v1p1.xsd">\n  <title>${esc(title)}</title>\n  <text texttype="text/html">${esc(prompt)}</text>\n</topic>\n`);
         // the discussion's own fields come before its nested <assignment>
         add(
@@ -492,7 +502,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
   <require_initial_post>${bool(!!entry.requireInitialPost)}</require_initial_post>
   <has_group_category>${bool(!!groupSet)}</has_group_category>${groupSet ? `\n  <group_category>${esc(groupSet)}</group_category>` : ""}
   <workflow_state>${publish ? "active" : "unpublished"}</workflow_state>
-  <allow_rating>false</allow_rating>${!graded && due ? `\n  <todo_date>${due}</todo_date>` : ""}${graded ? `\n  <assignment identifier="${key("topicassignment", page.id, ...use)}">\n${assignmentBody({ ...entry, groupSet: "" }, title, () => "discussion_topic").replace(/^/gm, "  ")}\n  </assignment>` : ""}
+  <allow_rating>false</allow_rating>${!graded && due ? `\n  <todo_date>${due}</todo_date>` : ""}${graded ? `\n  <assignment identifier="${key("topicassignment", page.id, ...use)}">\n${assignmentBody({ ...withRubric, groupSet: "" }, title, () => "discussion_topic").replace(/^/gm, "  ")}\n  </assignment>` : ""}
 </topicMeta>
 `,
         );

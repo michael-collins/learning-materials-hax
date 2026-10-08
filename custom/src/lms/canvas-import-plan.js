@@ -185,9 +185,10 @@ function siteRubric(r) {
     criteria: r.criteria.map((c, i) => ({
       id: c.id || `criterion-${i + 1}`,
       name: c.name,
-      description: c.description || "",
+      // Canvas keeps rubric text as HTML (<br/>); the site's is plain text
+      description: htmlText(c.description || ""),
       weight: c.points || 1,
-      descriptors: Object.fromEntries(c.ratings.filter((x) => x.description).map((x) => [levels.find((l) => l.name === (x.name || "Rating"))?.id, x.description])),
+      descriptors: Object.fromEntries(c.ratings.filter((x) => x.description).map((x) => [levels.find((l) => l.name === (x.name || "Rating"))?.id, htmlText(x.description)])),
     })),
   };
 }

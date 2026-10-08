@@ -20,7 +20,7 @@
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { pageIcon } from "../types/page-icon.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
-import { findRubric, isRubric, sameRubric, parseRubricRef, rubricRefsIn } from "../rubrics/rubric-model.js";
+import { findRubric, isRubric, sameRubric, parseRubricRef, rubricRefsIn, itemRubric, isGradedItem } from "../rubrics/rubric-model.js";
 
 export const isSnapshot = (item) => !!item?.metadata?.oerSnapshotOf;
 
@@ -75,15 +75,24 @@ async function pageHtml(item) {
   return htmlText.replace(/<page-break\b[^>]*>(?:\s*<\/page-break>)?/gi, "").trim() || "<p></p>";
 }
 
+// the rubric a sequence item grades with (its own, or its page's)
+const gradingRubric = (it, list) => (isGradedItem(it) ? itemRubric(it, list.find((i) => i.id === it.page)) : { ref: "" });
+
 // the rubric pages a page uses at the latest (not pinned): its Rubric
-// blocks (from `contents`, else its recorded list) and a sequence's items
+// blocks (from `contents`, else its recorded list) and a sequence's graded
+// items (their own rubrics, or their pages')
 function rubricsUsed(page, contents, list) {
   const refs = new Set();
   for (const entry of contents != null ? rubricRefsIn(contents) : [].concat(page.metadata?.oerRubrics || [])) {
     const r = parseRubricRef(entry);
     if (!r.version) refs.add(r.ref);
   }
-  for (const m of page.metadata?.oerSequence?.modules || []) for (const it of m.items || []) if (it.rubric && !it.rubricVersion) refs.add(it.rubric);
+  for (const m of page.metadata?.oerSequence?.modules || []) {
+    for (const it of m.items || []) {
+      const r = gradingRubric(it, list);
+      if (r.ref && !r.version) refs.add(r.ref);
+    }
+  }
   const out = new Map();
   for (const ref of refs) {
     const rubric = findRubric(list, ref);
@@ -117,17 +126,20 @@ function pinBlocks(html, plan, list) {
   });
 }
 
-// pin a sequence's items that grade with the latest rubric
+// pin a sequence's items that grade with the latest rubric; an item using
+// its page's rubric names it, so the release keeps grading with it as it
+// was whatever the page shows later
 function pinSequence(sequence, plan, list) {
   return {
     ...sequence,
     modules: (sequence.modules || []).map((m) => ({
       ...m,
       items: (m.items || []).map((it) => {
-        if (!it.rubric || it.rubricVersion) return it;
-        const rubric = findRubric(list, it.rubric);
+        const r = gradingRubric(it, list);
+        if (!r.ref || r.version) return r.from === "page" ? { ...it, rubric: r.ref, rubricVersion: r.version } : it;
+        const rubric = findRubric(list, r.ref);
         const pin = rubric && plan.find((p) => p.rubric.id === rubric.id);
-        return pin ? { ...it, rubricVersion: pin.version } : it;
+        return pin ? { ...it, rubric: r.ref, rubricVersion: pin.version } : it;
       }),
     })),
   };

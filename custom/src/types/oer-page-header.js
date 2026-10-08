@@ -25,7 +25,7 @@ import { cleanRichText } from "../ui/oer-text-editor.js";
 const richText = (htmlText) => globalThis.document.createRange().createContextualFragment(cleanRichText(htmlText || ""));
 import { sequenceExport } from "../lms/oer-sequence-export.js";
 import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
-import { RUBRIC_TYPE } from "../rubrics/rubric-model.js";
+import { RUBRIC_TYPE, itemRubric, findRubric, isGradedItem } from "../rubrics/rubric-model.js";
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
 
 const lucide = (name) =>
@@ -52,6 +52,7 @@ class OerPageHeader extends LitElement {
       _types: { state: true },
       _exportOpen: { state: true },
       _exporting: { state: true },
+      _rubricsOpen: { state: true }, // schedule items whose rubric is shown
     };
   }
 
@@ -59,6 +60,7 @@ class OerPageHeader extends LitElement {
     super();
     this._item = null;
     this._types = [];
+    this._rubricsOpen = new Set();
   }
 
   connectedCallback() {
@@ -502,6 +504,42 @@ class OerPageHeader extends LitElement {
         font-size: 0.8125rem;
         color: var(--muted-foreground);
       }
+      /* an item's rubric: named after its note, opened below it */
+      .schedule li.with-rubric {
+        flex-wrap: wrap;
+      }
+      .rubric-toggle {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0 0.375rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .rubric-toggle:hover {
+        color: var(--foreground);
+        background: var(--accent);
+      }
+      .rubric-toggle:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .rubric-toggle[aria-expanded="true"] .lucide {
+        transform: rotate(90deg);
+      }
+      .schedule .no-rubric {
+        color: var(--destructive);
+      }
+      .item-rubric {
+        flex-basis: 100%;
+        padding-left: 1.875rem;
+      }
+      .item-rubric oer-rubric {
+        margin: 0.375rem 0 0.75rem;
+      }
       .schedule li.sub {
         padding-top: 0.25rem;
         padding-left: 1.875rem;
@@ -651,10 +689,29 @@ class OerPageHeader extends LitElement {
               const type = this._types.find((t) => t.id === p.metadata?.pageType);
               // pages not yet published are listed, not linked, for visitors
               const open = store.isLoggedIn || p.metadata?.published !== false;
-              return html`<li style="${pad}">
+              // the rubric it's graded with (its own, or its page's), shown
+              // on request with this item's points
+              const graded = isGradedItem(it) && Number(it.points) > 0;
+              const r = graded ? itemRubric(it, p) : null;
+              const rubric = r?.ref ? findRubric(this._allItems || [], r.ref) : null;
+              const key = `${m.id}:${(m.items || []).indexOf(it)}`;
+              const shown = rubric && this._rubricsOpen.has(key);
+              const toggle = () => {
+                const next = new Set(this._rubricsOpen);
+                if (next.has(key)) next.delete(key);
+                else next.add(key);
+                this._rubricsOpen = next;
+              };
+              return html`<li class="${rubric ? "with-rubric" : ""}" style="${pad}">
                 ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
                 ${open ? html`<a href="${p.slug}">${it.title || p.title}</a>` : html`<span>${it.title || p.title}</span>`}
                 <small>${note(it, p)}</small>
+                ${rubric
+                  ? html`<button class="rubric-toggle" aria-expanded="${shown ? "true" : "false"}" @click="${toggle}">${lucide("oer:chevron-right")}${rubric.title}</button>`
+                  : graded && store.isLoggedIn
+                    ? html`<small class="no-rubric">No rubric</small>`
+                    : ""}
+                ${shown ? html`<div class="item-rubric"><oer-rubric rubric-id="${r.ref}" version="${r.version || ""}" points="${it.points}"></oer-rubric></div>` : ""}
               </li>`;
             })}
           </ul>`,

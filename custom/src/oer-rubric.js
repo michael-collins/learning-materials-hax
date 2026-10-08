@@ -20,12 +20,17 @@ import { html, css, store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/
 import { registerBlocks } from "./blocks/register.js";
 import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
-import { findRubric, rubricAt, rubricOf, rubricPages, hasDescriptors, percent, shareLabel, weightTotal } from "./rubrics/rubric-model.js";
+import { findRubric, rubricAt, rubricOf, rubricPages, hasDescriptors, percent, shareLabel, weightTotal, criterionPoints } from "./rubrics/rubric-model.js";
 import { rubricEditor } from "./rubrics/oer-rubric-editor.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
 // "Exercise" -> "Exercise rubric"; a name that already says rubric stays
+// "3.33 pts" (cents, as Canvas rates them)
+const ptsLabel = (n) => `${Math.round(n * 100) / 100} pts`;
+// a criterion's share of the grade, with its points when there's a total
+const weightNote = (c, i, total, pts, ofGrade = true) => (pts ? `${ptsLabel(pts[i])} (${shareLabel(c.weight, total)})` : `${shareLabel(c.weight, total)}${ofGrade ? " of the grade" : ""}`);
+
 const heading = (name) => (/rubric/i.test(name) ? name : `${name} rubric`);
 
 export class OerRubric extends DDD {
@@ -74,6 +79,23 @@ export class OerRubric extends DDD {
   disconnectedCallback() {
     this.__dispose?.();
     super.disconnectedCallback();
+  }
+
+  // points="10" (set by a course sequence's schedule, not in page content):
+  // each criterion and rating shows its points, as Canvas grades it. Read
+  // from the attribute, not a declared property, so HAX never saves it.
+  static get observedAttributes() {
+    return [...super.observedAttributes, "points"];
+  }
+
+  attributeChangedCallback(name, old, value) {
+    super.attributeChangedCallback(name, old, value);
+    if (name === "points") this.requestUpdate();
+  }
+
+  get _points() {
+    const n = Number(this.getAttribute("points"));
+    return Number.isFinite(n) && n > 0 ? n : 0;
   }
 
   get _hidden() {
@@ -292,6 +314,20 @@ export class OerRubric extends DDD {
           clip-path: inset(50%);
           white-space: nowrap;
         }
+        /* rubric text keeps its line breaks */
+        .grid td,
+        .grid th p,
+        .stacked dd,
+        .cdesc,
+        td {
+          white-space: pre-line;
+        }
+        .grid td .pts {
+          display: block;
+          margin-bottom: 0.25rem;
+          font-weight: 600;
+          color: var(--foreground, inherit);
+        }
         .weight {
           white-space: nowrap;
           font-variant-numeric: tabular-nums;
@@ -343,6 +379,7 @@ export class OerRubric extends DDD {
 
   _renderGrid(r) {
     const total = weightTotal(r);
+    const pts = this._points ? criterionPoints(r, this._points) : null;
     return html`<div class="n${Math.max(2, Math.min(7, r.levels.length))}"><div class="table-wrap grid-wrap">
       <table class="grid">
         <thead>
@@ -353,9 +390,13 @@ export class OerRubric extends DDD {
         </thead>
         <tbody>
           ${r.criteria.map(
-            (c) => html`<tr>
-              <th scope="row">${c.name}<small class="weight">${shareLabel(c.weight, total)} of the grade</small>${c.description ? html`<p>${c.description}</p>` : ""}</th>
-              ${r.levels.map((l) => (c.descriptors?.[l.id] ? html`<td>${c.descriptors[l.id]}</td>` : html`<td class="none"><span aria-label="Not described">–</span></td>`))}
+            (c, i) => html`<tr>
+              <th scope="row">${c.name}<small class="weight">${weightNote(c, i, total, pts)}</small>${c.description ? html`<p>${c.description}</p>` : ""}</th>
+              ${r.levels.map((l) =>
+                c.descriptors?.[l.id]
+                  ? html`<td>${pts ? html`<small class="pts">${ptsLabel(pts[i] * l.share)}</small>` : ""}${c.descriptors[l.id]}</td>`
+                  : html`<td class="none">${pts ? html`<small class="pts">${ptsLabel(pts[i] * l.share)}</small>` : ""}<span aria-label="Not described">–</span></td>`,
+              )}
             </tr>`,
           )}
         </tbody>
@@ -363,11 +404,11 @@ export class OerRubric extends DDD {
     </div>
     <ul class="stacked" role="list">
       ${r.criteria.map(
-        (c) => html`<li>
-          <h4>${c.name}<small class="weight">${shareLabel(c.weight, total)} of the grade</small></h4>
+        (c, i) => html`<li>
+          <h4>${c.name}<small class="weight">${weightNote(c, i, total, pts)}</small></h4>
           ${c.description ? html`<p class="cdesc">${c.description}</p>` : ""}
           <dl>
-            ${r.levels.map((l) => html`<dt>${l.name}<small>${percent(l.share)}</small></dt><dd>${c.descriptors?.[l.id] || "–"}</dd>`)}
+            ${r.levels.map((l) => html`<dt>${l.name}<small>${pts ? ptsLabel(pts[i] * l.share) : percent(l.share)}</small></dt><dd>${c.descriptors?.[l.id] || "–"}</dd>`)}
           </dl>
         </li>`,
       )}
@@ -376,13 +417,14 @@ export class OerRubric extends DDD {
 
   _renderList(r) {
     const total = weightTotal(r);
+    const pts = this._points ? criterionPoints(r, this._points) : null;
     return html`<div class="table-wrap">
         <table>
           <thead>
-            <tr><th scope="col">Criterion</th><th scope="col">Description</th><th scope="col">Share of the grade</th></tr>
+            <tr><th scope="col">Criterion</th><th scope="col">Description</th><th scope="col">${pts ? "Points" : "Share of the grade"}</th></tr>
           </thead>
           <tbody>
-            ${r.criteria.map((c) => html`<tr><th scope="row">${c.name}</th><td>${c.description}</td><td class="weight">${shareLabel(c.weight, total)}</td></tr>`)}
+            ${r.criteria.map((c, i) => html`<tr><th scope="row">${c.name}</th><td>${c.description}</td><td class="weight">${weightNote(c, i, total, pts, false)}</td></tr>`)}
           </tbody>
         </table>
       </div>

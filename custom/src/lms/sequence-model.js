@@ -50,7 +50,7 @@
  * dependencies.
  */
 import { deliveryFromCourse, teachingWeeks, weeksAvailable, dueAt } from "./offering-schedule.js";
-import { findRubric, rubricAt, rubricOf } from "../rubrics/rubric-model.js";
+import { findRubric, rubricAt, rubricOf, itemRubric, rubricDiffers, pageRubric } from "../rubrics/rubric-model.js";
 
 export const SEQUENCE_TYPE = "oer:sequence";
 
@@ -86,12 +86,16 @@ export function defaultRole(pageType) {
   return "page";
 }
 
-/** A new item for a page, with the usual settings for its type. */
+/**
+ * A new item for a page, with the usual settings for its type. It grades
+ * with the rubric its page shows; a page without one gets the type's usual
+ * rubric.
+ */
 export function newItem(page, week) {
   const as = defaultRole(page.metadata?.pageType);
   if (as === "assignment") {
     const project = page.metadata?.pageType === "oer:project";
-    return { page: page.id, as, due: { week }, points: project ? 100 : 20, submission: ["online_upload"], rubric: project ? "project" : "exercise" };
+    return { page: page.id, as, due: { week }, points: project ? 100 : 20, submission: ["online_upload"], ...(pageRubric(page) ? {} : { rubric: project ? "project" : "exercise" }) };
   }
   if (as === "quiz") return { page: page.id, as, quizType: "practice" };
   return { page: page.id, as };
@@ -159,9 +163,15 @@ export function toOffering(page, items, run) {
   };
 }
 
-/** Problems to fix before exporting: [{ level: "error" | "warning", text }]. */
+/**
+ * Problems to fix before exporting: [{ level: "error" | "warning", text,
+ * fix? }]. fix: "rubrics" when the sequence's Rubrics panel is where to fix
+ * it.
+ */
 export function readiness(page, items, run = null) {
   const out = [];
+  const noRubric = [];
+  const differs = [];
   const sequence = sequenceOf(page);
   const byId = new Map(items.map((i) => [i.id, i]));
   const weeks = sequenceWeeks(page, sequence);
@@ -192,15 +202,22 @@ export function readiness(page, items, run = null) {
         if (!(Number(it.points) > 0)) out.push({ level: "warning", text: `${page.title} has no points.` });
         if (sequence.groups.length && (!it.group || !groupIds.has(it.group))) out.push({ level: "warning", text: `${page.title} isn't in a grade group.` });
         if (it.due?.week > weeks) out.push({ level: "warning", text: `${page.title} is due in week ${it.due.week}, after the sequence's ${weeks} weeks.` });
-        if (it.rubric) {
-          const rubric = findRubric(items, it.rubric);
-          if (!rubric) out.push({ level: "warning", text: `${page.title}: its rubric (${it.rubric}) isn't on the site.` });
-          else if (!rubricOf(rubric).criteria.length) out.push({ level: "warning", text: `${page.title}: the rubric “${rubric.title}” has no criteria yet.` });
-          else if (it.rubricVersion && rubricAt(items, it.rubric, it.rubricVersion).missing) out.push({ level: "warning", text: `${page.title}: rubric version ${it.rubricVersion} isn't on the site.` });
-        }
+        // its own rubric, or its page's
+        const r = itemRubric(it, page);
+        const name = it.title || page.title;
+        if (r.ref) {
+          const rubric = findRubric(items, r.ref);
+          if (!rubric) out.push({ level: "warning", text: `${name}: its rubric (${r.ref}) isn't on the site.`, fix: "rubrics" });
+          else if (!rubricOf(rubric).criteria.length) out.push({ level: "warning", text: `${name}: the rubric “${rubric.title}” has no criteria yet.` });
+          else if (r.version && rubricAt(items, r.ref, r.version).missing) out.push({ level: "warning", text: `${name}: rubric version ${r.version} isn't on the site.` });
+        } else if (Number(it.points) > 0) noRubric.push(name);
+        if (rubricDiffers(it, page, items)) differs.push(name);
       }
     }
   }
+  const list = (names) => (names.length > 4 ? `${names.slice(0, 3).join(", ")} and ${names.length - 3} more` : names.join(", "));
+  if (noRubric.length) out.push({ level: "warning", text: `${noRubric.length} graded item${noRubric.length === 1 ? " has" : "s have"} no rubric: ${list(noRubric)}.`, fix: "rubrics" });
+  if (differs.length) out.push({ level: "warning", text: `${differs.length} item${differs.length === 1 ? " grades" : "s grade"} with a different rubric from the one ${differs.length === 1 ? "its page shows" : "their pages show"}: ${list(differs)}.`, fix: "rubrics" });
   if (run) {
     const available = weeksAvailable({ ...run, weeks });
     if (available && available < weeks) out.push({ level: "warning", text: `The term has ${available} teaching weeks between its dates, but the sequence runs ${weeks}.` });

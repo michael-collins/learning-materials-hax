@@ -24,8 +24,12 @@
  * Versions: a rubric is released like any page (an archived copy keeps the
  * rubric as it was). A reference can pin a release: the block's version
  * attribute, a sequence item's rubricVersion; releasing a page pins its
- * rubrics (rubrics/rubric-versions.js). Usage lists name pins as
+ * rubrics (versions/versioning.js). Usage lists name pins as
  * "exercise@1.0.0".
+ *
+ * A course sequence's graded item grades with the rubric its page shows,
+ * unless the item names its own (rubric: a reference) or none (rubric: "")
+ * (itemRubric).
  *
  * Plain functions with no browser or HAX dependencies (the Canvas export
  * runs in Node too).
@@ -74,6 +78,39 @@ export function parseRubricRef(entry = "") {
   return at > 0 ? { ref: entry.slice(0, at), version: entry.slice(at + 1) } : { ref: String(entry), version: "" };
 }
 
+/** The rubric a page shows (its first Rubric block): { ref, version } or null. */
+export function pageRubric(page) {
+  const first = [].concat(page?.metadata?.oerRubrics || [])[0];
+  return first ? parseRubricRef(first) : null;
+}
+
+/**
+ * The rubric a course sequence's item grades with:
+ * - its own, when it names one (rubric, rubricVersion)
+ * - none, when it says so (rubric: "")
+ * - else the one its page shows (pinned as the page's block is)
+ * → { ref, version, from: "item" | "page" | "", pageShows: { ref, version } | null }
+ */
+export function itemRubric(it, page) {
+  const pageShows = pageRubric(page);
+  if (it?.rubric === "") return { ref: "", version: "", from: "", pageShows };
+  if (it?.rubric) return { ref: it.rubric, version: it.rubricVersion || "", from: "item", pageShows };
+  if (pageShows) return { ...pageShows, from: "page", pageShows };
+  return { ref: "", version: "", from: "", pageShows };
+}
+
+/** True for a sequence item that's graded work (an assignment or discussion). */
+export const isGradedItem = (it) => (it?.as === "assignment" || it?.as === "discussion") && it?.graded !== false;
+
+/** True when an item names its own rubric and its page shows a different one. */
+export function rubricDiffers(it, page, items = []) {
+  const r = itemRubric(it, page);
+  if (r.from !== "item" || !r.pageShows) return false;
+  const own = findRubric(items, r.ref);
+  const shown = findRubric(items, r.pageShows.ref);
+  return !!own && !!shown && own.id !== shown.id;
+}
+
 /**
  * Where a rubric is used: pages that show it with the Rubric block (their
  * metadata.oerRubrics, kept up to date when a page is saved), archived
@@ -85,14 +122,16 @@ export function rubricUsage(items = [], page) {
   const refs = new Set(rubricRefs(page));
   const out = { pages: [], versions: [], sequences: [], pinned: [] };
   if (!refs.size) return out;
+  const byId = new Map(items.map((i) => [i.id, i]));
   for (const i of items) {
     if (i.id === page.id || i.metadata?.oerSnapshotOf === page.id) continue;
     const named = [].concat(i.metadata?.oerRubrics || []).map(parseRubricRef).filter((r) => refs.has(r.ref));
     if (named.some((r) => !r.version)) (i.metadata?.oerSnapshotOf ? out.versions : out.pages).push(i);
     else if (named.length) out.pinned.push(i);
     if (i.metadata?.pageType === "oer:sequence") {
-      const uses = (i.metadata?.oerSequence?.modules || []).flatMap((m) => (m.items || []).filter((it) => it.rubric && refs.has(it.rubric)));
-      if (uses.some((it) => !it.rubricVersion) && !i.metadata?.oerSnapshotOf) out.sequences.push({ page: i, items: uses.filter((it) => !it.rubricVersion).length });
+      // items grading with it: their own choice, or their page's rubric
+      const uses = (i.metadata?.oerSequence?.modules || []).flatMap((m) => (m.items || []).filter(isGradedItem).map((it) => itemRubric(it, byId.get(it.page))).filter((r) => r.ref && refs.has(r.ref)));
+      if (uses.some((r) => !r.version) && !i.metadata?.oerSnapshotOf) out.sequences.push({ page: i, items: uses.filter((r) => !r.version).length });
       else if (uses.length) out.pinned.push(i);
     }
   }
