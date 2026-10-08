@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791479243,
+      "updated": 1791485017,
       "version": "26.8.0"
     },
     "theme": {
@@ -48,7 +48,7 @@
       "description": "This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen",
       "metadata": {
         "created": 1790801562,
-        "updated": 1791479242,
+        "updated": 1791485016,
         "published": true,
         "locked": false,
         "status": "",
@@ -64,7 +64,7 @@
         "oerSaveTiming": "",
         "overridePathauto": false,
         "hideInMenu": false,
-        "readtime": 15,
+        "readtime": 16,
         "videos": [],
         "images": []
       }

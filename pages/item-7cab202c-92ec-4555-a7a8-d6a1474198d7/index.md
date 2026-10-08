@@ -70,6 +70,8 @@ A **course sequence** is a page that plans one way to run a course, week by week
 
 **Edit sequence** opens the sequence builder: the outline on the left, the selected item on the right. The outline works like the site outline: weekly modules (or units) at the top and their items under them. Drag items between modules, indent them with Tab and move them with Alt and the arrow keys. Each module ends with _Add pages_ (the page picker), _Add header_ and _Add link_. Select an item to set how it works in an LMS above a preview of its page: an embedded page, an assignment (due week, points, what students submit, rubric and grade group), a discussion, a quiz, a link or a file. An item keeps its due date relative to its module, so moving it two weeks later moves its due date too. **Course settings** opens a side panel for the length, delivery and grade groups. Each graded item picks one of the site's rubrics. Checks at the bottom flag what to fix before exporting.
 
+A module runs in one week, a span of weeks (Weeks 14–15) or all term ("Start here", "Resources"). Its **overview**, the to-do page students see first, is the module's first row: a page as written, or a note plus a to-do list made when the sequence is exported, with that term's due dates. Pages about running the course (a welcome, the syllabus, policies) can live in the sequence itself as **sequence pages**: exported as LMS pages and kept out of the library, where they wouldn't be reused.
+
 **Export to Canvas** asks for the term: its first and last days, its breaks, when assignments are usually due (Sunday at 11:59 pm, say, or the start of the week's first class) and, optionally, class meetings for the calendar. It downloads a Canvas course package to import with _Settings → Import Course Content → Canvas Course Export Package_. Pages and assignment instructions are embedded from the site, so they stay current; quizzes are built from the page's questions and can become New Quizzes on import.
 
 Rubrics
@@ -89,6 +91,8 @@ Import from Canvas
 *   **Skip**, for instructor-only notes, unpublished items, surveys and short weekly to-do lists.
 
 You can change any suggestion before importing. Rubrics that are the same are merged (and reuse the site's when they match), due dates become teaching weeks, and the modules become a draft sequence for the course. Files come over only when you tick them, because a course's files can include student work and files on the site are public once it's published. With the local helper running (an Anthropic API key in `.env.local`, then `node --env-file=.env.local scripts/ai-bridge.mjs` in nu-hax), **Refine with Claude** checks the suggested types, matches and skips. Everything new arrives as a draft that only signed-in authors see.
+
+Weekly to-do pages become module overviews and course-information pages stay in the sequence, and each item keeps its Canvas title, due and availability dates, so a course comes back out the way it went in. `scripts/canvas-roundtrip.mjs` in nu-hax checks that for an export: it imports the course in memory, exports it again and lists anything that came back different.
 
 Pathways
 --------

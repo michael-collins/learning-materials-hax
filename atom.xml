@@ -3,7 +3,7 @@
   <title>Digital Arts OER</title>
   <link href="https://localhost:3000/learning-materials/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-10-08T15:33:54.000Z</updated>
+  <updated>2026-10-08T17:07:23.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>D.Arts OER Overview</title>
     <id>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</id>
-    <updated>2026-10-08T17:07:22.000Z</updated>
+    <updated>2026-10-08T18:43:36.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen</summary>
     <link href="https://localhost:3000/learning-materials/d-arts-oer-overview"/>
@@ -89,6 +89,7 @@
 <h2>Course sequences</h2>
 <p>A <strong>course sequence</strong> is a page that plans one way to run a course, week by week: a 15-week studio, a 6-week summer session, any length. They're under <em>Curriculum → Sequences</em> and on their course pages. A sequence page shows its schedule: each module and what's in it, which items are assignments (with points and due weeks), and how grades are weighted. Like any page it has versions, so a term can keep the version it started with.</p>
 <p><strong>Edit sequence</strong> opens the sequence builder: the outline on the left, the selected item on the right. The outline works like the site outline: weekly modules (or units) at the top and their items under them. Drag items between modules, indent them with Tab and move them with Alt and the arrow keys. Each module ends with <em>Add pages</em> (the page picker), <em>Add header</em> and <em>Add link</em>. Select an item to set how it works in an LMS above a preview of its page: an embedded page, an assignment (due week, points, what students submit, rubric and grade group), a discussion, a quiz, a link or a file. An item keeps its due date relative to its module, so moving it two weeks later moves its due date too. <strong>Course settings</strong> opens a side panel for the length, delivery and grade groups. Each graded item picks one of the site's rubrics. Checks at the bottom flag what to fix before exporting.</p>
+<p>A module runs in one week, a span of weeks (Weeks 14–15) or all term ("Start here", "Resources"). Its <strong>overview</strong>, the to-do page students see first, is the module's first row: a page as written, or a note plus a to-do list made when the sequence is exported, with that term's due dates. Pages about running the course (a welcome, the syllabus, policies) can live in the sequence itself as <strong>sequence pages</strong>: exported as LMS pages and kept out of the library, where they wouldn't be reused.</p>
 <p><strong>Export to Canvas</strong> asks for the term: its first and last days, its breaks, when assignments are usually due (Sunday at 11:59 pm, say, or the start of the week's first class) and, optionally, class meetings for the calendar. It downloads a Canvas course package to import with <em>Settings → Import Course Content → Canvas Course Export Package</em>. Pages and assignment instructions are embedded from the site, so they stay current; quizzes are built from the page's questions and can become New Quizzes on import.</p>
 <oer-schematic preset="sequence" alt="Diagram of the sequence builder: on the left, an outline of weekly modules with their items indented under them, a highlighted assignment worth 30 points due in week 2, a Readings header, and Add pages and Add module rows; on the right, that assignment's settings (becomes Assignment, 30 points, due week 2, a rubric) above a preview of its page, with a Course settings button at the top." caption="The sequence builder: weekly modules in an outline you drag and indent, the selected item's LMS settings and page beside it, and grade groups under Course settings."></oer-schematic>
 
@@ -105,6 +106,7 @@
 <li><strong>Skip</strong>, for instructor-only notes, unpublished items, surveys and short weekly to-do lists.</li>
 </ul>
 <p>You can change any suggestion before importing. Rubrics that are the same are merged (and reuse the site's when they match), due dates become teaching weeks, and the modules become a draft sequence for the course. Files come over only when you tick them, because a course's files can include student work and files on the site are public once it's published. With the local helper running (an Anthropic API key in <code>.env.local</code>, then <code>node --env-file=.env.local scripts/ai-bridge.mjs</code> in nu-hax), <strong>Refine with Claude</strong> checks the suggested types, matches and skips. Everything new arrives as a draft that only signed-in authors see.</p>
+<p>Weekly to-do pages become module overviews and course-information pages stay in the sequence, and each item keeps its Canvas title, due and availability dates, so a course comes back out the way it went in. <code>scripts/canvas-roundtrip.mjs</code> in nu-hax checks that for an export: it imports the course in memory, exports it again and lists anything that came back different.</p>
 <oer-schematic preset="import" alt="Diagram of the Canvas import review: Canvas items for week 2 on the left, each marked Link, Create or Skip (a skipped item is struck through), with the first selected; on the right, Link chosen, the matching page on the site, the item's place in the sequence (an assignment worth 10 points due in week 2) and a preview, with an Import as drafts button at the top." caption="The Canvas import: what each item becomes, why, and its place in the sequence, before anything is saved."></oer-schematic>
 
 <h2>Pathways</h2>
