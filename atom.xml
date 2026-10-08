@@ -12,7 +12,7 @@
   <entry>
     <title>D.Arts OER Overview</title>
     <id>item-7cab202c-92ec-4555-a7a8-d6a1474198d7</id>
-    <updated>2026-10-08T15:19:58.000Z</updated>
+    <updated>2026-10-08T15:33:54.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen</summary>
     <link href="https://localhost:3000/learning-materials/d-arts-oer-overview"/>
@@ -94,7 +94,7 @@
 
 <h2>Rubrics</h2>
 <p>A <strong>rubric</strong> is a page of its own, under <em>Assessments → Rubrics</em>. One rubric can serve many exercises, projects and critiques, and a different kind of work can have a rubric all its own. Each criterion has a weight that sets its share of the grade: weights of 1, 1 and 1 make each criterion exactly a third, so the same rubric fits a 20-point exercise and a 100-point project. Each rating level is worth a share of a criterion's points, and can say what that level looks like for each criterion.</p>
-<p><strong>Edit rubric</strong> opens the rubric editor: criteria down the side, levels across the top and a description in each cell. It's on a rubric's page, on the rubric where a page shows it, and on the rubric block's label while you edit a page. Saving a rubric that other pages use says how many pages, course sequences and archived versions will change, with the choice to <strong>save it as a new rubric</strong> instead. The <strong>Rubric</strong> block puts one on a page. Course sequences choose a rubric for each graded assignment and discussion, and Export to Canvas turns it into a Canvas rubric: points split by weight, each rubric's own levels, and the level descriptions as the ratings' descriptions.</p>
+<p><strong>Edit rubric</strong> opens the rubric editor: criteria down the side, levels across the top and a description in each cell. It's on a rubric's page, on the rubric where a page shows it, and on the rubric block's label while you edit a page. Saving a rubric that other pages use says how many pages, course sequences and archived versions will change, with the choice to <strong>save it as a new rubric</strong> instead. Rubrics have versions too. Releasing a page or a course sequence keeps each rubric it uses as it was, pinned to the rubric's release. If the rubric changed since its last release, it's released again first, and the release dialog says so. An archived version shows its rubric "as released", with a link to the latest. The <strong>Rubric</strong> block puts one on a page. Course sequences choose a rubric for each graded assignment and discussion, and Export to Canvas turns it into a Canvas rubric: points split by weight, each rubric's own levels, and the level descriptions as the ratings' descriptions.</p>
 <oer-schematic preset="rubric" alt="Diagram of the rubric editor: name and description fields, then a grid with three criteria down the side, each worth a third of the grade, and the levels Exemplary 100%, Proficient 85% and Developing 70% across the top. Each cell holds a description, and one is highlighted. Save as new rubric and Save rubric buttons are at the top." caption="The rubric editor: each criterion's share of the grade, each level's share of a criterion's points, and what each level looks like."></oer-schematic>
 
 <h2>Pathways</h2>

@@ -11,7 +11,7 @@ description: >-
   pathways, versions, books, embedding and open licen
 metadata:
   created: 1790801562
-  updated: 1791472798
+  updated: 1791473634
   published: true
   locked: false
   status: ''
@@ -239,11 +239,15 @@ content: >
   page, on the rubric where a page shows it, and on the rubric block's label
   while you edit a page. Saving a rubric that other pages use says how many
   pages, course sequences and archived versions will change, with the choice to
-  <strong>save it as a new rubric</strong> instead. The <strong>Rubric</strong>
-  block puts one on a page. Course sequences choose a rubric for each graded
-  assignment and discussion, and Export to Canvas turns it into a Canvas rubric:
-  points split by weight, each rubric's own levels, and the level descriptions
-  as the ratings' descriptions.</p>
+  <strong>save it as a new rubric</strong> instead. Rubrics have versions too.
+  Releasing a page or a course sequence keeps each rubric it uses as it was,
+  pinned to the rubric's release. If the rubric changed since its last release,
+  it's released again first, and the release dialog says so. An archived version
+  shows its rubric "as released", with a link to the latest. The
+  <strong>Rubric</strong> block puts one on a page. Course sequences choose a
+  rubric for each graded assignment and discussion, and Export to Canvas turns
+  it into a Canvas rubric: points split by weight, each rubric's own levels, and
+  the level descriptions as the ratings' descriptions.</p>
 
   <oer-schematic preset="rubric" alt="Diagram of the rubric editor: name and
   description fields, then a grid with three criteria down the side, each worth
