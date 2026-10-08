@@ -18,7 +18,11 @@ import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
-import { SEQUENCE_TYPE, sequenceOf, indentOf } from "../lms/sequence-model.js";
+import { SEQUENCE_TYPE, sequenceOf, indentOf, moduleWeekLabel } from "../lms/sequence-model.js";
+import { cleanRichText } from "../ui/oer-text-editor.js";
+
+// stored rich text (a sequence's own pages, its overviews) as nodes to render
+const richText = (htmlText) => globalThis.document.createRange().createContextualFragment(cleanRichText(htmlText || ""));
 import { sequenceExport } from "../lms/oer-sequence-export.js";
 import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
 import { RUBRIC_TYPE } from "../rubrics/rubric-model.js";
@@ -377,6 +381,40 @@ class OerPageHeader extends LitElement {
         color: var(--muted-foreground);
         font-size: 0.75rem;
       }
+      .schedule h3 .when {
+        margin-left: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--muted-foreground);
+      }
+      .seq-text {
+        margin: 0.25rem 0 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        font-size: 0.875rem;
+      }
+      .seq-text.inline {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      .seq-text summary {
+        cursor: pointer;
+        font-weight: 500;
+      }
+      .seq-text[open] > summary {
+        margin-bottom: 0.5rem;
+      }
+      .seq-text :is(p, ul, ol) {
+        margin: 0 0 0.5rem;
+      }
+      .seq-text .note {
+        color: var(--muted-foreground);
+        font-size: 0.8125rem;
+      }
       .schedule h3 {
         margin: 0.875rem 0 0.25rem;
         font-size: 0.8125rem;
@@ -510,11 +548,21 @@ class OerPageHeader extends LitElement {
         ? html`<p class="grading"><span>Grading</span>${seq.groups.map((g) => html`<span class="pill">${g.name} <b>${g.weight}%</b></span>`)}</p>`
         : ""}
       ${seq.modules.map(
-        (m) => html`<h3>${m.title}</h3>
+        (m) => html`<h3>${m.title}${/\bweeks?\s*\d/i.test(m.title) ? "" : html`<small class="when">${moduleWeekLabel(m)}</small>`}</h3>
+          ${m.overview
+            ? html`<details class="seq-text">
+                <summary>${m.overview.title || `${m.title}: To do`}</summary>
+                ${m.overview.mode === "written" ? richText(m.overview.html) : html`${m.overview.note ? richText(m.overview.note) : ""}<p class="note">The week's items and due dates are listed here when the sequence is exported for a term.</p>`}
+              </details>`
+            : ""}
           <ul role="list">
             ${(m.items || []).map((it) => {
               const pad = `padding-left: ${indentOf(it) * 1.25}rem`;
               if (it.header) return html`<li class="sub" style="${`padding-left: ${1.875 + indentOf(it) * 1.25}rem`}">${it.header}</li>`;
+              // a page the sequence holds: open it here
+              if (it.as === "text") {
+                return html`<li style="${pad}"><span class="noicon"></span><details class="seq-text inline"><summary>${it.title || "Page"}</summary>${richText(it.html)}</details><small>Page</small></li>`;
+              }
               if (it.as === "url") {
                 return /^https?:\/\//.test(it.url || "")
                   ? html`<li style="${pad}"><span class="noicon"></span><a href="${it.url}" target="_blank" rel="noopener noreferrer">${it.title || it.url}</a><small>Link</small></li>`
@@ -527,7 +575,7 @@ class OerPageHeader extends LitElement {
               const open = store.isLoggedIn || p.metadata?.published !== false;
               return html`<li style="${pad}">
                 ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
-                ${open ? html`<a href="${p.slug}">${p.title}</a>` : html`<span>${p.title}</span>`}
+                ${open ? html`<a href="${p.slug}">${it.title || p.title}</a>` : html`<span>${it.title || p.title}</span>`}
                 <small>${note(it, p)}</small>
               </li>`;
             })}

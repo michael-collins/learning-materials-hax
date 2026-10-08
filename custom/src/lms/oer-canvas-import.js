@@ -5,7 +5,8 @@
  *    analysed against the site (lms/canvas-import-plan.js).
  * 2. Review. The modules and their items on the left, each with what it
  *    becomes: Link (the site has it), Create (a new draft page of a type),
- *    Skip, or a link or header in the sequence only. The selected item on the
+ *    In sequence (a page the sequence keeps: welcome, syllabus), Overview
+ *    (the module's to-do page), Skip, or a link or header in the sequence. The selected item on the
  *    right: its action, type or matching page, the reasons, its place in the
  *    sequence, and a preview. Rubrics (merged and reused where they can be),
  *    files (none come over unless ticked: course files can include student
@@ -31,13 +32,14 @@ import { applyImport } from "./canvas-import-apply.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { uploadFile } from "../types/relations.js";
 import { rubricPages, rubricOf } from "../rubrics/rubric-model.js";
+import { moduleWeekLabel } from "./sequence-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
 export const AI_BRIDGE = "http://127.0.0.1:3110";
 const TYPES = ["oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:activity", "oer:project", "oer:quiz"];
-const ACTION_LABEL = { create: "Create", link: "Link", skip: "Skip", url: "Link only", header: "Header" };
+const ACTION_LABEL = { create: "Create", link: "Link", skip: "Skip", url: "Link only", header: "Header", overview: "Overview", text: "In sequence" };
 const ROLE_LABEL = { page: "Page", assignment: "Assignment", discussion: "Discussion", quiz: "Quiz", file: "File", url: "Link" };
 
 class OerCanvasImport extends LitElement {
@@ -136,6 +138,13 @@ class OerCanvasImport extends LitElement {
   _set(id, patch) {
     const fix = (e) => (e.id === id ? { ...e, ...patch } : e);
     this._plan = { ...this._plan, modules: this._plan.modules.map((m) => ({ ...m, items: m.items.map(fix) })), unplaced: this._plan.unplaced.map(fix) };
+  }
+
+  // a module has one overview: choosing one makes any other a sequence page
+  _setOverview(e) {
+    const m = this._plan.modules.find((x) => x.items.some((i) => i.id === e.id));
+    for (const other of m?.items || []) if (other.id !== e.id && other.action === "overview") this._set(other.id, { action: "text" });
+    this._set(e.id, { action: "overview" });
   }
 
   _setModule(id, patch) {
@@ -561,6 +570,15 @@ class OerCanvasImport extends LitElement {
         outline: 2px solid var(--ring);
         outline-offset: 1px;
       }
+      .segs.wrap {
+        flex-wrap: wrap;
+      }
+      .chip.overview,
+      .chip.text {
+        background: transparent;
+        box-shadow: inset 0 0 0 1px var(--border);
+        color: var(--foreground);
+      }
       .segs {
         display: inline-flex;
         padding: 3px;
@@ -738,7 +756,7 @@ class OerCanvasImport extends LitElement {
       ${row("rubrics", html`${lucide("icons:assignment-turned-in", "sm")}<span class="title">Rubrics</span><span class="chip">${p.rubrics.filter((r) => r.uses).length}</span>`)}
       ${row("files", html`${lucide("icons:insert-drive-file", "sm")}<span class="title">Files</span><span class="chip">${p.files.filter((f) => f.import).length} of ${p.files.length}</span>`)}
       <p class="group-label">Modules</p>
-      ${p.modules.map((m) => html`${row(m.id, html`<span class="title">${m.title}</span><span class="type">Week ${m.week}</span>${m.skip ? html`<span class="chip skip">Skip</span>` : ""}`, `module ${m.skip ? "skipped" : ""}`)}
+      ${p.modules.map((m) => html`${row(m.id, html`<span class="title">${m.title}</span><span class="type">${moduleWeekLabel(m)}</span>${m.skip ? html`<span class="chip skip">Skip</span>` : ""}`, `module ${m.skip ? "skipped" : ""}`)}
         ${m.items.map((e) => entryRow(e, m.skip))}`)}
       ${p.unplaced.length ? html`<p class="group-label">Not in a module</p>${p.unplaced.map((e) => entryRow(e, false))}` : ""}
     </nav>`;
@@ -753,7 +771,9 @@ class OerCanvasImport extends LitElement {
     const group = this._plan.groups.find((g) => g.id === role.group);
     const rubric = this._plan.rubrics.find((r) => r.id === role.rubric);
     const due = role.due ? `week ${role.due.week}${role.due.day ? `, ${role.due.day} ${role.due.time}` : ""}` : "";
-    const seg = (action, label, disabled = false) => html`<button class="seg" aria-pressed="${e.action === action ? "true" : "false"}" aria-disabled="${disabled ? "true" : "false"}" @click="${() => !disabled && this._set(e.id, { action })}">${label}</button>`;
+    const seg = (action, label, disabled = false) =>
+      html`<button class="seg" aria-pressed="${e.action === action ? "true" : "false"}" aria-disabled="${disabled ? "true" : "false"}" @click="${() => !disabled && (action === "overview" ? this._setOverview(e) : this._set(e.id, { action }))}">${label}</button>`;
+    const inModule = this._plan.modules.some((m) => m.items.some((x) => x.id === e.id));
     const preview = `<!doctype html><meta charset="utf-8"><style>body{font:15px/1.55 system-ui,sans-serif;margin:16px;color:#111}img{max-width:100%}oer-iframe,iframe{display:block;border:1px dashed #999;padding:8px;margin:8px 0;font-size:13px;color:#555}oer-iframe::before{content:"Embedded: " attr(src)}multiple-choice,true-false-question,self-check{display:block;border:1px solid #ccc;border-radius:6px;padding:8px 12px;margin:8px 0}multiple-choice::before,true-false-question::before{content:attr(question);display:block;font-weight:600}input{display:block}input::after{content:attr(value)}</style>${e.html || "<p><i>No text.</i></p>"}`;
     return html`<div>
         <p class="eyebrow">${ROLE_LABEL[role.as] || (fixed ? "Header" : "Item")} in ${module?.title || "no module"}</p>
@@ -761,9 +781,12 @@ class OerCanvasImport extends LitElement {
       </div>
       ${fixed
         ? html`<p class="hint">A text header in the module.</p>`
-        : html`<div class="segs" role="group" aria-label="What it becomes">
-            ${seg("link", "Link to the site's page", !e.match)}${e.kind === "link" ? seg("url", "Link only") : seg("create", "Create a draft", !e.type)}${seg("skip", "Skip")}
-          </div>`}
+        : html`<div class="segs wrap" role="group" aria-label="What it becomes">
+              ${seg("link", "Link to the site's page", !e.match)}${e.kind === "link" ? seg("url", "Link only") : seg("create", "Create a draft", !e.type)}
+              ${e.kind === "page" ? html`${seg("text", "Keep in the sequence")}${inModule ? seg("overview", "The module's overview") : ""}` : ""}${seg("skip", "Skip")}
+            </div>
+            ${e.action === "text" ? html`<p class="hint">The sequence keeps it as one of its own pages, exported as an LMS page, not in the site's library: right for a welcome, a syllabus or course policies.</p>` : ""}
+            ${e.action === "overview" ? html`<p class="hint">The module's overview, kept as written. You can switch it to a note plus a to-do list made for each term in the sequence builder.</p>` : ""}`}
       ${e.action === "create"
         ? html`<label class="field"
               >Title<input class="input" .value="${e.title}" @input="${(ev) => this._set(e.id, { title: ev.target.value })}"
@@ -827,9 +850,25 @@ class OerCanvasImport extends LitElement {
         <button class="seg" aria-pressed="${m.skip ? "true" : "false"}" @click="${() => this._setModule(m.id, { skip: true, reason: m.reason || "you skipped it" })}">Skip</button>
       </div>
       ${m.reason ? html`<p class="hint">Suggested: skip, because ${m.reason}.</p>` : ""}
-      <label class="field"
-        >Teaching week<input class="input" type="number" min="1" style="width:6rem" .value="${String(m.week)}" @change="${(ev) => Number(ev.target.value) > 0 && this._setModule(m.id, { week: Number(ev.target.value) })}"
-      /></label>
+      <label class="check" style="display:flex;gap:0.5rem;align-items:center;font-size:0.875rem"
+        ><input type="checkbox" .checked="${!Number(m.week)}" @change="${(ev) => this._setModule(m.id, ev.target.checked ? { week: "", weeks: 1 } : { week: 1, weeks: 1 })}" />All term (no week)</label
+      >
+      ${Number(m.week)
+        ? html`<div style="display:flex;gap:0.75rem">
+            <label class="field"
+              >From week<input class="input" type="number" min="1" style="width:6rem" .value="${String(m.week)}" @change="${(ev) => Number(ev.target.value) > 0 && this._setModule(m.id, { week: Number(ev.target.value) })}"
+            /></label>
+            <label class="field"
+              >To week<input
+                class="input"
+                type="number"
+                min="${m.week}"
+                style="width:6rem"
+                .value="${String(Number(m.week) + (m.weeks || 1) - 1)}"
+                @change="${(ev) => this._setModule(m.id, { weeks: Math.max(1, (Number(ev.target.value) || m.week) - m.week + 1) })}"
+            /></label>
+          </div>`
+        : ""}
       <p class="hint">${m.items.length} item${m.items.length === 1 ? "" : "s"}.</p>`;
   }
 
@@ -901,7 +940,7 @@ class OerCanvasImport extends LitElement {
         <dt>Modules</dt>
         <dd>${p.modules.length} (${p.modules.filter((m) => m.skip).length} suggested to skip)</dd>
         <dt>The import</dt>
-        <dd>${c.link} linked to the site's pages, ${c.create} new draft pages, ${c.urls} links, ${c.skip} skipped; ${c.rubricsNew} new rubric${c.rubricsNew === 1 ? "" : "s"}, ${c.rubricsReused} reused</dd>
+        <dd>${c.link} linked to the site's pages, ${c.create} new draft pages, ${c.texts} kept in the sequence, ${c.overviews} module overviews, ${c.urls} links, ${c.skip} skipped; ${c.rubricsNew} new rubric${c.rubricsNew === 1 ? "" : "s"}, ${c.rubricsReused} reused</dd>
       </dl>
       <label class="field">Sequence title<input class="input" .value="${p.sequenceTitle}" @input="${(ev) => this._setPlan({ sequenceTitle: ev.target.value })}" /></label>
       <label class="field"
@@ -974,7 +1013,7 @@ class OerCanvasImport extends LitElement {
                   ? html`<span class="warn">Close without importing? Your review is lost.</span>
                       <button class="btn outline" @click="${() => (this._confirmClose = false)}">Keep reviewing</button>
                       <button class="btn outline" @click="${() => ((this._confirmClose = true), this._requestClose())}">Close</button>`
-                  : html`<span class="status">${this._error ? html`<span class="error">${this._error}</span>` : html`${c.link} linked, ${c.create} new drafts, ${c.urls} links, ${c.skip} skipped${c.files ? `, ${c.files} files` : ""}`}</span>
+                  : html`<span class="status">${this._error ? html`<span class="error">${this._error}</span>` : html`${c.link} linked, ${c.create} new drafts, ${c.texts + c.overviews} kept in the sequence, ${c.urls} links, ${c.skip} skipped${c.files ? `, ${c.files} files` : ""}`}</span>
                       <button class="btn outline" @click="${this._requestClose}">Cancel</button>
                       <button class="btn primary" @click="${this._apply}">Import as drafts</button>`}
               </footer>`

@@ -281,5 +281,6 @@
   "oer:panel-right-open": "panel-right-open",
   "oer:pencil": "pencil",
   "oer:sparkles": "sparkles",
-  "oer:upload": "upload"
+  "oer:upload": "upload",
+  "oer:file-text": "file-text"
 }

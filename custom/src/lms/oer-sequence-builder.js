@@ -44,6 +44,8 @@ import { pagePicker } from "../books/oer-page-picker.js";
 import { embedUrl } from "../embed/embed-mode.js";
 import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
 import { findRubric, rubricPages, rubricOf } from "../rubrics/rubric-model.js";
+import { moduleWeekLabel } from "./sequence-model.js";
+import "../ui/oer-text-editor.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -66,6 +68,7 @@ const clone = (o) => JSON.parse(JSON.stringify(o));
 const uid = () => `m${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 const isHeader = (item) => item?.header !== undefined;
 const isUrl = (item) => item?.as === "url";
+const isText = (item) => item?.as === "text";
 
 class OerSequenceBuilder extends OerOutlineBuilder {
   static get tag() {
@@ -152,6 +155,8 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this._types = [];
     const seq = sequenceOf(page);
     this._groups = clone(seq.groups);
+    this._moduleRules = seq.moduleRules || "";
+    this._hadRules = !!seq.moduleRules;
     const f = page.metadata?.oerFields || {};
     this._fields = { weeks: Number(f.weeks) || Math.max(0, ...seq.modules.map((m) => Number(m.week) || 0)) || 15, delivery: f.delivery || "In person" };
     this._rows = this._rowsOf(seq);
@@ -175,7 +180,12 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _rowsOf(seq) {
     const rows = [];
     for (const m of seq.modules) {
-      rows.push({ id: m.id || uid(), kind: "module", title: m.title || "", week: Number(m.week) || "", depth: 0, orig: true });
+      // spans, overviews, order rules, prerequisites… ride along
+      const { id, title, week, items, ...mod } = m;
+      const moduleId = id || uid();
+      rows.push({ id: moduleId, kind: "module", title: title || "", week: Number(week) || "", mod: clone(mod), depth: 0, orig: true });
+      // the module's overview: its first row, as its to-do page is in the LMS
+      if (mod.overview) rows.push({ id: `ov-${moduleId}`, kind: "overview", moduleId, title: mod.overview.title || "", depth: 1, orig: true });
       for (const it of m.items || []) {
         const { indent, ...item } = it;
         rows.push(this._itemRow(item, 1 + indentOf(it), true));
@@ -185,7 +195,8 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   }
 
   _itemRow(item, depth, orig = null) {
-    const title = isHeader(item) ? item.header : isUrl(item) ? item.title || "" : this._byId?.get(item.page)?.title || "";
+    // a page's row shows the title it's listed under in the LMS, if it has one
+    const title = isHeader(item) ? item.header : isUrl(item) || isText(item) ? item.title || "" : item.title || this._byId?.get(item.page)?.title || "";
     return { id: newItemId(), kind: "item", item, title, type: isHeader(item) ? HEADING_TYPE : "", depth: Math.min(depth, MAX_DEPTH), orig };
   }
 
@@ -193,14 +204,20 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _toModules(rows = this._rows) {
     const modules = [];
     for (const r of rows) {
-      if (r.kind === "module") modules.push({ id: r.id, title: r.title, week: Number(r.week) || "", items: [] });
-      else if (modules.length) {
+      if (r.kind === "module") modules.push({ id: r.id, title: r.title, week: Number(r.week) || "", ...(r.mod || {}), items: [] });
+      else if (r.kind === "overview") {
+        const m = modules.at(-1);
+        if (m?.overview) {
+          const { title, ...rest } = m.overview;
+          m.overview = r.title.trim() ? { ...rest, title: r.title.trim() } : rest;
+        }
+      } else if (modules.length) {
         const item = clone(r.item);
         if (isHeader(item)) {
           if (!r.title.trim()) continue;
           item.header = r.title.trim();
         }
-        if (isUrl(item)) item.title = r.title;
+        if (isUrl(item) || isText(item)) item.title = r.title;
         modules.at(-1).items.push({ ...item, indent: Math.max(0, r.depth - 1) });
       }
     }
@@ -208,7 +225,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   }
 
   _sequence() {
-    return { version: 1, modules: this._toModules(), groups: this._groups };
+    return { version: 1, modules: this._toModules(), groups: this._groups, ...(this._moduleRules ? { moduleRules: this._moduleRules } : {}) };
   }
 
   _signature() {
@@ -251,23 +268,38 @@ class OerSequenceBuilder extends OerOutlineBuilder {
 
   /* ---------- the outline's rules ---------- */
 
-  // modules stay at the top; items stay inside a module, at most one level
-  // deeper than the row above; items above the first module join it
+  // modules stay at the top; items stay inside a module; items above the
+  // first module join it
   _normalize(rows) {
+    // a module with an overview has its overview row first, at depth 1
+    // (dragged elsewhere, it goes back; made or removed with the overview)
+    const overviews = new Map(rows.filter((r) => r.kind === "overview").map((r) => [r.moduleId, r]));
     const out = [];
     const leading = [];
+    // items stay inside a module; their indent is their own (an LMS indents
+    // any item, so an imported course's first item can sit one level in)
     const place = (r) => {
-      const depth = Math.max(1, Math.min(r.depth, out.at(-1).depth + 1, MAX_DEPTH));
+      const depth = Math.max(1, Math.min(r.depth, MAX_DEPTH));
       out.push(depth === r.depth ? r : { ...r, depth });
     };
     for (const r of rows) {
+      if (r.kind === "overview") continue;
       if (r.kind === "module") {
         out.push(r.depth === 0 ? r : { ...r, depth: 0 });
+        if (r.mod?.overview) {
+          const ov = overviews.get(r.id) || { id: `ov-${r.id}`, kind: "overview", moduleId: r.id, title: r.mod.overview.title || "", depth: 1, orig: null };
+          out.push(ov.depth === 1 ? ov : { ...ov, depth: 1 });
+        }
         leading.splice(0).forEach(place);
       } else if (out.length) place(r);
       else leading.push(r);
     }
     return [...out, ...leading];
+  }
+
+  // change a module's settings (spans, overview, order…)
+  _setModuleMod(moduleId, patch) {
+    this._commit(this._rows.map((r) => (r.id === moduleId ? { ...r, mod: { ...(r.mod || {}), ...patch } } : r)));
   }
 
   // each item's module week
@@ -310,11 +342,13 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   // a dragged module stays at the top; an item stays inside a module
   _previewDepth(d, targetId) {
     const depth = super._previewDepth(d, targetId);
-    return this._rows[this._index(d.id)]?.kind === "module" ? 0 : Math.max(1, depth);
+    const kind = this._rows[this._index(d.id)]?.kind;
+    return kind === "module" ? 0 : kind === "overview" ? 1 : Math.max(1, depth);
   }
 
   // Alt+↑ on a module's first item moves it to the end of the module before
   _moveUp(id) {
+    if (this._rows[this._index(id)]?.kind === "overview") return;
     const idx = this._index(id);
     const row = this._rows[idx];
     if (row?.kind === "item" && row.depth === 1 && this._rows[idx - 1]?.kind === "module") {
@@ -332,6 +366,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
 
   // Alt+↓ on a module's last item moves it to the start of the next module
   _moveDown(id) {
+    if (this._rows[this._index(id)]?.kind === "overview") return;
     const idx = this._index(id);
     const row = this._rows[idx];
     if (row?.kind === "item" && row.depth === 1) {
@@ -365,13 +400,20 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   }
 
   _canRename(row) {
-    return row.kind === "module" || isHeader(row.item) || isUrl(row.item);
+    return row.kind === "module" || row.kind === "overview" || isHeader(row.item) || isUrl(row.item) || isText(row.item);
   }
 
   _placeholder(row) {
     if (row.kind === "module") return "Module title…";
+    if (row.kind === "overview") return `${this._rows.find((r) => r.id === row.moduleId)?.title || "Module"}: To do`;
     if (isHeader(row.item)) return "Header…";
+    if (isText(row.item)) return "Page title…";
     return "Link title…";
+  }
+
+  _setMod(patch) {
+    const row = this._rows.find((r) => r.id === this._selId);
+    if (row) this._setRow({ mod: { ...(row.mod || {}), ...patch } });
   }
 
   _rowCurrent(row) {
@@ -394,6 +436,14 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _remove(id) {
     const idx = this._index(id);
     if (idx < 0) return;
+    // removing the overview row removes the overview (its items stay)
+    if (this._rows[idx].kind === "overview") {
+      const moduleId = this._rows[idx].moduleId;
+      this._commit(this._rows.filter((r) => r.id !== id).map((r) => (r.id === moduleId ? { ...r, mod: { ...(r.mod || {}), overview: undefined } } : r)));
+      this._select(moduleId);
+      this._focusRow(moduleId);
+      return;
+    }
     const { start, end } = this._subtree(idx);
     const rows = [...this._rows];
     const prev = idx > 0 ? rows[idx - 1].id : rows[end]?.id || null;
@@ -500,6 +550,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     const graded = item.graded !== false;
     if (isHeader(item)) return "Header";
     if (isUrl(item)) return "Link";
+    if (isText(item)) return "Sequence page";
     if (item.as === "assignment") return graded ? [`${item.points || 0} pts`, item.due?.week ? `wk ${item.due.week}` : "no due week"].join(" · ") : "Ungraded";
     if (item.as === "discussion") return ["Discussion", graded && item.points ? `${item.points} pts` : "", graded && item.due?.week ? `wk ${item.due.week}` : ""].filter(Boolean).join(" · ");
     if (item.as === "quiz") return item.quizType === "graded" ? "Graded quiz" : "Practice quiz";
@@ -509,11 +560,17 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _renderRowChips(row, index) {
     if (row.kind === "module") {
       const empty = !this._hasChildren(index);
-      return html`${empty ? html`<span class="chip quiet">Empty</span>` : ""}<span class="chip week" title="Teaching week">Week ${row.week || "?"}</span>`;
+      const label = moduleWeekLabel({ week: row.week, weeks: row.mod?.weeks });
+      return html`${empty ? html`<span class="chip quiet">Empty</span>` : ""}<span class="chip week" title="When it runs">${label}</span>`;
+    }
+    if (row.kind === "overview") {
+      const ov = this._rows.find((r) => r.id === row.moduleId)?.mod?.overview;
+      return html`<span class="chip quiet" title="The module's overview page">${lucide("oer:file-text", "sm")}${ov?.mode === "list" ? "Overview: note + to-do list" : "Overview"}</span>`;
     }
     const item = row.item;
     if (isHeader(item)) return "";
     if (isUrl(item)) return html`<span class="chip quiet">${lucide("icons:link", "sm")}Link</span>`;
+    if (isText(item)) return html`<span class="chip quiet" title="A page the sequence holds: exported as an LMS page, not in the library">${lucide("oer:file-text", "sm")}Sequence page</span>`;
     const label = this._summary(item);
     const graded = ["assignment", "discussion"].includes(item.as) || (item.as === "quiz" && item.quizType === "graded");
     return html`${item.version ? html`<span class="chip quiet" title="Pinned to version ${item.version}">v${item.version}</span>` : ""}
@@ -538,7 +595,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
       <button
         class="act danger"
         tabindex="-1"
-        title="${row.kind === "module" ? "Remove the module and its items (Delete)" : "Remove from the sequence (Delete). The page is kept."}"
+        title="${row.kind === "module" ? "Remove the module and its items (Delete)" : row.kind === "overview" ? "Remove the overview (Delete). Its items stay." : "Remove from the sequence (Delete). The page is kept."}"
         aria-label="Remove ${row.title || "item"} from the sequence"
         @click="${(e) => {
           e.stopPropagation();
@@ -553,7 +610,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _renderTypeMenu() {
     const m = this._typeMenu;
     const row = this._rows[this._index(m.id)];
-    if (!row || row.kind !== "item" || m.kind !== "type" || isHeader(row.item) || isUrl(row.item)) return "";
+    if (!row || row.kind !== "item" || m.kind !== "type" || isHeader(row.item) || isUrl(row.item) || isText(row.item)) return "";
     const keys = (e) => {
       const items = [...e.currentTarget.querySelectorAll("[role=menuitemradio]")];
       const i = items.indexOf(this.shadowRoot.activeElement);
@@ -605,6 +662,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
       })}
       ${extra("oer:heading-2", "Add header", "Add a text header to the module", () => this._addItem(add.afterId, add.depth, { header: "" }))}
       ${extra("icons:link", "Add link", "Add a link to any web address, such as a video call", () => this._addItem(add.afterId, add.depth, { as: "url", title: "", url: "", newTab: true }))}
+      ${extra("oer:file-text", "Add sequence page", "A page this sequence holds (welcome, syllabus, policies): exported as an LMS page, not in the library", () => this._addItem(add.afterId, add.depth, { as: "text", title: "", html: "" }))}
     </div>`;
   }
 
@@ -672,6 +730,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _renderSettings(row, page) {
     if (!row) return html`<div class="detail-empty">${lucide("icons:date-range")}<p>Select a module or an item to see it here.</p></div>`;
     if (row.kind === "module") return this._renderModuleDetail(row);
+    if (row.kind === "overview") return this._renderOverviewDetail(row);
     const item = row.item;
     if (isHeader(item)) {
       return html`<div class="detail-pad settings">
@@ -680,6 +739,17 @@ class OerSequenceBuilder extends OerOutlineBuilder {
           <h3 class="dtitle">${row.title || "Untitled header"}</h3>
         </div>
         <p class="hint">A text header in the module. Items indented under it are grouped with it in the LMS. Rename it in the outline (Enter).</p>
+      </div>`;
+    }
+    if (isText(item)) {
+      return html`<div class="detail-pad settings">
+        <p class="eyebrow">Sequence page</p>
+        <label class="field">Title<input class="input" placeholder="Welcome to the course" .value="${row.title || ""}" @input="${(e) => this._setRow({ title: e.target.value })}" /></label>
+        <div class="field-block">
+          <p class="field-label" id="text-l">Page</p>
+          <oer-text-editor label="Page text" placeholder="What students read on this page" .value="${item.html || ""}" @change="${(e) => this._setItem({ html: e.detail.value })}"></oer-text-editor>
+        </div>
+        <p class="hint">A page this sequence holds, for running the course: a welcome, the syllabus, policies. It's exported to the LMS as a page of its own and stays out of the site's library.</p>
       </div>`;
     }
     if (isUrl(item)) {
@@ -711,29 +781,88 @@ class OerSequenceBuilder extends OerOutlineBuilder {
 
   _renderModuleDetail(row) {
     const idx = this._index(row.id);
-    const items = this._rows.slice(idx + 1, this._subtree(idx).end);
+    const items = this._rows.slice(idx + 1, this._subtree(idx).end).filter((r) => r.kind === "item");
     const graded = items.filter((r) => ["assignment", "discussion"].includes(r.item.as) && r.item.graded !== false);
     const points = graded.reduce((s, r) => s + (Number(r.item.points) || 0), 0);
     return html`<div class="detail-pad settings">
       <p class="eyebrow">Module</p>
       <label class="field">Title<input class="input" .value="${row.title}" @input="${(e) => this._setRow({ title: e.target.value })}" /></label>
+      ${this._renderModuleWeeks(row)}
       <label class="field"
-        >Teaching week
-        <input
-          class="input num"
-          type="number"
-          min="1"
-          .value="${String(row.week || "")}"
-          @change="${(e) => Number(e.target.value) > 0 && this._setRow({ week: Number(e.target.value) })}"
-        />
-        <span class="hint">Its items' due weeks move with it. Asynchronous courses open the module on this week's Monday.</span>
+        >Overview page
+        <select @change="${(e) => this._setModuleMod(row.id, { overview: e.target.value ? { ...(row.mod?.overview || {}), mode: e.target.value } : undefined })}">
+          <option value="" ?selected="${!row.mod?.overview}">None</option>
+          <option value="list" ?selected="${row.mod?.overview?.mode === "list"}">A note and the module's to-do list</option>
+          <option value="written" ?selected="${row.mod?.overview?.mode === "written"}">A page as written</option>
+        </select>
+        ${row.mod?.overview ? html`<span class="hint"><button class="linkbtn" @click="${() => this._select(`ov-${row.id}`)}">Edit the overview</button>: it's the module's first row.</span>` : ""}
       </label>
+      <label class="check"><input type="checkbox" .checked="${!!row.mod?.sequential}" @change="${(e) => this._setMod({ sequential: e.target.checked || undefined })}" />Students work through it in order</label>
+      ${(row.mod?.prerequisites || []).length
+        ? html`<p class="hint">Opens after ${row.mod.prerequisites.map((id) => this._rows.find((r) => r.id === id)?.title || "a module that's gone").join(", ")} (from the course it was imported from).</p>`
+        : ""}
+      ${row.mod?.unlock ? html`<p class="hint">Opens in week ${row.mod.unlock.week}${row.mod.unlock.day ? `, ${row.mod.unlock.day}` : ""}.</p>` : ""}
       <p class="stat">${items.length} item${items.length === 1 ? "" : "s"}${graded.length ? `, ${graded.length} graded (${points} points)` : ""}</p>
       ${graded.length
         ? html`<ul class="due-list">
             ${graded.map((r) => html`<li><span>${r.title}</span><small>${this._summary(r.item)}</small></li>`)}
           </ul>`
         : ""}
+    </div>`;
+  }
+
+  // when the module runs: a week, a span of weeks, or all term
+  _renderModuleWeeks(row) {
+    const allTerm = !Number(row.week);
+    const start = Number(row.week) || 1;
+    const end = start + Math.max(1, Number(row.mod?.weeks) || 1) - 1;
+    return html`<fieldset class="checks">
+      <legend>When it runs</legend>
+      <label class="check"><input type="checkbox" .checked="${allTerm}" @change="${(e) => (e.target.checked ? this._setRow({ week: "" }) : this._setRow({ week: 1 }))}" />All term (no week: "Start here", "Resources")</label>
+      ${allTerm
+        ? ""
+        : html`<div class="pair">
+              <label class="field"
+                >From week<input class="input num" type="number" min="1" .value="${String(start)}" @change="${(e) => Number(e.target.value) > 0 && this._setRow({ week: Number(e.target.value) })}"
+              /></label>
+              <label class="field"
+                >To week<input
+                  class="input num"
+                  type="number"
+                  min="${start}"
+                  .value="${String(end)}"
+                  @change="${(e) => {
+                    const to = Math.max(start, Number(e.target.value) || start);
+                    this._setMod({ weeks: to > start ? to - start + 1 : undefined });
+                  }}"
+              /></label>
+            </div>
+            <span class="hint">Its items' due weeks move with it. Asynchronous courses open the module on its first week's Monday.</span>`}
+    </fieldset>`;
+  }
+
+  // the module's overview (its first row): a note with its to-do list
+  // (made at export), or a page as written (an imported to-do page)
+  _renderOverviewDetail(row) {
+    const moduleRow = this._rows.find((r) => r.id === row.moduleId);
+    const ov = moduleRow?.mod?.overview || {};
+    const set = (patch) => this._setModuleMod(row.moduleId, { overview: { ...ov, ...patch } });
+    return html`<div class="detail-pad settings">
+      <p class="eyebrow">Overview of ${moduleRow?.title || "the module"}</p>
+      <label class="field">Title<input class="input" placeholder="${this._placeholder(row)}" .value="${row.title || ""}" @input="${(e) => this._setRow({ title: e.target.value })}" /></label>
+      <label class="field"
+        >It shows
+        <select @change="${(e) => set({ mode: e.target.value })}">
+          <option value="list" ?selected="${ov.mode === "list"}">A note and the module's to-do list</option>
+          <option value="written" ?selected="${ov.mode !== "list"}">A page as written</option>
+        </select>
+      </label>
+      ${ov.mode === "list"
+        ? html`<oer-text-editor label="Note" placeholder="Anything to say about the week (optional)" .value="${ov.note || ""}" @change="${(e) => set({ note: e.detail.value })}"></oer-text-editor>
+            <span class="hint">At export, the module's items are listed under the note, each linked, with that term's due dates.</span>`
+        : html`<oer-text-editor label="Overview page" .value="${ov.html || ""}" @change="${(e) => set({ html: e.detail.value })}"></oer-text-editor>
+            <span class="hint">Exported as written. Choose “A note and the module's to-do list” to have the list made for each term.</span>`}
+      <p class="hint">It comes first in the module; items indented under it are listed under it in the LMS. Delete removes the overview, not the items.</p>
     </div>`;
   }
 
@@ -960,6 +1089,21 @@ class OerSequenceBuilder extends OerOutlineBuilder {
             </label>
           </div>
           <section aria-labelledby="groups-t">
+            ${this._hadRules
+              ? html`<label class="field"
+                  >How modules open
+                  <select
+                    @change="${(e) => {
+                      this._moduleRules = e.target.value === "own" ? "own" : "";
+                      this.requestUpdate();
+                    }}"
+                  >
+                    <option value="own" ?selected="${this._moduleRules === "own"}">As each module says (its order, prerequisites and opening date)</option>
+                    <option value="delivery" ?selected="${this._moduleRules !== "own"}">By delivery: weekly and in order when asynchronous</option>
+                  </select>
+                  <span class="hint">An imported course keeps its modules' own settings.</span>
+                </label>`
+              : ""}
             <h4 id="groups-t">Grade groups</h4>
             <div class="rows">
               ${this._groups.map(
@@ -1204,6 +1348,16 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         fieldset.checks legend {
           margin-bottom: 0.375rem;
           padding: 0;
+          font-size: 0.8125rem;
+          font-weight: 500;
+        }
+        .field-block {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+        }
+        .field-label {
+          margin: 0;
           font-size: 0.8125rem;
           font-weight: 500;
         }
