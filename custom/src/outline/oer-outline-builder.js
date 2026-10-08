@@ -166,9 +166,9 @@ class OerOutlineBuilder extends LitElement {
       if (row.orig) {
         const o = row.orig;
         const item = out.get(row.id);
+        // (a change of order is worked out below, with the pages not shown)
         const changed =
           (o.parent || null) !== (parent || null) ||
-          Number(o.order) !== order ||
           Number(o.indent) !== indent ||
           o.title !== title ||
           pageIcon(o) !== row.icon ||
@@ -229,6 +229,7 @@ class OerOutlineBuilder extends LitElement {
       const item = out.get(id);
       if (item) item.delete = true;
     }
+    this._numberChildren(all, out);
     // the site-wide "Icons in navigation" setting lives on the system page
     const sys = systemItem(all);
     if (sys && (sys.metadata?.oerNavIcons !== false) !== this._navIcons) {
@@ -238,6 +239,48 @@ class OerOutlineBuilder extends LitElement {
     }
     saveOutline([...out.values()]);
     this._close();
+  }
+
+  /**
+   * Number each parent's children as one list, as HAX numbers them (0, 1,
+   * 2…; outline-model.js saves that in site.json's own numbers): the rows
+   * as arranged, with the pages the builder doesn't show (removed from the
+   * navigation, archived versions, the system page) where they were, each
+   * after the shown page that was before it. Only pages whose place
+   * changes are marked to save.
+   */
+  _numberChildren(all, out) {
+    const rowIds = new Set(this._rows.map((r) => r.id));
+    const was = childrenMap(all);
+    const parents = new Set();
+    for (const r of this._rows) {
+      parents.add(out.get(r.id)?.parent || null);
+      if (r.orig) parents.add(r.orig.parent || null);
+    }
+    for (const parent of parents) {
+      const rows = [...out.values()].filter((i) => rowIds.has(i.id) && !i.delete && (i.parent || null) === parent).sort((a, b) => a.order - b.order);
+      const here = new Set(rows.map((i) => i.id));
+      const before = was.get(parent) || [];
+      const after = new Map([["", []]]);
+      for (const [k, item] of before.entries()) {
+        if (rowIds.has(item.id) || out.get(item.id)?.delete) continue;
+        let anchor = "";
+        for (let j = k - 1; j >= 0; j--) {
+          if (here.has(before[j].id)) {
+            anchor = before[j].id;
+            break;
+          }
+        }
+        if (!after.has(anchor)) after.set(anchor, []);
+        after.get(anchor).push(out.get(item.id));
+      }
+      const list = [...after.get(""), ...rows.flatMap((r) => [r, ...(after.get(r.id) || [])])];
+      list.forEach((item, order) => {
+        const orig = this._byId.get(item.id);
+        item.order = order;
+        if (orig && ((orig.parent || null) !== parent || Number(orig.order) !== order)) item.modified = true;
+      });
+    }
   }
 
   /* ---------- tree helpers (flat list with depths) ---------- */

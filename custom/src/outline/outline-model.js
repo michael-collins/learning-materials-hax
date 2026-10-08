@@ -6,7 +6,9 @@
  * manifest afterwards.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { HAX_GUESSED_ICON } from "../types/page-icon.js";
+import { storedOrders, nextStoredOrder } from "./outline-order.js";
 
 const byOrder = (a, b) => (Number(a.order) || 0) - (Number(b.order) || 0);
 
@@ -60,13 +62,29 @@ export function starterContent(pageType) {
 }
 
 /**
+ * site.json's own order and parent for each item: Map id → { order, parent }
+ * (the editor's items are renumbered; see outline-order.js), or null when
+ * it can't be read.
+ */
+async function siteOrders() {
+  try {
+    const res = await fetch(new URL(`site.json?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" });
+    if (!res.ok) return null;
+    return new Map(((await res.json())?.items || []).map((i) => [i.id, { order: i.order, parent: i.parent || null }]));
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Create a page at the end of `parent`'s children (null = top level),
  * optionally of a content type.
  */
-export function createPage(title, parent = null, pageType = "") {
+export async function createPage(title, parent = null, pageType = "") {
   const siblings = childrenMap(store.manifest?.items).get(parent || null) || [];
   const last = siblings[siblings.length - 1];
-  const order = last ? (Number(last.order) || 0) + 1 : 0;
+  const stored = await siteOrders();
+  const order = stored ? nextStoredOrder(parent, toJS(store.manifest?.items) || [], stored) : last ? (Number(last.order) || 0) + 1 : 0;
   const target = siteEditor() || globalThis.document.body;
   target.dispatchEvent(
     new CustomEvent("haxcms-create-node", {
@@ -89,20 +107,26 @@ export function createPage(title, parent = null, pageType = "") {
 /**
  * Save an outline: `items` is the full item list in JSON Outline Schema
  * form, with `new`, `modified` and `delete` flags as HAX's own outline
- * designer sends them.
+ * designer sends them. Orders are the editor's (each parent's children
+ * numbered by rank); they're saved in site.json's own numbering
+ * (outline-order.js), so pages that don't move keep their stored order and
+ * the navigation never reorders by itself. Siblings that must move down to
+ * make room are saved too (whole, so they keep their descriptions).
  */
-export function saveOutline(items) {
+export async function saveOutline(items) {
   const before = store.manifest;
   // Only new, changed and deleted items go to HAXcms. Its outline save
   // processes every item it's sent, rewriting site.json and rebuilding the
   // feeds and search index (which reads every page) once per item, so
   // sending the whole outline took minutes on a large site; unchanged items
   // need nothing, and each sent item is handled on its own.
-  const changed = (items || [])
-    .filter((i) => i && (i.new || i.modified || i.delete))
-    // pages keep no icon unless one was chosen (types/page-icon.js)
-    .map((i) => (i.metadata?.icon === HAX_GUESSED_ICON ? { ...i, metadata: { ...i.metadata, icon: "" } } : i));
-  if (!changed.length) return Promise.resolve(false);
+  let changed = (items || []).filter((i) => i && (i.new || i.modified || i.delete));
+  if (!changed.length) return false;
+  const current = toJS(store.manifest?.items) || [];
+  const stored = await siteOrders();
+  if (stored) changed = storedOrders(changed, current, stored).items;
+  // pages keep no icon unless one was chosen (types/page-icon.js)
+  changed = changed.map((i) => (i.metadata?.icon === HAX_GUESSED_ICON ? { ...i, metadata: { ...i.metadata, icon: "" } } : i));
   siteEditor()?.saveOutline?.({ detail: changed });
   return manifestChange(before);
 }

@@ -191,22 +191,11 @@ class OerLinkCheck extends LitElement {
     this._error = "";
     const saved = [];
     try {
-      // HAX's store numbers each page's order afresh when it loads, so its
-      // orders differ from site.json's; saving them for some pages and not
-      // their siblings would reorder the navigation. Send the stored ones.
-      const res = await fetch(new URL(`site.json?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" });
-      const stored = new Map(((await res.json())?.items || []).map((i) => [i.id, i]));
       for (let i = 0; i < changes.length; i += 8) {
         const part = changes.slice(i, i + 8);
         this._note = `Saving pages: ${Math.min(i + part.length, changes.length)} of ${changes.length}…`;
         const items = toJS(store.manifest?.items) || [];
-        await saveOutline(
-          part.map(({ item, html: contents }) => {
-            const now = items.find((x) => x.id === item.id) || item;
-            const disk = stored.get(item.id);
-            return { ...now, ...(disk ? { order: disk.order, parent: disk.parent ?? now.parent } : {}), contents, modified: true };
-          }),
-        );
+        await saveOutline(part.map(({ item, html: contents }) => ({ ...(items.find((x) => x.id === item.id) || item), contents, modified: true })));
         saved.push(...part.map((c) => c.item));
       }
       // outline saves drop descriptions: give the pages theirs back
