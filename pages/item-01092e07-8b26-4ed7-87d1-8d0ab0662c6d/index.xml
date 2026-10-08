@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d</id>
+<indent>1</indent>
+<location>pages/item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d/index.xml</location>
+<slug>sequences/dmd-400-15-week-from-canvas</slug>
+<order>1</order>
+<parent>item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639</parent>
+<title>DMD 400: 15-week (from Canvas)</title>
+<description></description>
+<metadata>
+<pageType>oer:sequence</pageType>
+<published>false</published>
+<oerFields>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+<weeks>15</weeks>
+<delivery>Online (asynchronous)</delivery>
+<license>CC BY 4.0</license>
+</oerFields>
+<oerSequence>
+<version>1</version>
+<modules>
+<item>
+<id>gb9fca41fdee279abb3fabd5f443408da</id>
+<title>Essential Course Information</title>
+<week></week>
+<items>
+<item>
+<header>Getting Started</header>
+<indent>1</indent>
+</item>
+<item>
+<as>text</as>
+<title>Welcome to DMD 400</title>
+<html>&lt;p&gt;Hello! Welcome to the DMD 400, the capstone course for the DMD program. My name is Michael Collins, and I&apos;m an Associate Teaching Professor for the Penn State Digital Multimedia Design program. I was a founding faculty member for the program and will be working with you this semester to realize your capstone projects.&lt;/p&gt;
+&lt;p&gt;My professional and academic background is in illustration, interactive media, graphic design, photography and video production, 3D animation, web, product design, digital fabrication, and New Media exhibition art. My professional network extends into pretty much every creative field touching creative digital production, so if I don&apos;t know the answer to a question, I can point you to someone who does. I&apos;m also a long time committee member for ACM SIGGRAPH, which hosts the premiere computing graphics conference on the planet, &lt;a href=&quot;https://www.siggraph.org/current-conference&quot;&gt;SIGGRAPH&lt;/a&gt; and &lt;a href=&quot;https://www.siggraph.org/current-asia-conference&quot;&gt;SIGGRAPH Asia&lt;/a&gt;. Please ask me more about this conference if you are looking for networking opportunities.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;The bar for the capstone is high. The course asks that you focus on the media or creative design fields of your interest to produce portfolio quality work. A successful capstone project demonstrates the creative capabilities and competencies you acquired during your time in the DMD program.&lt;/p&gt;
+&lt;p&gt;This course provides a framework to help you successfully navigate the capstone project process, which is similar to the self-directed project you completed in DMD 300. While the course has little in the way of technical instruction, I am here to help you navigate and refine your skills and workflow as needed. Please take advantage of my office hours, feedback, and the resources I provide throughout the semester.&lt;/p&gt;
+&lt;p&gt;I look forward to working with you! Also, connect on the following if you haven&apos;t already:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DMD Slack:&lt;/strong&gt; &lt;a href=&quot;https://dmd-program.slack.com&quot;&gt;https://dmd-program.slack.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DMD Alumni Group on LinkedIn:&lt;/strong&gt; &lt;a href=&quot;https://www.linkedin.com/groups/12200300/&quot;&gt;https://www.linkedin.com/groups/12200300/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Best,&lt;br&gt;Michael&lt;/p&gt;</html>
+<indent>1</indent>
+</item>
+<item>
+<as>text</as>
+<title>Syllabus</title>
+<html>&lt;p&gt;&lt;oer-iframe src=&quot;https://docs.google.com/document/d/e/2PACX-1vQYBi81MCkfVH5wXD4Gx8p9ReCuICsd7bIze7U-vjghoCUyGzUeQnq57HHhj7YdoNC1-FFSz1-M_qBs/pub?embedded=true&quot; title=&quot;Embedded content&quot;&gt;&lt;/oer-iframe&gt;&lt;/p&gt;</html>
+<indent>1</indent>
+</item>
+<item>
+<page>item-ce739bdb-84f3-4797-9b76-5f951decba4e</page>
+<as>page</as>
+<title>DMD-400 Course Book</title>
+<indent>1</indent>
+</item>
+<item>
+<as>url</as>
+<title>Project categories: DMD Art &amp; Design Course Resources</title>
+<url>https://dmd-program.github.io/art-design-course-resources/</url>
+<newTab>true</newTab>
+<indent>1</indent>
+</item>
+<item>
+<header>Communication</header>
+<indent>0</indent>
+</item>
+<item>
+<as>text</as>
+<title>Communication Standards and Professional Etiquette</title>
+<html>&lt;p&gt;&lt;strong&gt;Emailing your professor or industry professionals:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I&apos;ve been called a lot of things in emails. &quot;Yo&quot;, &quot;bud&quot;, &quot; Dr. Collins,&quot; and &quot;Dr. Michael&quot; (I do not have a PhD). Often, I am not addressed by name, sometimes all I get is a &quot;hello.&quot; While I personally tend to communicate fairly informally, communications are always professional. So please address me as Mike, Michael, Mr. Collins or Professor Collins. I typically go by Michael when corresponding with email, and so I tend to address students by their first names as well.&lt;/p&gt;
+&lt;p&gt;When addressing someone via email that you don&apos;t typically communicate with, the best rule of thumb is to start formally (IE - with most respect), and match the tone and formality of the email response you get. For those who are unsure, an email contains three parts. The salutation (with accompanying name), the body, and the closing/signature. For example, you could write:&lt;/p&gt;
+
+&lt;p&gt;Hello Michael,&lt;/p&gt;
+&lt;p&gt;I have a question about [here you will provide specific information about he purpose of the communication].&lt;/p&gt;
+&lt;p&gt;Thank you,&lt;br&gt;Your Name&lt;/p&gt;
+
+&lt;p&gt;If you get an email, and someone (myself included) calls you the wrong name, you should diplomatically correct them. After all, it&apos;s your name. In this course, your online communication will likely take the form of emails, journal posts, and video. As these online communications are considered part of a college course, your writing style should conform to the rules of Standard English.&lt;/p&gt;
+&lt;p&gt;Accordingly, you should:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use the spell check feature prior to sending an email or post&lt;/li&gt;
+&lt;li&gt;refrain from using emoticons, slang, or instant texting terms&lt;/li&gt;
+&lt;li&gt;never resort to using vulgar language&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;Don’t use all capital letters as it gives the impression you’re SHOUTING!&lt;/li&gt;
+&lt;li&gt;Be professional and respectful — treating someone in a courteous and respectful manner encourages them to respond to you in a similar way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Communicating with industry professionals, project clients, and other professors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;All projects require a project advisor. This is often an industry professional or other faculty members. If you are having trouble finding a project advisor, I will do my best to connect you with someone relevant to your project type that can assist you with feedback, direction, and sometimes technical help. Please be respectful, communicative, and thankful as these advisors are not paid and are donating their time to help your project be as successful as possible. Some are good friends and most are professional acquaintances from my network. As such, your actions reflect directly on me.&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you are doing a client-based project and will be interacting with a small business owner, please keep in mind that you are representing Penn State University during this process. You may experience clients that provide vague information, vague feedback, or are challenging to work with in some other way. It is your job as the designer (a current or aspiring professional) to handle these situations appropriately and diplomatically as they are common to most client-based work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here are some suggestions for contributing to online discussions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Good Attitude!&lt;/strong&gt; Operate from the perspective that everyone in the discussion is participating with the goal to create a lively, interesting conversation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be Prepared.&lt;/strong&gt; Be prepared to participate in the discussions—do the readings, review media that may be assigned and think about the issues or questions that have been posted in relationship to the discussion topic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ask Nicely.&lt;/strong&gt; If you are not certain about the meaning of a comment, ask the original poster to elaborate or clarify what they’ve written.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be Respectful.&lt;/strong&gt; Recognize and value the experiences, abilities, and knowledge each person brings to class. Acknowledge the diverse perspectives and viewpoints of class members.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Disagree with ideas, not classmates.&lt;/strong&gt; Ideas are presented for discussion and that sometimes includes pointed disagreement. When disagreeing with the ideas of another, be sure that your comments are directed toward his or her ideas and not the actual person. Never use personal attacks to express your disagreement.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use humor carefully.&lt;/strong&gt; Be cautious about injecting humor into your comments and remember that it’s easy to misinterpret humor in written language. In face to face conversations, our body language and the inflections of our voices help others discern when we are being humorous.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reference who you are responding to.&lt;/strong&gt; A brief summary or reference quote from the comment you are responding will help provide a context for your comment and identify to whom who you are responding.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don’t just jump into a long thread&lt;/strong&gt;; review earlier comments and postings so that you do not simply repeat what others have written.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post your responses under the appropriate heading or thread.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cite your References.&lt;/strong&gt; Acknowledge the source of your information and provide links to online material that might help expand or illustrate your points.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contribute enthusiastically&lt;/strong&gt; and diligently to online conversations but don’t monopolize or hijack them. Since reading other’s comments or articles can be very time consuming, try to be succinct and brief.&lt;/li&gt;
+&lt;/ul&gt;</html>
+<indent>1</indent>
+</item>
+<item>
+<as>url</as>
+<title>Office Hours Calendar</title>
+<url>https://calendly.com/msc227/office-hours</url>
+<newTab>true</newTab>
+<indent>1</indent>
+</item>
+<item>
+<as>url</as>
+<title>DMD Club Discord</title>
+<url>https://discord.gg/9swwuHn8wb</url>
+<newTab>true</newTab>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g1670469605b6b3ea5b3e41b0a0f567ba</id>
+<title>Week 1</title>
+<week>1</week>
+<overview>
+<mode>written</mode>
+<title>Week 1: To do</title>
+<html>&lt;p&gt;Welcome to DMD 400: Digital Multimedia Design Capstone!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Have a look at the course syllabus.&lt;/li&gt;
+&lt;li&gt;Participate in the graded Discussions &lt;a title=&quot; Class Introductions (Required)&quot; href=&quot;projects/class-introductions&quot;&gt; Class Introductions (Required)&lt;/a&gt; and &lt;a title=&quot;Discussion: Pathway Reflection (REQUIRED)&quot; href=&quot;projects/discussion-pathway-reflection&quot;&gt;Discussion: Pathway Reflection (REQUIRED)&lt;/a&gt;&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;Read the following&amp;nbsp; pages from the &lt;a href=&quot;books/dmd-400-digital-multimedia-design-capstone&quot;&gt;course book&lt;/a&gt; to get acquainted with the structure of the capstone course and project:
+&lt;ul&gt;
+&lt;li&gt;About&lt;/li&gt;
+&lt;li&gt;Introduction&lt;/li&gt;
+&lt;li&gt;Assessment&lt;/li&gt;
+&lt;li&gt;Concept Development&lt;/li&gt;
+&lt;li&gt;Capstone project page&lt;/li&gt;
+&lt;li&gt;Project Proposal Page&lt;/li&gt;
+&lt;li&gt;Project categories (below the numbered Capstone pages)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Begin working on your capstone project proposal.&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-b65c405c-3d53-442e-9b92-cf54bd89d151</page>
+<as>discussion</as>
+<due>
+<week>1</week>
+</due>
+<points>1</points>
+<graded>true</graded>
+<group>g7d326cfc488cbe11b96c6ef7ef3dae60</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+<item>
+<page>item-cfbc00e8-0248-4d0d-9b54-fc02ca9eb9d7</page>
+<as>discussion</as>
+<due>
+<week>2</week>
+<day>Wed</day>
+<time>23:59</time>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g09b375f37c7ee1ea1d7cbc78ce394e90</id>
+<title>Week 2</title>
+<week>2</week>
+<overview>
+<mode>written</mode>
+<title>Week 2: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;This week, you will complete your project proposal document.&lt;/li&gt;
+&lt;li&gt;Read the concept development and project research expectations pages&lt;/li&gt;
+&lt;li&gt;You will need to schedule a Zoom meeting during the week. We will meet again near the middle of the semester.
+&lt;ul&gt;
+&lt;li&gt;Be prepared to take notes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-d1a7f274-190f-4724-ae1d-37ae7a41f4c5</page>
+<as>page</as>
+<title>Project concept development</title>
+<indent>1</indent>
+</item>
+<item>
+<page>item-42c443ea-48f3-496e-91cb-78b4df8362ea</page>
+<as>page</as>
+<indent>1</indent>
+</item>
+<item>
+<page>item-9aefed67-638b-467b-af95-4bff55882eed</page>
+<as>assignment</as>
+<title>Capstone Project: Proposal</title>
+<due>
+<week>2</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>doc</item>
+<item>docx</item>
+<item>pdf</item>
+</extensions>
+<indent>1</indent>
+</item>
+<item>
+<page>item-b54ccf5c-be8c-4477-8193-4692faf8c8bf</page>
+<as>assignment</as>
+<due>
+<week>2</week>
+</due>
+<points>20</points>
+<graded>true</graded>
+<group>g7d326cfc488cbe11b96c6ef7ef3dae60</group>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>doc</item>
+<item>docx</item>
+</extensions>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g141985b90d9622f920310513fa957191</id>
+<title>Week 3</title>
+<week>3</week>
+<overview>
+<mode>written</mode>
+<title>Week 3: To do</title>
+<html>&lt;p&gt;I you have not met with your instructor to discuss your proposal, set up a meeting as soon as possible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DUE:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Proposal Revision (If applicable - upload to replace original proposal submission)&lt;/li&gt;
+&lt;li&gt;Evidence of ability&lt;/li&gt;
+&lt;li&gt;Project Agreement Form&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-27ca7119-a186-4605-9c09-02959c7b035b</page>
+<as>assignment</as>
+<title>Capstone Project: Evidence of ability</title>
+<due>
+<week>3</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<submission>
+<item>online_upload</item>
+</submission>
+<indent>1</indent>
+</item>
+<item>
+<page>item-176073ba-2e94-4870-9c7c-512a0d013b7d</page>
+<as>assignment</as>
+<due>
+<week>3</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>pdf</item>
+</extensions>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g7217347d35fcb86fdb2efff69fe05bd0</id>
+<title>Week 4</title>
+<week>4</week>
+<overview>
+<mode>written</mode>
+<title>Week 4: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;You should have the following completed:
+&lt;ul&gt;
+&lt;li&gt;Revised project proposal document&lt;/li&gt;
+&lt;li&gt;Capstone evidence of ability&lt;/li&gt;
+&lt;li&gt;Project agreement form&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Get started on project production and read the production report requirements page: &lt;a href=&quot;projects/capstone-project/capstone-project-production-reports&quot;&gt;https://dmd-program.github.io/dmd-400-master/capstone-project-production-report.html&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;While you can use sites.psu.edu for your production report, once you graduate, you will lose access to the site. Choose accordingly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 1</title>
+<due>
+<week>4</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+<item>
+<page>item-5c7841d6-767a-41d2-ae53-238f0806b2b7</page>
+<as>discussion</as>
+<graded>false</graded>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>gfc5350e3265ae3d99b304a7ac149ce88</id>
+<title>Week 5</title>
+<week>5</week>
+<overview>
+<mode>written</mode>
+<title>Week 5: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Complete the capstone project production report for this week (blog post).&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 2</title>
+<due>
+<week>5</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g6e167d80fa8209fb0daa3acc3e4d98ef</id>
+<title>Week 6</title>
+<week>6</week>
+<overview>
+<mode>written</mode>
+<title>Week 6: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress.&lt;/li&gt;
+&lt;li&gt;Complete the production report&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 3</title>
+<due>
+<week>6</week>
+</due>
+<unlock>
+<week>4</week>
+<day>Sun</day>
+<time>00:00</time>
+</unlock>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>gf32e4378834be3b81661862b5e989b54</id>
+<title>Week 7</title>
+<week>7</week>
+<overview>
+<mode>written</mode>
+<title>Week 7: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Continue project production&lt;/li&gt;
+&lt;li&gt;Complete this week&apos;s work report&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 4</title>
+<due>
+<week>7</week>
+</due>
+<unlock>
+<week>4</week>
+<day>Sun</day>
+<time>00:00</time>
+</unlock>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g778b3aa3e055e42581fefa1ac6efb801</id>
+<title>Week 8</title>
+<week>8</week>
+<overview>
+<mode>written</mode>
+<title>Week 8: To do</title>
+<html>&lt;p&gt;You should be about 50% of the way through your capstone project&apos;s production.&lt;/p&gt;
+&lt;p&gt;The mid-term progress report PDF and video presentation is due soon, and will help faculty (and sometimes external reviewers) to provide feedback, advice, and determine where you are in your project. It&apos;s imperative that you explain everything that you&apos;ve done up to this point, and how this will lead the the success of the project.&lt;/p&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 5</title>
+<due>
+<week>8</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>g3f48260abfd55b199061d0253dfafbcb</id>
+<title>Week 9</title>
+<week>9</week>
+<overview>
+<mode>written</mode>
+<title>Week 9: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Submit a capstone project production report.&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762</page>
+<as>assignment</as>
+<title>Mid-capstone video presentation</title>
+<due>
+<week>9</week>
+</due>
+<points>20</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<submission>
+<item>online_upload</item>
+</submission>
+<indent>1</indent>
+</item>
+<item>
+<page>item-0052d02f-a00e-41a8-949f-ef0137a44fbb</page>
+<as>file</as>
+<file>files/Midterm_progress_report_v2.docx</file>
+<title>Download: Midterm Progress Report Template</title>
+<indent>1</indent>
+</item>
+<item>
+<page>item-7fb4ddb1-f890-47d1-9c37-76587f1dd698</page>
+<as>assignment</as>
+<due>
+<week>9</week>
+</due>
+<points>30</points>
+<graded>true</graded>
+<group>g9889e7362e775b987290ab7e1f915a6a</group>
+<rubric>dmd400-mid-capstone-eval</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>jpg</item>
+<item>png</item>
+<item>mp4</item>
+<item>mov</item>
+<item>pdf</item>
+</extensions>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>gdac0e88101e688b3bef102e0f837e4ef</id>
+<title>Week 10</title>
+<week>10</week>
+<overview>
+<mode>written</mode>
+<title>Week 10: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Review mid-term feedback videos when posted.&lt;/li&gt;
+&lt;li&gt;Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Submit midterm feedback summary.&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+</items>
+</item>
+<item>
+<id>gecdb96602d93455f0c0080e7fe661ffb</id>
+<title>Week 11</title>
+<week>11</week>
+<overview>
+<mode>written</mode>
+<title>Week 11: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.&lt;/li&gt;
+&lt;li&gt;Submit the first exhibition statement draft.&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-2cd6e694-d66b-4ab1-b61d-06f525c6e423</page>
+<as>assignment</as>
+<due>
+<week>11</week>
+</due>
+<points>20</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>doc</item>
+<item>docx</item>
+</extensions>
+<indent>1</indent>
+</item>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 6</title>
+<due>
+<week>11</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>ge3b05f0cb848719b6f01bc89701890e7</id>
+<title>Week 12</title>
+<week>12</week>
+<overview>
+<mode>written</mode>
+<title>Week 12: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Submit a capstone project production report.&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 7</title>
+<due>
+<week>12</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+<item>
+<page>item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222</page>
+<as>assignment</as>
+<title>Capstone Project: Exhibition statement draft</title>
+<due>
+<week>12</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>doc</item>
+<item>docx</item>
+</extensions>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>gdfaf0136703522d3a5156033ad360579</id>
+<title>Week 13</title>
+<week>13</week>
+<overview>
+<mode>written</mode>
+<title>Week 13: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Submit a capstone project production report.&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</page>
+<as>discussion</as>
+<title>Discussion Production Report 8</title>
+<due>
+<week>13</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gc4a54880fa556862d1dc1a88f9cd6098</group>
+<requireInitialPost>false</requireInitialPost>
+<indent>1</indent>
+</item>
+</items>
+</item>
+<item>
+<id>gdd320e35e923e9cc804d344a54d086a0</id>
+<title>Week 14 and 15</title>
+<week>14</week>
+<weeks>2</weeks>
+<overview>
+<mode>written</mode>
+<title>Week 14-15: To do</title>
+<html>&lt;ol&gt;
+&lt;li&gt;Submit the Project statement final draft (module will open after draft feedback is distributed)&lt;/li&gt;
+&lt;li&gt;Submit the capstone document&lt;/li&gt;
+&lt;li&gt;Submit Exhibition files and upload form for exhibition website (module will open when exhibition site is ready)&lt;/li&gt;
+&lt;li&gt;Submit the project explainer video&lt;/li&gt;
+&lt;/ol&gt;</html>
+</overview>
+<items>
+<item>
+<page>item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222</page>
+<as>assignment</as>
+<title>Capstone Project: Exhibition statement final draft</title>
+<due>
+<week>15</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<indent>1</indent>
+</item>
+<item>
+<page>item-d759a2b5-61e3-4423-a706-91c282cf8b12</page>
+<as>assignment</as>
+<title>Capstone Project: Document</title>
+<due>
+<week>15</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<extensions>
+<item>pdf</item>
+</extensions>
+<indent>1</indent>
+</item>
+<item>
+<page>item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b</page>
+<as>assignment</as>
+<title>Capstone project: Exhibition files and form</title>
+<due>
+<week>15</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_text_entry</item>
+<item>online_url</item>
+<item>online_upload</item>
+</submission>
+<indent>1</indent>
+</item>
+<item>
+<page>item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7</page>
+<as>assignment</as>
+<title>Capstone project: Explainer video</title>
+<due>
+<week>15</week>
+</due>
+<points>10</points>
+<graded>true</graded>
+<group>gdea5b921f3edf6ab2521e6b81072ea7e</group>
+<rubric>pass-fail</rubric>
+<submission>
+<item>online_upload</item>
+</submission>
+<indent>1</indent>
+</item>
+<item>
+<page>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</page>
+<as>assignment</as>
+<title>Capstone project assessment</title>
+<points>100</points>
+<graded>true</graded>
+<group>g9889e7362e775b987290ab7e1f915a6a</group>
+<rubric>dmd400-capstone-project</rubric>
+<submission>
+<item>none</item>
+</submission>
+<indent>1</indent>
+</item>
+</items>
+</item>
+</modules>
+<groups>
+<item>
+<id>g7d326cfc488cbe11b96c6ef7ef3dae60</id>
+<name>LIVE Discussion</name>
+<weight>0</weight>
+</item>
+<item>
+<id>gdea5b921f3edf6ab2521e6b81072ea7e</id>
+<name>Process Assignments</name>
+<weight>10</weight>
+</item>
+<item>
+<id>gc4a54880fa556862d1dc1a88f9cd6098</id>
+<name>Work reports</name>
+<weight>10</weight>
+</item>
+<item>
+<id>g9889e7362e775b987290ab7e1f915a6a</id>
+<name>Capstone project assessment</name>
+<weight>80</weight>
+</item>
+</groups>
+<moduleRules>own</moduleRules>
+</oerSequence>
+<oerCanvasImport>
+<batch>canvas-muzzavh1</batch>
+<id>sequence</id>
+</oerCanvasImport>
+<created>1791490694</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791490694</updated>
+</metadata>
+<content><![CDATA[<p>Imported from the Canvas course “DMD 400, Section 001: DMD Capstone (22681--WC---RADMD-----400-------001-)”, which started 2026-08-24. Check each week, then export it to Canvas with your term's dates.</p>]]></content>
+</item>

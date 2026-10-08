@@ -1,0 +1,684 @@
+{
+  "id": "item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d",
+  "indent": 1,
+  "location": "pages/item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d/index.json",
+  "slug": "sequences/dmd-400-15-week-from-canvas",
+  "order": 1,
+  "parent": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
+  "title": "DMD 400: 15-week (from Canvas)",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:sequence",
+    "published": false,
+    "oerFields": {
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ],
+      "weeks": 15,
+      "delivery": "Online (asynchronous)",
+      "license": "CC BY 4.0"
+    },
+    "oerSequence": {
+      "version": 1,
+      "modules": [
+        {
+          "id": "gb9fca41fdee279abb3fabd5f443408da",
+          "title": "Essential Course Information",
+          "week": "",
+          "items": [
+            {
+              "header": "Getting Started",
+              "indent": 1
+            },
+            {
+              "as": "text",
+              "title": "Welcome to DMD 400",
+              "html": "<p>Hello! Welcome to the DMD 400, the capstone course for the DMD program. My name is Michael Collins, and I'm an Associate Teaching Professor for the Penn State Digital Multimedia Design program. I was a founding faculty member for the program and will be working with you this semester to realize your capstone projects.</p>\n<p>My professional and academic background is in illustration, interactive media, graphic design, photography and video production, 3D animation, web, product design, digital fabrication, and New Media exhibition art. My professional network extends into pretty much every creative field touching creative digital production, so if I don't know the answer to a question, I can point you to someone who does. I'm also a long time committee member for ACM SIGGRAPH, which hosts the premiere computing graphics conference on the planet, <a href=\"https://www.siggraph.org/current-conference\">SIGGRAPH</a> and <a href=\"https://www.siggraph.org/current-asia-conference\">SIGGRAPH Asia</a>. Please ask me more about this conference if you are looking for networking opportunities.&nbsp;</p>\n<p>The bar for the capstone is high. The course asks that you focus on the media or creative design fields of your interest to produce portfolio quality work. A successful capstone project demonstrates the creative capabilities and competencies you acquired during your time in the DMD program.</p>\n<p>This course provides a framework to help you successfully navigate the capstone project process, which is similar to the self-directed project you completed in DMD 300. While the course has little in the way of technical instruction, I am here to help you navigate and refine your skills and workflow as needed. Please take advantage of my office hours, feedback, and the resources I provide throughout the semester.</p>\n<p>I look forward to working with you! Also, connect on the following if you haven't already:</p>\n<p><strong>DMD Slack:</strong> <a href=\"https://dmd-program.slack.com\">https://dmd-program.slack.com</a></p>\n<p><strong>DMD Alumni Group on LinkedIn:</strong> <a href=\"https://www.linkedin.com/groups/12200300/\">https://www.linkedin.com/groups/12200300/</a></p>\n<p>Best,<br>Michael</p>",
+              "indent": 1
+            },
+            {
+              "as": "text",
+              "title": "Syllabus",
+              "html": "<p><oer-iframe src=\"https://docs.google.com/document/d/e/2PACX-1vQYBi81MCkfVH5wXD4Gx8p9ReCuICsd7bIze7U-vjghoCUyGzUeQnq57HHhj7YdoNC1-FFSz1-M_qBs/pub?embedded=true\" title=\"Embedded content\"></oer-iframe></p>",
+              "indent": 1
+            },
+            {
+              "page": "item-ce739bdb-84f3-4797-9b76-5f951decba4e",
+              "as": "page",
+              "title": "DMD-400 Course Book",
+              "indent": 1
+            },
+            {
+              "as": "url",
+              "title": "Project categories: DMD Art & Design Course Resources",
+              "url": "https://dmd-program.github.io/art-design-course-resources/",
+              "newTab": true,
+              "indent": 1
+            },
+            {
+              "header": "Communication",
+              "indent": 0
+            },
+            {
+              "as": "text",
+              "title": "Communication Standards and Professional Etiquette",
+              "html": "<p><strong>Emailing your professor or industry professionals:</strong></p>\n<p>I've been called a lot of things in emails. \"Yo\", \"bud\", \" Dr. Collins,\" and \"Dr. Michael\" (I do not have a PhD). Often, I am not addressed by name, sometimes all I get is a \"hello.\" While I personally tend to communicate fairly informally, communications are always professional. So please address me as Mike, Michael, Mr. Collins or Professor Collins. I typically go by Michael when corresponding with email, and so I tend to address students by their first names as well.</p>\n<p>When addressing someone via email that you don't typically communicate with, the best rule of thumb is to start formally (IE - with most respect), and match the tone and formality of the email response you get. For those who are unsure, an email contains three parts. The salutation (with accompanying name), the body, and the closing/signature. For example, you could write:</p>\n\n<p>Hello Michael,</p>\n<p>I have a question about [here you will provide specific information about he purpose of the communication].</p>\n<p>Thank you,<br>Your Name</p>\n\n<p>If you get an email, and someone (myself included) calls you the wrong name, you should diplomatically correct them. After all, it's your name. In this course, your online communication will likely take the form of emails, journal posts, and video. As these online communications are considered part of a college course, your writing style should conform to the rules of Standard English.</p>\n<p>Accordingly, you should:</p>\n<ul>\n<li>use the spell check feature prior to sending an email or post</li>\n<li>refrain from using emoticons, slang, or instant texting terms</li>\n<li>never resort to using vulgar language&nbsp;</li>\n<li>Don’t use all capital letters as it gives the impression you’re SHOUTING!</li>\n<li>Be professional and respectful — treating someone in a courteous and respectful manner encourages them to respond to you in a similar way.</li>\n</ul>\n<p><strong>Communicating with industry professionals, project clients, and other professors</strong></p>\n<p>All projects require a project advisor. This is often an industry professional or other faculty members. If you are having trouble finding a project advisor, I will do my best to connect you with someone relevant to your project type that can assist you with feedback, direction, and sometimes technical help. Please be respectful, communicative, and thankful as these advisors are not paid and are donating their time to help your project be as successful as possible. Some are good friends and most are professional acquaintances from my network. As such, your actions reflect directly on me.<strong></strong></p>\n<p>If you are doing a client-based project and will be interacting with a small business owner, please keep in mind that you are representing Penn State University during this process. You may experience clients that provide vague information, vague feedback, or are challenging to work with in some other way. It is your job as the designer (a current or aspiring professional) to handle these situations appropriately and diplomatically as they are common to most client-based work.</p>\n<p><strong>Here are some suggestions for contributing to online discussions:</strong></p>\n<ul>\n<li><strong>Good Attitude!</strong> Operate from the perspective that everyone in the discussion is participating with the goal to create a lively, interesting conversation.</li>\n<li><strong>Be Prepared.</strong> Be prepared to participate in the discussions—do the readings, review media that may be assigned and think about the issues or questions that have been posted in relationship to the discussion topic.</li>\n<li><strong>Ask Nicely.</strong> If you are not certain about the meaning of a comment, ask the original poster to elaborate or clarify what they’ve written.</li>\n<li><strong>Be Respectful.</strong> Recognize and value the experiences, abilities, and knowledge each person brings to class. Acknowledge the diverse perspectives and viewpoints of class members.</li>\n<li><strong>Disagree with ideas, not classmates.</strong> Ideas are presented for discussion and that sometimes includes pointed disagreement. When disagreeing with the ideas of another, be sure that your comments are directed toward his or her ideas and not the actual person. Never use personal attacks to express your disagreement.</li>\n<li><strong>Use humor carefully.</strong> Be cautious about injecting humor into your comments and remember that it’s easy to misinterpret humor in written language. In face to face conversations, our body language and the inflections of our voices help others discern when we are being humorous.</li>\n<li><strong>Reference who you are responding to.</strong> A brief summary or reference quote from the comment you are responding will help provide a context for your comment and identify to whom who you are responding.</li>\n<li><strong>Don’t just jump into a long thread</strong>; review earlier comments and postings so that you do not simply repeat what others have written.</li>\n<li><strong>Post your responses under the appropriate heading or thread.</strong></li>\n<li><strong>Cite your References.</strong> Acknowledge the source of your information and provide links to online material that might help expand or illustrate your points.</li>\n<li><strong>Contribute enthusiastically</strong> and diligently to online conversations but don’t monopolize or hijack them. Since reading other’s comments or articles can be very time consuming, try to be succinct and brief.</li>\n</ul>",
+              "indent": 1
+            },
+            {
+              "as": "url",
+              "title": "Office Hours Calendar",
+              "url": "https://calendly.com/msc227/office-hours",
+              "newTab": true,
+              "indent": 1
+            },
+            {
+              "as": "url",
+              "title": "DMD Club Discord",
+              "url": "https://discord.gg/9swwuHn8wb",
+              "newTab": true,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g1670469605b6b3ea5b3e41b0a0f567ba",
+          "title": "Week 1",
+          "week": 1,
+          "overview": {
+            "mode": "written",
+            "title": "Week 1: To do",
+            "html": "<p>Welcome to DMD 400: Digital Multimedia Design Capstone!</p>\n<ol>\n<li>Have a look at the course syllabus.</li>\n<li>Participate in the graded Discussions <a title=\" Class Introductions (Required)\" href=\"projects/class-introductions\"> Class Introductions (Required)</a> and <a title=\"Discussion: Pathway Reflection (REQUIRED)\" href=\"projects/discussion-pathway-reflection\">Discussion: Pathway Reflection (REQUIRED)</a>&nbsp;</li>\n<li>Read the following&nbsp; pages from the <a href=\"books/dmd-400-digital-multimedia-design-capstone\">course book</a> to get acquainted with the structure of the capstone course and project:\n<ul>\n<li>About</li>\n<li>Introduction</li>\n<li>Assessment</li>\n<li>Concept Development</li>\n<li>Capstone project page</li>\n<li>Project Proposal Page</li>\n<li>Project categories (below the numbered Capstone pages)</li>\n</ul>\n</li>\n<li>Begin working on your capstone project proposal.</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-b65c405c-3d53-442e-9b92-cf54bd89d151",
+              "as": "discussion",
+              "due": {
+                "week": 1
+              },
+              "points": 1,
+              "graded": true,
+              "group": "g7d326cfc488cbe11b96c6ef7ef3dae60",
+              "requireInitialPost": false,
+              "indent": 1
+            },
+            {
+              "page": "item-cfbc00e8-0248-4d0d-9b54-fc02ca9eb9d7",
+              "as": "discussion",
+              "due": {
+                "week": 2,
+                "day": "Wed",
+                "time": "23:59"
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g09b375f37c7ee1ea1d7cbc78ce394e90",
+          "title": "Week 2",
+          "week": 2,
+          "overview": {
+            "mode": "written",
+            "title": "Week 2: To do",
+            "html": "<ol>\n<li>This week, you will complete your project proposal document.</li>\n<li>Read the concept development and project research expectations pages</li>\n<li>You will need to schedule a Zoom meeting during the week. We will meet again near the middle of the semester.\n<ul>\n<li>Be prepared to take notes.</li>\n</ul>\n</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-d1a7f274-190f-4724-ae1d-37ae7a41f4c5",
+              "as": "page",
+              "title": "Project concept development",
+              "indent": 1
+            },
+            {
+              "page": "item-42c443ea-48f3-496e-91cb-78b4df8362ea",
+              "as": "page",
+              "indent": 1
+            },
+            {
+              "page": "item-9aefed67-638b-467b-af95-4bff55882eed",
+              "as": "assignment",
+              "title": "Capstone Project: Proposal",
+              "due": {
+                "week": 2
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "doc",
+                "docx",
+                "pdf"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-b54ccf5c-be8c-4477-8193-4692faf8c8bf",
+              "as": "assignment",
+              "due": {
+                "week": 2
+              },
+              "points": 20,
+              "graded": true,
+              "group": "g7d326cfc488cbe11b96c6ef7ef3dae60",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "doc",
+                "docx"
+              ],
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g141985b90d9622f920310513fa957191",
+          "title": "Week 3",
+          "week": 3,
+          "overview": {
+            "mode": "written",
+            "title": "Week 3: To do",
+            "html": "<p>I you have not met with your instructor to discuss your proposal, set up a meeting as soon as possible.</p>\n<p><strong>DUE:</strong></p>\n<ol>\n<li>Proposal Revision (If applicable - upload to replace original proposal submission)</li>\n<li>Evidence of ability</li>\n<li>Project Agreement Form</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-27ca7119-a186-4605-9c09-02959c7b035b",
+              "as": "assignment",
+              "title": "Capstone Project: Evidence of ability",
+              "due": {
+                "week": 3
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "submission": [
+                "online_upload"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-176073ba-2e94-4870-9c7c-512a0d013b7d",
+              "as": "assignment",
+              "due": {
+                "week": 3
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "pdf"
+              ],
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g7217347d35fcb86fdb2efff69fe05bd0",
+          "title": "Week 4",
+          "week": 4,
+          "overview": {
+            "mode": "written",
+            "title": "Week 4: To do",
+            "html": "<ol>\n<li>You should have the following completed:\n<ul>\n<li>Revised project proposal document</li>\n<li>Capstone evidence of ability</li>\n<li>Project agreement form</li>\n</ul>\n</li>\n<li>Get started on project production and read the production report requirements page: <a href=\"projects/capstone-project/capstone-project-production-reports\">https://dmd-program.github.io/dmd-400-master/capstone-project-production-report.html</a>\n<ul>\n<li>While you can use sites.psu.edu for your production report, once you graduate, you will lose access to the site. Choose accordingly.</li>\n</ul>\n</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 1",
+              "due": {
+                "week": 4
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            },
+            {
+              "page": "item-5c7841d6-767a-41d2-ae53-238f0806b2b7",
+              "as": "discussion",
+              "graded": false,
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "gfc5350e3265ae3d99b304a7ac149ce88",
+          "title": "Week 5",
+          "week": 5,
+          "overview": {
+            "mode": "written",
+            "title": "Week 5: To do",
+            "html": "<ol>\n<li>Complete the capstone project production report for this week (blog post).</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 2",
+              "due": {
+                "week": 5
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g6e167d80fa8209fb0daa3acc3e4d98ef",
+          "title": "Week 6",
+          "week": 6,
+          "overview": {
+            "mode": "written",
+            "title": "Week 6: To do",
+            "html": "<ol>\n<li>Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress.</li>\n<li>Complete the production report</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 3",
+              "due": {
+                "week": 6
+              },
+              "unlock": {
+                "week": 4,
+                "day": "Sun",
+                "time": "00:00"
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "gf32e4378834be3b81661862b5e989b54",
+          "title": "Week 7",
+          "week": 7,
+          "overview": {
+            "mode": "written",
+            "title": "Week 7: To do",
+            "html": "<ol>\n<li>Continue project production</li>\n<li>Complete this week's work report</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 4",
+              "due": {
+                "week": 7
+              },
+              "unlock": {
+                "week": 4,
+                "day": "Sun",
+                "time": "00:00"
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g778b3aa3e055e42581fefa1ac6efb801",
+          "title": "Week 8",
+          "week": 8,
+          "overview": {
+            "mode": "written",
+            "title": "Week 8: To do",
+            "html": "<p>You should be about 50% of the way through your capstone project's production.</p>\n<p>The mid-term progress report PDF and video presentation is due soon, and will help faculty (and sometimes external reviewers) to provide feedback, advice, and determine where you are in your project. It's imperative that you explain everything that you've done up to this point, and how this will lead the the success of the project.</p>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 5",
+              "due": {
+                "week": 8
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "g3f48260abfd55b199061d0253dfafbcb",
+          "title": "Week 9",
+          "week": 9,
+          "overview": {
+            "mode": "written",
+            "title": "Week 9: To do",
+            "html": "<ol>\n<li>Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.<br></li>\n<li>Submit a capstone project production report.</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762",
+              "as": "assignment",
+              "title": "Mid-capstone video presentation",
+              "due": {
+                "week": 9
+              },
+              "points": 20,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "submission": [
+                "online_upload"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-0052d02f-a00e-41a8-949f-ef0137a44fbb",
+              "as": "file",
+              "file": "files/Midterm_progress_report_v2.docx",
+              "title": "Download: Midterm Progress Report Template",
+              "indent": 1
+            },
+            {
+              "page": "item-7fb4ddb1-f890-47d1-9c37-76587f1dd698",
+              "as": "assignment",
+              "due": {
+                "week": 9
+              },
+              "points": 30,
+              "graded": true,
+              "group": "g9889e7362e775b987290ab7e1f915a6a",
+              "rubric": "dmd400-mid-capstone-eval",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "jpg",
+                "png",
+                "mp4",
+                "mov",
+                "pdf"
+              ],
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "gdac0e88101e688b3bef102e0f837e4ef",
+          "title": "Week 10",
+          "week": 10,
+          "overview": {
+            "mode": "written",
+            "title": "Week 10: To do",
+            "html": "<ol>\n<li>Review mid-term feedback videos when posted.</li>\n<li>Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.<br></li>\n<li>Submit midterm feedback summary.</li>\n</ol>"
+          },
+          "items": []
+        },
+        {
+          "id": "gecdb96602d93455f0c0080e7fe661ffb",
+          "title": "Week 11",
+          "week": 11,
+          "overview": {
+            "mode": "written",
+            "title": "Week 11: To do",
+            "html": "<ol>\n<li>Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.</li>\n<li>Submit the first exhibition statement draft.</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-2cd6e694-d66b-4ab1-b61d-06f525c6e423",
+              "as": "assignment",
+              "due": {
+                "week": 11
+              },
+              "points": 20,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "doc",
+                "docx"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 6",
+              "due": {
+                "week": 11
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "ge3b05f0cb848719b6f01bc89701890e7",
+          "title": "Week 12",
+          "week": 12,
+          "overview": {
+            "mode": "written",
+            "title": "Week 12: To do",
+            "html": "<ol>\n<li>Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.<br></li>\n<li>Submit a capstone project production report.</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 7",
+              "due": {
+                "week": 12
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            },
+            {
+              "page": "item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222",
+              "as": "assignment",
+              "title": "Capstone Project: Exhibition statement draft",
+              "due": {
+                "week": 12
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "doc",
+                "docx"
+              ],
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "gdfaf0136703522d3a5156033ad360579",
+          "title": "Week 13",
+          "week": 13,
+          "overview": {
+            "mode": "written",
+            "title": "Week 13: To do",
+            "html": "<ol>\n<li>Continue working on the capstone project. Keep your instructor aware of any challenges, issues, or obstacles to making progress. Schedule office hours if needed.<br></li>\n<li>Submit a capstone project production report.</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae",
+              "as": "discussion",
+              "title": "Discussion Production Report 8",
+              "due": {
+                "week": 13
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gc4a54880fa556862d1dc1a88f9cd6098",
+              "requireInitialPost": false,
+              "indent": 1
+            }
+          ]
+        },
+        {
+          "id": "gdd320e35e923e9cc804d344a54d086a0",
+          "title": "Week 14 and 15",
+          "week": 14,
+          "weeks": 2,
+          "overview": {
+            "mode": "written",
+            "title": "Week 14-15: To do",
+            "html": "<ol>\n<li>Submit the Project statement final draft (module will open after draft feedback is distributed)</li>\n<li>Submit the capstone document</li>\n<li>Submit Exhibition files and upload form for exhibition website (module will open when exhibition site is ready)</li>\n<li>Submit the project explainer video</li>\n</ol>"
+          },
+          "items": [
+            {
+              "page": "item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222",
+              "as": "assignment",
+              "title": "Capstone Project: Exhibition statement final draft",
+              "due": {
+                "week": 15
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_upload"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-d759a2b5-61e3-4423-a706-91c282cf8b12",
+              "as": "assignment",
+              "title": "Capstone Project: Document",
+              "due": {
+                "week": 15
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_upload"
+              ],
+              "extensions": [
+                "pdf"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b",
+              "as": "assignment",
+              "title": "Capstone project: Exhibition files and form",
+              "due": {
+                "week": 15
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_text_entry",
+                "online_url",
+                "online_upload"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7",
+              "as": "assignment",
+              "title": "Capstone project: Explainer video",
+              "due": {
+                "week": 15
+              },
+              "points": 10,
+              "graded": true,
+              "group": "gdea5b921f3edf6ab2521e6b81072ea7e",
+              "rubric": "pass-fail",
+              "submission": [
+                "online_upload"
+              ],
+              "indent": 1
+            },
+            {
+              "page": "item-9b164f52-dc53-41a3-871a-fd25c5cc83dd",
+              "as": "assignment",
+              "title": "Capstone project assessment",
+              "points": 100,
+              "graded": true,
+              "group": "g9889e7362e775b987290ab7e1f915a6a",
+              "rubric": "dmd400-capstone-project",
+              "submission": [
+                "none"
+              ],
+              "indent": 1
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "g7d326cfc488cbe11b96c6ef7ef3dae60",
+          "name": "LIVE Discussion",
+          "weight": 0
+        },
+        {
+          "id": "gdea5b921f3edf6ab2521e6b81072ea7e",
+          "name": "Process Assignments",
+          "weight": 10
+        },
+        {
+          "id": "gc4a54880fa556862d1dc1a88f9cd6098",
+          "name": "Work reports",
+          "weight": 10
+        },
+        {
+          "id": "g9889e7362e775b987290ab7e1f915a6a",
+          "name": "Capstone project assessment",
+          "weight": 80
+        }
+      ],
+      "moduleRules": "own"
+    },
+    "oerCanvasImport": {
+      "batch": "canvas-muzzavh1",
+      "id": "sequence"
+    },
+    "created": 1791490694,
+    "images": [],
+    "videos": [],
+    "updated": 1791490694
+  },
+  "content": "<p>Imported from the Canvas course “DMD 400, Section 001: DMD Capstone (22681--WC---RADMD-----400-------001-)”, which started 2026-08-24. Check each week, then export it to Canvas with your term's dates.</p>"
+}
