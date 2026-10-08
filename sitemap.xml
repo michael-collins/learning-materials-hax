@@ -271,16 +271,16 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/projects</loc>
-    <lastmod>2026-10-08T13:21:52.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/exercises/baking-normal-maps</loc>
     <lastmod>2026-10-07T20:21:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/projects</loc>
+    <lastmod>2026-10-08T13:21:52.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/exercises/importing-assets-into-playcanvas</loc>
@@ -1825,6 +1825,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/projects/open-design-project/develop-instructions</loc>
+    <lastmod>2026-10-07T15:19:04.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/resources</loc>
     <lastmod>2026-10-08T13:21:47.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -1835,12 +1841,6 @@
     <lastmod>2026-10-05T20:25:17.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/projects/open-design-project/develop-instructions</loc>
-    <lastmod>2026-10-07T15:19:04.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/capstone-project/capstone-project-exhibition-statement</loc>
@@ -1915,16 +1915,16 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/resources/dave-stewart</loc>
-    <lastmod>2026-10-05T20:25:17.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/projects/open-design-project/develop-user-testing</loc>
     <lastmod>2026-10-07T15:19:05.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/resources/dave-stewart</loc>
+    <lastmod>2026-10-05T20:25:17.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/capstone-project/capstone-project-document</loc>
@@ -2005,16 +2005,16 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/resources/eva-papamargariti</loc>
-    <lastmod>2026-10-05T20:25:18.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/projects/open-design-project/develop-iterate</loc>
     <lastmod>2026-10-07T15:19:05.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/resources/eva-papamargariti</loc>
+    <lastmod>2026-10-05T20:25:18.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/capstone-project/project-explainer-video</loc>
@@ -2083,16 +2083,16 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/resources/filip-tarczewski</loc>
-    <lastmod>2026-10-05T20:25:18.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/projects/open-design-project/develop-feedback</loc>
     <lastmod>2026-10-07T15:19:06.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/resources/filip-tarczewski</loc>
+    <lastmod>2026-10-05T20:25:18.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/capstone-project/capstone-project-exhibition</loc>
@@ -2179,12 +2179,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/books</loc>
-    <lastmod>2026-10-08T13:21:50.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/99-percent-invisible-lawn-order</loc>
     <lastmod>2026-10-07T18:19:25.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2233,22 +2227,28 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/resources/jacolby-satterwhite</loc>
-    <lastmod>2026-10-05T20:25:20.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/projects/open-design-project/deliver-project-documentation</loc>
     <lastmod>2026-10-07T15:19:07.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/resources/jacolby-satterwhite</loc>
+    <lastmod>2026-10-05T20:25:20.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/pathways/fundamentals</loc>
     <lastmod>2026-10-05T20:25:38.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/books</loc>
+    <lastmod>2026-10-08T13:21:50.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/discussions</loc>
@@ -2941,6 +2941,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/the-design-of-private-knowledge</loc>
+    <lastmod>2026-10-08T13:22:10.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/exercises/rigging-a-quadruped</loc>
     <lastmod>2026-10-05T20:26:03.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -3089,12 +3095,6 @@
     <lastmod>2026-10-07T15:18:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/learning-materials/the-design-of-private-knowledge</loc>
-    <lastmod>2026-10-08T13:22:10.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/oer-license-cc-by-4-0</loc>
@@ -3763,14 +3763,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/fundamentals/v0-9-0</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/projects/ideas-in-motion/v0-9-0</loc>
+    <lastmod>2026-10-07T15:19:15.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/projects/ideas-in-motion/v0-9-0</loc>
-    <lastmod>2026-10-07T15:19:15.000Z</lastmod>
+    <loc>https://localhost:3000/learning-materials/pathways/fundamentals/v0-9-0</loc>
+    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5129,5 +5129,17 @@
     <lastmod>2026-10-07T18:31:09.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/sequences/dart-413-15-week-studio</loc>
+    <lastmod>2026-10-08T13:22:10.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/sequences</loc>
+    <lastmod>2026-10-08T13:22:10.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>
