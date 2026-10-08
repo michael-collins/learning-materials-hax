@@ -3,17 +3,40 @@
  * pages). The plan lives in the page's metadata.oerSequence:
  *
  *   { version: 1,
- *     modules: [{ id, title, week, items: [
+ *     modules: [{ id, title,
+ *       week,              the teaching week it starts in; "" for none (open
+ *                          all term: "Start here", "Resources")
+ *       weeks?,            how many weeks it spans (Weeks 14–15: 2)
+ *       overview?: { mode: "list" | "written", title?, note?, html? },
+ *                          the module's to-do page: a note plus the module's
+ *                          items and due dates, listed at export ("list"), or
+ *                          a page as written (an imported to-do page)
+ *       sequential?, prerequisites?: [module id], unlock?: { week, day?, time? },
+ *       items: [
  *       { page, as: "page" | "assignment" | "discussion" | "quiz" | "link" | "file",
- *         title?, indent? (0–5),
+ *         title?, indent? (0–5),                           (title: as listed
+ *                                                          in the LMS, if not
+ *                                                          the page's)
  *         due: { week, day?, time?, rule? }, points, graded, group, rubric,
+ *         unlock?, lock?: { week, day?, time? },          (availability)
  *         submission: ["online_upload", …], extensions: ["pdf", …],
  *         peerReviews: { count, anonymous }, groupSet,      (assignments)
  *         replies, requirements: [], requireInitialPost,    (discussions)
  *         quizType: "practice" | "graded", file: url },     (quizzes, files)
+ *       { as: "text", title, html },                         (a page the
+ *                                                          sequence holds:
+ *                                                          welcome, syllabus,
+ *                                                          course policies;
+ *                                                          exported as an
+ *                                                          LMS page, never in
+ *                                                          the library)
  *       { as: "url", title, url, newTab },                  (any address)
  *       { header: "Readings", indent? } ] }],
- *     groups: [{ id, name, weight }] }
+ *     groups: [{ id, name, weight }],
+ *     moduleRules?: "own" }   modules open, order and depend as each says
+ *                             (sequential, prerequisites, unlock), as an
+ *                             imported course did; otherwise asynchronous
+ *                             delivery opens them weekly, in order
  *
  * An item's rubric names one of the site's rubric pages (by key or page id;
  * rubrics/rubric-model.js), which brings its own criteria, weights and
@@ -81,6 +104,7 @@ export function sequenceOf(page) {
     version: 1,
     modules: Array.isArray(s.modules) ? s.modules : [],
     groups: Array.isArray(s.groups) ? s.groups : [],
+    ...(s.moduleRules ? { moduleRules: s.moduleRules } : {}),
   };
 }
 
@@ -92,7 +116,17 @@ export function sequenceCourses(page, items) {
 
 /** The sequence's length in teaching weeks: its Length field, else its last module's week. */
 export function sequenceWeeks(page, sequence = sequenceOf(page)) {
-  return Number(page?.metadata?.oerFields?.weeks) || Math.max(0, ...sequence.modules.map((m) => Number(m.week) || 0)) || sequence.modules.length;
+  return Number(page?.metadata?.oerFields?.weeks) || Math.max(0, ...sequence.modules.map((m) => moduleEnd(m))) || sequence.modules.length;
+}
+
+/** The last teaching week a module covers (0 for a module with no week). */
+export const moduleEnd = (m) => (Number(m.week) ? Number(m.week) + Math.max(1, Number(m.weeks) || 1) - 1 : 0);
+
+/** "Week 3", "Weeks 14–15", or "All term" for a module with no week. */
+export function moduleWeekLabel(m) {
+  if (!Number(m.week)) return "All term";
+  const end = moduleEnd(m);
+  return end > Number(m.week) ? `Weeks ${m.week}–${end}` : `Week ${m.week}`;
 }
 
 /**
@@ -120,6 +154,7 @@ export function toOffering(page, items, run) {
     siteUrl: run.siteUrl || "",
     publish: run.publish !== false,
     groups: sequence.groups,
+    moduleRules: sequence.moduleRules || "",
     modules: sequence.modules,
   };
 }
@@ -135,9 +170,13 @@ export function readiness(page, items, run = null) {
   const total = sequence.groups.reduce((s, g) => s + (Number(g.weight) || 0), 0);
   if (sequence.groups.length && Math.round(total) !== 100) out.push({ level: "warning", text: `Grade group weights add up to ${Math.round(total * 10) / 10}%, not 100%.` });
   for (const m of sequence.modules) {
-    if (m.week > weeks) out.push({ level: "warning", text: `${m.title} is in week ${m.week}, after the sequence's ${weeks} weeks.` });
+    if (moduleEnd(m) > weeks) out.push({ level: "warning", text: `${m.title} runs to week ${moduleEnd(m)}, after the sequence's ${weeks} weeks.` });
     for (const it of m.items || []) {
       if (it.header !== undefined) continue;
+      if (it.as === "text") {
+        if (!String(it.title || "").trim()) out.push({ level: "warning", text: `${m.title}: a page in the sequence needs a title.` });
+        continue;
+      }
       if (it.as === "url") {
         if (!/^https?:\/\//.test(String(it.url || ""))) out.push({ level: "warning", text: `${m.title}: the link “${it.title || "untitled"}” needs a full web address (https://…).` });
         continue;

@@ -10,8 +10,9 @@
  * 4. links between pages: Canvas page and assignment links become links to
  *    the new (or matched) pages
  * 5. the sequence: a draft course sequence under Sequences with the
- *    modules, their items' roles, due weeks, points, grade groups and
- *    rubrics, linked to the course
+ *    modules (their weeks or spans, order rules, prerequisites, overviews),
+ *    their items' roles, titles, due weeks, availability, points, grade
+ *    groups and rubrics, and the sequence's own pages, linked to the course
  * Every new page carries metadata.oerCanvasImport { batch, id } so it can be
  * found (and the import repeated or undone). One outline save per step.
  *
@@ -150,15 +151,18 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
     const e = kind === "page" ? all.find((x) => x.kind === "page" && (x.slug === ref || x.ref === ref)) : all.find((x) => x.ref === ref);
     return e && e.action !== "skip" ? pageOf(e) : null;
   };
+  // files and Canvas links resolved: to the uploaded file, the new or
+  // matched page, or plain text when it didn't come over
+  const resolve = (html) =>
+    withFiles(html).replace(/<a\b([^>]*?)href="canvas-(page|object|course):([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, a, kind, ref, b, text) => {
+      const hit = kind === "page" ? target("page", ref) : kind === "object" ? target("object", ref.split("/").pop()) : null;
+      return hit ? `<a${a}href="${escAttr(hit.slug)}"${b}>${text}</a>` : text;
+    });
   const relinked = [];
   for (const e of toCreate) {
     const page = created.get(e.id);
     if (!page || !/canvas-(page|object|course):/.test(e.html)) continue;
-    const contents = withFiles(e.html).replace(/<a\b([^>]*?)href="canvas-(page|object|course):([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, a, kind, ref, b, text) => {
-      const hit = kind === "page" ? target("page", ref) : kind === "object" ? target("object", ref.split("/").pop()) : null;
-      return hit ? `<a${a}href="${escAttr(hit.slug)}"${b}>${text}</a>` : text;
-    });
-    relinked.push({ ...page, contents, modified: true });
+    relinked.push({ ...page, contents: resolve(e.html), modified: true });
   }
   if (relinked.length) await saveOutline(relinked);
 
@@ -171,26 +175,38 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
     if (!out.rubric) delete out.rubric;
     return out;
   };
+  const kept = new Set(plan.modules.filter((m) => !m.skip).map((m) => m.id));
   const modules = plan.modules
     .filter((m) => !m.skip)
-    .map((m) => ({
-      id: m.id,
-      title: m.title,
-      week: m.week,
-      items: m.items
-        .filter((e) => e.action !== "skip")
-        .map((e) => {
-          const indent = Math.max(0, Math.min(5, Number(e.indent) || 0));
-          if (e.action === "header") return { header: e.title, indent };
-          if (e.action === "url") return { as: "url", title: e.title, url: e.url, newTab: true, indent };
-          const page = pageOf(e);
-          if (!page) return null;
-          if (e.kind === "file") return fileUrl.get(e.files[0]) ? { page: page.id, as: "file", file: fileUrl.get(e.files[0]), indent } : { page: page.id, as: "page", indent };
-          const as = e.role?.as === "url" ? "page" : e.role?.as || "page";
-          return { page: page.id, as, ...roleFields(e.role), indent };
-        })
-        .filter(Boolean),
-    }));
+    .map((m) => {
+      const overview = m.items.find((e) => e.action === "overview");
+      return {
+        id: m.id,
+        title: m.title,
+        week: m.week,
+        ...(Number(m.week) && m.weeks > 1 ? { weeks: m.weeks } : {}),
+        ...(overview ? { overview: { mode: "written", title: overview.title, html: resolve(overview.html) } } : {}),
+        ...(m.sequential ? { sequential: true } : {}),
+        ...(m.unlock ? { unlock: m.unlock } : {}),
+        ...((m.prerequisites || []).some((id) => kept.has(id)) ? { prerequisites: m.prerequisites.filter((id) => kept.has(id)) } : {}),
+        items: m.items
+          .filter((e) => !["skip", "overview"].includes(e.action))
+          .map((e) => {
+            const indent = Math.max(0, Math.min(5, Number(e.indent) || 0));
+            if (e.action === "header") return { header: e.title, indent };
+            if (e.action === "url") return { as: "url", title: e.title, url: e.url, newTab: true, indent };
+            if (e.action === "text") return { as: "text", title: e.title, html: resolve(e.html), indent };
+            const page = pageOf(e);
+            if (!page) return null;
+            // the title it had in Canvas, when the page's is different
+            const title = e.canvasTitle && e.canvasTitle !== page.title ? { title: e.canvasTitle } : {};
+            if (e.kind === "file") return fileUrl.get(e.files[0]) ? { page: page.id, as: "file", file: fileUrl.get(e.files[0]), title: e.canvasTitle || e.title, indent } : { page: page.id, as: "page", ...title, indent };
+            const as = e.role?.as === "url" ? "page" : e.role?.as || "page";
+            return { page: page.id, as, ...title, ...roleFields(e.role), indent };
+          })
+          .filter(Boolean),
+      };
+    });
   const delivery = coursePage?.metadata?.oerFields?.delivery;
   const sequence = {
     id: newItemId(),
@@ -204,7 +220,8 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
       pageType: SEQUENCE_TYPE,
       published: false,
       oerFields: { courses, weeks: plan.course.weeks, delivery: DELIVERY.includes(delivery) ? delivery : /online/i.test(delivery || "") ? "Online (asynchronous)" : "In person", license: "CC BY 4.0" },
-      oerSequence: { version: 1, modules, groups: plan.groups },
+      // modules keep the rules they had in Canvas
+      oerSequence: { version: 1, modules, groups: plan.groups, moduleRules: "own" },
       oerCanvasImport: { batch, id: "sequence" },
     },
     contents: `<p>Imported from the Canvas course “${escAttr(plan.course.title)}”${plan.course.start ? `, which started ${plan.course.start}` : ""}. Check each week, then export it to Canvas with your term's dates.</p>`,

@@ -8,10 +8,17 @@
  * the reasons, and its place in the draft course sequence (role, due week,
  * points, grade group, rubric):
  * - link: the site already has it. Its embedded or linked page's address
- *   matches a page's, or its title does; the sequence points at the page.
+ *   matches a page's, or its title does; the sequence points at the page
+ *   (under the item's Canvas title).
  * - create: a new draft page of the suggested type, its HTML cleaned.
+ * - overview: the module's to-do page, kept as written as the module's
+ *   overview in the sequence.
+ * - text: a page about running this course (welcome, syllabus, policies),
+ *   kept in the sequence as one of its own pages, not in the library.
  * - url / header: a link or text header in the sequence only.
  * - skip: instructor-only material, surveys, external tools, New Quizzes.
+ * Modules keep their week (or span: Weeks 14–15; or none: open all term),
+ * their order rules and prerequisites, and items their availability dates.
  * Rubrics that are the same are merged, and reuse a site rubric with the
  * same criteria. Due dates become teaching weeks from the course's start.
  * Files come over only when ticked: a course's files can include student
@@ -138,6 +145,7 @@ const dayNumber = (ymd) => Math.floor(Date.UTC(...ymd.split("-").map((x, i) => N
 
 /* ---------- what an item becomes ---------- */
 
+const TODO = /^(?:(?:week|weeks|module|unit)\s*[\d][\d\s&,–-]*(?:and\s*\d+)?\s*:?\s*)?(?:to ?-?do|overview|checklist|agenda|this week)\b|^(?:week|weeks|module|unit)\s*[\d][\d\s&,–-]*:?\s*(?:to ?-?do|overview|checklist|agenda)/i;
 const INSTRUCTOR = /\b(faculty|instructor only|instructors only|teacher|professor guidance|course prep|todos?\b|to update|staff only|course template|sandbox)\b/i;
 const SURVEY = /\b(survey|feedback session|evaluation|course feedback|wrap-?up)\b/i;
 const VIDEO = /kaltura|youtube|youtu\.be|vimeo|panopto|loom/i;
@@ -224,7 +232,7 @@ export function planImport(course, items = []) {
 
   // an item in the plan
   const entryFor = (it, moduleTitle, moduleSkip) => {
-    const e = { id: it.id, kind: it.kind, ref: it.ref || "", title: it.title, indent: it.indent, url: it.url || "", rawHtml: "", html: "", reasons: [], action: "create", type: "", role: null, candidates: [], match: null, files: [], skipped: [] };
+    const e = { id: it.id, kind: it.kind, ref: it.ref || "", title: it.title, canvasTitle: it.title, indent: it.indent, url: it.url || "", rawHtml: "", html: "", reasons: [], action: "create", type: "", role: null, candidates: [], match: null, files: [], skipped: [] };
     const skip = (why) => Object.assign(e, { action: "skip", reasons: [why, ...e.reasons] });
     let src = null;
     if (it.kind === "page") src = course.pages.get(it.ref);
@@ -256,12 +264,20 @@ export function planImport(course, items = []) {
       if (!(d.day === "Sun" && d.time >= "23:59")) Object.assign(out, { day: d.day, time: d.time });
       return out;
     };
+    // an availability date: its week (from the start), day and time
+    const when = (utc) => {
+      const d = local(utc, zone);
+      if (!d || !start) return undefined;
+      return { week: Math.max(1, Math.floor((dayNumber(d.date) - dayNumber(start)) / 7) + 1), day: d.day, time: d.time };
+    };
     const assignmentRole = (a, as) => {
       const rubric = a.rubric ? rubricFor.get(a.rubric) : null;
       if (rubric) rubric.uses++;
       return {
         as,
         due: due(a.dueAt) || undefined,
+        unlock: when(a.unlockAt),
+        lock: when(a.lockAt),
         points: Number(a.points) || 0,
         graded: graded(a),
         group: a.group || "",
@@ -278,8 +294,8 @@ export function planImport(course, items = []) {
       const [type, why] = pageType(it.title, e.rawHtml, text);
       Object.assign(e, { type, role: { as: "page" } });
       if (e.action !== "skip") {
-        if (/\bsyllabus\b/i.test(it.title)) skip("a syllabus is term business: the course page and the sequence cover it");
-        else if (/^(week|module|unit)\s*[\d-]+/i.test(it.title) && /to ?do|overview|checklist|agenda/i.test(it.title) && e.words < 80) skip("a short to-do list for the week: the sequence shows each week's work");
+        if (TODO.test(it.title)) Object.assign(e, { action: "overview", reasons: ["the module's to-do page: kept as written as the module's overview in the sequence"] });
+        else if (/\b(syllabus|welcome|course information|getting started|communication|policies|netiquette|etiquette|office hours|course schedule)\b/i.test(it.title)) Object.assign(e, { action: "text", reasons: ["about running this course: kept in the sequence as one of its own pages, not in the library"] });
         else e.reasons.push(why);
       }
     } else if (it.kind === "assignment") {
@@ -318,29 +334,53 @@ export function planImport(course, items = []) {
     if (["page", "assignment", "discussion", "quiz", "link", "file"].includes(it.kind)) {
       e.candidates = matchCandidates(e, site);
       const best = e.candidates[0];
-      if (best && best.score >= 0.8 && e.action !== "skip") {
+      if (best && best.score >= 0.8 && !["skip", "overview"].includes(e.action)) {
         e.match = best;
         e.action = "link";
         e.reasons.unshift(`the site has it: ${best.why}`);
         if (e.role?.as === "url") e.role = { as: "page" };
       }
     }
-    e.confidence = e.action === "link" ? (e.match.score >= 0.95 ? "high" : "medium") : e.action === "skip" || e.action === "header" || e.action === "url" ? "high" : e.type === "oer:lesson" ? "low" : "medium";
+    e.confidence = e.action === "link" ? (e.match.score >= 0.95 ? "high" : "medium") : ["skip", "header", "url", "overview"].includes(e.action) ? "high" : e.type === "oer:lesson" ? "low" : "medium";
     return e;
   };
 
-  // modules → the sequence's weeks
+  // modules → the sequence's weeks: a span (Weeks 14–15), or none for the
+  // modules before the first week that set no work (Start here, Resources)
   const modules = [];
-  let lastWeek = 1;
-  for (const m of course.modules) {
+  const titled = course.modules.map((m) => {
+    const span = m.title.match(/\bweeks?\s*(\d+)\s*(?:-|–|—|&|and|to|through)\s*(?:week\s*)?(\d+)/i);
+    const one = m.title.match(/\bweek\s*(\d+)/i);
+    return span ? { week: Number(span[1]), weeks: Math.max(1, Number(span[2]) - Number(span[1]) + 1) } : one ? { week: Number(one[1]), weeks: 1 } : null;
+  });
+  const firstWeekly = titled.findIndex(Boolean);
+  let lastEnd = 0;
+  for (const [mi, m] of course.modules.entries()) {
     const hidden = m.unlockAt && Number(m.unlockAt.slice(0, 4)) > new Date().getFullYear() + 5;
     const moduleSkip = INSTRUCTOR.test(m.title) ? "the module is for instructors" : hidden ? "the module is hidden from students (it opens in the far future)" : !m.published ? "the module is unpublished in Canvas" : "";
     const items2 = m.items.map((it) => entryFor(it, m.title, moduleSkip));
-    const fromTitle = Number(m.title.match(/\bweek\s*(\d+)/i)?.[1]);
     const dueWeeks = items2.map((e) => e.role?.due?.week).filter(Boolean);
-    const week = fromTitle || (dueWeeks.length ? Math.min(...dueWeeks) : lastWeek);
-    lastWeek = week;
-    modules.push({ id: m.id, title: m.title, week, skip: !!moduleSkip, reason: moduleSkip, items: items2 });
+    let week;
+    let weeks = 1;
+    if (titled[mi]) ({ week, weeks } = titled[mi]);
+    else if (!dueWeeks.length && (firstWeekly < 0 ? mi === 0 : mi < firstWeekly)) week = "";
+    else if (dueWeeks.length) {
+      week = Math.min(...dueWeeks);
+      const nextStart = titled.slice(mi + 1).find(Boolean)?.week || Infinity;
+      weeks = Math.max(1, Math.min(Math.max(...dueWeeks), nextStart - 1) - week + 1);
+    } else week = lastEnd ? lastEnd + 1 : 1;
+    if (week) lastEnd = week + weeks - 1;
+    // one overview per module: the first to-do page; any others stay pages
+    let overview = false;
+    for (const e of items2) {
+      if (e.action !== "overview") continue;
+      if (overview) Object.assign(e, { action: "text", reasons: ["another to-do page in the module: kept in the sequence as a page"] });
+      overview = true;
+    }
+    if (!week) for (const e of items2) if (e.action === "create" && e.kind === "page") Object.assign(e, { action: "text", reasons: ["course information in a module that runs all term: kept in the sequence as one of its own pages", ...e.reasons] });
+    const opens = !hidden && m.unlockAt ? local(m.unlockAt, zone) : null;
+    const unlock = opens && start ? { week: Math.max(1, Math.floor((dayNumber(opens.date) - dayNumber(start)) / 7) + 1), day: opens.day, time: opens.time } : undefined;
+    modules.push({ id: m.id, title: m.title, week, weeks, sequential: !!m.sequential, prerequisites: m.prerequisites || [], unlock, skip: !!moduleSkip, reason: moduleSkip, items: items2 });
   }
 
   // pages and quizzes not in any module
@@ -370,7 +410,7 @@ export function planImport(course, items = []) {
   // the course page: one of the site's with the same course code
   const code = String(course.code || course.title).match(/\b([A-Z]{2,5})\s*-?\s*(\d{3})\b/);
   const coursePage = code ? items.find((i) => i.metadata?.pageType === "oer:course" && !i.metadata?.oerSnapshotOf && String(i.metadata?.oerFields?.code || i.title).replace(/\s+/g, " ").toUpperCase().startsWith(`${code[1]} ${code[2]}`)) : null;
-  const weeks = Math.max(1, ...modules.filter((m) => !m.skip).flatMap((m) => [m.week, ...m.items.map((e) => e.role?.due?.week || 0)]));
+  const weeks = Math.max(1, ...modules.filter((m) => !m.skip).flatMap((m) => [Number(m.week) ? Number(m.week) + m.weeks - 1 : 0, ...m.items.map((e) => e.role?.due?.week || 0)]));
 
   return {
     course: { title: course.title, code: code ? `${code[1]} ${code[2]}` : "", start, timeZone: zone, weeks },
@@ -394,6 +434,8 @@ export function planCounts(plan) {
     link: n((e) => e.action === "link"),
     skip: n((e) => e.action === "skip") + plan.modules.filter((m) => m.skip).reduce((s, m) => s + m.items.length, 0),
     urls: n((e) => e.action === "url"),
+    overviews: n((e) => e.action === "overview"),
+    texts: n((e) => e.action === "text"),
     rubricsNew: plan.rubrics.filter((r) => r.action === "create" && r.uses).length,
     rubricsReused: plan.rubrics.filter((r) => r.action === "reuse" && r.uses).length,
     files: plan.files.filter((f) => f.import).length,

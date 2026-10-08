@@ -285,8 +285,8 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     return [
       `<title>${esc(title)}</title>`,
       due ? `<due_at>${due}</due_at>` : "<due_at/>",
-      "<lock_at/>",
-      "<unlock_at/>",
+      entry.lock && utc(dueAt(offering, entry.lock), tz) ? `<lock_at>${utc(dueAt(offering, entry.lock), tz)}</lock_at>` : "<lock_at/>",
+      entry.unlock && utc(dueAt(offering, { day: "Mon", time: "00:00", ...entry.unlock }), tz) ? `<unlock_at>${utc(dueAt(offering, { day: "Mon", time: "00:00", ...entry.unlock }), tz)}</unlock_at>` : "<unlock_at/>",
       entry.group ? `<assignment_group_identifierref>${groupId(entry.group)}</assignment_group_identifierref>` : "",
       `<workflow_state>${publish ? "published" : "unpublished"}</workflow_state>`,
       rubricId ? `<rubric_identifierref>${rubricId}</rubric_identifierref>\n<rubric_use_for_grading>true</rubric_use_for_grading>\n<rubric_hide_points>false</rubric_hide_points>\n<rubric_hide_outcome_results>false</rubric_hide_outcome_results>\n<rubric_hide_score_total>false</rubric_hide_score_total>` : "",
@@ -342,6 +342,39 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     return s;
   };
 
+  // the nth use of a page in a role: the first keeps the plain key (stable
+  // across exports), later ones get a number
+  const uses = new Map();
+  const occurrence = (role, pageId) => {
+    const k = `${role}|${pageId}`;
+    const n = uses.get(k) || 0;
+    uses.set(k, n + 1);
+    return n ? [n] : [];
+  };
+  // links in the sequence's own pages to the site's pages, made absolute
+  const absolute = (html) =>
+    String(html || "").replace(/\b(href|src)="(?!https?:|mailto:|tel:|#|\$|data:)([^"]+)"/g, (m, a, v) => (siteUrl ? `${a}="${esc(new URL(v, siteUrl).href)}"` : m));
+  // a module's items as a to-do list, with this term's due dates
+  const toDoList = (listed) => {
+    const out = [];
+    let open = false;
+    for (const x of listed) {
+      if (x.header) {
+        if (open) out.push("</ul>");
+        out.push(`<h4>${esc(x.header)}</h4>`);
+        open = false;
+        continue;
+      }
+      if (!open) out.push("<ul>");
+      open = true;
+      const due = x.due ? readableDate(dueAt(offering, x.due)) : "";
+      out.push(`<li><a href="${esc(x.href)}">${esc(x.title)}</a>${due ? `, due ${esc(due)}` : ""}</li>`);
+    }
+    if (open) out.push("</ul>");
+    return out.length ? `<h3>What to do</h3>\n${out.join("\n")}` : "";
+  };
+  const emitted = new Map(); // module id → { id, title }, for prerequisites
+
   const unpublished = new Set();
   const modulesXml = [];
   const orgModules = [];
@@ -352,9 +385,13 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     const itemXml = [];
     const orgItems = [];
     const requirements = [];
-    const async = offering.delivery === "online-async";
+    // completion requirements go with weekly, in-order modules (not with an
+    // imported course's own rules)
+    const async = offering.delivery === "online-async" && offering.moduleRules !== "own";
+    const listed = []; // for a generated overview: { title, href, due } or { header }
     for (const [ii, entry] of (mod.items || []).entries()) {
       const tagId = key("tag", mod.id, ii);
+      if (entry.header) listed.push({ header: entry.header });
       if (entry.header) {
         itemXml.push(`      <item identifier="${tagId}">\n        <content_type>ContextModuleSubHeader</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(entry.header)}</title>\n        <new_tab/>\n        <indent>${clampIndent(entry.indent ?? 0)}</indent>\n      </item>`);
         orgItems.push(`<item identifier="${tagId}"><title>${esc(entry.header)}</title></item>`);
@@ -369,10 +406,26 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
           continue;
         }
         const parts = linkParts(key("weblink", mod.id, ii), tagId, entry.title || url, url, clampIndent(entry.indent ?? 0), entry.newTab !== false);
+        listed.push({ title: entry.title || url, href: url });
         itemXml.push(parts.item);
         orgItems.push(parts.org);
         if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.links++;
+        continue;
+      }
+      if (entry.as === "text") {
+        // a page the sequence holds (welcome, syllabus, policies): an LMS page
+        // of its own, not an embedded one
+        const pId = key("text", mod.id, ii);
+        const title = String(entry.title || "").trim() || "Page";
+        const slug = uniqueSlug(title);
+        add(`wiki_content/${slug}.html`, htmlPage(title, absolute(entry.html) || "<p></p>", { identifier: pId, editing_roles: "teachers", workflow_state: publish ? "active" : "unpublished" }));
+        resources.push(`<resource identifier="${pId}" type="webcontent" href="wiki_content/${slug}.html"><file href="wiki_content/${slug}.html"/></resource>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>WikiPage</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${pId}</identifierref>\n        <new_tab/>\n        <indent>${clampIndent(entry.indent ?? 0)}</indent>\n      </item>`);
+        orgItems.push(`<item identifier="${tagId}" identifierref="${pId}"><title>${esc(title)}</title></item>`);
+        if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
+        listed.push({ title, href: `$WIKI_REFERENCE$/pages/${slug}` });
+        counts.pages++;
         continue;
       }
       const latest = byId.get(entry.page);
@@ -386,7 +439,10 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
       const page = pinned || latest;
       // the live page shows in Canvas only once it's published on the site
       if (!["link", "file"].includes(entry.as) && page.metadata?.published === false) unpublished.add(page.title);
-      const title = entry.title && entry.as === "page" && entry.title !== "Overview" ? entry.title : page.title;
+      // the title it's listed under in the LMS ("Production report 3"), else the page's
+      const title = entry.title && !(entry.as === "page" && entry.title === "Overview") ? entry.title : page.title;
+      // each use of a page is its own LMS item (a weekly report used eight times)
+      const use = occurrence(entry.as, page.id);
       const indent = clampIndent(entry.indent ?? (entry.as === "link" ? 1 : 0));
 
       if (entry.as === "link") {
@@ -395,52 +451,55 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
           warnings.push(`${mod.title}: “${page.title}” has no absolute address, so Canvas would skip its link.`);
           continue;
         }
-        const parts = linkParts(key("weblink", mod.id, ii), tagId, page.title, url, indent);
+        const parts = linkParts(key("weblink", mod.id, ii), tagId, title, url, indent);
+        listed.push({ title, href: url });
         itemXml.push(parts.item);
         orgItems.push(parts.org);
         if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.links++;
       } else if (entry.as === "assignment") {
-        const aId = key("assignment", page.id);
-        const slug = slugify(page.title);
-        add(`${aId}/${slug}.html`, htmlPage(`Assignment: ${page.title}`, `${instructionsIntro(page)}\n${embed(siteUrl, page, siteName)}`));
-        add(`${aId}/assignment_settings.xml`, `${XML_HEAD}<assignment identifier="${aId}" ${CCC}>\n${assignmentBody(entry, page.title, (graded) => (graded ? entry.submission || ["online_upload"] : ["not_graded"]).join(","))}\n</assignment>\n`);
+        const aId = key("assignment", page.id, ...use);
+        listed.push({ title, href: `$CANVAS_OBJECT_REFERENCE$/assignments/${aId}`, due: entry.due });
+        const slug = slugify(title);
+        add(`${aId}/${slug}.html`, htmlPage(`Assignment: ${title}`, `${instructionsIntro(page)}\n${embed(siteUrl, page, siteName)}`));
+        add(`${aId}/assignment_settings.xml`, `${XML_HEAD}<assignment identifier="${aId}" ${CCC}>\n${assignmentBody(entry, title, (graded) => (graded ? entry.submission || ["online_upload"] : ["not_graded"]).join(","))}\n</assignment>\n`);
         resources.push(`<resource identifier="${aId}" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="${aId}/${slug}.html"><file href="${aId}/${slug}.html"/><file href="${aId}/assignment_settings.xml"/></resource>`);
-        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Assignment</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(page.title)}</title>\n        <identifierref>${aId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
-        orgItems.push(`<item identifier="${tagId}" identifierref="${aId}"><title>${esc(page.title)}</title></item>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Assignment</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${aId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
+        orgItems.push(`<item identifier="${tagId}" identifierref="${aId}"><title>${esc(title)}</title></item>`);
         if (async) requirements.push(`<completionRequirement type="must_submit"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.assignments++;
       } else if (entry.as === "discussion") {
         // a discussion: the page as its prompt; graded ones carry an assignment
-        const tId = key("topic", page.id);
-        const metaId = key("topicmeta", page.id);
+        const tId = key("topic", page.id, ...use);
+        const metaId = key("topicmeta", page.id, ...use);
+        listed.push({ title, href: `$CANVAS_OBJECT_REFERENCE$/discussion_topics/${tId}`, due: entry.due });
         const graded = entry.graded !== false && Number(entry.points) > 0;
         const groupSet = String(entry.groupSet || "").trim();
         const due = utc(dueAt(offering, entry.due), tz);
         const rubricShown = graded && entry.rubric ? rubricAt(items, entry.rubric, entry.rubricVersion).shown : null;
         const rubricName = rubricShown ? rubricOf(rubricShown).name : "";
         const prompt = [instructionsIntro(page), requirementsHtml(entry, readableDate(dueAt(offering, entry.due)), rubricName), embed(siteUrl, page, siteName)].filter(Boolean).join("\n");
-        add(`${tId}.xml`, `${XML_HEAD}<topic xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1  http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imsdt_v1p1.xsd">\n  <title>${esc(page.title)}</title>\n  <text texttype="text/html">${esc(prompt)}</text>\n</topic>\n`);
+        add(`${tId}.xml`, `${XML_HEAD}<topic xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1  http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imsdt_v1p1.xsd">\n  <title>${esc(title)}</title>\n  <text texttype="text/html">${esc(prompt)}</text>\n</topic>\n`);
         // the discussion's own fields come before its nested <assignment>
         add(
           `${metaId}.xml`,
           `${XML_HEAD}<topicMeta identifier="${metaId}" ${CCC}>
   <topic_id>${tId}</topic_id>
-  <title>${esc(page.title)}</title>
+  <title>${esc(title)}</title>
   <position>${++topicPos}</position>
   <type>topic</type>
   <discussion_type>threaded</discussion_type>
   <require_initial_post>${bool(!!entry.requireInitialPost)}</require_initial_post>
   <has_group_category>${bool(!!groupSet)}</has_group_category>${groupSet ? `\n  <group_category>${esc(groupSet)}</group_category>` : ""}
   <workflow_state>${publish ? "active" : "unpublished"}</workflow_state>
-  <allow_rating>false</allow_rating>${!graded && due ? `\n  <todo_date>${due}</todo_date>` : ""}${graded ? `\n  <assignment identifier="${key("topicassignment", page.id)}">\n${assignmentBody({ ...entry, groupSet: "" }, page.title, () => "discussion_topic").replace(/^/gm, "  ")}\n  </assignment>` : ""}
+  <allow_rating>false</allow_rating>${!graded && due ? `\n  <todo_date>${due}</todo_date>` : ""}${graded ? `\n  <assignment identifier="${key("topicassignment", page.id, ...use)}">\n${assignmentBody({ ...entry, groupSet: "" }, title, () => "discussion_topic").replace(/^/gm, "  ")}\n  </assignment>` : ""}
 </topicMeta>
 `,
         );
         resources.push(`<resource identifier="${tId}" type="imsdt_xmlv1p1"><file href="${tId}.xml"/><dependency identifierref="${metaId}"/></resource>`);
         resources.push(`<resource identifier="${metaId}" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="${metaId}.xml"><file href="${metaId}.xml"/></resource>`);
-        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>DiscussionTopic</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(page.title)}</title>\n        <identifierref>${tId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
-        orgItems.push(`<item identifier="${tagId}" identifierref="${tId}"><title>${esc(page.title)}</title></item>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>DiscussionTopic</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${tId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
+        orgItems.push(`<item identifier="${tagId}" identifierref="${tId}"><title>${esc(title)}</title></item>`);
         if (async) requirements.push(`<completionRequirement type="${graded ? "must_submit" : "must_contribute"}"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.discussions++;
       } else if (entry.as === "file") {
@@ -451,7 +510,8 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
           continue;
         }
         const name = decodeURIComponent(att.url.split("?")[0].split("/").pop() || "file");
-        const title = att.title || name;
+        // as listed in the LMS (an imported course's title), else the file's
+        const title = entry.title || att.title || name;
         const data = await fileOf(att.url);
         if (!data) {
           // not readable from here (another site, say): link to it instead
@@ -476,7 +536,8 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.files++;
       } else if (entry.as === "quiz") {
-        const qId = key("quiz", page.id);
+        const qId = key("quiz", page.id, ...use);
+        listed.push({ title, href: `$CANVAS_OBJECT_REFERENCE$/quizzes/${qId}`, due: entry.quizType === "graded" ? entry.due : null });
         const questions = quizQuestions(await htmlOf(page), { includeDrafts });
         if (!questions.length) {
           warnings.push(`${page.title}: no questions to export${includeDrafts ? "" : " (draft questions are left out until they're published)"}; the quiz was skipped.`);
@@ -489,7 +550,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         add(
           `non_cc_assessments/${qId}.xml.qti`,
           `${XML_HEAD}<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsglobal.org/xsd/ims_qtiasiv1p2p1.xsd">
-  <assessment ident="${qId}" title="${esc(page.title)}">
+  <assessment ident="${qId}" title="${esc(title)}">
     <qtimetadata><qtimetadatafield><fieldlabel>cc_maxattempts</fieldlabel><fieldentry>unlimited</fieldentry></qtimetadatafield></qtimetadata>
     <section ident="root_section">
 ${questions.map((q, n) => qtiItem(q, n + 1, qId)).join("\n")}
@@ -502,7 +563,7 @@ ${questions.map((q, n) => qtiItem(q, n + 1, qId)).join("\n")}
           ? ""
           : `
   <assignment identifier="${qId}_asg">
-    <title>${esc(page.title)}</title>
+    <title>${esc(title)}</title>
     ${due ? `<due_at>${due}</due_at>` : "<due_at/>"}
     ${entry.group ? `<assignment_group_identifierref>${groupId(entry.group)}</assignment_group_identifierref>` : ""}
     <workflow_state>${publish ? "published" : "unpublished"}</workflow_state>
@@ -515,7 +576,7 @@ ${questions.map((q, n) => qtiItem(q, n + 1, qId)).join("\n")}
         add(
           `${qId}/assessment_meta.xml`,
           `${XML_HEAD}<quiz identifier="${qId}" ${CCC}>
-  <title>${esc(page.title)}</title>
+  <title>${esc(title)}</title>
   <description>${description}</description>
   ${due ? `<due_at>${due}</due_at>` : "<due_at/>"}
   <lock_at/>
@@ -542,14 +603,16 @@ ${questions.map((q, n) => qtiItem(q, n + 1, qId)).join("\n")}
 `,
         );
         resources.push(`<resource identifier="${qId}_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="${qId}/assessment_meta.xml"><file href="${qId}/assessment_meta.xml"/><file href="non_cc_assessments/${qId}.xml.qti"/></resource>`);
-        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Quizzes::Quiz</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(page.title)}</title>\n        <identifierref>${qId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
-        orgItems.push(`<item identifier="${tagId}" identifierref="${qId}_meta"><title>${esc(page.title)}</title></item>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Quizzes::Quiz</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${qId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
+        orgItems.push(`<item identifier="${tagId}" identifierref="${qId}_meta"><title>${esc(title)}</title></item>`);
         if (async) requirements.push(`<completionRequirement type="must_submit"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.quizzes++;
       } else {
         // a page: the live page, embedded
-        const pId = key("page", mod.id, page.id);
-        const file = `wiki_content/${uniqueSlug(title)}.html`;
+        const pId = key("page", mod.id, page.id, ...use);
+        const pageSlug = uniqueSlug(title);
+        const file = `wiki_content/${pageSlug}.html`;
+        listed.push({ title, href: `$WIKI_REFERENCE$/pages/${pageSlug}` });
         add(file, htmlPage(title, `${page.description ? `<p>${esc(page.description)}</p>\n` : ""}${embed(siteUrl, page, siteName)}`, { identifier: pId, editing_roles: "teachers", workflow_state: publish ? "active" : "unpublished" }));
         resources.push(`<resource identifier="${pId}" type="webcontent" href="${file}"><file href="${file}"/></resource>`);
         itemXml.push(`      <item identifier="${tagId}">\n        <content_type>WikiPage</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${pId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
@@ -558,18 +621,48 @@ ${questions.map((q, n) => qtiItem(q, n + 1, qId)).join("\n")}
         counts.pages++;
       }
     }
-    const unlock = utc(unlockAt(offering, mod.week), tz);
+    // the module's to-do page, first in it: as written, or a note and the
+    // module's items with their due dates for this term
+    if (mod.overview) {
+      const ov = mod.overview;
+      const title = String(ov.title || "").trim() || `${mod.title}: To do`;
+      const body = ov.mode === "written" ? absolute(ov.html) : [absolute(ov.note), toDoList(listed)].filter(Boolean).join("\n");
+      const pId = key("overview", mod.id);
+      const tag = key("overviewtag", mod.id);
+      const slug = uniqueSlug(title);
+      add(`wiki_content/${slug}.html`, htmlPage(title, body || "<p></p>", { identifier: pId, editing_roles: "teachers", workflow_state: publish ? "active" : "unpublished" }));
+      resources.push(`<resource identifier="${pId}" type="webcontent" href="wiki_content/${slug}.html"><file href="wiki_content/${slug}.html"/></resource>`);
+      itemXml.unshift(`      <item identifier="${tag}">\n        <content_type>WikiPage</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${pId}</identifierref>\n        <new_tab/>\n        <indent>0</indent>\n      </item>`);
+      orgItems.unshift(`<item identifier="${tag}" identifierref="${pId}"><title>${esc(title)}</title></item>`);
+      if (async) requirements.unshift(`<completionRequirement type="must_view"><identifierref>${tag}</identifierref></completionRequirement>`);
+      counts.pages++;
+    }
+    // when modules open, whether work goes in order, what comes first: each
+    // module's own rules (an imported course's), else asynchronous delivery
+    // opens them weekly, in order; a module with no week is open all term
+    const own = offering.moduleRules === "own";
+    const unlock = own
+      ? mod.unlock
+        ? utc(dueAt(offering, { day: "Mon", time: "00:00", ...mod.unlock }), tz)
+        : ""
+      : Number(mod.week)
+        ? utc(unlockAt(offering, Number(mod.week)), tz)
+        : "";
+    const sequential = own ? !!mod.sequential : offering.delivery === "online-async" || !!mod.sequential;
+    const prereqs = (mod.prerequisites || []).map((id) => emitted.get(id)).filter(Boolean);
+    if (!own && !prereqs.length && offering.delivery === "online-async" && previousModule) prereqs.push(previousModule);
     modulesXml.push(`  <module identifier="${modId}">
     <title>${esc(mod.title)}</title>
     <workflow_state>${publish ? "active" : "unpublished"}</workflow_state>
     <position>${mi + 1}</position>${unlock ? `\n    <unlock_at>${unlock}</unlock_at>` : ""}
-    <require_sequential_progress>${bool(offering.delivery === "online-async")}</require_sequential_progress>${offering.delivery === "online-async" && previousModule ? `\n    <prerequisites><prerequisite type="context_module"><title>${esc(previousModule.title)}</title><identifierref>${previousModule.id}</identifierref></prerequisite></prerequisites>` : ""}
+    <require_sequential_progress>${bool(sequential)}</require_sequential_progress>${prereqs.length ? `\n    <prerequisites>${prereqs.map((p) => `<prerequisite type="context_module"><title>${esc(p.title)}</title><identifierref>${p.id}</identifierref></prerequisite>`).join("")}</prerequisites>` : ""}
     <items>
 ${itemXml.join("\n")}
     </items>${requirements.length ? `\n    <completionRequirements>${requirements.join("")}</completionRequirements>` : ""}
   </module>`);
     orgModules.push(`<item identifier="${modId}"><title>${esc(mod.title)}</title>${orgItems.join("")}</item>`);
     previousModule = { id: modId, title: mod.title };
+    emitted.set(mod.id, previousModule);
     counts.modules++;
   }
 

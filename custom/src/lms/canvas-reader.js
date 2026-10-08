@@ -46,6 +46,7 @@ function assignmentFields(node) {
     title: childText(node, "title"),
     dueAt: childText(node, "due_at"),
     unlockAt: childText(node, "unlock_at"),
+    lockAt: childText(node, "lock_at"),
     points: num(childText(node, "points_possible")),
     gradingType: childText(node, "grading_type") || "points",
     submission,
@@ -262,6 +263,7 @@ export async function readCanvasPackage(input) {
       position: num(childText(m, "position")) || 0,
       unlockAt: childText(m, "unlock_at"),
       sequential: bool(childText(m, "require_sequential_progress")),
+      prerequisites: findAll(child(m, "prerequisites"), "prerequisite").map((p) => childText(p, "identifierref")).filter(Boolean),
       published: childText(m, "workflow_state") !== "unpublished",
       items: children(child(m, "items"), "item").map((it) => {
         const type = childText(it, "content_type");
