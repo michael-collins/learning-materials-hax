@@ -219,6 +219,69 @@ export function linksIn(html) {
   return out;
 }
 
+// entities in running text, numeric ones and the common named ones
+const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ndash: "–", mdash: "—", lsquo: "‘", rsquo: "’", ldquo: "“", rdquo: "”", hellip: "…" };
+const decodeText = (s) =>
+  String(s).replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
+    if (e[0] === "#") {
+      const n = e[1] === "x" || e[1] === "X" ? parseInt(e.slice(2), 16) : Number(e.slice(1));
+      return Number.isFinite(n) && n > 0 && n < 0x110000 ? String.fromCodePoint(n) : m;
+    }
+    return NAMED[e.toLowerCase()] ?? m;
+  });
+
+/**
+ * Each link in an HTML fragment with the words around it, to show where it
+ * is: [{ url, tag, text, before, after }], in order (an address used twice
+ * is listed twice). text is the link's own words (an embed's title, an
+ * image's alt); before and after are the rest of its sentence or line, up to
+ * `span` characters each way, with "…" where they're cut.
+ */
+export function linkContexts(html, span = 70) {
+  const found = [];
+  const mark = (url, tag, label) => {
+    found.push({ url: decodeEntities(url).trim(), tag });
+    return `\u0001${found.length - 1}\u0002${label}\u0003`;
+  };
+  const marked = String(html || "")
+    .replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<a\b([^>]*?)\shref="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/gi, (m, pre, href, post, inner) =>
+      // an image inside a link counts as its words
+      mark(href, "a", inner.replace(/<img\b[^>]*?\salt="([^"]*)"[^>]*>/gi, " $1 ")),
+    )
+    .replace(/<(iframe|oer-iframe|img|video-player|source)\b([^>]*?)\s(src|source)="([^"]*)"([^>]*)>/gi, (m, tag, pre, attr, src, post) => {
+      const label = `${pre} ${post}`.match(/\s(?:title|alt)="([^"]*)"/i)?.[1] || (tag.toLowerCase() === "img" ? "an image" : "an embed");
+      // an embed stands on its own line; an image sits in its sentence
+      const block = tag.toLowerCase() !== "img";
+      return `${block ? "\n" : ""}${mark(src, tag.toLowerCase(), label)}${block ? "\n" : ""}`;
+    });
+  const text = decodeText(marked.replace(/<br\s*\/?>|<\/?(p|div|li|ul|ol|h\d|tr|td|th|table|blockquote|figure|figcaption|section)\b[^>]*>/gi, "\n").replace(/<[^>]+>/g, " ")).replace(/[ \t ]+/g, " ");
+  // the plain text, and where each link's words sit in it
+  let plain = "";
+  const spots = [];
+  let last = 0;
+  for (const m of text.matchAll(/\u0001(\d+)\u0002([\s\S]*?)\u0003/g)) {
+    plain += text.slice(last, m.index);
+    const start = plain.length;
+    plain += m[2].replace(/[\u0001-\u0003]|\u0001\d+\u0002/g, "");
+    spots.push({ i: Number(m[1]), start, end: plain.length });
+    last = m.index + m[0].length;
+  }
+  plain += text.slice(last);
+  const squeeze = (s) => s.replace(/\s+/g, " ");
+  return spots.map(({ i, start, end }) => {
+    let before = plain.slice(Math.max(0, start - span * 2), start);
+    before = before.slice(before.lastIndexOf("\n") + 1);
+    const cutBefore = before.length > span;
+    if (cutBefore) before = before.slice(-span).replace(/^\S*\s/, "");
+    let after = plain.slice(end, end + span * 2);
+    after = after.split("\n")[0];
+    const cutAfter = after.length > span;
+    if (cutAfter) after = after.slice(0, span).replace(/\s\S*$/, "");
+    return { ...found[i], text: squeeze(plain.slice(start, end)).trim(), before: `${cutBefore ? "…" : ""}${squeeze(before).trimStart()}`, after: `${squeeze(after).trimEnd()}${cutAfter ? "…" : ""}` };
+  });
+}
+
 function decodeEntities(s) {
   return String(s)
     .replace(/&amp;/g, "&")

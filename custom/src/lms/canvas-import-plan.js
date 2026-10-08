@@ -31,7 +31,7 @@
  */
 import { cleanCanvasHtml, htmlText, placeholdersIn, questionsHtml } from "./canvas-html.js";
 import { rubricPages, rubricOf } from "../rubrics/rubric-model.js";
-import { addressIndex, alike, analyseLink, matchAddress, isOldSite, linksIn as linksInHtml, courseCode, reviewable } from "../links/link-model.js";
+import { addressIndex, alike, analyseLink, matchAddress, isOldSite, linksIn as linksInHtml, linkContexts, courseCode, reviewable } from "../links/link-model.js";
 
 /* ---------- words and matching ---------- */
 
@@ -440,15 +440,33 @@ export function planImport(course, items = []) {
 // what of an entry comes over: a page's text, or a link item's address
 const carried = (e) => (["create", "text", "overview", "url"].includes(e.action) ? e.links || [] : []);
 
+// an entry's links with their words and sentences, worked out once per text
+const contextCache = new Map();
+function contextsOf(htmlText) {
+  if (!contextCache.has(htmlText)) {
+    if (contextCache.size > 500) contextCache.clear();
+    contextCache.set(htmlText, linkContexts(htmlText));
+  }
+  return contextCache.get(htmlText);
+}
+
 /**
  * The plan's links in what comes over, each with where it's used:
- * [{ ...link, uses: [{ id, title }] }]. Links only in skipped items, or in
- * items linked to the site's pages (whose own text is used), aren't listed.
+ * [{ ...link, uses: [{ id, title, text, before, after, count, item }] }]
+ * (text: the link's words; before/after: its sentence; item: it's the
+ * module's link item itself). Links only in skipped items, or in items
+ * linked to the site's pages (whose own text is used), aren't listed.
  */
 export function importedLinks(plan) {
   const uses = new Map();
   const entries = [...plan.modules.filter((m) => !m.skip).flatMap((m) => m.items), ...plan.unplaced].filter((e) => e.action !== "skip");
-  for (const e of entries) for (const url of carried(e)) uses.set(url, [...(uses.get(url) || []), { id: e.id, title: e.title }]);
+  for (const e of entries) {
+    for (const url of carried(e)) {
+      const here = e.action === "url" ? [] : contextsOf(e.html).filter((c) => c.url === url);
+      const use = { id: e.id, title: e.title, ...(here[0] ? { text: here[0].text, before: here[0].before, after: here[0].after } : {}), count: here.length || 1, ...(e.action === "url" ? { item: true } : {}) };
+      uses.set(url, [...(uses.get(url) || []), use]);
+    }
+  }
   return (plan.links || []).filter((l) => uses.has(l.url)).map((l) => ({ ...l, uses: uses.get(l.url) }));
 }
 

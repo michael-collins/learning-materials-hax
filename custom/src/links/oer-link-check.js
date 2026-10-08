@@ -18,7 +18,7 @@ import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElemen
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { saveOutline } from "../outline/outline-model.js";
-import { addressIndex, analyseLink, linksIn, courseCode, reviewable, rewriteLinks, linkTarget } from "./link-model.js";
+import { addressIndex, analyseLink, linksIn, linkContexts, courseCode, reviewable, rewriteLinks, linkTarget } from "./link-model.js";
 import { renderLinkReview, linkReviewStyles, withCheck, checkable, checkViaHelper, helperStatus, linkCounts } from "./link-review.js";
 
 const lucide = (name, cls = "") =>
@@ -112,13 +112,17 @@ class OerLinkCheck extends LitElement {
         if (!htmlText) continue;
         const hint = courseCode(item.metadata?.oerSource || "");
         const keys = new Set();
+        const contexts = linkContexts(htmlText);
         for (const { url, tag } of linksIn(htmlText)) {
           const info = analyseLink(url, index, { hint, tag });
           if (!info || info.kind === "site") continue;
           // a relative address can mean different pages on different courses' pages
           const key = info.kind === "broken" && hint ? `${hint}::${url}` : url;
           keys.add(key);
-          const use = { id: item.id, title: item.title, slug: item.slug };
+          // where on the page: the link's words and its sentence (the first
+          // of several on one page, with how many there are)
+          const here = contexts.filter((c) => c.url === url);
+          const use = { id: item.id, title: item.title, slug: item.slug, ...(here[0] ? { text: here[0].text, before: here[0].before, after: here[0].after } : {}), count: here.length || 1 };
           const rec = records.get(key);
           if (rec) rec.uses.push(use);
           else records.set(key, { ...reviewable(info), key, uses: [use] });

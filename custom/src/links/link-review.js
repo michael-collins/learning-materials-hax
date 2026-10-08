@@ -12,7 +12,10 @@
  * the archived copy, the new address, another address, keep it, or remove
  * the link and keep its text.
  *
- *   renderLinkReview(links, { onChange(key, patch), onPick(key), check: { can, busy, note, run } })
+ *   renderLinkReview(links, { onChange(key, patch), onPick(key), onShow(use, link), check: { can, busy, note, run } })
+ * Each place a link is used ({ id, title, slug?, text, before, after,
+ * count, item? }) shows its sentence with the link's words marked, and opens
+ * the page in a new tab (with a slug) or, given onShow, shows the item.
  * A link's key is `key` when it has one (the same relative address can mean
  * different pages on different courses' pages), else its address.
  *   linkReviewStyles: the styles (add them to the host's)
@@ -159,11 +162,27 @@ function choose(l, value, handlers) {
   else onChange(l.url, { action: value });
 }
 
+// one place a link is used: the page or item (opened in a new tab, or shown
+// in the import), then its sentence with the link's words marked
+function useLine(u, l, handlers) {
+  // two pages with one title (a course's copy of an article): say which
+  const twin = u.slug && (l.uses || []).some((x) => x !== u && x.title === u.title && x.slug !== u.slug);
+  const where = handlers.onShow
+    ? html`<button type="button" class="use-open" title="Show “${u.title}”, with the link marked" @click="${() => handlers.onShow(u, l)}">${u.title}</button>`
+    : u.slug !== undefined
+      ? html`<a class="use-open" href="${u.slug}" target="_blank" rel="noopener" title="Open “${u.title}” in a new tab">${u.title}${lucide("icons:open-in-new")}</a>`
+      : html`<b>${u.title}</b>`;
+  return html`<li>
+    <span class="where">${u.item ? "The module's link" : "In"} ${where}${twin ? html` <span class="times">${u.slug}</span>` : ""}${u.count > 1 ? html` <span class="times">(${u.count} times)</span>` : ""}</span>
+    ${u.text && !u.item ? html`<q class="ctx">${u.before}<mark>${u.text}</mark>${u.after}</q>` : ""}
+  </li>`;
+}
+
 function row(l, handlers) {
   const id = `l-${Math.abs([...keyOf(l)].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) | 0, 7))}`;
   const c = l.check;
   const uses = l.uses || [];
-  return html`<li class="link-row">
+  return html`<li class="link-row" data-key="${keyOf(l)}">
     <div class="addr">
       <a href="${l.url}" target="_blank" rel="noopener noreferrer" title="${l.url}">${short(l.url)}${lucide("icons:open-in-new")}</a>
       ${c?.note && c.status !== "ok"
@@ -172,7 +191,19 @@ function row(l, handlers) {
           >`
         : ""}
     </div>
-    ${uses.length ? html`<div class="uses">In ${uses.slice(0, 3).map((u, i) => html`${i ? ", " : ""}${u.title}`)}${uses.length > 3 ? ` and ${uses.length - 3} more` : ""}</div>` : ""}
+    ${uses.length
+      ? html`<ul class="uses" aria-label="Where it's used">
+            ${uses.slice(0, 2).map((u) => useLine(u, l, handlers))}
+          </ul>
+          ${uses.length > 2
+            ? html`<details class="more-uses">
+                <summary>${lucide("oer:chevron-right")}${uses.length - 2} more place${uses.length - 2 === 1 ? "" : "s"}</summary>
+                <ul class="uses">
+                  ${uses.slice(2).map((u) => useLine(u, l, handlers))}
+                </ul>
+              </details>`
+            : ""}`
+      : ""}
     <label class="sr" for="${id}">What the link to ${short(l.url)} becomes</label>
     <select id="${id}" @change="${(e) => choose(l, e.target.value, handlers)}">
       ${options(l).map(([v, label]) => html`<option value="${v}" ?selected="${chosen(l) === v}">${label}</option>`)}
@@ -185,10 +216,10 @@ function row(l, handlers) {
 }
 
 /** The review: a summary, the check, and the links by group. */
-export function renderLinkReview(links, { onChange, onPick, check = {} }) {
+export function renderLinkReview(links, { onChange, onPick, onShow, check = {} }) {
   const by = new Map(GROUPS.map(([k]) => [k, []]));
   for (const l of links) by.get(linkGroup(l)).push(l);
-  const handlers = { onChange, onPick };
+  const handlers = { onChange, onPick, onShow };
   const unchecked = checkable(links).filter((l) => !l.check).length;
   return html`<div class="link-review">
     <div class="check-bar">
@@ -295,7 +326,79 @@ export const linkReviewStyles = css`
   .link-row .state.dead {
     color: var(--destructive);
   }
-  .link-row .uses,
+  .link-row .uses {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8125rem;
+  }
+  .link-row .uses li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.0625rem;
+  }
+  .link-row .where {
+    color: var(--muted-foreground);
+  }
+  .link-row .use-open {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--link, var(--primary));
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+  }
+  .link-row .use-open:focus-visible,
+  .more-uses > summary:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .link-row .times {
+    color: var(--muted-foreground);
+  }
+  .link-row .ctx {
+    color: var(--foreground);
+    quotes: "“" "”";
+    overflow-wrap: anywhere;
+  }
+  .link-row .ctx mark {
+    padding: 0 0.125rem;
+    border-radius: 2px;
+    background: color-mix(in oklch, var(--primary) 16%, transparent);
+    color: inherit;
+    font-weight: 600;
+  }
+  .more-uses {
+    font-size: 0.8125rem;
+  }
+  .more-uses > summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-height: 1.5rem;
+    color: var(--muted-foreground);
+    cursor: pointer;
+  }
+  .more-uses > summary::-webkit-details-marker {
+    display: none;
+  }
+  .more-uses > summary:hover {
+    color: var(--foreground);
+  }
+  .more-uses[open] > summary .lucide {
+    transform: rotate(90deg);
+  }
+  .more-uses > .uses {
+    margin-top: 0.25rem;
+  }
   .link-row .why {
     font-size: 0.75rem;
     color: var(--muted-foreground);

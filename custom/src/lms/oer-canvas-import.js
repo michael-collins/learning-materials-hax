@@ -62,6 +62,7 @@ class OerCanvasImport extends LitElement {
       _result: { state: true },
       _ai: { state: true }, // the local helper: { up, ai, model, busy, note }
       _linkCheck: { state: true }, // { busy, note }
+      _fromLink: { state: true }, // the link whose use is being shown (Back to links returns to it)
       _confirmClose: { state: true },
     };
   }
@@ -676,6 +677,12 @@ class OerCanvasImport extends LitElement {
       .note.warning {
         background: color-mix(in oklch, var(--destructive) 8%, transparent);
       }
+      .back-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.75rem;
+      }
       .preview {
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
@@ -775,7 +782,17 @@ class OerCanvasImport extends LitElement {
 
   _renderList() {
     const p = this._plan;
-    const row = (id, content, extra = "") => html`<button class="row ${extra}" aria-current="${this._sel === id ? "true" : "false"}" @click="${() => (this._sel = id)}">${content}</button>`;
+    const row = (id, content, extra = "") =>
+      html`<button
+        class="row ${extra}"
+        aria-current="${this._sel === id ? "true" : "false"}"
+        @click="${() => {
+          this._sel = id;
+          this._fromLink = null;
+        }}"
+      >
+        ${content}
+      </button>`;
     const typeLabel = (t) => contentTypes(toJS(store.manifest?.items) || []).types.find((x) => x.id === t)?.label || "";
     const entryRow = (e, moduleSkip) =>
       row(
@@ -797,6 +814,18 @@ class OerCanvasImport extends LitElement {
     </nav>`;
   }
 
+  // back from an item to the link it was shown for, in its place
+  _backToLinks() {
+    const url = this._fromLink;
+    this._fromLink = null;
+    this._sel = "links";
+    this.updateComplete.then(() => {
+      const row = [...this.shadowRoot.querySelectorAll(".link-row")].find((r) => r.dataset.key === url);
+      row?.scrollIntoView({ block: "center" });
+      row?.querySelector("select")?.focus();
+    });
+  }
+
   _renderEntry(e) {
     const site = toJS(store.manifest?.items) || [];
     const types = contentTypes(site).types.filter((t) => TYPES.includes(t.id));
@@ -809,8 +838,15 @@ class OerCanvasImport extends LitElement {
     const seg = (action, label, disabled = false) =>
       html`<button class="seg" aria-pressed="${e.action === action ? "true" : "false"}" aria-disabled="${disabled ? "true" : "false"}" @click="${() => !disabled && (action === "overview" ? this._setOverview(e) : this._set(e.id, { action }))}">${label}</button>`;
     const inModule = this._plan.modules.some((m) => m.items.some((x) => x.id === e.id));
-    const preview = `<!doctype html><meta charset="utf-8"><style>body{font:15px/1.55 system-ui,sans-serif;margin:16px;color:#111}img{max-width:100%}oer-iframe,iframe{display:block;border:1px dashed #999;padding:8px;margin:8px 0;font-size:13px;color:#555}oer-iframe::before{content:"Embedded: " attr(src)}multiple-choice,true-false-question,self-check{display:block;border:1px solid #ccc;border-radius:6px;padding:8px 12px;margin:8px 0}multiple-choice::before,true-false-question::before{content:attr(question);display:block;font-weight:600}input{display:block}input::after{content:attr(value)}</style>${e.html || "<p><i>No text.</i></p>"}`;
-    return html`<div>
+    const marked = this._fromLink ? `a[href="${this._fromLink.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/</g, "\\3c ")}"]{background:#fde047;outline:2px solid #a16207;outline-offset:1px;color:#111}` : "";
+    const preview = `<!doctype html><meta charset="utf-8"><style>${marked}body{font:15px/1.55 system-ui,sans-serif;margin:16px;color:#111}img{max-width:100%}oer-iframe,iframe{display:block;border:1px dashed #999;padding:8px;margin:8px 0;font-size:13px;color:#555}oer-iframe::before{content:"Embedded: " attr(src)}multiple-choice,true-false-question,self-check{display:block;border:1px solid #ccc;border-radius:6px;padding:8px 12px;margin:8px 0}multiple-choice::before,true-false-question::before{content:attr(question);display:block;font-weight:600}input{display:block}input::after{content:attr(value)}</style>${e.html || "<p><i>No text.</i></p>"}`;
+    return html`${this._fromLink
+        ? html`<div class="back-row">
+            <button class="btn outline small back-to-links" @click="${this._backToLinks}">${lucide("oer:chevron-left", "sm")}Back to links</button>
+            <span class="hint">The link to ${this._fromLink.replace(/^https?:\/\/(www\.)?/, "")} is marked in the preview below.</span>
+          </div>`
+        : ""}
+      <div>
         <p class="eyebrow">${ROLE_LABEL[role.as] || (fixed ? "Header" : "Item")} in ${module?.title || "no module"}</p>
         <h3>${e.title}</h3>
       </div>
@@ -975,6 +1011,11 @@ class OerCanvasImport extends LitElement {
       ${renderLinkReview(links, {
         onChange: (url, patch) => this._setLink(url, patch),
         onPick: (url) => this._pickLinkPage(url),
+        onShow: (use, link) => {
+          this._fromLink = link.url;
+          this._sel = use.id;
+          this.updateComplete.then(() => this.shadowRoot.querySelector(".back-to-links")?.focus());
+        },
         check: { can: this._ai.up && this._ai.links, busy: this._linkCheck.busy, note: this._linkCheck.note, run: () => this._checkLinks(), retry: () => this._checkAi() },
       })}`;
   }
