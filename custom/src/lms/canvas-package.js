@@ -194,7 +194,10 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
   const key = (...parts) => makeId([offering.code, offering.term, ...parts].join("|"));
 
   if (!siteUrl) warnings.push("No public site address (siteUrl): embedded pages and links point at relative paths and won't load in Canvas.");
-  if (DELIVERY_MODES[offering.delivery]?.meets && !(offering.meetings || []).length) warnings.push("No class meetings yet: due dates fall on the default day and time, and the calendar has no class sessions.");
+  if (DELIVERY_MODES[offering.delivery]?.meets && !(offering.meetings || []).length) {
+    const firstClass = (offering.defaults?.dueRule || "first-class") === "first-class";
+    warnings.push(`No class meetings given, so the Canvas calendar won't list class sessions${firstClass ? ", and assignments due at the first class fall on the usual day and time instead" : ""}.`);
+  }
 
   // grade groups
   const groupId = (gid) => key("group", gid);

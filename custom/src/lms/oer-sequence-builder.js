@@ -432,13 +432,14 @@ class OerSequenceBuilder extends LitElement {
       }
       .mhead {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         gap: 0.375rem;
         padding: 0.5rem 0.5rem 0.5rem 0.75rem;
         border-bottom: 1px solid var(--border);
       }
       .mhead .title {
-        flex: 1;
+        flex: 1 1 14rem;
         min-width: 0;
         height: 2rem;
         font-weight: 600;
@@ -762,8 +763,9 @@ class OerSequenceBuilder extends LitElement {
       ${page ? html`<a class="pagelink" href="${page.slug}" target="_blank">Open the page</a>` : ""}
       <label class="field">Becomes
         <select @change="${(e) => this._setItem({ as: e.target.value })}">
-          ${Object.entries(ROLES).map(([v, r]) => html`<option value="${v}" ?selected="${it.as === v}">${r.label} (${r.note})</option>`)}
+          ${Object.entries(ROLES).map(([v, r]) => html`<option value="${v}" ?selected="${it.as === v}">${r.label}</option>`)}
         </select>
+        <span class="hint">${ROLES[it.as]?.note ? `${ROLES[it.as].note[0].toUpperCase()}${ROLES[it.as].note.slice(1)}.` : ""}</span>
       </label>
       ${it.as === "assignment"
         ? html`<label class="check"><input type="checkbox" .checked="${it.graded !== false}" @change="${(e) => this._setItem({ graded: e.target.checked })}" />Graded</label>
