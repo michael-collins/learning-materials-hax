@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791473479,
+      "updated": 1791473480,
       "version": "26.8.0"
     },
     "theme": {
@@ -22628,7 +22628,7 @@
       "order": 1000,
       "parent": "item-02b98513-14ea-4b92-9f25-5fd6ca629758",
       "title": "v1.0.0",
-      "description": "",
+      "description": "This assessment measures your ability to communicate your ideas and scope of work fully and professionally.",
       "metadata": {
         "pageType": "oer:rubric",
         "oerFields": {},
