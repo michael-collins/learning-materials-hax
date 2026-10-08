@@ -126,10 +126,19 @@ class OerSequenceExport extends LitElement {
         const res = await fetch(new URL(item.location, base), { cache: "no-cache" });
         return res.ok ? res.text() : "";
       };
+      // attachments for File items: copied in when this browser can read them
+      const fileOf = async (url) => {
+        try {
+          const res = await fetch(new URL(url, base));
+          return res.ok ? new Uint8Array(await res.arrayBuffer()) : null;
+        } catch {
+          return null;
+        }
+      };
       const rubricsRes = await fetch(new URL("files/data/rubrics.json", base), { cache: "no-cache" });
       const data = rubricsRes.ok ? await rubricsRes.json() : [];
       const rubrics = Array.isArray(data) ? data : data.rubrics || [];
-      const { files, report } = await buildCanvasPackage({ offering, items: all, htmlOf, rubrics });
+      const { files, report } = await buildCanvasPackage({ offering, items: all, htmlOf, fileOf, rubrics });
       const name = `${(page.slug.split("/").pop() || "sequence").replace(/[^a-z0-9-]+/gi, "-")}${this._run.term ? `-${this._run.term.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}` : ""}.imscc`;
       download(new Blob([zipBytes(files)], { type: "application/zip" }), name);
       this._done = { name, ...report };
@@ -520,7 +529,7 @@ class OerSequenceExport extends LitElement {
           </div>
           ${this._done
             ? html`<div class="done" role="status">
-                <p><b>Downloaded ${this._done.name}</b>: ${this._done.counts.modules} modules, ${this._done.counts.assignments} assignments, ${this._done.counts.quizzes} quizzes, ${this._done.counts.pages} pages, ${this._done.counts.events} class meetings.</p>
+                <p><b>Downloaded ${this._done.name}</b>: ${this._done.counts.modules} modules, ${this._done.counts.assignments} assignments, ${this._done.counts.discussions} discussions, ${this._done.counts.quizzes} quizzes, ${this._done.counts.pages} pages, ${this._done.counts.files} files, ${this._done.counts.events} class meetings.</p>
                 ${this._done.warnings.length ? html`<ul class="checks">${this._done.warnings.map((w) => html`<li class="warn">${lucide("oer:circle-alert")}<span>${w}</span></li>`)}</ul>` : ""}
                 <ol>
                   <li>In Canvas: Settings → Import Course Content → Canvas Course Export Package.</li>

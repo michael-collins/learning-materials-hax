@@ -4,11 +4,15 @@
  *
  *   { version: 1,
  *     modules: [{ id, title, week, items: [
- *       { page, as: "page" | "assignment" | "quiz" | "link", title?, indent?,
- *         due: { week, day?, time? }, points, graded, group, rubric,
+ *       { page, as: "page" | "assignment" | "discussion" | "quiz" | "link" | "file",
+ *         title?, indent? (0–5),
+ *         due: { week, day?, time?, rule? }, points, graded, group, rubric,
  *         submission: ["online_upload", …], extensions: ["pdf", …],
- *         quizType: "practice" | "graded" },
- *       { header: "Readings" } ] }],
+ *         peerReviews: { count, anonymous }, groupSet,      (assignments)
+ *         replies, requirements: [], requireInitialPost,    (discussions)
+ *         quizType: "practice" | "graded", file: url },     (quizzes, files)
+ *       { as: "url", title, url, newTab },                  (any address)
+ *       { header: "Readings", indent? } ] }],
  *     groups: [{ id, name, weight }],
  *     rubricScale: [{ name, share }] }
  *
@@ -24,10 +28,18 @@ export const SEQUENCE_TYPE = "oer:sequence";
 
 export const ROLES = {
   page: { label: "Page", note: "the live page, embedded" },
-  assignment: { label: "Assignment", note: "due date, points, submission, rubric" },
+  assignment: { label: "Assignment", note: "due date, points, what students submit, rubric; peer reviews and group work optional" },
+  discussion: { label: "Discussion", note: "an open thread with the page as its prompt; graded ones have points, a due date, requirements and a rubric" },
   quiz: { label: "Quiz", note: "from the page's questions" },
-  link: { label: "Link", note: "opens the page or source" },
+  link: { label: "Link", note: "opens the page, or a resource's source, in a new tab" },
+  file: { label: "File", note: "one of the page's attachments, copied into the course files" },
 };
+
+/** An item's indent level (links to readings sit one level in unless set). */
+export const indentOf = (it) => Math.max(0, Math.min(5, Number(it.indent ?? (it.as === "link" ? 1 : 0)) || 0));
+
+/** A page's attachments (files field), for File items. */
+export const attachmentsOf = (page) => [].concat(page?.metadata?.oerFields?.attachments || []).filter((a) => a?.url);
 
 export const SUBMISSION_TYPES = {
   online_upload: "File upload",
@@ -131,12 +143,17 @@ export function readiness(page, items, run = null) {
     if (m.week > weeks) out.push({ level: "warning", text: `${m.title} is in week ${m.week}, after the sequence's ${weeks} weeks.` });
     for (const it of m.items || []) {
       if (it.header) continue;
+      if (it.as === "url") {
+        if (!/^https?:\/\//.test(String(it.url || ""))) out.push({ level: "warning", text: `${m.title}: the link “${it.title || "untitled"}” needs a full web address (https://…).` });
+        continue;
+      }
       const page = byId.get(it.page);
       if (!page) {
         out.push({ level: "error", text: `${m.title}: a page here isn't on the site any more.` });
         continue;
       }
-      if (it.as === "assignment" && it.graded !== false) {
+      if (it.as === "file" && !attachmentsOf(page).some((a) => a.url === it.file)) out.push({ level: "warning", text: `${page.title}: choose which of its files to add.` });
+      if ((it.as === "assignment" || it.as === "discussion") && it.graded !== false) {
         if (!it.due?.week && !it.due?.at) out.push({ level: "warning", text: `${page.title} has no due week.` });
         if (!(Number(it.points) > 0)) out.push({ level: "warning", text: `${page.title} has no points.` });
         if (sequence.groups.length && (!it.group || !groupIds.has(it.group))) out.push({ level: "warning", text: `${page.title} isn't in a grade group.` });

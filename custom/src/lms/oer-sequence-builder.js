@@ -3,8 +3,11 @@
  * its modules (weeks or units) and what's in each, picked from the site's
  * pages, and how each item works in an LMS: a page (the live page,
  * embedded), an assignment (due week and day, points, submission types,
- * allowed files, rubric, grade group), a quiz (practice or graded) or a
- * link. With nothing selected, the sequence's grade groups and weights and
+ * allowed files, rubric, grade group, peer reviews, group work), a
+ * discussion (an open thread; graded ones with points, a due date,
+ * requirements and a rubric), a quiz, a link or a file; plus links to any
+ * address and text headers, each item with an indent level. With nothing
+ * selected, the sequence's grade groups and weights and
  * its rubric point scale. Problems to fix before exporting show at the
  * bottom. Term dates come at export (lms/oer-sequence-export.js).
  *
@@ -17,7 +20,7 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes } from "../types/content-types.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { isSnapshot } from "../versions/versioning.js";
-import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, sequenceCourses, newItem, readiness } from "./sequence-model.js";
+import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, sequenceCourses, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -171,6 +174,38 @@ class OerSequenceBuilder extends LitElement {
     const mod = this._seq.modules[m];
     this._change((s) => s.modules[m].items.push(newItem(page, Number(mod.week) || 1)));
     this._sel = { m, i: this._seq.modules[m].items.length - 1 };
+  }
+
+  _addLink(m) {
+    this._change((s) => s.modules[m].items.push({ as: "url", title: "", url: "", newTab: true }));
+    this._sel = { m, i: this._seq.modules[m].items.length - 1 };
+  }
+
+  _indent(m, i, by) {
+    this._change((s) => {
+      const it = s.modules[m].items[i];
+      it.indent = Math.max(0, Math.min(5, indentOf(it) + by));
+    });
+  }
+
+  // a new role keeps what still applies and fills in the rest
+  _setRole(as) {
+    const { m, i } = this._sel;
+    const week = Number(this._seq.modules[m].week) || 1;
+    this._change((s) => {
+      const it = s.modules[m].items[i];
+      it.as = as;
+      if (as === "assignment" || as === "discussion") {
+        it.due ||= { week };
+        if (it.points === undefined) it.points = 20;
+      }
+      if (as === "discussion") {
+        if (it.replies === undefined) it.replies = 2;
+        it.requirements ||= [];
+        it.rubric ??= "task";
+      }
+      if (as === "file" && !it.file) it.file = attachmentsOf(items().find((x) => x.id === it.page))[0]?.url || "";
+    });
   }
 
   _addHeader(m) {
@@ -335,8 +370,12 @@ class OerSequenceBuilder extends LitElement {
         width: 1.75rem;
         height: 1.75rem;
       }
+      .icon[disabled] {
+        opacity: 0.35;
+        cursor: default;
+      }
       .x:hover,
-      .icon:hover {
+      .icon:not([disabled]):hover {
         background: var(--accent);
         color: var(--foreground);
       }
@@ -511,6 +550,7 @@ class OerSequenceBuilder extends LitElement {
       }
       .madd {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.5rem;
         padding: 0.25rem 0.5rem 0.5rem;
       }
@@ -699,9 +739,12 @@ class OerSequenceBuilder extends LitElement {
     </section>`;
   }
 
-  _summary(it, page) {
-    if (it.as === "assignment") return [it.graded === false ? "Ungraded" : `${it.points || 0} pts`, it.due?.week ? `week ${it.due.week}` : "no due week"].join(" · ");
+  _summary(it) {
+    const graded = it.graded !== false;
+    if (it.as === "assignment") return [graded ? `${it.points || 0} pts` : "Ungraded", it.due?.week ? `week ${it.due.week}` : "no due week", it.peerReviews ? "peer review" : "", it.groupSet ? "group" : ""].filter(Boolean).join(" · ");
+    if (it.as === "discussion") return ["Discussion", graded ? `${it.points || 0} pts` : "", it.due?.week ? `week ${it.due.week}` : ""].filter(Boolean).join(" · ");
     if (it.as === "quiz") return it.quizType === "graded" ? "Graded quiz" : "Practice quiz";
+    if (it.as === "url") return "Link";
     return ROLES[it.as]?.label || "Page";
   }
 
@@ -724,10 +767,13 @@ class OerSequenceBuilder extends LitElement {
                 ${(m.items || []).map((it, ii) => {
                   const selected = this._sel?.m === mi && this._sel?.i === ii;
                   const page = byId.get(it.page);
-                  const name = it.header || page?.title || "(missing page)";
-                  return html`<li class="row ${it.header ? "header" : ""}" role="option" aria-selected="${selected ? "true" : "false"}">
-                    <button class="pick" @click="${() => (this._sel = { m: mi, i: ii })}"><span class="name">${name}</span>${it.header ? "" : html`<small>${this._summary(it, page)}</small>`}</button>
+                  const name = it.header || (it.as === "url" ? it.title || it.url || "New link" : page?.title) || "(missing page)";
+                  const level = indentOf(it);
+                  return html`<li class="row ${it.header ? "header" : ""}" role="option" aria-selected="${selected ? "true" : "false"}" style="padding-left: ${0.5 + level * 1.25}rem">
+                    <button class="pick" @click="${() => (this._sel = { m: mi, i: ii })}"><span class="name">${name}</span>${it.header ? "" : html`<small>${this._summary(it)}</small>`}</button>
                     <span class="tools">
+                      <button class="icon sm" aria-label="Outdent ${name}" title="Outdent" ?disabled="${level === 0}" @click="${() => this._indent(mi, ii, -1)}">${lucide("oer:indent-decrease", "sm")}</button>
+                      <button class="icon sm" aria-label="Indent ${name}" title="Indent" ?disabled="${level >= 5}" @click="${() => this._indent(mi, ii, 1)}">${lucide("oer:indent-increase", "sm")}</button>
                       <button class="icon sm" aria-label="Move ${name} up" title="Move up" @click="${() => this._moveItem(mi, ii, -1)}">${lucide("oer:arrow-up", "sm")}</button>
                       <button class="icon sm" aria-label="Move ${name} down" title="Move down" @click="${() => this._moveItem(mi, ii, 1)}">${lucide("oer:arrow-down", "sm")}</button>
                       <button class="icon sm" aria-label="Remove ${name}" title="Remove" @click="${() => this._removeItem(mi, ii)}">${lucide("oer:x", "sm")}</button>
@@ -738,6 +784,7 @@ class OerSequenceBuilder extends LitElement {
               <div class="madd">
                 <button class="btn ghost small" @click="${() => (this._sel = { m: mi, i: null })}">${lucide("oer:plus", "sm")}Add pages here</button>
                 <button class="btn ghost small" @click="${() => this._addHeader(mi)}">${lucide("editor:title", "sm")}Add a header</button>
+                <button class="btn ghost small" @click="${() => this._addLink(mi)}">${lucide("oer:link", "sm")}Add a link</button>
               </div>
             </div>`,
           )
@@ -752,7 +799,16 @@ class OerSequenceBuilder extends LitElement {
       return html`<div class="settings">
         <h3>Header</h3>
         <label class="field">Text<input class="input" .value="${it.header}" @input="${(e) => this._setItem({ header: e.target.value })}" /></label>
-        <p class="hint">A label that groups the items under it in the module.</p>
+        <p class="hint">A text header in the Canvas module, grouping the items under it. Indent items beneath it to show they belong to it.</p>
+      </div>`;
+    }
+    if (it.as === "url") {
+      return html`<div class="settings">
+        <h3>Link</h3>
+        <label class="field">Title<input class="input" placeholder="Live session (Zoom)" .value="${it.title || ""}" @input="${(e) => this._setItem({ title: e.target.value })}" /></label>
+        <label class="field">Web address<input class="input" type="url" placeholder="https://…" .value="${it.url || ""}" @input="${(e) => this._setItem({ url: e.target.value.trim() })}" /></label>
+        <label class="check"><input type="checkbox" .checked="${it.newTab !== false}" @change="${(e) => this._setItem({ newTab: e.target.checked })}" />Open in a new tab</label>
+        <p class="hint">For anything that isn't a page on this site: a video call, a tool, another site.</p>
       </div>`;
     }
     const due = it.due || {};
@@ -762,7 +818,7 @@ class OerSequenceBuilder extends LitElement {
       <h3>${page?.title || "Missing page"}</h3>
       ${page ? html`<a class="pagelink" href="${page.slug}" target="_blank">Open the page</a>` : ""}
       <label class="field">Becomes
-        <select @change="${(e) => this._setItem({ as: e.target.value })}">
+        <select @change="${(e) => this._setRole(e.target.value)}">
           ${Object.entries(ROLES).map(([v, r]) => html`<option value="${v}" ?selected="${it.as === v}">${r.label}</option>`)}
         </select>
         <span class="hint">${ROLES[it.as]?.note ? `${ROLES[it.as].note[0].toUpperCase()}${ROLES[it.as].note.slice(1)}.` : ""}</span>
@@ -804,8 +860,25 @@ class OerSequenceBuilder extends LitElement {
             </fieldset>
             ${(it.submission || []).includes("online_upload")
               ? html`<label class="field">Allowed file types <span class="hint">optional, comma-separated</span><input class="input" placeholder="pdf, jpg, stl" .value="${(it.extensions || []).join(", ")}" @input="${(e) => this._setItem({ extensions: e.target.value.split(/[\s,]+/).map((x) => x.replace(/^\./, "").toLowerCase()).filter(Boolean) })}" /></label>`
+              : ""}
+            ${it.graded !== false
+              ? html`<label class="check"><input type="checkbox" .checked="${!!it.peerReviews}" @change="${(e) => this._setItem({ peerReviews: e.target.checked ? { count: 2, anonymous: false } : undefined })}" />Peer reviews</label>
+                  ${it.peerReviews
+                    ? html`<div class="pair">
+                        <label class="field">Reviews each<input class="input" type="number" min="1" .value="${String(it.peerReviews.count ?? 2)}" @input="${(e) => this._setItem({ peerReviews: { ...it.peerReviews, count: Math.max(1, Number(e.target.value) || 1) } })}" /></label>
+                        <label class="check" style="align-self:end;padding-bottom:0.5rem"><input type="checkbox" .checked="${!!it.peerReviews.anonymous}" @change="${(e) => this._setItem({ peerReviews: { ...it.peerReviews, anonymous: e.target.checked } })}" />Anonymous</label>
+                      </div>
+                      <p class="hint">Canvas assigns reviewers automatically when the assignment is due.</p>`
+                    : ""}`
+              : ""}
+            <label class="check"><input type="checkbox" .checked="${!!it.groupSet}" @change="${(e) => this._setItem({ groupSet: e.target.checked ? "Project groups" : undefined, gradeIndividually: undefined })}" />Group assignment</label>
+            ${it.groupSet
+              ? html`<label class="field">Group set<input class="input" .value="${it.groupSet}" @input="${(e) => this._setItem({ groupSet: e.target.value })}" /><span class="hint">Canvas makes this group set if the course doesn't have it; put students in groups there.</span></label>
+                  <label class="check"><input type="checkbox" .checked="${!!it.gradeIndividually}" @change="${(e) => this._setItem({ gradeIndividually: e.target.checked })}" />Grade each student individually</label>`
               : ""}`
         : ""}
+      ${it.as === "discussion" ? this._renderDiscussionSettings(it, due, dayValue, setDue) : ""}
+      ${it.as === "file" ? this._renderFileSettings(it, page) : ""}
       ${it.as === "quiz"
         ? html`<label class="field">Quiz
               <select @change="${(e) => this._setItem({ quizType: e.target.value })}">
@@ -829,6 +902,56 @@ class OerSequenceBuilder extends LitElement {
       ${it.as === "page" ? html`<p class="hint">Shows the live page in Canvas, so edits on the site appear there.</p>` : ""}
       ${it.as === "link" ? html`<p class="hint">Opens the page, or for a resource its source, in a new tab.</p>` : ""}
     </div>`;
+  }
+
+  _renderDiscussionSettings(it, due, dayValue, setDue) {
+    const graded = it.graded !== false;
+    return html`<label class="check"><input type="checkbox" .checked="${graded}" @change="${(e) => this._setItem({ graded: e.target.checked })}" />Graded</label>
+      ${graded
+        ? html`<div class="pair">
+              <label class="field">Points<input class="input" type="number" min="0" .value="${String(it.points ?? "")}" @input="${(e) => this._setItem({ points: Number(e.target.value) || 0 })}" /></label>
+              <label class="field">Grade group
+                <select @change="${(e) => this._setItem({ group: e.target.value })}">
+                  <option value="" ?selected="${!it.group}">None</option>
+                  ${this._seq.groups.map((g) => html`<option value="${g.id}" ?selected="${it.group === g.id}">${g.name}</option>`)}
+                </select>
+              </label>
+            </div>
+            <label class="field">Rubric
+              <select @change="${(e) => this._setItem({ rubric: e.target.value })}">
+                <option value="" ?selected="${!it.rubric}">None</option>
+                ${this._rubrics.map((r) => html`<option value="${r.slug}" ?selected="${it.rubric === r.slug}">${r.name} (${r.criteria?.length || 0} criteria)</option>`)}
+              </select>
+            </label>`
+        : ""}
+      <div class="pair">
+        <label class="field">${graded ? "Posts due week" : "Week"}<input class="input" type="number" min="1" .value="${String(due.week ?? "")}" @input="${(e) => setDue({ week: Number(e.target.value) || "" })}" /></label>
+        <label class="field">Time <span class="hint">optional</span><input class="input" type="time" .value="${due.time || ""}" @input="${(e) => setDue({ time: e.target.value || undefined })}" /></label>
+      </div>
+      <label class="field">Due on
+        <select @change="${(e) => (e.target.value === "first-class" ? setDue({ day: undefined, rule: "first-class" }) : setDue({ day: e.target.value || undefined, rule: undefined }))}">
+          ${DAYS.map(([v, l]) => html`<option value="${v}" ?selected="${dayValue === v}">${l}</option>`)}
+        </select>
+      </label>
+      <label class="field">Replies required<input class="input num" type="number" min="0" .value="${String(it.replies ?? 0)}" @input="${(e) => this._setItem({ replies: Math.max(0, Number(e.target.value) || 0) })}" /></label>
+      <label class="field">More requirements <span class="hint">one per line</span>
+        <textarea class="input" rows="3" style="height:auto;padding:0.5rem 0.625rem" placeholder="Name what's working and one change you'd try" .value="${(it.requirements || []).join("\n")}" @input="${(e) => this._setItem({ requirements: e.target.value.split("\n").map((l) => l.trim()).filter(Boolean) })}"></textarea>
+      </label>
+      <label class="check"><input type="checkbox" .checked="${!!it.requireInitialPost}" @change="${(e) => this._setItem({ requireInitialPost: e.target.checked })}" />Students post before they see others' replies</label>
+      <label class="check"><input type="checkbox" .checked="${!!it.groupSet}" @change="${(e) => this._setItem({ groupSet: e.target.checked ? "Critique groups" : undefined })}" />Group discussion</label>
+      ${it.groupSet ? html`<label class="field">Group set<input class="input" .value="${it.groupSet}" @input="${(e) => this._setItem({ groupSet: e.target.value })}" /></label>` : ""}
+      <p class="hint">The prompt shows the requirements (posting by the due date, the replies, these lines, the rubric), then the page's instructions, embedded.</p>`;
+  }
+
+  _renderFileSettings(it, page) {
+    const files = attachmentsOf(page);
+    if (!files.length) return html`<p class="hint">This page has no attachments. Add files to its Attachments field in Page details, then choose one here.</p>`;
+    return html`<label class="field">File
+        <select @change="${(e) => this._setItem({ file: e.target.value })}">
+          ${files.map((f) => html`<option value="${f.url}" ?selected="${it.file === f.url}">${f.title || f.url.split("/").pop()}</option>`)}
+        </select>
+      </label>
+      <p class="hint">Copied into the Canvas course's files. A file on another site that can't be copied becomes a link to it.</p>`;
   }
 
   _renderSequenceSettings() {

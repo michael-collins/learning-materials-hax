@@ -13,8 +13,13 @@
  * a parent's own fields come before nested blocks; a missing referenced
  * file fails the whole import; dates are UTC without an offset.
  *
- * Content is embedded, not copied: pages and assignment instructions show
- * the live page (its ?embed=1 view) in an iframe, with a link to open it.
+ * Content is embedded, not copied: pages, assignment instructions and
+ * discussion prompts show the live page (its ?embed=1 view) in an iframe,
+ * with a link to open it. Module items: pages, assignments (peer reviews,
+ * group assignments), discussions (open threads by default; graded ones
+ * with points, due date and rubric, and a Requirements list in the
+ * prompt), quizzes, links to pages or any address, files (a page's
+ * attachments, copied in), text headers; each with an indent level.
  * Quizzes are built from the page's questions (multiple choice, true/false;
  * self-checks become ungraded short essays with the model answer as
  * feedback). Canvas can convert them to New Quizzes on import.
@@ -179,9 +184,46 @@ ${criteria}
   </rubric>`;
 }
 
+// Canvas indents module items up to five levels
+const clampIndent = (n) => Math.max(0, Math.min(5, Number(n) || 0));
+
+// what comes before the embedded page in assignment and discussion
+// instructions: the page's description and its AI licence
+const instructionsIntro = (page) => {
+  const ai = [].concat(page.metadata?.oerFields?.aiLicense || []).filter(Boolean);
+  return [
+    page.description ? `<p>${esc(page.description)}</p>` : "",
+    ai.length ? `<p><strong>AI use:</strong> ${ai.map((c) => esc(c)).join(", ")} (see the instructions for what this allows).</p>` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+};
+
+// a discussion's requirements, above its instructions: post by the due
+// date, reply to classmates, anything else the sequence lists, the rubric
+const requirementsHtml = (entry, dueLabel, rubricName) => {
+  const lines = [
+    dueLabel ? `Post your work by ${esc(dueLabel)}.` : "",
+    Number(entry.replies) > 0 ? `Reply to at least ${Number(entry.replies)} classmate${Number(entry.replies) === 1 ? "" : "s"}, with specific, constructive feedback.` : "",
+    ...[].concat(entry.requirements || []).map((r) => esc(String(r).trim())).filter(Boolean),
+    rubricName ? `Graded with the ${esc(rubricName)} rubric (${Number(entry.points)} points).` : "",
+  ].filter(Boolean);
+  return lines.length ? `<h3>Requirements</h3>\n<ul>\n${lines.map((l) => `<li>${l}</li>`).join("\n")}\n</ul>` : "";
+};
+
+// "Sunday, January 24, 11:59 pm" from a wall-clock time
+const readableDate = (local) => {
+  if (!local) return "";
+  const [d, t = "00:00"] = local.split("T");
+  const date = new Date(`${d}T00:00:00Z`);
+  const day = date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", timeZone: "UTC" });
+  const [h, m] = t.split(":").map(Number);
+  return `${day}, ${((h + 11) % 12) + 1}:${String(m).padStart(2, "0")} ${h < 12 ? "am" : "pm"}`;
+};
+
 /* ---------- the package ---------- */
 
-export async function buildCanvasPackage({ offering, items, htmlOf = async () => "", rubrics = [], includeDrafts = false, siteName = "Digital Arts OER" }) {
+export async function buildCanvasPackage({ offering, items, htmlOf = async () => "", fileOf = async () => null, rubrics = [], includeDrafts = false, siteName = "Digital Arts OER" }) {
   const tz = offering.timeZone || "UTC";
   const siteUrl = offering.siteUrl || "";
   const byId = new Map(items.map((i) => [i.id, i]));
@@ -189,7 +231,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
   const files = [];
   const resources = [];
   const warnings = [];
-  const counts = { modules: 0, pages: 0, assignments: 0, quizzes: 0, links: 0, headers: 0, events: 0, rubrics: 0 };
+  const counts = { modules: 0, pages: 0, assignments: 0, discussions: 0, quizzes: 0, links: 0, files: 0, headers: 0, events: 0, rubrics: 0 };
   const add = (name, data) => files.push({ name, data });
   const key = (...parts) => makeId([offering.code, offering.term, ...parts].join("|"));
 
@@ -220,6 +262,70 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     return rubricIds.get(k);
   };
 
+  // an assignment's settings, in Canvas's field order: a standalone
+  // assignment's assignment_settings.xml, or the <assignment> inside a
+  // graded discussion. submission(graded) gives its submission types.
+  let assignmentPos = 0;
+  const assignmentBody = (entry, title, submission) => {
+    const points = Number(entry.points ?? 0);
+    const graded = entry.graded !== false && points > 0;
+    const due = utc(dueAt(offering, entry.due), tz);
+    const rubricId = graded && entry.rubric ? rubricFor(entry.rubric, points) : "";
+    if (graded && entry.rubric && !rubricId) warnings.push(`${title}: rubric “${entry.rubric}” wasn't found.`);
+    const peer = entry.peerReviews && graded ? entry.peerReviews : null; // { count, anonymous }
+    const groupSet = String(entry.groupSet || "").trim();
+    return [
+      `<title>${esc(title)}</title>`,
+      due ? `<due_at>${due}</due_at>` : "<due_at/>",
+      "<lock_at/>",
+      "<unlock_at/>",
+      entry.group ? `<assignment_group_identifierref>${groupId(entry.group)}</assignment_group_identifierref>` : "",
+      `<workflow_state>${publish ? "published" : "unpublished"}</workflow_state>`,
+      rubricId ? `<rubric_identifierref>${rubricId}</rubric_identifierref>\n<rubric_use_for_grading>true</rubric_use_for_grading>\n<rubric_hide_points>false</rubric_hide_points>\n<rubric_hide_outcome_results>false</rubric_hide_outcome_results>\n<rubric_hide_score_total>false</rubric_hide_score_total>` : "",
+      "<assignment_overrides/>",
+      `<allowed_extensions>${esc((entry.extensions || []).join(","))}</allowed_extensions>`,
+      `<has_group_category>${bool(!!groupSet)}</has_group_category>`,
+      groupSet ? `<group_category>${esc(groupSet)}</group_category>` : "",
+      `<points_possible>${points.toFixed(1)}</points_possible>`,
+      `<grading_type>${graded ? "points" : "not_graded"}</grading_type>`,
+      "<all_day>false</all_day>",
+      `<submission_types>${esc(submission(graded))}</submission_types>`,
+      `<position>${++assignmentPos}</position>`,
+      `<peer_review_count>${peer ? Math.max(1, Number(peer.count) || 2) : 0}</peer_review_count>`,
+      `<peer_reviews>${bool(!!peer)}</peer_reviews>`,
+      `<automatic_peer_reviews>${bool(!!peer)}</automatic_peer_reviews>`,
+      `<anonymous_peer_reviews>${bool(!!peer?.anonymous)}</anonymous_peer_reviews>`,
+      `<grade_group_students_individually>${bool(!!groupSet && !!entry.gradeIndividually)}</grade_group_students_individually>`,
+      `<omit_from_final_grade>${bool(!graded)}</omit_from_final_grade>`,
+      "<hide_in_gradebook>false</hide_in_gradebook>",
+      "<allowed_attempts>-1</allowed_attempts>",
+    ]
+      .filter(Boolean)
+      .join("\n")
+      .replace(/^/gm, "  ");
+  };
+
+  // a link module item (ExternalUrl), plus the CC web link Canvas ignores
+  const linkParts = (wlId, tagId, title, url, indent, newTab = true) => {
+    add(`${wlId}.xml`, `${XML_HEAD}<webLink xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imswl_v1p1"><title>${esc(title)}</title><url href="${esc(url)}"/></webLink>\n`);
+    resources.push(`<resource identifier="${wlId}" type="imswl_xmlv1p1"><file href="${wlId}.xml"/></resource>`);
+    return {
+      item: `      <item identifier="${tagId}">\n        <content_type>ExternalUrl</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${wlId}</identifierref>\n        <url>${esc(url)}</url>\n        <new_tab>${bool(newTab)}</new_tab>\n        <indent>${indent}</indent>\n      </item>`,
+      org: `<item identifier="${tagId}" identifierref="${wlId}"><title>${esc(title)}</title></item>`,
+    };
+  };
+
+  const usedFiles = new Set();
+  const uniqueFile = (name) => {
+    const dot = name.lastIndexOf(".");
+    const stem = slugify(dot > 0 ? name.slice(0, dot) : name);
+    const ext = dot > 0 ? name.slice(dot + 1).toLowerCase().replace(/[^a-z0-9]/g, "") : "";
+    let n = `${stem}${ext ? `.${ext}` : ""}`;
+    for (let k = 2; usedFiles.has(n); k++) n = `${stem}-${k}${ext ? `.${ext}` : ""}`;
+    usedFiles.add(n);
+    return n;
+  };
+
   const pageFiles = new Set();
   const uniqueSlug = (base) => {
     let s = slugify(base);
@@ -231,7 +337,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
   const unpublished = new Set();
   const modulesXml = [];
   const orgModules = [];
-  let assignmentPos = 0;
+  let topicPos = 0;
   let previousModule = null;
   for (const [mi, mod] of (offering.modules || []).entries()) {
     const modId = key("module", mod.id);
@@ -242,9 +348,23 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     for (const [ii, entry] of (mod.items || []).entries()) {
       const tagId = key("tag", mod.id, ii);
       if (entry.header) {
-        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>ContextModuleSubHeader</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(entry.header)}</title>\n        <new_tab/>\n        <indent>0</indent>\n      </item>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>ContextModuleSubHeader</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(entry.header)}</title>\n        <new_tab/>\n        <indent>${clampIndent(entry.indent ?? 0)}</indent>\n      </item>`);
         orgItems.push(`<item identifier="${tagId}"><title>${esc(entry.header)}</title></item>`);
         counts.headers++;
+        continue;
+      }
+      if (entry.as === "url") {
+        // a link to any web address (a video call, another site)
+        const url = String(entry.url || "").trim();
+        if (!/^https?:\/\//.test(url)) {
+          warnings.push(`${mod.title}: the link “${entry.title || url || "untitled"}” needs a full web address (https://…).`);
+          continue;
+        }
+        const parts = linkParts(key("weblink", mod.id, ii), tagId, entry.title || url, url, clampIndent(entry.indent ?? 0), entry.newTab !== false);
+        itemXml.push(parts.item);
+        orgItems.push(parts.org);
+        if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
+        counts.links++;
         continue;
       }
       const page = byId.get(entry.page);
@@ -253,9 +373,9 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         continue;
       }
       // the live page shows in Canvas only once it's published on the site
-      if (entry.as !== "link" && page.metadata?.published === false) unpublished.add(page.title);
+      if (!["link", "file"].includes(entry.as) && page.metadata?.published === false) unpublished.add(page.title);
       const title = entry.title && entry.as === "page" && entry.title !== "Overview" ? entry.title : page.title;
-      const indent = entry.indent ?? (entry.as === "link" ? 1 : 0);
+      const indent = clampIndent(entry.indent ?? (entry.as === "link" ? 1 : 0));
 
       if (entry.as === "link") {
         const url = page.metadata?.oerFields?.url || pageUrl(siteUrl, page);
@@ -263,60 +383,85 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
           warnings.push(`${mod.title}: “${page.title}” has no absolute address, so Canvas would skip its link.`);
           continue;
         }
-        const wlId = key("weblink", mod.id, ii);
-        add(`${wlId}.xml`, `${XML_HEAD}<webLink xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imswl_v1p1"><title>${esc(page.title)}</title><url href="${esc(url)}"/></webLink>\n`);
-        resources.push(`<resource identifier="${wlId}" type="imswl_xmlv1p1"><file href="${wlId}.xml"/></resource>`);
-        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>ExternalUrl</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(page.title)}</title>\n        <identifierref>${wlId}</identifierref>\n        <url>${esc(url)}</url>\n        <new_tab>true</new_tab>\n        <indent>${indent}</indent>\n      </item>`);
-        orgItems.push(`<item identifier="${tagId}" identifierref="${wlId}"><title>${esc(page.title)}</title></item>`);
+        const parts = linkParts(key("weblink", mod.id, ii), tagId, page.title, url, indent);
+        itemXml.push(parts.item);
+        orgItems.push(parts.org);
         if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.links++;
       } else if (entry.as === "assignment") {
         const aId = key("assignment", page.id);
         const slug = slugify(page.title);
-        const points = Number(entry.points ?? 0);
-        const graded = entry.graded !== false && points > 0;
-        const due = utc(dueAt(offering, entry.due), tz);
-        const rubricId = graded && entry.rubric ? rubricFor(entry.rubric, points) : "";
-        if (graded && entry.rubric && !rubricId) warnings.push(`${page.title}: rubric “${entry.rubric}” wasn't found.`);
-        const ai = [].concat(page.metadata?.oerFields?.aiLicense || []).filter(Boolean);
-        const intro = [
-          page.description ? `<p>${esc(page.description)}</p>` : "",
-          ai.length ? `<p><strong>AI use:</strong> ${ai.map((c) => esc(c)).join(", ")} (see the instructions for what this allows).</p>` : "",
-        ].join("\n");
-        add(`${aId}/${slug}.html`, htmlPage(`Assignment: ${page.title}`, `${intro}\n${embed(siteUrl, page, siteName)}`));
-        add(
-          `${aId}/assignment_settings.xml`,
-          `${XML_HEAD}<assignment identifier="${aId}" ${CCC}>
-  <title>${esc(page.title)}</title>
-  ${due ? `<due_at>${due}</due_at>` : "<due_at/>"}
-  <lock_at/>
-  <unlock_at/>
-  ${entry.group ? `<assignment_group_identifierref>${groupId(entry.group)}</assignment_group_identifierref>` : ""}
-  <workflow_state>${publish ? "published" : "unpublished"}</workflow_state>
-  ${rubricId ? `<rubric_identifierref>${rubricId}</rubric_identifierref>\n  <rubric_use_for_grading>true</rubric_use_for_grading>\n  <rubric_hide_points>false</rubric_hide_points>\n  <rubric_hide_outcome_results>false</rubric_hide_outcome_results>\n  <rubric_hide_score_total>false</rubric_hide_score_total>` : ""}
-  <assignment_overrides/>
-  <allowed_extensions>${esc((entry.extensions || []).join(","))}</allowed_extensions>
-  <has_group_category>false</has_group_category>
-  <points_possible>${points.toFixed(1)}</points_possible>
-  <grading_type>${graded ? "points" : "not_graded"}</grading_type>
-  <all_day>false</all_day>
-  <submission_types>${esc((graded ? entry.submission || ["online_upload"] : ["not_graded"]).join(","))}</submission_types>
-  <position>${++assignmentPos}</position>
-  <peer_review_count>0</peer_review_count>
-  <peer_reviews>false</peer_reviews>
-  <automatic_peer_reviews>false</automatic_peer_reviews>
-  <anonymous_peer_reviews>false</anonymous_peer_reviews>
-  <omit_from_final_grade>${bool(!graded)}</omit_from_final_grade>
-  <hide_in_gradebook>false</hide_in_gradebook>
-  <allowed_attempts>-1</allowed_attempts>
-</assignment>
-`,
-        );
+        add(`${aId}/${slug}.html`, htmlPage(`Assignment: ${page.title}`, `${instructionsIntro(page)}\n${embed(siteUrl, page, siteName)}`));
+        add(`${aId}/assignment_settings.xml`, `${XML_HEAD}<assignment identifier="${aId}" ${CCC}>\n${assignmentBody(entry, page.title, (graded) => (graded ? entry.submission || ["online_upload"] : ["not_graded"]).join(","))}\n</assignment>\n`);
         resources.push(`<resource identifier="${aId}" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="${aId}/${slug}.html"><file href="${aId}/${slug}.html"/><file href="${aId}/assignment_settings.xml"/></resource>`);
         itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Assignment</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(page.title)}</title>\n        <identifierref>${aId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
         orgItems.push(`<item identifier="${tagId}" identifierref="${aId}"><title>${esc(page.title)}</title></item>`);
         if (async) requirements.push(`<completionRequirement type="must_submit"><identifierref>${tagId}</identifierref></completionRequirement>`);
         counts.assignments++;
+      } else if (entry.as === "discussion") {
+        // a discussion: the page as its prompt; graded ones carry an assignment
+        const tId = key("topic", page.id);
+        const metaId = key("topicmeta", page.id);
+        const graded = entry.graded !== false && Number(entry.points) > 0;
+        const groupSet = String(entry.groupSet || "").trim();
+        const due = utc(dueAt(offering, entry.due), tz);
+        const rubricName = graded && entry.rubric ? rubrics.find((r) => r.slug === entry.rubric)?.name || "" : "";
+        const prompt = [instructionsIntro(page), requirementsHtml(entry, readableDate(dueAt(offering, entry.due)), rubricName), embed(siteUrl, page, siteName)].filter(Boolean).join("\n");
+        add(`${tId}.xml`, `${XML_HEAD}<topic xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1  http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imsdt_v1p1.xsd">\n  <title>${esc(page.title)}</title>\n  <text texttype="text/html">${esc(prompt)}</text>\n</topic>\n`);
+        // the discussion's own fields come before its nested <assignment>
+        add(
+          `${metaId}.xml`,
+          `${XML_HEAD}<topicMeta identifier="${metaId}" ${CCC}>
+  <topic_id>${tId}</topic_id>
+  <title>${esc(page.title)}</title>
+  <position>${++topicPos}</position>
+  <type>topic</type>
+  <discussion_type>threaded</discussion_type>
+  <require_initial_post>${bool(!!entry.requireInitialPost)}</require_initial_post>
+  <has_group_category>${bool(!!groupSet)}</has_group_category>${groupSet ? `\n  <group_category>${esc(groupSet)}</group_category>` : ""}
+  <workflow_state>${publish ? "active" : "unpublished"}</workflow_state>
+  <allow_rating>false</allow_rating>${!graded && due ? `\n  <todo_date>${due}</todo_date>` : ""}${graded ? `\n  <assignment identifier="${key("topicassignment", page.id)}">\n${assignmentBody({ ...entry, groupSet: "" }, page.title, () => "discussion_topic").replace(/^/gm, "  ")}\n  </assignment>` : ""}
+</topicMeta>
+`,
+        );
+        resources.push(`<resource identifier="${tId}" type="imsdt_xmlv1p1"><file href="${tId}.xml"/><dependency identifierref="${metaId}"/></resource>`);
+        resources.push(`<resource identifier="${metaId}" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="${metaId}.xml"><file href="${metaId}.xml"/></resource>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>DiscussionTopic</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(page.title)}</title>\n        <identifierref>${tId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
+        orgItems.push(`<item identifier="${tagId}" identifierref="${tId}"><title>${esc(page.title)}</title></item>`);
+        if (async) requirements.push(`<completionRequirement type="${graded ? "must_submit" : "must_contribute"}"><identifierref>${tagId}</identifierref></completionRequirement>`);
+        counts.discussions++;
+      } else if (entry.as === "file") {
+        // one of the page's attachments, copied into the course's files
+        const att = [].concat(page.metadata?.oerFields?.attachments || []).find((a) => a?.url && a.url === entry.file);
+        if (!att) {
+          warnings.push(`${page.title}: choose which of its files to add.`);
+          continue;
+        }
+        const name = decodeURIComponent(att.url.split("?")[0].split("/").pop() || "file");
+        const title = att.title || name;
+        const data = await fileOf(att.url);
+        if (!data) {
+          // not readable from here (another site, say): link to it instead
+          const url = /^https?:\/\//.test(att.url) ? att.url : siteUrl ? new URL(att.url, siteUrl).href : "";
+          if (!url) {
+            warnings.push(`${page.title}: “${title}” couldn't be read, so it was left out.`);
+            continue;
+          }
+          warnings.push(`${page.title}: “${title}” couldn't be copied, so it's a link to the file instead.`);
+          const parts = linkParts(key("weblink", mod.id, ii), tagId, title, url, indent);
+          itemXml.push(parts.item);
+          orgItems.push(parts.org);
+          counts.links++;
+          continue;
+        }
+        const fId = key("file", page.id, att.url);
+        const path = `web_resources/${uniqueFile(name)}`;
+        add(path, data);
+        resources.push(`<resource identifier="${fId}" type="webcontent" href="${path}"><file href="${path}"/></resource>`);
+        itemXml.push(`      <item identifier="${tagId}">\n        <content_type>Attachment</content_type>\n        <workflow_state>active</workflow_state>\n        <title>${esc(title)}</title>\n        <identifierref>${fId}</identifierref>\n        <new_tab/>\n        <indent>${indent}</indent>\n      </item>`);
+        orgItems.push(`<item identifier="${tagId}" identifierref="${fId}"><title>${esc(title)}</title></item>`);
+        if (async) requirements.push(`<completionRequirement type="must_view"><identifierref>${tagId}</identifierref></completionRequirement>`);
+        counts.files++;
       } else if (entry.as === "quiz") {
         const qId = key("quiz", page.id);
         const questions = quizQuestions(await htmlOf(page), { includeDrafts });

@@ -18,7 +18,7 @@ import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
-import { SEQUENCE_TYPE, sequenceOf } from "../lms/sequence-model.js";
+import { SEQUENCE_TYPE, sequenceOf, indentOf } from "../lms/sequence-model.js";
 import { sequenceExport } from "../lms/oer-sequence-export.js";
 import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
 
@@ -494,9 +494,12 @@ class OerPageHeader extends LitElement {
       return store.isLoggedIn ? html`<section class="block steps schedule"><h2>Schedule</h2><p class="empty">No modules yet. Use Edit sequence to build it.</p></section>` : "";
     }
     const note = (it, p) => {
-      if (it.as === "assignment") return ["Assignment", it.graded !== false && it.points ? `${it.points} pts` : "", it.due?.week ? `due week ${it.due.week}` : ""].filter(Boolean).join(" · ");
+      const graded = it.graded !== false && it.points;
+      if (it.as === "assignment") return ["Assignment", graded ? `${it.points} pts` : "", it.due?.week ? `due week ${it.due.week}` : "", it.peerReviews ? "peer review" : "", it.groupSet ? "group" : ""].filter(Boolean).join(" · ");
+      if (it.as === "discussion") return [graded ? "Graded discussion" : "Discussion", graded ? `${it.points} pts` : "", it.due?.week ? `week ${it.due.week}` : ""].filter(Boolean).join(" · ");
       if (it.as === "quiz") return it.quizType === "graded" ? "Graded quiz" : "Practice quiz";
       if (it.as === "link") return "Link";
+      if (it.as === "file") return "File";
       return this._types.find((t) => t.id === p.metadata?.pageType)?.label || "Page";
     };
     return html`<section class="block steps schedule" aria-labelledby="sched-h">
@@ -508,13 +511,19 @@ class OerPageHeader extends LitElement {
         (m) => html`<h3>${m.title}</h3>
           <ul role="list">
             ${(m.items || []).map((it) => {
-              if (it.header) return html`<li class="sub">${it.header}</li>`;
+              const pad = `padding-left: ${indentOf(it) * 1.25}rem`;
+              if (it.header) return html`<li class="sub" style="${`padding-left: ${1.875 + indentOf(it) * 1.25}rem`}">${it.header}</li>`;
+              if (it.as === "url") {
+                return /^https?:\/\//.test(it.url || "")
+                  ? html`<li style="${pad}"><span class="noicon"></span><a href="${it.url}" target="_blank" rel="noopener noreferrer">${it.title || it.url}</a><small>Link</small></li>`
+                  : "";
+              }
               const p = byId.get(it.page);
               if (!p) return "";
               const type = this._types.find((t) => t.id === p.metadata?.pageType);
               // pages not yet published are listed, not linked, for visitors
               const open = store.isLoggedIn || p.metadata?.published !== false;
-              return html`<li>
+              return html`<li style="${pad}">
                 ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
                 ${open ? html`<a href="${p.slug}">${p.title}</a>` : html`<span>${p.title}</span>`}
                 <small>${note(it, p)}</small>
