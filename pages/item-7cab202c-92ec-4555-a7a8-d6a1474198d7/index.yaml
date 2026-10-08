@@ -11,7 +11,7 @@ description: >-
   pathways, versions, books, embedding and open licen
 metadata:
   created: 1790801562
-  updated: 1791473634
+  updated: 1791479242
   published: true
   locked: false
   status: ''
@@ -24,7 +24,7 @@ metadata:
   oerSaveTiming: ''
   overridePathauto: false
   hideInMenu: false
-  readtime: 14
+  readtime: 15
   videos: []
   images: []
 content: >
@@ -257,6 +257,45 @@ content: >
   caption="The rubric editor: each criterion's share of the grade, each level's
   share of a criterion's points, and what each level looks
   like."></oer-schematic>
+
+
+  <h2>Import from Canvas</h2>
+
+  <p><strong>Import from Canvas</strong>, on the sidebar's Site tab, turns a
+  Canvas course export (in Canvas: <em>Settings → Export Course Content →
+  Course</em>) into draft pages and a draft course sequence. It reads the export
+  in your browser and suggests what each item becomes, with its reasons:</p>
+
+  <ul>
+
+  <li><strong>Link</strong>, when the site already has it: the item embeds or
+  links to the same page, or has its title.</li>
+
+  <li><strong>Create</strong>, a new draft page of a suggested type.</li>
+
+  <li><strong>Skip</strong>, for instructor-only notes, unpublished items,
+  surveys and short weekly to-do lists.</li>
+
+  </ul>
+
+  <p>You can change any suggestion before importing. Rubrics that are the same
+  are merged (and reuse the site's when they match), due dates become teaching
+  weeks, and the modules become a draft sequence for the course. Files come over
+  only when you tick them, because a course's files can include student work and
+  files on the site are public once it's published. With the local helper
+  running (an Anthropic API key in <code>.env.local</code>, then <code>node
+  --env-file=.env.local scripts/ai-bridge.mjs</code> in nu-hax), <strong>Refine
+  with Claude</strong> checks the suggested types, matches and skips. Everything
+  new arrives as a draft that only signed-in authors see.</p>
+
+  <oer-schematic preset="import" alt="Diagram of the Canvas import review:
+  Canvas items for week 2 on the left, each marked Link, Create or Skip (a
+  skipped item is struck through), with the first selected; on the right, Link
+  chosen, the matching page on the site, the item's place in the sequence (an
+  assignment worth 10 points due in week 2) and a preview, with an Import as
+  drafts button at the top." caption="The Canvas import: what each item becomes,
+  why, and its place in the sequence, before anything is
+  saved."></oer-schematic>
 
 
   <h2>Pathways</h2>

@@ -79,6 +79,17 @@ A **rubric** is a page of its own, under _Assessments → Rubrics_. One rubric c
 
 **Edit rubric** opens the rubric editor: criteria down the side, levels across the top and a description in each cell. It's on a rubric's page, on the rubric where a page shows it, and on the rubric block's label while you edit a page. Saving a rubric that other pages use says how many pages, course sequences and archived versions will change, with the choice to **save it as a new rubric** instead. Rubrics have versions too. Releasing a page or a course sequence keeps each rubric it uses as it was, pinned to the rubric's release. If the rubric changed since its last release, it's released again first, and the release dialog says so. An archived version shows its rubric "as released", with a link to the latest. The **Rubric** block puts one on a page. Course sequences choose a rubric for each graded assignment and discussion, and Export to Canvas turns it into a Canvas rubric: points split by weight, each rubric's own levels, and the level descriptions as the ratings' descriptions.
 
+Import from Canvas
+------------------
+
+**Import from Canvas**, on the sidebar's Site tab, turns a Canvas course export (in Canvas: _Settings → Export Course Content → Course_) into draft pages and a draft course sequence. It reads the export in your browser and suggests what each item becomes, with its reasons:
+
+*   **Link**, when the site already has it: the item embeds or links to the same page, or has its title.
+*   **Create**, a new draft page of a suggested type.
+*   **Skip**, for instructor-only notes, unpublished items, surveys and short weekly to-do lists.
+
+You can change any suggestion before importing. Rubrics that are the same are merged (and reuse the site's when they match), due dates become teaching weeks, and the modules become a draft sequence for the course. Files come over only when you tick them, because a course's files can include student work and files on the site are public once it's published. With the local helper running (an Anthropic API key in `.env.local`, then `node --env-file=.env.local scripts/ai-bridge.mjs` in nu-hax), **Refine with Claude** checks the suggested types, matches and skips. Everything new arrives as a draft that only signed-in authors see.
+
 Pathways
 --------
 
