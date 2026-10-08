@@ -37,7 +37,7 @@ The production blog can be hosted anywhere. If you already have a blog created, 
 Recommended blog platforms:
 
 *   [sites.psu.edu](https://sites.psu.edu)
-*   [Notion](notion.so) (a nice option to [create a public blog](https://www.notion.com/help/guides/build-a-website-with-notion-in-seconds-no-coding-required) alongside private notes)
+*   [Notion](https://notion.so) (a nice option to [create a public blog](https://www.notion.com/help/guides/build-a-website-with-notion-in-seconds-no-coding-required) alongside private notes)
 *   [Adobe Spark](https://spark.adobe.com/)
 
 Submission details

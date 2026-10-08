@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-42c443ea-48f3-496e-91cb-78b4df8362ea</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-42c443ea-48f3-496e-91cb-78b4df8362ea/index.xml</location>
-<slug>projects/project-research-expectations</slug>
-<order>61</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/capstone-project/project-research-expectations</slug>
+<order>4</order>
+<parent>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</parent>
 <title>Project research expectations</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd400-capstone-project-research</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,9 +34,12 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491590</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
-<content><![CDATA[<p>Please see the <a href="/projects/dmd400-capstone-project-document">Project Document</a> research section for specific end-of-semester outcome requirements. Research expectations can differ between projects. For the Digital Multimedia Design Capstone course, students can select from a variety of media types that correspond to their fields of interest. Research is integral to the design process that you will be using for the capstone project, and therefore, everyone will incorporate appropriate research methods into their production timelines. The importance of conducting research can be summed up by the following:</p>
+<content><![CDATA[<p>Please see the <a href="projects/capstone-project/capstone-project-document">Project Document</a> research section for specific end-of-semester outcome requirements. Research expectations can differ between projects. For the Digital Multimedia Design Capstone course, students can select from a variety of media types that correspond to their fields of interest. Research is integral to the design process that you will be using for the capstone project, and therefore, everyone will incorporate appropriate research methods into their production timelines. The importance of conducting research can be summed up by the following:</p>
 <p><strong>Research...</strong></p>
 <ol>
 <li>Contextualizes your work within the broader landscape of work;</li>
@@ -61,6 +67,5 @@
 <p>If you are creating a video game, you may need to research certain relevant history, game theory, or various design research related to developing characters and props in your game. The research that you conduct depends of the scope of work and what aspect of the game's design you are emphasizing. This could be story, game play, environment or character design, etc. Each of or combinations of these areas could require research. See <a href="https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/7/143171/files/formidable/2/2023-12-04/Logaraj_Harish-Capstone-Project-Document-e780af.pdf">this project's research</a> as an example for good game design research. For example, if you are making a project that takes place in 200 B.C. in a particular region of the world, you will need to conduct secondary research to find written or visual information of that period that helps inform the design of your sets, props, and characters. Simply copying other game designs would not constitute you as having completed research as those designs are interpretations rather than sources.</p>
 <p>If you are creating a graphic design project, you may start by researching case studies of similar projects (<a href="https://www.behance.net/galleries/graphic-design">Behance.net</a> is a great place to start), look into the history or context of the subject matter you are designing for, and get a better understanding of client or business goals through a variety of research methods. If you are doing video or photography, perhaps you will do research into other artists, films, or work that you may try to emulate.</p>
 <p>If you are designing mostly fiction, you will need to inspire your fictional design from something. All design for the most part can be referenced back to other design work or naturally occurring phenomenon. This is where reference sheets can come in as a visual research method, where you can assemble visuals that help guide the design process. Let's say you are designing a spaceship for a fictional universe, how would you create rules around that that universe might look like? Here is an example with the art director from the Ridley Scott film, <a href="https://www.youtube.com/watch?v=JJzy0kvMCkM">Prometheus, discussing the inspiration</a> for the production design.</p>
-<p>Not sure where to start? The <a href="https://dmd-program.github.io/art-design-course-resources/">DMD Art and Design Course Resources</a> offers a good starting point for many project types.</p>
-]]></content>
+<p>Not sure where to start? The <a href="https://dmd-program.github.io/art-design-course-resources/">DMD Art and Design Course Resources</a> offers a good starting point for many project types.</p>]]></content>
 </item>

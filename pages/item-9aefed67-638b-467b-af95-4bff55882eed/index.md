@@ -12,13 +12,13 @@ The following must be included in the proposal:
     *   Here you will list what you know, and what you are interested in. This should be related to the project concept. (IE - if you are skilled and interested in web development, it would be confusing to then propose an animation project.)
     *   List existing digital media skills and other relevant skills.
     *   List any skills you hope to obtain during this project.
-3.  **[Concept](/articles/dmd400-concept-development)**
+3.  **[Concept](articles/concept-development-1)**
     *   Concise description of the project ideas.
     *   What design methods will be used?
     *   What production tools will be used?
     *   What topics and theory need to be researched?
     *   Who is the intended audience?
-4.  **[Advisor](/projects/dmd400-capstone-project-advisor)** (If you are unable to acquire a project advisor by the due date, please contact your instructor and list "TBD" in this section.)
+4.  **[Advisor](projects/capstone-project/project-advisor)** (If you are unable to acquire a project advisor by the due date, please contact your instructor and list "TBD" in this section.)
     *   Project advisor name and job title
     *   Advisor area of expertise
         *   The advisor should not be a project client you are working with to develop the project. Find an industry professional that you will have at least three meetings with in order to facilitate the development of your project. This should be someone who is expert in the technical area of your project. If your project includes field specific knowledge outside of the digital arts, you may also want to find an expert in this field (IE – if your project attempts to teach about ).
@@ -45,7 +45,7 @@ The following must be included in the proposal:
     *   Ensure the timeline is feasible.
     *   It's okay for your timeline to be updated as you progress to better serve the project or adjust for scope changes.
 9.  **Research**
-    *   What areas of research do you intend to pursue during the production of this project? Examples include any technical or craft aspects of the project, required visual research, user research, design thinking or methods research, and others. Please see the [research](/projects/dmd400-capstone-project-research) page for more details.
+    *   What areas of research do you intend to pursue during the production of this project? Examples include any technical or craft aspects of the project, required visual research, user research, design thinking or methods research, and others. Please see the [research](projects/capstone-project/project-research-expectations) page for more details.
         *   Your project should either include a contemporary critical issue, explore critical theory, or relate the project to design methods and principles.
     *   What research resources available to you?
 10.  **Questions for your proposal reviewers**

@@ -1,20 +1,21 @@
 id: item-b7a3817a-2523-41ce-8647-5051c5d08b03
-indent: 1
+indent: 2
 location: pages/item-b7a3817a-2523-41ce-8647-5051c5d08b03/index.yaml
-slug: projects/phase-3-pitch
-order: 48
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/project-1/phase-3-pitch
+order: 3
+parent: item-aef9003a-aac3-4a77-a874-48276f2cf152
 title: 'Phase 3: Pitch'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd300-project-1-phase-3-pitch
   tags: project-deliverable,Group Project
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491586
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>Produce a short presentation that explains the project concept. Use
   presentation slide software to design the presentation and record a video
   presenting the slides in a professional manner. You can include voice
@@ -60,9 +64,9 @@ content: >
   have an unlimited budget and develop a speculative design that never leaves
   the imagination stage. For other projects, you might create a real website, ad
   campaign, or comic book. Focus on applying <a
-  href="/articles/dmd300-design-process-and-methods">design thinking</a> to your
-  problem and demonstrating creative problem-solving, attention to craft and
-  detail, and sophisticated visual design.</p>
+  href="articles/design-process-and-methods">design thinking</a> to your problem
+  and demonstrating creative problem-solving, attention to craft and detail, and
+  sophisticated visual design.</p>
 
   <h2>Required Slides</h2>
 

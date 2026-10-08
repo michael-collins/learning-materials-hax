@@ -5,17 +5,17 @@ Project deliverables
 
 The capstone project is broken down into the following deliverable categories. See each category for more information about deliverable requirements:
 
-1.  [Proposal](/projects/dmd400-capstone-project-proposal)
-2.  [Agreement form](/projects/dmd400-capstone-project-agreement-form)
-3.  [Evidence of ability](/projects/dmd400-capstone-project-evidence-of-ability)
-4.  [Research](/projects/dmd400-capstone-project-research)
+1.  [Proposal](projects/capstone-project/capstone-project-proposal)
+2.  [Agreement form](projects/capstone-project/agreement-form)
+3.  [Evidence of ability](projects/capstone-project/evidence-of-ability)
+4.  [Research](projects/capstone-project/project-research-expectations)
 5.  [Progress reports](/capstone-project-report.md)
-6.  [Progress report discussions](/capstone-project-report-discussions.md)
-7.  [Midterm video](/capstone-project-midterm-video.md)
-8.  [Statement](/projects/dmd400-capstone-project-statement)
-9.  [Project document](/projects/dmd400-capstone-project-document)
-10.  [Project explainer video](/projects/dmd400-project-explainer-video)
-11.  [Capstone project exhibition](/projects/dmd400-capstone-project-exhibition)
+6.  [Progress report discussions](projects/capstone-project/capstone-project-production-report-discussions)
+7.  [Midterm video](projects/capstone-project/project-midterm-video)
+8.  [Statement](projects/capstone-project/capstone-project-exhibition-statement)
+9.  [Project document](projects/capstone-project/capstone-project-document)
+10.  [Project explainer video](projects/capstone-project/project-explainer-video)
+11.  [Capstone project exhibition](projects/capstone-project/capstone-project-exhibition)
 
 Expectations
 ------------
@@ -40,7 +40,7 @@ Each project should demonstrate a minimum of entry-level skills for their chosen
 Types
 -----
 
-While project types may overlap, in general, they can be broken down into a few types. You can map [project categories](/articles/dmd400-project-categories) to the following:
+While project types may overlap, in general, they can be broken down into a few types. You can map [project categories](articles/project-categories-and-resources-1) to the following:
 
 *   Client-based project
     *   This project is based on fulfilling stakeholder needs and requirements.

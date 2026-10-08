@@ -1,6 +1,6 @@
 ![sprint timeline graphic](files/timeline@2x.png)
 
-1.  **Rule number one in art and design - if it's not documented, it never happened.** Please keep detailed and dated notes, photos, screenshots, video recordings, and other forms of documentation of team meetings, brainstorm sessions, concept research, design sprints or working session outcomes, etc. This will help your team immensely when crafting the project document, and will mostly likely be referred back to quite often. Consider keeping these materials in a shared team folder. See [collaboration tools](/articles/dmd300-collaboration-tools) for information on available resources.
+1.  **Rule number one in art and design - if it's not documented, it never happened.** Please keep detailed and dated notes, photos, screenshots, video recordings, and other forms of documentation of team meetings, brainstorm sessions, concept research, design sprints or working session outcomes, etc. This will help your team immensely when crafting the project document, and will mostly likely be referred back to quite often. Consider keeping these materials in a shared team folder. See [collaboration tools](articles/collaboration-tools) for information on available resources.
 2.  **Consider setting roles and responsibilities.** Members may have multiple roles.
 3.  If your team feels that the design process isn't working as intended, feel free to change up the design of the sprint. However, don't give up too early, sometimes you have to trust the process to give it a chance to work.
 

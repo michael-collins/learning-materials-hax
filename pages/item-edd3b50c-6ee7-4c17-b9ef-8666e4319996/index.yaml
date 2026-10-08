@@ -1,20 +1,21 @@
 id: item-edd3b50c-6ee7-4c17-b9ef-8666e4319996
-indent: 1
+indent: 2
 location: pages/item-edd3b50c-6ee7-4c17-b9ef-8666e4319996/index.yaml
-slug: projects/capstone-project-production-reports
-order: 58
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/capstone-project/capstone-project-production-reports
+order: 5
+parent: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 title: Capstone project production reports
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd400-capstone-project-production-report
   tags: project-deliverable
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491591
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>A production report is a comprehensive update about what progress has been
   made for of planning, research, and production — at times, all three. A report
   can consist of any visual documentation and text description including
@@ -89,7 +93,7 @@ content: >
 
   <li><a href="https://sites.psu.edu">sites.psu.edu</a></li>
 
-  <li><a href="notion.so">Notion</a> (a nice option to <a
+  <li><a href="https://notion.so">Notion</a> (a nice option to <a
   href="https://www.notion.com/help/guides/build-a-website-with-notion-in-seconds-no-coding-required">create
   a public blog</a> alongside private notes)</li>
 

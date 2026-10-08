@@ -3,19 +3,22 @@
 <id>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</id>
 <indent>1</indent>
 <location>pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.xml</location>
-<slug>lessons/capstone-project</slug>
-<order>24</order>
-<parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
+<slug>projects/capstone-project</slug>
+<order>12</order>
+<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
 <title>Capstone project</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:lesson</pageType>
+<pageType>oer:project</pageType>
 <oerSource>lessons/dmd400-capstone-project</oerSource>
 <tags>lesson</tags>
 <oerFields>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <authors>
 <item>
@@ -30,23 +33,26 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491588</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>A capstone project represents the culmination of your interests and skills developed throughout your studies. Capstone's are typically individual projects, though you have the option to enlist the help of peer DMD students who may have complimentary skills to help bring your project to fruition. The capstone project must include a major research component, demonstrated media production skills and techniques, and participation in the online  capstone project exhibition. Capstone projects must be able to be completed within the duration of the capstone experience. In order to successfully complete the capstone project, a good understanding of media, production workflows, and project scope will be needed. You will produce documentation, meet deliverable and milestone deadlines, introduce relevant theory and analysis, and participate in the capstone project online exhibition. Students who do not earn a B or better on their project assessment will not be able to participate in the online capstone exhibition.</p>
 <h2>Project deliverables</h2>
 <p>The capstone project is broken down into the following deliverable categories. See each category for more information about deliverable requirements:</p>
 <ol>
-<li><a href="/projects/dmd400-capstone-project-proposal">Proposal</a></li>
-<li><a href="/projects/dmd400-capstone-project-agreement-form">Agreement form</a></li>
-<li><a href="/projects/dmd400-capstone-project-evidence-of-ability">Evidence of ability</a></li>
-<li><a href="/projects/dmd400-capstone-project-research">Research</a></li>
+<li><a href="projects/capstone-project/capstone-project-proposal">Proposal</a></li>
+<li><a href="projects/capstone-project/agreement-form">Agreement form</a></li>
+<li><a href="projects/capstone-project/evidence-of-ability">Evidence of ability</a></li>
+<li><a href="projects/capstone-project/project-research-expectations">Research</a></li>
 <li><a href="/capstone-project-report.md">Progress reports</a></li>
-<li><a href="/capstone-project-report-discussions.md">Progress report discussions</a></li>
-<li><a href="/capstone-project-midterm-video.md">Midterm video</a></li>
-<li><a href="/projects/dmd400-capstone-project-statement">Statement</a></li>
-<li><a href="/projects/dmd400-capstone-project-document">Project document</a></li>
-<li><a href="/projects/dmd400-project-explainer-video">Project explainer video</a></li>
-<li><a href="/projects/dmd400-capstone-project-exhibition">Capstone project exhibition</a></li>
+<li><a href="projects/capstone-project/capstone-project-production-report-discussions">Progress report discussions</a></li>
+<li><a href="projects/capstone-project/project-midterm-video">Midterm video</a></li>
+<li><a href="projects/capstone-project/capstone-project-exhibition-statement">Statement</a></li>
+<li><a href="projects/capstone-project/capstone-project-document">Project document</a></li>
+<li><a href="projects/capstone-project/project-explainer-video">Project explainer video</a></li>
+<li><a href="projects/capstone-project/capstone-project-exhibition">Capstone project exhibition</a></li>
 </ol>
 <h2>Expectations</h2>
 <p>Each project should demonstrate a minimum of entry-level skills for their chosen field.</p>
@@ -76,7 +82,7 @@
 <li>Deliver a final video explainer presentation and produce media for work exhibition.</li>
 </ol>
 <h2>Types</h2>
-<p>While project types may overlap, in general, they can be broken down into a few types. You can map <a href="/articles/dmd400-project-categories">project categories</a> to the following:</p>
+<p>While project types may overlap, in general, they can be broken down into a few types. You can map <a href="articles/project-categories-and-resources-1">project categories</a> to the following:</p>
 <ul>
 <li>Client-based project
 <ul>
@@ -94,6 +100,5 @@
 <li>Story driven projects comprise of fictional or non-fictional stories told through digital narrative media. These stories can be either new or reimagined existing stories.</li>
 </ul>
 </li>
-</ul>
-]]></content>
+</ul>]]></content>
 </item>

@@ -1,20 +1,21 @@
 id: item-42c443ea-48f3-496e-91cb-78b4df8362ea
-indent: 1
+indent: 2
 location: pages/item-42c443ea-48f3-496e-91cb-78b4df8362ea/index.yaml
-slug: projects/project-research-expectations
-order: 61
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/capstone-project/project-research-expectations
+order: 4
+parent: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 title: Project research expectations
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd400-capstone-project-research
   tags: project-deliverable
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,9 +23,13 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
-  <p>Please see the <a href="/projects/dmd400-capstone-project-document">Project
+  updated: 1791491590
+  locked: false
+  status: ''
+  icon: ''
+content: >-
+  <p>Please see the <a
+  href="projects/capstone-project/capstone-project-document">Project
   Document</a> research section for specific end-of-semester outcome
   requirements. Research expectations can differ between projects. For the
   Digital Multimedia Design Capstone course, students can select from a variety

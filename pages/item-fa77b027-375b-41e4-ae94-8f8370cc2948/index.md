@@ -40,13 +40,13 @@ Requirements
     *   Share your thoughts on the premise of a fast-paced "design sprint" and the steps prescribed by the class (sprint timeline, pitch video, blog posts, etc.)
     *   Reflect on the process of collaboration within your group. What were the biggest challenges you faced as a group? (e.g. meeting times, delegation, clashing visions, etc.) What strategies or advice might you use in future collaborative work?
 8.  **Bibliography**
-    *   You can choose either APA, MLA , or Chicago format for document. See [documentation resources](/articles/dmd300-documentation-resources) for help.
+    *   You can choose either APA, MLA , or Chicago format for document. See [documentation resources](articles/documentation-resources) for help.
 
 Formatting requirements:
 ------------------------
 
 *   PDF document in US Letter size.
-*   Please see [documentation resources](/articles/dmd300-documentation-resources) for guidance.
+*   Please see [documentation resources](articles/documentation-resources) for guidance.
 *   Proofread and spellcheck
 *   Additional files if neccesary to show your completed work (e.g. video, execuatable app, ZIP archive, etc.)
 

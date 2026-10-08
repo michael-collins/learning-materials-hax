@@ -1,20 +1,21 @@
 id: item-fa77b027-375b-41e4-ae94-8f8370cc2948
-indent: 1
+indent: 2
 location: pages/item-fa77b027-375b-41e4-ae94-8f8370cc2948/index.yaml
-slug: projects/phase-5-project-document
-order: 50
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/project-1/phase-5-project-document
+order: 5
+parent: item-aef9003a-aac3-4a77-a874-48276f2cf152
 title: 'Phase 5: Project document'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd300-project-1-phase-5
   tags: project-deliverable,Group Project
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491588
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>Each team should produce a single Project Document.</p>
 
   <h2>Requirements</h2>
@@ -199,8 +203,8 @@ content: >
   <ul>
 
   <li>You can choose either APA, MLA , or Chicago format for document. See <a
-  href="/articles/dmd300-documentation-resources">documentation resources</a>
-  for help.</li>
+  href="articles/documentation-resources">documentation resources</a> for
+  help.</li>
 
   </ul>
 
@@ -214,9 +218,8 @@ content: >
 
   <li>PDF document in US Letter size.</li>
 
-  <li>Please see <a
-  href="/articles/dmd300-documentation-resources">documentation resources</a>
-  for guidance.</li>
+  <li>Please see <a href="articles/documentation-resources">documentation
+  resources</a> for guidance.</li>
 
   <li>Proofread and spellcheck</li>
 

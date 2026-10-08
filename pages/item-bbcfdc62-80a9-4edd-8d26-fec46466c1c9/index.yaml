@@ -1,20 +1,21 @@
 id: item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9
-indent: 1
+indent: 2
 location: pages/item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9/index.yaml
-slug: projects/phase-4-design-sprint
-order: 49
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/project-1/phase-4-design-sprint
+order: 4
+parent: item-aef9003a-aac3-4a77-a874-48276f2cf152
 title: 'Phase 4: Design sprint'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd300-project-1-phase-4-design-sprint
   tags: project-deliverable,Group Project
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491587
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/timeline@2x.png" alt="sprint timeline graphic"></p>
 
   <ol>
@@ -35,8 +39,8 @@ content: >
   session outcomes, etc. This will help your team immensely when crafting the
   project document, and will mostly likely be referred back to quite often.
   Consider keeping these materials in a shared team folder. See <a
-  href="/articles/dmd300-collaboration-tools">collaboration tools</a> for
-  information on available resources.</li>
+  href="articles/collaboration-tools">collaboration tools</a> for information on
+  available resources.</li>
 
   <li><strong>Consider setting roles and responsibilities.</strong> Members may
   have multiple roles.</li>

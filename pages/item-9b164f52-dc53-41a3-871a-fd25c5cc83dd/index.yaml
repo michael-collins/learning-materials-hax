@@ -1,19 +1,20 @@
 id: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 indent: 1
 location: pages/item-9b164f52-dc53-41a3-871a-fd25c5cc83dd/index.yaml
-slug: lessons/capstone-project
-order: 24
-parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
+slug: projects/capstone-project
+order: 12
+parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
 title: Capstone project
 description: ''
 metadata:
   published: true
-  pageType: oer:lesson
+  pageType: oer:project
   oerSource: lessons/dmd400-capstone-project
   tags: lesson
   oerFields:
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     authors:
       - name: Michael Collins
         url: ''
@@ -21,8 +22,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491588
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>A capstone project represents the culmination of your interests and skills
   developed throughout your studies. Capstone's are typically individual
   projects, though you have the option to enlist the help of peer DMD students
@@ -46,33 +50,37 @@ content: >
 
   <ol>
 
-  <li><a href="/projects/dmd400-capstone-project-proposal">Proposal</a></li>
+  <li><a
+  href="projects/capstone-project/capstone-project-proposal">Proposal</a></li>
 
-  <li><a href="/projects/dmd400-capstone-project-agreement-form">Agreement
-  form</a></li>
+  <li><a href="projects/capstone-project/agreement-form">Agreement form</a></li>
 
-  <li><a href="/projects/dmd400-capstone-project-evidence-of-ability">Evidence
-  of ability</a></li>
+  <li><a href="projects/capstone-project/evidence-of-ability">Evidence of
+  ability</a></li>
 
-  <li><a href="/projects/dmd400-capstone-project-research">Research</a></li>
+  <li><a
+  href="projects/capstone-project/project-research-expectations">Research</a></li>
 
   <li><a href="/capstone-project-report.md">Progress reports</a></li>
 
-  <li><a href="/capstone-project-report-discussions.md">Progress report
-  discussions</a></li>
+  <li><a
+  href="projects/capstone-project/capstone-project-production-report-discussions">Progress
+  report discussions</a></li>
 
-  <li><a href="/capstone-project-midterm-video.md">Midterm video</a></li>
-
-  <li><a href="/projects/dmd400-capstone-project-statement">Statement</a></li>
-
-  <li><a href="/projects/dmd400-capstone-project-document">Project
-  document</a></li>
-
-  <li><a href="/projects/dmd400-project-explainer-video">Project explainer
+  <li><a href="projects/capstone-project/project-midterm-video">Midterm
   video</a></li>
 
-  <li><a href="/projects/dmd400-capstone-project-exhibition">Capstone project
-  exhibition</a></li>
+  <li><a
+  href="projects/capstone-project/capstone-project-exhibition-statement">Statement</a></li>
+
+  <li><a href="projects/capstone-project/capstone-project-document">Project
+  document</a></li>
+
+  <li><a href="projects/capstone-project/project-explainer-video">Project
+  explainer video</a></li>
+
+  <li><a href="projects/capstone-project/capstone-project-exhibition">Capstone
+  project exhibition</a></li>
 
   </ol>
 
@@ -140,8 +148,9 @@ content: >
   <h2>Types</h2>
 
   <p>While project types may overlap, in general, they can be broken down into a
-  few types. You can map <a href="/articles/dmd400-project-categories">project
-  categories</a> to the following:</p>
+  few types. You can map <a
+  href="articles/project-categories-and-resources-1">project categories</a> to
+  the following:</p>
 
   <ul>
 

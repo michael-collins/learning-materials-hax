@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-fa77b027-375b-41e4-ae94-8f8370cc2948</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-fa77b027-375b-41e4-ae94-8f8370cc2948/index.xml</location>
-<slug>projects/phase-5-project-document</slug>
-<order>50</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/project-1/phase-5-project-document</slug>
+<order>5</order>
+<parent>item-aef9003a-aac3-4a77-a874-48276f2cf152</parent>
 <title>Phase 5: Project document</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd300-project-1-phase-5</oerSource>
 <tags>project-deliverable,Group Project</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 300</item>
+<item>
+<page>item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,7 +34,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491588</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>Each team should produce a single Project Document.</p>
 <h2>Requirements</h2>
@@ -104,18 +110,17 @@
 </li>
 <li><strong>Bibliography</strong>
 <ul>
-<li>You can choose either APA, MLA , or Chicago format for document. See <a href="/articles/dmd300-documentation-resources">documentation resources</a> for help.</li>
+<li>You can choose either APA, MLA , or Chicago format for document. See <a href="articles/documentation-resources">documentation resources</a> for help.</li>
 </ul>
 </li>
 </ol>
 <h2>Formatting requirements:</h2>
 <ul>
 <li>PDF document in US Letter size.</li>
-<li>Please see <a href="/articles/dmd300-documentation-resources">documentation resources</a> for guidance.</li>
+<li>Please see <a href="articles/documentation-resources">documentation resources</a> for guidance.</li>
 <li>Proofread and spellcheck</li>
 <li>Additional files if neccesary to show your completed work (e.g. video, execuatable app, ZIP archive, etc.)</li>
 </ul>
 <h2>Submission details:</h2>
-<p>Upload the PDF document to the canvas assignment by the due date and time listed (only one person in the group needs to submit the file to the group assignment).</p>
-]]></content>
+<p>Upload the PDF document to the canvas assignment by the due date and time listed (only one person in the group needs to submit the file to the group assignment).</p>]]></content>
 </item>

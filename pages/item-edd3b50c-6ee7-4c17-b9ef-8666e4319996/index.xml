@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-edd3b50c-6ee7-4c17-b9ef-8666e4319996</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-edd3b50c-6ee7-4c17-b9ef-8666e4319996/index.xml</location>
-<slug>projects/capstone-project-production-reports</slug>
-<order>58</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/capstone-project/capstone-project-production-reports</slug>
+<order>5</order>
+<parent>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</parent>
 <title>Capstone project production reports</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd400-capstone-project-production-report</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,7 +34,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491591</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>A production report is a comprehensive update about what progress has been made for of planning, research, and production — at times, all three. A report can consist of any visual documentation and text description including screenshot images, photographs of prototypes, video of working functionality, code snippets, production artwork, concept maps, research findings, work inspiration, storyboards and scripts, etc.</p>
 <p><strong>Each blog post should be a minimum of 500 words long, and include images or other media.</strong></p>
@@ -57,10 +63,9 @@
 <p>Recommended blog platforms:</p>
 <ul>
 <li><a href="https://sites.psu.edu">sites.psu.edu</a></li>
-<li><a href="notion.so">Notion</a> (a nice option to <a href="https://www.notion.com/help/guides/build-a-website-with-notion-in-seconds-no-coding-required">create a public blog</a> alongside private notes)</li>
+<li><a href="https://notion.so">Notion</a> (a nice option to <a href="https://www.notion.com/help/guides/build-a-website-with-notion-in-seconds-no-coding-required">create a public blog</a> alongside private notes)</li>
 <li><a href="https://spark.adobe.com/">Adobe Spark</a></li>
 </ul>
 <h2>Submission details</h2>
-<p>Post a link to the relevant blog post in each week's Canvas discussion.</p>
-]]></content>
+<p>Post a link to the relevant blog post in each week's Canvas discussion.</p>]]></content>
 </item>

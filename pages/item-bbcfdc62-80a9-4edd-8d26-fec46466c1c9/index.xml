@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-bbcfdc62-80a9-4edd-8d26-fec46466c1c9/index.xml</location>
-<slug>projects/phase-4-design-sprint</slug>
-<order>49</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/project-1/phase-4-design-sprint</slug>
+<order>4</order>
+<parent>item-aef9003a-aac3-4a77-a874-48276f2cf152</parent>
 <title>Phase 4: Design sprint</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd300-project-1-phase-4-design-sprint</oerSource>
 <tags>project-deliverable,Group Project</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 300</item>
+<item>
+<page>item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,11 +34,14 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491587</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p><img src="files/timeline@2x.png" alt="sprint timeline graphic"></p>
 <ol>
-<li><strong>Rule number one in art and design - if it's not documented, it never happened.</strong> Please keep detailed and dated notes, photos, screenshots, video recordings, and other forms of documentation of team meetings, brainstorm sessions, concept research, design sprints or working session outcomes, etc. This will help your team immensely when crafting the project document, and will mostly likely be referred back to quite often. Consider keeping these materials in a shared team folder. See <a href="/articles/dmd300-collaboration-tools">collaboration tools</a> for information on available resources.</li>
+<li><strong>Rule number one in art and design - if it's not documented, it never happened.</strong> Please keep detailed and dated notes, photos, screenshots, video recordings, and other forms of documentation of team meetings, brainstorm sessions, concept research, design sprints or working session outcomes, etc. This will help your team immensely when crafting the project document, and will mostly likely be referred back to quite often. Consider keeping these materials in a shared team folder. See <a href="articles/collaboration-tools">collaboration tools</a> for information on available resources.</li>
 <li><strong>Consider setting roles and responsibilities.</strong> Members may have multiple roles.</li>
 <li>If your team feels that the design process isn't working as intended, feel free to change up the design of the sprint. However, don't give up too early, sometimes you have to trust the process to give it a chance to work.</li>
 </ol>
@@ -50,6 +56,5 @@
 <ol>
 <li>Publish 5 or more detailed posts to the <a href="http://sites.psu.edu">http://sites.psu.edu</a> blog that you created to track your project's progress from the design sprint. Upload media and write descriptions and other relevant information.</li>
 <li>The end results of the design process are included in what gets published on this blog, they do not need to be uploaded to canvas other than what is included in the project document PDF.</li>
-</ol>
-]]></content>
+</ol>]]></content>
 </item>

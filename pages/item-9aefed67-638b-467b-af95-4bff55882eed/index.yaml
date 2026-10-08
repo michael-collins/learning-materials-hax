@@ -1,20 +1,21 @@
 id: item-9aefed67-638b-467b-af95-4bff55882eed
-indent: 1
+indent: 2
 location: pages/item-9aefed67-638b-467b-af95-4bff55882eed/index.yaml
-slug: projects/capstone-project-proposal
-order: 60
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/capstone-project/capstone-project-proposal
+order: 0
+parent: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 title: Capstone Project Proposal
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd400-capstone-project-proposal
   tags: project-deliverable
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491589
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>The capstone project proposal is the first step in producing a capstone
   project for the Digital Multimedia Design degree program. It asks you to think
   through the entire production process of the upcoming project, and helps you
@@ -68,8 +72,7 @@ content: >
 
   </li>
 
-  <li><strong><a
-  href="/articles/dmd400-concept-development">Concept</a></strong>
+  <li><strong><a href="articles/concept-development-1">Concept</a></strong>
 
   <ul>
 
@@ -88,7 +91,7 @@ content: >
   </li>
 
   <li><strong><a
-  href="/projects/dmd400-capstone-project-advisor">Advisor</a></strong> (If you
+  href="projects/capstone-project/project-advisor">Advisor</a></strong> (If you
   are unable to acquire a project advisor by the due date, please contact your
   instructor and list "TBD" in this section.)
 
@@ -220,8 +223,8 @@ content: >
   this project? Examples include any technical or craft aspects of the project,
   required visual research, user research, design thinking or methods research,
   and others. Please see the <a
-  href="/projects/dmd400-capstone-project-research">research</a> page for more
-  details.
+  href="projects/capstone-project/project-research-expectations">research</a>
+  page for more details.
 
   <ul>
 
