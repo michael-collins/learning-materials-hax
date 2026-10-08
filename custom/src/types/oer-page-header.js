@@ -387,29 +387,100 @@ class OerPageHeader extends LitElement {
         font-weight: 500;
         color: var(--muted-foreground);
       }
+      /* a module's overview, and the sequence's own pages: open in place */
       .seq-text {
         margin: 0.25rem 0 0.5rem;
-        padding: 0.5rem 0.75rem;
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
         font-size: 0.875rem;
       }
+      .seq-text > summary {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 2rem;
+        padding: 0.25rem 0.625rem;
+        border-radius: calc(var(--radius-md) - 1px);
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .seq-text > summary::-webkit-details-marker {
+        display: none;
+      }
+      .seq-text > summary:hover {
+        background: var(--accent);
+      }
+      .seq-text > summary:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      .seq-text > summary .lucide {
+        color: var(--muted-foreground);
+      }
+      .seq-text[open] > summary .lucide {
+        transform: rotate(90deg);
+      }
+      .seq-text > summary small {
+        font-weight: 400;
+      }
+      .seq-text:not(.inline)[open] > summary {
+        border-bottom: 1px solid var(--border);
+        border-radius: calc(var(--radius-md) - 1px) calc(var(--radius-md) - 1px) 0 0;
+      }
+      .seq-text:not(.inline) > .seq-body {
+        padding: 0.625rem 0.75rem 0.25rem 2rem;
+      }
+      /* a sequence page in the list: its chevron in the icon column */
+      .steps li.text-item {
+        display: block;
+      }
       .seq-text.inline {
-        flex: 1;
-        min-width: 0;
         margin: 0;
-        padding: 0;
         border: 0;
       }
-      .seq-text summary {
-        cursor: pointer;
-        font-weight: 500;
+      .seq-text.inline > summary {
+        min-height: 1.75rem;
+        padding: 0 0.375rem 0 0;
       }
-      .seq-text[open] > summary {
-        margin-bottom: 0.5rem;
+      .seq-text.inline > summary .lucide {
+        margin: 0 0.25rem;
       }
-      .seq-text :is(p, ul, ol) {
+      .seq-text.inline > .seq-body {
+        margin: 0.25rem 0 0.5rem 1.875rem;
+        padding: 0.5rem 0 0.25rem 0.875rem;
+        border-left: 2px solid var(--border);
+      }
+      /* the text inside: the schedule's list and heading styles don't apply */
+      .steps .seq-body :is(p, ul, ol, blockquote) {
         margin: 0 0 0.5rem;
+      }
+      .steps .seq-body :is(ul, ol) {
+        list-style: revert;
+        padding-left: 1.25rem;
+      }
+      .steps .seq-body :is(ul, ol) :is(ul, ol) {
+        margin: 0.25rem 0 0;
+      }
+      .steps .seq-body li {
+        display: list-item;
+        padding: 0;
+      }
+      .steps .seq-body li + li {
+        margin-top: 0.125rem;
+      }
+      .steps .seq-body :is(h3, h4) {
+        margin: 0.75rem 0 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: normal;
+        text-transform: none;
+        color: var(--foreground);
+      }
+      .steps .seq-body blockquote {
+        padding-left: 0.75rem;
+        border-left: 2px solid var(--border);
+        color: var(--muted-foreground);
       }
       .seq-text .note {
         color: var(--muted-foreground);
@@ -551,8 +622,10 @@ class OerPageHeader extends LitElement {
         (m) => html`<h3>${m.title}${/\bweeks?\s*\d/i.test(m.title) ? "" : html`<small class="when">${moduleWeekLabel(m)}</small>`}</h3>
           ${m.overview
             ? html`<details class="seq-text">
-                <summary>${m.overview.title || `${m.title}: To do`}</summary>
-                ${m.overview.mode === "written" ? richText(m.overview.html) : html`${m.overview.note ? richText(m.overview.note) : ""}<p class="note">The week's items and due dates are listed here when the sequence is exported for a term.</p>`}
+                <summary>${lucide("oer:chevron-right")}<span>${m.overview.title || `${m.title}: To do`}</span></summary>
+                <div class="seq-body">
+                  ${m.overview.mode === "written" ? richText(m.overview.html) : html`${m.overview.note ? richText(m.overview.note) : ""}<p class="note">The week's items and due dates are listed here when the sequence is exported for a term.</p>`}
+                </div>
               </details>`
             : ""}
           <ul role="list">
@@ -561,7 +634,12 @@ class OerPageHeader extends LitElement {
               if (it.header) return html`<li class="sub" style="${`padding-left: ${1.875 + indentOf(it) * 1.25}rem`}">${it.header}</li>`;
               // a page the sequence holds: open it here
               if (it.as === "text") {
-                return html`<li style="${pad}"><span class="noicon"></span><details class="seq-text inline"><summary>${it.title || "Page"}</summary>${richText(it.html)}</details><small>Page</small></li>`;
+                return html`<li class="text-item" style="${pad}">
+                  <details class="seq-text inline">
+                    <summary>${lucide("oer:chevron-right")}<span>${it.title || "Page"}</span><small>Page</small></summary>
+                    <div class="seq-body">${richText(it.html)}</div>
+                  </details>
+                </li>`;
               }
               if (it.as === "url") {
                 return /^https?:\/\//.test(it.url || "")
