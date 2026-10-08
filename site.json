@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791471275,
+      "updated": 1791471276,
       "version": "26.8.0"
     },
     "theme": {
@@ -32730,7 +32730,7 @@
       "order": 18,
       "parent": null,
       "title": "Rubrics",
-      "description": "",
+      "description": "Scoring guides for exercises, projects and discussions: criteria, weights and rating levels.",
       "metadata": {
         "pageType": "oer:section",
         "published": true,
