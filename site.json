@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791490694,
+      "updated": 1791490696,
       "version": "26.8.0"
     },
     "theme": {
@@ -10643,7 +10643,7 @@
       "order": 1,
       "parent": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
       "title": "DMD 400: 15-week (from Canvas)",
-      "description": "",
+      "description": "15 weeks, imported from Canvas: the schedule, assignments and grading for DMD 400.",
       "metadata": {
         "pageType": "oer:sequence",
         "published": false,
