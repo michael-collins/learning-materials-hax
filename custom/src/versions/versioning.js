@@ -190,5 +190,11 @@ export async function publishVersion(pageId, version, notes = "") {
   const extra = { oerRubrics: rubricRefsIn(contents) };
   if (page.metadata?.oerSequence) extra.oerSequence = pinSequence(page.metadata.oerSequence, plan, list);
   out.push(...releaseItems(page, version, notes, contents, list, extra));
-  return saveOutline(out);
+  await saveOutline(out);
+  // outline saves drop descriptions: give the archived copies theirs
+  const fresh = items();
+  for (const snap of out.filter((i) => i.new && i.description)) {
+    const saved = fresh.find((i) => i.metadata?.oerSnapshotOf === snap.metadata.oerSnapshotOf && i.metadata?.version === snap.metadata.version);
+    if (saved && !saved.description) await store.cmsSiteEditor?.instance?.saveNodeDetails?.({ detail: { id: saved.id, operation: "setDescription", description: snap.description } });
+  }
 }

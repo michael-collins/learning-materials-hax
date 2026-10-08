@@ -124,11 +124,15 @@ export function rubricAt(items = [], ref = "", version = "") {
   return { page, shown: snapshot || page, missing: !snapshot };
 }
 
-/** True when two rubric pages (or a page and a release) hold the same rubric. */
+/**
+ * True when two rubric pages (or a page and a release) grade the same way:
+ * the same criteria, weights and levels (a new name or description alone
+ * isn't a new version).
+ */
 export function sameRubric(a, b) {
   const norm = (p) => {
-    const { id, ...r } = rubricOf(p);
-    return JSON.stringify(r);
+    const r = rubricOf(p);
+    return JSON.stringify([r.levels, r.criteria]);
   };
   return !!a && !!b && norm(a) === norm(b);
 }
