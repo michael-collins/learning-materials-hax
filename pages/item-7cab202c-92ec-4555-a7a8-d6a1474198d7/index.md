@@ -94,6 +94,17 @@ You can change any suggestion before importing. Rubrics that are the same are me
 
 Weekly to-do pages become module overviews and course-information pages stay in the sequence, and each item keeps its Canvas title, due and availability dates, so a course comes back out the way it went in. `scripts/canvas-roundtrip.mjs` in nu-hax checks that for an export: it imports the course in memory, exports it again and lists anything that came back different.
 
+Checking links
+--------------
+
+**Check links**, on the sidebar's Site tab, reads every page and lists the links worth a look:
+
+*   **To pages on this site**: links to the old course books on dmd-program.github.io, or to the old site's addresses, whose pages are here now. They'll point at the page here instead.
+*   **Links here that go nowhere**, and addresses written wrong.
+*   **Not working**, **Moved** and **Need a sign-in**, once the local helper has checked them. A dead link can use the Internet Archive's copy, and a link that moved within its own site takes its new address.
+
+Choose what each link becomes, then **Change links** saves only the pages whose links change. The Canvas import has the same list under **Links**, for the pages, overviews and links it brings over. Archived versions keep their links as released. To check outside links, start the local helper (`node --env-file=.env.local scripts/ai-bridge.mjs` in nu-hax); it doesn't need the API key for this. `node scripts/check-links.mjs --check` prints the same report without the browser.
+
 Pathways
 --------
 

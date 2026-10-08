@@ -10,7 +10,7 @@
 <description>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen</description>
 <metadata>
 <created>1790801562</created>
-<updated>1791485016</updated>
+<updated>1791488698</updated>
 <published>true</published>
 <locked>false</locked>
 <status></status>
@@ -122,6 +122,16 @@
 <p>You can change any suggestion before importing. Rubrics that are the same are merged (and reuse the site's when they match), due dates become teaching weeks, and the modules become a draft sequence for the course. Files come over only when you tick them, because a course's files can include student work and files on the site are public once it's published. With the local helper running (an Anthropic API key in <code>.env.local</code>, then <code>node --env-file=.env.local scripts/ai-bridge.mjs</code> in nu-hax), <strong>Refine with Claude</strong> checks the suggested types, matches and skips. Everything new arrives as a draft that only signed-in authors see.</p>
 <p>Weekly to-do pages become module overviews and course-information pages stay in the sequence, and each item keeps its Canvas title, due and availability dates, so a course comes back out the way it went in. <code>scripts/canvas-roundtrip.mjs</code> in nu-hax checks that for an export: it imports the course in memory, exports it again and lists anything that came back different.</p>
 <oer-schematic preset="import" alt="Diagram of the Canvas import review: Canvas items for week 2 on the left, each marked Link, Create or Skip (a skipped item is struck through), with the first selected; on the right, Link chosen, the matching page on the site, the item's place in the sequence (an assignment worth 10 points due in week 2) and a preview, with an Import as drafts button at the top." caption="The Canvas import: what each item becomes, why, and its place in the sequence, before anything is saved."></oer-schematic>
+
+<h2>Checking links</h2>
+<p><strong>Check links</strong>, on the sidebar's Site tab, reads every page and lists the links worth a look:</p>
+<ul>
+<li><strong>To pages on this site</strong>: links to the old course books on dmd-program.github.io, or to the old site's addresses, whose pages are here now. They'll point at the page here instead.</li>
+<li><strong>Links here that go nowhere</strong>, and addresses written wrong.</li>
+<li><strong>Not working</strong>, <strong>Moved</strong> and <strong>Need a sign-in</strong>, once the local helper has checked them. A dead link can use the Internet Archive's copy, and a link that moved within its own site takes its new address.</li>
+</ul>
+<p>Choose what each link becomes, then <strong>Change links</strong> saves only the pages whose links change. The Canvas import has the same list under <strong>Links</strong>, for the pages, overviews and links it brings over. Archived versions keep their links as released. To check outside links, start the local helper (<code>node --env-file=.env.local scripts/ai-bridge.mjs</code> in nu-hax); it doesn't need the API key for this. <code>node scripts/check-links.mjs --check</code> prints the same report without the browser.</p>
+<oer-schematic preset="links" alt="Diagram of Check links over the page: under To pages on this site, an address on the old DMD 400 course book with the choice The page here: Capstone Project Proposal highlighted; under Not working, a link that isn't found with the choice Use the archived copy; Check for dead links at the top and Change links at the bottom." caption="Check links: old course-site links pointed at the pages here, and dead links given the archive's copy."></oer-schematic>
 
 <h2>Pathways</h2>
 <p>A pathway is a page of type Pathway whose sub-pages are its modules; each module's sub-pages are its items, usually linked from the library so they stay in one place. The Pathways page lists them in three groups: where to start, what builds on it, and what is still in development. On a pathway page you see the course, length, levels and what to do first, then the route: a matrix of modules by level, or a module list with a level switcher. Items without a level belong to every level.</p>
