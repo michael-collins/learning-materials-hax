@@ -28,6 +28,7 @@ import { usedIn } from "./relations.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { ccLicense, ccIcon } from "./licenses.js";
 import { loadAiul, aiulInfo, AIUL_GUIDE } from "./aiul.js";
+import { deliveryFromCourse } from "../lms/offering-schedule.js";
 import { permalinkFor } from "../ui/permalinks.js";
 import { versionsOf } from "../versions/versioning.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
@@ -216,6 +217,12 @@ class OerPageFooter extends LitElement {
     };
     if (item.description) data["schema:description"] = item.description;
     if (cc?.url) data["schema:license"] = cc.url;
+    // a course sequence: how long it runs and how it meets
+    if (typeId === "oer:sequence") {
+      if (Number(f.weeks)) data["schema:timeRequired"] = `P${Number(f.weeks)}W`;
+      const mode = { "in-person": "onsite", hybrid: "blended", "online-sync": ["online", "synchronous"], "online-async": ["online", "asynchronous"] }[deliveryFromCourse(f.delivery)];
+      if (mode) data["schema:courseMode"] = mode;
+    }
     // AI use: OER Schema's aiUsageConstraint, each AIUL licence by its page
     // (the machine-readable form OER Schema prefers), or by its code when the
     // AIUL list doesn't know it. OER Schema puts the property on Task

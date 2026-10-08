@@ -1,0 +1,162 @@
+/**
+ * Course sequences: a published plan for running a course (oer:sequence
+ * pages). The plan lives in the page's metadata.oerSequence:
+ *
+ *   { version: 1,
+ *     modules: [{ id, title, week, items: [
+ *       { page, as: "page" | "assignment" | "quiz" | "link", title?, indent?,
+ *         due: { week, day?, time? }, points, graded, group, rubric,
+ *         submission: ["online_upload", …], extensions: ["pdf", …],
+ *         quizType: "practice" | "graded" },
+ *       { header: "Readings" } ] }],
+ *     groups: [{ id, name, weight }],
+ *     rubricScale: [{ name, share }] }
+ *
+ * What changes from term to term (start and end dates, breaks, the typical
+ * due day and time, class meetings, the time zone) isn't part of it: the
+ * export asks for those and toOffering() combines the two for the Canvas
+ * package (lms/canvas-package.js). Plain functions with no browser or HAX
+ * dependencies.
+ */
+import { deliveryFromCourse, teachingWeeks, weeksAvailable, dueAt } from "./offering-schedule.js";
+
+export const SEQUENCE_TYPE = "oer:sequence";
+
+export const ROLES = {
+  page: { label: "Page", note: "the live page, embedded" },
+  assignment: { label: "Assignment", note: "due date, points, submission, rubric" },
+  quiz: { label: "Quiz", note: "from the page's questions" },
+  link: { label: "Link", note: "opens the page or source" },
+};
+
+export const SUBMISSION_TYPES = {
+  online_upload: "File upload",
+  online_text_entry: "Text entry",
+  online_url: "Website URL",
+  media_recording: "Media recording",
+  on_paper: "On paper",
+  none: "No submission",
+};
+
+export const DEFAULT_RUBRIC_SCALE = [
+  { name: "Exemplary", share: 1 },
+  { name: "Proficient", share: 0.85 },
+  { name: "Developing", share: 0.7 },
+  { name: "Beginning", share: 0.5 },
+  { name: "Missing", share: 0 },
+];
+
+/** The role a page of this type usually takes in an LMS. */
+export function defaultRole(pageType) {
+  if (["oer:exercise", "oer:project", "oer:activity"].includes(pageType)) return "assignment";
+  if (pageType === "oer:quiz") return "quiz";
+  if (pageType === "oer:resource") return "link";
+  return "page";
+}
+
+/** A new item for a page, with the usual settings for its type. */
+export function newItem(page, week) {
+  const as = defaultRole(page.metadata?.pageType);
+  if (as === "assignment") {
+    const project = page.metadata?.pageType === "oer:project";
+    return { page: page.id, as, due: { week }, points: project ? 100 : 20, submission: ["online_upload"], rubric: project ? "project" : "exercise" };
+  }
+  if (as === "quiz") return { page: page.id, as, quizType: "practice" };
+  return { page: page.id, as };
+}
+
+/** The page's sequence, with defaults filled in. */
+export function sequenceOf(page) {
+  const s = page?.metadata?.oerSequence || {};
+  return {
+    version: 1,
+    modules: Array.isArray(s.modules) ? s.modules : [],
+    groups: Array.isArray(s.groups) ? s.groups : [],
+    rubricScale: Array.isArray(s.rubricScale) && s.rubricScale.length ? s.rubricScale : DEFAULT_RUBRIC_SCALE,
+  };
+}
+
+/** The courses a sequence is for (course pages). */
+export function sequenceCourses(page, items) {
+  const ids = [].concat(page?.metadata?.oerFields?.courses || []).map((c) => (typeof c === "string" ? c : c?.page)).filter(Boolean);
+  return ids.map((id) => items.find((i) => i.id === id)).filter(Boolean);
+}
+
+/** The sequence's length in teaching weeks: its Length field, else its last module's week. */
+export function sequenceWeeks(page, sequence = sequenceOf(page)) {
+  return Number(page?.metadata?.oerFields?.weeks) || Math.max(0, ...sequence.modules.map((m) => Number(m.week) || 0)) || sequence.modules.length;
+}
+
+/**
+ * The offering the Canvas package is built from: the sequence plus the
+ * term the export asked for.
+ *   run: { start, end, breaks, timeZone, defaults: { dueRule, dueDay, dueTime },
+ *          meetings, siteUrl, publish }
+ */
+export function toOffering(page, items, run) {
+  const sequence = sequenceOf(page);
+  const courses = sequenceCourses(page, items);
+  return {
+    title: page.title,
+    code: courses.map((c) => c.metadata?.oerFields?.code).filter(Boolean).join(" / ") || page.title,
+    course: courses[0]?.id || null,
+    term: run.term || "",
+    delivery: deliveryFromCourse(page.metadata?.oerFields?.delivery) || "in-person",
+    weeks: sequenceWeeks(page, sequence),
+    timeZone: run.timeZone || "America/New_York",
+    start: run.start,
+    end: run.end || "",
+    breaks: run.breaks || [],
+    meetings: run.meetings || [],
+    defaults: run.defaults || {},
+    siteUrl: run.siteUrl || "",
+    publish: run.publish !== false,
+    groups: sequence.groups,
+    rubricScale: sequence.rubricScale,
+    modules: sequence.modules,
+  };
+}
+
+/** Problems to fix before exporting: [{ level: "error" | "warning", text }]. */
+export function readiness(page, items, run = null) {
+  const out = [];
+  const sequence = sequenceOf(page);
+  const byId = new Map(items.map((i) => [i.id, i]));
+  const weeks = sequenceWeeks(page, sequence);
+  const groupIds = new Set(sequence.groups.map((g) => g.id));
+  if (!sequence.modules.length) out.push({ level: "error", text: "The sequence has no modules yet." });
+  const total = sequence.groups.reduce((s, g) => s + (Number(g.weight) || 0), 0);
+  if (sequence.groups.length && Math.round(total) !== 100) out.push({ level: "warning", text: `Grade group weights add up to ${Math.round(total * 10) / 10}%, not 100%.` });
+  for (const m of sequence.modules) {
+    if (m.week > weeks) out.push({ level: "warning", text: `${m.title} is in week ${m.week}, after the sequence's ${weeks} weeks.` });
+    for (const it of m.items || []) {
+      if (it.header) continue;
+      const page = byId.get(it.page);
+      if (!page) {
+        out.push({ level: "error", text: `${m.title}: a page here isn't on the site any more.` });
+        continue;
+      }
+      if (it.as === "assignment" && it.graded !== false) {
+        if (!it.due?.week && !it.due?.at) out.push({ level: "warning", text: `${page.title} has no due week.` });
+        if (!(Number(it.points) > 0)) out.push({ level: "warning", text: `${page.title} has no points.` });
+        if (sequence.groups.length && (!it.group || !groupIds.has(it.group))) out.push({ level: "warning", text: `${page.title} isn't in a grade group.` });
+        if (it.due?.week > weeks) out.push({ level: "warning", text: `${page.title} is due in week ${it.due.week}, after the sequence's ${weeks} weeks.` });
+      }
+    }
+  }
+  if (run) {
+    const available = weeksAvailable({ ...run, weeks });
+    if (available && available < weeks) out.push({ level: "warning", text: `The term has ${available} teaching weeks between its dates, but the sequence runs ${weeks}.` });
+    if (run.start && teachingWeeks({ ...run, weeks }).length < weeks) out.push({ level: "warning", text: "Some weeks fall outside the term." });
+    // due dates that land after the term ends
+    if (run.end) {
+      for (const m of sequence.modules) {
+        for (const it of m.items || []) {
+          const when = it.as === "assignment" && dueAt({ ...toOffering(page, items, run) }, it.due);
+          if (when && when.slice(0, 10) > run.end) out.push({ level: "warning", text: `${byId.get(it.page)?.title || "An assignment"} would be due ${when.slice(0, 10)}, after the term ends.` });
+        }
+      }
+    }
+  }
+  return out;
+}

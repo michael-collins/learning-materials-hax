@@ -18,6 +18,9 @@ import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
+import { SEQUENCE_TYPE, sequenceOf } from "../lms/sequence-model.js";
+import { sequenceExport } from "../lms/oer-sequence-export.js";
+import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -372,6 +375,34 @@ class OerPageHeader extends LitElement {
         color: var(--muted-foreground);
         font-size: 0.75rem;
       }
+      .schedule h3 {
+        margin: 0.875rem 0 0.25rem;
+        font-size: 0.8125rem;
+        letter-spacing: normal;
+        text-transform: none;
+        color: var(--foreground);
+      }
+      .schedule .grading {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.375rem;
+        margin: 0 0 0.25rem;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
+      .schedule li.sub {
+        padding-top: 0.25rem;
+        padding-left: 1.875rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--muted-foreground);
+      }
+      .schedule .empty {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+      }
       .sr {
         position: absolute;
         width: 1px;
@@ -448,6 +479,45 @@ class OerPageHeader extends LitElement {
                     : html`<span class="noicon"></span>`}
                 <a href="${p.item.slug}">${p.item.title}</a>
                 ${p.activity ? "" : html`<small>${type?.label || "Page"}</small>`}
+              </li>`;
+            })}
+          </ul>`,
+      )}
+    </section>`;
+  }
+
+  // a course sequence: its grade groups, then each module and what's in it
+  _renderSchedule(page) {
+    const seq = sequenceOf(page);
+    const byId = new Map((this._allItems || []).map((i) => [i.id, i]));
+    if (!seq.modules.length) {
+      return store.isLoggedIn ? html`<section class="block steps schedule"><h2>Schedule</h2><p class="empty">No modules yet. Use Edit sequence to build it.</p></section>` : "";
+    }
+    const note = (it, p) => {
+      if (it.as === "assignment") return ["Assignment", it.graded !== false && it.points ? `${it.points} pts` : "", it.due?.week ? `due week ${it.due.week}` : ""].filter(Boolean).join(" · ");
+      if (it.as === "quiz") return it.quizType === "graded" ? "Graded quiz" : "Practice quiz";
+      if (it.as === "link") return "Link";
+      return this._types.find((t) => t.id === p.metadata?.pageType)?.label || "Page";
+    };
+    return html`<section class="block steps schedule" aria-labelledby="sched-h">
+      <h2 id="sched-h">Schedule</h2>
+      ${seq.groups.length
+        ? html`<p class="grading"><span>Grading</span>${seq.groups.map((g) => html`<span class="pill">${g.name} <b>${g.weight}%</b></span>`)}</p>`
+        : ""}
+      ${seq.modules.map(
+        (m) => html`<h3>${m.title}</h3>
+          <ul role="list">
+            ${(m.items || []).map((it) => {
+              if (it.header) return html`<li class="sub">${it.header}</li>`;
+              const p = byId.get(it.page);
+              if (!p) return "";
+              const type = this._types.find((t) => t.id === p.metadata?.pageType);
+              // pages not yet published are listed, not linked, for visitors
+              const open = store.isLoggedIn || p.metadata?.published !== false;
+              return html`<li>
+                ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
+                ${open ? html`<a href="${p.slug}">${p.title}</a>` : html`<span>${p.title}</span>`}
+                <small>${note(it, p)}</small>
               </li>`;
             })}
           </ul>`,
@@ -534,7 +604,7 @@ class OerPageHeader extends LitElement {
     // an activity: its place in its project; a project: its steps
     const subject = source || own;
     const step = activityContext(subject, this._allItems);
-    const steps = typeId === PROJECT_TYPE ? this._renderSteps(subject.id) : "";
+    const steps = typeId === PROJECT_TYPE ? this._renderSteps(subject.id) : typeId === SEQUENCE_TYPE ? this._renderSchedule(subject) : "";
     return html`
       ${snapshot && latest
         ? html`<div class="archived" role="status">
@@ -553,6 +623,10 @@ class OerPageHeader extends LitElement {
           : ""}
         ${pills.map((f) => html`<span class="pill">${f.kind === "people" && f.name === "authors" ? "By" : f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">
+          ${typeId === SEQUENCE_TYPE
+            ? html`<button class="edit start" @click="${() => sequenceExport().show(subject)}">${lucide("hax:module")}Export to Canvas</button>
+                ${store.isLoggedIn ? html`<button class="edit" @click="${() => sequenceBuilder().show(subject.id)}">${lucide("icons:create")}Edit sequence</button>` : ""}`
+            : ""}
           ${canView(own, this._allItems)
             ? html`<button class="edit" aria-label="Open ${item.title} in the viewer" @click="${() => outlineViewer().show(own.id)}">${lucide("oer:eye")}Viewer</button>`
             : ""}

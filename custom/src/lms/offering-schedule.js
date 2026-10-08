@@ -96,7 +96,7 @@ export function classMeetings(offering) {
 
 /**
  * When an item is due, as a wall-clock time ("YYYY-MM-DDTHH:MM"), or "".
- * due: { at } | { week, day?, time? }
+ * due: { at } | { week, day?, time?, rule?: "first-class" }
  */
 export function dueAt(offering, due) {
   if (!due) return "";
@@ -106,7 +106,7 @@ export function dueAt(offering, due) {
   const async = offering.delivery === "online-async";
   const meetings = classMeetings(offering);
   const rule = offering.defaults?.dueRule || (async || !DELIVERY_MODES[offering.delivery]?.meets ? "day" : "first-class");
-  if (!due.day && rule === "first-class") {
+  if (!due.day && (due.rule || rule) === "first-class") {
     const first = meetings.find((m) => m.week === due.week);
     if (first) return `${first.date}T${due.time || first.start}`;
   }
