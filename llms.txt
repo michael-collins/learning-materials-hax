@@ -774,8 +774,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Sequences](https://localhost:3000/learning-materials/pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.md): Week-by-week plans for running a course, ready to export to Canvas.
 - [Pathways](https://localhost:3000/learning-materials/pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.md): A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r
 - [Visual Effects (VFX)](https://localhost:3000/learning-materials/pages/item-1dba3ce1-6791-4d78-860d-bf8d6f338579/index.md): Integrates CGI elements into live-action footage and blends them seamlessly.
-- [Fundamentals](https://localhost:3000/learning-materials/pages/item-728c455b-226f-433d-9978-17a476458a79/index.md): The essentials.
-- [v0.9.0](https://localhost:3000/learning-materials/pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.md)
 - [Digital Fabrication Studio](https://localhost:3000/learning-materials/pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.md): Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.
 - [Modeling and sculpting a sea creature](https://localhost:3000/learning-materials/pages/item-dbe4cef4-73d0-43d9-b532-46081fc2688c/index.md)
 - [Drawing for 3D Design quiz](https://localhost:3000/learning-materials/pages/item-063f4287-8a23-4467-8604-4f433afe6f43/index.md)
@@ -890,6 +888,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Corporate Redesign and the Business of Knowledge](https://localhost:3000/learning-materials/pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.md): Corporate Redesign and the Business of Knowledge (p. 150-165) in Design and Truth by Robert Grudin.Writing prompt In this chapter, Grudin describes arguments over imbuing corporate free market endeav
 - [Designing Time](https://localhost:3000/learning-materials/pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.md): Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting prompt In these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports
 - [The Design of Private Knowledge](https://localhost:3000/learning-materials/pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.md): The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experien
+- [v0.9.0](https://localhost:3000/learning-materials/pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/learning-materials/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
