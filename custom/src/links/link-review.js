@@ -162,90 +162,112 @@ function choose(l, value, handlers) {
   else onChange(l.url, { action: value });
 }
 
-// one place a link is used: the page or item (opened in a new tab, or shown
-// in the import), then its sentence with the link's words marked
+// one place a link is used, on one line: the page or item (opened in a new
+// tab, or shown in the import), then its sentence with the link's words in
+// bold (the whole sentence on hover)
 function useLine(u, l, handlers) {
   // two pages with one title (a course's copy of an article): say which
-  const twin = u.slug && (l.uses || []).some((x) => x !== u && x.title === u.title && x.slug !== u.slug);
+  const twin = (l.uses || []).some((x) => x !== u && x.title === u.title && x.id !== u.id);
+  const label = html`${u.title}${twin && u.course ? html` <span class="twin">${u.course}</span>` : ""}`;
   const where = handlers.onShow
-    ? html`<button type="button" class="use-open" title="Show “${u.title}”, with the link marked" @click="${() => handlers.onShow(u, l)}">${u.title}</button>`
+    ? html`<button type="button" class="use-open" @click="${() => handlers.onShow(u, l)}">${label}<span class="sr"> (show it, with the link marked)</span></button>`
     : u.slug !== undefined
-      ? html`<a class="use-open" href="${u.slug}" target="_blank" rel="noopener" title="Open “${u.title}” in a new tab">${u.title}${lucide("icons:open-in-new")}</a>`
-      : html`<b>${u.title}</b>`;
+      ? html`<a class="use-open" href="${u.slug}" target="_blank" rel="noopener">${label}<span class="sr"> (opens in a new tab)</span></a>`
+      : html`<span class="use-open">${label}</span>`;
+  const sentence = u.item ? "The module's link item" : u.text ? `${u.before}${u.text}${u.after}` : "";
   return html`<li>
-    <span class="where">${u.item ? "The module's link" : "In"} ${where}${twin ? html` <span class="times">${u.slug}</span>` : ""}${u.count > 1 ? html` <span class="times">(${u.count} times)</span>` : ""}</span>
-    ${u.text && !u.item ? html`<q class="ctx">${u.before}<mark>${u.text}</mark>${u.after}</q>` : ""}
+    ${where}
+    ${u.item
+      ? html`<span class="ctx">${sentence}</span>`
+      : u.text
+        ? html`<span class="ctx" title="${sentence}">${u.before}<b>${u.text}</b>${u.after}</span>`
+        : ""}
+    ${u.count > 1 ? html`<span class="times">×${u.count}</span>` : ""}
   </li>`;
+}
+
+// what the check found, in words (the group says the rest)
+function checkNote(l) {
+  const c = l.check;
+  if (!c?.note || c.status === "ok") return "";
+  if (c.status === "moved" && siteOf(c.final) !== siteOf(l.url)) return `It now goes to another site (${siteOf(c.final)}). Check it's the same page.`;
+  const code = c.code >= 400 && !c.note.includes(String(c.code)) ? ` (${c.code})` : "";
+  return `${c.note[0].toUpperCase()}${c.note.slice(1)}${code}.`;
 }
 
 function row(l, handlers) {
   const id = `l-${Math.abs([...keyOf(l)].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) | 0, 7))}`;
-  const c = l.check;
   const uses = l.uses || [];
+  const note = checkNote(l);
   return html`<li class="link-row" data-key="${keyOf(l)}">
-    <div class="addr">
-      <a href="${l.url}" target="_blank" rel="noopener noreferrer" title="${l.url}">${short(l.url)}${lucide("icons:open-in-new")}</a>
-      ${c?.note && c.status !== "ok"
-        ? html`<span class="state ${c.status}"
-            >${c.status === "moved" && siteOf(c.final) !== siteOf(l.url) ? `It now goes to another site (${siteOf(c.final)}): check it's the same page` : `${c.note[0].toUpperCase()}${c.note.slice(1)}`}${c.code >= 400 && !c.note.includes(String(c.code)) ? ` (${c.code})` : ""}</span
-          >`
+    <div class="lr-main">
+      <a class="addr" href="${l.url}" target="_blank" rel="noopener noreferrer" title="${l.url}">${short(l.url)}${lucide("icons:open-in-new")}<span class="sr"> (opens in a new tab)</span></a>
+      ${note ? html`<p class="note-line">${note}</p>` : ""}
+      ${uses.length
+        ? html`<ul class="uses" aria-label="Where it's used">
+              ${uses.slice(0, 2).map((u) => useLine(u, l, handlers))}
+            </ul>
+            ${uses.length > 2
+              ? html`<details class="more-uses">
+                  <summary>${lucide("oer:chevron-right")}${uses.length - 2} more place${uses.length - 2 === 1 ? "" : "s"}</summary>
+                  <ul class="uses">
+                    ${uses.slice(2).map((u) => useLine(u, l, handlers))}
+                  </ul>
+                </details>`
+              : ""}`
         : ""}
     </div>
-    ${uses.length
-      ? html`<ul class="uses" aria-label="Where it's used">
-            ${uses.slice(0, 2).map((u) => useLine(u, l, handlers))}
-          </ul>
-          ${uses.length > 2
-            ? html`<details class="more-uses">
-                <summary>${lucide("oer:chevron-right")}${uses.length - 2} more place${uses.length - 2 === 1 ? "" : "s"}</summary>
-                <ul class="uses">
-                  ${uses.slice(2).map((u) => useLine(u, l, handlers))}
-                </ul>
-              </details>`
-            : ""}`
-      : ""}
-    <label class="sr" for="${id}">What the link to ${short(l.url)} becomes</label>
-    <select id="${id}" @change="${(e) => choose(l, e.target.value, handlers)}">
-      ${options(l).map(([v, label]) => html`<option value="${v}" ?selected="${chosen(l) === v}">${label}</option>`)}
-    </select>
-    ${l.action === "replace" && l.via === "other"
-      ? html`<input class="input" type="url" placeholder="https://…" aria-label="The new address for ${short(l.url)}" .value="${l.to || ""}" @change="${(e) => handlers.onChange(keyOf(l), { action: "replace", to: e.target.value.trim(), via: "other" })}" />`
-      : ""}
-    ${l.action === "page" && l.match ? html`<div class="why">${l.match.why ? `${l.match.why[0].toUpperCase()}${l.match.why.slice(1)}.` : ""}</div>` : ""}
+    <div class="lr-choice">
+      <label class="sr" for="${id}">What the link to ${short(l.url)} becomes</label>
+      <select id="${id}" @change="${(e) => choose(l, e.target.value, handlers)}">
+        ${options(l).map(([v, label]) => html`<option value="${v}" ?selected="${chosen(l) === v}">${label}</option>`)}
+      </select>
+      ${l.action === "replace" && l.via === "other"
+        ? html`<input class="input" type="url" placeholder="https://…" aria-label="The new address for ${short(l.url)}" .value="${l.to || ""}" @change="${(e) => handlers.onChange(keyOf(l), { action: "replace", to: e.target.value.trim(), via: "other" })}" />`
+        : ""}
+      ${l.action === "page" && l.match?.why ? html`<p class="why">${l.match.why[0].toUpperCase()}${l.match.why.slice(1)}.</p>` : ""}
+    </div>
   </li>`;
 }
 
-/** The review: a summary, the check, and the links by group. */
-export function renderLinkReview(links, { onChange, onPick, onShow, check = {} }) {
+/**
+ * The review: a bar with the summary (given) and the dead-link check, then
+ * the links by group.
+ */
+export function renderLinkReview(links, { onChange, onPick, onShow, check = {}, summary = "" }) {
   const by = new Map(GROUPS.map(([k]) => [k, []]));
   for (const l of links) by.get(linkGroup(l)).push(l);
   const handlers = { onChange, onPick, onShow };
   const unchecked = checkable(links).filter((l) => !l.check).length;
   return html`<div class="link-review">
-    <div class="check-bar">
+    <div class="review-bar">
+      <div class="review-summary">${summary}</div>
       ${check.can
         ? html`<button class="btn outline small" aria-disabled="${check.busy || !checkable(links).length ? "true" : "false"}" @click="${() => !check.busy && checkable(links).length && check.run()}">
-            ${lucide("oer:circle-alert")}${check.busy ? "Checking…" : unchecked ? `Check ${unchecked} link${unchecked === 1 ? "" : "s"} for dead ones` : "Check again"}
+            ${lucide("oer:circle-alert")}${check.busy ? "Checking…" : unchecked ? `Check ${unchecked} for dead links` : "Check again"}
           </button>`
-        : html`<p class="hint">To find dead links, start the local helper in nu-hax: <code>node --env-file=.env.local scripts/ai-bridge.mjs</code>${check.retry ? html` <button class="btn outline small inline" @click="${check.retry}">Check again</button>` : ""}</p>`}
-      ${check.note ? html`<p class="hint" role="status">${check.note}</p>` : ""}
+        : ""}
     </div>
+    ${check.note ? html`<p class="hint" role="status">${check.note}</p>` : ""}
+    ${check.can
+      ? ""
+      : html`<p class="hint">
+          To find dead links, start the local helper in nu-hax: <code>node --env-file=.env.local scripts/ai-bridge.mjs</code>${check.retry ? html` <button class="btn outline small inline" @click="${check.retry}">Check again</button>` : ""}
+        </p>`}
     ${GROUPS.map(([key, label, about]) => {
       const list = by.get(key);
       if (!list.length) return "";
-      const body = html`${about ? html`<p class="hint">${about}</p>` : ""}
+      const head = html`<h4>${label}<span class="count">${list.length}</span></h4>`;
+      const body = html`${about ? html`<p class="group-about">${about}</p>` : ""}
         <ul class="link-list">
           ${list.map((l) => row(l, handlers))}
         </ul>`;
       return key === "ok" || (key === "unchecked" && list.length > 8)
         ? html`<details class="link-group">
-            <summary><h4>${label} <span class="count">${list.length}</span></h4></summary>
+            <summary>${lucide("oer:chevron-right")}${head}</summary>
             ${body}
           </details>`
-        : html`<section class="link-group" aria-label="${label}">
-            <h4>${label} <span class="count">${list.length}</span></h4>
-            ${body}
-          </section>`;
+        : html`<section class="link-group" aria-label="${label}">${head}${body}</section>`;
     })}
   </div>`;
 }
@@ -258,122 +280,198 @@ export function linkCounts(links) {
 
 export const linkReviewStyles = css`
   .link-review {
+    container-type: inline-size;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
   }
-  .check-bar {
+  .review-bar {
     display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--muted);
+  }
+  .review-summary {
+    flex: 1;
+    min-width: 14rem;
+    font-size: 0.875rem;
+  }
+  .review-summary p {
+    margin: 0;
+  }
+  .review-summary p + p {
+    margin-top: 0.125rem;
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+  }
+  .link-review > .hint {
+    margin-top: -0.75rem;
   }
   .btn.inline {
     display: inline-flex;
     margin-left: 0.25rem;
     height: 1.75rem;
   }
+  /* groups */
   .link-group h4 {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin: 0 0 0.25rem;
+    margin: 0;
     font-size: 0.875rem;
     font-weight: 600;
   }
   .link-group .count {
-    font-size: 0.75rem;
-    font-weight: 500;
+    display: inline-grid;
+    place-items: center;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.375rem;
+    border-radius: 999px;
+    background: var(--muted);
+    font-size: 0.6875rem;
+    font-weight: 600;
     color: var(--muted-foreground);
   }
-  details.link-group summary {
+  .group-about {
+    margin: 0.125rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+  details.link-group > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 2rem;
+    width: fit-content;
     cursor: pointer;
   }
-  details.link-group summary:focus-visible {
+  details.link-group > summary::-webkit-details-marker,
+  .more-uses > summary::-webkit-details-marker {
+    display: none;
+  }
+  details.link-group > summary .lucide,
+  .more-uses > summary .lucide {
+    color: var(--muted-foreground);
+  }
+  details.link-group[open] > summary .lucide,
+  .more-uses[open] > summary .lucide {
+    transform: rotate(90deg);
+  }
+  details.link-group > summary:focus-visible,
+  .more-uses > summary:focus-visible,
+  .link-row a:focus-visible,
+  .use-open:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
+    border-radius: 2px;
   }
   .link-list {
-    margin: 0.5rem 0 0;
+    margin: 0.625rem 0 0;
     padding: 0;
     list-style: none;
+    border-top: 1px solid var(--border);
   }
+  /* a link: what and where on the left, the choice on the right */
   .link-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.625rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  @container (min-width: 36rem) {
+    .link-row {
+      grid-template-columns: minmax(0, 1fr) minmax(13rem, 18rem);
+      column-gap: 1.25rem;
+      align-items: start;
+    }
+  }
+  .lr-main {
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.375rem;
-    padding: 0.625rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
+    gap: 0.25rem;
   }
   .link-row .addr {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.25rem 0.75rem;
-  }
-  .link-row a {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    color: var(--link, var(--primary));
+    gap: 0.375rem;
+    width: fit-content;
+    max-width: 100%;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    text-decoration: none;
     overflow-wrap: anywhere;
   }
-  .link-row .state {
+  .link-row .addr:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .link-row .addr .lucide {
+    color: var(--muted-foreground);
+  }
+  .note-line {
+    margin: 0;
     font-size: 0.8125rem;
     color: var(--muted-foreground);
   }
-  .link-row .state.dead {
-    color: var(--destructive);
-  }
-  .link-row .uses {
-    margin: 0;
+  .uses {
+    margin: 0.125rem 0 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.8125rem;
+    gap: 0.125rem;
   }
-  .link-row .uses li {
+  .uses li {
     display: flex;
-    flex-direction: column;
-    gap: 0.0625rem;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-width: 0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
   }
-  .link-row .where {
-    color: var(--muted-foreground);
-  }
-  .link-row .use-open {
+  .use-open {
     all: unset;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
+    flex: none;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: var(--link, var(--primary));
+    cursor: pointer;
+  }
+  .use-open:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
-    cursor: pointer;
-    overflow-wrap: anywhere;
   }
-  .link-row .use-open:focus-visible,
-  .more-uses > summary:focus-visible {
-    outline: 2px solid var(--ring);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
-  .link-row .times {
+  .use-open .twin {
     color: var(--muted-foreground);
   }
-  .link-row .ctx {
-    color: var(--foreground);
-    quotes: "“" "”";
-    overflow-wrap: anywhere;
+  .uses .ctx {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--muted-foreground);
   }
-  .link-row .ctx mark {
-    padding: 0 0.125rem;
-    border-radius: 2px;
-    background: color-mix(in oklch, var(--primary) 16%, transparent);
-    color: inherit;
+  .uses .ctx b {
     font-weight: 600;
+    color: var(--foreground);
+  }
+  .uses .times {
+    flex: none;
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
   }
   .more-uses {
     font-size: 0.8125rem;
@@ -387,24 +485,26 @@ export const linkReviewStyles = css`
     color: var(--muted-foreground);
     cursor: pointer;
   }
-  .more-uses > summary::-webkit-details-marker {
-    display: none;
-  }
   .more-uses > summary:hover {
     color: var(--foreground);
   }
-  .more-uses[open] > summary .lucide {
-    transform: rotate(90deg);
-  }
   .more-uses > .uses {
-    margin-top: 0.25rem;
+    margin-top: 0.125rem;
   }
-  .link-row .why {
+  .lr-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    min-width: 0;
+  }
+  .lr-choice select,
+  .lr-choice .input {
+    width: 100%;
+  }
+  .lr-choice .why {
+    margin: 0;
     font-size: 0.75rem;
     color: var(--muted-foreground);
-  }
-  .link-row select {
-    max-width: 36rem;
   }
   .sr {
     position: absolute;

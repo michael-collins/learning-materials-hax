@@ -27,6 +27,9 @@ const lucide = (name, cls = "") =>
 // pages whose text isn't the author's to relink
 const SKIP_TYPES = new Set(["oer:system", "oer:sequence"]);
 
+// a page's course, to tell apart pages that share a title ("DMD 400")
+const courseLabel = (item) => courseCode(item.metadata?.oerSource || item.slug || "").toUpperCase().replace(/(\d)/, " $1") || item.slug;
+
 async function pageHtml(item) {
   const url = new URL(item.location, globalThis.document.baseURI);
   url.searchParams.set("t", String(Date.now()));
@@ -122,7 +125,7 @@ class OerLinkCheck extends LitElement {
           // where on the page: the link's words and its sentence (the first
           // of several on one page, with how many there are)
           const here = contexts.filter((c) => c.url === url);
-          const use = { id: item.id, title: item.title, slug: item.slug, ...(here[0] ? { text: here[0].text, before: here[0].before, after: here[0].after } : {}), count: here.length || 1 };
+          const use = { id: item.id, title: item.title, slug: item.slug, course: courseLabel(item), ...(here[0] ? { text: here[0].text, before: here[0].before, after: here[0].after } : {}), count: here.length || 1 };
           const rec = records.get(key);
           if (rec) rec.uses.push(use);
           else records.set(key, { ...reviewable(info), key, uses: [use] });
@@ -453,15 +456,9 @@ class OerLinkCheck extends LitElement {
         <div class="body">
           ${step === "reading" ? html`<p class="hint" role="status">${this._note || "Reading pages…"}</p>` : ""}
           ${step === "review"
-            ? html`<dl class="facts">
-                  <dt>Links</dt>
-                  <dd>${n.total} to check on ${this._pages.size} page${this._pages.size === 1 ? "" : "s"} (links within the site that work aren't listed)</dd>
-                  <dt>To pages here</dt>
-                  <dd>${n.here} found${n.ask ? `, ${n.ask} more that might be` : ""}</dd>
-                  ${n.broken ? html`<dt>Go nowhere</dt><dd>${n.broken}</dd>` : ""}
-                </dl>
-                <p class="hint">Archived versions keep their links as they were released. Course sequences' own pages aren't checked here.</p>
-                ${renderLinkReview(this._links, {
+            ? html`${renderLinkReview(this._links, {
+                  summary: html`<p><b>${n.total} link${n.total === 1 ? "" : "s"}</b> on ${this._pages.size} page${this._pages.size === 1 ? "" : "s"}${n.here || n.ask ? `: ${n.here} to pages here${n.ask ? `, ${n.ask} that might be` : ""}` : ""}${n.broken ? `, ${n.broken} that go nowhere` : ""}${n.dead ? `, ${n.dead} not working` : ""}.</p>
+                    <p>Links within the site that work aren't listed. Archived versions keep their links as released; course sequences' own pages aren't checked here.</p>`,
                   onChange: (key, patch) => this._set(key, patch),
                   onPick: (key) => this._pick(key),
                   check: { can: this._helper.up && this._helper.links, busy: this._check.busy, note: this._check.note, run: () => this._runCheck(), retry: async () => (this._helper = await helperStatus()) },

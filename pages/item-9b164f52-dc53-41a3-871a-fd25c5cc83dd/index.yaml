@@ -22,7 +22,7 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791491588
+  updated: 1791492419
   locked: false
   status: ''
   icon: ''
@@ -61,7 +61,9 @@ content: >-
   <li><a
   href="projects/capstone-project/project-research-expectations">Research</a></li>
 
-  <li><a href="/capstone-project-report.md">Progress reports</a></li>
+  <li><a
+  href="projects/capstone-project/capstone-project-production-reports">Progress
+  reports</a></li>
 
   <li><a
   href="projects/capstone-project/capstone-project-production-report-discussions">Progress
