@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791471280,
+      "updated": 1791471281,
       "version": "26.8.0"
     },
     "theme": {
@@ -22131,7 +22131,7 @@
       "order": 4,
       "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
       "title": "Written statement",
-      "description": "",
+      "description": "This assessment measures your ability to communicate your ideas and scope of work fully and professionally.",
       "metadata": {
         "pageType": "oer:rubric",
         "published": true,
