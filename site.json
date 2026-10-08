@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791471276,
+      "updated": 1791471277,
       "version": "26.8.0"
     },
     "theme": {
@@ -7904,7 +7904,7 @@
       "order": 0,
       "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
       "title": "Exercise",
-      "description": "",
+      "description": "An exercise assessment type is formative and tends to focus on evaluating mastery of a narrow set of competencies and capabilities, defined in the learning objectives.",
       "metadata": {
         "pageType": "oer:rubric",
         "published": true,
