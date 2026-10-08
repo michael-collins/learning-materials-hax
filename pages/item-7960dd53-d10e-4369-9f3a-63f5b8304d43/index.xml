@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-7960dd53-d10e-4369-9f3a-63f5b8304d43</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-7960dd53-d10e-4369-9f3a-63f5b8304d43/index.xml</location>
-<slug>projects/develop-story-and-plot-elements</slug>
-<order>22</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/hypertext-narrative-project-civic-imagination/develop-story-and-plot-elements</slug>
+<order>6</order>
+<parent>item-9401e020-db14-4652-9d7b-fc6a27557c2c</parent>
 <title>Develop: Story and plot elements</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd100-lesson-3-narrative-develop-story-and-plot</oerSource>
 <tags>Double diamond,Design thinking</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 100</item>
+<item>
+<page>item-2191170b-b92b-406b-bf5a-84d7524a7de8</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,7 +34,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491574</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
 <p>You will now write a fictional, yet <em><strong>plausible</strong></em> story that describes how this imagined future 30 years from now came to be. For example, Unicorns are not plausible to exist in 30 years (unless you make a compelling CRISPR argument), but autonomous flying cars are plausible.</p>
@@ -80,7 +86,7 @@
 </li>
 <li><strong>Character list</strong>
 <ul>
-<li>List the people who would need to see this story in order for it to become a reality? Who are the decision makers that can make this happen? Who are the organizers, supporters, proponents, and opponents? These people are your characters. Read the <a href="/topics/character.html">Character</a> for more details.</li>
+<li>List the people who would need to see this story in order for it to become a reality? Who are the decision makers that can make this happen? Who are the organizers, supporters, proponents, and opponents? These people are your characters. Read the <a href="articles/character-1">Character</a> for more details.</li>
 </ul>
 </li>
 <li><strong>Plot structure</strong>
@@ -104,6 +110,5 @@
 <ol>
 <li>Follow the document instructions.</li>
 <li>Upload the plot document in <code>.doc</code> format.</li>
-</ol>
-]]></content>
+</ol>]]></content>
 </item>

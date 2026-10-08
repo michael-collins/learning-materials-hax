@@ -42,4 +42,4 @@ Anyone can recommend additions or alterations to this course. Please, submit a [
 License
 -------
 
-See the [license](/LICENSE.md) page for details.
+See the [license](articles/oer-license-cc-by-4-0) page for details.

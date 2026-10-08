@@ -4,7 +4,7 @@ The following is a list of media that you might choose to work with in your proj
 2.  What skills or techniques do you want to master?
 3.  What processes or raw materials relate to your conceptual research topic?
 
-Additional resources for learning these fields can be found at the end of this course book under [Project Categories](/articles/dmd300-project-categories), but your learning path will be largely self-directed—with advice from your instructor of course!
+Additional resources for learning these fields can be found at the end of this course book under [Project Categories](articles/project-categories-and-resources), but your learning path will be largely self-directed—with advice from your instructor of course!
 
 *   **[2D and 3D Animation](https://dmd-program.github.io/art-design-course-resources/animation.html)**
     *   Narrative short film

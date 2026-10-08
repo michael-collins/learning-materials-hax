@@ -16,7 +16,7 @@ For this project, you will create a fictional hypertext fiction with an open-sou
 
 **Instructor produced:**
 
-*   [Twine tutorial: Getting started with Twine](/lessons/lesson-3/topics/twine-tutorial-getting-started.html)
+*   [Twine tutorial: Getting started with Twine](articles/twine-tutorial-getting-started-with-twine)
 
 You should include the bare minimum listed in this tutorial, but if you want to produce a more advanced hypertext narrative, see the [Twine Wiki](http://twinery.org/wiki/twine2:guide) for more details.
 

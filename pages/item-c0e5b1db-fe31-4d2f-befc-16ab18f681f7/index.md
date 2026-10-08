@@ -1,4 +1,4 @@
-This course follows [DMD 100: Digital Multimedia Design Foundations](https://dmd-program.github.io/dmd-100-master/). In that course, students were given a fairly rigid design process to follow with prescribed outcomes and formats. In DMD 300: Digital Multimedia Design Studio, students will have the opportunity to build their own design process and work with digital formats and tools of their choosing.
+This course follows [DMD 100: Digital Multimedia Design Foundations](books/dmd-100-digital-multimedia-design-foundations). In that course, students were given a fairly rigid design process to follow with prescribed outcomes and formats. In DMD 300: Digital Multimedia Design Studio, students will have the opportunity to build their own design process and work with digital formats and tools of their choosing.
 
 Course description
 ------------------

@@ -1,20 +1,22 @@
 id: item-7960dd53-d10e-4369-9f3a-63f5b8304d43
-indent: 1
+indent: 2
 location: pages/item-7960dd53-d10e-4369-9f3a-63f5b8304d43/index.yaml
-slug: projects/develop-story-and-plot-elements
-order: 22
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: >-
+  projects/hypertext-narrative-project-civic-imagination/develop-story-and-plot-elements
+order: 6
+parent: item-9401e020-db14-4652-9d7b-fc6a27557c2c
 title: 'Develop: Story and plot elements'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd100-lesson-3-narrative-develop-story-and-plot
   tags: Double diamond,Design thinking
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +24,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491574
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond
   Develop Phase graphic"></p>
 
@@ -147,7 +152,7 @@ content: >
   <li>List the people who would need to see this story in order for it to become
   a reality? Who are the decision makers that can make this happen? Who are the
   organizers, supporters, proponents, and opponents? These people are your
-  characters. Read the <a href="/topics/character.html">Character</a> for more
+  characters. Read the <a href="articles/character-1">Character</a> for more
   details.</li>
 
   </ul>

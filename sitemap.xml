@@ -1016,7 +1016,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations</loc>
-    <lastmod>2026-10-05T20:21:17.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1652,7 +1652,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/hypertext-narrative-project-civic-imagination/develop-story-and-plot-elements</loc>
-    <lastmod>2026-10-07T15:18:42.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1664,7 +1664,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/hypertext-narrative-project-civic-imagination</loc>
-    <lastmod>2026-10-07T15:18:43.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1724,7 +1724,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/projects/hypertext-narrative-project-civic-imagination/develop-characters</loc>
-    <lastmod>2026-10-07T15:18:44.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2630,7 +2630,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/what-is-design</loc>
-    <lastmod>2026-10-07T15:17:54.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:50.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3134,7 +3134,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/digital-design-project-types</loc>
-    <lastmod>2026-10-07T15:18:29.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3146,7 +3146,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/introduction-3</loc>
-    <lastmod>2026-10-07T15:18:31.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3176,7 +3176,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/introduction-4</loc>
-    <lastmod>2026-10-07T15:18:34.000Z</lastmod>
+    <lastmod>2026-10-08T20:32:52.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3763,12 +3763,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/pathways/fundamentals/v0-9-0</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/exercises/animated-procedural-textures/v0-9-0</loc>
     <lastmod>2026-10-08T15:29:59.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -4007,6 +4001,12 @@
     <lastmod>2026-10-07T15:16:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/learning-materials/pathways/fundamentals/v0-9-0</loc>
+    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources/cradle-to-cradle-remaking-the-way-we-make-things</loc>

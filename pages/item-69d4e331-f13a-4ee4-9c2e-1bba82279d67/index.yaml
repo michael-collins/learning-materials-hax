@@ -5,7 +5,11 @@ slug: books/dmd-100-digital-multimedia-design-foundations
 order: 0
 parent: item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d
 title: 'DMD 100: Digital Multimedia Design Foundations'
-description: ''
+description: >-
+  DMD 100 introduces design process and thinking skills to support and
+  facilitate creative and reasoned approaches to ambiguous and ill-defined
+  problem spaces. It is the first of three spine courses in the Bachelor of
+  Design in Digital Multimedia Design program at Penn State University.
 metadata:
   published: false
   pageType: oer:book
@@ -23,8 +27,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491573
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/dmd100-bg-compressed-cropped.jpg" alt="dmd 100 course
   background art"></p>
 
@@ -88,4 +95,5 @@ content: >
 
   <h2>License</h2>
 
-  <p>See the <a href="/LICENSE.md">license</a> page for details.</p>
+  <p>See the <a href="articles/oer-license-cc-by-4-0">license</a> page for
+  details.</p>

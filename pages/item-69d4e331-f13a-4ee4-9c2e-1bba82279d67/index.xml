@@ -7,7 +7,7 @@
 <order>0</order>
 <parent>item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d</parent>
 <title>DMD 100: Digital Multimedia Design Foundations</title>
-<description></description>
+<description>DMD 100 introduces design process and thinking skills to support and facilitate creative and reasoned approaches to ambiguous and ill-defined problem spaces. It is the first of three spine courses in the Bachelor of Design in Digital Multimedia Design program at Penn State University.</description>
 <metadata>
 <published>false</published>
 <pageType>oer:book</pageType>
@@ -26,7 +26,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491573</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p><img src="files/dmd100-bg-compressed-cropped.jpg" alt="dmd 100 course background art"></p>
 <p>DMD 100 is the first of three spine courses in the Bachelor of Design in Digital Multimedia Design (DMD) program at Penn State University. This program is the <a href="https://artsandarchitecture.psu.edu/news/e-learning-institute-launches-digital-multimedia-design-online-degree">first entirely online multi-college undergraduate bachelor's degree program</a> offered at Penn State.</p>
@@ -51,6 +54,5 @@
 <h2>Contributing</h2>
 <p>Anyone can recommend additions or alterations to this course. Please, submit a <a href="https://github.com/dmd-program/dmd-100-master">pull request on github.com</a> or file an issue in the <a href="https://github.com/dmd-program/dmd-100-master/issues">issue queue</a>.</p>
 <h2>License</h2>
-<p>See the <a href="/LICENSE.md">license</a> page for details.</p>
-]]></content>
+<p>See the <a href="articles/oer-license-cc-by-4-0">license</a> page for details.</p>]]></content>
 </item>

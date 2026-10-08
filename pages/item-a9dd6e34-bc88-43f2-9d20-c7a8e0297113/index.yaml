@@ -16,13 +16,17 @@ metadata:
         url: ''
     date: '2026-03-05'
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491571
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>The following is a list of media that you might choose to work with in your
   projects for this class. This isn't comprehensive and people are always
   discovering new ways to create experiences and tell stories, but you can use
@@ -41,9 +45,10 @@ content: >
   </ol>
 
   <p>Additional resources for learning these fields can be found at the end of
-  this course book under <a href="/articles/dmd300-project-categories">Project
-  Categories</a>, but your learning path will be largely self-directed—with
-  advice from your instructor of course!</p>
+  this course book under <a
+  href="articles/project-categories-and-resources">Project Categories</a>, but
+  your learning path will be largely self-directed—with advice from your
+  instructor of course!</p>
 
   <ul>
 

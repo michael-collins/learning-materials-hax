@@ -1,21 +1,24 @@
 {
   "id": "item-fdca5e87-bcec-46d2-953d-f604f9122e65",
-  "indent": 1,
+  "indent": 2,
   "location": "pages/item-fdca5e87-bcec-46d2-953d-f604f9122e65/index.json",
-  "slug": "projects/develop-characters",
-  "order": 19,
-  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "slug": "projects/hypertext-narrative-project-civic-imagination/develop-characters",
+  "order": 7,
+  "parent": "item-9401e020-db14-4652-9d7b-fc6a27557c2c",
   "title": "Develop: Characters",
   "description": "",
   "metadata": {
     "published": true,
-    "pageType": "oer:project",
+    "pageType": "oer:activity",
     "oerSource": "projects/dmd100-lesson-3-narrative-develop-characters",
     "tags": "Double diamond,Design thinking",
     "oerFields": {
       "difficulty": "intermediate",
       "courses": [
-        "DMD 100"
+        {
+          "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -28,7 +31,10 @@
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791491575,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<p><img src=\"files/dd-process-develop-1200px@2x.png\" alt=\"Double Diamond Develop Phase graphic\"></p>\n<h2>Tools</h2>\n<ul>\n<li>Pen or pencil</li>\n<li>Download: <a href=\"https://github.com/dmd-program/dmd-100-sp18/raw/master/assets/characterization.pdf\">Characterization Sheet</a></li>\n<li>Printer</li>\n<li>Scanner or camera</li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>In Synopsis activity, you listed <a href=\"/topics/character.html\">characters</a> that would be involved in the story. Using your list as a starting point, find images and articles of people (or objects) to base your characters on. You can combine attributes of character references together to create your own characters.</li>\n<li>Fill out a <a href=\"https://github.com/dmd-program/dmd-100-sp18/raw/master/assets/characterization.pdf\">Characterization Sheet</a> for each character in your story.</li>\n<li>Scan or photograph your worksheets</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>\n<ol>\n<li>Upload the finished characterization sheets in <code>.jpg</code>, <code>.png</code>, or <code>.pdf</code> format.</li>\n</ol>\n"
+  "content": "<p><img src=\"files/dd-process-develop-1200px@2x.png\" alt=\"Double Diamond Develop Phase graphic\"></p>\n<h2>Tools</h2>\n<ul>\n<li>Pen or pencil</li>\n<li>Download: <a href=\"https://github.com/dmd-program/dmd-100-sp18/raw/master/assets/characterization.pdf\">Characterization Sheet</a></li>\n<li>Printer</li>\n<li>Scanner or camera</li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>In Synopsis activity, you listed <a href=\"articles/character-1\">characters</a> that would be involved in the story. Using your list as a starting point, find images and articles of people (or objects) to base your characters on. You can combine attributes of character references together to create your own characters.</li>\n<li>Fill out a <a href=\"https://github.com/dmd-program/dmd-100-sp18/raw/master/assets/characterization.pdf\">Characterization Sheet</a> for each character in your story.</li>\n<li>Scan or photograph your worksheets</li>\n</ol>\n<h2>Post work</h2>\n<p>Use the exact indicated file format. You must obtain prior approval to deviate from these upload requirements.</p>\n<ol>\n<li>Upload the finished characterization sheets in <code>.jpg</code>, <code>.png</code>, or <code>.pdf</code> format.</li>\n</ol>"
 }

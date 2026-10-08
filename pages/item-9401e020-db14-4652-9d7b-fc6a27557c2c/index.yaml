@@ -2,7 +2,7 @@ id: item-9401e020-db14-4652-9d7b-fc6a27557c2c
 indent: 1
 location: pages/item-9401e020-db14-4652-9d7b-fc6a27557c2c/index.yaml
 slug: projects/hypertext-narrative-project-civic-imagination
-order: 24
+order: 6
 parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
 title: 'Hypertext Narrative Project: Civic Imagination'
 description: ''
@@ -14,7 +14,8 @@ metadata:
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491574
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/1500.jpg" alt="Photo of clouds and an airplane
   contrail"></p>
 
@@ -59,8 +63,7 @@ content: >
 
   <ul>
 
-  <li><a
-  href="/lessons/lesson-3/topics/twine-tutorial-getting-started.html">Twine
+  <li><a href="articles/twine-tutorial-getting-started-with-twine">Twine
   tutorial: Getting started with Twine</a></li>
 
   </ul>

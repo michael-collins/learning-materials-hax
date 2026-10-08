@@ -4,7 +4,7 @@
 <indent>1</indent>
 <location>pages/item-9401e020-db14-4652-9d7b-fc6a27557c2c/index.xml</location>
 <slug>projects/hypertext-narrative-project-civic-imagination</slug>
-<order>24</order>
+<order>6</order>
 <parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
 <title>Hypertext Narrative Project: Civic Imagination</title>
 <description></description>
@@ -15,7 +15,10 @@
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 100</item>
+<item>
+<page>item-2191170b-b92b-406b-bf5a-84d7524a7de8</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -30,7 +33,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491574</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p><img src="files/1500.jpg" alt="Photo of clouds and an airplane contrail"></p>
 <h2>Brief</h2>
@@ -45,7 +51,7 @@
 <h3>Learning Resources</h3>
 <p><strong>Instructor produced:</strong></p>
 <ul>
-<li><a href="/lessons/lesson-3/topics/twine-tutorial-getting-started.html">Twine tutorial: Getting started with Twine</a></li>
+<li><a href="articles/twine-tutorial-getting-started-with-twine">Twine tutorial: Getting started with Twine</a></li>
 </ul>
 <p>You should include the bare minimum listed in this tutorial, but if you want to produce a more advanced hypertext narrative, see the <a href="http://twinery.org/wiki/twine2:guide">Twine Wiki</a> for more details.</p>
 <p><strong>From the Twine community:</strong></p>
@@ -66,6 +72,5 @@
 <h2>Grading</h2>
 <p>This project will be graded according to a cumulative assessment of each part of the design process. More information can be found on the individual design process step.</p>
 <h2>Citation</h2>
-<p><strong>This project has been adapted from:</strong> THINK CRITICALLY - ACT CREATIVELY: HARNESSING THE POWER OF FICTION FOR SOCIAL GOOD. Accessed on October 10, 2016. <a href="http://byanymedia.org/works/mapp/activity-1?path=activities">http://byanymedia.org/works/mapp/activity-1?path=activities</a></p>
-]]></content>
+<p><strong>This project has been adapted from:</strong> THINK CRITICALLY - ACT CREATIVELY: HARNESSING THE POWER OF FICTION FOR SOCIAL GOOD. Accessed on October 10, 2016. <a href="http://byanymedia.org/works/mapp/activity-1?path=activities">http://byanymedia.org/works/mapp/activity-1?path=activities</a></p>]]></content>
 </item>

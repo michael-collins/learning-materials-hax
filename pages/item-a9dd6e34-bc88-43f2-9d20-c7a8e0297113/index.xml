@@ -21,7 +21,10 @@
 </authors>
 <date>2026-03-05</date>
 <courses>
-<item>DMD 300</item>
+<item>
+<page>item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 </oerFields>
@@ -30,7 +33,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491571</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>The following is a list of media that you might choose to work with in your projects for this class. This isn't comprehensive and people are always discovering new ways to create experiences and tell stories, but you can use this as a menu to browse and consider:</p>
 <ol>
@@ -38,7 +44,7 @@
 <li>What skills or techniques do you want to master?</li>
 <li>What processes or raw materials relate to your conceptual research topic?</li>
 </ol>
-<p>Additional resources for learning these fields can be found at the end of this course book under <a href="/articles/dmd300-project-categories">Project Categories</a>, but your learning path will be largely self-directed—with advice from your instructor of course!</p>
+<p>Additional resources for learning these fields can be found at the end of this course book under <a href="articles/project-categories-and-resources">Project Categories</a>, but your learning path will be largely self-directed—with advice from your instructor of course!</p>
 <ul>
 <li><strong><a href="https://dmd-program.github.io/art-design-course-resources/animation.html">2D and 3D Animation</a></strong>
 <ul>
@@ -148,6 +154,5 @@
 <li>Web app</li>
 </ul>
 </li>
-</ul>
-]]></content>
+</ul>]]></content>
 </item>

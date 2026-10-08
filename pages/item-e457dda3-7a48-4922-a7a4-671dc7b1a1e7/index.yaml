@@ -17,17 +17,20 @@ metadata:
         url: ''
     date: '2026-03-05'
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491572
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>This course follows <a
-  href="https://dmd-program.github.io/dmd-100-master/">DMD 100: Digital
-  Multimedia Design Foundations</a> and <a
-  href="https://dmd-program.github.io/dmd-300-master/introduction.html#">DMD
+  href="books/dmd-100-digital-multimedia-design-foundations">DMD 100: Digital
+  Multimedia Design Foundations</a> and <a href="articles/introduction-3">DMD
   300: Digital Multimedia Design Studio</a>. In DMD 300, students participated
   in a group design project, and developed their own independent project using
   digital formats and tools of their choosing. In DMD 400: Digital Multimedia
