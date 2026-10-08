@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791485017,
+      "updated": 1791486284,
       "version": "26.8.0"
     },
     "theme": {
@@ -23682,6 +23682,81 @@
       }
     },
     {
+      "id": "item-70e10e6f-aa7a-4f03-b5eb-13345082ba6a",
+      "indent": 1,
+      "location": "pages/item-70e10e6f-aa7a-4f03-b5eb-13345082ba6a/index.html",
+      "slug": "rubrics/dmd400-capstone-project",
+      "order": 5,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "DMD400 Capstone Project",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": false,
+        "oerRubric": {
+          "version": 1,
+          "key": "dmd400-capstone-project",
+          "levels": [
+            {
+              "id": "level-1",
+              "name": "Full Marks",
+              "share": 1
+            },
+            {
+              "id": "level-2",
+              "name": "No Marks",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "_3139",
+              "name": "Concept",
+              "description": "Concept was clearly articulated, developed, and scope-aligned with the format of this course. Concepts should be one or more of the following: socially engaged, novel and experimental, contributes knowledge to existing problem spaces, or serves a clear benefit for a person/people, organization, or business.",
+              "weight": 20,
+              "descriptors": {}
+            },
+            {
+              "id": "_9729",
+              "name": "Craft",
+              "description": "Displayed strong technical abilities to produce digital or digital-related media and design to accomplish project goals. Sought out advice and technical guides to help improve technical skills. Project media was carefully and thoughtfully presented in all aspects, including production blogs, project documentation materials, videos, discussions, and other submissions.",
+              "weight": 20,
+              "descriptors": {}
+            },
+            {
+              "id": "1302490_1133",
+              "name": "Feedback",
+              "description": "Applied feedback by instructor, peers, and project advisor. Interpreted a variety of feedback for applicability to project goals, particularly when feedback may be conflicting. Sought out feedback when needed. Contributed meaningful feedback to other student&#39;s projects during discussions.",
+              "weight": 20,
+              "descriptors": {}
+            },
+            {
+              "id": "1302490_7344",
+              "name": "Design process",
+              "description": "Created and followed a well-developed design process. Process included relevant methods for research, production, iteration, feedback, testing, and other applicable steps described by your instructor.",
+              "weight": 20,
+              "descriptors": {}
+            },
+            {
+              "id": "1302490_1631",
+              "name": "Design Research",
+              "description": "Demonstrates the ability to conduct research to inform the design process and to support the accuracy and relevance to any information or claims made by the project. The student is able to communicate research findings and effectively.",
+              "weight": 20,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzwofmc",
+          "id": "rubric-1"
+        },
+        "created": 1791486284,
+        "images": [],
+        "videos": [],
+        "updated": 1791486284
+      }
+    },
+    {
       "id": "item-bea752bd-0781-46bf-8fcf-db273caa8d00",
       "indent": 1,
       "location": "pages/item-bea752bd-0781-46bf-8fcf-db273caa8d00/index.html",
@@ -26891,6 +26966,53 @@
       }
     },
     {
+      "id": "item-d6860692-d893-4033-b002-a038e47dbbf8",
+      "indent": 1,
+      "location": "pages/item-d6860692-d893-4033-b002-a038e47dbbf8/index.html",
+      "slug": "rubrics/pass/fail",
+      "order": 6,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "Pass/fail",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": false,
+        "oerRubric": {
+          "version": 1,
+          "key": "pass-fail",
+          "levels": [
+            {
+              "id": "level-1",
+              "name": "Full Marks",
+              "share": 1
+            },
+            {
+              "id": "level-2",
+              "name": "No Marks",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "_4767",
+              "name": "Pass/Fail",
+              "description": "Passing: In order to get a passing mark, you will need to meet all deliverable requirements and submit on time.<br/>\n<br/>\nFailing: A failing mark indicates that you have not achieved confidence from the capstone course instructor that you will be able to complete the capstone project in the current pace of progress or at the level of quality required from the capstone project requirements.",
+              "weight": 10,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzwofmc",
+          "id": "rubric-2"
+        },
+        "created": 1791486284,
+        "images": [],
+        "videos": [],
+        "updated": 1791486284
+      }
+    },
+    {
       "id": "item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7",
       "indent": 1,
       "location": "pages/item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7/index.html",
@@ -27398,6 +27520,67 @@
         "images": [],
         "videos": [],
         "updated": 1791386347
+      }
+    },
+    {
+      "id": "item-6b19b811-2521-410e-be4d-a7518644727a",
+      "indent": 1,
+      "location": "pages/item-6b19b811-2521-410e-be4d-a7518644727a/index.html",
+      "slug": "rubrics/dmd400-mid-capstone-eval",
+      "order": 7,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "DMD400 Mid-Capstone Eval",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": false,
+        "oerRubric": {
+          "version": 1,
+          "key": "dmd400-mid-capstone-eval",
+          "levels": [
+            {
+              "id": "level-1",
+              "name": "Full Marks",
+              "share": 1
+            },
+            {
+              "id": "level-2",
+              "name": "No Marks",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "_3191",
+              "name": "Research completeness",
+              "description": "Was the research as thorough and complete as reasonably possible?",
+              "weight": 10,
+              "descriptors": {}
+            },
+            {
+              "id": "868468_931",
+              "name": "Adopting and engaging with feedback",
+              "description": "- Did you adopt the feedback and make changes apparent through production reports?<br/>\n- If you don’t agree with feedback, are you engaging in conversation with the instructor to discuss and clarify?",
+              "weight": 10,
+              "descriptors": {}
+            },
+            {
+              "id": "868468_3355",
+              "name": "Evidence of mastery in tools and craft",
+              "description": "- Are you using tools, techniques, methods, and skills relevant to accomplishing your project goals?<br/>\n- Are you using elements and principles of art and design effectively?",
+              "weight": 10,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzwofmc",
+          "id": "rubric-3"
+        },
+        "created": 1791486284,
+        "images": [],
+        "videos": [],
+        "updated": 1791486284
       }
     },
     {

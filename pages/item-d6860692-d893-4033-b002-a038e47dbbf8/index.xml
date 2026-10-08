@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d6860692-d893-4033-b002-a038e47dbbf8</id>
+<indent>1</indent>
+<location>pages/item-d6860692-d893-4033-b002-a038e47dbbf8/index.xml</location>
+<slug>rubrics/pass/fail</slug>
+<order>6</order>
+<parent>item-8660850b-ca78-4dc6-ad8d-c1c5a676167a</parent>
+<title>Pass/fail</title>
+<description></description>
+<metadata>
+<pageType>oer:rubric</pageType>
+<published>false</published>
+<oerRubric>
+<version>1</version>
+<key>pass-fail</key>
+<levels>
+<item>
+<id>level-1</id>
+<name>Full Marks</name>
+<share>1</share>
+</item>
+<item>
+<id>level-2</id>
+<name>No Marks</name>
+<share>0</share>
+</item>
+</levels>
+<criteria>
+<item>
+<id>_4767</id>
+<name>Pass/Fail</name>
+<description>Passing: In order to get a passing mark, you will need to meet all deliverable requirements and submit on time.&lt;br/&gt;
+&lt;br/&gt;
+Failing: A failing mark indicates that you have not achieved confidence from the capstone course instructor that you will be able to complete the capstone project in the current pace of progress or at the level of quality required from the capstone project requirements.</description>
+<weight>10</weight>
+<descriptors>
+</descriptors>
+</item>
+</criteria>
+</oerRubric>
+<oerCanvasImport>
+<batch>canvas-muzwofmc</batch>
+<id>rubric-2</id>
+</oerCanvasImport>
+<created>1791486284</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791486284</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

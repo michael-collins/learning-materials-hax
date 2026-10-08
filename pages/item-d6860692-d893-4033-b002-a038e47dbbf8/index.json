@@ -1,0 +1,48 @@
+{
+  "id": "item-d6860692-d893-4033-b002-a038e47dbbf8",
+  "indent": 1,
+  "location": "pages/item-d6860692-d893-4033-b002-a038e47dbbf8/index.json",
+  "slug": "rubrics/pass/fail",
+  "order": 6,
+  "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+  "title": "Pass/fail",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:rubric",
+    "published": false,
+    "oerRubric": {
+      "version": 1,
+      "key": "pass-fail",
+      "levels": [
+        {
+          "id": "level-1",
+          "name": "Full Marks",
+          "share": 1
+        },
+        {
+          "id": "level-2",
+          "name": "No Marks",
+          "share": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "_4767",
+          "name": "Pass/Fail",
+          "description": "Passing: In order to get a passing mark, you will need to meet all deliverable requirements and submit on time.<br/>\n<br/>\nFailing: A failing mark indicates that you have not achieved confidence from the capstone course instructor that you will be able to complete the capstone project in the current pace of progress or at the level of quality required from the capstone project requirements.",
+          "weight": 10,
+          "descriptors": {}
+        }
+      ]
+    },
+    "oerCanvasImport": {
+      "batch": "canvas-muzwofmc",
+      "id": "rubric-2"
+    },
+    "created": 1791486284,
+    "images": [],
+    "videos": [],
+    "updated": 1791486284
+  },
+  "content": "<p></p>"
+}

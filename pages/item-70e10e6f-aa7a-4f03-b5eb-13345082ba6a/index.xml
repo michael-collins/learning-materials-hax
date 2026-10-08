@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-70e10e6f-aa7a-4f03-b5eb-13345082ba6a</id>
+<indent>1</indent>
+<location>pages/item-70e10e6f-aa7a-4f03-b5eb-13345082ba6a/index.xml</location>
+<slug>rubrics/dmd400-capstone-project</slug>
+<order>5</order>
+<parent>item-8660850b-ca78-4dc6-ad8d-c1c5a676167a</parent>
+<title>DMD400 Capstone Project</title>
+<description></description>
+<metadata>
+<pageType>oer:rubric</pageType>
+<published>false</published>
+<oerRubric>
+<version>1</version>
+<key>dmd400-capstone-project</key>
+<levels>
+<item>
+<id>level-1</id>
+<name>Full Marks</name>
+<share>1</share>
+</item>
+<item>
+<id>level-2</id>
+<name>No Marks</name>
+<share>0</share>
+</item>
+</levels>
+<criteria>
+<item>
+<id>_3139</id>
+<name>Concept</name>
+<description>Concept was clearly articulated, developed, and scope-aligned with the format of this course. Concepts should be one or more of the following: socially engaged, novel and experimental, contributes knowledge to existing problem spaces, or serves a clear benefit for a person/people, organization, or business.</description>
+<weight>20</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>_9729</id>
+<name>Craft</name>
+<description>Displayed strong technical abilities to produce digital or digital-related media and design to accomplish project goals. Sought out advice and technical guides to help improve technical skills. Project media was carefully and thoughtfully presented in all aspects, including production blogs, project documentation materials, videos, discussions, and other submissions.</description>
+<weight>20</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>1302490_1133</id>
+<name>Feedback</name>
+<description>Applied feedback by instructor, peers, and project advisor. Interpreted a variety of feedback for applicability to project goals, particularly when feedback may be conflicting. Sought out feedback when needed. Contributed meaningful feedback to other student&amp;#39;s projects during discussions.</description>
+<weight>20</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>1302490_7344</id>
+<name>Design process</name>
+<description>Created and followed a well-developed design process. Process included relevant methods for research, production, iteration, feedback, testing, and other applicable steps described by your instructor.</description>
+<weight>20</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>1302490_1631</id>
+<name>Design Research</name>
+<description>Demonstrates the ability to conduct research to inform the design process and to support the accuracy and relevance to any information or claims made by the project. The student is able to communicate research findings and effectively.</description>
+<weight>20</weight>
+<descriptors>
+</descriptors>
+</item>
+</criteria>
+</oerRubric>
+<oerCanvasImport>
+<batch>canvas-muzwofmc</batch>
+<id>rubric-1</id>
+</oerCanvasImport>
+<created>1791486284</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791486284</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

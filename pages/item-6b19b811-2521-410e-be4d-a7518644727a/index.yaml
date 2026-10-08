@@ -1,0 +1,54 @@
+id: item-6b19b811-2521-410e-be4d-a7518644727a
+indent: 1
+location: pages/item-6b19b811-2521-410e-be4d-a7518644727a/index.yaml
+slug: rubrics/dmd400-mid-capstone-eval
+order: 7
+parent: item-8660850b-ca78-4dc6-ad8d-c1c5a676167a
+title: DMD400 Mid-Capstone Eval
+description: ''
+metadata:
+  pageType: oer:rubric
+  published: false
+  oerRubric:
+    version: 1
+    key: dmd400-mid-capstone-eval
+    levels:
+      - id: level-1
+        name: Full Marks
+        share: 1
+      - id: level-2
+        name: No Marks
+        share: 0
+    criteria:
+      - id: _3191
+        name: Research completeness
+        description: Was the research as thorough and complete as reasonably possible?
+        weight: 10
+        descriptors: {}
+      - id: 868468_931
+        name: Adopting and engaging with feedback
+        description: >-
+          - Did you adopt the feedback and make changes apparent through
+          production reports?<br/>
+
+          - If you don’t agree with feedback, are you engaging in conversation
+          with the instructor to discuss and clarify?
+        weight: 10
+        descriptors: {}
+      - id: 868468_3355
+        name: Evidence of mastery in tools and craft
+        description: >-
+          - Are you using tools, techniques, methods, and skills relevant to
+          accomplishing your project goals?<br/>
+
+          - Are you using elements and principles of art and design effectively?
+        weight: 10
+        descriptors: {}
+  oerCanvasImport:
+    batch: canvas-muzwofmc
+    id: rubric-3
+  created: 1791486284
+  images: []
+  videos: []
+  updated: 1791486284
+content: <p></p>
