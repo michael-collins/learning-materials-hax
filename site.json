@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791409954,
+      "updated": 1791465284,
       "version": "26.8.0"
     },
     "theme": {
@@ -18650,6 +18650,113 @@
               ]
             },
             {
+              "id": "oer:sequence",
+              "label": "Course sequence",
+              "icon": "icons:date-range",
+              "description": "A plan for running a course, week by week: what students read, do and hand in, when it's due and how it's graded. Export it to Canvas with your term's dates.",
+              "schemaType": "oer:InstructionalPattern",
+              "nav": false,
+              "children": [],
+              "fields": [
+                {
+                  "name": "courses",
+                  "label": "Courses",
+                  "kind": "relation",
+                  "header": true,
+                  "types": [
+                    "oer:course"
+                  ],
+                  "filter": true,
+                  "help": "The courses this sequence is for."
+                },
+                {
+                  "name": "weeks",
+                  "label": "Length (weeks)",
+                  "kind": "number",
+                  "header": true,
+                  "help": "Teaching weeks, breaks not counted."
+                },
+                {
+                  "name": "delivery",
+                  "label": "Delivery",
+                  "kind": "select",
+                  "header": true,
+                  "options": [
+                    {
+                      "value": "In person",
+                      "label": "In person"
+                    },
+                    {
+                      "value": "Hybrid",
+                      "label": "Hybrid"
+                    },
+                    {
+                      "value": "Online (synchronous)",
+                      "label": "Online (synchronous)"
+                    },
+                    {
+                      "value": "Online (asynchronous)",
+                      "label": "Online (asynchronous)"
+                    }
+                  ],
+                  "help": "How the course meets. It sets the defaults: weekly unlocks and in-order work online and asynchronous, class meetings otherwise."
+                },
+                {
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": false,
+                  "help": "In order. Each with an optional link to their site or profile."
+                },
+                {
+                  "name": "license",
+                  "label": "License",
+                  "kind": "select",
+                  "options": [
+                    {
+                      "value": "CC BY 4.0",
+                      "label": "CC BY 4.0"
+                    },
+                    {
+                      "value": "CC BY-SA 4.0",
+                      "label": "CC BY-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC 4.0",
+                      "label": "CC BY-NC 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-SA 4.0",
+                      "label": "CC BY-NC-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-ND 4.0",
+                      "label": "CC BY-ND 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-ND 4.0",
+                      "label": "CC BY-NC-ND 4.0"
+                    },
+                    {
+                      "value": "CC0 1.0",
+                      "label": "CC0 1.0"
+                    },
+                    {
+                      "value": "All Rights Reserved",
+                      "label": "All Rights Reserved"
+                    }
+                  ],
+                  "default": "CC BY 4.0"
+                },
+                {
+                  "name": "placeholder",
+                  "label": "In development",
+                  "kind": "boolean",
+                  "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+                }
+              ]
+            },
+            {
               "id": "oer:pathway",
               "label": "Pathway",
               "icon": "hax:unit",
@@ -20116,7 +20223,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791409953,
+        "updated": 1791465283,
         "locked": false,
         "status": "",
         "icon": "",
