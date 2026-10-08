@@ -1,0 +1,66 @@
+id: item-b7590be3-8075-43ed-b5b2-3f8587627dfe
+indent: 2
+location: pages/item-b7590be3-8075-43ed-b5b2-3f8587627dfe/index.yaml
+slug: rubrics/exercise/v1-0-0
+order: 1000
+parent: item-5d91a0c3-191b-4d03-84c8-807804af52cc
+title: v1.0.0
+description: ''
+metadata:
+  pageType: oer:rubric
+  oerFields: {}
+  oerRubric:
+    version: 1
+    key: exercise
+    levels:
+      - id: exemplary
+        name: Exemplary
+        share: 1
+      - id: proficient
+        name: Proficient
+        share: 0.85
+      - id: developing
+        name: Developing
+        share: 0.7
+      - id: beginning
+        name: Beginning
+        share: 0.5
+      - id: missing
+        name: Missing
+        share: 0
+    criteria:
+      - id: recDvB7XFqiTA9AX6
+        name: Steps completed
+        description: >-
+          This criteria assess whether you completed all parts of a given set of
+          instructions.
+        weight: 1
+        descriptors: {}
+      - id: recCfnMbyUIiHI3PT
+        name: Attention to detail
+        description: >-
+          This criteria measures ability to use proper naming conventions and
+          formats, meet submission deadlines, check to see that others are able
+          to access submitted materials, and fulfills other specified
+          requirements.
+        weight: 1
+        descriptors: {}
+      - id: recgzIu9wDNGWpJhv
+        name: On time
+        description: >-
+          This criterion checks to see if the assigned task was submitted on
+          time. This indirectly assesses time management.
+        weight: 1
+        descriptors: {}
+  oerSnapshotOf: item-5d91a0c3-191b-4d03-84c8-807804af52cc
+  oerSnapshotTitle: Exercise
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791473385
+  images: []
+  videos: []
+  updated: 1791473385
+content: <p></p>

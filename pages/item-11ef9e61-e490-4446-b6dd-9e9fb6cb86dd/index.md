@@ -1,4 +1,10 @@
-For this project, you will produce 3D rendered images of products and other objects you experience every day, but with one slight difference. You will augment the object in such a way to inhibit its utility, material qualities, or its system or environmental context. <br><br> To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. **_[Ontology](https://www.merriam-webster.com/dictionary/ontology)_**, the study of being, invites us to question not just what objects _are_ but _how_ they are—how they exist independently of human utility and purpose. By distorting or modifying the object, you are encouraged to explore the essence of its being outside of the roles assigned to it by human need or desire. <br><br> We will also touch on the concept of hyper-objects—entities that transcend our immediate comprehension and experience, such as climate change or the internet. These phenomena challenge our usual boundaries of time, space, and perception. As you alter your chosen object, consider whether it can become something more than a mere item of daily use. Can its altered form push it into a new realm of being, perhaps even taking on characteristics of a hyper-object that defies easy understanding? <br><br> **Further reading:** <br><br>
+For this project, you will produce 3D rendered images of products and other objects you experience every day, but with one slight difference. You will augment the object in such a way to inhibit its utility, material qualities, or its system or environmental context.
+
+To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. **_[Ontology](https://www.merriam-webster.com/dictionary/ontology)_**, the study of being, invites us to question not just what objects _are_ but _how_ they are—how they exist independently of human utility and purpose. By distorting or modifying the object, you are encouraged to explore the essence of its being outside of the roles assigned to it by human need or desire.
+
+We will also touch on the concept of hyper-objects—entities that transcend our immediate comprehension and experience, such as climate change or the internet. These phenomena challenge our usual boundaries of time, space, and perception. As you alter your chosen object, consider whether it can become something more than a mere item of daily use. Can its altered form push it into a new realm of being, perhaps even taking on characteristics of a hyper-object that defies easy understanding?
+
+**Further reading:**
 
 1.  **[Anthony Dunne & Fiona Raby - _Speculative Everything: Design, Fiction, and Social Dreaming_](http://ezaccess.libraries.psu.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=672907&site=ehost-live&scope=site&ebv=EB&ppid=pp_Cover) (2013):** Dunne and Raby explore the use of speculative design as a tool for reimagining objects and systems. This book will help you think critically about how design can question the status quo and offer alternative realities, which aligns with the idea of augmenting objects to alter their utility and context.
 2.  **[Joseph Bedford - Is There an Object Oriented Architecture? : Engaging Graham Harman](http://ezaccess.libraries.psu.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=2332813&site=ehost-live&scope=site&ebv=EB&ppid=pp_15) (2020):** Harman's work is central to Object-Oriented Ontology (OOO), a branch of metaphysics that explores the independence of objects from human perception. This book provides a foundational understanding of how objects interact with one another outside of human intervention.
@@ -29,17 +35,17 @@ Requirements
 3.  **Work intent (.doc):** Describe what you will be doing.
     *   Include name and date
     *   Short one sentence description of what you intend to make.
-    *   Upload this in an MS Word `doc` format. <br><br>
+    *   Upload this in an MS Word `doc` format.
 
 **Production (.jpg or .png):**
 
 1.  Submit screenshots from Blender showing significant progress.
 2.  Post your screenshots to the **Project updates** discussion thread.
-3.  Meet with instructor if needed. <br><br>
+3.  Meet with instructor if needed.
 
 **Work Statement (.doc):**
 
-A work statement is a clear articulation about what you’ve made. This is not a journal entry, where you might feel compelled to complain about problems you’ve had with software, or that it didn’t turn out how you wanted. Instead, imagine this is being printed in a magazine, or put on the side of a gallery. What do you want your viewers to come away with? <br><br>
+A work statement is a clear articulation about what you’ve made. This is not a journal entry, where you might feel compelled to complain about problems you’ve had with software, or that it didn’t turn out how you wanted. Instead, imagine this is being printed in a magazine, or put on the side of a gallery. What do you want your viewers to come away with?
 
 **Include the following to create a clear work statement:**
 
@@ -60,7 +66,7 @@ A work statement is a clear articulation about what you’ve made. This is not a
 8.  Did you have any interesting moments where the projects theme helped you understand something new or from a new perspective?
     *   **Note:** This is not a question/answer assignment, skip this if you aren’t sure what to write.
 
-<br><br> **Upload work (.zip):**
+**Upload work (.zip):**
 
 1.  Images should be: 1920px by 1080px minimum.
 2.  Upload final materials as a `LASTNAME-project1-files.zip` file

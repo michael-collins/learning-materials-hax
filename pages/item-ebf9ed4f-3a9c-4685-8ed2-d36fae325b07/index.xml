@@ -4,7 +4,7 @@
 <indent>2</indent>
 <location>pages/item-ebf9ed4f-3a9c-4685-8ed2-d36fae325b07/index.xml</location>
 <slug>exercises/sculpting-retopo-and-texturing/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-ab29af24-626a-4330-82b7-4f1d2fe0c558</parent>
 <title>v0.9.0</title>
 <description></description>
@@ -15,12 +15,21 @@
 <image>files/rec9LnLexVEqnrZNs_image_sculpting-retopo-header-v2.png</image>
 <imageAlt>sculpting-retopo-header-v2.png</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-ab29af24-626a-4330-82b7-4f1d2fe0c558</oerSnapshotOf>
 <oerSnapshotTitle>Sculpting, retopo, and texturing</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -33,7 +42,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473397</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you continue working on your creature sculpt. You will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrU8K-0aHxzKVRQWLcJt7YAW" title="Sculpting, retopo, and texturing Tutorial"></oer-iframe>
@@ -63,6 +76,6 @@
 <li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

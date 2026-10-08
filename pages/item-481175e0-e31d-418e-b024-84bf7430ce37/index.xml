@@ -39,7 +39,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473408</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice using PBR materials, modeling, lighting, and rendering. You will also use compositional theory from art and design to organize elements in a 3D scene to create an image.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXmwBV0kO-ErBLFnyWukKsD" title="Sculpture Garden Tutorial"></oer-iframe>
@@ -114,6 +117,6 @@ https://creativecloud.adobe.com/cc/learn/substance-3d-designer/web/the-pbr-guide
 https://www.textures.com/
 https://polyhaven.com/hdris</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

@@ -35,7 +35,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473401
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, students will practice correcting a character model's
   edge-flow and set up an armature rig to pose the character in a sitting
@@ -108,4 +110,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

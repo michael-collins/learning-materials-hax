@@ -3,7 +3,7 @@
 <id>item-55eded12-5c2e-4693-a94c-dd670dddac77</id>
 <indent>2</indent>
 <location>pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.xml</location>
-<slug>exercises/model-a-snowflake/v0-9-0</slug>
+<slug>model-a-snowflake/v0-9-0</slug>
 <order>1000</order>
 <parent>item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49</parent>
 <title>v0.9.0</title>
@@ -38,7 +38,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473412</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will learn how to model 3 snowflakes</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlA1AFMxpkvj6JQwOxNygMy" title="Model a Snowflake Tutorial"></oer-iframe>
@@ -67,6 +70,6 @@ Brill Ian Lesson x Assignment x
 &lt;br&gt;<br>
 Be sure to provide screen grabs or renders from 3 angles and the original blender file. Be sure to upload each file independently to facilitate ease in grading (so that the reviewer only need to download files when necessary).</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

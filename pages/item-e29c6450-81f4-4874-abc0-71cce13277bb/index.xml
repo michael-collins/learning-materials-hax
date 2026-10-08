@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e29c6450-81f4-4874-abc0-71cce13277bb</id>
+<indent>2</indent>
+<location>pages/item-e29c6450-81f4-4874-abc0-71cce13277bb/index.xml</location>
+<slug>rubrics/project/v1-0-0</slug>
+<order>1000</order>
+<parent>item-3e46634c-0cd8-4c7e-b442-4a727210f00c</parent>
+<title>v1.0.0</title>
+<description></description>
+<metadata>
+<pageType>oer:rubric</pageType>
+<oerFields>
+</oerFields>
+<oerRubric>
+<version>1</version>
+<key>project</key>
+<levels>
+<item>
+<id>exemplary</id>
+<name>Exemplary</name>
+<share>1</share>
+</item>
+<item>
+<id>proficient</id>
+<name>Proficient</name>
+<share>0.85</share>
+</item>
+<item>
+<id>developing</id>
+<name>Developing</name>
+<share>0.7</share>
+</item>
+<item>
+<id>beginning</id>
+<name>Beginning</name>
+<share>0.5</share>
+</item>
+<item>
+<id>missing</id>
+<name>Missing</name>
+<share>0</share>
+</item>
+</levels>
+<criteria>
+<item>
+<id>recEjg2iqFDPEmD00</id>
+<name>Concept development</name>
+<description>This criterion attempts to measure your ability to respond to project themes and learning objectives through creative thinking processes, account for technical and causal relationships through systems thinking, and show awareness of cultural contexts and philosophical or ideological mappings through critical thinking.</description>
+<weight>1</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recWVHiInoUGO31VR</id>
+<name>Technical mastery</name>
+<description>This grading criterion measures your ability to quickly gain and apply necessary technical understanding. Working with new digital formats, following technical instructions, using digital and analog tools, and applying formal elements and principles of design can all be considered aspects of technical mastery. Often, learning resources outside of provided course content will need to be consulted to acquire pre-requisite knowledge and skills that may be lacking. Your ability to quickly and efficiently locate and absorb technical knowledge is essential for success after your studies. Consult with instructor where necessary.</description>
+<weight>1</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recDvB7XFqiTA9AX6</id>
+<name>Steps completed</name>
+<description>This criteria assess whether you completed all parts of a given set of instructions.</description>
+<weight>1</weight>
+<descriptors>
+</descriptors>
+</item>
+</criteria>
+</oerRubric>
+<oerSnapshotOf>item-3e46634c-0cd8-4c7e-b442-4a727210f00c</oerSnapshotOf>
+<oerSnapshotTitle>Project</oerSnapshotTitle>
+<version>1.0.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791473386</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791473386</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

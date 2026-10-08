@@ -1,0 +1,73 @@
+{
+  "id": "item-670e29da-2ade-41d3-82a8-1c815fe3e961",
+  "indent": 2,
+  "location": "pages/item-670e29da-2ade-41d3-82a8-1c815fe3e961/index.json",
+  "slug": "rubrics/task/v1-0-0",
+  "order": 1000,
+  "parent": "item-98b4c319-23c3-4d2c-ae1e-dd5ff1f70c64",
+  "title": "v1.0.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:rubric",
+    "oerFields": {},
+    "oerRubric": {
+      "version": 1,
+      "key": "task",
+      "levels": [
+        {
+          "id": "exemplary",
+          "name": "Exemplary",
+          "share": 1
+        },
+        {
+          "id": "proficient",
+          "name": "Proficient",
+          "share": 0.85
+        },
+        {
+          "id": "developing",
+          "name": "Developing",
+          "share": 0.7
+        },
+        {
+          "id": "beginning",
+          "name": "Beginning",
+          "share": 0.5
+        },
+        {
+          "id": "missing",
+          "name": "Missing",
+          "share": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "recgzIu9wDNGWpJhv",
+          "name": "On time",
+          "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+          "weight": 1,
+          "descriptors": {}
+        },
+        {
+          "id": "recDvB7XFqiTA9AX6",
+          "name": "Steps completed",
+          "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+          "weight": 1,
+          "descriptors": {}
+        }
+      ]
+    },
+    "oerSnapshotOf": "item-98b4c319-23c3-4d2c-ae1e-dd5ff1f70c64",
+    "oerSnapshotTitle": "Task",
+    "version": "1.0.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1791473387,
+    "images": [],
+    "videos": [],
+    "updated": 1791473387
+  },
+  "content": "<p></p>"
+}

@@ -15,7 +15,10 @@
 <image>files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg</image>
 <imageAlt>cycles-banner-compressed2.jpg</imageAlt>
 <courses>
-<item>Dart 303</item>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <aiLicense>
@@ -58,7 +61,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473398</updated>
+<oerRubrics>
+<item>project@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this project, you will apply creative 3D production workflows to develop a 30 second animation. You will pursue your own interests while balance solving for the project's theme.</p>
 <h2>Learning Objectives</h2>
@@ -217,6 +223,6 @@ A successful project will demonstrate understanding and mastery of 3D tools and 
 </li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="project"></oer-rubric>
+<oer-rubric rubric-id="project" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

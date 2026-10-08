@@ -30,7 +30,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473401
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, level 1 students will practice keyframe animation,
   parenting, animating the camera with a target, and manipulating curves in the
@@ -146,4 +148,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

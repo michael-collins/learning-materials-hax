@@ -30,7 +30,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473399
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will create a textured anime-style waterfall in
   Blender, render a final Blender animation as an image sequence, and import it
@@ -138,4 +140,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

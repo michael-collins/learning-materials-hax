@@ -4,7 +4,7 @@
 <indent>2</indent>
 <location>pages/item-ce434634-1121-4d93-9833-2cffbb887565/index.xml</location>
 <slug>exercises/texturing-a-room/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-d069ea51-73ec-4db0-b27a-612dbfd77bcf</parent>
 <title>v0.9.0</title>
 <description></description>
@@ -15,12 +15,21 @@
 <image>files/recJabaqMEyrxdB23_image_interior-texture-banner.png</image>
 <imageAlt>interior-texture-banner.png</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-d069ea51-73ec-4db0-b27a-612dbfd77bcf</oerSnapshotOf>
 <oerSnapshotTitle>Texturing a room</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -33,7 +42,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473391</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will continue working on your objects. Practice unwrapping UVs, exporting UV maps, and create textures in 2D image editing software like Photoshop.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVw5dp65bKPjF6iFdKpF2el" title="Texturing a room Tutorial"></oer-iframe>
@@ -66,6 +79,6 @@
 <li>Double check that you’ve included all files and that your <code>.zip</code> file can be downloaded and opened.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

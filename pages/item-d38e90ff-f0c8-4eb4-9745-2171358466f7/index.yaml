@@ -13,7 +13,8 @@ metadata:
     image: files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg
     imageAlt: cycles-banner-compressed2.jpg
     courses:
-      - Dart 303
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
     license: CC BY 4.0
     aiLicense:
       - AIUL-WA
@@ -43,7 +44,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473398
+  oerRubrics:
+    - project@1.0.0
 content: >
   <p>In this project, you will apply creative 3D production workflows to develop
   a 30 second animation. You will pursue your own interests while balance
@@ -428,4 +431,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="project"></oer-rubric>
+  <oer-rubric rubric-id="project" version="1.0.0"></oer-rubric>

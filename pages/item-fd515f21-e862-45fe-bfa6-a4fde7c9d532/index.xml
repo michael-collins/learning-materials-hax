@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fd515f21-e862-45fe-bfa6-a4fde7c9d532</id>
+<indent>2</indent>
+<location>pages/item-fd515f21-e862-45fe-bfa6-a4fde7c9d532/index.xml</location>
+<slug>rubrics/exercise-low-poly/v1-0-0</slug>
+<order>1000</order>
+<parent>item-e925a1e5-1a8f-4a37-a75e-606911de7a70</parent>
+<title>v1.0.0</title>
+<description></description>
+<metadata>
+<pageType>oer:rubric</pageType>
+<oerFields>
+</oerFields>
+<oerRubric>
+<version>1</version>
+<key>exercise-low-poly</key>
+<levels>
+<item>
+<id>exemplary</id>
+<name>Exemplary</name>
+<share>1</share>
+</item>
+<item>
+<id>proficient</id>
+<name>Proficient</name>
+<share>0.85</share>
+</item>
+<item>
+<id>developing</id>
+<name>Developing</name>
+<share>0.7</share>
+</item>
+<item>
+<id>beginning</id>
+<name>Beginning</name>
+<share>0.5</share>
+</item>
+<item>
+<id>missing</id>
+<name>Missing</name>
+<share>0</share>
+</item>
+</levels>
+<criteria>
+<item>
+<id>recDvB7XFqiTA9AX6</id>
+<name>Steps completed</name>
+<description>This criteria assess whether you completed all parts of a given set of instructions.</description>
+<weight>1</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recCfnMbyUIiHI3PT</id>
+<name>Attention to detail</name>
+<description>This criteria measures ability to use proper naming conventions and formats, meet submission deadlines, check to see that others are able to access submitted materials, and fulfills other specified requirements.</description>
+<weight>1</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recgzIu9wDNGWpJhv</id>
+<name>On time</name>
+<description>This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.</description>
+<weight>1</weight>
+<descriptors>
+</descriptors>
+</item>
+</criteria>
+</oerRubric>
+<oerSnapshotOf>item-e925a1e5-1a8f-4a37-a75e-606911de7a70</oerSnapshotOf>
+<oerSnapshotTitle>Exercise Low Poly</oerSnapshotTitle>
+<version>1.0.0</version>
+<versionStatus>archived</versionStatus>
+<hideInMenu>true</hideInMenu>
+<locked>true</locked>
+<published>true</published>
+<created>1791473386</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791473386</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

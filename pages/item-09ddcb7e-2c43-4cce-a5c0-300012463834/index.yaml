@@ -1,7 +1,7 @@
 id: item-09ddcb7e-2c43-4cce-a5c0-300012463834
 indent: 2
 location: pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.yaml
-slug: exercises/modeling-a-bishop/v0-9-0
+slug: modeling-a-bishop/v0-9-0
 order: 1000
 parent: item-2915a7be-6743-4a69-a63f-820bda80cbb4
 title: v0.9.0
@@ -46,7 +46,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473413
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   using reference images to create a chess piece</p>
@@ -110,4 +112,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

@@ -2,7 +2,7 @@ id: item-b54845bf-2716-4e05-8df2-dd530691babe
 indent: 2
 location: pages/item-b54845bf-2716-4e05-8df2-dd530691babe/index.yaml
 slug: exercises/modeling-a-low-poly-animal-and-introduction-to-particles/v0-9-0
-order: 1000
+order: 0
 parent: item-e43ae2ca-dce1-4f71-8356-b6538830ed65
 title: v0.9.0
 description: ''
@@ -12,11 +12,16 @@ metadata:
     difficulty: Beginner
     image: files/recvUlgEohhluSnhU_image_OSTRICH.png
     imageAlt: OSTRICH.png
-    aiLicense: AIUL-WA, AIUL-NA-3D
-    author: Kenneth Ian Brill
-    authorUrl: https://www.ianbrill.com/
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
-  icon: courseicons:learning-objectives
+    authors:
+      - name: Kenneth Ian Brill
+        url: https://www.ianbrill.com/
+  icon: ''
   oerSnapshotOf: item-e43ae2ca-dce1-4f71-8356-b6538830ed65
   oerSnapshotTitle: Modeling a Low Poly Animal and Introduction to Particles
   version: 0.9.0
@@ -27,7 +32,10 @@ metadata:
   created: 1790880627
   images: []
   videos: []
-  updated: 1790880627
+  updated: 1791473393
+  status: ''
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <h2>Instructions</h2>
 
@@ -57,4 +65,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

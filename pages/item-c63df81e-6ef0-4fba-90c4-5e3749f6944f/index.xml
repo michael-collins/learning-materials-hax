@@ -3,7 +3,7 @@
 <id>item-c63df81e-6ef0-4fba-90c4-5e3749f6944f</id>
 <indent>2</indent>
 <location>pages/item-c63df81e-6ef0-4fba-90c4-5e3749f6944f/index.xml</location>
-<slug>exercises/modeling-a-rook/v0-9-0</slug>
+<slug>modeling-a-rook/v0-9-0</slug>
 <order>1000</order>
 <parent>item-4ba5032b-78e8-46ac-9711-fb8810465008</parent>
 <title>v0.9.0</title>
@@ -58,7 +58,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473417</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Ql40pEsctlh1xNHLDS8F0cb" title="Modeling a Rook Tutorial"></oer-iframe>
@@ -79,6 +82,6 @@ Make sure that your assignment is titled in the following format:
 &lt;BR&gt;<br>
 <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

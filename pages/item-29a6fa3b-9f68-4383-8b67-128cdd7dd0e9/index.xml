@@ -4,7 +4,7 @@
 <indent>2</indent>
 <location>pages/item-29a6fa3b-9f68-4383-8b67-128cdd7dd0e9/index.xml</location>
 <slug>exercises/modeling-the-airline-chair/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</parent>
 <title>v0.9.0</title>
 <description></description>
@@ -15,9 +15,12 @@
 <image>files/recksNEMV7vl5SFG4_image_airline-chair-header-compressed.jpg</image>
 <imageAlt>airline-chair-header-compressed.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <attachments>
 <item>
@@ -33,8 +36,14 @@
 <alt>Airline Chair</alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7</oerSnapshotOf>
 <oerSnapshotTitle>Modeling the Airline Chair</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -47,7 +56,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473389</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f" title="Modeling the Airline Chair Tutorial"></oer-iframe>
@@ -77,6 +90,6 @@
 <li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

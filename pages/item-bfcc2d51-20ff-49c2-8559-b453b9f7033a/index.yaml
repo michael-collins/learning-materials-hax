@@ -2,7 +2,7 @@ id: item-bfcc2d51-20ff-49c2-8559-b453b9f7033a
 indent: 2
 location: pages/item-bfcc2d51-20ff-49c2-8559-b453b9f7033a/index.yaml
 slug: exercises/texturing-the-airline-chair/v0-9-0
-order: 1000
+order: 0
 parent: item-1ac14915-a348-47d3-9ecc-a88e800d4bb9
 title: v0.9.0
 description: ''
@@ -13,9 +13,11 @@ metadata:
     image: files/recF0xzVxfkZoJ63J_image_airline-chair-texturing-header.jpg
     imageAlt: airline-chair-texturing-header.jpg
     license: CC BY 4.0
-    aiLicense: AIUL-WA, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     attachments:
       - title: Airline Chair 3/4 view
@@ -26,7 +28,10 @@ metadata:
         url: files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg
         description: Airline Chair designed by KEM Weber.
         alt: Airline Chair
-  icon: courseicons:learning-objectives
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+  icon: ''
   oerSnapshotOf: item-1ac14915-a348-47d3-9ecc-a88e800d4bb9
   oerSnapshotTitle: Texturing the Airline Chair
   version: 0.9.0
@@ -37,7 +42,10 @@ metadata:
   created: 1790880627
   images: []
   videos: []
-  updated: 1790880627
+  updated: 1791473391
+  status: ''
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will practice unwrapping UVs, exporting a UV map, and
   creating textures in 2D image editing software like Photoshop. You will then
@@ -119,4 +127,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

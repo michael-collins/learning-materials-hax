@@ -39,7 +39,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473410</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you continue working on the sea creature. You will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Substance Painter and/or Photoshop.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUU3MSAv9EfORij5j2E3uVv" title="Sea creature: Texturing Tutorial"></oer-iframe>
@@ -78,6 +81,6 @@
 <li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

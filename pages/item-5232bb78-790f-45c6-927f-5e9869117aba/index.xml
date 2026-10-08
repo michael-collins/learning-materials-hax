@@ -76,7 +76,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473403</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlEM8qkrx_rcHaAemZ3oHZH" title="Modeling a Figurative Knight Tutorial"></oer-iframe>
@@ -90,6 +93,6 @@
 <h2>Instructions</h2>
 <p>This a demonstration of how to create a more complex Knight that looks more like an actual horse. You can download and use these reference images to complete this version of the Knight Chess Piece assignment.</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

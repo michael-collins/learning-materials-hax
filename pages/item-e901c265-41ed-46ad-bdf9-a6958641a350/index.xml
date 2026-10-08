@@ -4,7 +4,7 @@
 <indent>2</indent>
 <location>pages/item-e901c265-41ed-46ad-bdf9-a6958641a350/index.xml</location>
 <slug>exercises/modeling-and-sculpting-a-sea-creature/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-dbe4cef4-73d0-43d9-b532-46081fc2688c</parent>
 <title>v0.9.0</title>
 <description></description>
@@ -15,12 +15,21 @@
 <image>files/reckkzm19AZnEIkJE_image_sculpting-retopo-header-v1.jpg</image>
 <imageAlt>sculpting-retopo-header-v1.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-dbe4cef4-73d0-43d9-b532-46081fc2688c</oerSnapshotOf>
 <oerSnapshotTitle>Modeling and sculpting a sea creature</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -33,7 +42,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473396</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice sculpting tools and workflows, as well as go through the process of retopology. You will end up with two models, a high resolution sculpt and a base mesh that will be ready for texturing.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrW9SylyEr8DprET38xynl_5" title="Modeling and sculpting a sea creature Tutorial"></oer-iframe>
@@ -59,6 +72,6 @@
 <li>Ensure you’ve included everything properly. Failure to ensure that you’ve uploaded the file will result in your exercise being graded according the grading criteria.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

@@ -1,7 +1,7 @@
 id: item-c63df81e-6ef0-4fba-90c4-5e3749f6944f
 indent: 2
 location: pages/item-c63df81e-6ef0-4fba-90c4-5e3749f6944f/index.yaml
-slug: exercises/modeling-a-rook/v0-9-0
+slug: modeling-a-rook/v0-9-0
 order: 1000
 parent: item-4ba5032b-78e8-46ac-9711-fb8810465008
 title: v0.9.0
@@ -42,7 +42,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473417
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   using reference images to create a chess piece</p>
@@ -94,4 +96,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

@@ -3,7 +3,7 @@
   "indent": 2,
   "location": "pages/item-88ae9248-a1a2-439f-b349-7364b851491e/index.json",
   "slug": "exercises/modeling-a-room/v0-9-0",
-  "order": 1000,
+  "order": 0,
   "parent": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
   "title": "v0.9.0",
   "description": "",
@@ -14,12 +14,21 @@
       "image": "files/rec6ebYsG1Dnf08qb_image_room-model.png",
       "imageAlt": "room-model.png",
       "license": "CC BY 4.0",
-      "aiLicense": "AIUL-WA, AIUL-NA-3D",
-      "author": "Michael Collins",
-      "authorUrl": "https://michaelcollins.xyz",
-      "allowEmbed": true
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "author": "",
+      "authorUrl": "",
+      "allowEmbed": true,
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ]
     },
-    "icon": "courseicons:learning-objectives",
+    "icon": "",
     "oerSnapshotOf": "item-dbf43915-8e34-4116-a6e7-67cd08a1316e",
     "oerSnapshotTitle": "Modeling a room",
     "version": "0.9.0",
@@ -30,7 +39,11 @@
     "created": 1790880627,
     "images": [],
     "videos": [],
-    "updated": 1790880627
+    "updated": 1791473390,
+    "status": "",
+    "oerRubrics": [
+      "exercise@1.0.0"
+    ]
   },
-  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVP_vzYSEfaSkkPDhMdPfrK\" title=\"Modeling a room Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software terminology</li>\n<li>Practice polygonal modeling workflows</li>\n<li>Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel.</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>Note:</strong> There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction.</p>\n<ol>\n<li>Watch the video playlist for relevant workflows and techniques to adapt for this exercise.</li>\n<li>Create a project folder. Save all assets to the project folder.</li>\n<li>Model a room in your home as a diorama.\n<ul>\n<li>The room should have only two walls to make it easier to render.</li>\n<li>Model a minimum of 5 unique objects or features in the room. The models can be simple and can have relatively low poly counts.</li>\n<li>Focus ONLY on modeling, you will add textures in a later exercise.</li>\n</ul>\n</li>\n<li>If you are unsure about how to proceed with modeling any of the objects, try searching tutorial resources. Reach out to your instructor with any workflow questions.\n<ul>\n<li>Focus on maintaining quads and good <a href=\"https://www.youtube.com/watch?v=Lip59doQQRk\">edgeflow</a>.</li>\n</ul>\n</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>YOURNAME-modeling-room.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Ensure you’ve completed and included everything according to the instructions.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVP_vzYSEfaSkkPDhMdPfrK\" title=\"Modeling a room Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software terminology</li>\n<li>Practice polygonal modeling workflows</li>\n<li>Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel.</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>Note:</strong> There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction.</p>\n<ol>\n<li>Watch the video playlist for relevant workflows and techniques to adapt for this exercise.</li>\n<li>Create a project folder. Save all assets to the project folder.</li>\n<li>Model a room in your home as a diorama.\n<ul>\n<li>The room should have only two walls to make it easier to render.</li>\n<li>Model a minimum of 5 unique objects or features in the room. The models can be simple and can have relatively low poly counts.</li>\n<li>Focus ONLY on modeling, you will add textures in a later exercise.</li>\n</ul>\n</li>\n<li>If you are unsure about how to proceed with modeling any of the objects, try searching tutorial resources. Reach out to your instructor with any workflow questions.\n<ul>\n<li>Focus on maintaining quads and good <a href=\"https://www.youtube.com/watch?v=Lip59doQQRk\">edgeflow</a>.</li>\n</ul>\n</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>YOURNAME-modeling-room.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Ensure you’ve completed and included everything according to the instructions.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\" version=\"1.0.0\"></oer-rubric>\n"
 }

@@ -2,7 +2,7 @@ id: item-e901c265-41ed-46ad-bdf9-a6958641a350
 indent: 2
 location: pages/item-e901c265-41ed-46ad-bdf9-a6958641a350/index.yaml
 slug: exercises/modeling-and-sculpting-a-sea-creature/v0-9-0
-order: 1000
+order: 0
 parent: item-dbe4cef4-73d0-43d9-b532-46081fc2688c
 title: v0.9.0
 description: ''
@@ -13,11 +13,16 @@ metadata:
     image: files/reckkzm19AZnEIkJE_image_sculpting-retopo-header-v1.jpg
     imageAlt: sculpting-retopo-header-v1.jpg
     license: CC BY 4.0
-    aiLicense: AIUL-WA, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
-  icon: courseicons:learning-objectives
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+  icon: ''
   oerSnapshotOf: item-dbe4cef4-73d0-43d9-b532-46081fc2688c
   oerSnapshotTitle: Modeling and sculpting a sea creature
   version: 0.9.0
@@ -28,7 +33,10 @@ metadata:
   created: 1790880627
   images: []
   videos: []
-  updated: 1790880627
+  updated: 1791473396
+  status: ''
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will practice sculpting tools and workflows, as well
   as go through the process of retopology. You will end up with two models, a
@@ -91,4 +99,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

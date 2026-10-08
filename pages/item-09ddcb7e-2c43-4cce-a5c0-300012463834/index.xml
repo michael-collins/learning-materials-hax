@@ -3,7 +3,7 @@
 <id>item-09ddcb7e-2c43-4cce-a5c0-300012463834</id>
 <indent>2</indent>
 <location>pages/item-09ddcb7e-2c43-4cce-a5c0-300012463834/index.xml</location>
-<slug>exercises/modeling-a-bishop/v0-9-0</slug>
+<slug>modeling-a-bishop/v0-9-0</slug>
 <order>1000</order>
 <parent>item-2915a7be-6743-4a69-a63f-820bda80cbb4</parent>
 <title>v0.9.0</title>
@@ -64,7 +64,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473413</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5Qn9EwcL-Arvg3QWeQ_h-WVg" title="Modeling a Bishop Tutorial"></oer-iframe>
@@ -89,6 +92,6 @@ Make sure that your assignment is titled in the following format:
 &lt;BR&gt;<br>
 <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

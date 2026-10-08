@@ -4,7 +4,7 @@
 <indent>2</indent>
 <location>pages/item-0ecd661a-3e15-4eda-8a72-51762dba558f/index.xml</location>
 <slug>exercises/texturing-random-objects/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-a203e95e-0ddd-43af-9519-ee3df76a5b2d</parent>
 <title>v0.9.0</title>
 <description></description>
@@ -15,12 +15,21 @@
 <image>files/reczUhTIOSSFk77BH_image_texturing-objects-header-v2.jpg</image>
 <imageAlt>texturing-objects-header-v2.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-a203e95e-0ddd-43af-9519-ee3df76a5b2d</oerSnapshotOf>
 <oerSnapshotTitle>Texturing random objects</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -33,7 +42,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473396</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will continue working on your objects. Practice unwrapping UVs, exporting UV maps, and create textures in 2D image editing software like Photoshop.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrWipZPDR5ZYk4-EgwFzMahg" title="Texturing random objects Tutorial"></oer-iframe>
@@ -63,6 +76,6 @@
 <li>Double check that you’ve included all files and that your <code>.zip</code> file can be downloaded and opened.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

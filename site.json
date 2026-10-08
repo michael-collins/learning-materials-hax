@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791473369,
+      "updated": 1791473419,
       "version": "26.8.0"
     },
     "theme": {
@@ -570,10 +570,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472138,
+        "updated": 1791473388,
         "status": "",
         "oerRubrics": [
-          "project"
+          "project@1.0.0"
         ]
       }
     },
@@ -2428,10 +2428,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472138,
+        "updated": 1791473388,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2490,10 +2490,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472139,
+        "updated": 1791473389,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2538,10 +2538,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472140,
+        "updated": 1791473390,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2600,10 +2600,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472140,
+        "updated": 1791473391,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2648,10 +2648,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472141,
+        "updated": 1791473391,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2716,10 +2716,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472142,
+        "updated": 1791473392,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2764,10 +2764,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472142,
+        "updated": 1791473393,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2811,10 +2811,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472143,
+        "updated": 1791473393,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2859,10 +2859,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472144,
+        "updated": 1791473394,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2907,10 +2907,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472145,
+        "updated": 1791473395,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -2955,10 +2955,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472145,
+        "updated": 1791473396,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -3003,10 +3003,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472146,
+        "updated": 1791473396,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -3051,10 +3051,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472147,
+        "updated": 1791473397,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -8016,7 +8016,94 @@
         "created": 1791471275,
         "images": [],
         "videos": [],
-        "updated": 1791472520
+        "updated": 1791473384,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1791473384,
+            "notes": "First release: the rubric as moved from the old rubrics data file, so archived pages keep it as it was."
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-b7590be3-8075-43ed-b5b2-3f8587627dfe",
+      "indent": 2,
+      "location": "pages/item-b7590be3-8075-43ed-b5b2-3f8587627dfe/index.html",
+      "slug": "rubrics/exercise/v1-0-0",
+      "order": 1000,
+      "parent": "item-5d91a0c3-191b-4d03-84c8-807804af52cc",
+      "title": "v1.0.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "oerFields": {},
+        "oerRubric": {
+          "version": 1,
+          "key": "exercise",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recCfnMbyUIiHI3PT",
+              "name": "Attention to detail",
+              "description": "This criteria measures ability to use proper naming conventions and formats, meet submission deadlines, check to see that others are able to access submitted materials, and fulfills other specified requirements.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 1,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-5d91a0c3-191b-4d03-84c8-807804af52cc",
+        "oerSnapshotTitle": "Exercise",
+        "version": "1.0.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791473385,
+        "images": [],
+        "videos": [],
+        "updated": 1791473385
       }
     },
     {
@@ -10458,7 +10545,94 @@
         "created": 1791471275,
         "images": [],
         "videos": [],
-        "updated": 1791472521
+        "updated": 1791473385,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1791473384,
+            "notes": "First release: the rubric as moved from the old rubrics data file, so archived pages keep it as it was."
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-fd515f21-e862-45fe-bfa6-a4fde7c9d532",
+      "indent": 2,
+      "location": "pages/item-fd515f21-e862-45fe-bfa6-a4fde7c9d532/index.html",
+      "slug": "rubrics/exercise-low-poly/v1-0-0",
+      "order": 1000,
+      "parent": "item-e925a1e5-1a8f-4a37-a75e-606911de7a70",
+      "title": "v1.0.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "oerFields": {},
+        "oerRubric": {
+          "version": 1,
+          "key": "exercise-low-poly",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recCfnMbyUIiHI3PT",
+              "name": "Attention to detail",
+              "description": "This criteria measures ability to use proper naming conventions and formats, meet submission deadlines, check to see that others are able to access submitted materials, and fulfills other specified requirements.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 1,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-e925a1e5-1a8f-4a37-a75e-606911de7a70",
+        "oerSnapshotTitle": "Exercise Low Poly",
+        "version": "1.0.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791473386,
+        "images": [],
+        "videos": [],
+        "updated": 1791473386
       }
     },
     {
@@ -15960,7 +16134,94 @@
         "created": 1791471275,
         "images": [],
         "videos": [],
-        "updated": 1791472521
+        "updated": 1791473386,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1791473384,
+            "notes": "First release: the rubric as moved from the old rubrics data file, so archived pages keep it as it was."
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-e29c6450-81f4-4874-abc0-71cce13277bb",
+      "indent": 2,
+      "location": "pages/item-e29c6450-81f4-4874-abc0-71cce13277bb/index.html",
+      "slug": "rubrics/project/v1-0-0",
+      "order": 1000,
+      "parent": "item-3e46634c-0cd8-4c7e-b442-4a727210f00c",
+      "title": "v1.0.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "oerFields": {},
+        "oerRubric": {
+          "version": 1,
+          "key": "project",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recEjg2iqFDPEmD00",
+              "name": "Concept development",
+              "description": "This criterion attempts to measure your ability to respond to project themes and learning objectives through creative thinking processes, account for technical and causal relationships through systems thinking, and show awareness of cultural contexts and philosophical or ideological mappings through critical thinking.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recWVHiInoUGO31VR",
+              "name": "Technical mastery",
+              "description": "This grading criterion measures your ability to quickly gain and apply necessary technical understanding. Working with new digital formats, following technical instructions, using digital and analog tools, and applying formal elements and principles of design can all be considered aspects of technical mastery. Often, learning resources outside of provided course content will need to be consulted to acquire pre-requisite knowledge and skills that may be lacking. Your ability to quickly and efficiently locate and absorb technical knowledge is essential for success after your studies. Consult with instructor where necessary.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 1,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-3e46634c-0cd8-4c7e-b442-4a727210f00c",
+        "oerSnapshotTitle": "Project",
+        "version": "1.0.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791473386,
+        "images": [],
+        "videos": [],
+        "updated": 1791473386
       }
     },
     {
@@ -17691,7 +17952,87 @@
         "created": 1791471275,
         "images": [],
         "videos": [],
-        "updated": 1791472522
+        "updated": 1791473386,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1791473384,
+            "notes": "First release: the rubric as moved from the old rubrics data file, so archived pages keep it as it was."
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-670e29da-2ade-41d3-82a8-1c815fe3e961",
+      "indent": 2,
+      "location": "pages/item-670e29da-2ade-41d3-82a8-1c815fe3e961/index.html",
+      "slug": "rubrics/task/v1-0-0",
+      "order": 1000,
+      "parent": "item-98b4c319-23c3-4d2c-ae1e-dd5ff1f70c64",
+      "title": "v1.0.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "oerFields": {},
+        "oerRubric": {
+          "version": 1,
+          "key": "task",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 1,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-98b4c319-23c3-4d2c-ae1e-dd5ff1f70c64",
+        "oerSnapshotTitle": "Task",
+        "version": "1.0.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791473387,
+        "images": [],
+        "videos": [],
+        "updated": 1791473387
       }
     },
     {
@@ -22268,7 +22609,101 @@
         "created": 1791471275,
         "images": [],
         "videos": [],
-        "updated": 1791472523
+        "updated": 1791473387,
+        "version": "1.0.0",
+        "oerVersions": [
+          {
+            "version": "1.0.0",
+            "date": 1791473384,
+            "notes": "First release: the rubric as moved from the old rubrics data file, so archived pages keep it as it was."
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-d5a5d22a-6495-4623-898c-310d714b61d9",
+      "indent": 2,
+      "location": "pages/item-d5a5d22a-6495-4623-898c-310d714b61d9/index.html",
+      "slug": "rubrics/written-statement/v1-0-0",
+      "order": 1000,
+      "parent": "item-02b98513-14ea-4b92-9f25-5fd6ca629758",
+      "title": "v1.0.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "oerFields": {},
+        "oerRubric": {
+          "version": 1,
+          "key": "written-statement",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "reci1lnjIVyGiwSU9",
+              "name": "Articulation",
+              "description": " This measures the ability to synthesize and articulate ideas through a written statement, and to meet the minimum statement requirements. Depending on the associated work, you may be required to talk about what you did, the context of the work in a larger landscape of contemporary or historical work, why the work is interesting, can be considered successful, or what the work may impact.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "rec8RBn3GbilCke2Q",
+              "name": "Writing quality",
+              "description": "Language should be clear, understandable, free of hyperbole and generalizations, show specific examples, and reference or cite sources where necessary.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "rectebGWNwSLoMwny",
+              "name": "Spelling and grammar",
+              "description": "Generally free of spelling mistakes, grammar issues, and missing or incomplete sentences.",
+              "weight": 1,
+              "descriptors": {}
+            },
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 1,
+              "descriptors": {}
+            }
+          ]
+        },
+        "oerSnapshotOf": "item-02b98513-14ea-4b92-9f25-5fd6ca629758",
+        "oerSnapshotTitle": "Written statement",
+        "version": "1.0.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": true,
+        "created": 1791473388,
+        "images": [],
+        "videos": [],
+        "updated": 1791473388
       }
     },
     {
@@ -29454,9 +29889,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472157,
+        "updated": 1791473398,
         "oerRubrics": [
-          "project"
+          "project@1.0.0"
         ]
       }
     },
@@ -30395,9 +30830,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472160,
+        "updated": 1791473399,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -30492,9 +30927,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472162,
+        "updated": 1791473399,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -30589,9 +31024,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472163,
+        "updated": 1791473400,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -30794,9 +31229,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472164,
+        "updated": 1791473401,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -30907,9 +31342,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472166,
+        "updated": 1791473401,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31054,9 +31489,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472167,
+        "updated": 1791473402,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31225,9 +31660,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472169,
+        "updated": 1791473403,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31360,9 +31795,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472170,
+        "updated": 1791473404,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31507,9 +31942,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472172,
+        "updated": 1791473404,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31604,9 +32039,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472173,
+        "updated": 1791473405,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31701,9 +32136,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472174,
+        "updated": 1791473406,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31798,9 +32233,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472176,
+        "updated": 1791473406,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31895,9 +32330,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472177,
+        "updated": 1791473407,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -31992,9 +32427,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472179,
+        "updated": 1791473408,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -32089,9 +32524,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472180,
+        "updated": 1791473409,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -32186,9 +32621,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472182,
+        "updated": 1791473409,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -32283,9 +32718,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472183,
+        "updated": 1791473410,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33053,9 +33488,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472185,
+        "updated": 1791473411,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33152,9 +33587,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472186,
+        "updated": 1791473412,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33251,9 +33686,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472187,
+        "updated": 1791473412,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33488,9 +33923,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472189,
+        "updated": 1791473413,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33646,9 +34081,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472190,
+        "updated": 1791473414,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33788,9 +34223,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472192,
+        "updated": 1791473415,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -33930,9 +34365,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472193,
+        "updated": 1791473415,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -34057,9 +34492,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472195,
+        "updated": 1791473416,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -34184,9 +34619,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472196,
+        "updated": 1791473417,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -34323,9 +34758,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472197,
+        "updated": 1791473417,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
@@ -34551,9 +34986,9 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791472199,
+        "updated": 1791473418,
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },

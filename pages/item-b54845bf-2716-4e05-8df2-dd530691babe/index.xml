@@ -4,7 +4,7 @@
 <indent>2</indent>
 <location>pages/item-b54845bf-2716-4e05-8df2-dd530691babe/index.xml</location>
 <slug>exercises/modeling-a-low-poly-animal-and-introduction-to-particles/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-e43ae2ca-dce1-4f71-8356-b6538830ed65</parent>
 <title>v0.9.0</title>
 <description></description>
@@ -14,12 +14,21 @@
 <difficulty>Beginner</difficulty>
 <image>files/recvUlgEohhluSnhU_image_OSTRICH.png</image>
 <imageAlt>OSTRICH.png</imageAlt>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Kenneth Ian Brill</author>
-<authorUrl>https://www.ianbrill.com/</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
+<authors>
+<item>
+<name>Kenneth Ian Brill</name>
+<url>https://www.ianbrill.com/</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-e43ae2ca-dce1-4f71-8356-b6538830ed65</oerSnapshotOf>
 <oerSnapshotTitle>Modeling a Low Poly Animal and Introduction to Particles</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -32,7 +41,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473393</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<h2>Instructions</h2>
 <p>This week I want you to make a low poly animal. Ideally, you will have more than one reference image. Below is a demonstration of how I would approach resolving a low poly model with only a profile image. For your assignment I encourage you to work from multiple reference images instead. However, some of the techniques I use to calculate volume and resolve topological flow may be of help. There is an additional video in the playlist that demonstrates the use of particles as a means of generating feathers on my Ostrich.</p>
@@ -42,6 +55,6 @@
 <li>Use 2D Reference images, imagination and observations / calculations to generate a basic 3D form of an animal. Use a combination of modeling techniques, HDRIs (free from https://polyhaven.com/hdris), or particles to create an environment for your animal</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

@@ -2,7 +2,7 @@
   "id": "item-6311aaff-6ebe-4d66-87ae-4f0a803d435f",
   "indent": 2,
   "location": "pages/item-6311aaff-6ebe-4d66-87ae-4f0a803d435f/index.json",
-  "slug": "exercises/modeling-a-queen/v0-9-0",
+  "slug": "modeling-a-queen/v0-9-0",
   "order": 1000,
   "parent": "item-af4143af-48cc-461a-bb7c-ab562ff1b3a4",
   "title": "v0.9.0",
@@ -49,7 +49,10 @@
     "created": 1791232004,
     "images": [],
     "videos": [],
-    "updated": 1791232004
+    "updated": 1791473417,
+    "oerRubrics": [
+      "exercise@1.0.0"
+    ]
   },
-  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5QkznWA0SSvO8i2iMil7btof\" title=\"Modeling a Queen Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice working from reference images</li>\n<li>Practice using 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>\n</ol>\n<h2>Instructions</h2>\n<p>For this assignment, recreate the steps in&nbsp;basic&nbsp;<strong>Demonstration</strong>&nbsp;or try to make something more refined or complex.\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>Submit three renders to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em></strong>.&nbsp;Make sure that your assignment is titled in the following format:\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x\n&nbsp;</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PLcAjW37cz5QkznWA0SSvO8i2iMil7btof\" title=\"Modeling a Queen Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Practice working from reference images</li>\n<li>Practice using 3D software interface and terminology.</li>\n<li>Use modeling workflows to create high quality topology and edge flow.</li>\n<li>Familiarize yourself with a cumulative number of hotkeys and operations (it's a good idea to keep a personal log of hotkeys and operators that you will likely use again, as you go).</li>\n</ol>\n<h2>Instructions</h2>\n<p>For this assignment, recreate the steps in&nbsp;basic&nbsp;<strong>Demonstration</strong>&nbsp;or try to make something more refined or complex.\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>Submit three renders to both <em>Canvas</em> <em>and the corresponding discussion thread for review</em></strong>.&nbsp;Make sure that your assignment is titled in the following format:\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>Last name, First name,</strong>&nbsp;the word&nbsp;<strong>\"Lesson\"</strong>&nbsp;followed by the&nbsp;<strong>Lesson number,</strong>&nbsp;and the&nbsp;<strong>word \"Assignment\"</strong>&nbsp;followed by the&nbsp;<strong>Assignment number.</strong>\n&lt;br&gt;\n&lt;br&gt;<br>\n<strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x\n&nbsp;</p>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\" version=\"1.0.0\"></oer-rubric>\n"
 }

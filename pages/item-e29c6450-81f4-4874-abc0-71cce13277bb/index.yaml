@@ -1,0 +1,75 @@
+id: item-e29c6450-81f4-4874-abc0-71cce13277bb
+indent: 2
+location: pages/item-e29c6450-81f4-4874-abc0-71cce13277bb/index.yaml
+slug: rubrics/project/v1-0-0
+order: 1000
+parent: item-3e46634c-0cd8-4c7e-b442-4a727210f00c
+title: v1.0.0
+description: ''
+metadata:
+  pageType: oer:rubric
+  oerFields: {}
+  oerRubric:
+    version: 1
+    key: project
+    levels:
+      - id: exemplary
+        name: Exemplary
+        share: 1
+      - id: proficient
+        name: Proficient
+        share: 0.85
+      - id: developing
+        name: Developing
+        share: 0.7
+      - id: beginning
+        name: Beginning
+        share: 0.5
+      - id: missing
+        name: Missing
+        share: 0
+    criteria:
+      - id: recEjg2iqFDPEmD00
+        name: Concept development
+        description: >-
+          This criterion attempts to measure your ability to respond to project
+          themes and learning objectives through creative thinking processes,
+          account for technical and causal relationships through systems
+          thinking, and show awareness of cultural contexts and philosophical or
+          ideological mappings through critical thinking.
+        weight: 1
+        descriptors: {}
+      - id: recWVHiInoUGO31VR
+        name: Technical mastery
+        description: >-
+          This grading criterion measures your ability to quickly gain and apply
+          necessary technical understanding. Working with new digital formats,
+          following technical instructions, using digital and analog tools, and
+          applying formal elements and principles of design can all be
+          considered aspects of technical mastery. Often, learning resources
+          outside of provided course content will need to be consulted to
+          acquire pre-requisite knowledge and skills that may be lacking. Your
+          ability to quickly and efficiently locate and absorb technical
+          knowledge is essential for success after your studies. Consult with
+          instructor where necessary.
+        weight: 1
+        descriptors: {}
+      - id: recDvB7XFqiTA9AX6
+        name: Steps completed
+        description: >-
+          This criteria assess whether you completed all parts of a given set of
+          instructions.
+        weight: 1
+        descriptors: {}
+  oerSnapshotOf: item-3e46634c-0cd8-4c7e-b442-4a727210f00c
+  oerSnapshotTitle: Project
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1791473386
+  images: []
+  videos: []
+  updated: 1791473386
+content: <p></p>

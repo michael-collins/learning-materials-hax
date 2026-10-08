@@ -1,7 +1,7 @@
 id: item-55eded12-5c2e-4693-a94c-dd670dddac77
 indent: 2
 location: pages/item-55eded12-5c2e-4693-a94c-dd670dddac77/index.yaml
-slug: exercises/model-a-snowflake/v0-9-0
+slug: model-a-snowflake/v0-9-0
 order: 1000
 parent: item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49
 title: v0.9.0
@@ -29,7 +29,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473412
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will learn how to model 3 snowflakes</p>
 
@@ -97,4 +99,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

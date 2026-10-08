@@ -2,7 +2,7 @@ id: item-29a6fa3b-9f68-4383-8b67-128cdd7dd0e9
 indent: 2
 location: pages/item-29a6fa3b-9f68-4383-8b67-128cdd7dd0e9/index.yaml
 slug: exercises/modeling-the-airline-chair/v0-9-0
-order: 1000
+order: 0
 parent: item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7
 title: v0.9.0
 description: ''
@@ -13,9 +13,11 @@ metadata:
     image: files/recksNEMV7vl5SFG4_image_airline-chair-header-compressed.jpg
     imageAlt: airline-chair-header-compressed.jpg
     license: CC BY 4.0
-    aiLicense: AIUL-WA, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     attachments:
       - title: Airline Chair 3/4 view
@@ -26,7 +28,10 @@ metadata:
         url: files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg
         description: Airline Chair designed by KEM Weber.
         alt: Airline Chair
-  icon: courseicons:learning-objectives
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+  icon: ''
   oerSnapshotOf: item-9f9dad88-3dbd-472b-af30-d93e6bdff2d7
   oerSnapshotTitle: Modeling the Airline Chair
   version: 0.9.0
@@ -37,7 +42,10 @@ metadata:
   created: 1790880627
   images: []
   videos: []
-  updated: 1790880627
+  updated: 1791473389
+  status: ''
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   will use 3D software to build a polygonal model of the 1930s Kem Weber Airline
@@ -109,4 +117,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

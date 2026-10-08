@@ -4,10 +4,10 @@
 <indent>2</indent>
 <location>pages/item-e16aa1eb-6d78-4212-880f-cb215bb4a4ce/index.xml</location>
 <slug>exercises/animated-textures/v0-9-0</slug>
-<order>1000</order>
+<order>0</order>
 <parent>item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171</parent>
 <title>v0.9.0</title>
-<description></description>
+<description>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</description>
 <metadata>
 <pageType>oer:exercise</pageType>
 <oerFields>
@@ -15,9 +15,12 @@
 <image>/uploads/recn4C0llk2Kq5tuH_image_ex-7-intro-banner-compressed.jpg</image>
 <imageAlt>ex-7-intro-banner-compressed.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <attachments>
 <item>
@@ -27,8 +30,14 @@
 <alt></alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <oerSnapshotOf>item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171</oerSnapshotOf>
 <oerSnapshotTitle>Animated textures</oerSnapshotTitle>
 <version>0.9.0</version>
@@ -41,7 +50,11 @@
 </images>
 <videos>
 </videos>
-<updated>1790880627</updated>
+<updated>1791473388</updated>
+<status></status>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH" title="Animated textures Tutorial"></oer-iframe>
@@ -69,6 +82,6 @@
 <li>Double check that you’ve included all files and that your files can be downloaded and opened.</li>
 </ol>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

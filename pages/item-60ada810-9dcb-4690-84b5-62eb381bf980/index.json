@@ -3,7 +3,7 @@
   "indent": 2,
   "location": "pages/item-60ada810-9dcb-4690-84b5-62eb381bf980/index.json",
   "slug": "exercises/modeling-random-objects/v0-9-0",
-  "order": 1000,
+  "order": 0,
   "parent": "item-b57b43a9-5427-445c-affe-80ce46848788",
   "title": "v0.9.0",
   "description": "",
@@ -14,12 +14,21 @@
       "image": "files/recLtYP0nJUL7RK8O_image_modeling-objects-header.jpg",
       "imageAlt": "modeling-objects-header.jpg",
       "license": "CC BY 4.0",
-      "aiLicense": "AIUL-WA, AIUL-NA-3D",
-      "author": "Michael Collins",
-      "authorUrl": "https://michaelcollins.xyz",
-      "allowEmbed": true
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "author": "",
+      "authorUrl": "",
+      "allowEmbed": true,
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ]
     },
-    "icon": "courseicons:learning-objectives",
+    "icon": "",
     "oerSnapshotOf": "item-b57b43a9-5427-445c-affe-80ce46848788",
     "oerSnapshotTitle": "Modeling random objects",
     "version": "0.9.0",
@@ -30,7 +39,11 @@
     "created": 1790880627,
     "images": [],
     "videos": [],
-    "updated": 1790880627
+    "updated": 1791473395,
+    "status": "",
+    "oerRubrics": [
+      "exercise@1.0.0"
+    ]
   },
-  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of three random objects.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrUtPySfHyf4j_w6PGi6AES9\" title=\"Modeling random objects Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software terminology</li>\n<li>Practice polygonal modeling workflows</li>\n<li>Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel.</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the Blender Foundation videos to get a refresher on the Blender’s interface.</li>\n<li>Look at the learning materials to get an understanding of modeling theory.</li>\n<li>Create a project folder. Save all assets to the project folder.</li>\n<li>Obtain three randomly generated objects from <a href=\"http://www.randomlists.com/things\">this website</a>. Include a screenshot of the website objects in your project folder called <code>YOURNAME-objects-modeling.jpg</code> (or <code>.png</code>)</li>\n<li>If you are unsure about how to proceed with modeling your first, do a quick search to see if someone has a tutorial for starting to model the object. Drawing the object on paper, and then drawing polygons over top is also helpful to plan your topology.</li>\n<li>Create a new file for each object and save in the project folder.\n<ul>\n<li><strong>Naming:</strong> <code>YOURNAME-modeling-object1</code>, <code>YOURNAME-modeling-object2</code>, <code>YOURNAME-modeling-object2</code></li>\n</ul>\n</li>\n<li>Create one polygonal model for each scene file from your set of randomly generated objects in Step 2. (You should be making three objects since you’ve created three scenes.)</li>\n<li>Create a base mesh for each object.\n<ul>\n<li>Focus on maintaining quads and good <a href=\"https://www.youtube.com/watch?v=Lip59doQQRk\">edgeflow</a>.</li>\n</ul>\n</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>YOURNAME-modeling-objects.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Ensure you’ve included everything properly. Failure to ensure that you’ve uploaded the file will result in your exercise being graded according the grading criteria.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+  "content": "<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of three random objects.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrUtPySfHyf4j_w6PGi6AES9\" title=\"Modeling random objects Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with 3D software terminology</li>\n<li>Practice polygonal modeling workflows</li>\n<li>Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel.</li>\n</ol>\n<h2>Instructions</h2>\n<ol>\n<li>Watch the Blender Foundation videos to get a refresher on the Blender’s interface.</li>\n<li>Look at the learning materials to get an understanding of modeling theory.</li>\n<li>Create a project folder. Save all assets to the project folder.</li>\n<li>Obtain three randomly generated objects from <a href=\"http://www.randomlists.com/things\">this website</a>. Include a screenshot of the website objects in your project folder called <code>YOURNAME-objects-modeling.jpg</code> (or <code>.png</code>)</li>\n<li>If you are unsure about how to proceed with modeling your first, do a quick search to see if someone has a tutorial for starting to model the object. Drawing the object on paper, and then drawing polygons over top is also helpful to plan your topology.</li>\n<li>Create a new file for each object and save in the project folder.\n<ul>\n<li><strong>Naming:</strong> <code>YOURNAME-modeling-object1</code>, <code>YOURNAME-modeling-object2</code>, <code>YOURNAME-modeling-object2</code></li>\n</ul>\n</li>\n<li>Create one polygonal model for each scene file from your set of randomly generated objects in Step 2. (You should be making three objects since you’ve created three scenes.)</li>\n<li>Create a base mesh for each object.\n<ul>\n<li>Focus on maintaining quads and good <a href=\"https://www.youtube.com/watch?v=Lip59doQQRk\">edgeflow</a>.</li>\n</ul>\n</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>YOURNAME-modeling-objects.zip</code>.</li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Ensure you’ve included everything properly. Failure to ensure that you’ve uploaded the file will result in your exercise being graded according the grading criteria.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\" version=\"1.0.0\"></oer-rubric>\n"
 }

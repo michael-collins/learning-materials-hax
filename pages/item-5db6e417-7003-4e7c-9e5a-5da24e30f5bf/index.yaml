@@ -1,7 +1,7 @@
 id: item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf
 indent: 2
 location: pages/item-5db6e417-7003-4e7c-9e5a-5da24e30f5bf/index.yaml
-slug: exercises/model-a-gem/v0-9-0
+slug: model-a-gem/v0-9-0
 order: 1000
 parent: item-ca98e9d2-a6bf-43da-af53-0ff978b5f684
 title: v0.9.0
@@ -29,7 +29,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473412
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>model a Custom Gem</p>
 
@@ -90,4 +92,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

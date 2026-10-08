@@ -1,7 +1,7 @@
 id: item-13ee5c87-198e-415d-a9cf-4a548562f4f5
 indent: 2
 location: pages/item-13ee5c87-198e-415d-a9cf-4a548562f4f5/index.yaml
-slug: exercises/share-one-completed-set/v0-9-0
+slug: share-one-completed-set/v0-9-0
 order: 1000
 parent: item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d
 title: v0.9.0
@@ -29,7 +29,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473418
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, you will apply Image textures to a Chess board and
   pieces</p>
@@ -71,4 +73,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

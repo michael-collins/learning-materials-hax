@@ -30,7 +30,9 @@ metadata:
   created: 1791232004
   images: []
   videos: []
-  updated: 1791232004
+  updated: 1791473406
+  oerRubrics:
+    - exercise@1.0.0
 content: >
   <p>In this exercise, students will practice modeling, rigging, and animating a
   human.</p>
@@ -106,4 +108,4 @@ content: >
 
   <h2>Grading Rubric</h2>
 
-  <oer-rubric rubric-id="exercise"></oer-rubric>
+  <oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>

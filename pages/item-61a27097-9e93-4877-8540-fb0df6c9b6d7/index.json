@@ -3,7 +3,7 @@
   "indent": 2,
   "location": "pages/item-61a27097-9e93-4877-8540-fb0df6c9b6d7/index.json",
   "slug": "exercises/lighting-and-rendering-the-airline-chair/v0-9-0",
-  "order": 1000,
+  "order": 0,
   "parent": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
   "title": "v0.9.0",
   "description": "",
@@ -14,9 +14,12 @@
       "image": "files/recbAgArvnM20cFKL_image_rendering-banner.jpg",
       "imageAlt": "rendering-banner.jpg",
       "license": "CC BY 4.0",
-      "aiLicense": "AIUL-WA, AIUL-NA-3D",
-      "author": "Michael Collins",
-      "authorUrl": "https://michaelcollins.xyz",
+      "aiLicense": [
+        "AIUL-WA",
+        "AIUL-NA-3D"
+      ],
+      "author": "",
+      "authorUrl": "",
       "allowEmbed": true,
       "attachments": [
         {
@@ -37,9 +40,15 @@
           "description": "Airline Chair example render",
           "alt": "An example rendering of the KEM Weber Airline Chair"
         }
+      ],
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
       ]
     },
-    "icon": "courseicons:learning-objectives",
+    "icon": "",
     "oerSnapshotOf": "item-cfaff943-bb9c-4bb5-ba04-82a293c03f96",
     "oerSnapshotTitle": "Lighting and Rendering the Airline Chair",
     "version": "0.9.0",
@@ -50,7 +59,11 @@
     "created": 1790880627,
     "images": [],
     "videos": [],
-    "updated": 1790880627
+    "updated": 1791473392,
+    "status": "",
+    "oerRubrics": [
+      "exercise@1.0.0"
+    ]
   },
-  "content": "<p>In this exercise, you will create a final render of the KEM Weber Airline Chair. You will practice setting up 3-point lighting, adding cameras, creating a backdrop, optionally adding additional textures to the materials, configuring render settings, and doing some post-production cleanup in Photoshop.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q\" title=\"Lighting and Rendering the Airline Chair Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with the rendering process.</li>\n<li>Become familiarized with setting up and configuring lights and a backdrop.</li>\n<li>Practice color grading in Photoshop</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>Note:</strong> You should have a basic understanding of Blender's interface before completing this exercise. You should also complete the exercise called <strong>Modeling the Airline Chair</strong> prior to completing this exercise.</p>\n<ol>\n<li>Duplicate the texturing folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>\n<li>Follow the video demonstrations to light and render the <a href=\"https://collection.cooperhewitt.org/objects/404536651/images/\">KEM Weber Airline Chair</a>.</li>\n<li>Enable <strong>Cycles</strong> rendering mode.</li>\n<li>Add a backdrop and three point lighting setup.</li>\n<li>Configure your render camera with a pleasing focal length and compose your layout.</li>\n<li>Configure the render settings <strong>sampling</strong> to be high enough to reduce noise. Somewhere between 250 and 750 should give good results.</li>\n<li>Render and import the image into Photoshop to adjust saturation, contrast.</li>\n<li>Save the render as <strong><em>LASTNAME</em>-rendering-chair.png</strong>, etc. in the project folder. Name the files in an organized in a logical way.</li>\n<li>Remove large Photoshop files that you may have in the project folder before compressing for upload.</li>\n<li>Save the 3D scene file as <strong><em>LASTNAME</em>-rendering-chair</strong> in the project folder.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-rendering-chair.zip.</strong></li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\"></oer-rubric>\n"
+  "content": "<p>In this exercise, you will create a final render of the KEM Weber Airline Chair. You will practice setting up 3-point lighting, adding cameras, creating a backdrop, optionally adding additional textures to the materials, configuring render settings, and doing some post-production cleanup in Photoshop.</p>\n<oer-iframe src=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q\" title=\"Lighting and Rendering the Airline Chair Tutorial\"></oer-iframe>\n<h2>Learning Objectives</h2>\n<ol>\n<li>Become familiarized with the rendering process.</li>\n<li>Become familiarized with setting up and configuring lights and a backdrop.</li>\n<li>Practice color grading in Photoshop</li>\n</ol>\n<h2>Instructions</h2>\n<p><strong>Note:</strong> You should have a basic understanding of Blender's interface before completing this exercise. You should also complete the exercise called <strong>Modeling the Airline Chair</strong> prior to completing this exercise.</p>\n<ol>\n<li>Duplicate the texturing folder on your computer. <strong>This will be your project folder.</strong> Save all files to this folder.</li>\n<li>Follow the video demonstrations to light and render the <a href=\"https://collection.cooperhewitt.org/objects/404536651/images/\">KEM Weber Airline Chair</a>.</li>\n<li>Enable <strong>Cycles</strong> rendering mode.</li>\n<li>Add a backdrop and three point lighting setup.</li>\n<li>Configure your render camera with a pleasing focal length and compose your layout.</li>\n<li>Configure the render settings <strong>sampling</strong> to be high enough to reduce noise. Somewhere between 250 and 750 should give good results.</li>\n<li>Render and import the image into Photoshop to adjust saturation, contrast.</li>\n<li>Save the render as <strong><em>LASTNAME</em>-rendering-chair.png</strong>, etc. in the project folder. Name the files in an organized in a logical way.</li>\n<li>Remove large Photoshop files that you may have in the project folder before compressing for upload.</li>\n<li>Save the 3D scene file as <strong><em>LASTNAME</em>-rendering-chair</strong> in the project folder.</li>\n<li>Compress the project folder once you’ve completed the tutorial and rename it <strong><em>LASTNAME</em>-rendering-chair.zip.</strong></li>\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>\n</ol>\n<h2>Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\" version=\"1.0.0\"></oer-rubric>\n"
 }

@@ -3,7 +3,7 @@
 <id>item-656e93f2-644f-47ec-b6f0-160ddaf215fd</id>
 <indent>2</indent>
 <location>pages/item-656e93f2-644f-47ec-b6f0-160ddaf215fd/index.xml</location>
-<slug>exercises/applying-textures-to-3-unique-chess-sets/v0-9-0</slug>
+<slug>applying-textures-to-3-unique-chess-sets/v0-9-0</slug>
 <order>1000</order>
 <parent>item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c</parent>
 <title>v0.9.0</title>
@@ -46,7 +46,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473411</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will apply Image textures to a Chess board and pieces</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PLcAjW37cz5QlIH4xCkx3q86mJu84QpGOJ" title="Applying Textures to 3 Unique Chess Sets Tutorial"></oer-iframe>
@@ -83,6 +86,6 @@ Create three unique chess sets based on the steps in Demonstrations 1, 2 and tut
 &lt;br&gt;<br>
 <strong>Example:</strong>&nbsp;Brill Ian Lesson x Assignment x</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>

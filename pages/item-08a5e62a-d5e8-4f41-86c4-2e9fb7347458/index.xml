@@ -39,7 +39,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791232004</updated>
+<updated>1791473400</updated>
+<oerRubrics>
+<item>exercise@1.0.0</item>
+</oerRubrics>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice animation techniques by recreating creatures from Evolved Virtual Creatures by Karl Sims.</p>
 <oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVL5OApws44r45Oz65NJyEi" title="Animating virtual creatures Tutorial"></oer-iframe>
@@ -87,6 +90,6 @@
 <p>https://www.karlsims.com/evolved-virtual-creatures.html</p>
 <p>https://www.karlsims.com/papers/siggraph94.pdf</p>
 <h2>Grading Rubric</h2>
-<oer-rubric rubric-id="exercise"></oer-rubric>
+<oer-rubric rubric-id="exercise" version="1.0.0"></oer-rubric>
 ]]></content>
 </item>
