@@ -384,7 +384,7 @@ const PRESETS = {
     ${page(126, 44, 258, 9)}
     ${scrim()}
     ${R(60, 38, 280, 194, "pop", 10)}
-    ${R(74, 50, 70, 10, "t", 3)}${btn(232, 46, 94, "Check for dead links")}
+    ${R(74, 50, 70, 10, "t", 3)}${btn(220, 45, 106, "Check for dead links")}
     ${HR(60.5, 72, 339.5)}
     ${T(74, 88, "To pages on this site", "lbl sm")}
     ${T(74, 101, "dmd-400-master/capstone-project-proposal.html", "muted sm")}

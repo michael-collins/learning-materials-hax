@@ -17933,7 +17933,7 @@ ${d}
     ${Tt(126,44,258,9)}
     ${lo()}
     ${k(60,38,280,194,"pop",10)}
-    ${k(74,50,70,10,"t",3)}${ue(232,46,94,"Check for dead links")}
+    ${k(74,50,70,10,"t",3)}${ue(220,45,106,"Check for dead links")}
     ${fe(60.5,72,339.5)}
     ${B(74,88,"To pages on this site","lbl sm")}
     ${B(74,101,"dmd-400-master/capstone-project-proposal.html","muted sm")}
