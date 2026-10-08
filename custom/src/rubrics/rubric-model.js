@@ -55,6 +55,37 @@ export function findRubric(items = [], ref = "") {
   );
 }
 
+/** The names pages and sequences may use for a rubric: its page id, key and address. */
+export function rubricRefs(page) {
+  return [page?.id, page?.metadata?.oerRubric?.key, String(page?.slug || "").split("/").filter(Boolean).pop()].filter(Boolean);
+}
+
+/**
+ * Where a rubric is used: pages that show it with the Rubric block (their
+ * metadata.oerRubrics, kept up to date when a page is saved), archived
+ * versions of pages that do, and course sequences that grade with it.
+ *   → { pages, versions, sequences: [{ page, items }] }
+ */
+export function rubricUsage(items = [], page) {
+  const refs = new Set(rubricRefs(page));
+  const out = { pages: [], versions: [], sequences: [] };
+  if (!refs.size) return out;
+  for (const i of items) {
+    if (i.id === page.id || i.metadata?.oerSnapshotOf === page.id) continue;
+    if ([].concat(i.metadata?.oerRubrics || []).some((r) => refs.has(r))) (i.metadata?.oerSnapshotOf ? out.versions : out.pages).push(i);
+    if (i.metadata?.pageType === "oer:sequence" && !i.metadata?.oerSnapshotOf) {
+      const n = (i.metadata?.oerSequence?.modules || []).reduce((sum, m) => sum + (m.items || []).filter((it) => it.rubric && refs.has(it.rubric)).length, 0);
+      if (n) out.sequences.push({ page: i, items: n });
+    }
+  }
+  return out;
+}
+
+/** The rubric names a page's content shows (its Rubric blocks' rubric-id). */
+export function rubricRefsIn(htmlText = "") {
+  return [...new Set([...String(htmlText).matchAll(/<oer-rubric\b[^>]*\brubric-id="([^"]+)"/gi)].map((m) => m[1]))];
+}
+
 /** Whole-number weights for n criteria that add up to 100. */
 export function evenWeights(n) {
   if (n <= 0) return [];
@@ -95,14 +126,16 @@ export const weightTotal = (rubric) => rubric.criteria.reduce((s, c) => s + (Num
 /**
  * The points each criterion is worth when the work is worth `points`: split
  * by weight in hundredths, adding up to exactly `points` (weights that don't
- * add up to 100 are scaled to).
+ * add up to 100 are scaled to). An even split (34/33/33) shares the points
+ * equally, so a 30-point exercise is 10/10/10, not 10.2/9.9/9.9.
  */
 export function criterionPoints(rubric, points) {
   const total = weightTotal(rubric);
   const n = rubric.criteria.length;
   if (!n) return [];
   const cents = Math.round((Number(points) || 0) * 100);
-  const raw = rubric.criteria.map((c) => (total > 0 ? (cents * (Number(c.weight) || 0)) / total : cents / n));
+  const even = evenWeights(n).every((w, i) => Number(rubric.criteria[i].weight) === w);
+  const raw = rubric.criteria.map((c) => (total > 0 && !even ? (cents * (Number(c.weight) || 0)) / total : cents / n));
   const out = raw.map(Math.floor);
   // the cents lost to rounding down go to the largest remainders
   let left = cents - out.reduce((s, x) => s + x, 0);

@@ -6,6 +6,11 @@
  * criterion. Nothing is written until "Save rubric"; every page and course
  * sequence that uses the rubric shows the change (rubrics/rubric-model.js).
  *
+ * Saving a rubric that pages or course sequences use first says how many
+ * will change, with the choice to save it as a new rubric instead; "Save as
+ * new rubric" makes a copy with the changes and leaves the original as it
+ * was.
+ *
  * Keyboard: Tab moves through the grid; Alt+↑/↓ in a criterion's row moves
  * the criterion, Alt+←/→ in a level's heading moves the level. Esc asks
  * before discarding changes.
@@ -16,14 +21,16 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { saveOutline } from "../outline/outline-model.js";
-import { rubricOf, evenWeights, weightTotal } from "./rubric-model.js";
+import { saveOutline, newItemId } from "../outline/outline-model.js";
+import { RUBRIC_TYPE, isRubric, rubricOf, rubricUsage, evenWeights, weightTotal } from "./rubric-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 const uid = (p) => `${p}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 const clone = (o) => JSON.parse(JSON.stringify(o));
 const sameWeights = (a, b) => a.length === b.length && a.every((x, i) => Number(x) === b[i]);
+const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
+const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 class OerRubricEditor extends LitElement {
   static get tag() {
@@ -35,6 +42,8 @@ class OerRubricEditor extends LitElement {
       open: { type: Boolean, reflect: true },
       _draft: { state: true },
       _confirmDiscard: { state: true },
+      _confirm: { state: true }, // null | "save" (what changes) | "saveas" (the copy's name)
+      _newName: { state: true },
       _saving: { state: true },
     };
   }
@@ -47,7 +56,8 @@ class OerRubricEditor extends LitElement {
       if (!this.open || e.key !== "Escape") return;
       e.preventDefault();
       e.stopPropagation();
-      this._requestClose();
+      if (this._confirm) this._closeConfirm();
+      else this._requestClose();
     };
   }
 
@@ -61,6 +71,7 @@ class OerRubricEditor extends LitElement {
     this._draft = { name: r.name, description: r.description, key: r.key, levels: r.levels, criteria: r.criteria };
     this._snapshot = JSON.stringify(this._draft);
     this._confirmDiscard = false;
+    this._confirm = null;
     this._saving = false;
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
@@ -82,18 +93,17 @@ class OerRubricEditor extends LitElement {
   _close() {
     this.open = false;
     this._confirmDiscard = false;
+    this._confirm = null;
     globalThis.removeEventListener("keydown", this.__keys, true);
   }
 
-  async _save() {
-    const page = (toJS(store.manifest?.items) || []).find((i) => i.id === this._pageId);
-    if (!page) return;
+  // the draft as stored: trimmed, without descriptions of removed levels
+  _stored(key) {
     const d = this._draft;
     const levelIds = new Set(d.levels.map((l) => l.id));
-    const oerRubric = {
+    return {
       version: 1,
-      // the key is set once, so references made with it keep working
-      key: d.key || String(page.slug || "").split("/").filter(Boolean).pop() || page.id,
+      key,
       levels: d.levels.map((l) => ({ id: l.id, name: l.name.trim(), share: Math.max(0, Math.min(1, Number(l.share) || 0)) })),
       criteria: d.criteria.map((c) => ({
         id: c.id,
@@ -103,6 +113,49 @@ class OerRubricEditor extends LitElement {
         descriptors: Object.fromEntries(Object.entries(c.descriptors || {}).filter(([k, v]) => levelIds.has(k) && String(v).trim()).map(([k, v]) => [k, String(v).trim()])),
       })),
     };
+  }
+
+  get _page() {
+    return (toJS(store.manifest?.items) || []).find((i) => i.id === this._pageId);
+  }
+
+  // where the rubric is used: pages, archived versions, course sequences
+  _usage() {
+    const page = this._page;
+    return page ? rubricUsage(toJS(store.manifest?.items) || [], page) : { pages: [], versions: [], sequences: [] };
+  }
+
+  // straight away when nothing else uses the rubric; otherwise say what
+  // will change first
+  _requestSave() {
+    if (!this._dirty || this._saving) return;
+    const u = this._usage();
+    if (u.pages.length || u.versions.length || u.sequences.length) {
+      this._confirm = "save";
+      this._focus(".confirm .btn.primary");
+    } else this._save();
+  }
+
+  _openSaveAs() {
+    const name = this._draft.name.trim();
+    const original = JSON.parse(this._snapshot).name;
+    this._newName = name && name !== original ? name : `${name || original} (copy)`;
+    this._confirm = "saveas";
+    this._focus("#new-name");
+  }
+
+  _closeConfirm() {
+    const was = this._confirm;
+    this._confirm = null;
+    this._focus(was === "saveas" ? ".save-as" : ".save");
+  }
+
+  async _save() {
+    const page = this._page;
+    if (!page) return;
+    const d = this._draft;
+    // the key is set once, so references made with it keep working
+    const oerRubric = this._stored(d.key || String(page.slug || "").split("/").filter(Boolean).pop() || page.id);
     this._saving = true;
     await saveOutline([{ ...page, title: d.name.trim() || page.title, metadata: { ...page.metadata, oerRubric }, modified: true }]);
     // HAX keeps descriptions out of outline saves
@@ -112,6 +165,43 @@ class OerRubricEditor extends LitElement {
     }
     this._saving = false;
     this._close();
+  }
+
+  // a new rubric page beside this one, with the changes; the original stays
+  // as it was. Then go to it.
+  async _saveAs() {
+    const name = String(this._newName || "").trim();
+    const page = this._page;
+    if (!name || !page || this._saving) return;
+    const items = toJS(store.manifest?.items) || [];
+    const keys = new Set(items.filter(isRubric).map((i) => i.metadata?.oerRubric?.key));
+    const base = slugify(name) || "rubric";
+    let key = base;
+    for (let n = 2; keys.has(key); n++) key = `${base}-${n}`;
+    this._saving = true;
+    await saveOutline([
+      {
+        id: newItemId(),
+        title: name,
+        parent: page.parent || null,
+        order: items.filter((i) => (i.parent || null) === (page.parent || null)).length,
+        indent: Number(page.indent) || 0,
+        location: "",
+        description: "",
+        metadata: { pageType: RUBRIC_TYPE, published: page.metadata?.published !== false, oerFields: { ...(page.metadata?.oerFields || {}) }, oerRubric: this._stored(key) },
+        contents: "",
+        new: true,
+      },
+    ]);
+    const created = (toJS(store.manifest?.items) || []).find((i) => isRubric(i) && i.metadata?.oerRubric?.key === key);
+    const description = this._draft.description.trim();
+    if (created && description) await store.cmsSiteEditor?.instance?.saveNodeDetails?.({ detail: { id: created.id, operation: "setDescription", description } });
+    this._saving = false;
+    this._close();
+    if (created) {
+      globalThis.history.pushState({}, "", created.slug);
+      globalThis.dispatchEvent(new PopStateEvent("popstate"));
+    }
   }
 
   /* ---------- edits ---------- */
@@ -348,6 +438,7 @@ class OerRubricEditor extends LitElement {
         color: inherit;
         font: inherit;
         font-size: 0.875rem;
+        font-weight: 400;
         line-height: 1.4;
       }
       textarea.input {
@@ -401,9 +492,11 @@ class OerRubricEditor extends LitElement {
       tbody tr:last-child > * {
         border-bottom: 0;
       }
+      th {
+        font-weight: 500;
+      }
       thead th {
         background: var(--muted);
-        font-weight: 500;
       }
       .crit-col {
         position: sticky;
@@ -531,6 +624,64 @@ class OerRubricEditor extends LitElement {
       kbd {
         font-family: var(--font-mono, ui-monospace, monospace);
       }
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+      .confirm-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        background: rgb(0 0 0 / 0.35);
+      }
+      .confirm {
+        box-sizing: border-box;
+        width: min(32rem, 100%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.5rem;
+        background: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 16px 48px rgb(0 0 0 / 0.24);
+      }
+      .confirm h3 {
+        margin: 0;
+        font-size: 1.0625rem;
+      }
+      .confirm p {
+        margin: 0;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--muted-foreground);
+      }
+      .confirm .used {
+        max-height: 10rem;
+        overflow-y: auto;
+        margin: 0;
+        padding: 0.5rem 0.75rem 0.5rem 1.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        font-size: 0.875rem;
+      }
+      .confirm .used a {
+        color: var(--link, var(--primary));
+      }
+      .confirm .used .more {
+        list-style: none;
+        color: var(--muted-foreground);
+      }
+      .confirm .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+      }
       @media (max-width: 720px) {
         .about {
           grid-template-columns: minmax(0, 1fr);
@@ -559,7 +710,7 @@ class OerRubricEditor extends LitElement {
             .value="${String(Math.round(l.share * 1000) / 10)}"
             @input="${(e) => set({ share: Math.max(0, Math.min(100, Number(e.target.value) || 0)) / 100 })}"
           />
-          <span class="unit">% of points</span>
+          <span class="unit" title="Share of a criterion's points">%</span>
           <span class="tools">
             <button class="icon" title="Move left (Alt+←)" aria-label="Move ${l.name || "level"} left" ?disabled="${i === 0}" @click="${() => this._moveLevel(i, -1)}">${lucide("oer:chevron-left", "sm")}</button>
             <button class="icon" title="Move right (Alt+→)" aria-label="Move ${l.name || "level"} right" ?disabled="${i === n - 1}" @click="${() => this._moveLevel(i, 1)}">${lucide("oer:chevron-right", "sm")}</button>
@@ -614,6 +765,64 @@ class OerRubricEditor extends LitElement {
     </tr>`;
   }
 
+  // shadcn AlertDialog inside the editor: what saving changes, or the
+  // copy's name
+  _renderConfirm() {
+    const keys = (e) => {
+      if (e.key !== "Tab") return;
+      const all = [...e.currentTarget.querySelectorAll("button, input, a[href]")];
+      const active = this.shadowRoot.activeElement;
+      if (e.shiftKey && active === all[0]) {
+        all.at(-1).focus();
+        e.preventDefault();
+      } else if (!e.shiftKey && active === all.at(-1)) {
+        all[0].focus();
+        e.preventDefault();
+      }
+    };
+    if (this._confirm === "saveas") {
+      return html`<div class="confirm-layer" @click="${this._closeConfirm}">
+        <form class="confirm" role="alertdialog" aria-modal="true" aria-labelledby="c-t" aria-describedby="c-d" @click="${(e) => e.stopPropagation()}" @keydown="${keys}" @submit="${(e) => (e.preventDefault(), this._saveAs())}">
+          <h3 id="c-t">Save as a new rubric</h3>
+          <p id="c-d">A copy with your changes, beside this one under Rubrics. “${JSON.parse(this._snapshot).name}” stays as it was, and so do the pages that use it.</p>
+          <label class="field">Name<input id="new-name" class="input" required .value="${this._newName}" @input="${(e) => (this._newName = e.target.value)}" /></label>
+          <div class="actions">
+            <button type="button" class="btn outline" @click="${this._closeConfirm}">Cancel</button>
+            <button type="submit" class="btn primary" aria-disabled="${String(this._newName || "").trim() && !this._saving ? "false" : "true"}">${this._saving ? "Saving…" : "Create rubric"}</button>
+          </div>
+        </form>
+      </div>`;
+    }
+    const u = this._usage();
+    const parts = [
+      u.pages.length ? plural(u.pages.length, "page") : "",
+      u.sequences.length ? `${plural(u.sequences.length, "course sequence")} (${plural(u.sequences.reduce((s, x) => s + x.items, 0), "graded item")})` : "",
+      u.versions.length ? plural(u.versions.length, "archived version") : "",
+    ].filter(Boolean);
+    const listed = [...u.pages, ...u.sequences.map((x) => x.page)];
+    const name = JSON.parse(this._snapshot).name;
+    return html`<div class="confirm-layer" @click="${this._closeConfirm}">
+      <div class="confirm" role="alertdialog" aria-modal="true" aria-labelledby="c-t" aria-describedby="c-d" @click="${(e) => e.stopPropagation()}" @keydown="${keys}">
+        <h3 id="c-t">Change “${name}” everywhere it's used?</h3>
+        <p id="c-d">
+          It's used by ${parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts.at(-1)}` : parts[0]}. They'll all show the changed rubric${u.sequences.length ? ", and the next Canvas export grades with it" : ""}.
+          To change it for one piece of work only, save it as a new rubric instead.
+        </p>
+        ${listed.length
+          ? html`<ul class="used" role="list">
+              ${listed.slice(0, 8).map((p) => html`<li><a href="${p.slug}" target="_blank">${p.title}</a></li>`)}
+              ${listed.length > 8 ? html`<li class="more">and ${listed.length - 8} more</li>` : ""}
+            </ul>`
+          : ""}
+        <div class="actions">
+          <button class="btn outline" @click="${this._closeConfirm}">Keep editing</button>
+          <button class="btn outline" @click="${this._openSaveAs}">Save as new rubric…</button>
+          <button class="btn primary" aria-disabled="${this._saving ? "true" : "false"}" @click="${() => !this._saving && this._save()}">${this._saving ? "Saving…" : `Change ${plural(u.pages.length + u.sequences.length + u.versions.length, "use")}`}</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
   render() {
     if (!this.open || !this._draft) return html``;
     const d = this._draft;
@@ -641,8 +850,8 @@ class OerRubricEditor extends LitElement {
           </div>
           <h3>Criteria and levels</h3>
           <p class="hint">
-            Each criterion's weight is its share of the grade, so the rubric fits work of any point value. Each level is worth a share of a criterion's points. The cells say what each level looks like
-            (optional). <kbd>Alt</kbd>+arrows move a criterion or level.
+            Each criterion's weight is its share of the grade, so the rubric fits work of any point value. Each level is worth a share (%) of a criterion's points. The cells say what each level
+            looks like (optional). <kbd>Alt</kbd>+arrows move a criterion or level.
           </p>
           <div class="grid-wrap">
             <table>
@@ -677,8 +886,10 @@ class OerRubricEditor extends LitElement {
                   ${d.criteria.length} criteri${d.criteria.length === 1 ? "on" : "a"}, ${d.levels.length} level${d.levels.length === 1 ? "" : "s"}${unnamed ? `. ${unnamed} still need${unnamed === 1 ? "s" : ""} a name.` : ""}
                 </span>
                 <button class="btn outline" @click="${this._requestClose}">Cancel</button>
-                <button class="btn primary" aria-disabled="${dirty && !this._saving ? "false" : "true"}" @click="${() => dirty && !this._saving && this._save()}">${this._saving ? "Saving…" : "Save rubric"}</button>`}
+                <button class="btn outline save-as" ?disabled="${this._saving}" @click="${this._openSaveAs}">Save as new rubric…</button>
+                <button class="btn primary save" aria-disabled="${dirty && !this._saving ? "false" : "true"}" @click="${this._requestSave}">${this._saving ? "Saving…" : "Save rubric"}</button>`}
         </footer>
+        ${this._confirm ? this._renderConfirm() : ""}
       </div>
     `;
   }

@@ -11,6 +11,7 @@
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { versionsOf } from "../versions/versioning.js";
 import { SYSTEM_TYPE } from "./content-types.js";
+import { isRubric, rubricUsage } from "../rubrics/rubric-model.js";
 
 const items = () => toJS(store.manifest?.items) || [];
 
@@ -27,10 +28,18 @@ export function resolveLinks(value, list = items()) {
 
 /**
  * Pages that link to `pageId`, through a relation field or as an included
- * chapter: [{ item, via }] where `via` names the field (or "Included").
+ * chapter: [{ item, via }] where `via` names the field (or "Included"). A
+ * rubric is used by the pages that show it and the sequences that grade
+ * with it.
  */
 export function usedIn(pageId, types, list = items()) {
   const out = [];
+  const target = list.find((i) => i.id === pageId);
+  if (isRubric(target)) {
+    const usage = rubricUsage(list, target);
+    for (const item of usage.pages) out.push({ item, via: "Shows this rubric" });
+    for (const { page } of usage.sequences) out.push({ item: page, via: "Grades with it" });
+  }
   for (const item of list) {
     if (item.id === pageId || item.metadata?.oerSnapshotOf || item.metadata?.pageType === SYSTEM_TYPE) continue;
     if (item.metadata?.oerRef?.page === pageId) {

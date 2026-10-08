@@ -83,12 +83,84 @@ export class OerRubric extends DDD {
         :host {
           display: block;
           margin: 2rem 0;
+          text-align: start;
         }
         .card {
+          container-type: inline-size;
           border: 1px solid var(--border, var(--ddd-theme-default-limestoneLight));
           border-radius: var(--radius-lg, var(--ddd-radius-md));
           padding: 1rem 0 0.25rem;
         }
+        /* narrow: each criterion with its levels listed under it, instead
+           of a grid that scrolls sideways */
+        .stacked {
+          display: none;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        /* the grid needs about 10rem for criteria and 7rem a level */
+        @container (max-width: 31rem) {
+          .n2 .grid-wrap { display: none; }
+          .n2 .stacked { display: block; }
+        }
+        @container (max-width: 38rem) {
+          .n3 .grid-wrap { display: none; }
+          .n3 .stacked { display: block; }
+        }
+        @container (max-width: 45rem) {
+          .n4 .grid-wrap { display: none; }
+          .n4 .stacked { display: block; }
+        }
+        @container (max-width: 47rem) {
+          .n5 .grid-wrap { display: none; }
+          .n5 .stacked { display: block; }
+        }
+        @container (max-width: 54rem) {
+          .n6 .grid-wrap { display: none; }
+          .n6 .stacked { display: block; }
+        }
+        @container (max-width: 61rem) {
+          .n7 .grid-wrap { display: none; }
+          .n7 .stacked { display: block; }
+        }
+        .stacked > li {
+          padding: 0.75rem 1rem;
+          border-top: 1px solid var(--border, var(--ddd-theme-default-limestoneLight));
+          font-size: 0.875rem;
+        }
+        .stacked h4 {
+          margin: 0;
+          font-size: 0.9375rem;
+          font-weight: 600;
+        }
+        .stacked .cdesc {
+          margin: 0.25rem 0 0.5rem;
+          color: var(--muted-foreground, inherit);
+        }
+        /* DDD sizes and pads definition lists; these are compact */
+        .stacked dl {
+          display: grid;
+          grid-template-columns: minmax(7rem, max-content) 1fr;
+          gap: 0.375rem 0.75rem;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .stacked dt,
+        .stacked dd {
+          margin: 0 !important;
+          padding: 0 !important;
+          font-size: 0.875rem !important;
+          line-height: 1.45;
+        }
+        .stacked dt {
+          font-weight: 500;
+        }
+        .stacked dt small {
+          display: inline;
+          margin-left: 0.25rem;
+        }
+
         .head {
           display: flex;
           align-items: flex-start;
@@ -192,11 +264,29 @@ export class OerRubric extends DDD {
           font-weight: 400;
           color: var(--muted-foreground, inherit);
         }
+        .grid th,
         .grid td {
-          min-width: 9rem;
+          padding: 0.75rem 0.625rem !important;
+        }
+        .grid tr > :first-child {
+          padding-left: 1rem !important;
+        }
+        .grid tr > :last-child {
+          padding-right: 1rem !important;
+        }
+        .grid td {
+          min-width: 5.5rem;
         }
         .grid tbody th {
-          min-width: 11rem;
+          min-width: 8.5rem;
+        }
+        .sr {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip-path: inset(50%);
+          white-space: nowrap;
         }
         .weight {
           white-space: nowrap;
@@ -236,12 +326,12 @@ export class OerRubric extends DDD {
   }
 
   _renderGrid(r) {
-    return html`<div class="table-wrap">
+    return html`<div class="n${Math.max(2, Math.min(7, r.levels.length))}"><div class="table-wrap grid-wrap">
       <table class="grid">
         <thead>
           <tr>
             <th scope="col">Criterion</th>
-            ${r.levels.map((l) => html`<th scope="col">${l.name}<small>${percent(l.share)} of its points</small></th>`)}
+            ${r.levels.map((l) => html`<th scope="col">${l.name}<small>${percent(l.share)}<span class="sr"> of each criterion's points</span></small></th>`)}
           </tr>
         </thead>
         <tbody>
@@ -253,7 +343,18 @@ export class OerRubric extends DDD {
           )}
         </tbody>
       </table>
-    </div>`;
+    </div>
+    <ul class="stacked" role="list">
+      ${r.criteria.map(
+        (c) => html`<li>
+          <h4>${c.name}<small class="weight">${c.weight}% of the grade</small></h4>
+          ${c.description ? html`<p class="cdesc">${c.description}</p>` : ""}
+          <dl>
+            ${r.levels.map((l) => html`<dt>${l.name}<small>${percent(l.share)}</small></dt><dd>${c.descriptors?.[l.id] || "–"}</dd>`)}
+          </dl>
+        </li>`,
+      )}
+    </ul></div>`;
   }
 
   _renderList(r) {

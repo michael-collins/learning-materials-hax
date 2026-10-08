@@ -63,6 +63,7 @@ import { followPermalink } from "./ui/permalinks.js";
 import { openViewerFromUrl } from "./ui/oer-outline-viewer.js";
 import { loadReaderSettings, saveReaderSettings, readerVars } from "./ui/oer-reader.js";
 import { HAX_GUESSED_ICON } from "./types/page-icon.js";
+import { syncRubricRefs } from "./rubrics/rubric-usage.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -184,6 +185,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__beforeSave = () => {
       const pb = this.querySelector("page-break");
       if (pb?.icon === HAX_GUESSED_ICON) pb.icon = null;
+      // the rubrics the page shows, recorded so a rubric knows where it's
+      // used (rubrics/rubric-usage.js)
+      const id = toJS(store.activeId);
+      const refs = [...new Set([...this.querySelectorAll("oer-rubric")].map((e) => e.getAttribute("rubric-id")).filter(Boolean))];
+      if (id) syncRubricRefs(id, refs);
     };
     // ?embed=1: chrome-less page for LMS iframes; decided once, so following
     // links inside the frame stays embedded

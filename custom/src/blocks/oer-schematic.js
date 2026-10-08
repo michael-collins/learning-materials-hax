@@ -307,6 +307,43 @@ const PRESETS = {
     ${page(222, 154, 150, 4)}`;
   },
 
+  // the rubric editor: name and description, then the grid (criteria with
+  // their weights down the side, levels with their share of points across
+  // the top, what each level looks like in the cells; one highlighted)
+  rubric: () => {
+    const cols = [120, 209, 298];
+    const levels = [
+      ["Exemplary", "100%"],
+      ["Proficient", "85%"],
+      ["Developing", "70%"],
+    ];
+    const rows = [
+      [64, "40%"],
+      [78, "40%"],
+      [52, "20%"],
+    ];
+    return svg`
+    ${win(false)}
+    ${R(14, 38, 110, 10, "t", 3)}${btn(306, 34, 80, "Save rubric", "hi")}
+    ${HR(0.5, 58, W - 0.5)}
+    ${R(14, 66, 112, 14, "card", 3)}${L(20, 70.5, 50, "t2")}${R(134, 66, 252, 14, "card", 3)}${L(140, 70.5, 150, "t2")}
+    ${R(14, 90, 372, 140, "card", 6)}
+    ${RC(14.5, 90.5, 371, 29.5, [5.5, 5.5, 0, 0], "panel")}
+    ${HR(14.5, 120, 385.5)}${HR(14.5, 157, 385.5)}${HR(14.5, 194, 385.5)}
+    ${cols.map((x) => P(`M${x} 90.5 V229.5`, "rule"))}
+    ${T(22, 109, "Criterion", "muted sm")}
+    ${levels.map(([name, share], i) => svg`${T(cols[i] + 8, 103, name, "lbl sm")}${T(cols[i] + 8, 114, share, "muted sm")}`)}
+    ${rows.map(([w, weight], r) => {
+      const y = 120 + r * 37;
+      return svg`${L(22, y + 8, w, "t")}${R(22, y + 19, 30, 10, "pill", 5)}${T(37, y + 27, weight, "lbl sm", "middle")}
+        ${cols.map((x, c) =>
+          r === 1 && c === 1
+            ? svg`${R(x + 3, y + 3, 83, 31, "hi-soft", 4)}${L(x + 8, y + 9, 66, "t-hi")}${L(x + 8, y + 20, 46, "t-hi")}`
+            : svg`${L(x + 8, y + 9, 58 - c * 6, "t2")}${L(x + 8, y + 20, 40 - c * 4, "t2")}`,
+        )}`;
+    })}`;
+  },
+
   // a course page: code and credits, bulletin and prerequisites, then
   // everything taught in it, grouped by type (highlighted)
   course: () => svg`
