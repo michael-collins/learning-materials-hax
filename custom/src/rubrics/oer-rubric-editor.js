@@ -804,7 +804,7 @@ class OerRubricEditor extends LitElement {
         <div class="actions">
           <button class="btn outline" @click="${this._closeConfirm}">Keep editing</button>
           <button class="btn outline" @click="${this._openSaveAs}">Save as new rubric…</button>
-          <button class="btn primary" aria-disabled="${this._saving ? "true" : "false"}" @click="${() => !this._saving && this._save()}">${this._saving ? "Saving…" : `Change ${plural(u.pages.length + u.sequences.length + u.versions.length, "use")}`}</button>
+          <button class="btn primary" aria-disabled="${this._saving ? "true" : "false"}" @click="${() => !this._saving && this._save()}">${this._saving ? "Saving…" : "Save changes"}</button>
         </div>
       </div>
     </div>`;

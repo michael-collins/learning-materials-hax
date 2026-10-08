@@ -308,8 +308,9 @@ const PRESETS = {
   },
 
   // the rubric editor: name and description, then the grid (criteria with
-  // their weights down the side, levels with their share of points across
-  // the top, what each level looks like in the cells; one highlighted)
+  // their shares of the grade down the side, levels with their share of
+  // points across the top, what each level looks like in the cells; one
+  // highlighted), with Save as new rubric beside Save
   rubric: () => {
     const cols = [120, 209, 298];
     const levels = [
@@ -318,13 +319,13 @@ const PRESETS = {
       ["Developing", "70%"],
     ];
     const rows = [
-      [64, "40%"],
-      [78, "40%"],
-      [52, "20%"],
+      [64, "1/3"],
+      [78, "1/3"],
+      [52, "1/3"],
     ];
     return svg`
     ${win(false)}
-    ${R(14, 38, 110, 10, "t", 3)}${btn(306, 34, 80, "Save rubric", "hi")}
+    ${R(14, 38, 110, 10, "t", 3)}${btn(214, 34, 86, "Save as new…")}${btn(306, 34, 80, "Save rubric", "hi")}
     ${HR(0.5, 58, W - 0.5)}
     ${R(14, 66, 112, 14, "card", 3)}${L(20, 70.5, 50, "t2")}${R(134, 66, 252, 14, "card", 3)}${L(140, 70.5, 150, "t2")}
     ${R(14, 90, 372, 140, "card", 6)}
