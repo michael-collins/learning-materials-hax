@@ -11,7 +11,7 @@ description: >-
   pathways, versions, books, embedding and open licen
 metadata:
   created: 1790801562
-  updated: 1791466061
+  updated: 1791469043
   published: true
   locked: false
   status: ''
@@ -190,12 +190,19 @@ content: >
   are assignments (with points and due weeks), and how grades are weighted. Like
   any page it has versions, so a term can keep the version it started with.</p>
 
-  <p><strong>Edit sequence</strong> opens the sequence builder. Add pages to
-  each module from the library (the course's own pages come first), and set how
-  each one works in an LMS: an embedded page, an assignment (due week, points,
-  what students submit, rubric and grade group), a quiz or a link. With nothing
-  selected it holds the grade groups and the rubric point scale. Checks at the
-  bottom flag what to fix before exporting.</p>
+  <p><strong>Edit sequence</strong> opens the sequence builder: the outline on
+  the left, the selected item on the right. The outline works like the site
+  outline: weekly modules (or units) at the top and their items under them. Drag
+  items between modules, indent them with Tab and move them with Alt and the
+  arrow keys. Each module ends with <em>Add pages</em> (the page picker),
+  <em>Add header</em> and <em>Add link</em>. Select an item to set how it works
+  in an LMS above a preview of its page: an embedded page, an assignment (due
+  week, points, what students submit, rubric and grade group), a discussion, a
+  quiz, a link or a file. An item keeps its due date relative to its module, so
+  moving it two weeks later moves its due date too. <strong>Course
+  settings</strong> opens a side panel for the length, delivery, grade groups
+  and rubric point scale. Checks at the bottom flag what to fix before
+  exporting.</p>
 
   <p><strong>Export to Canvas</strong> asks for the term: its first and last
   days, its breaks, when assignments are usually due (Sunday at 11:59 pm, say,
@@ -206,13 +213,15 @@ content: >
   quizzes are built from the page's questions and can become New Quizzes on
   import.</p>
 
-  <oer-schematic preset="sequence" alt="Diagram of the sequence builder: a list
-  of pages to add on the left, weekly modules in the middle with a highlighted
-  assignment worth 30 points due in week 2, and its settings on the right:
-  becomes Assignment, 30 points, due week 2, a rubric and what students submit,
-  with an Export to Canvas button at the top." caption="The sequence builder:
-  pages into weekly modules, each assignment's points, due week and rubric, then
-  Export to Canvas."></oer-schematic>
+  <oer-schematic preset="sequence" alt="Diagram of the sequence builder: on the
+  left, an outline of weekly modules with their items indented under them, a
+  highlighted assignment worth 30 points due in week 2, a Readings header, and
+  Add pages and Add module rows; on the right, that assignment's settings
+  (becomes Assignment, 30 points, due week 2, a rubric) above a preview of its
+  page, with a Course settings button at the top." caption="The sequence
+  builder: weekly modules in an outline you drag and indent, the selected item's
+  LMS settings and page beside it, and grade groups under Course
+  settings."></oer-schematic>
 
 
   <h2>Pathways</h2>
