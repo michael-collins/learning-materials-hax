@@ -13,8 +13,11 @@
  *         quizType: "practice" | "graded", file: url },     (quizzes, files)
  *       { as: "url", title, url, newTab },                  (any address)
  *       { header: "Readings", indent? } ] }],
- *     groups: [{ id, name, weight }],
- *     rubricScale: [{ name, share }] }
+ *     groups: [{ id, name, weight }] }
+ *
+ * An item's rubric names one of the site's rubric pages (by key or page id;
+ * rubrics/rubric-model.js), which brings its own criteria, weights and
+ * levels.
  *
  * What changes from term to term (start and end dates, breaks, the typical
  * due day and time, class meetings, the time zone) isn't part of it: the
@@ -23,6 +26,7 @@
  * dependencies.
  */
 import { deliveryFromCourse, teachingWeeks, weeksAvailable, dueAt } from "./offering-schedule.js";
+import { findRubric, rubricOf } from "../rubrics/rubric-model.js";
 
 export const SEQUENCE_TYPE = "oer:sequence";
 
@@ -50,14 +54,6 @@ export const SUBMISSION_TYPES = {
   none: "No submission",
 };
 
-export const DEFAULT_RUBRIC_SCALE = [
-  { name: "Exemplary", share: 1 },
-  { name: "Proficient", share: 0.85 },
-  { name: "Developing", share: 0.7 },
-  { name: "Beginning", share: 0.5 },
-  { name: "Missing", share: 0 },
-];
-
 /** The role a page of this type usually takes in an LMS. */
 export function defaultRole(pageType) {
   if (["oer:exercise", "oer:project", "oer:activity"].includes(pageType)) return "assignment";
@@ -84,7 +80,6 @@ export function sequenceOf(page) {
     version: 1,
     modules: Array.isArray(s.modules) ? s.modules : [],
     groups: Array.isArray(s.groups) ? s.groups : [],
-    rubricScale: Array.isArray(s.rubricScale) && s.rubricScale.length ? s.rubricScale : DEFAULT_RUBRIC_SCALE,
   };
 }
 
@@ -124,7 +119,6 @@ export function toOffering(page, items, run) {
     siteUrl: run.siteUrl || "",
     publish: run.publish !== false,
     groups: sequence.groups,
-    rubricScale: sequence.rubricScale,
     modules: sequence.modules,
   };
 }
@@ -158,6 +152,11 @@ export function readiness(page, items, run = null) {
         if (!(Number(it.points) > 0)) out.push({ level: "warning", text: `${page.title} has no points.` });
         if (sequence.groups.length && (!it.group || !groupIds.has(it.group))) out.push({ level: "warning", text: `${page.title} isn't in a grade group.` });
         if (it.due?.week > weeks) out.push({ level: "warning", text: `${page.title} is due in week ${it.due.week}, after the sequence's ${weeks} weeks.` });
+        if (it.rubric) {
+          const rubric = findRubric(items, it.rubric);
+          if (!rubric) out.push({ level: "warning", text: `${page.title}: its rubric (${it.rubric}) isn't on the site.` });
+          else if (!rubricOf(rubric).criteria.length) out.push({ level: "warning", text: `${page.title}: the rubric “${rubric.title}” has no criteria yet.` });
+        }
       }
     }
   }

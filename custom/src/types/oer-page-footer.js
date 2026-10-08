@@ -29,6 +29,7 @@ import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { ccLicense, ccIcon } from "./licenses.js";
 import { loadAiul, aiulInfo, AIUL_GUIDE } from "./aiul.js";
 import { deliveryFromCourse } from "../lms/offering-schedule.js";
+import { RUBRIC_TYPE, rubricOf, rubricJsonLd } from "../rubrics/rubric-model.js";
 import { permalinkFor } from "../ui/permalinks.js";
 import { versionsOf } from "../versions/versioning.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
@@ -217,6 +218,11 @@ class OerPageFooter extends LitElement {
     };
     if (item.description) data["schema:description"] = item.description;
     if (cc?.url) data["schema:license"] = cc.url;
+    // a rubric: its criteria (with weights) and levels, as OER Schema has them
+    if (typeId === RUBRIC_TYPE) {
+      const { "@type": _t, ...rubric } = rubricJsonLd(rubricOf(item));
+      Object.assign(data, rubric);
+    }
     // a course sequence: how long it runs and how it meets
     if (typeId === "oer:sequence") {
       if (Number(f.weeks)) data["schema:timeRequired"] = `P${Number(f.weeks)}W`;

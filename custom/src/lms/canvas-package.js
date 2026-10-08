@@ -22,12 +22,16 @@
  * attachments, copied in), text headers; each with an indent level.
  * Quizzes are built from the page's questions (multiple choice, true/false;
  * self-checks become ungraded short essays with the model answer as
- * feedback). Canvas can convert them to New Quizzes on import.
+ * feedback). Canvas can convert them to New Quizzes on import. Rubrics are
+ * the site's rubric pages (rubrics/rubric-model.js): each criterion worth
+ * its weight's share of the assignment's points, rated on the rubric's own
+ * levels, with what each level looks like as the rating's description.
  *
- * buildCanvasPackage({ offering, items, htmlOf, rubrics, includeDrafts })
+ * buildCanvasPackage({ offering, items, htmlOf, fileOf, includeDrafts })
  *   → { files: [{ name, data }], report: { warnings, counts } }
  */
 import { classMeetings, dueAt, termEnd, toUtc, unlockAt, DELIVERY_MODES } from "./offering-schedule.js";
+import { findRubric, rubricOf, criterionPoints } from "../rubrics/rubric-model.js";
 
 /* ---------- helpers ---------- */
 
@@ -144,20 +148,20 @@ ${answers.map((a) => `              <response_label ident="${a.id}"><material><m
 
 /* ---------- rubrics ---------- */
 
-// split points across criteria in hundredths, the remainder on the last
-function splitPoints(total, n) {
-  const each = Math.floor((total * 100) / n) / 100;
-  return Array.from({ length: n }, (_, i) => (i === n - 1 ? Math.round((total - each * (n - 1)) * 100) / 100 : each));
-}
-
-function rubricXml(id, rubric, points, scale) {
-  const shares = points > 0 ? splitPoints(points, rubric.criteria.length) : rubric.criteria.map(() => 0);
+// a rubric for work worth `points`: each criterion its weight's share, each
+// rating the level's share of that, the level's description for the
+// criterion as the rating's long description
+function rubricXml(id, rubric, points) {
+  const shares = criterionPoints(rubric, points);
   const criteria = rubric.criteria
     .map((c, i) => {
       const cid = `_${i + 1}`;
       const pts = shares[i];
-      const ratings = scale
-        .map((lvl, j) => `<rating><description>${esc(lvl.name)}</description><points>${(Math.round(pts * lvl.share * 100) / 100).toFixed(2)}</points><criterion_id>${cid}</criterion_id><id>${cid}_${j + 1}</id></rating>`)
+      const ratings = rubric.levels
+        .map((lvl, j) => {
+          const long = String(c.descriptors?.[lvl.id] || "").trim();
+          return `<rating><description>${esc(lvl.name)}</description><points>${(Math.round(pts * lvl.share * 100) / 100).toFixed(2)}</points><criterion_id>${cid}</criterion_id>${long ? `<long_description>${esc(long)}</long_description>` : ""}<id>${cid}_${j + 1}</id></rating>`;
+        })
         .join("");
       return `      <criterion>
         <criterion_id>${cid}</criterion_id>
@@ -223,7 +227,7 @@ const readableDate = (local) => {
 
 /* ---------- the package ---------- */
 
-export async function buildCanvasPackage({ offering, items, htmlOf = async () => "", fileOf = async () => null, rubrics = [], includeDrafts = false, siteName = "Digital Arts OER" }) {
+export async function buildCanvasPackage({ offering, items, htmlOf = async () => "", fileOf = async () => null, includeDrafts = false, siteName = "Digital Arts OER" }) {
   const tz = offering.timeZone || "UTC";
   const siteUrl = offering.siteUrl || "";
   const byId = new Map(items.map((i) => [i.id, i]));
@@ -247,17 +251,18 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     .map((g, i) => `  <assignmentGroup identifier="${groupId(g.id)}">\n    <title>${esc(g.name)}</title>\n    <position>${i + 1}</position>\n    <group_weight>${Number(g.weight || 0).toFixed(1)}</group_weight>\n  </assignmentGroup>`)
     .join("\n");
 
-  // rubrics, one per rubric and point total
+  // rubrics (the site's rubric pages), one per rubric and point total
   const rubricIds = new Map();
   const rubricParts = [];
-  const rubricFor = (slug, points) => {
-    const rubric = rubrics.find((r) => r.slug === slug);
-    if (!rubric?.criteria?.length) return "";
-    const k = `${slug}:${points}`;
+  const rubricFor = (ref, points) => {
+    const page = findRubric(items, ref);
+    const rubric = page && rubricOf(page);
+    if (!rubric?.criteria.length || !rubric.levels.length) return "";
+    const k = `${page.id}:${points}`;
     if (!rubricIds.has(k)) {
       const id = key("rubric", k);
       rubricIds.set(k, id);
-      rubricParts.push(rubricXml(id, rubric, points, offering.rubricScale || [{ name: "Full marks", share: 1 }, { name: "No marks", share: 0 }]));
+      rubricParts.push(rubricXml(id, rubric, points));
     }
     return rubricIds.get(k);
   };
@@ -271,7 +276,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     const graded = entry.graded !== false && points > 0;
     const due = utc(dueAt(offering, entry.due), tz);
     const rubricId = graded && entry.rubric ? rubricFor(entry.rubric, points) : "";
-    if (graded && entry.rubric && !rubricId) warnings.push(`${title}: rubric “${entry.rubric}” wasn't found.`);
+    if (graded && entry.rubric && !rubricId) warnings.push(`${title}: ${findRubric(items, entry.rubric) ? `the rubric “${findRubric(items, entry.rubric).title}” has no criteria yet` : `rubric “${entry.rubric}” wasn't found`}, so it has no rubric in Canvas.`);
     const peer = entry.peerReviews && graded ? entry.peerReviews : null; // { count, anonymous }
     const groupSet = String(entry.groupSet || "").trim();
     return [
@@ -409,7 +414,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         const graded = entry.graded !== false && Number(entry.points) > 0;
         const groupSet = String(entry.groupSet || "").trim();
         const due = utc(dueAt(offering, entry.due), tz);
-        const rubricName = graded && entry.rubric ? rubrics.find((r) => r.slug === entry.rubric)?.name || "" : "";
+        const rubricName = graded && entry.rubric ? findRubric(items, entry.rubric)?.title || "" : "";
         const prompt = [instructionsIntro(page), requirementsHtml(entry, readableDate(dueAt(offering, entry.due)), rubricName), embed(siteUrl, page, siteName)].filter(Boolean).join("\n");
         add(`${tId}.xml`, `${XML_HEAD}<topic xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1  http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imsdt_v1p1.xsd">\n  <title>${esc(page.title)}</title>\n  <text texttype="text/html">${esc(prompt)}</text>\n</topic>\n`);
         // the discussion's own fields come before its nested <assignment>

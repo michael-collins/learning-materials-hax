@@ -21,6 +21,8 @@ import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 import { SEQUENCE_TYPE, sequenceOf, indentOf } from "../lms/sequence-model.js";
 import { sequenceExport } from "../lms/oer-sequence-export.js";
 import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
+import { RUBRIC_TYPE } from "../rubrics/rubric-model.js";
+import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -613,7 +615,15 @@ class OerPageHeader extends LitElement {
     // an activity: its place in its project; a project: its steps
     const subject = source || own;
     const step = activityContext(subject, this._allItems);
-    const steps = typeId === PROJECT_TYPE ? this._renderSteps(subject.id) : typeId === SEQUENCE_TYPE ? this._renderSchedule(subject) : "";
+    // a rubric page: its rubric (the same block pages show it with)
+    const steps =
+      typeId === PROJECT_TYPE
+        ? this._renderSteps(subject.id)
+        : typeId === SEQUENCE_TYPE
+          ? this._renderSchedule(subject)
+          : typeId === RUBRIC_TYPE
+            ? html`<oer-rubric rubric-id="${own.id}"></oer-rubric>`
+            : "";
     return html`
       ${snapshot && latest
         ? html`<div class="archived" role="status">
@@ -635,6 +645,9 @@ class OerPageHeader extends LitElement {
           ${typeId === SEQUENCE_TYPE
             ? html`<button class="edit start" @click="${() => sequenceExport().show(subject)}">${lucide("hax:module")}Export to Canvas</button>
                 ${store.isLoggedIn ? html`<button class="edit" @click="${() => sequenceBuilder().show(subject.id)}">${lucide("icons:create")}Edit sequence</button>` : ""}`
+            : ""}
+          ${typeId === RUBRIC_TYPE && store.isLoggedIn && !snapshot
+            ? html`<button class="edit start" @click="${() => rubricEditor().show(subject.id)}">${lucide("icons:create")}Edit rubric</button>`
             : ""}
           ${canView(own, this._allItems)
             ? html`<button class="edit" aria-label="Open ${item.title} in the viewer" @click="${() => outlineViewer().show(own.id)}">${lucide("oer:eye")}Viewer</button>`

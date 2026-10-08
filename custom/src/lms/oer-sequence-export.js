@@ -135,10 +135,7 @@ class OerSequenceExport extends LitElement {
           return null;
         }
       };
-      const rubricsRes = await fetch(new URL("files/data/rubrics.json", base), { cache: "no-cache" });
-      const data = rubricsRes.ok ? await rubricsRes.json() : [];
-      const rubrics = Array.isArray(data) ? data : data.rubrics || [];
-      const { files, report } = await buildCanvasPackage({ offering, items: all, htmlOf, fileOf, rubrics });
+      const { files, report } = await buildCanvasPackage({ offering, items: all, htmlOf, fileOf });
       const name = `${(page.slug.split("/").pop() || "sequence").replace(/[^a-z0-9-]+/gi, "-")}${this._run.term ? `-${this._run.term.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}` : ""}.imscc`;
       download(new Blob([zipBytes(files)], { type: "application/zip" }), name);
       this._done = { name, ...report };

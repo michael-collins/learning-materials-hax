@@ -27,7 +27,7 @@
  * discussion (an open thread; graded ones with points, a due date,
  * requirements and a rubric), a quiz, a link, a file; text headers and links
  * to any address. Course settings: length, delivery, grade groups and
- * weights, the rubric point scale. Term dates come at export
+ * weights. Rubrics are the site's rubric pages, each with its own levels. Term dates come at export
  * (lms/oer-sequence-export.js).
  *
  *   sequenceBuilder().show(pageId)
@@ -43,6 +43,7 @@ import { isSnapshot, versionsOf } from "../versions/versioning.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { embedUrl } from "../embed/embed-mode.js";
 import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
+import { findRubric, rubricPages, rubricOf } from "../rubrics/rubric-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -77,7 +78,6 @@ class OerSequenceBuilder extends OerOutlineBuilder {
       _selId: { state: true },
       _previewId: { state: true },
       _groups: { state: true },
-      _scale: { state: true },
       _fields: { state: true },
       _sheet: { state: true },
       _layout: { state: true }, // { outline, detail }: which columns show
@@ -93,9 +93,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this._selId = null;
     this._previewId = null;
     this._sheet = false;
-    this._rubrics = [];
     this._groups = [];
-    this._scale = [];
     this._fields = { weeks: 15, delivery: "In person" };
     this._layout = { outline: true, detail: true };
     this._tab = "settings";
@@ -154,7 +152,6 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this._types = [];
     const seq = sequenceOf(page);
     this._groups = clone(seq.groups);
-    this._scale = clone(seq.rubricScale);
     const f = page.metadata?.oerFields || {};
     this._fields = { weeks: Number(f.weeks) || Math.max(0, ...seq.modules.map((m) => Number(m.week) || 0)) || 15, delivery: f.delivery || "In person" };
     this._rows = this._rowsOf(seq);
@@ -172,14 +169,6 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
     this.updateComplete.then(() => this.shadowRoot.querySelector("[role=treeitem], .empty button")?.focus());
-    try {
-      const res = await fetch(new URL("files/data/rubrics.json", globalThis.document.baseURI), { cache: "no-cache" });
-      const data = res.ok ? await res.json() : [];
-      this._rubrics = Array.isArray(data) ? data : data.rubrics || [];
-    } catch {
-      this._rubrics = [];
-    }
-    this.requestUpdate();
   }
 
   // the sequence as outline rows: modules at depth 0, items at 1 + indent
@@ -219,7 +208,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   }
 
   _sequence() {
-    return { version: 1, modules: this._toModules(), groups: this._groups, rubricScale: this._scale };
+    return { version: 1, modules: this._toModules(), groups: this._groups };
   }
 
   _signature() {
@@ -758,13 +747,20 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     </label>`;
   }
 
+  // the site's rubric pages (by key, as older items name them, or page id)
   _rubric(item) {
+    const current = findRubric(this._items || [], item.rubric);
     return html`<label class="field"
       >Rubric
       <select @change="${(e) => this._setItem({ rubric: e.target.value })}">
         <option value="" ?selected="${!item.rubric}">None</option>
-        ${this._rubrics.map((r) => html`<option value="${r.slug}" ?selected="${item.rubric === r.slug}">${r.name} (${r.criteria?.length || 0} criteria)</option>`)}
+        ${rubricPages(this._items || []).map((p) => {
+          const r = rubricOf(p);
+          return html`<option value="${r.key || p.id}" ?selected="${current?.id === p.id}">${p.title} (${r.criteria.length} criteri${r.criteria.length === 1 ? "on" : "a"})</option>`;
+        })}
+        ${item.rubric && !current ? html`<option value="${item.rubric}" selected>Not found: ${item.rubric}</option>` : ""}
       </select>
+      <span class="hint">${current ? html`<a href="${current.slug}" target="_blank">Open the rubric</a>: its criteria, weights and levels.` : "Rubrics are pages under Assessments → Rubrics."}</span>
     </label>`;
   }
 
@@ -934,11 +930,6 @@ class OerSequenceBuilder extends OerOutlineBuilder {
       fn(g);
       this._groups = g;
     };
-    const setScale = (fn) => {
-      const s = clone(this._scale);
-      fn(s);
-      this._scale = s;
-    };
     return html`<div class="sheet-layer" @click="${this._closeSheet}">
       <aside class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-t" @click="${(e) => e.stopPropagation()}" @keydown="${this._sheetKeys}">
         <header class="sheet-head">
@@ -975,29 +966,6 @@ class OerSequenceBuilder extends OerOutlineBuilder {
             <p class="total ${this._groups.length && Math.round(total) !== 100 ? "off" : ""}">Total ${Math.round(total * 10) / 10}%${this._groups.length && Math.round(total) !== 100 ? " (should be 100%)" : ""}</p>
             <button class="btn outline small" @click="${() => setGroups((x) => x.push({ id: uid(), name: "New group", weight: 0 }))}">${lucide("oer:plus", "sm")}Add group</button>
             <p class="hint">The LMS weights groups, not single assignments. Within a group, points set each assignment's share.</p>
-          </section>
-          <section aria-labelledby="scale-t">
-            <h4 id="scale-t">Rubric point scale</h4>
-            <div class="rows">
-              ${this._scale.map(
-                (l, li) => html`<div class="entry">
-                  <input class="input" aria-label="Rating name" .value="${l.name}" @input="${(e) => setScale((x) => (x[li].name = e.target.value))}" />
-                  <input
-                    class="input num"
-                    type="number"
-                    min="0"
-                    max="100"
-                    aria-label="${l.name} (% of the criterion's points)"
-                    .value="${String(Math.round((l.share ?? 0) * 100))}"
-                    @input="${(e) => setScale((x) => (x[li].share = (Number(e.target.value) || 0) / 100))}"
-                  />
-                  <span class="unit">%</span>
-                  <button class="icon" aria-label="Remove ${l.name}" title="Remove" @click="${() => setScale((x) => x.splice(li, 1))}">${lucide("oer:x", "sm")}</button>
-                </div>`,
-              )}
-            </div>
-            <button class="btn outline small" @click="${() => setScale((x) => x.push({ name: "New rating", share: 0.5 }))}">${lucide("oer:plus", "sm")}Add rating</button>
-            <p class="hint">Every rubric criterion gets these ratings, as a share of its points. An assignment's points are split evenly across its rubric's criteria.</p>
           </section>
         </div>
         <footer class="sheet-foot"><button class="btn primary" @click="${this._closeSheet}">Done</button></footer>
