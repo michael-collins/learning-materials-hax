@@ -21,6 +21,9 @@
  * their order rules and prerequisites, and items their availability dates.
  * Rubrics that are the same are merged, and reuse a site rubric with the
  * same criteria. Due dates become teaching weeks from the course's start.
+ * Links in what comes over are listed (plan.links, links/link-model.js):
+ * ones to the old course sites point at the pages here that they mean; the
+ * rest can be checked for dead links by the local helper.
  * Files come over only when ticked: a course's files can include student
  * work, and uploaded files are public once the site is published.
  *
@@ -28,6 +31,7 @@
  */
 import { cleanCanvasHtml, htmlText, placeholdersIn, questionsHtml } from "./canvas-html.js";
 import { rubricPages, rubricOf } from "../rubrics/rubric-model.js";
+import { addressIndex, alike, analyseLink, matchAddress, isOldSite, linksIn as linksInHtml, courseCode, reviewable } from "../links/link-model.js";
 
 /* ---------- words and matching ---------- */
 
@@ -42,17 +46,6 @@ export function words(s) {
     .split(" ")
     .filter((w) => w && !STOP.has(w) && !(/^\d+$/.test(w) && Number(w) < 100))
     .map((w) => (w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w));
-}
-
-// how alike two word lists are: half overlap of the union, half overlap of
-// the shorter (a short title inside a long one counts, two words or more)
-function alike(a, b) {
-  const A = new Set(a);
-  const B = new Set(b);
-  if (!A.size || !B.size) return 0;
-  const both = [...A].filter((w) => B.has(w)).length;
-  const contain = Math.min(A.size, B.size) >= 2 ? both / Math.min(A.size, B.size) : both / Math.max(A.size, B.size);
-  return 0.5 * (both / new Set([...A, ...B]).size) + 0.5 * contain;
 }
 
 const tail = (url) => {
@@ -211,6 +204,7 @@ export function planImport(course, items = []) {
     .filter((i) => !i.metadata?.oerSnapshotOf && !i.metadata?.oerRef && !NOT_MATCHABLE.has(i.metadata?.pageType))
     .map((page) => ({ page, words: words(page.title), slug: page.slug, slugWords: words(String(page.slug || "").split("/").pop()) }));
   const groupsById = new Map(course.groups.map((g) => [g.id, g]));
+  const addresses = addressIndex(items);
   const problems = [...course.problems];
 
   // rubrics: merge the same, reuse the site's
@@ -243,6 +237,7 @@ export function planImport(course, items = []) {
     if (it.kind === "page" && src?.slug) e.slug = src.slug;
     e.html = cleanCanvasHtml(e.rawHtml);
     e.files = [...placeholdersIn(e.html).files];
+    e.links = linksInHtml(e.html).map((l) => l.url);
     const text = htmlText(e.html);
     e.words = text.split(/\s+/).filter(Boolean).length;
 
@@ -312,6 +307,7 @@ export function planImport(course, items = []) {
       const q = src || {};
       const built = questionsHtml(q.questions || []);
       e.html = [e.html, built.html].filter(Boolean).join("\n");
+      e.links = linksInHtml(e.html).map((l) => l.url);
       e.skipped = built.skipped;
       Object.assign(e, { type: "oer:quiz", role: { as: "quiz", quizType: q.quizType === "assignment" ? "graded" : "practice", due: due(q.dueAt) || undefined, group: q.group || "", points: q.points } });
       if (e.action !== "skip") {
@@ -320,6 +316,7 @@ export function planImport(course, items = []) {
         else e.reasons.push(`a quiz with ${(q.questions || []).length - built.skipped.length} of ${(q.questions || []).length} questions the site can use`);
       }
     } else if (it.kind === "link") {
+      e.links = it.url ? [it.url] : [];
       Object.assign(e, { action: e.action === "skip" ? "skip" : "url", role: { as: "url", title: it.title, url: it.url, newTab: true } });
       if (e.action !== "skip") e.reasons.push("a link: in the sequence, no page needed");
     } else if (it.kind === "file") {
@@ -333,6 +330,11 @@ export function planImport(course, items = []) {
     // the site may already have it
     if (["page", "assignment", "discussion", "quiz", "link", "file"].includes(it.kind)) {
       e.candidates = matchCandidates(e, site);
+      // an embedded or linked page on an old course site that's here now
+      const known = [...new Set([...(e.url ? [e.url] : []), ...iframesIn(e.rawHtml)])]
+        .filter((u) => isOldSite(u))
+        .flatMap((u) => matchAddress(u, addresses).filter((c) => c.score >= 0.97).map((c) => ({ ...c, score: 1, why: `the old page it ${u === e.url ? "links to" : "embeds"} (${tail(u)}) is now “${c.title}”` })));
+      if (known.length) e.candidates = [...known.slice(0, 1), ...e.candidates.filter((c) => c.id !== known[0].id)].slice(0, 5);
       const best = e.candidates[0];
       if (best && best.score >= 0.8 && !["skip", "overview"].includes(e.action)) {
         e.match = best;
@@ -407,6 +409,15 @@ export function planImport(course, items = []) {
   const total = groups.reduce((s, g) => s + g.weight, 0);
   if (groups.length && Math.round(total) !== 100) problems.push({ level: "info", text: `The Canvas grade groups add up to ${total}%, not 100%; adjust them in the sequence's Course settings.` });
 
+  // links: each address once, with what's known about it
+  const hint = courseCode(course.code || course.title);
+  const tags = new Map();
+  for (const e of all) for (const l of linksInHtml(e.html)) if (!tags.has(l.url)) tags.set(l.url, l.tag);
+  const links = [...new Set(all.flatMap((e) => e.links || []))]
+    .map((url) => analyseLink(url, addresses, { hint, tag: tags.get(url) || "a" }))
+    .filter((l) => l && l.kind !== "site")
+    .map(reviewable);
+
   // the course page: one of the site's with the same course code
   const code = String(course.code || course.title).match(/\b([A-Z]{2,5})\s*-?\s*(\d{3})\b/);
   const coursePage = code ? items.find((i) => i.metadata?.pageType === "oer:course" && !i.metadata?.oerSnapshotOf && String(i.metadata?.oerFields?.code || i.title).replace(/\s+/g, " ").toUpperCase().startsWith(`${code[1]} ${code[2]}`)) : null;
@@ -421,8 +432,24 @@ export function planImport(course, items = []) {
     rubrics,
     groups,
     files,
+    links,
     problems,
   };
+}
+
+// what of an entry comes over: a page's text, or a link item's address
+const carried = (e) => (["create", "text", "overview", "url"].includes(e.action) ? e.links || [] : []);
+
+/**
+ * The plan's links in what comes over, each with where it's used:
+ * [{ ...link, uses: [{ id, title }] }]. Links only in skipped items, or in
+ * items linked to the site's pages (whose own text is used), aren't listed.
+ */
+export function importedLinks(plan) {
+  const uses = new Map();
+  const entries = [...plan.modules.filter((m) => !m.skip).flatMap((m) => m.items), ...plan.unplaced].filter((e) => e.action !== "skip");
+  for (const e of entries) for (const url of carried(e)) uses.set(url, [...(uses.get(url) || []), { id: e.id, title: e.title }]);
+  return (plan.links || []).filter((l) => uses.has(l.url)).map((l) => ({ ...l, uses: uses.get(l.url) }));
 }
 
 /** Counts for a summary: what the import will do. */
@@ -439,5 +466,6 @@ export function planCounts(plan) {
     rubricsNew: plan.rubrics.filter((r) => r.action === "create" && r.uses).length,
     rubricsReused: plan.rubrics.filter((r) => r.action === "reuse" && r.uses).length,
     files: plan.files.filter((f) => f.import).length,
+    linksHere: importedLinks(plan).filter((l) => l.action === "page").length,
   };
 }

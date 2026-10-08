@@ -65,6 +65,7 @@ import { loadReaderSettings, saveReaderSettings, readerVars } from "./ui/oer-rea
 import { HAX_GUESSED_ICON } from "./types/page-icon.js";
 import { syncRubricRefs } from "./rubrics/rubric-usage.js";
 import { canvasImport } from "./lms/oer-canvas-import.js";
+import { linkCheck } from "./links/oer-link-check.js";
 
 // skins for shared site elements (menu, breadcrumb, collapse) apply only
 // while this theme is active: the bundle also loads under stock themes
@@ -113,6 +114,7 @@ const icon = {
   settings: lucide("icons:settings"),
   types: lucide("hax:templates"),
   upload: lucide("oer:upload"),
+  link: lucide("icons:link"),
   files: lucide("oer:files"),
   details: lucide("image:tune"),
   code: lucide("icons:code"),
@@ -1814,6 +1816,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               <button class="site-action" @click="${() => pagesBrowser().show()}">${icon.files}Browse pages</button>
               <button class="site-action" @click="${() => typeEditor().show()}">${icon.types}Content types</button>
               <button class="site-action" @click="${() => canvasImport().show()}">${icon.upload}Import from Canvas</button>
+              <button class="site-action" @click="${() => linkCheck().show()}">${icon.link}Check links</button>
               <button class="site-action" @click="${openSiteSettings}">${icon.settings}Settings</button>
             </div>`
           : ""}

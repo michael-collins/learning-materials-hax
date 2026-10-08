@@ -375,6 +375,26 @@ const PRESETS = {
     ${R(212, 168, 174, 62, "card", 5)}${L(220, 178, 120)}${L(220, 190, 150)}${L(220, 202, 100)}`;
   },
 
+  // Check links over the page: an old course site's address pointed at the
+  // page here (highlighted), a dead link offered its archived copy, and
+  // Change links
+  links: () => svg`
+    ${win()}
+    ${navLines(44, 10)}
+    ${page(126, 44, 258, 9)}
+    ${scrim()}
+    ${R(60, 38, 280, 194, "pop", 10)}
+    ${R(74, 50, 70, 10, "t", 3)}${btn(232, 46, 94, "Check for dead links")}
+    ${HR(60.5, 72, 339.5)}
+    ${T(74, 88, "To pages on this site", "lbl sm")}
+    ${T(74, 101, "dmd-400-master/capstone-project-proposal.html", "muted sm")}
+    ${R(74, 106, 252, 15, "hi-line card", 3)}${T(80, 116.5, "The page here: Capstone Project Proposal", "lbl sm")}${chevron(312, 111.5)}
+    ${T(74, 140, "Not working", "lbl sm")}
+    ${T(74, 153, "designkit.org/methods/3 · not found", "muted sm")}
+    ${R(74, 158, 252, 15, "card", 3)}${T(80, 168.5, "Use the archived copy (2023)", "lbl sm")}${chevron(312, 163.5, "stroke")}
+    ${HR(60.5, 188, 339.5)}
+    ${L(74, 205, 90, "t2")}${btn(246, 198, 80, "Change links", "hi")}`,
+
   // a course page: code and credits, bulletin and prerequisites, then
   // everything taught in it, grouped by type (highlighted)
   course: () => svg`

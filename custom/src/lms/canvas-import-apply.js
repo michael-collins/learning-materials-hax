@@ -8,7 +8,9 @@
  *    to the course; their Canvas file links point at the uploaded files (or
  *    lose the link when the file stayed behind)
  * 4. links between pages: Canvas page and assignment links become links to
- *    the new (or matched) pages
+ *    the new (or matched) pages; links reviewed under Links (plan.links)
+ *    point where the review says: a page here for an old course site's
+ *    page, a new address (moved, archived, corrected), or plain text
  * 5. the sequence: a draft course sequence under Sequences with the
  *    modules (their weeks or spans, order rules, prerequisites, overviews),
  *    their items' roles, titles, due weeks, availability, points, grade
@@ -25,6 +27,7 @@
  */
 import { RUBRIC_TYPE, isRubric } from "../rubrics/rubric-model.js";
 import { SEQUENCE_TYPE } from "./sequence-model.js";
+import { rewriteLinks, linkTarget } from "../links/link-model.js";
 
 const SECTIONS = {
   "oer:lesson": "Lessons",
@@ -108,6 +111,9 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
     const bytes = await course.zip.bytes(`web_resources/${f.path}`);
     if (bytes) fileUrl.set(f.path, await io.upload(f.name, bytes));
   }
+  // reviewed links (plan.links): to a page here, a new address, or text
+  const linkByUrl = new Map((plan.links || []).map((l) => [l.url, l]));
+  const relink = (html) => rewriteLinks(html, (url) => linkTarget(linkByUrl.get(url)));
   const withFiles = (html) =>
     String(html || "")
       .replace(/<a\b([^>]*?)href="canvas-file:([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, a, path, b, text) => (fileUrl.has(path) ? `<a${a}href="${escAttr(fileUrl.get(path))}"${b}>${text}</a>` : text))
@@ -136,7 +142,7 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
         oerFields: { ...(courses.length ? { courses } : {}), ...(file ? { attachments: [{ title: e.title.replace(/^download:\s*/i, ""), url: file }] } : {}) },
         oerCanvasImport: { batch, id: e.id },
       },
-      contents: withFiles(e.html) || "<p></p>",
+      contents: relink(withFiles(e.html)) || "<p></p>",
       new: true,
     };
   });
@@ -154,7 +160,7 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
   // files and Canvas links resolved: to the uploaded file, the new or
   // matched page, or plain text when it didn't come over
   const resolve = (html) =>
-    withFiles(html).replace(/<a\b([^>]*?)href="canvas-(page|object|course):([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, a, kind, ref, b, text) => {
+    relink(withFiles(html)).replace(/<a\b([^>]*?)href="canvas-(page|object|course):([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (m, a, kind, ref, b, text) => {
       const hit = kind === "page" ? target("page", ref) : kind === "object" ? target("object", ref.split("/").pop()) : null;
       return hit ? `<a${a}href="${escAttr(hit.slug)}"${b}>${text}</a>` : text;
     });
@@ -194,7 +200,13 @@ export async function applyImport(plan, course, { io, onStep = () => {} }) {
           .map((e) => {
             const indent = Math.max(0, Math.min(5, Number(e.indent) || 0));
             if (e.action === "header") return { header: e.title, indent };
-            if (e.action === "url") return { as: "url", title: e.title, url: e.url, newTab: true, indent };
+            if (e.action === "url") {
+              // a link reviewed to a page here, another address, or none
+              const link = linkByUrl.get(e.url);
+              if (link?.action === "page" && link.match) return { page: link.match.id, as: "page", title: e.title, indent };
+              if (link?.action === "unlink") return { header: e.title, indent };
+              return { as: "url", title: e.title, url: linkTarget(link) || e.url, newTab: true, indent };
+            }
             if (e.action === "text") return { as: "text", title: e.title, html: resolve(e.html), indent };
             const page = pageOf(e);
             if (!page) return null;

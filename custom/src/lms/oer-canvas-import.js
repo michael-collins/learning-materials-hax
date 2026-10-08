@@ -11,10 +11,13 @@
  *    sequence, and a preview. Rubrics (merged and reused where they can be),
  *    files (none come over unless ticked: course files can include student
  *    work, and uploaded files are public once the site is published) and the
- *    sequence's settings have their own rows. "Refine with Claude" asks the
- *    local AI helper (nu-hax/scripts/ai-bridge.mjs, with the API key in
- *    .env.local) to check the types, matches and skips; without it the
- *    wizard works on its rules alone.
+ *    sequence's settings have their own rows. Links (links/link-review.js):
+ *    the links in what comes over, with those to the old course sites
+ *    pointed at the pages here they mean; the local helper checks the rest
+ *    for dead ones. "Refine with Claude" asks the local helper
+ *    (nu-hax/scripts/ai-bridge.mjs, with the API key in .env.local) to check
+ *    the types, matches and skips; without it the wizard works on its rules
+ *    alone.
  * 3. Import (lms/canvas-import-apply.js): draft pages, rubrics, files, and a
  *    draft course sequence linked to the course.
  *
@@ -27,17 +30,18 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes } from "../types/content-types.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { readCanvasPackage } from "./canvas-reader.js";
-import { planImport, planCounts } from "./canvas-import-plan.js";
+import { planImport, planCounts, importedLinks } from "./canvas-import-plan.js";
 import { applyImport } from "./canvas-import-apply.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { uploadFile } from "../types/relations.js";
 import { rubricPages, rubricOf } from "../rubrics/rubric-model.js";
 import { moduleWeekLabel } from "./sequence-model.js";
+import { renderLinkReview, linkReviewStyles, withCheck, checkable, checkViaHelper, helperStatus, linkCounts, LOCAL_HELPER } from "../links/link-review.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
-export const AI_BRIDGE = "http://127.0.0.1:3110";
+export const AI_BRIDGE = LOCAL_HELPER;
 const TYPES = ["oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:activity", "oer:project", "oer:quiz"];
 const ACTION_LABEL = { create: "Create", link: "Link", skip: "Skip", url: "Link only", header: "Header", overview: "Overview", text: "In sequence" };
 const ROLE_LABEL = { page: "Page", assignment: "Assignment", discussion: "Discussion", quiz: "Quiz", file: "File", url: "Link" };
@@ -52,11 +56,12 @@ class OerCanvasImport extends LitElement {
       open: { type: Boolean, reflect: true },
       _step: { state: true }, // pick | reading | review | applying | done
       _plan: { state: true },
-      _sel: { state: true }, // an entry id, a module id, or "rubrics" | "files" | "settings"
+      _sel: { state: true }, // an entry id, a module id, or "rubrics" | "files" | "links" | "settings"
       _error: { state: true },
       _log: { state: true },
       _result: { state: true },
-      _ai: { state: true }, // { up, model, busy, note }
+      _ai: { state: true }, // the local helper: { up, ai, model, busy, note }
+      _linkCheck: { state: true }, // { busy, note }
       _confirmClose: { state: true },
     };
   }
@@ -66,6 +71,7 @@ class OerCanvasImport extends LitElement {
     this.open = false;
     this._step = "pick";
     this._ai = { up: false };
+    this._linkCheck = {};
     this.__keys = (e) => {
       if (!this.open || e.key !== "Escape" || globalThis.document.querySelector("oer-page-picker[open]")) return;
       e.preventDefault();
@@ -85,6 +91,7 @@ class OerCanvasImport extends LitElement {
     this._log = [];
     this._result = null;
     this._confirmClose = false;
+    this._linkCheck = {};
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
     this._checkAi();
@@ -160,20 +167,43 @@ class OerCanvasImport extends LitElement {
     if (choice) this._set(e.id, { action: "link", match: { id: choice.page.id, title: choice.page.title, slug: choice.page.slug, type: choice.page.metadata?.pageType || "", score: 1, why: "you chose it" } });
   }
 
-  /* ---------- Claude (the local helper) ---------- */
+  /* ---------- links ---------- */
 
-  async _checkAi() {
+  _setLink(url, patch) {
+    this._setPlan({ links: this._plan.links.map((l) => (l.url === url ? { ...l, ...patch } : l)) });
+  }
+
+  async _pickLinkPage(url) {
+    const choice = await pagePicker().pick({ title: `The page here for ${url.replace(/^https?:\/\//, "")}`, children: false });
+    if (choice) this._setLink(url, { action: "page", match: { id: choice.page.id, title: choice.page.title, slug: choice.page.slug, type: choice.page.metadata?.pageType || "", score: 1, why: "you chose it" } });
+    else this.requestUpdate(); // the select shows the choice it had
+  }
+
+  // whether the links in what comes over still work, through the local helper
+  async _checkLinks() {
+    const urls = checkable(importedLinks(this._plan)).map((l) => l.url);
+    if (!urls.length || this._linkCheck.busy) return;
+    this._linkCheck = { busy: true, note: `Checking ${urls.length} link${urls.length === 1 ? "" : "s"}…` };
     try {
-      const res = await fetch(`${AI_BRIDGE}/status`, { signal: AbortSignal.timeout(1200) });
-      const data = await res.json();
-      this._ai = { up: !!data.ok, model: data.model || "" };
-    } catch {
-      this._ai = { up: false };
+      const results = await checkViaHelper(urls, { onProgress: (done, all) => (this._linkCheck = { busy: true, note: `Checked ${done} of ${all}…` }) });
+      this._setPlan({ links: this._plan.links.map((l) => (results.has(l.url) ? withCheck(l, results.get(l.url)) : l)) });
+      const r = [...results.values()];
+      const n = (st) => r.filter((x) => x.status === st).length;
+      this._linkCheck = { busy: false, note: `Checked ${r.length}: ${n("dead")} not working, ${n("moved")} moved, ${n("private")} need a sign-in, ${n("unknown")} couldn't be checked, ${n("ok")} working.` };
+    } catch (err) {
+      this._linkCheck = { busy: false, note: `The check stopped: ${err.message}` };
+      this._checkAi();
     }
   }
 
+  /* ---------- Claude (the local helper) ---------- */
+
+  async _checkAi() {
+    this._ai = await helperStatus();
+  }
+
   async _refine() {
-    if (!this._ai.up || this._ai.busy) return;
+    if (!this._ai.ai || this._ai.busy) return;
     this._ai = { ...this._ai, busy: true, note: "" };
     const types = contentTypes(toJS(store.manifest?.items) || []).types.filter((t) => TYPES.includes(t.id)).map((t) => ({ id: t.id, label: t.label, description: t.description || "" }));
     const items = this._entries
@@ -250,6 +280,10 @@ class OerCanvasImport extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
+    return [linkReviewStyles, this._styles];
+  }
+
+  static get _styles() {
     return css`
       :host {
         position: fixed;
@@ -755,6 +789,7 @@ class OerCanvasImport extends LitElement {
       ${row("settings", html`${lucide("oer:sliders-horizontal", "sm")}<span class="title">Sequence and course</span>`)}
       ${row("rubrics", html`${lucide("icons:assignment-turned-in", "sm")}<span class="title">Rubrics</span><span class="chip">${p.rubrics.filter((r) => r.uses).length}</span>`)}
       ${row("files", html`${lucide("icons:insert-drive-file", "sm")}<span class="title">Files</span><span class="chip">${p.files.filter((f) => f.import).length} of ${p.files.length}</span>`)}
+      ${row("links", html`${lucide("icons:link", "sm")}<span class="title">Links</span><span class="chip">${importedLinks(p).length}</span>`)}
       <p class="group-label">Modules</p>
       ${p.modules.map((m) => html`${row(m.id, html`<span class="title">${m.title}</span><span class="type">${moduleWeekLabel(m)}</span>${m.skip ? html`<span class="chip skip">Skip</span>` : ""}`, `module ${m.skip ? "skipped" : ""}`)}
         ${m.items.map((e) => entryRow(e, m.skip))}`)}
@@ -926,6 +961,24 @@ class OerCanvasImport extends LitElement {
       </ul>`;
   }
 
+  _renderLinks() {
+    const links = importedLinks(this._plan);
+    const n = linkCounts(links);
+    return html`<div>
+        <p class="eyebrow">Links</p>
+        <h3>${links.length} link${links.length === 1 ? "" : "s"} in what's imported</h3>
+      </div>
+      <p class="hint">
+        The links in the new pages, the module overviews, the sequence's own pages and its link items. ${n.here ? `${n.here} point${n.here === 1 ? "s" : ""} at an old course site's page that's here now, and will link to it instead.` : ""} Items
+        linked to the site's pages use the page's own text, so their Canvas links don't come over.
+      </p>
+      ${renderLinkReview(links, {
+        onChange: (url, patch) => this._setLink(url, patch),
+        onPick: (url) => this._pickLinkPage(url),
+        check: { can: this._ai.up && this._ai.links, busy: this._linkCheck.busy, note: this._linkCheck.note, run: () => this._checkLinks(), retry: () => this._checkAi() },
+      })}`;
+  }
+
   _renderSettings() {
     const p = this._plan;
     const courses = (toJS(store.manifest?.items) || []).filter((i) => i.metadata?.pageType === "oer:course" && !i.metadata?.oerSnapshotOf);
@@ -941,6 +994,8 @@ class OerCanvasImport extends LitElement {
         <dd>${p.modules.length} (${p.modules.filter((m) => m.skip).length} suggested to skip)</dd>
         <dt>The import</dt>
         <dd>${c.link} linked to the site's pages, ${c.create} new draft pages, ${c.texts} kept in the sequence, ${c.overviews} module overviews, ${c.urls} links, ${c.skip} skipped; ${c.rubricsNew} new rubric${c.rubricsNew === 1 ? "" : "s"}, ${c.rubricsReused} reused</dd>
+        <dt>Links</dt>
+        <dd>${importedLinks(p).length} in what's imported; ${c.linksHere} to old course sites will point at the pages here</dd>
       </dl>
       <label class="field">Sequence title<input class="input" .value="${p.sequenceTitle}" @input="${(ev) => this._setPlan({ sequenceTitle: ev.target.value })}" /></label>
       <label class="field"
@@ -965,7 +1020,9 @@ class OerCanvasImport extends LitElement {
       ${p.problems.length ? html`<div><p class="eyebrow">To know</p><ul class="reasons">${p.problems.map((x) => html`<li>${x.text}</li>`)}</ul></div>` : ""}
       <div>
         <p class="eyebrow">Claude</p>
-        ${this._ai.up
+        ${this._ai.up && !this._ai.ai
+          ? html`<p class="hint">The local helper is running without an API key, so it checks links but can't ask Claude. Add ANTHROPIC_API_KEY to nu-hax/.env.local and restart it.</p>`
+          : this._ai.up
           ? html`<p class="hint">The local helper is running${this._ai.model ? ` (${this._ai.model})` : ""}. It can check the suggested types, matches and skips; you still review every change.</p>
               <div style="margin-top:0.5rem"><button class="btn outline small" aria-disabled="${this._ai.busy ? "true" : "false"}" @click="${this._refine}">${lucide("oer:sparkles", "sm")}${this._ai.busy ? "Checking…" : "Refine with Claude"}</button></div>`
           : html`<p class="hint">
@@ -981,6 +1038,7 @@ class OerCanvasImport extends LitElement {
     if (sel === "settings") return this._renderSettings();
     if (sel === "rubrics") return this._renderRubrics();
     if (sel === "files") return this._renderFiles();
+    if (sel === "links") return this._renderLinks();
     const m = this._module(sel);
     if (m) return this._renderModule(m);
     const e = this._entry(sel);
