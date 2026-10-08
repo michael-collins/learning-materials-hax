@@ -70,16 +70,25 @@ export function zipBytes(files) {
 }
 
 
-// inflate raw deflate data with the platform's DecompressionStream
-async function inflateRaw(bytes) {
-  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
-  return new Uint8Array(await new Response(stream).arrayBuffer());
+// inflate raw deflate data with the platform's DecompressionStream (a
+// failure there surfaces as "Failed to fetch"; say what it was instead)
+async function inflateRaw(bytes, name) {
+  try {
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  } catch (err) {
+    throw new Error(`Couldn't unpack ${name} from the export (${err.message}).`);
+  }
 }
+
+const MAX32 = 0xffffffff;
 
 /**
  * Read a zip: { names, has(name), bytes(name), text(name) }. Entries are
  * inflated when first read. Names are as stored (a single wrapping folder,
- * which some tools add, is stripped).
+ * which some tools add, is stripped). ZIP64 is read: Canvas writes its
+ * exports with ZIP64 entries, whose sizes and offsets live in an extra
+ * field while the usual fields say 0xFFFFFFFF.
  */
 export function readZip(input) {
   const buf = input instanceof Uint8Array ? input : new Uint8Array(input);
@@ -93,19 +102,47 @@ export function readZip(input) {
     }
   }
   if (eocd < 0) throw new Error("This isn't a zip file (no central directory).");
-  const count = view.getUint16(eocd + 10, true);
+  let count = view.getUint16(eocd + 10, true);
   let at = view.getUint32(eocd + 16, true);
+  // ZIP64: the real count and directory offset are in the ZIP64 end record,
+  // which a locator just before the usual end record points to
+  if ((count === 0xffff || at === MAX32) && eocd >= 20 && view.getUint32(eocd - 20, true) === 0x07064b50) {
+    const rec = Number(view.getBigUint64(eocd - 20 + 8, true));
+    if (view.getUint32(rec, true) === 0x06064b50) {
+      count = Number(view.getBigUint64(rec + 32, true));
+      at = Number(view.getBigUint64(rec + 48, true));
+    }
+  }
   const dec = new TextDecoder();
   const entries = new Map();
   for (let n = 0; n < count; n++) {
     if (view.getUint32(at, true) !== 0x02014b50) throw new Error("The zip's central directory is damaged.");
     const method = view.getUint16(at + 10, true);
-    const compressed = view.getUint32(at + 20, true);
+    let compressed = view.getUint32(at + 20, true);
+    let size = view.getUint32(at + 24, true);
     const nameLen = view.getUint16(at + 28, true);
     const extraLen = view.getUint16(at + 30, true);
     const commentLen = view.getUint16(at + 32, true);
-    const local = view.getUint32(at + 42, true);
+    let local = view.getUint32(at + 42, true);
     const name = dec.decode(buf.subarray(at + 46, at + 46 + nameLen));
+    // ZIP64 extra field (0x0001): 8-byte values for each field that reads
+    // 0xFFFFFFFF, in the order size, compressed size, local header offset
+    if (size === MAX32 || compressed === MAX32 || local === MAX32) {
+      let x = at + 46 + nameLen;
+      const end = x + extraLen;
+      while (x + 4 <= end) {
+        const id = view.getUint16(x, true);
+        const len = view.getUint16(x + 2, true);
+        if (id === 0x0001) {
+          let p = x + 4;
+          if (size === MAX32) (size = Number(view.getBigUint64(p, true))), (p += 8);
+          if (compressed === MAX32) (compressed = Number(view.getBigUint64(p, true))), (p += 8);
+          if (local === MAX32) local = Number(view.getBigUint64(p, true));
+          break;
+        }
+        x += 4 + len;
+      }
+    }
     if (!name.endsWith("/") && !/(^|\/)(__MACOSX|\.DS_Store|thumbs\.db)/i.test(name)) entries.set(name, { method, compressed, local });
     at += 46 + nameLen + extraLen + commentLen;
   }
@@ -123,7 +160,7 @@ export function readZip(input) {
       const start = e.local + 30 + nameLen + extraLen;
       const raw = buf.subarray(start, start + e.compressed);
       if (e.method !== 0 && e.method !== 8) throw new Error(`${name}: compression method ${e.method} isn't supported.`);
-      cache.set(name, e.method === 8 ? inflateRaw(raw) : Promise.resolve(raw));
+      cache.set(name, e.method === 8 ? inflateRaw(raw, name) : Promise.resolve(raw));
     }
     return cache.get(name);
   };
