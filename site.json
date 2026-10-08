@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791471279,
+      "updated": 1791471280,
       "version": "26.8.0"
     },
     "theme": {
@@ -17574,7 +17574,7 @@
       "order": 3,
       "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
       "title": "Task",
-      "description": "",
+      "description": "This formative assessment measures completeness of a given task. It is typically in the context of a larger or  assessment goal.",
       "metadata": {
         "pageType": "oer:rubric",
         "published": true,
