@@ -17,6 +17,11 @@
  * it to a module two weeks later (or move the module) and it's due two weeks
  * later too.
  *
+ * The right column shows the selected item's Settings or its page's Preview
+ * (tabs, with buttons to step through the sequence); the header's Outline
+ * and Item buttons hide either column to give the other the whole width.
+ * The layout and tab are remembered in this browser.
+ *
  * Items: a page (the live page, embedded), an assignment (due week and day,
  * points, submissions, rubric, grade group, peer reviews, group work), a
  * discussion (an open thread; graded ones with points, a due date,
@@ -55,6 +60,7 @@ const DAYS = [
 ];
 const DELIVERY = ["In person", "Hybrid", "Online (synchronous)", "Online (asynchronous)"];
 const PREVIEW_DELAY_MS = 300;
+const LAYOUT_KEY = "oer-sequence-builder:layout";
 const clone = (o) => JSON.parse(JSON.stringify(o));
 const uid = () => `m${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 const isHeader = (item) => item?.header !== undefined;
@@ -74,6 +80,8 @@ class OerSequenceBuilder extends OerOutlineBuilder {
       _scale: { state: true },
       _fields: { state: true },
       _sheet: { state: true },
+      _layout: { state: true }, // { outline, detail }: which columns show
+      _tab: { state: true }, // "settings" | "preview"
       _showChecks: { state: true },
       _saving: { state: true },
     };
@@ -89,6 +97,47 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this._groups = [];
     this._scale = [];
     this._fields = { weeks: 15, delivery: "In person" };
+    this._layout = { outline: true, detail: true };
+    this._tab = "settings";
+    try {
+      const saved = JSON.parse(globalThis.localStorage.getItem(LAYOUT_KEY) || "{}");
+      if (saved.outline === false || saved.detail === false) this._layout = { outline: saved.outline !== false, detail: saved.detail !== false };
+      if (saved.tab === "preview") this._tab = "preview";
+    } catch {
+      // no storage: the default layout
+    }
+  }
+
+  /* ---------- layout: columns and tabs ---------- */
+
+  _saveLayout() {
+    try {
+      globalThis.localStorage.setItem(LAYOUT_KEY, JSON.stringify({ ...this._layout, tab: this._tab }));
+    } catch {
+      // not remembered
+    }
+  }
+
+  // hide or show a column; hiding the only one left shows the other
+  _togglePanel(name) {
+    const next = { ...this._layout, [name]: !this._layout[name] };
+    if (!next.outline && !next.detail) next[name === "outline" ? "detail" : "outline"] = true;
+    this._layout = next;
+    this._saveLayout();
+  }
+
+  _setTab(tab) {
+    this._tab = tab;
+    this._saveLayout();
+  }
+
+  // the previous or next row, for moving through the sequence from the
+  // right column (with the outline hidden, say)
+  _step(delta) {
+    const next = this._rows[this._index(this._selId) + delta];
+    if (!next) return;
+    this._select(next.id);
+    this.updateComplete.then(() => this.shadowRoot.querySelector(`[role=treeitem][data-id="${next.id}"]`)?.scrollIntoView({ block: "nearest" }));
   }
 
   /* ---------- open / save ---------- */
@@ -587,8 +636,51 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     return versionsOf(page.id, this._items || []).find((v) => v.version === item.version)?.snapshot || page;
   }
 
+  // the selected row: its settings, or its page's preview, one tab at a time
   _renderDetail() {
     const row = this._rows.find((r) => r.id === this._selId);
+    const page = row?.kind === "item" && row.item.page ? this._byId?.get(row.item.page) : null;
+    const tab = page && this._tab === "preview" ? "preview" : "settings";
+    const shown = page ? this._shownPage(row.item) : null;
+    const at = row ? this._index(row.id) : -1;
+    // arrow keys move between the tabs (and choose them)
+    const tabKeys = (e) => {
+      if (!page || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+      e.preventDefault();
+      const next = e.key === "Home" ? "settings" : e.key === "End" ? "preview" : tab === "settings" ? "preview" : "settings";
+      this._setTab(next);
+      this.updateComplete.then(() => this.shadowRoot.getElementById(`tab-${next}`)?.focus());
+    };
+    const tabButton = (id, label, disabled = false) => html`<button
+      role="tab"
+      id="tab-${id}"
+      class="tab"
+      aria-selected="${tab === id ? "true" : "false"}"
+      aria-controls="panel-${id}"
+      aria-disabled="${disabled ? "true" : "false"}"
+      tabindex="${tab === id ? "0" : "-1"}"
+      title="${disabled ? "Only pages have a preview" : ""}"
+      @click="${() => !disabled && this._setTab(id)}"
+    >
+      ${label}
+    </button>`;
+    return html`<div class="detail-bar">
+        <div class="tabs" role="tablist" aria-label="Selected item" @keydown="${tabKeys}">${tabButton("settings", "Settings")}${tabButton("preview", "Preview", !page)}</div>
+        <div class="stepper">
+          <button class="icon" aria-label="Previous item" title="Previous item" ?disabled="${at <= 0}" @click="${() => this._step(-1)}">${lucide("oer:chevron-left", "sm")}</button>
+          <button class="icon" aria-label="Next item" title="Next item" ?disabled="${at < 0 || at >= this._rows.length - 1}" @click="${() => this._step(1)}">${lucide("oer:chevron-right", "sm")}</button>
+        </div>
+        ${tab === "preview" ? html`<a class="open-link" href="${shown.slug}" target="_blank">${lucide("icons:open-in-new", "sm")}Open in a new tab</a>` : ""}
+      </div>
+      <div class="tabpanel" role="tabpanel" id="panel-settings" aria-labelledby="tab-settings" ?hidden="${tab !== "settings"}">${this._renderSettings(row, page)}</div>
+      ${page
+        ? html`<div class="tabpanel preview" role="tabpanel" id="panel-preview" aria-labelledby="tab-preview" ?hidden="${tab !== "preview"}">
+            ${this._renderPreview(row, page, shown, tab === "preview")}
+          </div>`
+        : ""}`;
+  }
+
+  _renderSettings(row, page) {
     if (!row) return html`<div class="detail-empty">${lucide("icons:date-range")}<p>Select a module or an item to see it here.</p></div>`;
     if (row.kind === "module") return this._renderModuleDetail(row);
     const item = row.item;
@@ -610,30 +702,22 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         <p class="hint">For anything that isn't a page on this site: a video call, a tool, another site.</p>
       </div>`;
     }
-    const page = this._byId?.get(item.page);
     const type = page ? contentTypes(this._items).types.find((t) => t.id === page.metadata?.pageType) : null;
-    return html`<div class="detail-split">
-      <div class="detail-pad settings">
-        <div>
-          <p class="eyebrow">${type?.label || "Page"}${item.version ? ` · pinned to v${item.version}` : ""}</p>
-          <h3 class="dtitle">${page?.title || "This page isn't on the site any more"}</h3>
-        </div>
-        ${page ? this._renderItemSettings(row, item, page) : html`<p class="hint">Remove it from the sequence (Delete), or add the page again.</p>`}
+    return html`<div class="detail-pad settings">
+      <div>
+        <p class="eyebrow">${type?.label || "Page"}${item.version ? ` · pinned to v${item.version}` : ""}</p>
+        <h3 class="dtitle">${page?.title || "This page isn't on the site any more"}</h3>
       </div>
-      ${page ? this._renderPreview(row, item, page) : ""}
+      ${page ? this._renderItemSettings(row, item, page) : html`<p class="hint">Remove it from the sequence (Delete), or add the page again.</p>`}
     </div>`;
   }
 
-  _renderPreview(row, item, page) {
-    const shown = this._shownPage(item);
-    const ready = this._previewId === row.id;
-    return html`<div class="preview">
-      <div class="preview-bar">
-        <span>Page${item.version ? ` (v${item.version})` : ""}</span>
-        <a href="${shown.slug}" target="_blank">${lucide("icons:open-in-new", "sm")}Open in a new tab</a>
-      </div>
-      ${ready ? html`<iframe src="${embedUrl(shown.slug)}" title="${page.title}"></iframe>` : html`<div class="frame-wait"></div>`}
-    </div>`;
+  // the page loads once its tab is opened (and stays loaded while the item
+  // is selected), after the selection settles
+  _renderPreview(row, page, shown, active) {
+    const settled = this._previewId === row.id;
+    if (active && settled) this._framed = row.id;
+    return settled && this._framed === row.id ? html`<iframe src="${embedUrl(shown.slug)}" title="${page.title}"></iframe>` : html`<div class="frame-wait"></div>`;
   }
 
   _renderModuleDetail(row) {
@@ -942,6 +1026,45 @@ class OerSequenceBuilder extends OerOutlineBuilder {
           display: grid;
           grid-template-columns: minmax(22rem, 1fr) minmax(24rem, 1.2fr);
         }
+        .split.one {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .split.one .left {
+          border-right: 0;
+        }
+        /* Outline | Item: which columns show */
+        .panels {
+          display: inline-flex;
+          border: 1px solid var(--input-border, var(--border));
+          border-radius: var(--radius-md);
+          overflow: hidden;
+        }
+        .seg {
+          all: unset;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+          height: 2rem;
+          padding: 0 0.75rem;
+          font-size: 0.8125rem;
+          font-weight: 500;
+          color: var(--muted-foreground);
+          cursor: pointer;
+        }
+        .seg + .seg {
+          border-left: 1px solid var(--input-border, var(--border));
+        }
+        .seg[aria-pressed="true"] {
+          background: var(--accent);
+          color: var(--foreground);
+        }
+        .seg:hover {
+          color: var(--foreground);
+        }
+        .seg:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: -2px;
+        }
         .left {
           display: flex;
           flex-direction: column;
@@ -1010,20 +1133,9 @@ class OerSequenceBuilder extends OerOutlineBuilder {
           height: 1.5rem;
           opacity: 0.5;
         }
-        .detail-split {
-          flex: 1;
-          min-height: 0;
-          display: flex;
-          flex-direction: column;
-        }
         .detail-pad {
           padding: 1rem 1.25rem 1.25rem;
           overflow-y: auto;
-        }
-        .detail-split > .detail-pad {
-          flex: 0 1 auto;
-          max-height: 50%;
-          border-bottom: 1px solid var(--border);
         }
         .eyebrow {
           margin: 0;
@@ -1141,33 +1253,83 @@ class OerSequenceBuilder extends OerOutlineBuilder {
           color: var(--muted-foreground);
           white-space: nowrap;
         }
-        .preview {
-          flex: 1 1 0;
-          min-height: 14rem;
+        /* the right column: shadcn Tabs, then the tab's panel */
+        .detail-bar {
+          flex: none;
           display: flex;
-          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border-bottom: 1px solid var(--border);
+        }
+        .tabs {
+          display: inline-flex;
+          padding: 3px;
+          border-radius: var(--radius-md);
           background: var(--muted);
         }
-        .preview-bar {
-          display: flex;
-          justify-content: space-between;
+        .tab {
+          all: unset;
+          display: inline-flex;
           align-items: center;
-          gap: 1rem;
-          padding: 0.5rem 1.25rem;
-          font-size: 0.75rem;
+          height: 1.75rem;
+          padding: 0 0.875rem;
+          border-radius: calc(var(--radius-md) - 2px);
+          font-size: 0.8125rem;
           font-weight: 500;
           color: var(--muted-foreground);
+          cursor: pointer;
         }
-        .preview-bar a {
+        .tab[aria-selected="true"] {
+          background: var(--background);
+          color: var(--foreground);
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.1);
+        }
+        .tab[aria-disabled="true"] {
+          opacity: 0.5;
+          cursor: default;
+        }
+        .tab:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .stepper {
+          display: flex;
+          gap: 0.125rem;
+        }
+        .stepper .icon:disabled {
+          opacity: 0.4;
+          cursor: default;
+          background: none;
+        }
+        .open-link {
+          margin-left: auto;
           display: inline-flex;
           align-items: center;
           gap: 0.25rem;
+          font-size: 0.8125rem;
           color: var(--link, var(--primary));
+        }
+        .tabpanel {
+          flex: 1;
+          min-height: 0;
+          overflow-y: auto;
+        }
+        .tabpanel.preview {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          background: var(--muted);
+        }
+        .tabpanel[hidden],
+        .left[hidden],
+        .right[hidden] {
+          display: none;
         }
         .preview iframe,
         .frame-wait {
           flex: 1;
-          margin: 0 1.25rem 1.25rem;
+          margin: 1rem;
           border: 1px solid var(--border);
           border-radius: var(--radius-md);
           background: var(--background);
@@ -1319,9 +1481,15 @@ class OerSequenceBuilder extends OerOutlineBuilder {
             grid-template-columns: minmax(0, 1fr);
             grid-template-rows: minmax(14rem, 1fr) minmax(18rem, 1.2fr);
           }
+          .split.one {
+            grid-template-rows: minmax(0, 1fr);
+          }
           .left {
             border-right: 0;
             border-bottom: 1px solid var(--border);
+          }
+          .split.one .left {
+            border-bottom: 0;
           }
           .hints {
             display: none;
@@ -1352,14 +1520,22 @@ class OerSequenceBuilder extends OerOutlineBuilder {
             <p class="sub">${this._fields.weeks || "?"} weeks, ${String(this._fields.delivery).toLowerCase()}. Changes apply when you save.</p>
           </div>
           <div class="headtools">
+            <div class="panels" role="group" aria-label="Columns">
+              <button class="seg" aria-pressed="${this._layout.outline ? "true" : "false"}" title="${this._layout.outline ? "Hide" : "Show"} the outline" @click="${() => this._togglePanel("outline")}">
+                ${lucide(this._layout.outline ? "oer:panel-left-close" : "oer:panel-left-open", "sm")}Outline
+              </button>
+              <button class="seg" aria-pressed="${this._layout.detail ? "true" : "false"}" title="${this._layout.detail ? "Hide" : "Show"} the selected item" @click="${() => this._togglePanel("detail")}">
+                Item${lucide(this._layout.detail ? "oer:panel-right-close" : "oer:panel-right-open", "sm")}
+              </button>
+            </div>
             <button class="btn outline settings-btn" aria-haspopup="dialog" aria-expanded="${this._sheet ? "true" : "false"}" @click="${this._openSheet}">
               ${lucide("oer:sliders-horizontal", "sm")}Course settings
             </button>
             <button class="x" aria-label="Close" title="Close (Esc)" @click="${this._requestClose}">${lucide("oer:x")}</button>
           </div>
         </header>
-        <div class="split">
-          <section class="left" aria-label="Outline">
+        <div class="split ${this._layout.outline && this._layout.detail ? "" : "one"}">
+          <section class="left" aria-label="Outline" ?hidden="${!this._layout.outline}">
             <div class="tools">
               ${anyKids
                 ? html`<button class="tool" @click="${this._collapseAll}">${lucide("oer:chevron-right", "sm")}Collapse all</button>
@@ -1369,7 +1545,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
             </div>
             <div class="body">${this._renderTree(vis, "Modules")}</div>
           </section>
-          <section class="right" aria-label="Selected item">${this._renderDetail()}</section>
+          <section class="right" aria-label="Selected item" ?hidden="${!this._layout.detail}">${this._renderDetail()}</section>
         </div>
         ${this._showChecks && checks.length ? html`<ul class="checklist" id="checks">${checks.map((c) => html`<li>${c.text}</li>`)}</ul>` : ""}
         <footer>
