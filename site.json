@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791472799,
+      "updated": 1791473369,
       "version": "26.8.0"
     },
     "theme": {
@@ -335,10 +335,10 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791472136,
+        "updated": 1791473368,
         "status": "",
         "oerRubrics": [
-          "exercise"
+          "exercise@1.0.0"
         ]
       }
     },
