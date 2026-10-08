@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791471278,
+      "updated": 1791471279,
       "version": "26.8.0"
     },
     "theme": {
@@ -15839,7 +15839,7 @@
       "order": 2,
       "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
       "title": "Project",
-      "description": "",
+      "description": "A project assessment type is summative and tends to focus on evaluating mastery of a large scope of competencies and capabilities, defined in the learning objectives.",
       "metadata": {
         "pageType": "oer:rubric",
         "published": true,
