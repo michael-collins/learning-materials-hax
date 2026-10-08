@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791465730,
+      "updated": 1791465732,
       "version": "26.8.0"
     },
     "theme": {
@@ -7210,7 +7210,7 @@
       "order": 0,
       "parent": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
       "title": "DART 413: 15-week studio",
-      "description": "",
+      "description": "15 weeks, in person: the schedule, assignments and grading for DART 413.",
       "metadata": {
         "pageType": "oer:sequence",
         "published": false,
