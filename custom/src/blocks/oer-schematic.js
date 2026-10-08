@@ -345,6 +345,36 @@ const PRESETS = {
     })}`;
   },
 
+  // the Canvas import's review: Canvas items on the left, each with what it
+  // becomes (Link, Create, Skip struck through), the selected item on the
+  // right (Link to the site's page, its match, its place in the sequence,
+  // a preview), and Import as drafts
+  import: () => {
+    const rows = [
+      [62, "Link", "hi-soft"],
+      [80, "Create", "card"],
+      [54, "Skip", "pill", true],
+      [70, "Link", "hi-soft"],
+      [58, "Link", "hi-soft"],
+      [66, "Create", "card"],
+    ];
+    return svg`
+    ${win(false)}
+    ${R(14, 38, 120, 10, "t", 3)}${btn(296, 34, 90, "Import as drafts", "hi")}
+    ${HR(0.5, 58, W - 0.5)}
+    ${T(14, 74, "WEEK 2", "muted sm caps")}
+    ${rows.map(([w, label, cls, struck], i) => {
+      const y = 84 + i * 22;
+      return svg`${i === 0 ? R(10, y - 4, 186, 18, "hi-soft", 4) : ""}${L(22, y + 2.5, w, struck ? "t2" : "t")}${struck ? P(`M22 ${y + 5} H${22 + w}`, "stroke") : ""}${R(150, y, 40, 11, cls, 5.5)}${T(170, y + 8.5, label, "lbl sm", "middle")}`;
+    })}
+    ${P("M204 58 V239", "rule")}
+    ${R(212, 68, 174, 16, "pill", 4)}${R(214, 70, 70, 12, "card", 3)}${T(249, 79, "Link", "lbl sm", "middle")}${T(305, 79, "Create", "muted sm", "middle")}${T(355, 79, "Skip", "muted sm", "middle")}
+    ${T(212, 100, "The site's page", "muted sm")}${R(212, 104, 174, 13, "hi-line card", 3)}${L(217, 108, 96, "t-hi")}
+    ${L(212, 128, 140, "t2")}${L(212, 140, 110, "t2")}
+    ${T(212, 160, "Assignment · 10 pts · week 2", "lbl sm")}
+    ${R(212, 168, 174, 62, "card", 5)}${L(220, 178, 120)}${L(220, 190, 150)}${L(220, 202, 100)}`;
+  },
+
   // a course page: code and credits, bulletin and prerequisites, then
   // everything taught in it, grouped by type (highlighted)
   course: () => svg`
