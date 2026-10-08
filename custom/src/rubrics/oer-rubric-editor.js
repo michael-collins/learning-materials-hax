@@ -121,7 +121,7 @@ class OerRubricEditor extends LitElement {
   // where the rubric is used: pages, archived versions, course sequences
   _usage() {
     const page = this._page;
-    return page ? rubricUsage(toJS(store.manifest?.items) || [], page) : { pages: [], versions: [], sequences: [] };
+    return page ? rubricUsage(toJS(store.manifest?.items) || [], page) : { pages: [], versions: [], sequences: [], pinned: [] };
   }
 
   // straight away when nothing else uses the rubric; otherwise say what
@@ -793,7 +793,7 @@ class OerRubricEditor extends LitElement {
         <h3 id="c-t">Change “${name}” everywhere it's used?</h3>
         <p id="c-d">
           It's used by ${parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts.at(-1)}` : parts[0]}. They'll all show the changed rubric${u.sequences.length ? ", and the next Canvas export grades with it" : ""}.
-          To change it for one piece of work only, save it as a new rubric instead.
+          ${u.pinned.length ? `${plural(u.pinned.length, "archived version or pinned page", "archived versions and pinned pages")} keep the release they're pinned to. ` : ""}To change it for one piece of work only, save it as a new rubric instead.
         </p>
         ${listed.length
           ? html`<ul class="used" role="list">

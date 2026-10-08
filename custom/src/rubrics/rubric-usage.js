@@ -1,5 +1,6 @@
 /**
- * Keep each page's metadata.oerRubrics (the rubrics its Rubric blocks show)
+ * Keep each page's metadata.oerRubrics (the rubrics its Rubric blocks show,
+ * "exercise" or pinned to a release "exercise@1.0.0")
  * in step with its content, so a rubric knows where it's used without
  * reading every page (rubric-model.js rubricUsage). The theme calls this
  * as a page is saved; scripts/index-rubric-usage.mjs filled it in for the

@@ -8,12 +8,19 @@
  *   metadata.oerVersions = [{ version, date, notes }] newest first
  * - each release: a hidden, locked child page titled "v1.2.0" whose
  *   metadata has oerSnapshotOf = page id, version, versionStatus "archived",
- *   and copies of the page's type and fields; its content is the page's
+ *   and copies of the page's type, fields and structure (a rubric's
+ *   oerRubric, a course sequence's oerSequence); its content is the page's
  *   HTML at release time
+ *
+ * Rubrics go with releases: each rubric a page or sequence uses at the
+ * latest is pinned in the release to the rubric's current version, and
+ * released first when it has changed since its last release (or never was),
+ * so an archived version keeps the rubric as it was (rubricPlan).
  */
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { pageIcon } from "../types/page-icon.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
+import { findRubric, isRubric, sameRubric, parseRubricRef, rubricRefsIn } from "../rubrics/rubric-model.js";
 
 export const isSnapshot = (item) => !!item?.metadata?.oerSnapshotOf;
 
@@ -68,23 +75,71 @@ async function pageHtml(item) {
   return htmlText.replace(/<page-break\b[^>]*>(?:\s*<\/page-break>)?/gi, "").trim() || "<p></p>";
 }
 
+// the rubric pages a page uses at the latest (not pinned): its Rubric
+// blocks (from `contents`, else its recorded list) and a sequence's items
+function rubricsUsed(page, contents, list) {
+  const refs = new Set();
+  for (const entry of contents != null ? rubricRefsIn(contents) : [].concat(page.metadata?.oerRubrics || [])) {
+    const r = parseRubricRef(entry);
+    if (!r.version) refs.add(r.ref);
+  }
+  for (const m of page.metadata?.oerSequence?.modules || []) for (const it of m.items || []) if (it.rubric && !it.rubricVersion) refs.add(it.rubric);
+  const out = new Map();
+  for (const ref of refs) {
+    const rubric = findRubric(list, ref);
+    if (rubric && !isSnapshot(rubric)) out.set(rubric.id, rubric);
+  }
+  return [...out.values()];
+}
+
 /**
- * Release the page's current content as `version` with notes. Resolves when
- * HAXcms has saved it.
+ * What releasing `page` does to its rubrics: [{ rubric, version, release,
+ * since }]. Each is pinned to `version`, its current release, or released
+ * first as `version` (release: true) when it changed since `since` or was
+ * never released.
  */
-export async function publishVersion(pageId, version, notes = "") {
-  if (!parseVersion(version)) throw new Error("Versions look like 1.2.0");
-  const list = items();
-  const page = list.find((i) => i.id === pageId);
-  if (!page) throw new Error("Page not found");
-  if (versionsOf(pageId, list).some((r) => r.version === version)) throw new Error(`Version ${version} already exists`);
-  const contents = await pageHtml(page);
-  const date = Math.floor(Date.now() / 1000);
-  const siblings = list.filter((i) => i.parent === pageId);
+export function rubricPlan(page, list = items(), contents = null) {
+  if (!page || isRubric(page) || isSnapshot(page)) return [];
+  return rubricsUsed(page, contents, list).map((rubric) => {
+    const latest = versionsOf(rubric.id, list)[0];
+    if (latest?.snapshot && sameRubric(rubric, latest.snapshot)) return { rubric, version: latest.version, release: false, since: latest.version };
+    return { rubric, version: latest ? bump(latest.version, "minor") : "1.0.0", release: true, since: latest?.version || "" };
+  });
+}
+
+// pin a page's Rubric blocks that show the latest to the plan's versions
+function pinBlocks(html, plan, list) {
+  return html.replace(/<oer-rubric\b[^>]*>/gi, (tag) => {
+    if (/\sversion="/i.test(tag)) return tag;
+    const rubric = findRubric(list, tag.match(/\srubric-id="([^"]*)"/i)?.[1] || "");
+    const pin = rubric && plan.find((p) => p.rubric.id === rubric.id);
+    return pin ? tag.replace(/\s*(\/?)>$/, ` version="${pin.version}"$1>`) : tag;
+  });
+}
+
+// pin a sequence's items that grade with the latest rubric
+function pinSequence(sequence, plan, list) {
+  return {
+    ...sequence,
+    modules: (sequence.modules || []).map((m) => ({
+      ...m,
+      items: (m.items || []).map((it) => {
+        if (!it.rubric || it.rubricVersion) return it;
+        const rubric = findRubric(list, it.rubric);
+        const pin = rubric && plan.find((p) => p.rubric.id === rubric.id);
+        return pin ? { ...it, rubricVersion: pin.version } : it;
+      }),
+    })),
+  };
+}
+
+// a release: the page's record of it, and its archived copy
+function releaseItems(page, version, notes, contents, list, extra = {}) {
+  const siblings = list.filter((i) => i.parent === page.id);
   const snapshot = {
     id: newItemId(),
     title: `v${version}`,
-    parent: pageId,
+    parent: page.id,
     order: siblings.length + 1000,
     indent: (Number(page.indent) || 0) + 1,
     location: "",
@@ -92,8 +147,11 @@ export async function publishVersion(pageId, version, notes = "") {
     metadata: {
       pageType: page.metadata?.pageType,
       oerFields: page.metadata?.oerFields || {},
+      ...(page.metadata?.oerRubric ? { oerRubric: page.metadata.oerRubric } : {}),
+      ...(page.metadata?.oerSequence ? { oerSequence: page.metadata.oerSequence } : {}),
+      ...extra,
       icon: pageIcon(page),
-      oerSnapshotOf: pageId,
+      oerSnapshotOf: page.id,
       oerSnapshotTitle: page.title,
       version,
       versionStatus: "archived",
@@ -106,16 +164,31 @@ export async function publishVersion(pageId, version, notes = "") {
   };
   if (!snapshot.metadata.pageType) delete snapshot.metadata.pageType;
   if (!snapshot.metadata.icon) delete snapshot.metadata.icon;
-  const record = { version, date, notes: notes.trim() };
-  const out = list.map((i) =>
-    i.id === pageId
-      ? {
-          ...i,
-          metadata: { ...i.metadata, version, oerVersions: [record, ...(i.metadata?.oerVersions || [])] },
-          modified: true,
-        }
-      : i,
-  );
-  out.push(snapshot);
+  const record = { version, date: Math.floor(Date.now() / 1000), notes: notes.trim() };
+  const update = { ...page, metadata: { ...page.metadata, version, oerVersions: [record, ...(page.metadata?.oerVersions || [])] }, modified: true };
+  return [update, snapshot];
+}
+
+/**
+ * Release the page's current content as `version` with notes, with its
+ * rubrics pinned (and released first where they changed; rubricPlan).
+ * Resolves when HAXcms has saved it, in one outline save.
+ */
+export async function publishVersion(pageId, version, notes = "") {
+  if (!parseVersion(version)) throw new Error("Versions look like 1.2.0");
+  const list = items();
+  const page = list.find((i) => i.id === pageId);
+  if (!page) throw new Error("Page not found");
+  if (versionsOf(pageId, list).some((r) => r.version === version)) throw new Error(`Version ${version} already exists`);
+  let contents = await pageHtml(page);
+  const plan = rubricPlan(page, list, contents);
+  const out = [];
+  for (const p of plan.filter((x) => x.release)) {
+    out.push(...releaseItems(p.rubric, p.version, `Released with “${page.title}” v${version}.`, await pageHtml(p.rubric), list));
+  }
+  contents = pinBlocks(contents, plan, list);
+  const extra = { oerRubrics: rubricRefsIn(contents) };
+  if (page.metadata?.oerSequence) extra.oerSequence = pinSequence(page.metadata.oerSequence, plan, list);
+  out.push(...releaseItems(page, version, notes, contents, list, extra));
   return saveOutline(out);
 }

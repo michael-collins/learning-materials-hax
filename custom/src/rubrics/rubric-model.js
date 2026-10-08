@@ -21,6 +21,12 @@
  * references working: <oer-rubric rubric-id="exercise"> and sequence items'
  * rubric: "exercise" find the rubric by it; new references use the page id.
  *
+ * Versions: a rubric is released like any page (an archived copy keeps the
+ * rubric as it was). A reference can pin a release: the block's version
+ * attribute, a sequence item's rubricVersion; releasing a page pins its
+ * rubrics (rubrics/rubric-versions.js). Usage lists name pins as
+ * "exercise@1.0.0".
+ *
  * Plain functions with no browser or HAX dependencies (the Canvas export
  * runs in Node too).
  */
@@ -62,30 +68,69 @@ export function rubricRefs(page) {
   return [page?.id, page?.metadata?.oerRubric?.key, String(page?.slug || "").split("/").filter(Boolean).pop()].filter(Boolean);
 }
 
+/** "exercise@1.0.0" → { ref: "exercise", version: "1.0.0" }; no "@", the latest. */
+export function parseRubricRef(entry = "") {
+  const at = String(entry).lastIndexOf("@");
+  return at > 0 ? { ref: entry.slice(0, at), version: entry.slice(at + 1) } : { ref: String(entry), version: "" };
+}
+
 /**
  * Where a rubric is used: pages that show it with the Rubric block (their
  * metadata.oerRubrics, kept up to date when a page is saved), archived
- * versions of pages that do, and course sequences that grade with it.
- *   → { pages, versions, sequences: [{ page, items }] }
+ * versions of pages, and course sequences that grade with it. Uses pinned
+ * to a release (archived versions, as a rule) don't change with the rubric:
+ *   → { pages, versions, sequences: [{ page, items }], pinned: [item] }
  */
 export function rubricUsage(items = [], page) {
   const refs = new Set(rubricRefs(page));
-  const out = { pages: [], versions: [], sequences: [] };
+  const out = { pages: [], versions: [], sequences: [], pinned: [] };
   if (!refs.size) return out;
   for (const i of items) {
     if (i.id === page.id || i.metadata?.oerSnapshotOf === page.id) continue;
-    if ([].concat(i.metadata?.oerRubrics || []).some((r) => refs.has(r))) (i.metadata?.oerSnapshotOf ? out.versions : out.pages).push(i);
-    if (i.metadata?.pageType === "oer:sequence" && !i.metadata?.oerSnapshotOf) {
-      const n = (i.metadata?.oerSequence?.modules || []).reduce((sum, m) => sum + (m.items || []).filter((it) => it.rubric && refs.has(it.rubric)).length, 0);
-      if (n) out.sequences.push({ page: i, items: n });
+    const named = [].concat(i.metadata?.oerRubrics || []).map(parseRubricRef).filter((r) => refs.has(r.ref));
+    if (named.some((r) => !r.version)) (i.metadata?.oerSnapshotOf ? out.versions : out.pages).push(i);
+    else if (named.length) out.pinned.push(i);
+    if (i.metadata?.pageType === "oer:sequence") {
+      const uses = (i.metadata?.oerSequence?.modules || []).flatMap((m) => (m.items || []).filter((it) => it.rubric && refs.has(it.rubric)));
+      if (uses.some((it) => !it.rubricVersion) && !i.metadata?.oerSnapshotOf) out.sequences.push({ page: i, items: uses.filter((it) => !it.rubricVersion).length });
+      else if (uses.length) out.pinned.push(i);
     }
   }
   return out;
 }
 
-/** The rubric names a page's content shows (its Rubric blocks' rubric-id). */
+const attr = (tag, name) => tag.match(new RegExp(`\\s${name}="([^"]*)"`, "i"))?.[1] || "";
+
+/** The rubrics a page's content shows: its Rubric blocks, "exercise" or pinned "exercise@1.0.0". */
 export function rubricRefsIn(htmlText = "") {
-  return [...new Set([...String(htmlText).matchAll(/<oer-rubric\b[^>]*\brubric-id="([^"]+)"/gi)].map((m) => m[1]))];
+  const out = [...String(htmlText).matchAll(/<oer-rubric\b[^>]*>/gi)].map(([tag]) => {
+    const ref = attr(tag, "rubric-id");
+    const version = attr(tag, "version");
+    return ref ? (version ? `${ref}@${version}` : ref) : "";
+  });
+  return [...new Set(out.filter(Boolean))];
+}
+
+/**
+ * A rubric as a reference shows it: the release `version` names (its
+ * archived copy), else the latest. → { page (the latest), shown, missing }
+ * where missing means that release isn't on the site (the latest is shown).
+ */
+export function rubricAt(items = [], ref = "", version = "") {
+  const page = findRubric(items, ref);
+  if (!page) return { page: null, shown: null, missing: false };
+  if (!version || page.metadata?.oerSnapshotOf) return { page, shown: page, missing: false };
+  const snapshot = items.find((i) => i.metadata?.oerSnapshotOf === page.id && i.metadata?.version === version);
+  return { page, shown: snapshot || page, missing: !snapshot };
+}
+
+/** True when two rubric pages (or a page and a release) hold the same rubric. */
+export function sameRubric(a, b) {
+  const norm = (p) => {
+    const { id, ...r } = rubricOf(p);
+    return JSON.stringify(r);
+  };
+  return !!a && !!b && norm(a) === norm(b);
 }
 
 /** Equal weights for n criteria: each counts the same. */
@@ -107,7 +152,8 @@ export function rubricOf(page) {
   return {
     id: page?.id || "",
     key: r.key || "",
-    name: page?.title || "",
+    // an archived copy is titled "v1.0.0"; it keeps the page's title too
+    name: page?.metadata?.oerSnapshotTitle || page?.title || "",
     description: page?.description || "",
     levels: levels.map((l, i) => ({ id: l.id || `level-${i + 1}`, name: l.name || "", share: Math.max(0, Math.min(1, Number(l.share) || 0)) })),
     criteria: criteria.map((c, i) => ({

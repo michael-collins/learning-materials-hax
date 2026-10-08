@@ -752,7 +752,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     const current = findRubric(this._items || [], item.rubric);
     return html`<label class="field"
       >Rubric
-      <select @change="${(e) => this._setItem({ rubric: e.target.value })}">
+      <select @change="${(e) => this._setItem({ rubric: e.target.value, rubricVersion: undefined })}">
         <option value="" ?selected="${!item.rubric}">None</option>
         ${rubricPages(this._items || []).map((p) => {
           const r = rubricOf(p);
@@ -760,7 +760,15 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         })}
         ${item.rubric && !current ? html`<option value="${item.rubric}" selected>Not found: ${item.rubric}</option>` : ""}
       </select>
-      <span class="hint">${current ? html`<a href="${current.slug}" target="_blank">Open the rubric</a>: its criteria, weights and levels.` : "Rubrics are pages under Assessments → Rubrics."}</span>
+      <span class="hint"
+        >${current
+          ? html`${item.rubricVersion ? html`Pinned to v${item.rubricVersion}. <button type="button" class="linkbtn" @click="${() => this._setItem({ rubricVersion: undefined })}">Use the latest</button>. ` : ""}<a
+                href="${current.slug}"
+                target="_blank"
+                >Open the rubric</a
+              >: its criteria, weights and levels.`
+          : "Rubrics are pages under Assessments → Rubrics."}</span
+      >
     </label>`;
   }
 

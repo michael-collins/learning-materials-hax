@@ -10,7 +10,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { versionsOf, bump, publishVersion } from "./versioning.js";
+import { versionsOf, bump, publishVersion, rubricPlan } from "./versioning.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -85,6 +85,26 @@ class OerVersionsDialog extends LitElement {
       this._error = err.message;
     }
     this._busy = false;
+  }
+
+  // the rubrics that go with the release: pinned as they are, or released
+  // first because they changed
+  _renderRubricPlan(page) {
+    const plan = rubricPlan(page, toJS(store.manifest?.items) || []);
+    if (!plan.length) return "";
+    return html`<div class="rubric-plan">
+      <p class="hint"><b>Rubrics</b> stay as they are now in this version:</p>
+      <ul>
+        ${plan.map(
+          (p) => html`<li>
+            <a href="${p.rubric.slug}" target="_blank">${p.rubric.title}</a>
+            ${p.release
+              ? html`: released as v${p.version} too, ${p.since ? `since it changed after v${p.since}` : "its first release"}`
+              : html`: v${p.version}, its current release`}
+          </li>`,
+        )}
+      </ul>
+    </div>`;
   }
 
   _go(slug) {
@@ -252,6 +272,14 @@ class OerVersionsDialog extends LitElement {
         font-size: 0.75rem;
         color: var(--muted-foreground);
       }
+      .rubric-plan ul {
+        margin: 0.25rem 0 0;
+        padding-left: 1.25rem;
+        font-size: 0.8125rem;
+      }
+      .rubric-plan a {
+        color: var(--link, var(--primary));
+      }
       .error {
         margin: 0.5rem 0 0;
         font-size: 0.8125rem;
@@ -380,6 +408,7 @@ class OerVersionsDialog extends LitElement {
                 <label for="notes">Release notes</label>
                 <textarea id="notes" .value="${this._notes}" @input="${(e) => (this._notes = e.target.value)}" placeholder="What changed in this version?"></textarea>
                 <p class="hint">Freezes the page as it is now. Readers and books can keep using this version while the page changes.</p>
+                ${this._renderRubricPlan(page)}
                 ${this._error ? html`<p class="error">${this._error}</p>` : ""}
                 <div class="row">
                   <button class="btn outline" @click="${() => (this._publishing = false)}">Cancel</button>

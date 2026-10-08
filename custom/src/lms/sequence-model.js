@@ -17,7 +17,8 @@
  *
  * An item's rubric names one of the site's rubric pages (by key or page id;
  * rubrics/rubric-model.js), which brings its own criteria, weights and
- * levels.
+ * levels; rubricVersion pins a release of it (a released sequence pins
+ * its items' rubrics).
  *
  * What changes from term to term (start and end dates, breaks, the typical
  * due day and time, class meetings, the time zone) isn't part of it: the
@@ -26,7 +27,7 @@
  * dependencies.
  */
 import { deliveryFromCourse, teachingWeeks, weeksAvailable, dueAt } from "./offering-schedule.js";
-import { findRubric, rubricOf } from "../rubrics/rubric-model.js";
+import { findRubric, rubricAt, rubricOf } from "../rubrics/rubric-model.js";
 
 export const SEQUENCE_TYPE = "oer:sequence";
 
@@ -156,6 +157,7 @@ export function readiness(page, items, run = null) {
           const rubric = findRubric(items, it.rubric);
           if (!rubric) out.push({ level: "warning", text: `${page.title}: its rubric (${it.rubric}) isn't on the site.` });
           else if (!rubricOf(rubric).criteria.length) out.push({ level: "warning", text: `${page.title}: the rubric “${rubric.title}” has no criteria yet.` });
+          else if (it.rubricVersion && rubricAt(items, it.rubric, it.rubricVersion).missing) out.push({ level: "warning", text: `${page.title}: rubric version ${it.rubricVersion} isn't on the site.` });
         }
       }
     }

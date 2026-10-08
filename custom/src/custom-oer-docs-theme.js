@@ -188,7 +188,14 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       // the rubrics the page shows, recorded so a rubric knows where it's
       // used (rubrics/rubric-usage.js)
       const id = toJS(store.activeId);
-      const refs = [...new Set([...this.querySelectorAll("oer-rubric")].map((e) => e.getAttribute("rubric-id")).filter(Boolean))];
+      const refs = [
+        ...new Set(
+          [...this.querySelectorAll("oer-rubric")]
+            .map((e) => [e.getAttribute("rubric-id"), e.getAttribute("version")])
+            .filter(([ref]) => ref)
+            .map(([ref, version]) => (version ? `${ref}@${version}` : ref)),
+        ),
+      ];
       if (id) syncRubricRefs(id, refs);
     };
     // ?embed=1: chrome-less page for LMS iframes; decided once, so following

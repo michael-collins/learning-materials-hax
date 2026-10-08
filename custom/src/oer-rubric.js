@@ -8,7 +8,8 @@
  * descriptions it's a grid, criteria by rating levels; without, a list of
  * criteria with their weights and the ratings they share. The title links
  * to the rubric's page; signed-in authors can open the rubric editor from
- * here. Hidden when the page URL has ?hideRubric=true (embeds that leave
+ * here. With a version (an archived page's rubric is pinned to the release
+ * that went with it) it shows that release, as it was. Hidden when the page URL has ?hideRubric=true (embeds that leave
  * the rubric out).
  *
  * Authors pick the rubric from a dropdown in the HAX block settings; the
@@ -19,7 +20,7 @@ import { html, css, store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/
 import { registerBlocks } from "./blocks/register.js";
 import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
-import { findRubric, rubricOf, rubricPages, hasDescriptors, percent, shareLabel, weightTotal } from "./rubrics/rubric-model.js";
+import { findRubric, rubricAt, rubricOf, rubricPages, hasDescriptors, percent, shareLabel, weightTotal } from "./rubrics/rubric-model.js";
 import { rubricEditor } from "./rubrics/oer-rubric-editor.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -36,12 +37,15 @@ export class OerRubric extends DDD {
     return {
       ...super.properties,
       rubricId: { type: String, attribute: "rubric-id", reflect: true },
+      // a release of the rubric ("1.0.0"); empty: the latest
+      version: { type: String, reflect: true },
     };
   }
 
   constructor() {
     super();
     this.rubricId = "";
+    this.version = "";
     // Internal state is kept out of the declared properties on purpose:
     // HAX serializes every declared property into the saved page HTML.
     this.__items = null;
@@ -310,6 +314,18 @@ export class OerRubric extends DDD {
           border-radius: 999px;
           color: var(--foreground, inherit);
         }
+        .pin {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 0.375rem;
+          margin: 0.5rem 1rem 0;
+          font-size: 0.8125rem;
+          color: var(--muted-foreground, inherit);
+        }
+        .pin a {
+          color: var(--link, var(--primary));
+        }
         .missing {
           padding: 1rem;
           border: 1px dashed var(--border, currentColor);
@@ -375,22 +391,29 @@ export class OerRubric extends DDD {
 
   render() {
     if (this._hidden || !this.__items) return html``;
-    const page = findRubric(this.__items, this.rubricId);
+    const { page, shown, missing } = rubricAt(this.__items, this.rubricId, this.version);
     if (!page) {
       return html`<div class="missing">Rubric not found${this.rubricId ? html`: <code>${this.rubricId}</code>` : ""}</div>`;
     }
-    const r = rubricOf(page);
+    const r = rubricOf(shown);
+    const pinned = shown !== page;
     // on the rubric's own page the page header has the description and
     // the Edit rubric button
     const onOwnPage = this.__activeId === page.id;
     return html`
       <section class="card" aria-labelledby="title">
         <div class="head">
-          <h3 id="title">${onOwnPage ? heading(r.name) : html`<a href="${page.slug}">${heading(r.name)}</a>`}</h3>
-          ${this.__signedIn && !this.__editing && !onOwnPage && !page.metadata?.oerSnapshotOf
+          <h3 id="title">${onOwnPage ? heading(r.name) : html`<a href="${shown.slug}">${heading(r.name)}</a>`}</h3>
+          ${this.__signedIn && !this.__editing && !onOwnPage && !pinned && !page.metadata?.oerSnapshotOf
             ? html`<button class="edit" @click="${() => rubricEditor().show(page.id)}">${lucide("icons:create")}Edit rubric</button>`
             : ""}
         </div>
+        ${pinned || missing
+          ? html`<p class="pin">
+              ${missing ? html`Version ${this.version} isn't on the site; this is the latest.` : html`<span class="pill">v${this.version}</span> as released.`}
+              <a href="${page.slug}">See the latest</a>
+            </p>`
+          : ""}
         ${r.description && !onOwnPage ? html`<p class="desc">${r.description}</p>` : html`<div style="height:0.75rem"></div>`}
         ${!r.criteria.length
           ? html`<p class="empty">No criteria yet.${this.__signedIn ? " Use Edit rubric to add them." : ""}</p>`
@@ -438,6 +461,12 @@ export class OerRubric extends DDD {
             description: "Which rubric to show. Rubrics are pages under Assessments → Rubrics.",
             inputMethod: "select",
             options,
+          },
+          {
+            property: "version",
+            title: "Version",
+            description: "Leave empty for the latest. A release (such as 1.0.0) keeps this page on the rubric as it was then.",
+            inputMethod: "textfield",
           },
         ],
         advanced: [],

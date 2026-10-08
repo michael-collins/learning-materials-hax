@@ -25,13 +25,15 @@
  * feedback). Canvas can convert them to New Quizzes on import. Rubrics are
  * the site's rubric pages (rubrics/rubric-model.js): each criterion worth
  * its weight's share of the assignment's points, rated on the rubric's own
- * levels, with what each level looks like as the rating's description.
+ * levels, with what each level looks like as the rating's description; an
+ * item pinned to a rubric release (rubricVersion, as an archived sequence's
+ * items are) gets that release.
  *
  * buildCanvasPackage({ offering, items, htmlOf, fileOf, includeDrafts })
  *   → { files: [{ name, data }], report: { warnings, counts } }
  */
 import { classMeetings, dueAt, termEnd, toUtc, unlockAt, DELIVERY_MODES } from "./offering-schedule.js";
-import { findRubric, rubricOf, criterionPoints } from "../rubrics/rubric-model.js";
+import { findRubric, rubricAt, rubricOf, criterionPoints } from "../rubrics/rubric-model.js";
 
 /* ---------- helpers ---------- */
 
@@ -254,11 +256,11 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
   // rubrics (the site's rubric pages), one per rubric and point total
   const rubricIds = new Map();
   const rubricParts = [];
-  const rubricFor = (ref, points) => {
-    const page = findRubric(items, ref);
-    const rubric = page && rubricOf(page);
+  const rubricFor = (ref, points, version = "") => {
+    const { shown } = rubricAt(items, ref, version);
+    const rubric = shown && rubricOf(shown);
     if (!rubric?.criteria.length || !rubric.levels.length) return "";
-    const k = `${page.id}:${points}`;
+    const k = `${shown.id}:${points}`;
     if (!rubricIds.has(k)) {
       const id = key("rubric", k);
       rubricIds.set(k, id);
@@ -275,7 +277,8 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
     const points = Number(entry.points ?? 0);
     const graded = entry.graded !== false && points > 0;
     const due = utc(dueAt(offering, entry.due), tz);
-    const rubricId = graded && entry.rubric ? rubricFor(entry.rubric, points) : "";
+    const rubricId = graded && entry.rubric ? rubricFor(entry.rubric, points, entry.rubricVersion) : "";
+    if (graded && entry.rubric && entry.rubricVersion && rubricAt(items, entry.rubric, entry.rubricVersion).missing) warnings.push(`${title}: rubric version ${entry.rubricVersion} isn't on the site, so the latest is used.`);
     if (graded && entry.rubric && !rubricId) warnings.push(`${title}: ${findRubric(items, entry.rubric) ? `the rubric “${findRubric(items, entry.rubric).title}” has no criteria yet` : `rubric “${entry.rubric}” wasn't found`}, so it has no rubric in Canvas.`);
     const peer = entry.peerReviews && graded ? entry.peerReviews : null; // { count, anonymous }
     const groupSet = String(entry.groupSet || "").trim();
@@ -414,7 +417,8 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
         const graded = entry.graded !== false && Number(entry.points) > 0;
         const groupSet = String(entry.groupSet || "").trim();
         const due = utc(dueAt(offering, entry.due), tz);
-        const rubricName = graded && entry.rubric ? findRubric(items, entry.rubric)?.title || "" : "";
+        const rubricShown = graded && entry.rubric ? rubricAt(items, entry.rubric, entry.rubricVersion).shown : null;
+        const rubricName = rubricShown ? rubricOf(rubricShown).name : "";
         const prompt = [instructionsIntro(page), requirementsHtml(entry, readableDate(dueAt(offering, entry.due)), rubricName), embed(siteUrl, page, siteName)].filter(Boolean).join("\n");
         add(`${tId}.xml`, `${XML_HEAD}<topic xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imsdt_v1p1  http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imsdt_v1p1.xsd">\n  <title>${esc(page.title)}</title>\n  <text texttype="text/html">${esc(prompt)}</text>\n</topic>\n`);
         // the discussion's own fields come before its nested <assignment>
