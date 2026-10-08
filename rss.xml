@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/learning-materials</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2026 21:52:34 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 13:14:44 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/learning-materials/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -149,6 +149,29 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
+      <title>Modeling a room</title>
+      <link>https://localhost:3000/learning-materials/exercises/modeling-a-room</link>
+      <description>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space. Learning Objectives Become familiarized with 3D software terminology Practice polygonal modeling workflows Perform fundamental polygonal modeling operations including extrude, merge, bridge, and bevel. Instructions Note: There are no step-by-step tutorials for this intermediate level exercise. See beginner level exercises if you need guided instruction....</description>
+      <category>Blender</category>
+      <guid>https://localhost:3000/learning-materials/exercises/modeling-a-room</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Modular Environment Kit</title>
+      <link>https://localhost:3000/learning-materials/projects/modular-environment-kit</link>
+      <description>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene. Learning Objectives Plan a modular grid and pivot conventions Model and texture reusable pieces Assemble a scene from the kit in a real-time engine</description>
+      <category>Blender,PlayCanvas</category>
+      <guid>https://localhost:3000/learning-materials/projects/modular-environment-kit</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lectures</title>
+      <link>https://localhost:3000/learning-materials/lectures</link>
+      <description>Presentations that introduce the ideas behind a topic.</description>
+      <guid>https://localhost:3000/learning-materials/lectures</guid>
+      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
+    </item>
+    <item>
       <title>Lighting Principles</title>
       <link>https://localhost:3000/learning-materials/lessons/lighting-principles</link>
       <description>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</description>
@@ -156,38 +179,19 @@
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Camera and Composition</title>
-      <link>https://localhost:3000/learning-materials/lessons/camera-and-composition</link>
-      <description>Learn how to set up and control virtual cameras, applying cinematography and composition principles to create professional-quality renders.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/camera-and-composition</guid>
+      <title>Texturing the Airline Chair</title>
+      <link>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</link>
+      <description>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair. Learning Objectives Become familiarized with 3D software interface and terminology. Use modeling workflows to create high quality topology and edge flow. Perform fundamental polygonal modeling operations including mirror, extrude, loop cut, and subdivide. Instructions No...</description>
+      <category>Blender,Texturing</category>
+      <guid>https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
     <item>
-      <title>Rendering Techniques</title>
-      <link>https://localhost:3000/learning-materials/lessons/rendering-techniques</link>
-      <description>Master the rendering process from setup to final output, learning how to configure render engines and optimize settings for professional results.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/rendering-techniques</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Real-time Engines</title>
-      <link>https://localhost:3000/learning-materials/lessons/real-time-engines</link>
-      <description>Gain proficiency in game engines, learning how to import assets, configure materials, and build interactive real-time experiences.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/real-time-engines</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Environment Design for Real-time</title>
-      <link>https://localhost:3000/learning-materials/lessons/environment-design-for-real-time</link>
-      <description>Master environment design for real-time applications, learning to create engaging spaces while maintaining performance constraints.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/environment-design-for-real-time</guid>
-      <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>Real-time Asset Budgets</title>
-      <link>https://localhost:3000/learning-materials/lessons/real-time-asset-budgets</link>
-      <description>How game engines render your work, and the budgets that follow from it: polygon counts, texel density, draw calls and texture memory.</description>
-      <guid>https://localhost:3000/learning-materials/lessons/real-time-asset-budgets</guid>
+      <title>Realtime Game Environment</title>
+      <link>https://localhost:3000/learning-materials/projects/realtime-game-environment</link>
+      <description>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player...</description>
+      <category>Blender,PlayCanvas,Github</category>
+      <guid>https://localhost:3000/learning-materials/projects/realtime-game-environment</guid>
       <pubDate>Thu, 01 Oct 2026 04:45:09 GMT</pubDate>
     </item>
   </channel>
