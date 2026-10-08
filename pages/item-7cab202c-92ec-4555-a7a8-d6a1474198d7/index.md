@@ -63,6 +63,15 @@ Each course has a page under _Curriculum → Courses_: its code, credits and uni
 
 To put a page in a course, add the course in the page's _Courses_ field in Page details. A page can be in any number of courses, at any university; each is a link to its course page, so the same course code at two universities stays two courses. Authors can name their university too, which the page credits beside their name. A page collection placed anywhere can be limited to one course in its settings.
 
+Course sequences
+----------------
+
+A **course sequence** is a page that plans one way to run a course, week by week: a 15-week studio, a 6-week summer session, any length. They're under _Curriculum → Sequences_ and on their course pages. A sequence page shows its schedule: each module and what's in it, which items are assignments (with points and due weeks), and how grades are weighted. Like any page it has versions, so a term can keep the version it started with.
+
+**Edit sequence** opens the sequence builder. Add pages to each module from the library (the course's own pages come first), and set how each one works in an LMS: an embedded page, an assignment (due week, points, what students submit, rubric and grade group), a quiz or a link. With nothing selected it holds the grade groups and the rubric point scale. Checks at the bottom flag what to fix before exporting.
+
+**Export to Canvas** asks for the term: its first and last days, its breaks, when assignments are usually due (Sunday at 11:59 pm, say, or the start of the week's first class) and, optionally, class meetings for the calendar. It downloads a Canvas course package to import with _Settings → Import Course Content → Canvas Course Export Package_. Pages and assignment instructions are embedded from the site, so they stay current; quizzes are built from the page's questions and can become New Quizzes on import.
+
 Pathways
 --------
 

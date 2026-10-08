@@ -11,7 +11,7 @@ description: >-
   pathways, versions, books, embedding and open licen
 metadata:
   created: 1790801562
-  updated: 1791403577
+  updated: 1791466061
   published: true
   locked: false
   status: ''
@@ -24,7 +24,7 @@ metadata:
   oerSaveTiming: ''
   overridePathauto: false
   hideInMenu: false
-  readtime: 11
+  readtime: 12
   videos: []
   images: []
 content: >
@@ -179,6 +179,40 @@ content: >
   of what is taught in the course, grouped into lessons, readings and projects."
   caption="A course page: the catalog details, then everything taught in the
   course, grouped by type."></oer-schematic>
+
+
+  <h2>Course sequences</h2>
+
+  <p>A <strong>course sequence</strong> is a page that plans one way to run a
+  course, week by week: a 15-week studio, a 6-week summer session, any length.
+  They're under <em>Curriculum → Sequences</em> and on their course pages. A
+  sequence page shows its schedule: each module and what's in it, which items
+  are assignments (with points and due weeks), and how grades are weighted. Like
+  any page it has versions, so a term can keep the version it started with.</p>
+
+  <p><strong>Edit sequence</strong> opens the sequence builder. Add pages to
+  each module from the library (the course's own pages come first), and set how
+  each one works in an LMS: an embedded page, an assignment (due week, points,
+  what students submit, rubric and grade group), a quiz or a link. With nothing
+  selected it holds the grade groups and the rubric point scale. Checks at the
+  bottom flag what to fix before exporting.</p>
+
+  <p><strong>Export to Canvas</strong> asks for the term: its first and last
+  days, its breaks, when assignments are usually due (Sunday at 11:59 pm, say,
+  or the start of the week's first class) and, optionally, class meetings for
+  the calendar. It downloads a Canvas course package to import with <em>Settings
+  → Import Course Content → Canvas Course Export Package</em>. Pages and
+  assignment instructions are embedded from the site, so they stay current;
+  quizzes are built from the page's questions and can become New Quizzes on
+  import.</p>
+
+  <oer-schematic preset="sequence" alt="Diagram of the sequence builder: a list
+  of pages to add on the left, weekly modules in the middle with a highlighted
+  assignment worth 30 points due in week 2, and its settings on the right:
+  becomes Assignment, 30 points, due week 2, a rubric and what students submit,
+  with an Export to Canvas button at the top." caption="The sequence builder:
+  pages into weekly modules, each assignment's points, due week and rubric, then
+  Export to Canvas."></oer-schematic>
 
 
   <h2>Pathways</h2>
