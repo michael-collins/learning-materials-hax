@@ -9,12 +9,14 @@
  *     levels: [{ id, name, share }],          highest first; share of a
  *                                             criterion's points (1 = all)
  *     criteria: [{ id, name, description,
- *                  weight,                    % of the work's points
+ *                  weight,                    relative: share = weight / total
  *                  descriptors: { [levelId]: "what this level looks like" } }] }
  *
- * Weights are percentages (OER Schema's criterionWeight), so one rubric fits
- * a 20-point exercise and a 100-point project: the points are split by
- * weight when the work is graded or exported. The rubric's name and
+ * Weights are relative (OER Schema's criterionWeight): a criterion's share
+ * of the grade is its weight over the total, so 1, 1, 1 (or 10, 10, 10) is
+ * exactly a third each, which no percentage can say. One rubric fits a
+ * 20-point exercise and a 100-point project: the points are split by weight
+ * when the work is graded or exported. The rubric's name and
  * description are its page's title and description. `key` keeps older
  * references working: <oer-rubric rubric-id="exercise"> and sequence items'
  * rubric: "exercise" find the rubric by it; new references use the page id.
@@ -86,11 +88,9 @@ export function rubricRefsIn(htmlText = "") {
   return [...new Set([...String(htmlText).matchAll(/<oer-rubric\b[^>]*\brubric-id="([^"]+)"/gi)].map((m) => m[1]))];
 }
 
-/** Whole-number weights for n criteria that add up to 100. */
+/** Equal weights for n criteria: each counts the same. */
 export function evenWeights(n) {
-  if (n <= 0) return [];
-  const base = Math.floor(100 / n);
-  return Array.from({ length: n }, (_, i) => base + (i < 100 - base * n ? 1 : 0));
+  return Array.from({ length: Math.max(0, n) }, () => 1);
 }
 
 /**
@@ -120,22 +120,20 @@ export function rubricOf(page) {
   };
 }
 
-/** The criteria's weights added up (100 when they're right). */
+/** The criteria's weights added up. */
 export const weightTotal = (rubric) => rubric.criteria.reduce((s, c) => s + (Number(c.weight) || 0), 0);
 
 /**
- * The points each criterion is worth when the work is worth `points`: split
- * by weight in hundredths, adding up to exactly `points` (weights that don't
- * add up to 100 are scaled to). An even split (34/33/33) shares the points
- * equally, so a 30-point exercise is 10/10/10, not 10.2/9.9/9.9.
+ * The points each criterion is worth when the work is worth `points`: its
+ * share (weight over total) in hundredths, adding up to exactly `points`
+ * (30 points over weights 1, 1, 1 is 10, 10, 10).
  */
 export function criterionPoints(rubric, points) {
   const total = weightTotal(rubric);
   const n = rubric.criteria.length;
   if (!n) return [];
   const cents = Math.round((Number(points) || 0) * 100);
-  const even = evenWeights(n).every((w, i) => Number(rubric.criteria[i].weight) === w);
-  const raw = rubric.criteria.map((c) => (total > 0 && !even ? (cents * (Number(c.weight) || 0)) / total : cents / n));
+  const raw = rubric.criteria.map((c) => (total > 0 ? (cents * (Number(c.weight) || 0)) / total : cents / n));
   const out = raw.map(Math.floor);
   // the cents lost to rounding down go to the largest remainders
   let left = cents - out.reduce((s, x) => s + x, 0);
@@ -153,6 +151,28 @@ export function criterionPoints(rubric, points) {
 
 /** True when any criterion describes what its levels look like. */
 export const hasDescriptors = (rubric) => rubric.criteria.some((c) => rubric.levels.some((l) => String(c.descriptors?.[l.id] || "").trim()));
+
+const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+
+/**
+ * A criterion's share of the grade, for display: "1/3 · 33.3%" (the exact
+ * fraction too when the weights are whole numbers and the percentage isn't
+ * exact), else "40%".
+ */
+export function shareLabel(weight, total) {
+  const w = Number(weight) || 0;
+  const t = Number(total) || 0;
+  if (t <= 0) return "0%";
+  const pct = `${Math.round((w / t) * 1000) / 10}%`;
+  // as whole numbers (0.5 of 1.5 is 5 of 15), then the reduced fraction
+  const places = Math.min(4, Math.max(...[w, t].map((x) => (String(x).split(".")[1] || "").length)));
+  const [a, b] = [w, t].map((x) => Math.round(x * 10 ** places));
+  if (a > 0 && a < b && (a * 1000) % b !== 0) {
+    const g = gcd(a, b);
+    if (b / g <= 12) return `${a / g}/${b / g} · ${pct}`;
+  }
+  return pct;
+}
 
 /** A percentage for display: 0.85 -> "85%". */
 export const percent = (share) => `${Math.round((Number(share) || 0) * 1000) / 10}%`;

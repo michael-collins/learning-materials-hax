@@ -278,5 +278,6 @@
   "icons:date-range": "calendar-range",
   "oer:panel-left-close": "panel-left-close",
   "oer:panel-left-open": "panel-left-open",
-  "oer:panel-right-open": "panel-right-open"
+  "oer:panel-right-open": "panel-right-open",
+  "oer:pencil": "pencil"
 }

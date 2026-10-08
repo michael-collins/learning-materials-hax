@@ -24,7 +24,9 @@
  * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
  * opens the layout menu (presets, select, remove; or "put in columns" for
  * a block outside any layout). The sliders button opens the block's
- * settings (oer-settings-dialog).
+ * settings (oer-settings-dialog). A block can add its own button after its
+ * name with a static `frameAction`: { label, icon (an oer: Lucide name),
+ * run(node) }, e.g. the rubric block's Edit rubric.
  *
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
  * floating drag menu in hax-plate-context.
@@ -52,6 +54,7 @@ class OerBlockFrame extends LitElement {
   static get properties() {
     return {
       _label: { state: true },
+      _action: { state: true }, // the block's own button, if its class has a frameAction
       _drag: { state: true },
       _layout: { state: true },
       _guides: { state: true },
@@ -121,6 +124,7 @@ class OerBlockFrame extends LitElement {
       this._layout = layoutOf(hax.activeHaxBody, node);
       const schema = hax.haxSchemaFromTag?.(node.localName);
       this._label = schema?.gizmo?.title || node.localName;
+      this._action = node.constructor?.frameAction || null;
     }
     const f = frameRect(node);
     const view = contentViewport();
@@ -428,6 +432,17 @@ class OerBlockFrame extends LitElement {
       .label .sep {
         opacity: 0.7;
       }
+      /* a block's own action (frameAction): full strength for contrast */
+      .label .act {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-weight: 600;
+      }
+      .label .act .icon {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
       .label .sep .icon {
         width: 0.75rem;
         height: 0.75rem;
@@ -621,6 +636,18 @@ class OerBlockFrame extends LitElement {
             <span class="sep" aria-hidden="true">${icon("chevron-right")}</span>`
         : ""}
       <span>${this._label}</span>
+      ${this._action
+        ? html`<span class="sep" aria-hidden="true">·</span>
+            <button
+              class="act"
+              @click="${() => {
+                this._menu = false;
+                this._action.run(this.__node);
+              }}"
+            >
+              ${icon(this._action.icon)}${this._action.label}
+            </button>`
+        : ""}
     </div>`;
   }
 

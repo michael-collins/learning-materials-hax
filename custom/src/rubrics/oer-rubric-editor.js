@@ -1,7 +1,7 @@
 /**
  * `oer-rubric-editor` — edit a rubric page (type Rubric) as a grid: its
- * criteria down the side, each with a description and a weight (% of the
- * grade), its rating levels across the top, each worth a share of a
+ * criteria down the side, each with a description and a weight (relative:
+ * 1, 1, 1 is a third each), its rating levels across the top, each worth a share of a
  * criterion's points, and in each cell what that level looks like for that
  * criterion. Nothing is written until "Save rubric"; every page and course
  * sequence that uses the rubric shows the change (rubrics/rubric-model.js).
@@ -22,13 +22,12 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
-import { RUBRIC_TYPE, isRubric, rubricOf, rubricUsage, evenWeights, weightTotal } from "./rubric-model.js";
+import { RUBRIC_TYPE, isRubric, rubricOf, rubricUsage, weightTotal, shareLabel } from "./rubric-model.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 const uid = (p) => `${p}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 const clone = (o) => JSON.parse(JSON.stringify(o));
-const sameWeights = (a, b) => a.length === b.length && a.every((x, i) => Number(x) === b[i]);
 const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
 const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
@@ -213,30 +212,20 @@ class OerRubricEditor extends LitElement {
     this._confirmDiscard = false;
   }
 
-  // weights still split evenly stay even when criteria come and go
-  _reweigh(d, before) {
-    if (sameWeights(before, evenWeights(before.length))) {
-      const even = evenWeights(d.criteria.length);
-      d.criteria.forEach((c, i) => (c.weight = even[i]));
-    }
-  }
-
+  // a new criterion counts as much as the others when they're equal, else
+  // as much as an average one
   _addCriterion() {
     const id = uid("criterion");
     this._edit((d) => {
-      const before = d.criteria.map((c) => c.weight);
-      d.criteria.push({ id, name: "", description: "", weight: 0, descriptors: {} });
-      this._reweigh(d, before);
+      const w = d.criteria.map((c) => Number(c.weight) || 0);
+      const weight = !w.length ? 1 : w.every((x) => x === w[0]) ? w[0] || 1 : Math.round((w.reduce((s, x) => s + x, 0) / w.length) * 100) / 100;
+      d.criteria.push({ id, name: "", description: "", weight, descriptors: {} });
     });
     this._focus(`[data-criterion="${id}"] .cname`);
   }
 
   _removeCriterion(i) {
-    this._edit((d) => {
-      const before = d.criteria.map((c) => c.weight);
-      d.criteria.splice(i, 1);
-      this._reweigh(d, before);
-    });
+    this._edit((d) => d.criteria.splice(i, 1));
     this._focus(".add-criterion");
   }
 
@@ -268,10 +257,7 @@ class OerRubricEditor extends LitElement {
   }
 
   _evenOut() {
-    this._edit((d) => {
-      const even = evenWeights(d.criteria.length);
-      d.criteria.forEach((c, i) => (c.weight = even[i]));
-    });
+    this._edit((d) => d.criteria.forEach((c) => (c.weight = 1)));
   }
 
   _focus(sel) {
@@ -723,6 +709,7 @@ class OerRubricEditor extends LitElement {
 
   _renderCriterion(c, i, n) {
     const d = this._draft;
+    const total = weightTotal(d);
     const set = (patch) => this._edit((x) => Object.assign(x.criteria[i], patch));
     const name = c.name || `Criterion ${i + 1}`;
     return html`<tr data-criterion="${c.id}" @keydown="${(e) => this._rowKeys(e, i)}">
@@ -735,12 +722,12 @@ class OerRubricEditor extends LitElement {
               class="input num weight"
               type="number"
               min="0"
-              max="100"
-              aria-label="${name}: weight (% of the grade)"
+              step="any"
+              aria-label="${name}: weight, ${shareLabel(c.weight, total)} of the grade"
               .value="${String(c.weight)}"
               @input="${(e) => set({ weight: Math.max(0, Number(e.target.value) || 0) })}"
             />
-            <span class="unit">% of the grade</span>
+            <span class="unit" aria-hidden="true">${shareLabel(c.weight, total)}</span>
             <span class="tools">
               <button class="icon" title="Move up (Alt+↑)" aria-label="Move ${name} up" ?disabled="${i === 0}" @click="${() => this._moveCriterion(i, -1)}">${lucide("oer:chevron-up", "sm")}</button>
               <button class="icon" title="Move down (Alt+↓)" aria-label="Move ${name} down" ?disabled="${i === n - 1}" @click="${() => this._moveCriterion(i, 1)}">${lucide("oer:chevron-down", "sm")}</button>
@@ -827,7 +814,7 @@ class OerRubricEditor extends LitElement {
     if (!this.open || !this._draft) return html``;
     const d = this._draft;
     const total = weightTotal(d);
-    const off = d.criteria.length > 0 && Math.round(total * 10) / 10 !== 100;
+    const uneven = d.criteria.length > 1 && d.criteria.some((c) => Number(c.weight) !== Number(d.criteria[0].weight));
     const unnamed = d.criteria.filter((c) => !c.name.trim()).length + d.levels.filter((l) => !l.name.trim()).length;
     const dirty = this._dirty;
     return html`
@@ -850,8 +837,8 @@ class OerRubricEditor extends LitElement {
           </div>
           <h3>Criteria and levels</h3>
           <p class="hint">
-            Each criterion's weight is its share of the grade, so the rubric fits work of any point value. Each level is worth a share (%) of a criterion's points. The cells say what each level
-            looks like (optional). <kbd>Alt</kbd>+arrows move a criterion or level.
+            A criterion's weight sets its share of the grade: weights of 1, 1 and 1 (or 10, 10 and 10) make each exactly a third, whatever the work is worth. Each level is worth a share (%)
+            of a criterion's points. The cells say what each level looks like (optional). <kbd>Alt</kbd>+arrows move a criterion or level.
           </p>
           <div class="grid-wrap">
             <table>
@@ -871,10 +858,8 @@ class OerRubricEditor extends LitElement {
           </div>
           <div class="below">
             <button class="btn outline small add-criterion" @click="${this._addCriterion}">${lucide("oer:plus", "sm")}Add criterion</button>
-            ${d.criteria.length
-              ? html`<span class="total ${off ? "off" : ""}" role="status">Weights add up to ${Math.round(total * 10) / 10}%${off ? ", not 100%" : ""}</span>
-                  ${off ? html`<button class="btn outline small" @click="${this._evenOut}">Split evenly</button>` : ""}`
-              : ""}
+            ${uneven ? html`<button class="btn outline small" @click="${this._evenOut}">Weigh them equally</button>` : ""}
+            ${d.criteria.length && total <= 0 ? html`<span class="total off" role="status">Give at least one criterion a weight.</span>` : ""}
           </div>
         </div>
         <footer>

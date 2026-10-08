@@ -19,7 +19,7 @@ import { html, css, store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/
 import { registerBlocks } from "./blocks/register.js";
 import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
-import { findRubric, rubricOf, rubricPages, hasDescriptors, percent } from "./rubrics/rubric-model.js";
+import { findRubric, rubricOf, rubricPages, hasDescriptors, percent, shareLabel, weightTotal } from "./rubrics/rubric-model.js";
 import { rubricEditor } from "./rubrics/oer-rubric-editor.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -326,6 +326,7 @@ export class OerRubric extends DDD {
   }
 
   _renderGrid(r) {
+    const total = weightTotal(r);
     return html`<div class="n${Math.max(2, Math.min(7, r.levels.length))}"><div class="table-wrap grid-wrap">
       <table class="grid">
         <thead>
@@ -337,7 +338,7 @@ export class OerRubric extends DDD {
         <tbody>
           ${r.criteria.map(
             (c) => html`<tr>
-              <th scope="row">${c.name}<small class="weight">${c.weight}% of the grade</small>${c.description ? html`<p>${c.description}</p>` : ""}</th>
+              <th scope="row">${c.name}<small class="weight">${shareLabel(c.weight, total)} of the grade</small>${c.description ? html`<p>${c.description}</p>` : ""}</th>
               ${r.levels.map((l) => (c.descriptors?.[l.id] ? html`<td>${c.descriptors[l.id]}</td>` : html`<td class="none"><span aria-label="Not described">–</span></td>`))}
             </tr>`,
           )}
@@ -347,7 +348,7 @@ export class OerRubric extends DDD {
     <ul class="stacked" role="list">
       ${r.criteria.map(
         (c) => html`<li>
-          <h4>${c.name}<small class="weight">${c.weight}% of the grade</small></h4>
+          <h4>${c.name}<small class="weight">${shareLabel(c.weight, total)} of the grade</small></h4>
           ${c.description ? html`<p class="cdesc">${c.description}</p>` : ""}
           <dl>
             ${r.levels.map((l) => html`<dt>${l.name}<small>${percent(l.share)}</small></dt><dd>${c.descriptors?.[l.id] || "–"}</dd>`)}
@@ -358,13 +359,14 @@ export class OerRubric extends DDD {
   }
 
   _renderList(r) {
+    const total = weightTotal(r);
     return html`<div class="table-wrap">
         <table>
           <thead>
-            <tr><th scope="col">Criterion</th><th scope="col">Description</th><th scope="col">Weight</th></tr>
+            <tr><th scope="col">Criterion</th><th scope="col">Description</th><th scope="col">Share of the grade</th></tr>
           </thead>
           <tbody>
-            ${r.criteria.map((c) => html`<tr><th scope="row">${c.name}</th><td>${c.description}</td><td class="weight">${c.weight}%</td></tr>`)}
+            ${r.criteria.map((c) => html`<tr><th scope="row">${c.name}</th><td>${c.description}</td><td class="weight">${shareLabel(c.weight, total)}</td></tr>`)}
           </tbody>
         </table>
       </div>
@@ -397,6 +399,19 @@ export class OerRubric extends DDD {
             : this._renderList(r)}
       </section>
     `;
+  }
+
+  // in edit mode, an Edit rubric button on the selected block's label
+  // (editor/oer-block-frame.js)
+  static get frameAction() {
+    return {
+      label: "Edit rubric",
+      icon: "pencil",
+      run: (node) => {
+        const page = findRubric(toJS(store.manifest?.items) || [], node.rubricId);
+        if (page) rubricEditor().show(page.id);
+      },
+    };
   }
 
   // the rubric dropdown: the site's rubric pages, by key (older pages use
