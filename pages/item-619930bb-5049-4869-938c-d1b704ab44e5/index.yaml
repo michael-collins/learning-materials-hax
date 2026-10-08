@@ -1,20 +1,21 @@
 id: item-619930bb-5049-4869-938c-d1b704ab44e5
-indent: 1
+indent: 2
 location: pages/item-619930bb-5049-4869-938c-d1b704ab44e5/index.yaml
-slug: projects/documentation
-order: 39
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/project-2/documentation
+order: 4
+parent: item-ba7ab274-d43f-4029-af9c-78edc5d3c484
 title: Documentation
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd300-design-project-2-project-2-documentation
   tags: project-deliverable
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491582
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <ol>
 
   <li><strong>Title slide</strong>
@@ -119,8 +123,8 @@ content: >
   <ul>
 
   <li>You can choose either APA or MLA format for document. See <a
-  href="/articles/dmd300-documentation-resources">documentation resources</a>
-  for help.</li>
+  href="articles/documentation-resources">documentation resources</a> for
+  help.</li>
 
   </ul>
 
@@ -134,9 +138,8 @@ content: >
 
   <li>PDF document in US Letter size.</li>
 
-  <li>Please see <a
-  href="/articles/dmd300-documentation-resources">documentation resources</a>
-  for guidance.</li>
+  <li>Please see <a href="articles/documentation-resources">documentation
+  resources</a> for guidance.</li>
 
   <li>Proofread and spellcheck</li>
 

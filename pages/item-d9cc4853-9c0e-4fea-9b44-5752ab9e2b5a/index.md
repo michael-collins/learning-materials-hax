@@ -10,7 +10,7 @@ Constraints
     1.  Allowed tools: Scissors, X-Acto knife
     2.  Allowed surface marking implements: Pen, pencil, marker, paintbrush
 
-*   [Open Design Project](/lessons/lesson-4/projects/open_design/open_design_project.html)
+*   [Open Design Project](projects/open-design-project)
 
 Instructions
 ------------

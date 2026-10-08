@@ -5,7 +5,7 @@ In this phase, you will use a tool called Twine to create an interactive narrati
 Learning resources
 ------------------
 
-*   [Twine tutorial: Getting started with Twine](/lessons/lesson-3/topics/twine-tutorial-getting-started.html)
+*   [Twine tutorial: Getting started with Twine](articles/twine-tutorial-getting-started-with-twine)
 
 Story requirements
 ------------------

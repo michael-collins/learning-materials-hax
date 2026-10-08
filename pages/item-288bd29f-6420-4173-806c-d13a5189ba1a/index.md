@@ -59,7 +59,7 @@ Algorithms are not very interesting; they don't know what you know, and they don
 
 For one draft of your Work Statement, you should use an AI assistant to revise the text or generate feedback.
 
-Use one of the AI resources listed under the Text section of the [Resources page](/projects/dmd300-design-project-2-project-2-project-description).
+Use one of the AI resources listed under the Text section of the [Resources page](projects/project-2).
 
 You can paste your entire statement into one of the tools, and say something like:
 

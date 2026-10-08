@@ -1,20 +1,21 @@
 id: item-5c890ba9-e6e5-484c-9209-ce2593a41192
-indent: 1
+indent: 2
 location: pages/item-5c890ba9-e6e5-484c-9209-ce2593a41192/index.yaml
-slug: projects/production-reports
-order: 41
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/project-2/production-reports
+order: 2
+parent: item-ba7ab274-d43f-4029-af9c-78edc5d3c484
 title: Production reports
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd300-design-project-2-project-2-production-reports
   tags: project-deliverable
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491582
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>A production report is a comprehensive update about what progress has been
   made. A report can consist of any visual or text description and may include
   screenshot images, photographs of prototypes, video of working functionality,
@@ -34,8 +38,7 @@ content: >
   <h2>Initial Blog Post</h2>
 
   <p>Your first blog post should be a reflection on the required reading and
-  video playlist listed on the <a
-  href="/projects/dmd300-design-project-2-project-2-project-description">project
+  video playlist listed on the <a href="projects/project-2">project
   overview</a>.</p>
 
   <ul>

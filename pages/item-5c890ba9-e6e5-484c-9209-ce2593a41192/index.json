@@ -1,21 +1,24 @@
 {
   "id": "item-5c890ba9-e6e5-484c-9209-ce2593a41192",
-  "indent": 1,
+  "indent": 2,
   "location": "pages/item-5c890ba9-e6e5-484c-9209-ce2593a41192/index.json",
-  "slug": "projects/production-reports",
-  "order": 41,
-  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "slug": "projects/project-2/production-reports",
+  "order": 2,
+  "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
   "title": "Production reports",
   "description": "",
   "metadata": {
     "published": true,
-    "pageType": "oer:project",
+    "pageType": "oer:activity",
     "oerSource": "projects/dmd300-design-project-2-project-2-production-reports",
     "tags": "project-deliverable",
     "oerFields": {
       "difficulty": "intermediate",
       "courses": [
-        "DMD 300"
+        {
+          "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -28,7 +31,10 @@
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791491582,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<p>A production report is a comprehensive update about what progress has been made. A report can consist of any visual or text description and may include screenshot images, photographs of prototypes, video of working functionality, code snippets, production artwork, concept maps, research findings, work inspiration, storyboards and scripts, etc. Include hyperlinks to your research sources, tutorials you followed, or other influences on your work!</p>\n<h2>Initial Blog Post</h2>\n<p>Your first blog post should be a reflection on the required reading and video playlist listed on the <a href=\"/projects/dmd300-design-project-2-project-2-project-description\">project overview</a>.</p>\n<ul>\n<li>Include 2+ quotes from the assigned reading material with your own commentary and analysis.</li>\n<li>Include a link to one additional article, artwork, social media post, or other reference that relates to the subject of generative AI.</li>\n</ul>\n<p>Write in a professional format appropriate for a college-level class. You can take this response in whatever direction you like, but you might consider:</p>\n<ul>\n<li>What are the biggest potential rewards and risks that you see in this technology?</li>\n<li>What examples or ideas did you find compelling in the assigned reading/videos?</li>\n<li>What uses of generative AI stuck out to you prior to this class?</li>\n<li>Using <a href=\"https://www.geoffreylitt.com/2023/02/26/llm-as-muse-not-oracle\">ChatGPT as a muse</a> to help you discover your feelings about this stuff by asking you provocative questions.</li>\n</ul>\n<h2>Structure</h2>\n<p><strong>All blog posts should be a minimum of 500 words long, and include images or other media.</strong></p>\n<p>After the initial blog post (above) each weekly post should include the following sections:</p>\n<h3>Week at a glance</h3>\n<p>1–2 sentences describing what you accomplished and what stage of the design process you are in (from your pitch timeline).</p>\n<h3>Reply to feedback</h3>\n<p>1–2 paragraphs replying to feedback you received from your instructor or peers. Your instructor will typically post specific questions or recommendations in your Canvas assessment — this is your chance to explain how you factored that into your work, or why you chose to ignore it.</p>\n<h3>Free writing</h3>\n<p>Spend the majority of your post describing your process, struggles, or ideas related to the project. Make this writing professional and worth reading. Good things to write about include:\n- Behind the scenes process explanations; write your own little tutorials!\n- Research into related artwork, design, history, or theory.\n- Show iterations of work: failed experiments, evolving designs, and so on — not just the pretty picture, but all the middling ones along the way.</p>\n<h2>Production blog</h2>\n<p>All reports should be published on the production blog by the due dates indicated on the project schedule. The production blog can be hosted anywhere.</p>\n<p>Hosted blog choices include:</p>\n<ul>\n<li><a href=\"https://sites.psu.edu\">sites.psu.edu</a></li>\n<li><a href=\"https://pages.github.com/\">Github Pages</a></li>\n<li><a href=\"http://medium.com\">Medium.com</a></li>\n<li><a href=\"https://spark.adobe.com/\">Adobe Spark</a></li>\n<li><a href=\"https://www.wix.com/\">Wix</a></li>\n<li><a href=\"http://wordpress.com\">WordPress.com</a></li>\n<li><a href=\"https://www.blogger.com\">Blogger</a></li>\n<li><a href=\"https://www.tumblr.com/\">Tumblr</a></li>\n<li><a href=\"http://squarespace.com\">Squarespace</a></li>\n<li><a href=\"https://www.weebly.com/\">Weebly</a></li>\n</ul>\n"
+  "content": "<p>A production report is a comprehensive update about what progress has been made. A report can consist of any visual or text description and may include screenshot images, photographs of prototypes, video of working functionality, code snippets, production artwork, concept maps, research findings, work inspiration, storyboards and scripts, etc. Include hyperlinks to your research sources, tutorials you followed, or other influences on your work!</p>\n<h2>Initial Blog Post</h2>\n<p>Your first blog post should be a reflection on the required reading and video playlist listed on the <a href=\"projects/project-2\">project overview</a>.</p>\n<ul>\n<li>Include 2+ quotes from the assigned reading material with your own commentary and analysis.</li>\n<li>Include a link to one additional article, artwork, social media post, or other reference that relates to the subject of generative AI.</li>\n</ul>\n<p>Write in a professional format appropriate for a college-level class. You can take this response in whatever direction you like, but you might consider:</p>\n<ul>\n<li>What are the biggest potential rewards and risks that you see in this technology?</li>\n<li>What examples or ideas did you find compelling in the assigned reading/videos?</li>\n<li>What uses of generative AI stuck out to you prior to this class?</li>\n<li>Using <a href=\"https://www.geoffreylitt.com/2023/02/26/llm-as-muse-not-oracle\">ChatGPT as a muse</a> to help you discover your feelings about this stuff by asking you provocative questions.</li>\n</ul>\n<h2>Structure</h2>\n<p><strong>All blog posts should be a minimum of 500 words long, and include images or other media.</strong></p>\n<p>After the initial blog post (above) each weekly post should include the following sections:</p>\n<h3>Week at a glance</h3>\n<p>1–2 sentences describing what you accomplished and what stage of the design process you are in (from your pitch timeline).</p>\n<h3>Reply to feedback</h3>\n<p>1–2 paragraphs replying to feedback you received from your instructor or peers. Your instructor will typically post specific questions or recommendations in your Canvas assessment — this is your chance to explain how you factored that into your work, or why you chose to ignore it.</p>\n<h3>Free writing</h3>\n<p>Spend the majority of your post describing your process, struggles, or ideas related to the project. Make this writing professional and worth reading. Good things to write about include:\n- Behind the scenes process explanations; write your own little tutorials!\n- Research into related artwork, design, history, or theory.\n- Show iterations of work: failed experiments, evolving designs, and so on — not just the pretty picture, but all the middling ones along the way.</p>\n<h2>Production blog</h2>\n<p>All reports should be published on the production blog by the due dates indicated on the project schedule. The production blog can be hosted anywhere.</p>\n<p>Hosted blog choices include:</p>\n<ul>\n<li><a href=\"https://sites.psu.edu\">sites.psu.edu</a></li>\n<li><a href=\"https://pages.github.com/\">Github Pages</a></li>\n<li><a href=\"http://medium.com\">Medium.com</a></li>\n<li><a href=\"https://spark.adobe.com/\">Adobe Spark</a></li>\n<li><a href=\"https://www.wix.com/\">Wix</a></li>\n<li><a href=\"http://wordpress.com\">WordPress.com</a></li>\n<li><a href=\"https://www.blogger.com\">Blogger</a></li>\n<li><a href=\"https://www.tumblr.com/\">Tumblr</a></li>\n<li><a href=\"http://squarespace.com\">Squarespace</a></li>\n<li><a href=\"https://www.weebly.com/\">Weebly</a></li>\n</ul>"
 }

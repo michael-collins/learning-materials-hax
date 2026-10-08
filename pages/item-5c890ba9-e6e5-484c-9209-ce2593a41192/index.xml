@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-5c890ba9-e6e5-484c-9209-ce2593a41192</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-5c890ba9-e6e5-484c-9209-ce2593a41192/index.xml</location>
-<slug>projects/production-reports</slug>
-<order>41</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/project-2/production-reports</slug>
+<order>2</order>
+<parent>item-ba7ab274-d43f-4029-af9c-78edc5d3c484</parent>
 <title>Production reports</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd300-design-project-2-project-2-production-reports</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 300</item>
+<item>
+<page>item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,11 +34,14 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491582</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>A production report is a comprehensive update about what progress has been made. A report can consist of any visual or text description and may include screenshot images, photographs of prototypes, video of working functionality, code snippets, production artwork, concept maps, research findings, work inspiration, storyboards and scripts, etc. Include hyperlinks to your research sources, tutorials you followed, or other influences on your work!</p>
 <h2>Initial Blog Post</h2>
-<p>Your first blog post should be a reflection on the required reading and video playlist listed on the <a href="/projects/dmd300-design-project-2-project-2-project-description">project overview</a>.</p>
+<p>Your first blog post should be a reflection on the required reading and video playlist listed on the <a href="projects/project-2">project overview</a>.</p>
 <ul>
 <li>Include 2+ quotes from the assigned reading material with your own commentary and analysis.</li>
 <li>Include a link to one additional article, artwork, social media post, or other reference that relates to the subject of generative AI.</li>
@@ -73,6 +79,5 @@
 <li><a href="https://www.tumblr.com/">Tumblr</a></li>
 <li><a href="http://squarespace.com">Squarespace</a></li>
 <li><a href="https://www.weebly.com/">Weebly</a></li>
-</ul>
-]]></content>
+</ul>]]></content>
 </item>

@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-288bd29f-6420-4173-806c-d13a5189ba1a</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-288bd29f-6420-4173-806c-d13a5189ba1a/index.xml</location>
-<slug>projects/work-statement</slug>
-<order>44</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/project-2/work-statement</slug>
+<order>1</order>
+<parent>item-ba7ab274-d43f-4029-af9c-78edc5d3c484</parent>
 <title>Work Statement</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd300-design-project-2-project-2-work-statement</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 300</item>
+<item>
+<page>item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,7 +34,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491581</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>Develop a 150–500 word work statement that thoughtfully employs relevant and critical art and design language. This statement should be developed with feedback from your instructor to adjust tone, terminology, and structure. You will use MS Word tracked changes to refine and edit the statement over the duration of the project.</p>
 <p>The statement's use of language should seek a balance of accurate technical terminology, concise statements about the work, and language that is accessible to a diverse audience and is wholly descriptive. It is easy for artists and designers to adopt opaque language when attempting to describe abstract works. Developing playful language can be a fun exercise, but has the tendency to confuse or shut out those with-out a strong grasp of obscure and creatively applied vocabulary. There are really no rules with how language is used, but ultimately the goal in a work statement is that the artist or designer can clearly communicate their ideas, processes, and outcomes to a wide audience.</p>
@@ -83,7 +89,7 @@
 <p>As you explore the use of AI in design, it's worth seeing how AI can help us with writing too.</p>
 <p>Algorithms are not very interesting; they don't know what you know, and they don't care about anything. But they are really good at regurgitating the writing style of other people into a sort of average result. And you can iterate and guide an AI to give you more interesting results, possibly editing its suggestions into your own writing. This can be help align your writing with the conventions and language of a particular industry.</p>
 <p>For one draft of your Work Statement, you should use an AI assistant to revise the text or generate feedback.</p>
-<p>Use one of the AI resources listed under the Text section of the <a href="/projects/dmd300-design-project-2-project-2-project-description">Resources page</a>.</p>
+<p>Use one of the AI resources listed under the Text section of the <a href="projects/project-2">Resources page</a>.</p>
 <p>You can paste your entire statement into one of the tools, and say something like:</p>
 <ul>
 <li>"Give me feedback on this design statement, considering writing style, clarity of ideas, and professional context."</li>
@@ -104,6 +110,5 @@
 <li>Include a brief reflection on the use of AI, such as describing its strengths and weaknesses, or what percentage of the writing is yours vs. the AI's.</li>
 </ul>
 </li>
-</ul>
-]]></content>
+</ul>]]></content>
 </item>

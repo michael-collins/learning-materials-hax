@@ -2,7 +2,7 @@ id: item-ba7ab274-d43f-4029-af9c-78edc5d3c484
 indent: 1
 location: pages/item-ba7ab274-d43f-4029-af9c-78edc5d3c484/index.yaml
 slug: projects/project-2
-order: 42
+order: 8
 parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
 title: Project 2
 description: ''
@@ -14,7 +14,8 @@ metadata:
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491580
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <h2>Description</h2>
 
   <p>For this project, you will produce a digital design work that critically
@@ -458,27 +462,22 @@ content: >
 
   <ol>
 
-  <li><a
-  href="/projects/dmd300-design-project-2-project-2-production-reports"><strong>Production
+  <li><a href="projects/project-2/production-reports"><strong>Production
   blog</strong></a> (Canvas)</li>
 
-  <li><a
-  href="/projects/dmd300-design-project-2-project-2-concept-pitch"><strong>Concept
+  <li><a href="projects/project-2/concept-pitch"><strong>Concept
   pitch</strong></a> (Canvas, production blog)</li>
 
-  <li><a
-  href="/projects/dmd300-design-project-2-project-2-production-reports"><strong>Production
+  <li><a href="projects/project-2/production-reports"><strong>Production
   Reports</strong></a> (Production blog)</li>
 
-  <li><a
-  href="/projects/dmd300-design-project-2-project-2-work-statement"><strong>Work
+  <li><a href="projects/project-2/work-statement"><strong>Work
   statement</strong></a> that uses design language (Canvas)</li>
 
-  <li><a href="/design-project-2/project-2-files.md"><strong>Project
-  files:</strong></a> (Canvas)</li>
+  <li><a href="projects/project-2/files"><strong>Project files:</strong></a>
+  (Canvas)</li>
 
-  <li><a
-  href="/projects/dmd300-design-project-2-project-2-documentation"><strong>Project
+  <li><a href="projects/project-2/documentation"><strong>Project
   documentation</strong></a> (Canvas, production blog)</li>
 
   </ol>
@@ -611,9 +610,9 @@ content: >
 
   <p>If you are unsure of what types of digital projects are available to
   create, please have a look at the list of <a
-  href="/articles/dmd300-digital-design-project-types">digital design project
-  types</a>. This is not a comprehensive list, but you should be able to locate
-  your own creative interests within.</p>
+  href="articles/digital-design-project-types">digital design project types</a>.
+  This is not a comprehensive list, but you should be able to locate your own
+  creative interests within.</p>
 
   <hr>
 

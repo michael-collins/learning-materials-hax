@@ -1,20 +1,22 @@
 id: item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0
-indent: 1
+indent: 2
 location: pages/item-39dd5e21-e60f-4e9a-bf3e-fc828fe8fdf0/index.yaml
-slug: projects/develop-hypertext-narrative-draft-1
-order: 21
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
-title: 'Develop: Hypertext narrative \(draft 1\)'
+slug: >-
+  projects/hypertext-narrative-project-civic-imagination/develop-hypertext-narrative-draft-1
+order: 8
+parent: item-9401e020-db14-4652-9d7b-fc6a27557c2c
+title: 'Develop: Hypertext narrative (draft 1)'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd100-lesson-3-narrative-develop-hypertext-narrative-draft-1
   tags: Double diamond,Design thinking
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +24,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491578
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond
   Develop Phase graphic"></p>
 
@@ -40,8 +45,7 @@ content: >
 
   <ul>
 
-  <li><a
-  href="/lessons/lesson-3/topics/twine-tutorial-getting-started.html">Twine
+  <li><a href="articles/twine-tutorial-getting-started-with-twine">Twine
   tutorial: Getting started with Twine</a></li>
 
   </ul>

@@ -4,7 +4,7 @@
 <indent>1</indent>
 <location>pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.xml</location>
 <slug>projects/project-1</slug>
-<order>45</order>
+<order>9</order>
 <parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
 <title>Project 1</title>
 <description></description>
@@ -16,7 +16,10 @@
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 300</item>
+<item>
+<page>item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,12 +34,15 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491583</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<h2>Description</h2>
 <p>In this project, you will work in small team to produce a design process, digital media, and documentation. Your team will build its own project by setting meeting agendas, creating a concept pitch, develop and use a design process/sprint structure, track and document progress using a project blog, and produce project documentation. The project outcomes can take the form of any combination of digital media formats including 2D, 3D, video and motion design, interactive and web, UX/UI app design, and product design. The projects could emphasize a wide range of approaches including tool building, product or service, marketing or awareness campaigns, calls to action, open-source tools, traditional or experimental digital story telling, speculative design, wayfinding, identity systems, toolkits, educational materials, etc.</p>
 <p>Avoid basing your project around existing intellectual properties (movies, comics, games, etc.) unless you do something conceptually sophisticated like a parody, deconstruction, etc.</p>
-<p>Please read through <a href="/articles/dmd300-project-categories">project categories</a> to learn more about the types of projects possible to produce and their production needs. While the media and form of your project is up to you, the following focus word should be used as a jumping off point for your project's concept.</p>
+<p>Please read through <a href="articles/project-categories-and-resources">project categories</a> to learn more about the types of projects possible to produce and their production needs. While the media and form of your project is up to you, the following focus word should be used as a jumping off point for your project's concept.</p>
 <h2>Objectives</h2>
 <p><strong>The purpose of this project is to help you:</strong></p>
 <ul>
@@ -99,6 +105,5 @@
 <li>Technical craft and aesthetics: 20%</li>
 <li>Research and design process: 20%</li>
 <li>Participation grade: 10%</li>
-</ul>
-]]></content>
+</ul>]]></content>
 </item>

@@ -2,7 +2,7 @@ id: item-aef9003a-aac3-4a77-a874-48276f2cf152
 indent: 1
 location: pages/item-aef9003a-aac3-4a77-a874-48276f2cf152/index.yaml
 slug: projects/project-1
-order: 45
+order: 9
 parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
 title: Project 1
 description: ''
@@ -14,7 +14,8 @@ metadata:
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 300
+      - page: item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491583
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <h2>Description</h2>
 
   <p>In this project, you will work in small team to produce a design process,
@@ -43,11 +47,12 @@ content: >
   comics, games, etc.) unless you do something conceptually sophisticated like a
   parody, deconstruction, etc.</p>
 
-  <p>Please read through <a href="/articles/dmd300-project-categories">project
-  categories</a> to learn more about the types of projects possible to produce
-  and their production needs. While the media and form of your project is up to
-  you, the following focus word should be used as a jumping off point for your
-  project's concept.</p>
+  <p>Please read through <a
+  href="articles/project-categories-and-resources">project categories</a> to
+  learn more about the types of projects possible to produce and their
+  production needs. While the media and form of your project is up to you, the
+  following focus word should be used as a jumping off point for your project's
+  concept.</p>
 
   <h2>Objectives</h2>
 

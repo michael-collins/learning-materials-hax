@@ -1,21 +1,24 @@
 {
   "id": "item-619930bb-5049-4869-938c-d1b704ab44e5",
-  "indent": 1,
+  "indent": 2,
   "location": "pages/item-619930bb-5049-4869-938c-d1b704ab44e5/index.json",
-  "slug": "projects/documentation",
-  "order": 39,
-  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "slug": "projects/project-2/documentation",
+  "order": 4,
+  "parent": "item-ba7ab274-d43f-4029-af9c-78edc5d3c484",
   "title": "Documentation",
   "description": "",
   "metadata": {
     "published": true,
-    "pageType": "oer:project",
+    "pageType": "oer:activity",
     "oerSource": "projects/dmd300-design-project-2-project-2-documentation",
     "tags": "project-deliverable",
     "oerFields": {
       "difficulty": "intermediate",
       "courses": [
-        "DMD 300"
+        {
+          "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -28,7 +31,10 @@
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791491582,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<ol>\n<li><strong>Title slide</strong>\n<ol>\n<li>Title</li>\n<li>Name</li>\n<li>Date</li>\n<li>Course (\"DMD 300: Digital Multimedia Design Studio\")</li>\n<li>Semester (Example: \"Spring 2019\")</li>\n</ol>\n</li>\n<li><strong>Bio</strong>\n<ul>\n<li>Include a bio that describes relevant interests, skills, and capabilities.</li>\n</ul>\n</li>\n<li><strong>Work Statement</strong>\n<ul>\n<li>A final draft of work statement language developed during Project 2.</li>\n</ul>\n</li>\n<li><strong>Design process overview</strong>\n<ul>\n<li>Timeline of events</li>\n<li>List methods used with brief descriptions</li>\n<li>Anticipated outcomes of each step and how they contributed to the project's development.</li>\n</ul>\n</li>\n<li><strong>Outcomes</strong>\n<ul>\n<li>Analyze and deconstruct central issues using <a href=\"https://www.core77.com/posts/69273/Book-Review-Notes-on-the-Synthesis-of-Form\">form and context analysis</a>.</li>\n<li><a href=\"https://vimeo.com/10875362\">Identify forces that impact form</a></li>\n<li>Are there any ethical considerations?</li>\n<li>Include figures and diagrams of conceptual relationships</li>\n<li>Describe media used in digital production. For example, print, web, info-graphics, game/interactive, animation, video/film, audio/sound, physical installation, etc.</li>\n</ul>\n</li>\n<li><strong>Images</strong>\n<ul>\n<li>Include 4–8 images that show key features of your work with short descriptions of each image.</li>\n</ul>\n</li>\n<li><strong>Bibliography</strong>\n<ul>\n<li>You can choose either APA or MLA format for document. See <a href=\"/articles/dmd300-documentation-resources\">documentation resources</a> for help.</li>\n</ul>\n</li>\n</ol>\n<h4>Formatting requirements:</h4>\n<ol>\n<li>PDF document in US Letter size.</li>\n<li>Please see <a href=\"/articles/dmd300-documentation-resources\">documentation resources</a> for guidance.</li>\n<li>Proofread and spellcheck</li>\n</ol>\n<h4>Submission details:</h4>\n<ol>\n<li>Upload the PDF document to the canvas assignment by the deadline.</li>\n<li>Upload PDF to production blog by the deadline.</li>\n</ol>\n"
+  "content": "<ol>\n<li><strong>Title slide</strong>\n<ol>\n<li>Title</li>\n<li>Name</li>\n<li>Date</li>\n<li>Course (\"DMD 300: Digital Multimedia Design Studio\")</li>\n<li>Semester (Example: \"Spring 2019\")</li>\n</ol>\n</li>\n<li><strong>Bio</strong>\n<ul>\n<li>Include a bio that describes relevant interests, skills, and capabilities.</li>\n</ul>\n</li>\n<li><strong>Work Statement</strong>\n<ul>\n<li>A final draft of work statement language developed during Project 2.</li>\n</ul>\n</li>\n<li><strong>Design process overview</strong>\n<ul>\n<li>Timeline of events</li>\n<li>List methods used with brief descriptions</li>\n<li>Anticipated outcomes of each step and how they contributed to the project's development.</li>\n</ul>\n</li>\n<li><strong>Outcomes</strong>\n<ul>\n<li>Analyze and deconstruct central issues using <a href=\"https://www.core77.com/posts/69273/Book-Review-Notes-on-the-Synthesis-of-Form\">form and context analysis</a>.</li>\n<li><a href=\"https://vimeo.com/10875362\">Identify forces that impact form</a></li>\n<li>Are there any ethical considerations?</li>\n<li>Include figures and diagrams of conceptual relationships</li>\n<li>Describe media used in digital production. For example, print, web, info-graphics, game/interactive, animation, video/film, audio/sound, physical installation, etc.</li>\n</ul>\n</li>\n<li><strong>Images</strong>\n<ul>\n<li>Include 4–8 images that show key features of your work with short descriptions of each image.</li>\n</ul>\n</li>\n<li><strong>Bibliography</strong>\n<ul>\n<li>You can choose either APA or MLA format for document. See <a href=\"articles/documentation-resources\">documentation resources</a> for help.</li>\n</ul>\n</li>\n</ol>\n<h4>Formatting requirements:</h4>\n<ol>\n<li>PDF document in US Letter size.</li>\n<li>Please see <a href=\"articles/documentation-resources\">documentation resources</a> for guidance.</li>\n<li>Proofread and spellcheck</li>\n</ol>\n<h4>Submission details:</h4>\n<ol>\n<li>Upload the PDF document to the canvas assignment by the deadline.</li>\n<li>Upload PDF to production blog by the deadline.</li>\n</ol>"
 }

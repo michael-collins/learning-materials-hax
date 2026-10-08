@@ -1,21 +1,24 @@
 {
   "id": "item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a",
-  "indent": 1,
+  "indent": 2,
   "location": "pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.json",
-  "slug": "projects/develop-mvp-prototype",
-  "order": 32,
-  "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+  "slug": "projects/open-design-project/develop-mvp-prototype",
+  "order": 7,
+  "parent": "item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85",
   "title": "Develop: MVP Prototype",
   "description": "",
   "metadata": {
     "published": true,
-    "pageType": "oer:project",
+    "pageType": "oer:activity",
     "oerSource": "projects/dmd100-lesson-4-open-design-develop-mvp-prototype",
     "tags": "Double diamond,Design thinking",
     "oerFields": {
       "difficulty": "intermediate",
       "courses": [
-        "DMD 100"
+        {
+          "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -28,7 +31,10 @@
     "created": 1791231123,
     "images": [],
     "videos": [],
-    "updated": 1791231123
+    "updated": 1791491580,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<p><img src=\"files/dd-process-develop-1200px@2x.png\" alt=\"Double Diamond Develop Phase graphic\"></p>\n<p>You will now start prototyping with your materials to try to approximate the toy from your product pitch. You will develop an MVP or <strong>Minimum Viable Product</strong> to use in later user testing.</p>\n<h2>Constraints</h2>\n<ol>\n<li>You must not spend more than $10.00 USD to assemble the kit.</li>\n<li>Your users must be able to assemble their kits without special skills or tools. Tools are excluded from the cost restriction.\n<ol>\n<li>Allowed tools: Scissors, X-Acto knife</li>\n<li>Allowed surface marking implements: Pen, pencil, marker, paintbrush</li>\n</ol>\n</li>\n</ol>\n<ul>\n<li><a href=\"/lessons/lesson-4/projects/open_design/open_design_project.html\">Open Design Project</a></li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>Revisit your research, resources, and product pitch. Make note in your journal of any ideas, insights, themes, or opportunities that you want to explore.</li>\n<li>Gather an array of materials to work with.</li>\n<li><strong>Start experimenting.</strong> Transform manipulate materials, use objects, and create visual modifications.\n<ol>\n<li>Take photos of your experiments and outcomes as you work. Don't worry if they are rough or ambiguous.</li>\n<li>Five (5) photos minimum.</li>\n</ol>\n</li>\n<li>Once you are happy with what you came up with, start to make variations.</li>\n<li>You should end up with a kit of parts that you can describe to another person how to make and assemble. Take photos of individual parts, templates, connectors, fasteners, and structural elements.</li>\n</ol>\n<h2>Post work</h2>\n<ol>\n<li>Upload photos of the prototype(s).</li>\n</ol>\n"
+  "content": "<p><img src=\"files/dd-process-develop-1200px@2x.png\" alt=\"Double Diamond Develop Phase graphic\"></p>\n<p>You will now start prototyping with your materials to try to approximate the toy from your product pitch. You will develop an MVP or <strong>Minimum Viable Product</strong> to use in later user testing.</p>\n<h2>Constraints</h2>\n<ol>\n<li>You must not spend more than $10.00 USD to assemble the kit.</li>\n<li>Your users must be able to assemble their kits without special skills or tools. Tools are excluded from the cost restriction.\n<ol>\n<li>Allowed tools: Scissors, X-Acto knife</li>\n<li>Allowed surface marking implements: Pen, pencil, marker, paintbrush</li>\n</ol>\n</li>\n</ol>\n<ul>\n<li><a href=\"projects/open-design-project\">Open Design Project</a></li>\n</ul>\n<h2>Instructions</h2>\n<ol>\n<li>Revisit your research, resources, and product pitch. Make note in your journal of any ideas, insights, themes, or opportunities that you want to explore.</li>\n<li>Gather an array of materials to work with.</li>\n<li><strong>Start experimenting.</strong> Transform manipulate materials, use objects, and create visual modifications.\n<ol>\n<li>Take photos of your experiments and outcomes as you work. Don't worry if they are rough or ambiguous.</li>\n<li>Five (5) photos minimum.</li>\n</ol>\n</li>\n<li>Once you are happy with what you came up with, start to make variations.</li>\n<li>You should end up with a kit of parts that you can describe to another person how to make and assemble. Take photos of individual parts, templates, connectors, fasteners, and structural elements.</li>\n</ol>\n<h2>Post work</h2>\n<ol>\n<li>Upload photos of the prototype(s).</li>\n</ol>"
 }

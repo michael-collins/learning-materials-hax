@@ -5,7 +5,7 @@ In this project, you will work in small team to produce a design process, digita
 
 Avoid basing your project around existing intellectual properties (movies, comics, games, etc.) unless you do something conceptually sophisticated like a parody, deconstruction, etc.
 
-Please read through [project categories](/articles/dmd300-project-categories) to learn more about the types of projects possible to produce and their production needs. While the media and form of your project is up to you, the following focus word should be used as a jumping off point for your project's concept.
+Please read through [project categories](articles/project-categories-and-resources) to learn more about the types of projects possible to produce and their production needs. While the media and form of your project is up to you, the following focus word should be used as a jumping off point for your project's concept.
 
 Objectives
 ----------

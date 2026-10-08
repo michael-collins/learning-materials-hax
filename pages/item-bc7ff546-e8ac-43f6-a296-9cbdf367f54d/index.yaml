@@ -1,20 +1,22 @@
 id: item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d
-indent: 1
+indent: 2
 location: pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.yaml
-slug: projects/deliver-hypertext-narrative-draft-2
-order: 18
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: >-
+  projects/hypertext-narrative-project-civic-imagination/deliver-hypertext-narrative-draft-2
+order: 12
+parent: item-9401e020-db14-4652-9d7b-fc6a27557c2c
 title: 'Deliver: Hypertext narrative (draft 2)'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2
   tags: Double diamond,Design thinking
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +24,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491579
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/dd-process-deliver-1200px@2x.png" alt="Double Diamond
   Deliver Phase graphic"></p>
 
@@ -61,7 +66,7 @@ content: >
   <ol>
 
   <li>If you are unsure about how feedback works, please see these <a
-  href="/toolkit/feedback-and-critique.html">guidelines</a>.</li>
+  href="articles/feedback-and-critique-1">guidelines</a>.</li>
 
   </ol>
 

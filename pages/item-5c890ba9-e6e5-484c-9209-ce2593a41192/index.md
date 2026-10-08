@@ -3,7 +3,7 @@ A production report is a comprehensive update about what progress has been made.
 Initial Blog Post
 -----------------
 
-Your first blog post should be a reflection on the required reading and video playlist listed on the [project overview](/projects/dmd300-design-project-2-project-2-project-description).
+Your first blog post should be a reflection on the required reading and video playlist listed on the [project overview](projects/project-2).
 
 *   Include 2+ quotes from the assigned reading material with your own commentary and analysis.
 *   Include a link to one additional article, artwork, social media post, or other reference that relates to the subject of generative AI.

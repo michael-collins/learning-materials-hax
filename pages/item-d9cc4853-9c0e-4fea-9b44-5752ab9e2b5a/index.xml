@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.xml</location>
-<slug>projects/develop-mvp-prototype</slug>
-<order>32</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/open-design-project/develop-mvp-prototype</slug>
+<order>7</order>
+<parent>item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85</parent>
 <title>Develop: MVP Prototype</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd100-lesson-4-open-design-develop-mvp-prototype</oerSource>
 <tags>Double diamond,Design thinking</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 100</item>
+<item>
+<page>item-2191170b-b92b-406b-bf5a-84d7524a7de8</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,7 +34,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491580</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond Develop Phase graphic"></p>
 <p>You will now start prototyping with your materials to try to approximate the toy from your product pitch. You will develop an MVP or <strong>Minimum Viable Product</strong> to use in later user testing.</p>
@@ -46,7 +52,7 @@
 </li>
 </ol>
 <ul>
-<li><a href="/lessons/lesson-4/projects/open_design/open_design_project.html">Open Design Project</a></li>
+<li><a href="projects/open-design-project">Open Design Project</a></li>
 </ul>
 <h2>Instructions</h2>
 <ol>
@@ -64,6 +70,5 @@
 <h2>Post work</h2>
 <ol>
 <li>Upload photos of the prototype(s).</li>
-</ol>
-]]></content>
+</ol>]]></content>
 </item>

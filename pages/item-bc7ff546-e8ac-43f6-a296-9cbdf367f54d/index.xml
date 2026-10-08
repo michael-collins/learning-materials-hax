@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-bc7ff546-e8ac-43f6-a296-9cbdf367f54d/index.xml</location>
-<slug>projects/deliver-hypertext-narrative-draft-2</slug>
-<order>18</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/hypertext-narrative-project-civic-imagination/deliver-hypertext-narrative-draft-2</slug>
+<order>12</order>
+<parent>item-9401e020-db14-4652-9d7b-fc6a27557c2c</parent>
 <title>Deliver: Hypertext narrative (draft 2)</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2</oerSource>
 <tags>Double diamond,Design thinking</tags>
 <oerFields>
 <difficulty>intermediate</difficulty>
 <courses>
-<item>DMD 100</item>
+<item>
+<page>item-2191170b-b92b-406b-bf5a-84d7524a7de8</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -31,7 +34,10 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791491579</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p><img src="files/dd-process-deliver-1200px@2x.png" alt="Double Diamond Deliver Phase graphic"></p>
 <p>Iterative improvement is the key to good design. Now that you have peer feedback, tweak, change, and improve your work. Re-read your story and identify where you might be able to further develop characters, increase tension and drama, introduce dialogue, alter story pacing, smooth out awkward transitions, etc.</p>
@@ -47,7 +53,7 @@
 <ol>
 <li>Review your feedback for the hypertext narrative.
 <ol>
-<li>If you are unsure about how feedback works, please see these <a href="/toolkit/feedback-and-critique.html">guidelines</a>.</li>
+<li>If you are unsure about how feedback works, please see these <a href="articles/feedback-and-critique-1">guidelines</a>.</li>
 </ol>
 </li>
 <li>Reflect on how your work can be improved. Analyze, interpret, and apply relevant feedback to improve the project.</li>
@@ -71,6 +77,5 @@
 <ol>
 <li><strong>Change Log:</strong> Upload a short description about the changes and improvements that were made in <code>changelog.doc</code> format.</li>
 <li><strong>HTML:</strong> Upload the exported Twine <code>.html</code> file (or <code>.zip</code> file if you have multiple assets).</li>
-</ol>
-]]></content>
+</ol>]]></content>
 </item>

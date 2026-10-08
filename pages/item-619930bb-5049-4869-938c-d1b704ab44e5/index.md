@@ -21,12 +21,12 @@
 6.  **Images**
     *   Include 4–8 images that show key features of your work with short descriptions of each image.
 7.  **Bibliography**
-    *   You can choose either APA or MLA format for document. See [documentation resources](/articles/dmd300-documentation-resources) for help.
+    *   You can choose either APA or MLA format for document. See [documentation resources](articles/documentation-resources) for help.
 
 #### Formatting requirements:
 
 1.  PDF document in US Letter size.
-2.  Please see [documentation resources](/articles/dmd300-documentation-resources) for guidance.
+2.  Please see [documentation resources](articles/documentation-resources) for guidance.
 3.  Proofread and spellcheck
 
 #### Submission details:

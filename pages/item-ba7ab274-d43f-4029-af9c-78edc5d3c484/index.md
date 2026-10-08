@@ -166,12 +166,12 @@ With generative AI you can build a real working app with limited or no coding ex
 Deliverables
 ------------
 
-1.  [**Production blog**](/projects/dmd300-design-project-2-project-2-production-reports) (Canvas)
-2.  [**Concept pitch**](/projects/dmd300-design-project-2-project-2-concept-pitch) (Canvas, production blog)
-3.  [**Production Reports**](/projects/dmd300-design-project-2-project-2-production-reports) (Production blog)
-4.  [**Work statement**](/projects/dmd300-design-project-2-project-2-work-statement) that uses design language (Canvas)
-5.  [**Project files:**](/design-project-2/project-2-files.md) (Canvas)
-6.  [**Project documentation**](/projects/dmd300-design-project-2-project-2-documentation) (Canvas, production blog)
+1.  [**Production blog**](projects/project-2/production-reports) (Canvas)
+2.  [**Concept pitch**](projects/project-2/concept-pitch) (Canvas, production blog)
+3.  [**Production Reports**](projects/project-2/production-reports) (Production blog)
+4.  [**Work statement**](projects/project-2/work-statement) that uses design language (Canvas)
+5.  [**Project files:**](projects/project-2/files) (Canvas)
+6.  [**Project documentation**](projects/project-2/documentation) (Canvas, production blog)
 
 * * *
 
@@ -211,7 +211,7 @@ Schedule
 Project media
 -------------
 
-If you are unsure of what types of digital projects are available to create, please have a look at the list of [digital design project types](/articles/dmd300-digital-design-project-types). This is not a comprehensive list, but you should be able to locate your own creative interests within.
+If you are unsure of what types of digital projects are available to create, please have a look at the list of [digital design project types](articles/digital-design-project-types). This is not a comprehensive list, but you should be able to locate your own creative interests within.
 
 * * *
 

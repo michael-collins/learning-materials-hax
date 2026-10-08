@@ -1,20 +1,21 @@
 id: item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a
-indent: 1
+indent: 2
 location: pages/item-d9cc4853-9c0e-4fea-9b44-5752ab9e2b5a/index.yaml
-slug: projects/develop-mvp-prototype
-order: 32
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/open-design-project/develop-mvp-prototype
+order: 7
+parent: item-651e53d3-49b0-45e3-9af0-bc2a27bf1e85
 title: 'Develop: MVP Prototype'
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd100-lesson-4-open-design-develop-mvp-prototype
   tags: Double diamond,Design thinking
   oerFields:
     difficulty: intermediate
     courses:
-      - DMD 100
+      - page: item-2191170b-b92b-406b-bf5a-84d7524a7de8
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -22,8 +23,11 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
-content: >
+  updated: 1791491580
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p><img src="files/dd-process-develop-1200px@2x.png" alt="Double Diamond
   Develop Phase graphic"></p>
 
@@ -54,9 +58,7 @@ content: >
 
   <ul>
 
-  <li><a
-  href="/lessons/lesson-4/projects/open_design/open_design_project.html">Open
-  Design Project</a></li>
+  <li><a href="projects/open-design-project">Open Design Project</a></li>
 
   </ul>
 
