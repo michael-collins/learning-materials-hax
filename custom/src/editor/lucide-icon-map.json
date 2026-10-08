@@ -274,5 +274,6 @@
   "oer:eye": "eye",
   "oer:files": "files",
   "oer:chevron-left": "chevron-left",
-  "icons:insert-drive-file": "file"
+  "icons:insert-drive-file": "file",
+  "icons:date-range": "calendar-range"
 }

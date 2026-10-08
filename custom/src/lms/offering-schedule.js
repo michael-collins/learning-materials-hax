@@ -10,7 +10,8 @@
  *     meetings: [{ day: "Tue", start: "13:25", end: "16:25",
  *                  mode: "in-person" | "online", location, link }],
  *     breaks: [{ label: "Spring break", start: "2027-03-08", end: "2027-03-14" }],
- *     defaults: { dueDay: "Fri", dueTime: "23:59" } }
+ *     end: "2027-05-07" (optional: the last day of the term),
+ *     defaults: { dueRule: "day" | "first-class", dueDay: "Sun", dueTime: "23:59" } }
  *
  * Times are wall-clock times in the offering's time zone ("2027-01-14T23:59");
  * toUtc() turns one into an instant for an LMS.
@@ -21,10 +22,12 @@
  * meetings on its dates, and a due date landing on it moves to the next
  * class (or, without classes, the next day).
  *
- * Due dates by delivery, unless an item sets its own day, time or date:
- * - in person, online (synchronous), hybrid: the start of the due week's
- *   first class (before there are meetings: defaults.dueDay at dueTime)
- * - online (asynchronous): Sunday 11:59 pm at the end of the due week
+ * Due dates, unless an item sets its own day, time or date: the typical
+ * day and time chosen for the offering (defaults.dueDay at dueTime,
+ * Sunday 11:59 pm unless set), or with dueRule "first-class" the start of
+ * the due week's first class (falling back to the day and time while there
+ * are no meetings). Without a dueRule, in person, hybrid and online
+ * synchronous use the first class and online asynchronous the day.
  * Modules of an asynchronous offering unlock on the Monday of their week.
  */
 
@@ -102,12 +105,13 @@ export function dueAt(offering, due) {
   if (!week) return "";
   const async = offering.delivery === "online-async";
   const meetings = classMeetings(offering);
-  if (!due.day && !async) {
+  const rule = offering.defaults?.dueRule || (async || !DELIVERY_MODES[offering.delivery]?.meets ? "day" : "first-class");
+  if (!due.day && rule === "first-class") {
     const first = meetings.find((m) => m.week === due.week);
     if (first) return `${first.date}T${due.time || first.start}`;
   }
-  const day = due.day || (async ? "Sun" : offering.defaults?.dueDay || "Fri");
-  const time = due.time || (async ? "23:59" : offering.defaults?.dueTime || "23:59");
+  const day = due.day || offering.defaults?.dueDay || "Sun";
+  const time = due.time || offering.defaults?.dueTime || "23:59";
   let date = addDays(parseDate(week.start), Math.max(0, DAYS.indexOf(day)));
   // a holiday moves it to the next class, or the next day
   for (let guard = 0; isHoliday(offering, fmtDate(date)) && guard < 21; guard++) {
@@ -124,9 +128,15 @@ export function unlockAt(offering, week) {
   return w ? `${w.start}T00:00` : "";
 }
 
-/** The last day of teaching ("YYYY-MM-DD"). */
+/** The last day of the term ("YYYY-MM-DD"): its end date, else the last teaching week's Sunday. */
 export function termEnd(offering) {
-  return teachingWeeks(offering).at(-1)?.end || "";
+  return offering.end || teachingWeeks(offering).at(-1)?.end || "";
+}
+
+/** How many teaching weeks fit between the term's start and end (breaks left out), or 0 without an end. */
+export function weeksAvailable(offering) {
+  if (!offering.end) return 0;
+  return teachingWeeks({ ...offering, weeks: 60 }).filter((w) => w.start <= offering.end).length;
 }
 
 /** A wall-clock time in a time zone as a UTC ISO instant ("2027-01-15T04:59:00Z"). */
