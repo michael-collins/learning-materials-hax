@@ -168,7 +168,7 @@ function choose(l, value, handlers) {
 function useLine(u, l, handlers) {
   // two pages with one title (a course's copy of an article): say which
   const twin = (l.uses || []).some((x) => x !== u && x.title === u.title && x.id !== u.id);
-  const label = html`${u.title}${twin && u.course ? html` <span class="twin">${u.course}</span>` : ""}`;
+  const label = html`<span class="use-title">${u.title}</span>${twin && u.course ? html`<span class="twin">${u.course}</span>` : ""}`;
   const where = handlers.onShow
     ? html`<button type="button" class="use-open" @click="${() => handlers.onShow(u, l)}">${label}<span class="sr"> (show it, with the link marked)</span></button>`
     : u.slug !== undefined
@@ -201,7 +201,7 @@ function row(l, handlers) {
   const note = checkNote(l);
   return html`<li class="link-row" data-key="${keyOf(l)}">
     <div class="lr-main">
-      <a class="addr" href="${l.url}" target="_blank" rel="noopener noreferrer" title="${l.url}">${short(l.url)}${lucide("icons:open-in-new")}<span class="sr"> (opens in a new tab)</span></a>
+      <a class="addr" href="${l.url}" target="_blank" rel="noopener noreferrer" title="${l.url}"><span class="addr-text">${short(l.url).slice(0, -10)}</span><span class="addr-end"><span class="addr-text">${short(l.url).slice(-10)}</span>${lucide("icons:open-in-new")}</span><span class="sr"> (opens in a new tab)</span></a>
       ${note ? html`<p class="note-line">${note}</p>` : ""}
       ${uses.length
         ? html`<ul class="uses" aria-label="Where it's used">
@@ -399,19 +399,26 @@ export const linkReviewStyles = css`
     flex-direction: column;
     gap: 0.25rem;
   }
+  /* the address wraps when it must, its icon after the last word */
   .link-row .addr {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    width: fit-content;
-    max-width: 100%;
+    display: block;
     font-size: 0.875rem;
     font-weight: 500;
+    line-height: 1.4;
     color: var(--foreground);
     text-decoration: none;
     overflow-wrap: anywhere;
   }
-  .link-row .addr:hover {
+  .link-row .addr .lucide {
+    display: inline-block;
+    margin-left: 0.375rem;
+    vertical-align: -0.0625em;
+  }
+  /* the address's last characters and its icon wrap together */
+  .addr-end {
+    white-space: nowrap;
+  }
+  .link-row .addr:hover .addr-text {
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -442,18 +449,26 @@ export const linkReviewStyles = css`
   .use-open {
     all: unset;
     flex: none;
-    max-width: 50%;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    max-width: 55%;
+    color: var(--link, var(--primary));
+    cursor: pointer;
+  }
+  .use-title {
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: var(--link, var(--primary));
-    cursor: pointer;
   }
   .use-open:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   .use-open .twin {
+    flex: none;
+    font-size: 0.75rem;
     color: var(--muted-foreground);
   }
   .uses .ctx {

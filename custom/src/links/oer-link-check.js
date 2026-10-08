@@ -148,7 +148,7 @@ class OerLinkCheck extends LitElement {
 
   async _pick(key) {
     const l = this._links.find((x) => x.key === key);
-    const choice = await pagePicker().pick({ title: `The page here for ${String(l?.url || "").replace(/^https?:\/\//, "")}`, children: false });
+    const choice = await pagePicker().pick({ title: `The page here for ${String(l?.url || "").replace(/^https?:\/\//, "")}`, hint: "The link will point at the page you choose.", children: false, action: "Choose", versions: false });
     if (choice) this._set(key, { action: "page", match: { id: choice.page.id, title: choice.page.title, slug: choice.page.slug, type: choice.page.metadata?.pageType || "", score: 1, why: "you chose it" } });
     else this.requestUpdate();
   }

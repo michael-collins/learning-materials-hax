@@ -50,9 +50,13 @@ class OerPagePicker extends LitElement {
 
   /**
    * types: limit to these content type ids; children: offer "Also add its
-   * sub-pages"; title: dialog heading.
+   * sub-pages"; title: dialog heading; hint: the line under it; action: the
+   * button's word ("Add", or "Choose" when picking a page to point at);
+   * versions: offer a released version of each page.
    */
-  pick({ exclude = [], types = null, children = true, title = "Add an existing page", hint = null } = {}) {
+  pick({ exclude = [], types = null, children = true, title = "Add an existing page", hint = null, action = "Add", versions = true } = {}) {
+    this._action = action;
+    this._offerVersions = versions;
     this._exclude = new Set(exclude);
     this._only = types && types.length ? new Set(types) : null;
     this._offerChildren = children;
@@ -217,6 +221,14 @@ class OerPagePicker extends LitElement {
         color: var(--muted-foreground);
         white-space: nowrap;
       }
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
       .add {
         all: unset;
         display: inline-flex;
@@ -301,7 +313,7 @@ class OerPagePicker extends LitElement {
                     <div class="title">${i.title}</div>
                     <div class="meta">${[type?.label, i.metadata?.oerFields?.institution, parent ? `in ${parent.title}` : ""].filter(Boolean).join(" · ")}</div>
                   </div>
-                  ${releases.length
+                  ${releases.length && this._offerVersions !== false
                     ? html`<select aria-label="Version of ${i.title}" @change="${(e) => (this._versions = { ...this._versions, [i.id]: e.target.value })}">
                         <option value="">Latest${i.metadata?.version ? ` (v${i.metadata.version})` : ""}</option>
                         ${releases.map((r) => html`<option value="${r.version}">v${r.version}</option>`)}
@@ -310,7 +322,7 @@ class OerPagePicker extends LitElement {
                       ? html`<span class="ver">v${i.metadata.version}</span>`
                       : ""}
                   <button class="add" @click="${() => this._done({ page: i, version: this._versions[i.id] || "", withChildren: this._children })}">
-                    ${lucide("oer:plus", "sm")}Add
+                    ${this._action === "Add" ? lucide("oer:plus", "sm") : ""}${this._action || "Add"}<span class="sr"> ${i.title}</span>
                   </button>
                 </li>`;
               })}

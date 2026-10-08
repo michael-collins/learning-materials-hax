@@ -164,7 +164,7 @@ class OerCanvasImport extends LitElement {
   }
 
   async _pickPage(e) {
-    const choice = await pagePicker().pick({ title: `The site's page for “${e.title}”`, children: false });
+    const choice = await pagePicker().pick({ title: `The site's page for “${e.title}”`, hint: "The sequence will use the page you choose, under the item's Canvas title.", children: false, action: "Choose", versions: false });
     if (choice) this._set(e.id, { action: "link", match: { id: choice.page.id, title: choice.page.title, slug: choice.page.slug, type: choice.page.metadata?.pageType || "", score: 1, why: "you chose it" } });
   }
 
@@ -175,7 +175,7 @@ class OerCanvasImport extends LitElement {
   }
 
   async _pickLinkPage(url) {
-    const choice = await pagePicker().pick({ title: `The page here for ${url.replace(/^https?:\/\//, "")}`, children: false });
+    const choice = await pagePicker().pick({ title: `The page here for ${url.replace(/^https?:\/\//, "")}`, hint: "The link will point at the page you choose.", children: false, action: "Choose", versions: false });
     if (choice) this._setLink(url, { action: "page", match: { id: choice.page.id, title: choice.page.title, slug: choice.page.slug, type: choice.page.metadata?.pageType || "", score: 1, why: "you chose it" } });
     else this.requestUpdate(); // the select shows the choice it had
   }
@@ -1004,11 +1004,9 @@ class OerCanvasImport extends LitElement {
         <p class="eyebrow">Links</p>
         <h3>${links.length} link${links.length === 1 ? "" : "s"} in what's imported</h3>
       </div>
-      <p class="hint">
-        The links in the new pages, the module overviews, the sequence's own pages and its link items. ${n.here ? `${n.here} point${n.here === 1 ? "s" : ""} at an old course site's page that's here now, and will link to it instead.` : ""} Items
-        linked to the site's pages use the page's own text, so their Canvas links don't come over.
-      </p>
       ${renderLinkReview(links, {
+        summary: html`<p>${n.here ? html`<b>${n.here}</b> point${n.here === 1 ? "s" : ""} at an old course site's page that's here now, and will link to it instead.` : html`The links in what comes over.`}</p>
+          <p>From the new pages, the module overviews, the sequence's own pages and its link items. Items linked to the site's pages use the page's own text, so their Canvas links don't come over.</p>`,
         onChange: (url, patch) => this._setLink(url, patch),
         onPick: (url) => this._pickLinkPage(url),
         onShow: (use, link) => {
