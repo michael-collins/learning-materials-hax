@@ -97,10 +97,9 @@ class OerVersionsDialog extends LitElement {
       <ul>
         ${plan.map(
           (p) => html`<li>
-            <a href="${p.rubric.slug}" target="_blank">${p.rubric.title}</a>
-            ${p.release
-              ? html`: released as v${p.version} too, ${p.since ? `since it changed after v${p.since}` : "its first release"}`
-              : html`: v${p.version}, its current release`}
+            <a href="${p.rubric.slug}" target="_blank">${p.rubric.title}</a>${p.release
+              ? `: released as v${p.version} too, ${p.since ? `since it changed after v${p.since}` : "its first release"}`
+              : `: v${p.version}, its current release`}
           </li>`,
         )}
       </ul>

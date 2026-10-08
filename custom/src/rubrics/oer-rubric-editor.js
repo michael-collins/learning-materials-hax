@@ -30,6 +30,13 @@ const uid = (p) => `${p}-${Date.now().toString(36)}${Math.random().toString(36).
 const clone = (o) => JSON.parse(JSON.stringify(o));
 const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
 const plural = (n, one, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+// "42 archived versions keep the release they're pinned to. "
+const pinnedNote = (pinned) => {
+  const versions = pinned.filter((i) => i.metadata?.oerSnapshotOf).length;
+  const pages = pinned.length - versions;
+  const parts = [versions ? plural(versions, "archived version") : "", pages ? plural(pages, "pinned page or sequence", "pinned pages and sequences") : ""].filter(Boolean);
+  return parts.length ? `${parts.join(" and ")} ${pinned.length === 1 ? "keeps the release it's" : "keep the release they're"} pinned to. ` : "";
+};
 
 class OerRubricEditor extends LitElement {
   static get tag() {
@@ -793,7 +800,7 @@ class OerRubricEditor extends LitElement {
         <h3 id="c-t">Change “${name}” everywhere it's used?</h3>
         <p id="c-d">
           It's used by ${parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts.at(-1)}` : parts[0]}. They'll all show the changed rubric${u.sequences.length ? ", and the next Canvas export grades with it" : ""}.
-          ${u.pinned.length ? `${plural(u.pinned.length, "archived version or pinned page", "archived versions and pinned pages")} keep the release they're pinned to. ` : ""}To change it for one piece of work only, save it as a new rubric instead.
+          ${pinnedNote(u.pinned)}To change it for one piece of work only, save it as a new rubric instead.
         </p>
         ${listed.length
           ? html`<ul class="used" role="list">
