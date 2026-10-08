@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791493085,
+      "updated": 1791495589,
       "version": "26.8.0"
     },
     "theme": {
@@ -10648,7 +10648,7 @@
       "id": "item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d",
       "indent": 1,
       "location": "pages/item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d/index.html",
-      "slug": "sequences/dmd-400-15-week-collins-",
+      "slug": "sequences/dmd-400-15-week-collins",
       "order": 1,
       "parent": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
       "title": "DMD 400: 15-week (Collins)",
@@ -11324,7 +11324,8 @@
         "created": 1791490694,
         "images": [],
         "videos": [],
-        "updated": 1791490694
+        "updated": 1791495589,
+        "overridePathauto": true
       }
     },
     {
@@ -24439,7 +24440,7 @@
             {
               "id": "1302490_1133",
               "name": "Feedback",
-              "description": "Applied feedback by instructor, peers, and project advisor. Interpreted a variety of feedback for applicability to project goals, particularly when feedback may be conflicting. Sought out feedback when needed. Contributed meaningful feedback to other student&#39;s projects during discussions.",
+              "description": "Applied feedback by instructor, peers, and project advisor. Interpreted a variety of feedback for applicability to project goals, particularly when feedback may be conflicting. Sought out feedback when needed. Contributed meaningful feedback to other student's projects during discussions.",
               "weight": 20,
               "descriptors": {}
             },
@@ -24466,7 +24467,7 @@
         "created": 1791486284,
         "images": [],
         "videos": [],
-        "updated": 1791486284
+        "updated": 1791495586
       }
     },
     {
@@ -27736,7 +27737,7 @@
             {
               "id": "_4767",
               "name": "Pass/Fail",
-              "description": "Passing: In order to get a passing mark, you will need to meet all deliverable requirements and submit on time.<br/>\n<br/>\nFailing: A failing mark indicates that you have not achieved confidence from the capstone course instructor that you will be able to complete the capstone project in the current pace of progress or at the level of quality required from the capstone project requirements.",
+              "description": "Passing: In order to get a passing mark, you will need to meet all deliverable requirements and submit on time.\nFailing: A failing mark indicates that you have not achieved confidence from the capstone course instructor that you will be able to complete the capstone project in the current pace of progress or at the level of quality required from the capstone project requirements.",
               "weight": 10,
               "descriptors": {}
             }
@@ -27749,7 +27750,7 @@
         "created": 1791486284,
         "images": [],
         "videos": [],
-        "updated": 1791486284
+        "updated": 1791495587
       }
     },
     {
@@ -28303,14 +28304,14 @@
             {
               "id": "868468_931",
               "name": "Adopting and engaging with feedback",
-              "description": "- Did you adopt the feedback and make changes apparent through production reports?<br/>\n- If you don’t agree with feedback, are you engaging in conversation with the instructor to discuss and clarify?",
+              "description": "- Did you adopt the feedback and make changes apparent through production reports?\n- If you don’t agree with feedback, are you engaging in conversation with the instructor to discuss and clarify?",
               "weight": 10,
               "descriptors": {}
             },
             {
               "id": "868468_3355",
               "name": "Evidence of mastery in tools and craft",
-              "description": "- Are you using tools, techniques, methods, and skills relevant to accomplishing your project goals?<br/>\n- Are you using elements and principles of art and design effectively?",
+              "description": "- Are you using tools, techniques, methods, and skills relevant to accomplishing your project goals?\n- Are you using elements and principles of art and design effectively?",
               "weight": 10,
               "descriptors": {}
             }
@@ -28323,7 +28324,7 @@
         "created": 1791486284,
         "images": [],
         "videos": [],
-        "updated": 1791486284
+        "updated": 1791495588
       }
     },
     {
