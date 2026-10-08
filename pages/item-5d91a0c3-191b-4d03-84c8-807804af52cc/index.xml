@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5d91a0c3-191b-4d03-84c8-807804af52cc</id>
+<indent>1</indent>
+<location>pages/item-5d91a0c3-191b-4d03-84c8-807804af52cc/index.xml</location>
+<slug>rubrics/exercise</slug>
+<order>0</order>
+<parent>item-8660850b-ca78-4dc6-ad8d-c1c5a676167a</parent>
+<title>Exercise</title>
+<description></description>
+<metadata>
+<pageType>oer:rubric</pageType>
+<published>true</published>
+<oerRubric>
+<version>1</version>
+<key>exercise</key>
+<levels>
+<item>
+<id>exemplary</id>
+<name>Exemplary</name>
+<share>1</share>
+</item>
+<item>
+<id>proficient</id>
+<name>Proficient</name>
+<share>0.85</share>
+</item>
+<item>
+<id>developing</id>
+<name>Developing</name>
+<share>0.7</share>
+</item>
+<item>
+<id>beginning</id>
+<name>Beginning</name>
+<share>0.5</share>
+</item>
+<item>
+<id>missing</id>
+<name>Missing</name>
+<share>0</share>
+</item>
+</levels>
+<criteria>
+<item>
+<id>recDvB7XFqiTA9AX6</id>
+<name>Steps completed</name>
+<description>This criteria assess whether you completed all parts of a given set of instructions.</description>
+<weight>34</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recCfnMbyUIiHI3PT</id>
+<name>Attention to detail</name>
+<description>This criteria measures ability to use proper naming conventions and formats, meet submission deadlines, check to see that others are able to access submitted materials, and fulfills other specified requirements.</description>
+<weight>33</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recgzIu9wDNGWpJhv</id>
+<name>On time</name>
+<description>This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.</description>
+<weight>33</weight>
+<descriptors>
+</descriptors>
+</item>
+</criteria>
+</oerRubric>
+<created>1791471275</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791471275</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

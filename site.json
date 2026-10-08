@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791471255,
+      "updated": 1791471275,
       "version": "26.8.0"
     },
     "theme": {
@@ -7897,6 +7897,78 @@
       }
     },
     {
+      "id": "item-5d91a0c3-191b-4d03-84c8-807804af52cc",
+      "indent": 1,
+      "location": "pages/item-5d91a0c3-191b-4d03-84c8-807804af52cc/index.html",
+      "slug": "rubrics/exercise",
+      "order": 0,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "Exercise",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": true,
+        "oerRubric": {
+          "version": 1,
+          "key": "exercise",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 34,
+              "descriptors": {}
+            },
+            {
+              "id": "recCfnMbyUIiHI3PT",
+              "name": "Attention to detail",
+              "description": "This criteria measures ability to use proper naming conventions and formats, meet submission deadlines, check to see that others are able to access submitted materials, and fulfills other specified requirements.",
+              "weight": 33,
+              "descriptors": {}
+            },
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 33,
+              "descriptors": {}
+            }
+          ]
+        },
+        "created": 1791471275,
+        "images": [],
+        "videos": [],
+        "updated": 1791471275
+      }
+    },
+    {
       "id": "item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f",
       "indent": 2,
       "location": "pages/item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f/index.html",
@@ -10258,6 +10330,78 @@
         "images": [],
         "videos": [],
         "updated": 1791397866
+      }
+    },
+    {
+      "id": "item-e925a1e5-1a8f-4a37-a75e-606911de7a70",
+      "indent": 1,
+      "location": "pages/item-e925a1e5-1a8f-4a37-a75e-606911de7a70/index.html",
+      "slug": "rubrics/exercise-low-poly",
+      "order": 1,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "Exercise Low Poly",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": true,
+        "oerRubric": {
+          "version": 1,
+          "key": "exercise-low-poly",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 34,
+              "descriptors": {}
+            },
+            {
+              "id": "recCfnMbyUIiHI3PT",
+              "name": "Attention to detail",
+              "description": "This criteria measures ability to use proper naming conventions and formats, meet submission deadlines, check to see that others are able to access submitted materials, and fulfills other specified requirements.",
+              "weight": 33,
+              "descriptors": {}
+            },
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 33,
+              "descriptors": {}
+            }
+          ]
+        },
+        "created": 1791471275,
+        "images": [],
+        "videos": [],
+        "updated": 1791471275
       }
     },
     {
@@ -15688,6 +15832,78 @@
       }
     },
     {
+      "id": "item-3e46634c-0cd8-4c7e-b442-4a727210f00c",
+      "indent": 1,
+      "location": "pages/item-3e46634c-0cd8-4c7e-b442-4a727210f00c/index.html",
+      "slug": "rubrics/project",
+      "order": 2,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "Project",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": true,
+        "oerRubric": {
+          "version": 1,
+          "key": "project",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recEjg2iqFDPEmD00",
+              "name": "Concept development",
+              "description": "This criterion attempts to measure your ability to respond to project themes and learning objectives through creative thinking processes, account for technical and causal relationships through systems thinking, and show awareness of cultural contexts and philosophical or ideological mappings through critical thinking.",
+              "weight": 34,
+              "descriptors": {}
+            },
+            {
+              "id": "recWVHiInoUGO31VR",
+              "name": "Technical mastery",
+              "description": "This grading criterion measures your ability to quickly gain and apply necessary technical understanding. Working with new digital formats, following technical instructions, using digital and analog tools, and applying formal elements and principles of design can all be considered aspects of technical mastery. Often, learning resources outside of provided course content will need to be consulted to acquire pre-requisite knowledge and skills that may be lacking. Your ability to quickly and efficiently locate and absorb technical knowledge is essential for success after your studies. Consult with instructor where necessary.",
+              "weight": 33,
+              "descriptors": {}
+            },
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 33,
+              "descriptors": {}
+            }
+          ]
+        },
+        "created": 1791471275,
+        "images": [],
+        "videos": [],
+        "updated": 1791471275
+      }
+    },
+    {
       "id": "item-2e61b638-0bbe-4708-a00a-c523bcbb229c",
       "indent": 2,
       "location": "pages/item-2e61b638-0bbe-4708-a00a-c523bcbb229c/index.html",
@@ -17348,6 +17564,71 @@
         "images": [],
         "videos": [],
         "updated": 1791386147
+      }
+    },
+    {
+      "id": "item-98b4c319-23c3-4d2c-ae1e-dd5ff1f70c64",
+      "indent": 1,
+      "location": "pages/item-98b4c319-23c3-4d2c-ae1e-dd5ff1f70c64/index.html",
+      "slug": "rubrics/task",
+      "order": 3,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "Task",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": true,
+        "oerRubric": {
+          "version": 1,
+          "key": "task",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 50,
+              "descriptors": {}
+            },
+            {
+              "id": "recDvB7XFqiTA9AX6",
+              "name": "Steps completed",
+              "description": "This criteria assess whether you completed all parts of a given set of instructions.",
+              "weight": 50,
+              "descriptors": {}
+            }
+          ]
+        },
+        "created": 1791471275,
+        "images": [],
+        "videos": [],
+        "updated": 1791471275
       }
     },
     {
@@ -21840,6 +22121,85 @@
         "images": [],
         "videos": [],
         "updated": 1791386148
+      }
+    },
+    {
+      "id": "item-02b98513-14ea-4b92-9f25-5fd6ca629758",
+      "indent": 1,
+      "location": "pages/item-02b98513-14ea-4b92-9f25-5fd6ca629758/index.html",
+      "slug": "rubrics/written-statement",
+      "order": 4,
+      "parent": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "title": "Written statement",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:rubric",
+        "published": true,
+        "oerRubric": {
+          "version": 1,
+          "key": "written-statement",
+          "levels": [
+            {
+              "id": "exemplary",
+              "name": "Exemplary",
+              "share": 1
+            },
+            {
+              "id": "proficient",
+              "name": "Proficient",
+              "share": 0.85
+            },
+            {
+              "id": "developing",
+              "name": "Developing",
+              "share": 0.7
+            },
+            {
+              "id": "beginning",
+              "name": "Beginning",
+              "share": 0.5
+            },
+            {
+              "id": "missing",
+              "name": "Missing",
+              "share": 0
+            }
+          ],
+          "criteria": [
+            {
+              "id": "reci1lnjIVyGiwSU9",
+              "name": "Articulation",
+              "description": " This measures the ability to synthesize and articulate ideas through a written statement, and to meet the minimum statement requirements. Depending on the associated work, you may be required to talk about what you did, the context of the work in a larger landscape of contemporary or historical work, why the work is interesting, can be considered successful, or what the work may impact.",
+              "weight": 25,
+              "descriptors": {}
+            },
+            {
+              "id": "rec8RBn3GbilCke2Q",
+              "name": "Writing quality",
+              "description": "Language should be clear, understandable, free of hyperbole and generalizations, show specific examples, and reference or cite sources where necessary.",
+              "weight": 25,
+              "descriptors": {}
+            },
+            {
+              "id": "rectebGWNwSLoMwny",
+              "name": "Spelling and grammar",
+              "description": "Generally free of spelling mistakes, grammar issues, and missing or incomplete sentences.",
+              "weight": 25,
+              "descriptors": {}
+            },
+            {
+              "id": "recgzIu9wDNGWpJhv",
+              "name": "On time",
+              "description": "This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.",
+              "weight": 25,
+              "descriptors": {}
+            }
+          ]
+        },
+        "created": 1791471275,
+        "images": [],
+        "videos": [],
+        "updated": 1791471275
       }
     },
     {
@@ -32363,11 +32723,29 @@
       }
     },
     {
+      "id": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "indent": 0,
+      "location": "pages/item-8660850b-ca78-4dc6-ad8d-c1c5a676167a/index.html",
+      "slug": "rubrics",
+      "order": 18,
+      "parent": null,
+      "title": "Rubrics",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "published": true,
+        "created": 1791471275,
+        "images": [],
+        "videos": [],
+        "updated": 1791471275
+      }
+    },
+    {
       "id": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
       "indent": 0,
       "location": "pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.html",
       "slug": "applying-textures-to-3-unique-chess-sets",
-      "order": 18,
+      "order": 19,
       "parent": null,
       "title": "Applying Textures to 3 Unique Chess Sets",
       "description": "In this exercise, you will apply Image textures to a Chess board and pieces\nLearning Objectives\n\nPractice using texture images and the UV editor\nShort introduction to material nodes\nPractice appendin",
@@ -32403,7 +32781,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465713,
+        "updated": 1791471258,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32476,7 +32854,7 @@
       "indent": 0,
       "location": "pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.html",
       "slug": "model-a-gem",
-      "order": 19,
+      "order": 20,
       "parent": null,
       "title": "Model a Gem",
       "description": "model a Custom Gem\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulat",
@@ -32504,7 +32882,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465714,
+        "updated": 1791471259,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32569,7 +32947,7 @@
       "indent": 0,
       "location": "pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.html",
       "slug": "model-a-snowflake",
-      "order": 20,
+      "order": 21,
       "parent": null,
       "title": "Model a Snowflake",
       "description": "In this exercise, you will learn how to model 3 snowflakes\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge f",
@@ -32597,7 +32975,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465715,
+        "updated": 1791471260,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32662,7 +33040,7 @@
       "indent": 0,
       "location": "pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.html",
       "slug": "what-design-and-truth-say-about-each-other",
-      "order": 21,
+      "order": 22,
       "parent": null,
       "title": "What Design and Truth Say about Each Other",
       "description": "What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt\nIn this chapter, Grudin talks about the transition of design from close dialogue with natural systems",
@@ -32693,7 +33071,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465715,
+        "updated": 1791471260,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32705,7 +33083,7 @@
       "indent": 0,
       "location": "pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.html",
       "slug": "design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
-      "order": 22,
+      "order": 23,
       "parent": null,
       "title": "Design as Tragedy: The Rise and Fall of the Twin Towers",
       "description": "Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may",
@@ -32736,7 +33114,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465716,
+        "updated": 1791471261,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32748,7 +33126,7 @@
       "indent": 0,
       "location": "pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.html",
       "slug": "modeling-a-bishop",
-      "order": 23,
+      "order": 24,
       "parent": null,
       "title": "Modeling a Bishop",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice using the boolean operator and fixing any irregula",
@@ -32802,7 +33180,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465717,
+        "updated": 1791471262,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -32893,7 +33271,7 @@
       "indent": 0,
       "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.html",
       "slug": "edsel-s-law-how-bad-design-happens",
-      "order": 24,
+      "order": 25,
       "parent": null,
       "title": "Edsel's Law: How Bad Design Happens",
       "description": "Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin describes the Edsel scale for measuring the quality of a design:\n\nPhotograph an objec",
@@ -32924,7 +33302,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465718,
+        "updated": 1791471262,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -32936,7 +33314,7 @@
       "indent": 0,
       "location": "pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.html",
       "slug": "modeling-a-chavet-121-series-no-6-knight",
-      "order": 25,
+      "order": 26,
       "parent": null,
       "title": "Modeling a Chavet 121 series no 6 Knight",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -32972,7 +33350,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465718,
+        "updated": 1791471263,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33045,7 +33423,7 @@
       "indent": 0,
       "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.html",
       "slug": "designs-of-darkness",
-      "order": 26,
+      "order": 27,
       "parent": null,
       "title": "Designs of Darkness",
       "description": "Designs of Darkness (p. 55-61) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the soci",
@@ -33076,7 +33454,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465719,
+        "updated": 1791471264,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33088,7 +33466,7 @@
       "indent": 0,
       "location": "pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.html",
       "slug": "modeling-a-chessboard",
-      "order": 27,
+      "order": 28,
       "parent": null,
       "title": "Modeling a Chessboard",
       "description": "How to Make a Chess Board\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a ",
@@ -33116,7 +33494,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465720,
+        "updated": 1791471264,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33181,7 +33559,7 @@
       "indent": 0,
       "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.html",
       "slug": "face-to-face-with-design",
-      "order": 28,
+      "order": 29,
       "parent": null,
       "title": "Face to Face with Design",
       "description": "Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No",
@@ -33212,7 +33590,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465720,
+        "updated": 1791471265,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33224,7 +33602,7 @@
       "indent": 0,
       "location": "pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.html",
       "slug": "modeling-a-diamond",
-      "order": 29,
+      "order": 30,
       "parent": null,
       "title": "Modeling a Diamond",
       "description": "Model a Diamond\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulative",
@@ -33252,7 +33630,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465721,
+        "updated": 1791471266,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33317,7 +33695,7 @@
       "indent": 0,
       "location": "pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.html",
       "slug": "modeling-a-pawn",
-      "order": 30,
+      "order": 31,
       "parent": null,
       "title": "Modeling a Pawn",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -33359,7 +33737,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465722,
+        "updated": 1791471267,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33438,7 +33816,7 @@
       "indent": 0,
       "location": "pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.html",
       "slug": "modeling-a-queen",
-      "order": 31,
+      "order": 32,
       "parent": null,
       "title": "Modeling a Queen",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -33480,7 +33858,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465722,
+        "updated": 1791471267,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33559,7 +33937,7 @@
       "indent": 0,
       "location": "pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.html",
       "slug": "modeling-a-rook",
-      "order": 32,
+      "order": 33,
       "parent": null,
       "title": "Modeling a Rook",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
@@ -33607,7 +33985,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465723,
+        "updated": 1791471268,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33692,7 +34070,7 @@
       "indent": 0,
       "location": "pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.html",
       "slug": "in-jefferson-s-footsteps-modes-of-self-design",
-      "order": 33,
+      "order": 34,
       "parent": null,
       "title": "In Jefferson's Footsteps: Modes of Self-Design",
       "description": "In Jefferson's Footsteps: Modes of Self-Design (p. 105-116) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin talks briefly about humanity's departure from synergy with the ",
@@ -33723,7 +34101,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465724,
+        "updated": 1791471269,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33735,7 +34113,7 @@
       "indent": 0,
       "location": "pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.html",
       "slug": "giorgio-vasari-and-the-permutations-of-design",
-      "order": 34,
+      "order": 35,
       "parent": null,
       "title": "Giorgio Vasari and the Permutations of Design",
       "description": "Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin explores implications resulting from Vasari helping to establish th",
@@ -33766,7 +34144,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465725,
+        "updated": 1791471269,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33778,7 +34156,7 @@
       "indent": 0,
       "location": "pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.html",
       "slug": "the-lady-in-the-picture-design-and-revelation-in-renaissance-art",
-      "order": 35,
+      "order": 36,
       "parent": null,
       "title": "The Lady in the Picture: Design and Revelation in Renaissance Art",
       "description": "The Lady in the Picture: Design and Revelation in Renaissance Art (p. 88-104) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin gives us a glimpse into specific moments of kn",
@@ -33809,7 +34187,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465725,
+        "updated": 1791471270,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33821,7 +34199,7 @@
       "indent": 0,
       "location": "pages/item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d/index.html",
       "slug": "share-one-completed-set",
-      "order": 36,
+      "order": 37,
       "parent": null,
       "title": "Share One Completed Set",
       "description": "In this exercise, you will apply Image textures to a Chess board and piecesLearning Objectives\n\nPractice rendering images for submissions\n\nInstructions\nFor this assignment, you will submit 3 total im",
@@ -33849,7 +34227,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465726,
+        "updated": 1791471271,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -33914,7 +34292,7 @@
       "indent": 0,
       "location": "pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.html",
       "slug": "jefferson-s-gravestone-metaphorical-extensions-of-design",
-      "order": 37,
+      "order": 38,
       "parent": null,
       "title": "Jefferson's Gravestone: Metaphorical Extensions of Design",
       "description": "Jefferson's Gravestone: Metaphorical Extensions of Design (p. 117-133) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin takes us on a foray through literary design, social ",
@@ -33945,7 +34323,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465727,
+        "updated": 1791471272,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -33957,7 +34335,7 @@
       "indent": 0,
       "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.html",
       "slug": "liberty-as-knowledge-design",
-      "order": 38,
+      "order": 39,
       "parent": null,
       "title": "Liberty as Knowledge Design",
       "description": "Liberty as Knowledge Design (p. 134 - 149) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin dissects the design challenges inherent in a society built on democratic values.",
@@ -33988,7 +34366,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465728,
+        "updated": 1791471272,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -34000,7 +34378,7 @@
       "indent": 0,
       "location": "pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.html",
       "slug": "corporate-redesign-and-the-business-of-knowledge",
-      "order": 39,
+      "order": 40,
       "parent": null,
       "title": "Corporate Redesign and the Business of Knowledge",
       "description": "Corporate Redesign and the Business of Knowledge (p. 150-165) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin describes arguments over imbuing corporate free market endeav",
@@ -34031,7 +34409,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465728,
+        "updated": 1791471273,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -34043,7 +34421,7 @@
       "indent": 0,
       "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.html",
       "slug": "designing-time",
-      "order": 40,
+      "order": 41,
       "parent": null,
       "title": "Designing Time",
       "description": "Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting prompt\nIn these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports",
@@ -34074,7 +34452,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465729,
+        "updated": 1791471274,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,
@@ -34086,7 +34464,7 @@
       "indent": 0,
       "location": "pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.html",
       "slug": "the-design-of-private-knowledge",
-      "order": 41,
+      "order": 42,
       "parent": null,
       "title": "The Design of Private Knowledge",
       "description": "The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experien",
@@ -34117,7 +34495,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791465730,
+        "updated": 1791471274,
         "overridePathauto": false,
         "hideInMenu": false,
         "locked": false,

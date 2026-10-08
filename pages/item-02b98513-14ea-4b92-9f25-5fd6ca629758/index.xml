@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-02b98513-14ea-4b92-9f25-5fd6ca629758</id>
+<indent>1</indent>
+<location>pages/item-02b98513-14ea-4b92-9f25-5fd6ca629758/index.xml</location>
+<slug>rubrics/written-statement</slug>
+<order>4</order>
+<parent>item-8660850b-ca78-4dc6-ad8d-c1c5a676167a</parent>
+<title>Written statement</title>
+<description></description>
+<metadata>
+<pageType>oer:rubric</pageType>
+<published>true</published>
+<oerRubric>
+<version>1</version>
+<key>written-statement</key>
+<levels>
+<item>
+<id>exemplary</id>
+<name>Exemplary</name>
+<share>1</share>
+</item>
+<item>
+<id>proficient</id>
+<name>Proficient</name>
+<share>0.85</share>
+</item>
+<item>
+<id>developing</id>
+<name>Developing</name>
+<share>0.7</share>
+</item>
+<item>
+<id>beginning</id>
+<name>Beginning</name>
+<share>0.5</share>
+</item>
+<item>
+<id>missing</id>
+<name>Missing</name>
+<share>0</share>
+</item>
+</levels>
+<criteria>
+<item>
+<id>reci1lnjIVyGiwSU9</id>
+<name>Articulation</name>
+<description> This measures the ability to synthesize and articulate ideas through a written statement, and to meet the minimum statement requirements. Depending on the associated work, you may be required to talk about what you did, the context of the work in a larger landscape of contemporary or historical work, why the work is interesting, can be considered successful, or what the work may impact.</description>
+<weight>25</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>rec8RBn3GbilCke2Q</id>
+<name>Writing quality</name>
+<description>Language should be clear, understandable, free of hyperbole and generalizations, show specific examples, and reference or cite sources where necessary.</description>
+<weight>25</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>rectebGWNwSLoMwny</id>
+<name>Spelling and grammar</name>
+<description>Generally free of spelling mistakes, grammar issues, and missing or incomplete sentences.</description>
+<weight>25</weight>
+<descriptors>
+</descriptors>
+</item>
+<item>
+<id>recgzIu9wDNGWpJhv</id>
+<name>On time</name>
+<description>This criterion checks to see if the assigned task was submitted on time. This indirectly assesses time management.</description>
+<weight>25</weight>
+<descriptors>
+</descriptors>
+</item>
+</criteria>
+</oerRubric>
+<created>1791471275</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791471275</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

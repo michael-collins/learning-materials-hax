@@ -1,0 +1,59 @@
+id: item-e925a1e5-1a8f-4a37-a75e-606911de7a70
+indent: 1
+location: pages/item-e925a1e5-1a8f-4a37-a75e-606911de7a70/index.yaml
+slug: rubrics/exercise-low-poly
+order: 1
+parent: item-8660850b-ca78-4dc6-ad8d-c1c5a676167a
+title: Exercise Low Poly
+description: ''
+metadata:
+  pageType: oer:rubric
+  published: true
+  oerRubric:
+    version: 1
+    key: exercise-low-poly
+    levels:
+      - id: exemplary
+        name: Exemplary
+        share: 1
+      - id: proficient
+        name: Proficient
+        share: 0.85
+      - id: developing
+        name: Developing
+        share: 0.7
+      - id: beginning
+        name: Beginning
+        share: 0.5
+      - id: missing
+        name: Missing
+        share: 0
+    criteria:
+      - id: recDvB7XFqiTA9AX6
+        name: Steps completed
+        description: >-
+          This criteria assess whether you completed all parts of a given set of
+          instructions.
+        weight: 34
+        descriptors: {}
+      - id: recCfnMbyUIiHI3PT
+        name: Attention to detail
+        description: >-
+          This criteria measures ability to use proper naming conventions and
+          formats, meet submission deadlines, check to see that others are able
+          to access submitted materials, and fulfills other specified
+          requirements.
+        weight: 33
+        descriptors: {}
+      - id: recgzIu9wDNGWpJhv
+        name: On time
+        description: >-
+          This criterion checks to see if the assigned task was submitted on
+          time. This indirectly assesses time management.
+        weight: 33
+        descriptors: {}
+  created: 1791471275
+  images: []
+  videos: []
+  updated: 1791471275
+content: <p></p>

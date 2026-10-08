@@ -2455,12 +2455,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/learning-materials/applying-textures-to-3-unique-chess-sets</loc>
-    <lastmod>2026-10-08T13:21:53.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://localhost:3000/learning-materials/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/ritual-project-introduction</loc>
     <lastmod>2026-10-07T18:19:39.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2491,8 +2485,14 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://localhost:3000/learning-materials/applying-textures-to-3-unique-chess-sets</loc>
+    <lastmod>2026-10-08T14:54:18.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://localhost:3000/learning-materials/model-a-gem</loc>
-    <lastmod>2026-10-08T13:21:54.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:19.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2522,7 +2522,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/model-a-snowflake</loc>
-    <lastmod>2026-10-08T13:21:55.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:20.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2546,7 +2546,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/what-design-and-truth-say-about-each-other</loc>
-    <lastmod>2026-10-08T13:21:55.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:20.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2576,7 +2576,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/design-as-tragedy-the-rise-and-fall-of-the-twin-towers</loc>
-    <lastmod>2026-10-08T13:21:56.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:21.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2606,7 +2606,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-bishop</loc>
-    <lastmod>2026-10-08T13:21:57.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:22.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2630,7 +2630,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/edsel-s-law-how-bad-design-happens</loc>
-    <lastmod>2026-10-08T13:21:58.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:22.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2660,7 +2660,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-chavet-121-series-no-6-knight</loc>
-    <lastmod>2026-10-08T13:21:58.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2690,7 +2690,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/designs-of-darkness</loc>
-    <lastmod>2026-10-08T13:21:59.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:24.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2714,7 +2714,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-chessboard</loc>
-    <lastmod>2026-10-08T13:22:00.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:24.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2732,7 +2732,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/face-to-face-with-design</loc>
-    <lastmod>2026-10-08T13:22:00.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:25.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2756,7 +2756,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-diamond</loc>
-    <lastmod>2026-10-08T13:22:01.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:26.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2774,7 +2774,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-pawn</loc>
-    <lastmod>2026-10-08T13:22:02.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:27.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2792,7 +2792,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-queen</loc>
-    <lastmod>2026-10-08T13:22:02.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:27.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2810,7 +2810,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/modeling-a-rook</loc>
-    <lastmod>2026-10-08T13:22:03.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2822,7 +2822,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/in-jefferson-s-footsteps-modes-of-self-design</loc>
-    <lastmod>2026-10-08T13:22:04.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:29.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2840,7 +2840,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/giorgio-vasari-and-the-permutations-of-design</loc>
-    <lastmod>2026-10-08T13:22:05.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:29.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2858,7 +2858,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/the-lady-in-the-picture-design-and-revelation-in-renaissance-art</loc>
-    <lastmod>2026-10-08T13:22:05.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:30.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2876,7 +2876,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/share-one-completed-set</loc>
-    <lastmod>2026-10-08T13:22:06.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:31.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2888,7 +2888,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/jefferson-s-gravestone-metaphorical-extensions-of-design</loc>
-    <lastmod>2026-10-08T13:22:07.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:32.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2900,7 +2900,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/liberty-as-knowledge-design</loc>
-    <lastmod>2026-10-08T13:22:08.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:32.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2912,7 +2912,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/corporate-redesign-and-the-business-of-knowledge</loc>
-    <lastmod>2026-10-08T13:22:08.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:33.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2930,7 +2930,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/designing-time</loc>
-    <lastmod>2026-10-08T13:22:09.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2942,7 +2942,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/the-design-of-private-knowledge</loc>
-    <lastmod>2026-10-08T13:22:10.000Z</lastmod>
+    <lastmod>2026-10-08T14:54:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

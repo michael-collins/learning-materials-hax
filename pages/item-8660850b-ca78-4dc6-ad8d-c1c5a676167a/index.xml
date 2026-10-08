@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-8660850b-ca78-4dc6-ad8d-c1c5a676167a</id>
+<indent>0</indent>
+<location>pages/item-8660850b-ca78-4dc6-ad8d-c1c5a676167a/index.xml</location>
+<slug>rubrics</slug>
+<order>18</order>
+<parent></parent>
+<title>Rubrics</title>
+<description></description>
+<metadata>
+<pageType>oer:section</pageType>
+<published>true</published>
+<created>1791471275</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791471275</updated>
+</metadata>
+<content><![CDATA[<p>Scoring guides for exercises, projects and discussions. Each criterion's weight is its share of the grade, so a rubric fits work of any point value, and each level is worth a share of a criterion's points. Pages show a rubric with the Rubric block; course sequences grade with them in Canvas.</p>
+<oer-collection types="oer:rubric" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+</item>
