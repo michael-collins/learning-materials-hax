@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791469043,
+      "updated": 1791471255,
       "version": "26.8.0"
     },
     "theme": {
@@ -20604,24 +20604,67 @@
             },
             {
               "id": "oer:rubric",
-              "label": "Assessment rubric",
-              "icon": "lrn:assessment",
-              "description": "",
+              "label": "Rubric",
+              "icon": "icons:assignment-turned-in",
+              "description": "A scoring guide: criteria with weights, rating levels and what each level looks like. Exercises, projects and discussions show it with the Rubric block, and course sequences grade with it in Canvas.",
+              "schemaType": "oer:Rubric",
+              "nav": false,
               "children": [],
               "fields": [
                 {
-                  "name": "recordId",
-                  "label": "Record ID",
-                  "kind": "text",
-                  "help": "Original Airtable record ID (for reference)"
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": false,
+                  "help": "In order. Each with an optional link to their site or profile."
                 },
                 {
-                  "name": "name",
-                  "label": "Name",
-                  "kind": "text"
+                  "name": "license",
+                  "label": "License",
+                  "kind": "select",
+                  "options": [
+                    {
+                      "value": "CC BY 4.0",
+                      "label": "CC BY 4.0"
+                    },
+                    {
+                      "value": "CC BY-SA 4.0",
+                      "label": "CC BY-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC 4.0",
+                      "label": "CC BY-NC 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-SA 4.0",
+                      "label": "CC BY-NC-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-ND 4.0",
+                      "label": "CC BY-ND 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-ND 4.0",
+                      "label": "CC BY-NC-ND 4.0"
+                    },
+                    {
+                      "value": "CC0 1.0",
+                      "label": "CC0 1.0"
+                    },
+                    {
+                      "value": "All Rights Reserved",
+                      "label": "All Rights Reserved"
+                    }
+                  ],
+                  "default": "CC BY 4.0"
+                },
+                {
+                  "name": "placeholder",
+                  "label": "In development",
+                  "kind": "boolean",
+                  "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
                 }
-              ],
-              "nav": false
+              ]
             },
             {
               "id": "oer:resource",
@@ -20917,7 +20960,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791465283,
+        "updated": 1791471254,
         "locked": false,
         "status": "",
         "icon": "",
