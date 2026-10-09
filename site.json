@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791566083,
+      "updated": 1791567509,
       "version": "26.8.0"
     },
     "theme": {
@@ -307,13 +307,13 @@
           "attachments": [
             {
               "title": "Bouncing Ball Reference",
-              "url": "/uploads/recIeZMcCM9SG8jcK_attachment_ball-bounce-reference.png",
+              "url": "files/recIeZMcCM9SG8jcK_attachment_ball-bounce-reference.png",
               "description": "Bouncing ball animation reference",
               "alt": "An image depicting 31 frames of a bouncing ball, from left to right with descending energy. A red motion path runs through the center of each ball position."
             }
           ],
           "difficulty": "Beginner",
-          "image": "/uploads/recmjJ85mfZrRGRFu_image_viewport-render.png",
+          "image": "files/recmjJ85mfZrRGRFu_image_viewport-render.png",
           "imageAlt": "viewport-render.png",
           "author": "",
           "authorUrl": "",
@@ -335,7 +335,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791473368,
+        "updated": 1791567507,
         "status": "",
         "oerRubrics": [
           "exercise@1.0.0"
@@ -2392,7 +2392,7 @@
         "pageType": "oer:exercise",
         "oerFields": {
           "difficulty": "Beginner",
-          "image": "/uploads/recn4C0llk2Kq5tuH_image_ex-7-intro-banner-compressed.jpg",
+          "image": "files/recn4C0llk2Kq5tuH_image_ex-7-intro-banner-compressed.jpg",
           "imageAlt": "ex-7-intro-banner-compressed.jpg",
           "license": "CC BY 4.0",
           "aiLicense": [
@@ -2428,7 +2428,7 @@
         "created": 1790880627,
         "images": [],
         "videos": [],
-        "updated": 1791473388,
+        "updated": 1791567508,
         "status": "",
         "oerRubrics": [
           "exercise@1.0.0"
@@ -31895,7 +31895,7 @@
           "attachments": [
             {
               "title": "Concept Development Worksheet (.docx)",
-              "url": "/uploads/recWIZ9by8kdM9JEo_attachment_dart303-project-concepts.docx",
+              "url": "files/recWIZ9by8kdM9JEo_attachment_dart303-project-concepts.docx",
               "description": "Concept development worksheet",
               "alt": "Concept development worksheet"
             },
@@ -31917,7 +31917,7 @@
         "created": 1791232004,
         "images": [],
         "videos": [],
-        "updated": 1791473398,
+        "updated": 1791567508,
         "oerRubrics": [
           "project@1.0.0"
         ]
