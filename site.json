@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791562432,
+      "updated": 1791562896,
       "version": "26.8.0"
     },
     "theme": {
@@ -37118,7 +37118,7 @@
       "title": "DART 413: Digital Fabrication Studio",
       "description": "Digital Fabrication Studio, 4 credits.",
       "metadata": {
-        "published": false,
+        "published": true,
         "hideInMenu": true,
         "overridePathauto": true,
         "oerFields": {
@@ -37131,7 +37131,7 @@
         },
         "pageType": "oer:course-site",
         "created": 1791560758,
-        "updated": 1791562431,
+        "updated": 1791562895,
         "images": [],
         "videos": [],
         "locked": false,
