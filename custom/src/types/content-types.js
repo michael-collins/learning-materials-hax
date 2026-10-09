@@ -90,10 +90,20 @@ export function coursesOf(value, list = items()) {
   for (const x of entries) {
     const id = x && typeof x === "object" ? x.page : "";
     const page = id ? pages.find((c) => c.id === id) : pages.find((c) => courseCode(c).toUpperCase() === String(x).trim().toUpperCase());
-    if (page) out.push({ id: page.id, code: courseCode(page), title: page.title, institution: String(page.metadata?.oerFields?.institution || ""), item: page });
+    if (page) out.push({ id: page.id, code: courseCode(page), title: page.title, institution: String(page.metadata?.oerFields?.institution || ""), campus: String(page.metadata?.oerFields?.campus || ""), item: page });
     else if (!id && String(x).trim()) out.push({ id: "", code: String(x).trim(), title: String(x).trim(), institution: "", item: null });
   }
   return out;
+}
+
+/**
+ * A course page's title, with its campus when another course page has the
+ * same code (the same course taught at two campuses): "DART 413: … · University Park".
+ */
+export function courseLabel(page, list = items()) {
+  const campus = page?.metadata?.oerFields?.campus;
+  const twin = campus && list.some((i) => i !== page && i.id !== page.id && i.metadata?.pageType === COURSE_TYPE && !i.metadata?.oerSnapshotOf && courseCode(i).toUpperCase() === courseCode(page).toUpperCase());
+  return twin ? `${page.title} · ${campus}` : page?.title || "";
 }
 
 /** Universities the site knows: course pages' and authors' affiliations, most used first. */

@@ -420,10 +420,10 @@ export class OerCollection extends LitElement {
   _label(field, value) {
     if (field?.kind === "relation") {
       const page = (this._all || []).find((i) => i.id === value);
-      // a course reads as its code and university
+      // a course reads as its code, university and campus
       if (page?.metadata?.pageType === COURSE_TYPE) {
         const f = page.metadata.oerFields || {};
-        return [f.code || page.title, f.institution].filter(Boolean).join(" · ");
+        return [f.code || page.title, f.institution, f.campus].filter(Boolean).join(" · ");
       }
       return page?.title || value;
     }

@@ -42,10 +42,21 @@ export const COURSE_SITE_DEF = {
 const refIds = (v) => (Array.isArray(v) ? v : v ? [v] : []).map((r) => (typeof r === "string" ? r : r?.page)).filter(Boolean);
 const isSnap = (i) => !!i?.metadata?.oerSnapshotOf;
 
-/** The address a course's site gets: its code, "DART 413" → "dart-413". */
+// short campus codes for addresses (scripts/course-campus-programs.mjs has the same)
+export const CAMPUS_CODES = { "University Park": "up", "World Campus": "wc" };
+const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/**
+ * The address a course's site gets: its campus, then its code, since the
+ * same code can be taught at more than one campus ("DART 413" at
+ * University Park → "up/dart-413"). A campus without a short code uses its
+ * name; a course without a campus, just its code.
+ */
 export function siteSlug(course) {
-  const code = course?.metadata?.oerFields?.code || course?.title || "course";
-  return String(code).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const f = course?.metadata?.oerFields || {};
+  const code = slugify(f.code || course?.title || "course");
+  const campus = f.campus ? CAMPUS_CODES[f.campus] || slugify(f.campus) : "";
+  return campus ? `${campus}/${code}` : code;
 }
 
 /** A course's site, if it has one. */
@@ -111,6 +122,8 @@ export function siteData(site, items) {
     terms: Array.isArray(cf.termsOffered) ? cf.termsOffered.filter(Boolean) : [],
     weekCount: Number(sequence?.metadata?.oerFields?.weeks) || weeks.length || 0,
     institution: cf.institution || "",
+    campus: cf.campus || "",
+    programs: Array.isArray(cf.programs) ? cf.programs.filter(Boolean) : [],
     institutionUrl: cf.institutionUrl || "",
     bulletin: cf.bulletin || "",
     prerequisites: refIds(cf.coursePrerequisites).map((id) => byId.get(id)).filter(Boolean),

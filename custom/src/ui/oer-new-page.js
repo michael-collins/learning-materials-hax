@@ -13,7 +13,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { contentTypes, allowedChildTypes, canContain, isSystemItem, isHeading, COURSE_TYPE } from "../types/content-types.js";
+import { contentTypes, allowedChildTypes, canContain, isSystemItem, isHeading, COURSE_TYPE, courseLabel } from "../types/content-types.js";
 import { groupedTypes, typeHint, homeOf, HOME_TITLES } from "../types/type-homes.js";
 import { createPage } from "../outline/outline-model.js";
 import { COURSE_SITE_TYPE } from "../types/course-site.js";
@@ -283,7 +283,7 @@ class OerNewPage extends LitElement {
               <span class="label">Course <span class="muted">(optional)</span></span>
               <select .value="${this._course}" @change="${(e) => (this._course = e.target.value)}">
                 <option value="">None yet</option>
-                ${courses.map((c) => html`<option value="${c.id}" ?selected="${this._course === c.id}">${c.title}</option>`)}
+                ${courses.map((c) => html`<option value="${c.id}" ?selected="${this._course === c.id}">${courseLabel(c, this._items)}</option>`)}
               </select>
               <span class="hint">It's listed on that course's page under Taught in this course.</span>
             </label>`

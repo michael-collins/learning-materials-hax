@@ -141,7 +141,7 @@ class OerCourseSite extends LitElement {
     return html`<section class="hero">
       <div class="wrap hero-in">
         <div class="hero-text">
-          <p class="kicker">${[d.code, d.institution].filter(Boolean).join(" · ")}</p>
+          <p class="kicker">${[d.code, d.institution, d.campus].filter(Boolean).join(" · ")}</p>
           <h1>${d.title.replace(new RegExp(`^${d.code}\\s*[:–—-]\\s*`), "")}</h1>
           ${d.tagline ? html`<p class="tagline">${d.tagline}</p>` : this._todo("Add a tagline: the page's description is the line under the title.")}
           <div class="ctas">
