@@ -8,7 +8,7 @@ title: 'DART 413: Digital Fabrication Studio'
 description: Digital Fabrication Studio, 4 credits.
 metadata:
   pageType: oer:course
-  published: false
+  published: true
   oerCourse: DART 413
   oerFields:
     code: DART 413
@@ -32,7 +32,7 @@ metadata:
   created: 1791385274
   images: []
   videos: []
-  updated: 1791386768
+  updated: 1791517414
   overridePathauto: false
   hideInMenu: false
   icon: courseicons:learning-objectives
@@ -40,9 +40,6 @@ metadata:
   locked: false
   readtime: 1
 content: >
-
-  <oer-draft note="Course description from the DART 413 course plan. Revise it,
-  then Publish to show it to readers." data-author="">
 
   <p>Digital Fabrication Studio explores how a diverse range of technologies can
   translate digital designs and data into the physical world. Through hands-on
@@ -58,8 +55,6 @@ content: >
   making. Assigned readings and class discussions will ask questions about the
   role these technologies play in the present, while prompting us to imagine
   their future potential.</p>
-
-  </oer-draft>
 
   <h2 id="h2--993097993">Taught in this course</h2>
 

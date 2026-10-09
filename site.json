@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791506825,
+      "updated": 1791517415,
       "version": "26.8.0"
     },
     "theme": {
@@ -24386,10 +24386,10 @@
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791404460,
+        "updated": 1791517414,
         "overridePathauto": false,
         "hideInMenu": false,
-        "icon": "",
+        "icon": "courseicons:learning-objectives",
         "linkTarget": "_self",
         "locked": false,
         "readtime": 1
