@@ -28,6 +28,8 @@ import { shadcnTokens } from "./tokens/shadcn-tokens.js";
 import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { newPage } from "./ui/oer-new-page.js";
 import { typeListedOn } from "./types/type-homes.js";
+import { COURSE_SITE_TYPE, siteForCourse, createCourseSite } from "./types/course-site.js";
+import "./blocks/oer-course-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
@@ -143,6 +145,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _loggedIn: { state: true },
       _bookChapters: { state: true },
       _listing: { state: true },
+      _courseSite: { state: true },
+      _siteOfCourse: { state: true },
       _chaptersOpen: { state: true },
       _userName: { state: true },
       _activeTitle: { state: true },
@@ -179,6 +183,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this._loggedIn = false;
     this._bookChapters = null;
     this._listing = null;
+    this._courseSite = null;
+    this._siteOfCourse = undefined;
     this._chaptersOpen = false;
     this._pageMenuOpen = false;
     this.reader = false;
@@ -277,6 +283,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           const source = refId ? (manifest?.items || []).find((i) => i.id === refId) : null;
           const fields = (source || item)?.metadata?.oerFields || {};
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
+          // a course site shows as a microsite; a course page links to its site
+          this._courseSite = item?.metadata?.pageType === COURSE_SITE_TYPE ? item : null;
+          this._siteOfCourse = item?.metadata?.pageType === "oer:course" ? siteForCourse(item, manifest?.items || []) : undefined;
           // a page that lists a type (Lessons, Exercises…): its New button
           const listed = typeListedOn(item);
           const listedType = listed && (contentTypes(manifest?.items || []).types || []).find((t) => t.id === listed);
@@ -1144,7 +1153,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           color: var(--primary-foreground);
         }
         .btn-primary:hover {
-          background: color-mix(in oklch, var(--primary) 90%, black);
+          background: color-mix(in oklab, var(--primary) 90%, black);
         }
         .btn-outline {
           background: var(--background);
@@ -1223,7 +1232,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           color: var(--primary-foreground);
         }
         .nav-edit.primary:hover {
-          background: color-mix(in oklch, var(--primary) 88%, var(--foreground));
+          background: color-mix(in oklab, var(--primary) 88%, var(--foreground));
         }
         /* a listing page's New [type]: shadcn Button, outline, beside the page menu */
         .new-btn {
@@ -1247,6 +1256,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         .new-btn:hover {
           background: var(--accent);
+        }
+        a.new-btn {
+          text-decoration: none;
         }
         .new-btn:focus-visible {
           outline: 2px solid var(--ring);
@@ -1950,6 +1962,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
   }
 
   render() {
+    // a course site: its microsite, full width (the editor keeps the usual layout)
+    if (this._courseSite && !this.editMode && !this.embed) {
+      return html`<oer-course-site .site="${this._courseSite}"><slot slot="about"></slot></oer-course-site>`;
+    }
     const drawerOpen = this.__mq.matches ? this.mobileOpen : !this.collapsed;
     return html`
       <a class="skip-link" href="#main">Skip to content</a>
@@ -2047,6 +2063,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
                     ${icon.plus}New ${this._listing.label.toLowerCase()}
                   </button>`
                 : ""}
+              ${this._siteOfCourse !== undefined && !this.editMode && !this.reader && !this.embed ? this._renderCourseSiteLink() : ""}
               ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
             </div>
             <oer-page-header></oer-page-header>
@@ -2273,6 +2290,19 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     } catch {
       // not remembered without storage
     }
+  }
+
+  // a course page: its site, or (for authors) a way to make one
+  _renderCourseSiteLink() {
+    const site = this._siteOfCourse;
+    if (site && (this._loggedIn || site.metadata?.published !== false)) {
+      return html`<a class="new-btn" href="${site.slug}">${icon.share}Course site</a>`;
+    }
+    if (!site && this._loggedIn) {
+      const course = (toJS(store.manifest?.items) || []).find((i) => i.id === store.activeId);
+      return html`<button class="new-btn" @click="${() => course && createCourseSite(course)}">${icon.plus}Create course site</button>`;
+    }
+    return "";
   }
 
   // this page on the published copy (its home when the page is a draft, so

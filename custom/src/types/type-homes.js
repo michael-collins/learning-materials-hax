@@ -40,7 +40,7 @@ export function typeListedOn(item) {
 export const TYPE_GROUPS = [
   { label: "Course materials", hint: "Pages students read, watch or look up.", types: ["oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource"] },
   { label: "Assessed work", hint: "Work students do and hand in, and how it's graded.", types: ["oer:exercise", "oer:reflection", "oer:project", "oer:activity", "oer:quiz", "oer:rubric"] },
-  { label: "Courses and pathways", hint: "How the materials come together for teaching.", types: ["oer:course", "oer:sequence", "oer:pathway", "oer:unit", "oer:book", "oer:specialization"] },
+  { label: "Courses and pathways", hint: "How the materials come together for teaching.", types: ["oer:course", "oer:course-site", "oer:sequence", "oer:pathway", "oer:unit", "oer:book", "oer:specialization"] },
   { label: "Site structure", hint: "Groups pages in the navigation.", types: [SECTION_TYPE] },
 ];
 

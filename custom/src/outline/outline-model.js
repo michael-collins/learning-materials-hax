@@ -82,10 +82,11 @@ async function siteOrders() {
  */
 /**
  * Create a page under `parent` (null: the top level). Options: `metadata`
- * (merged in: published, oerFields…), `description`, and `edit` (HAXcms
- * opens the new page in the editor once it's there).
+ * (merged in: published, oerFields…), `description`, `location` (its
+ * address) and `edit` (HAXcms opens the new page in the editor once it's
+ * there).
  */
-export async function createPage(title, parent = null, pageType = "", { metadata = null, description = "", edit = false } = {}) {
+export async function createPage(title, parent = null, pageType = "", { metadata = null, description = "", edit = false, location = "" } = {}) {
   const siblings = childrenMap(store.manifest?.items).get(parent || null) || [];
   const last = siblings[siblings.length - 1];
   const stored = await siteOrders();
@@ -99,7 +100,8 @@ export async function createPage(title, parent = null, pageType = "", { metadata
       detail: {
         originalTarget: target,
         values: {
-          node: { title: title || "New page", location: "", contents: starterContent(pageType) },
+          // location: the address to give it (HAXcms makes one from the title otherwise)
+          node: { title: title || "New page", location: location || "", contents: starterContent(pageType) },
           order,
           parent: parent || null,
           ...(description ? { description } : {}),

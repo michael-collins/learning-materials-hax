@@ -54,7 +54,19 @@ const isDraft = (item) => {
 };
 const drafts = KEEP_DRAFTS ? [] : all.filter(isDraft);
 const draftIds = new Set(drafts.map((i) => i.id));
-const items = all.filter((i) => !draftIds.has(i.id));
+// a published course site shows its course's plan week by week, and plans
+// are usually drafts: the plan stays in site.json (marked unpublished, so
+// it's nowhere in the navigation, search or feeds, and has no page file)
+const refs = (v) => (Array.isArray(v) ? v : v ? [v] : []).map((r) => (typeof r === "string" ? r : r?.page)).filter(Boolean);
+const planIds = new Set();
+for (const s of all) {
+  if (s.metadata?.pageType !== "oer:course-site" || draftIds.has(s.id)) continue;
+  const f = s.metadata?.oerFields || {};
+  const course = refs(f.course)[0];
+  const plan = refs(f.sequence)[0] || all.find((i) => i.metadata?.pageType === "oer:sequence" && !i.metadata?.oerSnapshotOf && refs(i.metadata?.oerFields?.courses).includes(course))?.id;
+  if (plan) planIds.add(plan);
+}
+const items = all.filter((i) => !draftIds.has(i.id) || planIds.has(i.id));
 
 /* ---------- 1. the site, copied ---------- */
 
