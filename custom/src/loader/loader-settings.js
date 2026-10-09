@@ -13,7 +13,7 @@ export const LOADER_SETTINGS = {
   easing: [0.2, 0.7, 0.2, 1],
   // then the caret blinks once and stays: the page is built
   caretDelayMs: 60,
-  blinkMs: 220,
+  blinkMs: 260,
   // still loading: the built page rests, fades, and the build starts again
   restMs: 330,
   fadeMs: 450,
@@ -22,7 +22,7 @@ export const LOADER_SETTINGS = {
   // "play" plays out at its own pace. Then a pause on the built page
   ready: "speed",
   finishMs: 700,
-  maxSpeed: 4,
+  maxSpeed: 6,
   holdMs: 150,
   // the dissolve: the figure fades, then the screen
   figureFadeMs: 350,
