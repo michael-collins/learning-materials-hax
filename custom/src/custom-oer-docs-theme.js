@@ -111,12 +111,7 @@ const icon = {
   user: lucide("social:person"),
   layoutDashboard: lucide("hax:home-edit"),
   logOut: lucide("icons:exit-to-app"),
-  type: lucide("editor:title"),
-  shapes: lucide("hax:hax2022"),
-  image: lucide("image:photo-library"),
-  tag: lucide("icons:label"),
   history: lucide("icons:history"),
-  chart: lucide("hax:graph"),
   eye: lucide("icons:visibility"),
   eyeOff: lucide("icons:visibility-off"),
   lockOpen: lucide("icons:lock-open"),
@@ -2267,20 +2262,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         ${this._pageMenuOpen && this._loggedIn
           ? html`<div class="menu" role="menu" @keydown="${this._menuKeys}">
               <button role="menuitem" ?disabled="${this._locked}" @click="${this._menuAction(editPage)}">
-                ${icon.pencil}Edit page<kbd>${MOD}⇧E</kbd>
+                ${icon.pencil}Edit content<kbd>${MOD}⇧E</kbd>
               </button>
-              <div class="menu-sep" role="separator"></div>
-              ${item(pb("_editTitle"), icon.type, "Rename page")}
-              ${item(pb("_editIcon"), icon.shapes, "Change icon")}
-              ${item(pb("_editMedia"), icon.image, "Page media")}
               ${item(this._menuAction(() => pageDetails().show(store.activeId)), icon.details, "Page details")}
-              ${item(pb("_editTags"), icon.tag, "Tags")}
-              ${item(this._menuAction(() => outlineBuilder().show(store.activeId)), icon.siteMap, "Edit page outline")}
               ${this._canEmbed ? item(this._menuAction(() => embedDialog().show(this._embedItem)), icon.share, "Embed…") : ""}
-              <div class="menu-sep" role="separator"></div>
               ${item(this._menuAction(() => versionsDialog().show(store.activeId, { publish: true })), icon.history, "Versions…")}
-              ${item(pb("_openRevisions"), icon.history, "Revisions")}
-              ${item(pb("_openPageReport"), icon.chart, "Page report")}
               <div class="menu-sep" role="separator"></div>
               ${item(pb("_togglePublished"), this._published ? icon.eyeOff : icon.eye, this._published ? "Unpublish" : "Publish")}
               ${item(pb("_toggleLocked"), this._locked ? icon.lockOpen : icon.lock, this._locked ? "Unlock page" : "Lock page")}

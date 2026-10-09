@@ -1,10 +1,19 @@
 /**
- * `oer-page-details` — edit a page's type, description and type fields in
- * a dialog. The form is generated from the type's definition; switching
- * type keeps values whose keys both types share. The type list only offers
- * types the parent page may contain.
+ * `oer-page-details` — everything about a page that isn't its content, in
+ * one dialog with its sections listed down the left:
+ * - General: title, address, icon, content type, description, tags
+ * - the type's details: the form generated from the type's definition
+ *   (switching type keeps values whose keys both types share; the type list
+ *   only offers types the parent page may contain)
+ * - Media: the images, video, embeds and files in the page, and which
+ *   images have no description
+ * - Structure: where the page sits and its sub-pages
+ * - History: its released versions and saved revisions
+ * - Report: words, reading time, headings and links
+ * General and the details save together; the rest are views with their
+ * own actions.
  *
- *   pageDetails().show(itemId)
+ *   pageDetails().show(itemId, { section: "media" })
  * @element oer-page-details
  */
 import { html, css, LitElement } from "../lit.js";
@@ -18,6 +27,29 @@ import { loadAiul, aiulInfo } from "./aiul.js";
 import { valuesInUse } from "../ui/oer-choice-field.js";
 import { formControls } from "../ui/form-controls.js";
 import "../ui/oer-image-field.js";
+import { iconPicker } from "../ui/oer-icon-picker.js";
+import { pageIcon } from "./page-icon.js";
+import { pageHtml, parsePage, pageReport } from "./page-report.js";
+import { versionsDialog } from "../versions/oer-versions-dialog.js";
+import { outlineBuilder } from "../outline/oer-outline-builder.js";
+import { newPage } from "../ui/oer-new-page.js";
+
+// the dialog's sections, in order ("details" is named after the page's type)
+const SECTIONS = [
+  ["general", "General", "oer:sliders-horizontal"],
+  ["details", "Details", "oer:file-text"],
+  ["media", "Media", "oer:files"],
+  ["structure", "Structure", "oer:list"],
+  ["history", "History", "oer:clock"],
+  ["report", "Report", "oer:check"],
+];
+const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const day = (secondsOrIso) => {
+  const d = typeof secondsOrIso === "number" ? new Date(secondsOrIso * 1000) : new Date(secondsOrIso);
+  return Number.isNaN(d.getTime()) ? "" : d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+};
+// HAX's commit messages, read as sentences: "'Page details updated: X (item-…)'" → "Page details updated"
+const revisionText = (m) => String(m || "").replace(/^'|'$/g, "").replace(/\s*\(item-[^)]+\)\s*$/, "").replace(/:\s.*$/, "").trim() || "Saved";
 
 // a multiple choice whose options are AI Usage License codes gets the AIUL
 // picker (licence + optional media) instead of one checkbox per code
@@ -50,6 +82,13 @@ class OerPageDetails extends LitElement {
       _values: { state: true },
       _saving: { state: true },
       _tried: { state: true },
+      _section: { state: true },
+      _title: { state: true },
+      _slugTail: { state: true },
+      _slugEdited: { state: true },
+      _icon: { state: true },
+      _report: { state: true }, // what's in the page (page-report.js), once read
+      _revisions: { state: true },
     };
   }
 
@@ -58,7 +97,8 @@ class OerPageDetails extends LitElement {
     this.open = false;
     this._values = {};
     this.__keys = (e) => {
-      if (this.open && e.key === "Escape") {
+      // Esc in the icon picker closes the picker, not this
+      if (this.open && e.key === "Escape" && !globalThis.document.querySelector("oer-icon-picker[open]")) {
         e.preventDefault();
         e.stopPropagation();
         this._close();
@@ -66,13 +106,25 @@ class OerPageDetails extends LitElement {
     };
   }
 
-  /** `onSaved({ pageType, description, fields })` runs after a save. */
-  show(id, { onSaved = null } = {}) {
+  /** `onSaved({ pageType, description, fields })` runs after a save; `section` opens one (general, details, media…). */
+  show(id, { onSaved = null, section = "general" } = {}) {
     this._onSaved = onSaved;
     const items = toJS(store.manifest?.items) || [];
     const item = items.find((i) => i.id === id);
     if (!item) return;
     this._item = item;
+    this._items = items;
+    this._section = SECTIONS.some(([k]) => k === section) ? section : "general";
+    this._title = item.title || "";
+    this._slugTail = String(item.slug || "").split("/").pop();
+    this._slugEdited = false;
+    this._icon = pageIcon(item);
+    this._report = null;
+    this._revisions = null;
+    pageHtml(item).then((text) => {
+      if (this._item?.id === id) this._report = pageReport(parsePage(text));
+    });
+    this._loadRevisions(id);
     const parent = item.parent ? items.find((i) => i.id === item.parent) : null;
     this._allowed = allowedChildTypes(parent?.metadata?.pageType || null, items);
     this._allTypes = contentTypes(items).types;
@@ -185,7 +237,9 @@ class OerPageDetails extends LitElement {
 
   async _save() {
     this._tried = true;
-    if (this._missing().length || this._saving) return;
+    if (this._missing().length) this._section = "details";
+    if (!this._title.trim()) this._section = "general";
+    if (this._missing().length || !this._title.trim() || this._saving) return;
     this._saving = true;
     // keep only this type's fields; tidy list entries
     const fields = {};
@@ -210,7 +264,11 @@ class OerPageDetails extends LitElement {
     // a tag typed but not yet added still counts
     this._addTag(this._tagDraft);
     const tags = this._tags;
-    await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields, tags });
+    // the address, when set by hand: its parent's part, then the new end
+    const prefix = String(this._item.slug || "").split("/").slice(0, -1).join("/");
+    const tail = slugify(this._slugTail);
+    const slug = this._slugEdited && tail && tail !== String(this._item.slug || "").split("/").pop() ? (prefix ? `${prefix}/${tail}` : tail) : "";
+    await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields, tags, title: this._title.trim(), slug, icon: this._icon });
     this._onSaved?.({ pageType: this._type, description: this._desc.trim(), fields, tags });
     this._saving = false;
     this._close();
@@ -239,8 +297,8 @@ class OerPageDetails extends LitElement {
         position: relative;
         display: flex;
         flex-direction: column;
-        width: min(40rem, calc(100vw - 2rem));
-        max-height: min(46rem, calc(100dvh - 2rem));
+        width: min(60rem, calc(100vw - 2rem));
+        height: min(44rem, calc(100dvh - 2rem));
         background: var(--background);
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
@@ -306,12 +364,314 @@ class OerPageDetails extends LitElement {
         background: var(--accent);
         color: var(--foreground);
       }
+      /* sections down the left, the open one on the right */
+      .split {
+        flex: 1;
+        min-height: 0;
+        display: grid;
+        grid-template-columns: 12rem minmax(0, 1fr);
+      }
+      .sections {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        padding: 0.75rem 0.5rem;
+        border-right: 1px solid var(--border);
+        background: var(--card, var(--background));
+        overflow-y: auto;
+      }
+      .sections [role="tab"] {
+        all: unset;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.625rem;
+        border-radius: var(--radius-md);
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        cursor: pointer;
+      }
+      .sections [role="tab"]:hover {
+        background: var(--accent);
+        color: var(--foreground);
+      }
+      .sections [role="tab"][aria-selected="true"] {
+        background: var(--background);
+        color: var(--foreground);
+        font-weight: 500;
+        box-shadow: 0 0 0 1px var(--border);
+      }
+      .sections [role="tab"]:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .sections span:not(.lucide) {
+        flex: 1;
+      }
+      .dot-warn {
+        flex: none !important;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 999px;
+        background: var(--destructive);
+      }
+      .count {
+        flex: none !important;
+        min-width: 1.25rem;
+        padding: 0 0.375rem;
+        border-radius: 999px;
+        background: color-mix(in oklab, var(--destructive) 14%, transparent);
+        color: var(--destructive);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-align: center;
+      }
       .body {
         overflow-y: auto;
         padding: 1.25rem;
         display: flex;
         flex-direction: column;
         gap: 1.125rem;
+      }
+      .muted {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+      }
+      .hint.tight {
+        margin-top: -0.75rem;
+      }
+      .address {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        background: var(--background);
+      }
+      .address:focus-within {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
+      .prefix {
+        flex: 0 0 auto;
+        padding-left: 0.75rem;
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 45%;
+      }
+      .status.info {
+        color: var(--muted-foreground);
+      }
+      .address .input {
+        border: 0;
+        padding-left: 0.125rem;
+        box-shadow: none;
+        outline: none;
+      }
+      .row {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-end;
+      }
+      .row .grow {
+        flex: 1;
+      }
+      .icon-choice {
+        display: inline-grid;
+        place-items: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding: 0;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        background: var(--background);
+        cursor: pointer;
+        --simple-icon-width: 1.125rem;
+        --simple-icon-height: 1.125rem;
+      }
+      .icon-choice:hover {
+        background: var(--accent);
+      }
+      .icon-choice .none {
+        font-size: 0.6875rem;
+        color: var(--muted-foreground);
+      }
+      .summary-line {
+        margin: 0;
+        font-size: 0.875rem;
+      }
+      .warn-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: var(--destructive);
+      }
+      .media,
+      .kids,
+      .rows,
+      .outline {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .media li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .thumb {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 3.5rem;
+        height: 2.625rem;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm, 0.375rem);
+        background: var(--muted);
+        color: var(--muted-foreground);
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .media-text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      .media-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .media-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.75rem;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
+      .kind {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        text-transform: capitalize;
+      }
+      .trail {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.375rem;
+        margin: 0;
+        font-size: 0.875rem;
+      }
+      .trail a,
+      .kids a,
+      .rows a {
+        color: var(--link);
+      }
+      .kids li,
+      .rows li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.625rem;
+        padding: 0.4375rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.875rem;
+        --simple-icon-width: 1rem;
+        --simple-icon-height: 1rem;
+      }
+      .kids .dot {
+        width: 1rem;
+      }
+      .row-note {
+        flex-basis: 100%;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground);
+      }
+      .badge {
+        padding: 0 0.4375rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        font-size: 0.6875rem;
+        color: var(--muted-foreground);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.625rem;
+      }
+      .actions .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+        gap: 0.75rem;
+        margin: 0;
+      }
+      .metrics div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        padding: 0.75rem 0.875rem;
+        border-radius: var(--radius-md);
+        background: var(--muted);
+      }
+      .metrics dt {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
+      .metrics dd {
+        margin: 0;
+        font-size: 1.375rem;
+        font-weight: 600;
+      }
+      .metric-note {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
+      .outline li {
+        display: flex;
+        gap: 0.5rem;
+        align-items: baseline;
+        padding: 0.25rem 0;
+        font-size: 0.875rem;
+      }
+      .lvl {
+        flex: none;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--muted-foreground);
+      }
+      @media (max-width: 700px) {
+        .split {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-rows: auto minmax(0, 1fr);
+        }
+        .sections {
+          flex-direction: row;
+          overflow-x: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .sections [role="tab"] {
+          flex: none;
+        }
       }
       label,
       .label {
@@ -1046,6 +1406,260 @@ class OerPageDetails extends LitElement {
     </div>`;
   }
 
+  async _loadRevisions(id) {
+    try {
+      const headers = store.jwt ? { Authorization: `Bearer ${store.jwt}` } : {};
+      const res = await fetch(new URL(`x/api/v1/items/${encodeURIComponent(id)}/revisions?page.limit=8`, globalThis.document.baseURI), { headers, credentials: "same-origin" });
+      const json = await res.json().catch(() => null);
+      if (this._item?.id === id) this._revisions = res.ok ? json?.data || { revisions: [], total: 0 } : { revisions: [], total: 0, error: true };
+    } catch {
+      if (this._item?.id === id) this._revisions = { revisions: [], total: 0, error: true };
+    }
+  }
+
+  // leave the dialog for another tool (the outline builder, Versions…)
+  _then(fn) {
+    this._close();
+    fn();
+  }
+
+  async _pickIcon() {
+    const name = await iconPicker().pick(this._icon);
+    if (name !== null) this._icon = name;
+  }
+
+  // arrow keys move between sections, as in a tab list
+  _navKeys(e) {
+    const keys = { ArrowDown: 1, ArrowUp: -1, ArrowRight: 1, ArrowLeft: -1, Home: -99, End: 99 };
+    if (!(e.key in keys)) return;
+    e.preventDefault();
+    const ids = SECTIONS.map(([k]) => k);
+    const i = ids.indexOf(this._section);
+    const next = keys[e.key] === -99 ? 0 : keys[e.key] === 99 ? ids.length - 1 : (i + keys[e.key] + ids.length) % ids.length;
+    this._section = ids[next];
+    this.updateComplete.then(() => this.shadowRoot.querySelector(`#tab-${ids[next]}`)?.focus());
+  }
+
+  /* ---------- General ---------- */
+
+  _renderGeneral(options, def) {
+    const prefix = String(this._item.slug || "").split("/").slice(0, -1).join("/");
+    const custom = !!this._item.metadata?.overridePathauto;
+    const noTitle = this._tried && !this._title.trim();
+    return html`
+      <div>
+        <label for="ptitle">Title <span class="req" aria-hidden="true">*</span></label>
+        <input id="ptitle" class="input ${noTitle ? "invalid" : ""}" .value="${this._title}" @input="${(e) => (this._title = e.target.value)}" />
+        ${noTitle ? html`<p class="err">The page needs a title.</p>` : ""}
+      </div>
+      <div>
+        <label for="pslug">Address</label>
+        <div class="address">
+          <span class="prefix">/${prefix ? `${prefix}/` : ""}</span>
+          <input
+            id="pslug"
+            class="input"
+            aria-describedby="pslug-help"
+            .value="${this._slugTail}"
+            @input="${(e) => {
+              this._slugTail = e.target.value;
+              this._slugEdited = true;
+            }}"
+          />
+        </div>
+        <p class="hint" id="pslug-help">
+          ${this._slugEdited
+            ? html`Saved as <b>/${prefix ? `${prefix}/` : ""}${slugify(this._slugTail) || "…"}</b>, and kept when the title changes. Links to the old address stop working.`
+            : custom
+              ? "Set by hand, so it stays when the title changes."
+              : "Made from the title: changing the title changes it, unless you set it here."}
+        </p>
+      </div>
+      <div class="row">
+        <div>
+          <span class="label" id="picon-l">Icon</span>
+          <button class="icon-choice" aria-labelledby="picon-l picon-v" @click="${this._pickIcon}">
+            ${this._icon ? html`<simple-icon-lite icon="${this._icon}"></simple-icon-lite>` : html`<span class="none">None</span>`}
+            <span class="sr" id="picon-v">${this._icon || "none"}, change</span>
+          </button>
+        </div>
+        <div class="grow">
+          <label for="ptype">Content type</label>
+          <select id="ptype" @change="${(e) => (this._type = e.target.value)}">
+            <option value="" ?selected="${!this._type}">No type</option>
+            ${options.map((t) => html`<option value="${t.id}" ?selected="${t.id === this._type}">${t.label}</option>`)}
+          </select>
+        </div>
+      </div>
+      ${def?.description ? html`<p class="hint tight">${def.description}</p>` : ""}
+      <div>
+        <label for="pdesc">Description</label>
+        <textarea id="pdesc" .value="${this._desc}" @input="${(e) => (this._desc = e.target.value)}"></textarea>
+        <p class="hint">Shown under the title and in search results.</p>
+      </div>
+      ${this._renderTags()}
+    `;
+  }
+
+  /* ---------- Media ---------- */
+
+  _renderMedia() {
+    const r = this._report;
+    if (!r) return html`<p class="muted">Reading the page…</p>`;
+    const images = r.media.filter((m) => m.kind === "image");
+    if (!r.media.length) return html`<p class="muted">This page has no images, video, embeds or files in its content.</p>`;
+    return html`
+      <p class="summary-line">
+        ${[images.length && `${images.length} image${images.length === 1 ? "" : "s"}`, r.media.length - images.length && `${r.media.length - images.length} other`].filter(Boolean).join(", ")}${r.missingAlt
+          ? html`; <b class="warn-text">${r.missingAlt} without a description</b>`
+          : images.length
+            ? "; every image has a description"
+            : ""}.
+      </p>
+      <ul class="media" aria-label="Media in this page">
+        ${r.media.map(
+          (m) => html`<li>
+            <span class="thumb">${m.kind === "image" ? html`<img src="${m.src}" alt="" loading="lazy" />` : lucide(m.kind === "file" ? "oer:files" : m.kind === "video" ? "oer:eye" : "oer:link")}</span>
+            <span class="media-text">
+              <span class="media-name" title="${m.src}">${m.label || m.name}</span>
+              <span class="media-meta">
+                <span class="kind">${m.kind}</span>
+                ${m.kind === "image"
+                  ? m.needsAlt
+                    ? html`<span class="warn-text">${lucide("oer:circle-alert", "sm")}No description</span>`
+                    : html`<span>“${m.alt}”</span>`
+                  : ""}
+              </span>
+            </span>
+          </li>`,
+        )}
+      </ul>
+      <p class="hint">To change one, use Edit content and choose its block. Images in this page's fields (such as a cover image) are under ${this._typeDef ? `${this._typeDef.label} details` : "Details"}.</p>
+    `;
+  }
+
+  /* ---------- Structure ---------- */
+
+  _renderStructure() {
+    const items = this._items || [];
+    const byId = new Map(items.map((i) => [i.id, i]));
+    const trail = [];
+    for (let p = byId.get(this._item.parent); p; p = byId.get(p.parent)) trail.unshift(p);
+    const kids = items.filter((i) => i.parent === this._item.id && !i.metadata?.oerSnapshotOf).sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0));
+    const typeLabel = (i) => this._allTypes?.find((t) => t.id === i.metadata?.pageType)?.label || "";
+    return html`
+      <div>
+        <span class="label">Where it is</span>
+        <p class="trail">
+          ${trail.length ? trail.map((p) => html`<a href="${p.slug}" @click="${() => this._close()}">${p.title}</a><span aria-hidden="true">›</span>`) : html`<span class="muted">Top level</span><span aria-hidden="true">›</span>`}
+          <b>${this._item.title}</b>
+        </p>
+        ${this._item.metadata?.hideInMenu ? html`<p class="hint">Not in the navigation: it's listed in Browse pages.</p>` : ""}
+      </div>
+      <div>
+        <span class="label">${kids.length ? `${kids.length} sub-page${kids.length === 1 ? "" : "s"}` : "Sub-pages"}</span>
+        ${kids.length
+          ? html`<ul class="kids">
+              ${kids.map(
+                (k) => html`<li>
+                  ${pageIcon(k) ? html`<simple-icon-lite icon="${pageIcon(k)}"></simple-icon-lite>` : html`<span class="dot" aria-hidden="true"></span>`}
+                  <a href="${k.slug}" @click="${() => this._close()}">${k.title}</a>
+                  ${typeLabel(k) ? html`<span class="kind">${typeLabel(k)}</span>` : ""}
+                  ${k.metadata?.published === false ? html`<span class="badge">Draft</span>` : ""}
+                </li>`,
+              )}
+            </ul>`
+          : html`<p class="muted">None yet.</p>`}
+      </div>
+      <div class="actions">
+        <button class="btn outline" @click="${() => this._then(() => outlineBuilder().show(this._item.id))}">${lucide("oer:list")}Edit page outline</button>
+        <button class="btn outline" @click="${() => this._then(() => newPage().show({ parent: this._item.id }))}">${lucide("oer:plus")}Add a sub-page</button>
+      </div>
+      <p class="hint">Edit page outline arranges, renames and moves this page's sub-pages. To move this page itself, use Edit navigation or Site › Page tree.</p>
+    `;
+  }
+
+  /* ---------- History ---------- */
+
+  _renderHistory() {
+    const versions = versionsOf(this._item.id, this._items || []);
+    const rev = this._revisions;
+    return html`
+      <div>
+        <span class="label">Versions</span>
+        ${versions.length
+          ? html`<ul class="rows">
+              ${versions.slice(0, 5).map(
+                (v) => html`<li>
+                  <b>${v.version}</b><span class="muted">${day(v.date)}</span>${v.notes ? html`<span class="row-note">${v.notes}</span>` : ""}
+                  ${v.snapshot ? html`<a href="${v.snapshot.slug}" @click="${() => this._close()}">Open</a>` : ""}
+                </li>`,
+              )}
+            </ul>`
+          : html`<p class="muted">No released versions. Releasing one freezes the page as it is, for pages and books that link to it.</p>`}
+        <div class="actions">
+          <button class="btn outline" @click="${() => this._then(() => versionsDialog().show(this._item.id, { publish: true }))}">${lucide("oer:clock")}Versions…</button>
+        </div>
+      </div>
+      <div class="sep" role="separator"></div>
+      <div>
+        <span class="label">Revisions</span>
+        <p class="hint tight">Every save, kept by the site's history.</p>
+        ${!rev
+          ? html`<p class="muted">Loading…</p>`
+          : rev.error
+            ? html`<p class="muted">The revisions couldn't be listed here.</p>`
+            : rev.revisions?.length
+              ? html`<ul class="rows">
+                  ${rev.revisions.map((r) => html`<li><b>${day(r.date || r.timestamp)}</b><span>${revisionText(r.message)}</span><span class="muted">${r.author || ""}</span></li>`)}
+                </ul>
+                ${rev.total > rev.revisions.length ? html`<p class="hint">${rev.total - rev.revisions.length} older.</p>` : ""}`
+              : html`<p class="muted">No revisions yet.</p>`}
+        <div class="actions">
+          <button
+            class="btn outline"
+            @click="${() =>
+              this._then(() =>
+                globalThis.dispatchEvent(new CustomEvent("haxcms-open-page-revisions", { bubbles: true, composed: true, cancelable: true, detail: { nodeId: this._item.id, nodeTitle: this._item.title, source: "page-details" } })),
+              )}"
+          >
+            ${lucide("oer:copy")}Compare and restore…
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  /* ---------- Report ---------- */
+
+  _renderReport() {
+    const r = this._report;
+    if (!r) return html`<p class="muted">Reading the page…</p>`;
+    const m = this._item.metadata || {};
+    const active = store.activeId === this._item.id;
+    return html`
+      <dl class="metrics">
+        <div><dt>Words</dt><dd>${r.words.toLocaleString()}</dd></div>
+        <div><dt>Reading time</dt><dd>${r.minutes ? `${r.minutes} min` : "—"}</dd></div>
+        <div><dt>Links</dt><dd>${r.links.internal + r.links.external}</dd><span class="metric-note">${r.links.external} to other sites</span></div>
+        <div><dt>Images</dt><dd>${r.media.filter((x) => x.kind === "image").length}</dd>${r.missingAlt ? html`<span class="metric-note warn-text">${r.missingAlt} without a description</span>` : ""}</div>
+      </dl>
+      <div>
+        <span class="label">Headings</span>
+        ${r.headings.length
+          ? html`<ul class="outline">${r.headings.map((h) => html`<li style="padding-left:${(h.level - 2) * 1}rem"><span class="lvl">H${h.level}</span>${h.text}</li>`)}</ul>
+              ${r.skipped ? html`<p class="hint warn-text">${r.skipped} heading${r.skipped === 1 ? " skips" : "s skip"} a level, which makes the page harder to follow with a screen reader.</p>` : ""}`
+          : html`<p class="muted">No headings. Long pages are easier to scan with a few.</p>`}
+      </div>
+      <p class="hint">Created ${day(m.created) || "—"} · last saved ${day(m.updated) || "—"}</p>
+      ${active
+        ? html`<div class="actions">
+            <button class="btn outline" @click="${() => this._then(() => globalThis.document.querySelector("custom-oer-docs-theme > page-break")?._openPageReport?.())}">${lucide("oer:check")}HAX's full report</button>
+          </div>`
+        : ""}
+    `;
+  }
+
   render() {
     if (!this.open) return html``;
     const def = this._typeDef;
@@ -1053,6 +1667,20 @@ class OerPageDetails extends LitElement {
     const allowedHere = this._allowed || [];
     // a page whose current type is not allowed here keeps it as an option
     const options = def && !allowedHere.some((t) => t.id === def.id) ? [...allowedHere, def] : allowedHere;
+    const label = (k, l) => (k === "details" ? (def ? `${def.label} details` : "Details") : l);
+    const panel = {
+      general: () => this._renderGeneral(options, def),
+      details: () =>
+        def
+          ? def.fields.length
+            ? shownFields(def.fields).map((f) => this._renderField(f))
+            : html`<p class="notype">${def.label} has no fields of its own.</p>`
+          : html`<p class="notype">Choose a content type in General to give this page its fields.</p>`,
+      media: () => this._renderMedia(),
+      structure: () => this._renderStructure(),
+      history: () => this._renderHistory(),
+      report: () => this._renderReport(),
+    }[this._section];
     return html`
       <div class="backdrop" @click="${this._close}"></div>
       <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="t">
@@ -1063,28 +1691,29 @@ class OerPageDetails extends LitElement {
           </div>
           <button class="x" aria-label="Close" title="Close (Esc)" @click="${this._close}">${lucide("oer:x")}</button>
         </header>
-        <div class="body">
-          <div>
-            <label for="ptype">Content type</label>
-            <select id="ptype" @change="${(e) => (this._type = e.target.value)}">
-              <option value="" ?selected="${!this._type}">No type</option>
-              ${options.map((t) => html`<option value="${t.id}" ?selected="${t.id === this._type}">${t.label}</option>`)}
-            </select>
-            ${def?.description ? html`<p class="hint">${def.description}</p>` : ""}
-          </div>
-          <div>
-            <label for="pdesc">Description</label>
-            <textarea id="pdesc" .value="${this._desc}" @input="${(e) => (this._desc = e.target.value)}"></textarea>
-            <p class="hint">Shown under the title and in search results.</p>
-          </div>
-          ${this._renderTags()}
-          ${def
-            ? html`<div class="sep" role="separator"></div>
-                ${def.fields.length ? shownFields(def.fields).map((f) => this._renderField(f)) : html`<p class="notype">${def.label} has no fields of its own.</p>`}`
-            : ""}
+        <div class="split">
+          <nav class="sections" role="tablist" aria-orientation="vertical" aria-label="Sections" @keydown="${this._navKeys}">
+            ${SECTIONS.map(
+              ([k, l, i]) => html`<button
+                id="tab-${k}"
+                role="tab"
+                aria-selected="${this._section === k ? "true" : "false"}"
+                aria-controls="panel"
+                tabindex="${this._section === k ? "0" : "-1"}"
+                @click="${() => (this._section = k)}"
+              >
+                ${lucide(i)}<span>${label(k, l)}</span>${k === "details" && missing.length ? html`<span class="dot-warn" aria-label="has required fields to fill in"></span>` : ""}${k === "media" && this._report?.missingAlt
+                  ? html`<span class="count" aria-label="${this._report.missingAlt} images without a description">${this._report.missingAlt}</span>`
+                  : ""}
+              </button>`,
+            )}
+          </nav>
+          <div class="body" id="panel" role="tabpanel" aria-labelledby="tab-${this._section}">${panel()}</div>
         </div>
         <footer>
-          <span class="status">${missing.length ? `Fill in: ${missing.map((f) => f.label).join(", ")}` : ""}</span>
+          ${missing.length
+            ? html`<span class="status">Fill in: ${missing.map((f) => f.label).join(", ")}</span>`
+            : html`<span class="status info">${["media", "structure", "history", "report"].includes(this._section) ? "Save details keeps what you change under General and Details." : ""}</span>`}
           <button class="btn outline" @click="${this._close}">Cancel</button>
           <button class="btn primary" aria-disabled="${this._saving ? "true" : "false"}" @click="${this._save}">${this._saving ? "Saving…" : "Save details"}</button>
         </footer>

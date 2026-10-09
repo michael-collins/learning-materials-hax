@@ -239,7 +239,7 @@ export const tagsOf = (item) =>
     .map((t) => t.trim())
     .filter(Boolean);
 
-export async function savePageDetails(id, { pageType, description, fields, tags }) {
+export async function savePageDetails(id, { pageType, description, fields, tags, title, slug, icon }) {
   const list = items();
   const current = list.find((i) => i.id === id);
   const out = list.map((item) => {
@@ -253,7 +253,10 @@ export async function savePageDetails(id, { pageType, description, fields, tags 
     const metadata = { ...item.metadata, oerFields: { ...cleared, ...fields } };
     metadata.pageType = pageType || "";
     if (Array.isArray(tags)) metadata.tags = tags.join(",");
-    return { ...item, metadata, modified: true };
+    if (typeof icon === "string") metadata.icon = icon;
+    // an address set by hand stays when the title changes (HAX's pathauto)
+    if (slug) metadata.overridePathauto = true;
+    return { ...item, ...(title ? { title } : {}), ...(slug ? { slug } : {}), metadata, modified: true };
   });
   await saveOutline(out);
   if (current && typeof description === "string" && description !== (current.description || "")) {
