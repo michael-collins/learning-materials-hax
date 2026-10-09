@@ -92,8 +92,15 @@ class OerCourseSite extends LitElement {
     return slot ? slot.assignedElements({ flatten: true }) : [];
   }
 
+  // the page's blocks arrived or changed: whether it has sections, and the
+  // bar's links (sections there before the frame couldn't tell it)
   _slotChanged() {
     this._hasSections = this._pageBlocks().some(isSection);
+    this.requestUpdate();
+  }
+
+  firstUpdated() {
+    this._slotChanged();
   }
 
   // a section on the page, or among the standard ones shown for a page without any
