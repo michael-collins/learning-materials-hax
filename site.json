@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791578537,
+      "updated": 1791578717,
       "version": "26.8.0"
     },
     "theme": {
@@ -11420,20 +11420,23 @@
         "published": true,
         "overridePathauto": true,
         "oerFields": {
+          "programUrl": "",
+          "bulletin": "",
           "shortName": "DART",
           "degree": "Bachelor of Design (B.Des.)",
           "institution": "Penn State University",
           "campuses": [
-            "University Park",
-            "World Campus"
-          ],
-          "programUrl": "",
-          "bulletin": ""
+            "University Park"
+          ]
         },
         "created": 1791578330,
         "images": [],
         "videos": [],
-        "updated": 1791578330
+        "updated": 1791578716,
+        "locked": false,
+        "status": "",
+        "icon": "",
+        "tags": ""
       }
     },
     {
