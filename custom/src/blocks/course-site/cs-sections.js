@@ -17,6 +17,7 @@ import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
 import { SiteSection, csStyles, icon, hasContent, listItems, questions } from "./cs-shared.js";
 import "../../ui/oer-image-field.js";
+import { siteForBook, bookSiteIsOn } from "../../types/book-site.js";
 
 // outcomes cycle through these
 const OUTCOME_ICONS = ["target", "sparkles", "layers", "wrench", "book", "users"];
@@ -587,6 +588,168 @@ export class OerCsMake extends SiteSection {
   }
 }
 
+/* ---------- the course's books, linking to their book sites ---------- */
+
+export class OerCsBooks extends SiteSection {
+  static get tag() {
+    return "oer-cs-books";
+  }
+  static get properties() {
+    return { heading: { type: String } };
+  }
+  // the course's books (its Books field), each with its book site if it has one on
+  books() {
+    const course = this._d?.course;
+    const ids = (Array.isArray(course?.metadata?.oerFields?.books) ? course.metadata.oerFields.books : []).map((r) => (typeof r === "string" ? r : r?.page)).filter(Boolean);
+    return ids
+      .map((id) => (this._items || []).find((i) => i.id === id))
+      .filter((b) => b && b.metadata?.published !== false)
+      .map((book) => {
+        const site = siteForBook(book, this._items);
+        return { book, site, on: bookSiteIsOn(site) };
+      });
+  }
+  get shown() {
+    return this.books().some((b) => b.on);
+  }
+  renderSection() {
+    const all = this.books();
+    const shown = this._author ? all : all.filter((b) => b.on);
+    if (!shown.length) return this._author ? html`<section class="section"><div class="wrap">${this.headingEl("Read the book")}${this.todo("The course's books show here: add them in the course page's Books field, and turn on each book's site from its page.")}</div></section>` : html``;
+    return html`<section class="section">
+      <div class="wrap">
+        ${this.headingEl(shown.length > 1 ? "Read the books" : "Read the book")}
+        <ul class="books" role="list">
+          ${shown.map(({ book, site, on }) => {
+            const f = book.metadata?.oerFields || {};
+            return html`<li class="book">
+              ${f.coverImage ? html`<img src="${f.coverImage}" alt="${f.coverImageAlt || ""}" loading="lazy" />` : html`<div class="cover-art" aria-hidden="true"><span>${book.title.split(":")[0]}</span></div>`}
+              <div>
+                <h3>${on ? html`<a class="stretch" href="${site.slug}">${book.title}</a>` : book.title}</h3>
+                ${book.description ? html`<p>${book.description}</p>` : ""}
+                ${on
+                  ? html`<span class="go">Read it online, or download it${icon("arrowRight")}</span>`
+                  : html`<p class="note">${icon("eyeOff")}<span>Readers don't see this book yet: turn on its book site from <a href="${book.slug}">the book's page</a>.</span></p>`}
+              </div>
+            </li>`;
+          })}
+        </ul>
+      </div>
+    </section>`;
+  }
+  static get styles() {
+    return [
+      csStyles,
+      css`
+        .books {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+          gap: 1.25rem;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        .book {
+          position: relative;
+          display: grid;
+          grid-template-columns: 7rem minmax(0, 1fr);
+          gap: 1.25rem;
+          align-items: start;
+          padding: 1.25rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          background: var(--background);
+        }
+        .book:focus-within {
+          outline: 2px solid var(--ring);
+          outline-offset: 2px;
+        }
+        .book img,
+        .cover-art {
+          width: 7rem;
+          aspect-ratio: 3 / 4;
+          object-fit: cover;
+          border-radius: var(--radius-sm, 0.375rem);
+          box-shadow: 0 6px 16px rgb(0 0 0 / 0.15);
+        }
+        .cover-art {
+          display: grid;
+          place-items: center;
+          background: color-mix(in oklab, var(--primary) 14%, var(--card));
+          color: var(--primary);
+          font-family: var(--cs-font-display, inherit);
+          font-weight: var(--cs-display-weight, 700);
+          text-align: center;
+        }
+        h3 {
+          margin: 0 0 0.375rem;
+          font-family: var(--cs-font-display, inherit);
+          font-size: 1.125rem;
+          font-weight: var(--cs-display-weight, 700);
+          line-height: 1.3;
+        }
+        h3 a {
+          color: inherit;
+          text-decoration: none;
+        }
+        .stretch::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+        }
+        .stretch:focus-visible {
+          outline: none;
+        }
+        p {
+          margin: 0 0 0.5rem;
+          font-size: 0.9375rem;
+          line-height: 1.5;
+          color: var(--muted-foreground);
+        }
+        .go {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: var(--link);
+        }
+        .note {
+          display: flex;
+          gap: 0.375rem;
+          align-items: flex-start;
+          font-size: 0.8125rem;
+        }
+        .note .i {
+          margin-top: 0.125rem;
+        }
+        @media (max-width: 520px) {
+          .books {
+            grid-template-columns: minmax(0, 1fr);
+          }
+          .book {
+            grid-template-columns: 5rem minmax(0, 1fr);
+          }
+          .book img,
+          .cover-art {
+            width: 5rem;
+          }
+        }
+      `,
+    ];
+  }
+  static get haxProperties() {
+    return {
+      type: "element",
+      canScale: false,
+      canEditSource: false,
+      gizmo: gizmo("Course site: the books", "The course's books, each linking to its book site to read online or download.", "icons:book"),
+      settings: { configure: [], advanced: [] },
+      demoSchema: [{ tag: "oer-cs-books", properties: {}, content: "" }],
+    };
+  }
+}
+
 /* ---------- who teaches it: the course's instructors and a note ---------- */
 
 export class OerCsPeople extends SiteSection {
@@ -878,6 +1041,6 @@ export class OerCsClosing extends SiteSection {
   }
 }
 
-const SECTIONS = [OerCsHero, OerCsFacts, OerCsLearn, OerCsSemester, OerCsMake, OerCsPeople, OerCsTools, OerCsFaq, OerCsClosing];
+const SECTIONS = [OerCsHero, OerCsFacts, OerCsLearn, OerCsSemester, OerCsMake, OerCsBooks, OerCsPeople, OerCsTools, OerCsFaq, OerCsClosing];
 for (const cls of SECTIONS) if (!customElements.get(cls.tag)) customElements.define(cls.tag, cls);
 registerBlocks(...SECTIONS);

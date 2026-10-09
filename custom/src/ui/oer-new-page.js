@@ -17,11 +17,12 @@ import { contentTypes, allowedChildTypes, canContain, isSystemItem, isHeading, C
 import { groupedTypes, typeHint, homeOf, HOME_TITLES } from "../types/type-homes.js";
 import { createPage } from "../outline/outline-model.js";
 import { COURSE_SITE_TYPE, COURSE_HUB_TYPE } from "../types/course-site.js";
+import { BOOK_SITE_TYPE } from "../types/book-site.js";
 import { formControls } from "./form-controls.js";
 
-// a course's site is turned on from its course page, and the site has one
-// OER Courses hub: neither is made here (types/course-site.js)
-const notSite = (t) => t.id !== COURSE_SITE_TYPE && t.id !== COURSE_HUB_TYPE;
+// a course's or book's site is turned on from its page, and the site has
+// one OER Courses hub: none is made here (types/course-site.js, book-site.js)
+const notSite = (t) => ![COURSE_SITE_TYPE, COURSE_HUB_TYPE, BOOK_SITE_TYPE].includes(t.id);
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;

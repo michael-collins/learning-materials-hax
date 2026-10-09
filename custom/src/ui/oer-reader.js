@@ -21,6 +21,34 @@ import { formControls } from "./form-controls.js";
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
+/**
+ * The page colours' palettes: light resolves the site's own light tokens
+ * (with a deeper link blue); dark, paper and sepia have their own. All AA
+ * with texture at its strongest (measured in nu-hax tools/reader-grain-tuner).
+ */
+export const READER_PALETTES = {
+  light: { scheme: "light", vars: { "--link": "#0062a3" } },
+  dark: {
+    scheme: "dark",
+    vars: { "--background": "#16181d", "--foreground": "#e3e1dc", "--card": "#1d2026", "--card-foreground": "#e3e1dc", "--popover": "#1d2026", "--popover-foreground": "#e3e1dc", "--muted": "#23262d", "--muted-foreground": "#a3a7ae", "--accent": "#262a31", "--accent-foreground": "#e3e1dc", "--border": "#30343c", "--input-border": "#6b717b", "--primary": "#7cb4f0", "--primary-foreground": "#0b1a2b", "--link": "#7cb4f0", "--ring": "#5b8fd0" },
+  },
+  paper: {
+    scheme: "light",
+    vars: { "--background": "#f8f5ec", "--foreground": "#2f2a22", "--card": "#f1ece0", "--card-foreground": "#2f2a22", "--popover": "#fcfaf5", "--popover-foreground": "#2f2a22", "--muted": "#ede6d8", "--muted-foreground": "#645a4a", "--accent": "#ece4d4", "--accent-foreground": "#2f2a22", "--border": "#ddd4c2", "--input-border": "#8c8270", "--primary": "#1d4f91", "--primary-foreground": "#ffffff", "--link": "#1d4f91", "--ring": "#4a6fa5" },
+  },
+  sepia: {
+    scheme: "light",
+    vars: { "--background": "#f6efe1", "--foreground": "#3a2e20", "--card": "#efe6d3", "--card-foreground": "#3a2e20", "--popover": "#fbf7ee", "--popover-foreground": "#3a2e20", "--muted": "#ebe1cc", "--muted-foreground": "#675642", "--accent": "#ebe1cc", "--accent-foreground": "#3a2e20", "--border": "#d9c9ab", "--input-border": "#8f7a5c", "--primary": "#7a4a1c", "--primary-foreground": "#ffffff", "--link": "#0f5596", "--ring": "#9a6a36" },
+  },
+};
+
+/** CSS for the palettes, each under `selector(colour)` (the theme's :host([reader-colour="…"])). */
+export function readerPaletteCss(selector) {
+  return Object.entries(READER_PALETTES)
+    .map(([c, p]) => `${selector(c)} { color-scheme: only ${p.scheme}; ${Object.entries(p.vars).map(([k, v]) => `${k}: ${v};`).join(" ")} }`)
+    .join("\n");
+}
+
 export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light", texture: false, textureStrength: 1, dim: 0 };
 const SIZES = [17, 19, 21, 24]; // px
 const WIDTHS = { narrow: "60ch", medium: "68ch", wide: "80ch" };
@@ -312,6 +340,57 @@ class OerReaderBar extends LitElement {
       : html`<button class="arrow" disabled aria-label="${label}">${lucide(iconName)}</button>`;
   }
 
+  // the Text panel's settings (also oer-reader-text, for the book sites)
+  _renderTextSettings() {
+    return html`
+    ${this._seg("Text size", "size", [
+      [0, "A", "s0"],
+      [1, "A", "s1"],
+      [2, "A", "s2"],
+      [3, "A", "s3"],
+    ])}
+    ${this._seg("Typeface", "font", [
+      ["serif", "Serif", "serif"],
+      ["sans", "Sans", "sans"],
+    ])}
+    ${this._seg("Line width", "width", [
+      ["narrow", "Narrow"],
+      ["medium", "Medium"],
+      ["wide", "Wide"],
+    ])}
+    ${this._seg("Line spacing", "spacing", [
+      ["normal", "Normal"],
+      ["relaxed", "Relaxed"],
+    ])}
+    ${this._seg(
+      "Page",
+      "colour",
+      // each swatch shows its page's grain, at the reader's strength
+      ["light", "paper", "sepia", "dark"].map((c) => [
+        c,
+        c[0].toUpperCase() + c.slice(1),
+        `c-${c}`,
+        this.settings.texture ? `background-image: ${textureFor(c, this.settings.textureStrength)}` : "",
+      ]),
+    )}
+    ${this._renderDim()}
+    <div class="setting row">
+      <span class="setting-label" id="lbl-texture">Texture</span>
+      <button
+        class="switch"
+        role="switch"
+        aria-checked="${this.settings.texture ? "true" : "false"}"
+        aria-labelledby="lbl-texture"
+        @click="${() => this._set("texture", !this.settings.texture)}"
+      >
+        <span class="knob"></span>
+      </button>
+    </div>
+    ${this.settings.texture ? this._renderStrength() : ""}
+    <p class="hint">Turn pages with <kbd>←</kbd> and <kbd>→</kbd>. Settings are remembered on this device.</p>
+    `;
+  }
+
   render() {
     const { index = 0, total = 0 } = this.position || {};
     const pct = total ? Math.round(((index + 1) / total) * 100) : 0;
@@ -348,51 +427,7 @@ class OerReaderBar extends LitElement {
         : ""}
       ${this._panel === "text"
         ? html`<div class="panel text" id="panel-text" role="dialog" aria-label="Text settings">
-            ${this._seg("Text size", "size", [
-              [0, "A", "s0"],
-              [1, "A", "s1"],
-              [2, "A", "s2"],
-              [3, "A", "s3"],
-            ])}
-            ${this._seg("Typeface", "font", [
-              ["serif", "Serif", "serif"],
-              ["sans", "Sans", "sans"],
-            ])}
-            ${this._seg("Line width", "width", [
-              ["narrow", "Narrow"],
-              ["medium", "Medium"],
-              ["wide", "Wide"],
-            ])}
-            ${this._seg("Line spacing", "spacing", [
-              ["normal", "Normal"],
-              ["relaxed", "Relaxed"],
-            ])}
-            ${this._seg(
-              "Page",
-              "colour",
-              // each swatch shows its page's grain, at the reader's strength
-              ["light", "paper", "sepia", "dark"].map((c) => [
-                c,
-                c[0].toUpperCase() + c.slice(1),
-                `c-${c}`,
-                this.settings.texture ? `background-image: ${textureFor(c, this.settings.textureStrength)}` : "",
-              ]),
-            )}
-            ${this._renderDim()}
-            <div class="setting row">
-              <span class="setting-label" id="lbl-texture">Texture</span>
-              <button
-                class="switch"
-                role="switch"
-                aria-checked="${this.settings.texture ? "true" : "false"}"
-                aria-labelledby="lbl-texture"
-                @click="${() => this._set("texture", !this.settings.texture)}"
-              >
-                <span class="knob"></span>
-              </button>
-            </div>
-            ${this.settings.texture ? this._renderStrength() : ""}
-            <p class="hint">Turn pages with <kbd>←</kbd> and <kbd>→</kbd>. Settings are remembered on this device.</p>
+            ${this._renderTextSettings()}
           </div>`
         : ""}`;
   }
@@ -728,3 +763,42 @@ class OerReaderBar extends LitElement {
 }
 
 if (!customElements.get(OerReaderBar.tag)) customElements.define(OerReaderBar.tag, OerReaderBar);
+
+/**
+ * `oer-reader-text` — the reader's Text settings on their own (size,
+ * typeface, line width and spacing, page colour, dimming, texture), for a
+ * page with its own bar, such as a book site (blocks/oer-book-site.js).
+ *
+ *   <oer-reader-text .settings=${s} @reader-settings=${(e) => save(e.detail)}></oer-reader-text>
+ * @element oer-reader-text
+ */
+class OerReaderText extends OerReaderBar {
+  static get tag() {
+    return "oer-reader-text";
+  }
+  connectedCallback() {
+    LitElement.prototype.connectedCallback.call(this);
+  }
+  disconnectedCallback() {
+    LitElement.prototype.disconnectedCallback.call(this);
+  }
+  render() {
+    return html`<div class="text-settings">${this._renderTextSettings()}</div>`;
+  }
+  static get styles() {
+    return [
+      super.styles,
+      css`
+        :host {
+          z-index: auto;
+        }
+        .text-settings {
+          display: flex;
+          flex-direction: column;
+          gap: 0.875rem;
+        }
+      `,
+    ];
+  }
+}
+if (!customElements.get(OerReaderText.tag)) customElements.define(OerReaderText.tag, OerReaderText);

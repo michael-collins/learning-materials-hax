@@ -28,6 +28,7 @@ import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
 import { RUBRIC_TYPE, itemRubric, findRubric, rubricAt, isGradedItem } from "../rubrics/rubric-model.js";
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
 import { siteForCourse, siteIsOn, siteSlug, setCourseSite } from "./course-site.js";
+import { siteForBook, bookSiteIsOn, bookSiteSlug, setBookSite } from "./book-site.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -843,58 +844,80 @@ class OerPageHeader extends LitElement {
     return v;
   }
 
-  // a course page's site (types/course-site.js): for readers a link while
-  // it's on; for authors the switch that turns it on and off
-  _renderCourseSite(course) {
-    const site = siteForCourse(course, this._allItems);
-    const on = siteIsOn(site);
+  // the switch card for a page's own site: a course's (types/course-site.js)
+  // or a book's (types/book-site.js). Readers get a link while it's on;
+  // authors the switch that turns it on and off, and a preview while it's off
+  _siteCard({ key, label, site, on, where, made, visit, toggle }) {
     if (!store.isLoggedIn && !on) return "";
-    const where = `/${site?.slug || siteSlug(course)}`;
-    const visit = on
-      ? html`<a class="site-open" href="${site.slug}">Visit the course site${lucide("oer:arrow-right", "sm")}</a>`
+    const link = on
+      ? html`<a class="site-open" href="${site.slug}">${visit}${lucide("oer:arrow-right", "sm")}</a>`
       : site && store.isLoggedIn
-        ? html`<a class="site-open" href="${site.slug}">Preview the course site${lucide("oer:arrow-right", "sm")}</a>`
+        ? html`<a class="site-open" href="${site.slug}">Preview the ${label.toLowerCase()}${lucide("oer:arrow-right", "sm")}</a>`
         : "";
-    if (!store.isLoggedIn) {
-      return html`<section class="block site-card"><h2>Course site</h2><p class="site-note">A page that introduces this course to students.</p>${visit}</section>`;
-    }
+    if (!store.isLoggedIn) return html`<section class="block site-card"><h2>${label}</h2>${link}</section>`;
     const switching = this._siteSwitching;
     const shown = switching ? switching === "on" : on;
     const note = switching
       ? `Turning ${switching}…`
       : on
-        ? `On: readers can see it at ${where}. Turning it off hides it and keeps what it says.`
+        ? `On: readers can see it at ${where}. Turning it off hides it and keeps it.`
         : site
           ? `Off: only signed-in authors can see it. Turning it on shows it again at ${where}.`
-          : `Off. Turning it on makes a page at ${where} that introduces this course to students.`;
+          : `Off. Turning it on makes ${made} at ${where}.`;
     return html`<section class="block site-card">
       <div class="site-row">
-        <h2 id="site-switch-label">Course site</h2>
+        <h2 id="${key}-label">${label}</h2>
         <button
           class="switch"
           role="switch"
           aria-checked="${shown ? "true" : "false"}"
-          aria-labelledby="site-switch-label"
-          aria-describedby="site-switch-note"
+          aria-labelledby="${key}-label"
+          aria-describedby="${key}-note"
           aria-disabled="${switching ? "true" : "false"}"
-          @click="${() => this._toggleCourseSite(course, site)}"
+          @click="${async () => {
+            if (this._siteSwitching) return;
+            this._siteSwitching = on ? "off" : "on";
+            try {
+              await toggle(!on);
+            } finally {
+              this._siteSwitching = "";
+            }
+          }}"
         >
           <span class="knob"></span>
         </button>
       </div>
-      <p class="site-note" id="site-switch-note" aria-live="polite">${note}</p>
-      ${switching ? "" : visit}
+      <p class="site-note" id="${key}-note" aria-live="polite">${note}</p>
+      ${switching ? "" : link}
     </section>`;
   }
 
-  async _toggleCourseSite(course, site) {
-    if (this._siteSwitching) return;
-    this._siteSwitching = siteIsOn(site) ? "off" : "on";
-    try {
-      await setCourseSite(course, this._siteSwitching === "on", this._allItems);
-    } finally {
-      this._siteSwitching = "";
-    }
+  _renderCourseSite(course) {
+    const site = siteForCourse(course, this._allItems);
+    return this._siteCard({
+      key: "course-site",
+      label: "Course site",
+      site,
+      on: siteIsOn(site),
+      where: `/${site?.slug || siteSlug(course)}`,
+      made: "a page that introduces this course to students",
+      visit: "Visit the course site",
+      toggle: (on) => setCourseSite(course, on, this._allItems),
+    });
+  }
+
+  _renderBookSite(book) {
+    const site = siteForBook(book, this._allItems);
+    return this._siteCard({
+      key: "book-site",
+      label: "Book site",
+      site,
+      on: bookSiteIsOn(site),
+      where: `/${site?.slug || bookSiteSlug(book)}`,
+      made: "the book on its own, to send to readers, with PDF and EPUB downloads,",
+      visit: "Read the book site",
+      toggle: (on) => setBookSite(book, on, this._allItems),
+    });
   }
 
   render() {
@@ -924,7 +947,7 @@ class OerPageHeader extends LitElement {
     const subject = source || own;
     const step = activityContext(subject, this._allItems);
     // a rubric page: its rubric (the same block pages show it with)
-    const siteCard = typeId === "oer:course" && !snapshot ? this._renderCourseSite(subject) : "";
+    const siteCard = snapshot ? "" : typeId === "oer:course" ? this._renderCourseSite(subject) : typeId === "oer:book" ? this._renderBookSite(subject) : "";
     const steps =
       typeId === PROJECT_TYPE
         ? this._renderSteps(subject.id)

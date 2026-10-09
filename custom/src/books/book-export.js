@@ -31,7 +31,7 @@ async function rawHtml(item) {
 }
 
 // replace <oer-include> with the content it shows (one level deep)
-async function resolvedHtml(item, all) {
+export async function resolvedHtml(item, all) {
   let html = await rawHtml(item);
   const includes = [...html.matchAll(/<oer-include\b([^>]*)>\s*<\/oer-include>/gi)];
   for (const m of includes) {

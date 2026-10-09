@@ -30,6 +30,7 @@ const NAV = [
   ["oer-cs-learn", "What you'll learn"],
   ["oer-cs-semester", "The semester"],
   ["oer-cs-make", "What you'll make"],
+  ["oer-cs-books", "Books"],
   ["oer-cs-faq", "Questions"],
 ];
 
@@ -187,7 +188,7 @@ class OerCourseSite extends LitElement {
     const before = this._hasSections ? "" : html`<oer-cs-hero></oer-cs-hero><oer-cs-facts></oer-cs-facts>`;
     const after = this._hasSections
       ? ""
-      : html`<oer-cs-learn></oer-cs-learn><oer-cs-semester></oer-cs-semester><oer-cs-make></oer-cs-make><oer-cs-people></oer-cs-people><oer-cs-faq></oer-cs-faq><oer-cs-closing></oer-cs-closing>`;
+      : html`<oer-cs-learn></oer-cs-learn><oer-cs-semester></oer-cs-semester><oer-cs-make></oer-cs-make><oer-cs-books></oer-cs-books><oer-cs-people></oer-cs-people><oer-cs-faq></oer-cs-faq><oer-cs-closing></oer-cs-closing>`;
     return html`<div class="ms">
       ${this._renderBar(d)}
       ${this._signedIn && !siteIsOn(this._site)

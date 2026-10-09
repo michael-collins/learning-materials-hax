@@ -129,6 +129,7 @@ export const COURSE_SITE_STARTER = [
   "<oer-cs-learn><ul><li></li></ul></oer-cs-learn>",
   "<oer-cs-semester></oer-cs-semester>",
   "<oer-cs-make></oer-cs-make>",
+  "<oer-cs-books></oer-cs-books>",
   "<oer-cs-people><p></p></oer-cs-people>",
   "<oer-cs-tools><ul><li></li></ul></oer-cs-tools>",
   "<oer-cs-faq><h3></h3><p></p></oer-cs-faq>",

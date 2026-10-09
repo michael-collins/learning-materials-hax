@@ -32,6 +32,8 @@ import { typeListedOn } from "./types/type-homes.js";
 import { isMicrosite } from "./types/course-site.js";
 import { siteStyleVars, loadSiteFonts } from "./types/course-site-style.js";
 import "./blocks/oer-course-site.js";
+import "./blocks/oer-book-site.js";
+import { BOOK_SITE_TYPE } from "./types/book-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
@@ -68,7 +70,8 @@ import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 import { installFootnotes } from "./ui/footnotes.js";
 import { followPermalink } from "./ui/permalinks.js";
 import { openViewerFromUrl } from "./ui/oer-outline-viewer.js";
-import { loadReaderSettings, saveReaderSettings, readerVars } from "./ui/oer-reader.js";
+import { loadReaderSettings, saveReaderSettings, readerVars, readerPaletteCss } from "./ui/oer-reader.js";
+import { unsafeCSS } from "./lit.js";
 import { HAX_GUESSED_ICON } from "./types/page-icon.js";
 import { syncRubricRefs } from "./rubrics/rubric-usage.js";
 import { canvasImport } from "./lms/oer-canvas-import.js";
@@ -147,6 +150,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _bookChapters: { state: true },
       _listing: { state: true },
       _courseSite: { state: true },
+      _bookSite: { state: true }, // a book site (blocks/oer-book-site.js), full page while reading
       _stylePreview: { state: true }, // the Style panel's unsaved choice
       _chaptersOpen: { state: true },
       _userName: { state: true },
@@ -185,6 +189,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this._bookChapters = null;
     this._listing = null;
     this._courseSite = null;
+    this._bookSite = null;
     this._stylePreview = null;
     this._chaptersOpen = false;
     this._pageMenuOpen = false;
@@ -287,6 +292,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
           // a course site shows as a microsite; a course page links to its site
           this._courseSite = isMicrosite(item) ? (manifest?.items || []).find((i) => i.id === item.id) || item : null;
+          this._bookSite = item?.metadata?.pageType === BOOK_SITE_TYPE ? (manifest?.items || []).find((i) => i.id === item.id) || item : null;
           // a page that lists a type (Lessons, Exercises…): its New button
           const listed = typeListedOn(item);
           const listedType = listed && (contentTypes(manifest?.items || []).types || []).find((t) => t.id === listed);
@@ -1787,76 +1793,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             background-image: none;
           }
         }
-        /* a deeper link blue than the site's, for AA on the grain (5.2:1 at
-           its strongest) */
-        :host([reader-colour="light"]) {
-          color-scheme: only light;
-          --link: #0062a3;
-        }
-        /* a softer dark than the site's black, easier over long reading
-           (AA with texture, at 1x to 3x: text 8.6:1, muted 4.6:1, links
-           5.1:1, ring 3.4:1) */
-        :host([reader-colour="dark"]) {
-          color-scheme: only dark;
-          --background: #16181d;
-          --foreground: #e3e1dc;
-          --card: #1d2026;
-          --card-foreground: #e3e1dc;
-          --popover: #1d2026;
-          --popover-foreground: #e3e1dc;
-          --muted: #23262d;
-          --muted-foreground: #a3a7ae;
-          --accent: #262a31;
-          --accent-foreground: #e3e1dc;
-          --border: #30343c;
-          --input-border: #6b717b;
-          --primary: #7cb4f0;
-          --primary-foreground: #0b1a2b;
-          --link: #7cb4f0;
-          --ring: #5b8fd0;
-        }
-        /* warm white under ink-blue links (AA with texture at its strongest,
-           1x to 3x: text 10.4:1, muted 4.9:1, links 5.9:1, ring 3.7:1) */
-        :host([reader-colour="paper"]) {
-          color-scheme: only light;
-          --background: #f8f5ec;
-          --foreground: #2f2a22;
-          --card: #f1ece0;
-          --card-foreground: #2f2a22;
-          --popover: #fcfaf5;
-          --popover-foreground: #2f2a22;
-          --muted: #ede6d8;
-          --muted-foreground: #645a4a;
-          --accent: #ece4d4;
-          --accent-foreground: #2f2a22;
-          --border: #ddd4c2;
-          --input-border: #8c8270;
-          --primary: #1d4f91;
-          --primary-foreground: #ffffff;
-          --link: #1d4f91;
-          --ring: #4a6fa5;
-        }
-        /* AA with texture at its strongest, 1x to 3x: text 9:1, muted 4.8:1,
-           links 5.2:1, ring 3.2:1 */
-        :host([reader-colour="sepia"]) {
-          color-scheme: only light;
-          --background: #f6efe1;
-          --foreground: #3a2e20;
-          --card: #efe6d3;
-          --card-foreground: #3a2e20;
-          --popover: #fbf7ee;
-          --popover-foreground: #3a2e20;
-          --muted: #ebe1cc;
-          --muted-foreground: #675642;
-          --accent: #ebe1cc;
-          --accent-foreground: #3a2e20;
-          --border: #d9c9ab;
-          --input-border: #8f7a5c;
-          --primary: #7a4a1c;
-          --primary-foreground: #ffffff;
-          --link: #0f5596;
-          --ring: #9a6a36;
-        }
+        /* the page colours: light resolves the site's tokens in light (with
+           a deeper link blue, 5.2:1 on the grain); dark, paper and sepia
+           have their own palettes, AA with texture at its strongest
+           (ui/oer-reader.js READER_PALETTES, shared with the book sites) */
+        ${unsafeCSS(readerPaletteCss((c) => `:host([reader-colour="${c}"])`))}
 
         /* a book's chapters, for authors (_renderBookChapters) */
         .book-chapters {
@@ -1977,7 +1918,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           max-width: none;
         }
         /* (the section blocks: blocks/course-site/cs-shared.js SECTION_TAGS) */
-        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing):not(oer-courses-intro):not(oer-courses-catalog)) {
+        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-books):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing):not(oer-courses-intro):not(oer-courses-catalog)) {
           box-sizing: border-box;
           width: min(48rem, calc(100% - 3rem));
           margin-inline: auto;
@@ -2017,13 +1958,14 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
   // a course site shows as its microsite, full width, in its own style,
   // while reading and while editing
   get _showsCourseSite() {
-    return !!this._courseSite && !this.embed;
+    // a book site has nothing of its own to edit: editing shows the usual layout
+    return (!!this._courseSite || (!!this._bookSite && !this.editMode)) && !this.embed;
   }
 
   willUpdate(changed) {
     super.willUpdate?.(changed);
     this.toggleAttribute("course-site", this._showsCourseSite);
-    if (this._showsCourseSite) {
+    if (this._showsCourseSite && this._courseSite) {
       const style = this._stylePreview || this._courseSite.metadata?.oerSiteStyle;
       this._siteVars = siteStyleVars(style);
       loadSiteFonts(style);
@@ -2133,6 +2075,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
                     plan, or the course sites). Add any block between sections.</span
                   >
                 </p>`
+              : site && this._bookSite
+              ? html`<oer-book-site .site="${this._bookSite}"></oer-book-site>`
               : site
               ? html`<oer-course-site .site="${this._courseSite}"><slot id="cs-slot"></slot></oer-course-site>`
               : html`${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
