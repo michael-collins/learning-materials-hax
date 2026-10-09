@@ -12,13 +12,10 @@ import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
 import { SiteSection, csStyles, icon, hasContent } from "./cs-shared.js";
 import { COURSE_HUB_TYPE, catalog } from "../../types/course-site.js";
-import { contentTypes } from "../../types/content-types.js";
 import { pageHtml, parsePage } from "../../types/page-report.js";
 
 const gizmo = (title, description, icon) => ({ title, description, icon, color: "blue", tags: ["Course site", "course", "catalog"], meta: { author: "Michael Collins" } });
 const onHub = (el) => el._page?.metadata?.pageType === COURSE_HUB_TYPE;
-// the degrees courses choose from, in the course type's order
-const programOrder = (items) => (contentTypes(items).types.find((t) => t.id === "oer:course")?.fields || []).find((f) => f.name === "programs")?.options?.map((o) => o.value) || [];
 const wrongPage = (el) =>
   el._author ? html`<div class="wrap"><p class="todo">${icon("info")}<span>This block lists the course sites, so it only works on the OER Courses page.</span></p></div>` : html``;
 
@@ -33,7 +30,7 @@ export class OerCoursesIntro extends SiteSection {
   }
   render() {
     if (!onHub(this)) return wrongPage(this);
-    const { count, groups } = catalog(this._items, programOrder(this._items));
+    const { count, groups } = catalog(this._items);
     const degrees = groups.filter((g) => g.program).length;
     const typed = hasContent(this);
     return html`<section class="intro">
@@ -107,13 +104,13 @@ export class OerCoursesCatalog extends SiteSection {
   }
 
   get shown() {
-    return onHub(this) && catalog(this._items, programOrder(this._items)).count > 0;
+    return onHub(this) && catalog(this._items).count > 0;
   }
 
   /** The degree groups, for the hub's bar. */
   get groups() {
     if (!onHub(this)) return [];
-    return catalog(this._items, programOrder(this._items)).groups.map((g, n) => ({ id: `group-${n}`, label: g.program || "Other courses" }));
+    return catalog(this._items).groups.map((g, n) => ({ id: `group-${n}`, label: g.program || "Other courses" }));
   }
 
   go(id) {
@@ -152,7 +149,7 @@ export class OerCoursesCatalog extends SiteSection {
 
   render() {
     if (!onHub(this)) return wrongPage(this);
-    const { groups, count, off } = catalog(this._items, programOrder(this._items));
+    const { groups, count, off } = catalog(this._items);
     const offNote = this._author && off.length
       ? html`<p class="todo">${icon("eyeOff")}<span>${off.length === 1 ? "One course site is off, so it isn't listed" : `${off.length} course sites are off, so they aren't listed`}: ${off.map((s, n) => html`${n ? ", " : ""}${s.title}`)}. Turn a site on from its course page.</span></p>`
       : "";

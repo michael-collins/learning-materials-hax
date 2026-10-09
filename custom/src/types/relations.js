@@ -26,6 +26,15 @@ export function resolveLinks(value, list = items()) {
     });
 }
 
+/** The relation fields of `item` (its type's) that link to `pageId`. */
+export function linkingFields(item, pageId, types) {
+  const type = types.find((t) => t.id === item?.metadata?.pageType);
+  return (type?.fields || []).filter((f) => {
+    const value = f.kind === "relation" ? item.metadata?.oerFields?.[f.name] : null;
+    return Array.isArray(value) && value.some((v) => v?.page === pageId);
+  });
+}
+
 /**
  * Pages that link to `pageId`, through a relation field or as an included
  * chapter: [{ item, via }] where `via` names the field (or "Included"). A
@@ -48,12 +57,7 @@ export function usedIn(pageId, types, list = items()) {
       out.push({ item: parent || item, via: "Includes it" });
       continue;
     }
-    const type = types.find((t) => t.id === item.metadata?.pageType);
-    for (const f of type?.fields || []) {
-      if (f.kind !== "relation") continue;
-      const value = item.metadata?.oerFields?.[f.name];
-      if (Array.isArray(value) && value.some((v) => v?.page === pageId)) out.push({ item, via: f.label });
-    }
+    for (const f of linkingFields(item, pageId, types)) out.push({ item, via: f.label });
   }
   // one entry per page
   const seen = new Set();

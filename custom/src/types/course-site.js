@@ -15,6 +15,7 @@
  * unpublish it, so what it says is kept while it's off.
  */
 import { saveOutline, newItemId } from "../outline/outline-model.js";
+import { programsOf, programPages } from "./program.js";
 
 export const COURSE_SITE_TYPE = "oer:course-site";
 const COURSE_TYPE = "oer:course";
@@ -97,7 +98,7 @@ export function siteData(site, items) {
     weekCount: Number(sequence?.metadata?.oerFields?.weeks) || weeks.length || 0,
     institution: cf.institution || "",
     campus: cf.campus || "",
-    programs: Array.isArray(cf.programs) ? cf.programs.filter(Boolean) : [],
+    programs: programsOf(course, items),
     institutionUrl: cf.institutionUrl || "",
     bulletin: cf.bulletin || "",
     prerequisites: refIds(cf.coursePrerequisites).map((id) => byId.get(id)).filter(Boolean),
@@ -189,17 +190,18 @@ export const isMicrosite = (item) => [COURSE_SITE_TYPE, COURSE_HUB_TYPE].include
 
 /**
  * The course sites readers can see, as catalog entries grouped by degree
- * program, in `programOrder` (the course type's options), a course in two
- * degrees under both; courses without a degree come last. Also the sites
- * that are off, for authors.
+ * program (types/program.js), in the programs' navigation order, a course
+ * in two degrees under both; courses without a degree come last. Also the
+ * sites that are off, for authors.
  */
-export function catalog(items, programOrder = []) {
+export function catalog(items) {
+  const programOrder = programPages(items).map((p) => p.title);
   const sites = (items || []).filter((i) => i.metadata?.pageType === COURSE_SITE_TYPE && !isSnap(i));
   const entries = sites
     .filter(siteIsOn)
     .map((site) => {
       const d = siteData(site, items);
-      const programs = Array.isArray(d.course?.metadata?.oerFields?.programs) ? d.course.metadata.oerFields.programs.filter(Boolean) : [];
+      const programs = d.programs;
       const image = d.projects.map((p) => p.page.metadata?.oerFields?.image).find(Boolean) || d.work.map((w) => w.image).find(Boolean) || "";
       return { site, ...d, programs, image };
     })

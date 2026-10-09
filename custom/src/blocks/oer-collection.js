@@ -6,7 +6,8 @@
  * layouts.
  *
  * What it shows (block settings): content types, scope (whole site / this
- * page's sub-pages / everything under this page), view (table / cards /
+ * page's sub-pages / everything under this page / pages that link to it
+ * through a field), view (table / cards /
  * outline), default sort, page size, and whether readers may switch view,
  * search and filter.
  *
@@ -26,7 +27,7 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { registerBlocks } from "./register.js";
 import { contentTypes, isSystemItem, coursesOf } from "../types/content-types.js";
 import { childrenMap } from "../outline/outline-model.js";
-import { resolveLinks } from "../types/relations.js";
+import { resolveLinks, linkingFields } from "../types/relations.js";
 import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_TYPE } from "../pathways/pathway-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 import { saveOutline } from "../outline/outline-model.js";
@@ -41,7 +42,7 @@ const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
 const VIEWS = { table: "Table", cards: "Cards", outline: "Outline (modules)", pathways: "Pathways (start here, next, in development)" };
-const SCOPES = { site: "Whole site", children: "This page's sub-pages", descendants: "Everything under this page" };
+const SCOPES = { site: "Whole site", children: "This page's sub-pages", descendants: "Everything under this page", linked: "Pages that link to this page" };
 const SORTS = { title: "Title", updated: "Recently updated", created: "Newest", order: "Outline order" };
 const DIFFICULTY_ORDER = ["beginner", "intermediate", "advanced"];
 
@@ -342,6 +343,8 @@ export class OerCollection extends LitElement {
     if (this.scope === "site") pool = pool.filter((i) => !i.metadata?.oerRef?.page);
     if (this.scope !== "site" && this._pageId) {
       if (this.scope === "children") pool = pool.filter((i) => i.parent === this._pageId);
+      // pages whose fields link here (a program's courses, through their Degree programs)
+      else if (this.scope === "linked") pool = pool.filter((i) => i.id !== this._pageId && linkingFields(i, this._pageId, this._defs).length);
       else {
         const kids = childrenMap(all);
         const under = new Set();
