@@ -1,17 +1,20 @@
 /**
- * Course sites: one microsite per course, at a short address (/dart-413),
- * that pitches the course to students and helps them enroll. Most of it
- * comes from the course (credits, delivery, prerequisites, instructors,
- * student work) and its plan (the weeks and the projects); the site's own
- * fields hold the pitch (hero image, outcomes, tools, a note from the
- * instructor, questions, the enroll link) and its description is the
- * tagline. blocks/oer-course-site.js draws it; the theme shows it full width.
+ * Course sites: one microsite per course, at a short address
+ * (/up/dart-413), that pitches the course to students and helps them
+ * enroll. Its page is made of section blocks (blocks/course-site/
+ * cs-sections.js): most of what they show comes from the course (credits,
+ * delivery, prerequisites, instructors, student work) and its plan (the
+ * weeks and the projects); the pitch is typed into them (the tagline, what
+ * you'll learn, the instructor's note, tools, questions). The site's own
+ * fields are the course, the enroll link and the plan; its description is
+ * the tagline until one is typed. blocks/oer-course-site.js is its frame;
+ * the theme shows it full width in its style (types/course-site-style.js).
  *
  * A course has one site, switched on and off from the course page (and the
  * site's own bar): on makes it the first time, then on and off publish and
  * unpublish it, so what it says is kept while it's off.
  */
-import { saveOutline, newItemId, starterContent } from "../outline/outline-model.js";
+import { saveOutline, newItemId } from "../outline/outline-model.js";
 
 export const COURSE_SITE_TYPE = "oer:course-site";
 const COURSE_TYPE = "oer:course";
@@ -26,14 +29,9 @@ export const COURSE_SITE_DEF = {
   description: "A page that pitches a course to students and helps them enroll, at a short address of its own.",
   children: [],
   nav: false,
+  // what students read is typed into the page's sections (Edit content)
   fields: [
     { name: "course", label: "Course", kind: "relation", types: [COURSE_TYPE], header: true, required: true, help: "The course this site is for." },
-    { name: "heroImage", label: "Hero image", kind: "image", help: "A wide image, such as student work or the studio, at least 1600 pixels wide." },
-    { name: "heroImageAlt", label: "Hero image description", kind: "text" },
-    { name: "outcomes", label: "What you'll learn", kind: "list", help: "One outcome a row: a short title, a colon, then a sentence. For example “Cut with confidence: plan, cut and finish work on the laser.”" },
-    { name: "tools", label: "Tools and software", kind: "list", help: "Software, machines and materials students use." },
-    { name: "instructorNote", label: "A note from the instructor", kind: "longtext" },
-    { name: "faq", label: "Questions and answers", kind: "longtext", help: "A question on its own line ending with ?, its answer below, a blank line between each." },
     { name: "enrollUrl", label: "Enroll link", kind: "url", help: "Where students sign up. If empty, the course's bulletin entry." },
     { name: "sequence", label: "Course plan", kind: "relation", types: [SEQUENCE_TYPE], help: "The plan the roadmap shows. If empty, the course's own plan." },
   ],
@@ -62,30 +60,6 @@ export function siteSlug(course) {
 /** A course's site, if it has one. */
 export function siteForCourse(course, items) {
   return (items || []).find((i) => i.metadata?.pageType === COURSE_SITE_TYPE && !isSnap(i) && refIds(i.metadata?.oerFields?.course).includes(course?.id)) || null;
-}
-
-/** "Title: sentence" rows → [{ title, text }]. */
-export function parseOutcomes(list) {
-  return (Array.isArray(list) ? list : [])
-    .map((row) => String(row || "").trim())
-    .filter(Boolean)
-    .map((row) => {
-      const at = row.search(/[:—–]\s/);
-      const text = at > 0 ? row.slice(at + 1).trim() : "";
-      return { title: at > 0 ? row.slice(0, at).trim() : row, text: text.charAt(0).toUpperCase() + text.slice(1) };
-    });
-}
-
-/** Questions (a line ending with ?) and the answers under them → [{ q, a }]. */
-export function parseFaq(text) {
-  const out = [];
-  for (const block of String(text || "").split(/\n\s*\n/)) {
-    const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
-    if (!lines.length) continue;
-    if (/\?$/.test(lines[0])) out.push({ q: lines[0], a: lines.slice(1).join(" ") });
-    else if (out.length) out[out.length - 1].a = `${out[out.length - 1].a} ${lines.join(" ")}`.trim();
-  }
-  return out.filter((f) => f.a);
 }
 
 const IMAGE = /\.(png|jpe?g|gif|webp|avif|svg)(\?|#|$)/i;
@@ -129,12 +103,6 @@ export function siteData(site, items) {
     prerequisites: refIds(cf.coursePrerequisites).map((id) => byId.get(id)).filter(Boolean),
     prerequisiteNote: cf.prerequisiteNote || "",
     instructors: (Array.isArray(cf.instructors) ? cf.instructors : []).map((p) => (typeof p === "string" ? { name: p } : p)).filter((p) => p?.name),
-    instructorNote: f.instructorNote || "",
-    heroImage: f.heroImage || "",
-    heroImageAlt: f.heroImageAlt || "",
-    outcomes: parseOutcomes(f.outcomes),
-    tools: (Array.isArray(f.tools) ? f.tools : []).map((t) => String(t).trim()).filter(Boolean),
-    faq: parseFaq(f.faq),
     enrollUrl: f.enrollUrl || cf.bulletin || "",
     weeks,
     projects,
@@ -150,6 +118,22 @@ export const siteIsOn = (site) => !!site && site.metadata?.published !== false;
 export function setSiteOn(site, on) {
   return saveOutline([{ ...site, metadata: { ...(site.metadata || {}), published: !!on, overridePathauto: true }, modified: true }]);
 }
+
+/**
+ * A new course site's page: the standard sections, the written ones each
+ * with an empty block to type into.
+ */
+export const COURSE_SITE_STARTER = [
+  "<oer-cs-hero><p></p></oer-cs-hero>",
+  "<oer-cs-facts></oer-cs-facts>",
+  "<oer-cs-learn><ul><li></li></ul></oer-cs-learn>",
+  "<oer-cs-semester></oer-cs-semester>",
+  "<oer-cs-make></oer-cs-make>",
+  "<oer-cs-people><p></p></oer-cs-people>",
+  "<oer-cs-tools><ul><li></li></ul></oer-cs-tools>",
+  "<oer-cs-faq><h3></h3><p></p></oer-cs-faq>",
+  "<oer-cs-closing></oer-cs-closing>",
+].join("\n");
 
 /**
  * Turn a course's site on or off. The first time on makes it at /<code>,
@@ -171,7 +155,7 @@ export async function setCourseSite(course, on, items) {
       location: "",
       description: "",
       metadata: { pageType: COURSE_SITE_TYPE, published: true, hideInMenu: true, overridePathauto: true, oerFields: { course: [{ page: course.id, version: "" }] } },
-      contents: starterContent(COURSE_SITE_TYPE),
+      contents: COURSE_SITE_STARTER,
       new: true,
     },
   ]);

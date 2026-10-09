@@ -30,6 +30,7 @@ import { newPage } from "./ui/oer-new-page.js";
 import { deletePage } from "./ui/oer-delete-page.js";
 import { typeListedOn } from "./types/type-homes.js";
 import { COURSE_SITE_TYPE } from "./types/course-site.js";
+import { siteStyleVars, loadSiteFonts } from "./types/course-site-style.js";
 import "./blocks/oer-course-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
@@ -151,6 +152,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _bookChapters: { state: true },
       _listing: { state: true },
       _courseSite: { state: true },
+      _stylePreview: { state: true }, // the Style panel's unsaved choice
       _chaptersOpen: { state: true },
       _userName: { state: true },
       _activeTitle: { state: true },
@@ -188,6 +190,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this._bookChapters = null;
     this._listing = null;
     this._courseSite = null;
+    this._stylePreview = null;
     this._chaptersOpen = false;
     this._pageMenuOpen = false;
     this.reader = false;
@@ -202,6 +205,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       this.__readerBook = "";
     }
     this.__onReader = () => this._enterReader();
+    this.__onStylePreview = (e) => (this._stylePreview = e.detail || null);
     // HAX's page save writes the page-break's icon to the page; in the
     // editor that's HAX's guess from the page type, never a chosen icon
     // (types/page-icon.js). Runs first: a capture listener on the target
@@ -287,7 +291,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           const fields = (source || item)?.metadata?.oerFields || {};
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
           // a course site shows as a microsite; a course page links to its site
-          this._courseSite = item?.metadata?.pageType === COURSE_SITE_TYPE ? item : null;
+          this._courseSite = item?.metadata?.pageType === COURSE_SITE_TYPE ? (manifest?.items || []).find((i) => i.id === item.id) || item : null;
           // a page that lists a type (Lessons, Exercises…): its New button
           const listed = typeListedOn(item);
           const listedType = listed && (contentTypes(manifest?.items || []).types || []).find((t) => t.id === listed);
@@ -450,6 +454,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
     globalThis.addEventListener("oer-reader", this.__onReader);
+    globalThis.addEventListener("oer-site-style-preview", this.__onStylePreview);
     globalThis.addEventListener("haxcms-save-node", this.__beforeSave, true);
     this.__bodyObserver.observe(globalThis.document.body, { childList: true });
     this._watchEditorBar();
@@ -515,6 +520,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.removeEventListener("keydown", this.__keyHandler);
     globalThis.removeEventListener("pointerdown", this.__outsideMenu);
     globalThis.removeEventListener("oer-reader", this.__onReader);
+    globalThis.removeEventListener("oer-site-style-preview", this.__onStylePreview);
     globalThis.removeEventListener("haxcms-save-node", this.__beforeSave, true);
     super.disconnectedCallback();
   }
@@ -1618,7 +1624,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             scrollbar-width: thin;
             scrollbar-color: var(--border) transparent;
           }
-          :host([reader]) .main-col {
+          :host([reader]) .main-col,
+          :host([course-site]:not([edit-mode])) .main-col {
             height: 100vh;
             height: 100dvh;
           }
@@ -1950,7 +1957,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           overflow: visible !important;
           padding: 1rem 1.25rem 1.5rem !important;
         }
-        /* a course site: the microsite alone, full width (it scrolls itself) */
+        /* a course site: the microsite alone, full width. <main> scrolls
+           and is the container its section blocks span (100cqw); other
+           blocks keep a readable width */
         :host([course-site]) .shell {
           display: block;
         }
@@ -1958,20 +1967,43 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([course-site]) .scrim {
           display: none !important;
         }
-        :host([course-site]) .main-col {
+        :host([course-site]) main {
+          container-type: inline-size;
+        }
+        :host([course-site]:not([edit-mode])) .main-col {
           margin: 0 !important;
-          height: auto !important;
-          overflow: visible !important;
-          border: 0 !important;
           border-radius: 0 !important;
           box-shadow: none !important;
         }
-        :host([course-site]) main {
-          overflow: visible !important;
+        :host([course-site]:not([edit-mode])) main {
           padding: 0 !important;
         }
-        :host([course-site]) article {
+        :host([course-site]:not([edit-mode])) article {
           max-width: none;
+        }
+        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing)) {
+          box-sizing: border-box;
+          width: min(48rem, calc(100% - 3rem));
+          margin-inline: auto;
+        }
+        .cs-editing {
+          display: flex;
+          gap: 0.5rem;
+          align-items: flex-start;
+          margin: 0 0 1.5rem;
+          padding: 0.625rem 0.875rem;
+          border-radius: var(--radius-md);
+          background: color-mix(in oklab, var(--primary) 8%, var(--background));
+          font-family: var(--font-sans);
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+        .cs-editing svg {
+          flex: none;
+          width: 1rem;
+          height: 1rem;
+          margin-top: 0.125rem;
+          color: var(--primary);
         }
         .skip-link:focus {
           z-index: 50;
@@ -1986,14 +2018,20 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     ];
   }
 
-  // a course site shows as its microsite, full width (the editor keeps the usual layout)
+  // a course site shows as its microsite, full width, in its own style,
+  // while reading and while editing
   get _showsCourseSite() {
-    return !!this._courseSite && !this.editMode && !this.embed;
+    return !!this._courseSite && !this.embed;
   }
 
   willUpdate(changed) {
     super.willUpdate?.(changed);
     this.toggleAttribute("course-site", this._showsCourseSite);
+    if (this._showsCourseSite) {
+      const style = this._stylePreview || this._courseSite.metadata?.oerSiteStyle;
+      this._siteVars = siteStyleVars(style);
+      loadSiteFonts(style);
+    } else this._siteVars = "";
   }
 
   render() {
@@ -2074,7 +2112,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       <div class="scrim" role="presentation" @click="${this._closeMobile}"></div>
 
       <div class="main-col">
-        ${site
+        ${site && !this.editMode
           ? ""
           : this.editMode
           ? this.renderEditorHeader(drawerOpen)
@@ -2090,10 +2128,17 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ></oer-reader-bar>`
             : this.renderTopbar(drawerOpen)}
 
-        <main id="main">
+        <main id="main" style="${this._siteVars || ""}">
           <article id="contentcontainer">
-            ${site
-              ? html`<oer-course-site .site="${this._courseSite}"><slot slot="about"></slot></oer-course-site>`
+            ${site && this.editMode
+              ? html`<p class="cs-editing" role="note">
+                  ${icon.pencil}<span
+                    >You're editing the course site as readers will see it. Type in the dashed boxes; the rest comes from the course and its plan.
+                    Add any block between sections.</span
+                  >
+                </p>`
+              : site
+              ? html`<oer-course-site .site="${this._courseSite}"><slot id="cs-slot"></slot></oer-course-site>`
               : html`${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
                 <div class="page-header">
                   <site-active-title part="page-title"></site-active-title>
