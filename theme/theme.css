@@ -11,3 +11,44 @@
  * Think of it like a sass mixin, where you can apply any css you want
  * inside of that block and it'll apply downstream. Two examples are given below
  */
+
+/* The loading screen: a page being built (building.svg, made by
+   nu-hax/scripts/make-building-figure.mjs) instead of HAX's red bar.
+   index.html is rewritten by HAX on saves, so the screen is restyled from
+   here; its own styles come later, hence "html body". */
+html body #loading {
+  background-color: #ffffff;
+}
+html body #loading .progress-line {
+  display: none;
+}
+html body #loading div.messaging {
+  top: 50%;
+  transform: translateY(-55%);
+  color: #5b616e;
+}
+html body #loading div.messaging::before {
+  content: "";
+  display: block;
+  width: min(320px, 78vw);
+  aspect-ratio: 4 / 3;
+  margin: 0 auto 0.25rem;
+  background: url("building.svg") center / contain no-repeat;
+}
+html body #loading div.messaging h1 {
+  font-size: 0 !important;
+  line-height: 1.5;
+}
+html body #loading div.messaging h1::after {
+  content: "Building the page";
+  font: 500 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0.01em;
+}
+@media (prefers-color-scheme: dark) {
+  html body #loading {
+    background-color: #000000;
+  }
+  html body #loading div.messaging {
+    color: #9a9ea6;
+  }
+}
