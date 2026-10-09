@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791517415,
+      "updated": 1791517597,
       "version": "26.8.0"
     },
     "theme": {
@@ -3170,7 +3170,7 @@
       "title": "DMD 100: Digital Multimedia Design Foundations",
       "description": "DMD 100 introduces design process and thinking skills to support and facilitate creative and reasoned approaches to ambiguous and ill-defined problem spaces. It is the first of three spine courses in the Bachelor of Design in Digital Multimedia Design program at Penn State University.",
       "metadata": {
-        "published": false,
+        "published": true,
         "pageType": "oer:book",
         "oerSource": "books/dmd-100-digital-multimedia-design",
         "tags": "design,digital-multimedia,foundations,dmd-100",
@@ -3185,7 +3185,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491573,
+        "updated": 1791517595,
         "locked": false,
         "status": "",
         "icon": ""
@@ -9270,7 +9270,7 @@
       "title": "DMD 300: Digital Multimedia Design Studio",
       "description": "DMD 300 is the second of three spine courses in the Bachelor of Design in Digital Multimedia Design (DMD) program at Penn State University. This program is the first entirely online multi-college u...",
       "metadata": {
-        "published": false,
+        "published": true,
         "pageType": "oer:book",
         "oerSource": "books/dmd-300-digital-multimedia-design-studio",
         "tags": "design,digital-multimedia,studio,dmd-300",
@@ -9289,7 +9289,10 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231783
+        "updated": 1791517596,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -15823,7 +15826,7 @@
       "title": "DMD 400: Digital Multimedia Design Capstone",
       "description": "DMD 400 is the third of three spine courses in the Bachelor of Design in Digital Multimedia Design (DMD) program at Penn State University. This program is the first entirely online multi-college un...",
       "metadata": {
-        "published": false,
+        "published": true,
         "pageType": "oer:book",
         "oerSource": "books/dmd-400-digital-multimedia-design-capstone",
         "tags": "design,digital-multimedia,capstone,dmd-400",
@@ -15842,7 +15845,10 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231829
+        "updated": 1791517596,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -22865,7 +22871,7 @@
       "metadata": {
         "pageType": "oer:book",
         "oerPlan": "DART 413:book",
-        "published": false,
+        "published": true,
         "oerFields": {
           "license": "CC BY 4.0",
           "authors": [
@@ -22879,7 +22885,10 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791383988
+        "updated": 1791517594,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
