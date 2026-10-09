@@ -1,0 +1,32 @@
+id: item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26
+indent: 1
+location: pages/item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26/index.yaml
+slug: programs/dart
+order: 1
+parent: item-cd131ff5-42a8-40e8-865a-97a2369e685e
+title: Digital Arts and Media Design (B.Des.)
+description: ''
+metadata:
+  pageType: oer:program
+  published: true
+  overridePathauto: true
+  oerFields:
+    shortName: DART
+    degree: Bachelor of Design (B.Des.)
+    institution: Penn State University
+    campuses:
+      - University Park
+      - World Campus
+    programUrl: ''
+    bulletin: ''
+  created: 1791578330
+  images: []
+  videos: []
+  updated: 1791578330
+content: >-
+  <p></p>
+
+  <h2>Courses</h2>
+
+  <oer-collection types="oer:course" scope="linked" view="table" sort="title"
+  controls="none"></oer-collection>

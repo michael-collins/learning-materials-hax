@@ -1,0 +1,19 @@
+id: item-e08764af-f059-4058-8a42-fce5da5c4c63
+indent: 0
+location: pages/item-e08764af-f059-4058-8a42-fce5da5c4c63/index.yaml
+slug: institution
+order: 21
+parent: null
+title: Institution
+description: ''
+metadata:
+  pageType: oer:heading
+  hideInMenu: true
+  published: true
+  overridePathauto: true
+  icon: icons:account-balance
+  created: 1791578330
+  images: []
+  videos: []
+  updated: 1791578330
+content: <p></p>

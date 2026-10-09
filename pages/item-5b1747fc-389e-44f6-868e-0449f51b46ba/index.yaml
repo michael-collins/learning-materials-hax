@@ -1,0 +1,31 @@
+id: item-5b1747fc-389e-44f6-868e-0449f51b46ba
+indent: 1
+location: pages/item-5b1747fc-389e-44f6-868e-0449f51b46ba/index.yaml
+slug: programs/dmd
+order: 0
+parent: item-cd131ff5-42a8-40e8-865a-97a2369e685e
+title: Digital Multimedia Design (B.Des.)
+description: ''
+metadata:
+  pageType: oer:program
+  published: true
+  overridePathauto: true
+  oerFields:
+    shortName: DMD
+    degree: Bachelor of Design (B.Des.)
+    institution: Penn State University
+    campuses:
+      - World Campus
+    programUrl: ''
+    bulletin: ''
+  created: 1791578330
+  images: []
+  videos: []
+  updated: 1791578330
+content: >-
+  <p></p>
+
+  <h2>Courses</h2>
+
+  <oer-collection types="oer:course" scope="linked" view="table" sort="title"
+  controls="none"></oer-collection>

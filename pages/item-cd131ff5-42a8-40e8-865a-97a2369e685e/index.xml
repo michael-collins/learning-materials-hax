@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-cd131ff5-42a8-40e8-865a-97a2369e685e</id>
+<indent>0</indent>
+<location>pages/item-cd131ff5-42a8-40e8-865a-97a2369e685e/index.xml</location>
+<slug>programs</slug>
+<order>22</order>
+<parent></parent>
+<title>Programs</title>
+<description></description>
+<metadata>
+<pageType>oer:section</pageType>
+<published>true</published>
+<overridePathauto>true</overridePathauto>
+<created>1791578330</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791578330</updated>
+</metadata>
+<content><![CDATA[<p>The degree programs these materials are taught in. Each program page lists the courses that count toward it.</p>
+<oer-collection types="oer:program" scope="site" view="table" sort="order" controls="none"></oer-collection>]]></content>
+</item>

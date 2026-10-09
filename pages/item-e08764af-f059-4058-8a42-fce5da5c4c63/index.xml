@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e08764af-f059-4058-8a42-fce5da5c4c63</id>
+<indent>0</indent>
+<location>pages/item-e08764af-f059-4058-8a42-fce5da5c4c63/index.xml</location>
+<slug>institution</slug>
+<order>21</order>
+<parent></parent>
+<title>Institution</title>
+<description></description>
+<metadata>
+<pageType>oer:heading</pageType>
+<hideInMenu>true</hideInMenu>
+<published>true</published>
+<overridePathauto>true</overridePathauto>
+<icon>icons:account-balance</icon>
+<created>1791578330</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791578330</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

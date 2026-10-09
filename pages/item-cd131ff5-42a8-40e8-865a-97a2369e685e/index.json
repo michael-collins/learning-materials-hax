@@ -1,0 +1,20 @@
+{
+  "id": "item-cd131ff5-42a8-40e8-865a-97a2369e685e",
+  "indent": 0,
+  "location": "pages/item-cd131ff5-42a8-40e8-865a-97a2369e685e/index.json",
+  "slug": "programs",
+  "order": 22,
+  "parent": null,
+  "title": "Programs",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:section",
+    "published": true,
+    "overridePathauto": true,
+    "created": 1791578330,
+    "images": [],
+    "videos": [],
+    "updated": 1791578330
+  },
+  "content": "<p>The degree programs these materials are taught in. Each program page lists the courses that count toward it.</p>\n<oer-collection types=\"oer:program\" scope=\"site\" view=\"table\" sort=\"order\" controls=\"none\"></oer-collection>"
+}

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791573816,
+      "updated": 1791578330,
       "version": "26.8.0"
     },
     "theme": {
@@ -8223,6 +8223,35 @@
       }
     },
     {
+      "id": "item-5b1747fc-389e-44f6-868e-0449f51b46ba",
+      "indent": 1,
+      "location": "pages/item-5b1747fc-389e-44f6-868e-0449f51b46ba/index.html",
+      "slug": "programs/dmd",
+      "order": 0,
+      "parent": "item-cd131ff5-42a8-40e8-865a-97a2369e685e",
+      "title": "Digital Multimedia Design (B.Des.)",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:program",
+        "published": true,
+        "overridePathauto": true,
+        "oerFields": {
+          "shortName": "DMD",
+          "degree": "Bachelor of Design (B.Des.)",
+          "institution": "Penn State University",
+          "campuses": [
+            "World Campus"
+          ],
+          "programUrl": "",
+          "bulletin": ""
+        },
+        "created": 1791578330,
+        "images": [],
+        "videos": [],
+        "updated": 1791578330
+      }
+    },
+    {
       "id": "item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f",
       "indent": 2,
       "location": "pages/item-9c6b94c9-6878-4eb4-8fb8-854ccd36f41f/index.html",
@@ -11369,6 +11398,36 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26",
+      "indent": 1,
+      "location": "pages/item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26/index.html",
+      "slug": "programs/dart",
+      "order": 1,
+      "parent": "item-cd131ff5-42a8-40e8-865a-97a2369e685e",
+      "title": "Digital Arts and Media Design (B.Des.)",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:program",
+        "published": true,
+        "overridePathauto": true,
+        "oerFields": {
+          "shortName": "DART",
+          "degree": "Bachelor of Design (B.Des.)",
+          "institution": "Penn State University",
+          "campuses": [
+            "University Park",
+            "World Campus"
+          ],
+          "programUrl": "",
+          "bulletin": ""
+        },
+        "created": 1791578330,
+        "images": [],
+        "videos": [],
+        "updated": 1791578330
       }
     },
     {
@@ -21142,6 +21201,69 @@
               "nav": false
             },
             {
+              "id": "oer:program",
+              "label": "Program",
+              "icon": "oer:school",
+              "description": "A degree or certificate: where it's offered, its bulletin entry, and the courses that count toward it.",
+              "schemaType": "EducationalOccupationalProgram",
+              "children": [],
+              "nav": false,
+              "template": "<p></p>\n<h2>Courses</h2>\n<oer-collection types=\"oer:course\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>",
+              "fields": [
+                {
+                  "name": "shortName",
+                  "label": "Short name",
+                  "kind": "text",
+                  "header": true,
+                  "help": "What people call it, e.g. DMD."
+                },
+                {
+                  "name": "degree",
+                  "label": "Degree",
+                  "kind": "text",
+                  "header": true,
+                  "help": "The credential, e.g. Bachelor of Design (B.Des.)."
+                },
+                {
+                  "name": "institution",
+                  "label": "Institution",
+                  "kind": "text",
+                  "header": true
+                },
+                {
+                  "name": "campuses",
+                  "label": "Campuses",
+                  "kind": "select",
+                  "multiple": true,
+                  "header": true,
+                  "filter": true,
+                  "options": [
+                    {
+                      "value": "University Park",
+                      "label": "University Park"
+                    },
+                    {
+                      "value": "World Campus",
+                      "label": "World Campus"
+                    }
+                  ],
+                  "help": "Where it's offered."
+                },
+                {
+                  "name": "programUrl",
+                  "label": "Program website",
+                  "kind": "url",
+                  "header": true
+                },
+                {
+                  "name": "bulletin",
+                  "label": "Bulletin entry",
+                  "kind": "url",
+                  "header": true
+                }
+              ]
+            },
+            {
               "id": "oer:course",
               "label": "Course",
               "icon": "oer:graduation-cap",
@@ -21206,21 +21328,13 @@
                 {
                   "name": "programs",
                   "label": "Degree programs",
-                  "kind": "select",
-                  "multiple": true,
+                  "kind": "relation",
+                  "types": [
+                    "oer:program"
+                  ],
                   "header": true,
                   "filter": true,
-                  "options": [
-                    {
-                      "value": "Digital Multimedia Design (B.Des.)",
-                      "label": "Digital Multimedia Design (B.Des.)"
-                    },
-                    {
-                      "value": "Digital Arts and Media Design (B.Des.)",
-                      "label": "Digital Arts and Media Design (B.Des.)"
-                    }
-                  ],
-                  "help": "The degrees this course counts toward."
+                  "help": "The programs this course counts toward."
                 },
                 {
                   "name": "delivery",
@@ -23026,7 +23140,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791570862,
+        "updated": 1791578329,
         "locked": false,
         "status": "",
         "icon": "",
@@ -37081,6 +37195,46 @@
         "published": true,
         "locked": false,
         "status": ""
+      }
+    },
+    {
+      "id": "item-e08764af-f059-4058-8a42-fce5da5c4c63",
+      "indent": 0,
+      "location": "pages/item-e08764af-f059-4058-8a42-fce5da5c4c63/index.html",
+      "slug": "institution",
+      "order": 21,
+      "parent": null,
+      "title": "Institution",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "published": true,
+        "overridePathauto": true,
+        "icon": "icons:account-balance",
+        "created": 1791578330,
+        "images": [],
+        "videos": [],
+        "updated": 1791578330
+      }
+    },
+    {
+      "id": "item-cd131ff5-42a8-40e8-865a-97a2369e685e",
+      "indent": 0,
+      "location": "pages/item-cd131ff5-42a8-40e8-865a-97a2369e685e/index.html",
+      "slug": "programs",
+      "order": 22,
+      "parent": null,
+      "title": "Programs",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "published": true,
+        "overridePathauto": true,
+        "created": 1791578330,
+        "images": [],
+        "videos": [],
+        "updated": 1791578330
       }
     },
     {

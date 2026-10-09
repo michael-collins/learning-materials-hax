@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26</id>
+<indent>1</indent>
+<location>pages/item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26/index.xml</location>
+<slug>programs/dart</slug>
+<order>1</order>
+<parent>item-cd131ff5-42a8-40e8-865a-97a2369e685e</parent>
+<title>Digital Arts and Media Design (B.Des.)</title>
+<description></description>
+<metadata>
+<pageType>oer:program</pageType>
+<published>true</published>
+<overridePathauto>true</overridePathauto>
+<oerFields>
+<shortName>DART</shortName>
+<degree>Bachelor of Design (B.Des.)</degree>
+<institution>Penn State University</institution>
+<campuses>
+<item>University Park</item>
+<item>World Campus</item>
+</campuses>
+<programUrl></programUrl>
+<bulletin></bulletin>
+</oerFields>
+<created>1791578330</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791578330</updated>
+</metadata>
+<content><![CDATA[<p></p>
+<h2>Courses</h2>
+<oer-collection types="oer:course" scope="linked" view="table" sort="title" controls="none"></oer-collection>]]></content>
+</item>
