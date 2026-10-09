@@ -63,6 +63,9 @@ class OerOutlineBuilder extends LitElement {
     super();
     this.open = false;
     this._rows = []; // [{ id, title, icon, depth, orig }]
+    this._navMode = false;
+    this._navHidden = new Set();
+    this._listed = new Map();
     this._deleted = new Map(); // id -> original item, deleted on save
     this._hidden = new Map(); // id -> original item, removed from the nav on save
     this._collapsed = new Set();
@@ -88,8 +91,13 @@ class OerOutlineBuilder extends LitElement {
 
   /* ---------- open / close / save ---------- */
 
-  /** Open for the whole site, or for the sub-pages of page `rootId`. */
-  show(rootId = null) {
+  /**
+   * Open for the whole site, or for the sub-pages of page `rootId`. With
+   * `nav`, the site as the sidebar shows it: pages of types kept out of the
+   * navigation (a section's lessons, say) aren't rows; each page lists how
+   * many it holds, linked to where they're listed.
+   */
+  show(rootId = null, { nav = false } = {}) {
     const items = toJS(store.manifest?.items) || [];
     // converting the manifest out of MobX is slow (~3ms); keep one copy per
     // open instead of converting per row while rendering
@@ -101,7 +109,10 @@ class OerOutlineBuilder extends LitElement {
     // pages removed from the navigation (and their sub-pages) are listed in
     // Browse pages instead; headings are hidden from stock menus but shown here
     const outOfNav = (i) => i.metadata?.hideInMenu && i.metadata?.pageType !== HEADING_TYPE;
-    this._rows = flatten(items.filter((i) => !isSystemItem(i) && !isSnapshot(i) && !outOfNav(i)), rootId).map(({ item, depth }) => ({
+    this._navMode = !!nav && !rootId;
+    this._navHidden = new Set(this._navMode ? contentTypes(items).types.filter((t) => t.nav === false).map((t) => t.id) : []);
+    const listedOnly = (i) => this._navHidden.has(i.metadata?.pageType);
+    this._rows = flatten(items.filter((i) => !isSystemItem(i) && !isSnapshot(i) && !outOfNav(i) && !listedOnly(i)), rootId).map(({ item, depth }) => ({
       id: item.id,
       title: item.title,
       icon: pageIcon(item),
@@ -114,6 +125,17 @@ class OerOutlineBuilder extends LitElement {
     }));
     // headings are built in, not a content type of the site
     this._types = [...contentTypes(items).types, HEADING_DEF];
+    // navigation: what each row holds that isn't in the navigation, by type
+    this._listed = new Map();
+    if (this._navMode) {
+      const shown = new Set(this._rows.map((r) => r.id));
+      for (const i of items) {
+        if (!listedOnly(i) || !shown.has(i.parent) || isSnapshot(i) || outOfNav(i)) continue;
+        const counts = this._listed.get(i.parent) || new Map();
+        counts.set(i.metadata.pageType, (counts.get(i.metadata.pageType) || 0) + 1);
+        this._listed.set(i.parent, counts);
+      }
+    }
     this._navIcons = navIconsOn(items);
     this._snapshot = this._signature();
     this._deleted = new Map();
@@ -818,13 +840,15 @@ class OerOutlineBuilder extends LitElement {
 
   // types allowed under a parent type id (null = top level / untyped)
   _allowedUnder(parentType) {
-    const types = this._types;
+    // the navigation adds only what it shows
+    const types = this._navMode ? this._types.filter((t) => !this._navHidden.has(t.id)) : this._types;
     const parent = parentType ? types.find((t) => t.id === parentType) : null;
     const restricted = !!parent && Array.isArray(parent.children);
+    const allowed = restricted ? types.filter((t) => parent.children.includes(t.id)) : types;
     return {
-      types: restricted ? types.filter((t) => parent.children.includes(t.id)) : types,
+      types: allowed,
       untyped: !restricted,
-      none: restricted && parent.children.length === 0,
+      none: restricted && !allowed.length,
     };
   }
 
@@ -1400,6 +1424,29 @@ class OerOutlineBuilder extends LitElement {
       }
 
       /* content type chip + menu */
+      /* navigation: what a row lists rather than shows */
+      .listed {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        flex: none;
+        padding: 0 0.5rem;
+        height: 1.375rem;
+        border-radius: 999px;
+        background: var(--muted);
+        color: var(--muted-foreground);
+        font-size: 0.75rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .listed:hover {
+        color: var(--foreground);
+        background: var(--accent);
+      }
+      .listed:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 1px;
+      }
       .type-chip {
         all: unset;
         flex: none;
@@ -1961,8 +2008,38 @@ class OerOutlineBuilder extends LitElement {
 
   // a page's version link or pin, and its content type
   _renderRowChips(row, index) {
-    return html`${row.ref ? this._renderRef(row, index) : this._pinnable(row.id).length ? this._renderNavVersion(row, index) : ""}
+    return html`${this._renderListed(row)}${row.ref ? this._renderRef(row, index) : this._pinnable(row.id).length ? this._renderNavVersion(row, index) : ""}
       ${this._renderTypeChip(row, index)}`;
+  }
+
+  // navigation: the pages a row holds that are listed on it, not in the
+  // navigation ("47 lessons"), linked to that page
+  _renderListed(row) {
+    const counts = this._listed?.get(row.id);
+    if (!counts || !row.orig?.slug) return "";
+    const text = [...counts].map(([type, n]) => `${n} ${this._typeNoun(type, n)}`).join(", ");
+    return html`<a
+      class="listed"
+      tabindex="-1"
+      href="${row.orig.slug}"
+      title="Listed on ${row.title}, not in the navigation"
+      @click="${(e) => {
+        e.stopPropagation();
+        if (this._dirty) {
+          e.preventDefault();
+          this._requestClose();
+        } else this._close();
+      }}"
+      >${text}${lucide("oer:arrow-right", "sm")}</a
+    >`;
+  }
+
+  _typeNoun(type, n) {
+    const word = (this._types.find((t) => t.id === type)?.label || "page").toLowerCase();
+    if (n === 1) return word;
+    if (/[^aeiou]y$/.test(word)) return `${word.slice(0, -1)}ies`;
+    if (/(s|x|z|ch|sh)$/.test(word)) return `${word}${word.endsWith("z") ? "z" : ""}es`;
+    return `${word}s`;
   }
 
   _placeholder(row) {
@@ -2124,9 +2201,14 @@ class OerOutlineBuilder extends LitElement {
       <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="t">
         <header>
           <div class="heading">
-            <h2 id="t">${lucide("hax:site-map")}${this._rootItem ? `${this._rootItem.title} outline` : "Site outline"}</h2>
+            <h2 id="t">${lucide("hax:site-map")}${this._rootItem ? `${this._rootItem.title} outline` : this._navMode ? "Navigation" : "Page tree"}</h2>
             <p class="sub">
-              ${this._rootItem ? "Sub-pages of this page." : "Every page in the site."} Changes apply when you save.
+              ${this._rootItem
+                ? "Sub-pages of this page."
+                : this._navMode
+                  ? "The sidebar, as readers see it. Pages in collections are listed on their collection's page, so they show as a count."
+                  : "Every page in the site, including the pages collections list, which the navigation leaves out."}
+              Changes apply when you save.
             </p>
           </div>
           <button class="x" aria-label="Close" title="Close (Esc)" @click="${this._requestClose}">${lucide("oer:x")}</button>

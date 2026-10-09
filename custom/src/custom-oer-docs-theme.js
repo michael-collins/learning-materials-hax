@@ -1177,38 +1177,39 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           margin-top: 1rem;
         }
         .nav-actions {
-          display: flex;
-          justify-content: center;
-          padding: 0.75rem 0.25rem 0.5rem;
+          padding: 0.75rem 0.5rem 0;
         }
-        /* shadcn Button, variant "outline", size "sm" */
-        .label-action {
+        #panel-nav > .nav-actions + oer-site-nav {
+          margin-top: 0.5rem;
+        }
+        /* shadcn Button, variant "outline": the way into the outline editor */
+        .nav-edit {
           all: unset;
           box-sizing: border-box;
-          display: inline-flex;
+          display: flex;
           align-items: center;
-          gap: 0.3125rem;
-          height: 1.625rem;
-          padding: 0 0.5rem;
+          justify-content: center;
+          gap: 0.375rem;
+          width: 100%;
+          height: 2rem;
+          padding: 0 0.75rem;
           border: 1px solid var(--input-border, var(--border));
           border-radius: var(--radius-md);
-          background: transparent;
-          font-size: 0.75rem;
+          font-size: 0.8125rem;
           font-weight: 500;
           color: var(--foreground);
           cursor: pointer;
         }
-        .label-action:hover {
+        .nav-edit:hover {
           background: var(--accent);
-          color: var(--foreground);
         }
-        .label-action:focus-visible {
+        .nav-edit:focus-visible {
           outline: 2px solid var(--ring);
           outline-offset: 1px;
         }
-        .label-action svg {
-          width: 0.75rem;
-          height: 0.75rem;
+        .nav-edit svg {
+          width: 0.875rem;
+          height: 0.875rem;
         }
         /* account menu (shadcn NavUser) */
         .user-wrap {
@@ -1925,22 +1926,25 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           aria-labelledby="${this._loggedIn ? "tab-nav" : ""}"
           ?hidden="${this._loggedIn && this._sidebarTab === "site"}"
         >
+          ${this._loggedIn && !this.editMode
+            ? html`<div class="nav-actions">
+                ${this._book
+                  ? html`<button class="nav-edit" @click="${() => outlineBuilder().show(this._book.id)}">${icon.pencil}Edit book outline</button>`
+                  : html`<button class="nav-edit" @click="${() => outlineBuilder().show(null, { nav: true })}">${icon.pencil}Edit navigation</button>`}
+              </div>`
+            : ""}
           <oer-site-nav
             part="site-menu"
             ?editable="${this._loggedIn && !this.editMode}"
             .root="${this._book?.id || null}"
             .filter="${this._book ? this._bookFilter || "" : ""}"
           ></oer-site-nav>
-          ${!this._book && this._loggedIn && !this.editMode
-            ? html`<div class="nav-actions">
-                <button class="label-action" @click="${() => outlineBuilder().show()}">${icon.pencil}Edit outline</button>
-              </div>`
-            : ""}
         </nav>
         ${this._loggedIn && this._sidebarTab === "site"
           ? html`<div class="site-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site">
               <div class="nav-group-label">Site</div>
               <button class="site-action" @click="${() => pagesBrowser().show()}">${icon.files}Browse pages</button>
+              <button class="site-action" @click="${() => outlineBuilder().show()}">${icon.siteMap}Page tree</button>
               <button class="site-action" @click="${() => typeEditor().show()}">${icon.types}Content types</button>
               <button class="site-action" @click="${() => canvasImport().show()}">${icon.upload}Import from Canvas</button>
               <button class="site-action" @click="${() => linkCheck().show()}">${icon.link}Check links</button>
