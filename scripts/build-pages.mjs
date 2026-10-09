@@ -220,7 +220,11 @@ function headFor(item) {
 // already fetched the preloaded files relative to the page's own address
 // (404s on every deep link): a real <base> first, from the published path
 const BASE = DOMAIN !== "/" ? new URL(DOMAIN).pathname.replace(/\/?$/, "/") : "/";
-const withBase = (html) => html.replace(/<head>/, `<head>\n  <base href="${esc(BASE)}" />`);
+// and the loading screen in the site's light/dark choice from the first
+// frame (custom/src/loader/site-loader.js decides the same, later; on the
+// editing server there's no way in before it)
+const SCHEME = `<script>try{document.documentElement.dataset.oerScheme=matchMedia("(prefers-color-scheme: dark)").matches||JSON.parse(localStorage.getItem("app-hax-darkMode"))===true?"dark":"light"}catch(e){}</script>`;
+const withBase = (html) => html.replace(/<head>/, `<head>\n  <base href="${esc(BASE)}" />\n  ${SCHEME}`);
 const template = withBase(readFileSync(path.join(SITE_DIR, "index.html"), "utf8"));
 writeFileSync(path.join(OUT, "index.html"), template);
 let pages = 0;

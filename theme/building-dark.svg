@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="A page about to be built">
 <style>
-svg{--fill:#f7f8f8;--front:#85858f;--mid:#ababb4;--faint:#cfcfd6;--accent:#18181b}
+svg{--fill:#17181c;--front:#8a8a94;--mid:#5c5c66;--faint:#3a3a42;--accent:#f4f4f5}
 path,ellipse{vector-effect:non-scaling-stroke;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none}
 .fill{fill:var(--fill)}
 .front{stroke:var(--front)}

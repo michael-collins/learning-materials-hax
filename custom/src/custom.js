@@ -3,6 +3,8 @@
 // and theme skins switch on only when custom-oer-docs-theme connects (see
 // installEditorChrome); blocks register everywhere, since content that uses
 // them must keep working under any theme.
+// first: it takes over the loading screen while the rest starts
+import "./loader/site-loader.js";
 import "./editor/index.js";
 import "./layout-breakpoints.js";
 import "./custom-oer-docs-theme.js";

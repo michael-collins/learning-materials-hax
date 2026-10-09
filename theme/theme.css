@@ -12,12 +12,19 @@
  * inside of that block and it'll apply downstream. Two examples are given below
  */
 
-/* The loading screen: a page being built (building.svg, made by
-   nu-hax/scripts/make-building-figure.mjs) instead of HAX's red bar.
+/* The loading screen: a page being built (building.svg / building-dark.svg,
+   made by nu-hax/scripts/make-building-figure.mjs) instead of HAX's red bar.
    index.html is rewritten by HAX on saves, so the screen is restyled from
-   here; its own styles come later, hence "html body". */
+   here; its own styles come later, hence "html body". Until the site's code
+   runs the figure is an image of its empty plate in the system's colour
+   scheme; then custom/src/loader/site-loader.js draws it in the page,
+   animated, in the site's own
+   light/dark choice ([data-oer-scheme]), holds the screen until the figure
+   has built its page ([data-oer-loader]) and dissolves it. The colours are
+   the site's own page backgrounds. */
 html body #loading {
-  background-color: #ffffff;
+  background-color: #f7f8f8;
+  transition: background-color 0.3s ease;
 }
 html body #loading .progress-line {
   display: none;
@@ -29,10 +36,15 @@ html body #loading div.messaging {
 }
 html body #loading div.messaging::before {
   content: "";
+}
+html body #loading div.messaging::before,
+html body #loading .oer-loader-figure {
   display: block;
   width: min(320px, 78vw);
   aspect-ratio: 4 / 3;
   margin: 0 auto 0.25rem;
+}
+html body #loading div.messaging::before {
   background: url("building.svg") center / contain no-repeat;
 }
 html body #loading div.messaging h1 {
@@ -46,9 +58,66 @@ html body #loading div.messaging h1::after {
 }
 @media (prefers-color-scheme: dark) {
   html body #loading {
-    background-color: #000000;
+    background-color: #17181c;
   }
   html body #loading div.messaging {
     color: #9a9ea6;
+  }
+  html body #loading div.messaging::before {
+    background-image: url("building-dark.svg");
+  }
+}
+html[data-oer-scheme="light"] body #loading {
+  background-color: #f7f8f8;
+}
+html[data-oer-scheme="light"] body #loading div.messaging {
+  color: #5b616e;
+}
+html[data-oer-scheme="light"] body #loading div.messaging::before {
+  background-image: url("building.svg");
+}
+html[data-oer-scheme="dark"] body #loading {
+  background-color: #17181c;
+}
+html[data-oer-scheme="dark"] body #loading div.messaging {
+  color: #9a9ea6;
+}
+html[data-oer-scheme="dark"] body #loading div.messaging::before {
+  background-image: url("building-dark.svg");
+}
+/* held: the figure is in the page, and HAX's quick fade and hide wait */
+html[data-oer-loader] body #loading div.messaging::before {
+  display: none;
+}
+html[data-oer-loader] body #loading.loaded {
+  animation: none;
+}
+html[data-oer-loader] body #loading[hidden] {
+  display: block;
+}
+/* the dissolve: the figure and its words go, then the screen melts into
+   the site behind it (the same background colour) */
+html body #loading.oer-dissolve {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+}
+html body #loading.oer-dissolve div.messaging {
+  opacity: 0;
+  transform: translateY(-55%) scale(0.985);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body #loading.oer-gone {
+  display: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #loading.oer-dissolve {
+    transition: opacity 0.15s linear;
+  }
+  html body #loading.oer-dissolve div.messaging {
+    transform: translateY(-55%);
+    transition: opacity 0.15s linear;
   }
 }
