@@ -29,6 +29,8 @@ import { childrenMap } from "../outline/outline-model.js";
 import { resolveLinks } from "../types/relations.js";
 import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_TYPE } from "../pathways/pathway-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
+import { saveOutline } from "../outline/outline-model.js";
+import { unwrapDrafts } from "./oer-draft.js";
 
 const COURSE_TYPE = "oer:course";
 // grouping by type follows how a course runs
@@ -93,6 +95,10 @@ export class OerCollection extends LitElement {
     this._defs = [];
     this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, activeGroup: "", view: null, hidden: [], perPage: 0 };
     this._columnsOpen = false;
+    // bulk publishing (signed-in authors, table view): selected page ids, and
+    // the Publish / Unpublish step in progress
+    this._selected = new Set();
+    this._bulk = null;
   }
 
   connectedCallback() {
@@ -100,7 +106,12 @@ export class OerCollection extends LitElement {
     this.__dispose = autorun(() => {
       const items = toJS(store.manifest?.items) || [];
       const active = toJS(store.activeId);
+      // read here so signing in and editing re-render the block
+      const signedIn = !!store.isLoggedIn;
+      const editing = !!store.editMode;
       Promise.resolve().then(() => {
+        this.__signedIn = signedIn;
+        this.__editing = editing;
         // the page this block is on is set when it first renders. After a
         // navigation the block is about to be replaced, so it mustn't rebuild
         // for the next page: on a course page that meant listing the whole
@@ -130,6 +141,149 @@ export class OerCollection extends LitElement {
 
   updated(changed) {
     if (["types", "scope", "sort", "course"].some((k) => changed.has(k)) && this._all) this._items = this._select(this._all);
+    // rows are reused as search, filters and pages change, and a click
+    // changes a box behind Lit's back: set every box from the selection
+    for (const box of this.shadowRoot.querySelectorAll("input.pick[data-id]")) box.checked = this._selected.has(box.dataset.id);
+  }
+
+  /* ---------- bulk publishing ---------- */
+
+  // signed-in authors, in the table, outside the editor (HAX is editing the
+  // page this block is on)
+  get _canSelect() {
+    const view = this.controls === "full" ? this._state.view || this.view : this.view;
+    return !!this.__signedIn && !this.__editing && !this.hasAttribute("data-hax-ray") && this.controls === "full" && view === "table";
+  }
+
+  _selectMany(ids, on) {
+    const next = new Set(this._selected);
+    for (const id of ids) on ? next.add(id) : next.delete(id);
+    this._selected = next;
+    if (this._bulk?.step !== "saving") this._bulk = null;
+  }
+
+  // what Publish or Unpublish would do with the selection
+  async _prepareBulk(action) {
+    const all = this._all || [];
+    const byId = new Map(all.map((i) => [i.id, i]));
+    const chosen = [...this._selected].map((id) => byId.get(id)).filter(Boolean);
+    const locked = chosen.filter((i) => i.metadata?.locked);
+    const pages = chosen.filter((i) => !i.metadata?.locked);
+    const plan = { action, pages, locked, above: [], drafts: [], checking: action === "publish", publishAbove: true, releaseDrafts: false };
+    if (action === "publish") {
+      // pages above the chosen ones that are drafts keep them hidden
+      const above = new Map();
+      for (const p of pages) for (let c = byId.get(p.parent); c; c = byId.get(c.parent)) if (c.metadata?.published === false && !this._selected.has(c.id)) above.set(c.id, c);
+      plan.above = [...above.values()];
+    }
+    this._bulk = { step: "confirm", ...plan };
+    if (action !== "publish") return;
+    // which hold text in draft blocks (read from their stored HTML)
+    const drafts = [];
+    await Promise.all(
+      pages.map(async (p) => {
+        if (!p.location) return;
+        try {
+          const res = await fetch(new URL(`${p.location}?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" });
+          const htmlText = res.ok ? await res.text() : "";
+          if (/<oer-draft\b/i.test(htmlText)) drafts.push({ page: p, html: htmlText.replace(/<page-break\b[^>]*>(?:\s*<\/page-break>)?/gi, "").trim() });
+        } catch {
+          // unreadable: published without touching its text
+        }
+      }),
+    );
+    if (this._bulk?.step === "confirm" && this._bulk.action === "publish") this._bulk = { ...this._bulk, drafts, checking: false };
+  }
+
+  async _applyBulk() {
+    const b = this._bulk;
+    if (!b || b.step !== "confirm" || b.checking) return;
+    const publish = b.action === "publish";
+    const contents = new Map(publish && b.releaseDrafts ? b.drafts.map((d) => [d.page.id, unwrapDrafts(d.html)]) : []);
+    // only pages that change: their status, or their text
+    const targets = [...b.pages, ...(publish && b.publishAbove ? b.above : [])].filter((p) => (p.metadata?.published === false) === publish || contents.has(p.id));
+    // the manifest's current items, with the new status (and text)
+    const now = new Map((this._all || []).map((i) => [i.id, i]));
+    const items = targets.map((p) => {
+      const cur = now.get(p.id) || p;
+      return { ...cur, metadata: { ...cur.metadata, published: publish }, ...(contents.has(p.id) && contents.get(p.id) ? { contents: contents.get(p.id) } : {}), modified: true };
+    });
+    this._bulk = { ...b, step: "saving", done: 0, total: items.length };
+    try {
+      for (let n = 0; n < items.length; n += 15) {
+        await saveOutline(items.slice(n, n + 15));
+        this._bulk = { ...this._bulk, done: Math.min(n + 15, items.length) };
+      }
+      const changedText = contents.size;
+      this._bulk = {
+        step: "done",
+        message: `${publish ? "Published" : "Unpublished"} ${items.length} page${items.length === 1 ? "" : "s"}${changedText ? `, and released the text held for review in ${changedText}` : ""}${b.locked.length ? `. ${b.locked.length} locked page${b.locked.length === 1 ? " was" : "s were"} left as ${b.locked.length === 1 ? "it was" : "they were"}` : ""}.`,
+      };
+      this._selected = new Set();
+    } catch (err) {
+      this._bulk = { step: "done", message: `Saving stopped: ${err.message || err}`, error: true };
+    }
+  }
+
+  _renderBulk(shownItems) {
+    const b = this._bulk;
+    if (!this._canSelect || (!this._selected.size && !b)) return "";
+    if (b?.step === "done") {
+      return html`<div class="bulk ${b.error ? "error" : ""}" role="status">
+        <span class="bulk-text">${b.message}${b.error ? "" : html` <span class="muted">The public site updates when you next run Publish to GitHub Pages.</span>`}</span>
+        <button class="btn" @click="${() => (this._bulk = null)}">Done</button>
+      </div>`;
+    }
+    if (b?.step === "saving") return html`<div class="bulk" role="status"><span class="bulk-text">Saving ${b.done} of ${b.total}…</span></div>`;
+    const n = this._selected.size;
+    const shown = new Set(shownItems.map((i) => i.id));
+    const hidden = [...this._selected].filter((id) => !shown.has(id)).length;
+    if (b?.step === "confirm") {
+      const publish = b.action === "publish";
+      const nowDraft = b.pages.filter((p) => p.metadata?.published === false).length;
+      // nothing would change: all published already, and no text released
+      const idle = publish && !nowDraft && !(b.publishAbove && b.above.length) && !(b.releaseDrafts && b.drafts.length);
+      return html`<div class="bulk confirm" role="group" aria-label="${publish ? "Publish" : "Unpublish"} the selected pages">
+        <p class="bulk-text">
+          ${publish
+            ? nowDraft
+              ? html`<b>Publish ${nowDraft} draft${nowDraft === 1 ? "" : "s"}?</b> Readers will see ${nowDraft === 1 ? "it" : "them"}.${nowDraft < b.pages.length ? ` The other ${b.pages.length - nowDraft} ${b.pages.length - nowDraft === 1 ? "is" : "are"} published already.` : ""}`
+              : html`<b>${b.pages.length === 1 ? "This page is" : `All ${b.pages.length} are`} published already.</b>`
+            : html`<b>Unpublish ${b.pages.length} page${b.pages.length === 1 ? "" : "s"}?</b> Readers won't see ${b.pages.length === 1 ? "it" : "them"}; signed-in authors still will.`}
+          ${b.locked.length ? html`<br />${b.locked.length} locked page${b.locked.length === 1 ? " is" : "s are"} left as ${b.locked.length === 1 ? "it is" : "they are"}.` : ""}
+        </p>
+        ${publish && b.above.length
+          ? html`<label class="bulk-opt"
+              ><input type="checkbox" .checked="${b.publishAbove}" @change="${(e) => (this._bulk = { ...this._bulk, publishAbove: e.target.checked })}" />
+              <span>Also publish the ${b.above.length} draft page${b.above.length === 1 ? "" : "s"} they sit under (${b.above.slice(0, 3).map((p) => p.title).join(", ")}${b.above.length > 3 ? "…" : ""}). Without ${b.above.length === 1 ? "it" : "them"}, readers can't reach these.</span></label
+            >`
+          : ""}
+        ${publish
+          ? b.checking
+            ? html`<p class="bulk-text muted">Checking for text held for review…</p>`
+            : b.drafts.length
+              ? html`<label class="bulk-opt"
+                  ><input type="checkbox" .checked="${b.releaseDrafts}" @change="${(e) => (this._bulk = { ...this._bulk, releaseDrafts: e.target.checked })}" />
+                  <span
+                    >Also release the text held for review in ${b.drafts.length} page${b.drafts.length === 1 ? "" : "s"} (its “Draft for review” blocks). Readers will see it as written; without this they see the page without it.</span
+                  ></label
+                >`
+              : ""
+          : ""}
+        <div class="bulk-actions">
+          <button class="btn" @click="${() => (this._bulk = null)}">Cancel</button>
+          <button class="btn primary" aria-disabled="${b.checking || idle ? "true" : "false"}" @click="${() => !idle && this._applyBulk()}">${publish ? (nowDraft || (b.publishAbove && b.above.length) ? `Publish ${nowDraft + (b.publishAbove ? b.above.length : 0)}` : "Release the text") : `Unpublish ${b.pages.length}`}</button>
+        </div>
+      </div>`;
+    }
+    return html`<div class="bulk" role="group" aria-label="Selected pages">
+      <span class="bulk-text"><b>${n} selected</b>${hidden ? ` (${hidden} not shown)` : ""}</span>
+      <span class="bulk-actions">
+        <button class="btn primary" @click="${() => this._prepareBulk("publish")}">${lucide("icons:visibility", "sm")}Publish</button>
+        <button class="btn" @click="${() => this._prepareBulk("unpublish")}">${lucide("icons:visibility-off", "sm")}Unpublish</button>
+        <button class="btn" @click="${() => this._selectMany([...this._selected], false)}">Clear</button>
+      </span>
+    </div>`;
   }
 
   // the page this block sits on (the active page while it is displayed, or
@@ -743,6 +897,72 @@ export class OerCollection extends LitElement {
         background: var(--muted, #f4f4f5);
         color: var(--muted-foreground, #555);
       }
+      /* bulk publishing */
+      .col-pick {
+        width: 2.25rem;
+        padding-right: 0;
+      }
+      .col-pick input {
+        width: 1rem;
+        height: 1rem;
+        margin: 0;
+        accent-color: var(--primary, #111);
+        cursor: pointer;
+      }
+      tr.selected td {
+        background: color-mix(in srgb, var(--primary, #111) 6%, transparent);
+      }
+      .bulk {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.75rem;
+        margin: 0 0 0.75rem;
+        padding: 0.625rem 0.875rem;
+        border: 1px solid var(--border, #e5e5e5);
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--muted, #f4f4f5);
+        font-size: 0.875rem;
+      }
+      .bulk.confirm {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .bulk.error {
+        border-color: var(--destructive, #dc2626);
+      }
+      .bulk-text {
+        flex: 1;
+        margin: 0;
+      }
+      .bulk .muted {
+        color: var(--muted-foreground, #666);
+      }
+      .bulk-actions {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-end;
+      }
+      .bulk-opt {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.8125rem;
+      }
+      .bulk-opt input {
+        margin-top: 0.15rem;
+        accent-color: var(--primary, #111);
+      }
+      .btn.primary {
+        background: var(--primary, #111);
+        border-color: var(--primary, #111);
+        color: var(--primary-foreground, #fff);
+      }
+      .btn[aria-disabled="true"] {
+        opacity: 0.5;
+        cursor: default;
+      }
       .draft {
         margin-left: 0.375rem;
         font-size: 0.6875rem;
@@ -1268,10 +1488,25 @@ export class OerCollection extends LitElement {
     };
     const cols = this._columns.filter((c) => c.fixed || (!this._state.hidden.includes(c.key) && has(c)));
     const key = this._state.sortKey || this.sort;
+    const pick = this._canSelect;
+    const ids = items.map((i) => i.id);
+    const picked = ids.filter((id) => this._selected.has(id)).length;
     return html`<div class="table-wrap">
       <table>
         <thead>
           <tr>
+            ${pick
+              ? html`<th scope="col" class="col-pick">
+                  <input
+                    type="checkbox"
+                    class="pick-all"
+                    aria-label="Select all ${items.length} shown"
+                    .checked="${picked > 0 && picked === ids.length}"
+                    .indeterminate="${picked > 0 && picked < ids.length}"
+                    @change="${(e) => this._selectMany(ids, e.target.checked)}"
+                  />
+                </th>`
+              : ""}
             ${cols.map((c) => {
               if (!c.sortable) return html`<th scope="col" class="col-${c.key}">${c.key === "image" ? html`<span class="sr" style="position:absolute;clip-path:inset(50%)">Image</span>` : c.label}</th>`;
               const on = key === c.key;
@@ -1284,7 +1519,15 @@ export class OerCollection extends LitElement {
           </tr>
         </thead>
         <tbody>
-          ${items.map((i) => html`<tr>${cols.map((c) => html`<td class="col-${c.key}">${this._cell(c, i)}</td>`)}</tr>`)}
+          ${items.map(
+            (i) =>
+              html`<tr class="${pick && this._selected.has(i.id) ? "selected" : ""}">
+                ${pick
+                  ? html`<td class="col-pick"><input type="checkbox" class="pick" data-id="${i.id}" aria-label="Select ${i.title}" .checked="${this._selected.has(i.id)}" @change="${(e) => this._selectMany([i.id], e.target.checked)}" /></td>`
+                  : ""}
+                ${cols.map((c) => html`<td class="col-${c.key}">${this._cell(c, i)}</td>`)}
+              </tr>`,
+          )}
         </tbody>
       </table>
     </div>`;
@@ -1594,6 +1837,7 @@ export class OerCollection extends LitElement {
     return html`
       ${heading}
       ${this.controls === "full" ? this._renderControls(this._items.length, filtered.length) : ""}
+      ${this._renderBulk(filtered)}
       ${!sorted.length
         ? html`<div class="empty">
             ${this._items.length ? html`Nothing matches. <button class="link" @click="${this._clear}">Clear filters</button>` : "Nothing here yet."}
@@ -1661,7 +1905,7 @@ export class OerCollection extends LitElement {
 
 // Internal state is kept out of `properties`: HAX writes every declared
 // property into the saved page, so these re-render via requestUpdate instead
-for (const name of ["_items", "_defs", "_state", "_columnsOpen"]) {
+for (const name of ["_items", "_defs", "_state", "_columnsOpen", "_selected", "_bulk"]) {
   Object.defineProperty(OerCollection.prototype, name, {
     get() {
       return this[`__${name}`];

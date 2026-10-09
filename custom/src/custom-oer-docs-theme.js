@@ -186,9 +186,34 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     // HAX's page save writes the page-break's icon to the page; in the
     // editor that's HAX's guess from the page type, never a chosen icon
     // (types/page-icon.js). Runs first: a capture listener on the target
-    this.__beforeSave = () => {
+    this.__beforeSave = (e) => {
       const pb = this.querySelector("page-break");
       if (pb?.icon === HAX_GUESSED_ICON) pb.icon = null;
+      // HAX writes the page's order into the saved page-break from its store,
+      // where each parent's children are numbered 0, 1, 2… in the browser
+      // only, so a page save moved the page among its siblings. For this
+      // save, the page-break HAX serializes gets site.json's own order
+      // (outline-order.js), unless the page moved to another parent
+      const id0 = toJS(store.activeId);
+      const stored = this.__storedOrders?.get(id0);
+      const parentNow = e?.detail?.parent ?? null;
+      const body = globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody;
+      if (stored && body && (parentNow || null) === (stored.parent || null) && !body.__orderWrapped) {
+        const serialize = body.haxToContent;
+        const restore = () => {
+          body.haxToContent = serialize;
+          body.__orderWrapped = false;
+        };
+        body.__orderWrapped = true;
+        body.haxToContent = async function (...args) {
+          restore();
+          const out = await serialize.apply(this, args);
+          return String(out).replace(/<page-break\b[^>]*>/i, (tag) =>
+            /\sorder="/i.test(tag) ? tag.replace(/\sorder="[^"]*"/i, ` order="${stored.order}"`) : tag.replace(/<page-break\b/i, `<page-break order="${stored.order}"`),
+          );
+        };
+        setTimeout(() => body.__orderWrapped && restore(), 10000);
+      }
       // the rubrics the page shows, recorded so a rubric knows where it's
       // used (rubrics/rubric-usage.js)
       const id = toJS(store.activeId);
@@ -2204,6 +2229,13 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     super.updated?.(changed);
     // editing a page leaves Reader mode (it comes back on the next visit to the book)
     if (changed.has("editMode") && this.editMode && this.reader) this.reader = false;
+    // site.json's own page orders, for the save (see __beforeSave)
+    if (changed.has("editMode") && this.editMode) {
+      fetch(new URL(`site.json?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((site) => (this.__storedOrders = new Map((site?.items || []).map((i) => [i.id, { order: i.order, parent: i.parent || null }]))))
+        .catch(() => (this.__storedOrders = null));
+    }
     if (changed.has("reader") || changed.has("_readerSettings") || changed.has("dark")) {
       const vars = this.reader ? readerVars(this._effectiveReaderSettings()) : {};
       for (const name of ["--reader-size", "--reader-measure", "--reader-leading", "--reader-font", "--reader-texture"]) {

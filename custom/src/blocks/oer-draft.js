@@ -14,6 +14,27 @@ import { registerBlocks } from "./register.js";
 
 const lucide = (name) => html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
+/**
+ * Page HTML with its draft blocks published: each <oer-draft> replaced by
+ * the blocks inside it (stray text in a paragraph), as the block's own
+ * Publish does while editing. For bulk publishing outside the editor.
+ */
+export function unwrapDrafts(htmlText) {
+  const doc = new DOMParser().parseFromString(`<body>${htmlText || ""}</body>`, "text/html");
+  for (let d = doc.body.querySelector("oer-draft"); d; d = doc.body.querySelector("oer-draft")) {
+    for (const k of [...d.childNodes]) {
+      if (k.nodeType === Node.ELEMENT_NODE) d.parentNode.insertBefore(k, d);
+      else if (k.nodeType === Node.TEXT_NODE && k.textContent.trim()) {
+        const p = doc.createElement("p");
+        p.textContent = k.textContent.trim();
+        d.parentNode.insertBefore(p, d);
+      }
+    }
+    d.remove();
+  }
+  return doc.body.innerHTML.trim();
+}
+
 export class OerDraft extends LitElement {
   static get tag() {
     return "oer-draft";
