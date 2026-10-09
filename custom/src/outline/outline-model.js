@@ -121,8 +121,19 @@ export async function createPage(title, parent = null, pageType = "", { metadata
  * (outline-order.js), so pages that don't move keep their stored order and
  * the navigation never reorders by itself. Siblings that must move down to
  * make room are saved too (whole, so they keep their descriptions).
+ *
+ * Saves run one at a time: HAXcms reads site.json when a save starts and
+ * writes it back at the end, so a save that overlapped another would undo
+ * it. Each resolves once HAXcms has finished and the manifest reloaded.
  */
-export async function saveOutline(items) {
+let saving = Promise.resolve();
+export function saveOutline(items) {
+  const run = saving.then(() => sendOutline(items));
+  saving = run.catch(() => {});
+  return run;
+}
+
+async function sendOutline(items) {
   const before = store.manifest;
   // Only new, changed and deleted items go to HAXcms. Its outline save
   // processes every item it's sent, rewriting site.json and rebuilding the
@@ -137,7 +148,9 @@ export async function saveOutline(items) {
   // pages keep no icon unless one was chosen (types/page-icon.js)
   changed = changed.map((i) => (i.metadata?.icon === HAX_GUESSED_ICON ? { ...i, metadata: { ...i.metadata, icon: "" } } : i));
   siteEditor()?.saveOutline?.({ detail: changed });
-  return manifestChange(before);
+  // HAXcms commits and rebuilds the feeds for each deleted page (seconds each)
+  const deletes = changed.filter((i) => i.delete).length;
+  return manifestChange(before, Math.min(600000, 20000 + 6000 * deletes + 1000 * changed.length));
 }
 
 /**

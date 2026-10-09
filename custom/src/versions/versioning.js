@@ -210,3 +210,139 @@ export async function publishVersion(pageId, version, notes = "") {
     if (saved && !saved.description) await store.cmsSiteEditor?.instance?.saveNodeDetails?.({ detail: { id: saved.id, operation: "setDescription", description: snap.description } });
   }
 }
+
+/* ---------- deleting pages, and their versions ---------- */
+
+/**
+ * Where a page's versions are used outside the page: Map version → the
+ * places, in words (a linked page pinned to it, a rubric or a course plan
+ * pinned to it, another page's archived version). `ignore`: pages also
+ * being deleted, which don't count.
+ */
+export function versionUses(pageId, list = items(), ignore = new Set()) {
+  const page = list.find((i) => i.id === pageId);
+  const rubric = page?.metadata?.pageType === "oer:rubric";
+  const uses = new Map();
+  const add = (v, where) => v && uses.set(v, [...new Set([...(uses.get(v) || []), where])]);
+  const name = (i) => (isSnapshot(i) ? `“${i.metadata?.oerSnapshotTitle || i.title}” (version ${i.metadata.version})` : `“${i.title}”`);
+  for (const i of list) {
+    if (i.id === pageId || i.metadata?.oerSnapshotOf === pageId || ignore.has(i.id)) continue;
+    const ref = i.metadata?.oerRef;
+    if (ref?.page === pageId && ref.version) add(ref.version, `linked from ${name(i)}`);
+    if (!rubric) continue;
+    for (const e of i.metadata?.oerRubrics || []) {
+      const r = parseRubricRef(e);
+      if (r.version && findRubric(list, r.ref)?.id === pageId) add(r.version, `the rubric on ${name(i)}`);
+    }
+    for (const m of i.metadata?.oerSequence?.modules || [])
+      for (const it of m.items || []) {
+        if (!it.rubric) continue;
+        const r = parseRubricRef(it.rubric);
+        if (r.version && findRubric(list, r.ref)?.id === pageId) add(r.version, `the plan ${name(i)}`);
+      }
+  }
+  return uses;
+}
+
+/**
+ * What uses one archived version: versionUses for a page that's still
+ * here; for a version whose page was deleted, the links pinned to it and
+ * (a rubric) the rubric references that named the deleted page at that
+ * version and don't now name another rubric.
+ */
+export function snapshotUses(snap, list = items(), ignore = new Set()) {
+  const pageId = snap.metadata.oerSnapshotOf;
+  const version = snap.metadata.version;
+  if (list.some((i) => i.id === pageId)) return versionUses(pageId, list, ignore).get(version) || [];
+  const uses = new Set();
+  const names = new Set([pageId, snap.metadata.oerRubric?.key, String(snap.slug || "").split("/").filter(Boolean).slice(-2, -1)[0]].filter(Boolean));
+  const rubric = snap.metadata.pageType === "oer:rubric";
+  const named = (entry) => {
+    const r = parseRubricRef(entry);
+    return r.version === version && names.has(r.ref) && !findRubric(list, r.ref);
+  };
+  for (const i of list) {
+    if (i.id === snap.id || ignore.has(i.id)) continue;
+    const name = isSnapshot(i) ? `“${i.metadata?.oerSnapshotTitle || i.title}” (version ${i.metadata.version})` : `“${i.title}”`;
+    if (i.metadata?.oerRef?.page === pageId && i.metadata.oerRef.version === version) uses.add(`linked from ${name}`);
+    if (!rubric) continue;
+    if ((i.metadata?.oerRubrics || []).some(named)) uses.add(`the rubric on ${name}`);
+    if ((i.metadata?.oerSequence?.modules || []).some((m) => (m.items || []).some((it) => it.rubric && named(it.rubric)))) uses.add(`the plan ${name}`);
+  }
+  return [...uses];
+}
+
+/** Archived versions whose page was deleted: [{ snap, uses }]. */
+export function orphanedVersions(list = items()) {
+  const ids = new Set(list.map((i) => i.id));
+  return list.filter((i) => isSnapshot(i) && !ids.has(i.metadata.oerSnapshotOf)).map((snap) => ({ snap, uses: snapshotUses(snap, list) }));
+}
+
+/**
+ * What deleting pages `ids` takes with it: `pages` (each with its
+ * sub-pages; an archived version asked for directly goes too), their
+ * versions split into `unused` (nothing else uses them, so they can go as
+ * well) and `used` ([{ snap, uses }], kept), `links` (pages that show a page
+ * that's going) and `home(snap)` (where a kept version moves: the nearest
+ * page that stays). `breaks` lists the archived versions asked for
+ * directly that something still uses ([{ snap, uses }]).
+ */
+export function deletionPlan(ids, list = items()) {
+  const byId = new Map(list.map((i) => [i.id, i]));
+  const kids = new Map();
+  for (const i of list) if (!isSnapshot(i)) kids.set(i.parent || null, [...(kids.get(i.parent || null) || []), i]);
+  const pages = new Set();
+  const walk = (id) => {
+    if (pages.has(id)) return;
+    pages.add(id);
+    for (const c of kids.get(id) || []) walk(c.id);
+  };
+  for (const id of ids) {
+    const it = byId.get(id);
+    if (it) isSnapshot(it) ? pages.add(id) : walk(id);
+  }
+  const unused = [];
+  const used = [];
+  for (const s of list) {
+    if (!isSnapshot(s) || pages.has(s.id) || !pages.has(s.metadata.oerSnapshotOf)) continue;
+    const uses = versionUses(s.metadata.oerSnapshotOf, list, pages).get(s.metadata.version) || [];
+    if (uses.length) used.push({ snap: s, uses });
+    else unused.push(s);
+  }
+  const links = list.filter((i) => !pages.has(i.id) && pages.has(i.metadata?.oerRef?.page)).length;
+  const breaks = [...pages]
+    .map((id) => byId.get(id))
+    .filter(isSnapshot)
+    .map((snap) => ({ snap, uses: snapshotUses(snap, list, pages) }))
+    .filter((b) => b.uses.length);
+  const home = (snap) => {
+    let p = byId.get(snap.metadata.oerSnapshotOf);
+    while (p && pages.has(p.id)) p = byId.get(p.parent);
+    return p?.id || null;
+  };
+  return { pages, unused, used, links, breaks, home };
+}
+
+/**
+ * The outline to save for a plan: its pages deleted, and its unused
+ * versions too when `withVersions`; versions that stay move to where their
+ * page was, keeping their address.
+ */
+export function deletionItems(plan, list = items(), withVersions = true) {
+  const going = new Set([...plan.pages, ...(withVersions ? plan.unused.map((s) => s.id) : [])]);
+  const staying = [...plan.used.map((u) => u.snap), ...(withVersions ? [] : plan.unused)];
+  const moves = new Map(staying.map((s) => [s.id, plan.home(s)]));
+  return list.map((i) =>
+    going.has(i.id)
+      ? { ...i, delete: true }
+      : moves.has(i.id)
+        ? { ...i, parent: moves.get(i.id), metadata: { ...(i.metadata || {}), overridePathauto: true }, modified: true }
+        : i,
+  );
+}
+
+/** "1.0.0", "1.0.0 and 1.1.0", "1.0.0, 1.1.0 and 2.0.0" */
+export const versionList = (snaps) => {
+  const v = snaps.map((s) => s.metadata?.version || s.snap?.metadata?.version).filter(Boolean);
+  return v.length < 3 ? v.join(" and ") : `${v.slice(0, -1).join(", ")} and ${v[v.length - 1]}`;
+};

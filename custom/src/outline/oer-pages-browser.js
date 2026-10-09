@@ -14,16 +14,29 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { pageIcon } from "../types/page-icon.js";
 import { isSystemItem, isHeading, contentTypes } from "../types/content-types.js";
-import { saveOutline, deletionSet, ancestors, newItemId } from "./outline-model.js";
+import { saveOutline, ancestors, newItemId } from "./outline-model.js";
+import { deletionPlan, deletionItems, versionList, orphanedVersions, isSnapshot } from "../versions/versioning.js";
 import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
+const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+// "2 pages and 1 version": what a delete takes, pages and versions apart
+function goingLabel(plan, items, withVersions) {
+  const byId = new Map(items.map((i) => [i.id, i]));
+  const versions = [...plan.pages].filter((id) => isSnapshot(byId.get(id))).length + (withVersions ? plan.unused.length : 0);
+  const pages = plan.pages.size - [...plan.pages].filter((id) => isSnapshot(byId.get(id))).length;
+  return [pages ? plural(pages, "page") : "", versions ? plural(versions, "version") : ""].filter(Boolean).join(" and ");
+}
+
 const FILTERS = [
   { id: "all", label: "All" },
   { id: "hidden", label: "Not in navigation" },
   { id: "versions", label: "Archived versions" },
+  // only offered while there are some
+  { id: "orphans", label: "Orphaned versions" },
 ];
 
 class OerPagesBrowser extends LitElement {
@@ -37,6 +50,7 @@ class OerPagesBrowser extends LitElement {
       _filter: { state: true },
       _query: { state: true },
       _confirm: { state: true },
+      _dropVersions: { state: true },
       _busy: { state: true },
       _selected: { state: true },
       _status: { state: true },
@@ -48,6 +62,7 @@ class OerPagesBrowser extends LitElement {
     this.open = false;
     this._filter = "all";
     this._query = "";
+    this._dropVersions = true;
     this._selected = new Set();
     this._status = "";
     this.__keys = (e) => {
@@ -89,6 +104,11 @@ class OerPagesBrowser extends LitElement {
   }
 
   // why the navigation doesn't list a page ("" when it does)
+  willUpdate(changed) {
+    // each delete starts with its unused versions going too
+    if (changed.has("_confirm")) this._dropVersions = true;
+  }
+
   _whyHidden(item, byId, hiddenTypes) {
     if (item.metadata?.oerSnapshotOf) return "archived";
     for (let cur = item; cur; cur = byId.get(cur.parent)) {
@@ -175,17 +195,20 @@ class OerPagesBrowser extends LitElement {
     this._status = `Appended ${n} page${n === 1 ? "" : "s"} to the navigation.`;
   }
 
-  async _delete(ids) {
+  async _delete(plan) {
     this._busy = true;
+    const versions = this._dropVersions ? plan.unused.length : 0;
+    const gone = new Set([...plan.pages, ...(versions ? plan.unused.map((v) => v.id) : [])]);
     // HAX reload-loops on the URL of a page that no longer exists
-    if (ids.has(store.activeId)) {
+    if (gone.has(store.activeId)) {
       globalThis.history.pushState({}, "", store.homeLink || "./");
       globalThis.dispatchEvent(new PopStateEvent("popstate"));
     }
-    await saveOutline(this._items.map((i) => (ids.has(i.id) ? { ...i, delete: true } : i)));
-    this._selected = new Set([...this._selected].filter((id) => !ids.has(id)));
+    const label = goingLabel(plan, this._items, this._dropVersions);
+    await saveOutline(deletionItems(plan, this._items, this._dropVersions));
+    this._selected = new Set([...this._selected].filter((id) => !gone.has(id)));
     this._confirm = null;
-    this._status = `Deleted ${ids.size} page${ids.size === 1 ? "" : "s"}.`;
+    this._status = `Deleted ${label}.`;
     this._busy = false;
   }
 
@@ -418,6 +441,41 @@ class OerPagesBrowser extends LitElement {
         border: 1px solid var(--border);
         color: var(--muted-foreground);
       }
+      .seg .n {
+        margin-left: 0.25rem;
+        padding: 0 0.375rem;
+        border-radius: 999px;
+        background: var(--background);
+        color: var(--foreground);
+        font-size: 0.6875rem;
+      }
+      .seg button[aria-pressed="true"] .n {
+        background: var(--muted);
+      }
+      .note {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0.625rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        background: color-mix(in oklab, var(--primary) 8%, var(--background));
+        font-size: 0.8125rem;
+        line-height: 1.5;
+      }
+      .note .lucide {
+        margin-top: 0.1875rem;
+        color: var(--primary);
+      }
+      .inline-check {
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        gap: 0.375rem;
+        margin: 0.375rem 0;
+        font-weight: 500;
+        cursor: pointer;
+      }
       .badge.hi {
         border-color: transparent;
         color: var(--primary);
@@ -493,7 +551,8 @@ class OerPagesBrowser extends LitElement {
   }
 
   _renderRow(item, ctx) {
-    const { byId, hiddenTypes, types, items } = ctx;
+    const { byId, hiddenTypes, types, items, orphans } = ctx;
+    const orphan = orphans.get(item.id);
     const why = this._whyHidden(item, byId, hiddenTypes);
     const snapOf = item.metadata?.oerSnapshotOf ? byId.get(item.metadata.oerSnapshotOf) : null;
     const linkOf = item.metadata?.oerRef?.page ? byId.get(item.metadata.oerRef.page) : null;
@@ -503,13 +562,11 @@ class OerPagesBrowser extends LitElement {
       .map((id) => byId.get(id)?.title)
       .filter(Boolean)
       .join(" › ");
-    const title = snapOf ? `${item.metadata?.oerSnapshotTitle || snapOf.title} v${item.metadata.version}` : item.title;
+    const isVersion = !!item.metadata?.oerSnapshotOf;
+    const title = isVersion ? `${item.metadata?.oerSnapshotTitle || snapOf?.title || item.title} v${item.metadata.version}` : item.title;
     const confirming = this._confirm === item.id;
     const busy = this._busy ? "true" : "false";
-    let doomed = null;
-    if (confirming) doomed = deletionSet(items, [item.id]);
-    const extra = doomed ? doomed.size - 1 : 0;
-    const links = doomed ? items.filter((i) => !doomed.has(i.id) && doomed.has(i.metadata?.oerRef?.page)).length : 0;
+    const plan = confirming ? deletionPlan([item.id], items) : null;
     const checked = this._selected.has(item.id);
     return html`<li class="${checked ? "selected" : ""}">
       <input type="checkbox" class="pick" data-id="${item.id}" aria-label="Select ${title}" .checked="${checked}" @change="${(e) => this._toggleSelect(item.id, e.target.checked)}" />
@@ -520,11 +577,12 @@ class OerPagesBrowser extends LitElement {
           ${why === "removed" ? html`<span class="badge hi">Not in navigation</span>` : ""}
           ${why === "parent" ? html`<span class="badge">Under a page not in navigation</span>` : ""}
           ${why === "type" ? html`<span class="badge">Type not listed in navigation</span>` : ""}
-          ${snapOf ? html`<span class="badge">Archived version</span>` : ""}
+          ${isVersion ? html`<span class="badge ${snapOf ? "" : "hi"}">${snapOf ? "Archived version" : "Version of a deleted page"}</span>` : ""}
+          ${orphan ? html`<span class="badge">${orphan.uses.length ? "In use" : "Unused"}</span>` : ""}
           ${linkOf ? html`<span class="badge">Shows “${linkOf.title}”${item.metadata.oerRef.version ? ` v${item.metadata.oerRef.version}` : ""}</span>` : ""}
           ${item.metadata?.published === false ? html`<span class="badge">Draft</span>` : ""}
         </span>
-        <p class="path">${path || "Top level"}</p>
+        <p class="path">${orphan?.uses.length ? `Used by ${orphan.uses.join("; ")}` : path || "Top level"}</p>
       </div>
       <div class="actions">
         ${why === "removed"
@@ -536,18 +594,7 @@ class OerPagesBrowser extends LitElement {
           ${lucide("oer:trash-2", "sm")}
         </button>
       </div>
-      ${confirming
-        ? html`<div class="confirm" role="alert">
-            <span
-              >Delete “${title}”${extra ? ` and ${extra} sub-page${extra === 1 ? "" : "s"} or archived version${extra === 1 ? "" : "s"}` : ""}?
-              ${links ? `${links} link${links === 1 ? "" : "s"} to ${extra ? "them" : "it"} will break. ` : ""}This can't be undone here.</span
-            >
-            <button class="btn outline" @click="${() => (this._confirm = null)}">Cancel</button>
-            <button class="btn destructive" aria-disabled="${busy}" @click="${() => !this._busy && this._delete(doomed)}">
-              ${this._busy ? "Deleting…" : "Delete"}
-            </button>
-          </div>`
-        : ""}
+      ${confirming ? this._renderConfirm(plan, `“${title}”`) : ""}
     </li>`;
   }
 
@@ -595,21 +642,31 @@ class OerPagesBrowser extends LitElement {
 
   // confirm deleting the whole selection, with what goes along with it
   _renderBulkConfirm() {
-    const items = this._items;
-    const doomed = deletionSet(items, this._selected);
     const n = this._selected.size;
-    const extra = doomed.size - n;
-    const links = items.filter((i) => !doomed.has(i.id) && doomed.has(i.metadata?.oerRef?.page)).length;
+    return this._renderConfirm(deletionPlan(this._selected, this._items), `${n} selected page${n === 1 ? "" : "s"}`);
+  }
+
+  // what a delete takes with it: sub-pages, versions nothing else uses (a
+  // choice), versions in use (they stay), links that break
+  _renderConfirm(plan, what) {
     const busy = this._busy ? "true" : "false";
+    const sub = plan.pages.size - [...plan.pages].filter((id) => this._selected.has(id) || id === this._confirm).length;
+    const n = plan.unused.length;
     return html`<div class="confirm" role="alert">
-      <span
-        >Delete ${n} selected page${n === 1 ? "" : "s"}${extra ? ` and ${extra} sub-page${extra === 1 ? "" : "s"} or archived version${extra === 1 ? "" : "s"}` : ""}?
-        ${links ? `${links} link${links === 1 ? "" : "s"} to ${n + extra === 1 ? "it" : "them"} will break. ` : ""}This can't be undone here.</span
-      >
+      <span>
+        Delete ${what}${sub > 0 ? ` and ${sub} sub-page${sub === 1 ? "" : "s"}` : ""}?
+        ${n
+          ? html`<label class="inline-check"
+              ><input type="checkbox" .checked="${this._dropVersions}" @change="${(e) => (this._dropVersions = e.target.checked)}" />Also delete
+              ${n === 1 ? "the unused version" : `${n} unused versions`} (${versionList(plan.unused)})</label
+            >`
+          : ""}
+        ${plan.used.length ? `${plan.used.length} version${plan.used.length === 1 ? "" : "s"} in use will stay. ` : ""}
+        ${plan.breaks.map((b) => html`<b>Version ${b.snap.metadata.version} is in use</b> (${b.uses.join("; ")}) and will show as missing. `)}
+        ${plan.links ? `${plan.links} link${plan.links === 1 ? "" : "s"} will break. ` : ""}This can't be undone here.
+      </span>
       <button class="btn outline" @click="${() => (this._confirm = null)}">Cancel</button>
-      <button class="btn destructive" aria-disabled="${busy}" @click="${() => !this._busy && this._delete(doomed)}">
-        ${this._busy ? "Deleting…" : `Delete ${doomed.size}`}
-      </button>
+      <button class="btn destructive" aria-disabled="${busy}" @click="${() => !this._busy && this._delete(plan)}">${this._busy ? "Deleting…" : `Delete ${goingLabel(plan, this._items, this._dropVersions)}`}</button>
     </div>`;
   }
 
@@ -619,7 +676,10 @@ class OerPagesBrowser extends LitElement {
     const byId = new Map(items.map((i) => [i.id, i]));
     const { types } = contentTypes(items);
     const hiddenTypes = new Set(types.filter((t) => t.nav === false).map((t) => t.id));
-    const ctx = { byId, hiddenTypes, types, items };
+    const orphans = new Map(orphanedVersions(items).map((o) => [o.snap.id, o]));
+    const unusedOrphans = [...orphans.values()].filter((o) => !o.uses.length).length;
+    const ctx = { byId, hiddenTypes, types, items, orphans };
+    const filters = FILTERS.filter((f) => f.id !== "orphans" || orphans.size || this._filter === "orphans");
     const pages = items.filter((i) => !isSystemItem(i) && !isHeading(i));
     const q = this._query.trim().toLowerCase();
     const shown = pages
@@ -627,6 +687,7 @@ class OerPagesBrowser extends LitElement {
         const why = this._whyHidden(i, byId, hiddenTypes);
         if (this._filter === "hidden") return why === "removed" || why === "parent";
         if (this._filter === "versions") return why === "archived";
+        if (this._filter === "orphans") return orphans.has(i.id);
         return true;
       })
       .filter((i) => !q || i.title.toLowerCase().includes(q) || `${i.metadata?.oerSnapshotTitle || ""} v${i.metadata?.version || ""}`.toLowerCase().includes(q))
@@ -647,18 +708,32 @@ class OerPagesBrowser extends LitElement {
             <input type="search" placeholder="Search pages" aria-label="Search pages" .value="${this._query}" @input="${(e) => (this._query = e.target.value)}" />
           </label>
           <div class="seg" role="group" aria-label="Show">
-            ${FILTERS.map(
-              (f) => html`<button aria-pressed="${this._filter === f.id ? "true" : "false"}" @click="${() => (this._filter = f.id)}">${f.label}</button>`,
+            ${filters.map(
+              (f) =>
+                html`<button aria-pressed="${this._filter === f.id ? "true" : "false"}" @click="${() => (this._filter = f.id)}">
+                  ${f.label}${f.id === "orphans" && orphans.size ? html` <span class="n">${orphans.size}</span>` : ""}
+                </button>`,
             )}
           </div>
         </div>
+        ${this._filter === "orphans" && orphans.size
+          ? html`<p class="note" role="note">
+              ${lucide("icons:info", "sm")}
+              <span
+                >These versions belong to pages that were deleted.
+                ${unusedOrphans
+                  ? `${unusedOrphans === orphans.size ? (unusedOrphans === 1 ? "Nothing uses it" : "Nothing uses them") : `${unusedOrphans} of them aren't used anywhere`}, so ${unusedOrphans === 1 ? "it" : "they"} can be deleted.`
+                  : "Each is still used, so keep them or update what uses them first."}</span
+              >
+            </p>`
+          : ""}
         ${this._renderSelectionBar(pages, shown)}
         <div class="body">
           ${shown.length
             ? html`<ul aria-label="Pages">
                 ${shown.map((i) => this._renderRow(i, ctx))}
               </ul>`
-            : html`<p class="empty">${q ? "No pages match." : this._filter === "hidden" ? "Every page is in the navigation." : this._filter === "versions" ? "No archived versions yet." : "No pages yet."}</p>`}
+            : html`<p class="empty">${q ? "No pages match." : this._filter === "hidden" ? "Every page is in the navigation." : this._filter === "versions" ? "No archived versions yet." : this._filter === "orphans" ? "No orphaned versions." : "No pages yet."}</p>`}
         </div>
         <footer>${shown.length} of ${pages.length} pages. To put a page somewhere specific, use Add existing in the outline builder.</footer>
       </div>

@@ -206,7 +206,7 @@ export function readiness(page, items, run = null) {
         const r = itemRubric(it, page);
         const name = it.title || page.title;
         if (r.ref) {
-          const rubric = findRubric(items, r.ref);
+          const rubric = findRubric(items, r.ref) || rubricAt(items, r.ref, r.version).page;
           if (!rubric) out.push({ level: "warning", text: `${name}: its rubric (${r.ref}) isn't on the site.`, fix: "rubrics" });
           else if (!rubricOf(rubric).criteria.length) out.push({ level: "warning", text: `${name}: the rubric “${rubric.title}” has no criteria yet.` });
           else if (r.version && rubricAt(items, r.ref, r.version).missing) out.push({ level: "warning", text: `${name}: rubric version ${r.version} isn't on the site.` });

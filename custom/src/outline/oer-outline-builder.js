@@ -20,10 +20,10 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { flatten, saveOutline, newItemId, starterContent, childrenMap, deletionSet } from "./outline-model.js";
+import { flatten, saveOutline, newItemId, starterContent, childrenMap } from "./outline-model.js";
 import { isSystemItem, systemItem, contentTypes, navIconsOn, HEADING_TYPE, HEADING_DEF } from "../types/content-types.js";
 import { pageIcon } from "../types/page-icon.js";
-import { isSnapshot, versionsOf } from "../versions/versioning.js";
+import { isSnapshot, versionsOf, deletionPlan, versionList } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { PATHWAY_TYPE, pathwayOf, pathwayLevels, levelChip, pathwayChipStyles } from "../pathways/pathway-model.js";
@@ -57,6 +57,7 @@ class OerOutlineBuilder extends LitElement {
       _longPress: { state: true },
       _typeMenu: { state: true }, // { id, x, y, kind: "type" | "level" } while choosing a row's type or level
       _confirmDiscard: { state: true },
+      _dropVersions: { state: true },
     };
   }
 
@@ -78,6 +79,7 @@ class OerOutlineBuilder extends LitElement {
     this._typeMenu = null;
     this._types = [];
     this._confirmDiscard = false;
+    this._dropVersions = true;
     this.__keys = (e) => {
       if (!this.open || e.key !== "Escape") return;
       // Esc in a picker opened from here closes the picker, not the builder
@@ -144,6 +146,7 @@ class OerOutlineBuilder extends LitElement {
     this._collapsed = new Set();
     this._editing = null;
     this._confirmDiscard = false;
+    this._dropVersions = true;
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
     this.updateComplete.then(() => this.shadowRoot.querySelector("[role=treeitem], .empty button")?.focus());
@@ -247,10 +250,22 @@ class OerOutlineBuilder extends LitElement {
       item.metadata = { ...(item.metadata || {}), hideInMenu: true };
       item.modified = true;
     }
-    // deleting a page also deletes its archived versions
-    for (const id of this._deletedWithVersions()) {
-      const item = out.get(id);
-      if (item) item.delete = true;
+    // deleted pages go with their sub-pages, and their versions nothing
+    // else uses (unless kept); versions in use stay, where their page was
+    const plan = this._deletionPlan();
+    if (plan) {
+      const going = new Set([...plan.pages, ...(this._dropVersions ? plan.unused.map((v) => v.id) : [])]);
+      for (const id of going) {
+        const item = out.get(id);
+        if (item) item.delete = true;
+      }
+      for (const v of [...plan.used.map((u) => u.snap), ...(this._dropVersions ? [] : plan.unused)]) {
+        const item = out.get(v.id);
+        if (!item) continue;
+        item.parent = plan.home(v);
+        item.metadata = { ...(item.metadata || {}), overridePathauto: true };
+        item.modified = true;
+      }
     }
     this._numberChildren(all, out);
     // the site-wide "Icons in navigation" setting lives on the system page
@@ -558,15 +573,9 @@ class OerOutlineBuilder extends LitElement {
     if (prev) this._focusRow(prev);
   }
 
-  // ids deleted on save: the deleted pages plus their archived versions
-  _deletedWithVersions() {
-    return this._deleted.size ? deletionSet(this._items, this._deleted.keys()) : new Set();
-  }
-
-  // links elsewhere in the site that show a page being deleted
-  _linksToDeleted() {
-    const ids = this._deletedWithVersions();
-    return (this._items || []).filter((i) => !ids.has(i.id) && ids.has(i.metadata?.oerRef?.page)).length;
+  // what the pages deleted take with them (versioning.js deletionPlan)
+  _deletionPlan() {
+    return this._deleted.size ? deletionPlan(this._deleted.keys(), this._items) : null;
   }
 
   _rename(id, title) {
@@ -1424,6 +1433,18 @@ class OerOutlineBuilder extends LitElement {
         opacity: 1;
       }
 
+      /* the footer's choice to delete unused versions too */
+      .inline-check {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        margin: 0 0.25rem;
+        color: var(--foreground);
+        cursor: pointer;
+      }
+      footer .kept {
+        color: var(--muted-foreground);
+      }
       /* content type chip + menu */
       /* navigation: what a row lists rather than shows */
       .listed {
@@ -2193,9 +2214,10 @@ class OerOutlineBuilder extends LitElement {
     const top = this._rows.filter((r) => r.depth === 0).length;
     const anyKids = this._rows.some((_, i) => this._hasChildren(i));
     const dirty = this._dirty;
-    const deleting = this._deletedWithVersions().size;
+    const plan = this._deletionPlan();
+    const deleting = plan ? plan.pages.size : 0;
     const hiding = [...this._hidden.keys()].filter((id) => !this._deleted.has(id)).length;
-    const brokenLinks = deleting ? this._linksToDeleted() : 0;
+    const brokenLinks = plan ? plan.links : 0;
     const invalidCount = this._rows.filter((_, i) => this._invalid(i)).length;
     return html`
       <div class="backdrop" @click="${this._requestClose}"></div>
@@ -2245,10 +2267,17 @@ class OerOutlineBuilder extends LitElement {
                   ? html`<span class="warn">${invalidCount} page${invalidCount === 1 ? " is" : "s are"} in a place ${invalidCount === 1 ? "its" : "their"} type isn't allowed. Change the type or move ${invalidCount === 1 ? "it" : "them"}.</span>`
                   : deleting || hiding
                   ? html`<span class="warn">
-                      ${[
-                        deleting ? `${deleting} page${deleting === 1 ? "" : "s"}${deleting > this._deleted.size ? " (with sub-pages and archived versions)" : ""} will be deleted${brokenLinks ? `, breaking ${brokenLinks} link${brokenLinks === 1 ? "" : "s"} to ${deleting === 1 ? "it" : "them"}` : ""}.` : "",
-                        hiding ? `${hiding} page${hiding === 1 ? "" : "s"} will leave the navigation and stay in Browse pages.` : "",
-                      ].join(" ")}
+                      ${deleting
+                        ? `${deleting} page${deleting === 1 ? "" : "s"}${deleting > this._deleted.size ? " (with sub-pages)" : ""} will be deleted${brokenLinks ? `, breaking ${brokenLinks} link${brokenLinks === 1 ? "" : "s"} to ${deleting === 1 ? "it" : "them"}` : ""}.`
+                        : ""}
+                      ${plan?.unused.length
+                        ? html`<label class="inline-check"
+                            ><input type="checkbox" .checked="${this._dropVersions}" @change="${(e) => (this._dropVersions = e.target.checked)}" />Also delete
+                            ${plan.unused.length === 1 ? (deleting === 1 ? "its unused version" : "1 unused version") : `${plan.unused.length} unused versions`} (${versionList(plan.unused)})</label
+                          >`
+                        : ""}
+                      ${plan?.used.length ? html`<span class="kept">${plan.used.length} version${plan.used.length === 1 ? "" : "s"} in use will stay.</span>` : ""}
+                      ${hiding ? `${hiding} page${hiding === 1 ? "" : "s"} will leave the navigation and stay in Browse pages.` : ""}
                     </span>`
                   : html`<div class="hints" aria-hidden="true">
                       <span><kbd>↵</kbd> rename</span><span><kbd>⇥</kbd> indent</span><span><kbd>⇧⇥</kbd> outdent</span>

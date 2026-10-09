@@ -25,7 +25,7 @@ import { cleanRichText } from "../ui/oer-text-editor.js";
 const richText = (htmlText) => globalThis.document.createRange().createContextualFragment(cleanRichText(htmlText || ""));
 import { sequenceExport } from "../lms/oer-sequence-export.js";
 import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
-import { RUBRIC_TYPE, itemRubric, findRubric, isGradedItem } from "../rubrics/rubric-model.js";
+import { RUBRIC_TYPE, itemRubric, findRubric, rubricAt, isGradedItem } from "../rubrics/rubric-model.js";
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
 
 const lucide = (name) =>
@@ -693,7 +693,7 @@ class OerPageHeader extends LitElement {
               // on request with this item's points
               const graded = isGradedItem(it) && Number(it.points) > 0;
               const r = graded ? itemRubric(it, p) : null;
-              const rubric = r?.ref ? findRubric(this._allItems || [], r.ref) : null;
+              const rubric = r?.ref ? findRubric(this._allItems || [], r.ref) || rubricAt(this._allItems || [], r.ref, r.version).page : null;
               const key = `${m.id}:${(m.items || []).indexOf(it)}`;
               const shown = rubric && this._rubricsOpen.has(key);
               const toggle = () => {
@@ -707,7 +707,7 @@ class OerPageHeader extends LitElement {
                 ${open ? html`<a href="${p.slug}">${it.title || p.title}</a>` : html`<span>${it.title || p.title}</span>`}
                 <small>${note(it, p)}</small>
                 ${rubric
-                  ? html`<button class="rubric-toggle" aria-expanded="${shown ? "true" : "false"}" @click="${toggle}">${lucide("oer:chevron-right")}${rubric.title}</button>`
+                  ? html`<button class="rubric-toggle" aria-expanded="${shown ? "true" : "false"}" @click="${toggle}">${lucide("oer:chevron-right")}${rubric.metadata?.oerSnapshotTitle || rubric.title}</button>`
                   : graded && store.isLoggedIn
                     ? html`<small class="no-rubric">No rubric</small>`
                     : ""}

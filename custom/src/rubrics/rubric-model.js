@@ -150,6 +150,18 @@ export function rubricRefsIn(htmlText = "") {
   return [...new Set(out.filter(Boolean))];
 }
 
+/** The archived version `version` of a deleted rubric that `ref` named (its id, key or address). */
+function keptVersion(items, ref, version) {
+  const ids = new Set(items.map((i) => i.id));
+  return (
+    items.find((i) => {
+      const m = i.metadata || {};
+      if (m.pageType !== RUBRIC_TYPE || !m.oerSnapshotOf || m.version !== version || ids.has(m.oerSnapshotOf)) return false;
+      return m.oerSnapshotOf === ref || m.oerRubric?.key === ref || String(i.slug || "").split("/").filter(Boolean).slice(-2, -1)[0] === ref;
+    }) || null
+  );
+}
+
 /**
  * A rubric as a reference shows it: the release `version` names (its
  * archived copy), else the latest. → { page (the latest), shown, missing }
@@ -157,7 +169,11 @@ export function rubricRefsIn(htmlText = "") {
  */
 export function rubricAt(items = [], ref = "", version = "") {
   const page = findRubric(items, ref);
-  if (!page) return { page: null, shown: null, missing: false };
+  if (!page) {
+    // a deleted rubric's version kept because this pinned it (versions/versioning.js deletionPlan)
+    const kept = version ? keptVersion(items, ref, version) : null;
+    return { page: kept, shown: kept, missing: false };
+  }
   if (!version || page.metadata?.oerSnapshotOf) return { page, shown: page, missing: false };
   const snapshot = items.find((i) => i.metadata?.oerSnapshotOf === page.id && i.metadata?.version === version);
   return { page, shown: snapshot || page, missing: !snapshot };

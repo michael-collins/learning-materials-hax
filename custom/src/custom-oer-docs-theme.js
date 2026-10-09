@@ -27,6 +27,7 @@ import "@haxtheweb/haxcms-elements/lib/ui-components/layout/site-modal.js";
 import { shadcnTokens } from "./tokens/shadcn-tokens.js";
 import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { newPage } from "./ui/oer-new-page.js";
+import { deletePage } from "./ui/oer-delete-page.js";
 import { typeListedOn } from "./types/type-homes.js";
 import { COURSE_SITE_TYPE, siteForCourse, createCourseSite } from "./types/course-site.js";
 import "./blocks/oer-course-site.js";
@@ -2202,7 +2203,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ${item(pb("_togglePublished"), this._published ? icon.eyeOff : icon.eye, this._published ? "Unpublish" : "Publish")}
               ${item(pb("_toggleLocked"), this._locked ? icon.lockOpen : icon.lock, this._locked ? "Unlock page" : "Lock page")}
               <div class="menu-sep" role="separator"></div>
-              ${item(pb("_deletePage"), icon.trash, "Delete page", "danger")}
+              ${item(this._menuAction(() => deletePage().show(store.activeId)), icon.trash, "Delete page…", "danger")}
             </div>`
           : ""}
       </div>
