@@ -1,8 +1,8 @@
 User-agent: *
 Crawl-delay: 10
 Allow: /
-Sitemap: https://localhost:3000/learning-materials/sitemap.xml
-LLMS: https://localhost:3000/learning-materials/llms.txt
+Sitemap: https://michaelcollins.xyz/learning-materials-hax/sitemap.xml
+LLMS: https://michaelcollins.xyz/learning-materials-hax/llms.txt
 # CSS, JS, Images
 Allow: /assets/*.css$
 Allow: /assets/*.css?

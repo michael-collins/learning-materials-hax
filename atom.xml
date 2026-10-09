@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Digital Arts OER</title>
-  <link href="https://localhost:3000/learning-materials/" rel="self" />
+  <link href="https://michaelcollins.xyz/learning-materials-hax/" rel="self" />
   <subtitle></subtitle>
   <updated>2026-10-09T04:18:26.000Z</updated>
   <author>
       <name></name>
   </author>
-  <id>https://localhost:3000/learning-materials/</id>
+  <id>https://michaelcollins.xyz/learning-materials-hax/</id>
   
   <entry>
     <title>D.Arts OER Overview</title>
@@ -15,7 +15,7 @@
     <updated>2026-10-08T19:44:58.000Z</updated>
     <published>2026-09-30T20:52:42.000Z</published>
     <summary>This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licen</summary>
-    <link href="https://localhost:3000/learning-materials/d-arts-oer-overview"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/d-arts-oer-overview"/>
     
     <content type="html">
       <![CDATA[ <p class="lead">This site runs on HAXcms with a custom theme that brings the features of the learning-materials-decapcms platform to HAX: content types with fields, pathways, versions, books, embedding and open licensing, plus an editor redesigned in the shadcn/ui style. This page explains what is new and where to find it.</p>
@@ -172,7 +172,7 @@
     <updated>2026-10-07T20:19:28.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.Master the fundamental principles of animation that bring characters and objects to life th</summary>
-    <link href="https://localhost:3000/learning-materials/lessons/animation-principles"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lessons/animation-principles"/>
     
     <content type="html">
       <![CDATA[ <p class="lead">Learn the twelve principles of animation and how to apply them to create believable movement in 3D animation.</p><p>Master the fundamental principles of animation that bring characters and objects to life through believable movement and performance.</p>
@@ -185,7 +185,7 @@
     <updated>2026-10-07T20:20:38.000Z</updated>
     <published>2026-09-30T21:03:11.000Z</published>
     <summary>Lessons group lectures, tutorials and exercises around a set of learning objectives.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lessons"/>
     
     <content type="html">
       <![CDATA[ 
@@ -204,7 +204,7 @@ Learning Objectives
 
 Practice keyframe animation of translation, rotation, and scale properties.
 Become </summary>
-    <link href="https://localhost:3000/learning-materials/exercises/animating-a-bouncing-ball"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/exercises/animating-a-bouncing-ball"/>
     <category term="Blender,Animation" label="Blender,Animation" />
     <content type="html">
       <![CDATA[ 
@@ -262,7 +262,7 @@ Become </summary>
     <updated>2026-10-08T15:09:07.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</summary>
-    <link href="https://localhost:3000/learning-materials/exercises/animated-textures"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/exercises/animated-textures"/>
     <category term="Blender,AfterEffects,Adobe Media Encoder" label="Blender,AfterEffects,Adobe Media Encoder" />
     <content type="html">
       <![CDATA[ <p>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264.</p>
@@ -301,7 +301,7 @@ Become </summary>
     <updated>2026-10-08T13:21:51.000Z</updated>
     <published>2026-09-30T21:03:12.000Z</published>
     <summary>Formative practice focused on a narrow set of competencies.</summary>
-    <link href="https://localhost:3000/learning-materials/exercises"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/exercises"/>
     
     <content type="html">
       <![CDATA[ 
@@ -313,10 +313,10 @@ Become </summary>
   <entry>
     <title>Content types</title>
     <id>item-b4e121df-b071-4067-a68c-23f5a26d3841</id>
-    <updated>2026-10-08T14:54:14.000Z</updated>
+    <updated>2026-10-09T13:11:48.000Z</updated>
     <published>2026-10-01T02:43:07.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/content-types"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/content-types"/>
     
     <content type="html">
       <![CDATA[ <p>This page stores the site's content type definitions.</p> ]]>
@@ -328,7 +328,7 @@ Become </summary>
     <updated>2026-10-08T13:21:49.000Z</updated>
     <published>2026-10-01T04:12:43.000Z</published>
     <summary>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r</summary>
-    <link href="https://localhost:3000/learning-materials/pathways"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/pathways"/>
     
     <content type="html">
       <![CDATA[ <p>A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a repeat run.</p>
@@ -341,7 +341,7 @@ Become </summary>
     <updated>2026-10-07T20:19:31.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lectures/introduction-to-modeling"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-modeling"/>
     
     <content type="html">
       <![CDATA[ <h2>Presentation</h2>
@@ -407,7 +407,7 @@ Become </summary>
     <updated>2026-10-08T15:08:57.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-objects"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/projects/you-don-t-see-that-everyday-objects"/>
     <category term="Blender" label="Blender" />
     <content type="html">
       <![CDATA[ <p>For this project, you will produce 3D rendered images of products and other objects you experience every day, but with one slight difference. You will augment the object in such a way to inhibit its utility, material qualities, or its system or environmental context.</p>
@@ -543,7 +543,7 @@ Become </summary>
     <updated>2026-10-07T20:19:34.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/tutorials/creating-blockouts-for-games"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/tutorials/creating-blockouts-for-games"/>
     
     <content type="html">
       <![CDATA[ <oer-video src="https://www.youtube.com/watch?v=9Dtkt2Ogric" title="Modular Environment Creation" credit="WorldofLevelDesign"></oer-video>
@@ -558,7 +558,7 @@ Become </summary>
     <updated>2026-10-07T20:20:18.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore the evolution and development of computer-generated imagery from its early beginnings to modern applications across film, gaming, and advertising industries.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons/history-of-cgi"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lessons/history-of-cgi"/>
     
     <content type="html">
       <![CDATA[ <p>An introduction to the history and evolution of computer-generated imagery, exploring how CGI has transformed visual storytelling and design across multiple industries.</p>
@@ -572,7 +572,7 @@ Become </summary>
     <updated>2026-10-07T20:20:19.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lectures/introduction-to-texturing"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-texturing"/>
     
     <content type="html">
       <![CDATA[ <h2>Presentation</h2>
@@ -629,7 +629,7 @@ Become </summary>
     <updated>2026-10-08T15:09:08.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/you-don-t-see-that-everyday-object-posters"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/projects/you-don-t-see-that-everyday-object-posters"/>
     <category term="Blender" label="Blender" />
     <content type="html">
       <![CDATA[ <p>For this project, you will produce 3D rendered poster series of objects that you encounter every day, but augmented in such a way changing their nature including material qualities, operation or use, or the system or environmental context.</p>
@@ -734,7 +734,7 @@ Become </summary>
     <updated>2026-10-07T20:20:32.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Master the fundamentals of 3D modeling including polygon modeling techniques, mesh topology, and efficient modeling workflows.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons/3d-modeling-fundamentals"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lessons/3d-modeling-fundamentals"/>
     
     <content type="html">
       <![CDATA[ <p>Learn the core principles and techniques of 3D modeling, focusing on polygon modeling methods that form the foundation for all 3D content creation.</p>
@@ -748,7 +748,7 @@ Become </summary>
     <updated>2026-10-08T15:09:09.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/exercises/modeling-the-airline-chair"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-the-airline-chair"/>
     <category term="Blender,Modeling" label="Blender,Modeling" />
     <content type="html">
       <![CDATA[ <p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair.</p>
@@ -789,7 +789,7 @@ Become </summary>
     <updated>2026-10-07T20:20:33.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lectures/introduction-to-cameras-lighting-and-rendering"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-cameras-lighting-and-rendering"/>
     
     <content type="html">
       <![CDATA[ <h2>Presentation</h2>
@@ -872,7 +872,7 @@ Become </summary>
     <updated>2026-10-07T20:20:34.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/stylized-prop-set"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/projects/stylized-prop-set"/>
     <category term="Blender,PlayCanvas" label="Blender,PlayCanvas" />
     <content type="html">
       <![CDATA[ <p>Design and build a small set of stylized, game-ready props that share a palette and style, and present them in a real-time engine.</p>
@@ -892,7 +892,7 @@ Become </summary>
     <updated>2026-10-07T20:20:39.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Learn how to unwrap 3D models and apply textures through proper UV mapping techniques and material creation workflows.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons/texturing-and-uv-mapping"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lessons/texturing-and-uv-mapping"/>
     
     <content type="html">
       <![CDATA[ <p>Master the art of UV mapping and texturing, learning how to properly unwrap 3D models and apply high-quality textures and materials.</p>
@@ -906,7 +906,7 @@ Become </summary>
     <updated>2026-10-08T15:09:10.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/exercises/modeling-a-room"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-room"/>
     <category term="Blender" label="Blender" />
     <content type="html">
       <![CDATA[ <p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of an interior space.</p>
@@ -949,7 +949,7 @@ Become </summary>
     <updated>2026-10-07T20:20:47.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/modular-environment-kit"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/projects/modular-environment-kit"/>
     <category term="Blender,PlayCanvas" label="Blender,PlayCanvas" />
     <content type="html">
       <![CDATA[ <p>Build a kit of modular environment pieces that snap together on a grid, then use it to assemble a small scene.</p>
@@ -968,7 +968,7 @@ Become </summary>
     <updated>2026-10-07T20:20:52.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/lectures"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lectures"/>
     
     <content type="html">
       <![CDATA[ <p>Presentations that introduce the ideas behind a topic.</p>
@@ -981,7 +981,7 @@ Become </summary>
     <updated>2026-10-07T20:20:40.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary>Explore fundamental lighting principles and techniques for creating mood, atmosphere, and visual interest in 3D scenes.</summary>
-    <link href="https://localhost:3000/learning-materials/lessons/lighting-principles"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/lessons/lighting-principles"/>
     
     <content type="html">
       <![CDATA[ <p>Learn the fundamental principles of lighting in 3D, including light types, placement strategies, and techniques for creating compelling visual scenes.</p>
@@ -995,7 +995,7 @@ Become </summary>
     <updated>2026-10-08T15:09:10.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/exercises/texturing-the-airline-chair"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/exercises/texturing-the-airline-chair"/>
     <category term="Blender,Texturing" label="Blender,Texturing" />
     <content type="html">
       <![CDATA[ <p>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair.</p>
@@ -1037,7 +1037,7 @@ Become </summary>
     <updated>2026-10-08T15:09:11.000Z</updated>
     <published>2026-10-01T04:45:09.000Z</published>
     <summary></summary>
-    <link href="https://localhost:3000/learning-materials/projects/realtime-game-environment"/>
+    <link href="https://michaelcollins.xyz/learning-materials-hax/projects/realtime-game-environment"/>
     <category term="Blender,PlayCanvas,Github" label="Blender,PlayCanvas,Github" />
     <content type="html">
       <![CDATA[ <p>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player understand where they are, what happened there, who belongs there, and what kinds of actions are possible?</p>

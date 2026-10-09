@@ -1,24 +1,24 @@
 {
   "linkset": [
     {
-      "anchor": "https://localhost:3000/learning-materials/",
+      "anchor": "https://michaelcollins.xyz/learning-materials-hax/",
       "item": [
         {
-          "href": "https://localhost:3000/learning-materials/x/api",
+          "href": "https://michaelcollins.xyz/learning-materials-hax/x/api",
           "rel": "service"
         }
       ],
       "service-desc": [
         {
-          "href": "https://localhost:3000/learning-materials/x/api/openapi",
+          "href": "https://michaelcollins.xyz/learning-materials-hax/x/api/openapi",
           "type": "application/json"
         },
         {
-          "href": "https://localhost:3000/learning-materials/x/api/openapi.json",
+          "href": "https://michaelcollins.xyz/learning-materials-hax/x/api/openapi.json",
           "type": "application/json"
         },
         {
-          "href": "https://localhost:3000/learning-materials/x/api/openapi.yaml",
+          "href": "https://michaelcollins.xyz/learning-materials-hax/x/api/openapi.yaml",
           "type": "application/yaml"
         }
       ]
