@@ -6,8 +6,12 @@
  * fields hold the pitch (hero image, outcomes, tools, a note from the
  * instructor, questions, the enroll link) and its description is the
  * tagline. blocks/oer-course-site.js draws it; the theme shows it full width.
+ *
+ * A course has one site, switched on and off from the course page (and the
+ * site's own bar): on makes it the first time, then on and off publish and
+ * unpublish it, so what it says is kept while it's off.
  */
-import { createPage } from "../outline/outline-model.js";
+import { saveOutline, newItemId, starterContent } from "../outline/outline-model.js";
 
 export const COURSE_SITE_TYPE = "oer:course-site";
 const COURSE_TYPE = "oer:course";
@@ -126,11 +130,36 @@ export function siteData(site, items) {
   };
 }
 
-/** Make a course's site at /<code>, out of the navigation (a draft unless `publish`); HAXcms then opens it. */
-export async function createCourseSite(course, { publish = false } = {}) {
-  return createPage(course.title, null, COURSE_SITE_TYPE, {
-    location: siteSlug(course),
-    description: course.description || "",
-    metadata: { published: !!publish, hideInMenu: true, overridePathauto: true, oerFields: { course: [{ page: course.id, version: "" }] } },
-  });
+/** A course site is on when readers can see it. */
+export const siteIsOn = (site) => !!site && site.metadata?.published !== false;
+
+/** Show or hide a site for readers (its address stays). Resolves once saved. */
+export function setSiteOn(site, on) {
+  return saveOutline([{ ...site, metadata: { ...(site.metadata || {}), published: !!on, overridePathauto: true }, modified: true }]);
+}
+
+/**
+ * Turn a course's site on or off. The first time on makes it at /<code>,
+ * out of the navigation, without leaving the course page; its tagline is
+ * the course's description until it has its own. Resolves once saved.
+ */
+export async function setCourseSite(course, on, items) {
+  const site = siteForCourse(course, items);
+  if (site) return siteIsOn(site) === !!on || setSiteOn(site, on);
+  if (!on) return true;
+  return saveOutline([
+    {
+      id: newItemId(),
+      title: course.title,
+      parent: null,
+      indent: 0,
+      order: items.filter((i) => !i.parent).length,
+      slug: siteSlug(course),
+      location: "",
+      description: "",
+      metadata: { pageType: COURSE_SITE_TYPE, published: true, hideInMenu: true, overridePathauto: true, oerFields: { course: [{ page: course.id, version: "" }] } },
+      contents: starterContent(COURSE_SITE_TYPE),
+      new: true,
+    },
+  ]);
 }

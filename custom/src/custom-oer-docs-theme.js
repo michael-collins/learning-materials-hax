@@ -29,7 +29,7 @@ import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { newPage } from "./ui/oer-new-page.js";
 import { deletePage } from "./ui/oer-delete-page.js";
 import { typeListedOn } from "./types/type-homes.js";
-import { COURSE_SITE_TYPE, siteForCourse, createCourseSite } from "./types/course-site.js";
+import { COURSE_SITE_TYPE, siteForCourse, siteIsOn, siteSlug, setCourseSite } from "./types/course-site.js";
 import "./blocks/oer-course-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
@@ -148,6 +148,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _listing: { state: true },
       _courseSite: { state: true },
       _siteOfCourse: { state: true },
+      _siteSwitching: { state: true },
       _chaptersOpen: { state: true },
       _userName: { state: true },
       _activeTitle: { state: true },
@@ -186,6 +187,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this._listing = null;
     this._courseSite = null;
     this._siteOfCourse = undefined;
+    this._siteSwitching = "";
     this._chaptersOpen = false;
     this._pageMenuOpen = false;
     this.reader = false;
@@ -1269,6 +1271,84 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           width: 0.875rem;
           height: 0.875rem;
         }
+        /* a course page's course-site switch (shadcn Switch, as in Reader mode) */
+        .site-switch {
+          flex: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          height: 2rem;
+          margin-top: 0.375rem;
+          padding: 0 0.25rem 0 0.5rem;
+          font-family: var(--font-sans);
+          font-size: 0.8125rem;
+          font-weight: 500;
+          color: var(--foreground);
+        }
+        .site-switch .switch {
+          position: relative;
+          flex: none;
+          box-sizing: border-box;
+          width: 2.25rem;
+          height: 1.25rem;
+          padding: 0;
+          border: 1px solid var(--input-border, var(--border));
+          border-radius: 999px;
+          background: var(--muted);
+          cursor: pointer;
+        }
+        .site-switch label {
+          cursor: pointer;
+        }
+        .site-switch .switch[aria-checked="true"] {
+          border-color: var(--primary);
+          background: var(--primary);
+        }
+        .site-switch .switch[aria-disabled="true"] {
+          opacity: 0.6;
+          cursor: progress;
+        }
+        .site-switch .knob {
+          position: absolute;
+          top: 0.0625rem;
+          left: 0.0625rem;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 999px;
+          background: var(--background);
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+          transition: transform 0.15s ease;
+        }
+        .site-switch .switch[aria-checked="true"] .knob {
+          transform: translateX(1rem);
+        }
+        .site-switch .switch:focus-visible,
+        .site-switch .open:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 2px;
+        }
+        .site-switch .open {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          height: 1.75rem;
+          padding: 0 0.5rem;
+          border-radius: var(--radius-md);
+          color: var(--link, var(--primary));
+          text-decoration: none;
+        }
+        .site-switch .open:hover {
+          background: var(--accent);
+        }
+        .site-switch .open svg {
+          width: 0.875rem;
+          height: 0.875rem;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .site-switch .knob {
+            transition: none;
+          }
+        }
         .nav-edit:focus-visible {
           outline: 2px solid var(--ring);
           outline-offset: 1px;
@@ -2293,17 +2373,51 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
   }
 
-  // a course page: its site, or (for authors) a way to make one
+  // a course page: a link to its site for readers; for authors, the switch
+  // that turns the site on and off (a course has one; off keeps what it says)
   _renderCourseSiteLink() {
     const site = this._siteOfCourse;
-    if (site && (this._loggedIn || site.metadata?.published !== false)) {
-      return html`<a class="new-btn" href="${site.slug}">${icon.share}Course site</a>`;
+    const on = siteIsOn(site);
+    if (!this._loggedIn) return on ? html`<a class="new-btn" href="${site.slug}">${icon.share}Course site</a>` : "";
+    const switching = this._siteSwitching;
+    const shown = switching ? switching === "on" : on;
+    const course = (toJS(store.manifest?.items) || []).find((i) => i.id === store.activeId);
+    const where = `/${site?.slug || siteSlug(course)}`;
+    const hint = on
+      ? `On: readers see it at ${where}. Off hides it and keeps what it says.`
+      : site
+        ? `Off: readers can't see it. On shows it again at ${where}, as it was.`
+        : `On makes a page at ${where} that pitches this course to students.`;
+    return html`<span class="site-switch" title="${hint}">
+      <button
+        id="site-switch"
+        class="switch"
+        role="switch"
+        aria-checked="${shown ? "true" : "false"}"
+        aria-labelledby="site-switch-label"
+        aria-describedby="site-switch-hint"
+        aria-disabled="${switching ? "true" : "false"}"
+        @click="${this._toggleCourseSite}"
+      >
+        <span class="knob"></span>
+      </button>
+      <label id="site-switch-label" for="site-switch">${switching ? `Turning ${switching}…` : "Course site"}</label>
+      <span id="site-switch-hint" hidden>${hint}</span>
+      ${on && !switching ? html`<a class="open" href="${site.slug}">Open${icon.share}</a>` : ""}
+    </span>`;
+  }
+
+  async _toggleCourseSite() {
+    if (this._siteSwitching) return;
+    const items = toJS(store.manifest?.items) || [];
+    const course = items.find((i) => i.id === store.activeId);
+    if (!course) return;
+    this._siteSwitching = siteIsOn(this._siteOfCourse) ? "off" : "on";
+    try {
+      await setCourseSite(course, this._siteSwitching === "on", items);
+    } finally {
+      this._siteSwitching = "";
     }
-    if (!site && this._loggedIn) {
-      const course = (toJS(store.manifest?.items) || []).find((i) => i.id === store.activeId);
-      return html`<button class="new-btn" @click="${() => course && createCourseSite(course)}">${icon.plus}Create course site</button>`;
-    }
-    return "";
   }
 
   // this page on the published copy (its home when the page is a draft, so

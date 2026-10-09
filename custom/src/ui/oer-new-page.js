@@ -16,8 +16,11 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, allowedChildTypes, canContain, isSystemItem, isHeading, COURSE_TYPE } from "../types/content-types.js";
 import { groupedTypes, typeHint, homeOf, HOME_TITLES } from "../types/type-homes.js";
 import { createPage } from "../outline/outline-model.js";
-import { COURSE_SITE_TYPE, siteForCourse, siteSlug, createCourseSite } from "../types/course-site.js";
+import { COURSE_SITE_TYPE } from "../types/course-site.js";
 import { formControls } from "./form-controls.js";
+
+// a course's site is turned on from its course page, not made here (types/course-site.js)
+const notSite = (t) => t.id !== COURSE_SITE_TYPE;
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -42,7 +45,6 @@ class OerNewPage extends LitElement {
       _placeQuery: { state: true },
       _course: { state: true },
       _publish: { state: true },
-      _siteCourse: { state: true },
     };
   }
 
@@ -66,13 +68,12 @@ class OerNewPage extends LitElement {
     this._context = parent;
     const parentType = parent ? this._byId.get(parent)?.metadata?.pageType || null : null;
     // an "Add page" row offers what that level may hold
-    this._allowed = parent !== undefined ? allowedChildTypes(parentType, this._items) : contentTypes(this._items).types;
+    this._allowed = (parent !== undefined ? allowedChildTypes(parentType, this._items) : contentTypes(this._items).types).filter(notSite);
     this._query = "";
     this._title = "";
     this._placeQuery = "";
     this._course = "";
     this._publish = false;
-    this._siteCourse = "";
     this._fixedType = !!type;
     const only = !type && this._allowed.length === 1 ? this._allowed[0].id : "";
     this._pick(type || only || null);
@@ -95,7 +96,7 @@ class OerNewPage extends LitElement {
   }
 
   _types() {
-    return contentTypes(this._items).types;
+    return contentTypes(this._items).types.filter(notSite);
   }
 
   _pick(typeId) {
@@ -157,23 +158,8 @@ class OerNewPage extends LitElement {
 
   /* ---------- create ---------- */
 
-  // courses that don't have a site yet
-  _siteCourses() {
-    return this._items.filter((i) => i.metadata?.pageType === COURSE_TYPE && !i.metadata?.oerSnapshotOf && !siteForCourse(i, this._items));
-  }
-
   async _create(e) {
     e?.preventDefault();
-    if (this._type?.id === COURSE_SITE_TYPE) {
-      const course = this._byId.get(this._siteCourse);
-      if (!course) {
-        this.shadowRoot.querySelector("#site-course")?.focus();
-        return;
-      }
-      this._close();
-      await createCourseSite(course, { publish: this._publish });
-      return;
-    }
     const title = this._title.trim();
     if (!title || !this._type) {
       this.shadowRoot.querySelector("#title")?.focus();
@@ -230,56 +216,12 @@ class OerNewPage extends LitElement {
               </section>`,
             )
           : html`<p class="note">No type matches “${this._query}”.</p>`}
+        ${q.length > 2 && "course site".includes(q) && !"course".startsWith(q) ? html`<p class="note">A course's site is turned on with the Course site switch on the course's page.</p>` : ""}
       </div>
     `;
   }
 
-  // a course site: which course; its title and address come from the course
-  _renderSiteDetails() {
-    const t = this._type;
-    const courses = this._siteCourses();
-    const course = this._byId.get(this._siteCourse);
-    return html`
-      <form @submit="${this._create}">
-        <div class="chosen">
-          <span class="card-icon">${lucide(t.icon || "oer:file-text")}</span>
-          <span class="card-text">
-            <span class="card-title">${t.label}</span>
-            <span class="card-hint">${typeHint(t)}</span>
-          </span>
-          <button type="button" class="btn ghost" @click="${() => (this._step = "type")}">Change type</button>
-        </div>
-        ${courses.length
-          ? html`<label class="field">
-              <span class="label">Course</span>
-              <select id="site-course" required .value="${this._siteCourse}" @change="${(e) => (this._siteCourse = e.target.value)}">
-                <option value="">Choose a course</option>
-                ${courses.map((c) => html`<option value="${c.id}" ?selected="${this._siteCourse === c.id}">${c.title}</option>`)}
-              </select>
-              <span class="hint">Its title, facts and semester come from the course and its plan; you add the pitch afterwards.</span>
-            </label>`
-          : html`<p class="note">Every course has a site already.</p>`}
-        <label class="choice publish">
-          <input type="checkbox" .checked="${this._publish}" @change="${(e) => (this._publish = e.target.checked)}" />
-          <span><b>Publish now</b><span class="muted"> — otherwise it starts as a draft only signed-in authors see.</span></span>
-        </label>
-        <p class="summary" aria-live="polite">
-          ${lucide("icons:info")}<span>${course
-            ? html`Creates the site for <b>${course.title}</b> at <b>/${siteSlug(course)}</b>, ${this._publish ? "published" : "as a draft"}, and opens it.`
-            : html`Choose the course to create its site.`}</span>
-        </p>
-        <footer>
-          ${this._fixedType ? html`<span></span>` : html`<button type="button" class="btn outline" @click="${() => (this._step = "type")}">${lucide("oer:chevron-left")}Back</button>`}
-          <span class="spacer"></span>
-          <button type="button" class="btn outline" @click="${this._close}">Cancel</button>
-          <button type="submit" class="btn primary" aria-disabled="${course ? "false" : "true"}">${lucide("oer:plus")}Create course site</button>
-        </footer>
-      </form>
-    `;
-  }
-
   _renderDetails() {
-    if (this._type?.id === COURSE_SITE_TYPE) return this._renderSiteDetails();
     const t = this._type;
     const places = this._places();
     const others = this._otherPlaces();

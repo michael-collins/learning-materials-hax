@@ -12,7 +12,7 @@
  */
 import { html, css, LitElement, svg } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
-import { siteData } from "../types/course-site.js";
+import { siteData, siteIsOn, setSiteOn } from "../types/course-site.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { editPage } from "../editor/stock.js";
 
@@ -36,6 +36,7 @@ const ICONS = {
   sun: svg`<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/>`,
   moon: svg`<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>`,
   chevron: svg`<path d="m6 9 6 6 6-6"/>`,
+  eyeOff: svg`<path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/>`,
 };
 const icon = (name) => html`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
 // outcomes cycle through these
@@ -55,6 +56,7 @@ class OerCourseSite extends LitElement {
       _signedIn: { state: true },
       _dark: { state: true },
       _hasAbout: { state: true },
+      _switching: { state: true },
     };
   }
 
@@ -65,6 +67,7 @@ class OerCourseSite extends LitElement {
     this._signedIn = false;
     this._dark = false;
     this._hasAbout = false;
+    this._switching = "";
   }
 
   connectedCallback() {
@@ -93,6 +96,7 @@ class OerCourseSite extends LitElement {
 
   _recompute() {
     const site = (this._items || []).find((i) => i.id === this.site?.id) || this.site;
+    this._site = site;
     this._data = site ? siteData(site, this._items || []) : null;
   }
 
@@ -104,6 +108,17 @@ class OerCourseSite extends LitElement {
 
   _go(id) {
     this.shadowRoot.getElementById(id)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  }
+
+  // for authors: show or hide the site for readers (as the course page's switch does)
+  async _toggle() {
+    if (this._switching || !this._site) return;
+    this._switching = siteIsOn(this._site) ? "off" : "on";
+    try {
+      await setSiteOn(this._site, this._switching === "on");
+    } finally {
+      this._switching = "";
+    }
   }
 
   // for authors: what a section needs, when it's empty
@@ -118,7 +133,8 @@ class OerCourseSite extends LitElement {
       ["make", "What you'll make", d.projects.length || d.work.length],
       ["questions", "Questions", d.faq.length || this._signedIn],
     ].filter(([, , show]) => show);
-    const draft = this.site?.metadata?.published === false;
+    const on = siteIsOn(this._site);
+    const shown = this._switching ? this._switching === "on" : on;
     return html`<header class="bar">
       <div class="wrap bar-in">
         <a class="brand" href="./" title="Digital Arts OER home"><span class="mark" aria-hidden="true">${icon("book")}</span><span class="brand-name">Digital Arts OER</span></a>
@@ -126,7 +142,12 @@ class OerCourseSite extends LitElement {
         <nav class="links" aria-label="On this page">${sections.map(([id, label]) => html`<button @click="${() => this._go(id)}">${label}</button>`)}</nav>
         <span class="spacer"></span>
         ${this._signedIn
-          ? html`<span class="status ${draft ? "draft" : ""}">${draft ? "Draft" : "Published"}</span>
+          ? html`<span class="site-switch" title="${on ? "On: readers can see this course site." : "Off: only signed-in authors can see this course site."}">
+                <button id="site-on" class="switch" role="switch" aria-checked="${shown ? "true" : "false"}" aria-label="Course site" aria-disabled="${this._switching ? "true" : "false"}" @click="${this._toggle}">
+                  <span class="knob"></span>
+                </button>
+                <label for="site-on">${this._switching ? `Turning ${this._switching}…` : on ? "On" : "Off"}</label>
+              </span>
               <button class="btn ghost sm" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Edit details</span></button>
               <button class="btn ghost sm" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit page</span></button>`
           : ""}
@@ -323,6 +344,11 @@ class OerCourseSite extends LitElement {
     if (!d) return html``;
     return html`<div class="ms">
       ${this._renderBar(d)}
+      ${this._signedIn && !siteIsOn(this._site)
+        ? html`<p class="off-note" role="status">
+            <span class="wrap">${icon("eyeOff")}<span>This course site is off, so readers can't see it. Turn it on in the bar above or on the course page.</span></span>
+          </p>`
+        : ""}
       <main>
         ${this._renderHero(d)}
         <section class="section about" ?hidden="${!this._hasAbout}">
@@ -477,17 +503,72 @@ class OerCourseSite extends LitElement {
       .spacer {
         flex: 1;
       }
-      .status {
-        padding: 0.125rem 0.5rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
+      /* shadcn Switch, as on the course page */
+      .site-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8125rem;
         font-weight: 500;
-        color: var(--muted-foreground);
-        background: var(--muted);
+        white-space: nowrap;
       }
-      .status.draft {
-        color: light-dark(oklch(0.45 0.12 70), oklch(0.82 0.12 78));
-        background: color-mix(in srgb, oklch(0.62 0.15 70) 16%, transparent);
+      .site-switch label {
+        cursor: pointer;
+      }
+      .switch {
+        position: relative;
+        flex: none;
+        box-sizing: border-box;
+        width: 2.25rem;
+        height: 1.25rem;
+        padding: 0;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: 999px;
+        background: var(--muted);
+        cursor: pointer;
+      }
+      .switch[aria-checked="true"] {
+        border-color: var(--primary);
+        background: var(--primary);
+      }
+      .switch[aria-disabled="true"] {
+        opacity: 0.6;
+        cursor: progress;
+      }
+      .switch .knob {
+        position: absolute;
+        top: 0.0625rem;
+        left: 0.0625rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 999px;
+        background: var(--background);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+        transition: transform 0.15s ease;
+      }
+      .switch[aria-checked="true"] .knob {
+        transform: translateX(1rem);
+      }
+      .switch:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      .off-note {
+        margin: 0;
+        padding: 0.625rem 0;
+        border-bottom: 1px solid var(--border);
+        background: var(--muted);
+        font-size: 0.875rem;
+      }
+      .off-note .wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .switch .knob {
+          transition: none;
+        }
       }
       .btn {
         box-sizing: border-box;
