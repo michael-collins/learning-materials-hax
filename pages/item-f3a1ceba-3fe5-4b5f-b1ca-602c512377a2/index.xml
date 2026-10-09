@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f3a1ceba-3fe5-4b5f-b1ca-602c512377a2</id>
+<indent>0</indent>
+<location>pages/item-f3a1ceba-3fe5-4b5f-b1ca-602c512377a2/index.xml</location>
+<slug>book/dmd-100</slug>
+<order>1881</order>
+<parent></parent>
+<title>DMD 100: Digital Multimedia Design Foundations</title>
+<description></description>
+<metadata>
+<pageType>oer:book-site</pageType>
+<published>true</published>
+<hideInMenu>true</hideInMenu>
+<overridePathauto>true</overridePathauto>
+<oerFields>
+<book>
+<item>
+<page>item-69d4e331-f13a-4ee4-9c2e-1bba82279d67</page>
+<version></version>
+</item>
+</book>
+</oerFields>
+<created>1791571089</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791571089</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

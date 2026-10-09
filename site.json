@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791570863,
+      "updated": 1791571090,
       "version": "26.8.0"
     },
     "theme": {
@@ -37216,6 +37216,34 @@
         "images": [],
         "videos": [],
         "updated": 1791568330
+      }
+    },
+    {
+      "id": "item-f3a1ceba-3fe5-4b5f-b1ca-602c512377a2",
+      "indent": 0,
+      "location": "pages/item-f3a1ceba-3fe5-4b5f-b1ca-602c512377a2/index.html",
+      "slug": "book/dmd-100",
+      "order": 1881,
+      "parent": null,
+      "title": "DMD 100: Digital Multimedia Design Foundations",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:book-site",
+        "published": true,
+        "hideInMenu": true,
+        "overridePathauto": true,
+        "oerFields": {
+          "book": [
+            {
+              "page": "item-69d4e331-f13a-4ee4-9c2e-1bba82279d67",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1791571089,
+        "images": [],
+        "videos": [],
+        "updated": 1791571089
       }
     }
   ]
