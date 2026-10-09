@@ -1651,6 +1651,22 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           font-size: var(--reader-size, 19px);
           line-height: var(--reader-leading, 1.7);
         }
+        /* Text dimming (ui/oer-reader.js): the chapter's text, headings,
+           muted text and links mixed toward the page colour, each by its
+           own amount so none goes below AA */
+        :host([reader]) {
+          --reader-ink: var(--foreground);
+          --reader-card-ink: var(--card-foreground);
+          --reader-muted-ink: var(--muted-foreground);
+          --reader-link-ink: var(--link);
+        }
+        :host([reader]) article {
+          --foreground: color-mix(in oklab, var(--reader-ink) calc(100% - var(--reader-dim, 0%)), var(--background));
+          --card-foreground: color-mix(in oklab, var(--reader-card-ink) calc(100% - var(--reader-dim, 0%)), var(--card));
+          --muted-foreground: color-mix(in oklab, var(--reader-muted-ink) calc(100% - var(--reader-dim-muted, 0%)), var(--background));
+          --link: color-mix(in oklab, var(--reader-link-ink) calc(100% - var(--reader-dim-link, 0%)), var(--background));
+          color: var(--foreground);
+        }
         :host([reader]) :is(.pager, oer-page-footer) {
           font-family: var(--font-sans);
           line-height: 1.5;
@@ -2238,7 +2254,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
     if (changed.has("reader") || changed.has("_readerSettings") || changed.has("dark")) {
       const vars = this.reader ? readerVars(this._effectiveReaderSettings()) : {};
-      for (const name of ["--reader-size", "--reader-measure", "--reader-leading", "--reader-font", "--reader-texture"]) {
+      for (const name of ["--reader-size", "--reader-measure", "--reader-leading", "--reader-font", "--reader-texture", "--reader-dim", "--reader-dim-muted", "--reader-dim-link"]) {
         if (vars[name]) this.style.setProperty(name, vars[name]);
         else this.style.removeProperty(name);
       }

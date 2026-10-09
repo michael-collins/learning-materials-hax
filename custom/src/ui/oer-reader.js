@@ -3,7 +3,8 @@
  * sidebar and site chrome, sets the chapter in a comfortable column, and
  * shows this bar instead of the top bar: Exit, the book and where you are
  * in it, Contents (the book's outline) and Text (size, typeface, line
- * width, line spacing, page colour, texture). Each chapter is still a real page, so
+ * width, line spacing, page colour, text dimming, texture). Each chapter is
+ * still a real page, so
  * links, Back, footnotes and quizzes work as usual.
  *
  *   <oer-reader-bar .book=${item} .position=${{ index, total }} .prev=${item} .next=${item}
@@ -19,7 +20,7 @@ import "../outline/oer-site-nav.js";
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
-export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light", texture: false, textureStrength: 1 };
+export const READER_DEFAULTS = { size: 1, font: "serif", width: "medium", spacing: "normal", colour: "light", texture: false, textureStrength: 1, dim: 0 };
 const SIZES = [17, 19, 21, 24]; // px
 const WIDTHS = { narrow: "60ch", medium: "68ch", wide: "80ch" };
 const SPACINGS = { normal: 1.7, relaxed: 1.95 };
@@ -68,6 +69,75 @@ export function textureFor(colour, strength = 1) {
   return textureCache.get(key);
 }
 
+// Text dimming, for bright screens: the text mixed toward its page colour
+// (in oklab, as the theme's color-mix does). The reader picks how far, as
+// a share of the most each page allows: text, muted text and links each
+// keep AA (4.5:1, with a little margin for rounding) on the grain's darkest
+// (or, on Dark, lightest) speck at the texture's strength, and on the
+// page's card and muted surfaces, so the page dims evenly. Each page's
+// colours, as the theme sets them (Light's are mostly the site's own
+// tokens), and its grain's most opaque speck at strength 1, measured at 1x,
+// 2x and 3x
+const INK = {
+  light: { page: "#ffffff", surfaces: ["#f7f8f8", "#e5e5e6"], text: "#0f1419", muted: "#50565c", link: "#0062a3", speck: 0.1373 },
+  paper: { page: "#f8f5ec", surfaces: ["#f1ece0", "#ede6d8"], text: "#2f2a22", muted: "#645a4a", link: "#1d4f91", speck: 0.1725 },
+  sepia: { page: "#f6efe1", surfaces: ["#efe6d3", "#ebe1cc"], text: "#3a2e20", muted: "#675642", link: "#0f5596", speck: 0.2 },
+  dark: { page: "#16181d", surfaces: ["#1d2026", "#23262d"], text: "#e3e1dc", muted: "#a3a7ae", link: "#7cb4f0", speck: 0.1608 },
+};
+const AA = 4.6;
+const rgbOf = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
+const toLinear = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+const toGamma = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055);
+const luminance = (rgb) => {
+  const [r, g, b] = rgb.map(toLinear);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+};
+const ratio = (a, b) => {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+};
+function toOklab(rgb) {
+  const [r, g, b] = rgb.map(toLinear);
+  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+  const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+  const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+  return [0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s, 1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s];
+}
+function fromOklab([L, a, b]) {
+  const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+  const m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+  const s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3;
+  return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s].map((c) =>
+    Math.min(1, Math.max(0, toGamma(Math.max(0, c)))),
+  );
+}
+const dimCache = new Map();
+/** The most a page's text, muted text and links can each be mixed toward its background (0 to 1) and keep AA. */
+export function dimLimits(colour, texture, strength) {
+  const ink = INK[colour] || INK.light;
+  const speck = texture ? ink.speck * textureStrength(colour, strength) : 0;
+  const key = `${colour}:${speck}`;
+  if (!dimCache.has(key)) {
+    const page = rgbOf(ink.page);
+    const pageLab = toOklab(page);
+    const grain = FILTERS[colour]?.rgb || [0, 0, 0];
+    const behind = [page.map((v, i) => v * (1 - speck) + grain[i] * speck), ...ink.surfaces.map(rgbOf)];
+    const keepsAA = (lab, d) => {
+      const rgb = fromOklab(lab.map((v, i) => v * (1 - d) + pageLab[i] * d));
+      return behind.every((bg) => ratio(rgb, bg) >= AA);
+    };
+    const limit = (hex) => {
+      const lab = toOklab(rgbOf(hex));
+      let d = 0;
+      while (d + 0.005 < 1 && keepsAA(lab, d + 0.005)) d += 0.005;
+      return d;
+    };
+    dimCache.set(key, { text: limit(ink.text), muted: limit(ink.muted), link: limit(ink.link) });
+  }
+  return dimCache.get(key);
+}
+const dimShare = (dim) => Math.min(Math.max(Number(dim) || 0, 0), 1);
+
 export function loadReaderSettings() {
   try {
     const stored = JSON.parse(globalThis.localStorage.getItem(KEY) || "{}");
@@ -99,7 +169,16 @@ export function readerVars(s) {
     "--reader-leading": String(SPACINGS[s.spacing] || SPACINGS.normal),
     "--reader-font": FONTS[s.font] || FONTS.serif,
     "--reader-texture": s.texture ? textureFor(s.colour, s.textureStrength) : "",
+    ...dimVars(s),
   };
+}
+
+// how far toward the page each kind of text goes, as color-mix percentages
+function dimVars(s) {
+  const share = dimShare(s.dim);
+  const limits = share ? dimLimits(s.colour, s.texture, s.textureStrength) : null;
+  const pct = (role) => (limits ? `${(share * limits[role] * 100).toFixed(1)}%` : "");
+  return { "--reader-dim": pct("text"), "--reader-dim-muted": pct("muted"), "--reader-dim-link": pct("link") };
 }
 
 class OerReaderBar extends LitElement {
@@ -201,6 +280,29 @@ class OerReaderBar extends LitElement {
     </div>`;
   }
 
+  // text dimming: how far toward the page colour, as a share of the most
+  // that keeps AA on this page (with its texture)
+  _renderDim() {
+    const value = Math.round(dimShare(this.settings.dim) * 100);
+    const label = value ? `${value}%` : "Off";
+    return html`<div class="setting">
+      <span class="setting-label row"><label for="text-dim">Text dimming</label><output for="text-dim">${label}</output></span>
+      <input
+        id="text-dim"
+        class="range"
+        type="range"
+        min="0"
+        max="100"
+        step="5"
+        .value="${String(value)}"
+        aria-valuetext="${label}"
+        aria-describedby="text-dim-hint"
+        @input="${(e) => this._set("dim", Number(e.target.value) / 100)}"
+      />
+      <span class="hint" id="text-dim-hint">Softens text and links toward the page colour, for bright screens. At most they keep AA contrast.</span>
+    </div>`;
+  }
+
   // a page turn: a link to the page (the router, Back and new tabs work),
   // or a disabled button at either end of the book, so nothing moves
   _arrow(page, label, iconName) {
@@ -275,6 +377,7 @@ class OerReaderBar extends LitElement {
                 this.settings.texture ? `background-image: ${textureFor(c, this.settings.textureStrength)}` : "",
               ]),
             )}
+            ${this._renderDim()}
             <div class="setting row">
               <span class="setting-label" id="lbl-texture">Texture</span>
               <button
