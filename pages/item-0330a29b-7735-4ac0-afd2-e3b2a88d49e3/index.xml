@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3</id>
+<indent>0</indent>
+<location>pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.xml</location>
+<slug>dart-413</slug>
+<order>1879</order>
+<parent></parent>
+<title>DART 413: Digital Fabrication Studio</title>
+<description>Digital Fabrication Studio, 4 credits.</description>
+<metadata>
+<published>false</published>
+<hideInMenu>true</hideInMenu>
+<overridePathauto>true</overridePathauto>
+<oerFields>
+<course>
+<item>
+<page>item-e09826f0-d716-4612-807a-2bbfcff22b36</page>
+<version></version>
+</item>
+</course>
+</oerFields>
+<pageType>oer:course-site</pageType>
+<created>1791560758</created>
+<updated>1791560758</updated>
+<images>
+</images>
+<videos>
+</videos>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

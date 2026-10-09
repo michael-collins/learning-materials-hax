@@ -1,0 +1,22 @@
+id: item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3
+indent: 0
+location: pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.yaml
+slug: dart-413
+order: 1879
+parent: null
+title: 'DART 413: Digital Fabrication Studio'
+description: Digital Fabrication Studio, 4 credits.
+metadata:
+  published: false
+  hideInMenu: true
+  overridePathauto: true
+  oerFields:
+    course:
+      - page: item-e09826f0-d716-4612-807a-2bbfcff22b36
+        version: ''
+  pageType: oer:course-site
+  created: 1791560758
+  updated: 1791560758
+  images: []
+  videos: []
+content: <p></p>
