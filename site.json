@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791519457,
+      "updated": 1791519489,
       "version": "26.8.0"
     },
     "theme": {
@@ -6740,7 +6740,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M01:L21",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-cf74e241-cda4-4eff-a5d1-14b9cf701571",
           "version": ""
@@ -6748,7 +6748,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519458,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6763,7 +6766,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M01:A01",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-4de26b66-7085-448a-ac92-f32fbf38f8f9",
           "version": ""
@@ -6771,7 +6774,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519459,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6786,7 +6792,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M01:A12",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-5117d4e6-e938-41a9-b976-858e75347ae5",
           "version": ""
@@ -6794,7 +6800,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519460,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6901,7 +6910,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:book:M02:L04",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
           "version": ""
@@ -6909,7 +6918,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519461,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6924,7 +6936,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:book:M03:L06",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-273da091-602a-4824-86cc-a45fc9346115",
           "version": ""
@@ -6932,7 +6944,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519466,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6947,7 +6962,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M04:L08",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
           "version": ""
@@ -6955,7 +6970,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519470,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6970,7 +6988,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M05:L08",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-389a18e8-e515-4482-ae7b-9a56687cb460",
           "version": ""
@@ -6978,7 +6996,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519473,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -6993,7 +7014,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:book:M06:L09",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
           "version": ""
@@ -7001,7 +7022,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519475,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -7016,7 +7040,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:book:M07:L12",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f",
           "version": ""
@@ -7024,7 +7048,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519481,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -7039,7 +7066,7 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerPlan": "DART 413:book:M08:L13",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
           "version": ""
@@ -7047,7 +7074,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519484,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -7062,7 +7092,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:book:M09:L14",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
           "version": ""
@@ -7070,7 +7100,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519487,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10083,7 +10116,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M02:L05",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
           "version": ""
@@ -10091,7 +10124,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519462,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10106,7 +10142,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M02:A02",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-e57bcbe5-efcd-42a7-a223-b05dea0dc123",
           "version": ""
@@ -10114,7 +10150,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519463,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10129,7 +10168,7 @@
       "metadata": {
         "pageType": "oer:quiz",
         "oerPlan": "DART 413:book:M02:quiz:M02",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
           "version": ""
@@ -10137,7 +10176,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519464,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10221,7 +10263,7 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerPlan": "DART 413:book:M03:L07",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-4876f604-977f-4e7d-a5c3-cc6b37063ec8",
           "version": ""
@@ -10229,7 +10271,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519467,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10244,7 +10289,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M04:L19",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
           "version": ""
@@ -10252,7 +10297,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519471,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10267,7 +10315,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M05:A13",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-d0feb7bc-5515-4f9a-8e3e-c2eb16672180",
           "version": ""
@@ -10275,7 +10323,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519474,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10290,7 +10341,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M06:L10",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
           "version": ""
@@ -10298,7 +10349,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519476,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10313,7 +10367,7 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerPlan": "DART 413:book:M07:L13",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
           "version": ""
@@ -10321,7 +10375,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519482,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10336,7 +10393,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M08:L19",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
           "version": ""
@@ -10344,7 +10401,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519485,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -10359,7 +10419,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:book:M09:L15",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
           "version": ""
@@ -10367,7 +10427,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519488,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -16589,7 +16652,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M03:A03",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-a16965e6-def0-4f61-b884-a46300037a08",
           "version": ""
@@ -16597,7 +16660,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519468,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -16612,7 +16678,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M03:A14",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-bdd37b96-f590-4a7b-aad8-5a32e85230ad",
           "version": ""
@@ -16620,7 +16686,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519469,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -16658,7 +16727,7 @@
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:book:M04:A04",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-59547add-790e-4255-a3f0-962065b0064f",
           "version": ""
@@ -16666,7 +16735,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519472,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -16681,7 +16753,7 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerPlan": "DART 413:book:M06:L11",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
           "version": ""
@@ -16689,7 +16761,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519477,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -16704,7 +16779,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M07:A06",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-f5669ca1-8a62-4854-908c-925e14b7eecb",
           "version": ""
@@ -16712,7 +16787,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519483,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -16727,7 +16805,7 @@
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:book:M08:A07",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-e8448268-7180-455f-ba52-360dd73d16f6",
           "version": ""
@@ -16735,7 +16813,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519486,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -18578,7 +18659,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:book:M06:A05",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-c825cd46-0d5b-48eb-90bd-6e0dcfc4ea21",
           "version": ""
@@ -18586,7 +18667,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519478,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -23032,7 +23116,7 @@
       "metadata": {
         "pageType": "oer:quiz",
         "oerPlan": "DART 413:book:M06:quiz:M06",
-        "published": false,
+        "published": true,
         "oerRef": {
           "page": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
           "version": ""
@@ -23040,7 +23124,10 @@
         "created": 1791383990,
         "images": [],
         "videos": [],
-        "updated": 1791383990
+        "updated": 1791519479,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
