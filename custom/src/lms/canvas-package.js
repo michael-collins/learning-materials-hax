@@ -230,11 +230,47 @@ const readableDate = (local) => {
   return `${day}, ${((h + 11) % 12) + 1}:${String(m).padStart(2, "0")} ${h < 12 ? "am" : "pm"}`;
 };
 
+/* ---------- the site's address ---------- */
+
+/** A site address as typed, made whole: https:// when no scheme, a trailing slash. "" if it isn't one. */
+export function siteAddress(raw) {
+  const v = String(raw || "").trim();
+  if (!v) return "";
+  try {
+    const u = new URL(/^[a-z][a-z0-9+.-]*:\/\//i.test(v) ? v : `https://${v}`);
+    if (!/^https?:$/.test(u.protocol)) return "";
+    u.pathname = u.pathname.replace(/\/?$/, "/");
+    u.search = "";
+    u.hash = "";
+    return u.href;
+  } catch {
+    return "";
+  }
+}
+
+/**
+ * Why embedded pages wouldn't load in Canvas from this address, if they
+ * wouldn't: Canvas pages are https, so an http frame is blocked, and so is
+ * a github.io address GitHub forwards to the site's own domain (it forwards
+ * over http). `domain`: the site's own address (Settings → Domain).
+ */
+export function addressProblem(url, domain = "") {
+  const u = siteAddress(url);
+  if (!u) return url ? "That isn't a web address." : "";
+  const { protocol, hostname } = new URL(u);
+  if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(hostname)) return "This is a local address: embedded pages only load in Canvas from the site's public address.";
+  if (protocol === "http:") return "Canvas pages are https, so browsers block embedded pages from an http address. Use the https address.";
+  const own = siteAddress(domain);
+  if (/\.github\.io$/.test(hostname) && own && new URL(own).hostname !== hostname)
+    return `GitHub forwards this address to the site's own domain over http, which Canvas blocks. Use ${own} instead.`;
+  return "";
+}
+
 /* ---------- the package ---------- */
 
 export async function buildCanvasPackage({ offering, items, htmlOf = async () => "", fileOf = async () => null, includeDrafts = false, siteName = "Digital Arts OER" }) {
   const tz = offering.timeZone || "UTC";
-  const siteUrl = offering.siteUrl || "";
+  const siteUrl = siteAddress(offering.siteUrl);
   const byId = new Map(items.map((i) => [i.id, i]));
   const publish = offering.publish !== false;
   const files = [];
@@ -245,6 +281,7 @@ export async function buildCanvasPackage({ offering, items, htmlOf = async () =>
   const key = (...parts) => makeId([offering.code, offering.term, ...parts].join("|"));
 
   if (!siteUrl) warnings.push("No public site address (siteUrl): embedded pages and links point at relative paths and won't load in Canvas.");
+  else if (addressProblem(siteUrl, offering.siteDomain)) warnings.push(addressProblem(siteUrl, offering.siteDomain));
   if (DELIVERY_MODES[offering.delivery]?.meets && !(offering.meetings || []).length) {
     const firstClass = (offering.defaults?.dueRule || "first-class") === "first-class";
     warnings.push(`No class meetings given, so the Canvas calendar won't list class sessions${firstClass ? ", and assignments due at the first class fall on the usual day and time instead" : ""}.`);

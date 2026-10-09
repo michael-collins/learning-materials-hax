@@ -40,8 +40,12 @@ jobs:
           npm pack "@haxtheweb/haxcms-nodejs@${HAX_VERSION}" --silent
           tar -xzf "haxtheweb-haxcms-nodejs-${HAX_VERSION}.tgz" package/dist/public
 
+      # links for the site's own address (Settings → Domain), else GitHub's
+      # (which is http when the account's domain is proxied, as here)
       - name: Build the published copy
-        run: node scripts/build-pages.mjs "$RUNNER_TEMP/site" --hax-build package/dist/public --domain "${{ steps.pages.outputs.base_url }}/"
+        run: |
+          DOMAIN=$(node -p 'require("./site.json").metadata?.site?.domain || ""')
+          node scripts/build-pages.mjs "$RUNNER_TEMP/site" --hax-build package/dist/public --domain "${DOMAIN:-${{ steps.pages.outputs.base_url }}/}"
 
       - uses: actions/upload-pages-artifact@v3
         with:

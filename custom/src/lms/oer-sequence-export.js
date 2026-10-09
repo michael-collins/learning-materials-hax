@@ -12,7 +12,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { buildCanvasPackage } from "./canvas-package.js";
+import { buildCanvasPackage, siteAddress, addressProblem } from "./canvas-package.js";
 import { zipBytes } from "./zip.js";
 import { download } from "../books/book-export.js";
 import { toOffering, readiness, sequenceWeeks, sequenceOf } from "./sequence-model.js";
@@ -84,8 +84,11 @@ class OerSequenceExport extends LitElement {
     } catch {
       saved = null;
     }
-    const domain = toJS(store.manifest?.metadata?.site?.domain) || "";
-    this._run = { ...blankRun(), siteUrl: domain || new URL(".", globalThis.document.baseURI).href, ...(saved || {}) };
+    // the site's own address (Settings → Domain) wins over one remembered
+    // from an earlier export, which may be out of date
+    const domain = siteAddress(toJS(store.manifest?.metadata?.site?.domain));
+    this.__domain = domain;
+    this._run = { ...blankRun(), ...(saved || {}), siteUrl: domain || saved?.siteUrl || new URL(".", globalThis.document.baseURI).href };
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
     this.updateComplete.then(() => this.shadowRoot.querySelector("#start")?.focus());
@@ -135,7 +138,7 @@ class OerSequenceExport extends LitElement {
           return null;
         }
       };
-      const { files, report } = await buildCanvasPackage({ offering, items: all, htmlOf, fileOf });
+      const { files, report } = await buildCanvasPackage({ offering: { ...offering, siteDomain: this.__domain }, items: all, htmlOf, fileOf });
       const name = `${(page.slug.split("/").pop() || "sequence").replace(/[^a-z0-9-]+/gi, "-")}${this._run.term ? `-${this._run.term.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}` : ""}.imscc`;
       download(new Blob([zipBytes(files)], { type: "application/zip" }), name);
       this._done = { name, ...report };
@@ -469,7 +472,7 @@ class OerSequenceExport extends LitElement {
     const missing = !r.start || !r.end;
     const checks = missing ? [] : readiness(page, all, r);
     const available = r.start && r.end ? weeksAvailable({ ...r, weeks }) : 0;
-    const local = /\/\/(localhost|127\.0\.0\.1)/.test(r.siteUrl || "");
+    const addressHint = addressProblem(r.siteUrl, this.__domain);
     const modules = sequenceOf(page).modules.length;
     return html`
       <div class="backdrop" @click="${this._close}"></div>
@@ -512,7 +515,7 @@ class OerSequenceExport extends LitElement {
             </label>
             <label class="field">Site address<input class="input" type="url" .value="${r.siteUrl}" @input="${(e) => this._set({ siteUrl: e.target.value })}" /></label>
           </div>
-          ${local ? html`<p class="hint">This is a local address: embedded pages only load in Canvas from the site's public address.</p>` : ""}
+          ${addressHint ? html`<p class="hint">${addressHint}</p>` : ""}
           <label class="choice"><input type="checkbox" .checked="${r.publish !== false}" @change="${(e) => this._set({ publish: e.target.checked })}" />Publish modules, pages and assignments on import</label>
           <div>
             <h3>Before you export</h3>
