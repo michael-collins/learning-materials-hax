@@ -1,1 +1,24 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme. It must stand, hold together without adhesive where possible, and be finished. Iterate through at least two prototypes in chipboard before the final cut.</p><h2>Theme: Sheet to form</h2><p>Turning flat sheet material into three-dimensional objects: sections, folds, slots, press-fit, living hinges. The classic 2D→3D problem of laser cutting.</p><p>Techniques: Laser cutting; vector drawing; sectioning and joinery; finishing</p><h2>What to hand in</h2><ul><li>The object</li><li>Two prototypes (or photos of them)</li><li>Process documentation: sketches, files, settings, failures</li></ul><h2>What you'll practise</h2><ul><li>Move from 2D drawing to 3D form deliberately</li><li>Iterate with prototypes</li><li>Finish and document a fabricated object</li></ul><p>Time: 2 weeks + crit</p></oer-draft>
+Make a three-dimensional object from flat sheet material using sectioning, folding, or joinery, responding to the theme. It must stand, hold together without adhesive where possible, and be finished. Iterate through at least two prototypes in chipboard before the final cut.
+
+Theme: Sheet to form
+--------------------
+
+Turning flat sheet material into three-dimensional objects: sections, folds, slots, press-fit, living hinges. The classic 2D→3D problem of laser cutting.
+
+Techniques: Laser cutting; vector drawing; sectioning and joinery; finishing
+
+What to hand in
+---------------
+
+*   The object
+*   Two prototypes (or photos of them)
+*   Process documentation: sketches, files, settings, failures
+
+What you'll practise
+--------------------
+
+*   Move from 2D drawing to 3D form deliberately
+*   Iterate with prototypes
+*   Finish and document a fabricated object
+
+Time: 2 weeks + crit

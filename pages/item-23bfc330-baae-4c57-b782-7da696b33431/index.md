@@ -1,1 +1,13 @@
-<oer-draft note="Week 8 from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Project 2 brief; series, editions, variation; precedents; mid-term review of process documentation.</p><h2>Ideas</h2><p>The multiple in art and design (edition, series, generative variation); the digital copy and authorship; distributed manufacturing and file sharing.</p><h2>In class</h2><ul><li>Brief + precedents (40)</li><li>mid-term documentation review (60)</li><li>proposal work (70)</li></ul></oer-draft>
+Project 2 brief; series, editions, variation; precedents; mid-term review of process documentation.
+
+Ideas
+-----
+
+The multiple in art and design (edition, series, generative variation); the digital copy and authorship; distributed manufacturing and file sharing.
+
+In class
+--------
+
+*   Brief + precedents (40 min)
+*   mid-term documentation review (60 min)
+*   proposal work (70 min)

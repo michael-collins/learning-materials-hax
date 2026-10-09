@@ -1,1 +1,13 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>For each required reading, a 200–300-word response that connects one idea in the text to something you made or saw in the shop that week.</p><h2>What to hand in</h2><ul><li>Responses posted before the class that discusses the reading</li></ul><h2>What you'll practise</h2><ul><li>Read theory against practice</li></ul><p>Time: recurring</p></oer-draft>
+For each required reading, a 200–300-word response that connects one idea in the text to something you made or saw in the shop that week.
+
+What to hand in
+---------------
+
+*   Responses posted before the class that discusses the reading
+
+What you'll practise
+--------------------
+
+*   Read theory against practice
+
+Time: recurring

@@ -1,1 +1,1 @@
-<oer-draft note="Outline from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Line weights and colors for cut/score/engrave; units; kerf by material; nesting; approved and forbidden materials. Draft via R006.</p></oer-draft>
+Line weights and colors for cut/score/engrave; units; kerf by material; nesting; approved and forbidden materials. Draft via R006.

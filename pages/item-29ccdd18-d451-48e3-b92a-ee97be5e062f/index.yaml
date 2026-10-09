@@ -5,14 +5,15 @@ slug: lessons/subtractive-cnc-routing
 order: 41
 parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
 title: 'Subtractive: CNC routing'
-description: ''
+description: 2.5D vs.
 metadata:
   pageType: oer:lesson
   oerPlan: DART 413:M09
-  published: false
+  published: true
   oerFields:
     courses:
-      - DART 413
+      - page: item-e09826f0-d716-4612-807a-2bbfcff22b36
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -23,25 +24,28 @@ metadata:
       - Choose bits and feeds for a material
       - Explain fixturing and safety for CNC
     estimatedDuration: 1 week
+    components:
+      - page: item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e
+        version: ''
+      - page: item-304740f9-f09f-4e1c-94dd-84eead792e87
+        version: ''
+      - page: item-70652b2f-07b2-489b-a0fa-e1f7f341ec91
+        version: ''
+      - page: item-6d67a392-9c2e-4070-bb24-8fed224e3774
+        version: ''
+    readings: []
   created: 1791383988
   images: []
   videos: []
-  updated: 1791383988
-content: >
-  <oer-draft note="Week 9 from the DART 413 course plan. Revise it, then Publish
-  to show it to readers.">
-
+  updated: 1791518094
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>2.5D vs. 3D milling; toolpaths; bits; feeds and speeds; fixturing, tabs,
-  and zeroing; materials; CAM workflow; the CNC job with the lab tech.</p>
-
-  <h2>Ideas</h2>
-
-  <p>Subtractive constraints (tool radius, reach, undercuts); the toolpath as
-  drawing at scale; stock, waste, and nesting; relief and topography.</p>
-
-  <h2>In class</h2>
-
-  <ul><li>Lecture (35)</li><li>CAM demo (40)</li><li>CNC run with the tech
-  (60)</li><li>relief exercise starts</li></ul>
-
-  </oer-draft>
+  and zeroing; materials; CAM workflow; the CNC job with the lab
+  tech.</p><h2>Ideas</h2><p>Subtractive constraints (tool radius, reach,
+  undercuts); the toolpath as drawing at scale; stock, waste, and nesting;
+  relief and topography.</p><h2>In class</h2><ul><li>Lecture (35
+  min)</li><li>CAM demo (40 min)</li><li>CNC run with the tech (60
+  min)</li><li>relief exercise starts</li></ul>

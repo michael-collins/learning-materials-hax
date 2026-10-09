@@ -6,14 +6,17 @@
   "order": 40,
   "parent": "item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6",
   "title": "Project 2 launch: Multiples and variation",
-  "description": "",
+  "description": "Project 2 brief; series, editions, variation; precedents; mid-term review of process documentation.",
   "metadata": {
     "pageType": "oer:lesson",
     "oerPlan": "DART 413:M08",
-    "published": false,
+    "published": true,
     "oerFields": {
       "courses": [
-        "DART 413"
+        {
+          "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -28,12 +31,43 @@
         "Plan print time and a material budget",
         "Present process documentation"
       ],
-      "estimatedDuration": "1 week"
+      "estimatedDuration": "1 week",
+      "components": [
+        {
+          "page": "item-f570ed6c-e171-4a20-af0f-58c5e61fceb7",
+          "version": ""
+        },
+        {
+          "page": "item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944",
+          "version": ""
+        },
+        {
+          "page": "item-e8448268-7180-455f-ba52-360dd73d16f6",
+          "version": ""
+        }
+      ],
+      "readings": [
+        {
+          "page": "item-a736e35a-581d-40fb-8d77-eb137a06c7e7",
+          "version": ""
+        },
+        {
+          "page": "item-5898b795-f4da-441d-aa3b-929668d03a7d",
+          "version": ""
+        },
+        {
+          "page": "item-4208204c-37a2-4060-adb2-c094b8de1cc3",
+          "version": ""
+        }
+      ]
     },
     "created": 1791383988,
     "images": [],
     "videos": [],
-    "updated": 1791383988
+    "updated": 1791518091,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<oer-draft note=\"Week 8 from the DART 413 course plan. Revise it, then Publish to show it to readers.\">\n<p>Project 2 brief; series, editions, variation; precedents; mid-term review of process documentation.</p>\n<h2>Ideas</h2>\n<p>The multiple in art and design (edition, series, generative variation); the digital copy and authorship; distributed manufacturing and file sharing.</p>\n<h2>In class</h2>\n<ul><li>Brief + precedents (40)</li><li>mid-term documentation review (60)</li><li>proposal work (70)</li></ul>\n</oer-draft>\n"
+  "content": "<p>Project 2 brief; series, editions, variation; precedents; mid-term review of process documentation.</p><h2>Ideas</h2><p>The multiple in art and design (edition, series, generative variation); the digital copy and authorship; distributed manufacturing and file sharing.</p><h2>In class</h2><ul><li>Brief + precedents (40 min)</li><li>mid-term documentation review (60 min)</li><li>proposal work (70 min)</li></ul>"
 }

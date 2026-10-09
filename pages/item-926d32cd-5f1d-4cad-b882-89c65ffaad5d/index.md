@@ -1,1 +1,13 @@
-<oer-draft note="Week 2 from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Vector drawing for fabrication (Illustrator); cut / score / engrave; line weight and color conventions; units and scale; kerf; nesting; the laser workflow and certification.</p><h2>Ideas</h2><p>Vector vs. raster; the toolpath as a drawing; kerf and material loss; power/speed/frequency as design variables; material behavior under heat; approved and forbidden materials.</p><h2>In class</h2><ul><li>Lecture (30)</li><li>laser demo + certification (60)</li><li>material test cut (60)</li></ul></oer-draft>
+Vector drawing for fabrication (Illustrator); cut / score / engrave; line weight and color conventions; units and scale; kerf; nesting; the laser workflow and certification.
+
+Ideas
+-----
+
+Vector vs. raster; the toolpath as a drawing; kerf and material loss; power/speed/frequency as design variables; material behavior under heat; approved and forbidden materials.
+
+In class
+--------
+
+*   Lecture (30 min)
+*   laser demo + certification (60 min)
+*   material test cut (60 min)
