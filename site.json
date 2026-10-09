@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791578336,
+      "updated": 1791578338,
       "version": "26.8.0"
     },
     "theme": {
@@ -37244,7 +37244,7 @@
       "order": 22,
       "parent": null,
       "title": "Programs",
-      "description": "",
+      "description": "Each degree program and the courses that count toward it.",
       "metadata": {
         "pageType": "oer:section",
         "published": true,
