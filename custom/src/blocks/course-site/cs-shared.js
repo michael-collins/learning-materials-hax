@@ -119,11 +119,37 @@ export class SiteSection extends LitElement {
       this.__raf = requestAnimationFrame(() => this.requestUpdate());
     });
     this.__typed.observe(this, { childList: true, subtree: true, characterData: true });
+    // HAX moves focus when a block becomes active (to its toolbar, then its
+    // settings form): a control the author just clicked here gets it back,
+    // unless they've clicked somewhere else since
+    this.__refocus = (e) => {
+      const c = this.__claim;
+      if (!c || performance.now() > c.until || !e.composedPath().includes(c.el)) return;
+      requestAnimationFrame(() => {
+        if (this.__claim !== c || performance.now() > c.until) return;
+        c.el.focus();
+        if (c.el.isContentEditable) {
+          const range = globalThis.document.createRange();
+          range.selectNodeContents(c.el);
+          range.collapse(false);
+          const sel = c.el.getRootNode().getSelection?.() || globalThis.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+      });
+    };
+    this.__elsewhere = (e) => {
+      if (this.__claim && !e.composedPath().includes(this.__claim.el)) this.__claim = null;
+    };
+    this.addEventListener("focusout", this.__refocus, true);
+    globalThis.document.addEventListener("pointerdown", this.__elsewhere, true);
   }
 
   disconnectedCallback() {
     this.__stop?.();
     this.__typed?.disconnect();
+    this.removeEventListener("focusout", this.__refocus, true);
+    globalThis.document.removeEventListener("pointerdown", this.__elsewhere, true);
     super.disconnectedCallback();
   }
 
@@ -144,6 +170,55 @@ export class SiteSection extends LitElement {
   go(tag) {
     const target = this.getRootNode().querySelector?.(tag) || globalThis.document.querySelector(tag);
     target?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  }
+
+  /**
+   * A section's heading: typed in place while editing (Enter or leaving
+   * keeps it, Esc puts it back; empty goes back to `fallback`), so authors
+   * never need the block's settings for it. Saved as the block's `heading`.
+   */
+  headingEl(fallback, tag = "h2") {
+    const text = this.heading || fallback;
+    if (!this._editing) return tag === "h1" ? html`<h1>${text}</h1>` : html`<h2>${text}</h2>`;
+    const commit = (e) => {
+      const v = e.target.textContent.replace(/\s+/g, " ").trim();
+      this.heading = v && v !== fallback ? v : undefined;
+      if (!this.heading) this.removeAttribute("heading");
+      e.target.textContent = this.heading || fallback;
+    };
+    const keys = (e) => {
+      // the editor's own keys (Enter adds a block, Backspace deletes one) stay out
+      e.stopPropagation();
+      if (e.key === "Enter") {
+        e.preventDefault();
+        e.target.blur();
+      } else if (e.key === "Escape") {
+        e.target.textContent = this.heading || fallback;
+        e.target.blur();
+      }
+    };
+    const attrs = { contenteditable: "plaintext-only", spellcheck: "true", role: "textbox", "aria-label": `Heading (empty for “${fallback}”)`, title: "Type to change the heading" };
+    // HAX takes clicks inside blocks for itself: this one is ours
+    const take = (e) => this.claim(e);
+    return tag === "h1"
+      ? html`<h1 class="edit-heading" contenteditable="${attrs.contenteditable}" role="textbox" aria-label="${attrs["aria-label"]}" title="${attrs.title}" .textContent="${text}" @pointerdown="${take}" @mousedown="${take}" @click="${take}" @keydown="${keys}" @paste="${(e) => e.stopPropagation()}" @blur="${commit}"></h1>`
+      : html`<h2 class="edit-heading" contenteditable="${attrs.contenteditable}" role="textbox" aria-label="${attrs["aria-label"]}" title="${attrs.title}" .textContent="${text}" @pointerdown="${take}" @mousedown="${take}" @click="${take}" @keydown="${keys}" @paste="${(e) => e.stopPropagation()}" @blur="${commit}"></h2>`;
+  }
+
+  /**
+   * A click on an in-place control (a heading, the hero's image field):
+   * kept from HAX, and the control keeps focus for a moment while HAX
+   * moves it about (see connectedCallback).
+   */
+  claim(e) {
+    e.stopPropagation();
+    const el = e.composedPath()[0];
+    if (e.type === "pointerdown" && el instanceof HTMLElement) this.__claim = { el, until: performance.now() + 1500 };
+  }
+
+  /** Events an in-place control keeps from HAX (which takes clicks and keys inside blocks for itself). */
+  static keep(e) {
+    e.stopPropagation();
   }
 
   /** For authors: what an empty section needs. */
@@ -343,6 +418,16 @@ export const csStyles = css`
   }
   .typing-hint .i {
     margin-top: 0.125rem;
+  }
+  /* a heading typed in place while editing */
+  .edit-heading {
+    border-radius: var(--radius-sm, 0.375rem);
+    outline: 1px dashed color-mix(in oklab, var(--primary) 45%, var(--border));
+    outline-offset: 0.25rem;
+    cursor: text;
+  }
+  .edit-heading:focus {
+    outline: 2px solid var(--ring);
   }
   .typing-area {
     padding: 0.75rem 1rem;

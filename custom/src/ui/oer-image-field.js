@@ -8,7 +8,8 @@
  *     @image-change="${(e) => set(e.detail.value, e.detail.alt)}"></oer-image-field>
  *
  * The label is the host's (a <label> or span pointing at `field-id`); this
- * draws the control under it.
+ * draws the control under it. `compact` leaves out the preview, for places
+ * that show the image themselves (a course site's hero while editing).
  * @element oer-image-field
  */
 import { html, css, LitElement } from "../lit.js";
@@ -46,6 +47,7 @@ class OerImageField extends LitElement {
       alt: { type: String },
       fieldId: { type: String, attribute: "field-id" },
       label: { type: String },
+      compact: { type: Boolean },
       _uploading: { state: true },
       _error: { state: true },
       _broken: { state: true },
@@ -63,6 +65,7 @@ class OerImageField extends LitElement {
     this.alt = "";
     this.fieldId = "";
     this.label = "Image";
+    this.compact = false;
     this._uploading = false;
     this._error = "";
     this._broken = false;
@@ -118,8 +121,10 @@ class OerImageField extends LitElement {
     this.shadowRoot.querySelector(".chooser input")?.focus();
   }
 
+  // a file dropped here is this field's, not the editor's (HAX inserts dropped files as blocks)
   _drop(e) {
     e.preventDefault();
+    e.stopPropagation();
     this._dragging = false;
     this._upload(e.dataTransfer?.files?.[0]);
   }
@@ -165,11 +170,16 @@ class OerImageField extends LitElement {
     return html`
       <div
         class="field ${this._dragging ? "dragging" : ""}"
-        @dragover="${(e) => (e.preventDefault(), (this._dragging = true))}"
+        @dragover="${(e) => (e.preventDefault(), e.stopPropagation(), (this._dragging = true))}"
         @dragleave="${() => (this._dragging = false)}"
         @drop="${this._drop}"
       >
-        ${v
+        ${v && this.compact
+          ? html`<div class="actions">
+              ${upload}${choose}
+              <button type="button" class="btn ghost danger" @click="${() => this._emit("", "")}">${lucide("oer:x", "sm")}Remove</button>
+            </div>`
+          : v
           ? html`<div class="current">
               <div class="preview">
                 ${this._broken

@@ -39,7 +39,7 @@ export class OerCoursesIntro extends SiteSection {
     return html`<section class="intro">
       <div class="wrap">
         <p class="kicker">${count ? `${count} course${count === 1 ? "" : "s"}${degrees ? ` in ${degrees} degree program${degrees === 1 ? "" : "s"}` : ""}` : "Courses"}</p>
-        <h1>${this.heading || "OER Courses"}</h1>
+        ${this.headingEl("OER Courses", "h1")}
         ${this._editing
           ? html`<div class="lede typing">
               <p class="typing-hint">${icon("pencil")}<span>A few lines for students: what these courses are and who they're for.</span></p>
@@ -87,7 +87,8 @@ export class OerCoursesIntro extends SiteSection {
       canScale: false,
       canEditSource: true,
       gizmo: gizmo("OER Courses: intro", "The hub's title and a few lines you write for students.", "icons:flag"),
-      settings: { configure: [{ property: "heading", title: "Heading", description: "Leave empty for “OER Courses”.", inputMethod: "textfield" }], advanced: [] },
+      // the heading is typed in place while editing
+      settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-courses-intro", properties: {}, content: "<p></p>" }],
     };
   }
