@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791555159,
+      "updated": 1791555545,
       "version": "26.8.0"
     },
     "theme": {
@@ -32477,10 +32477,10 @@
       "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
       "indent": 0,
       "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
-      "slug": "assessments",
+      "slug": "activity",
       "order": 14,
       "parent": null,
-      "title": "Assessments",
+      "title": "Activity",
       "description": "",
       "metadata": {
         "pageType": "oer:heading",
@@ -32488,7 +32488,7 @@
         "created": 1790878969,
         "images": [],
         "videos": [],
-        "updated": 1791555146,
+        "updated": 1791555544,
         "published": true,
         "locked": false,
         "status": "",
