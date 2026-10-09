@@ -134,6 +134,8 @@ class OerBookSite extends LitElement {
       if (e.key === "ArrowLeft" && this._turn(-1)) e.preventDefault();
       if (e.key === "ArrowRight" && this._turn(1)) e.preventDefault();
     };
+    this.__onLink = (e) => this._followLink(e);
+    this.addEventListener("click", this.__onLink);
     this.__outside = (e) => {
       if (this._panel && !e.composedPath().some((n) => n.classList?.contains("pop") || n.classList?.contains("pop-btn"))) this._panel = "";
     };
@@ -188,6 +190,39 @@ class OerBookSite extends LitElement {
     } catch {
       /* private window: for this visit only */
     }
+  }
+
+  // a chapter's address: the book site's own, with the chapter after the #
+  // (a bare "#…" would resolve against the site's <base>, its home page)
+  _href(rel) {
+    return rel ? `${this.site.slug}#${encodeURI(rel)}` : this.site.slug;
+  }
+
+  /**
+   * A click on a link to a chapter of this book (the contents, the pager,
+   * or a link inside a chapter) turns to it here, instead of leaving for
+   * the site's own page; a modified click (a new tab) goes its own way.
+   */
+  _followLink(e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.composedPath().find((n) => n.localName === "a");
+    if (!a || (a.target && a.target !== "_self")) return;
+    let rel = a.dataset.rel;
+    if (rel === undefined) {
+      const url = new URL(a.getAttribute("href") || "", globalThis.document.baseURI);
+      const root = new URL(".", globalThis.document.baseURI);
+      if (url.origin !== root.origin || !url.pathname.startsWith(root.pathname)) return;
+      const slug = decodeURIComponent(url.pathname.slice(root.pathname.length)).replace(/\/$/, "");
+      if (slug === this.site.slug) rel = decodeURIComponent(url.hash.slice(1));
+      else {
+        const hit = this._outline.find((c) => !c.heading && c.item.slug === slug);
+        if (!hit) return;
+        rel = hit.rel;
+      }
+    }
+    e.preventDefault();
+    e.stopPropagation();
+    this._go(rel);
   }
 
   // a chapter by its address in the book, or "" for the title page
@@ -287,7 +322,6 @@ class OerBookSite extends LitElement {
 
   _renderNode(node, current) {
     const { c, kids } = node;
-    const closeIfNarrow = () => !this.__wide.matches && (this._tocOpen = false);
     const open = kids.length ? this._isOpen(node, current) : false;
     const chevron = html`<span class="chev ${open ? "open" : ""}" aria-hidden="true">${lucide("oer:chevron-right", "sm")}</span>`;
     const list = kids.length && open ? html`<ol class="kids">${kids.map((k) => this._renderNode(k, current))}</ol>` : "";
@@ -300,7 +334,7 @@ class OerBookSite extends LitElement {
           </li>`
         : html`<li class="label">${c.item.title}</li>`;
     }
-    const link = html`<a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${closeIfNarrow}">${c.item.title}</a>`;
+    const link = html`<a href="${this._href(c.rel)}" data-rel="${c.rel}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}">${c.item.title}</a>`;
     return kids.length
       ? html`<li>
           <div class="row">
@@ -313,7 +347,6 @@ class OerBookSite extends LitElement {
 
   _renderToc(list, current) {
     const q = this._filter.trim().toLowerCase();
-    const closeIfNarrow = () => !this.__wide.matches && (this._tocOpen = false);
     const found = q ? list.filter((c) => !c.heading && c.item.title.toLowerCase().includes(q)) : [];
     return html`<nav class="toc" id="toc" aria-label="Chapters">
       ${list.length > 12
@@ -322,12 +355,12 @@ class OerBookSite extends LitElement {
       ${q
         ? html`<ol class="found">
               ${found.map(
-                (c) => html`<li><a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${closeIfNarrow}">${c.item.title}</a></li>`,
+                (c) => html`<li><a href="${this._href(c.rel)}" data-rel="${c.rel}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}">${c.item.title}</a></li>`,
               )}
             </ol>
             ${found.length ? "" : html`<p class="muted">No chapter matches.</p>`}`
         : html`<ol class="top-links">
-              <li><a href="${this.site.slug}" class="${current ? "" : "here"}" aria-current="${current ? "false" : "page"}" @click="${(e) => (e.preventDefault(), this._go(""))}">About this book</a></li>
+              <li><a href="${this._href("")}" data-rel="" class="${current ? "" : "here"}" aria-current="${current ? "false" : "page"}">About this book</a></li>
             </ol>
             ${contentsGroups(list).map(({ lead, rows }) => {
               const inset = lead && !lead.heading ? 1 : 0;
@@ -335,7 +368,7 @@ class OerBookSite extends LitElement {
                 ${lead
                   ? lead.heading
                     ? html`<h3>${lead.item.title}</h3>`
-                    : html`<h3><a href="#${encodeURI(lead.rel)}" class="${lead === current ? "here" : ""}" aria-current="${lead === current ? "page" : "false"}" @click="${closeIfNarrow}">${lead.item.title}</a></h3>`
+                    : html`<h3><a href="${this._href(lead.rel)}" data-rel="${lead.rel}" class="${lead === current ? "here" : ""}" aria-current="${lead === current ? "page" : "false"}">${lead.item.title}</a></h3>`
                   : ""}
                 ${rows.length ? html`<ol>${foldRows(rows, inset).map((n) => this._renderNode(n, current))}</ol>` : ""}
               </section>`;
@@ -374,14 +407,14 @@ class OerBookSite extends LitElement {
               } else shownRows.push({ c, more: 0 });
             }
             return html`<div class="group">
-              ${lead ? (lead.heading ? html`<h3 class="g-label">${lead.item.title}</h3>` : html`<h3><a href="#${encodeURI(lead.rel)}">${lead.item.title}</a></h3>`) : ""}
+              ${lead ? (lead.heading ? html`<h3 class="g-label">${lead.item.title}</h3>` : html`<h3><a href="${this._href(lead.rel)}" data-rel="${lead.rel}">${lead.item.title}</a></h3>`) : ""}
               ${shownRows.length
                 ? html`<ol>
                     ${shownRows.map(({ c, more }) =>
                       c.heading
                         ? html`<li class="label" style="--depth:${level(c)}">${c.item.title}</li>`
                         : html`<li style="--depth:${level(c)}">
-                            <a href="#${encodeURI(c.rel)}">${c.item.title}</a>${more ? html`<span class="more"> · ${more} more</span>` : ""}
+                            <a href="${this._href(c.rel)}" data-rel="${c.rel}">${c.item.title}</a>${more ? html`<span class="more"> · ${more} more</span>` : ""}
                           </li>`,
                     )}
                   </ol>`
@@ -403,15 +436,15 @@ class OerBookSite extends LitElement {
     const at = outline.indexOf(current);
     for (let k = at - 1; k >= 0 && current.depth > 0; k--) if (outline[k].depth < current.depth && !outline[k].heading) (part = outline[k]), (k = -1);
     return html`<article class="chapter">
-      ${part ? html`<p class="part"><a href="#${encodeURI(part.rel)}">${part.item.title}</a></p>` : ""}
+      ${part ? html`<p class="part"><a href="${this._href(part.rel)}" data-rel="${part.rel}">${part.item.title}</a></p>` : ""}
       <h1>${current.item.title}</h1>
       <div class="content" aria-busy="${this._loading ? "true" : "false"}"></div>
       ${this._loading && !this._html ? html`<p class="muted">Loading…</p>` : ""}
       <nav class="pager" aria-label="Previous and next chapter">
         ${prev
-          ? html`<a class="turn prev" href="#${encodeURI(prev.rel)}"><span class="dir">${lucide("oer:chevron-left", "sm")}Previous</span><span class="t">${prev.item.title}</span></a>`
-          : html`<a class="turn prev" href="${this.site.slug}" @click="${(e) => (e.preventDefault(), this._go(""))}"><span class="dir">${lucide("oer:chevron-left", "sm")}About this book</span></a>`}
-        ${next ? html`<a class="turn next" href="#${encodeURI(next.rel)}"><span class="dir">Next${lucide("oer:chevron-right", "sm")}</span><span class="t">${next.item.title}</span></a>` : html`<span></span>`}
+          ? html`<a class="turn prev" href="${this._href(prev.rel)}" data-rel="${prev.rel}"><span class="dir">${lucide("oer:chevron-left", "sm")}Previous</span><span class="t">${prev.item.title}</span></a>`
+          : html`<a class="turn prev" href="${this._href("")}" data-rel=""><span class="dir">${lucide("oer:chevron-left", "sm")}About this book</span></a>`}
+        ${next ? html`<a class="turn next" href="${this._href(next.rel)}" data-rel="${next.rel}"><span class="dir">Next${lucide("oer:chevron-right", "sm")}</span><span class="t">${next.item.title}</span></a>` : html`<span></span>`}
       </nav>
       <p class="pos">${i + 1} of ${list.length}</p>
     </article>`;
@@ -441,7 +474,7 @@ class OerBookSite extends LitElement {
       <header class="bar">
         ${this._tocButton()}
         <span class="divider" aria-hidden="true"></span>
-        <a class="title" href="${this.site.slug}" @click="${(e) => (e.preventDefault(), this._go(""))}">${book.title}</a>
+        <a class="title" href="${this._href("")}" data-rel="">${book.title}</a>
         <span class="spacer"></span>
         ${this._busy ? html`<span class="busy" role="status">${this._busy}</span>` : ""}
         <span class="pop-wrap">
