@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791505789,
+      "updated": 1791505805,
       "version": "26.8.0"
     },
     "theme": {
@@ -29236,7 +29236,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B06",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://archive.org/details/digitalfabricati0000iwam",
           "kind": "reading",
@@ -29258,7 +29258,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386331
+        "updated": 1791505790
       }
     },
     {
@@ -29273,7 +29273,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B07",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://www.hubs.com/knowledge-base/how-design-parts-fdm-3d-printing/",
           "kind": "reading",
@@ -29294,7 +29294,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386332
+        "updated": 1791505791
       }
     },
     {
@@ -29309,7 +29309,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B08",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://help.prusa3d.com/",
           "kind": "reading",
@@ -29330,7 +29330,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386332
+        "updated": 1791505792
       }
     },
     {
@@ -29345,7 +29345,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B09",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://archive.org/details/alphabetalgorith0000carp",
           "kind": "reading",
@@ -29367,7 +29367,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386333
+        "updated": 1791505793
       }
     },
     {
@@ -29382,7 +29382,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B10",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://formandcode.com/",
           "kind": "reading",
@@ -29408,7 +29408,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386334
+        "updated": 1791505793
       }
     },
     {
@@ -29423,7 +29423,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B11",
-        "published": false,
+        "published": true,
         "oerFields": {
           "kind": "reading",
           "authors": [
@@ -29445,7 +29445,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386335
+        "updated": 1791505794
       }
     },
     {
@@ -29460,7 +29460,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B12",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://doi.org/10.1080/01972243.2011.583819",
           "kind": "reading",
@@ -29482,7 +29482,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386335
+        "updated": 1791505795
       }
     },
     {
@@ -29497,7 +29497,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B13",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://www.newyorker.com/magazine/2014/01/13/making-it-2",
           "kind": "reading",
@@ -29519,7 +29519,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386336
+        "updated": 1791505795
       }
     },
     {
@@ -29534,7 +29534,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B14",
-        "published": false,
+        "published": true,
         "oerFields": {
           "kind": "reading",
           "authors": [
@@ -29555,7 +29555,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386337
+        "updated": 1791505796
       }
     },
     {
@@ -29570,7 +29570,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B15",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://doi.org/10.1017/S1380203807002127",
           "kind": "reading",
@@ -29592,7 +29592,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386338
+        "updated": 1791505797
       }
     },
     {
@@ -29607,7 +29607,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B16",
-        "published": false,
+        "published": true,
         "oerFields": {
           "kind": "reading",
           "authors": [
@@ -29627,7 +29627,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386338
+        "updated": 1791505798
       }
     },
     {
@@ -29642,7 +29642,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B18",
-        "published": false,
+        "published": true,
         "oerFields": {
           "kind": "reading",
           "authors": [
@@ -29663,7 +29663,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386339
+        "updated": 1791505798
       }
     },
     {
@@ -29678,7 +29678,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B19",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://fabacademy.org/",
           "kind": "reading",
@@ -29699,7 +29699,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386340
+        "updated": 1791505799
       }
     },
     {
@@ -29714,7 +29714,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B20",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://n-e-r-v-o-u-s.com/",
           "kind": "reading",
@@ -29738,7 +29738,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386340
+        "updated": 1791505800
       }
     },
     {
@@ -29753,7 +29753,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B24",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://additivism.org/manifesto",
           "kind": "reading",
@@ -29778,7 +29778,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386341
+        "updated": 1791505801
       }
     },
     {
@@ -31224,7 +31224,7 @@
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:A04",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -31244,7 +31244,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386367
+        "updated": 1791505801
       }
     },
     {
@@ -31387,7 +31387,7 @@
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:A07",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -31407,7 +31407,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386368
+        "updated": 1791505802
       }
     },
     {
@@ -33632,7 +33632,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A01",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33652,7 +33652,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386360
+        "updated": 1791505803
       }
     },
     {
@@ -33667,7 +33667,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A02",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33687,7 +33687,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386361
+        "updated": 1791505803
       }
     },
     {
@@ -33702,7 +33702,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A03",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33722,7 +33722,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386362
+        "updated": 1791505804
       }
     },
     {
