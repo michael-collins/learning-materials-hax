@@ -2371,12 +2371,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://michaelcollins.xyz/learning-materials-hax/books</loc>
-    <lastmod>2026-10-09T14:19:55.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/end-of-lesson-discussion</loc>
     <lastmod>2026-10-07T18:19:25.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2423,6 +2417,12 @@
     <lastmod>2026-10-05T20:25:21.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/books</loc>
+    <lastmod>2026-10-09T14:19:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/books/dmd-100-digital-multimedia-design-foundations/lesson-2-visual-and-interaction-design/99-percent-invisible-on-average</loc>
@@ -3661,6 +3661,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/v0-9-0</loc>
+    <lastmod>2026-10-09T14:20:00.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/articles/3d-career-development/v0-9-0</loc>
     <lastmod>2026-10-05T20:26:44.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -4001,12 +4007,6 @@
     <lastmod>2026-10-07T15:16:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://michaelcollins.xyz/learning-materials-hax/v0-9-0</loc>
-    <lastmod>2026-10-09T14:20:00.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/resources/cradle-to-cradle-remaking-the-way-we-make-things</loc>
