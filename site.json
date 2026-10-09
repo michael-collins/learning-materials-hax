@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791578330,
+      "updated": 1791578336,
       "version": "26.8.0"
     },
     "theme": {
@@ -7292,13 +7292,16 @@
           "institutionUrl": "https://www.psu.edu/",
           "campus": "World Campus",
           "programs": [
-            "Digital Multimedia Design (B.Des.)"
+            {
+              "page": "item-5b1747fc-389e-44f6-868e-0449f51b46ba",
+              "version": ""
+            }
           ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791564991
+        "updated": 1791578331
       }
     },
     {
@@ -10642,13 +10645,16 @@
           "institutionUrl": "https://www.psu.edu/",
           "campus": "World Campus",
           "programs": [
-            "Digital Multimedia Design (B.Des.)"
+            {
+              "page": "item-5b1747fc-389e-44f6-868e-0449f51b46ba",
+              "version": ""
+            }
           ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791564991
+        "updated": 1791578332
       }
     },
     {
@@ -16933,13 +16939,16 @@
           "institutionUrl": "https://www.psu.edu/",
           "campus": "World Campus",
           "programs": [
-            "Digital Multimedia Design (B.Des.)"
+            {
+              "page": "item-5b1747fc-389e-44f6-868e-0449f51b46ba",
+              "version": ""
+            }
           ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791564992
+        "updated": 1791578333
       }
     },
     {
@@ -18827,14 +18836,17 @@
           "institutionUrl": "https://www.psu.edu/",
           "campus": "World Campus",
           "programs": [
-            "Digital Arts and Media Design (B.Des.)"
+            {
+              "page": "item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26",
+              "version": ""
+            }
           ],
           "program": ""
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791564993
+        "updated": 1791578334
       }
     },
     {
@@ -24075,14 +24087,17 @@
           "institutionUrl": "https://www.psu.edu/",
           "campus": "World Campus",
           "programs": [
-            "Digital Arts and Media Design (B.Des.)"
+            {
+              "page": "item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26",
+              "version": ""
+            }
           ],
           "program": ""
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791564993
+        "updated": 1791578334
       }
     },
     {
@@ -25274,14 +25289,17 @@
           "institutionUrl": "https://www.psu.edu/",
           "campus": "University Park",
           "programs": [
-            "Digital Arts and Media Design (B.Des.)"
+            {
+              "page": "item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26",
+              "version": ""
+            }
           ],
           "program": ""
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791564994,
+        "updated": 1791578335,
         "overridePathauto": false,
         "hideInMenu": false,
         "icon": "courseicons:learning-objectives",
