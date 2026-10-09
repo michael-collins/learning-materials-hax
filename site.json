@@ -19612,6 +19612,359 @@
               "nav": false
             },
             {
+              "id": "oer:reflection",
+              "label": "Reflection",
+              "icon": "oer:message-square-quote",
+              "description": "A reading response or reflection prompt students write, assessed like an exercise.",
+              "children": [],
+              "fields": [
+                {
+                  "name": "image",
+                  "label": "Featured Image",
+                  "kind": "image"
+                },
+                {
+                  "name": "imageAlt",
+                  "label": "Image Alt Text",
+                  "kind": "text"
+                },
+                {
+                  "name": "courses",
+                  "label": "Courses",
+                  "kind": "relation",
+                  "types": [
+                    "oer:course"
+                  ],
+                  "filter": true,
+                  "help": "The courses this page is taught in, at any university. A page can be in several courses."
+                },
+                {
+                  "name": "license",
+                  "label": "License",
+                  "kind": "select",
+                  "options": [
+                    {
+                      "value": "CC BY 4.0",
+                      "label": "CC BY 4.0"
+                    },
+                    {
+                      "value": "CC BY-SA 4.0",
+                      "label": "CC BY-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC 4.0",
+                      "label": "CC BY-NC 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-SA 4.0",
+                      "label": "CC BY-NC-SA 4.0"
+                    },
+                    {
+                      "value": "CC BY-ND 4.0",
+                      "label": "CC BY-ND 4.0"
+                    },
+                    {
+                      "value": "CC BY-NC-ND 4.0",
+                      "label": "CC BY-NC-ND 4.0"
+                    },
+                    {
+                      "value": "CC0 1.0",
+                      "label": "CC0 1.0"
+                    },
+                    {
+                      "value": "All Rights Reserved",
+                      "label": "All Rights Reserved"
+                    }
+                  ],
+                  "default": "CC BY 4.0"
+                },
+                {
+                  "name": "aiLicense",
+                  "label": "AI Usage Licenses",
+                  "kind": "select",
+                  "help": "Select one or more AI usage policies. Defaults: AIUL-WA (general approval required) + AIUL-NA-3D (no AI for 3D work)",
+                  "options": [
+                    {
+                      "value": "AIUL-NA",
+                      "label": "AIUL-NA"
+                    },
+                    {
+                      "value": "AIUL-NA-WR",
+                      "label": "AIUL-NA-WR"
+                    },
+                    {
+                      "value": "AIUL-NA-IM",
+                      "label": "AIUL-NA-IM"
+                    },
+                    {
+                      "value": "AIUL-NA-VD",
+                      "label": "AIUL-NA-VD"
+                    },
+                    {
+                      "value": "AIUL-NA-AU",
+                      "label": "AIUL-NA-AU"
+                    },
+                    {
+                      "value": "AIUL-NA-3D",
+                      "label": "AIUL-NA-3D"
+                    },
+                    {
+                      "value": "AIUL-NA-TR",
+                      "label": "AIUL-NA-TR"
+                    },
+                    {
+                      "value": "AIUL-NA-MX",
+                      "label": "AIUL-NA-MX"
+                    },
+                    {
+                      "value": "AIUL-NA-CO",
+                      "label": "AIUL-NA-CO"
+                    },
+                    {
+                      "value": "AIUL-WA",
+                      "label": "AIUL-WA"
+                    },
+                    {
+                      "value": "AIUL-WA-WR",
+                      "label": "AIUL-WA-WR"
+                    },
+                    {
+                      "value": "AIUL-WA-IM",
+                      "label": "AIUL-WA-IM"
+                    },
+                    {
+                      "value": "AIUL-WA-VD",
+                      "label": "AIUL-WA-VD"
+                    },
+                    {
+                      "value": "AIUL-WA-AU",
+                      "label": "AIUL-WA-AU"
+                    },
+                    {
+                      "value": "AIUL-WA-3D",
+                      "label": "AIUL-WA-3D"
+                    },
+                    {
+                      "value": "AIUL-WA-TR",
+                      "label": "AIUL-WA-TR"
+                    },
+                    {
+                      "value": "AIUL-WA-MX",
+                      "label": "AIUL-WA-MX"
+                    },
+                    {
+                      "value": "AIUL-WA-CO",
+                      "label": "AIUL-WA-CO"
+                    },
+                    {
+                      "value": "AIUL-CD",
+                      "label": "AIUL-CD"
+                    },
+                    {
+                      "value": "AIUL-CD-WR",
+                      "label": "AIUL-CD-WR"
+                    },
+                    {
+                      "value": "AIUL-CD-IM",
+                      "label": "AIUL-CD-IM"
+                    },
+                    {
+                      "value": "AIUL-CD-VD",
+                      "label": "AIUL-CD-VD"
+                    },
+                    {
+                      "value": "AIUL-CD-AU",
+                      "label": "AIUL-CD-AU"
+                    },
+                    {
+                      "value": "AIUL-CD-3D",
+                      "label": "AIUL-CD-3D"
+                    },
+                    {
+                      "value": "AIUL-CD-TR",
+                      "label": "AIUL-CD-TR"
+                    },
+                    {
+                      "value": "AIUL-CD-MX",
+                      "label": "AIUL-CD-MX"
+                    },
+                    {
+                      "value": "AIUL-CD-CO",
+                      "label": "AIUL-CD-CO"
+                    },
+                    {
+                      "value": "AIUL-TC",
+                      "label": "AIUL-TC"
+                    },
+                    {
+                      "value": "AIUL-TC-WR",
+                      "label": "AIUL-TC-WR"
+                    },
+                    {
+                      "value": "AIUL-TC-IM",
+                      "label": "AIUL-TC-IM"
+                    },
+                    {
+                      "value": "AIUL-TC-VD",
+                      "label": "AIUL-TC-VD"
+                    },
+                    {
+                      "value": "AIUL-TC-AU",
+                      "label": "AIUL-TC-AU"
+                    },
+                    {
+                      "value": "AIUL-TC-3D",
+                      "label": "AIUL-TC-3D"
+                    },
+                    {
+                      "value": "AIUL-TC-TR",
+                      "label": "AIUL-TC-TR"
+                    },
+                    {
+                      "value": "AIUL-TC-MX",
+                      "label": "AIUL-TC-MX"
+                    },
+                    {
+                      "value": "AIUL-TC-CO",
+                      "label": "AIUL-TC-CO"
+                    },
+                    {
+                      "value": "AIUL-DP",
+                      "label": "AIUL-DP"
+                    },
+                    {
+                      "value": "AIUL-DP-WR",
+                      "label": "AIUL-DP-WR"
+                    },
+                    {
+                      "value": "AIUL-DP-IM",
+                      "label": "AIUL-DP-IM"
+                    },
+                    {
+                      "value": "AIUL-DP-VD",
+                      "label": "AIUL-DP-VD"
+                    },
+                    {
+                      "value": "AIUL-DP-AU",
+                      "label": "AIUL-DP-AU"
+                    },
+                    {
+                      "value": "AIUL-DP-3D",
+                      "label": "AIUL-DP-3D"
+                    },
+                    {
+                      "value": "AIUL-DP-TR",
+                      "label": "AIUL-DP-TR"
+                    },
+                    {
+                      "value": "AIUL-DP-MX",
+                      "label": "AIUL-DP-MX"
+                    },
+                    {
+                      "value": "AIUL-DP-CO",
+                      "label": "AIUL-DP-CO"
+                    },
+                    {
+                      "value": "AIUL-IU",
+                      "label": "AIUL-IU"
+                    },
+                    {
+                      "value": "AIUL-IU-WR",
+                      "label": "AIUL-IU-WR"
+                    },
+                    {
+                      "value": "AIUL-IU-IM",
+                      "label": "AIUL-IU-IM"
+                    },
+                    {
+                      "value": "AIUL-IU-VD",
+                      "label": "AIUL-IU-VD"
+                    },
+                    {
+                      "value": "AIUL-IU-AU",
+                      "label": "AIUL-IU-AU"
+                    },
+                    {
+                      "value": "AIUL-IU-3D",
+                      "label": "AIUL-IU-3D"
+                    },
+                    {
+                      "value": "AIUL-IU-TR",
+                      "label": "AIUL-IU-TR"
+                    },
+                    {
+                      "value": "AIUL-IU-MX",
+                      "label": "AIUL-IU-MX"
+                    },
+                    {
+                      "value": "AIUL-IU-CO",
+                      "label": "AIUL-IU-CO"
+                    }
+                  ],
+                  "default": "AIUL-WA",
+                  "multiple": true
+                },
+                {
+                  "name": "authors",
+                  "label": "Authors",
+                  "kind": "people",
+                  "header": false,
+                  "help": "In order. Each with an optional link to their site or profile."
+                },
+                {
+                  "name": "placeholder",
+                  "label": "In development",
+                  "kind": "boolean",
+                  "help": "A stub that will be developed into the real item. Shown with an In development badge on the site."
+                },
+                {
+                  "name": "allowEmbed",
+                  "label": "Allow Embedding",
+                  "kind": "boolean",
+                  "help": "Enable iframe embedding for this content"
+                },
+                {
+                  "name": "prerequisites",
+                  "label": "Before you start",
+                  "kind": "relation",
+                  "help": "Content to complete first",
+                  "header": true,
+                  "types": [
+                    "oer:lesson",
+                    "oer:lecture",
+                    "oer:tutorial",
+                    "oer:exercise",
+                    "oer:article",
+                    "oer:project",
+                    "oer:specialization",
+                    "oer:pathway",
+                    "oer:resource"
+                  ]
+                },
+                {
+                  "name": "resources",
+                  "label": "Learning resources",
+                  "kind": "relation",
+                  "types": [
+                    "oer:tutorial",
+                    "oer:lecture",
+                    "oer:article",
+                    "oer:resource"
+                  ],
+                  "header": true,
+                  "help": "Tutorials, lectures, readings and resources that support this"
+                },
+                {
+                  "name": "attachments",
+                  "label": "Files and links",
+                  "kind": "files",
+                  "header": true,
+                  "help": "Downloadable files or external links"
+                }
+              ],
+              "nav": false
+            },
+            {
               "id": "oer:project",
               "label": "Project",
               "icon": "hax:bulletin-board",
@@ -22546,7 +22899,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791471254,
+        "updated": 1791551508,
         "locked": false,
         "status": "",
         "icon": "",
@@ -28018,8 +28371,8 @@
       "indent": 1,
       "location": "pages/item-57e9feb2-c91c-4c7c-bf7f-2ff5f49413e7/index.html",
       "slug": "license-examples",
-      "order": 7,
-      "parent": null,
+      "order": 94,
+      "parent": "item-9c0d46bc-d931-4e43-94e4-a96f09bc3165",
       "title": "License Examples",
       "description": "This page demonstrates how to use different Creative Commons licenses on your VitePress pages.How to Use\nYou can specify the license type and attribution in the front matter of any markdown file:\n---",
       "metadata": {
@@ -28046,8 +28399,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791404493,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -31745,6 +32098,31 @@
       }
     },
     {
+      "id": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
+      "indent": 0,
+      "location": "pages/item-51cc91b4-48cc-4ce0-b50e-47c1887aed29/index.html",
+      "slug": "reflections",
+      "order": 16,
+      "parent": null,
+      "title": "Reflections",
+      "description": "Reading responses and reflection prompts, assessed like exercises.",
+      "metadata": {
+        "created": 1791551508,
+        "updated": 1791551508,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "oer:section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "",
+        "linkTarget": "_self"
+      }
+    },
+    {
       "id": "item-ab29af24-626a-4330-82b7-4f1d2fe0c558",
       "indent": 1,
       "location": "pages/item-ab29af24-626a-4330-82b7-4f1d2fe0c558/index.html",
@@ -34341,7 +34719,7 @@
       "indent": 0,
       "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
       "slug": "projects",
-      "order": 16,
+      "order": 17,
       "parent": null,
       "title": "Projects",
       "description": "",
@@ -34601,7 +34979,7 @@
       "indent": 0,
       "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
       "slug": "quizzes",
-      "order": 17,
+      "order": 18,
       "parent": null,
       "title": "Quizzes",
       "description": "",
@@ -34783,7 +35161,7 @@
       "indent": 0,
       "location": "pages/item-8660850b-ca78-4dc6-ad8d-c1c5a676167a/index.html",
       "slug": "rubrics",
-      "order": 18,
+      "order": 19,
       "parent": null,
       "title": "Rubrics",
       "description": "Scoring guides for exercises, projects and discussions: criteria, weights and rating levels.",
@@ -34798,11 +35176,11 @@
     },
     {
       "id": "item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-66c7c3cc-a643-4ded-a261-cf70c8a3b19c/index.html",
       "slug": "applying-textures-to-3-unique-chess-sets",
-      "order": 19,
-      "parent": null,
+      "order": 59,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Applying Textures to 3 Unique Chess Sets",
       "description": "In this exercise, you will apply Image textures to a Chess board and pieces\nLearning Objectives\n\nPractice using texture images and the UV editor\nShort introduction to material nodes\nPractice appendin",
       "metadata": {
@@ -34837,7 +35215,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472184,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -34851,7 +35229,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -34913,11 +35291,11 @@
     },
     {
       "id": "item-ca98e9d2-a6bf-43da-af53-0ff978b5f684",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-ca98e9d2-a6bf-43da-af53-0ff978b5f684/index.html",
       "slug": "model-a-gem",
-      "order": 20,
-      "parent": null,
+      "order": 60,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Model a Gem",
       "description": "model a Custom Gem\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulat",
       "metadata": {
@@ -34944,7 +35322,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472185,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -34958,7 +35336,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35012,11 +35390,11 @@
     },
     {
       "id": "item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-31ae1d4e-0fe0-4bfc-a512-ccef7c71fb49/index.html",
       "slug": "model-a-snowflake",
-      "order": 21,
-      "parent": null,
+      "order": 61,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Model a Snowflake",
       "description": "In this exercise, you will learn how to model 3 snowflakes\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge f",
       "metadata": {
@@ -35043,7 +35421,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472187,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35057,7 +35435,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35111,16 +35489,16 @@
     },
     {
       "id": "item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-e717a7a9-126f-4d6b-aa92-d9d3b97a120d/index.html",
       "slug": "what-design-and-truth-say-about-each-other",
-      "order": 22,
-      "parent": null,
+      "order": 0,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "What Design and Truth Say about Each Other",
       "description": "What Design and Truth Say about Each Other (p. 27-33) in Design and Truth by Robert Grudin.Prompt\nIn this chapter, Grudin talks about the transition of design from close dialogue with natural systems",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-2-readings-chapter-3-what-design-and-truth-say-about-each-other",
         "tags": "reading",
         "oerFields": {
@@ -35145,8 +35523,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471260,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -35154,16 +35532,16 @@
     },
     {
       "id": "item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.html",
       "slug": "design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
-      "order": 23,
-      "parent": null,
+      "order": 1,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Design as Tragedy: The Rise and Fall of the Twin Towers",
       "description": "Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-2-readings-chapter-4-design-as-tragedy-the-rise-and-fall-of-the-twin-towers",
         "tags": "reading",
         "oerFields": {
@@ -35188,8 +35566,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471261,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -35197,11 +35575,11 @@
     },
     {
       "id": "item-2915a7be-6743-4a69-a63f-820bda80cbb4",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-2915a7be-6743-4a69-a63f-820bda80cbb4/index.html",
       "slug": "modeling-a-bishop",
-      "order": 24,
-      "parent": null,
+      "order": 62,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Bishop",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice using the boolean operator and fixing any irregula",
       "metadata": {
@@ -35254,7 +35632,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472188,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35268,7 +35646,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35348,16 +35726,16 @@
     },
     {
       "id": "item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-eeaa188c-39a4-4fe8-9e80-da2de0186aeb/index.html",
       "slug": "edsel-s-law-how-bad-design-happens",
-      "order": 25,
-      "parent": null,
+      "order": 2,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Edsel's Law: How Bad Design Happens",
       "description": "Edsel's Law: How Bad Design Happens (p. 46-54) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin describes the Edsel scale for measuring the quality of a design:\n\nPhotograph an objec",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-2-readings-chapter-5-edsels-law-how-bad-design-happens",
         "tags": "reading",
         "oerFields": {
@@ -35382,8 +35760,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471262,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -35391,11 +35769,11 @@
     },
     {
       "id": "item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-ff2f66fd-37f0-4b4d-bfe1-3aa0be550ad1/index.html",
       "slug": "modeling-a-chavet-121-series-no-6-knight",
-      "order": 26,
-      "parent": null,
+      "order": 63,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Chavet 121 series no 6 Knight",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
       "metadata": {
@@ -35430,7 +35808,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472190,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35444,7 +35822,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35506,16 +35884,16 @@
     },
     {
       "id": "item-025f599c-65f1-41d7-9bdd-10778199ea2f",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-025f599c-65f1-41d7-9bdd-10778199ea2f/index.html",
       "slug": "designs-of-darkness",
-      "order": 27,
-      "parent": null,
+      "order": 3,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Designs of Darkness",
       "description": "Designs of Darkness (p. 55-61) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin makes a distinction between painting styles of Adolf Hitler and Winston Churchill as well as the soci",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-2-readings-chapter-6-designs-of-darkness",
         "tags": "reading",
         "oerFields": {
@@ -35540,8 +35918,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471264,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -35549,11 +35927,11 @@
     },
     {
       "id": "item-45493816-b35c-457b-9581-8934b03dbac2",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-45493816-b35c-457b-9581-8934b03dbac2/index.html",
       "slug": "modeling-a-chessboard",
-      "order": 28,
-      "parent": null,
+      "order": 64,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Chessboard",
       "description": "How to Make a Chess Board\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a ",
       "metadata": {
@@ -35580,7 +35958,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472191,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35594,7 +35972,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35648,16 +36026,16 @@
     },
     {
       "id": "item-8791fde3-3e35-4a01-bd33-2064ed777616",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-8791fde3-3e35-4a01-bd33-2064ed777616/index.html",
       "slug": "face-to-face-with-design",
-      "order": 29,
-      "parent": null,
+      "order": 4,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Face to Face with Design",
       "description": "Face to Face with Design (p. 62-82) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin talks about fixing and designing material objects which had some meaning in his life. No",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-2-readings-chapter-7-face-to-face-with-design",
         "tags": "reading",
         "oerFields": {
@@ -35682,8 +36060,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471265,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -35691,11 +36069,11 @@
     },
     {
       "id": "item-fba0686e-bf90-41f6-8925-3c1a822b6597",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-fba0686e-bf90-41f6-8925-3c1a822b6597/index.html",
       "slug": "modeling-a-diamond",
-      "order": 30,
-      "parent": null,
+      "order": 65,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Diamond",
       "description": "Model a Diamond\nLearning Objectives\n\nPractice using 3D software interface and terminology.\nUse modeling workflows to create high quality topology and edge flow.\nFamiliarize yourself with a cumulative",
       "metadata": {
@@ -35722,7 +36100,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472192,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35736,7 +36114,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35790,11 +36168,11 @@
     },
     {
       "id": "item-af9bc28d-d330-4bfe-ad53-59c160fef53a",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-af9bc28d-d330-4bfe-ad53-59c160fef53a/index.html",
       "slug": "modeling-a-pawn",
-      "order": 31,
-      "parent": null,
+      "order": 66,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Pawn",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
       "metadata": {
@@ -35835,7 +36213,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472194,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35849,7 +36227,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -35917,11 +36295,11 @@
     },
     {
       "id": "item-af4143af-48cc-461a-bb7c-ab562ff1b3a4",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-af4143af-48cc-461a-bb7c-ab562ff1b3a4/index.html",
       "slug": "modeling-a-queen",
-      "order": 32,
-      "parent": null,
+      "order": 67,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Queen",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
       "metadata": {
@@ -35962,7 +36340,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472195,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35976,7 +36354,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -36044,11 +36422,11 @@
     },
     {
       "id": "item-4ba5032b-78e8-46ac-9711-fb8810465008",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-4ba5032b-78e8-46ac-9711-fb8810465008/index.html",
       "slug": "modeling-a-rook",
-      "order": 33,
-      "parent": null,
+      "order": 68,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Modeling a Rook",
       "description": "In this exercise, you will practice polygonal modeling fundamentals and using reference images to create a chess piece\nLearning Objectives\n\nPractice working from reference images\nPractice using 3D so",
       "metadata": {
@@ -36095,7 +36473,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472197,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36109,7 +36487,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -36183,16 +36561,16 @@
     },
     {
       "id": "item-81ff20b4-9904-4613-99c8-f3c754d398c0",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-81ff20b4-9904-4613-99c8-f3c754d398c0/index.html",
       "slug": "in-jefferson-s-footsteps-modes-of-self-design",
-      "order": 34,
-      "parent": null,
+      "order": 5,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "In Jefferson's Footsteps: Modes of Self-Design",
       "description": "In Jefferson's Footsteps: Modes of Self-Design (p. 105-116) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin talks briefly about humanity's departure from synergy with the ",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-3-readings-chapter-10-in-jeffersons-footsteps-modes-of-self-design",
         "tags": "reading",
         "oerFields": {
@@ -36217,8 +36595,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471269,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36226,16 +36604,16 @@
     },
     {
       "id": "item-4fe6a5c8-3c76-445e-93ed-0328f671609e",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-4fe6a5c8-3c76-445e-93ed-0328f671609e/index.html",
       "slug": "giorgio-vasari-and-the-permutations-of-design",
-      "order": 35,
-      "parent": null,
+      "order": 6,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Giorgio Vasari and the Permutations of Design",
       "description": "Giorgio Vasari and the Permutations of Design (p. 85-87) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin explores implications resulting from Vasari helping to establish th",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-3-readings-chapter-8-giorgio-vasari-and-the-permutations-of-design",
         "tags": "reading",
         "oerFields": {
@@ -36260,8 +36638,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471269,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36269,16 +36647,16 @@
     },
     {
       "id": "item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-81d4a9f7-a28c-4dcc-a0e8-1abf4680b09d/index.html",
       "slug": "the-lady-in-the-picture-design-and-revelation-in-renaissance-art",
-      "order": 36,
-      "parent": null,
+      "order": 7,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "The Lady in the Picture: Design and Revelation in Renaissance Art",
       "description": "The Lady in the Picture: Design and Revelation in Renaissance Art (p. 88-104) in Design and Truth by Robert GrudinWriting prompt\nIn this chapter, Grudin gives us a glimpse into specific moments of kn",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-3-readings-chapter-9-the-lady-in-the-picture-design-and-revelation-in-r",
         "tags": "reading",
         "oerFields": {
@@ -36303,8 +36681,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471270,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36312,11 +36690,11 @@
     },
     {
       "id": "item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-529bb64b-2e42-4ff5-ae6d-2d875d2dec3d/index.html",
       "slug": "share-one-completed-set",
-      "order": 37,
-      "parent": null,
+      "order": 69,
+      "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
       "title": "Share One Completed Set",
       "description": "In this exercise, you will apply Image textures to a Chess board and piecesLearning Objectives\n\nPractice rendering images for submissions\n\nInstructions\nFor this assignment, you will submit 3 total im",
       "metadata": {
@@ -36343,7 +36721,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472198,
+        "updated": 1791551508,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36357,7 +36735,7 @@
             "notes": ""
           }
         ],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
@@ -36411,16 +36789,16 @@
     },
     {
       "id": "item-0e39f06d-969d-4ee4-ba00-aa33514304ba",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-0e39f06d-969d-4ee4-ba00-aa33514304ba/index.html",
       "slug": "jefferson-s-gravestone-metaphorical-extensions-of-design",
-      "order": 38,
-      "parent": null,
+      "order": 8,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Jefferson's Gravestone: Metaphorical Extensions of Design",
       "description": "Jefferson's Gravestone: Metaphorical Extensions of Design (p. 117-133) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin takes us on a foray through literary design, social ",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-4-readings-chapter-11-jeffersons-gravestone-metaphorical-extensions-of-d",
         "tags": "reading",
         "oerFields": {
@@ -36445,8 +36823,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471272,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36454,16 +36832,16 @@
     },
     {
       "id": "item-73f7f84a-b21c-4a11-b741-3e06a1dac59e",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-73f7f84a-b21c-4a11-b741-3e06a1dac59e/index.html",
       "slug": "liberty-as-knowledge-design",
-      "order": 39,
-      "parent": null,
+      "order": 9,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Liberty as Knowledge Design",
       "description": "Liberty as Knowledge Design (p. 134 - 149) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin dissects the design challenges inherent in a society built on democratic values.",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-4-readings-chapter-12-liberty-as-knowledge-design",
         "tags": "reading",
         "oerFields": {
@@ -36488,8 +36866,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471272,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36497,16 +36875,16 @@
     },
     {
       "id": "item-f264e5ef-3a93-4457-91f9-cd035ee31eee",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-f264e5ef-3a93-4457-91f9-cd035ee31eee/index.html",
       "slug": "corporate-redesign-and-the-business-of-knowledge",
-      "order": 40,
-      "parent": null,
+      "order": 10,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Corporate Redesign and the Business of Knowledge",
       "description": "Corporate Redesign and the Business of Knowledge (p. 150-165) in Design and Truth by Robert Grudin.Writing prompt\nIn this chapter, Grudin describes arguments over imbuing corporate free market endeav",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-4-readings-chapter-13-corporate-redesign-and-the-business-of-knowledge",
         "tags": "reading",
         "oerFields": {
@@ -36531,8 +36909,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471273,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36540,16 +36918,16 @@
     },
     {
       "id": "item-41d9b567-104d-4f03-a5b9-0194e4857e67",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.html",
       "slug": "designing-time",
-      "order": 41,
-      "parent": null,
+      "order": 11,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "Designing Time",
       "description": "Designing Time (p.166 - 177 ) in Design and Truth by Robert GrudinWriting prompt\nIn these chapters, Grudin discusses the dimensionality of temporal design from examples of storytelling, music, sports",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-4-readings-chapter-14-designing-time",
         "tags": "reading",
         "oerFields": {
@@ -36574,8 +36952,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471274,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36583,16 +36961,16 @@
     },
     {
       "id": "item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-f1689bd3-280e-4e1e-8c8d-75e2620e9c94/index.html",
       "slug": "the-design-of-private-knowledge",
-      "order": 42,
-      "parent": null,
+      "order": 12,
+      "parent": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "title": "The Design of Private Knowledge",
       "description": "The Design of Private Knowledge (p.178 - 195 ) in Design and Truth by Robert GrudinPrompt\nIn this chapter, Grudin talks about something he calls mental design, the ability to wrap a story or experien",
       "metadata": {
         "published": true,
-        "pageType": "oer:article",
+        "pageType": "oer:reflection",
         "oerSource": "articles/dmd100-lesson-5-readings-chapter-15-the-design-of-private-knowledge",
         "tags": "reading",
         "oerFields": {
@@ -36617,8 +36995,8 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791471274,
-        "overridePathauto": false,
+        "updated": 1791551508,
+        "overridePathauto": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
@@ -36629,7 +37007,7 @@
       "indent": 2,
       "location": "pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.html",
       "slug": "pathways/fundamentals/v0-9-0",
-      "order": 1878,
+      "order": 1879,
       "parent": null,
       "title": "v0.9.0",
       "description": "",

@@ -34,7 +34,7 @@ import { unwrapDrafts } from "./oer-draft.js";
 
 const COURSE_TYPE = "oer:course";
 // grouping by type follows how a course runs
-const TYPE_ORDER = ["oer:course", "oer:pathway", "oer:unit", "oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:project", "oer:activity", "oer:quiz", "oer:book"];
+const TYPE_ORDER = ["oer:course", "oer:pathway", "oer:unit", "oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:reflection", "oer:project", "oer:activity", "oer:quiz", "oer:book"];
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;

@@ -36,6 +36,7 @@ const SECTIONS = {
   "oer:article": "Articles",
   "oer:resource": "Resources",
   "oer:exercise": "Exercises",
+  "oer:reflection": "Reflections",
   "oer:project": "Projects",
   "oer:activity": "Projects",
   "oer:quiz": "Quizzes",

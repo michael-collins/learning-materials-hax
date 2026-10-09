@@ -80,7 +80,7 @@ export const SUBMISSION_TYPES = {
 
 /** The role a page of this type usually takes in an LMS. */
 export function defaultRole(pageType) {
-  if (["oer:exercise", "oer:project", "oer:activity"].includes(pageType)) return "assignment";
+  if (["oer:exercise", "oer:reflection", "oer:project", "oer:activity"].includes(pageType)) return "assignment";
   if (pageType === "oer:quiz") return "quiz";
   if (pageType === "oer:resource") return "link";
   return "page";

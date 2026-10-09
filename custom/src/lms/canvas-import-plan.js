@@ -62,8 +62,8 @@ const linksIn = (html) => [...String(html || "").matchAll(/<a\b[^>]*\shref="(htt
 const NOT_MATCHABLE = new Set(["oer:system", "oer:heading", "oer:section", "oer:sequence", "oer:rubric"]);
 const ROLE_TYPES = {
   page: ["oer:lesson", "oer:article", "oer:tutorial", "oer:lecture", "oer:resource", "oer:book"],
-  assignment: ["oer:activity", "oer:exercise", "oer:project"],
-  discussion: ["oer:activity", "oer:exercise"],
+  assignment: ["oer:activity", "oer:exercise", "oer:reflection", "oer:project"],
+  discussion: ["oer:activity", "oer:exercise", "oer:reflection"],
   quiz: ["oer:quiz"],
   link: ["oer:resource", "oer:book", "oer:course", "oer:lesson", "oer:article"],
   file: ["oer:resource"],
@@ -156,6 +156,7 @@ function assignmentType(a, title, group) {
   const g = group?.title || "";
   if ((Number(a.points) || 0) >= 50 || /\b(final project|portfolio)\b/i.test(title)) return ["oer:project", (Number(a.points) || 0) >= 50 ? `${a.points} points make it a project` : "its title says it's a project"];
   if (/\bproject\b/i.test(title) || /\bproject\b/i.test(g)) return ["oer:activity", "a step of a project"];
+  if (/\b(reading responses?|responses?|reflections?|reflect|journal)\b/i.test(`${title} ${g}`)) return ["oer:reflection", "its title or group says it's a reading response or reflection"];
   if (/\b(exercise|practice|lab|drill|worksheet)\b/i.test(`${title} ${g}`)) return ["oer:exercise", "its title or group says it's practice"];
   return ["oer:activity", "work students hand in"];
 }
@@ -302,8 +303,10 @@ export function planImport(course, items = []) {
       if (e.action !== "skip") e.reasons.push(why);
     } else if (it.kind === "discussion") {
       const d = src || {};
-      Object.assign(e, { type: "oer:activity", role: d.assignment ? { ...assignmentRole(d.assignment, "discussion"), requireInitialPost: d.requireInitialPost, groupSet: d.groupSet || undefined } : { as: "discussion", graded: false, requireInitialPost: d.requireInitialPost } });
-      if (e.action !== "skip") e.reasons.push(d.assignment ? "a graded discussion: an activity page as its prompt" : "a discussion: an activity page as its prompt");
+      const reflects = /\b(reading responses?|responses?|reflections?|reflect|journal)\b/i.test(it.title || "");
+      Object.assign(e, { type: reflects ? "oer:reflection" : "oer:activity", role: d.assignment ? { ...assignmentRole(d.assignment, "discussion"), requireInitialPost: d.requireInitialPost, groupSet: d.groupSet || undefined } : { as: "discussion", graded: false, requireInitialPost: d.requireInitialPost } });
+      const page = reflects ? "a reflection page" : "an activity page";
+      if (e.action !== "skip") e.reasons.push(d.assignment ? `a graded discussion: ${page} as its prompt` : `a discussion: ${page} as its prompt`);
     } else if (it.kind === "quiz") {
       const q = src || {};
       const built = questionsHtml(q.questions || []);

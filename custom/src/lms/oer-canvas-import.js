@@ -42,7 +42,7 @@ const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
 export const AI_BRIDGE = LOCAL_HELPER;
-const TYPES = ["oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:activity", "oer:project", "oer:quiz"];
+const TYPES = ["oer:lesson", "oer:lecture", "oer:tutorial", "oer:article", "oer:resource", "oer:exercise", "oer:reflection", "oer:activity", "oer:project", "oer:quiz"];
 const ACTION_LABEL = { create: "Create", link: "Link", skip: "Skip", url: "Link only", header: "Header", overview: "Overview", text: "In sequence" };
 const ROLE_LABEL = { page: "Page", assignment: "Assignment", discussion: "Discussion", quiz: "Quiz", file: "File", url: "Link" };
 
