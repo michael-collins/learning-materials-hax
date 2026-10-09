@@ -1,1 +1,15 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut. Fallback if CNC time is unavailable: laser-cut stacked contours of the same surface.</p><h2>What to hand in</h2><ul><li>The tile</li><li>CAM setup screenshots with bit/feeds/speeds justified</li></ul><h2>What you'll practise</h2><ul><li>Set up a CAM job</li><li>Think in 2.5D</li></ul><p>Time: 2 weeks (tech-run)</p></oer-draft>
+Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut. Fallback if CNC time is unavailable: laser-cut stacked contours of the same surface.
+
+What to hand in
+---------------
+
+*   The tile
+*   CAM setup screenshots with bit/feeds/speeds justified
+
+What you'll practise
+--------------------
+
+*   Set up a CAM job
+*   Think in 2.5D
+
+Time: 2 weeks (tech-run)

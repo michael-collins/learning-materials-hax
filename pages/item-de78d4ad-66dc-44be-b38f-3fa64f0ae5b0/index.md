@@ -1,1 +1,1 @@
-<oer-draft note="Outline from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Draft via R007.</p></oer-draft>
+Draft via R007.

@@ -5,11 +5,11 @@ slug: quizzes/3d-printing-quiz
 order: 18
 parent: item-1c6926f6-66c0-4907-859d-a8efbc78bb8a
 title: 3D printing quiz
-description: ''
+description: Self-check questions on 3D printing.
 metadata:
   pageType: oer:quiz
   oerPlan: DART 413:quiz:M06
-  published: false
+  published: true
   oerFields:
     license: CC BY 4.0
     authors:
@@ -17,41 +17,44 @@ metadata:
         url: ''
     placeholder: true
     estimatedDuration: 10 minutes
+    prerequisites:
+      - page: item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a
+        version: ''
+      - page: item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6
+        version: ''
+      - page: item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0
+        version: ''
+      - page: item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad
+        version: ''
+    courses:
+      - page: item-e09826f0-d716-4612-807a-2bbfcff22b36
+        version: ''
   created: 1791383988
   images: []
   videos: []
-  updated: 1791383988
-content: >
-  <oer-draft note="Suggested questions, written from the week's objectives.
-  Check them, then Publish.">
-
-  <p>Check your understanding of 3D printing. Your answers aren't recorded.</p>
-
-  <multiple-choice question="A printed bracket snaps cleanly along a layer line.
-  What is the best design fix?" single-option="" randomize="">
+  updated: 1791518061
+  locked: false
+  status: ''
+  icon: ''
+content: >-
+  <p>Check your understanding of 3D printing. Your answers aren't
+  recorded.</p><multiple-choice question="A printed bracket snaps cleanly along
+  a layer line. What is the best design fix?" single-option="" randomize="">
     <input type="checkbox" value="Reorient the print so the load runs along the layers, not across them" data-correct="true">
     <input type="checkbox" value="Print it faster">
     <input type="checkbox" value="Use a smaller nozzle">
     <input type="checkbox" value="Turn supports off">
-  </multiple-choice>
-
-  <multiple-choice question="Why does a slicer need a watertight (manifold)
-  mesh?" single-option="" randomize="">
+  </multiple-choice><multiple-choice question="Why does a slicer need a
+  watertight (manifold) mesh?" single-option="" randomize="">
     <input type="checkbox" value="It needs a closed surface to tell inside from outside when it computes each layer" data-correct="true">
     <input type="checkbox" value="Open meshes print too fast">
     <input type="checkbox" value="Watertight meshes never need supports">
     <input type="checkbox" value="STL files can't store open meshes">
-  </multiple-choice>
-
-  <true-false-question question="In FDM printing, overhangs steeper than about
-  45 degrees from vertical usually need support.">
+  </multiple-choice><true-false-question question="In FDM printing, overhangs
+  steeper than about 45 degrees from vertical usually need support.">
     <input type="checkbox" value="True" data-correct="true">
     <input type="checkbox" value="False">
-  </true-false-question>
-
-  <self-check title="Think it through">
+  </true-false-question><self-check title="Think it through">
     <p slot="question">Two printed parts should slide together. Why can't you model them at exactly the same size?</p>
     <p>Printed parts come out slightly larger or smaller than the model, and layer lines add roughness, so a fit needs clearance. Find the right gap for your printer and material with a small test print before printing the real parts.</p>
   </self-check>
-
-  </oer-draft>

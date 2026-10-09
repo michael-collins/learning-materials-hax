@@ -6,11 +6,11 @@
   "order": 19,
   "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
   "title": "CNC routing quiz",
-  "description": "",
+  "description": "Self-check questions on CNC routing.",
   "metadata": {
     "pageType": "oer:quiz",
     "oerPlan": "DART 413:quiz:M09",
-    "published": false,
+    "published": true,
     "oerFields": {
       "license": "CC BY 4.0",
       "authors": [
@@ -20,12 +20,35 @@
         }
       ],
       "placeholder": true,
-      "estimatedDuration": "10 minutes"
+      "estimatedDuration": "10 minutes",
+      "prerequisites": [
+        {
+          "page": "item-29ccdd18-d451-48e3-b92a-ee97be5e062f",
+          "version": ""
+        },
+        {
+          "page": "item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e",
+          "version": ""
+        },
+        {
+          "page": "item-304740f9-f09f-4e1c-94dd-84eead792e87",
+          "version": ""
+        }
+      ],
+      "courses": [
+        {
+          "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+          "version": ""
+        }
+      ]
     },
     "created": 1791383988,
     "images": [],
     "videos": [],
-    "updated": 1791383988
+    "updated": 1791518066,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<oer-draft note=\"Suggested questions, written from the week's objectives. Check them, then Publish.\">\n<p>Check your understanding of CNC routing. Your answers aren't recorded.</p>\n<multiple-choice question=\"In 2.5D milling, what can't a straight end mill cut, whatever the toolpath?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"An inside corner sharper than the bit's radius\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"A pocket deeper than half the stock\">\n  <input type=\"checkbox\" value=\"A curved outline\">\n  <input type=\"checkbox\" value=\"Lettering\">\n</multiple-choice>\n<multiple-choice question=\"What are tabs for in a profile cut?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"They hold the part to the stock so it can't shift or fly loose as the cut finishes\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"They mark where the cut starts\">\n  <input type=\"checkbox\" value=\"They cool the bit\">\n  <input type=\"checkbox\" value=\"They stop tear-out on the top face\">\n</multiple-choice>\n<true-false-question question=\"Feeds and speeds only change how long a job takes, not the quality or safety of the cut.\">\n  <input type=\"checkbox\" value=\"False\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"True\">\n</true-false-question>\n<self-check title=\"Think it through\">\n  <p slot=\"question\">Before you start a CNC job, what do you check about zero?</p>\n  <p>That X and Y zero are where the CAM setup expects them (a corner or the centre of the stock), and that Z zero is set to the surface the CAM used (the top of the stock or the spoilboard). A mismatch cuts air, or cuts into the spoilboard.</p>\n</self-check>\n</oer-draft>\n"
+  "content": "<p>Check your understanding of CNC routing. Your answers aren't recorded.</p><multiple-choice question=\"In 2.5D milling, what can't a straight end mill cut, whatever the toolpath?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"An inside corner sharper than the bit's radius\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"A pocket deeper than half the stock\">\n  <input type=\"checkbox\" value=\"A curved outline\">\n  <input type=\"checkbox\" value=\"Lettering\">\n</multiple-choice><multiple-choice question=\"What are tabs for in a profile cut?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"They hold the part to the stock so it can't shift or fly loose as the cut finishes\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"They mark where the cut starts\">\n  <input type=\"checkbox\" value=\"They cool the bit\">\n  <input type=\"checkbox\" value=\"They stop tear-out on the top face\">\n</multiple-choice><true-false-question question=\"Feeds and speeds only change how long a job takes, not the quality or safety of the cut.\">\n  <input type=\"checkbox\" value=\"False\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"True\">\n</true-false-question><self-check title=\"Think it through\">\n  <p slot=\"question\">Before you start a CNC job, what do you check about zero?</p>\n  <p>That X and Y zero are where the CAM setup expects them (a corner or the centre of the stock), and that Z zero is set to the surface the CAM used (the top of the stock or the spoilboard). A mismatch cuts air, or cuts into the spoilboard.</p>\n</self-check>"
 }

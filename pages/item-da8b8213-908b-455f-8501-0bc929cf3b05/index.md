@@ -1,1 +1,15 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>A single site or PDF documenting every exercise and project: photographs, files, settings, failures, and what you would do differently. Follow the documentation guide.</p><h2>What to hand in</h2><ul><li>Portfolio (site or PDF)</li><li>Published files with license</li></ul><h2>What you'll practise</h2><ul><li>Document making as part of the work</li><li>Publish files responsibly</li></ul><p>Time: ongoing; due week 15</p></oer-draft>
+A single site or PDF documenting every exercise and project: photographs, files, settings, failures, and what you would do differently. Follow the documentation guide.
+
+What to hand in
+---------------
+
+*   Portfolio (site or PDF)
+*   Published files with license
+
+What you'll practise
+--------------------
+
+*   Document making as part of the work
+*   Publish files responsibly
+
+Time: ongoing; due week 15

@@ -7,14 +7,17 @@
 <order>45</order>
 <parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
 <title>Final production I: workshops on demand</title>
-<description></description>
+<description>Production; targeted workshops by request (advanced slicing, Grasshopper basics, 3D CAM, casting); documentation practices.</description>
 <metadata>
 <pageType>oer:lesson</pageType>
 <oerPlan>DART 413:M13</oerPlan>
-<published>false</published>
+<published>true</published>
 <oerFields>
 <courses>
-<item>DART 413</item>
+<item>
+<page>item-e09826f0-d716-4612-807a-2bbfcff22b36</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -30,20 +33,28 @@
 <item>Choose a license and platform for sharing files</item>
 </learningObjectives>
 <estimatedDuration>1 week</estimatedDuration>
+<components>
+<item>
+<page>item-3eaf0ad2-49f1-48cb-95d1-62c414cde9f1</page>
+<version></version>
+</item>
+<item>
+<page>item-da8b8213-908b-455f-8501-0bc929cf3b05</page>
+<version></version>
+</item>
+</components>
+<readings>
+</readings>
 </oerFields>
 <created>1791383988</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791383988</updated>
+<updated>1791518072</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
-<content><![CDATA[<oer-draft note="Week 13 from the DART 413 course plan. Revise it, then Publish to show it to readers.">
-<p>Production; targeted workshops by request (advanced slicing, Grasshopper basics, 3D CAM, casting); documentation practices.</p>
-<h2>Ideas</h2>
-<p>Documentation as part of the work; files as publications (Printables/Thingiverse/GitHub); licensing and attribution.</p>
-<h2>In class</h2>
-<ul><li>Workshops (60)</li><li>production (110)</li></ul>
-</oer-draft>
-]]></content>
+<content><![CDATA[<p>Production; targeted workshops by request (advanced slicing, Grasshopper basics, 3D CAM, casting); documentation practices.</p><h2>Ideas</h2><p>Documentation as part of the work; files as publications (Printables/Thingiverse/GitHub); licensing and attribution.</p><h2>In class</h2><ul><li>Workshops (60 min)</li><li>production (110 min)</li></ul>]]></content>
 </item>

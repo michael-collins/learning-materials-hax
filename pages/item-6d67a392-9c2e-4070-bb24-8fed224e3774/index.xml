@@ -7,11 +7,11 @@
 <order>19</order>
 <parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
 <title>CNC routing quiz</title>
-<description></description>
+<description>Self-check questions on CNC routing.</description>
 <metadata>
 <pageType>oer:quiz</pageType>
 <oerPlan>DART 413:quiz:M09</oerPlan>
-<published>false</published>
+<published>true</published>
 <oerFields>
 <license>CC BY 4.0</license>
 <authors>
@@ -22,36 +22,52 @@
 </authors>
 <placeholder>true</placeholder>
 <estimatedDuration>10 minutes</estimatedDuration>
+<prerequisites>
+<item>
+<page>item-29ccdd18-d451-48e3-b92a-ee97be5e062f</page>
+<version></version>
+</item>
+<item>
+<page>item-e2cfa8d1-ddee-46fc-b6b6-fbb1bc69326e</page>
+<version></version>
+</item>
+<item>
+<page>item-304740f9-f09f-4e1c-94dd-84eead792e87</page>
+<version></version>
+</item>
+</prerequisites>
+<courses>
+<item>
+<page>item-e09826f0-d716-4612-807a-2bbfcff22b36</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <created>1791383988</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791383988</updated>
+<updated>1791518066</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
-<content><![CDATA[<oer-draft note="Suggested questions, written from the week's objectives. Check them, then Publish.">
-<p>Check your understanding of CNC routing. Your answers aren't recorded.</p>
-<multiple-choice question="In 2.5D milling, what can't a straight end mill cut, whatever the toolpath?" single-option="" randomize="">
+<content><![CDATA[<p>Check your understanding of CNC routing. Your answers aren't recorded.</p><multiple-choice question="In 2.5D milling, what can't a straight end mill cut, whatever the toolpath?" single-option="" randomize="">
   <input type="checkbox" value="An inside corner sharper than the bit's radius" data-correct="true">
   <input type="checkbox" value="A pocket deeper than half the stock">
   <input type="checkbox" value="A curved outline">
   <input type="checkbox" value="Lettering">
-</multiple-choice>
-<multiple-choice question="What are tabs for in a profile cut?" single-option="" randomize="">
+</multiple-choice><multiple-choice question="What are tabs for in a profile cut?" single-option="" randomize="">
   <input type="checkbox" value="They hold the part to the stock so it can't shift or fly loose as the cut finishes" data-correct="true">
   <input type="checkbox" value="They mark where the cut starts">
   <input type="checkbox" value="They cool the bit">
   <input type="checkbox" value="They stop tear-out on the top face">
-</multiple-choice>
-<true-false-question question="Feeds and speeds only change how long a job takes, not the quality or safety of the cut.">
+</multiple-choice><true-false-question question="Feeds and speeds only change how long a job takes, not the quality or safety of the cut.">
   <input type="checkbox" value="False" data-correct="true">
   <input type="checkbox" value="True">
-</true-false-question>
-<self-check title="Think it through">
+</true-false-question><self-check title="Think it through">
   <p slot="question">Before you start a CNC job, what do you check about zero?</p>
   <p>That X and Y zero are where the CAM setup expects them (a corner or the centre of the stock), and that Z zero is set to the surface the CAM used (the top of the stock or the spoilboard). A mismatch cuts air, or cuts into the spoilboard.</p>
-</self-check>
-</oer-draft>
-]]></content>
+</self-check>]]></content>
 </item>

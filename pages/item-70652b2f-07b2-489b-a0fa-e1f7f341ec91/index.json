@@ -6,14 +6,17 @@
   "order": 54,
   "parent": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
   "title": "CNC relief tile",
-  "description": "",
+  "description": "Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut.",
   "metadata": {
     "pageType": "oer:exercise",
     "oerPlan": "DART 413:A08",
-    "published": false,
+    "published": true,
     "oerFields": {
       "courses": [
-        "DART 413"
+        {
+          "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -27,7 +30,10 @@
     "created": 1791383988,
     "images": [],
     "videos": [],
-    "updated": 1791383988
+    "updated": 1791518065,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<oer-draft note=\"Brief from the DART 413 course plan. Revise it, then Publish to show it to readers.\">\n<p>Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut. Fallback if CNC time is unavailable: laser-cut stacked contours of the same surface.</p>\n<h2>What to hand in</h2>\n<ul><li>The tile</li><li>CAM setup screenshots with bit/feeds/speeds justified</li></ul>\n<h2>What you'll practise</h2>\n<ul><li>Set up a CAM job</li><li>Think in 2.5D</li></ul>\n<p>Time: 2 weeks (tech-run)</p>\n</oer-draft>\n"
+  "content": "<p>Design a 2.5D relief tile from a heightmap or modeled surface, set up the CAM job, and have it cut. Fallback if CNC time is unavailable: laser-cut stacked contours of the same surface.</p><h2>What to hand in</h2><ul><li>The tile</li><li>CAM setup screenshots with bit/feeds/speeds justified</li></ul><h2>What you'll practise</h2><ul><li>Set up a CAM job</li><li>Think in 2.5D</li></ul><p>Time: 2 weeks (tech-run)</p>"
 }

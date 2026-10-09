@@ -1,1 +1,13 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Prepared, specific, and generous participation in the four crits, following the protocol.</p><h2>What to hand in</h2><ul><li>Presence and contribution at each crit</li></ul><h2>What you'll practise</h2><ul><li>Critique on technical and conceptual terms</li></ul><p>Time: recurring</p></oer-draft>
+Prepared, specific, and generous participation in the four crits, following the protocol.
+
+What to hand in
+---------------
+
+*   Presence and contribution at each crit
+
+What you'll practise
+--------------------
+
+*   Critique on technical and conceptual terms
+
+Time: recurring
