@@ -1,0 +1,21 @@
+{
+  "id": "item-417a2d47-2196-42b8-acae-bb0202f18fae",
+  "indent": 0,
+  "location": "pages/item-417a2d47-2196-42b8-acae-bb0202f18fae/index.json",
+  "slug": "oer-courses",
+  "order": 1880,
+  "parent": null,
+  "title": "OER Courses",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:course-hub",
+    "published": true,
+    "hideInMenu": true,
+    "overridePathauto": true,
+    "created": 1791568330,
+    "images": [],
+    "videos": [],
+    "updated": 1791568330
+  },
+  "content": "<oer-courses-intro><p></p></oer-courses-intro>\n<oer-courses-catalog></oer-courses-catalog>"
+}

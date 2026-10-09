@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791567509,
+      "updated": 1791568330,
       "version": "26.8.0"
     },
     "theme": {
@@ -21380,6 +21380,15 @@
               ]
             },
             {
+              "id": "oer:course-hub",
+              "label": "Courses hub",
+              "icon": "oer:graduation-cap",
+              "description": "OER Courses: a page for students that lists the course sites, by degree program.",
+              "children": [],
+              "nav": false,
+              "fields": []
+            },
+            {
               "id": "oer:sequence",
               "label": "Course sequence",
               "icon": "icons:date-range",
@@ -22996,7 +23005,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791566081,
+        "updated": 1791568329,
         "locked": false,
         "status": "",
         "icon": "",
@@ -37166,6 +37175,26 @@
           "accent": "",
           "fonts": "syne"
         }
+      }
+    },
+    {
+      "id": "item-417a2d47-2196-42b8-acae-bb0202f18fae",
+      "indent": 0,
+      "location": "pages/item-417a2d47-2196-42b8-acae-bb0202f18fae/index.html",
+      "slug": "oer-courses",
+      "order": 1880,
+      "parent": null,
+      "title": "OER Courses",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:course-hub",
+        "published": true,
+        "hideInMenu": true,
+        "overridePathauto": true,
+        "created": 1791568330,
+        "images": [],
+        "videos": [],
+        "updated": 1791568330
       }
     }
   ]

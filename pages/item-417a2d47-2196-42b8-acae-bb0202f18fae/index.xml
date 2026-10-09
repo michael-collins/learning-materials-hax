@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-417a2d47-2196-42b8-acae-bb0202f18fae</id>
+<indent>0</indent>
+<location>pages/item-417a2d47-2196-42b8-acae-bb0202f18fae/index.xml</location>
+<slug>oer-courses</slug>
+<order>1880</order>
+<parent></parent>
+<title>OER Courses</title>
+<description></description>
+<metadata>
+<pageType>oer:course-hub</pageType>
+<published>true</published>
+<hideInMenu>true</hideInMenu>
+<overridePathauto>true</overridePathauto>
+<created>1791568330</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791568330</updated>
+</metadata>
+<content><![CDATA[<oer-courses-intro><p></p></oer-courses-intro>
+<oer-courses-catalog></oer-courses-catalog>]]></content>
+</item>
