@@ -4,7 +4,7 @@
  * states, Slider accent. Add `formControls` first in a component's styles;
  * the rules are :where() (no specificity), so a component's own rules for
  * size or spacing still win. Switches (role="switch") keep their own look.
- * See docs/design-system.md (Forms).
+ * See nu-hax docs/design-system.md (Components).
  */
 import { css, unsafeCSS } from "../lit.js";
 
