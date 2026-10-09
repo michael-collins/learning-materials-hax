@@ -160,3 +160,52 @@ export async function setCourseSite(course, on, items) {
     },
   ]);
 }
+
+/* ---------- OER Courses: the students' hub of course sites ---------- */
+
+export const COURSE_HUB_TYPE = "oer:course-hub";
+export const HUB_SLUG = "oer-courses";
+
+/** The hub's type, as the site's content types hold it: it has no fields of its own. */
+export const COURSE_HUB_DEF = {
+  id: COURSE_HUB_TYPE,
+  label: "Courses hub",
+  icon: "oer:graduation-cap",
+  description: "OER Courses: a page for students that lists the course sites, by degree program.",
+  children: [],
+  nav: false,
+  fields: [],
+};
+
+/** The hub's page: an intro to write, then the catalog of course sites. */
+export const HUB_STARTER = ["<oer-courses-intro><p></p></oer-courses-intro>", "<oer-courses-catalog></oer-courses-catalog>"].join("\n");
+
+/** The site's hub, if it has one. */
+export const hubPage = (items) => (items || []).find((i) => i.metadata?.pageType === COURSE_HUB_TYPE && !isSnap(i)) || null;
+
+/** Whether a page is shown as a microsite (a course site or the hub). */
+export const isMicrosite = (item) => [COURSE_SITE_TYPE, COURSE_HUB_TYPE].includes(item?.metadata?.pageType) && !isSnap(item);
+
+/**
+ * The course sites readers can see, as catalog entries grouped by degree
+ * program, in `programOrder` (the course type's options), a course in two
+ * degrees under both; courses without a degree come last. Also the sites
+ * that are off, for authors.
+ */
+export function catalog(items, programOrder = []) {
+  const sites = (items || []).filter((i) => i.metadata?.pageType === COURSE_SITE_TYPE && !isSnap(i));
+  const entries = sites
+    .filter(siteIsOn)
+    .map((site) => {
+      const d = siteData(site, items);
+      const programs = Array.isArray(d.course?.metadata?.oerFields?.programs) ? d.course.metadata.oerFields.programs.filter(Boolean) : [];
+      const image = d.projects.map((p) => p.page.metadata?.oerFields?.image).find(Boolean) || d.work.map((w) => w.image).find(Boolean) || "";
+      return { site, ...d, programs, image };
+    })
+    .sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
+  const named = [...new Set([...programOrder, ...entries.flatMap((e) => e.programs)])];
+  const groups = named.map((program) => ({ program, entries: entries.filter((e) => e.programs.includes(program)) })).filter((g) => g.entries.length);
+  const loose = entries.filter((e) => !e.programs.length);
+  if (loose.length) groups.push({ program: "", entries: loose });
+  return { groups, count: entries.length, off: sites.filter((s) => !siteIsOn(s)) };
+}

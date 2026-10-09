@@ -40,7 +40,7 @@ const ICONS = {
 export const icon = (name) => html`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
 
 // the section blocks, in the order a new course site has them
-export const SECTION_TAGS = ["oer-cs-hero", "oer-cs-facts", "oer-cs-learn", "oer-cs-semester", "oer-cs-make", "oer-cs-people", "oer-cs-tools", "oer-cs-faq", "oer-cs-closing"];
+export const SECTION_TAGS = ["oer-cs-hero", "oer-cs-facts", "oer-cs-learn", "oer-cs-semester", "oer-cs-make", "oer-cs-people", "oer-cs-tools", "oer-cs-faq", "oer-cs-closing", "oer-courses-intro", "oer-courses-catalog"];
 export const isSection = (el) => SECTION_TAGS.includes(el?.localName);
 
 /* ---------- what authors typed inside a section ---------- */
@@ -104,6 +104,9 @@ export class SiteSection extends LitElement {
       const editing = !!store.editMode;
       Promise.resolve().then(() => {
         const site = (item && items.find((i) => i.id === item.id)) || item;
+        // the page it's on, whatever it is, and the whole site (the hub's blocks read those)
+        this._page = site;
+        this._items = items;
         this._site = site?.metadata?.pageType === COURSE_SITE_TYPE ? site : null;
         this._d = this._site ? siteData(this._site, items) : null;
         this._author = author;

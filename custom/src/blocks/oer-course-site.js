@@ -5,7 +5,9 @@
  * Edit details and Style for authors), the page itself, and a footer. The
  * page is made of the course site's section blocks (course-site/
  * cs-sections.js) and any other blocks; a page without sections yet shows
- * the standard ones around what it has.
+ * the standard ones around what it has. The bar's brand goes to OER
+ * Courses, the students' hub of course sites (course-site/cs-hub.js), which
+ * this frames too: its bar links to each degree program's courses.
  *
  * While editing, the theme shows the page in HAX's editor instead, at the
  * same width and in the same style, so it looks as readers will see it.
@@ -15,12 +17,13 @@
  */
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
-import { siteData, siteIsOn } from "../types/course-site.js";
+import { siteData, siteIsOn, hubPage, COURSE_HUB_TYPE } from "../types/course-site.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { editPage } from "../editor/stock.js";
 import { siteStyle } from "../ui/oer-site-style.js";
 import { icon, isSection } from "./course-site/cs-shared.js";
 import "./course-site/cs-sections.js";
+import "./course-site/cs-hub.js";
 
 // the sections the bar links to, in order
 const NAV = [
@@ -83,7 +86,9 @@ class OerCourseSite extends LitElement {
   _recompute() {
     const site = (this._items || []).find((i) => i.id === this.site?.id) || this.site;
     this._site = site;
-    this._data = site ? siteData(site, this._items || []) : null;
+    this._hub = site?.metadata?.pageType === COURSE_HUB_TYPE;
+    this._hubPage = hubPage(this._items || []);
+    this._data = site && !this._hub ? siteData(site, this._items || []) : null;
   }
 
   // the page's blocks, through the theme's slot
@@ -112,25 +117,70 @@ class OerCourseSite extends LitElement {
     this._section(tag)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   }
 
+  // the brand: OER Courses, the hub of course sites (readers only once it's published)
+  _renderBrand() {
+    const hub = this._hubPage;
+    const href = hub && (siteIsOn(hub) || this._signedIn) ? hub.slug : "./";
+    const name = hub ? hub.title || "OER Courses" : "Digital Arts OER";
+    return html`<a class="brand" href="${href}" title="${hub ? `${name}: all the course sites` : `${name} home`}"
+      ><span class="mark" aria-hidden="true">${icon("book")}</span><span class="brand-name">${name}</span></a
+    >`;
+  }
+
+  // authors: open the editor, the page's details, or its style
+  _renderAuthorActions() {
+    return this._signedIn
+      ? html`<button class="btn ghost sm" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit content</span></button>
+          <button class="btn ghost sm" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Edit details</span></button>
+          <button class="btn ghost sm" @click="${() => siteStyle().show(this._site)}">${icon("palette")}<span class="lbl">Style</span></button>`
+      : "";
+  }
+
   _renderBar(d) {
     const links = NAV.filter(([tag]) => this._section(tag)?.shown);
     return html`<header class="bar">
       <div class="wrap bar-in">
-        <a class="brand" href="./" title="Digital Arts OER home"><span class="mark" aria-hidden="true">${icon("book")}</span><span class="brand-name">Digital Arts OER</span></a>
+        ${this._renderBrand()}
         ${d.code ? html`<span class="crumb" aria-hidden="true">/</span><span class="code">${d.code}</span>` : ""}
         <nav class="links" aria-label="On this page">${links.map(([tag, label]) => html`<button @click="${() => this._go(tag)}">${label}</button>`)}</nav>
         <span class="spacer"></span>
-        ${this._signedIn
-          ? html`<button class="btn ghost sm" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit content</span></button>
-              <button class="btn ghost sm" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Edit details</span></button>
-              <button class="btn ghost sm" @click="${() => siteStyle().show(this._site)}">${icon("palette")}<span class="lbl">Style</span></button>`
-          : ""}
+        ${this._renderAuthorActions()}
         ${d.enrollUrl ? html`<a class="btn primary sm" href="${d.enrollUrl}" target="_blank" rel="noopener">Enroll</a>` : ""}
       </div>
     </header>`;
   }
 
+  _themeButton() {
+    return html`<button class="theme-btn" aria-pressed="${this._dark ? "true" : "false"}" @click="${() => (store.darkMode = !store.darkMode)}">
+      ${icon(this._dark ? "sun" : "moon")}${this._dark ? "Light mode" : "Dark mode"}
+    </button>`;
+  }
+
+  // OER Courses: the hub's bar links to each degree program's courses
+  _renderHub() {
+    const catalogEl = this._section("oer-courses-catalog");
+    const groups = catalogEl?.groups || [];
+    const before = this._hasSections ? "" : html`<oer-courses-intro></oer-courses-intro>`;
+    const after = this._hasSections ? "" : html`<oer-courses-catalog></oer-courses-catalog>`;
+    return html`<div class="ms">
+      <header class="bar">
+        <div class="wrap bar-in">
+          ${this._renderBrand()}
+          <nav class="links" aria-label="Degree programs">${groups.map((g) => html`<button @click="${() => catalogEl.go(g.id)}">${g.label}</button>`)}</nav>
+          <span class="spacer"></span>
+          ${this._renderAuthorActions()}
+        </div>
+      </header>
+      ${this._signedIn && !siteIsOn(this._site)
+        ? html`<p class="off-note" role="status"><span class="wrap">${icon("eyeOff")}<span>This page is a draft, so readers can't see it. Publish it from the page menu.</span></span></p>`
+        : ""}
+      <main>${before}<slot @slotchange="${this._slotChanged}"></slot>${after}</main>
+      <footer class="foot"><div class="wrap foot-in">${this._themeButton()}</div></footer>
+    </div>`;
+  }
+
   render() {
+    if (this._hub) return this._renderHub();
     const d = this._data;
     if (!d) return html``;
     // a page without sections yet: the standard ones around what it has
@@ -155,11 +205,8 @@ class OerCourseSite extends LitElement {
         <div class="wrap foot-in">
           <span>${d.institutionUrl ? html`<a href="${d.institutionUrl}" target="_blank" rel="noopener">${d.institution}</a>` : d.institution}</span>
           ${d.course ? html`<a href="${d.course.slug}">Course details</a>` : ""}
-          <a href="./">Digital Arts OER</a>
           ${d.license ? html`<span class="muted">${d.license}</span>` : ""}
-          <button class="theme-btn" aria-pressed="${this._dark ? "true" : "false"}" @click="${() => (store.darkMode = !store.darkMode)}">
-            ${icon(this._dark ? "sun" : "moon")}${this._dark ? "Light mode" : "Dark mode"}
-          </button>
+          ${this._themeButton()}
         </div>
       </footer>
     </div>`;

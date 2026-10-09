@@ -29,7 +29,7 @@ import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { newPage } from "./ui/oer-new-page.js";
 import { deletePage } from "./ui/oer-delete-page.js";
 import { typeListedOn } from "./types/type-homes.js";
-import { COURSE_SITE_TYPE } from "./types/course-site.js";
+import { isMicrosite } from "./types/course-site.js";
 import { siteStyleVars, loadSiteFonts } from "./types/course-site-style.js";
 import "./blocks/oer-course-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
@@ -286,7 +286,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           const fields = (source || item)?.metadata?.oerFields || {};
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
           // a course site shows as a microsite; a course page links to its site
-          this._courseSite = item?.metadata?.pageType === COURSE_SITE_TYPE ? (manifest?.items || []).find((i) => i.id === item.id) || item : null;
+          this._courseSite = isMicrosite(item) ? (manifest?.items || []).find((i) => i.id === item.id) || item : null;
           // a page that lists a type (Lessons, Exercises…): its New button
           const listed = typeListedOn(item);
           const listedType = listed && (contentTypes(manifest?.items || []).types || []).find((t) => t.id === listed);
@@ -1976,7 +1976,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([course-site]:not([edit-mode])) article {
           max-width: none;
         }
-        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing)) {
+        /* (the section blocks: blocks/course-site/cs-shared.js SECTION_TAGS) */
+        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing):not(oer-courses-intro):not(oer-courses-catalog)) {
           box-sizing: border-box;
           width: min(48rem, calc(100% - 3rem));
           margin-inline: auto;
@@ -2128,8 +2129,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             ${site && this.editMode
               ? html`<p class="cs-editing" role="note">
                   ${icon.pencil}<span
-                    >You're editing the course site as readers will see it. Type in the dashed boxes; the rest comes from the course and its plan.
-                    Add any block between sections.</span
+                    >You're editing this page as readers will see it. Type in the dashed boxes; the rest is drawn from the site (the course and its
+                    plan, or the course sites). Add any block between sections.</span
                   >
                 </p>`
               : site
