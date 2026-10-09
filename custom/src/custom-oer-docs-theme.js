@@ -138,6 +138,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _prev: { state: true },
       _next: { state: true },
       _loggedIn: { state: true },
+      _bookChapters: { state: true },
+      _chaptersOpen: { state: true },
       _userName: { state: true },
       _activeTitle: { state: true },
       _locked: { state: true },
@@ -171,6 +173,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__mq = globalThis.matchMedia(MOBILE_QUERY);
     this.__keyHandler = this._onKeydown.bind(this);
     this._loggedIn = false;
+    this._bookChapters = null;
+    this._chaptersOpen = false;
     this._pageMenuOpen = false;
     this.reader = false;
     this.readerColour = "";
@@ -266,6 +270,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           const source = refId ? (manifest?.items || []).find((i) => i.id === refId) : null;
           const fields = (source || item)?.metadata?.oerFields || {};
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
+          // a book: its chapters' count, for the authors' Chapters panel
+          if (item?.metadata?.pageType === "oer:book") {
+            const kids = new Map();
+            for (const i of manifest?.items || []) if (!i.metadata?.hideInMenu) kids.set(i.parent || null, [...(kids.get(i.parent || null) || []), i]);
+            const under = [];
+            const walk = (id) => (kids.get(id) || []).forEach((c) => (under.push(c), walk(c.id)));
+            walk(item.id);
+            if (this._bookChapters?.id !== item.id) this._chaptersOpen = false;
+            this._bookChapters = { id: item.id, total: under.length, drafts: under.filter((c) => c.metadata?.published === false).length };
+          } else this._bookChapters = null;
           this._embedItem = item;
           this._canEmbed = !!item && !isEmbedded() && fields.allowEmbed !== false && item.metadata?.published !== false;
         });
@@ -1774,6 +1788,70 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           --ring: #9a6a36;
         }
 
+        /* a book's chapters, for authors (_renderBookChapters) */
+        .book-chapters {
+          margin: 2.5rem 0 0;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          background: var(--card);
+        }
+        .book-chapters summary {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1rem;
+          font-family: var(--font-sans);
+          font-size: 0.9375rem;
+          cursor: pointer;
+          list-style: none;
+        }
+        .book-chapters summary::-webkit-details-marker {
+          display: none;
+        }
+        .book-chapters summary::after {
+          content: "";
+          width: 0.5rem;
+          height: 0.5rem;
+          margin-left: auto;
+          border-right: 1.5px solid currentColor;
+          border-bottom: 1.5px solid currentColor;
+          transform: rotate(45deg) translateY(-2px);
+          color: var(--muted-foreground);
+        }
+        .book-chapters[open] summary::after {
+          transform: rotate(-135deg) translateY(-2px);
+        }
+        .book-chapters summary:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 2px;
+          border-radius: var(--radius-lg);
+        }
+        .bc-title {
+          font-weight: 600;
+        }
+        .bc-status {
+          padding: 0.0625rem 0.5rem;
+          border-radius: 999px;
+          font-size: 0.8125rem;
+          color: var(--muted-foreground);
+          background: var(--muted);
+        }
+        .bc-status.has-drafts {
+          font-weight: 500;
+          color: light-dark(oklch(0.45 0.12 70), oklch(0.82 0.12 78));
+          background: color-mix(in srgb, oklch(0.62 0.15 70) 16%, transparent);
+        }
+        .bc-note {
+          margin: 0 1rem 0.75rem;
+          font-family: var(--font-sans);
+          font-size: 0.8125rem;
+          color: var(--muted-foreground);
+        }
+        .book-chapters oer-collection {
+          display: block;
+          padding: 0 1rem 1rem;
+        }
+
         /* embed mode (?embed=1): only the page itself */
         :host([embed]) {
           background: var(--background);
@@ -1910,6 +1988,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             </div>
             <oer-page-header></oer-page-header>
             <section id="slot"><slot></slot></section>
+            ${this._renderBookChapters()}
             ${this.editMode ? "" : html`<oer-page-footer ?compact="${this.reader}"></oer-page-footer>`}
             <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
               ${this._prev
@@ -2204,6 +2283,21 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
   _closeMobile() {
     this.mobileOpen = false;
+  }
+
+  // a book, for signed-in authors: its chapters in a table, to publish or
+  // unpublish together (the table's own checkboxes and Publish bar)
+  _renderBookChapters() {
+    const b = this._bookChapters;
+    if (!b || !b.total || !this._loggedIn || this.editMode || this.reader || this.embed) return "";
+    const status = b.drafts ? `${b.drafts} of ${b.total} ${b.drafts === 1 ? "is a draft" : "are drafts"}` : `All ${b.total} published`;
+    return html`<details class="book-chapters" ?open="${this._chaptersOpen}" @toggle="${(e) => (this._chaptersOpen = e.target.open)}">
+      <summary>
+        ${lucide("oer:list")}<span class="bc-title">Chapters</span><span class="bc-status ${b.drafts ? "has-drafts" : ""}">${status}</span>
+      </summary>
+      <p class="bc-note">Only signed-in authors see this. Tick chapters, then Publish or Unpublish them together.</p>
+      ${this._chaptersOpen ? html`<oer-collection scope="descendants" view="table" controls="full" sort="order" per-page="100"></oer-collection>` : ""}
+    </details>`;
   }
 
   toggleDark() {

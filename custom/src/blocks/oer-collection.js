@@ -276,9 +276,13 @@ export class OerCollection extends LitElement {
         </div>
       </div>`;
     }
+    const unpicked = shownItems.filter((i) => !this._selected.has(i.id));
     return html`<div class="bulk" role="group" aria-label="Selected pages">
       <span class="bulk-text"><b>${n} selected</b>${hidden ? ` (${hidden} not shown)` : ""}</span>
       <span class="bulk-actions">
+        ${unpicked.length
+          ? html`<button class="btn" @click="${() => this._selectMany(shownItems.map((i) => i.id), true)}">Select all ${shownItems.length}</button>`
+          : ""}
         <button class="btn primary" @click="${() => this._prepareBulk("publish")}">${lucide("icons:visibility", "sm")}Publish</button>
         <button class="btn" @click="${() => this._prepareBulk("unpublish")}">${lucide("icons:visibility-off", "sm")}Unpublish</button>
         <button class="btn" @click="${() => this._selectMany([...this._selected], false)}">Clear</button>
@@ -461,12 +465,20 @@ export class OerCollection extends LitElement {
     const dir = this._state.sortDir || 1;
     // the first render can come before the site's pages are in
     const order = new Map((this._all || []).map((i, n) => [i.id, n]));
+    // outline order under a page: depth first, each page then its sub-pages
+    let tree = null;
+    if (key === "order" && this.scope !== "site" && this._pageId) {
+      tree = new Map();
+      const kids = childrenMap(this._all || []);
+      const walk = (id) => (kids.get(id) || []).forEach((c) => (tree.set(c.id, tree.size), walk(c.id)));
+      walk(this._pageId);
+    }
     const val = (i) => {
       if (key === "title") return i.title || "";
       if (key === "type") return this._type(i)?.label || "";
       if (key === "updated") return -(i.metadata?.updated || 0);
       if (key === "created") return -(i.metadata?.created || 0);
-      if (key === "order") return Number(i.order) || 0;
+      if (key === "order") return tree ? (tree.get(i.id) ?? 1e9) : Number(i.order) || 0;
       if (key === "difficulty") {
         const n = DIFFICULTY_ORDER.indexOf(String(this._value(i, key) || "").toLowerCase());
         return n < 0 ? 99 : n;
