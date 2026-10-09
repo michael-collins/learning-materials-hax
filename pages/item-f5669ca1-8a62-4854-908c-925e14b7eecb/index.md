@@ -1,1 +1,15 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Build a parametric model with at least three exposed parameters and generate a family of five variants. Print or cut at least two.</p><h2>What to hand in</h2><ul><li>Source model with parameters named</li><li>Renders or photos of the five variants; two fabricated</li></ul><h2>What you'll practise</h2><ul><li>Model with parameters and constraints</li><li>Generate variation systematically</li></ul><p>Time: 1 week</p></oer-draft>
+Build a parametric model with at least three exposed parameters and generate a family of five variants. Print or cut at least two.
+
+What to hand in
+---------------
+
+*   Source model with parameters named
+*   Renders or photos of the five variants; two fabricated
+
+What you'll practise
+--------------------
+
+*   Model with parameters and constraints
+*   Generate variation systematically
+
+Time: 1 week

@@ -1,1 +1,15 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Using the template: the idea, the theme it answers, the processes and machines, a week-by-week production plan with machine time, the materials and cost, and what you don't yet know. Pitch it in five minutes.</p><h2>What to hand in</h2><ul><li>Proposal document</li><li>5-minute pitch</li></ul><h2>What you'll practise</h2><ul><li>Plan production realistically</li><li>Position the work</li></ul><p>Time: 1 week</p></oer-draft>
+Using the template: the idea, the theme it answers, the processes and machines, a week-by-week production plan with machine time, the materials and cost, and what you don't yet know. Pitch it in five minutes.
+
+What to hand in
+---------------
+
+*   Proposal document
+*   5-minute pitch
+
+What you'll practise
+--------------------
+
+*   Plan production realistically
+*   Position the work
+
+Time: 1 week

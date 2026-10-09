@@ -1,1 +1,15 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Choose a manufactured object you own. Diagram how it was made: processes, materials, joints, tolerances, finish. Where is the workmanship of certainty, and where of risk? Present in three slides.</p><h2>What to hand in</h2><ul><li>3 slides: the object, the diagram, the process guesses</li><li>1 paragraph: what surprised you</li></ul><h2>What you'll practise</h2><ul><li>Identify fabrication processes from evidence on an object</li><li>Use the course's process vocabulary</li></ul><p>Time: 1 week</p></oer-draft>
+Choose a manufactured object you own. Diagram how it was made: processes, materials, joints, tolerances, finish. Where is the workmanship of certainty, and where of risk? Present in three slides.
+
+What to hand in
+---------------
+
+*   3 slides: the object, the diagram, the process guesses
+*   1 paragraph: what surprised you
+
+What you'll practise
+--------------------
+
+*   Identify fabrication processes from evidence on an object
+*   Use the course's process vocabulary
+
+Time: 1 week

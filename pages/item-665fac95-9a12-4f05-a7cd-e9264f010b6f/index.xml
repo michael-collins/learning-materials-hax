@@ -7,14 +7,17 @@
 <order>44</order>
 <parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
 <title>Final project launch + critical making</title>
-<description></description>
+<description>Final project brief (student-defined, theme-driven); proposal presentations; critical perspectives on digital fabrication.</description>
 <metadata>
 <pageType>oer:lesson</pageType>
 <oerPlan>DART 413:M12</oerPlan>
-<published>false</published>
+<published>true</published>
 <oerFields>
 <courses>
-<item>DART 413</item>
+<item>
+<page>item-e09826f0-d716-4612-807a-2bbfcff22b36</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -29,20 +32,56 @@
 <item>Position your work relative to critical debates about making</item>
 </learningObjectives>
 <estimatedDuration>1 week</estimatedDuration>
+<components>
+<item>
+<page>item-d691e847-ed22-40ee-8b49-1f409a0dc0c2</page>
+<version></version>
+</item>
+<item>
+<page>item-010e80e4-83fd-4ae6-9b1b-93cdd5a56944</page>
+<version></version>
+</item>
+<item>
+<page>item-eceae826-36f2-4e2c-b626-3c2136ab261b</page>
+<version></version>
+</item>
+<item>
+<page>item-c64e34a7-5763-4e28-b1e2-e9b87814daf8</page>
+<version></version>
+</item>
+</components>
+<readings>
+<item>
+<page>item-5d3296eb-cb97-4ccc-8bf2-e6ccedf22d62</page>
+<version></version>
+</item>
+<item>
+<page>item-37be7178-7d0e-47aa-9515-852942e1101f</page>
+<version></version>
+</item>
+<item>
+<page>item-de3020be-052d-4ec8-a11d-414dc295423b</page>
+<version></version>
+</item>
+<item>
+<page>item-0a2a466e-a69a-45e3-b4b6-53c7493455b5</page>
+<version></version>
+</item>
+<item>
+<page>item-60e4b429-b224-4257-bf91-839210d305a3</page>
+<version></version>
+</item>
+</readings>
 </oerFields>
 <created>1791383988</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791383988</updated>
+<updated>1791518077</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
-<content><![CDATA[<oer-draft note="Week 12 from the DART 413 course plan. Revise it, then Publish to show it to readers.">
-<p>Final project brief (student-defined, theme-driven); proposal presentations; critical perspectives on digital fabrication.</p>
-<h2>Ideas</h2>
-<p>Critical making (Ratto); the maker movement and its critics (Morozov); open hardware, sharing files, and the politics of making; sustainability.</p>
-<h2>In class</h2>
-<ul><li>Lecture/discussion (50)</li><li>proposal pitches (80)</li><li>planning (40)</li></ul>
-</oer-draft>
-]]></content>
+<content><![CDATA[<p>Final project brief (student-defined, theme-driven); proposal presentations; critical perspectives on digital fabrication.</p><h2>Ideas</h2><p>Critical making (Ratto); the maker movement and its critics (Morozov); open hardware, sharing files, and the politics of making; sustainability.</p><h2>In class</h2><ul><li>Lecture/discussion (50 min)</li><li>proposal pitches (80 min)</li><li>planning (40 min)</li></ul>]]></content>
 </item>

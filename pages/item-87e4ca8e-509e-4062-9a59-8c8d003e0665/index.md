@@ -1,1 +1,12 @@
-<oer-draft note="Week 14 from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Production; in-progress crit; exhibition planning.</p><h2>Ideas</h2><p>Editing a body of work; presenting fabricated objects (plinth, light, context).</p><h2>In class</h2><ul><li>Production (110)</li><li>WIP crit (60)</li></ul></oer-draft>
+Production; in-progress crit; exhibition planning.
+
+Ideas
+-----
+
+Editing a body of work; presenting fabricated objects (plinth, light, context).
+
+In class
+--------
+
+*   Production (110 min)
+*   WIP crit (60 min)

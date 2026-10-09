@@ -7,11 +7,11 @@
 <order>17</order>
 <parent>item-1c6926f6-66c0-4907-859d-a8efbc78bb8a</parent>
 <title>Laser cutting quiz</title>
-<description></description>
+<description>Self-check questions on laser cutting.</description>
 <metadata>
 <pageType>oer:quiz</pageType>
 <oerPlan>DART 413:quiz:M02</oerPlan>
-<published>false</published>
+<published>true</published>
 <oerFields>
 <license>CC BY 4.0</license>
 <authors>
@@ -22,36 +22,52 @@
 </authors>
 <placeholder>true</placeholder>
 <estimatedDuration>10 minutes</estimatedDuration>
+<prerequisites>
+<item>
+<page>item-926d32cd-5f1d-4cad-b882-89c65ffaad5d</page>
+<version></version>
+</item>
+<item>
+<page>item-d243f14d-7a76-437f-b519-3d8b112aac59</page>
+<version></version>
+</item>
+<item>
+<page>item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf</page>
+<version></version>
+</item>
+</prerequisites>
+<courses>
+<item>
+<page>item-e09826f0-d716-4612-807a-2bbfcff22b36</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <created>1791383988</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791383988</updated>
+<updated>1791518079</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
-<content><![CDATA[<oer-draft note="Suggested questions, written from the week's objectives. Check them, then Publish.">
-<p>Check your understanding of laser cutting. Your answers aren't recorded.</p>
-<multiple-choice question="What is kerf?" single-option="" randomize="">
+<content><![CDATA[<p>Check your understanding of laser cutting. Your answers aren't recorded.</p><multiple-choice question="What is kerf?" single-option="" randomize="">
   <input type="checkbox" value="The width of material the laser removes along a cut" data-correct="true">
   <input type="checkbox" value="The depth of an engraved area">
   <input type="checkbox" value="A gap left between parts on purpose">
   <input type="checkbox" value="The speed setting for vector cuts">
-</multiple-choice>
-<multiple-choice question="Why is PVC (vinyl) on every laser cutter's list of forbidden materials?" single-option="" randomize="">
+</multiple-choice><multiple-choice question="Why is PVC (vinyl) on every laser cutter's list of forbidden materials?" single-option="" randomize="">
   <input type="checkbox" value="Cutting it releases chlorine gas, which harms people and corrodes the machine" data-correct="true">
   <input type="checkbox" value="It is too hard for the laser to cut">
   <input type="checkbox" value="It can't be engraved">
   <input type="checkbox" value="It warps the bed">
-</multiple-choice>
-<true-false-question question="A press-fit slot should be drawn exactly as wide as the material is thick.">
+</multiple-choice><true-false-question question="A press-fit slot should be drawn exactly as wide as the material is thick.">
   <input type="checkbox" value="False" data-correct="true">
   <input type="checkbox" value="True">
-</true-false-question>
-<self-check title="Think it through">
+</true-false-question><self-check title="Think it through">
   <p slot="question">Your file cuts some lines and engraves others. How does the laser know which is which?</p>
   <p>From the drawing's conventions: hairline strokes in the cut colour are cut, other stroke colours are scored, and filled shapes or images are engraved. The studio's handout gives its exact colours and line weight.</p>
-</self-check>
-</oer-draft>
-]]></content>
+</self-check>]]></content>
 </item>

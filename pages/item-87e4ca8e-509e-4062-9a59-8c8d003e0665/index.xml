@@ -7,14 +7,17 @@
 <order>46</order>
 <parent>item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6</parent>
 <title>Final production II + work-in-progress crit</title>
-<description></description>
+<description>Production; in-progress crit; exhibition planning.</description>
 <metadata>
 <pageType>oer:lesson</pageType>
 <oerPlan>DART 413:M14</oerPlan>
-<published>false</published>
+<published>true</published>
 <oerFields>
 <courses>
-<item>DART 413</item>
+<item>
+<page>item-e09826f0-d716-4612-807a-2bbfcff22b36</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -29,20 +32,24 @@
 <item>Plan the presentation of the work</item>
 </learningObjectives>
 <estimatedDuration>1 week</estimatedDuration>
+<components>
+<item>
+<page>item-389a18e8-e515-4482-ae7b-9a56687cb460</page>
+<version></version>
+</item>
+</components>
+<readings>
+</readings>
 </oerFields>
 <created>1791383988</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791383988</updated>
+<updated>1791518075</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
-<content><![CDATA[<oer-draft note="Week 14 from the DART 413 course plan. Revise it, then Publish to show it to readers.">
-<p>Production; in-progress crit; exhibition planning.</p>
-<h2>Ideas</h2>
-<p>Editing a body of work; presenting fabricated objects (plinth, light, context).</p>
-<h2>In class</h2>
-<ul><li>Production (110)</li><li>WIP crit (60)</li></ul>
-</oer-draft>
-]]></content>
+<content><![CDATA[<p>Production; in-progress crit; exhibition planning.</p><h2>Ideas</h2><p>Editing a body of work; presenting fabricated objects (plinth, light, context).</p><h2>In class</h2><ul><li>Production (110 min)</li><li>WIP crit (60 min)</li></ul>]]></content>
 </item>

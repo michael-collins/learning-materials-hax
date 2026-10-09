@@ -1,1 +1,17 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition. Documentation is part of the work.</p><h2>What to hand in</h2><ul><li>The work, exhibited</li><li>Files published under a license you choose</li><li>Process documentation</li></ul><h2>What you'll practise</h2><ul><li>Integrate processes</li><li>Sustain a project across four weeks</li><li>Present finished work</li></ul><p>Time: 4 weeks</p></oer-draft>
+A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition. Documentation is part of the work.
+
+What to hand in
+---------------
+
+*   The work, exhibited
+*   Files published under a license you choose
+*   Process documentation
+
+What you'll practise
+--------------------
+
+*   Integrate processes
+*   Sustain a project across four weeks
+*   Present finished work
+
+Time: 4 weeks

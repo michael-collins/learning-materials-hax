@@ -1,1 +1,15 @@
-<oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish to show it to readers."><p>Design a small object with a fit (a lid, a snap, a hinge) and print it three times, changing one thing each time in response to what failed. Keep all three.</p><h2>What to hand in</h2><ul><li>Three prints, labeled v1–v3</li><li>A one-page revision log with slicer settings</li></ul><h2>What you'll practise</h2><ul><li>Prepare a printable mesh</li><li>Diagnose print failures and revise</li></ul><p>Time: 1–2 weeks</p></oer-draft>
+Design a small object with a fit (a lid, a snap, a hinge) and print it three times, changing one thing each time in response to what failed. Keep all three.
+
+What to hand in
+---------------
+
+*   Three prints, labeled v1–v3
+*   A one-page revision log with slicer settings
+
+What you'll practise
+--------------------
+
+*   Prepare a printable mesh
+*   Diagnose print failures and revise
+
+Time: 1–2 weeks

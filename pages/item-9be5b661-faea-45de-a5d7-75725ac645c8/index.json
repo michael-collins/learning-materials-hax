@@ -6,11 +6,11 @@
   "order": 17,
   "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
   "title": "Laser cutting quiz",
-  "description": "",
+  "description": "Self-check questions on laser cutting.",
   "metadata": {
     "pageType": "oer:quiz",
     "oerPlan": "DART 413:quiz:M02",
-    "published": false,
+    "published": true,
     "oerFields": {
       "license": "CC BY 4.0",
       "authors": [
@@ -20,12 +20,35 @@
         }
       ],
       "placeholder": true,
-      "estimatedDuration": "10 minutes"
+      "estimatedDuration": "10 minutes",
+      "prerequisites": [
+        {
+          "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+          "version": ""
+        },
+        {
+          "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+          "version": ""
+        },
+        {
+          "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+          "version": ""
+        }
+      ],
+      "courses": [
+        {
+          "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+          "version": ""
+        }
+      ]
     },
     "created": 1791383988,
     "images": [],
     "videos": [],
-    "updated": 1791383988
+    "updated": 1791518079,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<oer-draft note=\"Suggested questions, written from the week's objectives. Check them, then Publish.\">\n<p>Check your understanding of laser cutting. Your answers aren't recorded.</p>\n<multiple-choice question=\"What is kerf?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"The width of material the laser removes along a cut\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"The depth of an engraved area\">\n  <input type=\"checkbox\" value=\"A gap left between parts on purpose\">\n  <input type=\"checkbox\" value=\"The speed setting for vector cuts\">\n</multiple-choice>\n<multiple-choice question=\"Why is PVC (vinyl) on every laser cutter's list of forbidden materials?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"Cutting it releases chlorine gas, which harms people and corrodes the machine\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"It is too hard for the laser to cut\">\n  <input type=\"checkbox\" value=\"It can't be engraved\">\n  <input type=\"checkbox\" value=\"It warps the bed\">\n</multiple-choice>\n<true-false-question question=\"A press-fit slot should be drawn exactly as wide as the material is thick.\">\n  <input type=\"checkbox\" value=\"False\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"True\">\n</true-false-question>\n<self-check title=\"Think it through\">\n  <p slot=\"question\">Your file cuts some lines and engraves others. How does the laser know which is which?</p>\n  <p>From the drawing's conventions: hairline strokes in the cut colour are cut, other stroke colours are scored, and filled shapes or images are engraved. The studio's handout gives its exact colours and line weight.</p>\n</self-check>\n</oer-draft>\n"
+  "content": "<p>Check your understanding of laser cutting. Your answers aren't recorded.</p><multiple-choice question=\"What is kerf?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"The width of material the laser removes along a cut\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"The depth of an engraved area\">\n  <input type=\"checkbox\" value=\"A gap left between parts on purpose\">\n  <input type=\"checkbox\" value=\"The speed setting for vector cuts\">\n</multiple-choice><multiple-choice question=\"Why is PVC (vinyl) on every laser cutter's list of forbidden materials?\" single-option=\"\" randomize=\"\">\n  <input type=\"checkbox\" value=\"Cutting it releases chlorine gas, which harms people and corrodes the machine\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"It is too hard for the laser to cut\">\n  <input type=\"checkbox\" value=\"It can't be engraved\">\n  <input type=\"checkbox\" value=\"It warps the bed\">\n</multiple-choice><true-false-question question=\"A press-fit slot should be drawn exactly as wide as the material is thick.\">\n  <input type=\"checkbox\" value=\"False\" data-correct=\"true\">\n  <input type=\"checkbox\" value=\"True\">\n</true-false-question><self-check title=\"Think it through\">\n  <p slot=\"question\">Your file cuts some lines and engraves others. How does the laser know which is which?</p>\n  <p>From the drawing's conventions: hairline strokes in the cut colour are cut, other stroke colours are scored, and filled shapes or images are engraved. The studio's handout gives its exact colours and line weight.</p>\n</self-check>"
 }

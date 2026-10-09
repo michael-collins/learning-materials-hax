@@ -5,14 +5,17 @@ slug: exercises/press-fit-construction-kit
 order: 51
 parent: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
 title: Press-fit construction kit
-description: ''
+description: >-
+  Design a kit of no more than three part types that press-fit into at least two
+  different structures.
 metadata:
   pageType: oer:exercise
   oerPlan: DART 413:A03
-  published: false
+  published: true
   oerFields:
     courses:
-      - DART 413
+      - page: item-e09826f0-d716-4612-807a-2bbfcff22b36
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -21,25 +24,14 @@ metadata:
   created: 1791383988
   images: []
   videos: []
-  updated: 1791383988
-content: >
-  <oer-draft note="Brief from the DART 413 course plan. Revise it, then Publish
-  to show it to readers.">
-
+  updated: 1791518084
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>Design a kit of no more than three part types that press-fit into at least
   two different structures. Slots must be parameterized to your measured kerf.
-  No glue.</p>
-
-  <h2>What to hand in</h2>
-
-  <ul><li>The kit (≥ 12 parts) and two assemblies, photographed</li><li>Source
-  file with the slot parameter exposed</li></ul>
-
-  <h2>What you'll practise</h2>
-
-  <ul><li>Design tolerance for a friction fit</li><li>Parameterize a
-  slot</li></ul>
-
-  <p>Time: 1 week</p>
-
-  </oer-draft>
+  No glue.</p><h2>What to hand in</h2><ul><li>The kit (≥ 12 parts) and two
+  assemblies, photographed</li><li>Source file with the slot parameter
+  exposed</li></ul><h2>What you'll practise</h2><ul><li>Design tolerance for a
+  friction fit</li><li>Parameterize a slot</li></ul><p>Time: 1 week</p>

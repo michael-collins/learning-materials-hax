@@ -5,14 +5,18 @@ slug: lessons/modeling-for-fabrication-parametric-and-sculptural
 order: 39
 parent: item-7e9f47a6-c1c3-496b-b2f5-17cdeb215eb6
 title: 'Modeling for fabrication: parametric and sculptural'
-description: ''
+description: >-
+  Two modeling attitudes: parametric CAD (Fusion 360) and mesh/sculptural
+  (Blender); parameters, constraints, families of objects; scanning as input
+  (photogrammetry).
 metadata:
   pageType: oer:lesson
   oerPlan: DART 413:M07
-  published: false
+  published: true
   oerFields:
     courses:
-      - DART 413
+      - page: item-e09826f0-d716-4612-807a-2bbfcff22b36
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
@@ -23,26 +27,30 @@ metadata:
       - Generate a family of variants
       - Capture and clean a scanned form
     estimatedDuration: 1 week
+    components:
+      - page: item-4f27c62f-c3b8-47c3-a1e6-7b0daa12f89f
+        version: ''
+      - page: item-f570ed6c-e171-4a20-af0f-58c5e61fceb7
+        version: ''
+      - page: item-f5669ca1-8a62-4854-908c-925e14b7eecb
+        version: ''
+    readings:
+      - page: item-a736e35a-581d-40fb-8d77-eb137a06c7e7
+        version: ''
+      - page: item-dfb75ec5-a7d2-4bb4-a368-66f3b078a70c
+        version: ''
   created: 1791383988
   images: []
   videos: []
-  updated: 1791383988
-content: >
-  <oer-draft note="Week 7 from the DART 413 course plan. Revise it, then Publish
-  to show it to readers.">
-
+  updated: 1791518080
+  locked: false
+  status: ''
+  icon: ''
+content: >-
   <p>Two modeling attitudes: parametric CAD (Fusion 360) and mesh/sculptural
   (Blender); parameters, constraints, families of objects; scanning as input
-  (photogrammetry).</p>
-
-  <h2>Ideas</h2>
-
-  <p>Parametric design and the object as a family (Carpo: variable, identical,
-  differential); form + code; scanning and the digital copy.</p>
-
-  <h2>In class</h2>
-
-  <ul><li>Lecture (30)</li><li>parametric tutorial (60)</li><li>scan demo
-  (30)</li><li>work (60)</li></ul>
-
-  </oer-draft>
+  (photogrammetry).</p><h2>Ideas</h2><p>Parametric design and the object as a
+  family (Carpo: variable, identical, differential); form + code; scanning and
+  the digital copy.</p><h2>In class</h2><ul><li>Lecture (30
+  min)</li><li>parametric tutorial (60 min)</li><li>scan demo (30
+  min)</li><li>work (60 min)</li></ul>

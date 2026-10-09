@@ -6,14 +6,17 @@
   "order": 0,
   "parent": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
   "title": "Final project proposal",
-  "description": "",
+  "description": "Using the template: the idea, the theme it answers, the processes and machines, a week-by-week production plan with machine time, the materials and cost, and what you don't yet know.",
   "metadata": {
     "pageType": "oer:activity",
     "oerPlan": "DART 413:A09",
-    "published": false,
+    "published": true,
     "oerFields": {
       "courses": [
-        "DART 413"
+        {
+          "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+          "version": ""
+        }
       ],
       "license": "CC BY 4.0",
       "authors": [
@@ -27,7 +30,10 @@
     "created": 1791383988,
     "images": [],
     "videos": [],
-    "updated": 1791383988
+    "updated": 1791518077,
+    "locked": false,
+    "status": "",
+    "icon": ""
   },
-  "content": "<oer-draft note=\"Brief from the DART 413 course plan. Revise it, then Publish to show it to readers.\">\n<p>Using the template: the idea, the theme it answers, the processes and machines, a week-by-week production plan with machine time, the materials and cost, and what you don't yet know. Pitch it in five minutes.</p>\n<h2>What to hand in</h2>\n<ul><li>Proposal document</li><li>5-minute pitch</li></ul>\n<h2>What you'll practise</h2>\n<ul><li>Plan production realistically</li><li>Position the work</li></ul>\n<p>Time: 1 week</p>\n</oer-draft>\n"
+  "content": "<p>Using the template: the idea, the theme it answers, the processes and machines, a week-by-week production plan with machine time, the materials and cost, and what you don't yet know. Pitch it in five minutes.</p><h2>What to hand in</h2><ul><li>Proposal document</li><li>5-minute pitch</li></ul><h2>What you'll practise</h2><ul><li>Plan production realistically</li><li>Position the work</li></ul><p>Time: 1 week</p>"
 }
