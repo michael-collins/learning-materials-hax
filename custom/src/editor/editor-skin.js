@@ -2421,6 +2421,8 @@ export const editorSkin = {
   "app-hax-top-bar": css`
     :host {
       --top-bar-height: 3.5rem !important;
+      /* HAX's is white or pure black; the theme's own background instead */
+      --bg-color: var(--background) !important;
     }
   `,
 };
