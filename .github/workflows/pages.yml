@@ -1,0 +1,58 @@
+# Publish the site to GitHub Pages: a read-only copy of the published pages
+# (drafts and editing left out), with the HAX version the theme was made for
+# included instead of HAX's CDN (scripts/build-pages.mjs).
+#
+# It runs only when started: Actions → "Publish to GitHub Pages" → Run
+# workflow. Settings → Pages → Source must be "GitHub Actions".
+name: Publish to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# one publish at a time; a second waits instead of cancelling the first
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  HAX_VERSION: 26.8.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Get HAX's code
+        run: |
+          npm pack "@haxtheweb/haxcms-nodejs@${HAX_VERSION}" --silent
+          tar -xzf "haxtheweb-haxcms-nodejs-${HAX_VERSION}.tgz" package/dist/public
+
+      - name: Build the published copy
+        run: node scripts/build-pages.mjs "$RUNNER_TEMP/site" --hax-build package/dist/public --domain "${{ steps.pages.outputs.base_url }}/"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
