@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791562896,
+      "updated": 1791564996,
       "version": "26.8.0"
     },
     "theme": {
@@ -7279,7 +7279,7 @@
           "code": "DMD 100",
           "credits": "3",
           "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20100",
-          "program": "Digital Multimedia Design (B.Des.)",
+          "program": "",
           "delivery": "Online",
           "books": [
             {
@@ -7289,12 +7289,16 @@
           ],
           "license": "CC BY 4.0",
           "institution": "Penn State University",
-          "institutionUrl": "https://www.psu.edu/"
+          "institutionUrl": "https://www.psu.edu/",
+          "campus": "World Campus",
+          "programs": [
+            "Digital Multimedia Design (B.Des.)"
+          ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791386145
+        "updated": 1791564991
       }
     },
     {
@@ -10589,7 +10593,7 @@
           "code": "DMD 300",
           "credits": "3",
           "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20300",
-          "program": "Digital Multimedia Design (B.Des.)",
+          "program": "",
           "delivery": "Online",
           "prerequisiteNote": "Enforced prerequisite at enrollment: DART 100 and DMD 100 and 9 credits from the following list: ART 211Y, COMM 215, COMM 230W, DART 202, IST 140, IST 250.",
           "books": [
@@ -10606,12 +10610,16 @@
             }
           ],
           "institution": "Penn State University",
-          "institutionUrl": "https://www.psu.edu/"
+          "institutionUrl": "https://www.psu.edu/",
+          "campus": "World Campus",
+          "programs": [
+            "Digital Multimedia Design (B.Des.)"
+          ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791386146
+        "updated": 1791564991
       }
     },
     {
@@ -16842,7 +16850,7 @@
           "code": "DMD 400",
           "credits": "3 (maximum of 6)",
           "bulletin": "https://bulletins.psu.edu/search/?P=DMD%20400",
-          "program": "Digital Multimedia Design (B.Des.)",
+          "program": "",
           "delivery": "Online",
           "prerequisiteNote": "Enforced prerequisite: DMD 100 and DMD 300.",
           "books": [
@@ -16863,12 +16871,16 @@
             }
           ],
           "institution": "Penn State University",
-          "institutionUrl": "https://www.psu.edu/"
+          "institutionUrl": "https://www.psu.edu/",
+          "campus": "World Campus",
+          "programs": [
+            "Digital Multimedia Design (B.Des.)"
+          ]
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791386147
+        "updated": 1791564992
       }
     },
     {
@@ -18753,12 +18765,17 @@
           ],
           "license": "CC BY 4.0",
           "institution": "Penn State University",
-          "institutionUrl": "https://www.psu.edu/"
+          "institutionUrl": "https://www.psu.edu/",
+          "campus": "World Campus",
+          "programs": [
+            "Digital Arts and Media Design (B.Des.)"
+          ],
+          "program": ""
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791386147
+        "updated": 1791564993
       }
     },
     {
@@ -21139,7 +21156,7 @@
                   "kind": "text",
                   "required": true,
                   "header": true,
-                  "help": "As in the bulletin, e.g. DART 413. Pages whose Courses field holds this code are listed on the course page."
+                  "help": "As in the bulletin, e.g. DART 413. The same code can exist at more than one campus, as separate course pages."
                 },
                 {
                   "name": "credits",
@@ -21157,6 +21174,24 @@
                   "help": "The university that offers the course."
                 },
                 {
+                  "name": "campus",
+                  "label": "Campus",
+                  "kind": "select",
+                  "header": true,
+                  "filter": true,
+                  "options": [
+                    {
+                      "value": "University Park",
+                      "label": "University Park"
+                    },
+                    {
+                      "value": "World Campus",
+                      "label": "World Campus"
+                    }
+                  ],
+                  "help": "Where this version of the course is taught. A course taught at two campuses is two course pages, one for each."
+                },
+                {
                   "name": "institutionUrl",
                   "label": "University website",
                   "kind": "url"
@@ -21169,10 +21204,23 @@
                   "help": "The course's entry in the university bulletin. Link to it rather than copying its description."
                 },
                 {
-                  "name": "program",
-                  "label": "Program",
-                  "kind": "text",
-                  "suggest": true
+                  "name": "programs",
+                  "label": "Degree programs",
+                  "kind": "select",
+                  "multiple": true,
+                  "header": true,
+                  "filter": true,
+                  "options": [
+                    {
+                      "value": "Digital Multimedia Design (B.Des.)",
+                      "label": "Digital Multimedia Design (B.Des.)"
+                    },
+                    {
+                      "value": "Digital Arts and Media Design (B.Des.)",
+                      "label": "Digital Arts and Media Design (B.Des.)"
+                    }
+                  ],
+                  "help": "The degrees this course counts toward."
                 },
                 {
                   "name": "delivery",
@@ -22982,7 +23030,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791560250,
+        "updated": 1791564990,
         "locked": false,
         "status": "",
         "icon": "",
@@ -23914,12 +23962,17 @@
           ],
           "license": "CC BY 4.0",
           "institution": "Penn State University",
-          "institutionUrl": "https://www.psu.edu/"
+          "institutionUrl": "https://www.psu.edu/",
+          "campus": "World Campus",
+          "programs": [
+            "Digital Arts and Media Design (B.Des.)"
+          ],
+          "program": ""
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791386148
+        "updated": 1791564993
       }
     },
     {
@@ -25108,12 +25161,17 @@
             }
           ],
           "institution": "Penn State University",
-          "institutionUrl": "https://www.psu.edu/"
+          "institutionUrl": "https://www.psu.edu/",
+          "campus": "University Park",
+          "programs": [
+            "Digital Arts and Media Design (B.Des.)"
+          ],
+          "program": ""
         },
         "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791517414,
+        "updated": 1791564994,
         "overridePathauto": false,
         "hideInMenu": false,
         "icon": "courseicons:learning-objectives",
@@ -37112,7 +37170,7 @@
       "id": "item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3",
       "indent": 0,
       "location": "pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.html",
-      "slug": "dart-413",
+      "slug": "up/dart-413",
       "order": 1879,
       "parent": null,
       "title": "DART 413: Digital Fabrication Studio",
@@ -37131,7 +37189,7 @@
         },
         "pageType": "oer:course-site",
         "created": 1791560758,
-        "updated": 1791562895,
+        "updated": 1791564995,
         "images": [],
         "videos": [],
         "locked": false,
