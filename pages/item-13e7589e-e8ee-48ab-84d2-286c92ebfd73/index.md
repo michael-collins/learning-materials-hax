@@ -3,41 +3,7 @@ Draft outline from R005 — 25 slides, 40 minutes. Status: drafted for the instr
 Timing
 ------
 
-Part
-
-Slides
-
-Minutes
-
-1\. The loop
-
-1–6
-
-8
-
-2\. Three families
-
-7–13
-
-12
-
-3\. Lineage
-
-14–16
-
-6
-
-4\. Craft and the digital
-
-17–20
-
-9
-
-5\. This term
-
-21–25
-
-5
+<editable-table accent-color="grey" resource="#7ab1747b-93fa-12af-f248-994dd00439dc" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org" column-header=""><table><thead class="thead"><tr class="thead-tr tr"><th scope="col" class="th th-or-td">Part</th><th scope="col" class="th th-or-td">Slides</th><th scope="col" class="th th-or-td">Minutes</th></tr></thead><tbody class="tbody"><tr class="tbody-tr tr"><td class="td th-or-td">1. The loop</td><td class="td th-or-td">1–6</td><td class="td th-or-td">8</td></tr><tr class="tbody-tr tr"><td class="td th-or-td">2. Three families</td><td class="td th-or-td">7–13</td><td class="td th-or-td">12</td></tr><tr class="tbody-tr tr"><td class="td th-or-td">3. Lineage</td><td class="td th-or-td">14–16</td><td class="td th-or-td">6</td></tr><tr class="tbody-tr tr"><td class="td th-or-td">4. Craft and the digital</td><td class="td th-or-td">17–20</td><td class="td th-or-td">9</td></tr><tr class="tbody-tr tr"><td class="td th-or-td">5. This term</td><td class="td th-or-td">21–25</td><td class="td th-or-td">5</td></tr></tbody></table></editable-table>
 
 The argument in one line: **the machine relocates risk, it does not remove it** — set up in Part 1, named in Part 4 (Pye), and cashed out in the first assignment.
 
