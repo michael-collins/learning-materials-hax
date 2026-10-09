@@ -459,7 +459,8 @@ export class OerCollection extends LitElement {
   _sorted(list) {
     const key = this._state.sortKey || this.sort || "title";
     const dir = this._state.sortDir || 1;
-    const order = new Map(this._all.map((i, n) => [i.id, n]));
+    // the first render can come before the site's pages are in
+    const order = new Map((this._all || []).map((i, n) => [i.id, n]));
     const val = (i) => {
       if (key === "title") return i.title || "";
       if (key === "type") return this._type(i)?.label || "";
