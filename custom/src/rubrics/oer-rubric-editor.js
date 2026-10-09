@@ -23,6 +23,7 @@ import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElemen
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
 import { RUBRIC_TYPE, isRubric, rubricOf, rubricUsage, weightTotal, shareLabel } from "./rubric-model.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -289,7 +290,7 @@ class OerRubricEditor extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -685,7 +686,7 @@ class OerRubricEditor extends LitElement {
           width: 14rem;
         }
       }
-    `;
+    `];
   }
 
   _renderLevelHead(l, i, n) {

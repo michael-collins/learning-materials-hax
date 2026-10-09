@@ -9,6 +9,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { openCommandPalette, DAEMON } from "./stock.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
+import { formControls } from "../ui/form-controls.js";
 
 class OerCommandSearch extends LitElement {
   static get tag() {
@@ -64,7 +65,7 @@ class OerCommandSearch extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         display: inline-flex;
       }
@@ -139,7 +140,7 @@ class OerCommandSearch extends LitElement {
           transition: none;
         }
       }
-    `;
+    `];
   }
 
   render() {

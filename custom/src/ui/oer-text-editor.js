@@ -12,6 +12,7 @@
  */
 import { html, css, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
+import { formControls } from "./form-controls.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
@@ -154,7 +155,7 @@ class OerTextEditor extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         display: block;
       }
@@ -245,7 +246,7 @@ class OerTextEditor extends LitElement {
       .area a {
         color: var(--link, var(--primary));
       }
-    `;
+    `];
   }
 
   render() {

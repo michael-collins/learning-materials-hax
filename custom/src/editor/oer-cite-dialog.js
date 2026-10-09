@@ -20,6 +20,7 @@ import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElemen
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { formatCitation } from "./citations.js";
 import { peopleOf } from "../types/content-types.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -161,7 +162,7 @@ class OerCiteDialog extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -513,7 +514,7 @@ class OerCiteDialog extends LitElement {
         outline: 2px solid var(--ring);
         outline-offset: 2px;
       }
-    `;
+    `];
   }
 
   _option(id, title, sub, inner) {

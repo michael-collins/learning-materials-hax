@@ -9,6 +9,7 @@
  */
 import { html, css, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
+import { formControls } from "./form-controls.js";
 
 const CHOICES = Object.keys(LUCIDE_ICONS).filter((k) => !k.startsWith("oer:"));
 
@@ -55,7 +56,7 @@ class OerIconPicker extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -207,7 +208,7 @@ class OerIconPicker extends LitElement {
         outline: 2px solid var(--ring);
         outline-offset: 2px;
       }
-    `;
+    `];
   }
 
   render() {

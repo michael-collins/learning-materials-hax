@@ -10,6 +10,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { embedUrl } from "./embed-mode.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -85,7 +86,7 @@ class OerEmbedDialog extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -293,7 +294,7 @@ class OerEmbedDialog extends LitElement {
           border-bottom: 1px solid var(--border);
         }
       }
-    `;
+    `];
   }
 
   render() {

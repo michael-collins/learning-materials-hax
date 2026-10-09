@@ -16,6 +16,7 @@ import { pagePicker } from "../books/oer-page-picker.js";
 import { versionsOf } from "../versions/versioning.js";
 import { loadAiul, aiulInfo } from "./aiul.js";
 import { valuesInUse } from "../ui/oer-choice-field.js";
+import { formControls } from "../ui/form-controls.js";
 
 // a multiple choice whose options are AI Usage License codes gets the AIUL
 // picker (licence + optional media) instead of one checkbox per code
@@ -212,7 +213,7 @@ class OerPageDetails extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -646,7 +647,7 @@ class OerPageDetails extends LitElement {
         opacity: 0.5;
         cursor: default;
       }
-    `;
+    `];
   }
 
   // a list field's choices: values other pages use, plus a source field's

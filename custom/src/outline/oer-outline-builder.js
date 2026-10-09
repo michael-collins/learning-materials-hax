@@ -27,6 +27,7 @@ import { isSnapshot, versionsOf } from "../versions/versioning.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { pagePicker } from "../books/oer-page-picker.js";
 import { PATHWAY_TYPE, pathwayOf, pathwayLevels, levelChip, pathwayChipStyles } from "../pathways/pathway-model.js";
+import { formControls } from "../ui/form-controls.js";
 
 const INDENT_PX = 20;
 
@@ -902,7 +903,7 @@ class OerOutlineBuilder extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return [pathwayChipStyles, css`
+    return [formControls, pathwayChipStyles, css`
       :host {
         position: fixed;
         inset: 0;

@@ -20,6 +20,7 @@ import { pagePicker } from "../books/oer-page-picker.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { addressIndex, analyseLink, linksIn, linkContexts, courseCode, reviewable, rewriteLinks, linkTarget } from "./link-model.js";
 import { renderLinkReview, linkReviewStyles, withCheck, checkable, checkViaHelper, helperStatus, linkCounts } from "./link-review.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -229,7 +230,7 @@ class OerLinkCheck extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return [
+    return [formControls, 
       linkReviewStyles,
       css`
         :host {

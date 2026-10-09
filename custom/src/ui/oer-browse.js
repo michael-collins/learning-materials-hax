@@ -13,6 +13,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, isHeading } from "../types/content-types.js";
+import { formControls } from "./form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -133,7 +134,7 @@ class OerBrowse extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         font-family: var(--font-sans, system-ui, sans-serif);
         color: var(--foreground);
@@ -300,7 +301,7 @@ class OerBrowse extends LitElement {
       .all:hover {
         text-decoration: underline;
       }
-    `;
+    `];
   }
 }
 

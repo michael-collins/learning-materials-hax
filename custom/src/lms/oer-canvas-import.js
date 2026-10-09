@@ -37,6 +37,7 @@ import { uploadFile } from "../types/relations.js";
 import { rubricPages, rubricOf } from "../rubrics/rubric-model.js";
 import { moduleWeekLabel } from "./sequence-model.js";
 import { renderLinkReview, linkReviewStyles, withCheck, checkable, checkViaHelper, helperStatus, linkCounts, LOCAL_HELPER } from "../links/link-review.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -281,7 +282,7 @@ class OerCanvasImport extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return [linkReviewStyles, this._styles];
+    return [formControls, linkReviewStyles, this._styles];
   }
 
   static get _styles() {

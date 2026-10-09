@@ -17,6 +17,7 @@ import { zipBytes } from "./zip.js";
 import { download } from "../books/book-export.js";
 import { toOffering, readiness, sequenceWeeks, sequenceOf } from "./sequence-model.js";
 import { DELIVERY_MODES, deliveryFromCourse, weeksAvailable } from "./offering-schedule.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -150,7 +151,7 @@ class OerSequenceExport extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -410,7 +411,7 @@ class OerSequenceExport extends LitElement {
         margin: 0.375rem 0 0;
         padding-left: 1.25rem;
       }
-    `;
+    `];
   }
 
   _renderBreaks() {

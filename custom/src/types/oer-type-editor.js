@@ -21,6 +21,7 @@ import { html, css, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
 import { contentTypes, typeUsage, saveContentTypes, typeIdFrom, fieldNameFrom, FIELD_KINDS } from "./content-types.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -293,7 +294,7 @@ class OerTypeEditor extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -790,7 +791,7 @@ class OerTypeEditor extends LitElement {
         color: var(--muted-foreground);
         font-size: 0.875rem;
       }
-    `;
+    `];
   }
 
   _renderTypeList() {

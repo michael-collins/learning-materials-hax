@@ -16,6 +16,7 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { contentTypes, allowedChildTypes, canContain, isSystemItem, isHeading, COURSE_TYPE } from "../types/content-types.js";
 import { groupedTypes, typeHint, homeOf, HOME_TITLES } from "../types/type-homes.js";
 import { createPage } from "../outline/outline-model.js";
+import { formControls } from "./form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -129,9 +130,10 @@ class OerNewPage extends LitElement {
       if (!canContain(ptype, type.id, this._items)) return;
       out.push({ id, label: this._label(id), why });
     };
-    if (this._context !== undefined) add(this._context, "where you clicked Add page");
     const home = homeOf(type.id, this._items);
-    if (home) add(home.id, `where ${plural(noun(type))} are listed`);
+    const listed = `where ${plural(noun(type))} are listed`;
+    if (this._context !== undefined) add(this._context, home && home.id === this._context ? listed : "where you clicked Add page");
+    if (home) add(home.id, listed);
     if (!out.length) add(null, "the top level of the navigation");
     return out;
   }
@@ -323,7 +325,7 @@ class OerNewPage extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         font-family: var(--font-sans, system-ui, sans-serif);
         color: var(--foreground);
@@ -670,7 +672,7 @@ class OerNewPage extends LitElement {
           display: none;
         }
       }
-    `;
+    `];
   }
 }
 

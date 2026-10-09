@@ -31,6 +31,7 @@ import { sortLevels, levelChip, inDevelopmentBadge, pathwayChipStyles, PATHWAY_T
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { unwrapDrafts } from "./oer-draft.js";
+import { formControls } from "../ui/form-controls.js";
 
 const COURSE_TYPE = "oer:course";
 // grouping by type follows how a course runs
@@ -551,7 +552,7 @@ export class OerCollection extends LitElement {
   /* ---------- render ---------- */
 
   static get styles() {
-    return [pathwayChipStyles, css`
+    return [formControls, pathwayChipStyles, css`
       :host {
         display: block;
         /* the page body may be justified; lists and tables read ragged-right */

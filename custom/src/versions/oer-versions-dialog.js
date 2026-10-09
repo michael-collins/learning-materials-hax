@@ -11,6 +11,7 @@ import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { versionsOf, bump, publishVersion, rubricPlan } from "./versioning.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -113,7 +114,7 @@ class OerVersionsDialog extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -373,7 +374,7 @@ class OerVersionsDialog extends LitElement {
         font-size: 0.875rem;
         color: var(--muted-foreground);
       }
-    `;
+    `];
   }
 
   render() {

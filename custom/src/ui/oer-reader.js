@@ -16,6 +16,7 @@
 import { html, css, unsafeCSS, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import "../outline/oer-site-nav.js";
+import { formControls } from "./form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -397,7 +398,7 @@ class OerReaderBar extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: relative;
         display: block;
@@ -722,7 +723,7 @@ class OerReaderBar extends LitElement {
           display: none;
         }
       }
-    `;
+    `];
   }
 }
 

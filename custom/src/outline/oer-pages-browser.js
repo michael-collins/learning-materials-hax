@@ -15,6 +15,7 @@ import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { pageIcon } from "../types/page-icon.js";
 import { isSystemItem, isHeading, contentTypes } from "../types/content-types.js";
 import { saveOutline, deletionSet, ancestors, newItemId } from "./outline-model.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -189,7 +190,7 @@ class OerPagesBrowser extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         position: fixed;
         inset: 0;
@@ -488,7 +489,7 @@ class OerPagesBrowser extends LitElement {
         font-size: 0.75rem;
         color: var(--muted-foreground);
       }
-    `;
+    `];
   }
 
   _renderRow(item, ctx) {

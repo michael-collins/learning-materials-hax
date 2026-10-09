@@ -22,6 +22,7 @@ import { contentTypes } from "../types/content-types.js";
 import { resolvePathway, PATHWAY_TYPE } from "../pathways/pathway-model.js";
 import { projectParts, PROJECT_TYPE } from "../projects/project-model.js";
 import { versionsOf } from "../versions/versioning.js";
+import { formControls } from "./form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -169,7 +170,7 @@ class OerOutlineViewer extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [formControls, css`
       :host {
         display: contents;
         font-family: var(--font-sans, system-ui, sans-serif);
@@ -518,7 +519,7 @@ class OerOutlineViewer extends LitElement {
           padding: 1rem;
         }
       }
-    `;
+    `];
   }
 
   /** Open the viewer on a page (a pathway or project), at `item` if given. */

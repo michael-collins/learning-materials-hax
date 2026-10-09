@@ -47,6 +47,7 @@ import { findRubric, rubricPages, rubricOf, rubricAt, itemRubric, rubricDiffers,
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
 import { moduleWeekLabel } from "./sequence-model.js";
 import "../ui/oer-text-editor.js";
+import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -1307,7 +1308,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   /* ---------- render ---------- */
 
   static get styles() {
-    return [
+    return [formControls, 
       super.styles,
       css`
         .dialog {
