@@ -2,13 +2,13 @@
   "id": "item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3",
   "indent": 0,
   "location": "pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.json",
-  "slug": "dart-413",
+  "slug": "up/dart-413",
   "order": 1879,
   "parent": null,
   "title": "DART 413: Digital Fabrication Studio",
   "description": "Digital Fabrication Studio, 4 credits.",
   "metadata": {
-    "published": false,
+    "published": true,
     "hideInMenu": true,
     "overridePathauto": true,
     "oerFields": {
@@ -21,9 +21,17 @@
     },
     "pageType": "oer:course-site",
     "created": 1791560758,
-    "updated": 1791560758,
+    "updated": 1791566082,
     "images": [],
-    "videos": []
+    "videos": [],
+    "locked": false,
+    "status": "",
+    "icon": "",
+    "oerSiteStyle": {
+      "scheme": "graphite",
+      "accent": "",
+      "fonts": "syne"
+    }
   },
-  "content": "<p></p>"
+  "content": "<oer-cs-hero><p></p></oer-cs-hero>\n<oer-cs-facts></oer-cs-facts>\n<oer-cs-learn><ul><li></li></ul></oer-cs-learn>\n<oer-cs-semester></oer-cs-semester>\n<oer-cs-make></oer-cs-make>\n<oer-cs-people><p></p></oer-cs-people>\n<oer-cs-tools><ul><li></li></ul></oer-cs-tools>\n<oer-cs-faq><h3></h3><p></p></oer-cs-faq>\n<oer-cs-closing></oer-cs-closing>"
 }
