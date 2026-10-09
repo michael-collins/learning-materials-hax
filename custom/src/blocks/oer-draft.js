@@ -105,13 +105,27 @@ export class OerDraft extends LitElement {
     `;
   }
 
-  // keep the contents where the draft is, without the wrapper
+  // keep the contents where the draft is, without the wrapper. Only blocks
+  // move: HAX's page save walks the page's children as elements, and a
+  // loose text node there (the spaces between paragraphs) made it throw, so
+  // the save failed and the draft came back. Stray text goes in a paragraph.
   _publish() {
     const parent = this.parentNode;
     if (!parent) return;
-    const kids = [...this.childNodes];
-    for (const k of kids) parent.insertBefore(k, this);
+    const moved = [];
+    for (const k of [...this.childNodes]) {
+      if (k.nodeType === Node.ELEMENT_NODE) moved.push(k);
+      else if (k.nodeType === Node.TEXT_NODE && k.textContent.trim()) {
+        const p = globalThis.document.createElement("p");
+        p.textContent = k.textContent.trim();
+        moved.push(p);
+      }
+    }
+    for (const el of moved) parent.insertBefore(el, this);
     this.remove();
+    // the first published block is the one being edited now
+    const hax = globalThis.HaxStore?.requestAvailability?.();
+    if (hax && moved[0]) hax.activeNode = moved[0];
   }
 
   render() {

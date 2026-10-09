@@ -18767,7 +18767,7 @@ ${d}
         outline: 2px solid var(--ring);
         outline-offset: 2px;
       }
-    `}_publish(){const e=this.parentNode;if(!e)return;const t=[...this.childNodes];for(const r of t)e.insertBefore(r,this);this.remove()}render(){const e=this.hasAttribute("data-editing")||this.hasAttribute("data-hax-ray");return n`<div class="bar">
+    `}_publish(){const e=this.parentNode;if(!e)return;const t=[];for(const i of[...this.childNodes])if(i.nodeType===Node.ELEMENT_NODE)t.push(i);else if(i.nodeType===Node.TEXT_NODE&&i.textContent.trim()){const a=globalThis.document.createElement("p");a.textContent=i.textContent.trim(),t.push(a)}for(const i of t)e.insertBefore(i,this);this.remove();const r=globalThis.HaxStore?.requestAvailability?.();r&&t[0]&&(r.activeNode=t[0])}render(){const e=this.hasAttribute("data-editing")||this.hasAttribute("data-hax-ray");return n`<div class="bar">
         <span class="label">${bl("icons:visibility-off")}Draft for review</span>
         <span class="note"
           >${this.note?`${this.note}${/[.!?]$/.test(this.note.trim())?"":"."} `:""}Only signed-in authors see this.${e?"":" Edit the page to review and publish it."}</span
