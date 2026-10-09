@@ -7,16 +7,23 @@
  * - Footnote citations (sup.fn-ref a, see scripts/lib/footnotes.mjs) show
  *   their reference in a small preview on hover or keyboard focus, so
  *   readers don't lose their place; the link still jumps to the list.
+ * - Content inside a shadow root (a book site's chapter) works too: links
+ *   find their target in the same root, and that root watches for
+ *   previews itself (watchFootnotes), since events inside it don't reach
+ *   the document as themselves.
  */
 let installed = false;
 let tip = null;
 let hideTimer = null;
 
+// the element a "#id" link points to, in the link's own document or shadow root
 function targetOf(a) {
   const href = a?.getAttribute?.("href") || "";
   if (!href.startsWith("#") || href.length < 2) return null;
   try {
-    return globalThis.document.getElementById(decodeURIComponent(href.slice(1)));
+    const id = decodeURIComponent(href.slice(1));
+    const root = a.getRootNode?.();
+    return root?.getElementById?.(id) || globalThis.document.getElementById(id);
   } catch {
     return null;
   }
@@ -26,6 +33,9 @@ function jump(target) {
   if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
   target.scrollIntoView({ block: "center" });
   target.focus({ preventScroll: true });
+  // the address names the spot on an ordinary page; inside a shadow root
+  // (a book site, whose address names the chapter) it stays as it is
+  if (target.getRootNode() !== globalThis.document) return;
   const { pathname, search } = globalThis.location;
   globalThis.history.replaceState(globalThis.history.state, "", `${pathname}${search}#${target.id}`);
 }
@@ -72,6 +82,27 @@ function hide(now = false) {
 
 const isCitation = (a) => a?.closest?.("sup.fn-ref");
 
+/** Show a citation's note on hover and focus for content in `root` (the document, or a shadow root). */
+export function watchFootnotes(root) {
+  if (root.__oerFootnotes) return;
+  root.__oerFootnotes = true;
+  const citation = (e) => e.composedPath()[0]?.closest?.("sup.fn-ref a");
+  root.addEventListener("pointerover", (e) => {
+    const a = citation(e);
+    if (a) show(a);
+  });
+  root.addEventListener("pointerout", (e) => {
+    if (isCitation(e.composedPath()[0]) && !isCitation(e.relatedTarget)) hide();
+  });
+  root.addEventListener("focusin", (e) => {
+    const a = citation(e);
+    if (a) show(a);
+  });
+  root.addEventListener("focusout", (e) => {
+    if (isCitation(e.composedPath()[0])) hide();
+  });
+}
+
 export function installFootnotes() {
   if (installed) return;
   installed = true;
@@ -93,20 +124,7 @@ export function installFootnotes() {
     },
     true,
   );
-  doc.addEventListener("pointerover", (e) => {
-    const a = e.target.closest?.("sup.fn-ref a");
-    if (a) show(a);
-  });
-  doc.addEventListener("pointerout", (e) => {
-    if (isCitation(e.target) && !isCitation(e.relatedTarget)) hide();
-  });
-  doc.addEventListener("focusin", (e) => {
-    const a = e.target.closest?.("sup.fn-ref a");
-    if (a) show(a);
-  });
-  doc.addEventListener("focusout", (e) => {
-    if (isCitation(e.target)) hide();
-  });
+  watchFootnotes(doc);
   doc.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && tip && !tip.hidden) hide(true);
   });

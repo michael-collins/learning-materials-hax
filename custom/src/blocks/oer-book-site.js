@@ -24,6 +24,7 @@ import { bookPrint } from "../books/oer-book-print.js";
 import { exportEpub } from "../books/epub.js";
 import { loadReaderSettings, saveReaderSettings, readerVars, readerPaletteCss } from "../ui/oer-reader.js";
 import { formControls } from "../ui/form-controls.js";
+import { watchFootnotes } from "../ui/footnotes.js";
 
 const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -265,6 +266,11 @@ class OerBookSite extends LitElement {
       this._html = "";
     }
     if (changed.has("_route")) this.updateComplete.then(() => this.shadowRoot.querySelector(".top")?.scrollIntoView({ block: "start" }));
+  }
+
+  firstUpdated() {
+    // footnote previews for the chapters (their links jump within this page: ui/footnotes.js)
+    watchFootnotes(this.shadowRoot);
   }
 
   updated() {
@@ -863,6 +869,9 @@ class OerBookSite extends LitElement {
           min-width: 0;
           padding: 3rem 1.5rem 5rem;
           background-image: var(--reader-texture, none);
+          --reader-ink: var(--foreground);
+          --reader-muted-ink: var(--muted-foreground);
+          --reader-link-ink: var(--link);
         }
         article {
           box-sizing: border-box;
@@ -871,10 +880,9 @@ class OerBookSite extends LitElement {
           font-family: var(--reader-font, var(--font-sans));
           font-size: var(--reader-size, 19px);
           line-height: var(--reader-leading, 1.7);
-          /* Text dimming: text mixed toward the page, each kind by its own amount */
-          --reader-ink: var(--foreground);
-          --reader-muted-ink: var(--muted-foreground);
-          --reader-link-ink: var(--link);
+          /* Text dimming: text mixed toward the page, each kind by its own
+             amount (the inks are taken on .reading: defined here they'd
+             refer to themselves and cancel out) */
           --foreground: color-mix(in oklab, var(--reader-ink) calc(100% - var(--reader-dim, 0%)), var(--background));
           --muted-foreground: color-mix(in oklab, var(--reader-muted-ink) calc(100% - var(--reader-dim-muted, 0%)), var(--background));
           --link: color-mix(in oklab, var(--reader-link-ink) calc(100% - var(--reader-dim-link, 0%)), var(--background));
@@ -948,6 +956,52 @@ class OerBookSite extends LitElement {
           padding-left: 1em;
           border-left: 3px solid var(--border);
           color: var(--muted-foreground);
+        }
+        /* footnotes (scripts/lib/footnotes.mjs), as the site sets them */
+        .content sup.fn-ref {
+          line-height: 0;
+        }
+        .content sup.fn-ref a {
+          padding: 0 0.15em;
+          font-family: var(--font-sans);
+          font-size: 0.7em;
+          font-weight: 600;
+          text-decoration: none;
+          color: var(--link);
+        }
+        .content sup.fn-ref a:hover {
+          text-decoration: underline;
+        }
+        .content .footnotes {
+          margin-top: 2.5em;
+          padding-top: 1em;
+          border-top: 1px solid var(--border);
+          font-size: 0.85em;
+          line-height: 1.6;
+          color: var(--muted-foreground);
+        }
+        .content .footnotes h2 {
+          margin: 0 0 0.5em;
+          font-size: 1.1em;
+          color: var(--foreground);
+        }
+        .content .footnotes ol {
+          margin: 0;
+          padding-left: 1.5em;
+        }
+        .content .footnotes li + li {
+          margin-top: 0.375em;
+        }
+        .content .footnotes a {
+          overflow-wrap: anywhere;
+        }
+        .content .footnotes a.fn-back {
+          text-decoration: none;
+        }
+        .content :is(.footnotes li, sup.fn-ref):focus {
+          outline: none;
+          background: color-mix(in srgb, var(--primary) 12%, transparent);
+          border-radius: var(--radius-sm, 0.375rem);
         }
         .content pre,
         .content code {
