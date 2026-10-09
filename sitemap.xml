@@ -5143,12 +5143,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://michaelcollins.xyz/learning-materials-hax/rubrics/exercise-low-poly</loc>
-    <lastmod>2026-10-08T15:29:45.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/rubrics/project</loc>
     <lastmod>2026-10-08T15:29:46.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -5182,7 +5176,7 @@
     <loc>https://michaelcollins.xyz/learning-materials-hax/rubrics/exercise-low-poly/v1-0-0</loc>
     <lastmod>2026-10-08T15:29:46.000Z</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/rubrics/project/v1-0-0</loc>
