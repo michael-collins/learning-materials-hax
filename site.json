@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791555545,
+      "updated": 1791555601,
       "version": "26.8.0"
     },
     "theme": {
@@ -31028,28 +31028,6 @@
       }
     },
     {
-      "id": "item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb",
-      "indent": 0,
-      "location": "pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.html",
-      "slug": "curriculum",
-      "order": 9,
-      "parent": null,
-      "title": "Curriculum",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1790878969,
-        "images": [],
-        "videos": [],
-        "updated": 1791555145,
-        "published": true,
-        "locked": false,
-        "status": "",
-        "icon": "hax:blocks"
-      }
-    },
-    {
       "id": "item-50b4ae5c-4f84-43f3-9987-efb6b3428542",
       "indent": 1,
       "location": "pages/item-50b4ae5c-4f84-43f3-9987-efb6b3428542/index.html",
@@ -31316,22 +31294,24 @@
       }
     },
     {
-      "id": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
+      "id": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
       "indent": 0,
-      "location": "pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.html",
-      "slug": "courses",
-      "order": 10,
+      "location": "pages/item-8660850b-ca78-4dc6-ad8d-c1c5a676167a/index.html",
+      "slug": "rubrics",
+      "order": 9,
       "parent": null,
-      "title": "Courses",
-      "description": "Each course, its bulletin entry and what's taught in it.",
+      "title": "Rubrics",
+      "description": "Scoring guides for exercises, projects and discussions: criteria, weights and rating levels.",
       "metadata": {
         "pageType": "oer:section",
-        "icon": "",
         "published": true,
-        "created": 1791385274,
+        "created": 1791471275,
         "images": [],
         "videos": [],
-        "updated": 1791465708
+        "updated": 1791555599,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -31612,6 +31592,64 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-516620a0-e7c9-4eb5-be9c-76df19420ef9",
+      "indent": 0,
+      "location": "pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.html",
+      "slug": "v0-9-0",
+      "order": 10,
+      "parent": null,
+      "title": "v0.9.0",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:pathway",
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "allowEmbed": true,
+          "license": "CC BY 4.0"
+        },
+        "oerSnapshotOf": "item-728c455b-226f-433d-9978-17a476458a79",
+        "oerSnapshotTitle": "Fundamentals",
+        "version": "0.9.0",
+        "versionStatus": "archived",
+        "hideInMenu": true,
+        "locked": true,
+        "published": false,
+        "created": 1791232004,
+        "images": [],
+        "videos": [],
+        "updated": 1791555600,
+        "status": "",
+        "icon": ""
+      }
+    },
+    {
+      "id": "item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb",
+      "indent": 0,
+      "location": "pages/item-ca84a26b-a9c1-4611-a3f2-420940f7a9eb/index.html",
+      "slug": "curriculum",
+      "order": 11,
+      "parent": null,
+      "title": "Curriculum",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1790878969,
+        "images": [],
+        "videos": [],
+        "updated": 1791555592,
+        "published": true,
+        "locked": false,
+        "status": "",
+        "icon": "hax:blocks"
       }
     },
     {
@@ -31951,24 +31989,6 @@
       }
     },
     {
-      "id": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
-      "indent": 0,
-      "location": "pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.html",
-      "slug": "sequences",
-      "order": 11,
-      "parent": null,
-      "title": "Sequences",
-      "description": "Week-by-week plans for running a course, ready to export to Canvas.",
-      "metadata": {
-        "pageType": "oer:section",
-        "published": true,
-        "created": 1791465730,
-        "images": [],
-        "videos": [],
-        "updated": 1791465730
-      }
-    },
-    {
       "id": "item-41d9b567-104d-4f03-a5b9-0194e4857e67",
       "indent": 1,
       "location": "pages/item-41d9b567-104d-4f03-a5b9-0194e4857e67/index.html",
@@ -32012,27 +32032,24 @@
       }
     },
     {
-      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "id": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
       "indent": 0,
-      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
-      "slug": "pathways",
+      "location": "pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.html",
+      "slug": "courses",
       "order": 12,
       "parent": null,
-      "title": "Pathways",
-      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
+      "title": "Courses",
+      "description": "Each course, its bulletin entry and what's taught in it.",
       "metadata": {
-        "created": 1790827963,
-        "updated": 1791465709,
+        "pageType": "oer:section",
+        "icon": "",
+        "published": true,
+        "created": 1791385274,
         "images": [],
         "videos": [],
-        "published": true,
+        "updated": 1791555593,
         "locked": false,
-        "status": "",
-        "overridePathauto": false,
-        "hideInMenu": false,
-        "readtime": 1,
-        "icon": "",
-        "pageType": ""
+        "status": ""
       }
     },
     {
@@ -32088,51 +32105,6 @@
             "notes": ""
           }
         ]
-      }
-    },
-    {
-      "id": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
-      "indent": 1,
-      "location": "pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.html",
-      "slug": "pathways/digital-fabrication-studio",
-      "order": 14,
-      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
-      "title": "Digital Fabrication Studio",
-      "description": "Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.",
-      "metadata": {
-        "pageType": "oer:pathway",
-        "oerPlan": "DART 413:pathway",
-        "published": true,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true,
-          "estimatedDuration": "One course run (15 weeks)",
-          "prerequisites": [
-            {
-              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
-              "version": ""
-            }
-          ]
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791518070,
-        "locked": false,
-        "status": "",
-        "icon": ""
       }
     },
     {
@@ -32319,21 +32291,24 @@
       }
     },
     {
-      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
+      "id": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
       "indent": 0,
-      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
-      "slug": "books",
+      "location": "pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.html",
+      "slug": "sequences",
       "order": 13,
       "parent": null,
-      "title": "Books",
-      "description": "",
+      "title": "Sequences",
+      "description": "Week-by-week plans for running a course, ready to export to Canvas.",
       "metadata": {
-        "published": true,
         "pageType": "oer:section",
-        "created": 1791231123,
+        "published": true,
+        "created": 1791465730,
         "images": [],
         "videos": [],
-        "updated": 1791465710
+        "updated": 1791555594,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -32474,25 +32449,72 @@
       }
     },
     {
-      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
+      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "indent": 0,
-      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
-      "slug": "activity",
+      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
+      "slug": "pathways",
       "order": 14,
       "parent": null,
-      "title": "Activity",
-      "description": "",
+      "title": "Pathways",
+      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1790878969,
+        "created": 1790827963,
+        "updated": 1791555594,
         "images": [],
         "videos": [],
-        "updated": 1791555544,
         "published": true,
         "locked": false,
         "status": "",
-        "icon": "icons:description"
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "readtime": 1,
+        "icon": "",
+        "pageType": ""
+      }
+    },
+    {
+      "id": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
+      "indent": 1,
+      "location": "pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.html",
+      "slug": "pathways/digital-fabrication-studio",
+      "order": 14,
+      "parent": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "title": "Digital Fabrication Studio",
+      "description": "Digital Fabrication Studio explores how a diverse range of technologies can translate digital designs and data into the physical world.",
+      "metadata": {
+        "pageType": "oer:pathway",
+        "oerPlan": "DART 413:pathway",
+        "published": true,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "One course run (15 weeks)",
+          "prerequisites": [
+            {
+              "page": "item-0a52316c-dbac-45a2-9d8b-f88a9ad38f2e",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791518070,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -32632,28 +32654,24 @@
       }
     },
     {
-      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
       "indent": 0,
-      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
-      "slug": "exercises",
+      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
+      "slug": "books",
       "order": 15,
       "parent": null,
-      "title": "Exercises",
-      "description": "Formative practice focused on a narrow set of competencies.",
+      "title": "Books",
+      "description": "",
       "metadata": {
-        "created": 1790802192,
-        "updated": 1791465711,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
         "published": true,
         "pageType": "oer:section",
-        "hideInMenu": false,
+        "created": 1791231123,
+        "images": [],
+        "videos": [],
+        "updated": 1791555595,
         "locked": false,
-        "readtime": 1,
         "status": "",
-        "icon": "",
-        "linkTarget": "_self"
+        "icon": ""
       }
     },
     {
@@ -32715,6 +32733,95 @@
       }
     },
     {
+      "id": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
+      "indent": 1,
+      "location": "pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.html",
+      "slug": "projects/final-project",
+      "order": 15,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Final project",
+      "description": "A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition.",
+      "metadata": {
+        "pageType": "oer:project",
+        "oerPlan": "DART 413:A10",
+        "published": true,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ],
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791518076,
+        "locked": false,
+        "status": "",
+        "icon": ""
+      }
+    },
+    {
+      "id": "item-e4e10eff-a688-4ead-8963-d36e02adc4e5",
+      "indent": 1,
+      "location": "pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.html",
+      "slug": "quizzes/short-film-and-vfx-pathway-readiness-quiz",
+      "order": 15,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Short Film and VFX Pathway readiness quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791229731,
+        "images": [],
+        "videos": [],
+        "updated": 1791404488
+      }
+    },
+    {
+      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
+      "indent": 0,
+      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
+      "slug": "activity",
+      "order": 16,
+      "parent": null,
+      "title": "Activity",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1790878969,
+        "images": [],
+        "videos": [],
+        "updated": 1791555596,
+        "published": true,
+        "locked": false,
+        "status": "",
+        "icon": "icons:description"
+      }
+    },
+    {
       "id": "item-858f23fb-b6b5-442a-ac36-94d4afe1718f",
       "indent": 1,
       "location": "pages/item-858f23fb-b6b5-442a-ac36-94d4afe1718f/index.html",
@@ -32763,6 +32870,90 @@
             "notes": ""
           }
         ]
+      }
+    },
+    {
+      "id": "item-b65c405c-3d53-442e-9b92-cf54bd89d151",
+      "indent": 1,
+      "location": "pages/item-b65c405c-3d53-442e-9b92-cf54bd89d151/index.html",
+      "slug": "projects/class-introductions",
+      "order": 16,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Class Introductions",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g9404c1d9828484c35f8f793ed64ea395"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
+      "indent": 1,
+      "location": "pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.html",
+      "slug": "quizzes/short-film-pathway-readiness-quiz",
+      "order": 16,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Short Film Pathway readiness quiz",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "icon": "",
+        "published": false,
+        "oerTmpKey": "",
+        "oerFields": {
+          "estimatedDuration": "10 minutes",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ]
+        },
+        "created": 1791229754,
+        "images": [],
+        "videos": [],
+        "updated": 1791404488
+      }
+    },
+    {
+      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "indent": 0,
+      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
+      "slug": "exercises",
+      "order": 17,
+      "parent": null,
+      "title": "Exercises",
+      "description": "Formative practice focused on a narrow set of competencies.",
+      "metadata": {
+        "created": 1790802192,
+        "updated": 1791555597,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "oer:section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "",
+        "linkTarget": "_self"
       }
     },
     {
@@ -36517,178 +36708,6 @@
       }
     },
     {
-      "id": "item-c64e34a7-5763-4e28-b1e2-e9b87814daf8",
-      "indent": 1,
-      "location": "pages/item-c64e34a7-5763-4e28-b1e2-e9b87814daf8/index.html",
-      "slug": "projects/final-project",
-      "order": 15,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Final project",
-      "description": "A self-directed project answering one of the selected themes, using at least two fabrication processes, developed through the proposal, a work-in-progress crit, and a final exhibition.",
-      "metadata": {
-        "pageType": "oer:project",
-        "oerPlan": "DART 413:A10",
-        "published": true,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ],
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791518076,
-        "locked": false,
-        "status": "",
-        "icon": ""
-      }
-    },
-    {
-      "id": "item-e4e10eff-a688-4ead-8963-d36e02adc4e5",
-      "indent": 1,
-      "location": "pages/item-e4e10eff-a688-4ead-8963-d36e02adc4e5/index.html",
-      "slug": "quizzes/short-film-and-vfx-pathway-readiness-quiz",
-      "order": 15,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Short Film and VFX Pathway readiness quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791229731,
-        "images": [],
-        "videos": [],
-        "updated": 1791404488
-      }
-    },
-    {
-      "id": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
-      "indent": 0,
-      "location": "pages/item-51cc91b4-48cc-4ce0-b50e-47c1887aed29/index.html",
-      "slug": "reflections",
-      "order": 16,
-      "parent": null,
-      "title": "Reflections",
-      "description": "Reading responses and reflection prompts, assessed like exercises.",
-      "metadata": {
-        "created": 1791551508,
-        "updated": 1791551508,
-        "images": [],
-        "videos": [],
-        "overridePathauto": false,
-        "published": true,
-        "pageType": "oer:section",
-        "hideInMenu": false,
-        "locked": false,
-        "readtime": 1,
-        "status": "",
-        "icon": "",
-        "linkTarget": "_self"
-      }
-    },
-    {
-      "id": "item-b65c405c-3d53-442e-9b92-cf54bd89d151",
-      "indent": 1,
-      "location": "pages/item-b65c405c-3d53-442e-9b92-cf54bd89d151/index.html",
-      "slug": "projects/class-introductions",
-      "order": 16,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Class Introductions",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:activity",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
-              "version": ""
-            }
-          ]
-        },
-        "oerCanvasImport": {
-          "batch": "canvas-muzzavh1",
-          "id": "g9404c1d9828484c35f8f793ed64ea395"
-        },
-        "created": 1791490691,
-        "images": [],
-        "videos": [],
-        "updated": 1791490691
-      }
-    },
-    {
-      "id": "item-e74a2335-6e8e-47e8-850b-e2346efc427d",
-      "indent": 1,
-      "location": "pages/item-e74a2335-6e8e-47e8-850b-e2346efc427d/index.html",
-      "slug": "quizzes/short-film-pathway-readiness-quiz",
-      "order": 16,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Short Film Pathway readiness quiz",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "icon": "",
-        "published": false,
-        "oerTmpKey": "",
-        "oerFields": {
-          "estimatedDuration": "10 minutes",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ]
-        },
-        "created": 1791229754,
-        "images": [],
-        "videos": [],
-        "updated": 1791404488
-      }
-    },
-    {
-      "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "indent": 0,
-      "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
-      "slug": "projects",
-      "order": 17,
-      "parent": null,
-      "title": "Projects",
-      "description": "",
-      "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1790829909,
-        "images": [],
-        "videos": [],
-        "updated": 1791465712,
-        "locked": false,
-        "status": "",
-        "icon": ""
-      }
-    },
-    {
       "id": "item-cfbc00e8-0248-4d0d-9b54-fc02ca9eb9d7",
       "indent": 1,
       "location": "pages/item-cfbc00e8-0248-4d0d-9b54-fc02ca9eb9d7/index.html",
@@ -36719,6 +36738,84 @@
       }
     },
     {
+      "id": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
+      "indent": 1,
+      "location": "pages/item-9be5b661-faea-45de-a5d7-75725ac645c8/index.html",
+      "slug": "quizzes/laser-cutting-quiz",
+      "order": 17,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "Laser cutting quiz",
+      "description": "Self-check questions on laser cutting.",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:quiz:M02",
+        "published": true,
+        "oerFields": {
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "10 minutes",
+          "prerequisites": [
+            {
+              "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
+              "version": ""
+            },
+            {
+              "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
+              "version": ""
+            },
+            {
+              "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
+              "version": ""
+            }
+          ],
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791518079,
+        "locked": false,
+        "status": "",
+        "icon": ""
+      }
+    },
+    {
+      "id": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
+      "indent": 0,
+      "location": "pages/item-51cc91b4-48cc-4ce0-b50e-47c1887aed29/index.html",
+      "slug": "reflections",
+      "order": 18,
+      "parent": null,
+      "title": "Reflections",
+      "description": "Reading responses and reflection prompts, assessed like exercises.",
+      "metadata": {
+        "created": 1791551508,
+        "updated": 1791555597,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "oer:section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "",
+        "linkTarget": "_self"
+      }
+    },
+    {
       "id": "item-b54ccf5c-be8c-4477-8193-4692faf8c8bf",
       "indent": 1,
       "location": "pages/item-b54ccf5c-be8c-4477-8193-4692faf8c8bf/index.html",
@@ -36746,6 +36843,84 @@
         "images": [],
         "videos": [],
         "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
+      "indent": 1,
+      "location": "pages/item-ab1c8916-1374-44a6-8872-b62dcea82770/index.html",
+      "slug": "quizzes/3d-printing-quiz",
+      "order": 18,
+      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
+      "title": "3D printing quiz",
+      "description": "Self-check questions on 3D printing.",
+      "metadata": {
+        "pageType": "oer:quiz",
+        "oerPlan": "DART 413:quiz:M06",
+        "published": true,
+        "oerFields": {
+          "license": "CC BY 4.0",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "placeholder": true,
+          "estimatedDuration": "10 minutes",
+          "prerequisites": [
+            {
+              "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
+              "version": ""
+            },
+            {
+              "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
+              "version": ""
+            },
+            {
+              "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
+              "version": ""
+            },
+            {
+              "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
+              "version": ""
+            }
+          ],
+          "courses": [
+            {
+              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1791383988,
+        "images": [],
+        "videos": [],
+        "updated": 1791518061,
+        "locked": false,
+        "status": "",
+        "icon": ""
+      }
+    },
+    {
+      "id": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "indent": 0,
+      "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
+      "slug": "projects",
+      "order": 19,
+      "parent": null,
+      "title": "Projects",
+      "description": "",
+      "metadata": {
+        "published": true,
+        "pageType": "oer:section",
+        "created": 1790829909,
+        "images": [],
+        "videos": [],
+        "updated": 1791555598,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -36869,135 +37044,6 @@
       }
     },
     {
-      "id": "item-9be5b661-faea-45de-a5d7-75725ac645c8",
-      "indent": 1,
-      "location": "pages/item-9be5b661-faea-45de-a5d7-75725ac645c8/index.html",
-      "slug": "quizzes/laser-cutting-quiz",
-      "order": 17,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "Laser cutting quiz",
-      "description": "Self-check questions on laser cutting.",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "oerPlan": "DART 413:quiz:M02",
-        "published": true,
-        "oerFields": {
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true,
-          "estimatedDuration": "10 minutes",
-          "prerequisites": [
-            {
-              "page": "item-926d32cd-5f1d-4cad-b882-89c65ffaad5d",
-              "version": ""
-            },
-            {
-              "page": "item-d243f14d-7a76-437f-b519-3d8b112aac59",
-              "version": ""
-            },
-            {
-              "page": "item-9b31b8f0-e70c-4e70-bf73-71675f64b6bf",
-              "version": ""
-            }
-          ],
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ]
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791518079,
-        "locked": false,
-        "status": "",
-        "icon": ""
-      }
-    },
-    {
-      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "indent": 0,
-      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
-      "slug": "quizzes",
-      "order": 18,
-      "parent": null,
-      "title": "Quizzes",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:section",
-        "icon": "",
-        "oerTmpKey": "",
-        "created": 1791228261,
-        "images": [],
-        "videos": [],
-        "updated": 1791465713
-      }
-    },
-    {
-      "id": "item-ab1c8916-1374-44a6-8872-b62dcea82770",
-      "indent": 1,
-      "location": "pages/item-ab1c8916-1374-44a6-8872-b62dcea82770/index.html",
-      "slug": "quizzes/3d-printing-quiz",
-      "order": 18,
-      "parent": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
-      "title": "3D printing quiz",
-      "description": "Self-check questions on 3D printing.",
-      "metadata": {
-        "pageType": "oer:quiz",
-        "oerPlan": "DART 413:quiz:M06",
-        "published": true,
-        "oerFields": {
-          "license": "CC BY 4.0",
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": ""
-            }
-          ],
-          "placeholder": true,
-          "estimatedDuration": "10 minutes",
-          "prerequisites": [
-            {
-              "page": "item-dea7e7e2-d0fe-4423-ad9f-8004351ff58a",
-              "version": ""
-            },
-            {
-              "page": "item-c7c40ed6-9dcd-47f7-b06b-312b1ca2c1c6",
-              "version": ""
-            },
-            {
-              "page": "item-de78d4ad-66dc-44be-b38f-3fa64f0ae5b0",
-              "version": ""
-            },
-            {
-              "page": "item-deed2234-d9e7-4fc4-9113-08ebc3b2b7ad",
-              "version": ""
-            }
-          ],
-          "courses": [
-            {
-              "page": "item-e09826f0-d716-4612-807a-2bbfcff22b36",
-              "version": ""
-            }
-          ]
-        },
-        "created": 1791383988,
-        "images": [],
-        "videos": [],
-        "updated": 1791518061,
-        "locked": false,
-        "status": "",
-        "icon": ""
-      }
-    },
-    {
       "id": "item-6d67a392-9c2e-4070-bb24-8fed224e3774",
       "indent": 1,
       "location": "pages/item-6d67a392-9c2e-4070-bb24-8fed224e3774/index.html",
@@ -37051,55 +37097,25 @@
       }
     },
     {
-      "id": "item-8660850b-ca78-4dc6-ad8d-c1c5a676167a",
+      "id": "item-1c6926f6-66c0-4907-859d-a8efbc78bb8a",
       "indent": 0,
-      "location": "pages/item-8660850b-ca78-4dc6-ad8d-c1c5a676167a/index.html",
-      "slug": "rubrics",
-      "order": 19,
+      "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
+      "slug": "quizzes",
+      "order": 20,
       "parent": null,
-      "title": "Rubrics",
-      "description": "Scoring guides for exercises, projects and discussions: criteria, weights and rating levels.",
-      "metadata": {
-        "pageType": "oer:section",
-        "published": true,
-        "created": 1791471275,
-        "images": [],
-        "videos": [],
-        "updated": 1791471275
-      }
-    },
-    {
-      "id": "item-516620a0-e7c9-4eb5-be9c-76df19420ef9",
-      "indent": 2,
-      "location": "pages/item-516620a0-e7c9-4eb5-be9c-76df19420ef9/index.html",
-      "slug": "pathways/fundamentals/v0-9-0",
-      "order": 1879,
-      "parent": null,
-      "title": "v0.9.0",
+      "title": "Quizzes",
       "description": "",
       "metadata": {
-        "pageType": "oer:pathway",
-        "oerFields": {
-          "authors": [
-            {
-              "name": "Michael Collins",
-              "url": "https://michaelcollins.xyz"
-            }
-          ],
-          "allowEmbed": true,
-          "license": "CC BY 4.0"
-        },
-        "oerSnapshotOf": "item-728c455b-226f-433d-9978-17a476458a79",
-        "oerSnapshotTitle": "Fundamentals",
-        "version": "0.9.0",
-        "versionStatus": "archived",
-        "hideInMenu": true,
-        "locked": true,
-        "published": false,
-        "created": 1791232004,
+        "pageType": "oer:section",
+        "icon": "",
+        "oerTmpKey": "",
+        "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791232004
+        "updated": 1791555599,
+        "published": true,
+        "locked": false,
+        "status": ""
       }
     }
   ]

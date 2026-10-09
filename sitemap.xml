@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises</loc>
-    <lastmod>2026-10-08T13:21:51.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/pathways</loc>
-    <lastmod>2026-10-08T13:21:49.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -284,7 +284,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/projects</loc>
-    <lastmod>2026-10-08T13:21:52.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:58.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -566,13 +566,13 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/curriculum</loc>
-    <lastmod>2026-10-09T14:12:25.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:52.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/activity</loc>
-    <lastmod>2026-10-09T14:19:04.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:56.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -938,7 +938,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/quizzes</loc>
-    <lastmod>2026-10-08T13:21:53.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -2311,12 +2311,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://michaelcollins.xyz/learning-materials-hax/books</loc>
-    <lastmod>2026-10-08T13:21:50.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/discussions</loc>
     <lastmod>2026-10-07T18:19:21.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2375,6 +2369,12 @@
     <lastmod>2026-10-05T20:25:20.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/books</loc>
+    <lastmod>2026-10-09T14:19:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/books/dmd-100-digital-multimedia-design-foundations/lesson-1-what-is-design/end-of-lesson-discussion</loc>
@@ -4003,8 +4003,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://michaelcollins.xyz/learning-materials-hax/pathways/fundamentals/v0-9-0</loc>
-    <lastmod>2026-10-05T20:26:44.000Z</lastmod>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/v0-9-0</loc>
+    <lastmod>2026-10-09T14:20:00.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -5042,7 +5042,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/courses</loc>
-    <lastmod>2026-10-08T13:21:48.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -5132,7 +5132,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/sequences</loc>
-    <lastmod>2026-10-08T13:22:10.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -5168,7 +5168,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/rubrics</loc>
-    <lastmod>2026-10-08T14:54:35.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -5276,7 +5276,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/reflections</loc>
-    <lastmod>2026-10-09T13:11:48.000Z</lastmod>
+    <lastmod>2026-10-09T14:19:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
