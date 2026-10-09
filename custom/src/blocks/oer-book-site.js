@@ -41,6 +41,35 @@ const tocWanted = () => {
 };
 
 /**
+ * A group's rows folded for the chapters down the side: a heading holds
+ * the chapters after it (until the next heading), and a chapter holds the
+ * ones under it (a project's steps). Nodes: { c, kids }.
+ */
+function foldRows(rows, inset) {
+  const level = (c) => Math.max(0, c.depth - inset);
+  const out = [];
+  const lastChapter = () => {
+    const last = out[out.length - 1];
+    if (!last) return null;
+    if (!last.c.heading) return last;
+    return last.kids[last.kids.length - 1] || null;
+  };
+  for (const c of rows) {
+    const node = { c, kids: [] };
+    if (level(c) === 0) {
+      const last = out[out.length - 1];
+      if (!c.heading && last?.c.heading) last.kids.push(node);
+      else out.push(node);
+    } else {
+      const host = lastChapter();
+      if (host) host.kids.push(node);
+      else out.push(node);
+    }
+  }
+  return out;
+}
+
+/**
  * The contents in groups for the title page: each part (a top-level chapter
  * with chapters under it) on its own, a top-level heading with the
  * chapters after it, and runs of single top-level chapters together.
@@ -73,6 +102,7 @@ class OerBookSite extends LitElement {
       _loading: { state: true },
       _panel: { state: true },
       _tocOpen: { state: true },
+      _folds: { state: true }, // groups in the chapters down the side opened or closed by hand
       _filter: { state: true },
       _busy: { state: true },
       _signedIn: { state: true },
@@ -88,6 +118,7 @@ class OerBookSite extends LitElement {
     this._tocOpen = this.__wide.matches && tocWanted();
     this.__onWide = (e) => (this._tocOpen = e.matches && tocWanted());
     this._filter = "";
+    this._folds = new Map(); // item id → open (true) or closed (false)
     this._busy = "";
     this._settings = loadReaderSettings();
     this.colour = this._settings.colour;
@@ -240,25 +271,75 @@ class OerBookSite extends LitElement {
     if (this._book) bookPrint().show(this._book.id);
   }
 
+  // a fold in the chapters down the side: open by hand, or holding the page being read
+  _isOpen(node, current) {
+    const id = node.c.item.id;
+    if (this._folds.has(id)) return this._folds.get(id);
+    const holds = (n) => n.c === current || n.kids.some(holds);
+    return node.kids.some(holds);
+  }
+
+  _fold(node, current) {
+    const next = new Map(this._folds);
+    next.set(node.c.item.id, !this._isOpen(node, current));
+    this._folds = next;
+  }
+
+  _renderNode(node, current) {
+    const { c, kids } = node;
+    const closeIfNarrow = () => !this.__wide.matches && (this._tocOpen = false);
+    const open = kids.length ? this._isOpen(node, current) : false;
+    const chevron = html`<span class="chev ${open ? "open" : ""}" aria-hidden="true">${lucide("oer:chevron-right", "sm")}</span>`;
+    const list = kids.length && open ? html`<ol class="kids">${kids.map((k) => this._renderNode(k, current))}</ol>` : "";
+    // a heading: a button that opens the chapters after it
+    if (c.heading) {
+      return kids.length
+        ? html`<li>
+            <button class="fold" aria-expanded="${open ? "true" : "false"}" @click="${() => this._fold(node, current)}">${c.item.title}${chevron}</button>
+            ${list}
+          </li>`
+        : html`<li class="label">${c.item.title}</li>`;
+    }
+    const link = html`<a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${closeIfNarrow}">${c.item.title}</a>`;
+    return kids.length
+      ? html`<li>
+          <div class="row">
+            ${link}<button class="fold-btn" aria-expanded="${open ? "true" : "false"}" aria-label="${open ? "Hide" : "Show"} the parts of ${c.item.title}" @click="${() => this._fold(node, current)}">${chevron}</button>
+          </div>
+          ${list}
+        </li>`
+      : html`<li>${link}</li>`;
+  }
+
   _renderToc(list, current) {
     const q = this._filter.trim().toLowerCase();
-    const shown = q ? list.filter((c) => !c.heading && c.item.title.toLowerCase().includes(q)) : list;
     const closeIfNarrow = () => !this.__wide.matches && (this._tocOpen = false);
+    const found = q ? list.filter((c) => !c.heading && c.item.title.toLowerCase().includes(q)) : [];
     return html`<nav class="toc" id="toc" aria-label="Chapters">
       ${list.length > 12
         ? html`<label class="filter">${lucide("icons:search", "sm")}<input type="search" placeholder="Find a chapter" aria-label="Find a chapter" .value="${this._filter}" @input="${(e) => (this._filter = e.target.value)}" /></label>`
         : ""}
-      <ol>
-        <li><a href="${this.site.slug}" class="${current ? "" : "here"}" aria-current="${current ? "false" : "page"}" @click="${(e) => (e.preventDefault(), this._go(""))}">About this book</a></li>
-        ${shown.map((c) =>
-          c.heading
-            ? html`<li class="label" style="--depth:${c.depth}">${c.item.title}</li>`
-            : html`<li style="--depth:${q ? 0 : c.depth}">
-                <a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${closeIfNarrow}">${c.item.title}</a>
-              </li>`,
-        )}
-      </ol>
-      ${q && !shown.length ? html`<p class="muted">No chapter matches.</p>` : ""}
+      ${q
+        ? html`<ol class="found">
+              ${found.map(
+                (c) => html`<li><a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${closeIfNarrow}">${c.item.title}</a></li>`,
+              )}
+            </ol>
+            ${found.length ? "" : html`<p class="muted">No chapter matches.</p>`}`
+        : html`<ol class="top-links">
+              <li><a href="${this.site.slug}" class="${current ? "" : "here"}" aria-current="${current ? "false" : "page"}" @click="${(e) => (e.preventDefault(), this._go(""))}">About this book</a></li>
+            </ol>
+            ${contentsGroups(list).map(({ lead, rows }) => {
+              const inset = lead && !lead.heading ? 1 : 0;
+              return html`<section class="tgroup">
+                ${lead
+                  ? lead.heading
+                    ? html`<h3>${lead.item.title}</h3>`
+                    : html`<h3><a href="#${encodeURI(lead.rel)}" class="${lead === current ? "here" : ""}" aria-current="${lead === current ? "page" : "false"}" @click="${closeIfNarrow}">${lead.item.title}</a></h3>`
+                  : ""}
+                ${rows.length ? html`<ol>${foldRows(rows, inset).map((n) => this._renderNode(n, current))}</ol>` : ""}
+              </section>`;
+            })}`}
     </nav>`;
   }
 
@@ -336,12 +417,11 @@ class OerBookSite extends LitElement {
     </article>`;
   }
 
-  // the chapters' button: in the page's top-left corner on wide screens, in
-  // the bar on narrow ones (where a corner button would cover the text)
-  _tocButton(where) {
+  // the chapters' button, at the start of the bar
+  _tocButton() {
     const label = this._tocOpen ? "Hide chapters" : "Show chapters";
     return html`<button
-      class="icon-btn toc-btn ${where}"
+      class="icon-btn toc-btn"
       aria-controls="toc"
       aria-expanded="${this._tocOpen ? "true" : "false"}"
       aria-label="${label}"
@@ -359,7 +439,8 @@ class OerBookSite extends LitElement {
     const current = this._currentIn(list);
     return html`<div class="top"></div>
       <header class="bar">
-        ${this._tocButton("in-bar")}
+        ${this._tocButton()}
+        <span class="divider" aria-hidden="true"></span>
         <a class="title" href="${this.site.slug}" @click="${(e) => (e.preventDefault(), this._go(""))}">${book.title}</a>
         <span class="spacer"></span>
         ${this._busy ? html`<span class="busy" role="status">${this._busy}</span>` : ""}
@@ -386,7 +467,6 @@ class OerBookSite extends LitElement {
         ${this._renderToc(list, current)}
         ${this._tocOpen ? html`<div class="scrim" @click="${() => (this._tocOpen = false)}"></div>` : ""}
         <main class="reading">
-          <div class="toc-toggle">${this._tocButton("corner")}</div>
           ${current ? this._renderChapter(current, list) : this._renderTitlePage(book, list)}
         </main>
       </div>`;
@@ -594,7 +674,7 @@ class OerBookSite extends LitElement {
           box-sizing: border-box;
           height: calc(100dvh - var(--bar));
           overflow-y: auto;
-          padding: 1rem 0.75rem 2rem;
+          padding: 1rem 1.25rem 2rem;
           border-right: 1px solid var(--border);
           font-size: 0.875rem;
           scrollbar-width: thin;
@@ -602,36 +682,111 @@ class OerBookSite extends LitElement {
         .toc ol {
           display: flex;
           flex-direction: column;
-          gap: 0.0625rem;
           margin: 0;
           padding: 0;
           list-style: none;
         }
-        .toc a {
+        .tgroup {
+          padding: 0.75rem 0;
+          border-top: 1px solid var(--border);
+        }
+        .top-links {
+          padding-bottom: 0.5rem;
+        }
+        .tgroup h3 {
+          margin: 0 0 0.25rem;
+          font-size: 0.875rem;
+          font-weight: 700;
+          line-height: 1.45;
+          color: var(--foreground);
+        }
+        .tgroup h3 a {
+          padding: 0.25rem 0;
+          color: inherit;
+          font-weight: inherit;
+        }
+        .toc a,
+        .fold {
           display: block;
-          padding: 0.375rem 0.5rem 0.375rem calc(0.5rem + var(--depth, 0) * 0.875rem);
-          border-radius: var(--radius-md, 0.5rem);
+          padding: 0.25rem 0;
           color: var(--muted-foreground);
-          line-height: 1.35;
+          font-weight: 500;
+          line-height: 1.45;
           text-decoration: none;
         }
-        .toc a:hover {
+        .toc a:hover,
+        .fold:hover {
+          color: var(--foreground);
+        }
+        .toc a.here {
+          color: var(--link);
+          font-weight: 600;
+        }
+        .fold {
+          all: unset;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0.25rem 0;
+          color: var(--muted-foreground);
+          font-weight: 500;
+          line-height: 1.45;
+          cursor: pointer;
+        }
+        .row {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+        .row a {
+          flex: 1;
+          min-width: 0;
+        }
+        .fold-btn {
+          all: unset;
+          display: inline-grid;
+          place-items: center;
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: var(--radius-sm, 0.375rem);
+          color: var(--muted-foreground);
+          cursor: pointer;
+        }
+        .fold-btn:hover {
           background: var(--accent);
           color: var(--foreground);
         }
+        .fold:focus-visible,
+        .fold-btn:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .chev {
+          display: inline-grid;
+          transition: transform 0.15s ease;
+        }
+        .chev.open {
+          transform: rotate(90deg);
+        }
+        .kids {
+          margin: 0.125rem 0 0.25rem 0.125rem !important;
+          padding-left: 0.75rem !important;
+          border-left: 1px solid var(--border);
+        }
         .toc li.label {
-          margin-top: 0.625rem;
-          padding: 0.25rem 0.5rem 0.125rem calc(0.5rem + var(--depth, 0) * 0.875rem);
+          padding: 0.5rem 0 0.125rem;
           font-size: 0.6875rem;
           font-weight: 600;
           letter-spacing: 0.06em;
           text-transform: uppercase;
           color: var(--muted-foreground);
         }
-        .toc a.here {
-          background: var(--accent);
-          color: var(--foreground);
-          font-weight: 600;
+        @media (prefers-reduced-motion: reduce) {
+          .chev {
+            transition: none;
+          }
         }
         .filter {
           display: flex;
@@ -654,31 +809,26 @@ class OerBookSite extends LitElement {
           color: var(--foreground);
         }
 
-        /* the chapters' button: the page's top-left corner, beside the
-           chapters, staying there as the page scrolls */
-        .toc-toggle {
-          position: sticky;
-          top: calc(var(--bar) + 0.75rem);
-          z-index: 6;
-          height: 0;
-          margin: -2.75rem 0 0 -0.75rem;
+        /* a rule between the chapters' button and the book's title, so the
+           button doesn't read as a logo */
+        .divider {
+          flex: none;
+          width: 1px;
+          height: 1.5rem;
+          margin: 0 0.25rem;
+          background: var(--border);
         }
-        .toc-btn.corner {
-          border-color: var(--input-border, var(--border));
-          background-color: var(--background);
+        .toc-btn {
           color: var(--muted-foreground);
         }
-        .toc-btn.corner:hover {
+        .toc-btn:hover {
           color: var(--foreground);
-        }
-        .toc-btn.in-bar {
-          display: none;
         }
 
         /* the page */
         .reading {
           min-width: 0;
-          padding: 3.5rem 1.5rem 5rem;
+          padding: 3rem 1.5rem 5rem;
           background-image: var(--reader-texture, none);
         }
         article {
@@ -973,13 +1123,6 @@ class OerBookSite extends LitElement {
             visibility: visible;
             transform: none;
             transition: transform 0.2s ease;
-          }
-          /* the button moves to the bar, which is always in view */
-          .toc-btn.in-bar {
-            display: inline-flex;
-          }
-          .toc-toggle {
-            display: none;
           }
           .layout.toc-open .scrim {
             display: block;
