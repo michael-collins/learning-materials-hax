@@ -10,6 +10,7 @@ import { saveOutline, newItemId, flatten } from "../outline/outline-model.js";
 
 export const BOOK_SITE_TYPE = "oer:book-site";
 const BOOK_TYPE = "oer:book";
+const HEADING_TYPE = "oer:heading";
 
 /** The type's definition, as the site's content types hold it. */
 export const BOOK_SITE_DEF = {
@@ -43,11 +44,20 @@ export function bookOfSite(site, items) {
   return (items || []).find((i) => i.id === id) || null;
 }
 
-/** A book's chapters readers can see, in reading order: [{ item, depth, rel }] (rel: its address inside the book). */
+/**
+ * A book's chapters readers can see, in reading order: [{ item, depth, rel,
+ * heading }] (rel: its address inside the book; heading: a label that
+ * groups the chapters after it, with no page of its own to read).
+ */
 export function bookOutline(book, items) {
   if (!book) return [];
   const visible = (items || []).filter((i) => !isSnap(i) && i.metadata?.published !== false && i.metadata?.pageType !== "oer:system");
-  return flatten(visible, book.id).map(({ item, depth }) => ({ item, depth, rel: String(item.slug || "").startsWith(`${book.slug}/`) ? item.slug.slice(book.slug.length + 1) : item.id }));
+  return flatten(visible, book.id).map(({ item, depth }) => ({
+    item,
+    depth,
+    heading: item.metadata?.pageType === HEADING_TYPE,
+    rel: String(item.slug || "").startsWith(`${book.slug}/`) ? item.slug.slice(book.slug.length + 1) : item.id,
+  }));
 }
 
 export const bookSiteIsOn = (site) => !!site && site.metadata?.published !== false;

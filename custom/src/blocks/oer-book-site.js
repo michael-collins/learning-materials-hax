@@ -29,6 +29,37 @@ const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 const typing = (e) => e.composedPath().some((n) => n.isContentEditable || /^(input|textarea|select)$/i.test(n.localName || ""));
 
+// the chapters sit beside the page on wide screens and slide in on narrow ones
+const WIDE = "(min-width: 861px)";
+const TOC_KEY = "oer-book-toc";
+const tocWanted = () => {
+  try {
+    return globalThis.localStorage.getItem(TOC_KEY) !== "closed";
+  } catch {
+    return true;
+  }
+};
+
+/**
+ * The contents in groups for the title page: each part (a top-level chapter
+ * with chapters under it) on its own, a top-level heading with the
+ * chapters after it, and runs of single top-level chapters together.
+ */
+function contentsGroups(list) {
+  const groups = [];
+  list.forEach((c, i) => {
+    const last = groups[groups.length - 1];
+    if (c.depth > 0) {
+      if (last) last.rows.push(c);
+      else groups.push({ lead: null, rows: [c] });
+    } else if (c.heading) groups.push({ lead: c, rows: [] });
+    else if (list[i + 1]?.depth > 0) groups.push({ lead: c, rows: [] });
+    else if (last && (!last.lead || (last.lead.heading && last.rows.every((r) => r.depth === 0)))) last.rows.push(c);
+    else groups.push({ lead: null, rows: [c] });
+  });
+  return groups;
+}
+
 class OerBookSite extends LitElement {
   static get tag() {
     return "oer-book-site";
@@ -53,7 +84,9 @@ class OerBookSite extends LitElement {
     this.site = null;
     this._route = decodeURIComponent(globalThis.location.hash.slice(1));
     this._panel = "";
-    this._tocOpen = false;
+    this.__wide = globalThis.matchMedia(WIDE);
+    this._tocOpen = this.__wide.matches && tocWanted();
+    this.__onWide = (e) => (this._tocOpen = e.matches && tocWanted());
     this._filter = "";
     this._busy = "";
     this._settings = loadReaderSettings();
@@ -61,9 +94,9 @@ class OerBookSite extends LitElement {
     this._html = "";
     this.__onHash = () => (this._route = decodeURIComponent(globalThis.location.hash.slice(1)));
     this.__onKeys = (e) => {
-      if (e.key === "Escape" && (this._panel || this._tocOpen)) {
+      if (e.key === "Escape" && (this._panel || (this._tocOpen && !this.__wide.matches))) {
         this._panel = "";
-        this._tocOpen = false;
+        if (!this.__wide.matches) this._tocOpen = false;
         return;
       }
       if (typing(e) || e.altKey || e.ctrlKey || e.metaKey || globalThis.document.querySelector("oer-book-print[open]")) return;
@@ -80,6 +113,7 @@ class OerBookSite extends LitElement {
     globalThis.addEventListener("hashchange", this.__onHash);
     globalThis.addEventListener("keydown", this.__onKeys);
     globalThis.addEventListener("pointerdown", this.__outside, true);
+    this.__wide.addEventListener("change", this.__onWide);
     this.__stop = autorun(() => {
       const items = toJS(store.manifest?.items) || [];
       const signedIn = !!store.isLoggedIn;
@@ -95,6 +129,7 @@ class OerBookSite extends LitElement {
     globalThis.removeEventListener("hashchange", this.__onHash);
     globalThis.removeEventListener("keydown", this.__onKeys);
     globalThis.removeEventListener("pointerdown", this.__outside, true);
+    this.__wide.removeEventListener("change", this.__onWide);
     this.__stop?.();
     super.disconnectedCallback();
   }
@@ -107,14 +142,26 @@ class OerBookSite extends LitElement {
     return bookOutline(this._book, this._items);
   }
 
-  // the chapter the address names in `list` (the outline), or null for the title page
+  // the chapter the address names in `list` (the outline), or null for the
+  // title page; headings have no page of their own
   _currentIn(list) {
-    return this._route ? list.find((c) => c.rel === this._route) || null : null;
+    return this._route ? list.find((c) => c.rel === this._route && !c.heading) || null : null;
+  }
+
+  // show or hide the chapters; on wide screens the choice is remembered
+  _toggleToc() {
+    this._tocOpen = !this._tocOpen;
+    if (!this.__wide.matches) return;
+    try {
+      globalThis.localStorage.setItem(TOC_KEY, this._tocOpen ? "open" : "closed");
+    } catch {
+      /* private window: for this visit only */
+    }
   }
 
   // a chapter by its address in the book, or "" for the title page
   _go(rel) {
-    this._tocOpen = false;
+    if (!this.__wide.matches) this._tocOpen = false;
     if (rel) {
       globalThis.location.hash = encodeURI(rel);
       return;
@@ -124,7 +171,7 @@ class OerBookSite extends LitElement {
   }
 
   _turn(step) {
-    const list = this._outline;
+    const list = this._outline.filter((c) => !c.heading);
     const current = this._currentIn(list);
     const i = current ? list.indexOf(current) : -1;
     const next = i + step;
@@ -195,17 +242,20 @@ class OerBookSite extends LitElement {
 
   _renderToc(list, current) {
     const q = this._filter.trim().toLowerCase();
-    const shown = q ? list.filter((c) => c.item.title.toLowerCase().includes(q)) : list;
-    return html`<nav class="toc ${this._tocOpen ? "open" : ""}" aria-label="Chapters">
+    const shown = q ? list.filter((c) => !c.heading && c.item.title.toLowerCase().includes(q)) : list;
+    const closeIfNarrow = () => !this.__wide.matches && (this._tocOpen = false);
+    return html`<nav class="toc" id="toc" aria-label="Chapters">
       ${list.length > 12
         ? html`<label class="filter">${lucide("icons:search", "sm")}<input type="search" placeholder="Find a chapter" aria-label="Find a chapter" .value="${this._filter}" @input="${(e) => (this._filter = e.target.value)}" /></label>`
         : ""}
       <ol>
         <li><a href="${this.site.slug}" class="${current ? "" : "here"}" aria-current="${current ? "false" : "page"}" @click="${(e) => (e.preventDefault(), this._go(""))}">About this book</a></li>
-        ${shown.map(
-          (c) => html`<li style="--depth:${q ? 0 : c.depth}">
-            <a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${() => (this._tocOpen = false)}">${c.item.title}</a>
-          </li>`,
+        ${shown.map((c) =>
+          c.heading
+            ? html`<li class="label" style="--depth:${c.depth}">${c.item.title}</li>`
+            : html`<li style="--depth:${q ? 0 : c.depth}">
+                <a href="#${encodeURI(c.rel)}" class="${c === current ? "here" : ""}" aria-current="${c === current ? "page" : "false"}" @click="${closeIfNarrow}">${c.item.title}</a>
+              </li>`,
         )}
       </ol>
       ${q && !shown.length ? html`<p class="muted">No chapter matches.</p>` : ""}
@@ -213,6 +263,7 @@ class OerBookSite extends LitElement {
   }
 
   _renderTitlePage(book, list) {
+    const pages = list.filter((c) => !c.heading);
     const f = book.metadata?.oerFields || {};
     const authors = peopleOf(f.authors).map((p) => p.name).filter(Boolean);
     return html`<article class="title-page">
@@ -221,24 +272,55 @@ class OerBookSite extends LitElement {
       ${book.description ? html`<p class="desc">${book.description}</p>` : ""}
       ${authors.length ? html`<p class="authors">${authors.join(", ")}</p>` : ""}
       <div class="ctas">
-        ${list.length ? html`<button class="btn primary" @click="${() => this._go(list[0].rel)}">Start reading${lucide("oer:arrow-right", "sm")}</button>` : ""}
+        ${pages.length ? html`<button class="btn primary" @click="${() => this._go(pages[0].rel)}">Start reading${lucide("oer:arrow-right", "sm")}</button>` : ""}
         <button class="btn outline" @click="${this._pdf}">${lucide("icons:print", "sm")}PDF</button>
         <button class="btn outline" @click="${this._epub}">${lucide("oer:book-a", "sm")}EPUB</button>
       </div>
-      <h2 class="contents-h">Contents</h2>
-      <ol class="contents">
-        ${list.map((c) => html`<li style="--depth:${c.depth}"><a href="#${encodeURI(c.rel)}">${c.item.title}</a></li>`)}
-      </ol>
+      <section class="contents" aria-labelledby="contents-h">
+        <h2 id="contents-h">Contents <span class="count">${pages.length} chapter${pages.length === 1 ? "" : "s"}</span></h2>
+        <div class="groups">
+          ${contentsGroups(list).map(({ lead, rows }) => {
+            // rows sit one level in under a part's title; anything below a
+            // part's own chapters (a project's steps) folds into a count
+            // after its chapter here, and the chapters down the side list it all
+            const inset = lead && !lead.heading ? 1 : 0;
+            const level = (c) => Math.max(0, c.depth - inset);
+            const shownRows = [];
+            for (const c of rows) {
+              if (level(c) >= 1) {
+                const host = shownRows[shownRows.length - 1];
+                if (host && !c.heading) host.more++;
+              } else shownRows.push({ c, more: 0 });
+            }
+            return html`<div class="group">
+              ${lead ? (lead.heading ? html`<h3 class="g-label">${lead.item.title}</h3>` : html`<h3><a href="#${encodeURI(lead.rel)}">${lead.item.title}</a></h3>`) : ""}
+              ${shownRows.length
+                ? html`<ol>
+                    ${shownRows.map(({ c, more }) =>
+                      c.heading
+                        ? html`<li class="label" style="--depth:${level(c)}">${c.item.title}</li>`
+                        : html`<li style="--depth:${level(c)}">
+                            <a href="#${encodeURI(c.rel)}">${c.item.title}</a>${more ? html`<span class="more"> · ${more} more</span>` : ""}
+                          </li>`,
+                    )}
+                  </ol>`
+                : ""}
+            </div>`;
+          })}
+        </div>
+      </section>
     </article>`;
   }
 
-  _renderChapter(current, list) {
+  _renderChapter(current, outline) {
+    const list = outline.filter((c) => !c.heading);
     const i = list.indexOf(current);
     const prev = i > 0 ? list[i - 1] : null;
     const next = i < list.length - 1 ? list[i + 1] : null;
     // the part it's in: the nearest chapter above it
     let part = null;
-    for (let k = i - 1; k >= 0 && current.depth > 0; k--) if (list[k].depth < current.depth) (part = list[k]), (k = -1);
+    const at = outline.indexOf(current);
+    for (let k = at - 1; k >= 0 && current.depth > 0; k--) if (outline[k].depth < current.depth && !outline[k].heading) (part = outline[k]), (k = -1);
     return html`<article class="chapter">
       ${part ? html`<p class="part"><a href="#${encodeURI(part.rel)}">${part.item.title}</a></p>` : ""}
       <h1>${current.item.title}</h1>
@@ -261,7 +343,16 @@ class OerBookSite extends LitElement {
     const current = this._currentIn(list);
     return html`<div class="top"></div>
       <header class="bar">
-        <button class="icon-btn toc-btn" aria-label="Chapters" aria-expanded="${this._tocOpen ? "true" : "false"}" @click="${() => (this._tocOpen = !this._tocOpen)}">${lucide("oer:list")}</button>
+        <button
+          class="icon-btn toc-btn"
+          aria-controls="toc"
+          aria-expanded="${this._tocOpen ? "true" : "false"}"
+          aria-label="${this._tocOpen ? "Hide chapters" : "Show chapters"}"
+          title="${this._tocOpen ? "Hide chapters" : "Show chapters"}"
+          @click="${this._toggleToc}"
+        >
+          ${lucide(this._tocOpen ? "oer:panel-left-close" : "oer:panel-left-open")}
+        </button>
         <a class="title" href="${this.site.slug}" @click="${(e) => (e.preventDefault(), this._go(""))}">${book.title}</a>
         <span class="spacer"></span>
         ${this._busy ? html`<span class="busy" role="status">${this._busy}</span>` : ""}
@@ -284,8 +375,9 @@ class OerBookSite extends LitElement {
       ${this._signedIn && !bookSiteIsOn(this.site)
         ? html`<p class="off-note" role="status">This book site is off, so readers can't see it. Turn it on from <a href="${book.slug}">the book's page</a>.</p>`
         : ""}
-      <div class="layout">
+      <div class="layout ${this._tocOpen ? "toc-open" : ""}">
         ${this._renderToc(list, current)}
+        ${this._tocOpen ? html`<div class="scrim" @click="${() => (this._tocOpen = false)}"></div>` : ""}
         <main class="reading">${current ? this._renderChapter(current, list) : this._renderTitlePage(book, list)}</main>
       </div>`;
   }
@@ -409,9 +501,6 @@ class OerBookSite extends LitElement {
           font-family: Georgia, serif;
           font-size: 1rem;
         }
-        .toc-btn {
-          display: none;
-        }
         .pop-wrap {
           position: relative;
         }
@@ -469,10 +558,24 @@ class OerBookSite extends LitElement {
           font-size: 0.875rem;
         }
 
-        /* chapters down the side */
+        /* chapters down the side: beside the page on wide screens, shown
+           and hidden with the bar's button (remembered); on narrow ones
+           they slide in over it */
         .layout {
           display: grid;
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .layout.toc-open {
           grid-template-columns: var(--toc-width) minmax(0, 1fr);
+        }
+        .toc {
+          display: none;
+        }
+        .layout.toc-open .toc {
+          display: block;
+        }
+        .scrim {
+          display: none;
         }
         .toc {
           position: sticky;
@@ -505,6 +608,15 @@ class OerBookSite extends LitElement {
         .toc a:hover {
           background: var(--accent);
           color: var(--foreground);
+        }
+        .toc li.label {
+          margin-top: 0.625rem;
+          padding: 0.25rem 0.5rem 0.125rem calc(0.5rem + var(--depth, 0) * 0.875rem);
+          font-size: 0.6875rem;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: var(--muted-foreground);
         }
         .toc a.here {
           background: var(--accent);
@@ -680,8 +792,9 @@ class OerBookSite extends LitElement {
           color: var(--muted-foreground);
         }
 
-        /* the title page */
+        /* the title page: its opening centred, its contents in columns */
         .title-page {
+          max-width: min(72rem, 100%);
           text-align: center;
         }
         .cover {
@@ -711,26 +824,93 @@ class OerBookSite extends LitElement {
           gap: 0.625rem;
           font-family: var(--font-sans);
         }
-        .contents-h {
-          margin: 3rem 0 1rem;
-          font-size: 1.25em;
-        }
         .contents {
-          margin: 0;
-          padding: 0;
-          list-style: none;
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid var(--border);
           text-align: start;
-          font-size: 0.9em;
         }
-        .contents li {
-          padding: 0.375rem 0 0.375rem calc(var(--depth, 0) * 1.25rem);
+        .contents h2 {
+          display: flex;
+          align-items: baseline;
+          gap: 0.75rem;
+          margin: 0 0 1.5rem;
+          font-size: 1.35em;
+        }
+        .count {
+          font-family: var(--font-sans);
+          font-size: 0.8125rem;
+          font-weight: 400;
+          color: var(--muted-foreground);
+        }
+        /* as many columns as fit, kept even: a part may carry on into the
+           next column, but its title and labels stay with what follows */
+        .groups {
+          columns: 15rem;
+          column-gap: 2.5rem;
+          font-size: 0.8em;
+          line-height: 1.35;
+        }
+        .group {
+          margin-bottom: 1.5rem;
+        }
+        .group h3,
+        .group li.label {
+          break-after: avoid;
+          break-inside: avoid;
+        }
+        .group li {
+          break-inside: avoid;
+        }
+        .more {
+          font-family: var(--font-sans);
+          font-size: 0.85em;
+          color: var(--muted-foreground);
+          white-space: nowrap;
+        }
+        .group h3 {
+          margin: 0 0 0.375rem;
+          padding-bottom: 0.375rem;
           border-bottom: 1px solid var(--border);
+          font-size: 1.05em;
+          line-height: 1.3;
         }
-        .contents a {
+        .group h3 a {
           color: var(--foreground);
           text-decoration: none;
         }
-        .contents a:hover {
+        .group h3 a:hover {
+          text-decoration: underline;
+        }
+        .g-label,
+        .group li.label {
+          font-family: var(--font-sans);
+          font-size: 0.75em;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: var(--muted-foreground);
+        }
+        .group ol {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        .group li {
+          padding: 0.1875rem 0 0.1875rem calc(var(--depth, 0) * 1rem);
+        }
+        .group li.label {
+          padding-top: 0.625rem;
+        }
+        .group li.label:first-child {
+          padding-top: 0;
+        }
+        .group li a {
+          color: var(--foreground);
+          text-decoration: none;
+        }
+        .group li a:hover {
+          color: var(--link);
           text-decoration: underline;
         }
         .missing {
@@ -738,15 +918,14 @@ class OerBookSite extends LitElement {
           text-align: center;
         }
 
-        /* narrow screens: the chapters slide in */
+        /* narrow screens: the chapters slide in over the page */
         @media (max-width: 860px) {
-          .toc-btn {
-            display: inline-flex;
-          }
-          .layout {
+          .layout.toc-open {
             grid-template-columns: minmax(0, 1fr);
           }
           .toc {
+            display: block;
+            visibility: hidden;
             position: fixed;
             top: var(--bar);
             left: 0;
@@ -755,10 +934,21 @@ class OerBookSite extends LitElement {
             background: var(--background);
             box-shadow: 0 12px 32px rgb(0 0 0 / 0.18);
             transform: translateX(-105%);
+            transition:
+              transform 0.2s ease,
+              visibility 0s linear 0.2s;
+          }
+          .layout.toc-open .toc {
+            visibility: visible;
+            transform: none;
             transition: transform 0.2s ease;
           }
-          .toc.open {
-            transform: none;
+          .layout.toc-open .scrim {
+            display: block;
+            position: fixed;
+            inset: var(--bar) 0 0 0;
+            z-index: 24;
+            background: rgb(0 0 0 / 0.35);
           }
           .lbl {
             display: none;

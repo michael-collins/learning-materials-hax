@@ -124,7 +124,9 @@ function navOl(list) {
 /** Download a book as an EPUB. `online(item)` gives a chapter's web address, for notes and links. */
 export async function exportEpub(bookId, { online = null, onProgress = null } = {}) {
   const chapters = await bookChapters(bookId);
-  const [cover, ...rest] = chapters;
+  // headings label the chapters after them, with no page of their own: an ebook leaves them out
+  const [cover, ...withHeadings] = chapters;
+  const rest = withHeadings.filter((c) => c.item.metadata?.pageType !== "oer:heading");
   const book = cover.item;
   const items = toJS(store.manifest?.items) || [];
   const base = new URL(".", globalThis.document.baseURI).href;
