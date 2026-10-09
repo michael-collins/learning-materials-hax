@@ -288,9 +288,9 @@ class OerNewPage extends LitElement {
         </label>
 
         <p class="summary" aria-live="polite">
-          ${title
+          ${lucide("icons:info")}<span>${title
             ? html`Creates <b>“${title}”</b>, ${article(noun(t))} ${noun(t)} in <b>${where}</b>, ${this._publish ? "published" : "as a draft"}, and opens it in the editor.`
-            : html`Give it a title to create it.`}
+            : html`Give it a title to create it.`}</span>
         </p>
         <footer>
           ${this._fixedType ? html`<span></span>` : html`<button type="button" class="btn outline" @click="${() => (this._step = "type")}">${lucide("oer:chevron-left")}Back</button>`}
@@ -606,12 +606,21 @@ class OerNewPage extends LitElement {
       li + li .result {
         border-top: 1px solid var(--border);
       }
+      /* what Create will do: an info callout in the primary colour */
       .summary {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
         margin: 0;
         padding: 0.625rem 0.75rem;
+        border: 1px solid color-mix(in oklch, var(--primary) 45%, transparent);
         border-radius: var(--radius-md, 0.5rem);
-        background: var(--muted);
+        background: color-mix(in oklch, var(--primary) 12%, var(--popover, var(--background)));
         font-size: 0.875rem;
+      }
+      .summary .lucide {
+        margin-top: 0.125rem;
+        color: var(--primary);
       }
       footer {
         display: flex;

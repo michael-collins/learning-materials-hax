@@ -26,6 +26,7 @@ import { childrenMap, ancestors } from "./outline-model.js";
 import { allowedChildTypes, contentTypes, isHeading, navIconsOn } from "../types/content-types.js";
 import { pageIcon } from "../types/page-icon.js";
 import { newPage } from "../ui/oer-new-page.js";
+import { browse } from "../ui/oer-browse.js";
 
 const STORAGE_KEY = "oer-site-nav-open";
 
@@ -73,9 +74,13 @@ class OerSiteNav extends LitElement {
       autorun(() => {
         const loggedIn = !!store.isLoggedIn;
         // unpublished pages are listed for authors only
-        const items = (toJS(store.manifest?.items) || []).filter((i) => loggedIn || i.metadata?.published !== false);
+        const site = toJS(store.manifest?.items) || [];
+        const items = site.filter((i) => loggedIn || i.metadata?.published !== false);
         const active = toJS(store.activeId);
         Promise.resolve().then(() => {
+          // the site's settings (content types, icons) are on the system
+          // page, a draft: read from every page, or readers lose them
+          this.__site = site;
           this._all = items;
           // headings are hidden from menus (stock themes skip them) but
           // label groups here
@@ -118,8 +123,8 @@ class OerSiteNav extends LitElement {
   _choices(parent) {
     const all = this._all || [];
     const parentType = parent ? all.find((i) => i.id === parent)?.metadata?.pageType : null;
-    const types = allowedChildTypes(parentType || null, all);
-    const known = parentType && contentTypes(all).types.find((t) => t.id === parentType);
+    const types = allowedChildTypes(parentType || null, this.__site || all);
+    const known = parentType && contentTypes(this.__site || all).types.find((t) => t.id === parentType);
     const restricted = !!known && Array.isArray(known.children);
     return { types, untyped: !restricted };
   }
@@ -233,6 +238,10 @@ class OerSiteNav extends LitElement {
       }
       .chev .lucide {
         transform: rotate(-90deg);
+      }
+      /* a collection's Browse arrow points right, never turns */
+      .chev.browse .lucide {
+        transform: none;
       }
       .chev[aria-expanded="true"] .lucide {
         transform: none;
@@ -391,7 +400,7 @@ class OerSiteNav extends LitElement {
           // a heading inside a page (a lesson's "Readings") is a level below
           // one at the top of the outline
           // with icons on, a heading shows its icon beside its label
-          const headingIcon = navIconsOn(this._all) ? pageIcon(item) : "";
+          const headingIcon = navIconsOn(this.__site || this._all) ? pageIcon(item) : "";
           return html`<li class="heading ${depth ? "nested" : ""}">
             <span class="group-label" role="heading" aria-level="${Math.min(6, depth + 2)}"
               >${headingIcon ? html`<simple-icon-lite class="label-icon" icon="${headingIcon}"></simple-icon-lite>` : ""}${item.title}</span
@@ -400,22 +409,35 @@ class OerSiteNav extends LitElement {
         }
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
+        // a collection (Lessons): its pages open in Browse, not the sidebar
+        const listed = hasKids ? 0 : this.__listed?.get(item.id) || 0;
         const open = this.__forceOpen || this._open.has(item.id);
         const iconName = pageIcon(item);
-        return html`<li class="${[hasKids ? "has-kids" : "", grouped ? "grouped" : ""].join(" ")}">
+        return html`<li class="${[hasKids || listed ? "has-kids" : "", grouped ? "grouped" : ""].join(" ")}">
           <div class="row">
             <a
               href="${this._href(item)}"
               class="${item.metadata?.published === false ? "draft" : ""}"
               aria-current="${item.id === this._activeId || item.id === this.__pinnedActive ? "page" : item.id === this.__location ? "location" : "false"}"
             >
-              ${depth === 0 && navIconsOn(this._all)
+              ${depth === 0 && navIconsOn(this.__site || this._all)
                 ? iconName
                   ? html`<simple-icon-lite icon="${iconName}"></simple-icon-lite>`
                   : html`<span class="no-icon"></span>`
                 : ""}
               <span class="title">${item.title}</span>
             </a>
+            ${listed
+              ? html`<button
+                  class="chev browse"
+                  aria-haspopup="dialog"
+                  aria-label="Browse ${listed} in ${item.title}"
+                  title="Browse ${item.title}"
+                  @click="${() => browse().show({ parent: item.id })}"
+                >
+                  ${lucide("oer:chevron-right")}
+                </button>`
+              : ""}
             ${hasKids
               ? html`<button
                   class="chev"
@@ -447,14 +469,21 @@ class OerSiteNav extends LitElement {
   // collections): their pages and everything under them
   _navItems() {
     if (this.root) return this._items;
-    const hidden = new Set(contentTypes(this._all).types.filter((t) => t.nav === false).map((t) => t.id));
+    const hidden = new Set(contentTypes(this.__site || this._all).types.filter((t) => t.nav === false).map((t) => t.id));
     return hidden.size ? this._items.filter((i) => !hidden.has(i.metadata?.pageType)) : this._items;
   }
 
   render() {
     // the site's "Icons in navigation" setting switches the layout
-    this.toggleAttribute("no-icons", !navIconsOn(this._all));
+    this.toggleAttribute("no-icons", !navIconsOn(this.__site || this._all));
     let items = this._navItems();
+    // how many pages each page lists rather than shows (Lessons: its lessons)
+    const listedIds = new Set(items.map((i) => i.id));
+    this.__listed = new Map();
+    for (const i of this._items || []) {
+      if (listedIds.has(i.id) || isHeading(i) || !listedIds.has(i.parent)) continue;
+      this.__listed.set(i.parent, (this.__listed.get(i.parent) || 0) + 1);
+    }
     // a hidden page's nearest listed ancestor marks where the reader is
     const shown = new Set(items.map((i) => i.id));
     const byId = new Map((this._all || []).map((i) => [i.id, i]));

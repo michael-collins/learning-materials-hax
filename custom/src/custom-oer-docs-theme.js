@@ -265,6 +265,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         const manifest = toJS(store.manifest);
         Promise.resolve().then(() => {
           this._siteDescription = manifest?.description || "";
+          this._publishedUrl = manifest?.metadata?.site?.domain || "";
+          this._activeSlug = item?.metadata?.published === false ? "" : item?.slug || "";
           this._loggedIn = !!loggedIn;
           this._userName = user?.userName || "";
           this._activeTitle = item?.title || "";
@@ -2273,6 +2275,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
   }
 
+  // this page on the published copy (its home when the page is a draft, so
+  // not there yet); the copy updates when Publish to GitHub Pages runs
+  _publishedHref() {
+    try {
+      return new URL(this._activeSlug ? `${this._activeSlug.replace(/\/$/, "")}/` : "", this._publishedUrl).href;
+    } catch {
+      return this._publishedUrl;
+    }
+  }
+
   // the account is a menu (shadcn NavUser): dashboard and log out
   renderUser() {
     const name = this._userName || "Signed in";
@@ -2291,6 +2303,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         ${this._userMenuOpen
           ? html`<div class="menu user-menu" role="menu" aria-label="Account" @keydown="${this._userMenuKeys}">
               <div class="menu-label">${name}</div>
+              ${this._publishedUrl
+                ? html`<a role="menuitem" href="${this._publishedHref()}" target="_blank" rel="noopener">${icon.share}View published site</a>`
+                : ""}
               <a role="menuitem" href="${stockUI()?.backLink ?? "/"}">${icon.layoutDashboard}Site dashboard</a>
               <div class="menu-sep" role="separator"></div>
               <button role="menuitem" class="danger" @click="${() => ((this._userMenuOpen = false), logout())}">${icon.logOut}Log out</button>
