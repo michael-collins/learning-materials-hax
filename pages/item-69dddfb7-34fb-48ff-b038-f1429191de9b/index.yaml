@@ -1,15 +1,17 @@
 id: item-69dddfb7-34fb-48ff-b038-f1429191de9b
-indent: 1
+indent: 0
 location: pages/item-69dddfb7-34fb-48ff-b038-f1429191de9b/index.yaml
 slug: books/dart-413-digital-fabrication-studio
 order: 4
 parent: item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d
 title: 'DART 413: Digital Fabrication Studio'
-description: ''
+description: >-
+  Digital Fabrication Studio explores how a diverse range of technologies can
+  translate digital designs and data into the physical world.
 metadata:
   pageType: oer:book
   oerPlan: DART 413:book
-  published: false
+  published: true
   oerFields:
     license: CC BY 4.0
     authors:
@@ -19,10 +21,15 @@ metadata:
   created: 1791383988
   images: []
   videos: []
-  updated: 1791383988
+  updated: 1791518299
+  locked: false
+  status: ''
+  icon: courseicons:learning-objectives
+  overridePathauto: false
+  hideInMenu: false
+  linkTarget: _self
+  readtime: 2
 content: >
-  <oer-draft note="Course description from the DART 413 course plan. Revise it,
-  then Publish.">
 
   <p>Digital Fabrication Studio explores how a diverse range of technologies can
   translate digital designs and data into the physical world. Through hands-on
@@ -62,5 +69,3 @@ content: >
   portfolio another maker could reproduce from, and present that work
   publicly.</li><li>Give and receive critique that addresses concept, craft, and
   process, and revise work in response.</li></ul>
-
-  </oer-draft>
