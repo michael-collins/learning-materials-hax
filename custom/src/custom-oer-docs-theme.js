@@ -26,6 +26,8 @@ import "@haxtheweb/haxcms-elements/lib/ui-components/active-item/site-active-tit
 import "@haxtheweb/haxcms-elements/lib/ui-components/layout/site-modal.js";
 import { shadcnTokens } from "./tokens/shadcn-tokens.js";
 import { themeChoice, rememberTheme } from "./theme-choice.js";
+import { newPage } from "./ui/oer-new-page.js";
+import { typeListedOn } from "./types/type-homes.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
@@ -84,6 +86,7 @@ function lucide(name) {
 
 // Lucide icons (ISC), inlined so the theme has no icon-font dependency
 const icon = {
+  plus: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>`,
   share: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
   panelLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`,
   search: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
@@ -139,6 +142,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _next: { state: true },
       _loggedIn: { state: true },
       _bookChapters: { state: true },
+      _listing: { state: true },
       _chaptersOpen: { state: true },
       _userName: { state: true },
       _activeTitle: { state: true },
@@ -174,6 +178,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this.__keyHandler = this._onKeydown.bind(this);
     this._loggedIn = false;
     this._bookChapters = null;
+    this._listing = null;
     this._chaptersOpen = false;
     this._pageMenuOpen = false;
     this.reader = false;
@@ -270,6 +275,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           const source = refId ? (manifest?.items || []).find((i) => i.id === refId) : null;
           const fields = (source || item)?.metadata?.oerFields || {};
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
+          // a page that lists a type (Lessons, Exercises…): its New button
+          const listed = typeListedOn(item);
+          const listedType = listed && (contentTypes(manifest?.items || []).types || []).find((t) => t.id === listed);
+          this._listing = listedType && item ? { id: item.id, type: listedType.id, label: listedType.label } : null;
           // a book: its chapters' count, for the authors' Chapters panel
           if (item?.metadata?.pageType === "oer:book") {
             const kids = new Map();
@@ -1177,6 +1186,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           margin-top: 1rem;
         }
         .nav-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
           padding: 0.75rem 0.5rem 0;
         }
         #panel-nav > .nav-actions + oer-site-nav {
@@ -1202,6 +1214,45 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         .nav-edit:hover {
           background: var(--accent);
+        }
+        .nav-edit.primary {
+          border-color: var(--primary);
+          background: var(--primary);
+          color: var(--primary-foreground);
+        }
+        .nav-edit.primary:hover {
+          background: color-mix(in oklch, var(--primary) 88%, var(--foreground));
+        }
+        /* a listing page's New [type]: shadcn Button, outline, beside the page menu */
+        .new-btn {
+          all: unset;
+          box-sizing: border-box;
+          flex: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+          height: 2rem;
+          margin-top: 0.375rem;
+          padding: 0 0.75rem;
+          border: 1px solid var(--input-border, var(--border));
+          border-radius: var(--radius-md);
+          font-family: var(--font-sans);
+          font-size: 0.8125rem;
+          font-weight: 500;
+          color: var(--foreground);
+          white-space: nowrap;
+          cursor: pointer;
+        }
+        .new-btn:hover {
+          background: var(--accent);
+        }
+        .new-btn:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 1px;
+        }
+        .new-btn svg {
+          width: 0.875rem;
+          height: 0.875rem;
         }
         .nav-edit:focus-visible {
           outline: 2px solid var(--ring);
@@ -1930,7 +1981,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             ? html`<div class="nav-actions">
                 ${this._book
                   ? html`<button class="nav-edit" @click="${() => outlineBuilder().show(this._book.id)}">${icon.pencil}Edit book outline</button>`
-                  : html`<button class="nav-edit" @click="${() => outlineBuilder().show(null, { nav: true })}">${icon.pencil}Edit navigation</button>`}
+                  : html`<button class="nav-edit primary" @click="${() => newPage().show()}">${icon.plus}New page</button>
+                      <button class="nav-edit" @click="${() => outlineBuilder().show(null, { nav: true })}">${icon.pencil}Edit navigation</button>`}
               </div>`
             : ""}
           <oer-site-nav
@@ -1988,6 +2040,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             ${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
             <div class="page-header">
               <site-active-title part="page-title"></site-active-title>
+              ${this._listing && this._loggedIn && !this.editMode && !this.reader && !this.embed
+                ? html`<button class="new-btn" @click="${() => newPage().show({ type: this._listing.type, parent: this._listing.id })}">
+                    ${icon.plus}New ${this._listing.label.toLowerCase()}
+                  </button>`
+                : ""}
               ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
             </div>
             <oer-page-header></oer-page-header>

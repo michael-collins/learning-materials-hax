@@ -28,21 +28,9 @@
 import { RUBRIC_TYPE, isRubric } from "../rubrics/rubric-model.js";
 import { SEQUENCE_TYPE } from "./sequence-model.js";
 import { rewriteLinks, linkTarget } from "../links/link-model.js";
+import { HOME_TITLES } from "../types/type-homes.js";
 
-const SECTIONS = {
-  "oer:lesson": "Lessons",
-  "oer:lecture": "Lectures",
-  "oer:tutorial": "Tutorials",
-  "oer:article": "Articles",
-  "oer:resource": "Resources",
-  "oer:exercise": "Exercises",
-  "oer:reflection": "Reflections",
-  "oer:project": "Projects",
-  "oer:activity": "Projects",
-  "oer:quiz": "Quizzes",
-  [SEQUENCE_TYPE]: "Sequences",
-  [RUBRIC_TYPE]: "Rubrics",
-};
+const SECTIONS = HOME_TITLES;
 const DELIVERY = ["In person", "Hybrid", "Online (synchronous)", "Online (asynchronous)"];
 const newItemId = () => `item-${globalThis.crypto.randomUUID()}`;
 const slugify = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);

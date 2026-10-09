@@ -80,7 +80,12 @@ async function siteOrders() {
  * Create a page at the end of `parent`'s children (null = top level),
  * optionally of a content type.
  */
-export async function createPage(title, parent = null, pageType = "") {
+/**
+ * Create a page under `parent` (null: the top level). Options: `metadata`
+ * (merged in: published, oerFields…), `description`, and `edit` (HAXcms
+ * opens the new page in the editor once it's there).
+ */
+export async function createPage(title, parent = null, pageType = "", { metadata = null, description = "", edit = false } = {}) {
   const siblings = childrenMap(store.manifest?.items).get(parent || null) || [];
   const last = siblings[siblings.length - 1];
   const stored = await siteOrders();
@@ -97,7 +102,9 @@ export async function createPage(title, parent = null, pageType = "") {
           node: { title: title || "New page", location: "", contents: starterContent(pageType) },
           order,
           parent: parent || null,
-          ...(pageType ? { metadata: { pageType } } : {}),
+          ...(description ? { description } : {}),
+          ...(pageType || metadata ? { metadata: { ...(metadata || {}), ...(pageType ? { pageType } : {}) } } : {}),
+          ...(edit ? { merlinCreated: true } : {}),
         },
       },
     }),

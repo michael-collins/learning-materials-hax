@@ -22,9 +22,10 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { childrenMap, ancestors, createPage } from "./outline-model.js";
+import { childrenMap, ancestors } from "./outline-model.js";
 import { allowedChildTypes, contentTypes, isHeading, navIconsOn } from "../types/content-types.js";
 import { pageIcon } from "../types/page-icon.js";
+import { newPage } from "../ui/oer-new-page.js";
 
 const STORAGE_KEY = "oer-site-nav-open";
 
@@ -54,8 +55,6 @@ class OerSiteNav extends LitElement {
       _items: { state: true },
       _activeId: { state: true },
       _open: { state: true },
-      _adding: { state: true }, // parent id (or "root") being added to
-      _addType: { state: true },
     };
   }
 
@@ -65,7 +64,6 @@ class OerSiteNav extends LitElement {
     this._items = [];
     this._activeId = null;
     this._open = readOpen();
-    this._adding = null;
     this.__disposers = [];
   }
 
@@ -126,28 +124,9 @@ class OerSiteNav extends LitElement {
     return { types, untyped: !restricted };
   }
 
+  // Add page: the guided New page dialog, for this level
   _startAdd(parent) {
-    const { types, untyped } = this._choices(parent);
-    this._addType = untyped ? "" : types[0]?.id || "";
-    this._adding = parent ?? "root";
-    this.updateComplete.then(() => this.shadowRoot.querySelector(".add-input")?.focus());
-  }
-
-  _addKeys(e, parent) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      const title = (this.shadowRoot.querySelector(".add-input")?.value || "").trim();
-      if (!title) {
-        this.shadowRoot.querySelector(".add-input")?.focus();
-        return;
-      }
-      this._adding = null;
-      if (title) createPage(title, parent, this._addType);
-    } else if (e.key === "Escape") {
-      e.preventDefault();
-      this._adding = null;
-      this.updateComplete.then(() => this.shadowRoot.querySelector(`[data-add="${parent ?? "root"}"]`)?.focus());
-    }
+    newPage().show({ parent: parent ?? null });
   }
 
   static get styles() {
@@ -176,8 +155,7 @@ class OerSiteNav extends LitElement {
         align-items: center;
       }
       a,
-      .add,
-      .add-field {
+      .add {
         box-sizing: border-box;
         flex: 1;
         min-width: 0;
@@ -193,8 +171,7 @@ class OerSiteNav extends LitElement {
         text-decoration: none;
       }
       ul ul a,
-      ul ul .add,
-      ul ul .add-field {
+      ul ul .add {
         height: 1.75rem;
       }
       .has-kids > .row > a {
@@ -387,37 +364,6 @@ class OerSiteNav extends LitElement {
         width: 0.875rem;
         height: 0.875rem;
       }
-      .add-field {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.25rem;
-        height: auto !important;
-        padding: 0.25rem;
-      }
-      .add-type {
-        box-sizing: border-box;
-        height: 1.75rem;
-        padding: 0 0.375rem;
-        border: 1px solid var(--input-border, var(--border));
-        border-radius: var(--radius-md);
-        background: var(--background);
-        color: var(--foreground);
-        font: inherit;
-        font-size: 0.8125rem;
-      }
-      .add-input {
-        flex: 1;
-        min-width: 0;
-        height: 1.75rem;
-        box-sizing: border-box;
-        padding: 0 0.5rem;
-        border: 1px solid var(--input-border, var(--border));
-        border-radius: var(--radius-md);
-        background: var(--background);
-        color: var(--foreground);
-        font: inherit;
-        font-size: 0.875rem;
-      }
     `;
   }
 
@@ -427,32 +373,6 @@ class OerSiteNav extends LitElement {
     const key = parent ?? "root";
     const { types, untyped } = this._choices(parent);
     if (!types.length && !untyped) return "";
-    if (this._adding === key) {
-      return html`<li class="add-field ${grouped ? "grouped" : ""}">
-        ${types.length
-          ? html`<select
-              class="add-type"
-              aria-label="Content type of the new page"
-              @change="${(e) => (this._addType = e.target.value)}"
-              @keydown="${(e) => this._addKeys(e, parent)}"
-            >
-              ${untyped ? html`<option value="" ?selected="${!this._addType}">No type</option>` : ""}
-              ${types.map((t) => html`<option value="${t.id}" ?selected="${t.id === this._addType}">${t.label}</option>`)}
-            </select>`
-          : ""}
-        <input
-          class="add-input"
-          type="text"
-          placeholder="Page title, then Enter"
-          aria-label="New page title"
-          @keydown="${(e) => this._addKeys(e, parent)}"
-          @blur="${(e) => {
-            // moving to the type choice is not leaving the row
-            if (!e.target.value.trim() && !e.relatedTarget?.classList?.contains("add-type")) this._adding = null;
-          }}"
-        />
-      </li>`;
-    }
     return html`<li class="row ${grouped ? "grouped" : ""}">
       <button class="add" data-add="${key}" @click="${() => this._startAdd(parent)}">
         ${lucide("oer:plus")}Add page
