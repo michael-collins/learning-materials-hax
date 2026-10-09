@@ -18066,6 +18066,29 @@ ${l}
           overflow: visible !important;
           padding: 1rem 1.25rem 1.5rem !important;
         }
+        /* a course site: the microsite alone, full width (it scrolls itself) */
+        :host([course-site]) .shell {
+          display: block;
+        }
+        :host([course-site]) .sidebar,
+        :host([course-site]) .scrim {
+          display: none !important;
+        }
+        :host([course-site]) .main-col {
+          margin: 0 !important;
+          height: auto !important;
+          overflow: visible !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        :host([course-site]) main {
+          overflow: visible !important;
+          padding: 0 !important;
+        }
+        :host([course-site]) article {
+          max-width: none;
+        }
         .skip-link:focus {
           z-index: 50;
         }
@@ -18075,7 +18098,7 @@ ${l}
             transition: none;
           }
         }
-      `]}render(){if(this._courseSite&&!this.editMode&&!this.embed)return n`<oer-course-site .site="${this._courseSite}"><slot slot="about"></slot></oer-course-site>`;const e=this.__mq.matches?this.mobileOpen:!this.collapsed;return n`
+      `]}get _showsCourseSite(){return!!this._courseSite&&!this.editMode&&!this.embed}willUpdate(e){super.willUpdate?.(e),this.toggleAttribute("course-site",this._showsCourseSite)}render(){const e=this._showsCourseSite,t=this.__mq.matches?this.mobileOpen:!this.collapsed;return n`
       <a class="skip-link" href="#main">Skip to content</a>
       <div class="shell">
       <aside
@@ -18083,7 +18106,7 @@ ${l}
         class="sidebar"
         aria-label="Site navigation"
         part="sidebar"
-        ?inert="${!e||this.editMode||this.reader}"
+        ?inert="${!t||this.editMode||this.reader||e}"
       >
         <div class="sidebar-header">
           <a class="brand" href="${y.homeLink||"./"}">
@@ -18141,41 +18164,41 @@ ${l}
       <div class="scrim" role="presentation" @click="${this._closeMobile}"></div>
 
       <div class="main-col">
-        ${this.editMode?this.renderEditorHeader(e):this.reader?n`<oer-reader-bar
+        ${e?"":this.editMode?this.renderEditorHeader(t):this.reader?n`<oer-reader-bar
                 .book="${this._book}"
                 .position="${this._readerPos}"
                 .prev="${this._prev}"
                 .next="${this._next}"
                 .settings="${this._effectiveReaderSettings()}"
                 @reader-exit="${()=>this._exitReader()}"
-                @reader-settings="${t=>this._setReaderSettings(t.detail)}"
-              ></oer-reader-bar>`:this.renderTopbar(e)}
+                @reader-settings="${r=>this._setReaderSettings(r.detail)}"
+              ></oer-reader-bar>`:this.renderTopbar(t)}
 
         <main id="main">
           <article id="contentcontainer">
-            ${this._banner?n`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />`:""}
-            <div class="page-header">
-              <site-active-title part="page-title"></site-active-title>
-              ${this._listing&&this._loggedIn&&!this.editMode&&!this.reader&&!this.embed?n`<button class="new-btn" @click="${()=>ga().show({type:this._listing.type,parent:this._listing.id})}">
-                    ${N.plus}New ${this._listing.label.toLowerCase()}
-                  </button>`:""}
-              ${this._siteOfCourse!==void 0&&!this.editMode&&!this.reader&&!this.embed?this._renderCourseSiteLink():""}
-              ${!this.editMode&&!this.reader&&(this._loggedIn||this._canEmbed)?this.renderPageMenu():""}
-            </div>
-            <oer-page-header></oer-page-header>
-            <section id="slot"><slot></slot></section>
-            ${this._renderBookChapters()}
-            ${this.editMode?"":n`<oer-page-footer ?compact="${this.reader}"></oer-page-footer>`}
-            <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
-              ${this._prev?n`<a class="pager-link prev" href="${this._prev.slug}">
-                    <span class="pager-label">${N.chevronLeft} Previous</span>
-                    <span class="pager-title">${this._prev.title}</span>
-                  </a>`:n`<span></span>`}
-              ${this._next?n`<a class="pager-link next" href="${this._next.slug}">
-                    <span class="pager-label">Next ${N.chevronRight}</span>
-                    <span class="pager-title">${this._next.title}</span>
-                  </a>`:""}
-            </nav>
+            ${e?n`<oer-course-site .site="${this._courseSite}"><slot slot="about"></slot></oer-course-site>`:n`${this._banner?n`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />`:""}
+                <div class="page-header">
+                  <site-active-title part="page-title"></site-active-title>
+                  ${this._listing&&this._loggedIn&&!this.editMode&&!this.reader&&!this.embed?n`<button class="new-btn" @click="${()=>ga().show({type:this._listing.type,parent:this._listing.id})}">
+                        ${N.plus}New ${this._listing.label.toLowerCase()}
+                      </button>`:""}
+                  ${this._siteOfCourse!==void 0&&!this.editMode&&!this.reader&&!this.embed?this._renderCourseSiteLink():""}
+                  ${!this.editMode&&!this.reader&&(this._loggedIn||this._canEmbed)?this.renderPageMenu():""}
+                </div>
+                <oer-page-header></oer-page-header>
+                <section id="slot"><slot></slot></section>
+                ${this._renderBookChapters()}
+                ${this.editMode?"":n`<oer-page-footer ?compact="${this.reader}"></oer-page-footer>`}
+                <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
+                  ${this._prev?n`<a class="pager-link prev" href="${this._prev.slug}">
+                        <span class="pager-label">${N.chevronLeft} Previous</span>
+                        <span class="pager-title">${this._prev.title}</span>
+                      </a>`:n`<span></span>`}
+                  ${this._next?n`<a class="pager-link next" href="${this._next.slug}">
+                        <span class="pager-label">Next ${N.chevronRight}</span>
+                        <span class="pager-title">${this._next.title}</span>
+                      </a>`:""}
+                </nav>`}
           </article>
         </main>
       </div>

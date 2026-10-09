@@ -2029,6 +2029,29 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           overflow: visible !important;
           padding: 1rem 1.25rem 1.5rem !important;
         }
+        /* a course site: the microsite alone, full width (it scrolls itself) */
+        :host([course-site]) .shell {
+          display: block;
+        }
+        :host([course-site]) .sidebar,
+        :host([course-site]) .scrim {
+          display: none !important;
+        }
+        :host([course-site]) .main-col {
+          margin: 0 !important;
+          height: auto !important;
+          overflow: visible !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        :host([course-site]) main {
+          overflow: visible !important;
+          padding: 0 !important;
+        }
+        :host([course-site]) article {
+          max-width: none;
+        }
         .skip-link:focus {
           z-index: 50;
         }
@@ -2042,11 +2065,21 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     ];
   }
 
+  // a course site shows as its microsite, full width (the editor keeps the usual layout)
+  get _showsCourseSite() {
+    return !!this._courseSite && !this.editMode && !this.embed;
+  }
+
+  willUpdate(changed) {
+    super.willUpdate?.(changed);
+    this.toggleAttribute("course-site", this._showsCourseSite);
+  }
+
   render() {
-    // a course site: its microsite, full width (the editor keeps the usual layout)
-    if (this._courseSite && !this.editMode && !this.embed) {
-      return html`<oer-course-site .site="${this._courseSite}"><slot slot="about"></slot></oer-course-site>`;
-    }
+    // A course site keeps this layout, its frame hidden (:host([course-site])),
+    // and draws the microsite inside #contentcontainer: HAXcms puts its
+    // editor in that element, and saves stop working if it goes.
+    const site = this._showsCourseSite;
     const drawerOpen = this.__mq.matches ? this.mobileOpen : !this.collapsed;
     return html`
       <a class="skip-link" href="#main">Skip to content</a>
@@ -2056,7 +2089,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         class="sidebar"
         aria-label="Site navigation"
         part="sidebar"
-        ?inert="${!drawerOpen || this.editMode || this.reader}"
+        ?inert="${!drawerOpen || this.editMode || this.reader || site}"
       >
         <div class="sidebar-header">
           <a class="brand" href="${store.homeLink || "./"}">
@@ -2120,7 +2153,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       <div class="scrim" role="presentation" @click="${this._closeMobile}"></div>
 
       <div class="main-col">
-        ${this.editMode
+        ${site
+          ? ""
+          : this.editMode
           ? this.renderEditorHeader(drawerOpen)
           : this.reader
             ? html`<oer-reader-bar
@@ -2136,35 +2171,37 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
         <main id="main">
           <article id="contentcontainer">
-            ${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
-            <div class="page-header">
-              <site-active-title part="page-title"></site-active-title>
-              ${this._listing && this._loggedIn && !this.editMode && !this.reader && !this.embed
-                ? html`<button class="new-btn" @click="${() => newPage().show({ type: this._listing.type, parent: this._listing.id })}">
-                    ${icon.plus}New ${this._listing.label.toLowerCase()}
-                  </button>`
-                : ""}
-              ${this._siteOfCourse !== undefined && !this.editMode && !this.reader && !this.embed ? this._renderCourseSiteLink() : ""}
-              ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
-            </div>
-            <oer-page-header></oer-page-header>
-            <section id="slot"><slot></slot></section>
-            ${this._renderBookChapters()}
-            ${this.editMode ? "" : html`<oer-page-footer ?compact="${this.reader}"></oer-page-footer>`}
-            <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
-              ${this._prev
-                ? html`<a class="pager-link prev" href="${this._prev.slug}">
-                    <span class="pager-label">${icon.chevronLeft} Previous</span>
-                    <span class="pager-title">${this._prev.title}</span>
-                  </a>`
-                : html`<span></span>`}
-              ${this._next
-                ? html`<a class="pager-link next" href="${this._next.slug}">
-                    <span class="pager-label">Next ${icon.chevronRight}</span>
-                    <span class="pager-title">${this._next.title}</span>
-                  </a>`
-                : ""}
-            </nav>
+            ${site
+              ? html`<oer-course-site .site="${this._courseSite}"><slot slot="about"></slot></oer-course-site>`
+              : html`${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
+                <div class="page-header">
+                  <site-active-title part="page-title"></site-active-title>
+                  ${this._listing && this._loggedIn && !this.editMode && !this.reader && !this.embed
+                    ? html`<button class="new-btn" @click="${() => newPage().show({ type: this._listing.type, parent: this._listing.id })}">
+                        ${icon.plus}New ${this._listing.label.toLowerCase()}
+                      </button>`
+                    : ""}
+                  ${this._siteOfCourse !== undefined && !this.editMode && !this.reader && !this.embed ? this._renderCourseSiteLink() : ""}
+                  ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
+                </div>
+                <oer-page-header></oer-page-header>
+                <section id="slot"><slot></slot></section>
+                ${this._renderBookChapters()}
+                ${this.editMode ? "" : html`<oer-page-footer ?compact="${this.reader}"></oer-page-footer>`}
+                <nav class="pager" aria-label="Previous and next page" ?hidden="${this.editMode}">
+                  ${this._prev
+                    ? html`<a class="pager-link prev" href="${this._prev.slug}">
+                        <span class="pager-label">${icon.chevronLeft} Previous</span>
+                        <span class="pager-title">${this._prev.title}</span>
+                      </a>`
+                    : html`<span></span>`}
+                  ${this._next
+                    ? html`<a class="pager-link next" href="${this._next.slug}">
+                        <span class="pager-label">Next ${icon.chevronRight}</span>
+                        <span class="pager-title">${this._next.title}</span>
+                      </a>`
+                    : ""}
+                </nav>`}
           </article>
         </main>
       </div>
