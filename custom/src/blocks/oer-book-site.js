@@ -336,6 +336,22 @@ class OerBookSite extends LitElement {
     </article>`;
   }
 
+  // the chapters' button: in the page's top-left corner on wide screens, in
+  // the bar on narrow ones (where a corner button would cover the text)
+  _tocButton(where) {
+    const label = this._tocOpen ? "Hide chapters" : "Show chapters";
+    return html`<button
+      class="icon-btn toc-btn ${where}"
+      aria-controls="toc"
+      aria-expanded="${this._tocOpen ? "true" : "false"}"
+      aria-label="${label}"
+      title="${label}"
+      @click="${this._toggleToc}"
+    >
+      ${lucide(this._tocOpen ? "oer:panel-left-close" : "oer:panel-left-open")}
+    </button>`;
+  }
+
   render() {
     const book = this._book;
     if (!book) return html`<p class="missing">${this._items ? "This book site's book isn't on the site any more." : ""}</p>`;
@@ -343,16 +359,7 @@ class OerBookSite extends LitElement {
     const current = this._currentIn(list);
     return html`<div class="top"></div>
       <header class="bar">
-        <button
-          class="icon-btn toc-btn"
-          aria-controls="toc"
-          aria-expanded="${this._tocOpen ? "true" : "false"}"
-          aria-label="${this._tocOpen ? "Hide chapters" : "Show chapters"}"
-          title="${this._tocOpen ? "Hide chapters" : "Show chapters"}"
-          @click="${this._toggleToc}"
-        >
-          ${lucide(this._tocOpen ? "oer:panel-left-close" : "oer:panel-left-open")}
-        </button>
+        ${this._tocButton("in-bar")}
         <a class="title" href="${this.site.slug}" @click="${(e) => (e.preventDefault(), this._go(""))}">${book.title}</a>
         <span class="spacer"></span>
         ${this._busy ? html`<span class="busy" role="status">${this._busy}</span>` : ""}
@@ -378,7 +385,10 @@ class OerBookSite extends LitElement {
       <div class="layout ${this._tocOpen ? "toc-open" : ""}">
         ${this._renderToc(list, current)}
         ${this._tocOpen ? html`<div class="scrim" @click="${() => (this._tocOpen = false)}"></div>` : ""}
-        <main class="reading">${current ? this._renderChapter(current, list) : this._renderTitlePage(book, list)}</main>
+        <main class="reading">
+          <div class="toc-toggle">${this._tocButton("corner")}</div>
+          ${current ? this._renderChapter(current, list) : this._renderTitlePage(book, list)}
+        </main>
       </div>`;
   }
 
@@ -644,10 +654,31 @@ class OerBookSite extends LitElement {
           color: var(--foreground);
         }
 
+        /* the chapters' button: the page's top-left corner, beside the
+           chapters, staying there as the page scrolls */
+        .toc-toggle {
+          position: sticky;
+          top: calc(var(--bar) + 0.75rem);
+          z-index: 6;
+          height: 0;
+          margin: -2.75rem 0 0 -0.75rem;
+        }
+        .toc-btn.corner {
+          border-color: var(--input-border, var(--border));
+          background-color: var(--background);
+          color: var(--muted-foreground);
+        }
+        .toc-btn.corner:hover {
+          color: var(--foreground);
+        }
+        .toc-btn.in-bar {
+          display: none;
+        }
+
         /* the page */
         .reading {
           min-width: 0;
-          padding: 3rem 1.5rem 5rem;
+          padding: 3.5rem 1.5rem 5rem;
           background-image: var(--reader-texture, none);
         }
         article {
@@ -942,6 +973,13 @@ class OerBookSite extends LitElement {
             visibility: visible;
             transform: none;
             transition: transform 0.2s ease;
+          }
+          /* the button moves to the bar, which is always in view */
+          .toc-btn.in-bar {
+            display: inline-flex;
+          }
+          .toc-toggle {
+            display: none;
           }
           .layout.toc-open .scrim {
             display: block;

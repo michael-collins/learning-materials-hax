@@ -10495,18 +10495,18 @@ ${f.map((U,ve)=>`<itemref idref="c${ve+1}"/>`).join(`
         ${s?n`<a class="turn next" href="#${encodeURI(s.rel)}"><span class="dir">Next${ut("oer:chevron-right","sm")}</span><span class="t">${s.item.title}</span></a>`:n`<span></span>`}
       </nav>
       <p class="pos">${i+1} of ${r.length}</p>
-    </article>`}render(){const e=this._book;if(!e)return n`<p class="missing">${this._items?"This book site's book isn't on the site any more.":""}</p>`;const t=this._outline,r=this._currentIn(t);return n`<div class="top"></div>
+    </article>`}_tocButton(e){const t=this._tocOpen?"Hide chapters":"Show chapters";return n`<button
+      class="icon-btn toc-btn ${e}"
+      aria-controls="toc"
+      aria-expanded="${this._tocOpen?"true":"false"}"
+      aria-label="${t}"
+      title="${t}"
+      @click="${this._toggleToc}"
+    >
+      ${ut(this._tocOpen?"oer:panel-left-close":"oer:panel-left-open")}
+    </button>`}render(){const e=this._book;if(!e)return n`<p class="missing">${this._items?"This book site's book isn't on the site any more.":""}</p>`;const t=this._outline,r=this._currentIn(t);return n`<div class="top"></div>
       <header class="bar">
-        <button
-          class="icon-btn toc-btn"
-          aria-controls="toc"
-          aria-expanded="${this._tocOpen?"true":"false"}"
-          aria-label="${this._tocOpen?"Hide chapters":"Show chapters"}"
-          title="${this._tocOpen?"Hide chapters":"Show chapters"}"
-          @click="${this._toggleToc}"
-        >
-          ${ut(this._tocOpen?"oer:panel-left-close":"oer:panel-left-open")}
-        </button>
+        ${this._tocButton("in-bar")}
         <a class="title" href="${this.site.slug}" @click="${i=>(i.preventDefault(),this._go(""))}">${e.title}</a>
         <span class="spacer"></span>
         ${this._busy?n`<span class="busy" role="status">${this._busy}</span>`:""}
@@ -10526,7 +10526,10 @@ ${f.map((U,ve)=>`<itemref idref="c${ve+1}"/>`).join(`
       <div class="layout ${this._tocOpen?"toc-open":""}">
         ${this._renderToc(t,r)}
         ${this._tocOpen?n`<div class="scrim" @click="${()=>this._tocOpen=!1}"></div>`:""}
-        <main class="reading">${r?this._renderChapter(r,t):this._renderTitlePage(e,t)}</main>
+        <main class="reading">
+          <div class="toc-toggle">${this._tocButton("corner")}</div>
+          ${r?this._renderChapter(r,t):this._renderTitlePage(e,t)}
+        </main>
       </div>`}static get styles(){return[he,$`
         :host {
           display: block;
@@ -10786,10 +10789,31 @@ ${f.map((U,ve)=>`<itemref idref="c${ve+1}"/>`).join(`
           color: var(--foreground);
         }
 
+        /* the chapters' button: the page's top-left corner, beside the
+           chapters, staying there as the page scrolls */
+        .toc-toggle {
+          position: sticky;
+          top: calc(var(--bar) + 0.75rem);
+          z-index: 6;
+          height: 0;
+          margin: -2.75rem 0 0 -0.75rem;
+        }
+        .toc-btn.corner {
+          border-color: var(--input-border, var(--border));
+          background-color: var(--background);
+          color: var(--muted-foreground);
+        }
+        .toc-btn.corner:hover {
+          color: var(--foreground);
+        }
+        .toc-btn.in-bar {
+          display: none;
+        }
+
         /* the page */
         .reading {
           min-width: 0;
-          padding: 3rem 1.5rem 5rem;
+          padding: 3.5rem 1.5rem 5rem;
           background-image: var(--reader-texture, none);
         }
         article {
@@ -11084,6 +11108,13 @@ ${f.map((U,ve)=>`<itemref idref="c${ve+1}"/>`).join(`
             visibility: visible;
             transform: none;
             transition: transform 0.2s ease;
+          }
+          /* the button moves to the bar, which is always in view */
+          .toc-btn.in-bar {
+            display: inline-flex;
+          }
+          .toc-toggle {
+            display: none;
           }
           .layout.toc-open .scrim {
             display: block;
