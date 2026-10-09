@@ -29,7 +29,7 @@ import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { newPage } from "./ui/oer-new-page.js";
 import { deletePage } from "./ui/oer-delete-page.js";
 import { typeListedOn } from "./types/type-homes.js";
-import { COURSE_SITE_TYPE, siteForCourse, siteIsOn, siteSlug, setCourseSite } from "./types/course-site.js";
+import { COURSE_SITE_TYPE } from "./types/course-site.js";
 import "./blocks/oer-course-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
@@ -88,9 +88,13 @@ function lucide(name) {
 }
 
 // Lucide icons (ISC), inlined so the theme has no icon-font dependency
+// how this site looks and how to build for it (nu-hax docs/design-system.md)
+const DESIGN_SYSTEM_URL = "https://github.com/michael-collins/nu-hax/blob/main/docs/design-system.md";
+
 const icon = {
   plus: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>`,
   share: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
+  palette: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>`,
   panelLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`,
   search: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   sun: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></svg>`,
@@ -147,8 +151,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       _bookChapters: { state: true },
       _listing: { state: true },
       _courseSite: { state: true },
-      _siteOfCourse: { state: true },
-      _siteSwitching: { state: true },
       _chaptersOpen: { state: true },
       _userName: { state: true },
       _activeTitle: { state: true },
@@ -186,8 +188,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     this._bookChapters = null;
     this._listing = null;
     this._courseSite = null;
-    this._siteOfCourse = undefined;
-    this._siteSwitching = "";
     this._chaptersOpen = false;
     this._pageMenuOpen = false;
     this.reader = false;
@@ -288,7 +288,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           this._banner = fields.image ? { src: fields.image, alt: fields.imageAlt || "" } : null;
           // a course site shows as a microsite; a course page links to its site
           this._courseSite = item?.metadata?.pageType === COURSE_SITE_TYPE ? item : null;
-          this._siteOfCourse = item?.metadata?.pageType === "oer:course" ? siteForCourse(item, manifest?.items || []) : undefined;
           // a page that lists a type (Lessons, Exercises…): its New button
           const listed = typeListedOn(item);
           const listedType = listed && (contentTypes(manifest?.items || []).types || []).find((t) => t.id === listed);
@@ -1271,84 +1270,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           width: 0.875rem;
           height: 0.875rem;
         }
-        /* a course page's course-site switch (shadcn Switch, as in Reader mode) */
-        .site-switch {
-          flex: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          height: 2rem;
-          margin-top: 0.375rem;
-          padding: 0 0.25rem 0 0.5rem;
-          font-family: var(--font-sans);
-          font-size: 0.8125rem;
-          font-weight: 500;
-          color: var(--foreground);
-        }
-        .site-switch .switch {
-          position: relative;
-          flex: none;
-          box-sizing: border-box;
-          width: 2.25rem;
-          height: 1.25rem;
-          padding: 0;
-          border: 1px solid var(--input-border, var(--border));
-          border-radius: 999px;
-          background: var(--muted);
-          cursor: pointer;
-        }
-        .site-switch label {
-          cursor: pointer;
-        }
-        .site-switch .switch[aria-checked="true"] {
-          border-color: var(--primary);
-          background: var(--primary);
-        }
-        .site-switch .switch[aria-disabled="true"] {
-          opacity: 0.6;
-          cursor: progress;
-        }
-        .site-switch .knob {
-          position: absolute;
-          top: 0.0625rem;
-          left: 0.0625rem;
-          width: 1rem;
-          height: 1rem;
-          border-radius: 999px;
-          background: var(--background);
-          box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
-          transition: transform 0.15s ease;
-        }
-        .site-switch .switch[aria-checked="true"] .knob {
-          transform: translateX(1rem);
-        }
-        .site-switch .switch:focus-visible,
-        .site-switch .open:focus-visible {
-          outline: 2px solid var(--ring);
-          outline-offset: 2px;
-        }
-        .site-switch .open {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.25rem;
-          height: 1.75rem;
-          padding: 0 0.5rem;
-          border-radius: var(--radius-md);
-          color: var(--link, var(--primary));
-          text-decoration: none;
-        }
-        .site-switch .open:hover {
-          background: var(--accent);
-        }
-        .site-switch .open svg {
-          width: 0.875rem;
-          height: 0.875rem;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .site-switch .knob {
-            transition: none;
-          }
-        }
         .nav-edit:focus-visible {
           outline: 2px solid var(--ring);
           outline-offset: 1px;
@@ -2181,8 +2102,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
                         ${icon.plus}New ${this._listing.label.toLowerCase()}
                       </button>`
                     : ""}
-                  ${this._siteOfCourse !== undefined && !this.editMode && !this.reader && !this.embed ? this._renderCourseSiteLink() : ""}
-                  ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
+                      ${!this.editMode && !this.reader && (this._loggedIn || this._canEmbed) ? this.renderPageMenu() : ""}
                 </div>
                 <oer-page-header></oer-page-header>
                 <section id="slot"><slot></slot></section>
@@ -2410,53 +2330,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
   }
 
-  // a course page: a link to its site for readers; for authors, the switch
-  // that turns the site on and off (a course has one; off keeps what it says)
-  _renderCourseSiteLink() {
-    const site = this._siteOfCourse;
-    const on = siteIsOn(site);
-    if (!this._loggedIn) return on ? html`<a class="new-btn" href="${site.slug}">${icon.share}Course site</a>` : "";
-    const switching = this._siteSwitching;
-    const shown = switching ? switching === "on" : on;
-    const course = (toJS(store.manifest?.items) || []).find((i) => i.id === store.activeId);
-    const where = `/${site?.slug || siteSlug(course)}`;
-    const hint = on
-      ? `On: readers see it at ${where}. Off hides it and keeps what it says.`
-      : site
-        ? `Off: readers can't see it. On shows it again at ${where}, as it was.`
-        : `On makes a page at ${where} that pitches this course to students.`;
-    return html`<span class="site-switch" title="${hint}">
-      <button
-        id="site-switch"
-        class="switch"
-        role="switch"
-        aria-checked="${shown ? "true" : "false"}"
-        aria-labelledby="site-switch-label"
-        aria-describedby="site-switch-hint"
-        aria-disabled="${switching ? "true" : "false"}"
-        @click="${this._toggleCourseSite}"
-      >
-        <span class="knob"></span>
-      </button>
-      <label id="site-switch-label" for="site-switch">${switching ? `Turning ${switching}…` : "Course site"}</label>
-      <span id="site-switch-hint" hidden>${hint}</span>
-      ${on && !switching ? html`<a class="open" href="${site.slug}">Open${icon.share}</a>` : ""}
-    </span>`;
-  }
-
-  async _toggleCourseSite() {
-    if (this._siteSwitching) return;
-    const items = toJS(store.manifest?.items) || [];
-    const course = items.find((i) => i.id === store.activeId);
-    if (!course) return;
-    this._siteSwitching = siteIsOn(this._siteOfCourse) ? "off" : "on";
-    try {
-      await setCourseSite(course, this._siteSwitching === "on", items);
-    } finally {
-      this._siteSwitching = "";
-    }
-  }
-
   // this page on the published copy (its home when the page is a draft, so
   // not there yet); the copy updates when Publish to GitHub Pages runs
   _publishedHref() {
@@ -2489,6 +2362,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
                 ? html`<a role="menuitem" href="${this._publishedHref()}" target="_blank" rel="noopener">${icon.share}View published site</a>`
                 : ""}
               <a role="menuitem" href="${stockUI()?.backLink ?? "/"}">${icon.layoutDashboard}Site dashboard</a>
+              <a role="menuitem" href="${DESIGN_SYSTEM_URL}" target="_blank" rel="noopener">${icon.palette}Design system</a>
               <div class="menu-sep" role="separator"></div>
               <button role="menuitem" class="danger" @click="${() => ((this._userMenuOpen = false), logout())}">${icon.logOut}Log out</button>
             </div>`

@@ -12,7 +12,7 @@
  */
 import { html, css, LitElement, svg } from "../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
-import { siteData, siteIsOn, setSiteOn } from "../types/course-site.js";
+import { siteData, siteIsOn } from "../types/course-site.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { editPage } from "../editor/stock.js";
 
@@ -56,7 +56,6 @@ class OerCourseSite extends LitElement {
       _signedIn: { state: true },
       _dark: { state: true },
       _hasAbout: { state: true },
-      _switching: { state: true },
     };
   }
 
@@ -67,7 +66,6 @@ class OerCourseSite extends LitElement {
     this._signedIn = false;
     this._dark = false;
     this._hasAbout = false;
-    this._switching = "";
   }
 
   connectedCallback() {
@@ -110,17 +108,6 @@ class OerCourseSite extends LitElement {
     this.shadowRoot.getElementById(id)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   }
 
-  // for authors: show or hide the site for readers (as the course page's switch does)
-  async _toggle() {
-    if (this._switching || !this._site) return;
-    this._switching = siteIsOn(this._site) ? "off" : "on";
-    try {
-      await setSiteOn(this._site, this._switching === "on");
-    } finally {
-      this._switching = "";
-    }
-  }
-
   // for authors: what a section needs, when it's empty
   _todo(text) {
     return this._signedIn ? html`<p class="todo">${icon("pencil")}<span>${text} <button class="link" @click="${() => pageDetails().show(this.site.id)}">Edit details</button></span></p>` : "";
@@ -133,8 +120,6 @@ class OerCourseSite extends LitElement {
       ["make", "What you'll make", d.projects.length || d.work.length],
       ["questions", "Questions", d.faq.length || this._signedIn],
     ].filter(([, , show]) => show);
-    const on = siteIsOn(this._site);
-    const shown = this._switching ? this._switching === "on" : on;
     return html`<header class="bar">
       <div class="wrap bar-in">
         <a class="brand" href="./" title="Digital Arts OER home"><span class="mark" aria-hidden="true">${icon("book")}</span><span class="brand-name">Digital Arts OER</span></a>
@@ -142,16 +127,9 @@ class OerCourseSite extends LitElement {
         <nav class="links" aria-label="On this page">${sections.map(([id, label]) => html`<button @click="${() => this._go(id)}">${label}</button>`)}</nav>
         <span class="spacer"></span>
         ${this._signedIn
-          ? html`<span class="site-switch" title="${on ? "On: readers can see this course site." : "Off: only signed-in authors can see this course site."}">
-                <button id="site-on" class="switch" role="switch" aria-checked="${shown ? "true" : "false"}" aria-label="Course site" aria-disabled="${this._switching ? "true" : "false"}" @click="${this._toggle}">
-                  <span class="knob"></span>
-                </button>
-                <label for="site-on">${this._switching ? `Turning ${this._switching}…` : on ? "On" : "Off"}</label>
-              </span>
-              <button class="btn ghost sm" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Edit details</span></button>
+          ? html`<button class="btn ghost sm" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Edit details</span></button>
               <button class="btn ghost sm" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit page</span></button>`
           : ""}
-        <button class="icon-btn" aria-label="${this._dark ? "Light mode" : "Dark mode"}" @click="${() => (store.darkMode = !store.darkMode)}">${icon(this._dark ? "sun" : "moon")}</button>
         ${d.enrollUrl ? html`<a class="btn primary sm" href="${d.enrollUrl}" target="_blank" rel="noopener">Enroll</a>` : ""}
       </div>
     </header>`;
@@ -346,7 +324,12 @@ class OerCourseSite extends LitElement {
       ${this._renderBar(d)}
       ${this._signedIn && !siteIsOn(this._site)
         ? html`<p class="off-note" role="status">
-            <span class="wrap">${icon("eyeOff")}<span>This course site is off, so readers can't see it. Turn it on in the bar above or on the course page.</span></span>
+            <span class="wrap"
+              >${icon("eyeOff")}<span
+                >This course site is off, so readers can't see it.
+                ${d.course ? html`Turn it on from <a href="${d.course.slug}">the course page</a>.` : "Turn it on from its course page."}</span
+              ></span
+            >
           </p>`
         : ""}
       <main>
@@ -372,6 +355,9 @@ class OerCourseSite extends LitElement {
           ${d.course ? html`<a href="${d.course.slug}">Course details</a>` : ""}
           <a href="./">Digital Arts OER</a>
           ${d.license ? html`<span class="muted">${d.license}</span>` : ""}
+          <button class="theme-btn" aria-pressed="${this._dark ? "true" : "false"}" @click="${() => (store.darkMode = !store.darkMode)}">
+            ${icon(this._dark ? "sun" : "moon")}${this._dark ? "Light mode" : "Dark mode"}
+          </button>
         </div>
       </footer>
     </div>`;
@@ -503,56 +489,6 @@ class OerCourseSite extends LitElement {
       .spacer {
         flex: 1;
       }
-      /* shadcn Switch, as on the course page */
-      .site-switch {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.8125rem;
-        font-weight: 500;
-        white-space: nowrap;
-      }
-      .site-switch label {
-        cursor: pointer;
-      }
-      .switch {
-        position: relative;
-        flex: none;
-        box-sizing: border-box;
-        width: 2.25rem;
-        height: 1.25rem;
-        padding: 0;
-        border: 1px solid var(--input-border, var(--border));
-        border-radius: 999px;
-        background: var(--muted);
-        cursor: pointer;
-      }
-      .switch[aria-checked="true"] {
-        border-color: var(--primary);
-        background: var(--primary);
-      }
-      .switch[aria-disabled="true"] {
-        opacity: 0.6;
-        cursor: progress;
-      }
-      .switch .knob {
-        position: absolute;
-        top: 0.0625rem;
-        left: 0.0625rem;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 999px;
-        background: var(--background);
-        box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
-        transition: transform 0.15s ease;
-      }
-      .switch[aria-checked="true"] .knob {
-        transform: translateX(1rem);
-      }
-      .switch:focus-visible {
-        outline: 2px solid var(--ring);
-        outline-offset: 2px;
-      }
       .off-note {
         margin: 0;
         padding: 0.625rem 0;
@@ -564,11 +500,6 @@ class OerCourseSite extends LitElement {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .switch .knob {
-          transition: none;
-        }
       }
       .btn {
         box-sizing: border-box;
@@ -612,19 +543,8 @@ class OerCourseSite extends LitElement {
         color: var(--foreground);
       }
       .btn.outline:hover,
-      .btn.ghost:hover,
-      .icon-btn:hover {
+      .btn.ghost:hover {
         background: var(--accent);
-      }
-      .icon-btn {
-        all: unset;
-        display: inline-grid;
-        place-items: center;
-        width: 2rem;
-        height: 2rem;
-        border-radius: var(--radius-md);
-        cursor: pointer;
-        color: var(--muted-foreground);
       }
 
       /* the hero */
@@ -1004,6 +924,29 @@ class OerCourseSite extends LitElement {
       }
       .foot a {
         color: var(--muted-foreground);
+      }
+      .theme-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        margin-left: auto;
+        padding: 0.25rem 0.5rem;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: var(--radius-md);
+        background: none;
+        font: inherit;
+        color: var(--foreground);
+        cursor: pointer;
+      }
+      .theme-btn:hover {
+        background: var(--accent);
+      }
+      .theme-btn:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      .off-note a {
+        color: var(--link, var(--primary));
       }
       .todo {
         display: flex;

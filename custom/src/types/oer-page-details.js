@@ -17,6 +17,7 @@ import { versionsOf } from "../versions/versioning.js";
 import { loadAiul, aiulInfo } from "./aiul.js";
 import { valuesInUse } from "../ui/oer-choice-field.js";
 import { formControls } from "../ui/form-controls.js";
+import "../ui/oer-image-field.js";
 
 // a multiple choice whose options are AI Usage License codes gets the AIUL
 // picker (licence + optional media) instead of one checkbox per code
@@ -27,6 +28,9 @@ const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
 const empty = (v) => v === undefined || v === null || v === "" || (Array.isArray(v) && !v.filter((x) => String(x).trim()).length);
+
+// the form's fields: an image's description field is drawn with its image
+const shownFields = (fields) => fields.filter((f) => !(/Alt$/.test(f.name) && fields.some((g) => g.kind === "image" && `${g.name}Alt` === f.name)));
 
 // a multiple choice's values; older imports stored them joined ("A, B")
 const toArray = (v) => (Array.isArray(v) ? v : v ? String(v).split(",").map((s) => s.trim()).filter(Boolean) : []);
@@ -323,6 +327,9 @@ class OerPageDetails extends LitElement {
         margin: 0.375rem 0 0;
         font-size: 0.75rem;
         color: var(--muted-foreground);
+      }
+      oer-image-field {
+        margin-top: 0.5rem;
       }
       .err {
         margin: 0.375rem 0 0;
@@ -672,6 +679,24 @@ class OerPageDetails extends LitElement {
     const common = { id, invalid };
     let control;
     switch (f.kind) {
+      case "image":
+        // the image with its description (the type's `<name>Alt` field, drawn here, not on its own)
+        return html`<div>
+          <span class="label" id="${id}-l">${f.label}${f.required ? html` <span class="req">*</span>` : ""}</span>
+          ${help}
+          <oer-image-field
+            field-id="${id}"
+            label="${f.label}"
+            aria-labelledby="${id}-l"
+            .value="${v || ""}"
+            .alt="${this._values[`${f.name}Alt`] || ""}"
+            @image-change="${(e) => {
+              this._set(f.name, e.detail.value);
+              this._set(`${f.name}Alt`, e.detail.alt);
+            }}"
+          ></oer-image-field>
+          ${err}
+        </div>`;
       case "longtext":
         control = html`<textarea id="${id}" class="${invalid ? "invalid" : ""}" .value="${v || ""}" @input="${(e) => this._set(f.name, e.target.value)}"></textarea>`;
         break;
@@ -785,7 +810,7 @@ class OerPageDetails extends LitElement {
         }
       // falls through
       default: {
-        const type = { number: "number", date: "date", url: "url", image: "url" }[f.kind] || "text";
+        const type = { number: "number", date: "date", url: "url" }[f.kind] || "text";
         const val = f.kind === "date" && v ? String(v).slice(0, 10) : (v ?? "");
         control = html`<input id="${id}" class="input ${common.invalid ? "invalid" : ""}" type="${type}" .value="${val}" @input="${(e) => this._set(f.name, e.target.value)}" />`;
       }
@@ -1055,7 +1080,7 @@ class OerPageDetails extends LitElement {
           ${this._renderTags()}
           ${def
             ? html`<div class="sep" role="separator"></div>
-                ${def.fields.length ? def.fields.map((f) => this._renderField(f)) : html`<p class="notype">${def.label} has no fields of its own.</p>`}`
+                ${def.fields.length ? shownFields(def.fields).map((f) => this._renderField(f)) : html`<p class="notype">${def.label} has no fields of its own.</p>`}`
             : ""}
         </div>
         <footer>

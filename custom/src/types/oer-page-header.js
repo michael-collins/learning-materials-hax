@@ -27,6 +27,7 @@ import { sequenceExport } from "../lms/oer-sequence-export.js";
 import { sequenceBuilder } from "../lms/oer-sequence-builder.js";
 import { RUBRIC_TYPE, itemRubric, findRubric, rubricAt, isGradedItem } from "../rubrics/rubric-model.js";
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
+import { siteForCourse, siteIsOn, siteSlug, setCourseSite } from "./course-site.js";
 
 const lucide = (name) =>
   html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -53,6 +54,7 @@ class OerPageHeader extends LitElement {
       _exportOpen: { state: true },
       _exporting: { state: true },
       _rubricsOpen: { state: true }, // schedule items whose rubric is shown
+      _siteSwitching: { state: true }, // "on" or "off" while the course site saves
     };
   }
 
@@ -61,6 +63,7 @@ class OerPageHeader extends LitElement {
     this._item = null;
     this._types = [];
     this._rubricsOpen = new Set();
+    this._siteSwitching = "";
   }
 
   connectedCallback() {
@@ -336,6 +339,74 @@ class OerPageHeader extends LitElement {
         font-size: 0.875rem;
         font-weight: 600;
         letter-spacing: normal;
+      }
+      /* the course site card: shadcn Switch beside its title */
+      .site-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+      .site-row h2 {
+        margin: 0;
+      }
+      .site-note {
+        margin: 0.5rem 0 0;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: var(--muted-foreground);
+      }
+      .site-open {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        margin-top: 0.625rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--link, var(--primary));
+      }
+      .switch {
+        position: relative;
+        flex: none;
+        box-sizing: border-box;
+        width: 2.25rem;
+        height: 1.25rem;
+        padding: 0;
+        border: 1px solid var(--input-border, var(--border));
+        border-radius: 999px;
+        background: var(--muted);
+        cursor: pointer;
+      }
+      .switch[aria-checked="true"] {
+        border-color: var(--primary);
+        background: var(--primary);
+      }
+      .switch[aria-disabled="true"] {
+        opacity: 0.6;
+        cursor: progress;
+      }
+      .switch .knob {
+        position: absolute;
+        top: 0.0625rem;
+        left: 0.0625rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 999px;
+        background: var(--background);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+        transition: transform 0.15s ease;
+      }
+      .switch[aria-checked="true"] .knob {
+        transform: translateX(1rem);
+      }
+      .switch:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .switch .knob {
+          transition: none;
+        }
       }
       .steps h3 {
         margin: 0.75rem 0 0.25rem;
@@ -772,6 +843,60 @@ class OerPageHeader extends LitElement {
     return v;
   }
 
+  // a course page's site (types/course-site.js): for readers a link while
+  // it's on; for authors the switch that turns it on and off
+  _renderCourseSite(course) {
+    const site = siteForCourse(course, this._allItems);
+    const on = siteIsOn(site);
+    if (!store.isLoggedIn && !on) return "";
+    const where = `/${site?.slug || siteSlug(course)}`;
+    const visit = on
+      ? html`<a class="site-open" href="${site.slug}">Visit the course site${lucide("oer:arrow-right", "sm")}</a>`
+      : site && store.isLoggedIn
+        ? html`<a class="site-open" href="${site.slug}">Preview the course site${lucide("oer:arrow-right", "sm")}</a>`
+        : "";
+    if (!store.isLoggedIn) {
+      return html`<section class="block site-card"><h2>Course site</h2><p class="site-note">A page that introduces this course to students.</p>${visit}</section>`;
+    }
+    const switching = this._siteSwitching;
+    const shown = switching ? switching === "on" : on;
+    const note = switching
+      ? `Turning ${switching}…`
+      : on
+        ? `On: readers can see it at ${where}. Turning it off hides it and keeps what it says.`
+        : site
+          ? `Off: only signed-in authors can see it. Turning it on shows it again at ${where}.`
+          : `Off. Turning it on makes a page at ${where} that introduces this course to students.`;
+    return html`<section class="block site-card">
+      <div class="site-row">
+        <h2 id="site-switch-label">Course site</h2>
+        <button
+          class="switch"
+          role="switch"
+          aria-checked="${shown ? "true" : "false"}"
+          aria-labelledby="site-switch-label"
+          aria-describedby="site-switch-note"
+          aria-disabled="${switching ? "true" : "false"}"
+          @click="${() => this._toggleCourseSite(course, site)}"
+        >
+          <span class="knob"></span>
+        </button>
+      </div>
+      <p class="site-note" id="site-switch-note" aria-live="polite">${note}</p>
+      ${switching ? "" : visit}
+    </section>`;
+  }
+
+  async _toggleCourseSite(course, site) {
+    if (this._siteSwitching) return;
+    this._siteSwitching = siteIsOn(site) ? "off" : "on";
+    try {
+      await setCourseSite(course, this._siteSwitching === "on", this._allItems);
+    } finally {
+      this._siteSwitching = "";
+    }
+  }
+
   render() {
     // a linked chapter (oer-include page in a book) shows its source's
     // description and fields
@@ -799,6 +924,7 @@ class OerPageHeader extends LitElement {
     const subject = source || own;
     const step = activityContext(subject, this._allItems);
     // a rubric page: its rubric (the same block pages show it with)
+    const siteCard = typeId === "oer:course" && !snapshot ? this._renderCourseSite(subject) : "";
     const steps =
       typeId === PROJECT_TYPE
         ? this._renderSteps(subject.id)
@@ -854,8 +980,9 @@ class OerPageHeader extends LitElement {
       </div>
       ${type && item.description ? html`<p class="desc">${item.description}</p>` : ""}
       ${steps ? html`<div class="blocks">${steps}</div>` : ""}
-      ${blocks.length
+      ${blocks.length || siteCard
         ? html`<div class="blocks">
+            ${siteCard}
             ${blocks.map((f) => {
               const v = values[f.name];
               return html`<section class="block">
@@ -867,7 +994,7 @@ class OerPageHeader extends LitElement {
                     : f.kind === "list"
                   ? html`<ul>${(Array.isArray(v) ? v : [v]).map((x) => html`<li>${x}</li>`)}</ul>`
                   : f.kind === "image"
-                    ? html`<img src="${v}" alt="" />`
+                    ? html`<img src="${v}" alt="${values[`${f.name}Alt`] || ""}" />`
                     : f.kind === "url"
                       ? html`<p><a href="${v}">${readableUrl(v)}</a></p>`
                       : html`<p>${v}</p>`}
