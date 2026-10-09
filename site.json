@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791568330,
+      "updated": 1791570863,
       "version": "26.8.0"
     },
     "theme": {
@@ -22878,6 +22878,27 @@
               "nav": false
             },
             {
+              "id": "oer:book-site",
+              "label": "Book site",
+              "icon": "oer:book-a",
+              "description": "A book on its own, at a short address, for readers: its chapters, reading settings, and PDF and EPUB downloads.",
+              "children": [],
+              "nav": false,
+              "fields": [
+                {
+                  "name": "book",
+                  "label": "Book",
+                  "kind": "relation",
+                  "types": [
+                    "oer:book"
+                  ],
+                  "header": true,
+                  "required": true,
+                  "help": "The book this site shows."
+                }
+              ]
+            },
+            {
               "id": "oer:unit",
               "label": "Unit",
               "icon": "icons:view-module",
@@ -23005,7 +23026,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791568329,
+        "updated": 1791570862,
         "locked": false,
         "status": "",
         "icon": "",
