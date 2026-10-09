@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791505805,
+      "updated": 1791505814,
       "version": "26.8.0"
     },
     "theme": {
@@ -33737,7 +33737,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A05",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33757,7 +33757,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386362
+        "updated": 1791505806
       }
     },
     {
@@ -33772,7 +33772,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A06",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33792,7 +33792,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386363
+        "updated": 1791505807
       }
     },
     {
@@ -33807,7 +33807,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A08",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33827,7 +33827,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386364
+        "updated": 1791505808
       }
     },
     {
@@ -33842,7 +33842,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A11",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33862,7 +33862,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386365
+        "updated": 1791505808
       }
     },
     {
@@ -33877,7 +33877,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A12",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33897,7 +33897,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386365
+        "updated": 1791505809
       }
     },
     {
@@ -33912,7 +33912,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A13",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33932,7 +33932,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386366
+        "updated": 1791505810
       }
     },
     {
@@ -33947,7 +33947,7 @@
       "metadata": {
         "pageType": "oer:exercise",
         "oerPlan": "DART 413:A14",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -33967,7 +33967,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386367
+        "updated": 1791505811
       }
     },
     {
@@ -33982,7 +33982,7 @@
       "metadata": {
         "pageType": "oer:project",
         "oerPlan": "DART 413:A10",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -34002,7 +34002,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386369
+        "updated": 1791505811
       }
     },
     {
@@ -34325,7 +34325,7 @@
       "metadata": {
         "pageType": "oer:quiz",
         "oerPlan": "DART 413:quiz:M02",
-        "published": false,
+        "published": true,
         "oerFields": {
           "license": "CC BY 4.0",
           "authors": [
@@ -34360,7 +34360,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386370
+        "updated": 1791505812
       }
     },
     {
@@ -34375,7 +34375,7 @@
       "metadata": {
         "pageType": "oer:quiz",
         "oerPlan": "DART 413:quiz:M06",
-        "published": false,
+        "published": true,
         "oerFields": {
           "license": "CC BY 4.0",
           "authors": [
@@ -34414,7 +34414,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386370
+        "updated": 1791505813
       }
     },
     {
@@ -34429,7 +34429,7 @@
       "metadata": {
         "pageType": "oer:quiz",
         "oerPlan": "DART 413:quiz:M09",
-        "published": false,
+        "published": true,
         "oerFields": {
           "license": "CC BY 4.0",
           "authors": [
@@ -34464,7 +34464,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386371
+        "updated": 1791505813
       }
     },
     {
