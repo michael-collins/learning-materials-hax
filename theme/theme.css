@@ -23,6 +23,7 @@
    has built its page ([data-oer-loader]) and dissolves it. The colours are
    the site's own page backgrounds. */
 html body #loading {
+  --oer-figure-size: 400px; /* LOADER_SETTINGS.size */
   background-color: #f7f8f8;
   transition: background-color 0.3s ease;
 }
@@ -40,7 +41,7 @@ html body #loading div.messaging::before {
 html body #loading div.messaging::before,
 html body #loading .oer-loader-figure {
   display: block;
-  width: min(320px, 78vw);
+  width: min(var(--oer-figure-size), 78vw);
   aspect-ratio: 4 / 3;
   margin: 0 auto 0.25rem;
 }

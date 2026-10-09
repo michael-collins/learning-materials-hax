@@ -38,6 +38,7 @@ function holdLoadingScreen() {
   root.dataset.oerScheme = dark ? "dark" : "light";
   root.dataset.oerLoader = "held";
 
+  screen.style.setProperty("--oer-figure-size", `${LOADER_SETTINGS.size}px`);
   const host = doc.createElement("div");
   host.className = "oer-loader-figure";
   host.setAttribute("aria-hidden", "true");

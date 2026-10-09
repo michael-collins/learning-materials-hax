@@ -4,6 +4,9 @@
 // `node scripts/make-building-figure.mjs` in nu-hax so the tuner starts from
 // them, then rebuild. All times in ms.
 export const LOADER_SETTINGS = {
+  // the figure's width in px (at most 78% of a narrow screen); theme.css
+  // has a copy for the first frame, which make-building-figure.mjs updates
+  size: 400,
   // the build: each layer drops in, layers in a group closer together
   firstMs: 40,
   gapMs: 336,
