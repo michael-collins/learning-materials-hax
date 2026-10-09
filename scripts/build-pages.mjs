@@ -221,9 +221,9 @@ function headFor(item) {
 // (404s on every deep link): a real <base> first, from the published path
 const BASE = DOMAIN !== "/" ? new URL(DOMAIN).pathname.replace(/\/?$/, "/") : "/";
 // and the loading screen in the site's light/dark choice from the first
-// frame (custom/src/loader/site-loader.js decides the same, later; on the
+// frame (custom/src/theme-choice.js decides the same, later; on the
 // editing server there's no way in before it)
-const SCHEME = `<script>try{document.documentElement.dataset.oerScheme=matchMedia("(prefers-color-scheme: dark)").matches||JSON.parse(localStorage.getItem("app-hax-darkMode"))===true?"dark":"light"}catch(e){}</script>`;
+const SCHEME = `<script>try{var c=localStorage.getItem("oer-theme");document.documentElement.dataset.oerScheme=(c?c==="dark":matchMedia("(prefers-color-scheme: dark)").matches||JSON.parse(localStorage.getItem("app-hax-darkMode"))===true)?"dark":"light"}catch(e){}</script>`;
 const withBase = (html) => html.replace(/<head>/, `<head>\n  <base href="${esc(BASE)}" />\n  ${SCHEME}`);
 const template = withBase(readFileSync(path.join(SITE_DIR, "index.html"), "utf8"));
 writeFileSync(path.join(OUT, "index.html"), template);

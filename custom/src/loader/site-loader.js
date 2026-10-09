@@ -5,28 +5,20 @@
  *  - the figure is drawn in the page, in the site's light/dark choice (as
  *    an image it could only follow the system's), starting from the empty
  *    plate theme/theme.css shows until now;
- *  - once HAX says the page is ready, the screen stays until the figure has
- *    finished building its page (looping meanwhile on slow loads), then
- *    dissolves into the site, whose background is the screen's colour.
- * Not held for reduced motion, LMS embeds, or tabs that loaded out of view.
+ *  - once HAX says the page is ready, the figure gets to its built page as
+ *    loader-settings.js says (by default, playing the rest faster), looping
+ *    meanwhile on slow loads, then the screen dissolves into the site,
+ *    whose background is the screen's colour.
+ * Quick for reduced motion, LMS embeds, and tabs that loaded out of view.
  * If this never runs, HAX's own fade still applies.
  */
-import { BUILT_AT, CYCLE_MS, FIGURE_CSS, FIGURE_HTML } from "./building-figure.generated.js";
+import { FIGURE_CSS, FIGURE_HTML, PIECES } from "./building-figure.generated.js";
+import { LOADER_SETTINGS } from "./loader-settings.js";
+import { drawFigure, dissolve } from "./loader-core.js";
 import { isEmbedded } from "../embed/embed-mode.js";
+import { siteIsDark } from "../theme-choice.js";
 
-// the figure leaves first, then the screen
-const DISSOLVE_MS = 700;
-
-/** Dark as HAX's site builder decides it: the system's dark, or dark mode switched on here. */
-export function siteIsDark() {
-  let chosen = false;
-  try {
-    chosen = JSON.parse(globalThis.localStorage.getItem("app-hax-darkMode")) === true;
-  } catch {
-    chosen = false;
-  }
-  return !!globalThis.matchMedia?.("(prefers-color-scheme: dark)").matches || chosen;
-}
+const QUICK = { ...LOADER_SETTINGS, figureFadeMs: 150, dissolveDelayMs: 0, dissolveMs: 150 };
 
 function framed() {
   try {
@@ -46,13 +38,12 @@ function holdLoadingScreen() {
   root.dataset.oerScheme = dark ? "dark" : "light";
   root.dataset.oerLoader = "held";
 
-  const figure = doc.createElement("div");
-  figure.className = "oer-loader-figure";
-  figure.setAttribute("aria-hidden", "true");
-  figure.toggleAttribute("dark", dark);
-  const shadow = figure.attachShadow({ mode: "open" });
-  shadow.innerHTML = `<style>${FIGURE_CSS}</style>${FIGURE_HTML}`;
-  (screen.querySelector(".messaging") || screen).prepend(figure);
+  const host = doc.createElement("div");
+  host.className = "oer-loader-figure";
+  host.setAttribute("aria-hidden", "true");
+  host.toggleAttribute("dark", dark);
+  (screen.querySelector(".messaging") || screen).prepend(host);
+  const figure = drawFigure(host, { css: FIGURE_CSS, html: FIGURE_HTML, pieces: PIECES }, LOADER_SETTINGS);
 
   const reduced = !!globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   let unseen = doc.visibilityState === "hidden";
@@ -61,37 +52,27 @@ function holdLoadingScreen() {
   };
   doc.addEventListener("visibilitychange", onVisibility);
 
-  const dissolve = () => {
+  const reveal = (settings) => {
     doc.removeEventListener("visibilitychange", onVisibility);
-    // keep the built page still while it fades, onto the site's own
-    // background (a reader skin's, say)
-    for (const a of shadow.getAnimations()) a.pause();
+    // fade onto the site's own background (a reader skin's, say)
     const site = doc.querySelector(".haxcms-theme-element");
     const bg = site && globalThis.getComputedStyle(site).backgroundColor;
     if (bg && !/^(transparent|rgba\(0, 0, 0, 0\))$/.test(bg)) screen.style.backgroundColor = bg;
-    screen.classList.add("oer-dissolve");
-    setTimeout(
-      () => {
-        screen.classList.add("oer-gone");
-        screen.setAttribute("hidden", "hidden");
-        screen.setAttribute("aria-busy", "false");
-        figure.remove();
-      },
-      reduced ? 200 : DISSOLVE_MS + 50,
-    );
+    dissolve(screen, settings, () => {
+      screen.classList.add("oer-gone");
+      screen.setAttribute("hidden", "hidden");
+      screen.setAttribute("aria-busy", "false");
+      host.remove();
+    });
   };
 
-  // when the page is ready, wait for the next moment the figure's page is
-  // complete (the first one at least)
   const ready = () => {
     if (reduced || unseen || isEmbedded() || framed()) {
-      dissolve();
-      return;
+      figure.stop();
+      reveal(QUICK);
+    } else {
+      figure.finish(() => reveal(LOADER_SETTINGS));
     }
-    const t = Number(shadow.getAnimations()[0]?.currentTime) || 0;
-    const built = BUILT_AT * CYCLE_MS;
-    const at = t <= built ? built : Math.ceil((t - built) / CYCLE_MS) * CYCLE_MS + built;
-    setTimeout(dissolve, at - t);
   };
 
   // HAX marks the screen .loaded, then [hidden], when the page is ready

@@ -25,6 +25,7 @@ import "./ui/oer-breadcrumb.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/active-item/site-active-title.js";
 import "@haxtheweb/haxcms-elements/lib/ui-components/layout/site-modal.js";
 import { shadcnTokens } from "./tokens/shadcn-tokens.js";
+import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
 import { registerShadowStyles } from "./editor/shadow-styles.js";
 import { LUCIDE_ICONS } from "./editor/lucide-icons.generated.js";
@@ -275,9 +276,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     // sticky sidebar/top bar stick below it and the sidebar still fits
     this.__editorBarObserver = new ResizeObserver(() => this._measureEditorBar());
     this.__bodyObserver = new MutationObserver(() => this._watchEditorBar());
+    // the reader's own light/dark choice wins over HAX's dark-on-dark-systems
+    // (theme-choice.js); later switches, from here or HAX's menu, are kept
+    const chosen = themeChoice();
+    if (chosen !== null && !!store.darkMode !== chosen) store.darkMode = chosen;
+    let firstDark = true;
     this.__disposer.push(
       autorun(() => {
         const dark = toJS(store.darkMode);
+        if (!firstDark) rememberTheme(!!dark);
+        firstDark = false;
         Promise.resolve().then(() => {
           this.dark = !!dark;
         });

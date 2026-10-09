@@ -96,18 +96,19 @@ html[data-oer-loader] body #loading[hidden] {
   display: block;
 }
 /* the dissolve: the figure and its words go, then the screen melts into
-   the site behind it (the same background colour) */
+   the site behind it (the same background colour). Durations come from
+   custom/src/loader/loader-settings.js */
 html body #loading.oer-dissolve {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  transition: opacity var(--oer-dissolve, 0.55s) cubic-bezier(0.4, 0, 0.2, 1) var(--oer-dissolve-delay, 0.15s);
 }
 html body #loading.oer-dissolve div.messaging {
   opacity: 0;
   transform: translateY(-55%) scale(0.985);
   transition:
-    opacity 0.35s ease,
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity var(--oer-figure-fade, 0.35s) ease,
+    transform calc(var(--oer-figure-fade, 0.35s) + 0.15s) cubic-bezier(0.4, 0, 0.2, 1);
 }
 html body #loading.oer-gone {
   display: none !important;
@@ -120,4 +121,11 @@ html body #loading.oer-gone {
     transform: translateY(-55%);
     transition: opacity 0.15s linear;
   }
+}
+
+/* Light mode is light even when the system is dark: the site's colours are
+   light-dark() pairs, which otherwise follow the system unless dark mode
+   (body.dark-mode, from HAX) forces dark. */
+body:not(.dark-mode) {
+  color-scheme: only light;
 }
