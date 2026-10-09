@@ -310,6 +310,13 @@ class OerSiteNav extends LitElement {
         text-transform: uppercase;
         color: var(--muted-foreground);
       }
+      .group-label simple-icon-lite.label-icon {
+        width: 0.875rem;
+        height: 0.875rem;
+        margin-right: 0.375rem;
+        --simple-icon-height: 0.875rem;
+        --simple-icon-width: 0.875rem;
+      }
       /* a heading inside a page's sub-pages: closer to its pages, no extra
          gap above when it opens the list, sentence case at a lower weight
          than the top-level labels */
@@ -463,7 +470,13 @@ class OerSiteNav extends LitElement {
           grouped = true;
           // a heading inside a page (a lesson's "Readings") is a level below
           // one at the top of the outline
-          return html`<li class="heading ${depth ? "nested" : ""}"><span class="group-label" role="heading" aria-level="${Math.min(6, depth + 2)}">${item.title}</span></li>`;
+          // with icons on, a heading shows its icon beside its label
+          const headingIcon = navIconsOn(this._all) ? pageIcon(item) : "";
+          return html`<li class="heading ${depth ? "nested" : ""}">
+            <span class="group-label" role="heading" aria-level="${Math.min(6, depth + 2)}"
+              >${headingIcon ? html`<simple-icon-lite class="label-icon" icon="${headingIcon}"></simple-icon-lite>` : ""}${item.title}</span
+            >
+          </li>`;
         }
         const children = kids.get(item.id) || [];
         const hasKids = children.length > 0;
