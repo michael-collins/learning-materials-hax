@@ -5,7 +5,7 @@
 // them, then rebuild. All times in ms.
 export const LOADER_SETTINGS = {
   // the build: each layer drops in, layers in a group closer together
-  firstMs: 220,
+  firstMs: 40,
   gapMs: 336,
   groupGapMs: 500,
   dropMs: 392,
