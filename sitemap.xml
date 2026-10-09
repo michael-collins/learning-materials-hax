@@ -2545,12 +2545,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://michaelcollins.xyz/learning-materials-hax/books</loc>
-    <lastmod>2026-10-09T20:42:08.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/lessons/open-design</loc>
     <lastmod>2026-10-07T15:16:36.000Z</lastmod>
     <changefreq>daily</changefreq>
@@ -2567,6 +2561,12 @@
     <lastmod>2026-10-05T20:25:24.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/books</loc>
+    <lastmod>2026-10-09T20:42:08.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/animating-virtual-creatures</loc>
