@@ -7,9 +7,11 @@
 //    these scripts.
 // 2. Drafts come out: every page that is unpublished, or under an
 //    unpublished page (archived versions included), leaves site.json and its
-//    page folder is deleted. HAX's search index, sitemap and feeds list them
+//    page folder is deleted, as are folders left from deleted pages. HAX's search index, sitemap and feeds list them
 //    too, so their entries go. The system page (content types) stays: the
-//    theme reads it.
+//    theme reads it. Draft blocks (<oer-draft>, "Draft for review") inside
+//    published pages come out of the page files and the search index: the
+//    theme hides them from readers, but their words would still be there.
 // 3. HAX's code goes in build/: the site's build/ is a link hax serve fills,
 //    so the files come from an installed @haxtheweb/haxcms-nodejs (its
 //    dist/public/build), the version the theme was made for, not HAX's CDN,
@@ -77,6 +79,14 @@ cpSync(SITE_DIR, OUT, {
 
 const draftLocations = new Set(drafts.map((i) => i.location).filter(Boolean));
 for (const loc of draftLocations) rmSync(path.join(OUT, path.dirname(loc)), { recursive: true, force: true });
+// and the folders HAX leaves behind for deleted pages: unlinked, but anyone
+// could open them by address
+const pageFolders = new Set(items.map((i) => i.location && path.dirname(i.location)).filter(Boolean));
+if (existsSync(path.join(OUT, "pages"))) {
+  for (const d of readdirSync(path.join(OUT, "pages"))) {
+    if (!pageFolders.has(`pages/${d}`) && statSync(path.join(OUT, "pages", d)).isDirectory()) rmSync(path.join(OUT, "pages", d), { recursive: true, force: true });
+  }
+}
 writeFileSync(path.join(OUT, "site.json"), JSON.stringify({ ...site, items }, null, 2));
 const draftSlugs = new Set(drafts.map((i) => i.slug).filter(Boolean));
 const draftRefs = [...draftSlugs, ...draftLocations, ...draftIds];
@@ -106,6 +116,60 @@ const LOCAL = /https?:\/\/localhost(?::\d+)?\/learning-materials(?:\/|(?=["<\s])
 for (const f of ["sitemap.xml", "sitemap-index.xml", "rss.xml", "atom.xml", "llms.txt", "robots.txt"]) {
   const file = path.join(OUT, f);
   if (existsSync(file)) writeFileSync(file, readFileSync(file, "utf8").replace(LOCAL, DOMAIN !== "/" ? DOMAIN : ""));
+}
+
+// draft blocks: innermost first, so nested ones come out whole
+const DRAFT_BLOCK = /<oer-draft\b[^>]*>(?:(?!<oer-draft\b)[\s\S])*?<\/oer-draft>/gi;
+const withoutDraftBlocks = (html) => {
+  let out = html;
+  for (let prev = ""; prev !== out; ) {
+    prev = out;
+    out = out.replace(DRAFT_BLOCK, "");
+  }
+  return out;
+};
+// search text as HAX writes it, near enough: lowercase words, no punctuation
+const searchText = (html) =>
+  html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;|&#160;/g, " ")
+    .replace(/&[a-z#0-9]+;/gi, "")
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^\p{L}\p{N}\s-]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+const cleaned = new Map(); // slug → search text without the drafts
+for (const item of items) {
+  const file = item.location && path.join(OUT, item.location);
+  if (!file || !existsSync(file)) continue;
+  const html = readFileSync(file, "utf8");
+  if (!/<oer-draft\b/i.test(html)) continue;
+  const clean = withoutDraftBlocks(html);
+  writeFileSync(file, clean);
+  cleaned.set(item.slug, searchText(clean));
+  // HAX's copies of the page in other formats: cleaned the same way, or
+  // left out when that leaves them broken or still holding a draft
+  for (const ext of ["json", "md", "xml", "yaml"]) {
+    const other = path.join(path.dirname(file), `index.${ext}`);
+    if (!existsSync(other)) continue;
+    const text = withoutDraftBlocks(readFileSync(other, "utf8"));
+    let ok = !/<oer-draft\b|&lt;oer-draft\b/i.test(text);
+    if (ok && ext === "json") {
+      try {
+        JSON.parse(text);
+      } catch {
+        ok = false;
+      }
+    }
+    if (ok) writeFileSync(other, text);
+    else rmSync(other);
+  }
+}
+if (cleaned.size && existsSync(lunrFile)) {
+  const lunr = JSON.parse(readFileSync(lunrFile, "utf8"));
+  for (const e of lunr) if (cleaned.has(e.location)) e.text = cleaned.get(e.location);
+  writeFileSync(lunrFile, JSON.stringify(lunr));
 }
 
 /* ---------- 3. HAX's code ---------- */
@@ -254,5 +318,5 @@ const size = (dir) => readdirSync(dir).reduce((s, f) => {
   const st = lstatSync(p);
   return s + (st.isDirectory() ? size(p) : st.size);
 }, 0);
-console.log(`built ${OUT}: ${items.length} items (${drafts.length} drafts left out), ${pages} page files, ${(size(OUT) / 1048576).toFixed(0)} MB${DOMAIN !== "/" ? `, links for ${DOMAIN}` : " (relative links: pass --domain for absolute ones)"}`);
+console.log(`built ${OUT}: ${items.length} items (${drafts.length} drafts left out, draft blocks out of ${cleaned.size}), ${pages} page files, ${(size(OUT) / 1048576).toFixed(0)} MB${DOMAIN !== "/" ? `, links for ${DOMAIN}` : " (relative links: pass --domain for absolute ones)"}`);
 if (!existsSync(path.join(OUT, "404.html"))) console.log("note: no 404.html in the site");
