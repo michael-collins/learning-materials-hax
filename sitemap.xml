@@ -4112,7 +4112,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/tutorials/demo-laser-cutter-workflow-file-job-cleanup</loc>
-    <lastmod>2026-10-07T15:17:26.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:35.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4130,7 +4130,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/tutorials/press-fit-joinery-tolerance-test-kit</loc>
-    <lastmod>2026-10-07T15:17:27.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4142,7 +4142,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/tutorials/demo-3d-printing-workflow-mesh-slicer-print</loc>
-    <lastmod>2026-10-07T15:17:28.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:37.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4154,25 +4154,25 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/tutorials/a-parametric-object-in-fusion-360</loc>
-    <lastmod>2026-10-07T15:17:28.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:37.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/lectures/critical-making-the-maker-movement-and-its-critics</loc>
-    <lastmod>2026-10-07T15:17:17.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/tutorials/demo-cnc-cam-setup-to-cut-with-the-lab-tech</loc>
-    <lastmod>2026-10-07T15:17:29.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:38.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/tutorials/demo-rotation-molds-and-casting-vacuum-forming-vinyl</loc>
-    <lastmod>2026-10-07T15:17:30.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:39.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4244,7 +4244,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources/how-to-make-almost-anything-the-digital-fabrication-revolution</loc>
-    <lastmod>2026-10-07T15:18:47.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:46.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4256,7 +4256,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources/fab-the-coming-revolution-on-your-desktop</loc>
-    <lastmod>2026-10-07T15:18:48.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:46.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4268,7 +4268,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources/the-nature-and-art-of-workmanship-the-workmanship-of-risk-and-of-certainty</loc>
-    <lastmod>2026-10-07T15:18:49.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4280,7 +4280,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources/abstracting-craft-the-practiced-digital-hand-ch-1-hands</loc>
-    <lastmod>2026-10-07T15:18:50.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:48.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4292,7 +4292,7 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/resources/the-craftsman-prologue-man-as-his-own-maker</loc>
-    <lastmod>2026-10-07T15:18:50.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:48.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4490,49 +4490,49 @@
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/vector-file-prep-for-the-laser</loc>
-    <lastmod>2026-10-07T15:18:36.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/crit-protocol</loc>
-    <lastmod>2026-10-07T15:18:37.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/design-for-fdm-checklist</loc>
-    <lastmod>2026-10-07T15:18:38.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/cnc-materials-bits-feeds-and-speeds-fixturing</loc>
-    <lastmod>2026-10-07T15:18:38.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/documentation-guide-photographing-work-process-docs-publishing-files</loc>
-    <lastmod>2026-10-07T15:18:39.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:43.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/rubric-project-rubric-template</loc>
-    <lastmod>2026-10-07T15:18:40.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:43.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/template-final-project-proposal</loc>
-    <lastmod>2026-10-07T15:18:40.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/learning-materials/articles/worksheet-object-autopsy</loc>
-    <lastmod>2026-10-07T15:18:41.000Z</lastmod>
+    <lastmod>2026-10-09T00:29:45.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

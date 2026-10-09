@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": null,
       "created": 1790801562,
-      "updated": 1791505773,
+      "updated": 1791505789,
       "version": "26.8.0"
     },
     "theme": {
@@ -17632,7 +17632,7 @@
       "metadata": {
         "pageType": "oer:lecture",
         "oerPlan": "DART 413:L17",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -17652,7 +17652,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386237
+        "updated": 1791505774
       }
     },
     {
@@ -22830,7 +22830,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:L04",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -22850,7 +22850,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386246
+        "updated": 1791505775
       }
     },
     {
@@ -23447,7 +23447,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:L06",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -23467,7 +23467,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386247
+        "updated": 1791505776
       }
     },
     {
@@ -23482,7 +23482,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:L09",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -23502,7 +23502,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386248
+        "updated": 1791505777
       }
     },
     {
@@ -23517,7 +23517,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:L12",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -23537,7 +23537,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386248
+        "updated": 1791505777
       }
     },
     {
@@ -23552,7 +23552,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:L14",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -23572,7 +23572,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386249
+        "updated": 1791505778
       }
     },
     {
@@ -23587,7 +23587,7 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "oerPlan": "DART 413:L16",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -23607,7 +23607,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386250
+        "updated": 1791505779
       }
     },
     {
@@ -27090,7 +27090,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L05",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27110,7 +27110,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386316
+        "updated": 1791505780
       }
     },
     {
@@ -27125,7 +27125,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L08",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27145,7 +27145,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386317
+        "updated": 1791505780
       }
     },
     {
@@ -27160,7 +27160,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L10",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27180,7 +27180,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386318
+        "updated": 1791505781
       }
     },
     {
@@ -27195,7 +27195,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L15",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27215,7 +27215,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386318
+        "updated": 1791505782
       }
     },
     {
@@ -27230,7 +27230,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L18",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27250,7 +27250,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386319
+        "updated": 1791505783
       }
     },
     {
@@ -27265,7 +27265,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L19",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27285,7 +27285,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386320
+        "updated": 1791505783
       }
     },
     {
@@ -27300,7 +27300,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L20",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27320,7 +27320,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386320
+        "updated": 1791505784
       }
     },
     {
@@ -27335,7 +27335,7 @@
       "metadata": {
         "pageType": "oer:article",
         "oerPlan": "DART 413:L21",
-        "published": false,
+        "published": true,
         "oerFields": {
           "courses": [
             {
@@ -27355,7 +27355,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386321
+        "updated": 1791505785
       }
     },
     {
@@ -29051,7 +29051,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B01",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://cba.mit.edu/docs/papers/12.09.FA.pdf",
           "kind": "reading",
@@ -29073,7 +29073,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386327
+        "updated": 1791505786
       }
     },
     {
@@ -29088,7 +29088,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B02",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://archive.org/details/fabcomingrevolut00gers",
           "kind": "reading",
@@ -29110,7 +29110,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386328
+        "updated": 1791505786
       }
     },
     {
@@ -29125,7 +29125,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B03",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://archive.org/details/natureartofwor00pyed",
           "kind": "reading",
@@ -29147,7 +29147,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386329
+        "updated": 1791505787
       }
     },
     {
@@ -29162,7 +29162,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B04",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://mitpress.mit.edu/9780262631891/abstracting-craft/",
           "kind": "reading",
@@ -29184,7 +29184,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386330
+        "updated": 1791505788
       }
     },
     {
@@ -29199,7 +29199,7 @@
       "metadata": {
         "pageType": "oer:resource",
         "oerPlan": "DART 413:B05",
-        "published": false,
+        "published": true,
         "oerFields": {
           "url": "https://yalebooks.yale.edu/book/9780300151190/the-craftsman/",
           "kind": "reading",
@@ -29221,7 +29221,7 @@
         "created": 1791383988,
         "images": [],
         "videos": [],
-        "updated": 1791386330
+        "updated": 1791505788
       }
     },
     {
