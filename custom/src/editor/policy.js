@@ -26,6 +26,12 @@
  *   textTarget  HAX's text toolbar may make it its target (role="textbox");
  *               undefined leaves HAX's own way
  *   insertable  offered in the block list
+ *   label       what authors call it, in the editor's messages ("Tools
+ *               moved to 6 of 9"); blocks HAX knows take its name for them
+ *   starter     the HTML a new one starts with (an item's empty fields)
+ *
+ * policyOfTag(tag) is the same for a tag, and labelOf(el) what authors call
+ * it.
  *
  * And for the guards: unitOf (the section, item or block a node is in),
  * fieldOf (its text field), boundaryOf (what an edit there must stay
@@ -44,7 +50,7 @@ const MEDIA_TAGS = new Set(["img", "video", "audio", "iframe", "picture", "svg",
 
 const DEFAULTS = {
   section: { limit: 1, accepts: [], flow: "page", fullBleed: true, columns: false, textTarget: false, insertable: true },
-  item: { accepts: [], columns: false, textTarget: false, insertable: false },
+  item: { accepts: [], columns: false, textTarget: false, insertable: false, starter: "<h3></h3><p></p>" },
   text: { accepts: [], columns: true, textTarget: true, insertable: true },
   inline: { accepts: [], columns: false, insertable: false },
   layout: { accepts: ["*"], flow: "page", columns: false, textTarget: false, insertable: true },
@@ -52,7 +58,7 @@ const DEFAULTS = {
   break: { limit: 1, pin: "first", accepts: [], columns: false, textTarget: false, insertable: false },
   block: { accepts: [], columns: true, insertable: true },
 };
-const BASE = { kind: "block", limit: null, pin: null, pageTypes: null, accepts: [], flow: null, fields: {}, source: null, fullBleed: false, columns: true, textTarget: undefined, insertable: true };
+const BASE = { kind: "block", limit: null, pin: null, pageTypes: null, accepts: [], flow: null, fields: {}, source: null, fullBleed: false, columns: true, textTarget: undefined, insertable: true, label: null, starter: "" };
 
 // a section's or item's headings are one line, pasted as plain text
 const HEADINGS = Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { name: "heading", single: true, paste: "line" }]));
@@ -83,19 +89,19 @@ const TABLE = {
   ...Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { kind: "text" }])),
 
   // the course site, in the order a new one has them
-  "oer-cs-hero": written({ p: { name: "tagline" } }, ["p"], { pin: "first" }),
-  "oer-cs-facts": generated(FROM_COURSE),
-  "oer-cs-learn": written({ li: { name: "outcome", paste: "line" } }, ROWS, { flow: "cards" }),
-  "oer-cs-semester": generated(FROM_PLAN),
-  "oer-cs-make": generated(FROM_PLAN),
-  "oer-cs-books": generated(FROM_COURSE),
-  "oer-cs-people": written({ p: { name: "note" } }, ["p"]),
-  "oer-cs-tools": written({ li: { name: "tool", paste: "line" } }, ROWS, { flow: "chips" }),
-  "oer-cs-faq": written({ h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } }, ["h2", "h3", "h4", "h5", "h6", "p", ...ROWS], { flow: "stack" }),
-  "oer-cs-closing": generated(FROM_COURSE, { pin: "last" }),
+  "oer-cs-hero": written({ p: { name: "tagline" } }, ["p"], { pin: "first", label: "Hero" }),
+  "oer-cs-facts": generated(FROM_COURSE, { label: "Facts" }),
+  "oer-cs-learn": written({ li: { name: "outcome", paste: "line" } }, ROWS, { flow: "cards", label: "What you'll learn" }),
+  "oer-cs-semester": generated(FROM_PLAN, { label: "The semester" }),
+  "oer-cs-make": generated(FROM_PLAN, { label: "What you'll make" }),
+  "oer-cs-books": generated(FROM_COURSE, { label: "Books" }),
+  "oer-cs-people": written({ p: { name: "note" } }, ["p"], { label: "Who teaches it" }),
+  "oer-cs-tools": written({ li: { name: "tool", paste: "line" } }, ROWS, { flow: "chips", label: "Tools" }),
+  "oer-cs-faq": written({ h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } }, ["h2", "h3", "h4", "h5", "h6", "p", ...ROWS], { flow: "stack", label: "Questions" }),
+  "oer-cs-closing": generated(FROM_COURSE, { pin: "last", label: "Ready to start" }),
   // OER Courses
-  "oer-courses-intro": written({ p: { name: "intro" } }, ["p"], { pageTypes: HUB, pin: "first" }),
-  "oer-courses-catalog": generated({ label: "From the course sites", kind: "sites", section: null }, { pageTypes: HUB, pin: "last" }),
+  "oer-courses-intro": written({ p: { name: "intro" } }, ["p"], { pageTypes: HUB, pin: "first", label: "Intro" }),
+  "oer-courses-catalog": generated({ label: "From the course sites", kind: "sites", section: null }, { pageTypes: HUB, pin: "last", label: "Catalog" }),
 };
 
 /* ---------- descriptors ---------- */
@@ -115,7 +121,11 @@ const cache = new Map();
 
 /** The editor's descriptor for an element (see the top of this file). */
 export function policyOf(el) {
-  const tag = el?.localName;
+  return policyOfTag(el?.localName);
+}
+
+/** The descriptor for a tag, as for an element of it. */
+export function policyOfTag(tag) {
   if (!tag) return Object.freeze({ ...BASE, kind: null });
   let policy = cache.get(tag);
   if (policy) return policy;
@@ -128,6 +138,18 @@ export function policyOf(el) {
   // a custom element may be defined (or registered with HAX) later, with its own
   if (!tag.includes("-") || (cls && (table.kind || own.kind || hax()?.elementList?.[tag]))) cache.set(tag, policy);
   return policy;
+}
+
+/**
+ * What authors call an element (or a tag) in the editor's messages: its
+ * policy's label ("Tools"), HAX's name for the block ("Paragraph"), or its
+ * tag.
+ */
+export function labelOf(el) {
+  const tag = typeof el === "string" ? el : el?.localName;
+  const { label } = policyOfTag(tag);
+  if (label || !tag) return label || "";
+  return hax()?.haxSchemaFromTag?.(tag)?.gizmo?.title || tag;
 }
 
 /* ---------- where a node is ---------- */

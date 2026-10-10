@@ -1,12 +1,25 @@
 /**
  * `oer-toast` — Sonner-style notifications replacing haxcms-toast.
- * Bottom-right stack of cards, polite live region, no motion. duration 0
- * means the toast stays until dismissed (HAX uses that for "exit preview").
+ * Bottom-right stack of cards, no motion. Each is said in the editor's
+ * polite live region (announce.js), which it shares, rather than one of
+ * its own. duration 0 means the toast stays until dismissed (HAX uses that
+ * for "exit preview"); a toast waits while the pointer is over it or focus
+ * is in it.
+ *
+ * A toast can offer one action, as a button beside its text:
+ *
+ *   toaster().show({ text: "Books removed", action: { label: "Undo", run: () => … } })
+ *
+ * `said` is what screen readers hear, when it should differ from the text
+ * ("Books removed. Undo with ⌘Z").
  * @element oer-toast
  */
 import { html, css, LitElement } from "../lit.js";
+import { announce } from "./announce.js";
 
 const DEFAULT_DURATION = 4000;
+// time to reach an action
+const ACTION_DURATION = 8000;
 let seq = 0;
 
 class OerToast extends LitElement {
@@ -24,14 +37,33 @@ class OerToast extends LitElement {
     this.__timers = new Map();
   }
 
-  show({ text = "", duration = DEFAULT_DURATION, closeText = "Close", slot = null, onClose = null }) {
+  show({ text = "", duration, closeText = "Close", slot = null, onClose = null, action = null, said = "" }) {
     const id = ++seq;
+    duration ??= action ? ACTION_DURATION : DEFAULT_DURATION;
     // HAX sometimes passes a DOM node to show alongside the text (e.g. an
     // "exit preview" button); keep it live rather than cloning it
-    this._items = [...this._items, { id, text, closeText, slot, onClose }].slice(-4);
-    if (duration && duration > 0) {
-      this.__timers.set(id, setTimeout(() => this.dismiss(id), Math.max(duration, 2000)));
-    }
+    this._items = [...this._items, { id, text, closeText, slot, onClose, action, duration }].slice(-4);
+    this._wait(id);
+    announce(said || text);
+    return id;
+  }
+
+  // dismiss after the toast's duration (from now)
+  _wait(id) {
+    const item = this._items.find((i) => i.id === id);
+    clearTimeout(this.__timers.get(id));
+    if (item?.duration > 0) this.__timers.set(id, setTimeout(() => this.dismiss(id), Math.max(item.duration, 2000)));
+  }
+
+  // while the pointer is over a toast or focus is in it, it stays
+  _hold(id, held) {
+    if (held) clearTimeout(this.__timers.get(id));
+    else this._wait(id);
+  }
+
+  _act(t) {
+    this.dismiss(t.id);
+    t.action?.run?.();
   }
 
   dismiss(id) {
@@ -60,6 +92,11 @@ class OerToast extends LitElement {
         font-family: var(--font-sans, system-ui, sans-serif);
         pointer-events: none;
       }
+      .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
       .toast {
         pointer-events: auto;
         display: flex;
@@ -81,6 +118,28 @@ class OerToast extends LitElement {
       }
       .slot:empty {
         display: none;
+      }
+      /* Sonner's action button */
+      button.action {
+        flex: none;
+        align-self: center;
+        height: 2rem;
+        padding: 0 0.75rem;
+        border: 0;
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--primary, #111);
+        color: var(--primary-foreground, #fff);
+        font: inherit;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      button.action:hover {
+        background: color-mix(in oklab, var(--primary, #111) 88%, var(--foreground, #000));
+      }
+      button.action:focus-visible {
+        outline: 2px solid var(--ring, #2563eb);
+        outline-offset: 2px;
       }
       .slot {
         margin-top: 0.5rem;
@@ -121,14 +180,21 @@ class OerToast extends LitElement {
 
   render() {
     return html`
-      <div role="status" aria-live="polite" aria-atomic="false">
+      <div class="stack">
         ${this._items.map(
           (t) => html`
-            <div class="toast">
+            <div
+              class="toast"
+              @pointerenter="${() => this._hold(t.id, true)}"
+              @pointerleave="${() => this._hold(t.id, false)}"
+              @focusin="${() => this._hold(t.id, true)}"
+              @focusout="${() => this._hold(t.id, false)}"
+            >
               <div class="text">
                 ${t.text}
                 <div class="slot">${t.slot ?? ""}</div>
               </div>
+              ${t.action ? html`<button class="action" @click="${() => this._act(t)}">${t.action.label}</button>` : ""}
               <button class="close" aria-label="${t.closeText || "Close"}" @click="${() => this.dismiss(t.id)}">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
               </button>

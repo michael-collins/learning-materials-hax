@@ -17,6 +17,7 @@ import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
 import { SiteSection, csStyles, icon, hasContent, listItems, questions } from "./cs-shared.js";
 import "../../ui/oer-image-field.js";
+import { editorControl } from "../../ui/editor-control.js";
 import { siteForBook, bookSiteIsOn } from "../../types/book-site.js";
 
 // outcomes cycle through these
@@ -79,18 +80,10 @@ export class OerCsHero extends SiteSection {
         <div class="hero-art">
           ${image ? html`<img src="${image}" alt="${alt}" />` : html`<div class="art-fallback" aria-hidden="true"><span>${d.code || d.title}</span></div>`}
           ${this._editing
-            ? html`<div
-                class="image-edit"
-                @pointerdown="${(e) => this.claim(e)}"
-                @mousedown="${SiteSection.keep}"
-                @click="${SiteSection.keep}"
-                @focusin="${SiteSection.keep}"
-                @keydown="${SiteSection.keep}"
-                @paste="${SiteSection.keep}"
-                @input="${SiteSection.keep}"
-              >
+            ? html`<div class="image-edit">
                 <span class="typing-hint">${icon("pencil")}<span>${this.image ? "Hero image" : image ? "A project's image is shown. Choose a hero image of your own:" : "Choose a hero image: a wide picture, such as student work or the studio."}</span></span>
                 <oer-image-field
+                  ${editorControl()}
                   compact
                   label="Hero image"
                   .value="${this.image || ""}"

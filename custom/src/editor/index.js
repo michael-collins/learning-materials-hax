@@ -15,6 +15,9 @@ import { installCitationNormalizer } from "./citations.js";
 import { installHaxFixes } from "./hax-fixes.js";
 import { installUndo } from "./undo.js";
 import { installBoundaryGuard } from "./boundary-guard.js";
+import { installEditorState, editorState } from "./editor-state.js";
+import { installOps, ops } from "./ops.js";
+import { installAnnounce, announce } from "./announce.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -33,6 +36,11 @@ export function installEditorChrome() {
   installHaxFixes();
   installUndo();
   installBoundaryGuard();
+  installAnnounce();
+  installEditorState();
+  installOps();
+  // for the editor checks and the console
+  globalThis.OerEditor = { state: editorState, ops, announce };
   installQuietMode();
   installShadowStyles();
   registerShadowStyles(editorSkin);
