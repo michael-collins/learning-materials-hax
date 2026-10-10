@@ -43,7 +43,7 @@ import { contentViewport, pressPlate } from "./stock.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
-import { sectionOf } from "../blocks/course-site/cs-shared.js";
+import { sectionOf, isSection } from "../blocks/course-site/cs-shared.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -295,8 +295,10 @@ class OerBlockFrame extends LitElement {
       else if (d.y > view.bottom - SCROLL_EDGE) main.scrollTop += Math.ceil((d.y - view.bottom + SCROLL_EDGE) / 4);
     }
     const node = this.__node;
-    // not inside itself, and not the two slots it already sits between
-    const slots = computeSlots(this._hax?.activeHaxBody).filter((s) => !node.contains(s.container));
+    // not inside itself, and not the two slots it already sits between; a
+    // course site's section stays on the page, never in columns
+    const section = isSection(node);
+    const slots = computeSlots(this._hax?.activeHaxBody).filter((s) => !node.contains(s.container) && !(section && s.nested));
     const slot = nearestSlot(slots, d.x, d.y);
     const valid = !!slot && slot.before !== node && slot.after !== node;
     if (!sameSlot(slot, d.slot) || valid !== d.valid || !d.rect || d.rect.top !== Math.round(slot?.top)) {

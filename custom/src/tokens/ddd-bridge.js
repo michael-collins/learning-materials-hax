@@ -11,35 +11,42 @@
  *    remapped inside the editor elements. Redefining them site-wide would
  *    change every block that asks for, say, "skyBlue" on purpose.
  */
-import { css } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { css, unsafeCSS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+
+/**
+ * The semantic DDD tokens (tier 1), as the page sets them. DDD sets them
+ * again on h-a-x, the editor's root, so blocks/course-site/cs-content.js
+ * hands these same names the page's values there.
+ */
+export const DDD_TOKENS = {
+  // semantic colour
+  "--ddd-theme-primary": "var(--primary)",
+  "--ddd-theme-accent": "var(--accent)",
+  "--ddd-theme-default-link": "var(--link)",
+  "--ddd-theme-default-link80": "var(--link)",
+  "--ddd-theme-default-background": "var(--background)",
+  "--ddd-theme-default-error": "var(--destructive)",
+  "--ddd-theme-header-border-color": "var(--border)",
+  // type. DDD sets :root { font-size: var(--ddd-theme-body-font-size) },
+  // which is 20px by default and makes every rem 25% larger than the
+  // 16px scale shadcn sizes assume
+  "--ddd-theme-body-font-size": "16px",
+  "--ddd-font-primary": "var(--font-sans)",
+  "--ddd-font-secondary": "var(--font-sans)",
+  "--ddd-font-navigation": "var(--font-sans)",
+  // shape
+  "--ddd-radius-xs": "var(--radius-sm)",
+  "--ddd-radius-sm": "var(--radius-sm)",
+  "--ddd-radius-md": "var(--radius-md)",
+  "--ddd-radius-lg": "var(--radius-lg)",
+  "--ddd-border-sm": "1px solid var(--border)",
+  "--ddd-border-md": "1px solid var(--border)",
+};
 
 export const dddBridge = css`
   /* :root:root out-ranks DDD's own :root declarations, which load after ours */
   :root:root {
-    /* semantic colour */
-    --ddd-theme-primary: var(--primary);
-    --ddd-theme-accent: var(--accent);
-    --ddd-theme-default-link: var(--link);
-    --ddd-theme-default-link80: var(--link);
-    --ddd-theme-default-background: var(--background);
-    --ddd-theme-default-error: var(--destructive);
-    --ddd-theme-header-border-color: var(--border);
-
-    /* type. DDD sets :root { font-size: var(--ddd-theme-body-font-size) },
-       which is 20px by default and makes every rem 25% larger than the
-       16px scale shadcn sizes assume */
-    --ddd-theme-body-font-size: 16px;
-    --ddd-font-primary: var(--font-sans);
-    --ddd-font-secondary: var(--font-sans);
-    --ddd-font-navigation: var(--font-sans);
-
-    /* shape */
-    --ddd-radius-xs: var(--radius-sm);
-    --ddd-radius-sm: var(--radius-sm);
-    --ddd-radius-md: var(--radius-md);
-    --ddd-radius-lg: var(--radius-lg);
-    --ddd-border-sm: 1px solid var(--border);
-    --ddd-border-md: 1px solid var(--border);
+    ${unsafeCSS(Object.entries(DDD_TOKENS).map(([name, value]) => `${name}: ${value};`).join("\n    "))}
 
     /* site-menu / map-menu */
     --site-menu-color: var(--foreground);

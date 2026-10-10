@@ -303,9 +303,16 @@ class OerCourseSite extends LitElement {
         font-size: 0.875rem;
         font-weight: 600;
       }
+      /* one row of links: when the bar is short of room (an author's
+         buttons take some), the ones that don't fit wrap out of sight
+         rather than push the page wider */
       .links {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.125rem;
+        min-width: 0;
+        height: 2.25rem;
+        overflow: hidden;
         margin-left: 1rem;
       }
       .links button {
@@ -313,6 +320,7 @@ class OerCourseSite extends LitElement {
         padding: 0.375rem 0.625rem;
         border-radius: var(--radius-md);
         font-size: 0.875rem;
+        line-height: 1.5rem;
         color: var(--muted-foreground);
         cursor: pointer;
       }
@@ -406,14 +414,34 @@ class OerCourseSite extends LitElement {
         .links {
           display: none;
         }
+        /* the last to give way: the course's code, cut short */
+        .code {
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
       @media (max-width: 600px) {
         .wrap {
           padding: 0 1rem;
         }
         .brand-name,
+        .crumb,
         .lbl {
           display: none;
+        }
+        /* an author's buttons, icons alone, are square */
+        .btn.ghost {
+          width: 2rem;
+          padding: 0;
+        }
+      }
+      @media (max-width: 400px) {
+        .bar-in {
+          gap: 0.25rem;
+        }
+        .btn.primary {
+          padding: 0 0.625rem;
         }
       }
     `;

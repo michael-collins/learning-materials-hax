@@ -2,9 +2,9 @@
  * `oer-block-inserter` — insert blocks where you can see them land.
  *
  * While editing, hovering the empty slot between two blocks highlights it
- * with a "+" at its left edge; clicking anywhere in the slot opens the block
- * list, and the slot stays highlighted while the list is open so the target
- * is always visible. A persistent "Add block" row follows the last block. Either opens a flyout listing every block from HAX's Insert panel
+ * with a "+" at its left edge (in the middle of one as wide as the page);
+ * clicking anywhere in the slot opens the block list, and the slot stays
+ * highlighted while the list is open so the target is always visible. A persistent "Add block" row follows the last block. Either opens a flyout listing every block from HAX's Insert panel
  * (search, Recent, Popular, then categories), with a preview card beside it
  * for the hovered or highlighted block. The rail's "Insert block above /
  * below" opens the same flyout, which is the keyboard route.
@@ -139,7 +139,8 @@ class OerBlockInserter extends LitElement {
     if (hover) {
       hover = { ...hover, top: Math.round(hover.top), height: Math.round(hover.height), left: Math.round(hover.left), width: Math.round(hover.width) };
       // a slot as wide as the page (between a course site's sections) has
-      // its + inside, as there's no gutter beside it
+      // its + inside, centred, as there's no gutter beside it (and the
+      // rail is at the page's edge)
       hover.inside = hover.left - 12 < view.left;
     }
     const same =
@@ -338,7 +339,8 @@ class OerBlockInserter extends LitElement {
         box-shadow: 0 0 0 2px var(--background);
       }
       .slot.inside .plus {
-        left: 0.5rem;
+        left: 50%;
+        margin-left: -0.75rem;
       }
       .plus .icon {
         width: 0.875rem;
