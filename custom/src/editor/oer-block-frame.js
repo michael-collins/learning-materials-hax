@@ -29,6 +29,9 @@
  * after its name with a static `frameAction`: { label, icon (an oer: Lucide
  * name), run(node) }, e.g. the rubric block's Edit rubric.
  *
+ * A block as wide as the page (a course site's section) has its frame
+ * inside its edges, label included (frameRect's `inset`).
+ *
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
  * floating drag menu in hax-plate-context.
  * @element oer-block-frame
@@ -153,6 +156,7 @@ class OerBlockFrame extends LitElement {
     const visBottom = Math.min(f.bottom, view.bottom);
     s.setProperty("--grip", `${Math.round((visTop + visBottom) / 2 - f.top)}px`);
     this.toggleAttribute("compact", f.compact);
+    this.toggleAttribute("inset", f.inset);
 
     this._updateGuides();
     if (this._drag) this._dragFrame();
@@ -425,6 +429,10 @@ class OerBlockFrame extends LitElement {
         color: var(--primary-foreground);
         background: var(--primary);
         border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      }
+      :host([inset]) .label {
+        transform: translateX(-100%);
+        border-radius: 0 0 0 var(--radius-sm);
       }
       .label button {
         width: auto;

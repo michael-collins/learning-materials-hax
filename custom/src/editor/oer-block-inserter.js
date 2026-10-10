@@ -138,10 +138,13 @@ class OerBlockInserter extends LitElement {
     }
     if (hover) {
       hover = { ...hover, top: Math.round(hover.top), height: Math.round(hover.height), left: Math.round(hover.left), width: Math.round(hover.width) };
+      // a slot as wide as the page (between a course site's sections) has
+      // its + inside, as there's no gutter beside it
+      hover.inside = hover.left - 12 < view.left;
     }
     const same =
       hover && this._hover && sameSlot(hover, this._hover) &&
-      ["top", "height", "left", "width"].every((k) => hover[k] === this._hover[k]);
+      ["top", "height", "left", "width", "inside"].every((k) => hover[k] === this._hover[k]);
     if (!same && (hover || this._hover)) this._hover = hover;
   }
 
@@ -333,6 +336,9 @@ class OerBlockInserter extends LitElement {
         background: var(--primary);
         color: var(--primary-foreground);
         box-shadow: 0 0 0 2px var(--background);
+      }
+      .slot.inside .plus {
+        left: 0.5rem;
       }
       .plus .icon {
         width: 0.875rem;
@@ -580,7 +586,7 @@ class OerBlockInserter extends LitElement {
     return html`
       ${h
         ? html`<button
-            class="slot ${this._open ? "chosen" : ""}"
+            class="slot ${this._open ? "chosen" : ""} ${h.inside ? "inside" : ""}"
             style="left:${h.left}px;top:${h.top}px;width:${h.width}px;height:${h.height}px"
             tabindex="-1"
             title="Insert block here"

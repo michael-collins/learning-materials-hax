@@ -32,6 +32,7 @@ import { typeListedOn } from "./types/type-homes.js";
 import { isMicrosite } from "./types/course-site.js";
 import { siteStyleVars, loadSiteFonts } from "./types/course-site-style.js";
 import "./blocks/oer-course-site.js";
+import { adoptContentSheet } from "./blocks/course-site/cs-content.js";
 import "./blocks/oer-book-site.js";
 import { BOOK_SITE_TYPE } from "./types/book-site.js";
 import { dddBridge } from "./tokens/ddd-bridge.js";
@@ -443,6 +444,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
   connectedCallback() {
     super.connectedCallback();
+    // what authors write looks the same read and edited (before HAX's editor exists)
+    adoptContentSheet();
     installEditorChrome();
     installLayoutBreakpoints();
     installFootnotes();
@@ -1626,7 +1629,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             scrollbar-color: var(--border) transparent;
           }
           :host([reader]) .main-col,
-          :host([course-site]:not([edit-mode])) .main-col {
+          :host([course-site]) .main-col {
             height: 100vh;
             height: 100dvh;
           }
@@ -1893,9 +1896,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           overflow: visible !important;
           padding: 1rem 1.25rem 1.5rem !important;
         }
-        /* a course site: the microsite alone, full width. <main> scrolls
-           and is the container its section blocks span (100cqw); other
-           blocks keep a readable width */
+        /* a course site: the microsite alone, full width, the same while
+           editing (no gutter: the editor's rail sits over the page). Its
+           sections span it; other blocks keep a readable width
+           (blocks/course-site/cs-content.js) */
         :host([course-site]) .shell {
           display: block;
         }
@@ -1903,32 +1907,24 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([course-site]) .scrim {
           display: none !important;
         }
-        :host([course-site]) main {
-          container-type: inline-size;
-        }
-        :host([course-site]:not([edit-mode])) .main-col {
+        :host([course-site]) .main-col {
           margin: 0 !important;
           border-radius: 0 !important;
           box-shadow: none !important;
         }
-        :host([course-site]:not([edit-mode])) main {
+        :host([course-site]) main {
           padding: 0 !important;
         }
-        :host([course-site]:not([edit-mode])) article {
+        :host([course-site]) article {
           max-width: none;
-        }
-        /* (the section blocks: blocks/course-site/cs-shared.js SECTION_TAGS;
-           images keep their own size, placed by theme/theme.css) */
-        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-books):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing):not(oer-courses-intro):not(oer-courses-catalog):not(img):not(video):not(iframe)) {
-          box-sizing: border-box;
-          width: min(48rem, calc(100% - 3rem));
-          margin-inline: auto;
         }
         .cs-editing {
           display: flex;
           gap: 0.5rem;
           align-items: flex-start;
-          margin: 0 0 1.5rem;
+          box-sizing: border-box;
+          width: min(48rem, 100% - 3rem);
+          margin: 1.5rem auto;
           padding: 0.625rem 0.875rem;
           border-radius: var(--radius-md);
           background: color-mix(in oklab, var(--primary) 8%, var(--background));
@@ -2456,6 +2452,19 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     super.updated?.(changed);
     // editing a page leaves Reader mode (it comes back on the next visit to the book)
     if (changed.has("editMode") && this.editMode && this.reader) this.reader = false;
+    // HAX's editor draws a course site's page at the widths readers see
+    // (blocks/course-site/cs-content.js): a mark on hax-body, never saved,
+    // in place before editing starts
+    const body = globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody;
+    body?.toggleAttribute("data-oer-microsite", !!this._courseSite && this._showsCourseSite);
+    // While editing, the page is drawn in HAX's editor and the theme's own
+    // copy of it (its light DOM) isn't shown, so blocks there can rest. The
+    // mark is on the theme, where only that copy finds it with closest()
+    // (the editor's is in h-a-x's shadow root); the event says it changed.
+    if (changed.has("editMode")) {
+      this.toggleAttribute("reader-copy-idle", !!this.editMode);
+      globalThis.dispatchEvent(new CustomEvent("oer-reader-copy-idle", { detail: { idle: !!this.editMode } }));
+    }
     // site.json's own page orders, for the save (see __beforeSave)
     if (changed.has("editMode") && this.editMode) {
       fetch(new URL(`site.json?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" })

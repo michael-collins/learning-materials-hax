@@ -4,9 +4,9 @@
  * and its data (types/course-site.js siteData), and helpers that read what
  * an author typed inside a section (a list, questions and answers).
  *
- * Sections are full width wherever they sit: the theme makes the course
- * site's scrolling area a container, and each section spans it
- * (100cqw), so ordinary blocks between sections keep a readable width.
+ * Sections are the full width of the page they're on: the theme draws a
+ * course site's page full width, reading and editing, and ordinary blocks
+ * between sections keep a readable width (cs-content.js).
  */
 import { html, css, LitElement, svg } from "../../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
@@ -323,10 +323,8 @@ export const csStyles = css`
   :host {
     display: block;
     box-sizing: border-box;
-    /* the full width of the course site, wherever the block sits */
-    width: 100cqw;
-    max-width: 100cqw;
-    margin-inline: calc(50% - 50cqw);
+    /* the full width of the course site, which the theme draws full width */
+    width: 100%;
     color: var(--foreground);
     font-family: var(--cs-font-body, var(--font-sans, system-ui, sans-serif));
     /* DDD justifies the theme's text */
