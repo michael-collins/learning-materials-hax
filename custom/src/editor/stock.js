@@ -98,18 +98,6 @@ export function pressPlate(eventName) {
   button?.click();
 }
 
-/**
- * The theme's scrolling content area, for clipping overlays below the
- * header; left and right are its content's edges (inside the scrollbar).
- */
-export function contentViewport() {
-  const main = globalThis.document.querySelector("custom-oer-docs-theme")?.shadowRoot?.querySelector("main");
-  const r = main?.getBoundingClientRect();
-  return r
-    ? { top: r.top, bottom: r.bottom, left: r.left + main.clientLeft, right: r.left + main.clientLeft + main.clientWidth }
-    : { top: 0, bottom: globalThis.innerHeight, left: 0, right: globalThis.innerWidth };
-}
-
 export function showPanel(name) {
   const tray = haxStore()?.haxTray;
   if (!tray || !PANELS.includes(name)) return;

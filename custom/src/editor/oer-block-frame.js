@@ -39,7 +39,8 @@
 import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { contentViewport, pressPlate } from "./stock.js";
+import { pressPlate } from "./stock.js";
+import { contentView } from "./editor-state.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
@@ -140,7 +141,7 @@ class OerBlockFrame extends LitElement {
       this._section = !section ? null : section === node ? "self" : "inside";
     }
     const f = frameRect(node);
-    const view = contentViewport();
+    const view = contentView();
     if ((f.bottom < view.top || f.top > view.bottom || f.block.width === 0) && !this._drag) {
       this.hidden = true;
       return;
@@ -288,7 +289,7 @@ class OerBlockFrame extends LitElement {
   // per frame while dragging: auto-scroll near the edges, pick the drop slot
   _dragFrame() {
     const d = this._drag;
-    const view = contentViewport();
+    const view = contentView();
     const main = globalThis.document.querySelector("custom-oer-docs-theme")?.shadowRoot?.querySelector("main");
     if (main) {
       if (d.y < view.top + SCROLL_EDGE) main.scrollTop -= Math.ceil((view.top + SCROLL_EDGE - d.y) / 4);

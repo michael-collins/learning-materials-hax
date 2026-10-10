@@ -7,7 +7,7 @@
  * the blocks inside each layout container (grid-plate columns), including
  * empty columns.
  */
-import { contentViewport } from "./stock.js";
+import { contentView } from "./editor-state.js";
 
 export const RING_OFFSET = 4; // frame sits this far outside the block
 export const FULL_HANDLE_HEIGHT = 60; // shorter frames show only the grip
@@ -24,7 +24,7 @@ const MIN_SLOT = 16;
  */
 export function frameRect(node) {
   const r = node.getBoundingClientRect();
-  const inset = r.left - RING_OFFSET - HANDLE_WIDTH < contentViewport().left;
+  const inset = r.left - RING_OFFSET - HANDLE_WIDTH < contentView().left;
   const ring = inset ? -RING_OFFSET : RING_OFFSET;
   const top = r.top - ring;
   const bottom = r.bottom + ring;

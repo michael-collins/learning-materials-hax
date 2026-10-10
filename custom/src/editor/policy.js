@@ -21,6 +21,9 @@
  *               paste "line": pasted as plain text on one line
  *   source      where a generated section's content comes from:
  *               { label, kind, section }
+ *   attrs       the attributes that hold what the author wrote or chose (a
+ *               section's heading, the hero's image), which removing it
+ *               would lose as much as its text
  *   fullBleed   drawn edge to edge
  *   columns     can be put in columns
  *   textTarget  HAX's text toolbar may make it its target (role="textbox");
@@ -28,10 +31,12 @@
  *   insertable  offered in the block list
  *   label       what authors call it, in the editor's messages ("Tools
  *               moved to 6 of 9"); blocks HAX knows take its name for them
+ *   called      how a sentence names it, when not by its label ("the hero":
+ *               "The hero stays at the top", "Undid: removed the hero")
  *   starter     the HTML a new one starts with (an item's empty fields)
  *
- * policyOfTag(tag) is the same for a tag, and labelOf(el) what authors call
- * it.
+ * policyOfTag(tag) is the same for a tag, labelOf(el) what authors call it,
+ * and phraseOf(el) how a sentence names it.
  *
  * And for the guards: unitOf (the section, item or block a node is in),
  * fieldOf (its text field), boundaryOf (what an edit there must stay
@@ -58,7 +63,7 @@ const DEFAULTS = {
   break: { limit: 1, pin: "first", accepts: [], columns: false, textTarget: false, insertable: false },
   block: { accepts: [], columns: true, insertable: true },
 };
-const BASE = { kind: "block", limit: null, pin: null, pageTypes: null, accepts: [], flow: null, fields: {}, source: null, fullBleed: false, columns: true, textTarget: undefined, insertable: true, label: null, starter: "" };
+const BASE = { kind: "block", limit: null, pin: null, pageTypes: null, accepts: [], flow: null, fields: {}, source: null, attrs: [], fullBleed: false, columns: true, textTarget: undefined, insertable: true, label: null, called: null, starter: "" };
 
 // a section's or item's headings are one line, pasted as plain text
 const HEADINGS = Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { name: "heading", single: true, paste: "line" }]));
@@ -69,8 +74,9 @@ const COURSE = [COURSE_SITE_TYPE];
 const HUB = [COURSE_HUB_TYPE];
 const FROM_COURSE = { label: "From the course page", kind: "course", section: "details" };
 const FROM_PLAN = { label: "From the course plan", kind: "plan", section: "details" };
-// written sections hold what the author types (today: paragraphs and lists)
-const written = (fields, accepts, more = {}) => ({ kind: "section", pageTypes: COURSE, fields, accepts, ...more });
+// written sections hold what the author types (today: paragraphs and lists,
+// and the heading in an attribute)
+const written = (fields, accepts, more = {}) => ({ kind: "section", pageTypes: COURSE, fields, accepts, attrs: ["heading"], ...more });
 // generated ones draw from other pages and hold nothing typed
 const generated = (source, more = {}) => ({ kind: "section", pageTypes: COURSE, accepts: [], source, ...more });
 const ROWS = ["ul", "ol"];
@@ -89,10 +95,10 @@ const TABLE = {
   ...Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { kind: "text" }])),
 
   // the course site, in the order a new one has them
-  "oer-cs-hero": written({ p: { name: "tagline" } }, ["p"], { pin: "first", label: "Hero" }),
+  "oer-cs-hero": written({ p: { name: "tagline" } }, ["p"], { pin: "first", attrs: ["image", "alt"], label: "Hero", called: "the hero" }),
   "oer-cs-facts": generated(FROM_COURSE, { label: "Facts" }),
   "oer-cs-learn": written({ li: { name: "outcome", paste: "line" } }, ROWS, { flow: "cards", label: "What you'll learn" }),
-  "oer-cs-semester": generated(FROM_PLAN, { label: "The semester" }),
+  "oer-cs-semester": generated(FROM_PLAN, { label: "The semester", called: "the semester" }),
   "oer-cs-make": generated(FROM_PLAN, { label: "What you'll make" }),
   "oer-cs-books": generated(FROM_COURSE, { label: "Books" }),
   "oer-cs-people": written({ p: { name: "note" } }, ["p"], { label: "Who teaches it" }),
@@ -100,8 +106,8 @@ const TABLE = {
   "oer-cs-faq": written({ h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } }, ["h2", "h3", "h4", "h5", "h6", "p", ...ROWS], { flow: "stack", label: "Questions" }),
   "oer-cs-closing": generated(FROM_COURSE, { pin: "last", label: "Ready to start" }),
   // OER Courses
-  "oer-courses-intro": written({ p: { name: "intro" } }, ["p"], { pageTypes: HUB, pin: "first", label: "Intro" }),
-  "oer-courses-catalog": generated({ label: "From the course sites", kind: "sites", section: null }, { pageTypes: HUB, pin: "last", label: "Catalog" }),
+  "oer-courses-intro": written({ p: { name: "intro" } }, ["p"], { pageTypes: HUB, pin: "first", label: "Intro", called: "the intro" }),
+  "oer-courses-catalog": generated({ label: "From the course sites", kind: "sites", section: null }, { pageTypes: HUB, pin: "last", label: "Catalog", called: "the catalog" }),
 };
 
 /* ---------- descriptors ---------- */
@@ -150,6 +156,21 @@ export function labelOf(el) {
   const { label } = policyOfTag(tag);
   if (label || !tag) return label || "";
   return hax()?.haxSchemaFromTag?.(tag)?.gizmo?.title || tag;
+}
+
+/**
+ * How the editor's sentences name an element (or a tag): a section by its
+ * name ("Tools", "the hero"), anything else as a word in the sentence
+ * ("paragraph", "outcome"); with a capital to start a sentence (start):
+ * "The hero stays at the top", "Undid: duplicated paragraph".
+ */
+export function phraseOf(el, { start = false } = {}) {
+  const tag = typeof el === "string" ? el : el?.localName;
+  const { kind, called } = policyOfTag(tag);
+  const label = labelOf(tag);
+  // (not a name that starts with an abbreviation: "HTML")
+  const phrase = called || (kind === "section" || !/^[A-Z][a-z]/.test(label) ? label : label[0].toLowerCase() + label.slice(1));
+  return start && phrase ? phrase[0].toUpperCase() + phrase.slice(1) : phrase;
 }
 
 /* ---------- where a node is ---------- */

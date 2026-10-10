@@ -28,7 +28,8 @@
 import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { MOD, contentViewport } from "./stock.js";
+import { MOD } from "./stock.js";
+import { contentView } from "./editor-state.js";
 import { HANDLE_WIDTH, frameRect } from "./slots.js";
 import { insertCitation, pageReferences, linkReferenceToResource } from "./citations.js";
 import { citeDialog } from "./oer-cite-dialog.js";
@@ -283,7 +284,7 @@ class OerBlockRail extends LitElement {
     }
     const rail = this.shadowRoot?.querySelector(".rail");
     const railH = rail?.offsetHeight || 0;
-    const view = contentViewport();
+    const view = contentView();
     const top0 = view.top + 8;
     // level with the selection frame's top (see oer-block-frame), sticking
     // inside the viewport while a tall block scrolls, but never below the

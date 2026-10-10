@@ -4,7 +4,7 @@
  * polite live region (announce.js), which it shares, rather than one of
  * its own. duration 0 means the toast stays until dismissed (HAX uses that
  * for "exit preview"); a toast waits while the pointer is over it or focus
- * is in it.
+ * is in it, and its time starts again once neither is.
  *
  * A toast can offer one action, as a button beside its text:
  *
@@ -35,6 +35,8 @@ class OerToast extends LitElement {
     super();
     this._items = [];
     this.__timers = new Map();
+    // what holds each toast open: "pointer", "focus"
+    this.__holds = new Map();
   }
 
   show({ text = "", duration, closeText = "Close", slot = null, onClose = null, action = null, said = "" }) {
@@ -55,9 +57,16 @@ class OerToast extends LitElement {
     if (item?.duration > 0) this.__timers.set(id, setTimeout(() => this.dismiss(id), Math.max(item.duration, 2000)));
   }
 
-  // while the pointer is over a toast or focus is in it, it stays
-  _hold(id, held) {
-    if (held) clearTimeout(this.__timers.get(id));
+  // while the pointer is over a toast or focus is in it, it stays; its
+  // time starts again when both have left
+  _hold(id, by, held) {
+    // (focus leaves a toast's button as the toast goes)
+    if (!this._items.some((i) => i.id === id)) return;
+    const holds = this.__holds.get(id) ?? new Set();
+    if (held) holds.add(by);
+    else holds.delete(by);
+    this.__holds.set(id, holds);
+    if (holds.size) clearTimeout(this.__timers.get(id));
     else this._wait(id);
   }
 
@@ -70,6 +79,7 @@ class OerToast extends LitElement {
     const item = this._items.find((i) => i.id === id);
     clearTimeout(this.__timers.get(id));
     this.__timers.delete(id);
+    this.__holds.delete(id);
     this._items = this._items.filter((i) => i.id !== id);
     item?.onClose?.();
   }
@@ -185,10 +195,10 @@ class OerToast extends LitElement {
           (t) => html`
             <div
               class="toast"
-              @pointerenter="${() => this._hold(t.id, true)}"
-              @pointerleave="${() => this._hold(t.id, false)}"
-              @focusin="${() => this._hold(t.id, true)}"
-              @focusout="${() => this._hold(t.id, false)}"
+              @pointerenter="${() => this._hold(t.id, "pointer", true)}"
+              @pointerleave="${() => this._hold(t.id, "pointer", false)}"
+              @focusin="${() => this._hold(t.id, "focus", true)}"
+              @focusout="${(e) => !e.currentTarget.contains(e.relatedTarget) && this._hold(t.id, "focus", false)}"
             >
               <div class="text">
                 ${t.text}

@@ -21,7 +21,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { contentViewport } from "./stock.js";
+import { contentView } from "./editor-state.js";
 import { computeSlots, slotAt, sameSlot, insertInSlot } from "./slots.js";
 
 const PANEL_W = 288;
@@ -110,7 +110,7 @@ class OerBlockInserter extends LitElement {
       return;
     }
     const b = body.getBoundingClientRect();
-    const view = contentViewport();
+    const view = contentView();
     const inView = (y) => y > view.top + 4 && y < view.bottom - 4;
     const blocks = this._blocks();
     const rects = blocks.map((el) => el.getBoundingClientRect());

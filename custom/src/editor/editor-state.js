@@ -30,17 +30,22 @@
  *
  * Unsaved changes come from a baseline, not from HAX's undo position (which
  * no event follows): hax-body's HTML without what editing adds
- * (contentKey()), taken once HAX has finished entering edit mode, compared
- * by a debounced MutationObserver. So undoing back to the start reads "no
- * changes". The baseline waits for HAX's import and insert to end, then
- * past the stock editor's own copy (100 ms after entry), not for
- * isContentBusy(), which never clears in 26.8.1 (docs/editor-spikes/lifecycle.md).
+ * (contentKey()), compared by a debounced MutationObserver. So undoing back
+ * to the start reads "no changes". The baseline is HAX's own copy of the
+ * page as editing began (undoStackInitialValue, which the undo stack goes
+ * back to), not the page as it is once HAX has settled: HAX can put the
+ * caret in the first paragraph at once, and anything typed before the
+ * baseline was taken read as no change. It's taken once HAX's import and
+ * insert have ended and past the stock editor's own copy (100 ms after
+ * entry), not on isContentBusy(), which never clears in 26.8.1
+ * (docs/editor-spikes/lifecycle.md).
  *
  * And it keeps HAX on the field being typed in: when the caret goes into
  * another field without a click (the keyboard, or the editor placing it),
  * HAX's active block follows (__focusLogic(field, false)), so its toolbar
  * and our frame work on the right element. A click is left to HAX, and so
- * is the caret the browser moves when HAX replaces the content (Undo).
+ * is the caret Undo puts back (undo.js). A click on a unit's padding
+ * selects the unit as a whole: no caret is left in its fields.
  *
  *   editorState.addEventListener("change", (e) => e.detail.changed.has("unit") && …)
  *   editorState.set({ saving: true })
@@ -62,31 +67,19 @@ const RAIL_WIDTH = 42;
 
 /* ---------- what counts as a change ---------- */
 
-const BLOCK = /^(p|h[1-6]|ul|ol|li|dl|dt|dd|div|blockquote|pre|figure|figcaption|table|thead|tbody|tfoot|tr|td|th|hr|section|details|summary|page-break)$/;
-const isBlock = (n) => n?.nodeType === 1 && (BLOCK.test(n.localName) || n.localName.includes("-"));
-
 /**
  * hax-body's HTML as it counts for unsaved changes: normalizedHtml()
- * (undo.js), without what HAX changes on its own when it imports the page
- * again (Edit HTML): white space between blocks (it puts a line break
- * between nested blocks, docs/editor-spikes/structure.md), and the
- * page-break, which gets a new resource id and writes its properties out
- * as attributes. The page-break holds the page's details, which are
- * changed in Page details and saved there, not typed on the page. White
- * space between words and inline elements stays.
+ * (undo.js, which also leaves out the white space between blocks that HAX
+ * changes when it imports the page again), without the page-break, which
+ * gets a new resource id on an import (Edit HTML) and writes its
+ * properties out as attributes. The page-break holds the page's details,
+ * which are changed in Page details and saved there, not typed on the page.
  */
 export function contentKey(html) {
   const t = globalThis.document.createElement("template");
   t.innerHTML = normalizedHtml(html);
   for (const el of t.content.querySelectorAll("page-break")) el.remove();
-  const walk = globalThis.document.createTreeWalker(t.content, NodeFilter.SHOW_TEXT);
-  const blank = [];
-  for (let n = walk.nextNode(); n; n = walk.nextNode()) {
-    if (/\S/.test(n.data)) continue;
-    if (n.parentNode === t.content || isBlock(n.previousSibling) || isBlock(n.nextSibling) || (!n.previousSibling && !n.nextSibling && isBlock(n.parentNode))) blank.push(n);
-  }
-  for (const n of blank) n.remove();
-  return t.innerHTML;
+  return t.innerHTML.trim();
 }
 
 /* ---------- where things are on screen ---------- */
@@ -100,7 +93,8 @@ const round = (r) => (r ? { top: Math.round(r.top), right: Math.round(r.right), 
  * The content viewport, for both scrollers: on desktop <main> scrolls
  * under the bar, so it's main's box inside its scrollbar; on phones the
  * window scrolls, so it's the window below the sticky bar. Viewport
- * pixels, and which scrolls: { top, right, bottom, left, scroller }.
+ * pixels, and which scrolls: { top, right, bottom, left, scroller }. What
+ * the selection frame, the rail and the inserter clip to as well.
  */
 export function contentView() {
   const root = theme()?.shadowRoot;
@@ -256,9 +250,11 @@ class EditorState extends EventTarget {
   /* ---------- unsaved changes ---------- */
 
   /**
-   * Take the baseline once HAX has finished entering edit mode: its
-   * import, its undo reset (a setTimeout(0)) and the stock editor's own
-   * copy (100 ms after entry).
+   * Take the baseline once HAX has finished entering edit mode (its
+   * import, its undo reset in a setTimeout(0), and the stock editor's own
+   * copy 100 ms after entry): HAX's copy of the page as editing began,
+   * which its undo reset took and the undo stack goes back to. What's been
+   * typed by then is a change.
    */
   async _takeBaseline(body) {
     const entry = ++this.__entry;
@@ -268,7 +264,7 @@ class EditorState extends EventTarget {
     await sleep(150);
     await frames();
     if (entry !== this.__entry || !body.editMode) return;
-    this.resetBaseline(body);
+    this._baseline(body, body.undoStackInitialValue || body.innerHTML);
     this.__observer?.disconnect();
     this.__observer = new MutationObserver(() => {
       clearTimeout(this.__measuring);
@@ -279,10 +275,13 @@ class EditorState extends EventTarget {
 
   /** The page as it is now is what "no changes" means (after a save). */
   resetBaseline(body = activeBody()) {
-    if (!body) return;
-    this.__baseline = contentKey(body.innerHTML);
+    if (body) this._baseline(body, body.innerHTML);
+  }
+
+  _baseline(body, html) {
+    this.__baseline = contentKey(html);
     this.tracking = true;
-    this.set({ dirty: false });
+    this.set({ dirty: contentKey(body.innerHTML) !== this.__baseline });
   }
 
   _measure() {
@@ -342,6 +341,22 @@ class EditorState extends EventTarget {
     if (!field || active === field || (active?.contains(field) && hax.isTextElement?.(active))) return;
     body.__focusLogic(field, false);
   }
+
+  // after a click: when it made a section or item HAX's active block (a
+  // click on its padding), the browser has still put the caret in one of
+  // its fields, where the next key would go. Selected means no caret (spec
+  // §4.1)
+  _clicked() {
+    const body = activeBody();
+    if (!body?.editMode || deepActive() !== body) return;
+    const unit = haxStore().activeNode;
+    const { kind } = policyOf(unit);
+    if ((kind !== "section" && kind !== "item") || !body.contains(unit)) return;
+    const sel = selectionOf(body);
+    const field = sel?.rangeCount && sel.isCollapsed ? caretField(body) : null;
+    if (field && unit.contains(field)) sel.removeAllRanges();
+    this._caretSeen();
+  }
 }
 
 /** The editor's state: one for the page. */
@@ -372,5 +387,7 @@ export function installEditorState() {
       true,
     );
   }
+  // (after HAX's own click handling)
+  globalThis.addEventListener("click", () => editorState.editing && setTimeout(() => editorState._clicked()), true);
   if (activeBody()?.editMode) editorState._editMode(true);
 }

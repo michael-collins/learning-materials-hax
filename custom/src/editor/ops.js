@@ -48,12 +48,18 @@
  * "Only one per page"), for menus to show beside an item they switch off;
  * doing it anyway says the same in the live region.
  *
+ * A removal's toast offers Undo for as long as editing lasts; its Undo goes
+ * back to where the author was before the removal (undo.js placeOf), or
+ * else to what it put back. And Enter on a unit selected as a whole (focus
+ * in the content, no caret) puts the caret in its first field, rather than
+ * HAX adding an empty paragraph above it.
+ *
  *   installOps()   // from installEditorChrome (editor/index.js)
  *   await move(tools, -1)
  *   await addItem(outcome)
  */
-import { checkpoint, undo } from "./undo.js";
-import { policyOf, policyOfTag, labelOf, unitOf, TEXT_FIELDS } from "./policy.js";
+import { checkpoint, undo, placeOf } from "./undo.js";
+import { policyOf, policyOfTag, labelOf, phraseOf, unitOf, TEXT_FIELDS } from "./policy.js";
 import { editorState, contentView } from "./editor-state.js";
 import { announce } from "./announce.js";
 import { toaster } from "./oer-toast.js";
@@ -74,6 +80,18 @@ const activeBody = () => haxStore()?.activeHaxBody ?? null;
 const frame = () => new Promise((r) => requestAnimationFrame(r));
 const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
 const hasText = (el) => !!el.textContent.trim() || el.matches(MEDIA) || !!el.querySelector(MEDIA);
+// what's written in a unit: text and pictures in it, or its attributes that
+// hold what the author wrote or chose (policy attrs: its heading, an image)
+const hasContent = (unit) => [...unit.children].some(hasText) || policyOf(unit).attrs.some((a) => !!unit.getAttribute(a)?.trim());
+// a sentence that starts with a unit's name: "The hero stays at the top"
+const START = { start: true };
+
+// focus as the person sees it, inside shadow roots
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
 
 /**
  * Resolves once HAX has finished inserting (or importing) and two frames
@@ -214,7 +232,7 @@ function nextColumn(unit, dir) {
 function planMove(unit, dir) {
   if (!unit) return { reason: "Nothing selected" };
   const { pin } = policyOf(unit);
-  if (pin) return { reason: `${labelOf(unit)} stays at the ${PIN_PLACE[pin]}` };
+  if (pin) return { reason: `${phraseOf(unit, START)} stays at the ${PIN_PLACE[pin]}` };
   const peers = peersOf(unit);
   const partner = peers[peers.indexOf(unit) + dir];
   if (!partner) {
@@ -222,7 +240,7 @@ function planMove(unit, dir) {
     return column ? { column } : { reason: dir < 0 ? "Already first" : "Already last" };
   }
   const theirs = policyOf(partner).pin;
-  if (theirs) return { reason: `${labelOf(partner)} stays at the ${PIN_PLACE[theirs]}` };
+  if (theirs) return { reason: `${phraseOf(partner, START)} stays at the ${PIN_PLACE[theirs]}` };
   return { partner };
 }
 
@@ -248,8 +266,7 @@ export function move(el, dir) {
   const plan = planMove(unit, dir);
   if (plan.reason) return refuse(plan.reason);
   if (plan.column) return moveToColumn(unit, dir);
-  const label = labelOf(unit);
-  return change(`moved ${label} ${direction(unit, dir)}`, async (body) => {
+  return change(`moved ${phraseOf(unit)} ${direction(unit, dir)}`, async (body) => {
     const { partner, reason } = planMove(unit, dir);
     if (!partner) return refuse(reason || "Can't move it there");
     await keepCaret(body, () => {
@@ -261,7 +278,7 @@ export function move(el, dir) {
     body.___moveLock = false;
     reveal(unit);
     const peers = peersOf(unit);
-    announce(`${label} moved to ${peers.indexOf(unit) + 1} of ${peers.length}`);
+    announce(`${phraseOf(unit, START)} moved to ${peers.indexOf(unit) + 1} of ${peers.length}`);
     return true;
   });
 }
@@ -270,11 +287,11 @@ export function move(el, dir) {
 export function moveToColumn(el, dir) {
   const unit = unitOf(el);
   dir = dir < 0 ? -1 : 1;
-  const to = unit ? nextColumn(unit, dir) : 0;
-  if (!to) return refuse(dir < 0 ? "Already in the first column" : "Already in the last column");
-  const label = labelOf(unit);
+  const why = whyNot("move-to-column", unit, { dir });
+  if (why) return refuse(why);
+  const to = nextColumn(unit, dir);
   const grid = unit.parentElement;
-  return change(`moved ${label} to column ${to}`, async (body) => {
+  return change(`moved ${phraseOf(unit)} to column ${to}`, async (body) => {
     const slot = `col-${to}`;
     const there = [...grid.children].filter((c) => c !== unit && (c.getAttribute("slot") || "col-1") === slot);
     await keepCaret(body, () => {
@@ -287,7 +304,7 @@ export function moveToColumn(el, dir) {
     await settled(body);
     body.___moveLock = false;
     reveal(unit);
-    announce(`${label} moved to column ${to} of ${columnCount(grid)}`);
+    announce(`${phraseOf(unit, START)} moved to column ${to} of ${columnCount(grid)}`);
     return true;
   });
 }
@@ -309,13 +326,13 @@ const firstField = (el) => (el.matches(TEXT_FIELDS) ? el : el.querySelector(TEXT
  * unless focus is false. Resolves to the new item.
  */
 export function addItem(el, { above = false, focus = true } = {}) {
+  const why = whyNot("add-item", el);
+  if (why) return refuse(why);
   const at = unitOf(el);
   const isItem = policyOf(at).kind === "item";
   const section = isItem ? at.parentElement : at;
-  const tag = section ? itemTagOf(section) : "";
-  if (!tag) return refuse(`${at ? labelOf(at) : "This"} has no items to add`);
-  const label = labelOf(tag);
-  return change(`added ${label.toLowerCase()}`, async (body) => {
+  const tag = itemTagOf(section);
+  return change(`added ${phraseOf(tag)}`, async (body) => {
     // next to the item, or first in the section: before its first item, or
     // after its heading
     let anchor = isItem ? at : [...section.children].find((c) => policyOf(c).kind === "item");
@@ -340,7 +357,7 @@ export function addItem(el, { above = false, focus = true } = {}) {
     else if (focus) select(item);
     reveal(item);
     const peers = peersOf(item);
-    announce(`${label} added, ${peers.indexOf(item) + 1} of ${peers.length}`);
+    announce(`${phraseOf(tag, START)} added, ${peers.indexOf(item) + 1} of ${peers.length}`);
     return item;
   });
 }
@@ -352,8 +369,7 @@ export function addItem(el, { above = false, focus = true } = {}) {
  */
 export function insertBlock(slot, tag, { content = "", properties = {} } = {}) {
   if (!slot?.container || !tag) return refuse("Nowhere to add it");
-  const label = labelOf(tag);
-  return change(`added ${label.toLowerCase()}`, async (body) => {
+  return change(`added ${phraseOf(tag)}`, async (body) => {
     const added = await insertInSlot(haxStore(), slot, { tag, content, properties });
     if (!added) return null;
     await settled(body);
@@ -361,7 +377,7 @@ export function insertBlock(slot, tag, { content = "", properties = {} } = {}) {
     if (field) await caretInto(field);
     else select(added);
     added.scrollIntoView({ block: "center" });
-    announce(`${label} added`);
+    announce(`${phraseOf(tag, START)} added`);
     return added;
   });
 }
@@ -381,8 +397,7 @@ export function duplicate(el) {
   const unit = unitOf(el);
   const why = whyNotDuplicate(unit);
   if (why) return refuse(why);
-  const label = labelOf(unit);
-  return change(`duplicated ${label}`, async (body) => {
+  return change(`duplicated ${phraseOf(unit)}`, async (body) => {
     await body.haxDuplicateNode(unit);
     // HAX puts the copy right after it
     const copy = unit.nextElementSibling;
@@ -390,7 +405,8 @@ export function duplicate(el) {
     if (!copy) return null;
     select(copy);
     const peers = peersOf(copy);
-    announce(policyOf(unit).kind === "item" ? `${label} duplicated, ${peers.indexOf(copy) + 1} of ${peers.length}` : `${label} duplicated`);
+    const said = `${phraseOf(unit, START)} duplicated`;
+    announce(policyOf(unit).kind === "item" ? `${said}, ${peers.indexOf(copy) + 1} of ${peers.length}` : said);
     return copy;
   });
 }
@@ -398,16 +414,20 @@ export function duplicate(el) {
 /* ---------- removing ---------- */
 
 // what's typed in a section, for the question before removing it: its
-// items with text ("3 outcomes"), or else its fields with text ("1 note")
+// items with text ("its 3 outcomes"), or else its fields with text ("its
+// note"), or else "what's in it" (its heading, the hero's image)
 function typedIn(section) {
   const items = [...section.children].filter((c) => policyOf(c).kind === "item" && hasText(c));
-  if (items.length) return { count: items.length, noun: labelOf(items[0]).toLowerCase() };
+  let count = items.length;
+  let noun = count ? phraseOf(items[0]) : "";
   for (const [tag, field] of Object.entries(policyOf(section).fields)) {
+    if (count) break;
     if (!field?.name || field.name === "heading") continue;
-    const typed = [...section.querySelectorAll(tag)].filter(hasText);
-    if (typed.length) return { count: typed.length, noun: field.name };
+    count = [...section.querySelectorAll(tag)].filter(hasText).length;
+    noun = field.name;
   }
-  return { count: 0, noun: "" };
+  if (!count) return "what's in it";
+  return count === 1 ? `its ${noun}` : `its ${count} ${noun}s`;
 }
 
 // what's selected once a unit has gone: the one before it, or after it, or
@@ -419,40 +439,57 @@ function afterRemoving(unit) {
   return around[i - 1] || around[i + 1] || (kind === "item" ? unit.parentElement : null);
 }
 
-// a toast to take a removal back, while it's still the last thing done
-function offerUndo(body, text) {
+// the toasts offering to undo a removal: put away when editing ends
+const undoToasts = new Set();
+
+// a toast to take a removal back, while it's still the last thing done;
+// its Undo goes back to place (where the author was before the removal),
+// or else to what it put back
+function offerUndo(body, text, place) {
   const stack = body.undoStack;
   const step = stack?.commands[stack.undoStackPosition];
-  toaster().show({
+  const id = toaster().show({
     text,
     said: `${text}. Undo with ${UNDO_KEYS}`,
+    onClose: () => undoToasts.delete(id),
     action: {
       label: "Undo",
-      run: () => {
+      run: async () => {
+        if (!body.editMode) return;
         checkpoint(body);
-        if (body.editMode && step && stack.commands[stack.undoStackPosition] === step) undo();
-        else announce("Something else has changed since; use Undo in the bar");
+        if (!step || stack.commands[stack.undoStackPosition] !== step) {
+          announce(`Something else has changed since. Undo with ${UNDO_KEYS}, one step at a time`);
+          return;
+        }
+        await undo({ place });
+        // a unit selected as a whole, and focus not back in the content (HAX
+        // takes editing off the content while a generated section is
+        // selected): whoever draws the selection takes it
+        const active = haxStore().activeNode;
+        if (deepActive() !== body && active && unitOf(active) === active) editorState.requestFocus(active);
       },
     },
   });
+  undoToasts.add(id);
 }
 
 /**
- * Remove a unit. A written section with something typed in it asks first
- * (Keep it, Hide it instead, Remove section), unless ask is false; anything
- * else goes at once, with a toast to undo it. Resolves to whether it went
- * (or, for Hide it instead, was hidden).
+ * Remove a unit. A written section with something in it (text, or what its
+ * attributes hold: a heading, an image) asks first (Keep it, Hide it
+ * instead, Remove section), unless ask is false; anything else goes at
+ * once, with a toast to undo it. Resolves to whether it went (or, for Hide
+ * it instead, was hidden).
  */
 export async function remove(el, { ask = true } = {}) {
   const unit = unitOf(el);
-  if (!unit) return refuse("Nothing selected");
+  const why = whyNot("remove", unit);
+  if (why) return refuse(why);
   const policy = policyOf(unit);
-  if (policy.kind === "break") return refuse("Not for the page's details");
-  const label = labelOf(unit);
-  if (ask && policy.kind === "section" && !policy.source && [...unit.children].some(hasText)) {
-    const { count, noun } = typedIn(unit);
+  // where the author is, for the toast's Undo to go back to
+  const place = placeOf(activeBody());
+  if (ask && policy.kind === "section" && !policy.source && hasContent(unit)) {
     const choice = await confirmDialog().ask({
-      title: count ? `Remove “${label}” and its ${count} ${count === 1 ? noun : `${noun}s`}?` : `Remove “${label}” and what's written in it?`,
+      title: `Remove “${labelOf(unit)}” and ${typedIn(unit)}?`,
       text: "Readers won't see it either way, but hiding it keeps what's written for later.",
       actions: [
         { id: "keep", label: "Keep it" },
@@ -463,7 +500,7 @@ export async function remove(el, { ask = true } = {}) {
     if (choice === "hide") return hide(unit);
     if (choice !== "remove") return false;
   }
-  const done = await change(`removed ${label}`, async (body) => {
+  const done = await change(`removed ${phraseOf(unit)}`, async (body) => {
     if (!unit.isConnected) return false;
     const next = afterRemoving(unit);
     body.haxDeleteNode(unit);
@@ -471,7 +508,7 @@ export async function remove(el, { ask = true } = {}) {
     if (next?.isConnected) select(next);
     return true;
   });
-  if (done) offerUndo(activeBody(), `${label} removed`);
+  if (done) offerUndo(activeBody(), `${phraseOf(unit, START)} removed`, place);
   return done;
 }
 
@@ -480,28 +517,28 @@ export async function remove(el, { ask = true } = {}) {
 /**
  * Set an attribute (reflected by the block as a property), as one undo
  * step: null, undefined or false removes it, true sets it empty. step names
- * the undo step ("changed Hero"), and said is announced ("Hero changed").
+ * the undo step ("changed the hero"), and said is announced ("The hero
+ * changed").
  */
 export function setAttr(el, name, value, { step = "", said = "" } = {}) {
   if (!el || !name) return refuse("Nothing to change");
-  const label = labelOf(unitOf(el) || el);
-  return change(step || `changed ${label}`, () => {
+  const unit = unitOf(el) || el;
+  return change(step || `changed ${phraseOf(unit)}`, () => {
     if (!el.isConnected) return false;
     if (value === null || value === undefined || value === false) el.removeAttribute(name);
     else el.setAttribute(name, value === true ? "" : String(value));
-    announce(said || `${label} changed`);
+    announce(said || `${phraseOf(unit, START)} changed`);
     return true;
   });
 }
 
 function setHidden(el, hidden) {
+  const why = whyNot(hidden ? "hide" : "show", el);
+  if (why) return refuse(why);
   const unit = unitOf(el);
-  if (policyOf(unit).kind !== "section") return refuse("Only sections can be hidden");
-  if (unit.hasAttribute(HIDDEN) === hidden) return Promise.resolve(false);
-  const label = labelOf(unit);
   return setAttr(unit, HIDDEN, hidden, {
-    step: hidden ? `hid ${label} from readers` : `showed ${label} to readers`,
-    said: hidden ? `${label} hidden from readers. Undo with ${UNDO_KEYS}` : `${label} shown to readers`,
+    step: hidden ? `hid ${phraseOf(unit)} from readers` : `showed ${phraseOf(unit)} to readers`,
+    said: hidden ? `${phraseOf(unit, START)} hidden from readers. Undo with ${UNDO_KEYS}` : `${phraseOf(unit, START)} shown to readers`,
   });
 }
 
@@ -563,6 +600,25 @@ function onRequest(e) {
   run(from && unitOf(from), d, from);
 }
 
+/* ---------- Enter on a unit selected as a whole ---------- */
+
+// Enter with focus in the content and no caret (a unit selected as a
+// whole) edits the unit: the caret goes into its first field (spec §7.1).
+// HAX would add an empty paragraph above it. (Until the selection frame's
+// name tag holds focus in the Selected state, editor-redesign WP-09.) The
+// state is the editor's as the key arrives: Chrome has by then put a caret
+// at the start of the content.
+function enterSelected(e) {
+  if (e.key !== "Enter" || e.defaultPrevented || e.isComposing || e.shiftKey || e.altKey || e.ctrlKey || e.metaKey) return;
+  const body = activeBody();
+  const { mode, unit } = editorState;
+  if (!body?.editMode || mode !== "selected" || deepActive() !== body || !unit?.isConnected || !body.contains(unit)) return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  const field = firstField(unit);
+  if (field) caretInto(field);
+}
+
 /** All of the above, for the editor checks and the console (globalThis.OerEditor.ops). */
 export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, duplicate, remove, setAttr, hide, show, whyNot };
 
@@ -571,4 +627,10 @@ export function installOps() {
   if (installed) return;
   installed = true;
   globalThis.addEventListener("oer-edit-request", onRequest);
+  // capture, on the window: before HAX's own keydown (also on the window)
+  globalThis.addEventListener("keydown", enterSelected, true);
+  // nothing is left to undo once editing ends
+  globalThis.addEventListener("haxcms-edit-mode-changed", (e) => {
+    if (!e.detail) for (const id of [...undoToasts]) toaster().dismiss(id);
+  });
 }

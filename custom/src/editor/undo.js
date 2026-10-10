@@ -7,13 +7,15 @@
  *   contenteditable, role, element-visible as blocks scroll in and out), so
  *   five clicks were five steps of nothing. Blocks change their own markup
  *   too, as they start and as Undo puts them back (grid-plate adds ready, a
- *   question takes its answer inputs out), which made entering edit mode
- *   a step and cost the Redo; normalizedHtml() leaves out what HAX never
- *   saves of them. A snapshot whose normalizedHtml() is that of the state
- *   the undo position stands for (the last step, or what Undo or Redo put
- *   back) is skipped, which also keeps Redo after a click (and after the
- *   blocks Undo put back redraw). Snapshots stay raw, so undoing still
- *   restores which block was active. hax-body/hax-body.js undoManagerStackLogic
+ *   question takes its answer inputs out, editable-table rewrites the white
+ *   space between its rows), which made entering edit mode a step and cost
+ *   the Redo; normalizedHtml() leaves out what HAX never saves of them, and
+ *   white space between blocks. A snapshot whose normalizedHtml() is that
+ *   of the state the undo position stands for (the last step, or what Undo
+ *   or Redo put back) is skipped, which also keeps Redo after a click (and
+ *   after the blocks Undo put back redraw), and a step that is recorded
+ *   starts from that state. Snapshots stay raw, so undoing still restores
+ *   which block was active. hax-body/hax-body.js undoManagerStackLogic
  *   5444; undo-manager/undo-manager.js undoManagerStackLogic, Undo, and
  *   UndoManagerCommand.undo (which puts back the step before's newValue).
  * - Mod+Z, Mod+Shift+Z and Ctrl+Y (and Ctrl+Z, HAX's own, on a Mac too) run
@@ -27,6 +29,14 @@
  *   they're written back before each snapshot (keepAnswers).
  * - Typing HAX hasn't recorded yet (it waits 300 ms) is recorded first, so
  *   Undo straight after typing takes back the typing, not the step before.
+ * - Undo and Redo put the caret back where it was (spec §6.2 #4, §7.2):
+ *   HAX puts back a copy of the whole content and then puts the caret at
+ *   the start of the block that was active, so the next key went in at the
+ *   start of the paragraph. placeOf() notes the field and the caret's place
+ *   in its text, and returnTo() finds them again in the copy; where Undo
+ *   changed that field's text, the caret goes to the end of the change.
+ *   When the place is gone (Undo took back the item it was in), the block
+ *   HAX made active again takes it.
  * - checkpoint(body, label) records the content as one step now, named for
  *   announcing ("moved Tools up"); ops.js puts one before and one after
  *   each change it makes. undo() and redo() send `oer-undo` from hax-body
@@ -34,13 +44,25 @@
  *
  *   installUndo()          // from installEditorChrome (editor/index.js)
  *   undo(); redo()         // the editing bar's buttons
+ *   undo({ place })        // and go back to a place placeOf() took
  *   checkpoint(body, "moved Tools up")
  */
 import { isMac } from "./stock.js";
 import { onDefined, pinned } from "./hax-fixes.js";
+import { fieldOf } from "./policy.js";
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const frame = () => new Promise((r) => requestAnimationFrame(r));
+const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
+
+// focus as the person sees it, inside shadow roots
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
 
 // the attributes HAX never saves for a tag (its haxProperties'
 // saveOptions.unsetAttributes): state a block keeps in its own markup, as
@@ -54,13 +76,23 @@ const unsaved = (tag) => haxStore()?.elementList?.[tag]?.saveOptions?.unsetAttri
 // haxpreProcessNodeToContent 746
 const answersInLightDom = (tag) => typeof globalThis.customElements.get(tag)?.prototype?.loadLightDomData === "function";
 
+// blocks, between which white space is only layout
+const BLOCK = /^(p|h[1-6]|ul|ol|li|dl|dt|dd|div|blockquote|pre|figure|figcaption|table|thead|tbody|tfoot|tr|td|th|hr|section|details|summary|page-break)$/;
+const isBlock = (n) => n?.nodeType === 1 && (BLOCK.test(n.localName) || n.localName.includes("-"));
+// white space HTML ignores (not a typed non-breaking space)
+const BLANK = /^[ \t\n\r\f]*$/;
+
 /**
  * HTML without what HAX changes while editing: data-hax-* attributes,
  * contenteditable, draggable, element-visible, role="textbox", hax-*
- * classes and the end cap a drag adds; and without what blocks change in
- * their own markup that HAX never saves: attributes their haxProperties
- * leave unsaved, and a question's answer inputs. What "changed" means for
- * undo and unsaved changes.
+ * classes and the end cap a drag adds; without what blocks change in their
+ * own markup that HAX never saves: attributes their haxProperties leave
+ * unsaved, and a question's answer inputs; and without white space between
+ * blocks, which HAX changes when it imports a page again (Edit HTML puts a
+ * line break between nested blocks, docs/editor-spikes/structure.md) and
+ * editable-table rewrites as it starts. White space between words and
+ * inline elements, and in pre, stays. What "changed" means for undo and
+ * unsaved changes.
  */
 export function normalizedHtml(html) {
   const t = globalThis.document.createElement("template");
@@ -82,6 +114,13 @@ export function normalizedHtml(html) {
       else el.removeAttribute("class");
     }
   }
+  const walk = globalThis.document.createTreeWalker(t.content, NodeFilter.SHOW_TEXT);
+  const blank = [];
+  for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+    if (!BLANK.test(n.data) || n.parentElement?.closest("pre")) continue;
+    if (n.parentNode === t.content || isBlock(n.previousSibling) || isBlock(n.nextSibling) || (!n.previousSibling && !n.nextSibling && isBlock(n.parentNode))) blank.push(n);
+  }
+  for (const n of blank) n.remove();
   return t.innerHTML.trim();
 }
 
@@ -104,12 +143,18 @@ function keepAnswers(body) {
 // the last state compared, per body: { raw, blocks, normalized }
 const recordedCache = new WeakMap();
 
-// the content the undo position stands for: the last step recorded, or
-// what Undo or Redo put back (the step before's, or HAX's starting copy)
-function recorded(body) {
+// the content the undo position stands for, as HAX keeps it: the last step
+// recorded, or what Undo or Redo put back (the step before's, or HAX's
+// starting copy)
+function recordedRaw(body) {
   const stack = body.undoStack;
   const step = stack?.commands?.[stack.undoStackPosition];
-  const raw = step ? step.newValue : stack?.undoStackPosition === -1 ? body.undoStackInitialValue : body.undoStackPrevValue;
+  return step ? step.newValue : stack?.undoStackPosition === -1 ? body.undoStackInitialValue : body.undoStackPrevValue;
+}
+
+// the same, normalized
+function recorded(body) {
+  const raw = recordedRaw(body);
   // (normalizing depends on the blocks HAX knows, which can grow)
   const blocks = Object.keys(haxStore()?.elementList ?? {}).length;
   let cached = recordedCache.get(body);
@@ -150,22 +195,161 @@ export function stepLabel(body = activeBody(), { redo: again = false } = {}) {
   return (step && labels.get(step)) || "";
 }
 
-function step(again) {
+/* ---------- where the caret goes back to ---------- */
+
+// an element's way down from hax-body: at each level its tag and its place
+// among the siblings with that tag, so a section found by it is found
+// after moving past others (there's one of each section)
+function pathTo(body, el) {
+  const path = [];
+  for (; el && el !== body; el = el.parentElement) {
+    path.unshift([el.localName, [...el.parentElement.children].filter((c) => c.localName === el.localName).indexOf(el)]);
+  }
+  return path;
+}
+
+function follow(body, path) {
+  let el = body;
+  for (const [tag, i] of path) {
+    el = [...el.children].filter((c) => c.localName === tag)[i];
+    if (!el) return null;
+  }
+  return el;
+}
+
+/**
+ * Where the author is in the content, to go back to once Undo or Redo has
+ * put back a copy of it (new elements throughout): the field the caret is
+ * in, its text and the caret's place in that text; or, with no caret, the
+ * block selected as a whole (HAX's active block). Null when there's
+ * neither.
+ */
+export function placeOf(body = activeBody()) {
+  if (!body?.editMode) return null;
+  const sel = selectionOf(body);
+  const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+  const field = range && body.contains(range.startContainer) ? fieldOf(range.startContainer) : null;
+  if (field) {
+    const before = globalThis.document.createRange();
+    before.selectNodeContents(field);
+    before.setEnd(range.startContainer, range.startOffset);
+    return { path: pathTo(body, field), text: field.textContent, offset: before.toString().length };
+  }
+  const active = haxStore()?.activeNode;
+  return active && active !== body && body.contains(active) ? { path: pathTo(body, active), text: null, offset: 0 } : null;
+}
+
+// the place's element in the content as it is now: at the same path, or,
+// when that holds other text, the one element of its tag that holds the
+// place's text (it moved among its own kind)
+function findPlace(body, place) {
+  const at = follow(body, place.path);
+  if (place.text === null || at?.textContent === place.text) return at;
+  const same = [...body.querySelectorAll(place.path.at(-1)[0])].filter((el) => el.textContent === place.text);
+  return same.length === 1 ? same[0] : at;
+}
+
+// where the caret goes in a field whose text changed from before to after:
+// the end of what changed (typing taken back: where it began)
+function changedAt(before, after) {
+  let start = 0;
+  while (start < before.length && start < after.length && before[start] === after[start]) start++;
+  let end = 0;
+  while (end < before.length - start && end < after.length - start && before[before.length - 1 - end] === after[after.length - 1 - end]) end++;
+  return after.length - end;
+}
+
+// a caret at a character offset in an element's text (its end, past it)
+function caretAt(el, offset) {
+  const range = globalThis.document.createRange();
+  const walk = globalThis.document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  let last = null;
+  for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+    if (offset <= n.data.length) {
+      range.setStart(n, offset);
+      return range;
+    }
+    offset -= n.data.length;
+    last = n;
+  }
+  if (last) range.setStart(last, last.data.length);
+  else range.setStart(el, 0);
+  return range;
+}
+
+// focus in the content, and the caret at range (or none: a block selected
+// as a whole), with HAX's active block on node
+function putCaret(body, range, node) {
+  if (deepActive() !== body) body.focus({ preventScroll: true });
+  const sel = selectionOf(body);
+  sel.removeAllRanges();
+  if (range) {
+    range.collapse(true);
+    sel.addRange(range);
+    body.__focusLogic(node, false);
+  } else if (haxStore().activeNode !== node) haxStore().activeNode = node;
+}
+
+/**
+ * Go back to a place placeOf() took, in the content as it is now: the caret
+ * where it was in its field (at the end of what changed, if its text did),
+ * or the block selected again with no caret. Focus goes back into the
+ * content. False when the place is gone.
+ */
+export function returnTo(body, place) {
+  const el = place && body?.editMode ? findPlace(body, place) : null;
+  if (!el) return false;
+  if (place.text === null) {
+    putCaret(body, null, el);
+    return true;
+  }
+  const text = el.textContent;
+  putCaret(body, caretAt(el, text === place.text ? place.offset : changedAt(place.text, text)), el);
+  return true;
+}
+
+// the place is gone (Undo took back what held it): the block HAX made
+// active again from the copy, with the caret at the end of its text, or
+// selected as a whole
+function returnToActive(body) {
+  const hax = haxStore();
+  const active = hax.activeNode;
+  if (!active || !body.contains(active)) return;
+  putCaret(body, hax.isTextElement?.(active) ? caretAt(active, active.textContent.length) : null, active);
+}
+
+async function step(again, { place } = {}) {
   const body = activeBody();
-  if (!body?.undoStack || !body.editMode) return;
+  if (!body?.undoStack || !body.editMode) return false;
   checkpoint(body);
+  // where to go back to: the place given (a toast's Undo, where focus was on
+  // the toast), or where the author is when focus is in the content; from
+  // the editor's own buttons, focus stays on the button
+  const inContent = deepActive() === body;
+  place ??= inContent ? placeOf(body) : null;
   const label = stepLabel(body, { redo: again });
   const stack = body.undoStack;
   const possible = again ? stack.canRedo() : stack.canUndo();
   if (again) body.redo();
   else body.undo();
-  if (possible) body.dispatchEvent(new CustomEvent("oer-undo", { bubbles: true, composed: true, detail: { redo: again, label } }));
+  if (!possible) return false;
+  body.dispatchEvent(new CustomEvent("oer-undo", { bubbles: true, composed: true, detail: { redo: again, label } }));
+  // HAX makes the copy's active block active again a task later, and puts
+  // the caret at its start a task after that (hax-body.js undo 4237,
+  // __focusLogic 4064)
+  await sleep(0);
+  await sleep(0);
+  await frame();
+  if (!body.editMode) return true;
+  const lost = !deepActive() || deepActive() === globalThis.document.body;
+  if (!returnTo(body, place) && (place || inContent || lost)) returnToActive(body);
+  return true;
 }
 
-/** HAX's Undo, after recording any typing not yet in a step. */
-export const undo = () => step(false);
+/** HAX's Undo, after recording any typing not yet in a step; then back to place (placeOf()), or where the caret was. */
+export const undo = (options) => step(false, options);
 /** HAX's Redo. */
-export const redo = () => step(true);
+export const redo = (options) => step(true, options);
 
 /* ---------- keys ---------- */
 
@@ -220,8 +404,17 @@ export function installUndo() {
         function (mutations) {
           if (!this.editMode || this.__dragMoving || !this.undoStack) return original.call(this, mutations);
           keepAnswers(this);
-          if (unrecorded(this)) return original.call(this, mutations);
-          // only editing attributes changed: the next step starts from here,
+          if (unrecorded(this)) {
+            // a step starts from what the undo position stands for. HAX
+            // starts it from the content it last snapshotted, which Undo
+            // doesn't update, and records nothing when the content is that
+            // again: a section removed, put back with Undo and removed again
+            // made no step, and Undo then took back the step before
+            this.undoStackPrevValue = recordedRaw(this);
+            return original.call(this, mutations);
+          }
+          // only what editing changes changed (attributes, white space
+          // between blocks): the next step starts from here,
           // and until there is one, so does the way back (HAX's starting
           // copy is taken after it imports the page, which takes the
           // questions' answers out again, and before anything puts them back:

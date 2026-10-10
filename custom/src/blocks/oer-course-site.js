@@ -139,7 +139,8 @@ class OerCourseSite extends LitElement {
   }
 
   _renderBar(d) {
-    const links = NAV.filter(([tag]) => this._section(tag)?.shown);
+    // (not to a section hidden from readers)
+    const links = NAV.filter(([tag]) => this._section(tag)?.shown && !this._section(tag).hasAttribute("hidden-from-readers"));
     return html`<header class="bar">
       <div class="wrap bar-in">
         ${this._renderBrand()}

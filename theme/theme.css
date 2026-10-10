@@ -135,6 +135,13 @@ body:not(.dark-mode) {
    custom/src/blocks/course-site/cs-content.js, one sheet for reading and
    editing. Its rules need the theme, which marks the page [course-site].) */
 
+/* A section hidden from readers (Hide from readers while editing,
+   custom/src/editor/ops.js) isn't drawn for anyone reading the page, from
+   before its block has loaded. Authors still see it while editing. */
+custom-oer-docs-theme [hidden-from-readers]:not(hax-body *) {
+  display: none;
+}
+
 /* An image with no picture chosen yet (a new image block starts empty,
    custom/src/editor/oer-block-inserter.js STARTERS): authors see a box to
    select (editor-skin.js), readers see nothing, and can't tab to it. */
