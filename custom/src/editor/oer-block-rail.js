@@ -14,8 +14,15 @@
  * handling, undo and HAX's own state stay intact. Items whose stock control
  * is absent are left out, so the rail mirrors whatever HAX offers.
  *
+ * Items HAX has switched off are shown off, with the reason. Add and Remove
+ * column go through layouts.js (two equal columns, the block still
+ * selected), and aren't offered for or inside course site sections.
+ *
  * Keyboard: Alt+F10 moves focus from the content to the rail; arrows move,
- * Enter/Space/Right opens a menu, Escape/Left steps back.
+ * Enter/Space/Right opens a menu, Escape/Left steps back, and Escape on the
+ * rail returns to the content, as running a command does. Keys and pastes
+ * stop at the rail, so they never edit the content behind it; Ctrl and ⌘
+ * shortcuts (Save, Undo…) go on to the editor.
  * @element oer-block-rail
  */
 import { html, css, LitElement } from "../lit.js";
@@ -27,6 +34,8 @@ import { insertCitation, pageReferences, linkReferenceToResource } from "./citat
 import { citeDialog } from "./oer-cite-dialog.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
+import { layoutOf, columnCount, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
+import { sectionOf } from "../blocks/course-site/cs-shared.js";
 
 const SEP = { sep: true };
 
@@ -59,6 +68,17 @@ function nativeButton(el) {
 }
 
 const shown = (el) => el && !el.hidden && getComputedStyle(el).display !== "none";
+const disabled = (el) => !!el.disabled || el.hasAttribute?.("disabled");
+const nodeLength = (n) => (n.nodeType === 1 ? n.childNodes.length : n.length);
+
+// why HAX has switched a block command off, from its toolbar's state
+function offReason(plate, el) {
+  if (plate?.viewSource) return "Close Edit HTML first";
+  if (plate?.disableOps) return "Unlock it first";
+  if (plate?.hasActiveEditingElement) return "Finish editing first";
+  if (el.getAttribute("event-name") === "hax-source-view-toggle" && !plate?.sourceView) return "Not for this block";
+  return "Not here";
+}
 
 const byEvent = (name) => (els) => els.find((e) => e.getAttribute?.("event-name") === name);
 const byCommand = (cmd, label) => (els) =>
@@ -75,8 +95,11 @@ const BLOCK = [
   { label: "Insert block below…", icon: "arrow-down-to-line", find: byEvent("insert-below-active"), insert: "below" },
   { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate") },
   SEP,
-  { label: "Add column", icon: "columns-2", find: byEvent("hax-plate-create-right") },
-  { label: "Remove column", icon: "panel-right-close", find: byEvent("hax-plate-remove-right") },
+  // outside a layout, Add column puts the block in two equal columns (HAX's
+  // own makes three, with the block in the middle one); Remove column works
+  // from any block in the layout (HAX's only from the layout itself)
+  { label: "Add column", icon: "columns-2", find: byEvent("hax-plate-create-right"), columns: "add" },
+  { label: "Remove column", icon: "panel-right-close", find: byEvent("hax-plate-remove-right"), columns: "remove" },
   SEP,
   { label: "Edit HTML", icon: "code", find: byEvent("hax-source-view-toggle") },
   {
@@ -194,6 +217,16 @@ class OerBlockRail extends LitElement {
     this.__outside = (e) => {
       if (this._open && !e.composedPath().includes(this)) this._close();
     };
+    // HAX acts on keys and pastes anywhere in the window, at the last
+    // caret in the content (Enter here split the paragraph): ours stop
+    // here, except chords with Ctrl or ⌘ (Save, Exit, Undo and the site
+    // editor's other shortcuts)
+    const stop = (e) => {
+      if (!e.ctrlKey && !e.metaKey) e.stopPropagation();
+    };
+    this.addEventListener("keydown", stop);
+    this.addEventListener("keyup", stop);
+    this.addEventListener("paste", (e) => e.stopPropagation());
   }
 
   connectedCallback() {
@@ -319,26 +352,64 @@ class OerBlockRail extends LitElement {
       }
       const el = spec.find(els);
       if (!el) continue;
+      // (inside a course site section, blocks go above or below the section)
+      let run = spec.insert
+        ? () => globalThis.document.querySelector("oer-block-inserter")?.openFor(sectionOf(this._hax.activeNode) || this._hax.activeNode, spec.insert)
+        : () => nativeButton(el)?.click();
+      // our own columns commands: off when HAX switches all its block
+      // commands off (a locked block, Edit HTML open), not for its other reasons
+      let ours = false;
+      if (spec.columns) {
+        const node = this._hax?.activeNode;
+        const layout = layoutOf(this._hax?.activeHaxBody, node);
+        if (sectionOf(node) || (spec.columns === "remove" && !layout)) continue;
+        if (spec.columns === "add" && !layout) run = () => this._putInColumns(node);
+        if (spec.columns === "remove") run = () => this._removeColumn(node, layout);
+        ours = spec.columns === "remove" || !layout;
+      }
       const available = shown(el);
       // controls that only apply to selected text are shown disabled rather
       // than vanishing, so the menu does not change shape under the pointer
       const needs = spec.needs || (spec.selection ? "Select text" : "");
       if (!available && !needs) continue;
+      // and ones HAX has switched off say why
+      const plate = stock.plate;
+      const off = !available || (ours ? !!(plate?.viewSource || plate?.disableOps || plate?.hasActiveEditingElement) : disabled(el));
       out.push({
         label: typeof spec.label === "function" ? spec.label(el) : spec.label,
         icon: typeof spec.icon === "function" ? spec.icon(el) : spec.icon,
         shortcut: spec.shortcut,
         danger: spec.danger,
-        disabled: !available,
-        hint: !available ? needs : "",
+        disabled: off,
+        hint: !available ? needs : off ? offReason(stock.plate, el) : "",
         pressed: spec.toggle && available ? !!el.toggled : undefined,
-        run: spec.insert
-          ? () => globalThis.document.querySelector("oer-block-inserter")?.openFor(this._hax.activeNode, spec.insert)
-          : () => nativeButton(el)?.click(),
+        run,
       });
     }
     while (out.length && out[out.length - 1].sep) out.pop();
     return out;
+  }
+
+  // two equal columns around the block, which stays selected
+  async _putInColumns(node) {
+    const hax = this._hax;
+    if (!hax || !node) return;
+    if (await wrapInColumns(hax, node, "1-1")) hax.activeNode = node;
+  }
+
+  // one column fewer (its blocks join the last one); from two, the layout
+  // goes and its blocks stay where it was
+  _removeColumn(node, grid) {
+    const hax = this._hax;
+    if (!hax || !grid) return;
+    if (columnCount(grid) > 2) {
+      setLayout(grid, grid.layout.split("-").slice(0, -1).join("-"));
+      if (!node.isConnected) hax.activeNode = grid;
+      return;
+    }
+    const first = removeLayout(grid);
+    // (an empty paragraph goes with the layout)
+    hax.activeNode = node !== grid && node.isConnected ? node : first;
   }
 
   _pickerCurrent(spec) {
@@ -388,8 +459,54 @@ class OerBlockRail extends LitElement {
       item.run();
       return;
     }
+    const byKeys = this.matches(":focus-within");
     item.run();
     this._close();
+    // chosen from the keyboard: back to the content, unless the command
+    // opened something of its own (the block list, a dialog)
+    if (byKeys) {
+      requestAnimationFrame(() => {
+        const focus = globalThis.document.activeElement;
+        if (!focus || focus === globalThis.document.body || focus === this) this._toContent();
+      });
+    }
+  }
+
+  // focus back in the content: the caret where it was when Alt+F10 came to
+  // the rail, or, if the command moved things (Duplicate selects the copy,
+  // Move up moves a section), at the start of the selected text block, or
+  // just before any other block, as HAX has it when one is selected
+  _toContent() {
+    const body = this._hax?.activeHaxBody;
+    const node = this._hax?.activeNode;
+    if (!body || !node?.isConnected) return;
+    // a block open in Edit HTML: its HTML editor, which runs in a frame
+    // (HAX focuses the editor's element, which can't take focus), or
+    // focuses itself once it has loaded
+    const source = this._hax.activeEditingElement;
+    if (source?.isConnected && source.contains(node)) {
+      source.autofocus = true;
+      const frame = source.shadowRoot?.querySelector("monaco-element")?.shadowRoot?.querySelector("iframe");
+      frame?.focus();
+      frame?.contentDocument?.querySelector("textarea")?.focus();
+      return;
+    }
+    const at = this.__caret;
+    const range = globalThis.document.createRange();
+    if (at && node.contains(at.startContainer) && node.contains(at.endContainer)) {
+      range.setStart(at.startContainer, Math.min(at.startOffset, nodeLength(at.startContainer)));
+      range.setEnd(at.endContainer, Math.min(at.endOffset, nodeLength(at.endContainer)));
+    } else if (this._hax.isTextElement(node)) {
+      range.selectNodeContents(node);
+      range.collapse(true);
+    } else {
+      range.setStartBefore(node);
+      range.collapse(true);
+    }
+    body.focus({ preventScroll: true });
+    const sel = body.getRootNode().getSelection?.() || globalThis.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
   }
 
   // cite at the caret (or after the selection) in the active text block
@@ -476,6 +593,11 @@ class OerBlockRail extends LitElement {
     if (e.altKey && e.key === "F10") {
       e.preventDefault();
       e.stopPropagation();
+      // where to come back to (Esc, or after a command)
+      const body = this._hax?.activeHaxBody;
+      const sel = body?.getRootNode().getSelection?.() || globalThis.getSelection();
+      const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+      if (!this.matches(":focus-within")) this.__caret = range && body.contains(range.startContainer) ? new StaticRange(range) : null;
       this.shadowRoot.querySelector(".rail button")?.focus();
     }
   }
@@ -488,13 +610,13 @@ class OerBlockRail extends LitElement {
     else if (e.key === "ArrowUp") move(-1);
     else if (e.key === "Home") buttons[0]?.focus();
     else if (e.key === "End") buttons[buttons.length - 1]?.focus();
-    else if (e.key === "ArrowRight") {
+    else if (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ") {
       const cat = this._cats[i];
       if (cat && this._open?.id !== cat.id) this._toggle(cat, { currentTarget: buttons[i] });
       this._focusMenu();
     } else if (e.key === "Escape") {
       if (this._open) this._close();
-      else this._hax?.activeNode?.focus?.();
+      else this._toContent();
     } else return;
     e.preventDefault();
   }

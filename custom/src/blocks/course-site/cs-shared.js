@@ -43,6 +43,12 @@ export const icon = (name) => html`<svg class="i" viewBox="0 0 24 24" aria-hidde
 export const SECTION_TAGS = ["oer-cs-hero", "oer-cs-facts", "oer-cs-learn", "oer-cs-semester", "oer-cs-make", "oer-cs-books", "oer-cs-people", "oer-cs-tools", "oer-cs-faq", "oer-cs-closing", "oer-courses-intro", "oer-courses-catalog"];
 export const isSection = (el) => SECTION_TAGS.includes(el?.localName);
 
+/** The section a block is, or is inside (up to the page's body), or null. */
+export function sectionOf(el) {
+  for (let n = el; n && n.localName !== "hax-body"; n = n.parentElement) if (isSection(n)) return n;
+  return null;
+}
+
 /* ---------- what authors typed inside a section ---------- */
 
 /** A section's own blocks (HAX's page-break aside). */
@@ -143,6 +149,12 @@ export class SiteSection extends LitElement {
     };
     this.addEventListener("focusout", this.__refocus, true);
     globalThis.document.addEventListener("pointerdown", this.__elsewhere, true);
+    this.__typeHere = (e) => this.typeHere(e);
+    this.addEventListener("pointerdown", this.__typeHere);
+    // keys typed in the content arrive at hax-body (the element being
+    // edited), not at the section: catch them on the way there
+    this.__edges = (e) => this.keepEdges(e);
+    globalThis.document.addEventListener("keydown", this.__edges, true);
   }
 
   disconnectedCallback() {
@@ -150,7 +162,67 @@ export class SiteSection extends LitElement {
     this.__typed?.disconnect();
     this.removeEventListener("focusout", this.__refocus, true);
     globalThis.document.removeEventListener("pointerdown", this.__elsewhere, true);
+    this.removeEventListener("pointerdown", this.__typeHere);
+    globalThis.document.removeEventListener("keydown", this.__edges, true);
     super.disconnectedCallback();
+  }
+
+  /**
+   * A click in a typing box, but not on its text (the box's padding, or
+   * below a short paragraph): the caret goes into the box's first empty
+   * block, or the end of its last, and HAX works on that block rather
+   * than the whole section.
+   */
+  typeHere(e) {
+    if (!this._editing || e.button !== 0) return;
+    const area = e.composedPath()[0];
+    if (!area?.classList?.contains("typing-area")) return;
+    const blocks = area.querySelector("slot")?.assignedElements() || [];
+    const texts = blocks.flatMap((b) => (/^(ul|ol)$/.test(b.localName) ? [...b.children] : [b])).filter((b) => /^(p|h[1-6]|li|blockquote)$/.test(b.localName));
+    const target = texts.find((b) => !b.textContent.trim()) || texts[texts.length - 1];
+    const body = globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody;
+    if (!target || !body?.contains(target)) return;
+    // no mousedown: HAX would make the section the active block
+    e.preventDefault();
+    body.__focusLogic(target, false);
+    // after HAX has made the block editable
+    setTimeout(() => {
+      const range = globalThis.document.createRange();
+      range.selectNodeContents(target);
+      range.collapse(!target.textContent.trim());
+      const sel = target.getRootNode().getSelection?.() || globalThis.getSelection();
+      if (!body.matches(":focus-within")) body.focus({ preventScroll: true });
+      sel.removeAllRanges();
+      sel.addRange(range);
+    });
+  }
+
+  /**
+   * Backspace at the very start of a section's first block, or Delete at
+   * the very end of its last, does nothing: the browser would merge the
+   * block into the section next to it, or that section's into this one,
+   * and HAX could then delete a section.
+   */
+  keepEdges(e) {
+    if (!this._editing || (e.key !== "Backspace" && e.key !== "Delete")) return;
+    if (e.composedPath()[0]?.localName !== "hax-body") return;
+    const sel = this.getRootNode().getSelection?.() || globalThis.getSelection();
+    if (!sel?.rangeCount || !sel.isCollapsed) return;
+    const at = sel.getRangeAt(0);
+    if (!this.contains(at.startContainer)) return;
+    // the caret in the first (or last) block, or in the section between blocks
+    const blocks = ownBlocks(this);
+    const edge = blocks.some((b) => b.contains(at.startContainer)) ? (e.key === "Backspace" ? blocks[0] : blocks[blocks.length - 1]) : this;
+    if (!edge.contains(at.startContainer)) return;
+    // what lies between the caret and the block's edge
+    const rest = globalThis.document.createRange();
+    rest.selectNodeContents(edge);
+    if (e.key === "Backspace") rest.setEnd(at.startContainer, at.startOffset);
+    else rest.setStart(at.startContainer, at.startOffset);
+    if (/^[ \t\n\r]*$/.test(rest.toString()) && !rest.cloneContents().querySelector("img, video, iframe")) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
   }
 
   /** Whether readers see this section (the course site's bar lists those). */
@@ -175,7 +247,9 @@ export class SiteSection extends LitElement {
   /**
    * A section's heading: typed in place while editing (Enter or leaving
    * keeps it, Esc puts it back; empty goes back to `fallback`), so authors
-   * never need the block's settings for it. Saved as the block's `heading`.
+   * never need the block's settings for it. Saved as the block's `heading`
+   * attribute (declared with reflect, as HAX's undo and Edit HTML work from
+   * the markup).
    */
   headingEl(fallback, tag = "h2") {
     const text = this.heading || fallback;
@@ -189,20 +263,27 @@ export class SiteSection extends LitElement {
     const keys = (e) => {
       // the editor's own keys (Enter adds a block, Backspace deletes one) stay out
       e.stopPropagation();
+      // done with the heading: the claim mustn't put focus back in it
       if (e.key === "Enter") {
         e.preventDefault();
+        this.__claim = null;
         e.target.blur();
       } else if (e.key === "Escape") {
         e.target.textContent = this.heading || fallback;
+        this.__claim = null;
         e.target.blur();
+      } else if (e.key === "Tab") {
+        // focus moves on, and stays where Tab takes it
+        this.__claim = null;
       }
     };
     const attrs = { contenteditable: "plaintext-only", spellcheck: "true", role: "textbox", "aria-label": `Heading (empty for “${fallback}”)`, title: "Type to change the heading" };
-    // HAX takes clicks inside blocks for itself: this one is ours
+    // HAX takes clicks inside blocks for itself: this one is ours. Its
+    // focus too: HAX making the section active then pulls focus out again
     const take = (e) => this.claim(e);
     return tag === "h1"
-      ? html`<h1 class="edit-heading" contenteditable="${attrs.contenteditable}" role="textbox" aria-label="${attrs["aria-label"]}" title="${attrs.title}" .textContent="${text}" @pointerdown="${take}" @mousedown="${take}" @click="${take}" @keydown="${keys}" @paste="${(e) => e.stopPropagation()}" @blur="${commit}"></h1>`
-      : html`<h2 class="edit-heading" contenteditable="${attrs.contenteditable}" role="textbox" aria-label="${attrs["aria-label"]}" title="${attrs.title}" .textContent="${text}" @pointerdown="${take}" @mousedown="${take}" @click="${take}" @keydown="${keys}" @paste="${(e) => e.stopPropagation()}" @blur="${commit}"></h2>`;
+      ? html`<h1 class="edit-heading" contenteditable="${attrs.contenteditable}" role="textbox" aria-label="${attrs["aria-label"]}" title="${attrs.title}" .textContent="${text}" @pointerdown="${take}" @mousedown="${take}" @click="${take}" @focusin="${SiteSection.keep}" @keydown="${keys}" @paste="${SiteSection.keep}" @blur="${commit}"></h1>`
+      : html`<h2 class="edit-heading" contenteditable="${attrs.contenteditable}" role="textbox" aria-label="${attrs["aria-label"]}" title="${attrs.title}" .textContent="${text}" @pointerdown="${take}" @mousedown="${take}" @click="${take}" @focusin="${SiteSection.keep}" @keydown="${keys}" @paste="${SiteSection.keep}" @blur="${commit}"></h2>`;
   }
 
   /**
@@ -434,6 +515,11 @@ export const csStyles = css`
     border: 1px dashed color-mix(in oklab, var(--primary) 45%, var(--border));
     border-radius: var(--radius-md);
     background: var(--background);
+    cursor: text;
+  }
+  /* an empty paragraph still has a line to click into */
+  .typing-area ::slotted(*) {
+    min-block-size: 1lh;
   }
   @media (max-width: 600px) {
     .wrap {

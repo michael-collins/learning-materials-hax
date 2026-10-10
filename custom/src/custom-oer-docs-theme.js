@@ -1917,8 +1917,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([course-site]:not([edit-mode])) article {
           max-width: none;
         }
-        /* (the section blocks: blocks/course-site/cs-shared.js SECTION_TAGS) */
-        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-books):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing):not(oer-courses-intro):not(oer-courses-catalog)) {
+        /* (the section blocks: blocks/course-site/cs-shared.js SECTION_TAGS;
+           images keep their own size, placed by theme/theme.css) */
+        #cs-slot::slotted(:not(oer-cs-hero):not(oer-cs-facts):not(oer-cs-learn):not(oer-cs-semester):not(oer-cs-make):not(oer-cs-books):not(oer-cs-people):not(oer-cs-tools):not(oer-cs-faq):not(oer-cs-closing):not(oer-courses-intro):not(oer-courses-catalog):not(img):not(video):not(iframe)) {
           box-sizing: border-box;
           width: min(48rem, calc(100% - 3rem));
           margin-inline: auto;

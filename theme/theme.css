@@ -130,3 +130,33 @@ html body #loading.oer-gone {
 body:not(.dark-mode) {
   color-scheme: only light;
 }
+
+/* A course site or OER Courses, as readers see it: any block between its
+   full-width sections keeps the reading width, centred and start-aligned.
+   The blocks are the theme's own children, shown through the microsite's
+   slot, where the theme's ::slotted() rule loses to the page's margins.
+   (The section tags: custom/src/blocks/course-site/cs-shared.js SECTION_TAGS.) */
+custom-oer-docs-theme[course-site]
+  > :not(page-break, img, video, iframe, oer-cs-hero, oer-cs-facts, oer-cs-learn, oer-cs-semester, oer-cs-make, oer-cs-books, oer-cs-people, oer-cs-tools, oer-cs-faq, oer-cs-closing, oer-courses-intro, oer-courses-catalog) {
+  box-sizing: border-box;
+  width: min(48rem, 100% - 3rem);
+  margin-inline: auto;
+  text-align: start;
+}
+/* An image there keeps its own size, at the start of that width. */
+custom-oer-docs-theme[course-site] > :is(img, video, iframe) {
+  display: block;
+  box-sizing: border-box;
+  max-width: min(48rem, 100% - 3rem);
+  margin-inline: max(1.5rem, (100% - 48rem) / 2) auto;
+}
+custom-oer-docs-theme[course-site] > :is(img, video) {
+  height: auto;
+}
+
+/* An image with no picture chosen yet (a new image block starts empty,
+   custom/src/editor/oer-block-inserter.js STARTERS): authors see a box to
+   select (editor-skin.js), readers see nothing, and can't tab to it. */
+custom-oer-docs-theme :is(img:is(:not([src]), [src=""]), media-image:is(:not([source]), [source=""])):not(hax-body *) {
+  display: none;
+}

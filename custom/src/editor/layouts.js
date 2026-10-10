@@ -41,21 +41,29 @@ export function layoutPresets(grid) {
 
 const settle = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
+// an empty paragraph or heading, as a new column starts with
+const isEmptyText = (el) => /^(p|h[1-6])$/.test(el.localName) && !el.textContent.trim() && !el.querySelector("img, video, iframe, audio, embed, object");
+
 /**
  * Change a layout's preset. Blocks in columns the new preset drops move to
- * its last column instead of disappearing.
+ * its last column instead of disappearing (empty paragraphs just go).
  */
 export function setLayout(grid, key) {
   const count = key.split("-").length;
   const last = `col-${count}`;
   for (const child of [...grid.children]) {
     const n = Number((child.getAttribute("slot") || "col-1").replace("col-", ""));
-    if (n > count) child.setAttribute("slot", last);
+    if (n <= count) continue;
+    if (isEmptyText(child)) child.remove();
+    else child.setAttribute("slot", last);
   }
   grid.layout = key;
 }
 
-/** Wrap a block in a new column layout; the block becomes column 1. */
+/**
+ * Wrap a block in a new column layout; the block becomes column 1, and
+ * each other column gets an empty paragraph to type in.
+ */
 export async function wrapInColumns(hax, node, key) {
   const body = hax.activeHaxBody;
   const parent = node.parentElement;
@@ -67,16 +75,25 @@ export async function wrapInColumns(hax, node, key) {
   if (!grid) return null;
   grid.append(node);
   node.setAttribute("slot", "col-1");
+  for (let n = 2; n <= key.split("-").length; n++) {
+    const p = globalThis.document.createElement("p");
+    p.setAttribute("slot", `col-${n}`);
+    grid.append(p);
+  }
   return grid;
 }
 
-/** Remove a layout, keeping its blocks (column by column) where it was. */
+/**
+ * Remove a layout, keeping its blocks (column by column) where it was;
+ * empty paragraphs go, unless that would leave nothing.
+ */
 export function removeLayout(grid) {
   // a nested layout hands its column to its blocks; at page level they
   // carry no slot (a stray slot attribute can be left on the grid itself)
   const ownSlot = isLayoutEl(grid.parentElement) ? grid.getAttribute("slot") : null;
   const order = (el) => Number((el.getAttribute("slot") || "col-1").replace("col-", ""));
-  const kids = [...grid.children].sort((a, b) => order(a) - order(b));
+  let kids = [...grid.children].sort((a, b) => order(a) - order(b));
+  if (kids.some((kid) => !isEmptyText(kid))) kids = kids.filter((kid) => !isEmptyText(kid));
   for (const kid of kids) {
     grid.before(kid);
     if (ownSlot) kid.setAttribute("slot", ownSlot);

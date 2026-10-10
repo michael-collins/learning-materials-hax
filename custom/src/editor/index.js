@@ -12,6 +12,7 @@ import { installCommandPalette } from "./command-palette.js";
 import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
 import { installPageBreakDetails } from "./page-break-details.js";
 import { installCitationNormalizer } from "./citations.js";
+import { installHaxFixes } from "./hax-fixes.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -27,6 +28,7 @@ export function installEditorChrome() {
   if (installed) return;
   installed = true;
   installLucideIcons();
+  installHaxFixes();
   installQuietMode();
   installShadowStyles();
   registerShadowStyles(editorSkin);

@@ -49,7 +49,8 @@ export class OerCsHero extends SiteSection {
     return "oer-cs-hero";
   }
   static get properties() {
-    return { image: { type: String }, alt: { type: String } };
+    // reflected: HAX's undo and Edit HTML work from the markup
+    return { image: { type: String, reflect: true }, alt: { type: String, reflect: true } };
   }
   get shown() {
     return true;
@@ -83,6 +84,7 @@ export class OerCsHero extends SiteSection {
                 @pointerdown="${(e) => this.claim(e)}"
                 @mousedown="${SiteSection.keep}"
                 @click="${SiteSection.keep}"
+                @focusin="${SiteSection.keep}"
                 @keydown="${SiteSection.keep}"
                 @paste="${SiteSection.keep}"
                 @input="${SiteSection.keep}"
@@ -190,6 +192,9 @@ export class OerCsHero extends SiteSection {
       type: "grid",
       canScale: false,
       canEditSource: true,
+      contentEditable: true,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: hero", "The course's name, a tagline you write, the Enroll button and an image.", "icons:flag"),
       settings: {
         // the image is chosen on the hero itself while editing
@@ -285,6 +290,8 @@ export class OerCsFacts extends SiteSection {
       type: "element",
       canScale: false,
       canEditSource: false,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: facts", "Credits, length, format, projects and terms, from the course and its plan.", "icons:dashboard"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-facts", properties: {}, content: "" }],
@@ -299,7 +306,7 @@ export class OerCsLearn extends SiteSection {
     return "oer-cs-learn";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   get shown() {
     return listItems(this).length > 0;
@@ -353,6 +360,9 @@ export class OerCsLearn extends SiteSection {
       type: "grid",
       canScale: false,
       canEditSource: true,
+      contentEditable: true,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: what you'll learn", "A list you write, one outcome a row, shown as cards.", "icons:list"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-learn", properties: {}, content: "<ul><li></li></ul>" }],
@@ -367,13 +377,13 @@ export class OerCsSemester extends SiteSection {
     return "oer-cs-semester";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   get shown() {
     return !!this._d?.weeks.length;
   }
   renderSection(d) {
-    if (!d.weeks.length) return this._author ? html`<section class="section"><div class="wrap">${this.headingEl("The semester")}${this.todo("Link a course plan (a sequence) in Edit details to show the semester week by week.")}</div></section>` : html``;
+    if (!d.weeks.length) return this._author ? html`<section class="section"><div class="wrap">${this.headingEl("The semester")}${this.todo("Link a course plan (a sequence) in Page details to show the semester week by week.")}</div></section>` : html``;
     return html`<section class="section alt">
       <div class="wrap">
         ${this.headingEl("The semester, week by week")}
@@ -476,6 +486,8 @@ export class OerCsSemester extends SiteSection {
       type: "element",
       canScale: false,
       canEditSource: false,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: the semester", "The course plan week by week, with its projects.", "icons:date-range"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-semester", properties: {}, content: "" }],
@@ -490,7 +502,7 @@ export class OerCsMake extends SiteSection {
     return "oer-cs-make";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   get shown() {
     return !!(this._d?.projects.length || this._d?.work.length);
@@ -581,6 +593,8 @@ export class OerCsMake extends SiteSection {
       type: "element",
       canScale: false,
       canEditSource: false,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: what you'll make", "The course plan's projects and the course's student work.", "icons:build"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-make", properties: {}, content: "" }],
@@ -595,7 +609,7 @@ export class OerCsBooks extends SiteSection {
     return "oer-cs-books";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   // the course's books (its Books field), each with its book site if it has one on
   books() {
@@ -743,6 +757,8 @@ export class OerCsBooks extends SiteSection {
       type: "element",
       canScale: false,
       canEditSource: false,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: the books", "The course's books, each linking to its book site to read online or download.", "icons:book"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-books", properties: {}, content: "" }],
@@ -757,7 +773,7 @@ export class OerCsPeople extends SiteSection {
     return "oer-cs-people";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   get shown() {
     return !!this._d?.instructors.length || hasContent(this);
@@ -824,6 +840,9 @@ export class OerCsPeople extends SiteSection {
       type: "grid",
       canScale: false,
       canEditSource: true,
+      contentEditable: true,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: who teaches it", "The course's instructors, and a note from them you write.", "social:people"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-people", properties: {}, content: "<p></p>" }],
@@ -838,7 +857,7 @@ export class OerCsTools extends SiteSection {
     return "oer-cs-tools";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   get shown() {
     return listItems(this).length > 0;
@@ -885,6 +904,9 @@ export class OerCsTools extends SiteSection {
       type: "grid",
       canScale: false,
       canEditSource: true,
+      contentEditable: true,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: tools", "A list you write of software, machines and materials, shown as chips.", "icons:extension"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-tools", properties: {}, content: "<ul><li></li></ul>" }],
@@ -899,7 +921,7 @@ export class OerCsFaq extends SiteSection {
     return "oer-cs-faq";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   get shown() {
     return questions(this).length > 0;
@@ -974,6 +996,9 @@ export class OerCsFaq extends SiteSection {
       type: "grid",
       canScale: false,
       canEditSource: true,
+      contentEditable: true,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: questions", "Questions you write, each a heading with its answer, shown as an accordion.", "icons:help"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-faq", properties: {}, content: "<h3></h3><p></p>" }],
@@ -988,7 +1013,7 @@ export class OerCsClosing extends SiteSection {
     return "oer-cs-closing";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   renderSection(d) {
     return html`<section class="closing">
@@ -999,7 +1024,7 @@ export class OerCsClosing extends SiteSection {
           ${d.enrollUrl ? html`<a class="btn primary" href="${d.enrollUrl}" target="_blank" rel="noopener">Enroll${icon("arrowUpRight")}</a>` : ""}
           ${d.bulletin && d.bulletin !== d.enrollUrl ? html`<a class="btn outline" href="${d.bulletin}" target="_blank" rel="noopener">Bulletin entry</a>` : ""}
         </div>
-        ${!d.enrollUrl && this._author ? html`<p class="hint">Add the enroll link in Edit details to show an Enroll button.</p>` : ""}
+        ${!d.enrollUrl && this._author ? html`<p class="hint">Add the enroll link in Page details to show an Enroll button.</p>` : ""}
       </div>
     </section>`;
   }
@@ -1034,6 +1059,8 @@ export class OerCsClosing extends SiteSection {
       type: "element",
       canScale: false,
       canEditSource: false,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("Course site: ready to start", "A last call to enroll, with the bulletin entry.", "icons:send"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-cs-closing", properties: {}, content: "" }],

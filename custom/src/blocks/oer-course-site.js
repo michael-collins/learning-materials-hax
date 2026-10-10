@@ -2,7 +2,7 @@
  * `oer-course-site` — the frame around a course's microsite
  * (types/course-site.js), shown full width by the theme while reading: a
  * bar with the course, links to its sections and Enroll (and Edit content,
- * Edit details and Style for authors), the page itself, and a footer. The
+ * Page details and Style for authors), the page itself, and a footer. The
  * page is made of the course site's section blocks (course-site/
  * cs-sections.js) and any other blocks; a page without sections yet shows
  * the standard ones around what it has. The bar's brand goes to OER
@@ -128,12 +128,13 @@ class OerCourseSite extends LitElement {
     >`;
   }
 
-  // authors: open the editor, the page's details, or its style
+  // authors: open the editor, the page's details, or its style (named for
+  // when a narrow bar shows only their icons)
   _renderAuthorActions() {
     return this._signedIn
-      ? html`<button class="btn ghost sm" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit content</span></button>
-          <button class="btn ghost sm" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Edit details</span></button>
-          <button class="btn ghost sm" @click="${() => siteStyle().show(this._site)}">${icon("palette")}<span class="lbl">Style</span></button>`
+      ? html`<button class="btn ghost sm" aria-label="Edit content" title="Edit content" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit content</span></button>
+          <button class="btn ghost sm" aria-label="Page details" title="Page details" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Page details</span></button>
+          <button class="btn ghost sm" aria-label="Style" title="Style" @click="${() => siteStyle().show(this._site)}">${icon("palette")}<span class="lbl">Style</span></button>`
       : "";
   }
 

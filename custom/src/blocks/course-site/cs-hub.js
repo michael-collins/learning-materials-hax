@@ -26,7 +26,7 @@ export class OerCoursesIntro extends SiteSection {
     return "oer-courses-intro";
   }
   static get properties() {
-    return { heading: { type: String } };
+    return { heading: { type: String, reflect: true } };
   }
   render() {
     if (!onHub(this)) return wrongPage(this);
@@ -83,6 +83,9 @@ export class OerCoursesIntro extends SiteSection {
       type: "grid",
       canScale: false,
       canEditSource: true,
+      contentEditable: true,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("OER Courses: intro", "The hub's title and a few lines you write for students.", "icons:flag"),
       // the heading is typed in place while editing
       settings: { configure: [], advanced: [] },
@@ -135,11 +138,13 @@ export class OerCoursesCatalog extends SiteSection {
     const own = this._ownPage(e.site);
     const image = own.image || e.image;
     const facts = [e.credits && `${e.credits} credit${e.credits === "1" ? "" : "s"}`, e.delivery, e.weekCount && `${e.weekCount} weeks`].filter(Boolean);
+    const title = e.title.replace(new RegExp(`^${e.code}\\s*[:–—-]\\s*`), "");
+    // while editing, a card isn't a link: following it would leave the edit
     return html`<li class="card">
       ${image ? html`<img src="${image}" alt="${own.image ? own.alt : ""}" loading="lazy" />` : html`<div class="art" aria-hidden="true"><span>${e.code}</span></div>`}
       <div class="card-body">
         <p class="kicker">${[e.code, e.campus].filter(Boolean).join(" · ")}</p>
-        <h3><a class="stretch" href="${e.site.slug}">${e.title.replace(new RegExp(`^${e.code}\\s*[:–—-]\\s*`), "")}</a></h3>
+        <h3>${this._editing ? title : html`<a class="stretch" href="${e.site.slug}">${title}</a>`}</h3>
         ${own.tagline || e.tagline ? html`<p>${own.tagline || e.tagline}</p>` : ""}
         ${facts.length ? html`<p class="facts">${facts.join(" · ")}</p>` : ""}
         <span class="go">Visit the course site${icon("arrowRight")}</span>
@@ -269,6 +274,8 @@ export class OerCoursesCatalog extends SiteSection {
       type: "element",
       canScale: false,
       canEditSource: false,
+      hideDefaultSettings: true,
+      designSystem: false,
       gizmo: gizmo("OER Courses: catalog", "The course sites that are on, by degree program.", "icons:view-module"),
       settings: { configure: [], advanced: [] },
       demoSchema: [{ tag: "oer-courses-catalog", properties: {}, content: "" }],

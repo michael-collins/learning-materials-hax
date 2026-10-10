@@ -1502,6 +1502,18 @@ export const editorSkin = {
     ::slotted(page-break[data-hax-active]) {
       outline: 0 !important;
     }
+    /* a new image starts with no picture (oer-block-inserter STARTERS):
+       a box to select, rather than nothing */
+    ::slotted(img:not([src])) {
+      display: block;
+      width: 16rem;
+      max-width: 100%;
+      aspect-ratio: 3 / 2;
+      box-sizing: border-box;
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-md);
+      background: var(--muted);
+    }
   `,
 
   /* column layouts while editing: no stock borders/dotted outlines; the
@@ -1522,6 +1534,16 @@ export const editorSkin = {
     :host([data-hax-ray]) [data-layout-slotname],
     :host([data-hax-ray]) [data-layout-slotname]:hover {
       outline: 0 !important;
+    }
+    :host([data-hax-ray]) div ::slotted(img:not([src])) {
+      display: block;
+      width: 16rem;
+      max-width: 100%;
+      aspect-ratio: 3 / 2;
+      box-sizing: border-box;
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-md);
+      background: var(--muted);
     }
   `,
 

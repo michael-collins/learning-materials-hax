@@ -24,9 +24,10 @@
  * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
  * opens the layout menu (presets, select, remove; or "put in columns" for
  * a block outside any layout). The sliders button opens the block's
- * settings (oer-settings-dialog). A block can add its own button after its
- * name with a static `frameAction`: { label, icon (an oer: Lucide name),
- * run(node) }, e.g. the rubric block's Edit rubric.
+ * settings (oer-settings-dialog). A course site section has neither button,
+ * and a block inside one has no layout menu. A block can add its own button
+ * after its name with a static `frameAction`: { label, icon (an oer: Lucide
+ * name), run(node) }, e.g. the rubric block's Edit rubric.
  *
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
  * floating drag menu in hax-plate-context.
@@ -39,6 +40,7 @@ import { contentViewport, pressPlate } from "./stock.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
+import { sectionOf } from "../blocks/course-site/cs-shared.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -59,6 +61,7 @@ class OerBlockFrame extends LitElement {
       _layout: { state: true },
       _guides: { state: true },
       _menu: { state: true },
+      _section: { state: true }, // "self" or "inside" when the block is or is in a course site section
     };
   }
 
@@ -118,13 +121,20 @@ class OerBlockFrame extends LitElement {
       this._menu = false;
       return;
     }
-    if (node !== this.__node) {
+    // (a block put in columns stays the same block in a new place)
+    if (node !== this.__node || node.parentElement !== this.__parent) {
       this.__node = node;
+      this.__parent = node.parentElement;
       this._menu = false;
       this._layout = layoutOf(hax.activeHaxBody, node);
       const schema = hax.haxSchemaFromTag?.(node.localName);
       this._label = schema?.gizmo?.title || node.localName;
       this._action = node.constructor?.frameAction || null;
+      // a course site section has no settings, and neither it nor what's in
+      // it goes in columns: sections are full width, and readers only see a
+      // section's own blocks
+      const section = sectionOf(node);
+      this._section = !section ? null : section === node ? "self" : "inside";
     }
     const f = frameRect(node);
     const view = contentViewport();
@@ -203,6 +213,8 @@ class OerBlockFrame extends LitElement {
     const layout = this._currentLayout();
     if (layout) {
       setLayout(layout, key);
+      // an empty paragraph in a column that went goes with it
+      if (!node.isConnected) hax.activeNode = layout;
     } else {
       const grid = await wrapInColumns(hax, node, key);
       if (grid) {
@@ -220,7 +232,8 @@ class OerBlockFrame extends LitElement {
     const keep = hax.activeNode === grid ? null : hax.activeNode;
     const first = removeLayout(grid);
     this.__node = null;
-    hax.activeNode = keep || first;
+    // (an empty paragraph goes with the layout)
+    hax.activeNode = keep?.isConnected ? keep : first;
   }
 
   /* ---------- move ---------- */
@@ -609,28 +622,32 @@ class OerBlockFrame extends LitElement {
   _renderLabel() {
     const inLayout = this._layout && this._layout !== this.__node;
     return html`<div class="label" @mousedown="${(e) => e.preventDefault()}">
-      <button
-        class="lay"
-        title="Block settings"
-        aria-label="Block settings"
-        aria-haspopup="dialog"
-        @click="${() => {
-          this._menu = false;
-          settingsDialog().open("settings");
-        }}"
-      >
-        ${icon("sliders-horizontal")}
-      </button>
-      <button
-        class="lay"
-        title="Layout"
-        aria-label="Layout options"
-        aria-haspopup="menu"
-        aria-expanded="${this._menu ? "true" : "false"}"
-        @click="${() => (this._menu = !this._menu)}"
-      >
-        ${icon("columns-2")}
-      </button>
+      ${this._section === "self"
+        ? ""
+        : html`<button
+            class="lay"
+            title="Block settings"
+            aria-label="Block settings"
+            aria-haspopup="dialog"
+            @click="${() => {
+              this._menu = false;
+              settingsDialog().open("settings");
+            }}"
+          >
+            ${icon("sliders-horizontal")}
+          </button>`}
+      ${this._section
+        ? ""
+        : html`<button
+            class="lay"
+            title="Layout"
+            aria-label="Layout options"
+            aria-haspopup="menu"
+            aria-expanded="${this._menu ? "true" : "false"}"
+            @click="${() => (this._menu = !this._menu)}"
+          >
+            ${icon("columns-2")}
+          </button>`}
       ${inLayout
         ? html`<button class="crumb" title="Select the column layout" @click="${this._selectLayout}">Columns</button>
             <span class="sep" aria-hidden="true">${icon("chevron-right")}</span>`
@@ -698,7 +715,7 @@ class OerBlockFrame extends LitElement {
       )}
       <div class="ring"></div>
       ${this._renderLabel()}
-      ${this._menu ? this._renderMenu() : ""}
+      ${this._menu && !this._section ? this._renderMenu() : ""}
       <div class="handle" @mousedown="${(e) => e.preventDefault()}">
         <button class="step" title="Move up" aria-label="Move block up" @click="${() => this._move("up")}">${icon("chevron-up")}</button>
         <button

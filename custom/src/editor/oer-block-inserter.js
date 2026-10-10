@@ -12,7 +12,8 @@
  * Inserting goes through hax-body's haxInsert with the stock panel's block
  * template, so undo and the Block panel behave as with the stock panel;
  * haxInsert takes the node to insert after, which pins the block to the
- * chosen slot.
+ * chosen slot. Some blocks start from our own template instead (STARTERS):
+ * empty, rather than HAX's demo text and hotlinked pictures.
  * The block list and categories come from the stock hax-gizmo-browser so
  * they stay in step with whatever HAX allows.
  * @element oer-block-inserter
@@ -25,6 +26,17 @@ import { computeSlots, slotAt, sameSlot, insertInSlot } from "./slots.js";
 
 const PANEL_W = 288;
 const PREVIEW_W = 288;
+
+// What a new block starts as, where HAX's demo would need deleting first: a
+// paragraph to type in (the caret goes there), empty columns, and images
+// with nothing borrowed from other sites (a cat photo, a placeholder service)
+const STARTERS = {
+  p: { tag: "p", content: "", properties: {}, caret: true },
+  "grid-plate": { tag: "grid-plate", content: '<p slot="col-1"></p><p slot="col-2"></p>', properties: { itemMargin: 16, itemPadding: 16 } },
+  img: { tag: "img", content: "", properties: { loading: "lazy" } },
+  "media-image": { tag: "media-image", content: "", properties: {} },
+  figure: { tag: "figure", content: "<img /><figcaption><p></p></figcaption>", properties: {} },
+};
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -216,16 +228,32 @@ class OerBlockInserter extends LitElement {
         target = { ...slot, after: el, before: null };
       }
     } else {
-      // same template the stock Insert panel uses (data-demo-schema)
+      // our starter, or the template the stock Insert panel uses (data-demo-schema)
       const schema = hax.haxSchemaFromTag(item.tag);
-      const detail = schema?.demoSchema?.[0] || hax.haxElementPrototype({ tag: item.tag }, {}, "");
+      const detail = STARTERS[item.tag] || schema?.demoSchema?.[0] || hax.haxElementPrototype({ tag: item.tag }, {}, "");
       hax.recentGizmoList?.push?.(schema?.gizmo || item);
       added = await insertInSlot(hax, slot, detail);
+      if (added && detail.caret) this._caretInto(added);
     }
     if (!added) return;
     hax.activeNode = added;
     added.focus?.();
     added.scrollIntoView?.({ block: "nearest" });
+  }
+
+  // the caret at the start of a new block, once HAX has made it editable
+  _caretInto(el) {
+    const body = this._hax?.activeHaxBody;
+    setTimeout(() => {
+      if (!el.isConnected || !body) return;
+      const range = globalThis.document.createRange();
+      range.setStart(el, 0);
+      range.collapse(true);
+      const sel = el.getRootNode().getSelection?.() || globalThis.getSelection();
+      if (!body.matches(":focus-within")) body.focus({ preventScroll: true });
+      sel.removeAllRanges();
+      sel.addRange(range);
+    });
   }
 
   _flat() {

@@ -7,6 +7,7 @@
  * click(), so synthetic clicks on its buttons never reach those handlers.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { confirmDialog } from "../ui/oer-confirm.js";
 
 export const PANELS = ["content-add", "content-edit", "content-map", "view-source"];
 
@@ -30,13 +31,38 @@ export function callStock(method, selector) {
 
 export const editPage = () => callStock("_editButtonTap", "#editbutton");
 export const savePage = () => callStock("_editButtonTap", "#editbutton");
-export const cancelEdit = () => callStock("_cancelButtonTap", "#cancelbutton");
 export const openOutline = () => callStock("_outlineButtonTap", "#outlinebutton");
 export const openSiteSettings = () => callStock("_manifestButtonTap", "#manifestbtn");
 export const toggleLock = () => callStock("_toggleLockedStatus", "#lockbutton");
 export const logout = () => stockUI()?._logout?.();
 export const undo = () => haxStore()?.activeHaxBody?.undo?.();
 export const redo = () => haxStore()?.activeHaxBody?.redo?.();
+
+/**
+ * Leave the editor without saving: at once when nothing has changed,
+ * otherwise once the author has said to discard their changes (HAX's own
+ * question offers only "Cancel" and "OK"). Changed means the page's HTML
+ * differs from what the stock editor took 100 ms after editing began, as
+ * in its own _cancelButtonTap.
+ */
+export async function cancelEdit() {
+  const ui = stockUI();
+  if (!ui) return;
+  const body = haxStore()?.activeHaxBody;
+  if (body && (await body.haxToContent()) !== ui._originalContent) {
+    const title = store.activeItem?.title;
+    const choice = await confirmDialog().ask({
+      title: "Leave without saving?",
+      text: `Your changes${title ? ` to “${title}”` : ""} will be lost.`,
+      actions: [
+        { id: "keep", label: "Keep editing" },
+        { id: "discard", label: "Discard changes", kind: "destructive" },
+      ],
+    });
+    if (choice !== "discard" || !store.editMode) return;
+  }
+  ui._cancelEditing(fakeEvent(ui.shadowRoot?.querySelector("#cancelbutton")));
+}
 
 export function addPage() {
   const btn = stockUI()?.shadowRoot?.querySelector("#addpagebutton");
