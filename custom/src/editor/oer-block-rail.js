@@ -36,6 +36,7 @@ import { saveOutline } from "../outline/outline-model.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { layoutOf, columnCount, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 import { sectionOf } from "../blocks/course-site/cs-shared.js";
+import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 
 const SEP = { sep: true };
 
@@ -463,11 +464,19 @@ class OerBlockRail extends LitElement {
     item.run();
     this._close();
     // chosen from the keyboard: back to the content, unless the command
-    // opened something of its own (the block list, a dialog)
+    // opened something of its own (the block list, a dialog). Decided by
+    // where the caret is: Firefox puts focus back in the content by itself,
+    // with the caret where it was (in the original, after Duplicate)
     if (byKeys) {
       requestAnimationFrame(() => {
-        const focus = globalThis.document.activeElement;
-        if (!focus || focus === globalThis.document.body || focus === this) this._toContent();
+        const body = this._hax?.activeHaxBody;
+        const node = this._hax?.activeNode;
+        let focus = globalThis.document.activeElement;
+        while (focus?.shadowRoot?.activeElement) focus = focus.shadowRoot.activeElement;
+        const inContent = !!body && !!focus && body.contains(focus);
+        if (focus && focus !== globalThis.document.body && !inContent && !this.matches(":focus-within")) return;
+        const at = body && getEditRange(body);
+        if (!inContent || !at || !node?.contains(at.startContainer)) this._toContent();
       });
     }
   }
@@ -504,9 +513,7 @@ class OerBlockRail extends LitElement {
       range.collapse(true);
     }
     body.focus({ preventScroll: true });
-    const sel = body.getRootNode().getSelection?.() || globalThis.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
+    setEditRange(range);
   }
 
   // cite at the caret (or after the selection) in the active text block
@@ -595,8 +602,7 @@ class OerBlockRail extends LitElement {
       e.stopPropagation();
       // where to come back to (Esc, or after a command)
       const body = this._hax?.activeHaxBody;
-      const sel = body?.getRootNode().getSelection?.() || globalThis.getSelection();
-      const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+      const range = body ? getEditRange(body) : null;
       if (!this.matches(":focus-within")) this.__caret = range && body.contains(range.startContainer) ? new StaticRange(range) : null;
       this.shadowRoot.querySelector(".rail button")?.focus();
     }

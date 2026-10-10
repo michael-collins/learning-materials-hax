@@ -18,6 +18,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { parseReference } from "./parse-reference.js";
+import { setEditRange } from "../ui/edit-selection.js";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -144,14 +145,15 @@ export function insertCitation(body, range, ref, pageId = store.activeId) {
   const r = range.cloneRange();
   r.collapse(false);
   r.insertNode(sup);
-  // leave the caret after the citation
-  const after = globalThis.document.createRange();
-  after.setStartAfter(sup);
-  after.collapse(true);
-  const sel = body.getRootNode().getSelection?.() || globalThis.getSelection();
-  sel?.removeAllRanges();
-  sel?.addRange(after);
   normalizeCitations(body, pageId);
+  // leave the caret after the citation (once it's numbered: Safari had
+  // put the caret in the number's text, which numbering replaces)
+  if (sup.isConnected) {
+    const after = globalThis.document.createRange();
+    after.setStartAfter(sup);
+    after.collapse(true);
+    setEditRange(after);
+  }
   return id;
 }
 

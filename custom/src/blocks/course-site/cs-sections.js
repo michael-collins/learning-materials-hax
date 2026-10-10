@@ -164,9 +164,10 @@ export class OerCsHero extends SiteSection {
           display: grid;
           place-items: center;
           background-color: var(--card);
+          /* in srgb: Firefox draws hard stops in oklch (--border) inverted */
           background-image:
-            repeating-linear-gradient(0deg, transparent 0 23px, var(--border) 23px 24px),
-            repeating-linear-gradient(90deg, transparent 0 23px, var(--border) 23px 24px);
+            repeating-linear-gradient(0deg in srgb, transparent 0 23px, var(--border) 23px 24px),
+            repeating-linear-gradient(90deg in srgb, transparent 0 23px, var(--border) 23px 24px);
         }
         .art-fallback span {
           font-family: var(--cs-font-display, inherit);

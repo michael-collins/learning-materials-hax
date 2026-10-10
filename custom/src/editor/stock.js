@@ -7,6 +7,7 @@
  * click(), so synthetic clicks on its buttons never reach those handlers.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
+import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { confirmDialog } from "../ui/oer-confirm.js";
 
 export const PANELS = ["content-add", "content-edit", "content-map", "view-source"];
@@ -41,15 +42,17 @@ export const redo = () => haxStore()?.activeHaxBody?.redo?.();
 /**
  * Leave the editor without saving: at once when nothing has changed,
  * otherwise once the author has said to discard their changes (HAX's own
- * question offers only "Cancel" and "OK"). Changed means the page's HTML
- * differs from what the stock editor took 100 ms after editing began, as
- * in its own _cancelButtonTap.
+ * question offers only "Cancel" and "OK"). Changed means what HAX would
+ * save differs from the copy taken when the page arrived in the editor
+ * (watchBaseline). Called from a click, focus goes back to the button
+ * after "Keep editing" (Safari doesn't focus a button that's clicked).
  */
-export async function cancelEdit() {
+export async function cancelEdit(e) {
+  const opener = e?.currentTarget instanceof HTMLElement ? e.currentTarget : undefined;
   const ui = stockUI();
   if (!ui) return;
   const body = haxStore()?.activeHaxBody;
-  if (body && (await body.haxToContent()) !== ui._originalContent) {
+  if (body && (await unsaved(body, ui))) {
     const title = store.activeItem?.title;
     const choice = await confirmDialog().ask({
       title: "Leave without saving?",
@@ -58,10 +61,89 @@ export async function cancelEdit() {
         { id: "keep", label: "Keep editing" },
         { id: "discard", label: "Discard changes", kind: "destructive" },
       ],
+      opener,
+      fallback: body,
     });
     if (choice !== "discard" || !store.editMode) return;
   }
   ui._cancelEditing(fakeEvent(ui.shadowRoot?.querySelector("#cancelbutton")));
+}
+
+/* ---------- the page as it was when editing began ---------- */
+
+let baseline = null; // what HAX would save, normalized, once the page has arrived
+let session = 0; // counts edit mode starting and ending
+let arriving = 0; // the session whose copy is being taken
+let watching = false;
+
+// a page's HTML without what HAX adds while editing, or white space between tags
+function normalizedHtml(html) {
+  const t = globalThis.document.createElement("template");
+  t.innerHTML = html;
+  for (const el of t.content.querySelectorAll("*")) {
+    for (const a of [...el.attributes]) {
+      if (a.name.startsWith("data-hax-") || a.name === "contenteditable" || a.name === "draggable") el.removeAttribute(a.name);
+    }
+    if (el.getAttribute("role") === "textbox") el.removeAttribute("role");
+    if (el.hasAttribute("class")) {
+      const kept = [...el.classList].filter((c) => !c.startsWith("hax-"));
+      if (kept.length) el.setAttribute("class", kept.join(" "));
+      else el.removeAttribute("class");
+    }
+  }
+  return t.innerHTML.replace(/>\s+</g, "><").trim();
+}
+
+/**
+ * Take the "nothing changed" copy of the page (what HAX would save) once
+ * HAX has imported the page into hax-body: at its first
+ * hax-body-content-ready while editing, when the import is done and no
+ * block has come or gone for 300 ms. HAX's own copy (_originalContent,
+ * haxcms-site-editor-ui.js _editModeChanged 8103–8110) is taken on a
+ * 100 ms timer as editing starts, but the page is imported 250–700 ms
+ * later (haxcms-site-editor.js 57–72, hax-body.js importContent
+ * 3563–3650): in Firefox and Safari it was empty, and Cancel always asked
+ * to discard. HAX's copy is set to this one too.
+ */
+export function watchBaseline() {
+  if (watching) return;
+  watching = true;
+  autorun(() => {
+    toJS(store.editMode);
+    session++;
+    baseline = null;
+  });
+  globalThis.addEventListener("hax-body-content-ready", (e) => {
+    const body = e.detail?.body;
+    if (!body || !store.editMode || baseline !== null || arriving === session) return;
+    const mine = (arriving = session);
+    let changed = performance.now();
+    const observer = new MutationObserver(() => (changed = performance.now()));
+    observer.observe(body, { childList: true });
+    const settled = async () => {
+      if (mine !== session) return observer.disconnect();
+      if (body._contentState?.getState?.("importing") || performance.now() - changed < 300) return void setTimeout(settled, 50);
+      observer.disconnect();
+      const html = await body.haxToContent();
+      if (mine !== session) return;
+      const ui = stockUI();
+      if (ui) ui._originalContent = html;
+      baseline = normalizedHtml(html);
+    };
+    setTimeout(settled, 50);
+  });
+}
+
+/**
+ * Whether the page has changed since it arrived in the editor. Cancel
+ * straight after Edit content waits for that copy (a second or so in
+ * Firefox); without one it compares with HAX's own, as HAX does.
+ */
+async function unsaved(body, ui) {
+  const mine = session;
+  for (let waited = 0; baseline === null && mine === session && waited < 3000; waited += 50) await new Promise((r) => setTimeout(r, 50));
+  const now = await body.haxToContent();
+  return baseline === null ? now !== ui._originalContent : normalizedHtml(now) !== baseline;
 }
 
 export function addPage() {

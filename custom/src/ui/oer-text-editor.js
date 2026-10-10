@@ -13,6 +13,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { formControls } from "./form-controls.js";
+import { getEditRange, setEditRange } from "./edit-selection.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
@@ -136,20 +137,15 @@ class OerTextEditor extends LitElement {
   }
 
   _startLink() {
-    const sel = this.shadowRoot.getSelection ? this.shadowRoot.getSelection() : globalThis.getSelection();
-    this.__range = sel && sel.rangeCount ? sel.getRangeAt(0).cloneRange() : null;
+    this.__range = getEditRange(this._area);
     this._linking = true;
     this.updateComplete.then(() => this.shadowRoot.querySelector(".link-input")?.focus());
   }
 
   _applyLink(url) {
     this._linking = false;
-    const sel = this.shadowRoot.getSelection ? this.shadowRoot.getSelection() : globalThis.getSelection();
     this._area.focus();
-    if (this.__range && sel) {
-      sel.removeAllRanges();
-      sel.addRange(this.__range);
-    }
+    if (this.__range) setEditRange(this.__range);
     if (url.trim()) globalThis.document.execCommand("createLink", false, url.trim());
     this._input();
   }
@@ -255,7 +251,11 @@ class OerTextEditor extends LitElement {
       <div class="bar" role="toolbar" aria-label="${this.label}: formatting">
         ${this._linking
           ? html`<input class="link-input" type="url" placeholder="https://… or a page's address" aria-label="Link address" @keydown="${(e) => {
-                if (e.key === "Enter") this._applyLink(e.target.value);
+                if (e.key === "Enter") {
+                  // not also a new paragraph in place of the linked words
+                  e.preventDefault();
+                  this._applyLink(e.target.value);
+                }
                 if (e.key === "Escape") {
                   e.stopPropagation();
                   this._linking = false;

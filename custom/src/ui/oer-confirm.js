@@ -15,11 +15,14 @@
  * Resolves to the chosen action's id. The first action is the safe one:
  * it has focus when the dialog opens, and Esc chooses it. Kinds: "outline"
  * (the default), "primary" and "destructive". A native modal dialog: focus
- * stays inside and goes back where it was when it closes; a click outside
- * doesn't close it.
+ * stays inside, and when it closes goes back to `opener` (the control that
+ * asked, taken from its event: Safari doesn't focus a button that's
+ * clicked) or else where focus was, with the caret where it was; when
+ * that was the page itself, to `fallback`. A click outside doesn't close it.
  * @element oer-confirm
  */
 import { html, css, LitElement } from "../lit.js";
+import { getEditRange, setEditRange } from "./edit-selection.js";
 
 // focus as the person sees it, inside shadow roots
 function deepActive() {
@@ -45,10 +48,11 @@ class OerConfirm extends LitElement {
   }
 
   /** Ask; resolves to the chosen action's id (the first action's on Esc). */
-  ask({ title, text = "", actions }) {
+  ask({ title, text = "", actions, opener = deepActive(), fallback = null }) {
     // a question still open is answered safely first
     this._answer(this._q?.actions[0]?.id);
-    this.__opener = deepActive();
+    this.__opener = opener && opener !== globalThis.document.body ? opener : fallback;
+    this.__caret = this.__opener?.isContentEditable ? getEditRange(this.__opener) : null;
     this._q = { title, text, actions };
     return new Promise((resolve) => (this.__resolve = resolve));
   }
@@ -63,7 +67,10 @@ class OerConfirm extends LitElement {
     if (!this._q && dialog.open) {
       dialog.close();
       // back where focus was, if that's still on the page
-      if (this.__opener?.isConnected) this.__opener.focus();
+      if (this.__opener?.isConnected) {
+        this.__opener.focus();
+        if (this.__caret?.startContainer.isConnected) setEditRange(this.__caret);
+      }
     }
   }
 

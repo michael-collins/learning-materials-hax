@@ -23,6 +23,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { contentViewport } from "./stock.js";
 import { computeSlots, slotAt, sameSlot, insertInSlot } from "./slots.js";
+import { setEditRange } from "../ui/edit-selection.js";
 
 const PANEL_W = 288;
 const PREVIEW_W = 288;
@@ -249,10 +250,8 @@ class OerBlockInserter extends LitElement {
       const range = globalThis.document.createRange();
       range.setStart(el, 0);
       range.collapse(true);
-      const sel = el.getRootNode().getSelection?.() || globalThis.getSelection();
       if (!body.matches(":focus-within")) body.focus({ preventScroll: true });
-      sel.removeAllRanges();
-      sel.addRange(range);
+      setEditRange(range);
     });
   }
 

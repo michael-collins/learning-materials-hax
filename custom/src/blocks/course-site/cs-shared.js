@@ -11,6 +11,7 @@
 import { html, css, LitElement, svg } from "../../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { siteData, COURSE_SITE_TYPE } from "../../types/course-site.js";
+import { getEditRange, setEditRange } from "../../ui/edit-selection.js";
 
 // Lucide (ISC), inline
 const ICONS = {
@@ -138,9 +139,7 @@ export class SiteSection extends LitElement {
           const range = globalThis.document.createRange();
           range.selectNodeContents(c.el);
           range.collapse(false);
-          const sel = c.el.getRootNode().getSelection?.() || globalThis.getSelection();
-          sel.removeAllRanges();
-          sel.addRange(range);
+          setEditRange(range);
         }
       });
     };
@@ -190,10 +189,8 @@ export class SiteSection extends LitElement {
       const range = globalThis.document.createRange();
       range.selectNodeContents(target);
       range.collapse(!target.textContent.trim());
-      const sel = target.getRootNode().getSelection?.() || globalThis.getSelection();
       if (!body.matches(":focus-within")) body.focus({ preventScroll: true });
-      sel.removeAllRanges();
-      sel.addRange(range);
+      setEditRange(range);
     });
   }
 
@@ -201,15 +198,26 @@ export class SiteSection extends LitElement {
    * Backspace at the very start of a section's first block, or Delete at
    * the very end of its last, does nothing: the browser would merge the
    * block into the section next to it, or that section's into this one,
-   * and HAX could then delete a section.
+   * and HAX could then delete a section. Nor does deleting or typing over
+   * a selection that takes in this section and goes past it (Select All,
+   * or one from another section): the section would go with it, and in
+   * Firefox Select All then Backspace emptied the whole page.
    */
   keepEdges(e) {
-    if (!this._editing || (e.key !== "Backspace" && e.key !== "Delete")) return;
+    const deletes = e.key === "Backspace" || e.key === "Delete";
+    const types = e.key === "Enter" || (e.key?.length === 1 && !e.ctrlKey && !e.metaKey);
+    if (!this._editing || (!deletes && !types)) return;
     if (e.composedPath()[0]?.localName !== "hax-body") return;
-    const sel = this.getRootNode().getSelection?.() || globalThis.getSelection();
-    if (!sel?.rangeCount || !sel.isCollapsed) return;
-    const at = sel.getRangeAt(0);
-    if (!this.contains(at.startContainer)) return;
+    const at = getEditRange(this);
+    if (!at) return;
+    if (!at.collapsed) {
+      if (at.intersectsNode(this) && !(this.contains(at.startContainer) && this.contains(at.endContainer))) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      return;
+    }
+    if (!deletes || !this.contains(at.startContainer)) return;
     // the caret in the first (or last) block, or in the section between blocks
     const blocks = ownBlocks(this);
     const edge = blocks.some((b) => b.contains(at.startContainer)) ? (e.key === "Backspace" ? blocks[0] : blocks[blocks.length - 1]) : this;
