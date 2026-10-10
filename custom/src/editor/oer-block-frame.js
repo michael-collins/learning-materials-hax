@@ -24,7 +24,8 @@
  * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
  * opens the layout menu (presets, select, remove; or "put in columns" for
  * a block outside any layout). The sliders button opens the block's
- * settings (oer-settings-dialog). A course site section, its items and what
+ * settings (oer-settings-dialog), and shows only for a block that has some
+ * (block-settings.js: not text). A course site section, its items and what
  * they hold have neither button (nothing of theirs is set in settings). In
  * a section, ↑ / ↓ move the section or item (ops.js, as the rail's Move
  * does), and the grip doesn't drag a field or an item out of it. A block
@@ -46,6 +47,7 @@ import { pressPlate } from "./stock.js";
 import { contentView } from "./editor-state.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
+import { hasSettings } from "./block-settings.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 import { sectionOf, isSection } from "../blocks/course-site/cs-shared.js";
 import { sectionOrItemOf } from "./policy.js";
@@ -71,6 +73,7 @@ class OerBlockFrame extends LitElement {
       _guides: { state: true },
       _menu: { state: true },
       _section: { state: true }, // "self" or "inside" when the block is or is in a course site section
+      _settings: { state: true }, // whether the block has settings to show (block-settings.js)
     };
   }
 
@@ -144,6 +147,7 @@ class OerBlockFrame extends LitElement {
       // width, and readers only see a section's own blocks
       const section = sectionOf(node);
       this._section = !section ? null : section === node ? "self" : "inside";
+      this._settings = hasSettings(node);
     }
     const f = frameRect(node);
     const view = contentView();
@@ -643,16 +647,16 @@ class OerBlockFrame extends LitElement {
   _renderLabel() {
     const inLayout = this._layout && this._layout !== this.__node;
     return html`<div class="label" @mousedown="${(e) => e.preventDefault()}">
-      ${this._section
+      ${this._section || !this._settings
         ? ""
         : html`<button
             class="lay"
             title="Block settings"
             aria-label="Block settings"
             aria-haspopup="dialog"
-            @click="${() => {
+            @click="${(e) => {
               this._menu = false;
-              settingsDialog().open("settings");
+              settingsDialog().open("settings", e.currentTarget);
             }}"
           >
             ${icon("sliders-horizontal")}

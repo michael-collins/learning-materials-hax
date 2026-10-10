@@ -182,6 +182,8 @@ export const editorSkin = {
       font-size: 0.8125rem !important;
       color: var(--muted-foreground) !important;
       margin-top: 0.375rem !important;
+      /* stock dims it to 0.7 as well, which fails AA */
+      opacity: 1 !important;
     }
     [part="error-msg"] {
       font-size: 0.8125rem !important;
@@ -226,6 +228,12 @@ export const editorSkin = {
     [part="textarea"] {
       min-height: 5rem !important;
     }
+    /* stock gives selects "light dark", which follows the system, not the
+       site's dark mode, so the tokens drew a white select on a dark form */
+    select.field,
+    [part="select"] {
+      color-scheme: inherit !important;
+    }
     input.field:focus-visible,
     textarea.field:focus-visible,
     select.field:focus-visible {
@@ -266,6 +274,13 @@ export const editorSkin = {
       accent-color: var(--primary);
       width: 1rem;
       height: 1rem;
+    }
+    /* a checkbox before its words, as shadcn's Checkbox with its label */
+    :host([type="checkbox"]) [part="field-main"] {
+      flex-direction: row-reverse !important;
+      justify-content: flex-end !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
     }
     [part="fieldset-legend"] {
       font-size: 0.875rem !important;
@@ -443,6 +458,9 @@ export const editorSkin = {
       color: var(--foreground);
       --simple-icon-height: 1rem;
       --simple-icon-width: 1rem;
+      /* labels as they're written (sentence case), not capitalised */
+      --simple-fields-legend-text-transform: none !important;
+      --simple-fields-button-text-transform: none !important;
     }
     :host([collapsed]),
     :host(:not([data-oer-dialog])) {
@@ -527,6 +545,15 @@ export const editorSkin = {
       border: 0 !important;
       border-bottom: 1px solid var(--border) !important;
       margin: 0 !important;
+    }
+    /* a block's settings are one short list (block-settings.js), always
+       open: no Configure heading to open it by */
+    :host([id="settings.configure"]) {
+      border-bottom: 0 !important;
+    }
+    :host([id="settings.configure"]) > button,
+    :host([id="settings.configure"]) > #heading {
+      display: none !important;
     }
     #heading,
     button {

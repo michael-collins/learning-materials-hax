@@ -88,6 +88,7 @@ import { css } from "../lit.js";
 import { cancelEdit, isMac } from "./stock.js";
 import { registerShadowStyles } from "./shadow-styles.js";
 import { policyOf, closedUnitOf } from "./policy.js";
+import { curate, curatedValue } from "./block-settings.js";
 
 export function onDefined(tag, fn) {
   const cls = customElements.get(tag);
@@ -450,5 +451,87 @@ export function installHaxFixes() {
         pointer-events: none;
       }
     `,
+  });
+
+  curateSettingsForms();
+}
+
+/* ---------- block settings, curated (WP-13) ---------- */
+
+/**
+ * Every block's settings form is cut down to what block-settings.js keeps,
+ * as the tray builds it: HAX's setupActiveElementForm hook, which a block
+ * can declare to change its own form, runs for every block, and after the
+ * block's own, the form is curated (curate(), new arrays and fields) and
+ * filled in with the block's values for the fields it kept. Only the
+ * tray's forms: the text toolbar's prompts run the hook too, on a block
+ * made for the purpose and HAX's shared registration, which are left
+ * alone. hax-body/lib/hax-store.js testHook 68, runHook 84; hax-tray.js
+ * _setupForm 1396 (the hook 1697, the form's value 1706).
+ *
+ * And HAX's block list stays as it was: the tray's form shares its arrays
+ * and fields with HAXStore.elementList, and HAX writes each top-level
+ * field's property onto them (hax-tray.js 1617–1646). While a form is set
+ * up, the tray reads a copy of the block's registration instead (all of
+ * that happens before the hook, as _setupForm's first await). Selecting a
+ * block with slots (a callout) wrote the block itself, its children and
+ * more onto its registered slot fields the same way (hax-store.js
+ * slotsSchemaFromNode 1257–1283): slotsFromSchema (4507) now hands out
+ * copies of them.
+ */
+function curateSettingsForms() {
+  // the tray's form for a block in the page (not a prompt's made-up one)
+  const traysForm = (store, el, props) => !!el?.isConnected && !!props?.settings && props.settings !== store.elementList?.[el.localName]?.settings;
+
+  onDefined("hax-store", (Store) => {
+    const proto = Store.prototype;
+    const at = (method, marker) => ({ fix: `block settings curated (${method})`, owner: "hax-store", target: proto, method, marker });
+    let ownHook = null;
+    pinned(at("testHook", "primativeHooks"), (original) => {
+      ownHook = original;
+      return function (el, op) {
+        if (op === "setupActiveElementForm" && el?.isConnected && el.closest?.("hax-body")) return true;
+        return original.call(this, el, op);
+      };
+    });
+    pinned(at("runHook", "testHook"), (original) =>
+      async function (el, op, data = []) {
+        const [props] = data;
+        if (op !== "setupActiveElementForm" || !ownHook || !traysForm(this, el, props)) return original.call(this, el, op, data);
+        const result = ownHook.call(this, el, op) ? await original.call(this, el, op, data) : false;
+        const curated = curate(el.localName, props.settings);
+        Object.assign(props.settings, curated);
+        const tray = this.haxTray;
+        if (tray?.activeNode === el && tray.activeValue) tray.activeValue = curatedValue(curated.configure, tray.activeHaxElement?.properties, tray.activeValue);
+        return result;
+      },
+    );
+    pinned(
+      { fix: "a block's slots leave HAX's block list as it was", owner: "hax-store", target: proto, method: "slotsFromSchema", marker: ".required" },
+      (original) =>
+        function (...args) {
+          return original.apply(this, args).map((slot) => (slot && typeof slot === "object" ? { ...slot } : slot));
+        },
+    );
+  });
+
+  onDefined("hax-tray", (Tray) => {
+    pinned(
+      { fix: "block settings leave HAX's block list as it was", owner: "hax-tray", target: Tray.prototype, method: "_setupForm", marker: "setupActiveElementForm" },
+      (original) =>
+        function (...args) {
+          const list = haxStore()?.elementList;
+          const tag = this.activeNode?.localName;
+          const entry = tag && list?.[tag];
+          if (!entry?.settings) return original.apply(this, args);
+          const settings = Object.fromEntries(Object.entries(entry.settings).map(([key, fields]) => [key, Array.isArray(fields) ? fields.map((f) => (f && typeof f === "object" ? { ...f } : f)) : fields]));
+          list[tag] = { ...entry, settings };
+          try {
+            return original.apply(this, args);
+          } finally {
+            list[tag] = entry;
+          }
+        },
+    );
   });
 }

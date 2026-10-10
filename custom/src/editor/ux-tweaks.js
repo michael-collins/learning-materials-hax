@@ -98,8 +98,11 @@ export function installUxTweaks() {
 
 /**
  * The editor panel (hax-tray) is only shown inside oer-settings-dialog
- * (block settings, HTML source). Block settings open with "Configure"
- * expanded.
+ * (block settings, HTML source). A block's settings are one short list
+ * (block-settings.js): "Configure" stays expanded, with its heading
+ * hidden (editor-skin.js). The panel's scrolling body isn't a stop for
+ * Tab of its own, nor a live region reading the whole form out as it
+ * changes: the dialog names the block, and Tab goes to the fields.
  */
 
 function whenElement(tag, fn) {
@@ -126,6 +129,9 @@ export function installTrayEnhancer() {
 
     const enhance = () => {
       const root = tray.shadowRoot;
+      const detail = root.querySelector("#tray-detail");
+      if (detail && detail.getAttribute("tabindex") !== "-1") detail.setAttribute("tabindex", "-1");
+      if (detail && detail.getAttribute("aria-live") !== "off") detail.setAttribute("aria-live", "off");
       // HAX re-renders the section elements after the form itself, so key
       // off the Configure section's identity rather than the form's
       const configure = root.querySelector('a11y-collapse[id="settings.configure"]');
@@ -136,7 +142,7 @@ export function installTrayEnhancer() {
         });
       }
     };
-    new MutationObserver(enhance).observe(tray.shadowRoot, { childList: true, subtree: true });
+    new MutationObserver(enhance).observe(tray.shadowRoot, { childList: true, subtree: true, attributeFilter: ["tabindex", "aria-live"] });
     enhance();
   });
 }

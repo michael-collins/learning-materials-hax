@@ -2115,7 +2115,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           <div class="separator" aria-hidden="true"></div>
           <button
             class="icon-btn"
-            @click="${() => settingsDialog().open("source")}"
+            @click="${(e) => settingsDialog().open("source", e.currentTarget)}"
             title="Edit HTML source"
             aria-label="Edit HTML source"
           >
