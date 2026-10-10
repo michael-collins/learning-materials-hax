@@ -11,16 +11,18 @@
  * - Keys outside the content: hax-body acts on keys pressed anywhere in the
  *   window, at the last caret in the content (Enter on our toolbar split a
  *   paragraph; ↑↑ on a button added a paragraph above the hero). It now
- *   ignores keys from outside itself; Undo and Redo are undo.js's.
+ *   ignores keys from outside its light DOM, a block's own shadow controls
+ *   included (↑↑ on the hero's Choose from site did the same); Undo and
+ *   Redo are undo.js's.
  *   hax-body/hax-body.js _onKeyDown 1407–1432, _onKeyUp 1310; bound on
  *   entering edit mode (4456), so patching the prototype before then is
  *   enough.
  * - Pastes outside the content: HAX's store pastes into the active block
  *   whatever is pasted in the window (a paste in Page details added a
  *   paragraph to a section). Its window listener is bound when the store
- *   connects, so it's taken off once, wrapped, and put back.
- *   hax-body/lib/hax-store.js _onPaste 2072, bound by utils/utils.js
- *   winEventsElement 1850–1873.
+ *   connects (under the name its __winEvents give), so it's taken off once,
+ *   wrapped, and put back. hax-body/lib/hax-store.js _onPaste 2072,
+ *   __winEvents 3145; utils/utils.js winEventsElement 1850–1873.
  * - The text toolbar made every active block its target: a section got
  *   role="textbox" (announced as a text box) and contenteditable from it.
  *   Units whose policy says textTarget: false (policy.js) are passed over,
@@ -29,10 +31,20 @@
  *   1593–1630, enableEditing 1387; hax-body/lib/hax-text-editor-toolbar.js
  *   updated 754.
  * - Drops onto sections: a file dropped on a section landed inside it.
- *   Sections and items take only their own fields and items, so drops
- *   there are refused. hax-body.js dropEvent 5455.
+ *   Sections and items take only their own fields and items, so a file or
+ *   a block dropped there is refused, cleaning up as HAX's own drop does;
+ *   dragged text is left to the deletion guard. hax-body.js dropEvent
+ *   5455–6001, dragEnterBody 1021, dragEndBody 851.
  * - The settings form took focus each time a block became active.
  *   hax-body/lib/hax-tray.js #settingsform 993; simple-fields/lib/simple-fields-lite.js 583.
+ * - Selecting a block doesn't change it. Filling the settings form in for
+ *   the newly selected block fires value-changed, as editing a field does,
+ *   and the tray wrote every value back to the block: a quiz got
+ *   single-option="single-option" and quiz-name="default", a self-check's
+ *   paragraphs turned into spans, and each was an undo step and an
+ *   unsaved change. Until the author touches the form, its value-changed
+ *   stops before the tray's listener. hax-tray.js _setupForm 1396,
+ *   __valueChangedEvent 1843 (bound 1319), the writes 1870–2079.
  * - A source view left open (Edit HTML, then selecting another block) kept
  *   hax-body's viewSourceToggle on, which switches off Duplicate, Remove and
  *   Insert for every block. It ends when the selection moves.
@@ -53,13 +65,13 @@
  *   hax-body.js #topcontextmenu 213, 1069.
  *
  *   installHaxFixes()   // from installEditorChrome (editor/index.js)
- *   pinned({ fix, owner, target, method, marker }, (original) => wrapper)
+ *   pinned({ fix, owner, target, method, marker, file }, (original) => wrapper)
  *   onEditEntry((body) => …)   // each time editing starts
  */
 import { css } from "../lit.js";
 import { cancelEdit, isMac } from "./stock.js";
 import { registerShadowStyles } from "./shadow-styles.js";
-import { policyOf } from "./policy.js";
+import { policyOf, closedUnitOf } from "./policy.js";
 
 export function onDefined(tag, fn) {
   const cls = customElements.get(tag);
@@ -74,32 +86,49 @@ const haxStore = () => globalThis.HaxStore?.requestAvailability?.();
 const warned = new Set();
 
 /**
+ * Warn, once per fix, that it's off: why (by default, that owner's method()
+ * has changed), and the file to check it in (spec.file, which defaults to
+ * this one). Returns false.
+ */
+export function fixOff({ fix, owner, method, file = "editor/hax-fixes.js" }, why = `${owner} ${method}() isn't HAX 26.8.1's any more`) {
+  if (!warned.has(fix)) {
+    warned.add(fix);
+    console.warn(`Editor fix off: ${fix}. ${why}; check the fix in ${file} against it.`);
+  }
+  return false;
+}
+
+// HAX's own method, under any fixes already wrapped round it
+function haxOwn(fn) {
+  while (fn?.__oerOriginal) fn = fn.__oerOriginal;
+  return fn;
+}
+
+/**
  * Whether target[method] (owner names it: "hax-body") is still HAX
  * 26.8.1's: there, and its source holding marker (a property name or a
  * string, which survive HAX's minified build). If not, warns once that the
- * fix is off.
+ * fix is off (see fixOff).
  */
-export function matches({ fix, owner, target, method, marker }) {
-  const fn = target?.[method];
-  if (typeof fn === "function" && String(fn).includes(marker)) return true;
-  if (!warned.has(fix)) {
-    warned.add(fix);
-    console.warn(`Editor fix off: ${fix}. ${owner} ${method}() isn't HAX 26.8.1's any more; check the fix in editor/hax-fixes.js against it.`);
-  }
-  return false;
+export function matches(spec) {
+  const fn = haxOwn(spec.target?.[spec.method]);
+  if (typeof fn === "function" && String(fn).includes(spec.marker)) return true;
+  return fixOff(spec);
 }
 
 /**
  * Wrap a method of HAX's with wrap(original), once, if it still matches
  * (see matches()). Returns whether the fix is on; the wrapper carries the
- * fix's name as __oerFix.
+ * fix's name as __oerFix, and what it wraps as __oerOriginal.
  */
 export function pinned(spec, wrap) {
-  const { target, method } = spec;
+  const { target, method, fix } = spec;
+  for (let fn = target?.[method]; fn?.__oerOriginal; fn = fn.__oerOriginal) if (fn.__oerFix === fix) return true;
   if (!matches(spec)) return false;
-  if (target[method].__oerFix) return true;
-  const wrapped = wrap(target[method]);
-  wrapped.__oerFix = spec.fix;
+  const original = target[method];
+  const wrapped = wrap(original);
+  wrapped.__oerFix = fix;
+  wrapped.__oerOriginal = original;
   target[method] = wrapped;
   return true;
 }
@@ -154,17 +183,41 @@ function holdLinks(e) {
 
 /* ---------- drops ---------- */
 
-// a drop onto a section or item (or anything inside one), which takes
-// only its own fields and items, not blocks
+// a file or a block dropped onto a section or item (or anything inside
+// one), which takes only its own fields and items; dragged text is the
+// deletion guard's to judge
 function refusesDrop(e, body) {
-  for (const el of e.composedPath()) {
-    if (el === body) return false;
-    // its shadow parts are retargeted to it further along
-    if (el.nodeType !== 1 || !body.contains(el)) continue;
-    const { kind, accepts } = policyOf(el);
-    if ((kind === "section" || kind === "item") && !accepts.includes("*")) return true;
+  const file = [...(e.dataTransfer?.items || [])].some((item) => item.kind === "file");
+  if (!haxStore()?.__dragTarget && !file) return false;
+  // the first element in the content: a block's shadow parts come before it
+  const target = e.composedPath().find((el) => el === body || (el.nodeType === 1 && body.contains(el)));
+  return !!target && target !== body && !!closedUnitOf(target);
+}
+
+/* ---------- the settings form ---------- */
+
+// settings forms being filled in for a newly selected block, not yet
+// touched by the author
+const filling = new WeakSet();
+const watchedForms = new WeakSet();
+
+// filling the form in fires value-changed, as editing a field does, and
+// the tray wrote every value back to the block: these stop it, until the
+// author touches the form
+function watchFilling(form) {
+  if (watchedForms.has(form)) return;
+  watchedForms.add(form);
+  // capture, at the form itself: before the tray's own listener
+  form.addEventListener(
+    "value-changed",
+    (e) => {
+      if (filling.has(form) && e.composedPath()[0] === form) e.stopImmediatePropagation();
+    },
+    true,
+  );
+  for (const type of ["pointerdown", "keydown", "input", "paste", "drop"]) {
+    form.addEventListener(type, (e) => e.isTrusted && filling.delete(form), true);
   }
-  return false;
 }
 
 /* ---------- installing ---------- */
@@ -191,7 +244,10 @@ export function installHaxFixes() {
         at(method, marker, `keys outside the content (${method})`),
         (original) =>
           function (e) {
-            if (!e.composedPath?.().includes(this)) return;
+            // typed in the content's light DOM: not outside hax-body, nor in
+            // a block's own (shadow) controls, which only pass through it
+            const origin = e.composedPath?.()[0];
+            if (!origin || !(origin === this || this.contains(origin))) return;
             return original.call(this, e);
           },
       );
@@ -218,9 +274,15 @@ export function installHaxFixes() {
           if (!this.editMode || !refusesDrop(e, this)) return original.call(this, e);
           e.preventDefault();
           e.stopPropagation();
-          // what HAX would have cleared after the drop
+          // what HAX clears after any drop (dropEvent 5457, 6000–6001): the
+          // drag, the drop marks and the end cap a file brought in
+          // (dragEnterBody 1021), and the scrolling near the window's edge
           this.__dragMoving = false;
-          for (const el of this.querySelectorAll(".hax-hovered, .hax-drop-above, .hax-drop-below")) el.classList.remove("hax-hovered", "hax-drop-above", "hax-drop-below");
+          const hax = haxStore();
+          if (hax) hax.__dragTarget = null;
+          this.dragEndBody?.(e);
+          this.scrollerFixclickEvent?.(e);
+          this.dispatchEvent(new CustomEvent("oer-edit-refused", { bubbles: true, composed: true, detail: { inputType: "drop", reason: "drops into a section" } }));
           return false;
         },
     );
@@ -254,13 +316,34 @@ export function installHaxFixes() {
     );
   });
 
+  onDefined("hax-tray", (Tray) => {
+    pinned(
+      { fix: "selecting a block doesn't change it", owner: "hax-tray", target: Tray.prototype, method: "_setupForm", marker: "setupActiveElementForm" },
+      (original) =>
+        function (...args) {
+          const form = this.shadowRoot?.querySelector("#settingsform");
+          if (form) {
+            watchFilling(form);
+            filling.add(form);
+          }
+          return original.apply(this, args);
+        },
+    );
+  });
+
   // HAX's own paste listener on the window, put back to act only on pastes
   // in the content (not those in a block's own fields, either)
   const quietPaste = () => {
     const hax = haxStore();
     if (!hax || hax.__oerPaste) return;
-    // (the listener is the method bound to the store, which hides its source)
-    if (!Object.hasOwn(hax, "_onPaste") || !matches({ fix: "pastes outside the content", owner: "hax-store", target: hax.constructor.prototype, method: "_onPaste", marker: "EDITABLE-TABLE" })) return;
+    const spec = { fix: "pastes outside the content", owner: "hax-store", target: hax.constructor.prototype, method: "_onPaste", marker: "EDITABLE-TABLE" };
+    if (!matches(spec)) return;
+    // the listener is the method bound to the store (which hides its
+    // source), under the name the store's window events give
+    if (hax.__winEvents?.paste !== "_onPaste" || !Object.hasOwn(hax, "_onPaste")) {
+      fixOff(spec, "hax-store's window paste listener isn't its bound _onPaste() any more");
+      return;
+    }
     hax.__oerPaste = true;
     const original = hax._onPaste;
     globalThis.removeEventListener("paste", original);
@@ -270,7 +353,8 @@ export function installHaxFixes() {
       if (!body || !(origin === body || body.contains(origin))) return;
       return original.call(this, e);
     };
-    hax._onPaste.__oerFix = "pastes outside the content";
+    hax._onPaste.__oerFix = spec.fix;
+    hax._onPaste.__oerOriginal = original;
     globalThis.addEventListener("paste", hax._onPaste);
   };
 

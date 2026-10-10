@@ -20,7 +20,11 @@
  * - paste: HAX's own paste handler deletes the selection and places blocks
  *   itself, with no beforeinput to refuse. A refused selection is collapsed
  *   first, and in a section's one-line fields a paste is plain text on one
- *   line (two paragraphs pasted into a Tools row replaced the hero).
+ *   line (two paragraphs pasted into a Tools row replaced the hero). A
+ *   picture or a file isn't pasted into a section or item (HAX put it
+ *   inside). Blocks pasted in the middle of a paragraph, on any page, get
+ *   an empty paragraph of their own at the caret first (HAX lost the text
+ *   before the caret and reversed the blocks): see makeRoom().
  * - keydown, the backup: Backspace at the start of a field, or Delete at
  *   its end, does nothing where the field it would join is across a
  *   boundary or one line, or there's none (as when Chrome gives no target
@@ -31,7 +35,7 @@
  *   installBoundaryGuard()   // from installEditorChrome (editor/index.js)
  */
 import { onEditEntry } from "./hax-fixes.js";
-import { policyOf, fieldOf, boundaryOf, sameBoundary, isContained, isSingleLine, fieldPolicy, elementOf, TEXT_FIELDS } from "./policy.js";
+import { policyOf, fieldOf, boundaryOf, sameBoundary, isContained, isSingleLine, fieldPolicy, elementOf, closedUnitOf, TEXT_FIELDS } from "./policy.js";
 
 // what removes or rearranges content when it reaches across a boundary
 const STRUCTURAL = /^(delete|insertParagraph|insertLineBreak|insertFromPaste|insertFromDrop|insertReplacementText|insertText|insertFromYank|insertTranspose|formatBlock)/;
@@ -165,6 +169,87 @@ function onCompositionStart(e) {
   refused(body, "insertCompositionText", reason);
 }
 
+/* ---------- what a paste brings ---------- */
+
+// the blocks HAX pastes as blocks (hax-store.js __validGridTags 2836), and
+// a few more that are blocks to a reader
+const BLOCKS = new Set(["p", "ol", "ul", "li", "div", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote", "code", "section", "dl", "dd", "dt", "figure", "pre", "table", "hr"]);
+// HAX's own test for pasted markdown, which it turns into blocks
+// (utils/lib/markdown.js detectMarkdown), once it has loaded
+let detectMarkdown = null;
+
+function parse(html) {
+  const t = globalThis.document.createElement("template");
+  t.innerHTML = html;
+  return t.content;
+}
+
+// a file or a picture: the browser's own image, or one in the HTML
+function pastesMedia(e) {
+  const data = e.clipboardData;
+  if (!data) return false;
+  if ([...data.items].some((item) => item.kind === "file" || item.type.startsWith("image/"))) return true;
+  return !!parse(data.getData("text/html")).querySelector(MEDIA);
+}
+
+// whether HAX would paste blocks (paragraphs, headings, lists…) rather than
+// text into the field: HTML holding any (looking through a lone wrapper,
+// as Google Docs' <b>, as HAX does), or markdown
+function pastesBlocks(e) {
+  const html = e.clipboardData?.getData("text/html") || "";
+  if (html.trim()) {
+    let top = [...parse(html).children].filter((el) => !["meta", "style", "title"].includes(el.localName));
+    while (top.length === 1 && !BLOCKS.has(top[0].localName) && top[0].children.length) top = [...top[0].children];
+    return top.some((el) => BLOCKS.has(el.localName) || el.localName.includes("-"));
+  }
+  return !!detectMarkdown?.(e.clipboardData?.getData("text/plain") || "");
+}
+
+// a field the paste can split: a paragraph or a heading HAX makes active
+const SPLITS = new Set(["p", "h1", "h2", "h3", "h4", "h5", "h6"]);
+const isEmpty = (el) => !el.textContent.trim() && !el.querySelector(MEDIA);
+
+/**
+ * Make room for pasted blocks at the caret. HAX pastes blocks well into an
+ * empty active paragraph, which they replace, but in the middle of one it
+ * replaced the text before the caret with the first block and put the rest
+ * in reverse (hax-store.js _onPaste 2681–2752: the split is undone by
+ * haxReplaceNode on the wrong sibling). So the field is split here, with
+ * an empty paragraph between its halves for HAX to paste into: "Second" /
+ * the pasted blocks / " paragraph here.". A selection is deleted first, as
+ * typing over it would.
+ */
+function makeRoom(body, sel) {
+  if (!sel.isCollapsed) globalThis.document.execCommand("delete");
+  if (!sel.rangeCount || !sel.isCollapsed) return;
+  const range = sel.getRangeAt(0);
+  const field = fieldOf(range.startContainer);
+  // (an empty field is room already)
+  if (!field || !SPLITS.has(field.localName) || isEmpty(field)) return;
+  // what follows the caret, as a field of its own
+  const rest = globalThis.document.createRange();
+  rest.setStart(range.startContainer, range.startOffset);
+  rest.setEnd(field, field.childNodes.length);
+  const after = globalThis.document.createElement(field.localName);
+  for (const a of field.attributes) {
+    if (a.name !== "id" && !a.name.startsWith("data-hax-") && !["contenteditable", "role", "draggable", "class"].includes(a.name)) after.setAttribute(a.name, a.value);
+  }
+  after.append(rest.extractContents());
+  // the room: the field itself when nothing came before the caret
+  let room = field;
+  if (!isEmpty(field)) {
+    room = globalThis.document.createElement("p");
+    if (field.hasAttribute("slot")) room.setAttribute("slot", field.getAttribute("slot"));
+    field.after(room);
+  }
+  if (!isEmpty(after)) room.after(after);
+  room.replaceChildren(globalThis.document.createElement("br"));
+  sel.collapse(room, 0);
+  // HAX pastes into its active block
+  if (body.activeNode && body.setActiveNode) body.setActiveNode(room, true);
+  else if (globalThis.HaxStore?.requestAvailability) globalThis.HaxStore.requestAvailability().activeNode = room;
+}
+
 // before HAX's paste handler (on the window), which edits the DOM itself
 function onPaste(e) {
   const body = e.currentTarget;
@@ -179,6 +264,14 @@ function onPaste(e) {
     }
   }
   const at = sel.getRangeAt(0).startContainer;
+  // a picture or a file in a section or item, which takes no blocks: HAX
+  // would put it (and start its upload) inside, as a drop there would
+  if (closedUnitOf(at) && pastesMedia(e)) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    refused(body, "insertFromPaste", "pastes a picture into a section");
+    return;
+  }
   const field = fieldOf(at);
   if (!field) {
     // in a section but outside its fields: HAX would add a paragraph there
@@ -189,11 +282,14 @@ function onPaste(e) {
     }
     return;
   }
-  if (fieldPolicy(field)?.paste !== "line") return;
-  const text = (e.clipboardData?.getData("text/plain") || "").replace(/\s*\n\s*/g, " ").trim();
-  e.preventDefault();
-  e.stopImmediatePropagation();
-  if (text) globalThis.document.execCommand("insertText", false, text);
+  if (fieldPolicy(field)?.paste === "line") {
+    const text = (e.clipboardData?.getData("text/plain") || "").replace(/\s*\n\s*/g, " ").trim();
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if (text) globalThis.document.execCommand("insertText", false, text);
+    return;
+  }
+  if (pastesBlocks(e)) makeRoom(body, sel);
 }
 
 function onKeyDown(e) {
@@ -223,4 +319,8 @@ export function installBoundaryGuard() {
   if (installed) return;
   installed = true;
   onEditEntry(guard);
+  import("@haxtheweb/utils/lib/markdown.js").then(
+    (m) => (detectMarkdown = m.detectMarkdown),
+    () => {},
+  );
 }

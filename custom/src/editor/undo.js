@@ -5,11 +5,15 @@
  * - Selecting isn't an undo step. HAX snapshots hax-body's HTML 300 ms after
  *   any change to it, and selecting a block changes attributes (data-hax-*,
  *   contenteditable, role, element-visible as blocks scroll in and out), so
- *   five clicks were five steps of nothing. A snapshot whose
- *   normalizedHtml() is that of the state the undo position stands for
- *   (the last step, or what Undo or Redo put back) is skipped, which also
- *   keeps Redo after a click. Snapshots stay raw, so undoing still restores
- *   which block was active. hax-body/hax-body.js undoManagerStackLogic
+ *   five clicks were five steps of nothing. Blocks change their own markup
+ *   too, as they start and as Undo puts them back (grid-plate adds ready, a
+ *   question takes its answer inputs out), which made entering edit mode
+ *   a step and cost the Redo; normalizedHtml() leaves out what HAX never
+ *   saves of them. A snapshot whose normalizedHtml() is that of the state
+ *   the undo position stands for (the last step, or what Undo or Redo put
+ *   back) is skipped, which also keeps Redo after a click (and after the
+ *   blocks Undo put back redraw). Snapshots stay raw, so undoing still
+ *   restores which block was active. hax-body/hax-body.js undoManagerStackLogic
  *   5444; undo-manager/undo-manager.js undoManagerStackLogic, Undo, and
  *   UndoManagerCommand.undo (which puts back the step before's newValue).
  * - Mod+Z, Mod+Shift+Z and Ctrl+Y (and Ctrl+Z, HAX's own, on a Mac too) run
@@ -18,6 +22,9 @@
  *   for Ctrl only, so ⌘Z ran the browser's undo, which HAX then recorded as
  *   a new step. The browser's own Undo and Redo commands (the Edit menu)
  *   go to HAX's too. hax-body.js _onKeyDown 1433–1451, undo 4237.
+ * - Undo keeps a quiz's answers: a question's answers live in a property,
+ *   and its light DOM holds them only after saving writes them there, so
+ *   they're written back before each snapshot (keepAnswers).
  * - Typing HAX hasn't recorded yet (it waits 300 ms) is recorded first, so
  *   Undo straight after typing takes back the typing, not the step before.
  * - checkpoint(body, label) records the content as one step now, named for
@@ -32,20 +39,42 @@
 import { isMac } from "./stock.js";
 import { onDefined, pinned } from "./hax-fixes.js";
 
-const activeBody = () => globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody ?? null;
+const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
+const activeBody = () => haxStore()?.activeHaxBody ?? null;
+
+// the attributes HAX never saves for a tag (its haxProperties'
+// saveOptions.unsetAttributes): state a block keeps in its own markup, as
+// grid-plate's ready, true-false-question's _tfanswer, self-check's
+// image-loaded. hax-body/lib/hax-store.js nodeToContent 5196–5202
+const unsaved = (tag) => haxStore()?.elementList?.[tag]?.saveOptions?.unsetAttributes ?? [];
+// question blocks (multiple-choice, true-false-question) take their
+// answers out of light-DOM inputs when they start and write them back only
+// for saving, so the inputs come and go with Undo and the stock editor's
+// snapshot. multiple-choice/lib/QuestionElement.js loadLightDomData 1187,
+// haxpreProcessNodeToContent 746
+const answersInLightDom = (tag) => typeof globalThis.customElements.get(tag)?.prototype?.loadLightDomData === "function";
 
 /**
  * HTML without what HAX changes while editing: data-hax-* attributes,
- * contenteditable, draggable, element-visible, role="textbox" and hax-*
- * classes. What "changed" means for undo and unsaved changes.
+ * contenteditable, draggable, element-visible, role="textbox", hax-*
+ * classes and the end cap a drag adds; and without what blocks change in
+ * their own markup that HAX never saves: attributes their haxProperties
+ * leave unsaved, and a question's answer inputs. What "changed" means for
+ * undo and unsaved changes.
  */
 export function normalizedHtml(html) {
   const t = globalThis.document.createElement("template");
   t.innerHTML = html;
   for (const el of t.content.querySelectorAll("*")) {
-    for (const a of [...el.attributes]) {
-      if (a.name.startsWith("data-hax-") || a.name === "contenteditable" || a.name === "draggable" || a.name === "element-visible") el.removeAttribute(a.name);
+    if (el.localName === "fake-hax-body-end") {
+      el.remove();
+      continue;
     }
+    const skip = unsaved(el.localName);
+    for (const a of [...el.attributes]) {
+      if (a.name.startsWith("data-hax-") || a.name === "contenteditable" || a.name === "draggable" || a.name === "element-visible" || skip.includes(a.name)) el.removeAttribute(a.name);
+    }
+    if (answersInLightDom(el.localName)) for (const input of el.querySelectorAll(":scope > input:not([slot])")) input.remove();
     if (el.getAttribute("role") === "textbox") el.removeAttribute("role");
     if (el.hasAttribute("class")) {
       const kept = [...el.classList].filter((c) => !c.startsWith("hax-"));
@@ -56,9 +85,23 @@ export function normalizedHtml(html) {
   return t.innerHTML.trim();
 }
 
+/**
+ * Write each question's answers back into its light DOM, as saving does,
+ * so the copies undo keeps hold them: a question put back from a copy
+ * without them had no answers left (one Undo after typing on a quiz page
+ * emptied every question, and saving then saved them empty). Before each
+ * snapshot.
+ */
+function keepAnswers(body) {
+  for (const el of body.querySelectorAll("*")) {
+    if (!answersInLightDom(el.localName) || !el.answers?.length || typeof el.haxpreProcessNodeToContent !== "function") continue;
+    if (!el.querySelector(":scope > input:not([slot])")) el.haxpreProcessNodeToContent(el);
+  }
+}
+
 /* ---------- what the undo position stands for ---------- */
 
-// the last state compared, per body: { raw, normalized }
+// the last state compared, per body: { raw, blocks, normalized }
 const recordedCache = new WeakMap();
 
 // the content the undo position stands for: the last step recorded, or
@@ -67,8 +110,10 @@ function recorded(body) {
   const stack = body.undoStack;
   const step = stack?.commands?.[stack.undoStackPosition];
   const raw = step ? step.newValue : stack?.undoStackPosition === -1 ? body.undoStackInitialValue : body.undoStackPrevValue;
+  // (normalizing depends on the blocks HAX knows, which can grow)
+  const blocks = Object.keys(haxStore()?.elementList ?? {}).length;
   let cached = recordedCache.get(body);
-  if (cached?.raw !== raw) recordedCache.set(body, (cached = { raw, normalized: normalizedHtml(raw ?? "") }));
+  if (cached?.raw !== raw || cached.blocks !== blocks) recordedCache.set(body, (cached = { raw, blocks, normalized: normalizedHtml(raw ?? "") }));
   return cached.normalized;
 }
 
@@ -170,12 +215,19 @@ export function installUndo() {
   installed = true;
   onDefined("hax-body", (HaxBody) => {
     pinned(
-      { fix: "selecting isn't an undo step", owner: "hax-body", target: HaxBody.prototype, method: "undoManagerStackLogic", marker: "__dragMoving" },
+      { fix: "selecting isn't an undo step", owner: "hax-body", target: HaxBody.prototype, method: "undoManagerStackLogic", marker: "__dragMoving", file: "editor/undo.js" },
       (original) =>
         function (mutations) {
-          if (!this.editMode || this.__dragMoving || !this.undoStack || unrecorded(this)) return original.call(this, mutations);
-          // only editing attributes changed: the next step starts from here
+          if (!this.editMode || this.__dragMoving || !this.undoStack) return original.call(this, mutations);
+          keepAnswers(this);
+          if (unrecorded(this)) return original.call(this, mutations);
+          // only editing attributes changed: the next step starts from here,
+          // and until there is one, so does the way back (HAX's starting
+          // copy is taken after it imports the page, which takes the
+          // questions' answers out again, and before anything puts them back:
+          // hax-body.js 4400–4411)
           this.undoStackPrevValue = this.innerHTML;
+          if (this.undoStack.undoStackPosition === -1 && !this.undoStack.commands.length) this.undoStackInitialValue = this.innerHTML;
         },
     );
   });

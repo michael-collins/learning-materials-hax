@@ -29,8 +29,8 @@
  *
  * And for the guards: unitOf (the section, item or block a node is in),
  * fieldOf (its text field), boundaryOf (what an edit there must stay
- * inside: a section, an item or another block, a column, or the page) and
- * isSingleLine.
+ * inside: a section, an item or another block, a column, or the page),
+ * isSingleLine and closedUnitOf (the section or item that takes no blocks).
  *
  *   policyOf(el).kind === "section"
  *   sameBoundary(boundaryOf(range.startContainer), boundaryOf(range.endContainer))
@@ -168,9 +168,10 @@ export function fieldOf(node) {
 export function boundaryOf(node) {
   for (let el = elementOf(node); el; el = el.parentElement) {
     if (isBody(el)) return { host: el, slot: null };
+    // a block in a column (a callout) is its own boundary, as on the page
+    if (!OPEN.has(policyOf(el).kind)) return { host: el, slot: null };
     const parent = el.parentElement;
     if (parent && policyOf(parent).kind === "layout") return { host: parent, slot: el.getAttribute("slot") || "" };
-    if (!OPEN.has(policyOf(el).kind)) return { host: el, slot: null };
   }
   return null;
 }
@@ -193,3 +194,16 @@ export function fieldPolicy(field) {
 
 /** Whether a field is one line (a heading or title in a section or item): deletions and joins don't cross it. */
 export const isSingleLine = (field) => !!fieldPolicy(field)?.single;
+
+/**
+ * The innermost section or item around a node that takes only its own
+ * fields and items, not blocks, or null: where dropped and pasted files and
+ * pictures don't go.
+ */
+export function closedUnitOf(node) {
+  for (let el = elementOf(node); el && !isBody(el); el = el.parentElement) {
+    const { kind, accepts } = policyOf(el);
+    if ((kind === "section" || kind === "item") && !accepts.includes("*")) return el;
+  }
+  return null;
+}
