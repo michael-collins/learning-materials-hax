@@ -53,7 +53,7 @@
  *   installEditorState()          // from installEditorChrome (editor/index.js)
  */
 import { normalizedHtml } from "./undo.js";
-import { unitOf, fieldOf, policyOf } from "./policy.js";
+import { unitOf, fieldOf, policyOf, TEXT_FIELDS } from "./policy.js";
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
@@ -74,11 +74,21 @@ const RAIL_WIDTH = 42;
  * gets a new resource id on an import (Edit HTML) and writes its
  * properties out as attributes. The page-break holds the page's details,
  * which are changed in Page details and saved there, not typed on the page.
+ * And without what saving leaves out: an item with nothing in it, and a
+ * section's empty heading (blocks/course-site/: an empty outcome added,
+ * or the heading a section makes to type into, saves nothing, so Edit
+ * HTML, which goes by what's saved, drops them and changes nothing).
  */
 export function contentKey(html) {
   const t = globalThis.document.createElement("template");
   t.innerHTML = normalizedHtml(html);
   for (const el of t.content.querySelectorAll("page-break")) el.remove();
+  const empty = (el) => !el.textContent.trim() && !el.querySelector("img, video, audio, iframe");
+  for (const el of [...t.content.querySelectorAll("*")].reverse()) {
+    const { kind } = policyOf(el);
+    const heading = /^h[12]$/.test(el.localName) && policyOf(el.parentElement).kind === "section" && el.parentElement.firstElementChild === el;
+    if ((kind === "item" || heading) && empty(el)) el.remove();
+  }
   return t.innerHTML.trim();
 }
 
@@ -159,6 +169,19 @@ function caretNode(body) {
 }
 // the field the caret is in, or null
 const caretField = (body) => fieldOf(caretNode(body));
+
+// whether the caret is collapsed at the very start of the content: the
+// start of its first field
+function atContentStart(body) {
+  const sel = selectionOf(body);
+  const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+  const first = body.querySelector(TEXT_FIELDS);
+  if (!range?.collapsed || !first?.contains(range.startContainer)) return false;
+  const before = globalThis.document.createRange();
+  before.setStart(first, 0);
+  before.setEnd(range.startContainer, range.startOffset);
+  return !before.toString().trim();
+}
 
 const busy = (body) => !!(body._contentState?.getState("importing") || body._contentState?.getState("inserting"));
 
@@ -329,6 +352,16 @@ class EditorState extends EventTarget {
     const moved = fieldOf(caretNode(body)) !== this.__fieldAt;
     this._caretSeen();
     if (!moved || this.__pointerDown || busy(body) || deepActive() !== body) return;
+    // a unit selected as a whole has no caret (spec §4.1), but Chrome puts
+    // one at the very start of the content when HAX switches editing on
+    // again for it (contenteditable set on hax-body): not the author's (a
+    // click is HAX's to handle), so it goes
+    const { kind } = policyOf(hax.activeNode);
+    if ((kind === "section" || kind === "item") && unitOf(hax.activeNode) === hax.activeNode && atContentStart(body)) {
+      selectionOf(body).removeAllRanges();
+      this._caretSeen();
+      return;
+    }
     // the caret's node went with content HAX replaced (Undo, Redo, Edit
     // HTML): the browser put the caret in the first field it found, and HAX
     // puts its active block back itself (hax-body.js undo 4237; an Undo's
@@ -344,8 +377,8 @@ class EditorState extends EventTarget {
 
   // after a click: when it made a section or item HAX's active block (a
   // click on its padding), the browser has still put the caret in one of
-  // its fields, where the next key would go. Selected means no caret (spec
-  // §4.1)
+  // its fields (or left it in the field it was in), where the next key
+  // would go. Selected means no caret (spec §4.1)
   _clicked() {
     const body = activeBody();
     if (!body?.editMode || deepActive() !== body) return;
@@ -354,7 +387,7 @@ class EditorState extends EventTarget {
     if ((kind !== "section" && kind !== "item") || !body.contains(unit)) return;
     const sel = selectionOf(body);
     const field = sel?.rangeCount && sel.isCollapsed ? caretField(body) : null;
-    if (field && unit.contains(field)) sel.removeAllRanges();
+    if (field) sel.removeAllRanges();
     this._caretSeen();
   }
 }

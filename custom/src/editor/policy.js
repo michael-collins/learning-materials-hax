@@ -4,10 +4,10 @@
  * the frame, rail, inserter, slots and the Sections sheet move onto it as
  * they are rebuilt (nu-hax docs/editor-redesign/spec.md §6.1).
  *
- * A block class can say it in `static oerEditor`; HAX's own tags, and the
- * course-site sections until the section model gives them their own
- * (editor-redesign WP-07), come from the table below. policyOf(el) merges
- * the class's over the table's over the defaults for its kind.
+ * A block class says it in `static oerEditor` (the course site's sections
+ * and items do, blocks/course-site/); HAX's own tags come from the table
+ * below. policyOf(el) merges the class's over the table's over the
+ * defaults for its kind.
  *
  *   kind        "section", "item", "text", "inline", "layout", "media",
  *               "break" (the page-break) or "block" (any other block)
@@ -46,7 +46,6 @@
  *   policyOf(el).kind === "section"
  *   sameBoundary(boundaryOf(range.startContainer), boundaryOf(range.endContainer))
  */
-import { COURSE_SITE_TYPE, COURSE_HUB_TYPE } from "../types/course-site.js";
 
 /** Text fields: where the caret goes. */
 export const TEXT_FIELDS = "p,h1,h2,h3,h4,h5,h6,li,blockquote,pre,dt,dd,figcaption,td,th,summary";
@@ -68,19 +67,6 @@ const BASE = { kind: "block", limit: null, pin: null, pageTypes: null, accepts: 
 // a section's or item's headings are one line, pasted as plain text
 const HEADINGS = Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { name: "heading", single: true, paste: "line" }]));
 
-/* ---------- the course-site sections, until they declare their own ---------- */
-
-const COURSE = [COURSE_SITE_TYPE];
-const HUB = [COURSE_HUB_TYPE];
-const FROM_COURSE = { label: "From the course page", kind: "course", section: "details" };
-const FROM_PLAN = { label: "From the course plan", kind: "plan", section: "details" };
-// written sections hold what the author types (today: paragraphs and lists,
-// and the heading in an attribute)
-const written = (fields, accepts, more = {}) => ({ kind: "section", pageTypes: COURSE, fields, accepts, attrs: ["heading"], ...more });
-// generated ones draw from other pages and hold nothing typed
-const generated = (source, more = {}) => ({ kind: "section", pageTypes: COURSE, accepts: [], source, ...more });
-const ROWS = ["ul", "ol"];
-
 const TABLE = {
   // HAX's tags
   p: { kind: "text" },
@@ -93,21 +79,6 @@ const TABLE = {
   figure: { kind: "media" },
   "page-break": { kind: "break" },
   ...Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { kind: "text" }])),
-
-  // the course site, in the order a new one has them
-  "oer-cs-hero": written({ p: { name: "tagline" } }, ["p"], { pin: "first", attrs: ["image", "alt"], label: "Hero", called: "the hero" }),
-  "oer-cs-facts": generated(FROM_COURSE, { label: "Facts" }),
-  "oer-cs-learn": written({ li: { name: "outcome", paste: "line" } }, ROWS, { flow: "cards", label: "What you'll learn" }),
-  "oer-cs-semester": generated(FROM_PLAN, { label: "The semester", called: "the semester" }),
-  "oer-cs-make": generated(FROM_PLAN, { label: "What you'll make" }),
-  "oer-cs-books": generated(FROM_COURSE, { label: "Books" }),
-  "oer-cs-people": written({ p: { name: "note" } }, ["p"], { label: "Who teaches it" }),
-  "oer-cs-tools": written({ li: { name: "tool", paste: "line" } }, ROWS, { flow: "chips", label: "Tools" }),
-  "oer-cs-faq": written({ h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } }, ["h2", "h3", "h4", "h5", "h6", "p", ...ROWS], { flow: "stack", label: "Questions" }),
-  "oer-cs-closing": generated(FROM_COURSE, { pin: "last", label: "Ready to start" }),
-  // OER Courses
-  "oer-courses-intro": written({ p: { name: "intro" } }, ["p"], { pageTypes: HUB, pin: "first", label: "Intro", called: "the intro" }),
-  "oer-courses-catalog": generated({ label: "From the course sites", kind: "sites", section: null }, { pageTypes: HUB, pin: "last", label: "Catalog", called: "the catalog" }),
 };
 
 /* ---------- descriptors ---------- */

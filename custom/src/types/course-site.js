@@ -127,7 +127,7 @@ export function setSiteOn(site, on) {
 export const COURSE_SITE_STARTER = [
   "<oer-cs-hero><p></p></oer-cs-hero>",
   "<oer-cs-facts></oer-cs-facts>",
-  "<oer-cs-learn><ul><li></li></ul></oer-cs-learn>",
+  "<oer-cs-learn><oer-cs-outcome><h3></h3><p></p></oer-cs-outcome></oer-cs-learn>",
   "<oer-cs-semester></oer-cs-semester>",
   "<oer-cs-make></oer-cs-make>",
   "<oer-cs-books></oer-cs-books>",

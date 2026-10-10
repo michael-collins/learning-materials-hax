@@ -14,8 +14,9 @@
  * rule names both places, for readers and for authors (content() writes
  * the pair).
  *
- * Fields typed inside sections are styled here too, not with ::slotted() in
- * the section: the page's and DDD's rules for p, h2 or a outrank those.
+ * Fields typed inside sections and their items (a section's heading, an
+ * outcome's title and sentence) are styled here too, not with ::slotted()
+ * in the block: the page's and DDD's rules for p, h2 or a outrank those.
  *
  * The theme adopts it when it connects (adoptContentSheet()), before HAX's
  * editor exists; HAX's own stylesheets aren't touched. Reader mode's sizes
@@ -25,8 +26,9 @@ import { css, unsafeCSS } from "../../lit.js";
 import { SECTION_TAGS } from "./cs-shared.js";
 import { DDD_TOKENS } from "../../tokens/ddd-bridge.js";
 
-// the sections, and blocks that keep their own size
+// the sections, their items, and blocks that keep their own size
 const SECTIONS = unsafeCSS(SECTION_TAGS.join(", "));
+const ITEMS = unsafeCSS("oer-cs-outcome, oer-cs-tool, oer-cs-question");
 const MEDIA = unsafeCSS("img, video, iframe");
 
 // selectors inside a page's content, as readers see it and as authors edit it
@@ -299,6 +301,42 @@ export const contentStyles = css`
     font-size: clamp(2.5rem, 6vw, 4.25rem);
     line-height: 1.02;
     letter-spacing: -0.03em;
+  }
+  /* an empty field still has a line to click into */
+  :is(${SECTIONS}) > :is(h1, h2, h3, h4, h5, h6, p, blockquote),
+  :is(${SECTIONS}) > :is(ul, ol) > li,
+  :is(${ITEMS}) > * {
+    min-block-size: 1lh;
+  }
+  /* an item's fields, as its card, chip or question draws them */
+  ${content("oer-cs-outcome > h3", "oer-cs-question > h3")} {
+    margin: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: normal;
+  }
+  ${content("oer-cs-outcome > p")} {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+  }
+  ${content("oer-cs-tool > p")} {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  ${content("oer-cs-question > :not(h3)")} {
+    margin: 0 0 0.5rem;
+    line-height: 1.6;
+  }
+  /* while editing, what can be typed is tinted under the pointer (and
+     what's drawn from elsewhere isn't) */
+  :host hax-body :is(${SECTIONS}) > :is(h1, h2):hover,
+  :host hax-body :is(${ITEMS}) > :hover {
+    background: color-mix(in oklab, var(--accent) 60%, transparent);
   }
 `;
 

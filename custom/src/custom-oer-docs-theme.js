@@ -1896,8 +1896,8 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
             ${site && this.editMode
               ? html`<p class="cs-editing" role="note">
                   ${icon.pencil}<span
-                    >You're editing this page as readers will see it. Type in the dashed boxes; the rest is drawn from the site (the course and its
-                    plan, or the course sites). Add any block between sections.</span
+                    >You're editing this page as readers will see it. Type where the faint words say what goes there; the rest is drawn from the site
+                    (the course and its plan, or the course sites). Add any block between sections.</span
                   >
                 </p>`
               : site && this._bookSite

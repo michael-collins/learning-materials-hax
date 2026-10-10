@@ -20,10 +20,13 @@
  *   move-to-column  dir                     moveToColumn(unit, dir)
  *   add-item        above, focus            addItem(unit)
  *   duplicate                               duplicate(unit)
- *   remove          ask                     remove(unit)
+ *   remove          ask, caret              remove(unit)
  *   hide, show                              hide(unit), show(unit)
  *   set-attr        name, value             setAttr(the sender, name, value)
  *   insert-block    slot, tag, starter      insertBlock(slot, tag, starter)
+ *   paste-items     lines                   pasteItems(unit, lines)
+ *   stray-to-items                          strayToItems(section)
+ *   move-out                                moveOut(section)
  *
  * The unit is detail.unit, or the section, item or block the event came
  * from. Other actions ("image", "icon") are for the popovers.
@@ -31,7 +34,9 @@
  * How (HAX 26.8.1, docs/editor-spikes/structure.md S1):
  * - Add: haxInsert(tag, starter, {}, item) passing the item, never a field
  *   (which would nest the new item in it), with __addAbove set first (HAX
- *   starts it true); then settled() before the caret goes in.
+ *   starts it true); then settled() before the caret goes in. Several at
+ *   once (lines pasted, a section's stray blocks made items) go in as
+ *   elements, and HAX makes their fields editable.
  * - Duplicate and Remove: haxDuplicateNode, haxDeleteNode.
  * - Move: a swap among the units of the same kind in one container
  *   (sections among sections, items among items, past their heading; a
@@ -477,10 +482,13 @@ function offerUndo(body, text, place) {
  * Remove a unit. A written section with something in it (text, or what its
  * attributes hold: a heading, an image) asks first (Keep it, Hide it
  * instead, Remove section), unless ask is false; anything else goes at
- * once, with a toast to undo it. Resolves to whether it went (or, for Hide
+ * once, with a toast to undo it. What's selected next is the unit before
+ * (or after, or the section); with caret "before", the caret goes to the
+ * end of the field before it instead (Backspace in an empty item's title,
+ * blocks/course-site/cs-keys.js). Resolves to whether it went (or, for Hide
  * it instead, was hidden).
  */
-export async function remove(el, { ask = true } = {}) {
+export async function remove(el, { ask = true, caret = null } = {}) {
   const unit = unitOf(el);
   const why = whyNot("remove", unit);
   if (why) return refuse(why);
@@ -503,13 +511,109 @@ export async function remove(el, { ask = true } = {}) {
   const done = await change(`removed ${phraseOf(unit)}`, async (body) => {
     if (!unit.isConnected) return false;
     const next = afterRemoving(unit);
+    const before = caret === "before" ? fieldBefore(unit) : null;
     body.haxDeleteNode(unit);
     await settled(body);
-    if (next?.isConnected) select(next);
+    if (before?.isConnected) await caretInto(before, { atEnd: true });
+    else if (next?.isConnected) select(next);
     return true;
   });
   if (done) offerUndo(activeBody(), `${phraseOf(unit, START)} removed`, place);
   return done;
+}
+
+// the field before a unit in its section, in reading order: the item
+// before's last field, or the section's heading
+function fieldBefore(unit) {
+  const section = policyOf(unit).kind === "item" ? unit.parentElement : unit;
+  const fields = [...section.querySelectorAll(TEXT_FIELDS)].filter((f) => !f.querySelector(TEXT_FIELDS) && !unit.contains(f));
+  return fields.filter((f) => f.compareDocumentPosition(unit) & Node.DOCUMENT_POSITION_FOLLOWING).at(-1) || null;
+}
+
+/* ---------- several items at once ---------- */
+
+// a new item of tag holding text in its first field
+function itemWith(tag, text) {
+  const item = globalThis.document.createElement(tag);
+  item.innerHTML = policyOfTag(tag).starter;
+  const field = firstField(item);
+  if (typeof text === "string") field.textContent = text;
+  else field.append(...text);
+  return item;
+}
+
+/**
+ * Lines pasted in an item's title (or into an empty item), as one undo
+ * step: the first goes in at the caret (an empty item takes it as its
+ * title), and each of the others becomes a new item after it. The caret
+ * goes to the end of the last one's title. Resolves to the items.
+ */
+export function pasteItems(el, lines) {
+  const at = unitOf(el);
+  if (policyOf(at).kind !== "item" || !lines?.length) return refuse("Nothing to paste");
+  const tag = at.localName;
+  return change(`pasted ${lines.length} ${phraseOf(tag)}s`, async (body) => {
+    const title = firstField(at);
+    if (![...at.children].some(hasText) && title) title.textContent = lines[0];
+    else globalThis.document.execCommand("insertText", false, lines[0]);
+    const made = lines.slice(1).map((line) => itemWith(tag, line));
+    at.after(...made);
+    // (HAX makes the fields of a layout's new blocks editable)
+    await body.__rehydrateLayoutDescendants?.(at.parentElement, true);
+    await settled(body);
+    const last = made.at(-1) || at;
+    await caretInto(firstField(last), { atEnd: true });
+    reveal(last);
+    announce(`${lines.length} ${phraseOf(tag)}s pasted`);
+    return [at, ...made];
+  });
+}
+
+// what's in a section that readers won't see: blocks it doesn't take (it
+// says which, blocks/course-site/cs-shared.js sortChildren)
+const straysOf = (section) => section?.sortChildren?.().stray ?? [];
+
+/**
+ * A section's blocks that readers won't see, made into its items (a
+ * paragraph or a heading an item titled with its text, a list an item a
+ * row), after its last item, as one undo step. Blocks without text (a
+ * picture) stay. The caret goes to the end of the first new item's title.
+ */
+export function strayToItems(el) {
+  const section = unitOf(el);
+  const tag = section ? itemTagOf(section) : "";
+  const strays = straysOf(section).filter(hasText);
+  if (!tag) return refuse("Takes no items");
+  if (!strays.length) return refuse("Nothing to make into items");
+  return change(`made ${phraseOf(tag)}s`, async (body) => {
+    const made = strays.flatMap((stray) => (/^(ul|ol)$/.test(stray.localName) ? [...stray.children] : [stray]).filter(hasText).map((block) => itemWith(tag, [...block.childNodes])));
+    const items = [...section.children].filter((c) => c.localName === tag);
+    const after = items.at(-1) || section.headingElement;
+    if (after) after.after(...made);
+    else section.prepend(...made);
+    for (const stray of strays) stray.remove();
+    await body.__rehydrateLayoutDescendants?.(section, true);
+    await settled(body);
+    if (made[0]) await caretInto(firstField(made[0]), { atEnd: true });
+    announce(made.length === 1 ? `${phraseOf(tag, START)} made` : `${made.length} ${phraseOf(tag)}s made`);
+    return made;
+  });
+}
+
+/** A section's blocks that readers won't see, moved out to just after it (as one undo step), the first selected. */
+export function moveOut(el) {
+  const section = unitOf(el);
+  const strays = straysOf(section);
+  if (!strays.length) return refuse("Nothing to move");
+  return change(`moved ${strays.length === 1 ? "a block" : `${strays.length} blocks`} out of ${phraseOf(section)}`, async (body) => {
+    body.___moveLock = true;
+    section.after(...strays);
+    await settled(body);
+    body.___moveLock = false;
+    select(strays[0]);
+    announce(`${strays.length === 1 ? "Moved below" : `${strays.length} blocks moved below`} ${phraseOf(section)}`);
+    return true;
+  });
 }
 
 /* ---------- hiding, and attributes ---------- */
@@ -587,6 +691,9 @@ const ACTIONS = {
   show: (unit) => show(unit),
   "set-attr": (unit, d, from) => setAttr(from, d.name, d.value),
   "insert-block": (unit, d) => insertBlock(d.slot, d.tag, d.starter),
+  "paste-items": (unit, d) => pasteItems(unit, d.lines),
+  "stray-to-items": (unit) => strayToItems(unit),
+  "move-out": (unit) => moveOut(unit),
 };
 
 function onRequest(e) {
@@ -620,7 +727,7 @@ function enterSelected(e) {
 }
 
 /** All of the above, for the editor checks and the console (globalThis.OerEditor.ops). */
-export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, duplicate, remove, setAttr, hide, show, whyNot };
+export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, duplicate, remove, pasteItems, strayToItems, moveOut, setAttr, hide, show, whyNot };
 
 let installed = false;
 export function installOps() {

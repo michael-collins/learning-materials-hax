@@ -14,6 +14,7 @@ import { installPageBreakDetails } from "./page-break-details.js";
 import { installCitationNormalizer } from "./citations.js";
 import { installHaxFixes } from "./hax-fixes.js";
 import { installUndo } from "./undo.js";
+import { installFieldKeys } from "./field-keys.js";
 import { installBoundaryGuard } from "./boundary-guard.js";
 import { installEditorState, editorState } from "./editor-state.js";
 import { installOps, ops } from "./ops.js";
@@ -35,6 +36,8 @@ export function installEditorChrome() {
   installLucideIcons();
   installHaxFixes();
   installUndo();
+  // (keys in a section's fields are its own first, then the guard's)
+  installFieldKeys();
   installBoundaryGuard();
   installAnnounce();
   installEditorState();

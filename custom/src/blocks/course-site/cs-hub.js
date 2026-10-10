@@ -26,9 +26,15 @@ export class OerCoursesIntro extends SiteSection {
     return "oer-courses-intro";
   }
   static get properties() {
-    return { heading: { type: String, reflect: true } };
+    return { ...super.properties, heading: { type: String, reflect: true } };
   }
-  render() {
+  static get headingTag() {
+    return "h1";
+  }
+  static get oerEditor() {
+    return { kind: "section", label: "Intro", called: "the intro", pin: "first", pageTypes: [COURSE_HUB_TYPE], accepts: ["h1", "p"], fields: { p: { name: "intro" } }, attrs: ["heading"] };
+  }
+  renderContent() {
     if (!onHub(this)) return wrongPage(this);
     const { count, groups } = catalog(this._items);
     const degrees = groups.filter((g) => g.program).length;
@@ -36,15 +42,10 @@ export class OerCoursesIntro extends SiteSection {
     return html`<section class="intro">
       <div class="wrap">
         <p class="kicker">${count ? `${count} course${count === 1 ? "" : "s"}${degrees ? ` in ${degrees} degree program${degrees === 1 ? "" : "s"}` : ""}` : "Courses"}</p>
-        ${this.headingEl("OER Courses", "h1")}
-        ${this._editing
-          ? html`<div class="lede typing">
-              <p class="typing-hint">${icon("pencil")}<span>A few lines for students: what these courses are and who they're for.</span></p>
-              <div class="typing-area"><slot></slot></div>
-            </div>`
-          : typed
-            ? html`<div class="lede"><slot></slot></div>`
-            : this.todo("Add a few lines for students: Edit content and type them under the title.")}
+        ${this.headingCell("OER Courses")}
+        ${this._editing || typed
+          ? this.textCell("A few lines for students: what these courses are and who they're for", "lede")
+          : this.todo("Add a few lines for students: Edit content and type them under the title.")}
       </div>
     </section>`;
   }
@@ -55,7 +56,8 @@ export class OerCoursesIntro extends SiteSection {
         .intro {
           padding: 4.5rem 0 2rem;
         }
-        h1 {
+        h1,
+        .ph-h1 {
           margin: 0;
           font-size: clamp(2.5rem, 6vw, 4.25rem);
           line-height: 1.02;
@@ -68,7 +70,7 @@ export class OerCoursesIntro extends SiteSection {
           line-height: 1.5;
           color: var(--muted-foreground);
         }
-        ::slotted(*) {
+        .text-cell ::slotted(*) {
           margin: 0.375rem 0;
         }
         .todo {
@@ -89,7 +91,7 @@ export class OerCoursesIntro extends SiteSection {
       gizmo: gizmo("OER Courses: intro", "The hub's title and a few lines you write for students.", "icons:flag"),
       // the heading is typed in place while editing
       settings: { configure: [], advanced: [] },
-      demoSchema: [{ tag: "oer-courses-intro", properties: {}, content: "<p></p>" }],
+      demoSchema: [{ tag: "oer-courses-intro", properties: {}, content: "<h1></h1><p></p>" }],
     };
   }
 }
@@ -104,6 +106,12 @@ export class OerCoursesCatalog extends SiteSection {
   }
   static get tag() {
     return "oer-courses-catalog";
+  }
+  static get headingTag() {
+    return null;
+  }
+  static get oerEditor() {
+    return { kind: "section", label: "Catalog", called: "the catalog", pin: "last", pageTypes: [COURSE_HUB_TYPE], accepts: [], source: { label: "From the course sites", kind: "sites", section: null } };
   }
 
   get shown() {
@@ -152,7 +160,7 @@ export class OerCoursesCatalog extends SiteSection {
     </li>`;
   }
 
-  render() {
+  renderContent() {
     if (!onHub(this)) return wrongPage(this);
     const { groups, count, off } = catalog(this._items);
     const offNote = this._author && off.length

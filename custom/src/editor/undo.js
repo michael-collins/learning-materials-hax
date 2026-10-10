@@ -41,6 +41,13 @@
  *   announcing ("moved Tools up"); ops.js puts one before and one after
  *   each change it makes. undo() and redo() send `oer-undo` from hax-body
  *   with { redo, label }.
+ * - What a block makes of itself as editing begins is how the page began,
+ *   not a step: a course site section upgrades the markup written before
+ *   the section model and makes an empty heading to type into (blocks/
+ *   course-site/cs-shared.js upgrade(), on HAX's editModeChanged), which
+ *   can come after HAX has taken its starting copy (once it has imported
+ *   the page, a frame later). On its cs-upgraded, while nothing is recorded
+ *   yet, the starting copy is taken again. hax-body.js 4401–4448, 3563.
  *
  *   installUndo()          // from installEditorChrome (editor/index.js)
  *   undo(); redo()         // the editing bar's buttons
@@ -391,6 +398,19 @@ function historyInput(e) {
   step(e.inputType === "historyRedo");
 }
 
+/* ---------- how the page began ---------- */
+
+// a block upgraded itself as editing began: HAX's starting copy is the
+// page as it is now, while there's no step yet
+function upgraded(e) {
+  const body = activeBody();
+  const stack = body?.undoStack;
+  if (!body?.editMode || !stack || !e.composedPath().includes(body)) return;
+  if (stack.commands.length || stack.undoStackPosition !== -1) return;
+  body.undoStackInitialValue = body.innerHTML;
+  body.undoStackPrevValue = body.innerHTML;
+}
+
 /* ---------- installing ---------- */
 
 let installed = false;
@@ -427,4 +447,5 @@ export function installUndo() {
   // capture, on the window: before the rail and HAX see the keys
   globalThis.addEventListener("keydown", undoKeys, true);
   globalThis.addEventListener("beforeinput", historyInput, true);
+  globalThis.addEventListener("cs-upgraded", upgraded);
 }
