@@ -167,9 +167,11 @@ const kindOf = (el) => (el.localName === "p" ? "paragraph" : /^h[1-6]$/.test(el.
  *   without what editing adds (preProcessNodeToContent).
  * - Its heading is its first h2 (headingIn(), which a section whose
  *   headings meant something else before can change).
- * - Its HAX menu (inlineContextMenu) offers Hide from readers or Show to
- *   readers, and Add for a section of items, each asked of the editor with
- *   `oer-edit-request`.
+ * - Its HAX menu (inlineContextMenu) offers where a generated section's
+ *   content comes from (sourceCommand(): "Edit course details…"), Hide
+ *   from readers or Show to readers, and Add for a section of items, each
+ *   asked of the editor with `oer-edit-request` (or, for the source, the
+ *   theme with cs-edit-source).
  * - Preview (the oer-preview event, with data-oer-preview on hax-body) draws
  *   it as readers see it. The theme's own copy of the page rests while the
  *   page is edited (oer-reader-copy-idle).
@@ -596,6 +598,8 @@ export class SiteSection extends LitElement {
   /** Its own commands in HAX's block menu, each asked of the editor. */
   haxinlineContextMenu(plate) {
     const buttons = [];
+    const source = this.sourceCommand();
+    if (source) buttons.push({ icon: "icons:open-in-new", label: source.label, callback: "haxEditSource" });
     const itemTag = this.itemTag;
     if (itemTag) buttons.push({ icon: "icons:add", label: `Add ${withArticle((globalThis.customElements.get(itemTag).oerEditor.label || "item").toLowerCase())}`, callback: "haxAddItem" });
     buttons.push(
@@ -608,6 +612,23 @@ export class SiteSection extends LitElement {
 
   haxAddItem() {
     this.request("add-item");
+  }
+
+  /**
+   * Where a generated section's content comes from, as a command (its
+   * policy's source): { label, kind, field, page } for editSource(), or
+   * null for a section written here.
+   */
+  sourceCommand() {
+    const kind = this.constructor.oerEditor.source?.kind;
+    if (kind === "course") return { label: "Edit course details…", kind };
+    if (kind === "plan") return this._d?.sequence ? { label: "Open the course plan…", kind } : { label: "Choose a course plan…", kind, field: "sequence" };
+    return null;
+  }
+
+  haxEditSource() {
+    const source = this.sourceCommand();
+    if (source) this.editSource(source.kind, source.field, source.page);
   }
 
   haxHideFromReaders() {

@@ -983,9 +983,15 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         main {
           padding: 2.5rem 1.5rem 4rem;
         }
-        /* gutter for oer-block-rail, which sits left of the selected block */
+        /* gutter for oer-block-rail, which sits left of the selected block;
+           and room for the selection dock, where the rail is at the bottom
+           (its height: --oer-dock-height, which the rail sets) */
         :host([edit-mode]) main {
           padding-left: 5.5rem;
+          scroll-padding-bottom: var(--oer-dock-height, 0px);
+        }
+        :host([edit-mode]) article {
+          margin-bottom: var(--oer-dock-height, 0px);
         }
         article {
           max-width: 48rem;
@@ -1617,6 +1623,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           main {
             padding: 1.5rem 1rem 3rem;
           }
+          /* phones edit without the rail's gutter: the selection's tools
+             are in the dock at the bottom */
+          :host([edit-mode]) main {
+            padding-left: 1rem;
+          }
           site-active-title h1 {
             font-size: 1.75rem;
           }
@@ -1863,15 +1874,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([course-site][edit-mode]) main {
           padding-bottom: 4rem !important;
         }
-        /* Below 1280px the margin beside the sections' text can't hold the
-           rail and the frame's handle, which would cover the text's first
-           letters; editing keeps the gutter every other page has, until
-           the editor has a selection dock for narrow windows */
-        @media (max-width: 1279px) {
-          :host([course-site][edit-mode]) main {
-            padding-left: 5.5rem !important;
-          }
-        }
+        /* (where the margin beside the sections' text can't hold the rail
+           and the selection's handle, they go into the selection dock at
+           the bottom: editor/oer-block-rail.js) */
         :host([course-site]) article {
           max-width: none;
         }

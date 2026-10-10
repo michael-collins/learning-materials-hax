@@ -191,6 +191,12 @@ export class OerCoursesCatalog extends SiteSection {
     return this.fromElsewhere(text, courses ? `Open ${courses.title}` : "", { kind: "page", page: courses?.id || "" });
   }
 
+  /** Its content's source, as a command: Courses, where each course page's Course site card turns its site on. */
+  sourceCommand() {
+    const courses = homeOf("oer:course", this._items);
+    return courses ? { label: `Open ${courses.title}…`, kind: "page", page: courses.id } : null;
+  }
+
   renderContent() {
     if (!onHub(this)) return wrongPage(this);
     const { groups, count, off } = catalog(this._items);

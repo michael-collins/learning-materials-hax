@@ -1,51 +1,82 @@
 /**
- * `oer-block-rail` — a slim vertical toolbar in the gutter to the left of
- * the selected block, replacing HAX's floating block and text toolbars
- * (which sit on top of the content). Commands are grouped into categories;
- * each opens a labelled menu beside the rail.
+ * `oer-block-rail` — the one toolbar for what can be done with the
+ * selection (nu-hax docs/editor-redesign/spec.md §4.3, §4.4), at a fixed
+ * place: the content's left edge plus 8px, level with the selection's
+ * top. Its categories follow what's selected:
  *
- *   Block   move, insert above/below, duplicate, columns, HTML, lock, remove
- *   Text    paragraph/heading/quote, lists, indent, alignment
- *   Format  bold, italic, ... link, clear formatting
- *   Insert  symbol, emoji, math, vocabulary, ...
+ *   a section (selected, or typing in its heading or text)
+ *                       Section ▾, and Format ▾ while typing
+ *   an item, selected   Section ▾, Outcome ▾ (Tool ▾, Question ▾)
+ *   typing in an item   Section ▾, Outcome ▾, Format ▾, and Text ▾
+ *                       (paragraph and lists only) in an answer
+ *   an ordinary block   Block ▾, and Text ▾, Format ▾, Insert inline ▾ for text
  *
- * The stock toolbars stay mounted (hidden by editor-skin.js) and own every
- * command: a rail item presses the matching stock control, so selection
- * handling, undo and HAX's own state stay intact. Items whose stock control
- * is absent are left out, so the rail mirrors whatever HAX offers.
+ * Section ▾ and the item's menu hold the same verbs in the same order
+ * (Move, Add, Duplicate, Hide, Remove) through the editor (ops.js: one undo
+ * step each, their pins and limits, Remove's question), then the unit's own
+ * commands. A generated section's first command opens where its content
+ * comes from ("Edit course details…"). Each block declares its commands
+ * through HAX's inlineContextMenu hook (plate.ceButtons, { icon, label,
+ * callback }); the rail asks it for them as a menu opens
+ * (HAXStore.runHook(unit, "inlineContextMenu", [proxy])) rather than reading
+ * HAX's hidden block toolbar, and calls unit[callback]() as HAX does. Hide
+ * and Show come from there.
  *
- * Items HAX has switched off are shown off, with the reason. Add and Remove
- * column go through layouts.js (two equal columns, the block still
- * selected), and aren't offered for or inside course site sections.
- * Inside a course site section, Move up and down move the section or item
- * the caret is in, and Duplicate and Remove take the section or item whose
- * own field it is (a heading, an outcome's title), through the editor
- * (ops.js: one undo step, its pins and limits, Remove's question), never
- * HAX's command on the field alone; what can't be done says why.
+ * Block ▾, Text ▾, Format ▾ and Insert inline ▾ press HAX's own controls
+ * (its toolbars stay mounted, hidden by editor-skin.js), so selection
+ * handling, undo and HAX's state stay intact; items whose control is
+ * absent are left out. Move up and down go through ops.js there too (the
+ * hero and Ready to start stay put). Items that can't run now are shown
+ * off, with the reason ("Already first", "Only one per page", "Unlock it
+ * first"). Add and Remove column go through layouts.js.
  *
- * Keyboard: Alt+F10 moves focus from the content to the rail; arrows move,
- * Enter/Space/Right opens a menu, Escape/Left steps back, and Escape on the
- * rail returns to the content, as running a command does. Keys and pastes
- * stop at the rail, so they never edit the content behind it; Ctrl and ⌘
- * shortcuts (Save, Undo…) go on to the editor.
+ * Words beside the icons (a per-viewer setting, Show labels, on by
+ * default, in the first menu) show where the margin has room for them.
+ * Where it has no room even for the icons and the selection's handle
+ * (narrow windows, 200% zoom, phones: editorState's geometry.dock), the
+ * rail becomes a dock at the bottom of the window, above the on-screen
+ * keyboard, holding the selection's label and its moves as well:
+ *
+ *   │ What you'll learn › Outcome 2 of 3       │
+ *   │ [↑][↓] [Section ▾] [Outcome ▾] [Format ▾] │
+ *
+ * Keyboard: Alt+F10 moves focus from the content (or a name tag) to the
+ * rail; Shift+F10 on a name tag opens the unit's menu. Arrows move along
+ * the rail, Enter, Space and → (↑ in the dock) open a menu, Escape or ←
+ * steps back, and Escape on the rail goes back where focus came from (the
+ * caret where it was, or the name tag), as running a command from the
+ * keyboard does. Keys and pastes stop at the rail, so they never edit the
+ * content behind it; Ctrl and ⌘ shortcuts (Save, Undo…) go on to the
+ * editor.
+ *
+ * It follows the editor's state (editor-state.js), changing as it changes.
  * @element oer-block-rail
  */
 import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { MOD } from "./stock.js";
-import { contentView } from "./editor-state.js";
-import { HANDLE_WIDTH, frameRect } from "./slots.js";
+import { MOD, pressPlate } from "./stock.js";
+import { editorState } from "./editor-state.js";
 import { insertCitation, pageReferences, linkReferenceToResource } from "./citations.js";
 import { citeDialog } from "./oer-cite-dialog.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { layoutOf, columnCount, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
-import { sectionOf } from "../blocks/course-site/cs-shared.js";
-import { policyOf, phraseOf, sectionOrItemOf, ownerOf } from "./policy.js";
+import { policyOf, phraseOf } from "./policy.js";
 import { ops } from "./ops.js";
+import { announce } from "./announce.js";
+import { getEditRange, setEditRange } from "../ui/edit-selection.js";
+import { describeUnit, nameTagKeydown, runsAlong, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
 
 const SEP = { sep: true };
+// the room the selection's handle takes between the rail and the text
+const HANDLE_ROOM = 28;
+// where the viewer's Show labels setting is kept
+const LABELS_KEY = "oer-rail-labels";
+
+const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
+const inserter = () => globalThis.document.querySelector("oer-block-inserter");
+const frames = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
 /* ---------- finding stock controls ---------- */
 
@@ -77,7 +108,13 @@ function nativeButton(el) {
 
 const shown = (el) => el && !el.hidden && getComputedStyle(el).display !== "none";
 const disabled = (el) => !!el.disabled || el.hasAttribute?.("disabled");
-const nodeLength = (n) => (n.nodeType === 1 ? n.childNodes.length : n.length);
+
+// focus as the person sees it, inside shadow roots
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
 
 // why HAX has switched a block command off, from its toolbar's state
 function offReason(plate, el) {
@@ -89,19 +126,32 @@ function offReason(plate, el) {
 }
 
 const byEvent = (name) => (els) => els.find((e) => e.getAttribute?.("event-name") === name);
-const byCommand = (cmd, label) => (els) =>
-  els.find((e) => e.command === cmd && (!label || e.label === label));
+const byCommand = (cmd, label) => (els) => els.find((e) => e.command === cmd && (!label || e.label === label));
 
-/* ---------- categories ---------- */
+// "an outcome", "a tool"
+const withArticle = (noun) => `${/^[aeiou]/i.test(noun) ? "an" : "a"} ${noun}`;
+
+/**
+ * A unit's own commands, as it declares them to HAX's block toolbar
+ * (inlineContextMenu: plate.ceButtons), each run as HAX runs them.
+ */
+async function ceButtonsOf(unit) {
+  const hax = haxStore();
+  const proxy = { ceButtons: [], activeNode: unit };
+  if (unit && hax?.testHook?.(unit, "inlineContextMenu")) await hax.runHook(unit, "inlineContextMenu", [proxy]);
+  return (proxy.ceButtons || []).map((b) => ({ ...b, run: () => typeof unit[b.callback] === "function" && unit[b.callback]() }));
+}
+
+/* ---------- an ordinary block's categories ---------- */
 
 const BLOCK = [
-  { label: "Move up", icon: "arrow-up", find: byEvent("hax-plate-up"), unit: { op: "move", dir: -1 } },
-  { label: "Move down", icon: "arrow-down", find: byEvent("hax-plate-down"), unit: { op: "move", dir: 1 } },
+  { label: "Move up", icon: "arrow-up", find: byEvent("hax-plate-up"), move: -1 },
+  { label: "Move down", icon: "arrow-down", find: byEvent("hax-plate-down"), move: 1 },
   SEP,
   // these open oer-block-inserter's block list for that gap
   { label: "Insert block above…", icon: "arrow-up-to-line", find: byEvent("insert-above-active"), insert: "above" },
   { label: "Insert block below…", icon: "arrow-down-to-line", find: byEvent("insert-below-active"), insert: "below" },
-  { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate"), unit: { op: "duplicate" } },
+  { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate") },
   SEP,
   // outside a layout, Add column puts the block in two equal columns (HAX's
   // own makes three, with the block in the middle one); Remove column works
@@ -117,7 +167,7 @@ const BLOCK = [
     find: (els) => els.find((e) => e.localName === "hax-context-item" && /lock/.test(e.icon || "")),
   },
   SEP,
-  { label: "Remove block", icon: "trash-2", danger: true, find: byEvent("hax-plate-delete"), unit: { op: "remove" } },
+  { label: "Remove block", icon: "trash-2", danger: true, find: byEvent("hax-plate-delete") },
 ];
 
 const HEADING_ICONS = {
@@ -130,15 +180,19 @@ const HEADING_ICONS = {
   blockquote: "quote",
   pre: "square-code",
 };
-const HEADING_LABELS = { pre: "Code block", blockquote: "Quote" };
+const HEADING_LABELS = { p: "Paragraph", pre: "Code block", blockquote: "Quote" };
 
-const TEXT = [
-  { picker: "hax-text-editor-heading-picker", icons: HEADING_ICONS, labels: HEADING_LABELS, checked: "tag" },
-  SEP,
+const LISTS = [
   { label: "Bulleted list", icon: "list", find: byCommand("ul") },
   { label: "Numbered list", icon: "list-ordered", find: byCommand("ol") },
   { label: "Indent", icon: "indent-increase", find: byCommand("indent"), shortcut: `${MOD}]`, needs: "In lists" },
   { label: "Outdent", icon: "indent-decrease", find: byCommand("outdent"), shortcut: `${MOD}[`, needs: "In lists" },
+];
+
+const TEXT = [
+  { picker: "hax-text-editor-heading-picker", icons: HEADING_ICONS, labels: HEADING_LABELS, checked: "tag" },
+  SEP,
+  ...LISTS,
   SEP,
   {
     picker: "hax-text-editor-alignment-picker",
@@ -147,6 +201,9 @@ const TEXT = [
     checked: "align",
   },
 ];
+
+// in a question's answer: a paragraph or a list, never a heading
+const ANSWER = [{ picker: "hax-text-editor-heading-picker", icons: HEADING_ICONS, labels: HEADING_LABELS, checked: "tag", only: ["p"] }, SEP, ...LISTS];
 
 const FORMAT = [
   { label: "Bold", icon: "bold", find: byCommand("bold"), shortcut: `${MOD}B`, toggle: true },
@@ -178,20 +235,39 @@ const INSERT = [
   { label: "Sarcasm", icon: "message-square-quote", find: byCommand("insertHTML", "Sarcasm"), selection: true },
 ];
 
-const CATEGORIES = [
-  { id: "block", label: "Block", icon: "box", source: "plate", items: BLOCK },
-  { id: "text", label: "Text", icon: "pilcrow", source: "text", items: TEXT },
-  { id: "format", label: "Format", icon: "type", source: "text", items: FORMAT },
+const CAT = {
+  block: { id: "block", label: "Block", icon: "box", source: "plate", items: BLOCK },
+  text: { id: "text", label: "Text", icon: "pilcrow", source: "text", items: TEXT },
+  answer: { id: "text", label: "Text", icon: "pilcrow", source: "text", items: ANSWER },
+  format: { id: "format", label: "Format", icon: "type", source: "text", items: FORMAT },
   // "Insert inline" so it is not mistaken for inserting a block
-  { id: "insert", label: "Insert inline", icon: "smile-plus", source: "text", items: INSERT },
-];
+  insert: { id: "insert", label: "Insert inline", icon: "smile-plus", source: "text", items: INSERT },
+};
 
-const icon = (name) =>
-  html`<span
-    class="icon"
-    aria-hidden="true"
-    style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"
-  ></span>`;
+/**
+ * The rail's categories for what's selected (see the top of this file): a
+ * section's and an item's own (each with the unit it acts on), then the
+ * text ones while typing.
+ */
+function categoriesFor({ unit, mode, field }) {
+  const policy = policyOf(unit);
+  const typing = mode === "typing";
+  if (policy.kind === "section" || policy.kind === "item") {
+    const item = policy.kind === "item" ? unit : null;
+    const section = item ? item.parentElement : unit;
+    const cats = [{ id: "section", label: "Section", icon: "panels-top-left", unit: section }];
+    if (item) cats.push({ id: "item", label: policy.label || "Item", icon: "square-stack", unit: item });
+    if (typing) cats.push(CAT.format);
+    if (typing && item?.constructor?.textRole === "answer" && field && field !== item.titleElement) cats.push(CAT.answer);
+    return cats;
+  }
+  const hax = haxStore();
+  const text = typing || !!hax?.isTextElement?.(hax.activeNode);
+  return text ? [CAT.block, CAT.text, CAT.format, CAT.insert] : [CAT.block];
+}
+
+const iconSrc = (name) => LUCIDE_ICONS[name?.includes(":") ? name : `oer:${name}`] || "";
+const icon = (name) => html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${iconSrc(name)}&quot;)"></span>`;
 
 // symbol and emoji values are HTML entities
 const decoder = globalThis.document.createElement("textarea");
@@ -199,6 +275,19 @@ const decode = (s) => {
   decoder.innerHTML = s;
   return decoder.value;
 };
+
+// the viewer's Show labels setting (on unless they turned it off), read once
+let wantLabels = null;
+function labelsWanted() {
+  if (wantLabels === null) {
+    try {
+      wantLabels = globalThis.localStorage.getItem(LABELS_KEY) !== "off";
+    } catch {
+      wantLabels = true;
+    }
+  }
+  return wantLabels;
+}
 
 class OerBlockRail extends LitElement {
   static get tag() {
@@ -211,6 +300,9 @@ class OerBlockRail extends LitElement {
       _open: { state: true },
       _grid: { state: true },
       _query: { state: true },
+      _labels: { state: true }, // words beside the icons
+      _dock: { state: true }, // drawn as the dock at the bottom
+      _info: { state: true }, // the selection's name, in the dock
     };
   }
 
@@ -220,11 +312,22 @@ class OerBlockRail extends LitElement {
     this._open = null;
     this._grid = null;
     this._query = "";
-    this.__tick = this._tick.bind(this);
+    this._labels = labelsWanted();
+    this._dock = false;
+    this._info = null;
+    this.__unit = null;
+    // how wide the rail is with its words, by categories
+    this.__wide = new Map();
+    this.__changed = () => this._sync();
+    this.__focusRequest = (e) => {
+      // (the frame draws the name tag unless the dock does)
+      if (!e.defaultPrevented && editorState.geometry?.dock && this.focusTag(e.detail?.unit)) e.preventDefault();
+    };
     this.__keys = this._globalKeys.bind(this);
     this.__outside = (e) => {
       if (this._open && !e.composedPath().includes(this)) this._close();
     };
+    this.__viewport = () => this._sync();
     // HAX acts on keys and pastes anywhere in the window, at the last
     // caret in the content (Enter here split the paragraph): ours stop
     // here, except chords with Ctrl or ⌘ (Save, Exit, Undo and the site
@@ -241,95 +344,238 @@ class OerBlockRail extends LitElement {
     super.connectedCallback();
     // (attributes cannot be set in the constructor of a created element)
     this.hidden = true;
-    this.__raf = requestAnimationFrame(this.__tick);
+    editorState.addEventListener("change", this.__changed);
+    editorState.addEventListener("focusrequest", this.__focusRequest);
     globalThis.addEventListener("keydown", this.__keys, true);
     globalThis.addEventListener("pointerdown", this.__outside, true);
+    // the dock stays above the on-screen keyboard
+    globalThis.visualViewport?.addEventListener("resize", this.__viewport);
+    globalThis.visualViewport?.addEventListener("scroll", this.__viewport);
+    this._sync();
   }
 
   disconnectedCallback() {
-    cancelAnimationFrame(this.__raf);
+    editorState.removeEventListener("change", this.__changed);
+    editorState.removeEventListener("focusrequest", this.__focusRequest);
     globalThis.removeEventListener("keydown", this.__keys, true);
     globalThis.removeEventListener("pointerdown", this.__outside, true);
+    globalThis.visualViewport?.removeEventListener("resize", this.__viewport);
+    globalThis.visualViewport?.removeEventListener("scroll", this.__viewport);
     super.disconnectedCallback();
   }
 
-  /* ---------- stock state ---------- */
-
-  get _hax() {
-    return globalThis.HaxStore?.requestAvailability?.();
+  /** The rail's size beside the content, for the selection frame's handle to keep clear of; null when docked or hidden. */
+  get railSize() {
+    const rail = !this.hidden && !this._dock ? this.shadowRoot?.querySelector(".rail") : null;
+    return rail ? { width: rail.offsetWidth, height: rail.offsetHeight } : null;
   }
 
-  _stock() {
-    const root = this._hax?.activeHaxBody?.shadowRoot;
-    const plate = root?.querySelector("hax-plate-context");
-    const text = root?.querySelector("hax-text-editor-toolbar");
-    return {
-      plate,
-      // stock hides the text toolbar (display:none) unless the active block
-      // takes inline text editing
-      text: shown(text) ? text : null,
-    };
-  }
+  /* ---------- following the editor's state ---------- */
 
-  // follow the active block every frame: blocks move as content reflows,
-  // the page scrolls and the panel opens
-  _tick() {
-    this.__raf = requestAnimationFrame(this.__tick);
-    const node = store.editMode ? this._hax?.activeNode : null;
-    if (!node || !node.isConnected || node.localName === "page-break") {
-      if (!this.hidden) this._hide();
+  _sync() {
+    const s = editorState;
+    const unit = s.unit;
+    const g = s.geometry;
+    const off = !s.editing || !g || !unit?.isConnected || s.preview || s.saving || policyOf(unit).kind === "break" || !!s.body?.hasAttribute("data-oer-preview");
+    if (off) {
+      this._hide();
       return;
     }
-    const r = node.getBoundingClientRect();
-    const stock = this._stock();
-    const key = `${node.localName}|${!!stock.plate}|${!!stock.text}`;
-    if (node !== this.__node || key !== this.__key) {
-      if (node !== this.__node) this._close();
-      this.__node = node;
+    // what's selected, and its categories
+    const cats = categoriesFor(s);
+    const key = cats.map((c) => c.id + (c.unit ? `:${c.unit.localName}` : "")).join("|");
+    if (unit !== this.__unit || key !== this.__key) {
+      if (unit !== this.__unit && !this.__opening) this._close();
+      this.__unit = unit;
       this.__key = key;
-      this._cats = CATEGORIES.filter((c) => stock[c.source]);
+      this._cats = cats;
     }
+    const info = describeUnit(unit);
+    if (JSON.stringify(info && [info.name, info.said, info.crumbs.map((c) => c.label), info.chips.map((c) => c.label)]) !== this.__infoKey) {
+      this.__infoKey = JSON.stringify(info && [info.name, info.said, info.crumbs.map((c) => c.label), info.chips.map((c) => c.label)]);
+      this._info = info;
+    }
+    if (g.dock) {
+      this._placeDock(g);
+      return;
+    }
+    if (this._dock) {
+      this._dock = false;
+      this.removeAttribute("dock");
+      this.style.removeProperty("--dock-bottom");
+      this._dockHeight(0);
+    }
+    const ring = ringOf(unit, g);
     const rail = this.shadowRoot?.querySelector(".rail");
-    const railH = rail?.offsetHeight || 0;
-    const view = contentView();
-    const top0 = view.top + 8;
-    // level with the selection frame's top (see oer-block-frame), sticking
-    // inside the viewport while a tall block scrolls, but never below the
-    // frame's bottom edge
-    const f = frameRect(node);
-    let top = f.top;
-    if (top < top0) top = Math.max(Math.min(top0, f.bottom - railH), f.top);
-    const offscreen = f.bottom < top0 || f.top > view.bottom || r.width === 0;
-    if (offscreen && !this._open) {
+    const top = railTopOf(ring, g.view, rail?.offsetHeight || 0);
+    const offscreen = !g.visible;
+    if (offscreen && !this._open && !this.matches(":focus-within")) {
       this.hidden = true;
       return;
     }
     this.hidden = false;
-    // left of the frame's drag handle, but always in the page gutter: a
-    // block in a second column must not put the rail over the first. A
-    // page with no gutter (a course site's, full width) has it over the
-    // page: beside an inset frame's handle, or at the content's edge.
-    const bodyLeft = this._hax?.activeHaxBody?.getBoundingClientRect().left ?? f.left;
-    const anchor = Math.min(f.left, bodyLeft - 4 - 6);
-    const left = Math.round(Math.max(anchor - HANDLE_WIDTH - 8 - (rail?.offsetWidth || 42), f.inset ? f.left + 8 : view.left + 8));
-    this.style.transform = `translate(${left}px, ${Math.round(top)}px)`;
+    // words beside the icons where the margin has room for them, and the
+    // selection's handle beside the text
+    const wide = this.__wide.get(key);
+    const labels = labelsWanted() && (wide === undefined || RAIL_X + wide + 4 + HANDLE_ROOM <= g.gutter);
+    if (labels !== this._labels) this._labels = labels;
+    this.style.transform = `translate(${Math.round(g.view.left + RAIL_X)}px, ${Math.round(top)}px)`;
+  }
+
+  // the dock: the window's width at the bottom, above the on-screen keyboard
+  _placeDock(g) {
+    const vv = globalThis.visualViewport;
+    const keyboard = vv ? Math.max(0, globalThis.innerHeight - (vv.offsetTop + vv.height)) : 0;
+    this.hidden = false;
+    if (!this._dock) {
+      this._dock = true;
+      this.setAttribute("dock", "");
+    }
+    if (!this._labels && labelsWanted()) this._labels = true;
+    this.style.transform = "";
+    this.style.setProperty("--dock-left", `${Math.round(g.view.left)}px`);
+    this.style.setProperty("--dock-right", `${Math.round(Math.max(0, globalThis.innerWidth - g.view.right))}px`);
+    this.style.setProperty("--dock-bottom", `${Math.round(keyboard)}px`);
   }
 
   _hide() {
+    if (this.hidden && !this.__unit) return;
     this._close();
     this.hidden = true;
-    this.__node = null;
+    this.__unit = null;
+    this.__key = "";
+    if (this._dock) {
+      this._dock = false;
+      this.removeAttribute("dock");
+    }
+    this._dockHeight(0);
+  }
+
+  // how much of the window the dock covers: for the content view, and for
+  // the scrollers' padding (so focus is never hidden under it, and the
+  // page's end scrolls clear of it: the theme's --oer-dock-height)
+  _dockHeight(height) {
+    if (editorState.dockHeight !== height) editorState.set({ dockHeight: height });
+    const theme = globalThis.document.querySelector("custom-oer-docs-theme");
+    const root = globalThis.document.documentElement;
+    if (height) {
+      theme?.style.setProperty("--oer-dock-height", `${height}px`);
+      root.style.setProperty("scroll-padding-bottom", `${height}px`);
+    } else {
+      theme?.style.removeProperty("--oer-dock-height");
+      root.style.removeProperty("scroll-padding-bottom");
+    }
   }
 
   /* ---------- menus ---------- */
 
-  // resolve a category's items against the stock controls present now
-  _items(cat) {
+  // a category's items: a section's and an item's own (asked of the unit),
+  // or resolved against the stock controls present now
+  async _items(cat) {
+    if (cat.id === "section") return this._sectionItems(cat.unit);
+    if (cat.id === "item") return this._itemItems(cat.unit);
+    const items = this._stockItems(cat);
+    if (cat.id === "block") {
+      const own = await ceButtonsOf(this.__unit);
+      if (own.length) items.push(SEP, ...own.map((b) => ({ label: b.label, icon: b.icon, run: b.run })));
+    }
+    return items;
+  }
+
+  _stock() {
+    const root = haxStore()?.activeHaxBody?.shadowRoot;
+    const plate = root?.querySelector("hax-plate-context");
+    const text = root?.querySelector("hax-text-editor-toolbar");
+    // stock hides the text toolbar (display:none) unless the active block
+    // takes inline text editing
+    return { plate, text: shown(text) ? text : null };
+  }
+
+  // a move through the editor, a unit's verb (ops.js whyNot), with HAX's
+  // reasons for switching block commands off too (a locked block)
+  _verb(unit, label, iconName, action, { dir = 1, danger = false, plate = null, el = null } = {}) {
+    const why = ops.whyNot(action, unit, { dir }) || (plate?.viewSource || plate?.disableOps ? offReason(plate, el) : "");
+    return {
+      label,
+      icon: iconName,
+      danger,
+      disabled: !!why,
+      hint: why,
+      run: () => (action === "move" ? ops.move(unit, dir) : ops[action](unit)),
+    };
+  }
+
+  // Section ▾: where its content comes from (a generated section), Move,
+  // Add, Duplicate, Hide or Show, Remove; then its own (Add an outcome,
+  // Edit HTML…)
+  async _sectionItems(section) {
+    const ce = await ceButtonsOf(section);
+    const take = (...callbacks) => {
+      const i = ce.findIndex((b) => callbacks.includes(b.callback));
+      return i < 0 ? null : ce.splice(i, 1)[0];
+    };
+    const source = take("haxEditSource");
+    const hide = take("haxHideFromReaders", "haxShowToReaders");
+    const add = take("haxAddItem");
+    const { pin } = policyOf(section);
+    const stays = pin && `${phraseOf(section, { start: true })} stays at the ${pin === "first" ? "top" : "end"}`;
+    const out = [];
+    if (source) out.push({ label: source.label, icon: "arrow-right", run: source.run, opens: true }, SEP);
+    out.push(this._verb(section, "Move up", "arrow-up", "move", { dir: -1 }), this._verb(section, "Move down", "arrow-down", "move", { dir: 1 }), SEP);
+    out.push(
+      { label: "Add above…", icon: "arrow-up-to-line", disabled: pin === "first", hint: pin === "first" ? stays : "", opens: true, run: () => inserter()?.openFor(section, "above") },
+      { label: "Add below…", icon: "arrow-down-to-line", disabled: pin === "last", hint: pin === "last" ? stays : "", opens: true, run: () => inserter()?.openFor(section, "below") },
+      this._verb(section, "Duplicate", "copy", "duplicate"),
+    );
+    if (hide) {
+      const why = ops.whyNot(hide.callback === "haxHideFromReaders" ? "hide" : "show", section);
+      out.push({ label: hide.label, icon: hide.callback === "haxHideFromReaders" ? "eye-off" : "eye", disabled: !!why, hint: why, run: hide.run });
+    }
+    out.push(this._verb(section, "Remove section", "trash-2", "remove", { danger: true }));
+    const own = [add, ...ce].filter(Boolean).map((b) => ({ label: b.label, icon: b.callback === "haxAddItem" ? "plus" : b.icon, run: b.run }));
+    if (haxStore()?.haxSchemaFromTag?.(section.localName)?.canEditSource) own.push({ label: "Edit HTML…", icon: "code", run: () => this._sectionSource(section) });
+    if (own.length) out.push(SEP, ...own);
+    return out;
+  }
+
+  // the item's menu: Move (earlier and later for cards and chips), Add,
+  // Duplicate, Remove; then its own (Change icon…)
+  async _itemItems(item) {
+    const ce = await ceButtonsOf(item);
+    const noun = (policyOf(item).label || "item").toLowerCase();
+    const along = runsAlong(item);
+    const addWhy = ops.whyNot("add-item", item);
+    const add = (where, above) => ({ label: `Add ${withArticle(noun)} ${where}`, icon: above ? "arrow-up-to-line" : "arrow-down-to-line", disabled: !!addWhy, hint: addWhy, run: () => ops.addItem(item, { above }) });
+    const out = [
+      this._verb(item, along ? "Move earlier" : "Move up", along ? "arrow-left" : "arrow-up", "move", { dir: -1 }),
+      this._verb(item, along ? "Move later" : "Move down", along ? "arrow-right" : "arrow-down", "move", { dir: 1 }),
+      SEP,
+      add(along ? "before" : "above", true),
+      add(along ? "after" : "below", false),
+      this._verb(item, "Duplicate", "copy", "duplicate"),
+      this._verb(item, `Remove ${noun}`, "trash-2", "remove", { danger: true }),
+    ];
+    if (ce.length) out.push(SEP, ...ce.map((b) => ({ label: b.label, icon: b.icon, run: b.run })));
+    return out;
+  }
+
+  // a written section's own Edit HTML: HAX's source view, on the section
+  async _sectionSource(section) {
+    if (haxStore()?.activeNode !== section) {
+      ops.select(section, { focus: false });
+      await frames();
+    }
+    pressPlate("hax-source-view-toggle");
+  }
+
+  // an ordinary block's category, resolved against the stock controls present now
+  _stockItems(cat) {
     const stock = this._stock();
     const source = stock[cat.source];
     if (!source) return [];
     const els = [source, ...deepAll(source), ...deepAll(source.shadowRoot)];
     const out = [];
+    const plate = stock.plate;
     for (const spec of cat.items) {
       if (spec.sep) {
         if (out.length && !out[out.length - 1].sep) out.push(SEP);
@@ -341,6 +587,7 @@ class OerBlockRail extends LitElement {
         const current = this._pickerCurrent(spec);
         for (const opt of (picker.options || []).flat()) {
           if (!opt || opt.value === null || opt.value === undefined) continue;
+          if (spec.only && !spec.only.includes(opt.value)) continue;
           out.push({
             label: spec.labels?.[opt.value] || opt.alt,
             icon: spec.icons?.[opt.value] || "pilcrow",
@@ -351,7 +598,7 @@ class OerBlockRail extends LitElement {
         continue;
       }
       if (spec.action === "cite") {
-        out.push({ label: spec.label, icon: spec.icon, run: () => this._cite() });
+        out.push({ label: spec.label, icon: spec.icon, opens: true, run: () => this._cite() });
         continue;
       }
       if (spec.grid) {
@@ -362,22 +609,20 @@ class OerBlockRail extends LitElement {
       }
       const el = spec.find(els);
       if (!el) continue;
-      const unit = spec.unit && this._unitCommand(spec, el, stock.plate);
-      if (unit) {
-        out.push(unit);
+      // moves go through the editor: the hero and Ready to start stay put,
+      // and a block at the end of a column goes on to the next
+      if (spec.move) {
+        out.push(this._verb(this.__unit, spec.label, spec.icon, "move", { dir: spec.move, plate, el }));
         continue;
       }
-      // (inside a course site section, blocks go above or below the section)
-      let run = spec.insert
-        ? () => globalThis.document.querySelector("oer-block-inserter")?.openFor(sectionOf(this._hax.activeNode) || this._hax.activeNode, spec.insert)
-        : () => nativeButton(el)?.click();
+      let run = spec.insert ? () => inserter()?.openFor(this.__unit, spec.insert) : () => nativeButton(el)?.click();
       // our own columns commands: off when HAX switches all its block
       // commands off (a locked block, Edit HTML open), not for its other reasons
       let ours = false;
       if (spec.columns) {
-        const node = this._hax?.activeNode;
-        const layout = layoutOf(this._hax?.activeHaxBody, node);
-        if (sectionOf(node) || (spec.columns === "remove" && !layout)) continue;
+        const node = this.__unit;
+        const layout = layoutOf(haxStore()?.activeHaxBody, node);
+        if (!policyOf(node).columns || (spec.columns === "remove" && !layout)) continue;
         if (spec.columns === "add" && !layout) run = () => this._putInColumns(node);
         if (spec.columns === "remove") run = () => this._removeColumn(node, layout);
         ours = spec.columns === "remove" || !layout;
@@ -388,15 +633,15 @@ class OerBlockRail extends LitElement {
       const needs = spec.needs || (spec.selection ? "Select text" : "");
       if (!available && !needs) continue;
       // and ones HAX has switched off say why
-      const plate = stock.plate;
       const off = !available || (ours ? !!(plate?.viewSource || plate?.disableOps || plate?.hasActiveEditingElement) : disabled(el));
       out.push({
         label: typeof spec.label === "function" ? spec.label(el) : spec.label,
         icon: typeof spec.icon === "function" ? spec.icon(el) : spec.icon,
         shortcut: spec.shortcut,
         danger: spec.danger,
+        opens: !!spec.insert,
         disabled: off,
-        hint: !available ? needs : off ? offReason(stock.plate, el) : "",
+        hint: !available ? needs : off ? offReason(plate, el) : "",
         pressed: spec.toggle && available ? !!el.toggled : undefined,
         run,
       });
@@ -405,29 +650,9 @@ class OerBlockRail extends LitElement {
     return out;
   }
 
-  // a block command inside a course site section, made on the section or
-  // item (see the top of this file), or null for HAX's own on the block
-  _unitCommand(spec, el, plate) {
-    const node = this._hax?.activeNode;
-    const { op, dir } = spec.unit;
-    const unit = op === "move" ? sectionOrItemOf(node) : ownerOf(node);
-    if (!unit) return null;
-    // (HAX's reasons for switching every block command off still hold)
-    const why = ops.whyNot(op, unit, { dir }) || (plate?.viewSource || plate?.disableOps ? offReason(plate, el) : "");
-    const noun = policyOf(unit).kind === "item" ? phraseOf(unit) : "section";
-    return {
-      label: op === "remove" ? `Remove ${noun}` : spec.label,
-      icon: spec.icon,
-      danger: spec.danger,
-      disabled: !!why,
-      hint: why,
-      run: () => (op === "move" ? ops.move(unit, dir) : ops[op](unit)),
-    };
-  }
-
   // two equal columns around the block, which stays selected
   async _putInColumns(node) {
-    const hax = this._hax;
+    const hax = haxStore();
     if (!hax || !node) return;
     if (await wrapInColumns(hax, node, "1-1")) hax.activeNode = node;
   }
@@ -435,7 +660,7 @@ class OerBlockRail extends LitElement {
   // one column fewer (its blocks join the last one); from two, the layout
   // goes and its blocks stay where it was
   _removeColumn(node, grid) {
-    const hax = this._hax;
+    const hax = haxStore();
     if (!hax || !grid) return;
     if (columnCount(grid) > 2) {
       setLayout(grid, grid.layout.split("-").slice(0, -1).join("-"));
@@ -448,7 +673,7 @@ class OerBlockRail extends LitElement {
   }
 
   _pickerCurrent(spec) {
-    const node = this._hax?.activeNode;
+    const node = haxStore()?.activeNode;
     if (!node) return undefined;
     if (spec.checked === "tag") return node.localName;
     if (spec.checked === "align") {
@@ -458,104 +683,147 @@ class OerBlockRail extends LitElement {
     return undefined;
   }
 
+  /**
+   * Open a category's menu below (or, in the dock, above) its button: by
+   * the button (invoker), the control focus goes back to when the menu
+   * closes by a key. With keys, focus goes into the menu.
+   */
+  async _openMenu(cat, invoker, { keys = false } = {}) {
+    this._grid = null;
+    this._query = "";
+    this.__opening = true;
+    const items = await this._items(cat);
+    this.__opening = false;
+    // (the selection changed meanwhile)
+    if (!this._cats.some((c) => c.id === cat.id)) return;
+    const y = invoker?.offsetTop ?? 0;
+    const x = invoker?.offsetLeft ?? 0;
+    this._open = { ...cat, items, y, x, invoker };
+    if (keys) this._focusMenu();
+  }
+
   _toggle(cat, e) {
     if (this._open?.id === cat.id && !this._grid) {
       this._close();
       return;
     }
-    this._grid = null;
-    this._query = "";
-    this._open = { ...cat, items: this._items(cat), y: e?.currentTarget?.offsetTop ?? 0 };
+    this._openMenu(cat, e.currentTarget, { keys: e.detail === 0 });
   }
 
   _close(refocus = false) {
-    const id = this._open?.id;
+    const invoker = this._open?.invoker;
     this._open = null;
     this._grid = null;
     this._query = "";
-    if (refocus && id) {
-      this.updateComplete.then(() => this.shadowRoot.querySelector(`[data-cat="${id}"]`)?.focus());
-    }
+    if (refocus && invoker?.isConnected) this.updateComplete.then(() => invoker.focus());
   }
 
   _openGrid(spec, el) {
     const inner = el.shadowRoot?.querySelector("simple-symbol-picker, simple-emoji-picker, simple-picker");
     const options = (inner?.options || []).flat().filter((o) => o && o.value);
     this._grid = { label: spec.label.replace("…", ""), filter: spec.filter, options, el };
-    this.updateComplete.then(() => {
-      const first = this.shadowRoot.querySelector(".grid input, .grid button");
-      first?.focus();
-    });
+    this.updateComplete.then(() => this.shadowRoot.querySelector(".grid input, .grid button")?.focus());
   }
 
-  _run(item) {
+  /**
+   * Run a menu item. From the keyboard (the click has no pointer: detail
+   * 0), focus then goes back where it came from, unless the command put it
+   * somewhere (a dialog, the block list, a name tag); something that opens
+   * a dialog finds focus back there first, to give it back to as it
+   * closes. (A click leaves focus where it was: the rail never takes it.)
+   */
+  _run(item, e) {
     if (item.disabled || item.sep) return;
     if (item.submenu) {
       item.run();
       return;
     }
-    const byKeys = this.matches(":focus-within");
-    item.run();
+    const keys = e?.detail === 0;
     this._close();
-    // chosen from the keyboard: back to the content, unless the command
-    // opened something of its own (the block list, a dialog)
-    if (byKeys) {
-      requestAnimationFrame(() => {
-        const focus = globalThis.document.activeElement;
-        if (!focus || focus === globalThis.document.body || focus === this) this._toContent();
-      });
-    }
+    if (item.opens && keys) this._back({ quiet: true });
+    item.run();
+    if (!keys || item.opens) return;
+    requestAnimationFrame(() => {
+      const focus = deepActive();
+      if (!focus || focus === globalThis.document.body || !focus.isConnected || this.shadowRoot.contains(focus)) this._back();
+    });
   }
 
-  // focus back in the content: the caret where it was when Alt+F10 came to
-  // the rail, or, if the command moved things (Duplicate selects the copy,
-  // Move up moves a section), at the start of the selected text block, or
-  // just before any other block, as HAX has it when one is selected
-  _toContent() {
-    const body = this._hax?.activeHaxBody;
-    const node = this._hax?.activeNode;
-    if (!body || !node?.isConnected) return;
+  // back where focus came from: the caret where it was (in the content, a
+  // block's Edit HTML), a name tag, or the selection's name tag
+  _back({ quiet = false } = {}) {
+    const origin = this.__origin;
+    if (!quiet) this.__origin = null;
+    if (typeof origin?.back === "function") return origin.back();
+    const hax = haxStore();
+    const body = hax?.activeHaxBody;
+    const node = hax?.activeNode;
+    if (!body?.editMode) return;
     // a block open in Edit HTML: its HTML editor, which runs in a frame
-    // (HAX focuses the editor's element, which can't take focus), or
-    // focuses itself once it has loaded
-    const source = this._hax.activeEditingElement;
-    if (source?.isConnected && source.contains(node)) {
+    const source = hax.activeEditingElement;
+    if (source?.isConnected && node && source.contains(node)) {
       source.autofocus = true;
       const frame = source.shadowRoot?.querySelector("monaco-element")?.shadowRoot?.querySelector("iframe");
       frame?.focus();
       frame?.contentDocument?.querySelector("textarea")?.focus();
       return;
     }
-    const at = this.__caret;
-    const range = globalThis.document.createRange();
-    if (at && node.contains(at.startContainer) && node.contains(at.endContainer)) {
-      range.setStart(at.startContainer, Math.min(at.startOffset, nodeLength(at.startContainer)));
-      range.setEnd(at.endContainer, Math.min(at.endOffset, nodeLength(at.endContainer)));
-    } else if (this._hax.isTextElement(node)) {
+    const at = origin?.range;
+    const inNode = (n) => !!node && node.contains(n);
+    if (at?.startContainer.isConnected && body.contains(at.startContainer) && (!node || inNode(at.startContainer))) {
+      body.focus({ preventScroll: true });
+      setEditRange(at);
+      return;
+    }
+    // a unit selected as a whole (a command moved things): its name tag; a
+    // text block: the start of its text, as HAX has it when one is selected
+    if (node && hax.isTextElement?.(node) && body.contains(node)) {
+      const range = globalThis.document.createRange();
       range.selectNodeContents(node);
       range.collapse(true);
-    } else {
-      range.setStartBefore(node);
-      range.collapse(true);
+      body.focus({ preventScroll: true });
+      setEditRange(range);
+      return;
     }
-    body.focus({ preventScroll: true });
-    const sel = body.getRootNode().getSelection?.() || globalThis.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
+    const unit = editorState.unit;
+    if (!(unit && editorState.requestFocus(unit))) body.focus({ preventScroll: true });
+  }
+
+  /** Focus on the selection's name tag in the dock, drawn for unit now. Returns whether it took it. */
+  focusTag(unit) {
+    if (!unit?.isConnected || !editorState.geometry?.dock) return false;
+    this._placeDock(editorState.geometry);
+    this._info = describeUnit(unit);
+    this.updateComplete.then(() => this.shadowRoot.querySelector(".dock .tag")?.focus({ preventScroll: true }));
+    return true;
+  }
+
+  /**
+   * A unit's actions (Shift+F10 on its name tag): its own menu (Section ▾,
+   * Outcome ▾, Block ▾), with focus in it; back() puts focus back.
+   */
+  async openActions(unit, back) {
+    const cat = this._cats.find((c) => c.unit === unit) || this._cats.find((c) => c.id === "item") || this._cats[0];
+    if (!cat) return;
+    this.__origin = { back };
+    this.hidden = false;
+    await this.updateComplete;
+    const button = this.shadowRoot.querySelector(`[data-cat="${cat.id}"]`);
+    await this._openMenu(cat, button, { keys: true });
   }
 
   // cite at the caret (or after the selection) in the active text block
   async _cite() {
-    const hax = this._hax;
+    const hax = haxStore();
     const body = hax?.activeHaxBody;
     const node = hax?.activeNode;
     if (!body || !node) return;
-    let range = hax.getRange?.();
+    let range = getEditRange(body);
     if (!range || !node.contains(range.startContainer)) {
       range = globalThis.document.createRange();
       range.selectNodeContents(node);
       range.collapse(false);
-    } else range = range.cloneRange();
+    }
     const choice = await citeDialog().pick({ references: pageReferences(body) });
     if (!choice) {
       node.focus?.();
@@ -620,20 +888,46 @@ class OerBlockRail extends LitElement {
     this._close();
   }
 
+  _toggleLabels() {
+    const on = !labelsWanted();
+    wantLabels = on;
+    try {
+      globalThis.localStorage.setItem(LABELS_KEY, on ? "on" : "off");
+    } catch {
+      // (kept for this page only)
+    }
+    this._labels = on;
+    this._close();
+    this._sync();
+    announce(on ? "Labels shown on the toolbar" : "The toolbar shows icons only");
+  }
+
   /* ---------- keyboard ---------- */
 
   _globalKeys(e) {
     if (this.hidden) return;
-    // Alt+F10: jump to the toolbar, the convention in rich-text editors
-    if (e.altKey && e.key === "F10") {
+    // Escape closes a menu opened with the pointer (focus stayed where it was)
+    if (e.key === "Escape" && this._open && !this.matches(":focus-within")) {
       e.preventDefault();
       e.stopPropagation();
-      // where to come back to (Esc, or after a command)
-      const body = this._hax?.activeHaxBody;
-      const sel = body?.getRootNode().getSelection?.() || globalThis.getSelection();
-      const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
-      if (!this.matches(":focus-within")) this.__caret = range && body.contains(range.startContainer) ? new StaticRange(range) : null;
-      this.shadowRoot.querySelector(".rail button")?.focus();
+      this._close();
+      return;
+    }
+    // Alt+F10: to the toolbar, the convention in rich-text editors
+    if (e.altKey && !e.shiftKey && e.key === "F10") {
+      e.preventDefault();
+      e.stopPropagation();
+      // where to come back to (Escape, or after a command): the caret, or
+      // the name tag it came from
+      if (!this.matches(":focus-within")) {
+        const body = haxStore()?.activeHaxBody;
+        const from = e.composedPath()[0];
+        const unit = editorState.unit;
+        const fromTag = from?.classList?.contains("tag") && unit;
+        const range = !fromTag && body ? getEditRange(body) : null;
+        this.__origin = fromTag ? { back: () => editorState.requestFocus(unit) } : { range: range && body.contains(range.startContainer) ? new StaticRange(range) : null };
+      }
+      this.shadowRoot.querySelector(".rail button[data-cat]")?.focus();
     }
   }
 
@@ -641,17 +935,18 @@ class OerBlockRail extends LitElement {
     const buttons = [...this.shadowRoot.querySelectorAll(".rail button")];
     const i = buttons.indexOf(this.shadowRoot.activeElement);
     const move = (n) => buttons[(i + n + buttons.length) % buttons.length]?.focus();
-    if (e.key === "ArrowDown") move(1);
-    else if (e.key === "ArrowUp") move(-1);
+    const [back, on, opens] = this._dock ? ["ArrowLeft", "ArrowRight", "ArrowUp"] : ["ArrowUp", "ArrowDown", "ArrowRight"];
+    const cat = this._cats.find((c) => c.id === buttons[i]?.dataset.cat);
+    if (e.key === on) move(1);
+    else if (e.key === back) move(-1);
     else if (e.key === "Home") buttons[0]?.focus();
     else if (e.key === "End") buttons[buttons.length - 1]?.focus();
-    else if (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ") {
-      const cat = this._cats[i];
-      if (cat && this._open?.id !== cat.id) this._toggle(cat, { currentTarget: buttons[i] });
-      this._focusMenu();
+    else if (cat && (e.key === opens || e.key === "Enter" || e.key === " ")) {
+      if (this._open?.id !== cat.id) this._openMenu(cat, buttons[i], { keys: true });
+      else this._focusMenu();
     } else if (e.key === "Escape") {
       if (this._open) this._close();
-      else this._toContent();
+      else this._back();
     } else return;
     e.preventDefault();
   }
@@ -668,8 +963,13 @@ class OerBlockRail extends LitElement {
     else if (e.key === "ArrowUp") move(-1);
     else if (e.key === "Home") items[0]?.focus();
     else if (e.key === "End") items[items.length - 1]?.focus();
-    else if (e.key === "Escape" || e.key === "ArrowLeft") this._close(true);
-    else if (e.key === "Tab") this._close();
+    else if (e.key === "Escape" || (!this._dock && e.key === "ArrowLeft")) {
+      // opened from a name tag (Shift+F10): back there
+      if (typeof this.__origin?.back === "function") {
+        this._close();
+        this._back();
+      } else this._close(true);
+    } else if (e.key === "Tab") this._close();
     else return;
     e.preventDefault();
   }
@@ -699,6 +999,14 @@ class OerBlockRail extends LitElement {
     }
   }
 
+  _tagKeys(e) {
+    const unit = this._info?.unit;
+    if (nameTagKeydown(e, unit, { actions: () => this.openActions(unit, () => this.focusTag(unit)) })) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
   // keep the text selection: pressing a rail control must not move focus
   // out of the block before the stock command reads the selection
   _keepSelection(e) {
@@ -706,11 +1014,18 @@ class OerBlockRail extends LitElement {
     e.preventDefault();
   }
 
-  // menus open level with their rail button; lift one that would run past
-  // the bottom of the window (its top is relative to the rail)
   updated() {
+    // how wide the rail is with its words, to know where they fit
+    const rail = this.shadowRoot.querySelector(".rail");
+    if (rail && this._labels && !this._dock && this.__key && !this.__wide.has(this.__key)) {
+      this.__wide.set(this.__key, rail.offsetWidth);
+      this._sync();
+    }
+    if (this._dock) this._dockHeight(this.shadowRoot.querySelector(".dock")?.offsetHeight || 0);
+    // menus open level with their rail button; lift one that would run past
+    // the bottom of the window (its top is relative to the rail)
     const menu = this.shadowRoot.querySelector(".menu");
-    if (!menu) return;
+    if (!menu || this._dock) return;
     const r = menu.getBoundingClientRect();
     const over = r.bottom - (globalThis.innerHeight - 8);
     if (over > 0) menu.style.top = `${Math.max(menu.offsetTop - over, 8 - this.getBoundingClientRect().top)}px`;
@@ -730,6 +1045,15 @@ class OerBlockRail extends LitElement {
       }
       :host([hidden]) {
         display: none;
+      }
+      :host([dock]) {
+        top: auto;
+        left: var(--dock-left, 0);
+        right: var(--dock-right, 0);
+        bottom: var(--dock-bottom, 0);
+      }
+      .wrap {
+        position: relative;
       }
       .rail {
         display: flex;
@@ -756,15 +1080,28 @@ class OerBlockRail extends LitElement {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 2rem;
+        gap: 0.375rem;
+        min-width: 2rem;
         height: 2rem;
         border-radius: var(--radius-md);
         color: var(--foreground);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .rail.labels button {
+        justify-content: flex-start;
+        padding: 0 0.5rem;
       }
       .rail button:hover,
       .rail button[aria-expanded="true"] {
         background: var(--accent);
         color: var(--accent-foreground);
+      }
+      .rail button[aria-disabled="true"] {
+        cursor: default;
+        color: var(--muted-foreground);
+        background: transparent;
       }
       .icon {
         flex: none;
@@ -773,6 +1110,88 @@ class OerBlockRail extends LitElement {
         background: currentColor;
         -webkit-mask: var(--src) center / contain no-repeat;
         mask: var(--src) center / contain no-repeat;
+      }
+
+      /* the dock: the selection's label, then its moves and tools */
+      .dock {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.375rem 0.5rem calc(0.375rem + env(safe-area-inset-bottom, 0px));
+        background: var(--popover);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -2px 8px rgb(0 0 0 / 0.08);
+      }
+      .dock .rail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+      .dock .rail .step {
+        padding: 0;
+        width: 2rem;
+        justify-content: center;
+      }
+      .dock .rail .divider {
+        width: 1px;
+        align-self: stretch;
+        margin: 0.25rem 0.125rem;
+        background: var(--border);
+      }
+      .dock-label {
+        display: flex;
+        align-items: center;
+        gap: 0.125rem;
+        min-width: 0;
+        overflow: hidden;
+        font-size: 0.8125rem;
+        white-space: nowrap;
+      }
+      .dock-label button {
+        display: inline-flex;
+        align-items: center;
+        height: 1.75rem;
+        padding: 0 0.375rem;
+        border-radius: var(--radius-sm);
+        color: var(--muted-foreground);
+        font-weight: 500;
+      }
+      .dock-label .tag {
+        flex: none;
+        color: var(--foreground);
+        font-weight: 600;
+      }
+      .dock-label button:hover {
+        background: var(--accent);
+        color: var(--accent-foreground);
+      }
+      .dock-label .sep {
+        color: var(--muted-foreground);
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        height: 1.375rem;
+        margin-left: 0.25rem;
+        padding: 0 0.5rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--foreground);
+        background: var(--muted);
+      }
+      .dock-label button.chip {
+        height: 1.375rem;
+        color: var(--foreground);
+      }
+      .chip .icon {
+        width: 0.75rem;
+        height: 0.75rem;
       }
 
       /* shadcn DropdownMenu */
@@ -788,6 +1207,12 @@ class OerBlockRail extends LitElement {
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
         box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      }
+      :host([dock]) .menu {
+        top: auto;
+        bottom: calc(100% + 0.25rem);
+        left: clamp(0.5rem, var(--menu-x, 0.5rem), calc(100% - 14.5rem));
+        max-height: min(28rem, calc(100dvh - 8rem));
       }
       .label {
         padding: 0.375rem 0.5rem;
@@ -827,7 +1252,7 @@ class OerBlockRail extends LitElement {
       }
       [role^="menuitem"].danger:hover,
       [role^="menuitem"].danger:focus-visible {
-        background: color-mix(in oklch, var(--destructive) 10%, transparent);
+        background: color-mix(in oklab, var(--destructive) 10%, transparent);
       }
       .text {
         flex: 1;
@@ -880,6 +1305,13 @@ class OerBlockRail extends LitElement {
         font-size: 0.875rem;
         color: var(--muted-foreground);
       }
+      @media (forced-colors: active) {
+        .rail,
+        .dock,
+        .menu {
+          border: 1px solid CanvasText;
+        }
+      }
     `;
   }
 
@@ -887,24 +1319,21 @@ class OerBlockRail extends LitElement {
     if (item.sep) return html`<div class="sep" role="separator"></div>`;
     const role = item.checked !== undefined ? "menuitemradio" : item.pressed !== undefined ? "menuitemcheckbox" : "menuitem";
     const state = item.checked ?? item.pressed;
+    // (aria-checked only where it's allowed, and aria-haspopup only where
+    // there's one: ARIA reflection removes them with null)
     return html`<button
       role="${role}"
       class="${item.danger ? "danger" : ""}"
       tabindex="-1"
-      aria-checked="${state === undefined ? "" : String(!!state)}"
+      .ariaChecked="${state === undefined ? null : String(!!state)}"
       aria-disabled="${item.disabled ? "true" : "false"}"
-      aria-haspopup="${item.submenu ? "true" : "false"}"
-      @click="${() => this._run(item)}"
+      .ariaHasPopup="${item.submenu ? "true" : null}"
+      @click="${(e) => this._run(item, e)}"
     >
       ${icon(item.icon)}
       <span class="text">${item.label}</span>
-      ${item.hint
-        ? html`<span class="end">${item.hint}</span>`
-        : item.shortcut
-          ? html`<span class="end">${item.shortcut}</span>`
-          : ""}
-      ${state ? html`<span class="check">${icon("check")}</span>` : ""}
-      ${item.submenu ? icon("chevron-right") : ""}
+      ${item.hint ? html`<span class="end">${item.hint}</span>` : item.shortcut ? html`<span class="end">${item.shortcut}</span>` : ""}
+      ${state ? html`<span class="check">${icon("check")}</span>` : ""} ${item.submenu ? icon("chevron-right") : ""}
     </button>`;
   }
 
@@ -912,8 +1341,8 @@ class OerBlockRail extends LitElement {
     const g = this._grid;
     const q = this._query.trim().toLowerCase();
     const options = q ? g.options.filter((o) => (o.description || "").toLowerCase().includes(q)) : g.options;
-    return html`<div class="menu grid" style="top:${this._open.y}px" role="dialog" aria-label="${g.label}" @keydown="${this._gridKeys}">
-      <div class="label">${g.label}</div>
+    return html`<div class="menu grid" style="${this._menuPlace()}" role="dialog" aria-label="${g.label}" @keydown="${this._gridKeys}">
+      <div class="label" aria-hidden="true">${g.label}</div>
       ${g.filter
         ? html`<input
             type="search"
@@ -934,35 +1363,99 @@ class OerBlockRail extends LitElement {
     </div>`;
   }
 
+  // a menu opens level with its button beside the rail, or above the dock
+  // from its button's left
+  _menuPlace() {
+    const open = this._open;
+    return this._dock ? `--menu-x:${open.x}px` : `top:${open.y}px`;
+  }
+
+  _renderMenu() {
+    const open = this._open;
+    const first = this._cats[0]?.id === open.id;
+    return html`<div class="menu" role="menu" aria-label="${open.label}" style="${this._menuPlace()}" @keydown="${this._menuKeys}">
+      <div class="label" aria-hidden="true">${open.label}</div>
+      ${open.items.map((item) => this._renderItem(item))}
+      ${first
+        ? html`<div class="sep" role="separator"></div>
+            ${this._renderItem({ label: "Show labels", icon: "type", pressed: labelsWanted(), run: () => this._toggleLabels() })}`
+        : ""}
+    </div>`;
+  }
+
+  // the category buttons, and in the dock the selection's moves before them
+  _renderTools() {
+    const open = this._open;
+    const unit = this._info?.unit;
+    const along = unit && runsAlong(unit);
+    const step = (dir) => {
+      const why = unit ? ops.whyNot("move", unit, { dir }) : "";
+      const label = along ? (dir < 0 ? "Move earlier" : "Move later") : dir < 0 ? "Move up" : "Move down";
+      return html`<button
+        class="step"
+        tabindex="-1"
+        aria-label="${label}"
+        title="${why ? `${label}: ${why}` : label}"
+        aria-disabled="${why ? "true" : "false"}"
+        @click="${() => !why && ops.move(unit, dir)}"
+      >
+        ${icon(along ? (dir < 0 ? "arrow-left" : "arrow-right") : dir < 0 ? "arrow-up" : "arrow-down")}
+      </button>`;
+    };
+    return html`<div
+      class="rail ${this._labels ? "labels" : ""}"
+      role="toolbar"
+      aria-label="Tools for ${this._info?.name || "the selection"}"
+      aria-orientation="${this._dock ? "horizontal" : "vertical"}"
+      @keydown="${this._railKeys}"
+    >
+      ${this._dock && unit ? html`${step(-1)}${step(1)}<span class="divider" aria-hidden="true"></span>` : ""}
+      ${this._cats.map(
+        (cat, i) => html`<button
+          data-cat="${cat.id}"
+          tabindex="${i === 0 ? 0 : -1}"
+          title="${cat.label}"
+          aria-label="${cat.label}"
+          aria-haspopup="menu"
+          aria-expanded="${open?.id === cat.id ? "true" : "false"}"
+          @click="${(e) => this._toggle(cat, e)}"
+        >
+          ${icon(cat.icon)}${this._labels ? html`<span>${cat.label}</span>` : ""}
+        </button>`,
+      )}
+    </div>`;
+  }
+
+  // the dock's label row: the levels around the selection, its name tag, its state
+  _renderDockLabel() {
+    const info = this._info;
+    if (!info) return "";
+    return html`<div class="dock-label" role="toolbar" aria-label="Selection">
+      ${info.crumbs.map(
+        (c) => html`<button class="crumb" tabindex="-1" title="Select ${c.label}" @click="${() => ops.select(c.unit)}">${c.label}</button
+          ><span class="sep" aria-hidden="true">›</span>`,
+      )}
+      <button class="tag" aria-label="${info.said}" title="${info.name}: Enter edits it, arrows go to others, Shift+F10 for its actions" @keydown="${this._tagKeys}">
+        ${info.name}
+      </button>
+      ${info.chips.map((c) =>
+        c.run
+          ? html`<button class="chip" tabindex="-1" title="${c.label}: open it" @click="${() => c.run()}">${c.label}${icon("arrow-right")}</button>`
+          : html`<span class="chip">${c.label}</span>`,
+      )}
+    </div>`;
+  }
+
   render() {
     const open = this._open;
-    return html`
-      <div class="wrap" @mousedown="${this._keepSelection}">
-        <div class="rail" role="toolbar" aria-label="Block tools" aria-orientation="vertical" @keydown="${this._railKeys}">
-          ${this._cats.map(
-            (cat, i) => html`<button
-              data-cat="${cat.id}"
-              tabindex="${i === 0 ? 0 : -1}"
-              title="${cat.label}"
-              aria-label="${cat.label}"
-              aria-haspopup="menu"
-              aria-expanded="${open?.id === cat.id ? "true" : "false"}"
-              @click="${(e) => this._toggle(cat, e)}"
-            >
-              ${icon(cat.icon)}
-            </button>`,
-          )}
-        </div>
-        ${open && this._grid
-          ? this._renderGrid()
-          : open
-            ? html`<div class="menu" role="menu" aria-label="${open.label}" style="top:${open.y}px" @keydown="${this._menuKeys}">
-                <div class="label">${open.label}</div>
-                ${open.items.map((item) => this._renderItem(item))}
-              </div>`
-            : ""}
-      </div>
-    `;
+    const menu = open && this._grid ? this._renderGrid() : open ? this._renderMenu() : "";
+    if (this._dock) {
+      return html`<div class="wrap" @mousedown="${this._keepSelection}">
+        <div class="dock" role="region" aria-label="Selection">${this._renderDockLabel()} ${this._renderTools()}</div>
+        ${menu}
+      </div>`;
+    }
+    return html`<div class="wrap" @mousedown="${this._keepSelection}">${this._renderTools()} ${menu}</div>`;
   }
 }
 customElements.define(OerBlockRail.tag, OerBlockRail);

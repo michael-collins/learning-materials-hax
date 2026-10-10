@@ -21,7 +21,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
-import { contentView } from "./editor-state.js";
+import { contentView, editorState } from "./editor-state.js";
 import { computeSlots, slotAt, sameSlot, insertInSlot } from "./slots.js";
 
 const PANEL_W = 288;
@@ -126,7 +126,7 @@ class OerBlockInserter extends LitElement {
     // empty slots between blocks, including inside layout columns; the
     // slot after the last top-level block is the "Add block" row instead
     let hover = null;
-    if (!globalThis.__oerDragging) {
+    if (!editorState.dragging) {
       const slots = computeSlots(body).filter((sl) => !sl.end);
       if (this._open) {
         // keep the chosen slot marked (and following the page) while choosing

@@ -11,17 +11,22 @@
  *   level       "section", "item", "block", or "field" while typing
  *   mode        "typing" (the caret in a field, focus in the content) or
  *               "selected" (a unit as a whole), or null
- *   geometry    where the unit is: { view, unit, visible, gutter, dock,
- *               scroller }. view is the content viewport (below the bar,
- *               inside the scrollbar); unit the unit's rect and visible the
- *               part of it in the view (null when none is); gutter the
- *               empty margin left of the content's text column, and dock
- *               whether it's too narrow for the rail beside it, or the
- *               window is phone-width (below 48rem): then the selection's
- *               tools sit in a dock at the bottom; scroller
- *               "main" (desktop) or "window" (phones). Viewport pixels.
+ *   geometry    where the unit is: { view, unit, visible, field, gutter,
+ *               dock, scroller }. view is the content viewport (below the
+ *               bar, inside the scrollbar, above the dock); unit the unit's
+ *               rect and visible the part of it in the view (null when none
+ *               is); field the rect of the field being typed in, when it's
+ *               inside the unit (an outcome's title); gutter the empty
+ *               margin left of the content's text column, and dock whether
+ *               it's too narrow for the rail beside it, or the window is
+ *               phone-width (below 48rem): then the selection's tools sit in
+ *               a dock at the bottom; scroller "main" (desktop) or "window"
+ *               (phones). Viewport pixels.
  *   dirty       the page differs from when editing began (or was last saved)
  *   saving, preview   set by the editing bar
+ *   dragging    a unit is being dragged by the selection frame's grip
+ *   dockHeight  how much of the window's bottom the dock covers (the rail
+ *               sets it), which the content view leaves out
  *
  * It changes in one requestAnimationFrame loop, run only while editing,
  * and sends `change` with detail.changed (a Set of the names that
@@ -62,8 +67,10 @@ const frames = () => new Promise((r) => requestAnimationFrame(() => requestAnima
 
 // how long typing settles before unsaved changes are measured
 const DIRTY_DEBOUNCE = 150;
-// the rail's width with its icons alone (2rem buttons in a 0.25rem frame)
-const RAIL_WIDTH = 42;
+// the room the rail needs beside the text: its width with its icons alone
+// (2rem buttons in a 0.25rem frame), and the selection's handle, which sits
+// between it and the text (oer-block-frame)
+const RAIL_WIDTH = 42 + 24;
 
 /* ---------- what counts as a change ---------- */
 
@@ -104,19 +111,21 @@ const round = (r) => (r ? { top: Math.round(r.top), right: Math.round(r.right), 
  * under the bar, so it's main's box inside its scrollbar; on phones the
  * window scrolls, so it's the window below the sticky bar. Viewport
  * pixels, and which scrolls: { top, right, bottom, left, scroller }. What
- * the selection frame, the rail and the inserter clip to as well.
+ * the selection frame, the rail and the inserter clip to as well. The
+ * part of the window the selection dock covers (editorState.dockHeight)
+ * is left out.
  */
 export function contentView() {
   const root = theme()?.shadowRoot;
   const main = root?.querySelector("main");
   const vv = globalThis.visualViewport;
-  const height = vv ? vv.offsetTop + vv.height : globalThis.innerHeight;
+  const height = (vv ? vv.offsetTop + vv.height : globalThis.innerHeight) - (editorState.dockHeight || 0);
   if (!main) return { top: 0, right: globalThis.innerWidth, bottom: height, left: 0, scroller: "window" };
   const r = main.getBoundingClientRect();
   const left = r.left + main.clientLeft;
   const right = left + main.clientWidth;
   if (main.scrollHeight > main.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(main).overflowY)) {
-    return { top: r.top + main.clientTop, right, bottom: r.top + main.clientTop + main.clientHeight, left, scroller: "main" };
+    return { top: r.top + main.clientTop, right, bottom: Math.min(r.top + main.clientTop + main.clientHeight, height), left, scroller: "main" };
   }
   // the bar sticks to the top of the window
   const bar = root.querySelector("header.topbar, oer-edit-bar");
@@ -137,7 +146,7 @@ function textLeft(body) {
   return body.getBoundingClientRect().left;
 }
 
-function geometryOf(unit, body, railWidth) {
+function geometryOf(unit, body, railWidth, field = null) {
   const v = contentView();
   const view = { top: v.top, right: v.right, bottom: v.bottom, left: v.left };
   const gutter = Math.max(0, Math.round(textLeft(body) - view.left));
@@ -148,7 +157,8 @@ function geometryOf(unit, body, railWidth) {
       : null;
   // (the phone layout always docks)
   const dock = gutter < railWidth + 16 || PHONE.matches;
-  return { view: round(view), unit: round(r), visible: round(visible), gutter, dock, scroller: v.scroller };
+  const f = field && field !== unit && unit?.contains(field) ? field.getBoundingClientRect() : null;
+  return { view: round(view), unit: round(r), visible: round(visible), field: round(f), gutter, dock, scroller: v.scroller };
 }
 
 /* ---------- the store ---------- */
@@ -199,7 +209,9 @@ class EditorState extends EventTarget {
     this.dirty = false;
     this.saving = false;
     this.preview = false;
-    // the rail's width, which it sets when it shows its labels
+    this.dragging = false;
+    this.dockHeight = 0;
+    // the room the rail needs beside the text
     this.railWidth = RAIL_WIDTH;
     // whether unsaved changes are being followed (a baseline is taken)
     this.tracking = false;
@@ -266,7 +278,7 @@ class EditorState extends EventTarget {
       field: typingIn,
       level,
       mode,
-      geometry: editing ? geometryOf(unit, body, this.railWidth) : null,
+      geometry: editing ? geometryOf(unit, body, this.railWidth, typingIn) : null,
     });
   }
 
@@ -327,7 +339,7 @@ class EditorState extends EventTarget {
     this.__baseline = null;
     this.tracking = false;
     this._stop();
-    this.set({ editing: false, body: null, activeNode: null, unit: null, field: null, level: null, mode: null, geometry: null, dirty: false, preview: false });
+    this.set({ editing: false, body: null, activeNode: null, unit: null, field: null, level: null, mode: null, geometry: null, dirty: false, preview: false, dragging: false, dockHeight: 0 });
   }
 
   /* ---------- the caret and HAX's active block ---------- */
