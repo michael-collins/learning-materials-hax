@@ -35,12 +35,17 @@
  *   start of the paragraph. placeOf() notes the field and the caret's place
  *   in its text, and returnTo() finds them again in the copy; where Undo
  *   changed that field's text, the caret goes to the end of the change.
- *   When the place is gone (Undo took back the item it was in), the block
- *   HAX made active again takes it.
- * - checkpoint(body, label) records the content as one step now, named for
- *   announcing ("moved Tools up"); ops.js puts one before and one after
- *   each change it makes. undo() and redo() send `oer-undo` from hax-body
- *   with { redo, label }.
+ *   Undo of a change the editor made (ops.js: an outcome added, one
+ *   removed) goes back to where the author was as it began, and Redo to
+ *   where it left them (placeAround(): the caret, or the unit changed when
+ *   it came from a control), as the place they're in now may not be there
+ *   after it (the outcome Undo takes away), or may be another field at the
+ *   same place. When the place is gone, the block HAX made active again
+ *   takes it.
+ * - checkpoint(body, label, around) records the content as one step now,
+ *   named for announcing ("moved Tools up"), with where the author was
+ *   around it; ops.js puts one before and one after each change it makes.
+ *   undo() and redo() send `oer-undo` from hax-body with { redo, label }.
  * - What a block makes of itself as editing begins is how the page began,
  *   not a step: a course site section upgrades the markup written before
  *   the section model and makes an empty heading to type into (blocks/
@@ -52,7 +57,7 @@
  *   installUndo()          // from installEditorChrome (editor/index.js)
  *   undo(); redo()         // the editing bar's buttons
  *   undo({ place })        // and go back to a place placeOf() took
- *   checkpoint(body, "moved Tools up")
+ *   checkpoint(body, "moved Tools up", { before, after })
  */
 import { isMac } from "./stock.js";
 import { onDefined, pinned } from "./hax-fixes.js";
@@ -176,12 +181,17 @@ const unrecorded = (body) => normalizedHtml(body.innerHTML) !== recorded(body);
 
 // what each step did, for announcing it ("Undid: moved Tools up")
 const labels = new WeakMap();
+// where the author was as a step began and as it ended (placeOf()), for
+// Undo and Redo of it to go back to
+const places = new WeakMap();
 
 /**
  * Record hax-body's content as an undo step now, if it changed since the
- * last one, rather than when HAX's 300 ms wait ends; label names the step.
+ * last one, rather than when HAX's 300 ms wait ends; label names the step,
+ * and around ({ before, after }, placeAround()) says where the author was
+ * as it began and ended.
  */
-export function checkpoint(body, label = "") {
+export function checkpoint(body, label = "", around = null) {
   const stack = body?.undoStack;
   if (!stack) return;
   const before = stack.commands[stack.undoStackPosition];
@@ -192,7 +202,9 @@ export function checkpoint(body, label = "") {
     body.undoManagerStackLogic({});
   }
   const step = stack.commands[stack.undoStackPosition];
-  if (label && step && step !== before) labels.set(step, label);
+  if (!step || step === before) return;
+  if (label) labels.set(step, label);
+  if (around) places.set(step, around);
 }
 
 /** The name of the step Undo (or Redo) would take back next, or "". */
@@ -244,6 +256,17 @@ export function placeOf(body = activeBody()) {
   }
   const active = haxStore()?.activeNode;
   return active && active !== body && body.contains(active) ? { path: pathTo(body, active), text: null, offset: 0 } : null;
+}
+
+/**
+ * Where the author is as a change to unit begins or ends (ops.js), for Undo
+ * of it to go back to (and Redo to where it left them): placeOf() while
+ * focus is in the content; from a control (the editor's, or a block's own,
+ * such as Add an outcome), the unit, selected as a whole. Null for neither.
+ */
+export function placeAround(body, unit) {
+  if (deepActive() === body) return placeOf(body);
+  return unit?.isConnected && body.contains(unit) ? { path: pathTo(body, unit), text: null, offset: 0 } : null;
 }
 
 // the place's element in the content as it is now: at the same path, or,
@@ -330,12 +353,16 @@ async function step(again, { place } = {}) {
   if (!body?.undoStack || !body.editMode) return false;
   checkpoint(body);
   // where to go back to: the place given (a toast's Undo, where focus was on
-  // the toast), or where the author is when focus is in the content; from
-  // the editor's own buttons, focus stays on the button
+  // the toast); for a change the editor made (ops.js), where the author was
+  // as it began (Undo) or ended (Redo); or else where the author is, when
+  // focus is in the content. From the editor's own buttons, focus stays on
+  // the button
   const inContent = deepActive() === body;
-  place ??= inContent ? placeOf(body) : null;
-  const label = stepLabel(body, { redo: again });
   const stack = body.undoStack;
+  const around = places.get(stack.commands[again ? stack.undoStackPosition + 1 : stack.undoStackPosition]);
+  const made = around?.[again ? "after" : "before"];
+  place ??= inContent ? made || placeOf(body) : null;
+  const label = stepLabel(body, { redo: again });
   const possible = again ? stack.canRedo() : stack.canUndo();
   if (again) body.redo();
   else body.undo();
@@ -349,6 +376,7 @@ async function step(again, { place } = {}) {
   await frame();
   if (!body.editMode) return true;
   const lost = !deepActive() || deepActive() === globalThis.document.body;
+  if (lost) place ??= made;
   if (!returnTo(body, place) && (place || inContent || lost)) returnToActive(body);
   return true;
 }

@@ -10,7 +10,7 @@
  */
 import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
-import { SiteSection, csStyles, icon, hasContent } from "./cs-shared.js";
+import { SiteSection, csStyles, icon, hasContent, TEXT_BLOCKS } from "./cs-shared.js";
 import { COURSE_HUB_TYPE, catalog } from "../../types/course-site.js";
 import { pageHtml, parsePage } from "../../types/page-report.js";
 
@@ -32,7 +32,7 @@ export class OerCoursesIntro extends SiteSection {
     return "h1";
   }
   static get oerEditor() {
-    return { kind: "section", label: "Intro", called: "the intro", pin: "first", pageTypes: [COURSE_HUB_TYPE], accepts: ["h1", "p"], fields: { p: { name: "intro" } }, attrs: ["heading"] };
+    return { kind: "section", label: "Intro", called: "the intro", pin: "first", pageTypes: [COURSE_HUB_TYPE], accepts: ["h1", "h2", ...TEXT_BLOCKS], fields: { p: { name: "intro" } }, attrs: ["heading"] };
   }
   renderContent() {
     if (!onHub(this)) return wrongPage(this);

@@ -46,8 +46,12 @@
  *   heading. At the end of a column a block goes on to the next column.
  * - Hide, and any attribute: setAttr().
  * Each is checkpointed before and after (undo.js checkpoint): typing not
- * yet recorded is its own step, and the change is one step. Changes run one
- * at a time, in the order asked.
+ * yet recorded is its own step, and the change is one step, which notes
+ * where the author was as it began and ended (for Undo and Redo to go
+ * back to). Changes run one at a time, in the order asked, and what's
+ * typed in the content meanwhile (Enter in a sentence, then the next
+ * outcome's title straight away) is held and typed once they're done,
+ * where they leave the caret.
  *
  * whyNot(action, el) says why something can't be done ("Already first",
  * "Only one per page"), for menus to show beside an item they switch off;
@@ -63,7 +67,7 @@
  *   await move(tools, -1)
  *   await addItem(outcome)
  */
-import { checkpoint, undo, placeOf } from "./undo.js";
+import { checkpoint, undo, placeOf, placeAround } from "./undo.js";
 import { policyOf, policyOfTag, labelOf, phraseOf, unitOf, TEXT_FIELDS } from "./policy.js";
 import { editorState, contentView } from "./editor-state.js";
 import { announce } from "./announce.js";
@@ -97,6 +101,13 @@ function deepActive() {
   while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
   return el;
 }
+// focus gone: on the page itself, or on a control a change took away
+const focusLost = (el = deepActive()) => !el || el === globalThis.document.body || !el.isConnected || !el.checkVisibility();
+// whether a node is el or inside it, its shadow DOM included
+function within(node, el) {
+  for (let n = node; n; n = n.parentElement || n.getRootNode().host) if (n === el) return true;
+  return false;
+}
 
 /**
  * Resolves once HAX has finished inserting (or importing) and two frames
@@ -114,21 +125,58 @@ export async function settled(body = activeBody(), { timeout = 600 } = {}) {
 /* ---------- one change at a time, one undo step each ---------- */
 
 let queue = Promise.resolve();
+// changes asked for and not yet done, and what's been typed meanwhile
+let pending = 0;
+let held = "";
 
-// run fn(body) as one undo step named step, after any change still running
-function change(step, fn) {
+// run fn(body) as one undo step named step, after any change still running;
+// unit is what it changes, where Undo goes back to when the change came
+// from a control (undo.js placeAround)
+function change(unit, step, fn) {
+  pending++;
   const done = queue.then(async () => {
     const body = activeBody();
     if (!body?.editMode) return false;
+    const before = placeAround(body, unit);
     checkpoint(body);
     try {
       return await fn(body);
     } finally {
-      checkpoint(body, step);
+      checkpoint(body, step, { before, after: placeAround(body, unit) });
     }
   });
-  queue = done.catch(() => {});
+  queue = done
+    .catch(() => {})
+    .then(() => {
+      if (--pending === 0) typeHeld();
+    });
   return done;
+}
+
+// a character typed in the content while a change is being made: held (a
+// Backspace takes back the last one held), for typeHeld(). Otherwise it
+// would go to the field the caret was in as the change was asked for: the
+// sentence an Enter ended, not the new outcome's title
+function holdKeys(e) {
+  if (!pending || e.defaultPrevented || e.isComposing || e.ctrlKey || e.metaKey || e.altKey) return;
+  const typed = e.key.length === 1;
+  if (!typed && !(e.key === "Backspace" && held)) return;
+  const body = activeBody();
+  const origin = e.composedPath()[0];
+  if (!body?.editMode || !(origin === body || body.contains(origin))) return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  held = typed ? held + e.key : held.slice(0, -1);
+}
+
+// what was held, typed where the changes left the caret (if they left one)
+function typeHeld() {
+  const text = held;
+  held = "";
+  const body = activeBody();
+  if (!text || !body?.editMode || deepActive() !== body) return;
+  const sel = selectionOf(body);
+  if (sel?.rangeCount && body.contains(sel.getRangeAt(0).startContainer)) globalThis.document.execCommand("insertText", false, text);
 }
 
 // say why not, and do nothing
@@ -149,7 +197,8 @@ function reveal(el) {
 /**
  * Select a unit as a whole: HAX's active block, with no caret (so typing
  * can't go into it), and, with focus, focus on it (its name tag, drawn by
- * the selection frame).
+ * the selection frame); with no one to take it, and focus gone (with a
+ * control a change took away), focus goes to the content, with no caret.
  */
 export function select(el, { focus = true } = {}) {
   const body = activeBody();
@@ -159,7 +208,10 @@ export function select(el, { focus = true } = {}) {
   if (sel?.rangeCount && body.contains(sel.getRangeAt(0).startContainer)) sel.removeAllRanges();
   haxStore().activeNode = unit;
   reveal(unit);
-  if (focus) editorState.requestFocus(unit);
+  if (focus && !editorState.requestFocus(unit) && focusLost()) {
+    body.focus({ preventScroll: true });
+    sel?.removeAllRanges();
+  }
   return true;
 }
 
@@ -271,7 +323,7 @@ export function move(el, dir) {
   const plan = planMove(unit, dir);
   if (plan.reason) return refuse(plan.reason);
   if (plan.column) return moveToColumn(unit, dir);
-  return change(`moved ${phraseOf(unit)} ${direction(unit, dir)}`, async (body) => {
+  return change(unit, `moved ${phraseOf(unit)} ${direction(unit, dir)}`, async (body) => {
     const { partner, reason } = planMove(unit, dir);
     if (!partner) return refuse(reason || "Can't move it there");
     await keepCaret(body, () => {
@@ -296,7 +348,7 @@ export function moveToColumn(el, dir) {
   if (why) return refuse(why);
   const to = nextColumn(unit, dir);
   const grid = unit.parentElement;
-  return change(`moved ${phraseOf(unit)} to column ${to}`, async (body) => {
+  return change(unit, `moved ${phraseOf(unit)} to column ${to}`, async (body) => {
     const slot = `col-${to}`;
     const there = [...grid.children].filter((c) => c !== unit && (c.getAttribute("slot") || "col-1") === slot);
     await keepCaret(body, () => {
@@ -337,7 +389,7 @@ export function addItem(el, { above = false, focus = true } = {}) {
   const isItem = policyOf(at).kind === "item";
   const section = isItem ? at.parentElement : at;
   const tag = itemTagOf(section);
-  return change(`added ${phraseOf(tag)}`, async (body) => {
+  return change(section, `added ${phraseOf(tag)}`, async (body) => {
     // next to the item, or first in the section: before its first item, or
     // after its heading
     let anchor = isItem ? at : [...section.children].find((c) => policyOf(c).kind === "item");
@@ -374,7 +426,7 @@ export function addItem(el, { above = false, focus = true } = {}) {
  */
 export function insertBlock(slot, tag, { content = "", properties = {} } = {}) {
   if (!slot?.container || !tag) return refuse("Nowhere to add it");
-  return change(`added ${phraseOf(tag)}`, async (body) => {
+  return change(null, `added ${phraseOf(tag)}`, async (body) => {
     const added = await insertInSlot(haxStore(), slot, { tag, content, properties });
     if (!added) return null;
     await settled(body);
@@ -402,7 +454,7 @@ export function duplicate(el) {
   const unit = unitOf(el);
   const why = whyNotDuplicate(unit);
   if (why) return refuse(why);
-  return change(`duplicated ${phraseOf(unit)}`, async (body) => {
+  return change(unit, `duplicated ${phraseOf(unit)}`, async (body) => {
     await body.haxDuplicateNode(unit);
     // HAX puts the copy right after it
     const copy = unit.nextElementSibling;
@@ -508,7 +560,7 @@ export async function remove(el, { ask = true, caret = null } = {}) {
     if (choice === "hide") return hide(unit);
     if (choice !== "remove") return false;
   }
-  const done = await change(`removed ${phraseOf(unit)}`, async (body) => {
+  const done = await change(unit, `removed ${phraseOf(unit)}`, async (body) => {
     if (!unit.isConnected) return false;
     const next = afterRemoving(unit);
     const before = caret === "before" ? fieldBefore(unit) : null;
@@ -552,7 +604,7 @@ export function pasteItems(el, lines) {
   const at = unitOf(el);
   if (policyOf(at).kind !== "item" || !lines?.length) return refuse("Nothing to paste");
   const tag = at.localName;
-  return change(`pasted ${lines.length} ${phraseOf(tag)}s`, async (body) => {
+  return change(at, `pasted ${lines.length} ${phraseOf(tag)}s`, async (body) => {
     const title = firstField(at);
     if (![...at.children].some(hasText) && title) title.textContent = lines[0];
     else globalThis.document.execCommand("insertText", false, lines[0]);
@@ -583,9 +635,9 @@ export function strayToItems(el) {
   const section = unitOf(el);
   const tag = section ? itemTagOf(section) : "";
   const strays = straysOf(section).filter(hasText);
-  if (!tag) return refuse("Takes no items");
+  if (!tag) return refuse("Nothing can be added here");
   if (!strays.length) return refuse("Nothing to make into items");
-  return change(`made ${phraseOf(tag)}s`, async (body) => {
+  return change(section, `made ${phraseOf(tag)}s`, async (body) => {
     const made = strays.flatMap((stray) => (/^(ul|ol)$/.test(stray.localName) ? [...stray.children] : [stray]).filter(hasText).map((block) => itemWith(tag, [...block.childNodes])));
     const items = [...section.children].filter((c) => c.localName === tag);
     const after = items.at(-1) || section.headingElement;
@@ -605,7 +657,7 @@ export function moveOut(el) {
   const section = unitOf(el);
   const strays = straysOf(section);
   if (!strays.length) return refuse("Nothing to move");
-  return change(`moved ${strays.length === 1 ? "a block" : `${strays.length} blocks`} out of ${phraseOf(section)}`, async (body) => {
+  return change(section, `moved ${strays.length === 1 ? "a block" : `${strays.length} blocks`} out of ${phraseOf(section)}`, async (body) => {
     body.___moveLock = true;
     section.after(...strays);
     await settled(body);
@@ -627,7 +679,7 @@ export function moveOut(el) {
 export function setAttr(el, name, value, { step = "", said = "" } = {}) {
   if (!el || !name) return refuse("Nothing to change");
   const unit = unitOf(el) || el;
-  return change(step || `changed ${phraseOf(unit)}`, () => {
+  return change(unit, step || `changed ${phraseOf(unit)}`, () => {
     if (!el.isConnected) return false;
     if (value === null || value === undefined || value === false) el.removeAttribute(name);
     else el.setAttribute(name, value === true ? "" : String(value));
@@ -636,14 +688,22 @@ export function setAttr(el, name, value, { step = "", said = "" } = {}) {
   });
 }
 
-function setHidden(el, hidden) {
+// focus stays with the section: from one of its own controls, which the
+// change takes away (the strip's Show to readers), it's selected
+async function setHidden(el, hidden) {
   const why = whyNot(hidden ? "hide" : "show", el);
   if (why) return refuse(why);
   const unit = unitOf(el);
-  return setAttr(unit, HIDDEN, hidden, {
+  const own = deepActive() !== unit && within(deepActive(), unit);
+  const done = await setAttr(unit, HIDDEN, hidden, {
     step: hidden ? `hid ${phraseOf(unit)} from readers` : `showed ${phraseOf(unit)} to readers`,
     said: hidden ? `${phraseOf(unit, START)} hidden from readers. Undo with ${UNDO_KEYS}` : `${phraseOf(unit, START)} shown to readers`,
   });
+  if (done && own) {
+    await unit.updateComplete;
+    if (focusLost()) select(unit);
+  }
+  return done;
 }
 
 /** Hide a section from readers (it stays on the page for authors). */
@@ -664,7 +724,7 @@ export function whyNot(action, el, { dir = 1 } = {}) {
     case "move-to-column":
       return nextColumn(unit, dir < 0 ? -1 : 1) ? "" : dir < 0 ? "Already in the first column" : "Already in the last column";
     case "add-item":
-      return itemTagOf(kind === "item" ? unit.parentElement : unit) ? "" : "Takes no items";
+      return itemTagOf(kind === "item" ? unit.parentElement : unit) ? "" : "Nothing can be added here";
     case "duplicate":
       return whyNotDuplicate(unit);
     case "remove":
@@ -734,10 +794,14 @@ export function installOps() {
   if (installed) return;
   installed = true;
   globalThis.addEventListener("oer-edit-request", onRequest);
-  // capture, on the window: before HAX's own keydown (also on the window)
+  // capture, on the window: before HAX's own keydown (also on the window),
+  // and the editor's on hax-body (editor/field-keys.js)
   globalThis.addEventListener("keydown", enterSelected, true);
-  // nothing is left to undo once editing ends
+  globalThis.addEventListener("keydown", holdKeys, true);
+  // nothing is left to undo, or to type, once editing ends
   globalThis.addEventListener("haxcms-edit-mode-changed", (e) => {
-    if (!e.detail) for (const id of [...undoToasts]) toaster().dismiss(id);
+    if (e.detail) return;
+    for (const id of [...undoToasts]) toaster().dismiss(id);
+    held = "";
   });
 }

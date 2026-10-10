@@ -22,8 +22,8 @@
  */
 import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
-import { SiteSection, csStyles, icon, hasContent, listItems, questions, OUTCOME_ICONS } from "./cs-shared.js";
-import { rowsToItems } from "./cs-normalize.js";
+import { SiteSection, csStyles, icon, hasContent, listItems, questions, OUTCOME_ICONS, TEXT_BLOCKS } from "./cs-shared.js";
+import { rowsToItems, retag } from "./cs-normalize.js";
 import "./cs-items.js";
 import "../../ui/oer-image-field.js";
 import { editorControl } from "../../ui/editor-control.js";
@@ -71,7 +71,7 @@ export class OerCsHero extends SiteSection {
     return null;
   }
   static get oerEditor() {
-    return written({ label: "Hero", called: "the hero", pin: "first", accepts: ["p"], fields: { p: { name: "tagline" } }, attrs: ["image", "alt"] });
+    return written({ label: "Hero", called: "the hero", pin: "first", accepts: ["h2", ...TEXT_BLOCKS], fields: { p: { name: "tagline" } }, attrs: ["image", "alt"] });
   }
   get shown() {
     return true;
@@ -893,7 +893,7 @@ export class OerCsPeople extends SiteSection {
     return { ...super.properties, heading: { type: String, reflect: true } };
   }
   static get oerEditor() {
-    return written({ label: "Who teaches it", accepts: ["h2", "p"], fields: { p: { name: "note" } } });
+    return written({ label: "Who teaches it", accepts: ["h2", ...TEXT_BLOCKS], fields: { p: { name: "note" } } });
   }
   get shown() {
     return !!this._d?.instructors.length || hasContent(this);
@@ -1042,10 +1042,30 @@ export class OerCsFaq extends SiteSection {
   static get oerEditor() {
     return written({
       label: "Questions",
-      accepts: ["h2", "h3", "h4", "h5", "h6", "p", "ul", "ol"],
+      accepts: ["h2", ...TEXT_BLOCKS],
       flow: "stack",
       fields: { h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } },
     });
+  }
+  /**
+   * Its heading: its first h2, except in questions written before it had a
+   * heading of its own (a heading attribute then), when each h2 was a
+   * question: with a heading attribute, with more than one h2, or with one
+   * asking something and no other headings.
+   */
+  static headingIn(el) {
+    const kids = [...el.children];
+    const h2s = kids.filter((c) => c.localName === "h2");
+    const lower = kids.some((c) => /^h[3-6]$/.test(c.localName));
+    if (!h2s.length || el.hasAttribute("heading") || h2s.length > 1 || (!lower && /\?\s*$/.test(h2s[0].textContent))) return null;
+    return h2s[0];
+  }
+  // questions written as h2s, before it had a heading of its own: h3s, as
+  // questions are now (its heading then comes from its attribute)
+  upgradeItems() {
+    const old = this.headingElement ? [] : [...this.children].filter((c) => c.localName === "h2");
+    for (const h2 of old) retag(h2, "h3");
+    return old.length > 0;
   }
   get shown() {
     return questions(this).length > 0;

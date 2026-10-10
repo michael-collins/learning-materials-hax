@@ -17,9 +17,14 @@
  *   Mod+Enter          a new first item a new item after
  *   Backspace at start –                an empty item goes; else to the end of the field before
  *   Delete at the end  –
- *   Tab, Shift+Tab     the next or previous field on the page (in an answer's list, HAX indents)
+ *   Tab, Shift+Tab     the next or previous field on the page (in an answer's list, HAX indents);
+ *                      from the last field (or back from the first), on out of the content
  *   Mod+A              this field only
  *   Escape             selects the section, or the item
+ *
+ * Mod is ⌘ on a Mac (where Ctrl keeps its own meanings: Ctrl+A goes to the
+ * line's start) and Ctrl elsewhere. In a section that holds no items (the
+ * semester, the hub's intro), Enter and Mod+Enter add nothing.
  *
  * Every other key typed in a heading, title, tool or sentence is the
  * browser's to type and HAX never sees it: HAX's shortcuts ("/" for its
@@ -40,7 +45,9 @@
 // a block's text fields, where a caret goes (editor/policy.js TEXT_FIELDS)
 const FIELDS = "p,h1,h2,h3,h4,h5,h6,li,blockquote,pre,dt,dd,figcaption,td,th,summary";
 const MEDIA = "img, video, audio, iframe";
+// (cs-shared.js isEmpty, which imports this file)
 const isEmpty = (el) => !el.textContent.trim() && !el.querySelector(MEDIA);
+const MAC = /Mac|iPhone|iPad/.test(globalThis.navigator?.platform ?? "");
 
 /** The selection where a node is, from its own (shadow) root: the content's own, as editing sees it. */
 export function getEditRange(node) {
@@ -93,6 +100,23 @@ function besideField(root, field, back) {
 // the page's content, where Tab goes on to the next field
 const contentOf = (el) => el.closest("hax-body") || el.getRootNode();
 
+// Tab on from the last field on the page (or back from the first): focus
+// leaves the content for what follows it (or comes before it), as the
+// browser's own Tab does from a stand-in just outside the content, which
+// takes focus for the key and goes once focus moves on. (Outside the
+// element whose shadow DOM holds the content, HAX's h-a-x: from beside the
+// content in there, Tab came back to it.)
+function leaveContent(field, back) {
+  const content = field.closest("hax-body");
+  if (!content) return;
+  const outside = content.getRootNode().host || content;
+  const mark = content.ownerDocument.createElement("span");
+  mark.tabIndex = -1;
+  outside[back ? "before" : "after"](mark);
+  mark.addEventListener("blur", () => mark.remove(), { once: true });
+  mark.focus({ preventScroll: true });
+}
+
 // ask the editor for a change to a unit (ops.js oer-edit-request)
 const ask = (unit, action, detail = {}) => unit.dispatchEvent(new CustomEvent("oer-edit-request", { bubbles: true, composed: true, detail: { action, unit, ...detail } }));
 
@@ -114,9 +138,9 @@ export function roleOf(unit, field) {
   return unit.constructor.textRole || "sentence";
 }
 
-// the section a unit is in (itself, for a section)
-const sectionOf = (unit) => (unit.constructor?.oerEditor?.kind === "item" ? unit.parentElement : unit);
-const itemsOf = (section) => [...(section?.children || [])].filter((c) => c.constructor?.oerEditor?.kind === "item");
+// the section a unit is in (itself, for a section), and whether it holds items
+const ownSection = (unit) => (unit.constructor?.oerEditor?.kind === "item" ? unit.parentElement : unit);
+const holdsItems = (section) => !!section?.itemTag;
 
 /* ---------- keys ---------- */
 
@@ -126,7 +150,7 @@ export function fieldKeydown(unit, e, field) {
   if (!role || e.isComposing) return false;
   const range = getEditRange(field);
   if (!range) return false;
-  const mod = e.metaKey || e.ctrlKey;
+  const mod = MAC ? e.metaKey : e.ctrlKey;
   const done = () => {
     e.preventDefault();
     return true;
@@ -147,9 +171,12 @@ export function fieldKeydown(unit, e, field) {
       // a list's items in an answer indent (HAX)
       if (role === "answer" && field.localName === "li") return false;
       const next = besideField(contentOf(unit), field, e.shiftKey);
-      if (!next) return true;
-      placeCaret(next, { atEnd: e.shiftKey });
-      return done();
+      if (next) {
+        placeCaret(next, { atEnd: e.shiftKey });
+        return done();
+      }
+      leaveContent(field, e.shiftKey);
+      return true;
     }
     case "Escape":
       ask(unit, "select");
@@ -167,19 +194,19 @@ export function fieldKeydown(unit, e, field) {
 }
 
 function enter(unit, e, field, role, range, mod, done) {
-  const section = sectionOf(unit);
+  const section = ownSection(unit);
   if (e.shiftKey && !mod) {
     // a line break in a sentence or an answer (the browser's); none in one-line fields
     return role === "sentence" || role === "answer" ? true : done();
   }
   if (mod) {
-    ask(role === "heading" ? section : unit, "add-item");
+    if (holdsItems(section)) ask(role === "heading" ? section : unit, "add-item");
     return done();
   }
   if (role === "heading") {
     const next = besideField(section, field, false);
     if (next) placeCaret(next);
-    else ask(section, "add-item");
+    else if (holdsItems(section)) ask(section, "add-item");
     return done();
   }
   if (role === "title") {
@@ -207,7 +234,7 @@ function enter(unit, e, field, role, range, mod, done) {
 }
 
 function backspace(unit, field, role, done) {
-  const section = sectionOf(unit);
+  const section = ownSection(unit);
   // never deletes the heading, or the section
   if (role === "heading") return done();
   if (role === "title") {
@@ -259,4 +286,3 @@ export function fieldPaste(unit, e, field) {
   return true;
 }
 
-export { itemsOf, sectionOf };

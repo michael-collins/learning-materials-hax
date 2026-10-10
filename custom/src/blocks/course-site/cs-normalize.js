@@ -7,14 +7,17 @@
  *
  * - headingFromAttribute: the heading attribute becomes the section's own
  *   heading element (<h2>, or <h1> for the hub's intro).
- * - ensureHeading: an empty heading to type into, first, when there's none.
- * - rowsToItems: each row of the section's lists becomes an item. An
- *   outcome's title is the row's bold start, or its words before a colon or
- *   a dash, and its sentence the rest (as listItems() reads it); a tool is
- *   the whole row. Links and emphasis are kept.
+ * - ensureHeading: the heading first, or an empty one to type into when
+ *   there's none (an item's title too).
+ * - rowsToItems: each row of the section's lists becomes an item (a row's
+ *   own sub-list, the rows after it). An outcome's title is the row's bold
+ *   start, or its words before a colon or a dash, and its sentence the rest
+ *   (as listItems() reads it); a tool is the whole row. Links and emphasis
+ *   are kept.
  * - runsToQuestions: each question (a heading, or a paragraph ending with
  *   "?") and the blocks after it, up to the next, become a question item.
- * Each returns whether it changed anything.
+ * - retag: an element as another tag (a heading of another level).
+ * Each returns whether it changed anything, retag the new element.
  *
  *   <oer-cs-learn heading="Skills"><ul><li><b>Cut</b>: plan parts.</li></ul></oer-cs-learn>
  *   → <oer-cs-learn><h2>Skills</h2><oer-cs-outcome><h3>Cut</h3><p>Plan parts.</p></oer-cs-outcome></oer-cs-learn>
@@ -22,28 +25,43 @@
 
 const make = (parent, tag) => parent.ownerDocument.createElement(tag);
 
-/** The section's heading attribute as its heading element (filling an empty one). */
-export function headingFromAttribute(section, tag = "h2") {
+/**
+ * The section's heading attribute as its heading element: filling heading
+ * (the section's own, as it reads it, or null) if that's empty, or else a
+ * new one first.
+ */
+export function headingFromAttribute(section, tag = "h2", heading = null) {
   const text = section.getAttribute("heading");
   if (text === null) return false;
   section.removeAttribute("heading");
   if (!text.trim()) return true;
-  const first = section.firstElementChild;
-  if (first?.localName === tag) {
-    if (!first.textContent.trim()) first.textContent = text.trim();
+  if (heading) {
+    if (!heading.textContent.trim()) heading.textContent = text.trim();
   } else {
-    const heading = make(section, tag);
-    heading.textContent = text.trim();
-    section.prepend(heading);
+    const made = make(section, tag);
+    made.textContent = text.trim();
+    section.prepend(made);
   }
   return true;
 }
 
-/** An empty heading first in the section, unless it starts with one. */
-export function ensureHeading(section, tag = "h2") {
-  if (section.firstElementChild?.localName === tag) return false;
-  section.prepend(make(section, tag));
+/**
+ * The heading first in the section (heading: its own, as it reads it, or
+ * null), where it's drawn and where the keys go first; or, with none, an
+ * empty one to type into.
+ */
+export function ensureHeading(section, tag = "h2", heading = null) {
+  if (heading && section.firstElementChild === heading) return false;
+  section.prepend(heading || make(section, tag));
   return true;
+}
+
+/** An element as another tag, in its place, with its contents. Returns the new element. */
+export function retag(el, tag) {
+  const made = make(el, tag);
+  made.append(...el.childNodes);
+  el.replaceWith(made);
+  return made;
 }
 
 /* ---------- list rows ---------- */
@@ -107,16 +125,35 @@ export function splitRow(li) {
   return { title, text };
 }
 
+const isList = (el) => el.localName === "ul" || el.localName === "ol";
+
+// a list's rows, each without its own sub-lists, whose rows follow it (a
+// row holding only a sub-list gives just those)
+function rowsOf(list) {
+  return [...list.children]
+    .filter((li) => li.localName === "li")
+    .flatMap((li) => {
+      const subs = [...li.children].filter(isList);
+      const row = li.cloneNode(true);
+      for (const sub of [...row.children]) if (isList(sub)) sub.remove();
+      const empty = !row.textContent.trim() && !row.querySelector("img, video, audio, iframe");
+      return [...(subs.length && empty ? [] : [row]), ...subs.flatMap(rowsOf)];
+    });
+}
+
+/** The rows of a section's own lists, in order, as copies: a row's sub-list's rows after it (as listItems() reads them too). */
+export const listRows = (section) => [...section.children].filter(isList).flatMap(rowsOf);
+
 /**
  * Each row of the section's own lists (ul, ol) as an item of tag, in the
  * list's place: as an outcome (a title and a sentence) or, with whole, the
- * row in one paragraph (a tool). An empty row is an empty item.
+ * row in one paragraph (a tool). A row's sub-list gives items of its own,
+ * after it (Tab made one in a row). An empty row is an empty item.
  */
 export function rowsToItems(section, tag, { whole = false } = {}) {
-  const lists = [...section.children].filter((c) => c.localName === "ul" || c.localName === "ol");
+  const lists = [...section.children].filter(isList);
   for (const list of lists) {
-    const items = [...list.children]
-      .filter((li) => li.localName === "li")
+    const items = rowsOf(list)
       .map((li) => {
         const item = make(section, tag);
         if (whole) {

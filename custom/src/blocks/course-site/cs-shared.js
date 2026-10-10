@@ -16,7 +16,7 @@ import { html, css, LitElement, svg } from "../../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { siteData, COURSE_SITE_TYPE } from "../../types/course-site.js";
 import { editorControl } from "../../ui/editor-control.js";
-import { headingFromAttribute, ensureHeading } from "./cs-normalize.js";
+import { headingFromAttribute, ensureHeading, listRows } from "./cs-normalize.js";
 import { fieldKeydown, fieldKeyup, fieldPaste } from "./cs-keys.js";
 
 // Lucide (ISC), inline
@@ -64,12 +64,18 @@ export function sectionOf(el) {
 
 const MEDIA = "img, video, audio, iframe";
 /** Whether a field (or any block) holds no text and no picture. */
-export const isEmpty = (el) => !el.textContent.trim() && !el.querySelector(MEDIA);
+export const isEmpty = (el) => !el.textContent.trim() && !el.matches(MEDIA) && !el.querySelector(MEDIA);
 
-/** A section's own heading element (its first h2, the hub intro's h1), or null. */
+/**
+ * The blocks of text a written section shows readers as they're typed (a
+ * tagline, a note, a question's answer): what HAX makes of a field, its
+ * Markdown shortcuts and its Format menu included.
+ */
+export const TEXT_BLOCKS = ["p", "ul", "ol", "blockquote", "h3", "h4", "h5", "h6", "pre", "figure"];
+
+/** A section's own heading element (its first h2, the hub intro's h1: SiteSection.headingIn), or null. */
 export function headingOf(el) {
-  const tag = el.constructor?.headingTag;
-  return tag ? [...el.children].find((c) => c.localName === tag) || null : null;
+  return el.constructor?.headingIn?.(el) ?? null;
 }
 
 /** A section's own blocks: not HAX's page-break, nor its heading. */
@@ -78,18 +84,18 @@ export const ownBlocks = (el) => {
   return [...el.children].filter((c) => c.localName !== "page-break" && c !== heading);
 };
 
-/** Whether a section holds any text or media (its heading aside). */
-export const hasContent = (el) => ownBlocks(el).some((c) => c.textContent.trim() || /^(img|video|iframe|figure)$/.test(c.localName) || c.querySelector?.("img, video, iframe"));
+/** Whether a section holds text or a picture where readers see it: in the blocks it takes (its heading aside). */
+export const hasContent = (el) => (el.sortChildren?.().text ?? ownBlocks(el)).some((c) => !isEmpty(c));
 
 /**
- * A section's list as items: each row's bold start, or the words before a
- * colon or dash, is its title ("Cut with confidence: plan, cut and finish…").
+ * A section's list as items, a row's sub-list's rows after it: each row's
+ * bold start, or the words before a colon or dash, is its title ("Cut with
+ * confidence: plan, cut and finish…").
  * How readers see a section written before it had items (cs-normalize.js
  * rowsToItems makes items the same way).
  */
 export function listItems(el) {
-  const rows = [...el.querySelectorAll(":scope > ul > li, :scope > ol > li")];
-  return rows
+  return listRows(el)
     .map((li) => {
       const lead = li.firstElementChild && /^(strong|b)$/.test(li.firstElementChild.localName) && li.textContent.trim().startsWith(li.firstElementChild.textContent.trim()) ? li.firstElementChild.textContent.trim() : "";
       const all = li.textContent.replace(/\s+/g, " ").trim();
@@ -114,13 +120,18 @@ export function questions(el) {
   for (const b of blocks) {
     const isQ = headed ? /^h[2-6]$/.test(b.localName) : b.localName === "p" && /\?\s*$/.test(b.textContent);
     if (isQ && b.textContent.trim()) out.push({ q: b.textContent.trim(), a: [] });
-    else if (out.length && b.textContent.trim()) out[out.length - 1].a.push(b.cloneNode(true));
+    else if (out.length && !isEmpty(b)) out[out.length - 1].a.push(b.cloneNode(true));
   }
   return out;
 }
 
 // "an outcome", "a tool"
 const withArticle = (noun) => `${/^[aeiou]/i.test(noun) ? "an" : "a"} ${noun}`;
+// an element without what HAX adds while editing, which it never saves
+function withoutEditing(el) {
+  for (const a of [...el.attributes]) if (a.name.startsWith("data-hax-") || a.name === "contenteditable" || a.name === "draggable") el.removeAttribute(a.name);
+  if (el.getAttribute("role") === "textbox") el.removeAttribute("role");
+}
 // what a stray block is, in words
 const kindOf = (el) => (el.localName === "p" ? "paragraph" : /^h[1-6]$/.test(el.localName) ? "heading" : /^(ul|ol)$/.test(el.localName) ? "list" : "block");
 
@@ -151,7 +162,10 @@ const kindOf = (el) => (el.localName === "p" ? "paragraph" : /^h[1-6]$/.test(el.
  * - Editing begins (HAX's editModeChanged): its old markup is upgraded
  *   (cs-normalize.js), with an empty heading to type into; saving leaves an
  *   empty heading out (postProcessNodeToContent, from the HTML written for
- *   it: the page being edited keeps it).
+ *   it: the page being edited keeps it), and its own Edit HTML shows it
+ *   without what editing adds (preProcessNodeToContent).
+ * - Its heading is its first h2 (headingIn(), which a section whose
+ *   headings meant something else before can change).
  * - Its HAX menu (inlineContextMenu) offers Hide from readers or Show to
  *   readers, and Add for a section of items, each asked of the editor with
  *   `oer-edit-request`.
@@ -181,6 +195,12 @@ export class SiteSection extends LitElement {
   /** Its heading's tag: "h2" ("h1" for the hub's intro), or null for one without a heading of its own. */
   static get headingTag() {
     return "h2";
+  }
+
+  /** The heading of a section of this kind (el): its first child of headingTag, or null. */
+  static headingIn(el) {
+    const tag = this.headingTag;
+    return tag ? [...el.children].find((c) => c.localName === tag) || null : null;
   }
 
   constructor() {
@@ -289,9 +309,9 @@ export class SiteSection extends LitElement {
     const accepts = this.constructor.oerEditor.accepts || [];
     const tag = this.constructor.headingTag;
     const itemTag = this.itemTag;
-    const out = { heading: null, items: [], text: [], stray: [] };
+    const out = { heading: this.headingElement, items: [], text: [], stray: [] };
     for (const el of this.children) {
-      if (tag && el.localName === tag && !out.heading) out.heading = el;
+      if (el === out.heading) continue;
       else if (itemTag && el.localName === itemTag) out.items.push(el);
       // (one heading, and one only)
       else if (accepts.includes(el.localName) && el.localName !== tag) out.text.push(el);
@@ -327,7 +347,7 @@ export class SiteSection extends LitElement {
     slot("text-first")?.assign(...text.slice(0, 1));
     slot("text")?.assign(...text.slice(1));
     slot("stray")?.assign(...(editing ? sorted.stray : []));
-    for (const item of sorted.items) item.setEditing?.(editing);
+    sorted.items.forEach((item, i) => item.setEditing?.(editing, i));
   }
 
   /** Whether readers see this section (the course site's bar lists those). */
@@ -464,16 +484,18 @@ export class SiteSection extends LitElement {
       editModeChanged: "haxeditModeChanged",
       activeElementChanged: "haxactiveElementChanged",
       inlineContextMenu: "haxinlineContextMenu",
+      preProcessNodeToContent: "haxpreProcessNodeToContent",
       postProcessNodeToContent: "haxpostProcessNodeToContent",
     };
   }
 
   /**
    * Editing begins: what was written before the section model is upgraded
-   * (a heading attribute becomes its heading; upgradeItems() for items) and
-   * an empty heading is made to type into, all before HAX takes its
-   * starting copy of the page (or, should it come after, as part of it:
-   * editor/undo.js hears cs-upgraded), so none of it is a change.
+   * (upgradeItems() for items; a heading attribute becomes its heading),
+   * its heading goes first (an empty one is made to type into) and each
+   * item gets a title to type into, all before HAX takes its starting copy
+   * of the page (or, should it come after, as part of it: editor/undo.js
+   * hears cs-upgraded), so none of it is a change.
    */
   haxeditModeChanged(on) {
     if (on) this.upgrade();
@@ -482,10 +504,12 @@ export class SiteSection extends LitElement {
   /** See haxeditModeChanged(). Returns whether anything changed. */
   upgrade() {
     const tag = this.constructor.headingTag;
-    let changed = false;
-    if (tag) changed = headingFromAttribute(this, tag) || changed;
-    changed = this.upgradeItems() || changed;
-    if (tag) changed = ensureHeading(this, tag) || changed;
+    // (items first: what an old section's headings were is read before its
+    // heading attribute goes)
+    let changed = this.upgradeItems();
+    if (tag) changed = headingFromAttribute(this, tag, this.headingElement) || changed;
+    if (tag) changed = ensureHeading(this, tag, this.headingElement) || changed;
+    for (const item of this.items) changed = item.upgrade?.() || changed;
     if (changed) this.dispatchEvent(new CustomEvent("cs-upgraded", { bubbles: true, composed: true }));
     return changed;
   }
@@ -527,11 +551,22 @@ export class SiteSection extends LitElement {
   }
 
   /**
+   * HAX's own Edit HTML of the section (its source view, which shows the
+   * section element itself, and makes a new one of what's typed there):
+   * without what editing adds to it and its fields, as saving leaves them
+   * out. HAX takes the section out of editing for it anyway (and makes it
+   * what preProcessNodeToContent returns, so it's the section, not a copy).
+   * hax-body.js hax-source-view-toggle 3797–3826.
+   */
+  haxpreProcessNodeToContent(node) {
+    if (node.__haxSourceView) for (const el of [node, ...node.querySelectorAll("*")]) withoutEditing(el);
+    return node;
+  }
+
+  /**
    * Saving (and Edit HTML of the page): an empty heading, first in the HTML
    * HAX wrote for the section, is left out of it. (Not from the section
-   * itself, which keeps it to type into; nor from a copy of the section in
-   * preProcessNodeToContent, since HAX's own Edit HTML of a section makes
-   * what that returns its active block.)
+   * itself, which keeps it to type into.)
    */
   haxpostProcessNodeToContent(content) {
     const tag = this.constructor.headingTag;
@@ -804,6 +839,12 @@ export const csStyles = css`
     margin: 0 0 0.5rem;
     font-size: 0.8125rem;
     color: var(--muted-foreground);
+  }
+  @media (forced-colors: active) {
+    /* what goes in an empty field, unlike what's typed */
+    .ph {
+      color: GrayText;
+    }
   }
   @media (max-width: 600px) {
     .wrap {

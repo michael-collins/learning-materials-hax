@@ -50,10 +50,26 @@
  *   Insert for every block. It ends when the selection moves.
  *   hax-body.js hax-source-view-toggle 3797–3891, _activeNodeChanged 6282;
  *   hax-body/lib/hax-plate-context.js 362–410.
+ * - A block's own Edit HTML shows it as saved, without the editing
+ *   attributes on it and its fields (a section leaves them out,
+ *   blocks/course-site/cs-shared.js): HAX takes contenteditable off the
+ *   block it shows, but the click that opened it put it back; and the block
+ *   HAX makes of the source once it closes (by the toggle, or as another
+ *   block is selected) gets its fields made editable, which the source no
+ *   longer carries. hax-body.js positionContextMenus 2902–2917,
+ *   hax-source-view-toggle 3837–3891, _activeNodeChanged 6369–6417,
+ *   __rehydrateLayoutDescendants 5039.
  * - Double- and triple-click select a word or a paragraph again: HAX's
  *   mousedown handling made the block active anew and put the caret back.
  *   A triple click selects just the paragraph's text.
  *   hax-body.js _mouseDown 936, __focusLogic 4064–4201.
+ * - …and don't delete it. The text toolbar's emoji and symbol pickers (kept
+ *   hidden, and driven by the rail) empty their value as the selection
+ *   moves, and an emptied value counted as a pick: "" was inserted over
+ *   the selection, so a double click on a word in a field not yet being
+ *   edited (an outcome's title) deleted the word. A value of nothing is
+ *   never a pick there. rich-text-editor/lib/buttons/rich-text-editor-
+ *   picker.js _setRangeValue 214–224, _pickerChange 260–268.
  * - Links in the content don't leave the page mid-edit (losing the edit);
  *   Mod+click opens them in a new tab. The router skips a click whose
  *   default is prevented: haxcms-elements/lib/core/hax-router.js 43.
@@ -181,6 +197,22 @@ function holdLinks(e) {
   if (isMac ? e.metaKey : e.ctrlKey) globalThis.open(link.href, "_blank", "noopener");
 }
 
+/* ---------- source views ---------- */
+
+// a source view (Edit HTML) about to close: returns what to run once it has,
+// which makes the fields of the block HAX made of it editable, found where
+// the source view was
+function afterSource(body) {
+  const source = haxStore()?.activeEditingElement;
+  if (source?.localName !== "code-editor" || !body.contains(source)) return null;
+  const parent = source.parentNode;
+  const next = source.nextSibling;
+  return async () => {
+    const made = next?.isConnected ? next.previousElementSibling : parent.lastElementChild;
+    if (made && made !== source && body.contains(made)) await body.__rehydrateLayoutDescendants?.(made, body.editMode);
+  };
+}
+
 /* ---------- drops ---------- */
 
 // a file or a block dropped onto a section or item (or anything inside
@@ -257,12 +289,35 @@ export function installHaxFixes() {
       at("_activeNodeChanged", "data-hax-active", "a source view left open"),
       (original) =>
         async function (newValue, oldValue) {
+          const closing = oldValue && oldValue.parentNode === haxStore()?.activeEditingElement ? afterSource(this) : null;
           const result = await original.call(this, newValue, oldValue);
+          await closing?.();
           // HAX unwrapped the old block's source view, but left the toggle on
           if (newValue !== oldValue && this.viewSourceToggle && !haxStore()?.activeEditingElement) {
             this.viewSourceToggle = false;
             if (oldValue) oldValue.__haxSourceView = false;
           }
+          return result;
+        },
+    );
+
+    pinned(
+      at("positionContextMenus", "__positionContextTimer", "a block shown as its source isn't editable"),
+      (original) =>
+        function (node = this.activeNode) {
+          const result = original.call(this, node);
+          if (node?.__haxSourceView) node.removeAttribute("contenteditable");
+          return result;
+        },
+    );
+
+    pinned(
+      at("_haxContextOperation", "hax-source-view-toggle", "a block made from its source is editable"),
+      (original) =>
+        async function (e) {
+          const closing = e.detail?.eventName === "hax-source-view-toggle" && this.activeNode?.__haxSourceView ? afterSource(this) : null;
+          const result = await original.call(this, e);
+          await closing?.();
           return result;
         },
     );
@@ -315,6 +370,19 @@ export function installHaxFixes() {
         },
     );
   });
+
+  for (const tag of ["rich-text-editor-emoji-picker", "rich-text-editor-symbol-picker"]) {
+    onDefined(tag, (Picker) => {
+      pinned(
+        { fix: `a picker emptied isn't a pick (${tag})`, owner: tag, target: Picker.prototype, method: "_pickerChange", marker: "commandVal" },
+        (original) =>
+          function (e) {
+            if (!e?.detail?.value) return;
+            return original.call(this, e);
+          },
+      );
+    });
+  }
 
   onDefined("hax-tray", (Tray) => {
     pinned(

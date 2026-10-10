@@ -19,17 +19,16 @@
  * the field, which takes the click), never in the page's HTML; and an item
  * whose fields are all empty isn't saved.
  *
- * The section an item is in says whether it's being edited (setEditing()),
- * and keys and pastes in its fields are answered by cs-keys.js.
+ * The section an item is in says whether it's being edited, and where the
+ * item is among its items (setEditing()); keys and pastes in its fields are
+ * answered by cs-keys.js. As editing begins, an item without its title gets
+ * an empty one to type into (upgrade(), from its section's).
  */
 import { html, css, LitElement } from "../../lit.js";
 import { registerBlocks } from "../register.js";
-import { csStyles, icon, OUTCOME_ICONS } from "./cs-shared.js";
+import { csStyles, icon, isEmpty, OUTCOME_ICONS } from "./cs-shared.js";
 import { fieldKeydown, fieldKeyup, fieldPaste } from "./cs-keys.js";
-import { editorControl } from "../../ui/editor-control.js";
-
-const MEDIA = "img, video, audio, iframe";
-const isEmpty = (el) => !el.textContent.trim() && !el.querySelector(MEDIA);
+import { ensureHeading } from "./cs-normalize.js";
 
 const gizmo = (title, description, icon, parent) => ({
   title,
@@ -62,6 +61,8 @@ export class SiteItem extends LitElement {
   constructor() {
     super();
     this._editing = false;
+    // its place among its section's items (from 0), once the section says
+    this._index = -1;
     this._empty = { title: true, text: true };
     // a list item in its section's list, with nothing stored in the markup
     this._internals = this.attachInternals?.();
@@ -83,11 +84,21 @@ export class SiteItem extends LitElement {
     super.disconnectedCallback();
   }
 
-  /** Drawn for editing (the section it's in says), or for readers. */
-  setEditing(editing) {
-    if (this._editing === !!editing) return;
+  /**
+   * Drawn for editing, or for readers, and its place among the section's
+   * items: the section it's in says, after every change to what it holds
+   * (an outcome's automatic icon goes by its place).
+   */
+  setEditing(editing, index = this._index) {
+    if (this._editing === !!editing && this._index === index) return;
     this._editing = !!editing;
+    this._index = index;
     this.requestUpdate();
+  }
+
+  /** Editing begins: an empty title to type into, first, when it has none. Returns whether anything changed. */
+  upgrade() {
+    return ensureHeading(this, this.constructor.titleTag, this.titleElement);
   }
 
   /** Its title field: its first h3 (a tool's first p), or null. */
@@ -111,12 +122,14 @@ export class SiteItem extends LitElement {
     return { title, text: [...this.children].filter((c) => c !== title) };
   }
 
-  willUpdate() {
+  willUpdate(changed) {
+    super.willUpdate?.(changed);
     const { title, text } = this._fields();
     this._empty = { title: !title || isEmpty(title), text: text.every(isEmpty) };
   }
 
-  updated() {
+  updated(changed) {
+    super.updated?.(changed);
     this.assignSlots();
   }
 
@@ -212,6 +225,11 @@ const itemStyles = css`
     -webkit-user-select: none;
     user-select: none;
   }
+  @media (forced-colors: active) {
+    .ph {
+      color: GrayText;
+    }
+  }
 `;
 
 /* ---------- an outcome, a card ---------- */
@@ -233,28 +251,19 @@ export class OerCsOutcome extends SiteItem {
     };
   }
 
-  // its icon: the one chosen, or by its place among the outcomes
+  // its icon: the one chosen, or by its place among the outcomes (as its
+  // section says, setEditing(); before then, as it is now)
   _icon() {
     if (this.icon && OUTCOME_ICONS.includes(this.icon)) return this.icon;
-    const peers = [...(this.parentElement?.children || [])].filter((c) => c.localName === this.localName);
-    return OUTCOME_ICONS[Math.max(0, peers.indexOf(this)) % OUTCOME_ICONS.length];
+    const place = this._index >= 0 ? this._index : [...(this.parentElement?.children || [])].filter((c) => c.localName === this.localName).indexOf(this);
+    return OUTCOME_ICONS[Math.max(0, place) % OUTCOME_ICONS.length];
   }
 
   render() {
-    const name = this._icon();
-    const said = name.charAt(0).toUpperCase() + name.slice(1);
+    // (a picture, in both modes, until the icon picker lets authors change
+    // it: editor-redesign WP-14)
     return html`<div class="card ${this._editing ? "editing" : ""}">
-      ${this._editing
-        ? html`<button
-            class="tile"
-            ${editorControl()}
-            aria-label="Change icon: ${said}${this.icon ? "" : " (automatic)"}"
-            title="Change icon"
-            @click="${() => this.dispatchEvent(new CustomEvent("oer-edit-request", { bubbles: true, composed: true, detail: { action: "icon", unit: this, choices: OUTCOME_ICONS } }))}"
-          >
-            ${icon(name)}
-          </button>`
-        : html`<span class="tile" aria-hidden="true">${icon(name)}</span>`}
+      <span class="tile" aria-hidden="true">${icon(this._icon())}</span>
       ${this.field("title", "Outcome title")}
       ${this.field("text", "What students will be able to do")}
     </div>`;
@@ -284,17 +293,9 @@ export class OerCsOutcome extends SiteItem {
           width: 2.5rem;
           height: 2.5rem;
           margin-bottom: 0.25rem;
-          padding: 0;
-          border: 0;
           border-radius: var(--radius-md);
           background: color-mix(in oklab, var(--primary) 14%, transparent);
           color: var(--primary);
-        }
-        button.tile {
-          cursor: pointer;
-        }
-        button.tile:hover {
-          background: color-mix(in oklab, var(--primary) 22%, transparent);
         }
         .tile .i {
           width: 1.25rem;
