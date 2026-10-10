@@ -76,7 +76,9 @@ let session = 0; // counts edit mode starting and ending
 let arriving = 0; // the session whose copy is being taken
 let watching = false;
 
-// a page's HTML without what HAX adds while editing, or white space between tags
+// a page's HTML without what HAX adds while editing, or white space between
+// tags, with each element's attributes in one order (HAX writes the
+// page-break's out in another once an arrow key has reached it)
 function normalizedHtml(html) {
   const t = globalThis.document.createElement("template");
   t.innerHTML = html;
@@ -90,6 +92,9 @@ function normalizedHtml(html) {
       if (kept.length) el.setAttribute("class", kept.join(" "));
       else el.removeAttribute("class");
     }
+    const attrs = [...el.attributes].map((a) => [a.name, a.value]).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
+    for (const [name] of attrs) el.removeAttribute(name);
+    for (const [name, value] of attrs) el.setAttribute(name, value);
   }
   return t.innerHTML.replace(/>\s+</g, "><").trim();
 }

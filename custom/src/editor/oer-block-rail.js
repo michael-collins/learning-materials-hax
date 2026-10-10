@@ -35,7 +35,7 @@ import { citeDialog } from "./oer-cite-dialog.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { layoutOf, columnCount, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
-import { sectionOf } from "../blocks/course-site/cs-shared.js";
+import { sectionOf, ownBlocks } from "../blocks/course-site/cs-shared.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 
 const SEP = { sep: true };
@@ -461,7 +461,16 @@ class OerBlockRail extends LitElement {
       return;
     }
     const byKeys = this.matches(":focus-within");
+    const from = this._hax?.activeNode;
+    const section = sectionOf(from?.parentElement);
     item.run();
+    // a section whose only block was removed gets an empty paragraph, so
+    // there's still somewhere to type in it
+    if (section?.isConnected && !from.isConnected && !ownBlocks(section).length) {
+      const p = globalThis.document.createElement("p");
+      section.append(p);
+      this._hax.activeHaxBody?.__focusLogic(p, false);
+    }
     this._close();
     // chosen from the keyboard: back to the content, unless the command
     // opened something of its own (the block list, a dialog). Decided by

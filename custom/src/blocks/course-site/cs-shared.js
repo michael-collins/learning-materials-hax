@@ -169,8 +169,8 @@ export class SiteSection extends LitElement {
   /**
    * A click in a typing box, but not on its text (the box's padding, or
    * below a short paragraph): the caret goes into the box's first empty
-   * block, or the end of its last, and HAX works on that block rather
-   * than the whole section.
+   * block, or the end of its last (a new paragraph when it has none), and
+   * HAX works on that block rather than the whole section.
    */
   typeHere(e) {
     if (!this._editing || e.button !== 0) return;
@@ -178,9 +178,11 @@ export class SiteSection extends LitElement {
     if (!area?.classList?.contains("typing-area")) return;
     const blocks = area.querySelector("slot")?.assignedElements() || [];
     const texts = blocks.flatMap((b) => (/^(ul|ol)$/.test(b.localName) ? [...b.children] : [b])).filter((b) => /^(p|h[1-6]|li|blockquote)$/.test(b.localName));
-    const target = texts.find((b) => !b.textContent.trim()) || texts[texts.length - 1];
     const body = globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody;
-    if (!target || !body?.contains(target)) return;
+    if (!body?.contains(this)) return;
+    // a section with no block at all gets an empty paragraph to type in
+    const target = texts.find((b) => !b.textContent.trim()) || texts[texts.length - 1] || (blocks.length ? null : this.appendChild(globalThis.document.createElement("p")));
+    if (!target) return;
     // no mousedown: HAX would make the section the active block
     e.preventDefault();
     body.__focusLogic(target, false);

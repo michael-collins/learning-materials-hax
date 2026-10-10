@@ -39,6 +39,16 @@ const STARTERS = {
   figure: { tag: "figure", content: "<img /><figcaption><p></p></figcaption>", properties: {} },
 };
 
+// where typing goes in a new block of text, a list, a quote or a layout:
+// the block itself, its first item, or the first column's paragraph (the
+// caret in a list itself put Firefox's typing outside it, and a quote or
+// layout got none)
+function startOfText(el) {
+  if (/^(p|h[1-6]|pre)$/.test(el.localName)) return el;
+  if (!/^(ul|ol|blockquote|block-quote|grid-plate)$/.test(el.localName)) return null;
+  return el.querySelector("p, h1, h2, h3, h4, h5, h6, li, pre") || (/quote$/.test(el.localName) ? el : null);
+}
+
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
 
@@ -234,7 +244,7 @@ class OerBlockInserter extends LitElement {
       const detail = STARTERS[item.tag] || schema?.demoSchema?.[0] || hax.haxElementPrototype({ tag: item.tag }, {}, "");
       hax.recentGizmoList?.push?.(schema?.gizmo || item);
       added = await insertInSlot(hax, slot, detail);
-      if (added && detail.caret) this._caretInto(added);
+      if (added && (detail.caret || startOfText(added))) this._caretInto(added);
     }
     if (!added) return;
     hax.activeNode = added;
@@ -242,13 +252,14 @@ class OerBlockInserter extends LitElement {
     added.scrollIntoView?.({ block: "nearest" });
   }
 
-  // the caret at the start of a new block, once HAX has made it editable
+  // the caret at the start of a new block (its first item or column), once
+  // HAX has made it editable
   _caretInto(el) {
     const body = this._hax?.activeHaxBody;
     setTimeout(() => {
       if (!el.isConnected || !body) return;
       const range = globalThis.document.createRange();
-      range.setStart(el, 0);
+      range.setStart(startOfText(el) || el, 0);
       range.collapse(true);
       if (!body.matches(":focus-within")) body.focus({ preventScroll: true });
       setEditRange(range);
