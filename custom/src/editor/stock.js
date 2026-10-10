@@ -35,8 +35,6 @@ export const openOutline = () => callStock("_outlineButtonTap", "#outlinebutton"
 export const openSiteSettings = () => callStock("_manifestButtonTap", "#manifestbtn");
 export const toggleLock = () => callStock("_toggleLockedStatus", "#lockbutton");
 export const logout = () => stockUI()?._logout?.();
-export const undo = () => haxStore()?.activeHaxBody?.undo?.();
-export const redo = () => haxStore()?.activeHaxBody?.redo?.();
 
 /**
  * Leave the editor without saving: at once when nothing has changed,

@@ -151,10 +151,6 @@ export class SiteSection extends LitElement {
     globalThis.document.addEventListener("pointerdown", this.__elsewhere, true);
     this.__typeHere = (e) => this.typeHere(e);
     this.addEventListener("pointerdown", this.__typeHere);
-    // keys typed in the content arrive at hax-body (the element being
-    // edited), not at the section: catch them on the way there
-    this.__edges = (e) => this.keepEdges(e);
-    globalThis.document.addEventListener("keydown", this.__edges, true);
   }
 
   disconnectedCallback() {
@@ -163,7 +159,6 @@ export class SiteSection extends LitElement {
     this.removeEventListener("focusout", this.__refocus, true);
     globalThis.document.removeEventListener("pointerdown", this.__elsewhere, true);
     this.removeEventListener("pointerdown", this.__typeHere);
-    globalThis.document.removeEventListener("keydown", this.__edges, true);
     super.disconnectedCallback();
   }
 
@@ -195,34 +190,6 @@ export class SiteSection extends LitElement {
       sel.removeAllRanges();
       sel.addRange(range);
     });
-  }
-
-  /**
-   * Backspace at the very start of a section's first block, or Delete at
-   * the very end of its last, does nothing: the browser would merge the
-   * block into the section next to it, or that section's into this one,
-   * and HAX could then delete a section.
-   */
-  keepEdges(e) {
-    if (!this._editing || (e.key !== "Backspace" && e.key !== "Delete")) return;
-    if (e.composedPath()[0]?.localName !== "hax-body") return;
-    const sel = this.getRootNode().getSelection?.() || globalThis.getSelection();
-    if (!sel?.rangeCount || !sel.isCollapsed) return;
-    const at = sel.getRangeAt(0);
-    if (!this.contains(at.startContainer)) return;
-    // the caret in the first (or last) block, or in the section between blocks
-    const blocks = ownBlocks(this);
-    const edge = blocks.some((b) => b.contains(at.startContainer)) ? (e.key === "Backspace" ? blocks[0] : blocks[blocks.length - 1]) : this;
-    if (!edge.contains(at.startContainer)) return;
-    // what lies between the caret and the block's edge
-    const rest = globalThis.document.createRange();
-    rest.selectNodeContents(edge);
-    if (e.key === "Backspace") rest.setEnd(at.startContainer, at.startOffset);
-    else rest.setStart(at.startContainer, at.startOffset);
-    if (/^[ \t\n\r]*$/.test(rest.toString()) && !rest.cloneContents().querySelector("img, video, iframe")) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
   }
 
   /** Whether readers see this section (the course site's bar lists those). */

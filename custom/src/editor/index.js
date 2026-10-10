@@ -13,6 +13,8 @@ import { installUxTweaks, installTrayEnhancer } from "./ux-tweaks.js";
 import { installPageBreakDetails } from "./page-break-details.js";
 import { installCitationNormalizer } from "./citations.js";
 import { installHaxFixes } from "./hax-fixes.js";
+import { installUndo } from "./undo.js";
+import { installBoundaryGuard } from "./boundary-guard.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -29,6 +31,8 @@ export function installEditorChrome() {
   installed = true;
   installLucideIcons();
   installHaxFixes();
+  installUndo();
+  installBoundaryGuard();
   installQuietMode();
   installShadowStyles();
   registerShadowStyles(editorSkin);

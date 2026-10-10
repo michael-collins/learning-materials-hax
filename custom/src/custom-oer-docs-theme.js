@@ -45,11 +45,10 @@ import {
   cancelEdit,
   toggleLock,
   logout,
-  undo,
-  redo,
   openSiteSettings,
   MOD,
 } from "./editor/stock.js";
+import { undo, redo } from "./editor/undo.js";
 import { settingsDialog } from "./editor/oer-settings-dialog.js";
 import { outlineBuilder } from "./outline/oer-outline-builder.js";
 import { pagesBrowser } from "./outline/oer-pages-browser.js";
