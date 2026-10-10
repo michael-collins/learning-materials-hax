@@ -21,8 +21,9 @@
  *
  * The section an item is in says whether it's being edited, and where the
  * item is among its items (setEditing()); keys and pastes in its fields are
- * answered by cs-keys.js. As editing begins, an item without its title gets
- * an empty one to type into (upgrade(), from its section's).
+ * answered by cs-keys.js. As editing begins, an item without its title (or
+ * without anything after it) gets an empty one to type into (upgrade(),
+ * from its section's).
  */
 import { html, css, LitElement } from "../../lit.js";
 import { registerBlocks } from "../register.js";
@@ -96,9 +97,19 @@ export class SiteItem extends LitElement {
     this.requestUpdate();
   }
 
-  /** Editing begins: an empty title to type into, first, when it has none. Returns whether anything changed. */
+  /**
+   * Editing begins: an empty title to type into, first, when it has none,
+   * and an empty field after it (a sentence, an answer) when it has none of
+   * those. Returns whether anything changed.
+   */
   upgrade() {
-    return ensureHeading(this, this.constructor.titleTag, this.titleElement);
+    let changed = ensureHeading(this, this.constructor.titleTag, this.titleElement);
+    const textTag = this.constructor.textTag;
+    if (textTag && this.children.length === 1) {
+      this.append(this.ownerDocument.createElement(textTag));
+      changed = true;
+    }
+    return changed;
   }
 
   /** Its title field: its first h3 (a tool's first p), or null. */
@@ -199,8 +210,10 @@ export class SiteItem extends LitElement {
 }
 
 const itemStyles = css`
+  /* (sized by the section's list: not a section's full width) */
   :host {
     box-sizing: border-box;
+    width: auto;
     min-width: 0;
   }
   .field {

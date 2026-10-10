@@ -1,6 +1,7 @@
 /**
  * Keys and pastes in the fields of the course site's sections and items
- * (nu-hax docs/editor-redesign/spec.md §5.3, §5.4): a section's heading, an
+ * (nu-hax docs/editor-redesign/spec.md §5.3, §5.4): a section's heading and
+ * its text (the hero's tagline, the instructor's note, the hub's intro), an
  * outcome's title and sentence, a tool, a question and its answer. Blocks
  * never import HAX or the editor: the editor hears every key in the content
  * (they all go to hax-body, docs/editor-spikes/structure.md S1) and asks
@@ -9,14 +10,18 @@
  * as a whole) are asked of the editor with `oer-edit-request`, as the
  * blocks' buttons ask; the caret moves within the block's own fields here.
  *
- *   key                heading          title, tool, question   sentence         answer
+ *   key                heading          title, tool, question   sentence         answer, text
  *   Enter              the first field  the next field          a new item       HAX (a new paragraph)
  *                      (or a first item) (made if missing)      after            ; on an empty last
- *                                                                                  one, a new question
+ *                                                                                  answer, a new question
  *   Shift+Enter        –                –                       a line break     a line break
  *   Mod+Enter          a new first item a new item after
  *   Backspace at start –                an empty item goes; else to the end of the field before
- *   Delete at the end  –
+ *                                                                                (text: HAX's, but at its
+ *                                                                                first block's start, to
+ *                                                                                the heading's end)
+ *   Delete at the end  –                                                         (HAX's, but nothing at
+ *                                                                                the last field's end)
  *   Tab, Shift+Tab     the next or previous field on the page (in an answer's list, HAX indents);
  *                      from the last field (or back from the first), on out of the content
  *   Mod+A              this field only
@@ -30,7 +35,8 @@
  * browser's to type and HAX never sees it: HAX's shortcuts ("/" for its
  * command palette, "- " for a list) don't run there, as a key stopped
  * after the one before it has gone through is too late (HAX checks a
- * shortcut in a setTimeout after each key). Answers keep HAX's shortcuts.
+ * shortcut in a setTimeout after each key). Answers and a section's text
+ * (its blocks of text, as many as the author likes) keep HAX's shortcuts.
  *
  * Pastes: several lines in a title or a tool, or in an empty item, are one
  * item a line; anything else is the deletion guard's or HAX's to paste
@@ -120,23 +126,33 @@ function leaveContent(field, back) {
 // ask the editor for a change to a unit (ops.js oer-edit-request)
 const ask = (unit, action, detail = {}) => unit.dispatchEvent(new CustomEvent("oer-edit-request", { bubbles: true, composed: true, detail: { action, unit, ...detail } }));
 
+// the block of a unit a field is in (a list item's list)
+function topOf(unit, field) {
+  let top = field;
+  while (top.parentElement && top.parentElement !== unit) top = top.parentElement;
+  return top;
+}
+
 /**
- * What a field is to its unit: "heading" (a section's own heading),
- * "title" (an item's one-line first field: an outcome's title, a tool, a
- * question), "sentence" (an outcome's sentence) or "answer"; null for
- * fields these keys leave to HAX (the hero's tagline, until its section
- * moves on to the section model).
+ * What a field is to its unit: "heading" (a section's own heading), "text"
+ * (a section's text: the hero's tagline, the instructor's note), "title"
+ * (an item's one-line first field: an outcome's title, a tool, a question),
+ * "sentence" (an outcome's sentence) or "answer"; null for fields these
+ * keys leave to HAX (a block the section doesn't take).
  */
 export function roleOf(unit, field) {
   const own = unit.constructor?.oerEditor || {};
-  if (own.kind === "section") return field === unit.headingElement ? "heading" : null;
+  if (own.kind === "section") {
+    if (field === unit.headingElement) return "heading";
+    return unit.sortChildren?.().text.includes(topOf(unit, field)) ? "text" : null;
+  }
   if (own.kind !== "item") return null;
-  // the item's field the caret's field is (a list item's list in an answer)
-  let top = field;
-  while (top.parentElement && top.parentElement !== unit) top = top.parentElement;
-  if (top === unit.titleElement) return "title";
+  if (topOf(unit, field) === unit.titleElement) return "title";
   return unit.constructor.textRole || "sentence";
 }
+
+// the fields of a section's text, in order
+const textFields = (unit) => (unit.sortChildren?.().text ?? []).flatMap((block) => (block.matches(FIELDS) && !block.querySelector(FIELDS) ? [block] : fieldsIn(block)));
 
 // the section a unit is in (itself, for a section), and whether it holds items
 const ownSection = (unit) => (unit.constructor?.oerEditor?.kind === "item" ? unit.parentElement : unit);
@@ -151,6 +167,8 @@ export function fieldKeydown(unit, e, field) {
   const range = getEditRange(field);
   if (!range) return false;
   const mod = MAC ? e.metaKey : e.ctrlKey;
+  // blocks of text, as many as the author likes, which HAX types
+  const rich = role === "answer" || role === "text";
   const done = () => {
     e.preventDefault();
     return true;
@@ -159,17 +177,17 @@ export function fieldKeydown(unit, e, field) {
     case "Enter":
       return enter(unit, e, field, role, range, mod, done);
     case "Backspace":
-      if (!atEdge(range, field, true) || mod || e.altKey) return role !== "answer";
+      if (!atEdge(range, field, true) || mod || e.altKey) return !rich;
       return backspace(unit, field, role, done);
     case "Delete":
-      if (!atEdge(range, field, false) || mod || e.altKey) return role !== "answer";
+      if (!atEdge(range, field, false) || mod || e.altKey) return !rich;
       // never joins the next field (or the next item) into this one
-      if (role !== "answer" || field === fieldsIn(unit).at(-1)) return done();
+      if (!rich || field === (role === "text" ? textFields(unit) : fieldsIn(unit)).at(-1)) return done();
       return false;
     case "Tab": {
       if (mod || e.altKey) return false;
-      // a list's items in an answer indent (HAX)
-      if (role === "answer" && field.localName === "li") return false;
+      // a list's items in an answer or a section's text indent (HAX)
+      if (rich && field.localName === "li") return false;
       const next = besideField(contentOf(unit), field, e.shiftKey);
       if (next) {
         placeCaret(next, { atEnd: e.shiftKey });
@@ -190,14 +208,14 @@ export function fieldKeydown(unit, e, field) {
       break;
   }
   // a key typed in a plain field: the browser types it, HAX never sees it
-  return role !== "answer" && e.key.length === 1 && !mod;
+  return !rich && e.key.length === 1 && !mod;
 }
 
 function enter(unit, e, field, role, range, mod, done) {
   const section = ownSection(unit);
   if (e.shiftKey && !mod) {
-    // a line break in a sentence or an answer (the browser's); none in one-line fields
-    return role === "sentence" || role === "answer" ? true : done();
+    // a line break in a sentence, an answer or text (the browser's); none in one-line fields
+    return ["sentence", "answer", "text"].includes(role) ? true : done();
   }
   if (mod) {
     if (holdsItems(section)) ask(role === "heading" ? section : unit, "add-item");
@@ -225,7 +243,8 @@ function enter(unit, e, field, role, range, mod, done) {
     return done();
   }
   // an answer: an empty last paragraph ends it, and a new question follows
-  if (field.localName === "p" && isEmpty(field) && field === unit.lastElementChild) {
+  // (a section's text: HAX's new paragraph)
+  if (role === "answer" && field.localName === "p" && isEmpty(field) && field === unit.lastElementChild) {
     field.remove();
     ask(unit, "add-item");
     return done();
@@ -244,6 +263,14 @@ function backspace(unit, field, role, done) {
     }
     const before = besideField(section, field, true);
     if (before) placeCaret(before, { atEnd: true });
+    return done();
+  }
+  // a section's text: HAX's, except at its first field's start, which goes
+  // on to the heading's end (or nowhere)
+  if (role === "text") {
+    if (field !== textFields(unit)[0]) return false;
+    const before = besideField(unit, field, true);
+    if (before && before === unit.headingElement) placeCaret(before, { atEnd: true });
     return done();
   }
   // a sentence, or the first block of an answer: on to the title's end

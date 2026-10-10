@@ -29,7 +29,7 @@ import { themeChoice, rememberTheme } from "./theme-choice.js";
 import { newPage } from "./ui/oer-new-page.js";
 import { deletePage } from "./ui/oer-delete-page.js";
 import { typeListedOn } from "./types/type-homes.js";
-import { isMicrosite } from "./types/course-site.js";
+import { isMicrosite, siteData } from "./types/course-site.js";
 import { siteStyleVars, loadSiteFonts } from "./types/course-site-style.js";
 import "./blocks/oer-course-site.js";
 import { adoptContentSheet } from "./blocks/course-site/cs-content.js";
@@ -66,6 +66,7 @@ import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
 import { learningSkin, installLearningBlocks } from "./learning-skin.js";
 import { installEditorChrome } from "./editor/index.js";
+import { announce } from "./editor/announce.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
 import { installFootnotes } from "./ui/footnotes.js";
 import { followPermalink } from "./ui/permalinks.js";
@@ -206,6 +207,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
     this.__onReader = () => this._enterReader();
     this.__onStylePreview = (e) => (this._stylePreview = e.detail || null);
+    this.__onEditSource = (e) => this._editSource(e.detail || {});
     // HAX's page save writes the page-break's icon to the page; in the
     // editor that's HAX's guess from the page type, never a chosen icon
     // (types/page-icon.js). Runs first: a capture listener on the target
@@ -458,6 +460,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
     globalThis.addEventListener("oer-reader", this.__onReader);
     globalThis.addEventListener("oer-site-style-preview", this.__onStylePreview);
+    globalThis.addEventListener("cs-edit-source", this.__onEditSource);
     globalThis.addEventListener("haxcms-save-node", this.__beforeSave, true);
     this.__bodyObserver.observe(globalThis.document.body, { childList: true });
     this._watchEditorBar();
@@ -524,8 +527,32 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.removeEventListener("pointerdown", this.__outsideMenu);
     globalThis.removeEventListener("oer-reader", this.__onReader);
     globalThis.removeEventListener("oer-site-style-preview", this.__onStylePreview);
+    globalThis.removeEventListener("cs-edit-source", this.__onEditSource);
     globalThis.removeEventListener("haxcms-save-node", this.__beforeSave, true);
     super.disconnectedCallback();
+  }
+
+  /**
+   * Where a course site's generated section gets what it shows, opened from
+   * its callout (blocks/course-site/cs-shared.js SiteSection.editSource),
+   * read or edited: kind "course" opens the course page's Page details at
+   * field, "site" the course site's own; "plan" opens the course plan in a
+   * new tab, or with a field (the site's Course plan, when it has none) the
+   * site's Page details at it. A site without its course opens its own at
+   * the Course field.
+   */
+  _editSource({ kind, field = "" }) {
+    const items = toJS(store.manifest?.items) || [];
+    const site = this._courseSite && (items.find((i) => i.id === this._courseSite.id) || this._courseSite);
+    if (!site) return;
+    const d = siteData(site, items);
+    if (kind === "plan" && !field && d.sequence) {
+      globalThis.open(new URL(d.sequence.slug, globalThis.document.baseURI).href, "_blank", "noopener");
+      announce(`${d.sequence.title} opened in a new tab`);
+      return;
+    }
+    if (kind === "course" && d.course) pageDetails().show(d.course.id, { section: "details", field });
+    else pageDetails().show(site.id, { section: "details", field: kind === "course" ? "course" : field });
   }
 
   /**

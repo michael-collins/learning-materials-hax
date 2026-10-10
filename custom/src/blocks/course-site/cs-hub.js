@@ -5,8 +5,12 @@
  * by degree program (a course in two degrees under both). Course sites'
  * bars link here, so students browse courses without the OER repository.
  *
- *   <oer-courses-intro><p>…</p></oer-courses-intro>
+ *   <oer-courses-intro><h1>OER Courses</h1><p>…</p></oer-courses-intro>
  *   <oer-courses-catalog></oer-courses-catalog>
+ *
+ * The intro's heading (an h1) is typed in place; without one it's the
+ * hub's own. The catalog is drawn from the course sites, and with none on
+ * says so to authors (SiteSection.fromElsewhere).
  */
 import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
@@ -167,7 +171,11 @@ export class OerCoursesCatalog extends SiteSection {
       ? html`<p class="todo">${icon("eyeOff")}<span>${off.length === 1 ? "One course site is off, so it isn't listed" : `${off.length} course sites are off, so they aren't listed`}: ${off.map((s, n) => html`${n ? ", " : ""}${s.title}`)}. Turn a site on from its course page.</span></p>`
       : "";
     if (!count) {
-      return html`<section class="section"><div class="wrap">${this._author ? this.todo("No course sites are on yet. Turn one on from its course page (the Course site card).") : html`<p class="muted">Course sites will be listed here.</p>`}${offNote}</div></section>`;
+      return html`<section class="section">
+        <div class="wrap">
+          ${this._author ? this.fromElsewhere("The catalog lists the course sites that are on. Turn one on from its course page (the Course site card).") : html`<p class="muted">Course sites will be listed here.</p>`}${offNote}
+        </div>
+      </section>`;
     }
     return html`${groups.map(
       (g, n) => html`<section class="section ${n % 2 ? "alt" : ""}" aria-labelledby="group-${n}">
@@ -268,6 +276,9 @@ export class OerCoursesCatalog extends SiteSection {
         }
         .off {
           padding-bottom: 3rem;
+        }
+        .source + .todo {
+          margin-top: 0.75rem;
         }
         @media (prefers-reduced-motion: reduce) {
           .card {

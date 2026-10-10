@@ -121,8 +121,12 @@ export function setSiteOn(site, on) {
 }
 
 /**
- * A new course site's page: the standard sections, the written ones each
- * with an empty block to type into.
+ * A new course site's page: the standard sections, without headings (each
+ * shows its own until one is typed), the hero and the instructor's note
+ * with an empty paragraph to type into, and what you'll learn, the tools and
+ * the questions with one empty item each. (nu-hax scripts/course-site-
+ * sections.mjs keeps a copy; each section's demoSchema, what HAX inserts
+ * while editing, is its part of this.)
  */
 export const COURSE_SITE_STARTER = [
   "<oer-cs-hero><p></p></oer-cs-hero>",
@@ -132,8 +136,8 @@ export const COURSE_SITE_STARTER = [
   "<oer-cs-make></oer-cs-make>",
   "<oer-cs-books></oer-cs-books>",
   "<oer-cs-people><p></p></oer-cs-people>",
-  "<oer-cs-tools><ul><li></li></ul></oer-cs-tools>",
-  "<oer-cs-faq><h3></h3><p></p></oer-cs-faq>",
+  "<oer-cs-tools><oer-cs-tool><p></p></oer-cs-tool></oer-cs-tools>",
+  "<oer-cs-faq><oer-cs-question><h3></h3><p></p></oer-cs-question></oer-cs-faq>",
   "<oer-cs-closing></oer-cs-closing>",
 ].join("\n");
 
@@ -179,7 +183,11 @@ export const COURSE_HUB_DEF = {
   fields: [],
 };
 
-/** The hub's page: an intro to write, then the catalog of course sites. */
+/**
+ * The hub's page: an intro to write (its heading the hub's own until one is
+ * typed), then the catalog of course sites. (nu-hax scripts/course-hub.mjs
+ * keeps a copy.)
+ */
 export const HUB_STARTER = ["<oer-courses-intro><p></p></oer-courses-intro>", "<oer-courses-catalog></oer-courses-catalog>"].join("\n");
 
 /** The site's hub, if it has one. */

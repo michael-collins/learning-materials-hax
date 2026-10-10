@@ -334,7 +334,7 @@ export const contentStyles = css`
   }
   /* while editing, what can be typed is tinted under the pointer (and
      what's drawn from elsewhere isn't) */
-  :host hax-body :is(${SECTIONS}) > :is(h1, h2):hover,
+  :host hax-body :is(${SECTIONS}) > :is(h1, h2, p, ul, ol, blockquote, h3, h4, h5, h6, pre):hover,
   :host hax-body :is(${ITEMS}) > :hover {
     background: color-mix(in oklab, var(--accent) 60%, transparent);
   }

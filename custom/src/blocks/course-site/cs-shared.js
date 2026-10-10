@@ -16,7 +16,7 @@ import { html, css, LitElement, svg } from "../../lit.js";
 import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { siteData, COURSE_SITE_TYPE } from "../../types/course-site.js";
 import { editorControl } from "../../ui/editor-control.js";
-import { headingFromAttribute, ensureHeading, listRows } from "./cs-normalize.js";
+import { headingFromAttribute, ensureHeading, listRows, ITEMS_FROM } from "./cs-normalize.js";
 import { fieldKeydown, fieldKeyup, fieldPaste } from "./cs-keys.js";
 
 // Lucide (ISC), inline
@@ -44,6 +44,7 @@ const ICONS = {
   info: svg`<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>`,
   plus: svg`<path d="M5 12h14"/><path d="M12 5v14"/>`,
   link: svg`<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>`,
+  image: svg`<rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>`,
 };
 export const icon = (name) => html`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
 
@@ -174,6 +175,10 @@ const kindOf = (el) => (el.localName === "p" ? "paragraph" : /^h[1-6]$/.test(el.
  *   page is edited (oer-reader-copy-idle).
  * - It sends cs-section-change when readers would start or stop seeing it,
  *   cs-items-change when its items change, and cs-upgraded once upgraded.
+ * - Empty, it shows authors one of two things that never look alike: what
+ *   goes in a field, faintly in the field, or, for what comes from
+ *   elsewhere (fromElsewhere()), a callout with a button that sends
+ *   cs-edit-source for the theme to open the source.
  */
 export class SiteSection extends LitElement {
   static get shadowRootOptions() {
@@ -425,6 +430,20 @@ export class SiteSection extends LitElement {
     </div>`;
   }
 
+  /**
+   * While editing a section of items, the button that adds one after the
+   * last (or the first), in the shape of its items (cls: "add-card",
+   * "add-chip", "add-row", which the section styles; "first" while it has
+   * none, to start with).
+   */
+  addCell(cls) {
+    const last = this.items.at(-1);
+    const noun = (globalThis.customElements.get(this.itemTag)?.oerEditor.label || "item").toLowerCase();
+    return html`<button class="${cls} ${last ? "" : "first"}" ${editorControl()} @click="${() => this.request("add-item", last ? { unit: last } : {})}">
+      ${icon("plus")}<span>Add ${withArticle(noun)}</span>
+    </button>`;
+  }
+
   // while editing a section hidden from readers: a strip saying so, with the way back
   _strip() {
     const label = this.constructor.oerEditor.label || "This section";
@@ -439,6 +458,31 @@ export class SiteSection extends LitElement {
   /** For authors: what an empty section needs. */
   todo(text) {
     return this._author ? html`<p class="todo">${icon("pencil")}<span>${text}</span></p>` : "";
+  }
+
+  /**
+   * For authors, where what a generated section shows comes from, when it
+   * has nothing to show: an information callout (never a field's faint
+   * words) with one button that goes there (editSource(kind, field); no
+   * button without a label). kind is its policy's source by default.
+   */
+  fromElsewhere(text, label = "", { kind = this.constructor.oerEditor.source?.kind, field = "" } = {}) {
+    if (!this._author) return "";
+    return html`<div class="source" role="note">
+      ${icon("info")}<p class="source-text">${text}</p>
+      ${label ? html`<button class="btn outline sm" ${editorControl()} @click="${() => this.editSource(kind, field)}">${label}</button>` : ""}
+    </div>`;
+  }
+
+  /**
+   * Open where a generated section's content comes from: a cs-edit-source
+   * event, { kind, field }, which the theme answers while reading and
+   * editing alike: "course" the course page's Page details at that field,
+   * "site" the course site's own, "plan" the course plan (in a new tab), or
+   * with a field, the site's Page details at it.
+   */
+  editSource(kind, field = "") {
+    this.dispatchEvent(new CustomEvent("cs-edit-source", { bubbles: true, composed: true, detail: { kind, field } }));
   }
 
   /** What the section draws for its page: renderSection(d) on a course site. */
@@ -514,9 +558,9 @@ export class SiteSection extends LitElement {
     return changed;
   }
 
-  /** A section of items makes them from what was written before (cs-normalize.js). */
+  /** A section of items makes them from what was written before (cs-normalize.js ITEMS_FROM). */
   upgradeItems() {
-    return false;
+    return ITEMS_FROM[this.localName]?.(this) ?? false;
   }
 
   /** It, or something in it, became the active block: a hidden section opens. */
@@ -740,6 +784,38 @@ export const csStyles = css`
   .todo .i {
     margin-top: 0.1875rem;
     color: var(--primary);
+  }
+  /* for authors, where a generated section's content comes from: the same
+     callout, with the button that goes there */
+  .source {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid color-mix(in oklab, var(--primary) 45%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in oklab, var(--primary) 12%, var(--background));
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--foreground);
+  }
+  .source > .i {
+    color: var(--primary);
+  }
+  /* (whatever a section's own rules for p say) */
+  .source .source-text {
+    flex: 1 1 16rem;
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+  .source .btn {
+    background: var(--background);
+  }
+  .source .btn:hover {
+    background: var(--accent);
   }
   .btn.sm {
     height: 2rem;

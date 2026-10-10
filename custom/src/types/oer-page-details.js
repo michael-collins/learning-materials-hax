@@ -14,6 +14,7 @@
  * own actions.
  *
  *   pageDetails().show(itemId, { section: "media" })
+ *   pageDetails().show(itemId, { section: "details", field: "instructors" })
  * @element oer-page-details
  */
 import { html, css, LitElement } from "../lit.js";
@@ -106,8 +107,12 @@ class OerPageDetails extends LitElement {
     };
   }
 
-  /** `onSaved({ pageType, description, fields })` runs after a save; `section` opens one (general, details, media…). */
-  show(id, { onSaved = null, section = "general" } = {}) {
+  /**
+   * `onSaved({ pageType, description, fields })` runs after a save;
+   * `section` opens one (general, details, media…), and `field` (a field's
+   * name) puts focus on that field rather than the first.
+   */
+  show(id, { onSaved = null, section = "general", field = "" } = {}) {
     this._onSaved = onSaved;
     const items = toJS(store.manifest?.items) || [];
     const item = items.find((i) => i.id === id);
@@ -153,7 +158,21 @@ class OerPageDetails extends LitElement {
     });
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
-    this.updateComplete.then(() => this.shadowRoot.querySelector("select, input, textarea")?.focus());
+    this.updateComplete.then(() => (field && this._focusField(field)) || this.shadowRoot.querySelector("select, input, textarea")?.focus());
+  }
+
+  // focus on a field by its name: its own control, or the first in its group
+  // (a relation's Add button, a list's first entry); false if it isn't shown
+  _focusField(name) {
+    const root = this.shadowRoot;
+    const id = `f-${name}`;
+    const own = root.getElementById(id);
+    const group = own ? null : root.getElementById(`${id}-l`)?.parentElement;
+    const control = own || group?.querySelector("input, select, textarea, button, oer-choice-field, oer-image-field");
+    if (!control) return false;
+    control.scrollIntoView({ block: "nearest" });
+    control.focus();
+    return true;
   }
 
   _close() {

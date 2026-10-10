@@ -16,8 +16,14 @@
  *   are kept.
  * - runsToQuestions: each question (a heading, or a paragraph ending with
  *   "?") and the blocks after it, up to the next, become a question item.
+ * - questionsToItems: the questions section's own upgrade (questions
+ *   written as h2s first become h3s); faqHeading says which h2 is its
+ *   heading.
  * - retag: an element as another tag (a heading of another level).
  * Each returns whether it changed anything, retag the new element.
+ * ITEMS_FROM says which a section of items runs (the sections run it as
+ * editing begins, and nu-hax scripts/course-site-structure.mjs on saved
+ * pages).
  *
  *   <oer-cs-learn heading="Skills"><ul><li><b>Cut</b>: plan parts.</li></ul></oer-cs-learn>
  *   → <oer-cs-learn><h2>Skills</h2><oer-cs-outcome><h3>Cut</h3><p>Plan parts.</p></oer-cs-outcome></oer-cs-learn>
@@ -179,16 +185,23 @@ export function rowsToItems(section, tag, { whole = false } = {}) {
 
 /* ---------- questions ---------- */
 
+const hasText = (el) => !!el.textContent.trim() || !!el.querySelector("img, video, audio, iframe");
+
 /**
  * Questions and their answers as question items of tag: each heading (or,
- * with none, each paragraph ending with "?") starts one, and the blocks
- * after it are its answer. What comes before the first question stays. The
- * section's own heading (heading) isn't a question.
+ * with none, each paragraph ending with "?") starts one, an empty heading
+ * too (an empty question, as a new section's), and the blocks after it are
+ * its answer: those with text, or else its first, to type into. Empty
+ * blocks before the first question go; anything else there stays (readers
+ * never saw it). The section's own heading (heading) isn't a question.
+ *
+ *   <h3></h3><p></p>               → <oer-cs-question><h3></h3><p></p></oer-cs-question>
+ *   <h3>Why?</h3><p></p><p>So.</p> → <oer-cs-question><h3>Why?</h3><p>So.</p></oer-cs-question>
  */
 export function runsToQuestions(section, tag, { heading = null } = {}) {
   const blocks = [...section.children].filter((c) => c !== heading && c.localName !== "page-break" && !c.localName.includes("-"));
   const headed = blocks.some((b) => /^h[2-6]$/.test(b.localName));
-  const isQuestion = (b) => (headed ? /^h[2-6]$/.test(b.localName) : b.localName === "p" && /\?\s*$/.test(b.textContent)) && !!b.textContent.trim();
+  const isQuestion = (b) => (headed ? /^h[2-6]$/.test(b.localName) : b.localName === "p" && /\?\s*$/.test(b.textContent));
   let item = null;
   let changed = false;
   for (const b of blocks) {
@@ -200,10 +213,58 @@ export function runsToQuestions(section, tag, { heading = null } = {}) {
       b.replaceWith(item);
       changed = true;
     } else if (item) {
-      // an empty block between answers is left out
-      if (b.textContent.trim() || b.querySelector("img, video, iframe")) item.append(b);
+      // (an empty block in an answer is left out, unless it's all there is)
+      if (hasText(b)) {
+        if (item.children.length > 1 && !hasText(item.lastElementChild)) item.lastElementChild.remove();
+        item.append(b);
+      } else if (item.children.length === 1) item.append(b);
       else b.remove();
+    } else if (!hasText(b)) {
+      b.remove();
+      changed = true;
     }
   }
   return changed;
 }
+
+/**
+ * The questions section's heading: its first h2, except in questions
+ * written before it had a heading of its own (a heading attribute then),
+ * when each h2 was a question: with a heading attribute, with more than
+ * one h2, or with one asking something and no other headings. Once it
+ * holds question items, its h2 is its heading.
+ */
+export function faqHeading(section) {
+  const kids = [...section.children];
+  const h2s = kids.filter((c) => c.localName === "h2");
+  if (!h2s.length) return null;
+  if (kids.some((c) => c.localName === "oer-cs-question")) return h2s[0];
+  const lower = kids.some((c) => /^h[3-6]$/.test(c.localName));
+  if (section.hasAttribute("heading") || h2s.length > 1 || (!lower && /\?\s*$/.test(h2s[0].textContent))) return null;
+  return h2s[0];
+}
+
+/**
+ * A questions section's questions and answers as question items of tag,
+ * questions written as h2s (before it had a heading of its own) as h3s
+ * first, under the heading from its attribute (headingFromAttribute, after).
+ */
+export function questionsToItems(section, tag) {
+  const heading = faqHeading(section);
+  const old = heading ? [] : [...section.children].filter((c) => c.localName === "h2");
+  for (const h2 of old) retag(h2, "h3");
+  return runsToQuestions(section, tag, { heading }) || old.length > 0;
+}
+
+/* ---------- each section ---------- */
+
+/**
+ * How each section of items makes them from what was written before it had
+ * them: What you'll learn's list rows become outcomes, the tools' rows tools
+ * (each row whole), and the questions' runs questions.
+ */
+export const ITEMS_FROM = {
+  "oer-cs-learn": (section) => rowsToItems(section, "oer-cs-outcome"),
+  "oer-cs-tools": (section) => rowsToItems(section, "oer-cs-tool", { whole: true }),
+  "oer-cs-faq": (section) => questionsToItems(section, "oer-cs-question"),
+};

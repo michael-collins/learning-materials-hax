@@ -4,26 +4,36 @@
  * remove and repeat them and put any other block between them.
  *
  * Generated sections draw from the course and its plan (the facts, the
- * semester, the projects, the instructors). Written ones hold what the
- * author types inside them, as ordinary blocks: the hero's tagline, what
- * you'll learn (outcomes, cs-items.js), the instructor's note, the tools
- * (a list) and the questions (each a heading with its answer under it).
- * Each section draws what readers see in both modes, with what's typed in
- * it in place (cs-shared.js SiteSection): its heading, and its outcomes as
- * cards. (The tools and the questions are typed as a list and as headings
- * and answers until they have items of their own, editor-redesign WP-08;
- * readers see them as chips and an accordion.)
+ * semester, the projects, the books, the instructors, the last call to
+ * enroll); only their heading is typed, and with nothing to show they tell
+ * authors where it comes from, with a button that goes there
+ * (SiteSection.fromElsewhere). Written ones hold what the author types
+ * inside them, as ordinary blocks: the hero's tagline, the instructor's
+ * note, and items (cs-items.js): what you'll learn's outcomes, the tools
+ * and the questions. Each section draws what readers see in both modes,
+ * with what's typed in it in place (cs-shared.js SiteSection): its
+ * heading, its text, and its items as cards, chips or an accordion.
  *
  *   <oer-cs-learn><h2>What you'll be able to do</h2><oer-cs-outcome><h3>Cut with confidence</h3><p>…</p></oer-cs-outcome></oer-cs-learn>
+ *   <oer-cs-tools><oer-cs-tool><p>Epilog Fusion Pro laser cutter</p></oer-cs-tool></oer-cs-tools>
+ *   <oer-cs-faq><h2>Questions</h2><oer-cs-question><h3>Do I need experience?</h3><p>No.</p></oer-cs-question></oer-cs-faq>
+ *   <oer-cs-semester><h2>Fifteen weeks, three projects</h2></oer-cs-semester>
+ *
+ * Sections written before they had items (a list, questions as headings
+ * and answers) read as before, and become items as editing begins
+ * (cs-normalize.js; nu-hax scripts/course-site-structure.mjs does the same
+ * to saved pages).
  *
  * What the editor may do with each is its static oerEditor (editor/
  * policy.js): its name, where it stays, the pages it belongs on, what it
- * takes, and where a generated one's content comes from.
+ * takes, and where a generated one's content comes from. Each demoSchema
+ * (what HAX inserts while editing) is its part of COURSE_SITE_STARTER with
+ * its heading to type in, which isn't saved while empty.
  */
 import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
 import { SiteSection, csStyles, icon, hasContent, listItems, questions, OUTCOME_ICONS, TEXT_BLOCKS } from "./cs-shared.js";
-import { rowsToItems, retag } from "./cs-normalize.js";
+import { faqHeading } from "./cs-normalize.js";
 import "./cs-items.js";
 import "../../ui/oer-image-field.js";
 import { editorControl } from "../../ui/editor-control.js";
@@ -51,9 +61,6 @@ const slotted = css`
   .text-cell ::slotted(ol) {
     padding-left: 1.25rem;
   }
-  .rows .ph {
-    padding-left: 1.25rem;
-  }
 `;
 
 /* ---------- the hero: the course's name, the tagline, enroll ---------- */
@@ -63,8 +70,9 @@ export class OerCsHero extends SiteSection {
     return "oer-cs-hero";
   }
   static get properties() {
-    // reflected: HAX's undo and Edit HTML work from the markup
-    return { ...super.properties, image: { type: String, reflect: true }, alt: { type: String, reflect: true } };
+    // reflected: HAX's undo and Edit HTML work from the markup (and the
+    // OER Courses catalog reads them from the saved page)
+    return { ...super.properties, image: { type: String, reflect: true }, alt: { type: String, reflect: true }, decorative: { type: Boolean, reflect: true } };
   }
   static get headingTag() {
     // (its heading is the course's name)
@@ -73,12 +81,36 @@ export class OerCsHero extends SiteSection {
   static get oerEditor() {
     return written({ label: "Hero", called: "the hero", pin: "first", accepts: ["h2", ...TEXT_BLOCKS], fields: { p: { name: "tagline" } }, attrs: ["image", "alt"] });
   }
+  constructor() {
+    super();
+    this.decorative = false;
+    // the image field in place, open (until the editor's image popover takes Change image)
+    this._imageField = false;
+  }
   get shown() {
     return true;
   }
+  /**
+   * Change image: asked of the editor (an `oer-edit-request` { action:
+   * "image" }, which its image popover answers by cancelling it, editor-
+   * redesign WP-14); while nothing answers, the image field opens here,
+   * under the picture.
+   */
+  changeImage() {
+    const asked = new CustomEvent("oer-edit-request", {
+      bubbles: true,
+      composed: true,
+      cancelable: true,
+      detail: { action: "image", unit: this, image: this.image || "", alt: this.alt || "", decorative: !!this.decorative },
+    });
+    if (!this.dispatchEvent(asked)) return;
+    this._imageField = !this._imageField;
+    this.requestUpdate();
+    if (this._imageField) this.updateComplete.then(() => this.shadowRoot.querySelector("oer-image-field")?.scrollIntoView({ block: "nearest" }));
+  }
   renderSection(d) {
     const image = this.image || d.projects.map((p) => p.page.metadata?.oerFields?.image).find(Boolean) || d.work.map((w) => w.image).find(Boolean) || "";
-    const alt = this.image ? this.alt || "" : "";
+    const alt = this.image && !this.decorative ? this.alt || "" : "";
     const typed = hasContent(this);
     return html`<section class="hero">
       <div class="wrap hero-in">
@@ -97,10 +129,17 @@ export class OerCsHero extends SiteSection {
           </div>
         </div>
         <div class="hero-art">
-          ${image ? html`<img src="${image}" alt="${alt}" />` : html`<div class="art-fallback" aria-hidden="true"><span>${d.code || d.title}</span></div>`}
-          ${this._editing
+          <div class="art">
+            ${image ? html`<img src="${image}" alt="${alt}" />` : html`<div class="art-fallback" aria-hidden="true"><span>${d.code || d.title}</span></div>`}
+            ${this._editing
+              ? html`<button class="btn outline sm change-image" ${editorControl()} aria-expanded="${this._imageField ? "true" : "false"}" @click="${() => this.changeImage()}">
+                  ${icon("image")}<span>Change image</span>
+                </button>`
+              : ""}
+          </div>
+          ${this._editing && this._imageField
             ? html`<div class="image-edit">
-                <span class="hint">${icon("pencil")}<span>${this.image ? "Hero image" : image ? "A project's image is shown. Choose a hero image of your own:" : "Choose a hero image: a wide picture, such as student work or the studio."}</span></span>
+                <span class="hint">${icon("info")}<span>${this.image ? "Hero image" : image ? "A project's image is shown. Choose a hero image of your own:" : "Choose a hero image: a wide picture, such as student work or the studio."}</span></span>
                 <oer-image-field
                   ${editorControl()}
                   compact
@@ -128,11 +167,12 @@ export class OerCsHero extends SiteSection {
         .hero {
           padding: 4rem 0 1.5rem;
         }
+        /* (the text at the top, so nothing under the picture moves it) */
         .hero-in {
           display: grid;
           grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
           gap: 3rem;
-          align-items: center;
+          align-items: start;
         }
         h1 {
           margin: 0;
@@ -152,6 +192,19 @@ export class OerCsHero extends SiteSection {
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
+        }
+        .art {
+          position: relative;
+        }
+        /* while editing, on the picture's corner */
+        .change-image {
+          position: absolute;
+          right: 0.75rem;
+          bottom: 0.75rem;
+          background: var(--background);
+        }
+        .change-image:hover {
+          background: var(--accent);
         }
         .image-edit {
           display: flex;
@@ -255,9 +308,13 @@ export class OerCsFacts extends SiteSection {
   }
   renderSection(d) {
     const facts = this.facts(d);
-    if (!this.shown) return this.todo("The course's facts (credits, length, format) show here once the course page has them.");
+    if (!this.shown) {
+      return this._author ? html`<div class="wrap facts-wrap">${this.fromElsewhere("The course's facts (credits, length, format) come from the course page.", "Edit course details", { field: "credits" })}</div>` : html``;
+    }
     return html`<div class="wrap facts-wrap">
-      ${facts.length ? html`<dl class="facts">${facts.map(([i, value, label]) => html`<div class="fact"><span class="fact-icon">${icon(i)}</span><dt>${label}</dt><dd>${value}</dd></div>`)}</dl>` : ""}
+      ${facts.length
+        ? html`<dl class="facts">${facts.map(([i, value, label]) => html`<div class="fact"><dt><span class="fact-icon">${icon(i)}</span>${label}</dt><dd>${value}</dd></div>`)}</dl>`
+        : ""}
       ${d.prerequisites.length || d.prerequisiteNote
         ? html`<p class="prereq">
             <b>Before you take it:</b>
@@ -279,25 +336,30 @@ export class OerCsFacts extends SiteSection {
           gap: 0.75rem;
           margin: 0;
         }
+        /* the icon beside the label and the value, out of the list's flow
+           (a dl's groups hold only dt and dd) */
         .fact {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto auto;
-          column-gap: 0.75rem;
-          align-items: center;
-          padding: 1rem;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-height: 2.25rem;
+          padding: 1rem 1rem 1rem 4rem;
           border: 1px solid var(--border);
           border-radius: var(--radius-lg);
           background: var(--card);
         }
         .fact-icon {
-          grid-row: span 2;
+          position: absolute;
+          top: 50%;
+          left: 1rem;
           display: inline-grid;
           place-items: center;
           width: 2.25rem;
           height: 2.25rem;
           border-radius: var(--radius-md);
           background: var(--muted);
+          translate: 0 -50%;
         }
         .fact dt {
           font-size: 0.75rem;
@@ -344,10 +406,6 @@ export class OerCsLearn extends SiteSection {
   get shown() {
     return this.items.some((item) => item.hasText) || listItems(this).length > 0;
   }
-  // a list written before outcomes: one outcome a row
-  upgradeItems() {
-    return rowsToItems(this, "oer-cs-outcome");
-  }
   renderSection() {
     const outcomes = this.items.some((item) => item.hasText);
     // (a list written before outcomes, as readers still see it)
@@ -377,12 +435,10 @@ export class OerCsLearn extends SiteSection {
   // while editing: the outcomes as cards, and a card to add one; with none
   // yet, faint cards showing what goes there
   _editingCards() {
-    const last = this.items.at(-1);
-    const add = (unit) => this.request("add-item", unit ? { unit } : {});
     return html`<div class="cards">
       <div class="list" role="list"><slot name="items"></slot></div>
-      <button class="add-card ${last ? "" : "first"}" ${editorControl()} @click="${() => add(last)}">${icon("plus")}<span>Add an outcome</span></button>
-      ${last ? "" : html`<div class="ghost" aria-hidden="true"><span></span><span></span></div><div class="ghost" aria-hidden="true"><span></span><span></span></div>`}
+      ${this.addCell("add-card")}
+      ${this.items.length ? "" : html`<div class="ghost" aria-hidden="true"><span></span><span></span></div><div class="ghost" aria-hidden="true"><span></span><span></span></div>`}
     </div>`;
   }
   static get styles() {
@@ -488,7 +544,13 @@ export class OerCsSemester extends SiteSection {
     return !!this._d?.weeks.length;
   }
   renderSection(d) {
-    if (!d.weeks.length) return this._author ? html`<section class="section"><div class="wrap">${this.headingCell("The semester")}${this.todo("Link a course plan (a sequence) in Page details to show the semester week by week.")}</div></section>` : html``;
+    if (!d.weeks.length) {
+      if (!this._author) return html``;
+      const where = d.sequence
+        ? this.fromElsewhere("The semester comes from the course plan, which has no weeks yet.", "Open the course plan")
+        : this.fromElsewhere("The semester comes from a course plan.", "Choose a course plan", { field: "sequence" });
+      return html`<section class="section"><div class="wrap">${this.headingCell("The semester, week by week")}${where}</div></section>`;
+    }
     return html`<section class="section alt">
       <div class="wrap">
         ${this.headingCell("The semester, week by week")}
@@ -618,7 +680,13 @@ export class OerCsMake extends SiteSection {
     return !!(this._d?.projects.length || this._d?.work.length);
   }
   renderSection(d) {
-    if (!this.shown) return this._author ? html`<section class="section"><div class="wrap">${this.headingCell("What you'll make")}${this.todo("Projects in the course plan, and student work on the course page, show here.")}</div></section>` : html``;
+    if (!this.shown) {
+      if (!this._author) return html``;
+      const where = d.sequence
+        ? this.fromElsewhere("Projects come from the course plan, which has none yet, and student work from the course page.", "Add student work", { kind: "course", field: "studentWork" })
+        : this.fromElsewhere("Projects come from a course plan, and student work from the course page.", "Choose a course plan", { field: "sequence" });
+      return html`<section class="section"><div class="wrap">${this.headingCell("What you'll make")}${where}</div></section>`;
+    }
     return html`<section class="section">
       <div class="wrap">
         ${this.headingCell("What you'll make")}
@@ -744,7 +812,11 @@ export class OerCsBooks extends SiteSection {
   renderSection() {
     const all = this.books();
     const shown = this._author ? all : all.filter((b) => b.on);
-    if (!shown.length) return this._author ? html`<section class="section"><div class="wrap">${this.headingCell("Read the book")}${this.todo("The course's books show here: add them in the course page's Books field, and turn on each book's site from its page.")}</div></section>` : html``;
+    if (!shown.length) {
+      return this._author
+        ? html`<section class="section"><div class="wrap">${this.headingCell("Read the book")}${this.fromElsewhere("Books come from the course page. Each shows here once its book site is on.", "Add books", { field: "books" })}</div></section>`
+        : html``;
+    }
     return html`<section class="section">
       <div class="wrap">
         ${this.headingCell(shown.length > 1 ? "Read the books" : "Read the book")}
@@ -910,7 +982,7 @@ export class OerCsPeople extends SiteSection {
             ${p.url ? html`<a href="${p.url}" target="_blank" rel="noopener">${p.name}</a>` : html`<span>${p.name}</span>`}
           </p>`,
         )}
-        ${!d.instructors.length && this._author ? this.todo("Instructors come from the course page: add them in its Page details.") : ""}
+        ${!d.instructors.length ? this.fromElsewhere("Instructors come from the course page.", "Add instructors", { kind: "course", field: "instructors" }) : ""}
         ${this._editing || note ? html`<blockquote class="note">${this.textCell("A note from the instructor, in their own words")}</blockquote>` : ""}
       </div>
     </section>`;
@@ -963,39 +1035,47 @@ export class OerCsPeople extends SiteSection {
   }
 }
 
-/* ---------- tools: a list, shown as chips ---------- */
+/* ---------- tools: shown as chips ---------- */
 
 export class OerCsTools extends SiteSection {
   static get tag() {
     return "oer-cs-tools";
   }
   static get properties() {
+    // (the heading attribute of pages written before headings were typed in place)
     return { ...super.properties, heading: { type: String, reflect: true } };
   }
   static get oerEditor() {
-    return written({ label: "Tools", accepts: ["h2", "ul", "ol"], flow: "chips", fields: { li: { name: "tool", paste: "line" } } });
+    return written({ label: "Tools", accepts: ["h2", "oer-cs-tool"], flow: "chips" });
   }
   get shown() {
-    return listItems(this).length > 0;
+    return this.items.some((item) => item.hasText) || listItems(this).length > 0;
   }
   renderSection() {
-    const tools = listItems(this).map((t) => [t.title, t.text].filter(Boolean).join(": "));
-    if (!this._editing && !tools.length && !this._author) return html``;
+    const typed = this.items.some((item) => item.hasText);
+    // (a list written before tools, as readers still see it)
+    const rows = typed ? [] : listItems(this).map((t) => [t.title, t.text].filter(Boolean).join(": "));
+    if (!this._editing && !typed && !rows.length && !this._author) return html``;
     return html`<section class="section">
       <div class="wrap">
         ${this.headingCell("Tools you'll use")}
         ${this._editing
-          ? this.textCell("The software, machines and materials students use, one a row", "rows")
-          : tools.length
-            ? html`<ul class="chips" role="list">${tools.map((t) => html`<li>${t}</li>`)}</ul>`
-            : this.todo("Add the tools students use: Edit content and type a list here.")}
+          ? // the tools as chips, and a chip to add one; with none yet, a faint chip too
+            html`<div class="chips">
+              <div class="list" role="list"><slot name="items"></slot></div>
+              ${this.addCell("add-chip")}${this.items.length ? "" : html`<span class="ghost-chip" aria-hidden="true"></span>`}
+            </div>`
+          : typed
+            ? html`<div class="chips" role="list"><slot name="items"></slot></div>`
+            : rows.length
+              ? html`<ul class="chips" role="list">${rows.map((t) => html`<li>${t}</li>`)}</ul>`
+              : this.todo("Add the tools students use: Edit content and add a tool for each.")}
       </div>
     </section>`;
   }
   static get styles() {
     return [
       csStyles,
-      slotted,
       css`
         .chips {
           display: flex;
@@ -1012,6 +1092,42 @@ export class OerCsTools extends SiteSection {
           background: var(--card);
           font-size: 0.875rem;
         }
+        /* while editing, the chips (the list's items) and the chip to add
+           one share the row */
+        .list {
+          display: contents;
+        }
+        .add-chip,
+        .ghost-chip {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+          min-height: 2.125rem;
+          padding: 0 0.75rem;
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          font-size: 0.875rem;
+        }
+        .add-chip {
+          background: transparent;
+          color: var(--muted-foreground);
+          font-weight: 500;
+          cursor: pointer;
+        }
+        .add-chip.first {
+          background: color-mix(in oklab, var(--primary) 6%, var(--background));
+          color: var(--foreground);
+        }
+        .add-chip:hover {
+          background: var(--accent);
+          color: var(--foreground);
+        }
+        .ghost-chip {
+          width: 9rem;
+          opacity: 0.5;
+          background: var(--card);
+        }
       `,
     ];
   }
@@ -1023,14 +1139,14 @@ export class OerCsTools extends SiteSection {
       contentEditable: true,
       hideDefaultSettings: true,
       designSystem: false,
-      gizmo: gizmo("Course site: tools", "A list you write of software, machines and materials, shown as chips.", "icons:extension"),
+      gizmo: gizmo("Course site: tools", "The software, machines and materials students use, each one you write shown as a chip.", "icons:extension"),
       settings: { configure: [], advanced: [] },
-      demoSchema: [{ tag: "oer-cs-tools", properties: {}, content: "<h2></h2><ul><li></li></ul>" }],
+      demoSchema: [{ tag: "oer-cs-tools", properties: {}, content: "<h2></h2><oer-cs-tool><p></p></oer-cs-tool>" }],
     };
   }
 }
 
-/* ---------- questions: each a heading with its answer, as an accordion ---------- */
+/* ---------- questions: each with its answer, as an accordion ---------- */
 
 export class OerCsFaq extends SiteSection {
   static get tag() {
@@ -1040,61 +1156,46 @@ export class OerCsFaq extends SiteSection {
     return { ...super.properties, heading: { type: String, reflect: true } };
   }
   static get oerEditor() {
-    return written({
-      label: "Questions",
-      accepts: ["h2", ...TEXT_BLOCKS],
-      flow: "stack",
-      fields: { h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } },
-    });
+    return written({ label: "Questions", accepts: ["h2", "oer-cs-question"], flow: "stack" });
   }
-  /**
-   * Its heading: its first h2, except in questions written before it had a
-   * heading of its own (a heading attribute then), when each h2 was a
-   * question: with a heading attribute, with more than one h2, or with one
-   * asking something and no other headings.
-   */
+  /** Its heading: see cs-normalize.js faqHeading (its h2s were once its questions). */
   static headingIn(el) {
-    const kids = [...el.children];
-    const h2s = kids.filter((c) => c.localName === "h2");
-    const lower = kids.some((c) => /^h[3-6]$/.test(c.localName));
-    if (!h2s.length || el.hasAttribute("heading") || h2s.length > 1 || (!lower && /\?\s*$/.test(h2s[0].textContent))) return null;
-    return h2s[0];
-  }
-  // questions written as h2s, before it had a heading of its own: h3s, as
-  // questions are now (its heading then comes from its attribute)
-  upgradeItems() {
-    const old = this.headingElement ? [] : [...this.children].filter((c) => c.localName === "h2");
-    for (const h2 of old) retag(h2, "h3");
-    return old.length > 0;
+    return faqHeading(el);
   }
   get shown() {
-    return questions(this).length > 0;
+    return this.items.some((item) => item.hasText) || questions(this).length > 0;
   }
   renderSection() {
-    const qs = questions(this);
-    if (!this._editing && !qs.length && !this._author) return html``;
+    const typed = this.items.some((item) => item.hasText);
+    // (questions written before they were items, as readers still see them)
+    const qs = typed ? [] : questions(this);
+    if (!this._editing && !typed && !qs.length && !this._author) return html``;
     return html`<section class="section">
       <div class="wrap narrow">
         ${this.headingCell("Questions")}
         ${this._editing
-          ? this.textCell("A question students ask, then its answer under it", "questions")
-          : qs.length
-            ? html`<div class="faq">
-                ${qs.map(
-                  (f) => html`<details>
-                    <summary>${f.q}${icon("chevron")}</summary>
-                    <div class="answer">${f.a}</div>
-                  </details>`,
-                )}
-              </div>`
-            : this.todo("Add the questions students ask: Edit content and type each as a heading with its answer under it.")}
+          ? html`<div class="faq">
+              <div class="list" role="list"><slot name="items"></slot></div>
+              ${this.addCell("add-row")}
+            </div>`
+          : typed
+            ? html`<div class="faq" role="list"><slot name="items"></slot></div>`
+            : qs.length
+              ? html`<div class="faq">
+                  ${qs.map(
+                    (f) => html`<details>
+                      <summary>${f.q}${icon("chevron")}</summary>
+                      <div class="answer">${f.a}</div>
+                    </details>`,
+                  )}
+                </div>`
+              : this.todo("Add the questions students ask: Edit content and add a question for each, with its answer.")}
       </div>
     </section>`;
   }
   static get styles() {
     return [
       csStyles,
-      slotted,
       css`
         .faq details {
           border-bottom: 1px solid var(--border);
@@ -1127,6 +1228,33 @@ export class OerCsFaq extends SiteSection {
         .answer > * {
           margin: 0 0 0.5rem;
         }
+        /* while editing, a row to add a question after the last */
+        .list {
+          display: contents;
+        }
+        .add-row {
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: 100%;
+          padding: 1rem 0.5rem;
+          border: 0;
+          border-bottom: 1px solid var(--border);
+          background: transparent;
+          color: var(--muted-foreground);
+          font-weight: 500;
+          text-align: start;
+          cursor: pointer;
+        }
+        .add-row.first {
+          background: color-mix(in oklab, var(--primary) 6%, var(--background));
+          color: var(--foreground);
+        }
+        .add-row:hover {
+          background: var(--accent);
+          color: var(--foreground);
+        }
         @media (prefers-reduced-motion: reduce) {
           .faq summary .i {
             transition: none;
@@ -1143,9 +1271,9 @@ export class OerCsFaq extends SiteSection {
       contentEditable: true,
       hideDefaultSettings: true,
       designSystem: false,
-      gizmo: gizmo("Course site: questions", "Questions you write, each a heading with its answer, shown as an accordion.", "icons:help"),
+      gizmo: gizmo("Course site: questions", "Questions students ask, each with the answer you write, shown as an accordion.", "icons:help"),
       settings: { configure: [], advanced: [] },
-      demoSchema: [{ tag: "oer-cs-faq", properties: {}, content: "<h2></h2><h3></h3><p></p>" }],
+      demoSchema: [{ tag: "oer-cs-faq", properties: {}, content: "<h2></h2><oer-cs-question><h3></h3><p></p></oer-cs-question>" }],
     };
   }
 }
@@ -1171,7 +1299,7 @@ export class OerCsClosing extends SiteSection {
           ${d.enrollUrl ? html`<a class="btn primary" href="${d.enrollUrl}" target="_blank" rel="noopener">Enroll${icon("arrowUpRight")}</a>` : ""}
           ${d.bulletin && d.bulletin !== d.enrollUrl ? html`<a class="btn outline" href="${d.bulletin}" target="_blank" rel="noopener">Bulletin entry</a>` : ""}
         </div>
-        ${!d.enrollUrl && this._author ? html`<p class="hint">Add the enroll link in Page details to show an Enroll button.</p>` : ""}
+        ${!d.enrollUrl ? this.fromElsewhere("The Enroll button goes to the course site's enroll link, or the course's bulletin entry.", "Add an enroll link", { kind: "site", field: "enrollUrl" }) : ""}
       </div>
     </section>`;
   }
@@ -1194,9 +1322,9 @@ export class OerCsClosing extends SiteSection {
         .closing .ctas {
           justify-content: center;
         }
-        .closing .hint {
-          margin-top: 1rem;
-          font-size: 0.8125rem;
+        .closing .source {
+          margin-top: 1.5rem;
+          text-align: start;
         }
       `,
     ];
