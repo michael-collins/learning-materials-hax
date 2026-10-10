@@ -42,15 +42,14 @@ import "./editor/oer-command-search.js";
 import {
   stockUI,
   editPage,
-  savePage,
-  cancelEdit,
   toggleLock,
   logout,
   openSiteSettings,
   MOD,
 } from "./editor/stock.js";
-import { undo, redo } from "./editor/undo.js";
-import { settingsDialog } from "./editor/oer-settings-dialog.js";
+import "./editor/oer-edit-bar.js";
+import { pendingEdit, copyTime } from "./editor/recovery.js";
+import { siteStyle } from "./ui/oer-site-style.js";
 import { outlineBuilder } from "./outline/oer-outline-builder.js";
 import { pagesBrowser } from "./outline/oer-pages-browser.js";
 import { typeEditor } from "./types/oer-type-editor.js";
@@ -231,7 +230,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       this.__readerBook = "";
     }
     this.__onReader = () => this._enterReader();
-    this.__onStylePreview = (e) => (this._stylePreview = e.detail || null);
+    // the Style panel's unsaved choice, for the course site it's for
+    this.__onStylePreview = (e) => (this._stylePreview = e.detail?.siteId ? e.detail : null);
+    // unsaved edits a reload left behind, said in the top bar (editor/recovery.js)
+    this.__onPendingEdit = () => this.requestUpdate();
     this.__onEditSource = (e) => this._editSource(e.detail || {}, e.composedPath()[0]);
     // HAX's page save writes the page-break's icon to the page; in the
     // editor that's HAX's guess from the page type, never a chosen icon
@@ -303,7 +305,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       if (this._userMenuOpen && !path.includes(this.shadowRoot.querySelector(".user-wrap"))) {
         this._userMenuOpen = false;
       }
-      if (this._pageMenuOpen && !path.includes(this.shadowRoot.querySelector(".page-header .menu-wrap"))) {
+      if (this._pageMenuOpen && !path.includes(this.shadowRoot.querySelector(".menu-wrap"))) {
         this._pageMenuOpen = false;
       }
     };
@@ -495,6 +497,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
     globalThis.addEventListener("oer-reader", this.__onReader);
     globalThis.addEventListener("oer-site-style-preview", this.__onStylePreview);
+    globalThis.addEventListener("oer-pending-edit", this.__onPendingEdit);
     globalThis.addEventListener("cs-edit-source", this.__onEditSource);
     globalThis.addEventListener("haxcms-save-node", this.__beforeSave, true);
     this.__bodyObserver.observe(globalThis.document.body, { childList: true });
@@ -562,6 +565,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     globalThis.removeEventListener("pointerdown", this.__outsideMenu);
     globalThis.removeEventListener("oer-reader", this.__onReader);
     globalThis.removeEventListener("oer-site-style-preview", this.__onStylePreview);
+    globalThis.removeEventListener("oer-pending-edit", this.__onPendingEdit);
     globalThis.removeEventListener("cs-edit-source", this.__onEditSource);
     globalThis.removeEventListener("haxcms-save-node", this.__beforeSave, true);
     super.disconnectedCallback();
@@ -726,6 +730,18 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         custom-oer-docs-theme[reader] :is(figcaption, .footnotes) {
           font-size: 0.8em;
+        }
+        /* on a phone the window scrolls under the sticky editing bar:
+           what takes focus stops below it */
+        @media (max-width: 767px) {
+          html:has(custom-oer-docs-theme[edit-mode]) {
+            scroll-padding-top: calc(3.5rem + 1px);
+          }
+        }
+        /* Preview shows the page as readers see it: none of the editor's
+           overlays (editor/oer-edit-bar.js setPreview) */
+        html[data-oer-preview] :is(oer-block-frame, oer-block-rail, oer-block-inserter) {
+          display: none !important;
         }
         /* HAX's editor bar would sit above the reader; editing leaves Reader mode */
         body:has(custom-oer-docs-theme[reader]) haxcms-site-editor-ui {
@@ -1317,6 +1333,18 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           flex: none;
           margin-top: 0.375rem;
         }
+        /* in a course site's bar (oer-course-site's page-menu slot) */
+        .menu-wrap[slot="page-menu"] {
+          margin-top: 0;
+        }
+        .menu [role="menuitem"].phone-only {
+          display: none;
+        }
+        @media (max-width: 600px) {
+          .menu [role="menuitem"].phone-only {
+            display: flex;
+          }
+        }
         .menu {
           position: absolute;
           right: 0;
@@ -1372,41 +1400,35 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           background: var(--border);
         }
 
-        /* edit mode: the breadcrumb bar becomes the editor header */
-        .topbar.editing {
-          gap: 0.5rem;
+        /* edit mode: the editing bar (editor/oer-edit-bar.js) takes the top
+           bar's place, at its height */
+        oer-edit-bar {
+          position: sticky;
+          top: var(--editor-bar-height, 0px);
+          z-index: 20;
+          flex: none;
         }
-        .badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.375rem;
-          height: 1.5rem;
-          padding: 0 0.5rem;
-          border: 1px solid var(--border);
-          border-radius: 999px;
-          font-size: 0.75rem;
-          font-weight: 500;
-          white-space: nowrap;
+        @media (min-width: 768px) {
+          oer-edit-bar {
+            position: relative;
+            top: 0;
+          }
         }
-        .dot {
-          width: 0.5rem;
-          height: 0.5rem;
-          border-radius: 999px;
-          background: var(--primary);
+        /* unsaved edits a reload left behind (editor/recovery.js) */
+        .pending-edit {
+          flex: none;
+          max-width: 22rem;
+          font-size: 0.8125rem;
         }
-        .editing-title {
-          flex: 1;
+        .pending-edit span {
           min-width: 0;
           overflow: hidden;
           text-overflow: ellipsis;
-          white-space: nowrap;
-          font-size: 0.875rem;
-          font-weight: 600;
         }
-        .toolbar-group {
-          display: flex;
-          align-items: center;
-          gap: 0.25rem;
+        @media (max-width: 900px) {
+          .pending-edit {
+            display: none;
+          }
         }
 
         /* edit mode: the sidebar stays, but navigating away would drop
@@ -1859,9 +1881,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         :host([course-site]) main {
           padding: 0 !important;
         }
-        /* while editing, room below the last section for Add block */
-        :host([course-site][edit-mode]) main {
-          padding-bottom: 4rem !important;
+        /* while editing, room below the last section for Add block,
+           above the footer */
+        :host([course-site][edit-mode]) #contentcontainer {
+          padding-bottom: 4rem;
         }
         /* Below 1280px the margin beside the sections' text can't hold the
            rail and the frame's handle, which would cover the text's first
@@ -1874,27 +1897,6 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         }
         :host([course-site]) article {
           max-width: none;
-        }
-        .cs-editing {
-          display: flex;
-          gap: 0.5rem;
-          align-items: flex-start;
-          box-sizing: border-box;
-          width: min(48rem, 100% - 3rem);
-          margin: 1.5rem auto;
-          padding: 0.625rem 0.875rem;
-          border-radius: var(--radius-md);
-          background: color-mix(in oklab, var(--primary) 8%, var(--background));
-          font-family: var(--font-sans);
-          font-size: 0.875rem;
-          line-height: 1.5;
-        }
-        .cs-editing svg {
-          flex: none;
-          width: 1rem;
-          height: 1rem;
-          margin-top: 0.125rem;
-          color: var(--primary);
         }
         .skip-link:focus {
           z-index: 50;
@@ -1919,8 +1921,11 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
   willUpdate(changed) {
     super.willUpdate?.(changed);
     this.toggleAttribute("course-site", this._showsCourseSite);
+    // where the page is as editing begins (it's still the reading view)
+    if (changed.has("editMode") && this.editMode) this.__entryAnchor = this._readingAnchor();
     if (this._showsCourseSite && this._courseSite) {
-      const style = this._stylePreview || this._courseSite.metadata?.oerSiteStyle;
+      const preview = this._stylePreview?.siteId === this._courseSite.id ? this._stylePreview.style : null;
+      const style = preview || this._courseSite.metadata?.oerSiteStyle;
       this._siteVars = siteStyleVars(style);
       loadSiteFonts(style);
     } else this._siteVars = "";
@@ -2007,7 +2012,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
         ${site && !this.editMode
           ? ""
           : this.editMode
-          ? this.renderEditorHeader(drawerOpen)
+          ? html`<oer-edit-bar .site="${site ? this._courseSite : null}" page-title="${this._activeTitle}" .anchor="${this.__entryAnchor || null}"></oer-edit-bar>`
           : this.reader
             ? html`<oer-reader-bar
                 .book="${this._book}"
@@ -2020,19 +2025,16 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               ></oer-reader-bar>`
             : this.renderTopbar(drawerOpen)}
 
-        <main id="main" style="${this._siteVars || ""}">
+        <main id="main" style="${this._siteVars || ""}" .ariaLabel="${this.editMode ? "Page content, editing" : null}">
           <article id="contentcontainer">
             ${site && this.editMode
-              ? html`<p class="cs-editing" role="note">
-                  ${icon.pencil}<span
-                    >You're editing this page as readers will see it. Type where the faint words say what goes there; the rest is drawn from the site
-                    (the course and its plan, or the course sites). Add any block between sections.</span
-                  >
-                </p>`
+              ? html`<oer-course-site .site="${this._courseSite}" view="notice"></oer-course-site>`
               : site && this._bookSite
               ? html`<oer-book-site .site="${this._bookSite}"></oer-book-site>`
               : site
-              ? html`<oer-course-site .site="${this._courseSite}"><slot id="cs-slot"></slot></oer-course-site>`
+              ? html`<oer-course-site .site="${this._courseSite}"
+                  ><slot id="cs-slot"></slot>${this._loggedIn ? this.renderPageMenu({ slot: "page-menu", microsite: true }) : ""}</oer-course-site
+                >`
               : html`${this._banner ? html`<img class="page-banner" src="${this._banner.src}" alt="${this._banner.alt}" />` : ""}
                 <div class="page-header">
                   <site-active-title part="page-title"></site-active-title>
@@ -2062,6 +2064,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
                     : ""}
                 </nav>`}
           </article>
+          ${site && this.editMode ? html`<oer-course-site .site="${this._courseSite}" view="footer"></oer-course-site>` : ""}
         </main>
       </div>
       </div>
@@ -2089,6 +2092,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
           <site-search></site-search>
         </site-modal>
         ${this._loggedIn ? html`<oer-command-search></oer-command-search>` : ""}
+        ${this._renderPendingEdit()}
         ${this._book
           ? html`<button class="btn btn-outline reader-btn" @click="${() => this._enterReader()}" title="Read this book in Reader mode">
               ${icon.bookOpen}<span class="reader-label">Reader</span>
@@ -2098,51 +2102,66 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     `;
   }
 
-  // Decap-style edit header: what you are editing on the left, history and
-  // the commit actions on the right
-  renderEditorHeader() {
-    return html`
-      <header class="topbar editing" part="topbar">
-        <span class="badge"><span class="dot" aria-hidden="true"></span>Editing</span>
-        <span class="editing-title">${this._activeTitle}</span>
-        <div class="toolbar-group">
-          <button class="icon-btn" @click="${undo}" title="Undo (${MOD}Z)" aria-label="Undo">
-            ${icon.undo}
-          </button>
-          <button class="icon-btn" @click="${redo}" title="Redo (${MOD}⇧Z)" aria-label="Redo">
-            ${icon.redo}
-          </button>
-          <div class="separator" aria-hidden="true"></div>
-          <button
-            class="icon-btn"
-            @click="${() => settingsDialog().open("source")}"
-            title="Edit HTML source"
-            aria-label="Edit HTML source"
-          >
-            ${icon.code}
-          </button>
-          <oer-command-search></oer-command-search>
-          <div class="separator" aria-hidden="true"></div>
-          <button class="btn btn-outline" @click="${cancelEdit}" title="Discard changes (${MOD}⇧/)">
-            Cancel
-          </button>
-          <button class="btn btn-primary" @click="${savePage}" title="Save (${MOD}⇧S)">
-            ${icon.save}Save
-          </button>
-        </div>
-      </header>
-    `;
+  // unsaved edits a reload left behind for this page (editor/recovery.js):
+  // Edit content offers them back
+  _renderPendingEdit() {
+    const pending = this._loggedIn && !this.editMode ? pendingEdit(store.activeId) : null;
+    return pending
+      ? html`<button class="btn btn-outline pending-edit" title="Edit content to restore them" @click="${editPage}">
+          <span>Unsaved edits from ${copyTime(pending)} · Edit content to restore</span>
+        </button>`
+      : "";
+  }
+
+  /**
+   * The block at the top of the reading view and where it is on screen, as
+   * editing begins, for the editing bar to keep it there and select it
+   * (spec §7.2): { index, top }, its place among the page's blocks (past the
+   * page-break) and its top; null on other pages.
+   */
+  _readingAnchor() {
+    if (!this._showsCourseSite || !this._courseSite) return null;
+    const bar = this.shadowRoot?.querySelector("oer-course-site")?.shadowRoot?.querySelector("header.bar");
+    const below = bar ? bar.getBoundingClientRect().bottom : 0;
+    const blocks = [...this.children].filter((el) => el.localName !== "page-break");
+    const index = blocks.findIndex((el) => {
+      const r = el.getBoundingClientRect();
+      return r.height > 0 && r.bottom > below + 1;
+    });
+    return index < 0 ? null : { index, top: blocks[index].getBoundingClientRect().top };
+  }
+
+  // after editing (saved, or left): focus on Edit content, when it was
+  // lost with the editor (spec §7.2)
+  async _backToEditContent() {
+    await this.updateComplete;
+    for (let i = 0; i < 60 && !this.editMode; i++) {
+      const frame = this.shadowRoot.querySelector("oer-course-site");
+      const target = frame
+        ? frame.shadowRoot?.querySelector("[data-edit-content]")
+        : this.shadowRoot.querySelector('.page-header .menu-wrap [aria-haspopup="menu"]');
+      if (target?.checkVisibility()) {
+        let active = globalThis.document.activeElement;
+        while (active?.shadowRoot?.activeElement) active = active.shadowRoot.activeElement;
+        const lost = !active || active === globalThis.document.body || !active.isConnected || !active.checkVisibility() || active.localName === "hax-body";
+        if (lost) target.focus({ preventScroll: true });
+        return;
+      }
+      await new Promise((r) => requestAnimationFrame(r));
+    }
   }
 
   // page-level actions, as in learning-materials' "more" menu. Everything
   // but "Edit page" proxies the active page-break's own action handlers
   // (its stock pencil menu is hidden by the editor skin).
-  renderPageMenu() {
+  // (on a course site or OER Courses, in its bar: slot "page-menu", with
+  // Style there at phone width, where the bar has no room for its button)
+  renderPageMenu({ slot = null, microsite = false } = {}) {
     const pb = (method) => this._menuAction(() => this.querySelector("page-break")?.[method]?.());
     const item = (fn, iconTpl, label, extra = "") =>
       html`<button role="menuitem" class="${extra}" @click="${fn}">${iconTpl}${label}</button>`;
     return html`
-      <div class="menu-wrap">
+      <div class="menu-wrap" slot="${slot || ""}">
         <button
           class="icon-btn"
           aria-haspopup="menu"
@@ -2163,7 +2182,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
               <button role="menuitem" ?disabled="${this._locked}" @click="${this._menuAction(editPage)}">
                 ${icon.pencil}Edit content<kbd>${MOD}⇧E</kbd>
               </button>
-              ${item(this._menuAction(() => pageDetails().show(store.activeId)), icon.details, "Page details")}
+              ${item(this._menuAction((opener) => pageDetails().show(store.activeId, { opener })), icon.details, "Page details")}
+              ${microsite && this._courseSite
+                ? item(this._menuAction((opener) => siteStyle().show(this._courseSite, { opener })), icon.palette, "Style", "phone-only")
+                : ""}
               ${this._canEmbed ? item(this._menuAction(() => embedDialog().show(this._embedItem)), icon.share, "Embed…") : ""}
               ${item(this._menuAction(() => versionsDialog().show(store.activeId, { publish: true })), icon.history, "Versions…")}
               <div class="menu-sep" role="separator"></div>
@@ -2315,20 +2337,27 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
 
   _togglePageMenu() {
     this._pageMenuOpen = !this._pageMenuOpen;
+    if (this._pageMenuOpen) this.updateComplete.then(() => this.shadowRoot.querySelector('.menu [role="menuitem"]:not([disabled])')?.focus());
+  }
+
+  // the menu's button, which focus goes back to (Page details, Style)
+  _pageMenuButton() {
+    return this.shadowRoot.querySelector('.menu-wrap [aria-haspopup="menu"]');
   }
 
   _menuAction(fn) {
     return () => {
       this._pageMenuOpen = false;
-      fn();
+      fn(this._pageMenuButton());
     };
   }
 
   _menuKeys(e) {
-    const items = [...this.shadowRoot.querySelectorAll('.menu [role="menuitem"]')];
+    const items = [...this.shadowRoot.querySelectorAll('.menu [role="menuitem"]')].filter((el) => el.checkVisibility());
     const i = items.indexOf(this.shadowRoot.activeElement);
     if (e.key === "Escape") {
       this._pageMenuOpen = false;
+      this._pageMenuButton()?.focus();
     } else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
       e.preventDefault();
       items[(i + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length]?.focus();
@@ -2418,6 +2447,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     // copy of it (its light DOM) isn't shown, so blocks there can rest. The
     // mark is on the theme, where only that copy finds it with closest()
     // (the editor's is in h-a-x's shadow root); the event says it changed.
+    if (changed.has("editMode") && !this.editMode && changed.get("editMode")) this._backToEditContent();
     if (changed.has("editMode")) {
       this.toggleAttribute("reader-copy-idle", !!this.editMode);
       globalThis.dispatchEvent(new CustomEvent("oer-reader-copy-idle", { detail: { idle: !!this.editMode } }));

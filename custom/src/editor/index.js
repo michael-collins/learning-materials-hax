@@ -20,6 +20,9 @@ import { installEditorState, editorState } from "./editor-state.js";
 import { installOps, ops } from "./ops.js";
 import { installAnnounce, announce } from "./announce.js";
 import { installImportHold } from "./import-hold.js";
+import { installRecovery } from "./recovery.js";
+import { installLeaveGuard } from "./leave-guard.js";
+import { installEditBar } from "./oer-edit-bar.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -44,6 +47,10 @@ export function installEditorChrome() {
   installEditorState();
   installOps();
   installImportHold();
+  // the page level: the editing bar's keys, unsaved edits after a reload, leaving
+  installEditBar();
+  installRecovery();
+  installLeaveGuard();
   // for the editor checks and the console
   globalThis.OerEditor = { state: editorState, ops, announce };
   installQuietMode();

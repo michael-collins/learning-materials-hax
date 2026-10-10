@@ -1505,6 +1505,16 @@ export const editorSkin = {
     ::slotted(page-break[data-hax-active]) {
       outline: 0 !important;
     }
+    /* a course site's or OER Courses' page details are in the editing bar,
+       and its page starts where readers' does: the button takes no room
+       (out of the flow, not display, which its own skin sets) and isn't
+       seen. Not visibility: hidden, which moves the caret Chrome gives a
+       key pressed in the content with none into the hero's tagline */
+    :host([data-oer-microsite]) ::slotted(page-break) {
+      position: absolute !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
     /* a new image starts with no picture (oer-block-inserter STARTERS):
        a box to select, rather than nothing */
     ::slotted(img:not([src])) {

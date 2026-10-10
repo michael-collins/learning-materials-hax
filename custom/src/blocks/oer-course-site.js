@@ -10,9 +10,20 @@
  * this frames too: its bar links to each degree program's courses.
  *
  * While editing, the theme shows the page in HAX's editor instead, at the
- * same width and in the same style, so it looks as readers will see it.
+ * same width and in the same style, so it looks as readers will see it,
+ * with the editing bar (editor/oer-edit-bar.js) where this bar is, and
+ * this frame's "off" notice above the page (view "notice") and its footer
+ * below it (view "footer").
  *
- *   <oer-course-site .site=${item}><slot id="cs-slot"></slot></oer-course-site>
+ * For authors the bar has Edit content (off, saying why, on a locked
+ * page), Page details, Style and the page menu, which the theme puts in its
+ * page-menu slot (Publish, Lock, Versions…: the same menu as on every
+ * page). They keep their names at phone width: there, Page details and
+ * Style are in the page menu. When a reload left unsaved edits behind
+ * (editor/recovery.js), the bar says so.
+ *
+ *   <oer-course-site .site=${item}><slot id="cs-slot"></slot><div slot="page-menu">…</div></oer-course-site>
+ *   <oer-course-site .site=${item} view="footer"></oer-course-site>
  * @element oer-course-site
  */
 import { html, css, LitElement } from "../lit.js";
@@ -20,12 +31,18 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { siteData, siteIsOn, hubPage, COURSE_HUB_TYPE } from "../types/course-site.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { editPage } from "../editor/stock.js";
+import { announce } from "../editor/announce.js";
+import { pendingEdit, copyTime } from "../editor/recovery.js";
 import { siteStyle } from "../ui/oer-site-style.js";
 import { icon, isSection } from "./course-site/cs-shared.js";
 import "./course-site/cs-sections.js";
 import "./course-site/cs-hub.js";
 
-// the sections the bar links to, in order
+// the control a click came from (Safari doesn't focus a clicked button)
+const controlOf = (e) => (e?.currentTarget instanceof HTMLElement ? e.currentTarget : null);
+
+// the sections the bar links to, in order, named by their headings (these
+// until one is typed)
 const NAV = [
   ["oer-cs-learn", "What you'll learn"],
   ["oer-cs-semester", "The semester"],
@@ -42,6 +59,9 @@ class OerCourseSite extends LitElement {
   static get properties() {
     return {
       site: { type: Object },
+      // "" the whole frame; "notice" its "off" notice, "footer" its footer
+      // (around the page while it's edited)
+      view: { type: String },
       _data: { state: true },
       _signedIn: { state: true },
       _dark: { state: true },
@@ -52,16 +72,20 @@ class OerCourseSite extends LitElement {
   constructor() {
     super();
     this.site = null;
+    this.view = "";
     this._data = null;
     this._signedIn = false;
     this._dark = false;
     this._hasSections = true;
     // a section appeared or emptied: the bar's links change
     this.addEventListener("cs-section-change", () => this.requestUpdate());
+    // unsaved edits kept or dropped (editor/recovery.js)
+    this.__onPending = () => this.requestUpdate();
   }
 
   connectedCallback() {
     super.connectedCallback();
+    globalThis.addEventListener("oer-pending-edit", this.__onPending);
     this.__stop = autorun(() => {
       const items = toJS(store.manifest?.items) || [];
       const signedIn = !!store.isLoggedIn;
@@ -77,6 +101,7 @@ class OerCourseSite extends LitElement {
 
   disconnectedCallback() {
     this.__stop?.();
+    globalThis.removeEventListener("oer-pending-edit", this.__onPending);
     super.disconnectedCallback();
   }
 
@@ -128,19 +153,43 @@ class OerCourseSite extends LitElement {
     >`;
   }
 
-  // authors: open the editor, the page's details, or its style (named for
-  // when a narrow bar shows only their icons)
+  // authors: open the editor (not on a locked page: it says why), the
+  // page's details, its style, and the page menu (the theme's, slotted);
+  // at phone width Page details and Style are in the menu. And unsaved
+  // edits a reload left behind, when there are some
   _renderAuthorActions() {
-    return this._signedIn
-      ? html`<button class="btn ghost sm" aria-label="Edit content" title="Edit content" @click="${editPage}">${icon("pencil")}<span class="lbl">Edit content</span></button>
-          <button class="btn ghost sm" aria-label="Page details" title="Page details" @click="${() => pageDetails().show(this.site.id)}">${icon("sliders")}<span class="lbl">Page details</span></button>
-          <button class="btn ghost sm" aria-label="Style" title="Style" @click="${() => siteStyle().show(this._site)}">${icon("palette")}<span class="lbl">Style</span></button>`
-      : "";
+    if (!this._signedIn) return "";
+    const locked = !!this._site?.metadata?.locked;
+    const why = "This page is locked. Unlock it from the page menu to edit it.";
+    const pending = pendingEdit(this._site?.id);
+    return html`${pending
+        ? html`<button class="btn outline sm pending" title="Edit content to restore them" @click="${editPage}">
+            ${icon("pencil")}<span>Unsaved edits from ${copyTime(pending)} · Edit content to restore</span>
+          </button>`
+        : ""}
+      <button
+        class="btn ghost sm"
+        data-edit-content
+        aria-disabled="${locked ? "true" : "false"}"
+        title="${locked ? why : "Edit content"}"
+        @click="${() => (locked ? announce(why) : editPage())}"
+      >
+        ${icon("pencil")}<span>Edit content</span>
+      </button>
+      <button class="btn ghost sm wide-only" @click="${(e) => pageDetails().show(this.site.id, { opener: controlOf(e) })}">${icon("sliders")}<span>Page details</span></button>
+      <button class="btn ghost sm wide-only" @click="${(e) => siteStyle().show(this._site, { opener: controlOf(e) })}">${icon("palette")}<span>Style</span></button>
+      <slot name="page-menu"></slot>`;
+  }
+
+  // what the bar calls a section: its typed heading, or its own name
+  _linkLabel(tag, label) {
+    const heading = this._section(tag)?.headingElement?.textContent.replace(/\s+/g, " ").trim();
+    return heading || label;
   }
 
   _renderBar(d) {
     // (not to a section hidden from readers)
-    const links = NAV.filter(([tag]) => this._section(tag)?.shown && !this._section(tag).hasAttribute("hidden-from-readers"));
+    const links = NAV.filter(([tag]) => this._section(tag)?.shown && !this._section(tag).hasAttribute("hidden-from-readers")).map(([tag, label]) => [tag, this._linkLabel(tag, label)]);
     return html`<header class="bar">
       <div class="wrap bar-in">
         ${this._renderBrand()}
@@ -159,6 +208,34 @@ class OerCourseSite extends LitElement {
     </button>`;
   }
 
+  // the "off" notice, for authors: readers can't see this page yet
+  _renderNotice(d) {
+    if (!this._signedIn || siteIsOn(this._site)) return "";
+    if (this._hub) {
+      return html`<p class="off-note" role="status"><span class="wrap">${icon("eyeOff")}<span>This page is a draft, so readers can't see it. Publish it from the page menu.</span></span></p>`;
+    }
+    return html`<p class="off-note" role="status">
+      <span class="wrap"
+        >${icon("eyeOff")}<span
+          >This course site is off, so readers can't see it.
+          ${d?.course ? html`Turn it on from <a href="${d.course.slug}">the course page</a>.` : "Turn it on from its course page."}</span
+        ></span
+      >
+    </p>`;
+  }
+
+  _renderFooter(d) {
+    if (this._hub) return html`<footer class="foot"><div class="wrap foot-in">${this._themeButton()}</div></footer>`;
+    return html`<footer class="foot">
+      <div class="wrap foot-in">
+        <span>${d.institutionUrl ? html`<a href="${d.institutionUrl}" target="_blank" rel="noopener">${d.institution}</a>` : d.institution}</span>
+        ${d.course ? html`<a href="${d.course.slug}">Course details</a>` : ""}
+        ${d.license ? html`<span class="muted">${d.license}</span>` : ""}
+        ${this._themeButton()}
+      </div>
+    </footer>`;
+  }
+
   // OER Courses: the hub's bar links to each degree program's courses
   _renderHub() {
     const catalogEl = this._section("oer-courses-catalog");
@@ -174,17 +251,17 @@ class OerCourseSite extends LitElement {
           ${this._renderAuthorActions()}
         </div>
       </header>
-      ${this._signedIn && !siteIsOn(this._site)
-        ? html`<p class="off-note" role="status"><span class="wrap">${icon("eyeOff")}<span>This page is a draft, so readers can't see it. Publish it from the page menu.</span></span></p>`
-        : ""}
+      ${this._renderNotice()}
       <main>${before}<slot @slotchange="${this._slotChanged}"></slot>${after}</main>
-      <footer class="foot"><div class="wrap foot-in">${this._themeButton()}</div></footer>
+      ${this._renderFooter()}
     </div>`;
   }
 
   render() {
-    if (this._hub) return this._renderHub();
     const d = this._data;
+    if (this.view === "notice") return this._hub || d ? this._renderNotice(d) : html``;
+    if (this.view === "footer") return this._hub || d ? this._renderFooter(d) : html``;
+    if (this._hub) return this._renderHub();
     if (!d) return html``;
     // a page without sections yet: the standard ones around what it has
     const before = this._hasSections ? "" : html`<oer-cs-hero></oer-cs-hero><oer-cs-facts></oer-cs-facts>`;
@@ -193,25 +270,9 @@ class OerCourseSite extends LitElement {
       : html`<oer-cs-learn></oer-cs-learn><oer-cs-semester></oer-cs-semester><oer-cs-make></oer-cs-make><oer-cs-books></oer-cs-books><oer-cs-people></oer-cs-people><oer-cs-faq></oer-cs-faq><oer-cs-closing></oer-cs-closing>`;
     return html`<div class="ms">
       ${this._renderBar(d)}
-      ${this._signedIn && !siteIsOn(this._site)
-        ? html`<p class="off-note" role="status">
-            <span class="wrap"
-              >${icon("eyeOff")}<span
-                >This course site is off, so readers can't see it.
-                ${d.course ? html`Turn it on from <a href="${d.course.slug}">the course page</a>.` : "Turn it on from its course page."}</span
-              ></span
-            >
-          </p>`
-        : ""}
+      ${this._renderNotice(d)}
       <main>${before}<slot @slotchange="${this._slotChanged}"></slot>${after}</main>
-      <footer class="foot">
-        <div class="wrap foot-in">
-          <span>${d.institutionUrl ? html`<a href="${d.institutionUrl}" target="_blank" rel="noopener">${d.institution}</a>` : d.institution}</span>
-          ${d.course ? html`<a href="${d.course.slug}">Course details</a>` : ""}
-          ${d.license ? html`<span class="muted">${d.license}</span>` : ""}
-          ${this._themeButton()}
-        </div>
-      </footer>
+      ${this._renderFooter(d)}
     </div>`;
   }
 
@@ -366,6 +427,36 @@ class OerCourseSite extends LitElement {
       .btn.ghost:hover {
         background: var(--accent);
       }
+      .btn.outline {
+        border-color: var(--input-border, var(--border));
+        color: var(--foreground);
+      }
+      .btn.outline:hover {
+        background: var(--accent);
+      }
+      .btn[aria-disabled="true"] {
+        color: var(--muted-foreground);
+        cursor: default;
+      }
+      .btn[aria-disabled="true"]:hover {
+        background: none;
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+      }
+      /* unsaved edits a reload left behind: said while there's room */
+      .pending {
+        min-width: 0;
+        max-width: 22rem;
+      }
+      .pending span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      ::slotted([slot="page-menu"]) {
+        flex: none;
+      }
       .off-note {
         margin: 0;
         padding: 0.625rem 0;
@@ -411,6 +502,11 @@ class OerCourseSite extends LitElement {
         background: var(--accent);
       }
 
+      @media (max-width: 1100px) {
+        .pending {
+          display: none;
+        }
+      }
       @media (max-width: 900px) {
         .links {
           display: none;
@@ -427,14 +523,16 @@ class OerCourseSite extends LitElement {
           padding: 0 1rem;
         }
         .brand-name,
-        .crumb,
-        .lbl {
+        .crumb {
           display: none;
         }
-        /* an author's buttons, icons alone, are square */
+        /* an author's buttons keep their names: Page details and Style
+           are in the page menu here */
+        .wide-only {
+          display: none;
+        }
         .btn.ghost {
-          width: 2rem;
-          padding: 0;
+          padding: 0 0.5rem;
         }
       }
       @media (max-width: 400px) {
