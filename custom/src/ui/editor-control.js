@@ -45,6 +45,9 @@ export const CONTROL_EVENTS = ["pointerdown", "mousedown", "click", "dblclick", 
 const stop = (e) => e.stopPropagation();
 const kept = new WeakSet();
 
+/** Whether an element is a control kept from HAX this way (the editor's Tab goes to it: blocks/course-site/cs-keys.js). */
+export const isEditorControl = (el) => kept.has(el);
+
 /** Keep an element's events from HAX (what the directive does), once. */
 export function keepFromHax(el) {
   if (!el?.addEventListener || kept.has(el)) return el;

@@ -22,8 +22,11 @@
  *                                                                                the heading's end)
  *   Delete at the end  –                                                         (HAX's, but nothing at
  *                                                                                the last field's end)
- *   Tab, Shift+Tab     the next or previous field on the page (in an answer's list, HAX indents);
- *                      from the last field (or back from the first), on out of the content
+ *   Tab, Shift+Tab     the next or previous field on the page, or control a section draws
+ *                      (Change image, a callout's button, Add a tool: stopsIn); from the last
+ *                      (or back from the first), on out of the content. In a list in an answer
+ *                      or a section's text, Tab puts an item under the one before it and
+ *                      Shift+Tab takes it back out, where there's one to go under or out of
  *   Mod+A              this field only
  *   Escape             selects the section, or the item
  *
@@ -38,6 +41,9 @@
  * shortcut in a setTimeout after each key). Answers and a section's text
  * (its blocks of text, as many as the author likes) keep HAX's shortcuts.
  *
+ * Tab and Shift+Tab on those controls go on the same way (controlKeydown(),
+ * which the section calls from its shadow root).
+ *
  * Pastes: several lines in a title or a tool, or in an empty item, are one
  * item a line; anything else is the deletion guard's or HAX's to paste
  * (editor/boundary-guard.js pastes one line of plain text into one-line
@@ -47,6 +53,8 @@
  * keeps it from HAX (and from its own listeners after this one). Whether the
  * browser's own action still happens is up to preventDefault() here.
  */
+
+import { isEditorControl } from "../../ui/editor-control.js";
 
 // a block's text fields, where a caret goes (editor/policy.js TEXT_FIELDS)
 const FIELDS = "p,h1,h2,h3,h4,h5,h6,li,blockquote,pre,dt,dd,figcaption,td,th,summary";
@@ -90,10 +98,15 @@ function atEdge(range, field, back) {
   return /^[ \t\n\r]*$/.test(rest.toString()) && !rest.cloneContents().querySelector(MEDIA);
 }
 
+// whether a field holding fields of its own has words of its own too (a
+// list's item before its sub-list)
+const ownWords = (el) => [...el.childNodes].some((n) => (n.nodeType === 3 ? !!n.data.trim() : n.nodeType === 1 && !/^(ul|ol)$/.test(n.localName) && !n.matches(FIELDS) && !n.querySelector(FIELDS) && !!n.textContent.trim()));
+
 // the fields in a block (or the page), in reading order: not a list or a
-// quote holding fields of its own, and not one of a section folded away
+// quote holding fields of its own (but a list's item with words before its
+// sub-list), and not one of a section folded away
 function fieldsIn(root) {
-  return [...root.querySelectorAll(FIELDS)].filter((el) => !el.querySelector(FIELDS) && el.getClientRects().length > 0);
+  return [...root.querySelectorAll(FIELDS)].filter((el) => (!el.querySelector(FIELDS) || ownWords(el)) && el.getClientRects().length > 0);
 }
 
 // the field before (back) or after a field within root
@@ -103,18 +116,80 @@ function besideField(root, field, back) {
   return at < 0 ? null : all[at + (back ? -1 : 1)] || null;
 }
 
-// the page's content, where Tab goes on to the next field
-const contentOf = (el) => el.closest("hax-body") || el.getRootNode();
+// the page's content (hax-body) a field, or a control a block draws in its
+// shadow DOM, is in; or null
+function contentOf(el) {
+  for (let n = el; n; n = n.getRootNode().host) {
+    const body = n.closest?.("hax-body");
+    if (body) return body;
+  }
+  return null;
+}
 
-// Tab on from the last field on the page (or back from the first): focus
+// what takes focus in a control a block draws: itself, or the controls in
+// its own shadow DOM (the image field's)
+const FOCUSABLE = "button, a[href], input:not([type=hidden]), select, textarea, [tabindex]";
+const controlsIn = (control) => (control.shadowRoot ? [...control.shadowRoot.querySelectorAll(FOCUSABLE)] : control.matches(FOCUSABLE) ? [control] : []);
+
+// a block's stops, in the order it draws them: its fields, and the
+// controls in its shadow DOM, with the fields slotted among them
+function stopsOf(block) {
+  if (!block.shadowRoot) return [...(block.matches(FIELDS) && (!block.querySelector(FIELDS) || ownWords(block)) ? [block] : []), ...fieldsIn(block)];
+  const out = [];
+  const walk = (parent) => {
+    for (const el of parent.children) {
+      if (el.localName === "slot") for (const slotted of el.assignedElements()) out.push(...stopsOf(slotted));
+      else if (isEditorControl(el)) out.push(...controlsIn(el));
+      else walk(el);
+    }
+  };
+  walk(block.shadowRoot);
+  return out;
+}
+
+/**
+ * Where Tab stops in the page's content (body), in the order it's drawn:
+ * each field, and each control a section or item draws while editing
+ * (editorControl(): Change image, a callout's button, Add a tool), those
+ * the image field draws among them; what's drawn and not switched off.
+ */
+export const stopsIn = (body) =>
+  [...body.children].flatMap(stopsOf).filter((el) => el.getClientRects().length > 0 && !el.disabled && el.getAttribute("tabindex") !== "-1" && el.getAttribute("aria-disabled") !== "true");
+
+// Tab on from a field or a control (back: Shift+Tab) to the place after
+// it among stops: the caret into a field, or focus on a control; from the
+// last (or back from the first), out of the content. Returns whether it
+// moved within the content.
+function tabFrom(from, stops, body, back) {
+  const at = stops.indexOf(from);
+  const fields = stops.filter((s) => s.matches(FIELDS));
+  const next =
+    at >= 0
+      ? stops[at + (back ? -1 : 1)]
+      : // (a field that isn't a stop of its own: the nearest field after it, or before)
+        back
+        ? fields.findLast((s) => from.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_PRECEDING)
+        : fields.find((s) => from.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_FOLLOWING);
+  if (!next) {
+    leaveContent(body, back);
+    return false;
+  }
+  if (!next.matches(FIELDS)) {
+    next.focus();
+    return true;
+  }
+  if (body.getRootNode().activeElement !== body) body.focus({ preventScroll: true });
+  placeCaret(next, { atEnd: back });
+  return true;
+}
+
+// Tab on from the last place on the page (or back from the first): focus
 // leaves the content for what follows it (or comes before it), as the
 // browser's own Tab does from a stand-in just outside the content, which
 // takes focus for the key and goes once focus moves on. (Outside the
 // element whose shadow DOM holds the content, HAX's h-a-x: from beside the
 // content in there, Tab came back to it.)
-function leaveContent(field, back) {
-  const content = field.closest("hax-body");
-  if (!content) return;
+function leaveContent(content, back) {
   const outside = content.getRootNode().host || content;
   const mark = content.ownerDocument.createElement("span");
   mark.tabIndex = -1;
@@ -186,15 +261,13 @@ export function fieldKeydown(unit, e, field) {
       return false;
     case "Tab": {
       if (mod || e.altKey) return false;
-      // a list's items in an answer or a section's text indent (HAX)
-      if (rich && field.localName === "li") return false;
-      const next = besideField(contentOf(unit), field, e.shiftKey);
-      if (next) {
-        placeCaret(next, { atEnd: e.shiftKey });
-        return done();
-      }
-      leaveContent(field, e.shiftKey);
-      return true;
+      // a list's item in an answer or a section's text goes under the one
+      // before it, or back out (never HAX's, which wraps it in a list of
+      // its own each time, and never ends)
+      if (rich && field.localName === "li" && (e.shiftKey ? outdent(field, range) : indent(field, range))) return done();
+      const body = contentOf(field);
+      if (!body) return false;
+      return tabFrom(field, stopsIn(body), body, e.shiftKey) ? done() : true;
     }
     case "Escape":
       ask(unit, "select");
@@ -283,6 +356,55 @@ function backspace(unit, field, role, done) {
   return false;
 }
 
+/* ---------- a list's items, in and out ---------- */
+
+// put the caret (a range) back where it was once its nodes have moved
+function keepRange(range, move) {
+  const { startContainer, startOffset, endContainer, endOffset } = range;
+  move();
+  const sel = startContainer.getRootNode().getSelection?.() || globalThis.document.getSelection();
+  const back = globalThis.document.createRange();
+  back.setStart(startContainer, startOffset);
+  back.setEnd(endContainer, endOffset);
+  sel.removeAllRanges();
+  sel.addRange(back);
+}
+
+// a list item under the one before it, in that one's own sub-list (made, of
+// its list's kind, if it has none); false for the first, which has none
+function indent(li, range) {
+  const before = li.previousElementSibling;
+  if (before?.localName !== "li") return false;
+  keepRange(range, () => {
+    let sub = before.lastElementChild;
+    if (sub?.localName !== li.parentElement.localName) {
+      sub = li.ownerDocument.createElement(li.parentElement.localName);
+      before.append(sub);
+    }
+    sub.append(li);
+  });
+  return true;
+}
+
+// a list item in a sub-list back out, after the item that holds it, with
+// the items after it in the sub-list under it now; false at the top level
+function outdent(li, range) {
+  const list = li.parentElement;
+  const holder = list?.parentElement;
+  if (holder?.localName !== "li") return false;
+  keepRange(range, () => {
+    const after = [...list.children].slice([...list.children].indexOf(li) + 1);
+    if (after.length) {
+      const sub = li.ownerDocument.createElement(list.localName);
+      sub.append(...after);
+      li.append(sub);
+    }
+    holder.after(li);
+    if (!list.children.length) list.remove();
+  });
+  return true;
+}
+
 // this field's text selected, and no more
 function selectField(field) {
   const sel = field.getRootNode().getSelection?.() || globalThis.document.getSelection();
@@ -290,6 +412,23 @@ function selectField(field) {
   range.selectNodeContents(field);
   sel.removeAllRanges();
   sel.addRange(range);
+}
+
+/**
+ * keydown on a control a section (or an item in it) draws while editing,
+ * heard on the section's shadow root before the control (which keeps its
+ * keys from HAX): Tab and Shift+Tab go on to the next place in the
+ * content, as from a field. true when handled.
+ */
+export function controlKeydown(section, e) {
+  if (e.key !== "Tab" || e.ctrlKey || e.metaKey || e.altKey || e.isComposing || !section._editing) return false;
+  const from = e.composedPath()[0];
+  const body = contentOf(section);
+  const stops = body ? stopsIn(body) : [];
+  if (!stops.includes(from)) return false;
+  if (tabFrom(from, stops, body, e.shiftKey)) e.preventDefault();
+  e.stopPropagation();
+  return true;
 }
 
 /** keyup in a unit's field: ↑ and ↓ are kept from HAX, whose double ↑ (or ↓) adds a paragraph outside the sections. */

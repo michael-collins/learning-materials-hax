@@ -15,13 +15,22 @@
 import { html, css } from "../../lit.js";
 import { registerBlocks } from "../register.js";
 import { SiteSection, csStyles, icon, hasContent, TEXT_BLOCKS } from "./cs-shared.js";
-import { COURSE_HUB_TYPE, catalog } from "../../types/course-site.js";
+import { COURSE_HUB_TYPE, catalog, siteData } from "../../types/course-site.js";
+import { homeOf } from "../../types/type-homes.js";
 import { pageHtml, parsePage } from "../../types/page-report.js";
 
 const gizmo = (title, description, icon) => ({ title, description, icon, color: "blue", tags: ["Course site", "course", "catalog"], meta: { author: "Michael Collins" } });
 const onHub = (el) => el._page?.metadata?.pageType === COURSE_HUB_TYPE;
 const wrongPage = (el) =>
   el._author ? html`<div class="wrap"><p class="todo">${icon("info")}<span>This block lists the course sites, so it only works on the OER Courses page.</span></p></div>` : html``;
+
+// a hero's tagline as one line: its blocks and line breaks a space apart
+function taglineOf(hero) {
+  if (!hero) return "";
+  const copy = hero.cloneNode(true);
+  for (const el of copy.querySelectorAll("br, p, li, h3, h4, h5, h6, blockquote")) el.after(" ");
+  return copy.textContent.replace(/\s+/g, " ").trim();
+}
 
 /* ---------- the intro ---------- */
 
@@ -139,7 +148,7 @@ export class OerCoursesCatalog extends SiteSection {
       this.__pages.set(key, null);
       pageHtml(site).then((text) => {
         const hero = parsePage(text).querySelector("oer-cs-hero");
-        this.__pages.set(key, { image: hero?.getAttribute("image") || "", alt: hero?.getAttribute("alt") || "", tagline: hero?.textContent.replace(/\s+/g, " ").trim() || "" });
+        this.__pages.set(key, { image: hero?.getAttribute("image") || "", alt: hero?.getAttribute("alt") || "", tagline: taglineOf(hero) });
         this.requestUpdate();
       });
     }
@@ -164,19 +173,35 @@ export class OerCoursesCatalog extends SiteSection {
     </li>`;
   }
 
+  /**
+   * With no course site on: where they come from, for authors, with one
+   * button to it: the course page of the one that's off, or else Courses,
+   * where each course page's Course site card turns its site on.
+   */
+  _noneOn(off) {
+    const one = off.length === 1 ? siteData(off[0], this._items).course : null;
+    const courses = homeOf("oer:course", this._items);
+    const names = off.map((s) => s.title).join(", ");
+    const text = !off.length
+      ? "The catalog lists the course sites that are on, and there are none yet. Make one with the Course site switch on a course page."
+      : off.length === 1
+        ? `The catalog lists the course sites that are on. ${names} is off: turn it on from its course page (the Course site card).`
+        : `The catalog lists the course sites that are on. ${off.length} are off (${names}): turn one on from its course page (the Course site card).`;
+    if (one) return this.fromElsewhere(text, "Open the course page", { kind: "page", page: one.id });
+    return this.fromElsewhere(text, courses ? `Open ${courses.title}` : "", { kind: "page", page: courses?.id || "" });
+  }
+
   renderContent() {
     if (!onHub(this)) return wrongPage(this);
     const { groups, count, off } = catalog(this._items);
+    if (!count) {
+      return html`<section class="section">
+        <div class="wrap">${this._author ? this._noneOn(off) : html`<p class="muted">Course sites will be listed here.</p>`}</div>
+      </section>`;
+    }
     const offNote = this._author && off.length
       ? html`<p class="todo">${icon("eyeOff")}<span>${off.length === 1 ? "One course site is off, so it isn't listed" : `${off.length} course sites are off, so they aren't listed`}: ${off.map((s, n) => html`${n ? ", " : ""}${s.title}`)}. Turn a site on from its course page.</span></p>`
       : "";
-    if (!count) {
-      return html`<section class="section">
-        <div class="wrap">
-          ${this._author ? this.fromElsewhere("The catalog lists the course sites that are on. Turn one on from its course page (the Course site card).") : html`<p class="muted">Course sites will be listed here.</p>`}${offNote}
-        </div>
-      </section>`;
-    }
     return html`${groups.map(
       (g, n) => html`<section class="section ${n % 2 ? "alt" : ""}" aria-labelledby="group-${n}">
         <div class="wrap">
@@ -276,9 +301,6 @@ export class OerCoursesCatalog extends SiteSection {
         }
         .off {
           padding-bottom: 3rem;
-        }
-        .source + .todo {
-          margin-top: 0.75rem;
         }
         @media (prefers-reduced-motion: reduce) {
           .card {

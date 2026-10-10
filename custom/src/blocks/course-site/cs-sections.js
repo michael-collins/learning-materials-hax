@@ -94,7 +94,8 @@ export class OerCsHero extends SiteSection {
    * Change image: asked of the editor (an `oer-edit-request` { action:
    * "image" }, which its image popover answers by cancelling it, editor-
    * redesign WP-14); while nothing answers, the image field opens here,
-   * under the picture.
+   * under the picture, with focus in it. Esc in it closes it, focus back on
+   * Change image.
    */
   changeImage() {
     const asked = new CustomEvent("oer-edit-request", {
@@ -106,7 +107,20 @@ export class OerCsHero extends SiteSection {
     if (!this.dispatchEvent(asked)) return;
     this._imageField = !this._imageField;
     this.requestUpdate();
-    if (this._imageField) this.updateComplete.then(() => this.shadowRoot.querySelector("oer-image-field")?.scrollIntoView({ block: "nearest" }));
+    if (!this._imageField) return;
+    this.updateComplete.then(() => {
+      const field = this.shadowRoot.querySelector("oer-image-field");
+      field?.scrollIntoView({ block: "nearest" });
+      field?.focus();
+    });
+  }
+
+  _closeImageField(e) {
+    if (e.key !== "Escape" || !this._imageField) return;
+    e.preventDefault();
+    this._imageField = false;
+    this.requestUpdate();
+    this.updateComplete.then(() => this.shadowRoot.querySelector(".change-image")?.focus());
   }
   renderSection(d) {
     const image = this.image || d.projects.map((p) => p.page.metadata?.oerFields?.image).find(Boolean) || d.work.map((w) => w.image).find(Boolean) || "";
@@ -142,6 +156,7 @@ export class OerCsHero extends SiteSection {
                 <span class="hint">${icon("info")}<span>${this.image ? "Hero image" : image ? "A project's image is shown. Choose a hero image of your own:" : "Choose a hero image: a wide picture, such as student work or the studio."}</span></span>
                 <oer-image-field
                   ${editorControl()}
+                  @keydown="${(e) => this._closeImageField(e)}"
                   compact
                   label="Hero image"
                   .value="${this.image || ""}"

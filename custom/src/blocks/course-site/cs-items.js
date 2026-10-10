@@ -348,8 +348,26 @@ export class OerCsTool extends SiteItem {
   static get oerEditor() {
     return { kind: "item", label: "Tool", fields: { p: { name: "tool", single: true, paste: "line" } }, starter: "<p></p>" };
   }
+  /**
+   * A tool is one line: as editing begins, the words of any field after
+   * its first (a second paragraph, from Edit HTML) join it, a space
+   * between.
+   */
+  upgrade() {
+    let changed = super.upgrade();
+    const title = this.titleElement;
+    for (const el of [...this.children].filter((c) => c !== title)) {
+      if (!isEmpty(el) && isEmpty(title)) title.replaceChildren(...el.childNodes);
+      else if (!isEmpty(el)) title.append(" ", ...el.childNodes);
+      el.remove();
+      changed = true;
+    }
+    return changed;
+  }
   render() {
-    return html`<div class="chip ${this._editing ? "editing" : ""}">${this.field("title", "A tool, machine or material")}</div>`;
+    // (fields after the first, until editing joins them to it, are drawn
+    // after it: never out of sight)
+    return html`<div class="chip ${this._editing ? "editing" : ""}">${this.field("title", "A tool, machine or material")}<slot name="text-first"></slot><slot name="text"></slot></div>`;
   }
   static get styles() {
     return [
@@ -395,6 +413,11 @@ export class OerCsQuestion extends SiteItem {
       fields: { h3: { name: "question", single: true, paste: "line" }, p: { name: "answer" }, li: { name: "answer" } },
       starter: "<h3></h3><p></p>",
     };
+  }
+  /** Readers see a question only with its words: an accordion row needs them for its name. */
+  get hasText() {
+    const title = this.titleElement;
+    return !!title && !isEmpty(title);
   }
   render() {
     // open while editing, so every answer can be typed in (and found)

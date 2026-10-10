@@ -80,6 +80,19 @@ class OerImageField extends LitElement {
     if (changed.has("value")) this._broken = false;
   }
 
+  /** Focus its first control (a dialog focusing its field, or the hero opening it). */
+  focus(options) {
+    this.shadowRoot?.querySelector("button, input:not([type=file]), select, textarea, [tabindex]")?.focus(options);
+  }
+
+  // an address typed in: the image, and (the address field giving way to
+  // the image's description) focus on to that
+  _byAddressChange(e) {
+    const had = this.shadowRoot.activeElement === e.target;
+    this._emit(e.target.value.trim());
+    if (had) this.updateComplete.then(() => !e.target.isConnected && this.shadowRoot.querySelector(".alt input")?.focus());
+  }
+
   _emit(value, alt = this.alt) {
     this.value = value;
     this.alt = alt;
@@ -211,7 +224,7 @@ class OerImageField extends LitElement {
               placeholder="files/picture.jpg or https://…"
               aria-label="${this.label} address"
               .value="${v}"
-              @change="${(e) => this._emit(e.target.value.trim())}"
+              @change="${(e) => this._byAddressChange(e)}"
             />`
           : ""}
         ${this._choosing ? this._renderChooser() : ""}

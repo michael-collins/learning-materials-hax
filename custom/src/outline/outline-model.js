@@ -130,6 +130,9 @@ let saving = Promise.resolve();
 export function saveOutline(items) {
   const run = saving.then(() => sendOutline(items));
   saving = run.catch(() => {});
+  // (while a page is being edited, the editor keeps HAX's reload after the
+  // save out of it: editor/import-hold.js)
+  globalThis.dispatchEvent(new CustomEvent("oer-outline-save", { detail: { done: run } }));
   return run;
 }
 

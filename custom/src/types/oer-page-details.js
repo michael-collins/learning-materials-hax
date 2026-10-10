@@ -15,6 +15,10 @@
  *
  *   pageDetails().show(itemId, { section: "media" })
  *   pageDetails().show(itemId, { section: "details", field: "instructors" })
+ *
+ * As it closes, focus goes back to what had it as it opened (or to its
+ * opener: an element, or a function that puts focus back itself and is
+ * told whether the details were saved).
  * @element oer-page-details
  */
 import { html, css, LitElement } from "../lit.js";
@@ -68,6 +72,13 @@ const shownFields = (fields) => fields.filter((f) => !(/Alt$/.test(f.name) && fi
 // a multiple choice's values; older imports stored them joined ("A, B")
 const toArray = (v) => (Array.isArray(v) ? v : v ? String(v).split(",").map((s) => s.trim()).filter(Boolean) : []);
 
+// what has focus, through shadow roots
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
+
 class OerPageDetails extends LitElement {
   static get tag() {
     return "oer-page-details";
@@ -110,9 +121,11 @@ class OerPageDetails extends LitElement {
   /**
    * `onSaved({ pageType, description, fields })` runs after a save;
    * `section` opens one (general, details, media…), and `field` (a field's
-   * name) puts focus on that field rather than the first.
+   * name) puts focus on that field rather than the first. `opener` gets
+   * focus back as it closes (by default, what has it now); a function
+   * opener({ saved }) puts it back itself.
    */
-  show(id, { onSaved = null, section = "general", field = "" } = {}) {
+  show(id, { onSaved = null, section = "general", field = "", opener = null } = {}) {
     this._onSaved = onSaved;
     const items = toJS(store.manifest?.items) || [];
     const item = items.find((i) => i.id === id);
@@ -156,6 +169,8 @@ class OerPageDetails extends LitElement {
       this._aiul = d;
       this.requestUpdate();
     });
+    if (!this.open) this._opener = opener || deepActive();
+    this.__saved = false;
     this.open = true;
     globalThis.addEventListener("keydown", this.__keys, true);
     this.updateComplete.then(() => (field && this._focusField(field)) || this.shadowRoot.querySelector("select, input, textarea")?.focus());
@@ -178,6 +193,11 @@ class OerPageDetails extends LitElement {
   _close() {
     this.open = false;
     globalThis.removeEventListener("keydown", this.__keys, true);
+    // focus back where it was as it opened
+    const opener = this._opener;
+    this._opener = null;
+    if (typeof opener === "function") opener({ saved: !!this.__saved });
+    else if (opener?.isConnected) opener.focus({ preventScroll: true });
   }
 
   get _typeDef() {
@@ -290,6 +310,7 @@ class OerPageDetails extends LitElement {
     await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields, tags, title: this._title.trim(), slug, icon: this._icon });
     this._onSaved?.({ pageType: this._type, description: this._desc.trim(), fields, tags });
     this._saving = false;
+    this.__saved = true;
     this._close();
   }
 

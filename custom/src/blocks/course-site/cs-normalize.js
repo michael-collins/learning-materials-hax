@@ -13,7 +13,7 @@
  *   own sub-list, the rows after it). An outcome's title is the row's bold
  *   start, or its words before a colon or a dash, and its sentence the rest
  *   (as listItems() reads it); a tool is the whole row. Links and emphasis
- *   are kept.
+ *   are kept; paragraphs in a row are unwrapped to its words.
  * - runsToQuestions: each question (a heading, or a paragraph ending with
  *   "?") and the blocks after it, up to the next, become a question item.
  * - questionsToItems: the questions section's own upgrade (questions
@@ -133,8 +133,25 @@ export function splitRow(li) {
 
 const isList = (el) => el.localName === "ul" || el.localName === "ol";
 
-// a list's rows, each without its own sub-lists, whose rows follow it (a
-// row holding only a sub-list gives just those)
+// the blocks a row can hold its words in (a paragraph, as some editors
+// write every row), which an item's one-line field can't hold
+const ROW_BLOCKS = "p, div, h1, h2, h3, h4, h5, h6, blockquote, pre, figure, figcaption, address, section, article, header, footer";
+
+// a row's words out of the blocks they're in, a space between each
+// block's: an item's field holds a line, never a block
+function unwrapBlocks(row) {
+  const blocks = [...row.querySelectorAll(ROW_BLOCKS)];
+  if (!blocks.length) return;
+  // (the innermost first)
+  for (const block of blocks.reverse()) block.replaceWith(" ", ...block.childNodes, " ");
+  row.normalize();
+  const walk = row.ownerDocument.createTreeWalker(row, NodeFilter.SHOW_TEXT);
+  for (let n = walk.nextNode(); n; n = walk.nextNode()) n.data = n.data.replace(/\s{2,}/g, " ");
+}
+
+// a list's rows, each without its own sub-lists (and its words out of any
+// blocks), whose rows follow it (a row holding only a sub-list gives just
+// those)
 function rowsOf(list) {
   return [...list.children]
     .filter((li) => li.localName === "li")
@@ -142,6 +159,7 @@ function rowsOf(list) {
       const subs = [...li.children].filter(isList);
       const row = li.cloneNode(true);
       for (const sub of [...row.children]) if (isList(sub)) sub.remove();
+      unwrapBlocks(row);
       const empty = !row.textContent.trim() && !row.querySelector("img, video, audio, iframe");
       return [...(subs.length && empty ? [] : [row]), ...subs.flatMap(rowsOf)];
     });
@@ -189,11 +207,13 @@ const hasText = (el) => !!el.textContent.trim() || !!el.querySelector("img, vide
 
 /**
  * Questions and their answers as question items of tag: each heading (or,
- * with none, each paragraph ending with "?") starts one, an empty heading
- * too (an empty question, as a new section's), and the blocks after it are
- * its answer: those with text, or else its first, to type into. Empty
- * blocks before the first question go; anything else there stays (readers
- * never saw it). The section's own heading (heading) isn't a question.
+ * with none, each paragraph ending with "?") starts one, and the blocks
+ * after it are its answer: those with text, or else its first, to type
+ * into. An empty heading starts one only before any question has words
+ * (an empty question, as a new section's): after one, readers read past
+ * it, so it's an empty block in that answer. Empty blocks before the first
+ * question go; anything else there stays (readers never saw it). The
+ * section's own heading (heading) isn't a question.
  *
  *   <h3></h3><p></p>               → <oer-cs-question><h3></h3><p></p></oer-cs-question>
  *   <h3>Why?</h3><p></p><p>So.</p> → <oer-cs-question><h3>Why?</h3><p>So.</p></oer-cs-question>
@@ -201,11 +221,13 @@ const hasText = (el) => !!el.textContent.trim() || !!el.querySelector("img, vide
 export function runsToQuestions(section, tag, { heading = null } = {}) {
   const blocks = [...section.children].filter((c) => c !== heading && c.localName !== "page-break" && !c.localName.includes("-"));
   const headed = blocks.some((b) => /^h[2-6]$/.test(b.localName));
-  const isQuestion = (b) => (headed ? /^h[2-6]$/.test(b.localName) : b.localName === "p" && /\?\s*$/.test(b.textContent));
+  let asked = false;
+  const isQuestion = (b) => (headed ? /^h[2-6]$/.test(b.localName) && (hasText(b) || !asked) : b.localName === "p" && /\?\s*$/.test(b.textContent));
   let item = null;
   let changed = false;
   for (const b of blocks) {
     if (isQuestion(b)) {
+      asked ||= hasText(b);
       item = make(section, tag);
       const h3 = make(section, "h3");
       h3.append(...b.childNodes);
@@ -231,17 +253,20 @@ export function runsToQuestions(section, tag, { heading = null } = {}) {
  * The questions section's heading: its first h2, except in questions
  * written before it had a heading of its own (a heading attribute then),
  * when each h2 was a question: with a heading attribute, with more than
- * one h2, or with one asking something and no other headings. Once it
- * holds question items, its h2 is its heading.
+ * one h2, or with one asking something, an answer after it and no other
+ * headings. Once it holds question items, its h2 is its heading, and an
+ * h2 with nothing after it is one too ("Got questions?" over questions
+ * left empty, which aren't saved).
  */
 export function faqHeading(section) {
   const kids = [...section.children];
   const h2s = kids.filter((c) => c.localName === "h2");
   if (!h2s.length) return null;
   if (kids.some((c) => c.localName === "oer-cs-question")) return h2s[0];
+  if (section.hasAttribute("heading") || h2s.length > 1) return null;
   const lower = kids.some((c) => /^h[3-6]$/.test(c.localName));
-  if (section.hasAttribute("heading") || h2s.length > 1 || (!lower && /\?\s*$/.test(h2s[0].textContent))) return null;
-  return h2s[0];
+  const answered = kids.some((c) => c !== h2s[0] && c.localName !== "page-break" && !c.localName.includes("-") && hasText(c));
+  return !lower && answered && /\?\s*$/.test(h2s[0].textContent) ? null : h2s[0];
 }
 
 /**

@@ -17,7 +17,7 @@ import { store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMS
 import { siteData, COURSE_SITE_TYPE } from "../../types/course-site.js";
 import { editorControl } from "../../ui/editor-control.js";
 import { headingFromAttribute, ensureHeading, listRows, ITEMS_FROM } from "./cs-normalize.js";
-import { fieldKeydown, fieldKeyup, fieldPaste } from "./cs-keys.js";
+import { fieldKeydown, fieldKeyup, fieldPaste, controlKeydown } from "./cs-keys.js";
 
 // Lucide (ISC), inline
 const ICONS = {
@@ -229,6 +229,12 @@ export class SiteSection extends LitElement {
     this.__previewed = () => this._modeChanged();
     globalThis.addEventListener("oer-reader-copy-idle", this.__resting);
     globalThis.addEventListener("oer-preview", this.__previewed);
+    // Tab on its controls goes on through the content (before the control,
+    // which keeps its keys from HAX)
+    if (!this.__controlKeys) {
+      this.__controlKeys = (e) => controlKeydown(this, e);
+      this.renderRoot.addEventListener("keydown", this.__controlKeys, true);
+    }
     this._follow();
   }
 
@@ -463,26 +469,27 @@ export class SiteSection extends LitElement {
   /**
    * For authors, where what a generated section shows comes from, when it
    * has nothing to show: an information callout (never a field's faint
-   * words) with one button that goes there (editSource(kind, field); no
-   * button without a label). kind is its policy's source by default.
+   * words) with one button that goes there (editSource(kind, field, page);
+   * no button without a label). kind is its policy's source by default.
    */
-  fromElsewhere(text, label = "", { kind = this.constructor.oerEditor.source?.kind, field = "" } = {}) {
+  fromElsewhere(text, label = "", { kind = this.constructor.oerEditor.source?.kind, field = "", page = "" } = {}) {
     if (!this._author) return "";
     return html`<div class="source" role="note">
       ${icon("info")}<p class="source-text">${text}</p>
-      ${label ? html`<button class="btn outline sm" ${editorControl()} @click="${() => this.editSource(kind, field)}">${label}</button>` : ""}
+      ${label ? html`<button class="btn outline sm" ${editorControl()} @click="${() => this.editSource(kind, field, page)}">${label}</button>` : ""}
     </div>`;
   }
 
   /**
    * Open where a generated section's content comes from: a cs-edit-source
-   * event, { kind, field }, which the theme answers while reading and
+   * event, { kind, field, page }, which the theme answers while reading and
    * editing alike: "course" the course page's Page details at that field,
    * "site" the course site's own, "plan" the course plan (in a new tab), or
-   * with a field, the site's Page details at it.
+   * with a field, the site's Page details at it; "page" a page of the site
+   * by its id (a course page, Courses) in a new tab.
    */
-  editSource(kind, field = "") {
-    this.dispatchEvent(new CustomEvent("cs-edit-source", { bubbles: true, composed: true, detail: { kind, field } }));
+  editSource(kind, field = "", page = "") {
+    this.dispatchEvent(new CustomEvent("cs-edit-source", { bubbles: true, composed: true, detail: { kind, field, page } }));
   }
 
   /** What the section draws for its page: renderSection(d) on a course site. */
@@ -561,6 +568,23 @@ export class SiteSection extends LitElement {
   /** A section of items makes them from what was written before (cs-normalize.js ITEMS_FROM). */
   upgradeItems() {
     return ITEMS_FROM[this.localName]?.(this) ?? false;
+  }
+
+  /**
+   * Blocks made into this section's items as its upgrade makes them (a
+   * question and its answer, one question; a list's rows, a tool each),
+   * for the editor to put in (editor/ops.js strayToItems): copies, with
+   * any block it can't make an item of left as it is; or null for a
+   * section that makes none this way.
+   */
+  itemsFrom(blocks) {
+    const from = ITEMS_FROM[this.localName];
+    if (!from || !this.itemTag) return null;
+    const holder = this.ownerDocument.createElement("div");
+    holder.append(...blocks.map((b) => b.cloneNode(true)));
+    from(holder);
+    for (const item of holder.children) item.upgrade?.();
+    return [...holder.children];
   }
 
   /** It, or something in it, became the active block: a hidden section opens. */
@@ -811,7 +835,9 @@ export const csStyles = css`
     line-height: inherit;
     color: inherit;
   }
+  /* (its border 3:1 against the callout's tint, which --input-border isn't) */
   .source .btn {
+    border-color: color-mix(in oklab, var(--input-border) 80%, var(--foreground));
     background: var(--background);
   }
   .source .btn:hover {

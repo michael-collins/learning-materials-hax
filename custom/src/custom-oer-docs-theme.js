@@ -84,6 +84,31 @@ let themeSkinRegistered = false;
 
 const MOBILE_QUERY = "(max-width: 767px)";
 
+// the page's details HAX writes back to the page with its content, from
+// the page-break it puts first (docs/editor-spikes/lifecycle.md change 6)
+const PAGE_DETAILS = ["title", "description", "slug", "tags", "icon", "image", "page-type", "related-items", "accent-color", "hide-in-menu", "locked", "published", "override-pathauto", "link-url", "link-target"];
+
+// the page's details in the page-break HAX puts first in its copy of a
+// page, by attribute; or null
+function detailsIn(html) {
+  const tag = /<page-break\b[^>]*>/i.exec(html || "")?.[0];
+  if (!tag) return null;
+  const t = globalThis.document.createElement("template");
+  t.innerHTML = `${tag}</page-break>`;
+  const pb = t.content.firstElementChild;
+  return Object.fromEntries(PAGE_DETAILS.map((name) => [name, pb.getAttribute(name)]));
+}
+
+// a page-break's opening tag with an attribute set (null takes it out), the
+// rest as HAX wrote it: HAXcms reads its booleans from the text, and a bare
+// `published` counts where `published=""` (an element's outerHTML) doesn't
+function withAttribute(tag, name, value) {
+  const rest = tag.replace(new RegExp(`\\s${name}(?:="[^"]*")?(?=[\\s/>])`, "i"), "");
+  if (value === null) return rest;
+  const text = String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+  return rest.replace(/<page-break\b/i, `<page-break ${name}="${text}"`);
+}
+
 function lucide(name) {
   return html`<span
     class="lucide"
@@ -207,7 +232,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
     }
     this.__onReader = () => this._enterReader();
     this.__onStylePreview = (e) => (this._stylePreview = e.detail || null);
-    this.__onEditSource = (e) => this._editSource(e.detail || {});
+    this.__onEditSource = (e) => this._editSource(e.detail || {}, e.composedPath()[0]);
     // HAX's page save writes the page-break's icon to the page; in the
     // editor that's HAX's guess from the page type, never a chosen icon
     // (types/page-icon.js). Runs first: a capture listener on the target
@@ -222,22 +247,32 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       const id0 = toJS(store.activeId);
       const stored = this.__storedOrders?.get(id0);
       const parentNow = e?.detail?.parent ?? null;
+      const order = stored && (parentNow || null) === (stored.parent || null) ? stored.order : null;
+      // And the page's details saved in Page details while it was edited:
+      // HAX's page-break still has them as editing began, and would write
+      // those back (its imports were held meanwhile: editor/import-hold.js).
+      // Those that changed since come from HAX's copy of the page now.
+      const began = this.__detailsAtEntry;
+      const now = detailsIn(toJS(store.activeItemContent));
+      const fresh = began && now ? PAGE_DETAILS.filter((name) => now[name] !== began[name]) : [];
       const body = globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody;
-      if (stored && body && (parentNow || null) === (stored.parent || null) && !body.__orderWrapped) {
+      if (body && (order !== null || fresh.length) && !body.__pageBreakWrapped) {
         const serialize = body.haxToContent;
         const restore = () => {
           body.haxToContent = serialize;
-          body.__orderWrapped = false;
+          body.__pageBreakWrapped = false;
         };
-        body.__orderWrapped = true;
+        body.__pageBreakWrapped = true;
         body.haxToContent = async function (...args) {
           restore();
           const out = await serialize.apply(this, args);
-          return String(out).replace(/<page-break\b[^>]*>/i, (tag) =>
-            /\sorder="/i.test(tag) ? tag.replace(/\sorder="[^"]*"/i, ` order="${stored.order}"`) : tag.replace(/<page-break\b/i, `<page-break order="${stored.order}"`),
-          );
+          return String(out).replace(/<page-break\b[^>]*>/i, (tag) => {
+            let made = order === null ? tag : withAttribute(tag, "order", order);
+            for (const name of fresh) made = withAttribute(made, name, now[name]);
+            return made;
+          });
         };
-        setTimeout(() => body.__orderWrapped && restore(), 10000);
+        setTimeout(() => body.__pageBreakWrapped && restore(), 10000);
       }
       // the rubrics the page shows, recorded so a rubric knows where it's
       // used (rubrics/rubric-usage.js)
@@ -539,20 +574,87 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
    * field, "site" the course site's own; "plan" opens the course plan in a
    * new tab, or with a field (the site's Course plan, when it has none) the
    * site's Page details at it. A site without its course opens its own at
-   * the Course field.
+   * the Course field. Kind "page" opens a page by its id (page) in a new
+   * tab: the OER Courses catalog's course page, or Courses. Page details
+   * gives focus back to the button as it closes (_backTo).
    */
-  _editSource({ kind, field = "" }) {
+  _editSource({ kind, field = "", page = "" }, section = null) {
     const items = toJS(store.manifest?.items) || [];
+    if (kind === "page") {
+      const item = items.find((i) => i.id === page);
+      if (item) this._openInTab(item);
+      return;
+    }
     const site = this._courseSite && (items.find((i) => i.id === this._courseSite.id) || this._courseSite);
     if (!site) return;
     const d = siteData(site, items);
     if (kind === "plan" && !field && d.sequence) {
-      globalThis.open(new URL(d.sequence.slug, globalThis.document.baseURI).href, "_blank", "noopener");
-      announce(`${d.sequence.title} opened in a new tab`);
+      this._openInTab(d.sequence);
       return;
     }
-    if (kind === "course" && d.course) pageDetails().show(d.course.id, { section: "details", field });
-    else pageDetails().show(site.id, { section: "details", field: kind === "course" ? "course" : field });
+    const opener = this._backTo(section);
+    if (kind === "course" && d.course) pageDetails().show(d.course.id, { section: "details", field, opener });
+    else pageDetails().show(site.id, { section: "details", field: kind === "course" ? "course" : field, opener });
+  }
+
+  _openInTab(item) {
+    globalThis.open(new URL(item.slug, globalThis.document.baseURI).href, "_blank", "noopener");
+    announce(`${item.title} opened in a new tab`);
+  }
+
+  /**
+   * Focus back on the section's button that has it (its callout's) as Page
+   * details closes (spec §7.2), or, once a save has drawn the section
+   * without it (the callout filled in), the section: selected while
+   * editing; while reading, once HAX has drawn the page again, the same
+   * button there or else the section.
+   */
+  _backTo(section) {
+    let button = globalThis.document.activeElement;
+    while (button?.shadowRoot?.activeElement) button = button.shadowRoot.activeElement;
+    if (!section || button?.getRootNode?.().host !== section) return null;
+    const words = button.textContent.trim();
+    const frame = () => new Promise((r) => requestAnimationFrame(r));
+    return async ({ saved }) => {
+      if (!saved && button.isConnected) return button.focus({ preventScroll: true });
+      if (this.editMode) {
+        await section.updateComplete;
+        await frame();
+        if (button.isConnected) button.focus({ preventScroll: true });
+        else if (section.isConnected) section.dispatchEvent(new CustomEvent("oer-edit-request", { bubbles: true, composed: true, detail: { action: "select" } }));
+        return;
+      }
+      await this._redrawn();
+      const now = this.querySelector(section.localName);
+      const again = [...(now?.shadowRoot?.querySelectorAll("button") || [])].find((b) => b.textContent.trim() === words);
+      if (again) return again.focus({ preventScroll: true });
+      if (!now) return;
+      // (the section, for a moment: it isn't a control)
+      now.tabIndex = -1;
+      now.addEventListener("blur", () => now.removeAttribute("tabindex"), { once: true });
+      now.focus({ preventScroll: true });
+    };
+  }
+
+  // resolves once HAX has stopped drawing the page again (it does a few
+  // times after a save): nothing new for 800 ms, or after 6 s
+  _redrawn() {
+    return new Promise((resolve) => {
+      let quiet;
+      const done = () => {
+        observer.disconnect();
+        clearTimeout(quiet);
+        clearTimeout(most);
+        resolve();
+      };
+      const observer = new MutationObserver(() => {
+        clearTimeout(quiet);
+        quiet = setTimeout(done, 800);
+      });
+      observer.observe(this, { childList: true });
+      quiet = setTimeout(done, 800);
+      const most = setTimeout(done, 6000);
+    });
   }
 
   /**
@@ -2320,8 +2422,10 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       this.toggleAttribute("reader-copy-idle", !!this.editMode);
       globalThis.dispatchEvent(new CustomEvent("oer-reader-copy-idle", { detail: { idle: !!this.editMode } }));
     }
-    // site.json's own page orders, for the save (see __beforeSave)
+    // site.json's own page orders, and the page's details as editing
+    // begins, for the save (see __beforeSave)
     if (changed.has("editMode") && this.editMode) {
+      this.__detailsAtEntry = detailsIn(toJS(store.activeItemContent));
       fetch(new URL(`site.json?t=${Date.now()}`, globalThis.document.baseURI), { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : null))
         .then((site) => (this.__storedOrders = new Map((site?.items || []).map((i) => [i.id, { order: i.order, parent: i.parent || null }]))))

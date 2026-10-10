@@ -626,10 +626,13 @@ export function pasteItems(el, lines) {
 const straysOf = (section) => section?.sortChildren?.().stray ?? [];
 
 /**
- * A section's blocks that readers won't see, made into its items (a
- * paragraph or a heading an item titled with its text, a list an item a
- * row), after its last item, as one undo step. Blocks without text (a
- * picture) stay. The caret goes to the end of the first new item's title.
+ * A section's blocks that readers won't see, made into its items, after
+ * its last item, as one undo step: as the section makes items from what
+ * was written before it had them (its itemsFrom(): a question and its
+ * answer one question, a list's rows a tool each), and any other block an
+ * item titled with its text (a list, an item a row). Blocks without text
+ * (a picture) stay. The caret goes to the end of the first new item's
+ * title.
  */
 export function strayToItems(el) {
   const section = unitOf(el);
@@ -638,7 +641,10 @@ export function strayToItems(el) {
   if (!tag) return refuse("Nothing can be added here");
   if (!strays.length) return refuse("Nothing to make into items");
   return change(section, `made ${phraseOf(tag)}s`, async (body) => {
-    const made = strays.flatMap((stray) => (/^(ul|ol)$/.test(stray.localName) ? [...stray.children] : [stray]).filter(hasText).map((block) => itemWith(tag, [...block.childNodes])));
+    const blocks = section.itemsFrom?.(strays) ?? strays;
+    const made = blocks.flatMap((block) =>
+      block.localName === tag ? [block] : (/^(ul|ol)$/.test(block.localName) ? [...block.children] : [block]).filter(hasText).map((b) => itemWith(tag, [...b.childNodes])),
+    );
     const items = [...section.children].filter((c) => c.localName === tag);
     const after = items.at(-1) || section.headingElement;
     if (after) after.after(...made);
