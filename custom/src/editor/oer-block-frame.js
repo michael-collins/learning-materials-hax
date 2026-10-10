@@ -29,6 +29,9 @@
  * after its name with a static `frameAction`: { label, icon (an oer: Lucide
  * name), run(node) }, e.g. the rubric block's Edit rubric.
  *
+ * A block as wide as the page (a course site's section) has its frame
+ * inside its edges, label included (frameRect's `inset`).
+ *
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
  * floating drag menu in hax-plate-context.
  * @element oer-block-frame
@@ -40,7 +43,7 @@ import { contentViewport, pressPlate } from "./stock.js";
 import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
-import { sectionOf } from "../blocks/course-site/cs-shared.js";
+import { sectionOf, isSection } from "../blocks/course-site/cs-shared.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -153,6 +156,7 @@ class OerBlockFrame extends LitElement {
     const visBottom = Math.min(f.bottom, view.bottom);
     s.setProperty("--grip", `${Math.round((visTop + visBottom) / 2 - f.top)}px`);
     this.toggleAttribute("compact", f.compact);
+    this.toggleAttribute("inset", f.inset);
 
     this._updateGuides();
     if (this._drag) this._dragFrame();
@@ -291,8 +295,10 @@ class OerBlockFrame extends LitElement {
       else if (d.y > view.bottom - SCROLL_EDGE) main.scrollTop += Math.ceil((d.y - view.bottom + SCROLL_EDGE) / 4);
     }
     const node = this.__node;
-    // not inside itself, and not the two slots it already sits between
-    const slots = computeSlots(this._hax?.activeHaxBody).filter((s) => !node.contains(s.container));
+    // not inside itself, and not the two slots it already sits between; a
+    // course site's section stays on the page, never in columns
+    const section = isSection(node);
+    const slots = computeSlots(this._hax?.activeHaxBody).filter((s) => !node.contains(s.container) && !(section && s.nested));
     const slot = nearestSlot(slots, d.x, d.y);
     const valid = !!slot && slot.before !== node && slot.after !== node;
     if (!sameSlot(slot, d.slot) || valid !== d.valid || !d.rect || d.rect.top !== Math.round(slot?.top)) {
@@ -425,6 +431,10 @@ class OerBlockFrame extends LitElement {
         color: var(--primary-foreground);
         background: var(--primary);
         border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      }
+      :host([inset]) .label {
+        transform: translateX(-100%);
+        border-radius: 0 0 0 var(--radius-sm);
       }
       .label button {
         width: auto;

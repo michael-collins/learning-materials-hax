@@ -298,10 +298,12 @@ class OerBlockRail extends LitElement {
     }
     this.hidden = false;
     // left of the frame's drag handle, but always in the page gutter: a
-    // block in a second column must not put the rail over the first
+    // block in a second column must not put the rail over the first. A
+    // page with no gutter (a course site's, full width) has it over the
+    // page: beside an inset frame's handle, or at the content's edge.
     const bodyLeft = this._hax?.activeHaxBody?.getBoundingClientRect().left ?? f.left;
     const anchor = Math.min(f.left, bodyLeft - 4 - 6);
-    const left = Math.round(anchor - HANDLE_WIDTH - 8 - (rail?.offsetWidth || 42));
+    const left = Math.round(Math.max(anchor - HANDLE_WIDTH - 8 - (rail?.offsetWidth || 42), f.inset ? f.left + 8 : view.left + 8));
     this.style.transform = `translate(${left}px, ${Math.round(top)}px)`;
   }
 

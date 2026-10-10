@@ -7,6 +7,7 @@
  * the blocks inside each layout container (grid-plate columns), including
  * empty columns.
  */
+import { contentViewport } from "./stock.js";
 
 export const RING_OFFSET = 4; // frame sits this far outside the block
 export const FULL_HANDLE_HEIGHT = 60; // shorter frames show only the grip
@@ -16,19 +17,26 @@ const MIN_SLOT = 16;
 /**
  * The selection frame around a block, in viewport coordinates. `compact`
  * frames are too short for the handle's ↑ ⠿ ↓ and show just the grip (move
- * up / down stay in the rail's Block menu).
+ * up / down stay in the rail's Block menu). A block that reaches the
+ * content's left edge (a course site's section, which is full width) has
+ * no room around it, so its frame is `inset`: inside its edges, the handle
+ * included.
  */
 export function frameRect(node) {
   const r = node.getBoundingClientRect();
-  const top = r.top - RING_OFFSET;
-  const bottom = r.bottom + RING_OFFSET;
+  const inset = r.left - RING_OFFSET - HANDLE_WIDTH < contentViewport().left;
+  const ring = inset ? -RING_OFFSET : RING_OFFSET;
+  const top = r.top - ring;
+  const bottom = r.bottom + ring;
   return {
     top,
     bottom,
-    left: r.left - RING_OFFSET,
-    right: r.right + RING_OFFSET,
+    // (the handle is drawn left of the ring: inset, it starts at the ring's offset)
+    left: inset ? r.left + RING_OFFSET + HANDLE_WIDTH - 2 : r.left - RING_OFFSET,
+    right: r.right + ring,
     height: bottom - top,
     compact: bottom - top < FULL_HANDLE_HEIGHT,
+    inset,
     block: r,
   };
 }

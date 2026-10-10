@@ -1081,11 +1081,13 @@ export const editorSkin = {
       box-shadow: none !important;
       outline: 0 !important;
     }
-    /* stock edit-mode spacing is 16px padding + an 80px bottom margin */
+    /* stock edit-mode spacing is 16px padding + an 80px bottom margin
+       (auto at the sides: on a course site it has the reading width,
+       centred, as blocks there do) */
     :host([data-hax-ray]) {
       display: block !important;
       min-height: 2.25rem !important;
-      margin: 0 0 1rem !important;
+      margin: 0 auto 1rem !important;
       padding: 0 !important;
     }
     .save-button,
@@ -1481,18 +1483,14 @@ export const editorSkin = {
 
   /* ---------- editor canvas ---------- */
   "hax-body": css`
-    ::slotted(p),
-    ::slotted(li),
-    ::slotted(ul),
-    ::slotted(ol) {
-      text-align: start !important;
+    /* one ring: the selected block's ring, label and drag handle are drawn
+       by oer-block-frame, so none of HAX's outlines, on the selected
+       block (at any depth, from h-a-x's styles) or on hover. (Text is
+       start-aligned by blocks/course-site/cs-content.js.) */
+    :host {
+      --hax-body-active-outline: none;
     }
-    /* hover = dashed hint; the selected block's ring, label and drag
-       handle are drawn by oer-block-frame */
-    ::slotted(*:hover:not([data-hax-active])) {
-      outline: 1px dashed var(--muted-foreground) !important;
-      outline-offset: 4px !important;
-    }
+    ::slotted(*:hover),
     ::slotted([data-hax-active]) {
       outline: 0 !important;
     }
@@ -1516,9 +1514,8 @@ export const editorSkin = {
     }
   `,
 
-  /* column layouts while editing: no stock borders/dotted outlines; the
-     layout around the selection is outlined by oer-block-frame instead.
-     Nested blocks get the same dashed hover hint as top-level ones. */
+  /* column layouts while editing: no stock borders or outlines; the
+     layout around the selection is outlined by oer-block-frame instead */
   "grid-plate": css`
     :host([data-hax-ray]) div ::slotted(*),
     :host([data-hax-ray]) div ::slotted(*:hover),
@@ -1526,10 +1523,6 @@ export const editorSkin = {
     :host([data-hax-ray]) div ::slotted([data-hax-active]:hover) {
       border: 0 !important;
       outline: 0 !important;
-    }
-    :host([data-hax-ray]) div ::slotted(*:hover:not([data-hax-active])) {
-      outline: 1px dashed var(--muted-foreground) !important;
-      outline-offset: 4px !important;
     }
     :host([data-hax-ray]) [data-layout-slotname],
     :host([data-hax-ray]) [data-layout-slotname]:hover {
