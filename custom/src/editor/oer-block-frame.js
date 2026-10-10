@@ -24,10 +24,13 @@
  * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
  * opens the layout menu (presets, select, remove; or "put in columns" for
  * a block outside any layout). The sliders button opens the block's
- * settings (oer-settings-dialog). A course site section has neither button,
- * and a block inside one has no layout menu. A block can add its own button
- * after its name with a static `frameAction`: { label, icon (an oer: Lucide
- * name), run(node) }, e.g. the rubric block's Edit rubric.
+ * settings (oer-settings-dialog). A course site section, its items and what
+ * they hold have neither button (nothing of theirs is set in settings). In
+ * a section, ↑ / ↓ move the section or item (ops.js, as the rail's Move
+ * does), and the grip doesn't drag a field or an item out of it. A block
+ * can add its own button after its name with a static `frameAction`:
+ * { label, icon (an oer: Lucide name), run(node) }, e.g. the rubric
+ * block's Edit rubric.
  *
  * A block as wide as the page (a course site's section) has its frame
  * inside its edges, label included (frameRect's `inset`).
@@ -45,6 +48,8 @@ import { HANDLE_WIDTH, frameRect, computeSlots, nearestSlot, placeInSlot, sameSl
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 import { sectionOf, isSection } from "../blocks/course-site/cs-shared.js";
+import { sectionOrItemOf } from "./policy.js";
+import { ops } from "./ops.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -134,9 +139,9 @@ class OerBlockFrame extends LitElement {
       const schema = hax.haxSchemaFromTag?.(node.localName);
       this._label = schema?.gizmo?.title || node.localName;
       this._action = node.constructor?.frameAction || null;
-      // a course site section has no settings, and neither it nor what's in
-      // it goes in columns: sections are full width, and readers only see a
-      // section's own blocks
+      // a course site section has no settings, nor its items and fields,
+      // and neither it nor what's in it goes in columns: sections are full
+      // width, and readers only see a section's own blocks
       const section = sectionOf(node);
       this._section = !section ? null : section === node ? "self" : "inside";
     }
@@ -244,7 +249,10 @@ class OerBlockFrame extends LitElement {
   /* ---------- move ---------- */
 
   _move(dir) {
-    pressPlate(dir === "up" ? "hax-plate-up" : "hax-plate-down");
+    // in a section, the section or item moves, among its kind
+    const unit = sectionOrItemOf(this.__node);
+    if (unit) ops.move(unit, dir === "up" ? -1 : 1);
+    else pressPlate(dir === "up" ? "hax-plate-up" : "hax-plate-down");
   }
 
   _gripKeys(e) {
@@ -269,6 +277,8 @@ class OerBlockFrame extends LitElement {
     if (!this.__press) return;
     const moved = Math.hypot(e.clientX - this.__press.x, e.clientY - this.__press.y);
     if (!this._drag && moved < DRAG_THRESHOLD) return;
+    // a section's items and fields stay in it (↑ / ↓ move them)
+    if (this._section === "inside") return;
     if (!this._drag) {
       globalThis.__oerDragging = true;
     }
@@ -633,7 +643,7 @@ class OerBlockFrame extends LitElement {
   _renderLabel() {
     const inLayout = this._layout && this._layout !== this.__node;
     return html`<div class="label" @mousedown="${(e) => e.preventDefault()}">
-      ${this._section === "self"
+      ${this._section
         ? ""
         : html`<button
             class="lay"

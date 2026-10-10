@@ -42,6 +42,15 @@
  *   after it (the outcome Undo takes away), or may be another field at the
  *   same place. When the place is gone, the block HAX made active again
  *   takes it.
+ * - What Undo and Redo put back is editable as HAX made it: its starting
+ *   copy (undoStackInitialValue) is taken before it has made the page's
+ *   blocks editable, so an Undo back to the start put back sections and
+ *   items without data-hax-ray and contenteditable, and a click in one
+ *   didn't make it HAX's active block (its mousedown goes by data-hax-ray):
+ *   the frame, the rail and their commands stayed on the block before.
+ *   They're made editable again, as entering edit mode makes them.
+ *   hax-body.js _mouseDown 936, _applyContentEditable 5061,
+ *   __rehydrateLayoutDescendants 5039.
  * - checkpoint(body, label, around) records the content as one step now,
  *   named for announcing ("moved Tools up"), with where the author was
  *   around it; ops.js puts one before and one after each change it makes.
@@ -338,6 +347,21 @@ export function returnTo(body, place) {
   return true;
 }
 
+// blocks HAX put back without the editable state it gives them as editing
+// begins (see the top of this file), and the fields and items in them,
+// made editable again; grids HAX made editable stay as they are
+async function rehydrate(body) {
+  const hax = haxStore();
+  const bare = (el) => !el.hasAttribute("data-hax-ray");
+  for (const child of [...body.children]) {
+    if (child.localName === "page-break" || !child.isConnected) continue;
+    const grid = !!hax?.isGridPlateElement?.(child);
+    if (!bare(child) && !(grid && [...child.children].some(bare))) continue;
+    if (bare(child)) body.__applyNodeEditableState?.(child, true);
+    if (grid) await body.__rehydrateLayoutDescendants?.(child, true);
+  }
+}
+
 // the place is gone (Undo took back what held it): the block HAX made
 // active again from the copy, with the caret at the end of its text, or
 // selected as a whole
@@ -378,6 +402,7 @@ async function step(again, { place } = {}) {
   const lost = !deepActive() || deepActive() === globalThis.document.body;
   if (lost) place ??= made;
   if (!returnTo(body, place) && (place || inContent || lost)) returnToActive(body);
+  await rehydrate(body);
   return true;
 }
 

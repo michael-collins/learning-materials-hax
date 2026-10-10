@@ -837,10 +837,15 @@ export const editorSkin = {
      dividers between groups. */
   "hax-plate-context": css`
     /* replaced by oer-block-rail, which presses these controls; kept
-       mounted (not display:none) so their handlers and state stay live */
+       mounted (not display:none) so their handlers and state stay live,
+       but taking no room: at 375px wide (stock's min-width) beside the
+       active block, it made a phone's page scroll sideways */
     :host {
       visibility: hidden !important;
       pointer-events: none !important;
+      width: 0 !important;
+      min-width: 0 !important;
+      overflow: hidden !important;
     }
     /* the groups are slotted into hax-toolbar from here; stock gives each
        its own #ddd box inside the toolbar's border */

@@ -17,6 +17,11 @@
  * Items HAX has switched off are shown off, with the reason. Add and Remove
  * column go through layouts.js (two equal columns, the block still
  * selected), and aren't offered for or inside course site sections.
+ * Inside a course site section, Move up and down move the section or item
+ * the caret is in, and Duplicate and Remove take the section or item whose
+ * own field it is (a heading, an outcome's title), through the editor
+ * (ops.js: one undo step, its pins and limits, Remove's question), never
+ * HAX's command on the field alone; what can't be done says why.
  *
  * Keyboard: Alt+F10 moves focus from the content to the rail; arrows move,
  * Enter/Space/Right opens a menu, Escape/Left steps back, and Escape on the
@@ -37,6 +42,8 @@ import { saveOutline } from "../outline/outline-model.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { layoutOf, columnCount, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 import { sectionOf } from "../blocks/course-site/cs-shared.js";
+import { policyOf, phraseOf, sectionOrItemOf, ownerOf } from "./policy.js";
+import { ops } from "./ops.js";
 
 const SEP = { sep: true };
 
@@ -88,13 +95,13 @@ const byCommand = (cmd, label) => (els) =>
 /* ---------- categories ---------- */
 
 const BLOCK = [
-  { label: "Move up", icon: "arrow-up", find: byEvent("hax-plate-up") },
-  { label: "Move down", icon: "arrow-down", find: byEvent("hax-plate-down") },
+  { label: "Move up", icon: "arrow-up", find: byEvent("hax-plate-up"), unit: { op: "move", dir: -1 } },
+  { label: "Move down", icon: "arrow-down", find: byEvent("hax-plate-down"), unit: { op: "move", dir: 1 } },
   SEP,
   // these open oer-block-inserter's block list for that gap
   { label: "Insert block above…", icon: "arrow-up-to-line", find: byEvent("insert-above-active"), insert: "above" },
   { label: "Insert block below…", icon: "arrow-down-to-line", find: byEvent("insert-below-active"), insert: "below" },
-  { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate") },
+  { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate"), unit: { op: "duplicate" } },
   SEP,
   // outside a layout, Add column puts the block in two equal columns (HAX's
   // own makes three, with the block in the middle one); Remove column works
@@ -110,7 +117,7 @@ const BLOCK = [
     find: (els) => els.find((e) => e.localName === "hax-context-item" && /lock/.test(e.icon || "")),
   },
   SEP,
-  { label: "Remove block", icon: "trash-2", danger: true, find: byEvent("hax-plate-delete") },
+  { label: "Remove block", icon: "trash-2", danger: true, find: byEvent("hax-plate-delete"), unit: { op: "remove" } },
 ];
 
 const HEADING_ICONS = {
@@ -355,6 +362,11 @@ class OerBlockRail extends LitElement {
       }
       const el = spec.find(els);
       if (!el) continue;
+      const unit = spec.unit && this._unitCommand(spec, el, stock.plate);
+      if (unit) {
+        out.push(unit);
+        continue;
+      }
       // (inside a course site section, blocks go above or below the section)
       let run = spec.insert
         ? () => globalThis.document.querySelector("oer-block-inserter")?.openFor(sectionOf(this._hax.activeNode) || this._hax.activeNode, spec.insert)
@@ -391,6 +403,26 @@ class OerBlockRail extends LitElement {
     }
     while (out.length && out[out.length - 1].sep) out.pop();
     return out;
+  }
+
+  // a block command inside a course site section, made on the section or
+  // item (see the top of this file), or null for HAX's own on the block
+  _unitCommand(spec, el, plate) {
+    const node = this._hax?.activeNode;
+    const { op, dir } = spec.unit;
+    const unit = op === "move" ? sectionOrItemOf(node) : ownerOf(node);
+    if (!unit) return null;
+    // (HAX's reasons for switching every block command off still hold)
+    const why = ops.whyNot(op, unit, { dir }) || (plate?.viewSource || plate?.disableOps ? offReason(plate, el) : "");
+    const noun = policyOf(unit).kind === "item" ? phraseOf(unit) : "section";
+    return {
+      label: op === "remove" ? `Remove ${noun}` : spec.label,
+      icon: spec.icon,
+      danger: spec.danger,
+      disabled: !!why,
+      hint: why,
+      run: () => (op === "move" ? ops.move(unit, dir) : ops[op](unit)),
+    };
   }
 
   // two equal columns around the block, which stays selected

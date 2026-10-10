@@ -42,6 +42,8 @@
  * fieldOf (its text field), boundaryOf (what an edit there must stay
  * inside: a section, an item or another block, a column, or the page),
  * isSingleLine and closedUnitOf (the section or item that takes no blocks).
+ * And for the block commands: sectionOrItemOf (what Move moves) and
+ * ownerOf (what Duplicate and Remove take).
  *
  *   policyOf(el).kind === "section"
  *   sameBoundary(boundaryOf(range.startContainer), boundaryOf(range.endContainer))
@@ -164,6 +166,35 @@ export function unitOf(node) {
     if (isBody(parent) || policyOf(parent).kind === "layout") return el;
   }
   return null;
+}
+
+/**
+ * The section or item a node is, or is in (the innermost), or null: what
+ * moving it moves, as a section's or an item's fields and text don't move
+ * on their own.
+ */
+export function sectionOrItemOf(node) {
+  const unit = unitOf(node);
+  const { kind } = policyOf(unit);
+  return kind === "section" || kind === "item" ? unit : null;
+}
+
+/**
+ * The section or item a node is, or whose own field it is (a section's
+ * heading, an item's title or sentence, a tool), or null for a block of
+ * its own (between sections, in a column, or a paragraph of a section's
+ * text or of an answer): what duplicating or removing it there takes,
+ * the whole section or item, never its field alone.
+ */
+export function ownerOf(node) {
+  const el = elementOf(node);
+  const { kind } = policyOf(el);
+  if (kind === "section" || kind === "item") return el;
+  const parent = el?.parentElement;
+  const theirs = policyOf(parent).kind;
+  if (theirs !== "section" && theirs !== "item") return null;
+  const field = fieldPolicy(el);
+  return field?.single || field?.paste === "line" ? parent : null;
 }
 
 /** The text field holding a node (a paragraph, heading, list item…) inside hax-body, or null. */
