@@ -28,10 +28,13 @@
  * absent are left out. Move up and down go through ops.js there too (the
  * hero and Ready to start stay put). Items that can't run now are shown
  * off, with the reason ("Already first", "Only one per page", "Unlock it
- * first"). Add and Remove column go through layouts.js.
+ * first"). Add and Remove column go through layouts.js. Block ▾ ends with
+ * the block's own: Block settings… (when it has some) and its frame
+ * button (the rubric's Edit rubric), as the selection frame's label has.
  *
  * Words beside the icons (a per-viewer setting, Show labels, on by
- * default, in the first menu) show where the margin has room for them.
+ * default, in the first menu) show where the margin has room for them
+ * beside the selection's handle.
  * Where it has no room even for the icons and the selection's handle
  * (narrow windows, 200% zoom, phones: editorState's geometry.dock), the
  * rail becomes a dock at the bottom of the window, above the on-screen
@@ -45,9 +48,14 @@
  * the rail, Enter, Space and → (↑ in the dock) open a menu, Escape or ←
  * steps back, and Escape on the rail goes back where focus came from (the
  * caret where it was, or the name tag), as running a command from the
- * keyboard does. Keys and pastes stop at the rail, so they never edit the
- * content behind it; Ctrl and ⌘ shortcuts (Save, Undo…) go on to the
- * editor.
+ * keyboard does, and as Escape out of the block list it opened does. Keys
+ * and pastes stop at the rail, so they never edit the content behind it;
+ * Ctrl and ⌘ shortcuts (Save, Undo…) go on to the editor.
+ *
+ * It stays below the editing bar (the part of it a unit scrolling away
+ * takes up under the bar is cut off, unless it has focus or a menu open)
+ * and under the block list while that's open. The dock's height is the
+ * page's --oer-dock-height, which the theme and the toasts keep clear of.
  *
  * It follows the editor's state (editor-state.js), changing as it changes.
  * @element oer-block-rail
@@ -57,6 +65,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { MOD, pressPlate } from "./stock.js";
 import { editorState } from "./editor-state.js";
+import { settingsDialog } from "./oer-settings-dialog.js";
 import { insertCitation, pageReferences, linkReferenceToResource } from "./citations.js";
 import { citeDialog } from "./oer-cite-dialog.js";
 import { saveOutline } from "../outline/outline-model.js";
@@ -66,7 +75,7 @@ import { policyOf, phraseOf } from "./policy.js";
 import { ops } from "./ops.js";
 import { announce } from "./announce.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
-import { describeUnit, nameTagKeydown, runsAlong, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
+import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, watchBlockList, hasSettings, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
 
 const SEP = { sep: true };
 // the room the selection's handle takes between the rail and the text
@@ -303,6 +312,7 @@ class OerBlockRail extends LitElement {
       _labels: { state: true }, // words beside the icons
       _dock: { state: true }, // drawn as the dock at the bottom
       _info: { state: true }, // the selection's name, in the dock
+      _steps: { state: true }, // why the dock's moves are off: [up, down]
     };
   }
 
@@ -315,6 +325,7 @@ class OerBlockRail extends LitElement {
     this._labels = labelsWanted();
     this._dock = false;
     this._info = null;
+    this._steps = ["", ""];
     this.__unit = null;
     // how wide the rail is with its words, by categories
     this.__wide = new Map();
@@ -328,6 +339,11 @@ class OerBlockRail extends LitElement {
       if (this._open && !e.composedPath().includes(this)) this._close();
     };
     this.__viewport = () => this._sync();
+    // under the block list while it's open (focus is in it then)
+    this.__restack = () => {
+      cancelAnimationFrame(this.__stacking);
+      this.__stacking = requestAnimationFrame(() => this.toggleAttribute("under", !!inserter()?.matches(":focus-within")));
+    };
     // HAX acts on keys and pastes anywhere in the window, at the last
     // caret in the content (Enter here split the paragraph): ours stop
     // here, except chords with Ctrl or ⌘ (Save, Exit, Undo and the site
@@ -348,6 +364,7 @@ class OerBlockRail extends LitElement {
     editorState.addEventListener("focusrequest", this.__focusRequest);
     globalThis.addEventListener("keydown", this.__keys, true);
     globalThis.addEventListener("pointerdown", this.__outside, true);
+    for (const type of ["focusin", "keydown", "pointerdown"]) globalThis.addEventListener(type, this.__restack, true);
     // the dock stays above the on-screen keyboard
     globalThis.visualViewport?.addEventListener("resize", this.__viewport);
     globalThis.visualViewport?.addEventListener("scroll", this.__viewport);
@@ -359,6 +376,8 @@ class OerBlockRail extends LitElement {
     editorState.removeEventListener("focusrequest", this.__focusRequest);
     globalThis.removeEventListener("keydown", this.__keys, true);
     globalThis.removeEventListener("pointerdown", this.__outside, true);
+    for (const type of ["focusin", "keydown", "pointerdown"]) globalThis.removeEventListener(type, this.__restack, true);
+    cancelAnimationFrame(this.__stacking);
     globalThis.visualViewport?.removeEventListener("resize", this.__viewport);
     globalThis.visualViewport?.removeEventListener("scroll", this.__viewport);
     super.disconnectedCallback();
@@ -396,6 +415,9 @@ class OerBlockRail extends LitElement {
       this._info = info;
     }
     if (g.dock) {
+      // (the unit's place among the others changes why its moves are off)
+      const steps = [ops.whyNot("move", unit, { dir: -1 }), ops.whyNot("move", unit, { dir: 1 })];
+      if (steps.join("|") !== this._steps.join("|")) this._steps = steps;
       this._placeDock(g);
       return;
     }
@@ -407,17 +429,26 @@ class OerBlockRail extends LitElement {
     }
     const ring = ringOf(unit, g);
     const rail = this.shadowRoot?.querySelector(".rail");
-    const top = railTopOf(ring, g.view, rail?.offsetHeight || 0);
+    const height = rail?.offsetHeight || 0;
+    const held = !!this._open || this.matches(":focus-within");
     const offscreen = !g.visible;
-    if (offscreen && !this._open && !this.matches(":focus-within")) {
+    if (offscreen && !held) {
       this.hidden = true;
       return;
     }
     this.hidden = false;
+    // level with the ring, and below the editing bar: what a unit scrolling
+    // away takes up under the bar is cut off, unless it's in use
+    let top = railTopOf(ring, g.view, height);
+    if (held) top = Math.max(top, g.view.top + 8);
+    const cut = Math.round(g.view.top - top);
+    this.style.clipPath = cut > 0 ? `inset(${cut}px -100vw -100vh -100vw)` : "";
     // words beside the icons where the margin has room for them, and the
-    // selection's handle beside the text
+    // selection's handle between them and the unit (beside the unit's ring,
+    // or inside a unit as wide as the page)
+    const room = ring.inset ? g.gutter : Math.min(g.gutter, ring.left - g.view.left);
     const wide = this.__wide.get(key);
-    const labels = labelsWanted() && (wide === undefined || RAIL_X + wide + 4 + HANDLE_ROOM <= g.gutter);
+    const labels = labelsWanted() && (wide === undefined || RAIL_X + wide + 4 + HANDLE_ROOM <= room);
     if (labels !== this._labels) this._labels = labels;
     this.style.transform = `translate(${Math.round(g.view.left + RAIL_X)}px, ${Math.round(top)}px)`;
   }
@@ -433,6 +464,7 @@ class OerBlockRail extends LitElement {
     }
     if (!this._labels && labelsWanted()) this._labels = true;
     this.style.transform = "";
+    this.style.clipPath = "";
     this.style.setProperty("--dock-left", `${Math.round(g.view.left)}px`);
     this.style.setProperty("--dock-right", `${Math.round(Math.max(0, globalThis.innerWidth - g.view.right))}px`);
     this.style.setProperty("--dock-bottom", `${Math.round(keyboard)}px`);
@@ -453,16 +485,16 @@ class OerBlockRail extends LitElement {
 
   // how much of the window the dock covers: for the content view, and for
   // the scrollers' padding (so focus is never hidden under it, and the
-  // page's end scrolls clear of it: the theme's --oer-dock-height)
+  // page's end scrolls clear of it: --oer-dock-height, which the theme and
+  // the toasts read)
   _dockHeight(height) {
     if (editorState.dockHeight !== height) editorState.set({ dockHeight: height });
-    const theme = globalThis.document.querySelector("custom-oer-docs-theme");
     const root = globalThis.document.documentElement;
     if (height) {
-      theme?.style.setProperty("--oer-dock-height", `${height}px`);
+      root.style.setProperty("--oer-dock-height", `${height}px`);
       root.style.setProperty("scroll-padding-bottom", `${height}px`);
     } else {
-      theme?.style.removeProperty("--oer-dock-height");
+      root.style.removeProperty("--oer-dock-height");
       root.style.removeProperty("scroll-padding-bottom");
     }
   }
@@ -476,8 +508,14 @@ class OerBlockRail extends LitElement {
     if (cat.id === "item") return this._itemItems(cat.unit);
     const items = this._stockItems(cat);
     if (cat.id === "block") {
-      const own = await ceButtonsOf(this.__unit);
-      if (own.length) items.push(SEP, ...own.map((b) => ({ label: b.label, icon: b.icon, run: b.run })));
+      const unit = this.__unit;
+      const own = (await ceButtonsOf(unit)).map((b) => ({ label: b.label, icon: b.icon, run: b.run }));
+      // the frame label's buttons, for the keyboard here too (focus goes
+      // back to where it was as the menu ran it: the name tag, or the caret)
+      if (unit && hasSettings(unit)) own.unshift({ label: "Block settings…", icon: "sliders-horizontal", opens: true, run: () => settingsDialog().open("settings", deepActive()) });
+      const action = unit?.constructor?.frameAction;
+      if (action) own.push({ label: action.label, icon: action.icon, opens: true, run: () => action.run(unit) });
+      if (own.length) items.push(SEP, ...own);
     }
     return items;
   }
@@ -523,8 +561,8 @@ class OerBlockRail extends LitElement {
     if (source) out.push({ label: source.label, icon: "arrow-right", run: source.run, opens: true }, SEP);
     out.push(this._verb(section, "Move up", "arrow-up", "move", { dir: -1 }), this._verb(section, "Move down", "arrow-down", "move", { dir: 1 }), SEP);
     out.push(
-      { label: "Add above…", icon: "arrow-up-to-line", disabled: pin === "first", hint: pin === "first" ? stays : "", opens: true, run: () => inserter()?.openFor(section, "above") },
-      { label: "Add below…", icon: "arrow-down-to-line", disabled: pin === "last", hint: pin === "last" ? stays : "", opens: true, run: () => inserter()?.openFor(section, "below") },
+      { label: "Add above…", icon: "arrow-up-to-line", disabled: pin === "first", hint: pin === "first" ? stays : "", opens: true, list: true, run: () => inserter()?.openFor(section, "above") },
+      { label: "Add below…", icon: "arrow-down-to-line", disabled: pin === "last", hint: pin === "last" ? stays : "", opens: true, list: true, run: () => inserter()?.openFor(section, "below") },
       this._verb(section, "Duplicate", "copy", "duplicate"),
     );
     if (hide) {
@@ -640,6 +678,7 @@ class OerBlockRail extends LitElement {
         shortcut: spec.shortcut,
         danger: spec.danger,
         opens: !!spec.insert,
+        list: !!spec.insert,
         disabled: off,
         hint: !available ? needs : off ? offReason(plate, el) : "",
         pressed: spec.toggle && available ? !!el.toggled : undefined,
@@ -730,7 +769,8 @@ class OerBlockRail extends LitElement {
    * 0), focus then goes back where it came from, unless the command put it
    * somewhere (a dialog, the block list, a name tag); something that opens
    * a dialog finds focus back there first, to give it back to as it
-   * closes. (A click leaves focus where it was: the rail never takes it.)
+   * closes, and Escape out of the block list comes back there too. (A
+   * click leaves focus where it was: the rail never takes it.)
    */
   _run(item, e) {
     if (item.disabled || item.sep) return;
@@ -742,6 +782,7 @@ class OerBlockRail extends LitElement {
     this._close();
     if (item.opens && keys) this._back({ quiet: true });
     item.run();
+    if (item.list && keys) watchBlockList(() => this._back());
     if (!keys || item.opens) return;
     requestAnimationFrame(() => {
       const focus = deepActive();
@@ -792,6 +833,7 @@ class OerBlockRail extends LitElement {
   /** Focus on the selection's name tag in the dock, drawn for unit now. Returns whether it took it. */
   focusTag(unit) {
     if (!unit?.isConnected || !editorState.geometry?.dock) return false;
+    bringIntoView(unit);
     this._placeDock(editorState.geometry);
     this._info = describeUnit(unit);
     this.updateComplete.then(() => this.shadowRoot.querySelector(".dock .tag")?.focus({ preventScroll: true }));
@@ -1035,6 +1077,8 @@ class OerBlockRail extends LitElement {
 
   static get styles() {
     return css`
+      /* above the selection frame (9985) and the inserter's gaps (9989);
+         under the block list while it's open, and sheets (Style, 9998) */
       :host {
         position: fixed;
         top: 0;
@@ -1045,6 +1089,9 @@ class OerBlockRail extends LitElement {
       }
       :host([hidden]) {
         display: none;
+      }
+      :host([under]) {
+        z-index: 9988;
       }
       :host([dock]) {
         top: auto;
@@ -1389,7 +1436,7 @@ class OerBlockRail extends LitElement {
     const unit = this._info?.unit;
     const along = unit && runsAlong(unit);
     const step = (dir) => {
-      const why = unit ? ops.whyNot("move", unit, { dir }) : "";
+      const why = this._steps[dir < 0 ? 0 : 1];
       const label = along ? (dir < 0 ? "Move earlier" : "Move later") : dir < 0 ? "Move up" : "Move down";
       return html`<button
         class="step"

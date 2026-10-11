@@ -30,8 +30,10 @@
  *
  * It changes in one requestAnimationFrame loop, run only while editing,
  * and sends `change` with detail.changed (a Set of the names that
- * changed). `focusrequest` (cancelable, detail.unit) asks whoever draws the
- * selection to put focus on a unit selected as a whole (its name tag).
+ * changed); update() catches up at once (a selection just made, before
+ * anything is drawn for it). `focusrequest` (cancelable, detail.unit) asks
+ * whoever draws the selection to put focus on a unit selected as a whole
+ * (its name tag).
  *
  * Unsaved changes come from a baseline, not from HAX's undo position (which
  * no event follows): hax-body's HTML without what editing adds
@@ -261,6 +263,11 @@ class EditorState extends EventTarget {
   // what's selected and where, each frame while editing
   _tick() {
     this.__raf = requestAnimationFrame(this.__tick);
+    this.update();
+  }
+
+  /** What's selected and where, now. */
+  update() {
     const body = activeBody();
     const editing = !!body?.editMode;
     const node = editing ? haxStore().activeNode : null;

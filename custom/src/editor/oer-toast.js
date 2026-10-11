@@ -90,10 +90,11 @@ class OerToast extends LitElement {
 
   static get styles() {
     return css`
+      /* above the editor's selection dock on phones (oer-block-rail) */
       :host {
         position: fixed;
         right: 1rem;
-        bottom: 1rem;
+        bottom: calc(1rem + var(--oer-dock-height, 0px));
         z-index: 100001;
         display: flex;
         flex-direction: column;

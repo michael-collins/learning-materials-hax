@@ -182,9 +182,11 @@ class OerSiteStyle extends LitElement {
           font-family: var(--font-sans, system-ui, sans-serif);
           color: var(--popover-foreground, var(--foreground));
         }
+        /* over the editor, its selection chrome included (oer-block-frame,
+           oer-block-rail), and under dialogs */
         .sheet {
           position: fixed;
-          z-index: 1000;
+          z-index: 9998;
           top: calc(var(--editor-bar-height, 0px) + 0.5rem);
           right: 0.5rem;
           bottom: 0.5rem;

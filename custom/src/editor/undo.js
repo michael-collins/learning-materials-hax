@@ -41,7 +41,10 @@
  *   it came from a control), as the place they're in now may not be there
  *   after it (the outcome Undo takes away), or may be another field at the
  *   same place. When the place is gone, the block HAX made active again
- *   takes it.
+ *   takes it. From a unit's name tag (selected as a whole, oer-block-frame),
+ *   Undo of a change made there goes back to the unit where it began
+ *   (Redo, where it ended), selected as a whole, with focus on its name tag
+ *   again (the frame's focusTag): HAX's undo takes focus to the content.
  * - What Undo and Redo put back is editable as HAX made it: its starting
  *   copy (undoStackInitialValue) is taken before it has made the page's
  *   blocks editable, so an Undo back to the start put back sections and
@@ -70,7 +73,8 @@
  */
 import { isMac } from "./stock.js";
 import { onDefined, pinned } from "./hax-fixes.js";
-import { fieldOf } from "./policy.js";
+import { fieldOf, unitOf } from "./policy.js";
+import { getEditRange, editSelection } from "../ui/edit-selection.js";
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
@@ -83,6 +87,12 @@ function deepActive() {
   let el = globalThis.document.activeElement;
   while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
   return el;
+}
+// the selection's name tag (oer-block-frame's, or the phone dock's in
+// oer-block-rail), when it has focus
+function nameTag() {
+  const el = deepActive();
+  return el?.classList?.contains("tag") && el.getRootNode()?.host?.matches?.("oer-block-frame, oer-block-rail") ? el : null;
 }
 
 // the attributes HAX never saves for a tag (its haxProperties'
@@ -382,10 +392,12 @@ async function step(again, { place } = {}) {
   // focus is in the content. From the editor's own buttons, focus stays on
   // the button
   const inContent = deepActive() === body;
+  // (on a name tag, the unit selected as a whole)
+  const tag = inContent ? null : nameTag();
   const stack = body.undoStack;
   const around = places.get(stack.commands[again ? stack.undoStackPosition + 1 : stack.undoStackPosition]);
   const made = around?.[again ? "after" : "before"];
-  place ??= inContent ? made || placeOf(body) : null;
+  place ??= inContent || tag ? made || placeOf(body) : null;
   const label = stepLabel(body, { redo: again });
   const possible = again ? stack.canRedo() : stack.canUndo();
   if (again) body.redo();
@@ -401,8 +413,18 @@ async function step(again, { place } = {}) {
   if (!body.editMode) return true;
   const lost = !deepActive() || deepActive() === globalThis.document.body;
   if (lost) place ??= made;
-  if (!returnTo(body, place) && (place || inContent || lost)) returnToActive(body);
+  const returned = returnTo(body, place);
+  if (!returned && (place || inContent || lost)) returnToActive(body);
   await rehydrate(body);
+  // from a name tag, to a unit selected as a whole: focus on its name tag
+  // again, with no caret (Chrome puts one at the content's start as blocks
+  // are made editable again)
+  const active = haxStore().activeNode;
+  if (tag && unitOf(active) === active && (returned ? place.text === null : !haxStore().isTextElement?.(active))) {
+    const caret = getEditRange(body);
+    if (caret && body.contains(caret.startContainer)) editSelection(body)?.removeAllRanges();
+    globalThis.document.querySelector("oer-block-frame")?.focusTag?.(active);
+  }
   return true;
 }
 

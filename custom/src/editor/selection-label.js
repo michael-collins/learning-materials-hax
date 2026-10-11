@@ -14,6 +14,11 @@
  *     chips   its state: [{ id: "hidden" | "empty" | "source", label, run? }]
  *   nameTagKeydown(e, unit, { actions })   true when it handled the key
  *   parentUnit(unit)                       the level above, or null
+ *   bringIntoView(unit)                    scrolls it into view for its name
+ *                                          tag, when too little of it shows
+ *   watchBlockList(back)                   Escape out of the block list
+ *                                          just opened gives focus back
+ *   hasSettings(unit)                      whether a block has settings
  *   ringOf(unit, geometry), railTopOf(ring, view, height), RAIL_X
  *                                          where the ring and the rail go
  *
@@ -25,20 +30,31 @@
  *                    the unit before or after it, the first or the last
  *   Alt+Shift+arrows move it (ops.js)
  *   Mod+Enter        add after it: an item of its kind, or (a section, a
- *                    block) the block list for the gap below it
+ *                    block) the block list for the gap below it (Escape
+ *                    there comes back to the name tag)
  *   Mod+Shift+D      duplicate it
  *   Delete           remove it (Backspace too: there's no text to delete)
  *   Shift+F10        its actions (the rail's menu for it)
  * Moving to another unit says its name in the live region, as focus stays
- * on the same name tag.
+ * on the same name tag, and brings it into view: focus on a name tag
+ * scrolled away is focus no one can see (WCAG 2.4.11).
  */
 import { policyOf, labelOf, phraseOf, unitOf, TEXT_FIELDS } from "./policy.js";
 import { ops, peersOf, HIDDEN } from "./ops.js";
 import { announce } from "./announce.js";
 import { isMac } from "./stock.js";
+import { editorState, contentView } from "./editor-state.js";
 
 const plural = (n, noun) => `${n} ${noun}${n === 1 ? "" : "s"}`;
 const isBody = (el) => el?.localName === "hax-body";
+const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
+
+// focus as the person sees it, inside shadow roots
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
 
 /** Whether an item's units run along a line (cards, chips), so ← → move between them. */
 export function runsAlong(unit) {
@@ -148,7 +164,10 @@ export function nameTagKeydown(e, unit, { actions } = {}) {
     const { kind, pin } = policyOf(unit);
     if (kind === "item") ops.addItem(unit);
     else if (pin === "last") announce(`${phraseOf(unit, { start: true })} stays at the end`);
-    else globalThis.document.querySelector("oer-block-inserter")?.openFor(unit, "below");
+    else {
+      globalThis.document.querySelector("oer-block-inserter")?.openFor(unit, "below");
+      watchBlockList(() => editorState.requestFocus(unit));
+    }
     return true;
   }
   if ((e.shiftKey && e.key === "F10") || e.key === "ContextMenu") {
@@ -188,6 +207,71 @@ export function nameTagKeydown(e, unit, { actions } = {}) {
   if (next) go(next);
   else announce(ARROWS[e.key] < 0 ? "Already the first" : "Already the last");
   return true;
+}
+
+/* ---------- focus that can be seen, and comes back ---------- */
+
+// how much of a unit shows, at least, for its name tag and ring to show
+const SHOWN = 48;
+// and how far inside the content view it's brought
+const MARGIN = 8;
+
+/**
+ * Scroll the content so a unit whose name tag takes focus shows: when
+ * less than SHOWN px of it is in the content view (below the editing bar,
+ * above the dock), all of it, or its top when it's taller than the view.
+ * Measured now, as the editor's state may not have caught up.
+ */
+export function bringIntoView(unit) {
+  if (!unit?.isConnected) return;
+  const view = contentView();
+  const r = unit.getBoundingClientRect();
+  const shown = Math.min(r.bottom, view.bottom) - Math.max(r.top, view.top);
+  if (!r.height || shown >= Math.min(SHOWN, r.height)) return;
+  const tall = r.height > view.bottom - view.top - 2 * MARGIN;
+  const dy = tall || r.top < view.top ? r.top - (view.top + MARGIN) : r.bottom - (view.bottom - MARGIN);
+  const main = globalThis.document.querySelector("custom-oer-docs-theme")?.shadowRoot?.querySelector("main");
+  if (view.scroller === "main" && main) main.scrollBy({ top: dy });
+  else globalThis.scrollBy({ top: dy });
+}
+
+/**
+ * The block list (oer-block-inserter) was just opened from the keyboard:
+ * Escape out of it gives focus back (back()), which the list, opened from
+ * its own gaps too, doesn't know to do. Anything else done there (adding a
+ * block, a click elsewhere) ends the watch.
+ */
+export function watchBlockList(back) {
+  const list = globalThis.document.querySelector("oer-block-inserter");
+  if (!list) return;
+  const stop = () => {
+    globalThis.removeEventListener("keydown", key, true);
+    globalThis.removeEventListener("pointerdown", stop, true);
+  };
+  const key = (e) => {
+    if (!e.composedPath().includes(list) || e.key === "Enter") stop();
+    else if (e.key === "Escape") {
+      stop();
+      // (once the list has closed)
+      setTimeout(() => {
+        const focus = deepActive();
+        if (!focus || focus === globalThis.document.body) back();
+      });
+    }
+  };
+  globalThis.addEventListener("keydown", key, true);
+  globalThis.addEventListener("pointerdown", stop, true);
+}
+
+/**
+ * Whether a block has settings to show: HAX's fields for it (until
+ * editor-redesign WP-13's block-settings.js hasSettings, which curates
+ * them, takes this one's place). The frame's label and the rail's Block ▾
+ * offer Block settings for it.
+ */
+export function hasSettings(node) {
+  const settings = haxStore()?.haxSchemaFromTag?.(node.localName)?.settings || {};
+  return [...(settings.configure || []), ...(settings.advanced || [])].length > 0;
 }
 
 /* ---------- where the selection's tools go ---------- */

@@ -20,21 +20,27 @@
  *   move it through ops.js; the grip drags it to the slots it may go to
  *   (never into columns for a section, never past the hero or Ready to
  *   start); Escape cancels a drag. A unit that stays put (the hero) has
- *   them off, with the reason.
+ *   them off, with the reason. The handle is for the pointer: the name
+ *   tag's keys move it (Alt+Shift+arrows).
  * - The label is a toolbar ("Selection"): the levels around the unit
  *   (each selects its level), the unit's name tag, its state (Hidden,
  *   Empty: readers won't see it, and where a generated section's content
  *   comes from, which opens it), and for an ordinary block Block settings
  *   (only when it has settings) and Layout (columns). A block can add its
  *   own button with a static `frameAction`: { label, icon (an oer: Lucide
- *   name), run(node) }, e.g. the rubric block's Edit rubric.
+ *   name), run(node) }, e.g. the rubric block's Edit rubric. Tab goes from
+ *   the name tag to the buttons after it (← → move between them), as the
+ *   name tag's arrows go to other units; the rail's Block ▾ has them too.
  * - The name tag holds focus while a unit is selected as a whole: ops.js
  *   asks for it (editorState `focusrequest`: Escape from a field, a unit
- *   selected by a key), and a click on a unit's padding gives it. Its keys
- *   are selection-label.js nameTagKeydown (Enter, Escape, arrows, Home,
- *   End, Alt+Shift+arrows, Mod+Shift+D, Delete, Shift+F10).
+ *   selected by a key, Undo of a change made from it), and a click on a
+ *   unit's padding gives it (a second click too). Taking focus brings the
+ *   unit into view when too little of it shows. Its keys are
+ *   selection-label.js nameTagKeydown (Enter, Escape, arrows, Home, End,
+ *   Alt+Shift+arrows, Mod+Shift+D, Delete, Shift+F10).
  * - Everything is clipped to the content view (below the editing bar,
- *   above the phone dock) and drawn under the editor's menus and flyouts.
+ *   above the phone dock) and drawn under the editor's menus, flyouts and
+ *   sheets (Style).
  *   Where the margin beside the text is too narrow for the rail (narrow
  *   windows, phones), the label and the handle go into the rail's dock
  *   and the frame draws the ring alone.
@@ -42,8 +48,9 @@
  * And the regions: Ctrl+` (and F6, where the browser passes it) goes to
  * the next region, Ctrl+Shift+` (Shift+F6) to the one before: the editing
  * bar, the Sections sheet, the selection (its name tag), the content (the
- * caret where it was). Escape in an ordinary block's text selects the
- * block, as it does in a section's fields (blocks/course-site/cs-keys.js).
+ * caret where it was, unless another unit has been selected since: then
+ * its first field). Escape in an ordinary block's text selects the block,
+ * as it does in a section's fields (blocks/course-site/cs-keys.js).
  *
  * It follows the editor's state (editor-state.js), changing as it changes.
  * Replaces HAX's outline on [data-hax-active] (see editor-skin.js) and the
@@ -62,7 +69,7 @@ import { checkpoint } from "./undo.js";
 import { announce } from "./announce.js";
 import { onEditEntry } from "./hax-fixes.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
-import { describeUnit, nameTagKeydown, runsAlong, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
+import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, hasSettings, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -74,6 +81,9 @@ const STEP = 24;
 // how long after a click in the content a unit selected as a whole takes
 // focus on its name tag
 const CLICK_WINDOW = 1500;
+// how long after an Undo or Redo HAX has scrolled to the block it made
+// active (hax-body.js undo 4237: scrollHere, 100 ms later)
+const AFTER_UNDO = 250;
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const rail = () => globalThis.document.querySelector("oer-block-rail");
@@ -83,14 +93,6 @@ function deepActive() {
   let el = globalThis.document.activeElement;
   while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
   return el;
-}
-
-// whether a block has settings to show: HAX's fields for it (until
-// editor-redesign WP-13's block-settings.js hasSettings, which curates them,
-// takes this one's place)
-function hasSettings(node) {
-  const settings = haxStore()?.haxSchemaFromTag?.(node.localName)?.settings || {};
-  return [...(settings.configure || []), ...(settings.advanced || [])].length > 0;
 }
 
 // the first control that takes focus in an element, through its shadow root
@@ -138,7 +140,7 @@ class OerBlockFrame extends LitElement {
     this.__labelSize = { width: 0, height: 24 };
     this.__changed = () => this._sync();
     this.__focusRequest = (e) => {
-      if (this._focusTag(e.detail?.unit)) e.preventDefault();
+      if (this.focusTag(e.detail?.unit)) e.preventDefault();
     };
     this.__outside = (e) => {
       if (this._menu && !e.composedPath().includes(this)) this._menu = false;
@@ -147,9 +149,32 @@ class OerBlockFrame extends LitElement {
       const body = haxStore()?.activeHaxBody;
       if (e.button === 0 && body && e.composedPath().includes(body)) this.__clicked = performance.now();
     };
+    // (after HAX's handling of the click, and the editor's: editor-state.js _clicked)
+    this.__click = (e) => {
+      const body = editorState.body;
+      if (e.button === 0 && body && e.composedPath().includes(body)) setTimeout(() => this._clickedAgain());
+    };
     this.__keys = (e) => this._windowKeys(e);
     this.__escape = (e) => this._escapeInText(e);
+    // HAX scrolls to the block it made active a moment after an Undo, which
+    // needn't be the unit selected now: once it has, a unit whose name tag
+    // has focus is brought back into view
+    this.__undone = () => {
+      clearTimeout(this.__afterUndo);
+      this.__afterUndo = setTimeout(() => {
+        const unit = editorState.unit;
+        if (unit?.isConnected && editorState.mode === "selected" && deepActive()?.classList?.contains("tag")) bringIntoView(unit);
+      }, AFTER_UNDO);
+    };
     this.__listening = new WeakSet();
+    // HAX acts on keys anywhere in the window, at the last caret in the
+    // content: the label's keys stop here (as the rail's do), but chords
+    // with Ctrl or ⌘ (Save, Undo…)
+    const stop = (e) => {
+      if (!e.ctrlKey && !e.metaKey) e.stopPropagation();
+    };
+    this.addEventListener("keydown", stop);
+    this.addEventListener("keyup", stop);
   }
 
   connectedCallback() {
@@ -160,6 +185,8 @@ class OerBlockFrame extends LitElement {
     globalThis.addEventListener("keydown", this.__keys, true);
     globalThis.addEventListener("pointerdown", this.__outside, true);
     globalThis.addEventListener("pointerdown", this.__pointer, true);
+    globalThis.addEventListener("click", this.__click, true);
+    globalThis.addEventListener("oer-undo", this.__undone);
     // (after the fields' own keys, editor/field-keys.js, which take Escape
     // in a section's fields)
     onEditEntry((body) => {
@@ -176,6 +203,9 @@ class OerBlockFrame extends LitElement {
     globalThis.removeEventListener("keydown", this.__keys, true);
     globalThis.removeEventListener("pointerdown", this.__outside, true);
     globalThis.removeEventListener("pointerdown", this.__pointer, true);
+    globalThis.removeEventListener("click", this.__click, true);
+    globalThis.removeEventListener("oer-undo", this.__undone);
+    clearTimeout(this.__afterUndo);
     super.disconnectedCallback();
   }
 
@@ -214,7 +244,20 @@ class OerBlockFrame extends LitElement {
     if (!this.__clicked || performance.now() - this.__clicked > CLICK_WINDOW) return;
     this.__clicked = 0;
     const focus = deepActive();
-    if (!focus || focus === globalThis.document.body || focus === editorState.body) this._focusTag(unit);
+    if (!focus || focus === globalThis.document.body || focus === editorState.body) this.focusTag(unit);
+  }
+
+  // a click on the unit already selected as a whole (its padding again):
+  // the click took focus to the content, or the page, with no caret; it
+  // goes back to the name tag
+  _clickedAgain() {
+    const unit = this.__unit;
+    const body = editorState.body;
+    if (!unit?.isConnected || !body || haxStore()?.activeNode !== unit || this.__seen?.unit !== unit || this.__seen?.mode !== "selected") return;
+    const caret = getEditRange(body);
+    if (caret && body.contains(caret.startContainer)) return;
+    const focus = deepActive();
+    if (!focus || focus === globalThis.document.body || focus === body) this.focusTag(unit);
   }
 
   // where everything goes, for unit at geometry g (the store's, or measured now)
@@ -232,14 +275,12 @@ class OerBlockFrame extends LitElement {
       // and what they hold have neither (nothing of theirs is set in settings,
       // and sections never go in columns)
       this._tools = { settings: block && hasSettings(unit), layout: block };
-      this._handle = this._handleFor(unit);
     }
     const info = describeUnit(unit);
-    if (!same(drawn(info), drawn(this._info))) {
-      this._info = info;
-      // (its place among the others changes the reasons)
-      this._handle = this._handleFor(unit);
-    }
+    if (!same(drawn(info), drawn(this._info))) this._info = info;
+    // (its place among the others changes the reasons: "Already first")
+    const handle = this._handleFor(unit);
+    if (!same(handle, this._handle)) this._handle = handle;
     this.hidden = false;
     this.toggleAttribute("docked", !!g.dock);
     const view = g.view;
@@ -347,10 +388,14 @@ class OerBlockFrame extends LitElement {
   /**
    * Focus on a unit's name tag (in the dock, the rail's): drawn for it now,
    * as the editor's state may not have caught up with a selection just
-   * made. Returns whether one takes it.
+   * made. Returns whether one takes it. (undo.js asks for it too, after an
+   * Undo from a name tag.)
    */
-  _focusTag(unit) {
+  focusTag(unit) {
     if (!unit?.isConnected || !editorState.editing) return false;
+    bringIntoView(unit);
+    // (so what's drawn from the state before the next frame doesn't undo this)
+    editorState.update();
     if (editorState.geometry?.dock) return !!rail()?.focusTag?.(unit);
     const r = unit.getBoundingClientRect();
     const view = contentView();
@@ -363,7 +408,7 @@ class OerBlockFrame extends LitElement {
   // the unit's actions (Shift+F10): the rail's menu for it, focus back here
   _actions() {
     const unit = this.__unit;
-    rail()?.openActions?.(unit, () => this._focusTag(unit));
+    rail()?.openActions?.(unit, () => this.focusTag(unit));
   }
 
   _tagKeys(e) {
@@ -371,6 +416,18 @@ class OerBlockFrame extends LitElement {
       e.preventDefault();
       e.stopPropagation();
     }
+  }
+
+  // ← → Home End between the label's buttons after the name tag (whose own
+  // arrows go to other units)
+  _labelKeys(e) {
+    if (e.target.classList?.contains("tag") || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    const buttons = [...this.shadowRoot.querySelectorAll(".label button:not([tabindex='-1'])")];
+    const i = buttons.indexOf(e.target);
+    const to = { ArrowLeft: i - 1, ArrowRight: i + 1, Home: 0, End: buttons.length - 1 }[e.key];
+    if (i < 0 || to === undefined) return;
+    e.preventDefault();
+    buttons[Math.max(0, Math.min(buttons.length - 1, to))]?.focus();
   }
 
   /* ---------- keys ---------- */
@@ -422,12 +479,13 @@ class OerBlockFrame extends LitElement {
     const regions = [
       { id: "bar", here: (n) => n === bar, go: () => firstFocusable(bar)?.focus(), can: () => shown(bar) && !!firstFocusable(bar) },
       { id: "sheet", here: (n) => n === sheet, go: () => (typeof sheet.focusTree === "function" ? sheet.focusTree() : firstFocusable(sheet)?.focus()), can: () => shown(sheet) && !!firstFocusable(sheet) },
-      { id: "selection", here: (n) => n === this || n === rail(), go: () => this._focusTag(unit), can: () => !!unit?.isConnected },
+      { id: "selection", here: (n) => n === this || n === rail(), go: () => this.focusTag(unit), can: () => !!unit?.isConnected },
       { id: "content", here: (n) => n === body, go: () => this._toContent(unit), can: () => !!body },
     ];
     const at = regions.findIndex((r) => path.some((n) => r.here(n)));
-    // leaving the content: where the caret was, to come back to
-    if (regions[at]?.id === "content") this.__caret = getEditRange(body);
+    // leaving the content: where the caret was, to come back to while the
+    // same unit is selected
+    if (regions[at]?.id === "content") this.__caret = { range: getEditRange(body), unit };
     // (from outside them all: the first, or with Shift the last)
     const step = e.shiftKey ? -1 : 1;
     const n = regions.length;
@@ -441,11 +499,12 @@ class OerBlockFrame extends LitElement {
     }
   }
 
-  // back into the content: the caret where it was, or into the unit's first field
+  // back into the content: the caret where it was (when the unit it was in
+  // is still the one selected), or into the unit's first field
   _toContent(unit) {
     const body = editorState.body;
     if (!body) return;
-    const at = this.__caret;
+    const at = this.__caret?.unit === unit ? this.__caret.range : null;
     this.__caret = null;
     if (at?.startContainer.isConnected && body.contains(at.startContainer)) {
       body.focus({ preventScroll: true });
@@ -507,17 +566,6 @@ class OerBlockFrame extends LitElement {
   _move(dir) {
     const unit = this.__unit;
     if (unit) ops.move(unit, dir);
-  }
-
-  _gripKeys(e) {
-    const along = this._handle?.along;
-    const back = e.key === "ArrowUp" || (along && e.key === "ArrowLeft");
-    const on = e.key === "ArrowDown" || (along && e.key === "ArrowRight");
-    if (back || on) {
-      e.preventDefault();
-      e.stopPropagation();
-      this._move(back ? -1 : 1);
-    }
   }
 
   _pointerDown(e) {
@@ -971,7 +1019,7 @@ class OerBlockFrame extends LitElement {
     if (!info) return "";
     const unit = this.__unit;
     const inLayout = this._layout && this._layout !== unit;
-    return html`<div class="label" role="toolbar" aria-label="Selection" @mousedown="${(e) => e.preventDefault()}">
+    return html`<div class="label" role="toolbar" aria-label="Selection" @mousedown="${(e) => e.preventDefault()}" @keydown="${this._labelKeys}">
       ${info.crumbs.map(
         (c) => html`<button class="crumb" tabindex="-1" title="Select ${c.label}" @click="${() => ops.select(c.unit)}">${c.label}</button
           ><span class="sep" aria-hidden="true">›</span>`,
@@ -981,13 +1029,12 @@ class OerBlockFrame extends LitElement {
       </button>
       ${info.chips.map((c) =>
         c.run
-          ? html`<button class="chip" tabindex="-1" title="${c.label}: open it" @click="${() => c.run()}">${c.label}${icon("arrow-right")}</button>`
+          ? html`<button class="chip" title="${c.label}: open it" @click="${() => c.run()}">${c.label}${icon("arrow-right")}</button>`
           : html`<span class="chip">${c.label}</span>`,
       )}
       ${this._tools.settings
         ? html`<button
             class="lay"
-            tabindex="-1"
             title="Block settings"
             aria-label="Block settings"
             aria-haspopup="dialog"
@@ -1003,7 +1050,6 @@ class OerBlockFrame extends LitElement {
       ${this._tools.layout
         ? html`<button
             class="lay"
-            tabindex="-1"
             title="Layout options"
             aria-label="Layout options"
             aria-haspopup="menu"
@@ -1014,12 +1060,11 @@ class OerBlockFrame extends LitElement {
           </button>`
         : ""}
       ${inLayout && !info.crumbs.some((c) => c.unit === this._layout)
-        ? html`<button class="crumb" tabindex="-1" title="Select the column layout" @click="${this._selectLayout}">Columns</button>`
+        ? html`<button class="crumb" title="Select the column layout" @click="${this._selectLayout}">Columns</button>`
         : ""}
       ${this._action
         ? html`<button
             class="act"
-            tabindex="-1"
             @click="${() => {
               this._menu = false;
               this._action.run(unit);
@@ -1078,14 +1123,13 @@ class OerBlockFrame extends LitElement {
         ? html`<button
             class="grip"
             tabindex="-1"
-            title="${h.gripWhy ? `Drag to move: ${h.gripWhy}` : "Drag to move (or use the arrow keys)"}"
-            aria-label="Drag to move, or press the arrow keys"
+            title="${h.gripWhy ? `Drag to move: ${h.gripWhy}` : "Drag to move"}"
+            aria-label="Drag to move"
             aria-disabled="${h.gripWhy ? "true" : "false"}"
             @pointerdown="${this._pointerDown}"
             @pointermove="${this._pointerMove}"
             @pointerup="${this._pointerUp}"
             @pointercancel="${() => this._endDrag(false)}"
-            @keydown="${this._gripKeys}"
           >
             ${icon("grip-vertical")}
           </button>`
