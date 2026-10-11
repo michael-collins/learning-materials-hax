@@ -83,12 +83,16 @@ export async function unsaved() {
 
 /**
  * Whether something is typed and not on the page yet, as far as can be
- * told at once (beforeunload can't wait): in Edit HTML, or in a field that
- * commits as focus leaves it.
+ * told at once (beforeunload can't wait): in Edit HTML, in a field that
+ * commits as focus leaves it, or in the image popover before its Done.
  */
 export function typedNotOnPage() {
-  return !!typedField() || sourceTyped();
+  return !!typedField() || sourceTyped() || !!draftOpen();
 }
+
+// a popover over the content holding what isn't on the page yet (the image
+// popover: data-oer-draft), which commitDraft() puts there
+const draftOpen = () => globalThis.document.querySelector("[data-oer-draft]");
 
 /* ---------- fields that commit as focus leaves them ---------- */
 
@@ -130,6 +134,7 @@ function typedField() {
 // what's typed there, committed as Enter would (and the field's own
 // element has drawn the change)
 async function commitField() {
+  await draftOpen()?.commitDraft?.();
   const el = typedField();
   if (!el) return;
   el.dispatchEvent(new Event("change", { bubbles: true }));

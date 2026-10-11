@@ -5,7 +5,8 @@
  * something; it never stops a save.
  *
  * - The hero's picture has no description (and isn't marked as decoration):
- *   Add a description, which opens its image field.
+ *   Add a description, which opens its image popover with focus in the
+ *   description (and gives focus to Change image as it closes).
  * - A written section is empty, so readers won't see it: Go to it.
  * - The course site has no enroll link: Open Page details, at that field.
  * - An outcome or a question without its title: Go to it.
@@ -15,7 +16,8 @@
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { policyOf, labelOf } from "./policy.js";
-import { HIDDEN, select, caretInto } from "./ops.js";
+import { HIDDEN, select, caretInto, changeImage } from "./ops.js";
+import { imagePopover } from "./oer-image-popover.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { siteData, COURSE_SITE_TYPE } from "../types/course-site.js";
 
@@ -52,10 +54,8 @@ export function presaveChecks(body, site) {
       fix: "Add a description",
       run: async () => {
         select(hero, { focus: false });
-        // (Change image toggles the image field: opened only if it's shut)
-        if (!hero._imageField) hero.shadowRoot?.querySelector(".change-image")?.click();
-        await hero.updateComplete;
-        await focusStays(hero.shadowRoot?.querySelector("oer-image-field")?.shadowRoot?.querySelector(".alt input"));
+        await changeImage(hero, { focus: "alt", opener: hero.shadowRoot?.querySelector(".change-image") });
+        await focusStays(imagePopover().shadowRoot?.querySelector("oer-image-field")?.shadowRoot?.querySelector(".alt input"));
       },
     });
   }

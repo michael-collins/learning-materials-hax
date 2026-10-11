@@ -71,8 +71,11 @@
  *   never a pick there. rich-text-editor/lib/buttons/rich-text-editor-
  *   picker.js _setRangeValue 214–224, _pickerChange 260–268.
  * - Links in the content don't leave the page mid-edit (losing the edit);
- *   Mod+click opens them in a new tab. The router skips a click whose
- *   default is prevented: haxcms-elements/lib/core/hax-router.js 43.
+ *   Mod+click opens them in a new tab, and a click shows the link popover's
+ *   bubble (Open in new tab, and Edit link and Remove link for a link in
+ *   what's typed: oer-link-popover.js, told with `oer-link-click`). The
+ *   router skips a click whose default is prevented:
+ *   haxcms-elements/lib/core/hax-router.js 43.
  * - Leaving the editor asks our question (stock.js cancelEdit), also from
  *   its keyboard shortcut. haxcms-elements/lib/core/haxcms-site-editor-ui.js
  *   _cancelButtonTap 6707, shortcut 5551.
@@ -195,7 +198,13 @@ function holdLinks(e) {
   const link = path.slice(0, path.indexOf(body)).find((el) => el.localName === "a" && el.hasAttribute("href"));
   if (!link) return;
   e.preventDefault();
-  if (isMac ? e.metaKey : e.ctrlKey) globalThis.open(link.href, "_blank", "noopener");
+  if (isMac ? e.metaKey : e.ctrlKey) {
+    globalThis.open(link.href, "_blank", "noopener");
+    return;
+  }
+  // (a link a block draws in its own shadow DOM can be opened, not edited)
+  const editable = body.contains(link) && link.isContentEditable;
+  globalThis.dispatchEvent(new CustomEvent("oer-link-click", { detail: { link, editable } }));
 }
 
 /* ---------- source views ---------- */

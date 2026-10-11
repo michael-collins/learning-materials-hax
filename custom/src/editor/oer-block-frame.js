@@ -28,9 +28,11 @@
  *   comes from, which opens it), and for an ordinary block Block settings
  *   (only when it has settings) and Layout (columns). A block can add its
  *   own button with a static `frameAction`: { label, icon (an oer: Lucide
- *   name), run(node) }, e.g. the rubric block's Edit rubric. Tab goes from
- *   the name tag to the buttons after it (← → move between them), as the
- *   name tag's arrows go to other units; the rail's Block ▾ has them too.
+ *   name), run(node, opener) }, e.g. the rubric block's Edit rubric; an
+ *   img, media-image or figure has Change image… (oer-image-popover.js
+ *   frameActionOf). Tab goes from the name tag to the buttons after it
+ *   (← → move between them), as the name tag's arrows go to other units;
+ *   the rail's Block ▾ has them too.
  * - The name tag holds focus while a unit is selected as a whole: ops.js
  *   asks for it (editorState `focusrequest`: Escape from a field, a unit
  *   selected by a key, Undo of a change made from it), and a click on a
@@ -77,6 +79,7 @@ import { editorState, contentView } from "./editor-state.js";
 import { computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { hasSettings } from "./block-settings.js";
+import { frameActionOf } from "./oer-image-popover.js";
 import { layoutOf, columnRects, columnCount, columnsMenu, whyNoColumns } from "./layouts.js";
 import { policyOf, phraseOf, TEXT_FIELDS } from "./policy.js";
 import { ops } from "./ops.js";
@@ -87,7 +90,7 @@ import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
 
 const icon = (name) =>
-  html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
+  html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name?.includes(":") ? name : `oer:${name}`] || ""}&quot;)"></span>`;
 
 const DRAG_THRESHOLD = 4;
 const SCROLL_EDGE = 48;
@@ -275,7 +278,7 @@ class OerBlockFrame extends LitElement {
       this.__parent = unit.parentElement;
       this.__block = policyOf(unit).kind !== "section" && policyOf(unit).kind !== "item";
       this._layout = layoutOf(editorState.body, unit);
-      this._action = unit.constructor?.frameAction || null;
+      this._action = frameActionOf(unit);
       this.__locked = null;
     }
     // an ordinary block's own settings and columns; a section, its items
@@ -963,7 +966,10 @@ class OerBlockFrame extends LitElement {
       ${this._action
         ? html`<button
             class="act"
-            @click="${() => this._action.run(unit)}"
+            @click="${(e) => {
+              // (the button to give focus back to: Safari doesn't focus a clicked button)
+              this._action.run(unit, e.currentTarget);
+            }}"
           >
             ${icon(this._action.icon)}${this._action.label}
           </button>`

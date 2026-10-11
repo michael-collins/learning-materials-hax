@@ -35,7 +35,6 @@ import { registerBlocks } from "../register.js";
 import { SiteSection, csStyles, icon, hasContent, listItems, questions, OUTCOME_ICONS, TEXT_BLOCKS } from "./cs-shared.js";
 import { faqHeading } from "./cs-normalize.js";
 import "./cs-items.js";
-import "../../ui/oer-image-field.js";
 import { editorControl } from "../../ui/editor-control.js";
 import { siteForBook, bookSiteIsOn } from "../../types/book-site.js";
 import { COURSE_SITE_TYPE } from "../../types/course-site.js";
@@ -84,44 +83,20 @@ export class OerCsHero extends SiteSection {
   constructor() {
     super();
     this.decorative = false;
-    // the image field in place, open (until the editor's image popover takes Change image)
-    this._imageField = false;
   }
   get shown() {
     return true;
   }
   /**
    * Change image: asked of the editor (an `oer-edit-request` { action:
-   * "image" }, which its image popover answers by cancelling it, editor-
-   * redesign WP-14); while nothing answers, the image field opens here,
-   * under the picture, with focus in it. Esc in it closes it, focus back on
-   * Change image.
+   * "image" }), whose image popover (editor/oer-image-popover.js) sets
+   * image, alt and decorative as one undo step; focus comes back to opener
+   * (the button: Safari doesn't focus a clicked button).
    */
-  changeImage() {
-    const asked = new CustomEvent("oer-edit-request", {
-      bubbles: true,
-      composed: true,
-      cancelable: true,
-      detail: { action: "image", unit: this, image: this.image || "", alt: this.alt || "", decorative: !!this.decorative },
-    });
-    if (!this.dispatchEvent(asked)) return;
-    this._imageField = !this._imageField;
-    this.requestUpdate();
-    if (!this._imageField) return;
-    this.updateComplete.then(() => {
-      const field = this.shadowRoot.querySelector("oer-image-field");
-      field?.scrollIntoView({ block: "nearest" });
-      field?.focus();
-    });
+  changeImage(opener = null) {
+    this.request("image", { opener });
   }
 
-  _closeImageField(e) {
-    if (e.key !== "Escape" || !this._imageField) return;
-    e.preventDefault();
-    this._imageField = false;
-    this.requestUpdate();
-    this.updateComplete.then(() => this.shadowRoot.querySelector(".change-image")?.focus());
-  }
   renderSection(d) {
     const image = this.image || d.projects.map((p) => p.page.metadata?.oerFields?.image).find(Boolean) || d.work.map((w) => w.image).find(Boolean) || "";
     const alt = this.image && !this.decorative ? this.alt || "" : "";
@@ -146,30 +121,11 @@ export class OerCsHero extends SiteSection {
           <div class="art">
             ${image ? html`<img src="${image}" alt="${alt}" />` : html`<div class="art-fallback" aria-hidden="true"><span>${d.code || d.title}</span></div>`}
             ${this._editing
-              ? html`<button class="btn outline sm change-image" ${editorControl()} aria-expanded="${this._imageField ? "true" : "false"}" @click="${() => this.changeImage()}">
+              ? html`<button class="btn outline sm change-image" ${editorControl()} aria-haspopup="dialog" @click="${(e) => this.changeImage(e.currentTarget)}">
                   ${icon("image")}<span>Change image</span>
                 </button>`
               : ""}
           </div>
-          ${this._editing && this._imageField
-            ? html`<div class="image-edit">
-                <span class="hint">${icon("info")}<span>${this.image ? "Hero image" : image ? "A project's image is shown. Choose a hero image of your own:" : "Choose a hero image: a wide picture, such as student work or the studio."}</span></span>
-                <oer-image-field
-                  ${editorControl()}
-                  @keydown="${(e) => this._closeImageField(e)}"
-                  compact
-                  label="Hero image"
-                  .value="${this.image || ""}"
-                  .alt="${this.alt || ""}"
-                  @image-change="${(e) => {
-                    this.image = e.detail.value || undefined;
-                    this.alt = e.detail.alt || undefined;
-                    if (!this.image) this.removeAttribute("image");
-                    if (!this.alt) this.removeAttribute("alt");
-                  }}"
-                ></oer-image-field>
-              </div>`
-            : ""}
         </div>
       </div>
     </section>`;
@@ -220,26 +176,6 @@ export class OerCsHero extends SiteSection {
         }
         .change-image:hover {
           background: var(--accent);
-        }
-        .image-edit {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 0.75rem;
-          border: 1px solid var(--border);
-          border-radius: var(--radius-md);
-          background: var(--card);
-        }
-        .hint {
-          display: flex;
-          gap: 0.5rem;
-          align-items: flex-start;
-          font-size: 0.8125rem;
-          line-height: 1.5;
-          color: var(--muted-foreground);
-        }
-        .hint .i {
-          margin-top: 0.125rem;
         }
         .hero-art img,
         .art-fallback {

@@ -9,7 +9,16 @@
  *
  * The label is the host's (a <label> or span pointing at `field-id`); this
  * draws the control under it. `compact` leaves out the preview, for places
- * that show the image themselves (a course site's hero while editing).
+ * that show the image themselves. `decoration` adds "It's decoration" under
+ * the description (`decorative`, in image-change's detail too), for images
+ * that readers' screen readers should pass over.
+ *
+ * Every control is a button the keyboard reaches (Upload opens the file
+ * picker). Choose from site and Use an address open their panel with focus
+ * in it, scrolled into view; Esc closes it again, focus back on the button
+ * that opened it (and goes no further, so a popover or dialog around the
+ * field stays open). flush() puts an address typed and not yet committed
+ * (it commits on change: Enter, or focus leaving it) into the value.
  * @element oer-image-field
  */
 import { html, css, LitElement } from "../lit.js";
@@ -48,6 +57,8 @@ class OerImageField extends LitElement {
       fieldId: { type: String, attribute: "field-id" },
       label: { type: String },
       compact: { type: Boolean },
+      decoration: { type: Boolean },
+      decorative: { type: Boolean },
       _uploading: { state: true },
       _error: { state: true },
       _broken: { state: true },
@@ -66,6 +77,8 @@ class OerImageField extends LitElement {
     this.fieldId = "";
     this.label = "Image";
     this.compact = false;
+    this.decoration = false;
+    this.decorative = false;
     this._uploading = false;
     this._error = "";
     this._broken = false;
@@ -80,9 +93,51 @@ class OerImageField extends LitElement {
     if (changed.has("value")) this._broken = false;
   }
 
-  /** Focus its first control (a dialog focusing its field, or the hero opening it). */
+  /** Focus its first control (a dialog focusing its field, or a popover opening it). */
   focus(options) {
     this.shadowRoot?.querySelector("button, input:not([type=file]), select, textarea, [tabindex]")?.focus(options);
+  }
+
+  /** Focus the image's description (there is one only once there's an image). Returns whether it could. */
+  focusDescription(options) {
+    const input = this.shadowRoot?.querySelector(".alt input");
+    input?.focus(options);
+    return !!input;
+  }
+
+  /** An address typed and not yet committed (no Enter, focus still in it) goes into the value now. */
+  flush() {
+    const input = this.shadowRoot?.querySelector("input.address");
+    if (input && input.value.trim() !== (this.value || "")) this._emit(input.value.trim());
+  }
+
+  // a panel opened (the chooser, the address): focus in it, and in view
+  async _reveal(selector) {
+    await this.updateComplete;
+    const el = this.shadowRoot.querySelector(selector);
+    if (!el) return;
+    el.focus();
+    // (an address there already: typing replaces it)
+    if (el.matches("input.address")) el.select();
+    (el.closest(".chooser") || el).scrollIntoView({ block: "nearest" });
+  }
+
+  // Esc in a panel closes it, focus back on its button, and goes no further
+  _panelKeys(e) {
+    if (e.key !== "Escape" || e.isComposing) return;
+    const inChooser = !!e.composedPath().find((n) => n.classList?.contains("chooser"));
+    const inAddress = e.composedPath()[0]?.classList?.contains("address") && this._byAddress;
+    if (!inChooser && !inAddress) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (inChooser) this._choosing = false;
+    else this._byAddress = false;
+    this.updateComplete.then(() => this.shadowRoot.querySelector(inChooser ? ".choose" : ".by-address")?.focus());
+  }
+
+  _toggleAddress() {
+    this._byAddress = !this._byAddress;
+    if (this._byAddress) this._reveal("input.address");
   }
 
   // an address typed in: the image, and (the address field giving way to
@@ -91,14 +146,17 @@ class OerImageField extends LitElement {
     // (the event's target reads null once it has been dispatched)
     const input = e.target;
     const had = this.shadowRoot.activeElement === input;
+    // (an address given: the field gives way to the description)
+    if (input.value.trim()) this._byAddress = false;
     this._emit(input.value.trim());
     if (had) this.updateComplete.then(() => !input.isConnected && this.shadowRoot.querySelector(".alt input")?.focus());
   }
 
-  _emit(value, alt = this.alt) {
+  _emit(value, alt = this.alt, decorative = this.decorative) {
     this.value = value;
     this.alt = alt;
-    this.dispatchEvent(new CustomEvent("image-change", { detail: { value, alt } }));
+    this.decorative = !!decorative;
+    this.dispatchEvent(new CustomEvent("image-change", { detail: { value, alt, decorative: this.decorative } }));
   }
 
   async _upload(file) {
@@ -132,8 +190,7 @@ class OerImageField extends LitElement {
       this._images = [];
       this._error = err.message;
     }
-    await this.updateComplete;
-    this.shadowRoot.querySelector(".chooser input")?.focus();
+    this._reveal(".chooser input");
   }
 
   // a file dropped here is this field's, not the editor's (HAX inserts dropped files as blocks)
@@ -175,25 +232,28 @@ class OerImageField extends LitElement {
   render() {
     const v = this.value || "";
     const busy = this._uploading;
-    const picker = html`<input type="file" accept="image/*" hidden @change="${(e) => (this._upload(e.target.files?.[0]), (e.target.value = ""))}" />`;
-    const upload = html`<label class="btn outline" aria-disabled="${busy ? "true" : "false"}"
-      >${lucide("oer:upload", "sm")}${busy ? "Uploading…" : v ? "Replace" : "Upload"}${picker}</label
-    >`;
-    const choose = html`<button type="button" class="btn outline" aria-expanded="${this._choosing ? "true" : "false"}" @click="${this._openChooser}">
+    // (a button the keyboard reaches, opening the file input's picker)
+    const upload = html`<button type="button" class="btn outline" aria-disabled="${busy ? "true" : "false"}" @click="${() => !busy && this.shadowRoot.querySelector("input[type=file]")?.click()}">
+        ${lucide("oer:upload", "sm")}${busy ? "Uploading…" : v ? "Replace" : "Upload"}
+      </button>
+      <input type="file" accept="image/*" hidden tabindex="-1" @change="${(e) => (this._upload(e.target.files?.[0]), (e.target.value = ""))}" />`;
+    const choose = html`<button type="button" class="btn outline choose" aria-expanded="${this._choosing ? "true" : "false"}" @click="${this._openChooser}">
       ${lucide("oer:files", "sm")}Choose from site
     </button>`;
+    const byAddress = html`<button type="button" class="btn ghost by-address" aria-expanded="${this._byAddress ? "true" : "false"}" @click="${this._toggleAddress}">
+      ${lucide("oer:link", "sm")}Use an address
+    </button>`;
+    const remove = html`<button type="button" class="btn ghost danger" @click="${() => this._emit("", "")}">${lucide("oer:x", "sm")}Remove</button>`;
     return html`
       <div
         class="field ${this._dragging ? "dragging" : ""}"
         @dragover="${(e) => (e.preventDefault(), e.stopPropagation(), (this._dragging = true))}"
         @dragleave="${() => (this._dragging = false)}"
         @drop="${this._drop}"
+        @keydown="${this._panelKeys}"
       >
         ${v && this.compact
-          ? html`<div class="actions">
-              ${upload}${choose}
-              <button type="button" class="btn ghost danger" @click="${() => this._emit("", "")}">${lucide("oer:x", "sm")}Remove</button>
-            </div>`
+          ? html`<div class="actions">${upload}${choose}${byAddress}${remove}</div>`
           : v
           ? html`<div class="current">
               <div class="preview">
@@ -203,24 +263,16 @@ class OerImageField extends LitElement {
               </div>
               <div class="side">
                 <span class="name" title="${v}">${fileName(v)}</span>
-                <div class="actions">
-                  ${upload}${choose}
-                  <button type="button" class="btn ghost danger" @click="${() => this._emit("", "")}">${lucide("oer:x", "sm")}Remove</button>
-                </div>
+                <div class="actions">${upload}${choose}${byAddress}${remove}</div>
               </div>
             </div>`
           : html`<div class="empty">
               <span class="drop-hint">${lucide("oer:upload")}${busy ? "Uploading…" : "Drop an image here, or"}</span>
-              <div class="actions">
-                ${upload}${choose}
-                <button type="button" class="btn ghost" aria-expanded="${this._byAddress ? "true" : "false"}" @click="${() => (this._byAddress = !this._byAddress)}">
-                  ${lucide("oer:link", "sm")}Use an address
-                </button>
-              </div>
+              <div class="actions">${upload}${choose}${byAddress}</div>
             </div>`}
-        ${(this._byAddress && !v) || this._broken
+        ${this._byAddress || this._broken
           ? html`<input
-              class="input"
+              class="input address"
               id="${this.fieldId}"
               type="text"
               placeholder="files/picture.jpg or https://…"
@@ -233,10 +285,20 @@ class OerImageField extends LitElement {
         ${this._error ? html`<p class="err" role="alert">${this._error}</p>` : ""}
         ${v
           ? html`<label class="alt">
-              <span class="alt-label">Description (alt text)</span>
-              <input class="input" type="text" .value="${this.alt || ""}" @input="${(e) => this._emit(v, e.target.value)}" />
-              <span class="hint">What the image shows, for people who can't see it. Leave it empty only if the image is decoration.</span>
-            </label>`
+                <span class="alt-label">Description (alt text)</span>
+                <input class="input" type="text" .value="${this.alt || ""}" ?disabled="${this.decoration && this.decorative}" @input="${(e) => this._emit(v, e.target.value)}" />
+                <span class="hint"
+                  >${this.decoration && this.decorative
+                    ? "Screen readers pass over a picture that's decoration."
+                    : `What the image shows, for people who can't see it.${this.decoration ? "" : " Leave it empty only if the image is decoration."}`}</span
+                >
+              </label>
+              ${this.decoration
+                ? html`<label class="check">
+                    <input type="checkbox" .checked="${!!this.decorative}" @change="${(e) => this._emit(v, this.alt, e.target.checked)}" />
+                    <span>It's decoration</span>
+                  </label>`
+                : ""}`
           : ""}
       </div>
     `;
@@ -372,7 +434,6 @@ class OerImageField extends LitElement {
           cursor: progress;
         }
         .btn:focus-visible,
-        .btn:focus-within,
         .thumb:focus-visible {
           outline: 2px solid var(--ring);
           outline-offset: 2px;
@@ -388,6 +449,16 @@ class OerImageField extends LitElement {
           font: inherit;
           font-size: 0.875rem;
           color: var(--foreground);
+        }
+        .check {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.875rem;
+          cursor: pointer;
+        }
+        .input:disabled {
+          opacity: 0.6;
         }
         .alt {
           display: flex;

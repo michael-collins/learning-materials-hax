@@ -45,11 +45,33 @@ const ICONS = {
   plus: svg`<path d="M5 12h14"/><path d="M12 5v14"/>`,
   link: svg`<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>`,
   image: svg`<rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>`,
+  // (an outcome's icons, with target, sparkles, layers, wrench, book, users and palette above)
+  lightbulb: svg`<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>`,
+  "pen-tool": svg`<path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/>`,
+  ruler: svg`<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/>`,
+  compass: svg`<circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/>`,
+  "message-circle": svg`<path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/>`,
 };
 export const icon = (name) => html`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
 
 // an outcome's icon, when none is chosen: by its place among the outcomes
 export const OUTCOME_ICONS = ["target", "sparkles", "layers", "wrench", "book", "users"];
+
+/** The icons an author can choose for an outcome (its icon attribute), with their names. */
+export const OUTCOME_CHOICES = [
+  ["target", "Target"],
+  ["sparkles", "Sparkles"],
+  ["layers", "Layers"],
+  ["wrench", "Wrench"],
+  ["book", "Book"],
+  ["users", "People"],
+  ["lightbulb", "Lightbulb"],
+  ["pen-tool", "Pen"],
+  ["ruler", "Ruler"],
+  ["palette", "Palette"],
+  ["compass", "Compass"],
+  ["message-circle", "Conversation"],
+].map(([value, label]) => ({ value, label }));
 
 // the section blocks, in the order a new course site has them
 export const SECTION_TAGS = ["oer-cs-hero", "oer-cs-facts", "oer-cs-learn", "oer-cs-semester", "oer-cs-make", "oer-cs-books", "oer-cs-people", "oer-cs-tools", "oer-cs-faq", "oer-cs-closing", "oer-courses-intro", "oer-courses-catalog"];

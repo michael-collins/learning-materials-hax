@@ -512,7 +512,17 @@ export function installUndo() {
             // again: a section removed, put back with Undo and removed again
             // made no step, and Undo then took back the step before
             this.undoStackPrevValue = recordedRaw(this);
-            return original.call(this, mutations);
+            // nor does it record the content when it's its starting copy
+            // again (undo-manager compares with undoStackInitialValue): a
+            // link added and removed again made no step, and Undo then took
+            // back the adding instead
+            const initial = this.undoStackInitialValue;
+            if (this.innerHTML === initial) this.undoStackInitialValue = null;
+            try {
+              return original.call(this, mutations);
+            } finally {
+              this.undoStackInitialValue = initial;
+            }
           }
           // only what editing changes changed (attributes, white space
           // between blocks): the next step starts from here,
