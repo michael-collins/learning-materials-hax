@@ -28,7 +28,7 @@
  * absent are left out. Move up and down go through ops.js there too (the
  * hero and Ready to start stay put). Items that can't run now are shown
  * off, with the reason ("Already first", "Only one per page", "Unlock it
- * first"). Add and Remove column go through layouts.js. Block ▾ ends with
+ * first"). Columns… opens the Columns menu (layouts.js). Block ▾ ends with
  * the block's own: Block settings… (when it has some) and its frame
  * button (the rubric's Edit rubric), as the selection frame's label has.
  *
@@ -70,7 +70,7 @@ import { insertCitation, pageReferences, linkReferenceToResource } from "./citat
 import { citeDialog } from "./oer-cite-dialog.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
-import { layoutOf, columnCount, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
+import { layoutOf, columnsMenu, whyNoColumns } from "./layouts.js";
 import { policyOf, phraseOf } from "./policy.js";
 import { ops } from "./ops.js";
 import { announce } from "./announce.js";
@@ -178,11 +178,9 @@ const BLOCK = [
   { label: "Insert block below…", icon: "arrow-down-to-line", find: byEvent("insert-below-active"), insert: "below" },
   { label: "Duplicate", icon: "copy", find: byEvent("hax-plate-duplicate") },
   SEP,
-  // outside a layout, Add column puts the block in two equal columns (HAX's
-  // own makes three, with the block in the middle one); Remove column works
-  // from any block in the layout (HAX's only from the layout itself)
-  { label: "Add column", icon: "columns-2", find: byEvent("hax-plate-create-right"), columns: "add" },
-  { label: "Remove column", icon: "panel-right-close", find: byEvent("hax-plate-remove-right"), columns: "remove" },
+  // the Columns menu (layouts.js), for HAX's Add and Remove column (its Add
+  // made three, with the block in the middle one)
+  { label: "Columns…", icon: "columns-2", columns: true },
   SEP,
   { label: "Edit HTML", icon: "code", find: byEvent("hax-source-view-toggle") },
   {
@@ -668,6 +666,17 @@ class OerBlockRail extends LitElement {
         out.push({ label: spec.label, icon: spec.icon, submenu: true, run: () => this._openGrid(spec, el) });
         continue;
       }
+      // the Columns menu: for a block in columns or one that may go in them;
+      // off when HAX switches all its block commands off (a locked block,
+      // Edit HTML open)
+      if (spec.columns) {
+        const node = this.__unit;
+        if (!layoutOf(haxStore()?.activeHaxBody, node) && whyNoColumns(node)) continue;
+        const off = !!(plate?.viewSource || plate?.disableOps || plate?.hasActiveEditingElement);
+        const anchor = this.shadowRoot.querySelector(".dock, .rail");
+        out.push({ label: spec.label, icon: spec.icon, opens: true, disabled: off, hint: off ? offReason(plate, source) : "", run: (back) => columnsMenu().open(node, { opener: back, anchor }) });
+        continue;
+      }
       const el = spec.find(els);
       if (!el) continue;
       // moves go through the editor: the hero and Ready to start stay put,
@@ -676,25 +685,14 @@ class OerBlockRail extends LitElement {
         out.push(this._verb(this.__unit, spec.label, spec.icon, "move", { dir: spec.move, plate, el }));
         continue;
       }
-      let run = spec.insert ? () => inserter()?.openFor(this.__unit, spec.insert) : () => nativeButton(el)?.click();
-      // our own columns commands: off when HAX switches all its block
-      // commands off (a locked block, Edit HTML open), not for its other reasons
-      let ours = false;
-      if (spec.columns) {
-        const node = this.__unit;
-        const layout = layoutOf(haxStore()?.activeHaxBody, node);
-        if (!policyOf(node).columns || (spec.columns === "remove" && !layout)) continue;
-        if (spec.columns === "add" && !layout) run = () => this._putInColumns(node);
-        if (spec.columns === "remove") run = () => this._removeColumn(node, layout);
-        ours = spec.columns === "remove" || !layout;
-      }
+      const run = spec.insert ? () => inserter()?.openFor(this.__unit, spec.insert) : () => nativeButton(el)?.click();
       const available = shown(el);
       // controls that only apply to selected text are shown disabled rather
       // than vanishing, so the menu does not change shape under the pointer
       const needs = spec.needs || (spec.selection ? "Select text" : "");
       if (!available && !needs) continue;
       // and ones HAX has switched off say why
-      const off = !available || (ours ? !!(plate?.viewSource || plate?.disableOps || plate?.hasActiveEditingElement) : disabled(el));
+      const off = !available || disabled(el);
       out.push({
         label: typeof spec.label === "function" ? spec.label(el) : spec.label,
         icon: typeof spec.icon === "function" ? spec.icon(el) : spec.icon,
@@ -710,28 +708,6 @@ class OerBlockRail extends LitElement {
     }
     while (out.length && out[out.length - 1].sep) out.pop();
     return out;
-  }
-
-  // two equal columns around the block, which stays selected
-  async _putInColumns(node) {
-    const hax = haxStore();
-    if (!hax || !node) return;
-    if (await wrapInColumns(hax, node, "1-1")) hax.activeNode = node;
-  }
-
-  // one column fewer (its blocks join the last one); from two, the layout
-  // goes and its blocks stay where it was
-  _removeColumn(node, grid) {
-    const hax = haxStore();
-    if (!hax || !grid) return;
-    if (columnCount(grid) > 2) {
-      setLayout(grid, grid.layout.split("-").slice(0, -1).join("-"));
-      if (!node.isConnected) hax.activeNode = grid;
-      return;
-    }
-    const first = removeLayout(grid);
-    // (an empty paragraph goes with the layout)
-    hax.activeNode = node !== grid && node.isConnected ? node : first;
   }
 
   _pickerCurrent(spec) {

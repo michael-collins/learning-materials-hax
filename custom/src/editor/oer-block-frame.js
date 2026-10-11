@@ -49,8 +49,9 @@
  * layout gets a dashed outline with a "Columns · n" tab and its columns are
  * outlined; while dragging, every layout is. The label becomes a
  * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
- * opens the layout menu (presets, select, remove; or "put in columns" for
- * a block outside any layout). The sliders button opens the block's
+ * opens the Columns menu (layouts.js: presets, width, select, remove; or
+ * "put in columns" for a block outside any layout, never in a section or
+ * an item). The sliders button opens the block's
  * settings (oer-settings-dialog), and shows only for a block that has some
  * (block-settings.js: not text) and isn't locked. A course site section,
  * its items and what they hold have neither button (nothing of theirs is
@@ -76,7 +77,7 @@ import { editorState, contentView } from "./editor-state.js";
 import { computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
 import { hasSettings } from "./block-settings.js";
-import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
+import { layoutOf, columnRects, columnCount, columnsMenu, whyNoColumns } from "./layouts.js";
 import { policyOf, phraseOf, TEXT_FIELDS } from "./policy.js";
 import { ops } from "./ops.js";
 import { checkpoint } from "./undo.js";
@@ -133,7 +134,6 @@ class OerBlockFrame extends LitElement {
       _drag: { state: true },
       _layout: { state: true },
       _guides: { state: true },
-      _menu: { state: true },
       _tools: { state: true }, // { settings, layout }: the label's buttons for an ordinary block
       _handle: { state: true }, // { up, down, grip, along, upWhy, downWhy, gripWhy }
       _field: { state: true }, // the typed field's ring, or null
@@ -146,7 +146,6 @@ class OerBlockFrame extends LitElement {
     this._drag = null; // { x, y, slot, valid }
     this._layout = null; // the grid-plate around (or being) the selected unit
     this._guides = []; // outlines for layouts and their columns
-    this._menu = false;
     this._tools = { settings: false, layout: false };
     this._handle = null;
     this._field = null;
@@ -155,9 +154,6 @@ class OerBlockFrame extends LitElement {
     this.__changed = () => this._sync();
     this.__focusRequest = (e) => {
       if (this.focusTag(e.detail?.unit)) e.preventDefault();
-    };
-    this.__outside = (e) => {
-      if (this._menu && !e.composedPath().includes(this)) this._menu = false;
     };
     this.__pointer = (e) => {
       const body = haxStore()?.activeHaxBody;
@@ -197,7 +193,6 @@ class OerBlockFrame extends LitElement {
     editorState.addEventListener("change", this.__changed);
     editorState.addEventListener("focusrequest", this.__focusRequest);
     globalThis.addEventListener("keydown", this.__keys, true);
-    globalThis.addEventListener("pointerdown", this.__outside, true);
     globalThis.addEventListener("pointerdown", this.__pointer, true);
     globalThis.addEventListener("click", this.__click, true);
     globalThis.addEventListener("oer-undo", this.__undone);
@@ -215,7 +210,6 @@ class OerBlockFrame extends LitElement {
     editorState.removeEventListener("change", this.__changed);
     editorState.removeEventListener("focusrequest", this.__focusRequest);
     globalThis.removeEventListener("keydown", this.__keys, true);
-    globalThis.removeEventListener("pointerdown", this.__outside, true);
     globalThis.removeEventListener("pointerdown", this.__pointer, true);
     globalThis.removeEventListener("click", this.__click, true);
     globalThis.removeEventListener("oer-undo", this.__undone);
@@ -243,7 +237,6 @@ class OerBlockFrame extends LitElement {
     this.hidden = true;
     this.__unit = null;
     this._info = null;
-    this._menu = false;
     this._field = null;
     this._guides = [];
     this.__guideKey = "";
@@ -280,7 +273,6 @@ class OerBlockFrame extends LitElement {
     if (unit !== this.__unit || unit.parentElement !== this.__parent) {
       this.__unit = unit;
       this.__parent = unit.parentElement;
-      this._menu = false;
       this.__block = policyOf(unit).kind !== "section" && policyOf(unit).kind !== "item";
       this._layout = layoutOf(editorState.body, unit);
       this._action = unit.constructor?.frameAction || null;
@@ -293,7 +285,7 @@ class OerBlockFrame extends LitElement {
     const locked = !!unit.closest("[data-hax-lock]");
     if (locked !== this.__locked) {
       this.__locked = locked;
-      this._tools = { settings: this.__block && !locked && hasSettings(unit), layout: this.__block };
+      this._tools = { settings: this.__block && !locked && hasSettings(unit), layout: this.__block && (!!this._layout || !whyNoColumns(unit)) };
     }
     const info = describeUnit(unit);
     if (!same(drawn(info), drawn(this._info))) this._info = info;
@@ -452,13 +444,6 @@ class OerBlockFrame extends LitElement {
   /* ---------- keys ---------- */
 
   _windowKeys(e) {
-    if (this._menu && e.key === "Escape") {
-      e.preventDefault();
-      e.stopPropagation();
-      this._menu = false;
-      this.updateComplete.then(() => this.shadowRoot.querySelector(".lay[aria-haspopup=menu]")?.focus());
-      return;
-    }
     if (this._drag && e.key === "Escape") {
       e.preventDefault();
       e.stopPropagation();
@@ -545,39 +530,7 @@ class OerBlockFrame extends LitElement {
 
   _selectLayout() {
     const grid = this._currentLayout();
-    this._menu = false;
     if (grid) ops.select(grid);
-  }
-
-  async _chooseLayout(key) {
-    const hax = haxStore();
-    const node = this.__unit;
-    this._menu = false;
-    if (!hax || !node) return;
-    const layout = this._currentLayout();
-    if (layout) {
-      setLayout(layout, key);
-      // an empty paragraph in a column that went goes with it
-      if (!node.isConnected) hax.activeNode = layout;
-    } else {
-      const grid = await wrapInColumns(hax, node, key);
-      if (grid) {
-        this.__unit = null; // the layout is read again
-        hax.activeNode = node;
-      }
-    }
-  }
-
-  _removeLayout() {
-    const hax = haxStore();
-    const grid = this._currentLayout();
-    this._menu = false;
-    if (!hax || !grid) return;
-    const keep = this.__unit === grid ? null : this.__unit;
-    const first = removeLayout(grid);
-    this.__unit = null;
-    // (an empty paragraph goes with the layout)
-    hax.activeNode = keep?.isConnected ? keep : first;
   }
 
   /* ---------- moving ---------- */
@@ -745,7 +698,6 @@ class OerBlockFrame extends LitElement {
       }
       :host([docked]) .handle,
       :host([docked]) .label,
-      :host([docked]) .menu,
       :host([offscreen]) .handle {
         display: none;
       }
@@ -908,79 +860,6 @@ class OerBlockFrame extends LitElement {
         border-radius: 999px;
       }
 
-      /* layout menu (shadcn DropdownMenu) */
-      .menu {
-        pointer-events: auto;
-        position: fixed;
-        top: calc(var(--label-top) + 1.5rem);
-        left: max(0.5rem, calc(var(--left) + var(--width) - 16rem));
-        width: 16rem;
-        box-sizing: border-box;
-        padding: 0.25rem;
-        color: var(--popover-foreground);
-        background: var(--popover);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-md);
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-      }
-      .menu .head {
-        padding: 0.375rem 0.5rem;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--muted-foreground);
-      }
-      .presets {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.25rem;
-        padding: 0.25rem;
-      }
-      .menu .presets button {
-        height: 2.25rem;
-        padding: 0.375rem;
-        border: 1px solid var(--border);
-        display: flex;
-        gap: 2px;
-      }
-      .menu .presets button:hover {
-        border-color: var(--primary);
-        background: var(--accent);
-      }
-      .menu .presets button[aria-checked="true"] {
-        border-color: var(--primary);
-        box-shadow: inset 0 0 0 1px var(--primary);
-      }
-      .bar {
-        height: 100%;
-        border-radius: 2px;
-        background: color-mix(in oklab, var(--foreground) 35%, transparent);
-      }
-      .menu .presets button[aria-checked="true"] .bar {
-        background: var(--primary);
-      }
-      .menu .sepline {
-        height: 1px;
-        margin: 0.25rem -0.25rem;
-        background: var(--border);
-      }
-      .menu .item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        width: 100%;
-        height: 2rem;
-        padding: 0 0.5rem;
-        font-size: 0.875rem;
-        justify-content: flex-start;
-      }
-      .menu .item:hover {
-        background: var(--accent);
-        color: var(--accent-foreground);
-      }
-      .menu .icon {
-        width: 1rem;
-        height: 1rem;
-      }
       /* while dragging: the unit's ring goes quiet, the target slot lights up */
       :host([dragging]) .ring {
         border-style: dashed;
@@ -1033,14 +912,6 @@ class OerBlockFrame extends LitElement {
         this._sync();
       }
     }
-    // the layout menu opens below the label; lift it if it runs off-screen
-    const menu = this.shadowRoot.querySelector(".menu");
-    if (menu) {
-      menu.style.marginTop = "0px";
-      const r = menu.getBoundingClientRect();
-      const over = r.bottom - (globalThis.innerHeight - 8);
-      if (over > 0) menu.style.marginTop = `${-Math.min(over, r.top - 8)}px`;
-    }
   }
 
   _renderLabel() {
@@ -1068,7 +939,6 @@ class OerBlockFrame extends LitElement {
             aria-label="Block settings"
             aria-haspopup="dialog"
             @click="${(e) => {
-              this._menu = false;
               // (the button to give focus back to: Safari doesn't focus a clicked button)
               settingsDialog().open("settings", e.currentTarget);
             }}"
@@ -1079,11 +949,10 @@ class OerBlockFrame extends LitElement {
       ${this._tools.layout
         ? html`<button
             class="lay"
-            title="Layout options"
-            aria-label="Layout options"
+            title="Columns"
+            aria-label="Columns"
             aria-haspopup="menu"
-            aria-expanded="${this._menu ? "true" : "false"}"
-            @click="${() => (this._menu = !this._menu)}"
+            @click="${(e) => columnsMenu().open(this.__unit, { opener: e.currentTarget })}"
           >
             ${icon("columns-2")}
           </button>`
@@ -1094,39 +963,10 @@ class OerBlockFrame extends LitElement {
       ${this._action
         ? html`<button
             class="act"
-            @click="${() => {
-              this._menu = false;
-              this._action.run(unit);
-            }}"
+            @click="${() => this._action.run(unit)}"
           >
             ${icon(this._action.icon)}${this._action.label}
           </button>`
-        : ""}
-    </div>`;
-  }
-
-  _renderMenu() {
-    const grid = this._layout;
-    const presets = layoutPresets(grid).filter((p) => grid || p.key !== "1");
-    return html`<div class="menu" role="menu" aria-label="Layout" @mousedown="${(e) => e.preventDefault()}">
-      <div class="head" aria-hidden="true">${grid ? "Column layout" : "Put in columns"}</div>
-      <div class="presets" role="group" aria-label="Column presets">
-        ${presets.map(
-          (p) => html`<button
-            role="menuitemradio"
-            aria-checked="${grid?.layout === p.key ? "true" : "false"}"
-            title="${p.label}"
-            aria-label="${p.ratios.length} columns: ${p.label}"
-            @click="${() => this._chooseLayout(p.key)}"
-          >
-            ${p.ratios.map((r) => html`<span class="bar" style="flex:${r}"></span>`)}
-          </button>`,
-        )}
-      </div>
-      ${grid
-        ? html`<div class="sepline" role="separator"></div>
-            ${grid !== this.__unit ? html`<button class="item" role="menuitem" @click="${this._selectLayout}">${icon("box")} Select layout</button>` : ""}
-            <button class="item" role="menuitem" @click="${this._removeLayout}">${icon("panel-right-close")} Remove layout, keep blocks</button>`
         : ""}
     </div>`;
   }
@@ -1180,7 +1020,7 @@ class OerBlockFrame extends LitElement {
       )}
       <div class="ring"></div>
       ${f ? html`<div class="field-ring" style="top:${f.top}px;left:${f.left}px;width:${f.right - f.left}px;height:${f.bottom - f.top}px"></div>` : ""}
-      ${this._renderLabel()} ${this._menu && this._tools.layout ? this._renderMenu() : ""} ${this._renderHandle()}
+      ${this._renderLabel()} ${this._renderHandle()}
       ${d?.valid && d.rect ? html`<div class="drop" style="top:${d.rect.top}px;left:${d.rect.left}px;width:${d.rect.width}px;height:${d.rect.height}px"></div>` : ""}
       ${d ? html`<div class="ghost" style="left:${d.x}px;top:${d.y}px">${this._info?.name || ""}</div>` : ""}
     `;

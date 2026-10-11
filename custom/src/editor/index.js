@@ -26,6 +26,7 @@ import { installEditBar } from "./oer-edit-bar.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
+import { wrapInColumns } from "./layouts.js";
 
 /**
  * Turn the editor chrome on. Called by custom-oer-docs-theme when it is the
@@ -52,7 +53,7 @@ export function installEditorChrome() {
   installRecovery();
   installLeaveGuard();
   // for the editor checks and the console
-  globalThis.OerEditor = { state: editorState, ops, announce };
+  globalThis.OerEditor = { state: editorState, ops, announce, wrapInColumns };
   installQuietMode();
   installShadowStyles();
   registerShadowStyles(editorSkin);

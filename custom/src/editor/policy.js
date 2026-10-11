@@ -75,11 +75,13 @@ const TABLE = {
   ul: { kind: "text" },
   ol: { kind: "text" },
   blockquote: { kind: "text" },
-  "grid-plate": { kind: "layout" },
+  "grid-plate": { kind: "layout", label: "Columns" },
   "media-image": { kind: "media" },
   img: { kind: "media" },
   figure: { kind: "media" },
   "page-break": { kind: "break" },
+  // (a block of its own, not inline formatting)
+  hr: { kind: "block" },
   ...Object.fromEntries(["h1", "h2", "h3", "h4", "h5", "h6"].map((h) => [h, { kind: "text" }])),
 };
 

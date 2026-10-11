@@ -74,7 +74,7 @@ import { announce } from "./announce.js";
 import { toaster } from "./oer-toast.js";
 import { confirmDialog } from "../ui/oer-confirm.js";
 import { columnCount } from "./layouts.js";
-import { insertInSlot } from "./slots.js";
+import { insertInSlot, refusal, standardSlot } from "./slots.js";
 import { isMac } from "./stock.js";
 
 /** The attribute a section hidden from readers carries (spec §4.8). */
@@ -428,6 +428,8 @@ export function addItem(el, { above = false, focus = true } = {}) {
  */
 export function insertBlock(slot, tag, { content = "", properties = {} } = {}) {
   if (!slot?.container || !tag) return refuse("Nowhere to add it");
+  const why = refusal(slot, tag);
+  if (why) return refuse(why);
   return change(null, `added ${phraseOf(tag)}`, async (body) => {
     const added = await insertInSlot(haxStore(), slot, { tag, content, properties });
     if (!added) return null;
@@ -439,6 +441,20 @@ export function insertBlock(slot, tag, { content = "", properties = {} } = {}) {
     announce(`${phraseOf(tag, START)} added`);
     return added;
   });
+}
+
+/**
+ * Add back a standard section the page doesn't have (What you'll make on a
+ * course site), where it stands in the standard order (slots.js
+ * standardSlot), starting as its demoSchema says. Resolves to it.
+ */
+export function addSection(tag) {
+  const body = activeBody();
+  if (body?.querySelector(`:scope > ${tag}`)) return refuse(`${phraseOf(tag, START)} is already on this page`);
+  const slot = standardSlot(body, tag);
+  if (!slot) return refuse(`${phraseOf(tag, START)} isn't one of this page's sections`);
+  const demo = haxStore()?.haxSchemaFromTag(tag)?.demoSchema?.[0];
+  return insertBlock(slot, tag, { content: demo?.content || "", properties: demo?.properties || {} });
 }
 
 /* ---------- duplicating ---------- */
@@ -795,7 +811,7 @@ function enterSelected(e) {
 }
 
 /** All of the above, for the editor checks and the console (globalThis.OerEditor.ops). */
-export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, duplicate, remove, pasteItems, strayToItems, moveOut, setAttr, hide, show, whyNot };
+export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, addSection, duplicate, remove, pasteItems, strayToItems, moveOut, setAttr, hide, show, whyNot };
 
 let installed = false;
 export function installOps() {
