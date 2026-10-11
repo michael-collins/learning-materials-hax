@@ -25,7 +25,9 @@
  * Block ▾, Text ▾, Format ▾ and Insert inline ▾ press HAX's own controls
  * (its toolbars stay mounted, hidden by editor-skin.js), so selection
  * handling, undo and HAX's state stay intact; items whose control is
- * absent are left out. Move up and down go through ops.js there too (the
+ * absent are left out. Format ▾'s Link… and Remove link are the editor's
+ * own (oer-link-popover.js), and an image's Block ▾ has Change image…
+ * (oer-image-popover.js frameActionOf). Move up and down go through ops.js there too (the
  * hero and Ready to start stay put). Items that can't run now are shown
  * off, with the reason ("Already first", "Only one per page", "Unlock it
  * first"). Add and Remove column go through layouts.js. Block ▾ ends with
@@ -77,6 +79,8 @@ import { announce } from "./announce.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, watchBlockList, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
 import { hasSettings } from "./block-settings.js";
+import { linkPopover, removeLink, whyNoLink } from "./oer-link-popover.js";
+import { frameActionOf } from "./oer-image-popover.js";
 
 const SEP = { sep: true };
 // the room the selection's handle takes between the rail and the text
@@ -241,8 +245,9 @@ const FORMAT = [
   { label: "Superscript", icon: "superscript", find: byCommand("superscript"), toggle: true },
   { label: "Abbreviation", icon: "whole-word", find: byCommand("wrapRange", "Abbreviation"), selection: true },
   SEP,
-  { label: "Link", icon: "link", find: byCommand("createLink"), shortcut: `${MOD}K` },
-  { label: "Remove link", icon: "unlink", find: byCommand("unlink") },
+  // our own: the link popover (oer-link-popover.js), in place of HAX's prompt
+  { label: "Link…", icon: "link", action: "link", shortcut: `${MOD}K` },
+  { label: "Remove link", icon: "unlink", action: "unlink" },
   SEP,
   { label: "Clear formatting", icon: "remove-formatting", find: byCommand("removeFormat") },
 ];
@@ -536,8 +541,8 @@ class OerBlockRail extends LitElement {
       // the frame label's buttons, for the keyboard here too (focus goes
       // back to where it was as the menu ran it: the name tag, or the caret)
       if (unit && !unit.closest("[data-hax-lock]") && hasSettings(unit)) own.unshift({ label: "Block settings…", icon: "sliders-horizontal", opens: true, run: (back) => settingsDialog().open("settings", back) });
-      const action = unit?.constructor?.frameAction;
-      if (action) own.push({ label: action.label, icon: action.icon, opens: true, run: () => action.run(unit) });
+      const action = frameActionOf(unit);
+      if (action) own.push({ label: action.label, icon: action.icon, opens: true, run: (back) => action.run(unit, null, back) });
       if (own.length) items.push(SEP, ...own);
     }
     return items;
@@ -660,6 +665,15 @@ class OerBlockRail extends LitElement {
       }
       if (spec.action === "cite") {
         out.push({ label: spec.label, icon: spec.icon, opens: true, run: () => this._cite() });
+        continue;
+      }
+      if (spec.action === "link") {
+        out.push({ label: spec.label, icon: spec.icon, shortcut: spec.shortcut, opens: true, run: () => linkPopover().edit() });
+        continue;
+      }
+      if (spec.action === "unlink") {
+        const why = whyNoLink();
+        out.push({ label: spec.label, icon: spec.icon, disabled: !!why, hint: why, run: () => removeLink() });
         continue;
       }
       if (spec.grid) {

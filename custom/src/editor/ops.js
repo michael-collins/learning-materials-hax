@@ -22,14 +22,19 @@
  *   duplicate                               duplicate(unit)
  *   remove          ask, caret              remove(unit)
  *   hide, show                              hide(unit), show(unit)
- *   set-attr        name, value             setAttr(the sender, name, value)
+ *   set-attr        name, value (or attrs)  setAttr(the sender, name, value), setAttrs(the sender, attrs)
+ *   image           opener, back, focus     the image popover for its picture (oer-image-popover.js)
+ *   icon            choices, title, opener  the icon picker for its icon (ui/oer-icon-picker.js)
  *   insert-block    slot, tag, starter      insertBlock(slot, tag, starter)
  *   paste-items     lines                   pasteItems(unit, lines)
  *   stray-to-items                          strayToItems(section)
  *   move-out                                moveOut(section)
  *
  * The unit is detail.unit, or the section, item or block the event came
- * from. Other actions ("image", "icon") are for the popovers.
+ * from. A request the editor takes is cancelled (preventDefault), so a
+ * block can tell (the hero's Change image). The popovers give focus back
+ * to detail.opener (the control that asked, as Safari doesn't focus a
+ * clicked button), or else to where it was as they opened.
  *
  * How (HAX 26.8.1, docs/editor-spikes/structure.md S1):
  * - Add: haxInsert(tag, starter, {}, item) passing the item, never a field
@@ -44,7 +49,10 @@
  *   Ready to start), with ___moveLock so HAX doesn't make the moved block
  *   active. HAX's haxMoveGridPlate would push an item past its section's
  *   heading. At the end of a column a block goes on to the next column.
- * - Hide, and any attribute: setAttr().
+ * - Hide, and any attribute: setAttr(), or setAttrs() for several at once
+ *   (a picture and its description) as one step. Edits of the text that
+ *   aren't typed (a link added or removed: oer-link-popover.js) run as one
+ *   step the same way, through asOneStep().
  * Each is checkpointed before and after (undo.js checkpoint): typing not
  * yet recorded is its own step, and the change is one step, which notes
  * where the author was as it began and ended (for Undo and Redo to go
@@ -76,6 +84,9 @@ import { confirmDialog } from "../ui/oer-confirm.js";
 import { columnCount } from "./layouts.js";
 import { insertInSlot } from "./slots.js";
 import { isMac } from "./stock.js";
+import { imagePopover } from "./oer-image-popover.js";
+import { iconPicker } from "../ui/oer-icon-picker.js";
+import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 
 /** The attribute a section hidden from readers carries (spec §4.8). */
 export const HIDDEN = "hidden-from-readers";
@@ -123,6 +134,13 @@ export async function settled(body = activeBody(), { timeout = 600 } = {}) {
 }
 
 /* ---------- one change at a time, one undo step each ---------- */
+
+/**
+ * Run fn(body) as one undo step named step ("added a link"), after any
+ * change still running, unit being what it changes: for edits that aren't
+ * typed and aren't a unit's structure (oer-link-popover.js).
+ */
+export const asOneStep = (unit, step, fn) => change(unit, step, fn);
 
 let queue = Promise.resolve();
 // changes asked for and not yet done, and what's been typed meanwhile
@@ -684,13 +702,24 @@ export function moveOut(el) {
  * the undo step ("changed the hero"), and said is announced ("The hero
  * changed").
  */
-export function setAttr(el, name, value, { step = "", said = "" } = {}) {
-  if (!el || !name) return refuse("Nothing to change");
+export function setAttr(el, name, value, options = {}) {
+  if (!name) return refuse("Nothing to change");
+  return setAttrs(el, { [name]: value }, options);
+}
+
+/** Set several attributes at once ({ source, alt }), as one undo step, as setAttr() does one. */
+export function setAttrs(el, attrs, { step = "", said = "" } = {}) {
+  if (!el || !attrs || !Object.keys(attrs).length) return refuse("Nothing to change");
   const unit = unitOf(el) || el;
-  return change(unit, step || `changed ${phraseOf(unit)}`, () => {
+  return change(unit, step || `changed ${phraseOf(unit)}`, async () => {
     if (!el.isConnected) return false;
-    if (value === null || value === undefined || value === false) el.removeAttribute(name);
-    else el.setAttribute(name, value === true ? "" : String(value));
+    for (const [name, value] of Object.entries(attrs)) {
+      if (value === null || value === undefined || value === false) el.removeAttribute(name);
+      else el.setAttribute(name, value === true ? "" : String(value));
+    }
+    // (what the block draws and reflects from them is part of the step)
+    await el.updateComplete;
+    await frame();
     announce(said || `${phraseOf(unit, START)} changed`);
     return true;
   });
@@ -746,6 +775,51 @@ export function whyNot(action, el, { dir = 1 } = {}) {
   }
 }
 
+/* ---------- the popovers: a picture, an icon ---------- */
+
+// where focus is as a popover opens, to give it back to as it closes when
+// no control asked (a rail's command): the caret where it was, or the unit
+function focusBack(unit) {
+  const body = activeBody();
+  const range = body && deepActive() === body ? getEditRange(body) : null;
+  const kept = range && body.contains(range.startContainer) ? new StaticRange(range) : null;
+  return () => {
+    if (kept?.startContainer.isConnected) {
+      body.focus({ preventScroll: true });
+      setEditRange(kept);
+    } else if (unit?.isConnected) select(unit);
+  };
+}
+
+/** The picture a block shows (the hero's, an image's), changed in the image popover: one step. */
+export function changeImage(unit, { opener = null, back = null, focus = "" } = {}) {
+  return imagePopover().openFor(unit, {
+    opener,
+    focus,
+    back: back || focusBack(unit),
+    apply: (target, attrs) => setAttrs(target, attrs, { step: "changed a picture", said: "Image changed" }),
+  });
+}
+
+/**
+ * A unit's icon (an outcome's), chosen in the icon picker among choices
+ * ([{ value, label, render() }], "" for automatic): one step. Focus goes
+ * back to the opener, or where it was.
+ */
+export async function changeIcon(unit, { choices = null, title = "Choose an icon", opener = null } = {}) {
+  if (!unit) return false;
+  const back = opener?.isConnected ? () => opener.isConnected && opener.focus({ preventScroll: true }) : focusBack(unit);
+  const was = unit.getAttribute("icon") || "";
+  const choice = await iconPicker().pick(was, { choices, title, anchor: opener?.isConnected ? opener : unit });
+  let done = false;
+  if (choice !== null && choice !== was) {
+    const label = choices?.find((c) => c.value === choice)?.label || choice || "Automatic";
+    done = await setAttr(unit, "icon", choice || null, { step: "changed an icon", said: `Icon: ${label}` });
+  }
+  back();
+  return done;
+}
+
 /* ---------- requests from blocks ---------- */
 
 const ACTIONS = {
@@ -757,7 +831,9 @@ const ACTIONS = {
   remove: (unit, d) => remove(unit, d),
   hide: (unit) => hide(unit),
   show: (unit) => show(unit),
-  "set-attr": (unit, d, from) => setAttr(from, d.name, d.value),
+  "set-attr": (unit, d, from) => (d.attrs ? setAttrs(from, d.attrs) : setAttr(from, d.name, d.value)),
+  image: (unit, d, from) => changeImage(from, d),
+  icon: (unit, d) => changeIcon(unit, d),
   "insert-block": (unit, d) => insertBlock(d.slot, d.tag, d.starter),
   "paste-items": (unit, d) => pasteItems(unit, d.lines),
   "stray-to-items": (unit) => strayToItems(unit),
@@ -772,6 +848,8 @@ function onRequest(e) {
   // the block the event came from: the first element in the content on its
   // way out (its own controls are in its shadow DOM)
   const from = d.unit || e.composedPath().find((n) => n.nodeType === 1 && n !== body && body.contains(n)) || null;
+  // (taken: a block asking can tell, as the hero's Change image does)
+  e.preventDefault();
   run(from && unitOf(from), d, from);
 }
 
@@ -795,7 +873,7 @@ function enterSelected(e) {
 }
 
 /** All of the above, for the editor checks and the console (globalThis.OerEditor.ops). */
-export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, duplicate, remove, pasteItems, strayToItems, moveOut, setAttr, hide, show, whyNot };
+export const ops = { settled, select, caretInto, peersOf, move, moveToColumn, addItem, insertBlock, duplicate, remove, pasteItems, strayToItems, moveOut, setAttr, setAttrs, asOneStep, changeImage, changeIcon, hide, show, whyNot };
 
 let installed = false;
 export function installOps() {

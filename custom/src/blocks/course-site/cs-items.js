@@ -24,11 +24,19 @@
  * answered by cs-keys.js. As editing begins, an item without its title (or
  * without anything after it) gets an empty one to type into (upgrade(),
  * from its section's).
+ *
+ * An outcome's icon (the icon attribute, one of OUTCOME_CHOICES; none for
+ * one by its place) is a picture for readers and, while editing, a button
+ * ("Change icon: Target", editorControl()) that asks the editor to choose
+ * another (an `oer-edit-request` { action: "icon", choices }, editor/
+ * ops.js): 12 icons and Automatic. Its menu in the editor's rail has
+ * Change icon… too (inlineContextMenu).
  */
 import { html, css, LitElement } from "../../lit.js";
 import { registerBlocks } from "../register.js";
-import { csStyles, icon, isEmpty, OUTCOME_ICONS } from "./cs-shared.js";
-import { fieldKeydown, fieldKeyup, fieldPaste } from "./cs-keys.js";
+import { csStyles, icon, isEmpty, OUTCOME_ICONS, OUTCOME_CHOICES } from "./cs-shared.js";
+import { fieldKeydown, fieldKeyup, fieldPaste, controlKeydown } from "./cs-keys.js";
+import { editorControl } from "../../ui/editor-control.js";
 import { ensureHeading } from "./cs-normalize.js";
 
 const gizmo = (title, description, icon, parent) => ({
@@ -78,6 +86,11 @@ export class SiteItem extends LitElement {
     });
     this.__fields.observe(this, { childList: true, subtree: true, characterData: true });
     this._editing = !!this.parentElement?._editing;
+    // Tab on its controls (an outcome's icon) goes on through the content
+    if (!this.__controlKeys) {
+      this.__controlKeys = (e) => controlKeydown(this, e);
+      this.renderRoot.addEventListener("keydown", this.__controlKeys, true);
+    }
   }
 
   disconnectedCallback() {
@@ -186,7 +199,13 @@ export class SiteItem extends LitElement {
   /* ---------- HAX ---------- */
 
   haxHooks() {
-    return { preProcessNodeToContent: "haxpreProcessNodeToContent" };
+    return { activeElementChanged: "haxactiveElementChanged", preProcessNodeToContent: "haxpreProcessNodeToContent" };
+  }
+
+  /** It became HAX's active block, or stopped being it: drawn again (HAX does nothing more). */
+  haxactiveElementChanged() {
+    this.requestUpdate();
+    return false;
   }
 
   /** Saving: an item with nothing in it isn't saved (HAX takes a string as what to write). */
@@ -267,16 +286,44 @@ export class OerCsOutcome extends SiteItem {
   // its icon: the one chosen, or by its place among the outcomes (as its
   // section says, setEditing(); before then, as it is now)
   _icon() {
-    if (this.icon && OUTCOME_ICONS.includes(this.icon)) return this.icon;
+    if (OUTCOME_CHOICES.some((c) => c.value === this.icon)) return this.icon;
+    return this._autoIcon();
+  }
+
+  _autoIcon() {
     const place = this._index >= 0 ? this._index : [...(this.parentElement?.children || [])].filter((c) => c.localName === this.localName).indexOf(this);
     return OUTCOME_ICONS[Math.max(0, place) % OUTCOME_ICONS.length];
   }
 
+  /** Ask the editor to choose its icon, beside opener (the tile; Safari doesn't focus a clicked button). */
+  changeIcon(opener = null) {
+    const choices = [
+      { value: "", label: "Automatic", render: () => icon(this._autoIcon()) },
+      ...OUTCOME_CHOICES.map((c) => ({ ...c, render: () => icon(c.value) })),
+    ];
+    this.dispatchEvent(new CustomEvent("oer-edit-request", { bubbles: true, composed: true, detail: { action: "icon", unit: this, choices, title: "Choose an icon", opener } }));
+  }
+
+  haxHooks() {
+    return { ...super.haxHooks(), inlineContextMenu: "haxinlineContextMenu" };
+  }
+
+  /** Its own command in HAX's block menu (and the editor's rail). */
+  haxinlineContextMenu(plate) {
+    plate.ceButtons = [{ icon: "social:mood", label: "Change icon…", callback: "haxChangeIcon" }];
+  }
+
+  haxChangeIcon() {
+    this.changeIcon();
+  }
+
   render() {
-    // (a picture, in both modes, until the icon picker lets authors change
-    // it: editor-redesign WP-14)
+    const name = this._icon();
+    const label = OUTCOME_CHOICES.find((c) => c.value === this.icon)?.label || "Automatic";
     return html`<div class="card ${this._editing ? "editing" : ""}">
-      <span class="tile" aria-hidden="true">${icon(this._icon())}</span>
+      ${this._editing
+        ? html`<button class="tile" ${editorControl()} aria-label="Change icon: ${label}" title="Change icon" @click="${(e) => this.changeIcon(e.currentTarget)}">${icon(name)}</button>`
+        : html`<span class="tile" aria-hidden="true">${icon(name)}</span>`}
       ${this.field("title", "Outcome title")}
       ${this.field("text", "What students will be able to do")}
     </div>`;
@@ -309,6 +356,24 @@ export class OerCsOutcome extends SiteItem {
           border-radius: var(--radius-md);
           background: color-mix(in oklab, var(--primary) 14%, transparent);
           color: var(--primary);
+        }
+        button.tile {
+          padding: 0;
+          border: 0;
+          font: inherit;
+          cursor: pointer;
+        }
+        button.tile:hover {
+          background: color-mix(in oklab, var(--primary) 22%, transparent);
+        }
+        button.tile:focus-visible {
+          outline: 2px solid var(--ring);
+          outline-offset: 2px;
+        }
+        @media (forced-colors: active) {
+          button.tile {
+            border: 1px solid ButtonText;
+          }
         }
         .tile .i {
           width: 1.25rem;

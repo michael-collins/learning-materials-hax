@@ -23,6 +23,7 @@ import { installImportHold } from "./import-hold.js";
 import { installRecovery } from "./recovery.js";
 import { installLeaveGuard } from "./leave-guard.js";
 import { installEditBar } from "./oer-edit-bar.js";
+import { installLinkPopover } from "./oer-link-popover.js";
 import "./oer-block-frame.js";
 import "./oer-block-rail.js";
 import "./oer-block-inserter.js";
@@ -47,6 +48,7 @@ export function installEditorChrome() {
   installEditorState();
   installOps();
   installImportHold();
+  installLinkPopover();
   // the page level: the editing bar's keys, unsaved edits after a reload, leaving
   installEditBar();
   installRecovery();

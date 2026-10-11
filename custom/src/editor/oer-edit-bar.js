@@ -1263,14 +1263,16 @@ const bar = () => globalThis.document.querySelector("custom-oer-docs-theme")?.sh
 // what's open over the page where a key was pressed: a question
 // (oer-confirm), Edit HTML (oer-settings-dialog showing HAX's view-source
 // in its tray), another dialog or a popover, a sheet beside the page (a
-// non-modal dialog: Style, Sections); or nothing
+// non-modal dialog: Style, Sections, or a popover holding a change not yet
+// on the page, data-oer-draft, which Save takes along: the image popover);
+// or nothing
 function openOver(e) {
   if (globalThis.document.querySelector("oer-confirm")?.shadowRoot?.querySelector("dialog[open]")) return "question";
   const path = e.composedPath();
   const settings = globalThis.document.querySelector("oer-settings-dialog");
   if (settings?.mode && path.some((n) => n === settings || n.localName === "hax-tray")) return settings.mode === "source" ? "source" : "dialog";
   const role = (n) => (n.nodeType === 1 && n.getAttribute("role")) || "";
-  const open = (n) => n.nodeType === 1 && ((n.localName === "dialog" && n.open) || n.matches(":popover-open") || role(n) === "alertdialog" || (role(n) === "dialog" && n.getAttribute("aria-modal") === "true"));
+  const open = (n) => n.nodeType === 1 && ((n.localName === "dialog" && n.open) || (n.matches(":popover-open") && !n.hasAttribute("data-oer-draft")) || role(n) === "alertdialog" || (role(n) === "dialog" && n.getAttribute("aria-modal") === "true"));
   if (path.some(open)) return "dialog";
   return path.some((n) => role(n) === "dialog") ? "sheet" : "";
 }
