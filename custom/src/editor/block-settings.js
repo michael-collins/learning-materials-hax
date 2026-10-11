@@ -40,12 +40,13 @@ const SIZE = {
   inputMethod: "select",
   options: { "": "Full width", 75: "Three quarters", 50: "Half", 25: "A quarter" },
 };
+// (not DDD's Center: nothing draws it, so it looked just like Default)
 const POSITION = {
   attribute: "data-float-position",
   title: "Position",
   description: "On the left or right, text wraps round it on wide screens.",
   inputMethod: "select",
-  options: { "": "Default", left: "Left", center: "Centre", right: "Right" },
+  options: { "": "Default", left: "Left", right: "Right" },
 };
 // (a text field: HAX's own alt field marks itself required)
 const DESCRIPTION = { title: "Description", description: "What it shows, for people who can't see it.", inputMethod: "textfield", required: false };
@@ -191,8 +192,8 @@ export function settingsFields(el) {
 /** Whether a block has any settings to show: the Block settings button shows only then. */
 export const hasSettings = (el) => settingsFields(el).length > 0;
 
-/** What the settings dialog is called for a block: "Image settings". */
-export const settingsTitle = (el) => SETTINGS[el?.localName]?.title || `${labelOf(el) || "Block"} settings`;
+/** What the settings dialog is called for a block: "Image settings", "True / false question settings". */
+export const settingsTitle = (el) => SETTINGS[el?.localName]?.title || `${sentence(labelOf(el) || "Block")} settings`;
 
 /**
  * The values to fill the curated form in with: each field's, from the

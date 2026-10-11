@@ -14,6 +14,11 @@ const SOURCE_LABELS = {
   "icons:content-copy": "Copy",
 };
 
+// the settings form's upload and list fields, whose buttons are made
+// reachable (below), and those buttons' words in sentence case
+const FIELD_BUTTON_HOSTS = new Set(["hax-upload-field", "simple-fields-upload", "simple-fields-array", "simple-fields-array-item"]);
+const FIELD_BUTTON_LABELS = { "Expand All": "Expand all", "Collapse All": "Collapse all", "Add Item": "Add item" };
+
 export function installUxTweaks() {
   // Text formatting toolbar: stock collapses every formatting control into a
   // "more" (⋮) button. SimpleToolbar supports alwaysExpanded; force it on at
@@ -92,6 +97,49 @@ export function installUxTweaks() {
         const short = SOURCE_LABELS[b.icon];
         if (short && b.label !== short) b.label = short;
       }
+    };
+  });
+
+  // Upload and list fields in block settings (a video's address, poster
+  // and captions): their buttons (Upload.., Select media.., Add item) are
+  // toolbar buttons outside a toolbar, so none was ever the toolbar's
+  // current item, the one Tab stops at, and the keyboard couldn't reach
+  // them. Each is a stop of its own here, without aria-controls naming a
+  // part of another shadow root (axe: an invalid value), and the list's
+  // are in sentence case.
+  onDefined("simple-toolbar-button", (Cls) => {
+    const proto = Cls.prototype;
+    const updated = proto.updated;
+    proto.updated = function (changed) {
+      updated?.call(this, changed);
+      if (!FIELD_BUTTON_HOSTS.has(this.getRootNode()?.host?.localName)) return;
+      if (!this.isCurrentItem) this.isCurrentItem = true;
+      if (this.controls) this.controls = "";
+      const words = FIELD_BUTTON_LABELS[this.label];
+      if (words) this.label = words;
+    };
+  });
+
+  // …and an upload's own file input, hidden from sight and from screen
+  // readers, isn't a stop either: Upload.. opens it
+  onDefined("simple-file-upload", (Cls) => {
+    const proto = Cls.prototype;
+    const updated = proto.updated;
+    proto.updated = function (changed) {
+      updated?.call(this, changed);
+      const input = this.shadowRoot?.querySelector("input.hidden-input");
+      if (input && input.tabIndex !== -1) input.tabIndex = -1;
+    };
+  });
+
+  // …and their address fields ask the browser for autocomplete="both",
+  // aria-autocomplete's word, not the browser's (axe: an invalid value)
+  onDefined("simple-fields-url-combo", (Cls) => {
+    const proto = Cls.prototype;
+    const updated = proto.updated;
+    proto.updated = function (changed) {
+      updated?.call(this, changed);
+      this.shadowRoot?.querySelector("input[autocomplete='both']")?.setAttribute("autocomplete", "off");
     };
   });
 }

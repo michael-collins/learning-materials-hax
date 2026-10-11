@@ -147,6 +147,12 @@ class OerBlockFrame extends LitElement {
       // width, and readers only see a section's own blocks
       const section = sectionOf(node);
       this._section = !section ? null : section === node ? "self" : "inside";
+      this.__locked = null;
+    }
+    // its settings, none while it's locked (the rail's Lock content)
+    const locked = !!node.closest("[data-hax-lock]");
+    if (locked !== this.__locked) {
+      this.__locked = locked;
       this._settings = hasSettings(node);
     }
     const f = frameRect(node);

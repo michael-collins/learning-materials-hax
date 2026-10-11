@@ -497,6 +497,8 @@ export const editorSkin = {
     #tray-detail {
       flex: 1;
       min-height: 0;
+      /* stock keeps it to 70vw below 800px, two thirds of a phone's form */
+      max-width: none !important;
       overflow-y: auto;
       padding-top: 0.75rem;
       scrollbar-width: thin;
@@ -552,7 +554,8 @@ export const editorSkin = {
       border-bottom: 0 !important;
     }
     :host([id="settings.configure"]) > button,
-    :host([id="settings.configure"]) > #heading {
+    :host([id="settings.configure"]) > #heading,
+    :host([id="settings.configure"]) > simple-tooltip {
       display: none !important;
     }
     #heading,

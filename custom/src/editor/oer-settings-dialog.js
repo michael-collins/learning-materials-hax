@@ -25,9 +25,12 @@
  * While it's open the page behind it and the editor's chrome are inert
  * (HAX's palette, popovers and toasts aren't, so the form's own pickers
  * work), Tab and Shift+Tab go round the dialog and the form, and Esc
- * closes it, unless the command palette is open, which Esc closes first.
+ * closes it (from the HTML source's code editor too, where Tab indents),
+ * unless the command palette is open, which Esc closes first.
  * Closing gives focus back to the control that opened it (opener: from
- * the click, since Safari doesn't focus a clicked button).
+ * the click, since Safari doesn't focus a clicked button). For screen
+ * readers the element itself is the dialog, and owns the panel as its
+ * form (aria-owns).
  *
  * The preview is a non-interactive copy of the block, refreshed whenever
  * the block changes, drawn at the block's width on the page in a
@@ -70,12 +73,14 @@ const OVERLAYS = new Set([
 
 const palette = () => globalThis.SuperDaemonManager?.requestAvailability?.();
 
-// what Tab stops at in a tree, shadow roots and slots included, in order
+// what Tab stops at in a tree, shadow roots and slots included, in order:
+// a code editor's frame too (HTML source), and nothing hidden from screen
+// readers (an upload field's own file input)
 function tabbables(root) {
   const out = [];
   const visit = (el) => {
-    if (el.inert || el.hidden) return;
-    if (el.tabIndex >= 0 && !el.disabled && (el.hasAttribute("tabindex") || el.matches("a[href], button, input, select, textarea, summary, [contenteditable='true']")) && el.checkVisibility?.({ visibilityProperty: true }) !== false) {
+    if (el.inert || el.hidden || el.getAttribute("aria-hidden") === "true") return;
+    if (el.tabIndex >= 0 && !el.disabled && (el.hasAttribute("tabindex") || el.matches("a[href], button, input, select, textarea, summary, iframe, [contenteditable='true']")) && el.checkVisibility?.({ visibilityProperty: true }) !== false) {
       out.push(el);
     }
     const kids = el.shadowRoot ? el.shadowRoot.children : el.localName === "slot" ? el.assignedElements({ flatten: true }) : el.children;
@@ -83,6 +88,21 @@ function tabbables(root) {
   };
   for (const kid of root.children) visit(kid);
   return out;
+}
+
+// focus on an element, or, for a frame (the code editor), on what Tab
+// would stop at first in it (last, going back), as the browser's own Tab
+// does: focus on the frame itself left the editor in it unfocused
+function focusInto(el, back = false) {
+  if (el.localName === "iframe") {
+    let inside = [];
+    try {
+      inside = el.contentDocument?.body ? tabbables(el.contentDocument.body) : [];
+    } catch {}
+    const target = back ? inside[inside.length - 1] : inside[0];
+    if (target) return target.focus();
+  }
+  el.focus();
 }
 
 // focus as it really is: inside the innermost shadow root
@@ -109,6 +129,9 @@ class OerSettingsDialog extends LitElement {
     this.mode = null;
     this._title = "";
     this.__keys = (e) => this._keys(e);
+    this.__frameKeys = (e) => this._frameKeys(e);
+    // (focus going into a frame, by Tab or a click, takes it from this window)
+    this.__intoFrame = () => setTimeout(() => this._watchFrame(deepActive()));
     this.__place = () => this._placeTray();
   }
 
@@ -136,8 +159,10 @@ class OerSettingsDialog extends LitElement {
     this.mode = mode;
     showPanel(mode === "source" ? "view-source" : "content-edit");
     this._tray?.setAttribute("data-oer-dialog", mode);
+    this._own(true);
     globalThis.addEventListener("keydown", this.__keys, true);
     globalThis.addEventListener("resize", this.__place);
+    globalThis.addEventListener("blur", this.__intoFrame);
     this.updateComplete.then(async () => {
       if (!this.mode) return;
       this.__resize = new ResizeObserver(this.__place);
@@ -151,7 +176,7 @@ class OerSettingsDialog extends LitElement {
       if (!this.mode) return;
       // the first field, or the close button
       const [first] = this._tray ? tabbables(this._tray.shadowRoot) : [];
-      (first || this.shadowRoot.querySelector(".close"))?.focus();
+      focusInto(first || this.shadowRoot.querySelector(".close"));
     });
     return true;
   }
@@ -164,7 +189,11 @@ class OerSettingsDialog extends LitElement {
     this.__stageResize?.disconnect();
     globalThis.removeEventListener("keydown", this.__keys, true);
     globalThis.removeEventListener("resize", this.__place);
+    globalThis.removeEventListener("blur", this.__intoFrame);
+    for (const win of this.__frames || []) win.removeEventListener("keydown", this.__frameKeys, true);
+    this.__frames = null;
     this._tray?.removeAttribute("data-oer-dialog");
+    this._own(false);
     this._inertPage(false);
     const opener = this.__opener;
     const node = this.__node;
@@ -188,7 +217,35 @@ class OerSettingsDialog extends LitElement {
       this.close();
     } else if (e.key === "Tab" && !e.altKey && !e.ctrlKey && !e.metaKey) {
       this._trapTab(e);
+      setTimeout(() => this._watchFrame(deepActive()));
     }
+  }
+
+  // keys pressed in a frame in the form (the HTML source's code editor,
+  // where Tab indents) stay in it: Esc there closes the dialog too, once
+  // focus has gone in (after a Tab, or as this window loses it), unless
+  // one of the editor's own pop-ups is open (suggestions, find), which
+  // Esc closes
+  _watchFrame(el) {
+    if (el?.localName !== "iframe" || !this.mode) return;
+    let win = null;
+    try {
+      // (only a frame of this page's own: the editor writes its document)
+      if (el.contentWindow?.document) win = el.contentWindow;
+    } catch {}
+    this.__frames ??= [];
+    if (!win || this.__frames.includes(win)) return;
+    win.addEventListener("keydown", this.__frameKeys, true);
+    this.__frames.push(win);
+  }
+
+  _frameKeys(e) {
+    if (e.key !== "Escape" || !this.mode || palette()?.opened) return;
+    // (monaco's pop-ups, which take Esc themselves)
+    if (e.currentTarget.document.querySelector(".editor-widget.visible")) return;
+    e.preventDefault();
+    e.stopPropagation();
+    this.close();
   }
 
   // Tab goes round the dialog's own controls, then the form (the tray,
@@ -211,7 +268,22 @@ class OerSettingsDialog extends LitElement {
     else if (at === form[0]) next = last(own);
     if (!next) return;
     e.preventDefault();
-    next.focus();
+    focusInto(next, e.shiftKey);
+  }
+
+  /* ---------- for screen readers ---------- */
+
+  // this element is the dialog, and owns HAX's panel (elsewhere in the
+  // document) as its form, so the fields are read out in it: a dialog in
+  // the shadow root couldn't name the panel, and aria-modal hid it
+  _own(on) {
+    const tray = this._tray;
+    if (on && tray && !tray.id) tray.id = "oer-settings-form";
+    const attrs = { role: "dialog", "aria-modal": "true", "aria-label": this._title, "aria-owns": tray?.id };
+    for (const [name, value] of Object.entries(attrs)) {
+      if (on && value) this.setAttribute(name, value);
+      else this.removeAttribute(name);
+    }
   }
 
   /* ---------- the page behind ---------- */
@@ -438,10 +510,10 @@ class OerSettingsDialog extends LitElement {
   render() {
     return html`
       <div class="backdrop" @click="${() => this.close()}"></div>
-      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="title">
+      <div class="dialog">
         <header>
           ${icon(this.mode === "source" ? "code" : "sliders-horizontal")}
-          <h2 id="title">${this._title}</h2>
+          <h2>${this._title}</h2>
           <button class="close" aria-label="Close" title="Close (Esc)" @click="${() => this.close()}">${icon("x")}</button>
         </header>
         <div class="body">
