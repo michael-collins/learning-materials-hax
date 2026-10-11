@@ -86,7 +86,7 @@ import { insertInSlot, refusal, standardSlot } from "./slots.js";
 import { isMac } from "./stock.js";
 import { imagePopover } from "./oer-image-popover.js";
 import { iconPicker } from "../ui/oer-icon-picker.js";
-import { getEditRange, setEditRange } from "../ui/edit-selection.js";
+import { editSelection, getEditRange, setEditRange } from "../ui/edit-selection.js";
 
 /** The attribute a section hidden from readers carries (spec §4.8). */
 export const HIDDEN = "hidden-from-readers";
@@ -98,7 +98,6 @@ const PIN_PLACE = { first: "top", last: "end" };
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
 const frame = () => new Promise((r) => requestAnimationFrame(r));
-const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
 const hasText = (el) => !!el.textContent.trim() || el.matches(MEDIA) || !!el.querySelector(MEDIA);
 // what's written in a unit: text and pictures in it, or its attributes that
 // hold what the author wrote or chose (policy attrs: its heading, an image)
@@ -195,8 +194,8 @@ function typeHeld() {
   held = "";
   const body = activeBody();
   if (!text || !body?.editMode || deepActive() !== body) return;
-  const sel = selectionOf(body);
-  if (sel?.rangeCount && body.contains(sel.getRangeAt(0).startContainer)) globalThis.document.execCommand("insertText", false, text);
+  const at = getEditRange(body);
+  if (at && body.contains(at.startContainer)) globalThis.document.execCommand("insertText", false, text);
 }
 
 // say why not, and do nothing
@@ -224,8 +223,9 @@ export function select(el, { focus = true } = {}) {
   const body = activeBody();
   const unit = unitOf(el);
   if (!body?.editMode || !unit?.isConnected) return false;
-  const sel = selectionOf(body);
-  if (sel?.rangeCount && body.contains(sel.getRangeAt(0).startContainer)) sel.removeAllRanges();
+  const sel = editSelection(body);
+  const at = getEditRange(body);
+  if (at && body.contains(at.startContainer)) sel.removeAllRanges();
   haxStore().activeNode = unit;
   reveal(unit);
   if (focus && !editorState.requestFocus(unit) && focusLost()) {
@@ -246,32 +246,28 @@ export async function caretInto(field, { atEnd = false } = {}) {
     const range = globalThis.document.createRange();
     range.selectNodeContents(field);
     range.collapse(!atEnd);
-    const sel = selectionOf(body);
-    sel.removeAllRanges();
-    sel.addRange(range);
+    setEditRange(range);
   };
   body.focus({ preventScroll: true });
   place();
   body.__focusLogic(field, false);
   await frame();
   // (HAX making the field editable can take the caret away)
-  const sel = selectionOf(body);
-  if (!sel.rangeCount || !field.contains(sel.getRangeAt(0).startContainer)) place();
+  const at = getEditRange(body);
+  if (!at || !field.contains(at.startContainer)) place();
   return true;
 }
 
 // keep the caret (or selection) where it was across a move of what holds it
 async function keepCaret(body, fn) {
-  const sel = selectionOf(body);
-  const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+  const range = getEditRange(body);
   const kept = range && body.contains(range.startContainer) ? new StaticRange(range) : null;
   await fn();
   if (!kept || !kept.startContainer.isConnected || !body.contains(kept.startContainer)) return;
   const back = globalThis.document.createRange();
   back.setStart(kept.startContainer, kept.startOffset);
   back.setEnd(kept.endContainer, kept.endOffset);
-  sel.removeAllRanges();
-  sel.addRange(back);
+  setEditRange(back);
 }
 
 /* ---------- moving ---------- */

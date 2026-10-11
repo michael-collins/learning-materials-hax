@@ -35,6 +35,7 @@
  *   installBoundaryGuard()   // from installEditorChrome (editor/index.js)
  */
 import { onEditEntry } from "./hax-fixes.js";
+import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 import { policyOf, fieldOf, boundaryOf, sameBoundary, isContained, isSingleLine, fieldPolicy, elementOf, closedUnitOf, TEXT_FIELDS } from "./policy.js";
 
 // what removes or rearranges content when it reaches across a boundary
@@ -42,7 +43,12 @@ const STRUCTURAL = /^(delete|insertParagraph|insertLineBreak|insertFromPaste|ins
 const MEDIA = "img, video, audio, iframe";
 
 const isBody = (el) => el?.localName === "hax-body";
-const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
+// a range's start, as a caret
+function startOf(range) {
+  const caret = range.cloneRange();
+  caret.collapse(true);
+  return caret;
+}
 // typed in the content, not in a block's own (shadow) controls
 function fromContent(e, body) {
   const origin = e.composedPath()[0];
@@ -145,8 +151,7 @@ function onBeforeInput(e) {
   for (const range of ranges) reason ||= refusal(range, e.inputType, body);
   if (!ranges.length) {
     // no target range given: judge by the selection
-    const sel = selectionOf(body);
-    const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+    const range = getEditRange(body);
     if (range && body.contains(range.startContainer)) {
       reason = refusal(range, e.inputType, body);
       if (!reason && range.collapsed && /^delete/.test(e.inputType) && joinsAcross(range, /Backward/.test(e.inputType), body)) reason = "joins across a boundary";
@@ -161,11 +166,11 @@ function onBeforeInput(e) {
 function onCompositionStart(e) {
   const body = e.currentTarget;
   if (!body.editMode || !fromContent(e, body)) return;
-  const sel = selectionOf(body);
-  if (!sel?.rangeCount || sel.isCollapsed) return;
-  const reason = refusal(sel.getRangeAt(0), "insertCompositionText", body);
+  const range = getEditRange(body);
+  if (!range || range.collapsed) return;
+  const reason = refusal(range, "insertCompositionText", body);
   if (!reason) return;
-  sel.collapseToStart();
+  setEditRange(startOf(range));
   refused(body, "insertCompositionText", reason);
 }
 
@@ -219,10 +224,11 @@ const isEmpty = (el) => !el.textContent.trim() && !el.querySelector(MEDIA);
  * the pasted blocks / " paragraph here.". A selection is deleted first, as
  * typing over it would.
  */
-function makeRoom(body, sel) {
-  if (!sel.isCollapsed) globalThis.document.execCommand("delete");
-  if (!sel.rangeCount || !sel.isCollapsed) return;
-  const range = sel.getRangeAt(0);
+function makeRoom(body) {
+  const over = getEditRange(body);
+  if (over && !over.collapsed) globalThis.document.execCommand("delete");
+  const range = getEditRange(body);
+  if (!range?.collapsed) return;
   const field = fieldOf(range.startContainer);
   // (an empty field is room already)
   if (!field || !SPLITS.has(field.localName) || isEmpty(field)) return;
@@ -244,7 +250,9 @@ function makeRoom(body, sel) {
   }
   if (!isEmpty(after)) room.after(after);
   room.replaceChildren(globalThis.document.createElement("br"));
-  sel.collapse(room, 0);
+  const caret = globalThis.document.createRange();
+  caret.setStart(room, 0);
+  setEditRange(caret);
   // HAX pastes into its active block
   if (body.activeNode && body.setActiveNode) body.setActiveNode(room, true);
   else if (globalThis.HaxStore?.requestAvailability) globalThis.HaxStore.requestAvailability().activeNode = room;
@@ -254,16 +262,16 @@ function makeRoom(body, sel) {
 function onPaste(e) {
   const body = e.currentTarget;
   if (!body.editMode || !fromContent(e, body)) return;
-  const sel = selectionOf(body);
-  if (!sel?.rangeCount || !body.contains(sel.getRangeAt(0).startContainer)) return;
-  if (!sel.isCollapsed) {
-    const reason = refusal(sel.getRangeAt(0), "insertFromPaste", body);
+  const range = getEditRange(body);
+  if (!range || !body.contains(range.startContainer)) return;
+  if (!range.collapsed) {
+    const reason = refusal(range, "insertFromPaste", body);
     if (reason) {
-      sel.collapseToStart();
+      setEditRange(startOf(range));
       refused(body, "insertFromPaste", reason);
     }
   }
-  const at = sel.getRangeAt(0).startContainer;
+  const at = range.startContainer;
   // a picture or a file in a section or item, which takes no blocks: HAX
   // would put it (and start its upload) inside, as a drop there would
   if (closedUnitOf(at) && pastesMedia(e)) {
@@ -289,15 +297,14 @@ function onPaste(e) {
     if (text) globalThis.document.execCommand("insertText", false, text);
     return;
   }
-  if (pastesBlocks(e)) makeRoom(body, sel);
+  if (pastesBlocks(e)) makeRoom(body);
 }
 
 function onKeyDown(e) {
   const body = e.currentTarget;
   if (!body.editMode || (e.key !== "Backspace" && e.key !== "Delete") || !fromContent(e, body)) return;
-  const sel = selectionOf(body);
-  if (!sel?.rangeCount || !sel.isCollapsed) return;
-  const range = sel.getRangeAt(0);
+  const range = getEditRange(body);
+  if (!range?.collapsed) return;
   if (!body.contains(range.startContainer) || !joinsAcross(range, e.key === "Backspace", body)) return;
   e.preventDefault();
   e.stopPropagation();

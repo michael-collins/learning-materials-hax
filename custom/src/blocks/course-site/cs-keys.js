@@ -55,6 +55,7 @@
  */
 
 import { isEditorControl } from "../../ui/editor-control.js";
+import { getEditRange, setEditRange } from "../../ui/edit-selection.js";
 
 // a block's text fields, where a caret goes (editor/policy.js TEXT_FIELDS)
 const FIELDS = "p,h1,h2,h3,h4,h5,h6,li,blockquote,pre,dt,dd,figcaption,td,th,summary";
@@ -63,28 +64,12 @@ const MEDIA = "img, video, audio, iframe";
 const isEmpty = (el) => !el.textContent.trim() && !el.querySelector(MEDIA);
 const MAC = /Mac|iPhone|iPad/.test(globalThis.navigator?.platform ?? "");
 
-/** The selection where a node is, from its own (shadow) root: the content's own, as editing sees it. */
-export function getEditRange(node) {
-  const root = node.getRootNode();
-  const sel = root.getSelection?.() || globalThis.document.getSelection();
-  if (sel?.rangeCount && root.contains?.(sel.getRangeAt(0).startContainer)) return sel.getRangeAt(0);
-  // (browsers whose shadow roots don't give their selection)
-  const [composed] = globalThis.document.getSelection()?.getComposedRanges?.({ shadowRoots: root instanceof ShadowRoot ? [root] : [] }) || [];
-  if (!composed) return null;
-  const range = globalThis.document.createRange();
-  range.setStart(composed.startContainer, composed.startOffset);
-  range.setEnd(composed.endContainer, composed.endOffset);
-  return range;
-}
-
-/** Put the caret at the start (or end) of a field, in the selection of the field's root. */
+/** Put the caret at the start (or end) of a field. */
 export function placeCaret(field, { atEnd = false } = {}) {
-  const sel = field.getRootNode().getSelection?.() || globalThis.document.getSelection();
   const range = globalThis.document.createRange();
   range.selectNodeContents(field);
   range.collapse(!atEnd);
-  sel.removeAllRanges();
-  sel.addRange(range);
+  setEditRange(range);
 }
 
 // whether a collapsed range is at the start (back) or end of a field: nothing
@@ -362,12 +347,10 @@ function backspace(unit, field, role, done) {
 function keepRange(range, move) {
   const { startContainer, startOffset, endContainer, endOffset } = range;
   move();
-  const sel = startContainer.getRootNode().getSelection?.() || globalThis.document.getSelection();
   const back = globalThis.document.createRange();
   back.setStart(startContainer, startOffset);
   back.setEnd(endContainer, endOffset);
-  sel.removeAllRanges();
-  sel.addRange(back);
+  setEditRange(back);
 }
 
 // a list item under the one before it, in that one's own sub-list (made, of
@@ -407,11 +390,9 @@ function outdent(li, range) {
 
 // this field's text selected, and no more
 function selectField(field) {
-  const sel = field.getRootNode().getSelection?.() || globalThis.document.getSelection();
   const range = globalThis.document.createRange();
   range.selectNodeContents(field);
-  sel.removeAllRanges();
-  sel.addRange(range);
+  setEditRange(range);
 }
 
 /**

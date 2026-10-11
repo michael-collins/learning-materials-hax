@@ -82,6 +82,9 @@
  * - HAX's hidden context menus sit in #topcontextmenu, an invisible box over
  *   the active block that took clicks meant for the block above it.
  *   hax-body.js #topcontextmenu 213, 1069.
+ * - HAX finds the caret in Safari's engine too (see contentSelection), and
+ *   never makes something outside the content (the theme's host, the
+ *   page's body) its active block. hax-body.js __focusLogic 4064.
  *
  *   installHaxFixes()   // from installEditorChrome (editor/index.js)
  *   pinned({ fix, owner, target, method, marker, file }, (original) => wrapper)
@@ -92,6 +95,7 @@ import { cancelEdit, isMac } from "./stock.js";
 import { registerShadowStyles } from "./shadow-styles.js";
 import { policyOf, closedUnitOf } from "./policy.js";
 import { curate, curatedValue } from "./block-settings.js";
+import { editSelection, getEditRange, setEditRange } from "../ui/edit-selection.js";
 
 export function onDefined(tag, fn) {
   const cls = customElements.get(tag);
@@ -185,8 +189,9 @@ function keepClickSelection(e) {
   const block = path.slice(0, path.indexOf(active) + 1).find((n) => n.nodeType === 1 && !getComputedStyle(n).display.startsWith("inline"));
   setTimeout(() => {
     if (!block?.isConnected) return;
-    const sel = block.getRootNode().getSelection?.() || globalThis.getSelection();
-    sel.selectAllChildren(block);
+    const range = globalThis.document.createRange();
+    range.selectNodeContents(block);
+    setEditRange(range);
   });
 }
 
@@ -260,6 +265,95 @@ function watchFilling(form) {
   for (const type of ["pointerdown", "keydown", "input", "paste", "drop"]) {
     form.addEventListener(type, (e) => e.isTrusted && filling.delete(form), true);
   }
+}
+
+/* ---------- the caret in Safari ---------- */
+
+/**
+ * HAX reads the caret with HAXStore.getSelection() and getRange()
+ * (hax-body/lib/hax-store.js 97–124): the selection of the content's shadow
+ * root where there is one (Chrome), else the document's, which holds the
+ * nodes inside shadow roots in Firefox but in Safari's engine (WebKit)
+ * stops at the outermost shadow host, haxcms-site-builder, at offset 0.
+ * hax-body's arrow-key, Backspace and Delete handlers (hax-body.js
+ * _onKeyDown 1696–1790, 1861–1900) and its paste (hax-store.js _onPaste)
+ * then took that host for the caret's block: the caret left the content,
+ * HAX made the host its active block, and the editor re-imported the saved
+ * page over unsaved edits. HAX also places the caret with addRange (in
+ * __focusLogic 4170–4176), which WebKit ignores inside shadow roots.
+ *
+ * There (no getSelection on shadow roots, and a document selection that
+ * doesn't reach into them, though getComposedRanges does), HAX gets a
+ * stand-in for the document's selection: where the caret is in the
+ * content, its nodes come from the composed range (ui/edit-selection.js),
+ * and where it isn't, it holds no range; addRange places the caret with
+ * setBaseAndExtent. Chrome gets HAX's own, and so does Firefox while the
+ * caret is in the content, where its document selection holds the nodes
+ * themselves (Firefox 142 and later have getComposedRanges too, so that
+ * alone doesn't tell the engines apart).
+ */
+function standIn(body) {
+  const root = body?.getRootNode();
+  const sel = editSelection(body);
+  if (!root || root.getSelection || !sel?.getComposedRanges) return false;
+  return !(sel.rangeCount && sel.getRangeAt(0).startContainer.getRootNode() === root);
+}
+
+function contentSelection(store, sel) {
+  const body = store.activeHaxBody;
+  if (!sel || !standIn(body)) return sel;
+  const range = getEditRange(body);
+  const backward = !!range && sel.direction === "backward";
+  const [anchor, focus] = backward ? ["end", "start"] : ["start", "end"];
+  const own = range
+    ? {
+        anchorNode: range[`${anchor}Container`],
+        anchorOffset: range[`${anchor}Offset`],
+        focusNode: range[`${focus}Container`],
+        focusOffset: range[`${focus}Offset`],
+        rangeCount: 1,
+        isCollapsed: range.collapsed,
+        type: range.collapsed ? "Caret" : "Range",
+        getRangeAt: () => range,
+        toString: () => range.toString(),
+      }
+    : {
+        anchorNode: null,
+        anchorOffset: 0,
+        focusNode: null,
+        focusOffset: 0,
+        rangeCount: 0,
+        isCollapsed: true,
+        type: "None",
+        getRangeAt: () => {
+          throw new DOMException("The selection is outside the content", "IndexSizeError");
+        },
+        toString: () => "",
+      };
+  own.addRange = (r) => setEditRange(r);
+  return new Proxy(sel, {
+    get: (target, key) => (Object.hasOwn(own, key) ? own[key] : typeof target[key] === "function" ? target[key].bind(target) : target[key]),
+  });
+}
+
+function pinSelection(Store) {
+  const at = (method, marker) => ({ fix: `the caret in Safari (${method})`, owner: "hax-store", target: Store.prototype, method, marker });
+  pinned(
+    at("getSelection", "activeHaxBody"),
+    (original) =>
+      function () {
+        return contentSelection(this, original.call(this));
+      },
+  );
+  pinned(
+    at("getRange", "rangeCount"),
+    (original) =>
+      function () {
+        // Safari's engine: the composed range in the content, if it's there
+        const range = standIn(this.activeHaxBody) ? getEditRange(this.activeHaxBody) : null;
+        return range || original.call(this);
+      },
+  );
 }
 
 /* ---------- installing ---------- */
@@ -352,6 +446,16 @@ export function installHaxFixes() {
         },
     );
 
+    // never a block outside the content (the theme's host, the page's body)
+    pinned(
+      at("__focusLogic", "ignore-activation", "nothing outside the content is the active block"),
+      (original) =>
+        function (target, ...rest) {
+          if (target && target !== this && !this.contains(target)) return false;
+          return original.call(this, target, ...rest);
+        },
+    );
+
     // capture: before hax-body's own mousedown handler and the router
     const clicks = matches(at("_mouseDown", "__mouseDown", "double- and triple-click"));
     const listening = new WeakSet();
@@ -362,6 +466,8 @@ export function installHaxFixes() {
       body.addEventListener("click", holdLinks, true);
     });
   });
+
+  onDefined("hax-store", pinSelection);
 
   onDefined("hax-text-editor-toolbar", (Toolbar) => {
     pinned(

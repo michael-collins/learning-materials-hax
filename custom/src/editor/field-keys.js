@@ -18,16 +18,14 @@
  */
 import { onEditEntry } from "./hax-fixes.js";
 import { fieldOf } from "./policy.js";
-
-const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
+import { getEditRange } from "../ui/edit-selection.js";
 
 // the field the caret (or the selection's start) is in, for an event from
 // the content (not from a block's own controls), and the block holding it
 function target(e, body) {
   const origin = e.composedPath()[0];
   if (!body.editMode || !(origin === body || body.contains(origin))) return null;
-  const sel = selectionOf(body);
-  const node = sel?.rangeCount ? sel.getRangeAt(0).startContainer : null;
+  const node = getEditRange(body)?.startContainer;
   const field = node && body.contains(node) ? fieldOf(node) : null;
   if (!field) return null;
   for (let el = field.parentElement; el && el !== body; el = el.parentElement) {

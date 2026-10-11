@@ -61,6 +61,7 @@
  */
 import { normalizedHtml } from "./undo.js";
 import { unitOf, fieldOf, policyOf, TEXT_FIELDS } from "./policy.js";
+import { editSelection, getEditRange } from "../ui/edit-selection.js";
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
@@ -171,12 +172,10 @@ function deepActive() {
   while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
   return el;
 }
-const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
 
 // the node the caret is at, in hax-body's light DOM, or null
 function caretNode(body) {
-  const sel = selectionOf(body);
-  const node = sel?.rangeCount ? sel.getRangeAt(0).startContainer : null;
+  const node = getEditRange(body)?.startContainer;
   return node && body.contains(node) ? node : null;
 }
 // the field the caret is in, or null
@@ -185,8 +184,7 @@ const caretField = (body) => fieldOf(caretNode(body));
 // whether the caret is collapsed at the very start of the content: the
 // start of its first field
 function atContentStart(body) {
-  const sel = selectionOf(body);
-  const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+  const range = getEditRange(body);
   const first = body.querySelector(TEXT_FIELDS);
   if (!range?.collapsed || !first?.contains(range.startContainer)) return false;
   const before = globalThis.document.createRange();
@@ -377,7 +375,7 @@ class EditorState extends EventTarget {
     // click is HAX's to handle), so it goes
     const { kind } = policyOf(hax.activeNode);
     if ((kind === "section" || kind === "item") && unitOf(hax.activeNode) === hax.activeNode && atContentStart(body)) {
-      selectionOf(body).removeAllRanges();
+      editSelection(body).removeAllRanges();
       this._caretSeen();
       return;
     }
@@ -404,9 +402,8 @@ class EditorState extends EventTarget {
     const unit = haxStore().activeNode;
     const { kind } = policyOf(unit);
     if ((kind !== "section" && kind !== "item") || !body.contains(unit)) return;
-    const sel = selectionOf(body);
-    const field = sel?.rangeCount && sel.isCollapsed ? caretField(body) : null;
-    if (field) sel.removeAllRanges();
+    const field = getEditRange(body)?.collapsed ? caretField(body) : null;
+    if (field) editSelection(body).removeAllRanges();
     this._caretSeen();
   }
 }

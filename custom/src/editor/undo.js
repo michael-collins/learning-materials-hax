@@ -74,14 +74,13 @@
 import { isMac } from "./stock.js";
 import { onDefined, pinned } from "./hax-fixes.js";
 import { fieldOf, unitOf } from "./policy.js";
-import { getEditRange, editSelection } from "../ui/edit-selection.js";
+import { getEditRange, setEditRange, editSelection } from "../ui/edit-selection.js";
 import { announce } from "./announce.js";
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const frame = () => new Promise((r) => requestAnimationFrame(r));
-const selectionOf = (body) => body.getRootNode().getSelection?.() || globalThis.document.getSelection();
 
 // focus as the person sees it, inside shadow roots
 function deepActive() {
@@ -265,8 +264,7 @@ function follow(body, path) {
  */
 export function placeOf(body = activeBody()) {
   if (!body?.editMode) return null;
-  const sel = selectionOf(body);
-  const range = sel?.rangeCount ? sel.getRangeAt(0) : null;
+  const range = getEditRange(body);
   const field = range && body.contains(range.startContainer) ? fieldOf(range.startContainer) : null;
   if (field) {
     const before = globalThis.document.createRange();
@@ -331,13 +329,14 @@ function caretAt(el, offset) {
 // as a whole), with HAX's active block on node
 function putCaret(body, range, node) {
   if (deepActive() !== body) body.focus({ preventScroll: true });
-  const sel = selectionOf(body);
-  sel.removeAllRanges();
   if (range) {
     range.collapse(true);
-    sel.addRange(range);
+    setEditRange(range);
     body.__focusLogic(node, false);
-  } else if (haxStore().activeNode !== node) haxStore().activeNode = node;
+  } else {
+    editSelection(body).removeAllRanges();
+    if (haxStore().activeNode !== node) haxStore().activeNode = node;
+  }
 }
 
 /**
@@ -476,6 +475,14 @@ function historyInput(e) {
   const body = activeBody();
   if (!body?.editMode || !e.composedPath().includes(body) || !forThePage(e)) return;
   e.preventDefault();
+  // Safari's undo in a form field (the block list's search box) reaches
+  // into the content too, one undo stack for the page: that part is
+  // refused, and HAX's isn't run. It asks again for each step it would
+  // undo, so HAX's runs once for them.
+  const focus = deepActive();
+  if (focus?.matches?.(FORM_FIELDS) || (focus?.isContentEditable && !body.contains(focus)) || body.__oerHistory) return;
+  body.__oerHistory = true;
+  setTimeout(() => (body.__oerHistory = false));
   step(e.inputType === "historyRedo");
 }
 
