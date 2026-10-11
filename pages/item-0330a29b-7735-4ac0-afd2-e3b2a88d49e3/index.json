@@ -3,7 +3,7 @@
   "indent": 0,
   "location": "pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.json",
   "slug": "up/dart-413",
-  "order": 1879,
+  "order": 14,
   "parent": null,
   "title": "DART 413: Digital Fabrication Studio",
   "description": "Digital Fabrication Studio, 4 credits.",
@@ -21,7 +21,7 @@
     },
     "pageType": "oer:course-site",
     "created": 1791560758,
-    "updated": 1791566082,
+    "updated": 1791735515,
     "images": [],
     "videos": [],
     "locked": false,
@@ -30,8 +30,8 @@
     "oerSiteStyle": {
       "scheme": "graphite",
       "accent": "",
-      "fonts": "syne"
+      "fonts": "space"
     }
   },
-  "content": "<oer-cs-hero><p></p></oer-cs-hero>\n<oer-cs-facts></oer-cs-facts>\n<oer-cs-learn><ul><li></li></ul></oer-cs-learn>\n<oer-cs-semester></oer-cs-semester>\n<oer-cs-make></oer-cs-make>\n<oer-cs-people><p></p></oer-cs-people>\n<oer-cs-tools><ul><li></li></ul></oer-cs-tools>\n<oer-cs-faq><h3></h3><p></p></oer-cs-faq>\n<oer-cs-closing></oer-cs-closing>"
+  "content": "<oer-cs-hero><p></p></oer-cs-hero>\n<oer-cs-facts></oer-cs-facts>\n<oer-cs-learn><oer-cs-outcome><h3></h3><p></p></oer-cs-outcome></oer-cs-learn>\n<oer-cs-semester></oer-cs-semester>\n<oer-cs-make></oer-cs-make>\n<oer-cs-people><p></p></oer-cs-people>\n<oer-cs-tools><oer-cs-tool><p></p></oer-cs-tool></oer-cs-tools>\n<oer-cs-faq><oer-cs-question><h3></h3><p></p></oer-cs-question></oer-cs-faq>\n<oer-cs-closing></oer-cs-closing>"
 }
