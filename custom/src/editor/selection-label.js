@@ -18,7 +18,6 @@
  *                                          tag, when too little of it shows
  *   watchBlockList(back)                   Escape out of the block list
  *                                          just opened gives focus back
- *   hasSettings(unit)                      whether a block has settings
  *   ringOf(unit, geometry), railTopOf(ring, view, height), RAIL_X
  *                                          where the ring and the rail go
  *
@@ -47,7 +46,6 @@ import { editorState, contentView } from "./editor-state.js";
 
 const plural = (n, noun) => `${n} ${noun}${n === 1 ? "" : "s"}`;
 const isBody = (el) => el?.localName === "hax-body";
-const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 
 // focus as the person sees it, inside shadow roots
 function deepActive() {
@@ -261,17 +259,6 @@ export function watchBlockList(back) {
   };
   globalThis.addEventListener("keydown", key, true);
   globalThis.addEventListener("pointerdown", stop, true);
-}
-
-/**
- * Whether a block has settings to show: HAX's fields for it (until
- * editor-redesign WP-13's block-settings.js hasSettings, which curates
- * them, takes this one's place). The frame's label and the rail's Block ▾
- * offer Block settings for it.
- */
-export function hasSettings(node) {
-  const settings = haxStore()?.haxSchemaFromTag?.(node.localName)?.settings || {};
-  return [...(settings.configure || []), ...(settings.advanced || [])].length > 0;
 }
 
 /* ---------- where the selection's tools go ---------- */

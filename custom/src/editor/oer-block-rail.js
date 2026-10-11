@@ -75,7 +75,8 @@ import { policyOf, phraseOf } from "./policy.js";
 import { ops } from "./ops.js";
 import { announce } from "./announce.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
-import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, watchBlockList, hasSettings, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
+import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, watchBlockList, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
+import { hasSettings } from "./block-settings.js";
 
 const SEP = { sep: true };
 // the room the selection's handle takes between the rail and the text
@@ -534,7 +535,7 @@ class OerBlockRail extends LitElement {
       const own = (await ceButtonsOf(unit)).map((b) => ({ label: b.label, icon: b.icon, run: b.run }));
       // the frame label's buttons, for the keyboard here too (focus goes
       // back to where it was as the menu ran it: the name tag, or the caret)
-      if (unit && hasSettings(unit)) own.unshift({ label: "Block settings…", icon: "sliders-horizontal", opens: true, run: (back) => settingsDialog().open("settings", back) });
+      if (unit && !unit.closest("[data-hax-lock]") && hasSettings(unit)) own.unshift({ label: "Block settings…", icon: "sliders-horizontal", opens: true, run: (back) => settingsDialog().open("settings", back) });
       const action = unit?.constructor?.frameAction;
       if (action) own.push({ label: action.label, icon: action.icon, opens: true, run: () => action.run(unit) });
       if (own.length) items.push(SEP, ...own);

@@ -45,6 +45,19 @@
  *   windows, phones), the label and the handle go into the rail's dock
  *   and the frame draws the ring alone.
  *
+ * Layouts: when the block is inside a column layout (or is one), that
+ * layout gets a dashed outline with a "Columns · n" tab and its columns are
+ * outlined; while dragging, every layout is. The label becomes a
+ * breadcrumb (▥ Columns › Paragraph): "Columns" selects the layout and ▥
+ * opens the layout menu (presets, select, remove; or "put in columns" for
+ * a block outside any layout). The sliders button opens the block's
+ * settings (oer-settings-dialog), and shows only for a block that has some
+ * (block-settings.js: not text) and isn't locked. A course site section,
+ * its items and what they hold have neither button (nothing of theirs is
+ * set in settings). A block can add its own button after its name with a
+ * static `frameAction`: { label, icon (an oer: Lucide name), run(node) },
+ * e.g. the rubric block's Edit rubric.
+ *
  * And the regions: Ctrl+` (and F6, where the browser passes it) goes to
  * the next region, Ctrl+Shift+` (Shift+F6) to the one before: the editing
  * bar, the Sections sheet, the selection (its name tag), the content (the
@@ -62,6 +75,7 @@ import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { editorState, contentView } from "./editor-state.js";
 import { computeSlots, nearestSlot, placeInSlot, sameSlot } from "./slots.js";
 import { settingsDialog } from "./oer-settings-dialog.js";
+import { hasSettings } from "./block-settings.js";
 import { layoutOf, columnRects, columnCount, layoutPresets, setLayout, wrapInColumns, removeLayout } from "./layouts.js";
 import { policyOf, phraseOf, TEXT_FIELDS } from "./policy.js";
 import { ops } from "./ops.js";
@@ -69,7 +83,7 @@ import { checkpoint } from "./undo.js";
 import { announce } from "./announce.js";
 import { onEditEntry } from "./hax-fixes.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
-import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, hasSettings, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
+import { describeUnit, nameTagKeydown, runsAlong, bringIntoView, ringOf, railTopOf, RAIL_X } from "./selection-label.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -267,14 +281,19 @@ class OerBlockFrame extends LitElement {
       this.__unit = unit;
       this.__parent = unit.parentElement;
       this._menu = false;
-      const policy = policyOf(unit);
-      const block = policy.kind !== "section" && policy.kind !== "item";
+      this.__block = policyOf(unit).kind !== "section" && policyOf(unit).kind !== "item";
       this._layout = layoutOf(editorState.body, unit);
       this._action = unit.constructor?.frameAction || null;
-      // an ordinary block's own settings and columns; a section, its items
-      // and what they hold have neither (nothing of theirs is set in settings,
-      // and sections never go in columns)
-      this._tools = { settings: block && hasSettings(unit), layout: block };
+      this.__locked = null;
+    }
+    // an ordinary block's own settings and columns; a section, its items
+    // and what they hold have neither (nothing of theirs is set in
+    // settings, and sections never go in columns), and none while it's
+    // locked (the rail's Lock content)
+    const locked = !!unit.closest("[data-hax-lock]");
+    if (locked !== this.__locked) {
+      this.__locked = locked;
+      this._tools = { settings: this.__block && !locked && hasSettings(unit), layout: this.__block };
     }
     const info = describeUnit(unit);
     if (!same(drawn(info), drawn(this._info))) this._info = info;
