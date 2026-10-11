@@ -18,7 +18,7 @@ import { confirmDialog } from "../ui/oer-confirm.js";
 import { getEditRange, setEditRange } from "../ui/edit-selection.js";
 import { editorState } from "./editor-state.js";
 import { holdImports } from "./import-hold.js";
-import { dropCopy, forgetCopy, keepCopySoon } from "./recovery.js";
+import { forgetCopy, keepCopySoon } from "./recovery.js";
 import { siteData, COURSE_SITE_TYPE } from "../types/course-site.js";
 
 export const PANELS = ["content-add", "content-edit", "content-map", "view-source"];
@@ -259,7 +259,10 @@ let saving = null;
  * reload of the saved page has settled, with HAX's imports into the
  * editor held (import-hold.js), so the page from before never shows. Then
  * editing ends, on the saved page, and the copy of unsaved edits goes
- * (recovery.js). Preview ends first, and HTML typed in Edit HTML goes on
+ * (recovery.js; one kept for later with Not now stays). A reload that
+ * failed, or didn't settle in 20 s, would leave the reading view on the
+ * page from before or on HAX's "could not be located": the page as sent
+ * (which the server has saved) is shown instead. Preview ends first, and HTML typed in Edit HTML goes on
  * the page first. On an error, or no answer in 20 s, editing goes on with
  * every edit and the caret, and the status says why (saveError); an
  * answer after that still counts (answerLate). Resolves to { ok, reason }.
@@ -315,16 +318,25 @@ async function save() {
     if (!answer && asked.sent) answerLate(asked, body, sent);
     return { ok: false, reason };
   }
-  await reload.settled();
+  const landed = (await reload.settled()) && !reload.failed();
   reload.stop();
-  dropCopy(page);
+  forgetCopy(page);
   store.editMode = false;
   await frame();
   release();
   body.inert = false;
   body.removeAttribute("aria-busy");
+  if (!landed) showSaved(asked.body);
   editorState.set({ saving: false, savedAt: Date.now() });
   return { ok: true };
+}
+
+// the page as saved, in the reading view, when HAX's reload of it didn't
+// come: what was sent, less the page-break HAX adds to it again
+function showSaved(sent) {
+  if (typeof sent !== "string") return;
+  const content = sent.replace(/^\s*<page-break\b[^>]*>[\s\S]*?<\/page-break>/i, "");
+  siteBuilder()?._updateActiveItemContent?.(content, toJS(store.activeItem));
 }
 
 // the caret, to put back when the page stops being inert after a failed
@@ -438,6 +450,8 @@ export const saveAnswers = {
         },
       };
       asked.sent = true;
+      // (the page as HAX sends it: shown if its reload doesn't come)
+      asked.body = options.payload?.body;
       asked.send = () => original.call(this, sending);
       requests.set(options.payload, asked);
       return asked.send();
@@ -504,18 +518,20 @@ function reloadSite() {
  * followed while any save watches (a late answer can come while another
  * save waits for its own), with one wrapper each.
  */
-const loads = { watchers: 0, busy: 0, last: 0, undo: [] };
+const loads = { watchers: 0, busy: 0, last: 0, failed: 0, undo: [] };
 const touch = () => (loads.last = performance.now());
 
 function followLoads(builder) {
   if (loads.watchers++) return;
   Object.assign(loads, { busy: 0, undo: [] });
   touch();
-  for (const name of ["loadPageData", "loadJOSData", "_activeItemContentChanged"]) {
+  for (const name of ["loadPageData", "loadJOSData", "_activeItemContentChanged", "display404Error"]) {
     const original = builder?.[name];
     if (typeof original !== "function") continue;
     const own = Object.prototype.hasOwnProperty.call(builder, name);
     builder[name] = function (...args) {
+      // (a page load the server answered with an error)
+      if (name === "display404Error") loads.failed++;
       loads.busy++;
       touch();
       const out = original.apply(this, args);
@@ -539,11 +555,13 @@ function unfollowLoads() {
 
 /**
  * Follow HAX's reload after a save heard back about. settled() resolves
- * once the reload has begun (haxcms-trigger-update-node, unless begun) and
- * ended and nothing has moved for 300 ms; or after 20 s.
+ * to true once the reload has begun (haxcms-trigger-update-node, unless
+ * begun) and ended and nothing has moved for 300 ms; or to false after 20
+ * s. failed(): a page load since was answered with an error.
  */
 function watchReload(builder, { begun = false } = {}) {
   let stopped = false;
+  const failedBefore = loads.failed;
   const onNode = () => {
     begun = true;
     touch();
@@ -561,6 +579,7 @@ function watchReload(builder, { begun = false } = {}) {
         await sleep(25);
       }
     },
+    failed: () => loads.failed > failedBefore,
     stop() {
       if (stopped) return;
       stopped = true;

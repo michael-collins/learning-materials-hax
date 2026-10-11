@@ -8,12 +8,15 @@
  * typefaces are radio groups (arrow keys). Closing gives focus back to the
  * control that opened it (opener: Safari doesn't focus a clicked button).
  * Saved while the page is being edited, the edits stay (editor/
- * import-hold.js holds HAX's reload of the page out of the editor).
+ * import-hold.js holds HAX's reload of the page out of the editor). Save
+ * sends the site's page as it is saved now, with the style: Page details
+ * may have renamed it since the sheet opened.
  *
  *   siteStyle().show(siteItem, { opener })
  * @element oer-site-style
  */
 import { html, css, LitElement } from "../lit.js";
+import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { SCHEMES, FONT_PAIRS, accentPair, loadAllSiteFonts } from "../types/course-site-style.js";
@@ -94,7 +97,9 @@ class OerSiteStyle extends LitElement {
     this._saving = true;
     this._error = "";
     try {
-      await saveOutline([{ ...this._site, metadata: { ...(this._site.metadata || {}), oerSiteStyle: style }, modified: true }]);
+      // (HAXcms writes the title and merges the metadata it's sent)
+      const site = (toJS(store.manifest?.items) || []).find((i) => i.id === this._site.id) || this._site;
+      await saveOutline([{ ...site, metadata: { ...(site.metadata || {}), oerSiteStyle: style }, modified: true }]);
       preview(this._site, null);
       this._close();
     } catch (err) {

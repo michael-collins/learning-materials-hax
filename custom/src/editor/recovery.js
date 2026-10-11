@@ -25,12 +25,14 @@
  *   the editor as one undo step, so the page reads "Unsaved changes". The
  *   page's details are kept as they're saved now (its page-break, which
  *   Page details or Publish may have changed since the copy was made).
- * - Not now keeps the copy for later: it's asked again next time, and
- *   until then nothing replaces it or drops it but saving the page (whose
- *   saved form it was made to) or Discard them. Meanwhile this session's
- *   own changes aren't copied.
+ * - Not now keeps the copy for later, as the question says: it's asked
+ *   again next time, and until then nothing replaces it or drops it but
+ *   Discard them. Saved meanwhile, the page is offered back next time
+ *   saying it has been saved since. This session's own changes aren't
+ *   copied meanwhile.
  * - Saving the page (stock.js savePage) drops its copy, and so does
- *   discarding the changes it's a copy of (forgetCopy).
+ *   discarding the changes it's a copy of (forgetCopy), except one kept
+ *   for later.
  * - pendingEdit(id): a page's copy, for the reading view to say there is
  *   one ("Unsaved edits from 2:41 pm · Edit content to restore"); it
  *   sends `oer-pending-edit` on the window when a copy comes or goes.
@@ -115,7 +117,7 @@ export function copyTime(copy) {
 // the page whose copy was kept for later (Not now): this session leaves it alone
 let kept = "";
 
-/** Forget a page's copy of unsaved edits (they're saved, or discarded). */
+/** Forget a page's copy of unsaved edits, even one kept for later. */
 export function dropCopy(id = pageId()) {
   id = String(id);
   if (kept === id) kept = "";
@@ -135,7 +137,7 @@ function baseOf() {
   return `${text.length}:${h}`;
 }
 
-/** Forget the copy of a page's unsaved edits (they're discarded); a copy kept for later stays. */
+/** Forget the copy of a page's unsaved edits (they're saved, or discarded); a copy kept for later stays. */
 export function forgetCopy(id = pageId()) {
   if (kept !== String(id)) dropCopy(id);
 }
