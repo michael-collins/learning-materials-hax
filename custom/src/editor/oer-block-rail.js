@@ -440,6 +440,11 @@ class OerBlockRail extends LitElement {
       this.__infoKey = JSON.stringify(info && [info.name, info.said, info.crumbs.map((c) => c.label), info.chips.map((c) => c.label)]);
       this._info = info;
     }
+    // (locking takes the dock's Block settings away)
+    if (s.locked !== this.__locked) {
+      this.__locked = s.locked;
+      this.requestUpdate();
+    }
     if (g.dock) {
       // (the unit's place among the others changes why its moves are off)
       const steps = [ops.whyNot("move", unit, { dir: -1 }), ops.whyNot("move", unit, { dir: 1 })];
@@ -1492,6 +1497,10 @@ class OerBlockRail extends LitElement {
   _renderDockLabel() {
     const info = this._info;
     if (!info) return "";
+    // the frame label's Block settings, for an ordinary block (oer-block-frame.js)
+    const unit = this.__unit;
+    const kind = unit ? policyOf(unit).kind : null;
+    const settings = !!unit && kind !== "section" && kind !== "item" && !unit.closest("[data-hax-lock]") && hasSettings(unit);
     return html`<div class="dock-label" role="toolbar" aria-label="Selection">
       ${info.crumbs.map(
         (c) => html`<button class="crumb" tabindex="-1" title="Select ${c.label}" @click="${() => ops.select(c.unit)}">${c.label}</button
@@ -1505,6 +1514,19 @@ class OerBlockRail extends LitElement {
           ? html`<button class="chip" tabindex="-1" title="${c.label}: open it" @click="${() => c.run()}">${c.label}${icon("arrow-right")}</button>`
           : html`<span class="chip">${c.label}</span>`,
       )}
+      ${settings
+        ? html`<button
+            title="Block settings"
+            aria-label="Block settings"
+            aria-haspopup="dialog"
+            @click="${(e) => {
+              // (the button to give focus back to: Safari doesn't focus a clicked button)
+              settingsDialog().open("settings", e.currentTarget);
+            }}"
+          >
+            ${icon("sliders-horizontal")}
+          </button>`
+        : ""}
     </div>`;
   }
 

@@ -368,7 +368,7 @@ class OerEditBar extends LitElement {
       out.push({ id: "details", icon: "oer:sliders-horizontal", label: "Page details", run: (o) => pageDetails().show(this.site.id, { opener: o }), off: busy });
       out.push({ id: "preview", icon: "oer:eye", label: "Preview", run: () => setPreview(!editorState.preview), pressed: s.preview, off: busy });
     } else {
-      out.push({ id: "html", icon: "oer:code", label: "Edit HTML", name: "Edit HTML source", run: () => settingsDialog().open("source"), off: busy });
+      out.push({ id: "html", icon: "oer:code", label: "Edit HTML", name: "Edit HTML source", run: (o) => settingsDialog().open("source", o), off: busy });
       out.push({ id: "search", icon: "oer:command", label: "Command search", keys: DAEMON, run: () => openCommandPalette(), off: busy });
     }
     return out;

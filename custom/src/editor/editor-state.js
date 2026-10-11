@@ -11,6 +11,7 @@
  *   level       "section", "item", "block", or "field" while typing
  *   mode        "typing" (the caret in a field, focus in the content) or
  *               "selected" (a unit as a whole), or null
+ *   locked      whether the unit is locked (the rail's Lock content)
  *   geometry    where the unit is: { view, unit, visible, field, gutter,
  *               dock, scroller }. view is the content viewport (below the
  *               bar, inside the scrollbar, above the dock); unit the unit's
@@ -205,6 +206,7 @@ class EditorState extends EventTarget {
     this.field = null;
     this.level = null;
     this.mode = null;
+    this.locked = false;
     this.geometry = null;
     this.dirty = false;
     this.saving = false;
@@ -283,6 +285,7 @@ class EditorState extends EventTarget {
       field: typingIn,
       level,
       mode,
+      locked: !!unit?.closest("[data-hax-lock]"),
       geometry: editing ? geometryOf(unit, body, this.railWidth, typingIn) : null,
     });
   }
@@ -344,7 +347,7 @@ class EditorState extends EventTarget {
     this.__baseline = null;
     this.tracking = false;
     this._stop();
-    this.set({ editing: false, body: null, activeNode: null, unit: null, field: null, level: null, mode: null, geometry: null, dirty: false, preview: false, dragging: false, dockHeight: 0 });
+    this.set({ editing: false, body: null, activeNode: null, unit: null, field: null, level: null, mode: null, locked: false, geometry: null, dirty: false, preview: false, dragging: false, dockHeight: 0 });
   }
 
   /* ---------- the caret and HAX's active block ---------- */

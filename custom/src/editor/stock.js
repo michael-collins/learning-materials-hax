@@ -318,6 +318,9 @@ async function save() {
     body.inert = false;
     body.removeAttribute("aria-busy");
     refocus();
+    // (the state catches up with the caret now, or what it saw while the
+    // page was inert reads as a click selecting the section: oer-block-frame.js)
+    editorState.update();
     const reason = answer?.reason || (asked.sent ? "No answer from the server" : "The page wasn't sent");
     editorState.set({ saving: false, saveError: reason });
     if (!answer && asked.sent) answerLate(asked, body, sent);

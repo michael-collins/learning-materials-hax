@@ -167,7 +167,8 @@ class OerSettingsDialog extends LitElement {
 
   /**
    * Open the active block's settings, or (mode "source") the page HTML.
-   * opener is the control to give focus back to. Returns whether it
+   * opener is the control to give focus back to, or a function that puts
+   * it back (the rail's menus, by keyboard). Returns whether it
    * opened: a block with no settings has none to show.
    */
   open(mode = "settings", opener = null) {
@@ -225,7 +226,8 @@ class OerSettingsDialog extends LitElement {
     this.querySelector("[slot='preview']")?.replaceChildren();
     if (!focus) return;
     // back to what opened it; else, for a text block, into it
-    if (opener?.isConnected && opener.checkVisibility?.() !== false) opener.focus();
+    if (typeof opener === "function") opener();
+    else if (opener?.isConnected && opener.checkVisibility?.() !== false) opener.focus();
     else if (node?.isConnected && node.isContentEditable) node.focus();
   }
 
