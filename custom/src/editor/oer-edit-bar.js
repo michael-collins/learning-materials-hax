@@ -29,8 +29,8 @@
  *   (stock.js savePage). "⚠ 2 to check" (presave-check.js) only when
  *   something would be missed, never stopping a save.
  * - Sections sends `oer-sections-toggle` { opener } on the window
- *   (cancelable) for the Sections sheet, which says whether it's open with
- *   `oer-sections-state` { open }.
+ *   (cancelable) for the Sections sheet (oer-site-outline.js), which says
+ *   whether it's open with `oer-sections-state` { open }.
  * - Preview (setPreview()): hax-body inert, with data-oer-preview on it
  *   and on <html> (the theme hides the editor's overlays by it), and an
  *   `oer-preview` { preview } window event, on which sections and items
@@ -62,6 +62,7 @@ import { pageDetails } from "../types/oer-page-details.js";
 import { siteData, hubPage, COURSE_SITE_TYPE } from "../types/course-site.js";
 import { setEditRange } from "../ui/edit-selection.js";
 import { onDefined, pinned } from "./hax-fixes.js";
+import { installSiteOutline } from "./oer-site-outline.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 
@@ -1317,6 +1318,8 @@ export function installEditBar() {
   installed = true;
   globalThis.addEventListener("keydown", editingKeys, true);
   followPresses();
+  // Sections: the Sections sheet
+  installSiteOutline();
   onDefined("haxcms-site-editor-ui", (EditorUI) => {
     pinned(
       { fix: "HAX's save holds the edited page", owner: "haxcms-site-editor-ui", target: EditorUI.prototype, method: "_editButtonTap", marker: "_toggleEditMode", file: "editor/oer-edit-bar.js" },
