@@ -25,12 +25,14 @@
  * While it's open the page behind it and the editor's chrome are inert
  * (HAX's palette, popovers and toasts aren't, so the form's own pickers
  * work), Tab and Shift+Tab go round the dialog and the form, and Esc
- * closes it (from the HTML source's code editor too, where Tab indents),
- * unless the command palette is open, which Esc closes first.
- * Closing gives focus back to the control that opened it (opener: from
- * the click, since Safari doesn't focus a clicked button). For screen
- * readers the element itself is the dialog, and owns the panel as its
- * form (aria-owns).
+ * closes it, unless the command palette is open, which Esc closes first.
+ * In the HTML source's code editor, where Tab indents, Esc leaves the
+ * editor for Update HTML instead. Closing the source with changes not yet
+ * applied asks first (Keep editing, Discard changes or Update HTML), and
+ * Update HTML closes it. Closing gives focus back to the control that
+ * opened it (opener: from the click, since Safari doesn't focus a clicked
+ * button). For screen readers the element itself is the dialog, and owns
+ * the panel as its form (aria-owns).
  *
  * The preview is a non-interactive copy of the block, refreshed whenever
  * the block changes, drawn at the block's width on the page in a
@@ -43,6 +45,7 @@ import { html, css, LitElement } from "../lit.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { showPanel } from "./stock.js";
 import { hasSettings, settingsTitle } from "./block-settings.js";
+import { confirmDialog } from "../ui/oer-confirm.js";
 
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
@@ -68,6 +71,7 @@ const OVERLAYS = new Set([
   "absolute-position-state-manager",
   "oer-toast",
   "oer-announcer",
+  "oer-confirm",
   "haxcms-toast",
 ]);
 
@@ -103,6 +107,15 @@ function focusInto(el, back = false) {
     if (target) return target.focus();
   }
   el.focus();
+}
+
+// code as a browser reads it (the code editor holds what it was given
+// parsed, its text as typed), whitespace run together: the same page, the
+// same text
+function asParsed(code) {
+  const t = globalThis.document.createElement("template");
+  t.innerHTML = code || "";
+  return t.innerHTML.replace(/\s+/g, " ").trim();
 }
 
 // focus as it really is: inside the innermost shadow root
@@ -143,6 +156,15 @@ class OerSettingsDialog extends LitElement {
     return this._hax?.haxTray;
   }
 
+  // HAX's HTML source panel, and its code editor
+  get _source() {
+    return this._tray?.shadowRoot?.querySelector("#view-source") ?? null;
+  }
+
+  get _code() {
+    return this._source?.shadowRoot?.querySelector("#textarea") ?? null;
+  }
+
   /**
    * Open the active block's settings, or (mode "source") the page HTML.
    * opener is the control to give focus back to. Returns whether it
@@ -159,6 +181,7 @@ class OerSettingsDialog extends LitElement {
     this.mode = mode;
     showPanel(mode === "source" ? "view-source" : "content-edit");
     this._tray?.setAttribute("data-oer-dialog", mode);
+    this._watchPanel(mode === "source" ? "view-source" : "content-edit");
     this._own(true);
     globalThis.addEventListener("keydown", this.__keys, true);
     globalThis.addEventListener("resize", this.__place);
@@ -187,6 +210,7 @@ class OerSettingsDialog extends LitElement {
     this.__resize?.disconnect();
     this.__observer?.disconnect();
     this.__stageResize?.disconnect();
+    this.__panel?.disconnect();
     globalThis.removeEventListener("keydown", this.__keys, true);
     globalThis.removeEventListener("resize", this.__place);
     globalThis.removeEventListener("blur", this.__intoFrame);
@@ -208,13 +232,14 @@ class OerSettingsDialog extends LitElement {
   /* ---------- keys ---------- */
 
   _keys(e) {
-    if (!this.mode) return;
+    // (the question about changes not applied is over the dialog, with its own keys)
+    if (!this.mode || this.__asking) return;
     // the command palette is over the dialog: its keys are its own (Esc closes it)
     if (palette()?.opened) return;
     if (e.key === "Escape" && !e.defaultPrevented) {
       e.preventDefault();
       e.stopPropagation();
-      this.close();
+      this._requestClose();
     } else if (e.key === "Tab" && !e.altKey && !e.ctrlKey && !e.metaKey) {
       this._trapTab(e);
       setTimeout(() => this._watchFrame(deepActive()));
@@ -222,10 +247,10 @@ class OerSettingsDialog extends LitElement {
   }
 
   // keys pressed in a frame in the form (the HTML source's code editor,
-  // where Tab indents) stay in it: Esc there closes the dialog too, once
-  // focus has gone in (after a Tab, or as this window loses it), unless
-  // one of the editor's own pop-ups is open (suggestions, find), which
-  // Esc closes
+  // where Tab and Shift+Tab indent) stay in it: Esc there is the way out,
+  // to the form's first control (Update HTML), once focus has gone in
+  // (after a Tab, or as this window loses it), unless one of the editor's
+  // own pop-ups is open (suggestions, find), which Esc closes
   _watchFrame(el) {
     if (el?.localName !== "iframe" || !this.mode) return;
     let win = null;
@@ -240,12 +265,62 @@ class OerSettingsDialog extends LitElement {
   }
 
   _frameKeys(e) {
-    if (e.key !== "Escape" || !this.mode || palette()?.opened) return;
+    if (e.key !== "Escape" || !this.mode || this.__asking || palette()?.opened) return;
     // (monaco's pop-ups, which take Esc themselves)
     if (e.currentTarget.document.querySelector(".editor-widget.visible")) return;
     e.preventDefault();
     e.stopPropagation();
-    this.close();
+    const [first] = this._tray ? tabbables(this._tray.shadowRoot) : [];
+    focusInto(first || this.shadowRoot.querySelector(".close"));
+  }
+
+  /* ---------- closing ---------- */
+
+  // closing as the author asks (Esc, Close, a click outside): the HTML
+  // source with changes not yet on the page asks what to do with them
+  async _requestClose() {
+    if (this.__asking) return;
+    if (this.mode !== "source" || !this._unapplied()) return this.close();
+    this.__asking = true;
+    const choice = await confirmDialog().ask({
+      title: "Discard your HTML changes?",
+      text: "The page doesn't have them yet: Update HTML puts them on it.",
+      actions: [
+        { id: "keep", label: "Keep editing" },
+        { id: "discard", label: "Discard changes", kind: "destructive" },
+        { id: "update", label: "Update HTML", kind: "primary" },
+      ],
+    });
+    this.__asking = false;
+    if (this.mode !== "source") return;
+    if (choice === "discard") this.close();
+    else if (choice === "update") {
+      await this._source?.updateBodyFromHTML();
+      this.close();
+    }
+    // back to the code
+    else if (this._code) focusInto(tabbables(this._code.shadowRoot).find((el) => el.localName === "iframe") || this._code);
+  }
+
+  // whether the code editor holds changes the page doesn't have: its text
+  // against what it was given (HAX writes that into it as a template)
+  _unapplied() {
+    const code = this._code;
+    const given = code?.querySelector(":scope > template")?.innerHTML;
+    return given !== undefined && typeof code.value === "string" && asParsed(code.value) !== asParsed(given);
+  }
+
+  // HAX moving its panel on closes the dialog, which would show the wrong
+  // one: Update HTML and Clean formatting do, once they've put the code on
+  // the page, and so does the active block going (the block picker)
+  _watchPanel(panel) {
+    const tray = this._tray;
+    this.__panel?.disconnect();
+    if (!tray) return;
+    this.__panel = new MutationObserver(() => {
+      if (this.mode && tray.trayDetail !== panel) this.close();
+    });
+    this.__panel.observe(tray, { attributes: true, attributeFilter: ["tray-detail"] });
   }
 
   // Tab goes round the dialog's own controls, then the form (the tray,
@@ -352,10 +427,13 @@ class OerSettingsDialog extends LitElement {
     this._fitPreview();
   }
 
-  // the width the copy is laid out in: the block's own, or, for an image
-  // sized or placed in its column (Size and Position), the column's
+  // the width the copy is laid out in: the block's own, or its column's,
+  // for an image sized or placed in it (Size and Position) and for
+  // anything in a line of text (at its own width, a link wrapped a word
+  // to a line)
   _previewWidth(node) {
-    if (!node.hasAttribute("data-width") && !node.hasAttribute("data-float-position")) return node.getBoundingClientRect().width;
+    const inLine = getComputedStyle(node).display === "inline";
+    if (!inLine && !node.hasAttribute("data-width") && !node.hasAttribute("data-float-position")) return node.getBoundingClientRect().width;
     const column = node.assignedSlot?.parentElement ?? node.parentElement;
     const s = getComputedStyle(column);
     return column.clientWidth - parseFloat(s.paddingLeft) - parseFloat(s.paddingRight);
@@ -421,6 +499,12 @@ class OerSettingsDialog extends LitElement {
         letter-spacing: -0.01em;
       }
       header .icon {
+        color: var(--muted-foreground);
+      }
+      .hint {
+        min-width: 0;
+        margin: 0;
+        font-size: 0.8125rem;
         color: var(--muted-foreground);
       }
       .close {
@@ -494,6 +578,11 @@ class OerSettingsDialog extends LitElement {
         min-width: 0;
         min-height: 0;
       }
+      @media (max-width: 480px) {
+        .hint {
+          display: none;
+        }
+      }
       @media (max-width: 720px) {
         .body {
           grid-template-columns: minmax(0, 1fr);
@@ -509,12 +598,13 @@ class OerSettingsDialog extends LitElement {
 
   render() {
     return html`
-      <div class="backdrop" @click="${() => this.close()}"></div>
+      <div class="backdrop" @click="${() => this._requestClose()}"></div>
       <div class="dialog">
         <header>
           ${icon(this.mode === "source" ? "code" : "sliders-horizontal")}
           <h2>${this._title}</h2>
-          <button class="close" aria-label="Close" title="Close (Esc)" @click="${() => this.close()}">${icon("x")}</button>
+          ${this.mode === "source" ? html`<p class="hint">Esc leaves the code editor</p>` : ""}
+          <button class="close" aria-label="Close" title="Close (Esc)" @click="${() => this._requestClose()}">${icon("x")}</button>
         </header>
         <div class="body">
           <div class="preview" role="group" aria-label="Preview">

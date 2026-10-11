@@ -14,10 +14,16 @@
  * - A block listed in SETTINGS keeps those fields, in that order, with the
  *   words given: an image keeps its description, caption, size and
  *   position; a paragraph nothing (text is styled by the site, not
- *   block by block).
- * - Any other block keeps its own Configure fields, without DDD's groups or
- *   the lock (the rail has Lock content), in sentence case, a field for
- *   alternative text called Description. Advanced and Developer go.
+ *   block by block), nor a link (the text toolbar has it).
+ * - Any other block keeps its own Configure fields, without DDD's groups,
+ *   the lock (the rail has Lock content) or its slots, in sentence case, a
+ *   field for alternative text called Description. Advanced and Developer
+ *   go.
+ *
+ * A block's slots are what's typed in it on the page. HAX's form would
+ * write each one back on any change, even to another field, as text in a
+ * <span> in place of the whole slot (hax-tray.js 1958-2030): a self
+ * check's question lost its paragraph, and its answer all but its last.
  *
  * Nothing here changes what it's given: HAX shares the form's arrays and
  * fields with HAXStore.elementList, so curate() makes new ones.
@@ -52,13 +58,15 @@ const POSITION = {
 const DESCRIPTION = { title: "Description", description: "What it shows, for people who can't see it.", inputMethod: "textfield", required: false };
 
 /**
- * Per tag: the fields kept (`from` names a field by its property,
- * attribute or slot, anywhere in the block's form; `field` is a whole
- * field of ours), with new words; `title` is the dialog's.
+ * Per tag: the fields kept (`from` names a field by its property or
+ * attribute, anywhere in the block's form; `field` is a whole field of
+ * ours), with new words; `title` is the dialog's.
  */
 export const SETTINGS = {
   // typed on the page and styled by the site
   ...Object.fromEntries(["p", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "li", "blockquote", "pre", "code", "dl", "dt", "dd", "div", "span", "hr"].map((tag) => [tag, NONE])),
+  // in a line of text, made with the text toolbar (Link, Bold, Abbreviation…)
+  ...Object.fromEntries(["a", "b", "strong", "i", "em", "u", "s", "sub", "sup", "mark", "abbr", "cite", "q", "small", "time", "kbd"].map((tag) => [tag, NONE])),
   // Page details has these
   "page-break": NONE,
   "media-image": {
@@ -88,12 +96,11 @@ export const SETTINGS = {
       { from: "tracks", title: "Captions and subtitles" },
     ],
   },
+  // (its question and answer are typed on the page: they're its slots)
   "self-check": {
     title: "Self check settings",
     fields: [
       { from: "title", title: "Title" },
-      { from: "question", title: "Question" },
-      { from: "", title: "Answer" },
       { from: "image", title: "Image" },
       { from: "alt", ...DESCRIPTION, title: "Image description" },
       { from: "accentColor", title: "Colour" },
@@ -102,6 +109,7 @@ export const SETTINGS = {
 };
 
 const isLock = (f) => (f.property || f.attribute) === "data-hax-lock";
+const isSlot = (f) => f.slot !== undefined && !f.property;
 // DDD's groups: a collapse of style groups (ddd-styles), and the design
 // attributes it puts at the top of some forms (a list's bullet style)
 const isDDD = (f) => /^ddd-/.test(f.property || "") || /^data-(design-treatment|instructional-action|accent|primary|style-guide)$/.test(f.attribute || f.property || "");
@@ -128,13 +136,13 @@ function* everyField(settings) {
   for (const key of ["configure", "advanced", "developer"]) yield* walk(settings?.[key]);
 }
 
-const keyOf = (f) => f.property ?? f.attribute ?? f.slot;
+const keyOf = (f) => f.property ?? f.attribute;
 
-// a field by its property, attribute or slot ("" for the unnamed slot)
+// a field by its property or attribute
 function find(settings, from) {
   for (const f of everyField(settings)) {
     if (Array.isArray(f.properties) && f.inputMethod !== "array") continue;
-    if (f.property === from || f.attribute === from || (f.slot === from && !f.property)) return f;
+    if (f.property === from || f.attribute === from) return f;
   }
   return null;
 }
@@ -163,7 +171,7 @@ export function curate(tag, settings) {
     }
   } else {
     configure = (settings?.configure || [])
-      .filter((f) => f && !isDDD(f) && !isLock(f))
+      .filter((f) => f && !isDDD(f) && !isLock(f) && !isSlot(f))
       .map((f) => copy(f, f.inputMethod === "alt" ? DESCRIPTION : { title: sentence(f.title) }));
   }
   return { configure, advanced: [], developer: [] };
@@ -197,8 +205,8 @@ export const settingsTitle = (el) => SETTINGS[el?.localName]?.title || `${senten
 
 /**
  * The values to fill the curated form in with: each field's, from the
- * block (properties, the values HAX read off it) or, for a slot, the value
- * HAX already found (value, the form's value as HAX built it).
+ * block (properties, the values HAX read off it) or else the value HAX
+ * already found for it (value, the form's value as HAX built it).
  */
 export function curatedValue(fields, properties = {}, value = {}) {
   const found = (key) => {
@@ -217,7 +225,7 @@ export function curatedValue(fields, properties = {}, value = {}) {
   for (const f of fields) {
     const key = keyOf(f);
     if (key === undefined) continue;
-    const v = key !== "" && Object.hasOwn(properties, key) ? properties[key] : found(key);
+    const v = Object.hasOwn(properties, key) ? properties[key] : found(key);
     if (v !== undefined) configure[key] = v;
   }
   return { settings: { configure, advanced: {}, developer: {} } };
