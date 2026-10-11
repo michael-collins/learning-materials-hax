@@ -19,7 +19,11 @@
  * - Keys: a <header> named for the page ("Editing DART 413 course site"),
  *   led by Skip to selected section, with one roving toolbar (arrows,
  *   Home, End). Mod+Shift+S saves, Mod+Shift+/ exits, Mod+/ lists the
- *   keyboard shortcuts, and Esc leaves Preview (installEditBar()).
+ *   keyboard shortcuts, and Esc leaves Preview (installEditBar()); not
+ *   while a question or a dialog is open, whose keys are its own (but
+ *   Save takes along HTML typed in Edit HTML).
+ * - While the page saves, what would change it is off ("Wait until the
+ *   page is saved"): a change then would be dropped by the save.
  * - Status (role="status"): No changes, Unsaved changes, Saving…, Saved,
  *   or "Couldn't save: … Your edits are still here." with Try again
  *   (stock.js savePage). "⚠ 2 to check" (presave-check.js) only when
@@ -45,7 +49,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { editorState, contentView } from "./editor-state.js";
-import { savePage, cancelEdit, pageName, openCommandPalette, isMac, MOD, DAEMON } from "./stock.js";
+import { savePage, cancelEdit, pageName, openCommandPalette, closeSource, saveAnswers, isMac, MOD, DAEMON } from "./stock.js";
 import { undo, redo } from "./undo.js";
 import { announce } from "./announce.js";
 import { select, caretInto } from "./ops.js";
@@ -103,6 +107,12 @@ function natural(el, rem) {
 
 // the page's blocks as readers have them, past the page-break
 const blocksOf = (body) => [...(body?.children || [])].filter((el) => el.localName !== "page-break");
+
+// words as a sentence: a full stop, unless they end in one already
+const sentence = (words) => (/[.?!…][”’")]*$/.test(words) ? words : `${words}.`);
+
+// why the bar's changes are off while the page saves
+const SAVING = "Wait until the page is saved";
 
 /* ---------- Preview ---------- */
 
@@ -318,19 +328,20 @@ class OerEditBar extends LitElement {
   _items() {
     const s = this._s;
     const out = [];
+    const busy = s.saving ? SAVING : "";
     // (typing HAX hasn't made a step of yet is undone too: undo.js)
-    const undoOff = !this._canUndo && !s.dirty ? "Nothing to undo yet" : s.preview ? "Leave Preview to undo" : "";
-    const redoOff = !this._canRedo ? "Nothing to redo" : s.preview ? "Leave Preview to redo" : "";
-    if (this._microsite) out.push({ id: "sections", icon: "icons:toc", label: "Sections", run: (o) => this._sections(o), expanded: this._sectionsOpen });
+    const undoOff = busy || (!this._canUndo && !s.dirty ? "Nothing to undo yet" : s.preview ? "Leave Preview to undo" : "");
+    const redoOff = busy || (!this._canRedo ? "Nothing to redo" : s.preview ? "Leave Preview to redo" : "");
+    if (this._microsite) out.push({ id: "sections", icon: "icons:toc", label: "Sections", run: (o) => this._sections(o), expanded: this._sectionsOpen, off: busy });
     out.push({ id: "undo", icon: "icons:undo", label: "Undo", keys: `${MOD}Z`, run: () => undo(), off: undoOff });
     out.push({ id: "redo", icon: "icons:redo", label: "Redo", keys: `${MOD}⇧Z`, run: () => redo(), off: redoOff });
     if (this._microsite) {
-      out.push({ id: "style", icon: "lrn:palette", label: "Style", run: (o) => this._style(o) });
-      out.push({ id: "details", icon: "oer:sliders-horizontal", label: "Page details", run: (o) => pageDetails().show(this.site.id, { opener: o }) });
-      out.push({ id: "preview", icon: "oer:eye", label: "Preview", run: () => setPreview(!editorState.preview), pressed: s.preview });
+      out.push({ id: "style", icon: "lrn:palette", label: "Style", run: (o) => this._style(o), off: busy });
+      out.push({ id: "details", icon: "oer:sliders-horizontal", label: "Page details", run: (o) => pageDetails().show(this.site.id, { opener: o }), off: busy });
+      out.push({ id: "preview", icon: "oer:eye", label: "Preview", run: () => setPreview(!editorState.preview), pressed: s.preview, off: busy });
     } else {
-      out.push({ id: "html", icon: "oer:code", label: "Edit HTML", name: "Edit HTML source", run: () => settingsDialog().open("source") });
-      out.push({ id: "search", icon: "oer:command", label: "Command search", keys: DAEMON, run: () => openCommandPalette() });
+      out.push({ id: "html", icon: "oer:code", label: "Edit HTML", name: "Edit HTML source", run: () => settingsDialog().open("source"), off: busy });
+      out.push({ id: "search", icon: "oer:command", label: "Command search", keys: DAEMON, run: () => openCommandPalette(), off: busy });
     }
     return out;
   }
@@ -426,7 +437,7 @@ class OerEditBar extends LitElement {
             </button>`
           : ""}
         ${this._phone ? "" : exit}
-        <button class="btn primary" data-id="save" title="Save (${MOD}⇧S)" aria-disabled="${this._s.saving || this._s.preview ? "true" : "false"}" @click="${this._save}">
+        <button class="btn primary" data-id="save" title="Save (${MOD}⇧S)" aria-disabled="${this._s.saving ? "true" : "false"}" @click="${this._save}">
           ${lucide("icons:save")}<span class="t">Save</span>
         </button>
       </div>
@@ -585,10 +596,10 @@ class OerEditBar extends LitElement {
 
   /* ---------- the actions ---------- */
 
-  // (focus goes to Edit content once the saved page is up: the theme)
+  // (from Preview too, which ends first; focus goes to Edit content once
+  // the saved page is up: the theme)
   _save() {
     if (this._s.saving) return;
-    if (this._s.preview) return announce("Leave Preview to save");
     savePage();
   }
 
@@ -616,9 +627,10 @@ class OerEditBar extends LitElement {
       entries.push({ id: "checks", icon: "icons:warning", label: `${this._issues.length} to check`, run: () => this._openChecks(trigger) });
     }
     if (entries.length) entries.push({ sep: true });
-    if (this._microsite) entries.push({ id: "html", icon: "oer:code", label: "Edit HTML", run: () => settingsDialog().open("source") });
+    const busy = this._s.saving ? SAVING : "";
+    if (this._microsite) entries.push({ id: "html", icon: "oer:code", label: "Edit HTML", run: () => settingsDialog().open("source"), off: busy || (this._s.preview ? "Leave Preview to edit HTML" : "") });
     entries.push({ id: "keys", icon: "hardware:keyboard", label: "Keyboard shortcuts", keys: `${MOD}/`, run: () => this.showKeys(trigger) });
-    if (this._microsite) entries.push({ id: "search", icon: "oer:command", label: "Command search", keys: DAEMON, run: () => openCommandPalette() });
+    if (this._microsite) entries.push({ id: "search", icon: "oer:command", label: "Command search", keys: DAEMON, run: () => openCommandPalette(), off: busy });
     entries.push({ sep: true });
     entries.push({ id: "labels", label: "Show labels", checked: this.labels, run: () => this._setLabels(!this.labels) });
     this.__menuOpener = trigger;
@@ -723,6 +735,21 @@ class OerEditBar extends LitElement {
 
   /* ---------- as editing begins ---------- */
 
+  // an ordinary page: the caret at the start of the first block on screen
+  // that takes typing, or that block selected, so focus isn't left nowhere
+  _caretAtTop(body) {
+    const view = contentView();
+    const block = blocksOf(body).find((el) => el.getBoundingClientRect().bottom > view.top + 1);
+    if (!block) return false;
+    const field = block.matches(TEXT_FIELDS) ? block : block.querySelector(TEXT_FIELDS);
+    if (field && haxStore()?.isTextElement?.(block)) {
+      caretInto(field);
+      return true;
+    }
+    select(block);
+    return false;
+  }
+
   // keep the block that was at the top of the screen at the same height
   // (until the author clicks, types or scrolls)
   _keepPlace() {
@@ -766,8 +793,10 @@ class OerEditBar extends LitElement {
         said += `. ${what} selected`;
         ways = `Enter edits it; arrows go to other sections; ${ways[0].toLowerCase()}${ways.slice(1)}`;
       }
+    } else if (body && !this.__touched && this._caretAtTop(body)) {
+      ways = `Typing goes where the caret is. ${ways}`;
     }
-    announce(`${said}. ${ways}`);
+    announce(`${sentence(said)} ${ways}`);
     const restored = await offerRestore({ name, opener: deepActive() });
     // (the page put back is a new copy: the section again)
     if (restored === "restore" && unit && this.isConnected) {
@@ -1204,9 +1233,23 @@ if (!customElements.get(OerEditBar.tag)) customElements.define(OerEditBar.tag, O
 
 const bar = () => globalThis.document.querySelector("custom-oer-docs-theme")?.shadowRoot?.querySelector(OerEditBar.tag) ?? null;
 
+// what's open over the page where a key was pressed: a question
+// (oer-confirm), Edit HTML (oer-settings-dialog showing HAX's view-source
+// in its tray), another dialog or a popover; or nothing
+function openOver(e) {
+  if (globalThis.document.querySelector("oer-confirm")?.shadowRoot?.querySelector("dialog[open]")) return "question";
+  const path = e.composedPath();
+  const settings = globalThis.document.querySelector("oer-settings-dialog");
+  if (settings?.mode && path.some((n) => n === settings || n.localName === "hax-tray")) return settings.mode === "source" ? "source" : "dialog";
+  const open = (n) => n.nodeType === 1 && ((n.localName === "dialog" && n.open) || n.matches(":popover-open") || /^(alert)?dialog$/.test(n.getAttribute("role") || ""));
+  return path.some(open) ? "dialog" : "";
+}
+
 function editingKeys(e) {
   if (!store.editMode || e.defaultPrevented || e.isComposing) return;
-  if (e.key === "Escape" && editorState.preview) {
+  if (e.key === "Escape") {
+    // (an Esc for what's open over the page is its own)
+    if (!editorState.preview || openOver(e) || globalThis.document.querySelector("oer-settings-dialog")?.mode) return;
     e.preventDefault();
     e.stopImmediatePropagation();
     setPreview(false);
@@ -1224,6 +1267,9 @@ function editingKeys(e) {
   // (before HAX's own shortcuts, which save by leaving edit mode first)
   e.preventDefault();
   e.stopImmediatePropagation();
+  // under a question or a dialog, nothing (Save takes Edit HTML's along)
+  const over = openOver(e);
+  if (over && over !== "source") return;
   run();
 }
 
@@ -1250,7 +1296,15 @@ export function installEditBar() {
         },
     );
   });
-  // Preview ends with editing
+  // each save hears its own answer (stock.js saveAnswers)
+  onDefined("haxcms-site-editor", (SiteEditor) => {
+    const spec = { owner: "haxcms-site-editor", target: SiteEditor.prototype, file: "editor/stock.js" };
+    pinned({ ...spec, fix: "a save hears its own answer", method: "_requestJson", marker: "generateRequest" }, saveAnswers._requestJson);
+    pinned({ ...spec, fix: "a save hears its own failure", method: "lastErrorChanged", marker: "jwt-login-refresh-token" }, saveAnswers.lastErrorChanged);
+  });
+  // a save from Preview ends it first (stock.js)
+  globalThis.addEventListener("oer-preview-end", () => setPreview(false));
+  // Preview ends with editing, and so do the questions and dialogs about it
   globalThis.addEventListener("haxcms-edit-mode-changed", (e) => {
     if (e.detail) return;
     const body = activeBody();
@@ -1260,5 +1314,7 @@ export function installEditBar() {
     }
     globalThis.document.documentElement.removeAttribute("data-oer-preview");
     previewPlace = null;
+    globalThis.document.querySelector("oer-confirm")?.dismiss?.();
+    closeSource();
   });
 }

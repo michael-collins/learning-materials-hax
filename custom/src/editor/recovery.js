@@ -3,24 +3,29 @@
  * docs/editor-redesign/spec.md §3.3; docs/editor-spikes/lifecycle.md S6 and
  * change 19):
  *
- * - While the page has unsaved changes, 2 s after the last one, the site
- *   editor's _snapshotPendingEditForLogout() keeps a copy in
- *   sessionStorage "haxcms-pending-edit" ({ itemId, title, content,
- *   savedAt }, kept 30 minutes). HAX itself writes it only when a session
- *   ends. Beside it goes which saved page the edits were made to
- *   ("oer-pending-edit-base"): a copy made to a page that has been saved
- *   differently since isn't offered (it would put back the page from
- *   before). Back to no changes (Undo), the copy goes.
+ * - While the page has unsaved changes, 2 s after the last one, and as
+ *   the page goes (a reload the author has agreed to), the site editor's
+ *   _snapshotPendingEditForLogout() keeps a copy in sessionStorage
+ *   "haxcms-pending-edit" ({ itemId, title, content, savedAt }, kept 30
+ *   minutes). HAX itself writes it only when a session ends. Beside it
+ *   goes which saved page the edits were made to ("oer-pending-edit-base"):
+ *   a copy made to a page that has been saved differently since isn't
+ *   offered (it would put back the page from before). Back to no changes
+ *   (Undo), the copy goes.
  * - HAX would put that copy back by itself on entering edit mode, without
  *   asking (and in Safari lost it: its restore ran into its own import,
  *   which skipped it, and the copy was cleared). Its __pendingRestore reads
  *   null to HAX, so there's one way back, this one.
  * - offerRestore(), once editing has begun and its "no changes" baseline
  *   is taken (the editing bar calls it), asks "Restore unsaved edits from
- *   2:41 pm?": Not now (the copy stays), Discard them, or Restore, which
- *   puts the copy in the editor as one undo step, so the page reads
- *   "Unsaved changes".
- * - Saving the page (stock.js savePage) and discarding the changes drop it.
+ *   2:41 pm?": Not now, Discard them, or Restore, which puts the copy in
+ *   the editor as one undo step, so the page reads "Unsaved changes".
+ * - Not now keeps the copy for later: it's asked again next time, and
+ *   until then nothing replaces it or drops it but saving the page (whose
+ *   saved form it was made to) or Discard them. Meanwhile this session's
+ *   own changes aren't copied.
+ * - Saving the page (stock.js savePage) drops it, and so does discarding
+ *   the changes it's a copy of (forgetCopy).
  * - pendingEdit(id): a page's copy, for the reading view to say there is
  *   one ("Unsaved edits from 2:41 pm · Edit content to restore"); it
  *   sends `oer-pending-edit` on the window when the copy comes or goes.
@@ -66,8 +71,12 @@ export function copyTime(copy) {
   return time.replace(/\s?([AaPp])\.?\s?[Mm]\.?$/, (m, a) => ` ${a.toLowerCase()}m`);
 }
 
+// the copy was kept for later (Not now): this session leaves it alone
+let kept = false;
+
 /** Forget the copy of unsaved edits (they're saved, or discarded). */
 export function dropCopy() {
+  kept = false;
   if (!readCopy()) return;
   try {
     globalThis.sessionStorage.removeItem(KEY);
@@ -87,34 +96,49 @@ function baseOf() {
   return `${text.length}:${h}`;
 }
 
+/** Forget this session's copy of unsaved edits (they're discarded); a copy kept for later stays. */
+export function forgetCopy() {
+  if (!kept) dropCopy();
+}
+
 /* ---------- keeping the copy ---------- */
 
 let observer = null;
 let timer = 0;
+// the page being edited (a copy is only ever of it)
+let followed = "";
 
-function keepCopy() {
+// the page's unsaved edits, copied now (or the copy dropped, back to none)
+function takeCopy() {
   clearTimeout(timer);
-  timer = setTimeout(() => {
-    const body = activeBody();
-    if (!body?.editMode || editorState.saving || !editorState.tracking) return;
-    editorState._measure();
-    if (!editorState.dirty) return dropCopy();
-    siteEditor()?._snapshotPendingEditForLogout?.();
-    try {
-      globalThis.sessionStorage.setItem(BASE_KEY, JSON.stringify({ itemId: String(toJS(store.activeItem)?.id), base: baseOf() }));
-    } catch {
-      // (offered whatever page it was made to)
-    }
-    changed();
-  }, QUIET);
+  const body = activeBody();
+  if (kept || !body?.editMode || editorState.saving || !editorState.tracking) return;
+  const id = String(toJS(store.activeItem)?.id);
+  if (id !== followed) return;
+  editorState._measure();
+  if (!editorState.dirty) return dropCopy();
+  siteEditor()?._snapshotPendingEditForLogout?.();
+  try {
+    globalThis.sessionStorage.setItem(BASE_KEY, JSON.stringify({ itemId: id, base: baseOf() }));
+  } catch {
+    // (offered whatever page it was made to)
+  }
+  changed();
+}
+
+/** Copy the page's unsaved edits once changes have paused (2 s). */
+export function keepCopySoon() {
+  clearTimeout(timer);
+  timer = setTimeout(takeCopy, QUIET);
 }
 
 function follow(on) {
   observer?.disconnect();
   clearTimeout(timer);
   const body = activeBody();
+  followed = on ? String(toJS(store.activeItem)?.id) : "";
   if (!on || !body) return;
-  observer = new MutationObserver(keepCopy);
+  observer = new MutationObserver(keepCopySoon);
   observer.observe(body, { subtree: true, childList: true, characterData: true, attributes: true });
 }
 
@@ -141,6 +165,7 @@ function takeOver(EditorClass) {
 export async function offerRestore({ opener = null, name = "" } = {}) {
   const body = activeBody();
   if (!body?.editMode) return null;
+  kept = false;
   for (let waited = 0; !editorState.tracking && waited < 5000; waited += 50) await sleep(50);
   const id = toJS(store.activeItem)?.id;
   const copy = pendingEdit(id);
@@ -158,9 +183,11 @@ export async function offerRestore({ opener = null, name = "" } = {}) {
     dropCopy();
     return null;
   }
+  // (while it's asked, and after Not now, nothing replaces it or drops it)
+  kept = true;
   const choice = await confirmDialog().ask({
     title: `Restore unsaved edits from ${copyTime(copy)}?`,
-    text: `Changes to ${name || "this page"} weren't saved when it was last open. Restore puts them back on the page, and Undo takes them out again.`,
+    text: `Changes to ${name || "this page"} weren't saved when it was last open. Restore puts them back on the page, and Undo takes them out again. Not now keeps them for next time.`,
     actions: [
       { id: "later", label: "Not now" },
       { id: "discard", label: "Discard them", kind: "destructive" },
@@ -168,6 +195,7 @@ export async function offerRestore({ opener = null, name = "" } = {}) {
     ],
     opener,
   });
+  if (choice !== "later") kept = false;
   if (!body.editMode) return null;
   if (choice === "discard") dropCopy();
   if (choice !== "restore") return choice;
@@ -184,6 +212,9 @@ export function installRecovery() {
   globalThis.customElements.whenDefined("haxcms-site-editor").then(() => takeOver(globalThis.customElements.get("haxcms-site-editor")));
   globalThis.addEventListener("haxcms-edit-mode-changed", (e) => follow(!!e.detail));
   // discarding the changes drops their copy too
-  globalThis.addEventListener("hax-cancel", dropCopy);
+  globalThis.addEventListener("hax-cancel", forgetCopy);
+  // the page going (a reload or a close the author agreed to): what's
+  // changed in the last 2 s too
+  globalThis.addEventListener("pagehide", takeCopy);
   if (activeBody()?.editMode) follow(true);
 }

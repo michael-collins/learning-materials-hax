@@ -133,6 +133,8 @@ let held = "";
 // unit is what it changes, where Undo goes back to when the change came
 // from a control (undo.js placeAround)
 function change(unit, step, fn) {
+  // (the page as it was is being saved: a change now would be dropped)
+  if (editorState.saving) return refuse("Wait until the page is saved");
   pending++;
   const done = queue.then(async () => {
     const body = activeBody();

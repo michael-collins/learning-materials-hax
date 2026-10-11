@@ -19,6 +19,21 @@ import { HIDDEN, select, caretInto } from "./ops.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { siteData, COURSE_SITE_TYPE } from "../types/course-site.js";
 
+// focus on el that stays: HAX, making the unit its active block, can take
+// focus back to the page a moment later (as for ops.js caretInto)
+async function focusStays(el, ms = 400) {
+  if (!el) return;
+  el.focus();
+  for (const until = performance.now() + ms; performance.now() < until && el.isConnected; ) {
+    await new Promise((r) => requestAnimationFrame(r));
+    let active = globalThis.document.activeElement;
+    while (active?.shadowRoot?.activeElement) active = active.shadowRoot.activeElement;
+    // (the author has gone on elsewhere)
+    if (active && active !== el && active !== globalThis.document.body) return;
+    if (active !== el) el.focus();
+  }
+}
+
 const SECTION_TITLE = { "oer-cs-outcome": "An outcome has no title", "oer-cs-question": "A question has no question" };
 
 /**
@@ -35,9 +50,12 @@ export function presaveChecks(body, site) {
       id: "hero-alt",
       text: "The hero's picture has no description",
       fix: "Add a description",
-      run: () => {
+      run: async () => {
         select(hero, { focus: false });
-        hero.shadowRoot?.querySelector(".change-image")?.click();
+        // (Change image toggles the image field: opened only if it's shut)
+        if (!hero._imageField) hero.shadowRoot?.querySelector(".change-image")?.click();
+        await hero.updateComplete;
+        await focusStays(hero.shadowRoot?.querySelector("oer-image-field")?.shadowRoot?.querySelector(".alt input"));
       },
     });
   }

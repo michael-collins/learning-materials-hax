@@ -13,10 +13,12 @@
  *   });
  *
  * Resolves to the chosen action's id. The first action is the safe one:
- * it has focus when the dialog opens, and Esc chooses it. Kinds: "outline"
- * (the default), "primary" and "destructive". A native modal dialog: focus
- * stays inside and goes back where it was when it closes; a click outside
- * doesn't close it.
+ * it has focus when the dialog opens, and Esc chooses it (and so does
+ * dismiss(), for a question that no longer applies). Kinds: "outline" (the
+ * default), "primary" and "destructive". A native modal dialog: focus
+ * stays inside and goes back to opener when it closes (the control that
+ * asked: Safari doesn't focus a clicked button), or else where it was; a
+ * click outside doesn't close it.
  * @element oer-confirm
  */
 import { html, css, LitElement } from "../lit.js";
@@ -45,12 +47,17 @@ class OerConfirm extends LitElement {
   }
 
   /** Ask; resolves to the chosen action's id (the first action's on Esc). */
-  ask({ title, text = "", actions }) {
+  ask({ title, text = "", actions, opener = null }) {
     // a question still open is answered safely first
-    this._answer(this._q?.actions[0]?.id);
-    this.__opener = deepActive();
+    this.dismiss();
+    this.__opener = opener || deepActive();
     this._q = { title, text, actions };
     return new Promise((resolve) => (this.__resolve = resolve));
+  }
+
+  /** Answer the open question, if any, with its first (safe) action. */
+  dismiss() {
+    this._answer(this._q?.actions[0]?.id);
   }
 
   updated(changed) {

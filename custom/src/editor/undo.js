@@ -71,6 +71,7 @@
 import { isMac } from "./stock.js";
 import { onDefined, pinned } from "./hax-fixes.js";
 import { fieldOf } from "./policy.js";
+import { announce } from "./announce.js";
 
 const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
@@ -375,6 +376,11 @@ function returnToActive(body) {
 async function step(again, { place } = {}) {
   const body = activeBody();
   if (!body?.undoStack || !body.editMode) return false;
+  // (the page is being saved, or shown in Preview: oer-edit-bar.js)
+  if (body.inert) {
+    announce(body.hasAttribute("aria-busy") ? "Wait until the page is saved" : `Leave Preview to ${again ? "redo" : "undo"}`);
+    return false;
+  }
   checkpoint(body);
   // where to go back to: the place given (a toast's Undo, where focus was on
   // the toast); for a change the editor made (ops.js), where the author was
