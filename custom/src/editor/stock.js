@@ -74,6 +74,8 @@ export async function cancelEdit(e) {
 let baseline = null; // what HAX would save, normalized, once the page has arrived
 let session = 0; // counts edit mode starting and ending
 let arriving = 0; // the session whose copy is being taken
+let touched = 0; // a session in which the author changed the page before its copy was taken
+const CHANGED = Symbol("changed before the copy");
 let watching = false;
 
 // a page's HTML without what HAX adds while editing, or white space between
@@ -108,7 +110,10 @@ function normalizedHtml(html) {
  * 100 ms timer as editing starts, but the page is imported 250–700 ms
  * later (haxcms-site-editor.js 57–72, hax-body.js importContent
  * 3563–3650): in Firefox and Safari it was empty, and Cancel always asked
- * to discard. HAX's copy is set to this one too.
+ * to discard. HAX's copy is set to this one too. If the author types,
+ * pastes, cuts or drops into the content before the copy is taken (typing
+ * inside a paragraph doesn't hold it back), there's no copy of the page as
+ * it arrived: Cancel asks.
  */
 export function watchBaseline() {
   if (watching) return;
@@ -118,6 +123,12 @@ export function watchBaseline() {
     session++;
     baseline = null;
   });
+  // the author's own changes, as early as they come
+  const touch = (e) => {
+    const body = haxStore()?.activeHaxBody;
+    if (store.editMode && baseline === null && body?.contains(e.composedPath()[0])) touched = session;
+  };
+  for (const type of ["beforeinput", "paste", "drop", "cut"]) globalThis.addEventListener(type, touch, true);
   globalThis.addEventListener("hax-body-content-ready", (e) => {
     const body = e.detail?.body;
     if (!body || !store.editMode || baseline !== null || arriving === session) return;
@@ -129,8 +140,10 @@ export function watchBaseline() {
       if (mine !== session) return observer.disconnect();
       if (body._contentState?.getState?.("importing") || performance.now() - changed < 300) return void setTimeout(settled, 50);
       observer.disconnect();
+      if (touched === mine) return void (baseline = CHANGED);
       const html = await body.haxToContent();
       if (mine !== session) return;
+      if (touched === mine) return void (baseline = CHANGED);
       const ui = stockUI();
       if (ui) ui._originalContent = html;
       baseline = normalizedHtml(html);
@@ -147,6 +160,7 @@ export function watchBaseline() {
 async function unsaved(body, ui) {
   const mine = session;
   for (let waited = 0; baseline === null && mine === session && waited < 3000; waited += 50) await new Promise((r) => setTimeout(r, 50));
+  if (baseline === CHANGED) return true;
   const now = await body.haxToContent();
   return baseline === null ? now !== ui._originalContent : normalizedHtml(now) !== baseline;
 }

@@ -32,21 +32,23 @@
  *   taken once the page has arrived (stock.js watchBaseline).
  * - HAX finds the caret in Safari's engine too (see contentSelection), and
  *   never makes something outside the content its active block.
- * - After HAX's Undo or Redo the caret is back where it was (see
+ * - Undo and Redo straight after typing undo that typing on its own (see
+ *   recordTyping); after them the caret is back where it was (see
  *   keepCaretThroughUndo), and HAX can always save (see saveLooseText).
  * - What the browser does to the content as an author types, deletes or
  *   cuts is guarded in content-guards.js (the page-break, a course site's
- *   sections, joining blocks); a paste lands once and where it was pasted
- *   (see takePastes).
+ *   sections and other blocks, joining blocks); a paste lands once and
+ *   where it was pasted, in order, and takes nothing else with it (see
+ *   takePastes).
  * - After Enter, letters typed straight away stay in order (see
  *   quietSplit).
  *
  *   installHaxFixes()   // from installEditorChrome (editor/index.js)
  */
-import { sanitizeHTMLString } from "@haxtheweb/utils/utils.js";
+import { sanitizeHTMLString, validURL, detectMarkdown, markdownToHTML } from "@haxtheweb/utils/utils.js";
 import { cancelEdit, isMac, watchBaseline } from "./stock.js";
 import { editSelection, getEditRange, setEditRange } from "../ui/edit-selection.js";
-import { guardInput, deletable, caretInBlock, wrapLooseText } from "./content-guards.js";
+import { guardInput, guardComposition, deleteSelection, caretInBlock, wrapLooseText } from "./content-guards.js";
 
 function onDefined(tag, fn) {
   const cls = customElements.get(tag);
@@ -249,8 +251,10 @@ function putCaret(body, place) {
  */
 function keepCaretThroughUndo(original) {
   return function (...args) {
+    recordTyping(this);
     const place = caretPlace(this);
     const result = original.apply(this, args);
+    this.__oerEdited = false;
     // after HAX's own timeout, and the one that starts for the caret
     setTimeout(() =>
       setTimeout(() => {
@@ -267,15 +271,37 @@ function keepCaretThroughUndo(original) {
 }
 
 /**
+ * HAX records an undo step 300 ms after the content last changed (its
+ * undo-manager's MutationObserver, debounced: __StackDebounce,
+ * undoStackTimer), and its undo throws a step still waiting away
+ * (undoStackIgnore). Undo or Redo within 300 ms of typing went back past
+ * that typing as well, and Redo never brought it back. When the author
+ * has changed the content since HAX last recorded a step (__oerEdited:
+ * the browser's input events, and what the guards and pastes do
+ * themselves), that step is recorded first. Not otherwise: HAX's record
+ * compares with the content before its last undo, so a step recorded
+ * after an undo would have wiped out what Redo brings back.
+ */
+function recordTyping(body) {
+  if (!body.__oerEdited || body.undoStackIgnore || typeof body.undoManagerStackLogic !== "function") return;
+  clearTimeout(body.__StackDebounce);
+  body.undoManagerStackLogic({});
+  body.__oerEdited = false;
+}
+
+/**
  * Text left straight in hax-body goes into a paragraph before HAX reads
  * the content to save it, or to compare it on Cancel: HAX's haxToContent
  * threw on it (hax-body.js 2738), so Save closed the editor without
  * saving and Cancel did nothing. (content-guards.js keeps typing out of
- * there; this is for any other way in.)
+ * there; this is for any other way in.) A paragraph holding a block comes
+ * apart too (see unnestBlocks), or the HTML saved would leave text outside
+ * any block.
  */
 function saveLooseText(original) {
   return function (...args) {
     wrapLooseText(this);
+    unnestBlocks(this);
     return original.apply(this, args);
   };
 }
@@ -406,22 +432,34 @@ function pinSelection(HaxStore) {
  * ancestor; with whole blocks selected (Select All, a triple click) that
  * was hax-body or a removed block, so it deleted the page-break, put the
  * blocks in backwards, or never finished (Firefox froze). The selection is
- * deleted first, as Backspace would delete it, and nothing is pasted over
- * one that Backspace wouldn't delete (one reaching the page-break, or past
- * a section). A link pasted over words still makes them a link.
+ * deleted first, as Backspace would delete it (content-guards.js
+ * deleteSelection: across paragraphs they're joined there, the same in
+ * every engine), and nothing is pasted over one that Backspace wouldn't
+ * delete (one reaching the page-break, or past a section). A web address
+ * pasted over words in one paragraph still makes them a link, as HAX
+ * decides it (validURL of the text, 2358–2384).
+ *
+ * One paragraph pasted into a paragraph with text (copied from a page, or
+ * Markdown that makes one): its words go in at the caret. HAX put the
+ * paragraph itself inside the one pasted into (range.insertNode, 2660–
+ * 2672), and the HTML saved from that left the rest of the paragraph
+ * outside any block, which HAX's import then dropped.
  *
  * Pasted blocks with the caret inside a paragraph: HAX splits the
- * paragraph, then puts the first block in place of the block before the
- * one its range ends in (haxReplaceNode, 2711–2716). That's the empty half
- * when the caret was at the paragraph's start; from its middle it was the
- * paragraph's first half in Chrome and Safari, and in Firefox the block
- * before the paragraph (the page-break, say), all lost. The first block
- * goes in between the two halves instead (see splitPaste).
+ * paragraph with the browser's insertParagraph, which each engine does
+ * its own way, then puts the first block in place of the block before the
+ * one its range ends in (haxReplaceNode, 2711–2716), and in some cases
+ * the next block there too. That was the half before the caret when it
+ * was empty, the paragraph's first half (Chrome, Safari), or the block
+ * before the paragraph (Firefox: a picture, a list, the page-break), all
+ * lost, and the blocks went in backwards. The split is made here instead
+ * (splitForPaste), and the blocks go in between its halves in order (see
+ * splitPaste).
  */
 function takePastes(store) {
   if (store._onPaste?.__oerPinned) return;
   const source = String(Object.getPrototypeOf(store)._onPaste);
-  if (!["htmlToHaxElements", "insertParagraph", "previousElementSibling", "haxReplaceNode"].every((m) => source.includes(m))) {
+  if (!["htmlToHaxElements", "insertParagraph", "previousElementSibling", "haxReplaceNode", "commonAncestorContainer", "insertNode"].every((m) => source.includes(m))) {
     console.warn("hax-fixes: _onPaste isn't HAX 26.8.1's; left alone");
     return;
   }
@@ -432,45 +470,63 @@ function takePastes(store) {
     const into = e instanceof Event && e.cancelable && !e.defaultPrevented && !!body?.contains(e.composedPath()[0]);
     const active = globalThis.document.activeElement?.tagName;
     const looks = into && store.editMode && !["HAX-TRAY", "BODY", "SIMPLE-MODAL", "SUPER-DAEMON"].includes(active) && store.activeNode && store.activeNode.tagName !== "EDITABLE-TABLE";
-    const html = looks ? e.clipboardData?.getData("text/html") || "" : "";
+    const html = looks ? cleanClipboard(e.clipboardData?.getData("text/html") || "") : "";
     const text = looks ? e.clipboardData?.getData("text/plain") || "" : "";
     // files and pictures alone: HAX's own, cancelled at once already
     if (!html && !text) return original(e);
     e.preventDefault();
-    const link = /^\s*(<meta[^>]*>\s*)*<a\s[^>]*>[^<]*<\/a>\s*$/i.test(html) || /^\s*https?:\/\/\S+\s*$/i.test(text);
+    const event = keptPaste(e, html, text);
     const over = getEditRange(body);
+    // a web address over words in one block: HAX makes them a link
+    const linking = !html && validURL(text.trim()) && !!over && !over.collapsed && oneBlock(body, over);
     let emptied = null;
-    if (over && !over.collapsed && !link) {
-      if (!deletable(body, over)) return;
-      globalThis.document.execCommand("delete");
-      // the block the caret is left in (Safari can leave it between
-      // blocks) is the one HAX pastes at; left empty, it goes once the
-      // pasted blocks are in after it (HAX puts them after a paragraph
-      // holding an empty text, as Safari leaves it)
-      const block = caretInBlock(body);
-      if (block) body.__focusLogic(block, false);
-      if (block && !block.textContent.trim()) emptied = block;
+    if (over && !over.collapsed && !linking) {
+      const deleted = deleteSelection(body, over);
+      if (deleted === "refuse") return;
+      if (deleted?.nodeType === 1 && !deleted.textContent.trim()) emptied = deleted;
+    }
+    // HAX pastes at its active block: the one the caret is in
+    const block = linking ? null : caretInBlock(body);
+    if (block) body.__focusLogic(block, false);
+    // one paragraph into a paragraph with text: its words, at the caret
+    if (block && block.textContent.trim() && !/^pre$/.test(block.localName)) {
+      const words = await oneParagraph(html, text);
+      if (words && pasteWords(body, words)) {
+        body.__oerEdited = true;
+        return;
+      }
     }
     // HAX cancels the paste when it takes it
     let taken = false;
     e.preventDefault = () => (taken = true);
-    const split = (ev) => {
-      if (ev.inputType === "insertParagraph") body.__oerPasteSplit = true;
-    };
-    body.addEventListener("input", split);
     let changed = false;
     const watch = new MutationObserver(() => (changed = true));
     watch.observe(body, { childList: true, subtree: true, characterData: true });
+    // HAX's split of the paragraph, made here (see splitForPaste)
+    const doc = globalThis.document;
+    const exec = Object.hasOwn(doc, "execCommand") ? doc.execCommand : null;
+    doc.execCommand = function (command, ...rest) {
+      if (body.__oerPasting && command === "insertParagraph" && splitForPaste(body)) return true;
+      return Document.prototype.execCommand.call(this, command, ...rest);
+    };
+    const links = new Set(body.querySelectorAll("a"));
     body.__oerPasting = true;
+    body.__oerPasteSplit = null;
+    body.__oerPasteLast = null;
     try {
-      return await original(e);
+      return await original(event);
     } finally {
+      if (exec) doc.execCommand = exec;
+      else delete doc.execCommand;
       changed ||= watch.takeRecords().length > 0;
       watch.disconnect();
-      body.removeEventListener("input", split);
-      body.__oerPasteSplit = false;
+      if (changed) body.__oerEdited = true;
+      const split = body.__oerPasteSplit;
+      body.__oerPasteSplit = null;
+      body.__oerPasteLast = null;
       body.__oerPasting = false;
-      if (!taken || (!changed && !link)) {
+      if (split) mendSplit(split);
+      if (!taken || (!changed && !linkish(html, text))) {
         if (html) globalThis.document.execCommand("insertHTML", false, cleanPaste(html));
         else globalThis.document.execCommand("insertText", false, text);
       }
@@ -482,12 +538,283 @@ function takePastes(store) {
           if (block) body.__focusLogic(block, false);
         });
       }
+      unnestBlocks(body);
+      slotStrays(body);
+      // a web address HAX made a link of: the caret after it (HAX leaves it at its start)
+      if (changed && !html && validURL(text.trim())) setTimeout(() => setTimeout(() => caretAfterLink(body, links)));
     }
   };
   paste.__oerPinned = true;
   globalThis.removeEventListener("paste", original);
   store._onPaste = paste;
   globalThis.addEventListener("paste", paste);
+}
+
+/**
+ * The paste as HAX reads it, kept: Firefox empties a paste's data once its
+ * handlers have returned, and this one awaits before HAX looks. The HTML
+ * is the cleaned copy (see cleanClipboard).
+ */
+function keptPaste(e, html, text) {
+  const clip = e.clipboardData;
+  const kept = { "text/html": html, "text/plain": text, text: clip.getData("text") || text };
+  const data = { getData: (type) => (type in kept ? kept[type] : clip.getData(type)), files: clip.files, items: clip.items, types: clip.types };
+  return new Proxy(e, {
+    get(target, key) {
+      if (key === "clipboardData") return data;
+      const value = Reflect.get(target, key);
+      return typeof value === "function" ? value.bind(target) : value;
+    },
+    set: (target, key, value) => Reflect.set(target, key, value),
+  });
+}
+
+/**
+ * Pasted HTML without what the clipboard adds around what was copied:
+ * comments (Firefox's StartFragment), the html and body tags, the page's
+ * meta, base (Safari), title, link, style and script elements, and a div
+ * around all of it. HAX put a base element into the paragraph, read
+ * Firefox's copy of paragraphs as something to leave to the browser, and
+ * made a paragraph of words copied inside a div.
+ */
+function cleanClipboard(html) {
+  if (!html) return "";
+  const t = globalThis.document.createElement("template");
+  t.innerHTML = html;
+  const walker = globalThis.document.createTreeWalker(t.content, NodeFilter.SHOW_COMMENT);
+  const comments = [];
+  while (walker.nextNode()) comments.push(walker.currentNode);
+  for (const c of comments) c.remove();
+  for (const el of t.content.querySelectorAll("meta, base, title, link, style, script")) el.remove();
+  for (let kids = counted(t.content); kids.length === 1 && kids[0].localName === "div"; kids = counted(t.content)) {
+    kids[0].replaceWith(...kids[0].childNodes);
+  }
+  return t.innerHTML.trim();
+}
+
+/** The caret after the one link a paste added, when it's just before it or at its start. */
+function caretAfterLink(body, before) {
+  const added = [...body.querySelectorAll("a")].filter((a) => !before.has(a));
+  const at = getEditRange(body);
+  if (added.length !== 1 || !at?.collapsed) return;
+  const [link] = added;
+  const block = link.closest(TEXT_BLOCKS) || link.parentElement;
+  if (!block?.contains(at.startContainer)) return;
+  // how much text comes before a point in the block
+  const textBefore = (node, offset) => {
+    const r = globalThis.document.createRange();
+    r.setStart(block, 0);
+    r.setEnd(node, offset);
+    return r.toString().length;
+  };
+  if (textBefore(at.startContainer, at.startOffset) !== textBefore(link, 0)) return;
+  const caret = globalThis.document.createRange();
+  caret.setStartAfter(link);
+  setEditRange(caret);
+}
+
+/**
+ * Blocks a paste left in columns (grid-plate) without a column: they
+ * aren't shown. Each takes the column of the block before it, or after.
+ */
+function slotStrays(body) {
+  for (const grid of body.querySelectorAll("grid-plate")) {
+    for (const child of grid.children) {
+      if (child.hasAttribute("slot")) continue;
+      const near = [child.previousElementSibling, child.nextElementSibling].find((n) => n?.getAttribute("slot"));
+      if (near) child.setAttribute("slot", near.getAttribute("slot"));
+    }
+  }
+}
+
+// the text block a node is in
+const textBlock = (node) => (node?.nodeType === 1 ? node : node?.parentElement)?.closest(TEXT_BLOCKS);
+
+/** Whether a range lies inside one text block of the content. */
+function oneBlock(body, range) {
+  const block = textBlock(range.startContainer);
+  return !!block && block !== body && body.contains(block) && block.contains(range.endContainer);
+}
+
+/** Pasted HTML (cleaned, see cleanClipboard) as a template's content. */
+function pastedNodes(html) {
+  const t = globalThis.document.createElement("template");
+  t.innerHTML = sanitizeHTMLString(cleanClipboard(html));
+  return t.content;
+}
+
+/** The nodes that count in a fragment: elements, and text that isn't only white space. */
+const counted = (parent) => [...parent.childNodes].filter((n) => n.nodeType === 1 || (n.nodeType === 3 && n.data.trim()));
+
+/**
+ * Whether HAX treats a paste as a link (and may offer its link choices
+ * rather than put anything in): a web address as text alone, or HTML
+ * that's a single link.
+ */
+function linkish(html, text) {
+  if (!html) return validURL(text.trim());
+  const kids = counted(pastedNodes(html));
+  return kids.length === 1 && kids[0].localName === "a" && kids[0].hasAttribute("href");
+}
+
+const BLOCKS_IN_TEXT = "p, div, h1, h2, h3, h4, h5, h6, ul, ol, li, pre, blockquote, table, figure, hr, section, article, aside, header, footer, nav, details, dl";
+
+/**
+ * A paste that's one paragraph (as HAX would read it: Markdown from the
+ * text first, 2124–2148, else the HTML), as the paragraph element, cleaned
+ * as HAX cleans pasted HTML (no styles, ids or bare spans); or null.
+ */
+async function oneParagraph(html, text) {
+  let source = html;
+  if (text && text.length < 100000 && detectMarkdown(text)) {
+    try {
+      source = (await markdownToHTML(text)) || html;
+    } catch {
+      source = html;
+    }
+  }
+  if (!source) return null;
+  let kids = counted(pastedNodes(source));
+  // a div wrapping what was copied
+  while (kids.length === 1 && kids[0].localName === "div") kids = counted(kids[0]);
+  const p = kids.length === 1 && kids[0].localName === "p" ? kids[0] : null;
+  if (!p || p.querySelector(BLOCKS_IN_TEXT) || !p.textContent.trim()) return null;
+  for (const el of p.querySelectorAll("*")) {
+    el.removeAttribute("style");
+    el.removeAttribute("id");
+  }
+  for (const span of p.querySelectorAll("span")) if (!span.attributes.length) span.replaceWith(...span.childNodes);
+  return p;
+}
+
+/** A paragraph's words put in at the caret, and the caret after them. */
+function pasteWords(body, p) {
+  const at = getEditRange(body);
+  if (!at || !body.contains(at.startContainer)) return false;
+  at.collapse(true);
+  const nodes = [...p.childNodes];
+  const last = nodes[nodes.length - 1];
+  const words = globalThis.document.createDocumentFragment();
+  words.append(...nodes);
+  at.insertNode(words);
+  const caret = globalThis.document.createRange();
+  if (last.nodeType === 3) caret.setStart(last, last.length);
+  else caret.setStartAfter(last);
+  setEditRange(caret);
+  return true;
+}
+
+/**
+ * Split a text block at a point inside it, as Enter would: the block
+ * keeps what's before the point, and a copy of it (the same tag and
+ * attributes, without its id or HAX's marks) gets what's after, inline
+ * elements cut in two where the point is inside one. Returns the copy,
+ * placed right after the block.
+ */
+function splitBlock(block, container, offset) {
+  let start;
+  let parent;
+  if (container.nodeType === 3) {
+    start = offset <= 0 ? container : offset < container.length ? container.splitText(offset) : container.nextSibling;
+    parent = container.parentNode;
+  } else {
+    start = container.childNodes[offset] || null;
+    parent = container;
+  }
+  const copy = (el) => {
+    const c = el.cloneNode(false);
+    for (const a of [...c.attributes]) if (a.name === "id" || a.name === "contenteditable" || a.name.startsWith("data-hax")) c.removeAttribute(a.name);
+    return c;
+  };
+  const moveFrom = (node, into) => {
+    for (let n = node; n; ) {
+      const next = n.nextSibling;
+      into.append(n);
+      n = next;
+    }
+  };
+  while (parent !== block) {
+    const up = parent.parentNode;
+    let next = parent.nextSibling;
+    if (start) {
+      const half = copy(parent);
+      moveFrom(start, half);
+      up.insertBefore(half, next);
+      next = half;
+    }
+    start = next;
+    parent = up;
+  }
+  const second = copy(block);
+  moveFrom(start, second);
+  block.after(second);
+  return second;
+}
+
+/**
+ * HAX's split of the caret's paragraph during a paste (its
+ * execCommand("insertParagraph"), hax-store.js 2683–2690), made the same
+ * way in every engine, and remembered for splitPaste. The caret goes to
+ * the start of the second half, as the browser's split leaves it.
+ */
+function splitForPaste(body) {
+  const at = getEditRange(body);
+  const block = at && textBlock(at.startContainer);
+  if (!block || block === body || !body.contains(block) || !block.contains(at.endContainer)) return false;
+  const second = splitBlock(block, at.startContainer, at.startOffset);
+  body.__oerPasteSplit = { first: block, second };
+  const caret = globalThis.document.createRange();
+  caret.setStart(second, 0);
+  setEditRange(caret);
+  return true;
+}
+
+/** After a paste: a split's empty halves go once blocks are in between; with nothing in, the halves are one again. */
+function mendSplit({ first, second }) {
+  const blank = (el) => el.isConnected && !el.textContent.trim() && !el.querySelector("img, video, iframe");
+  if (first.isConnected && first.nextElementSibling === second) {
+    first.append(...second.childNodes);
+    second.remove();
+    return;
+  }
+  if (blank(second)) second.remove();
+  if (blank(first)) first.remove();
+}
+
+/**
+ * A text block (p, h1–h6) holding a block (a paragraph, a list) comes
+ * apart into blocks side by side, as it's shown: saved as it was, the
+ * browser's parser closed the paragraph at the inner block, and what
+ * followed was left outside any block, where HAX's import dropped it the
+ * next time the page was edited. The parts keep the text block's slot.
+ */
+function unnestBlocks(body) {
+  for (const outer of body.querySelectorAll("p, h1, h2, h3, h4, h5, h6")) {
+    if (!outer.isConnected || ![...outer.children].some((c) => c.matches(BLOCKS_IN_TEXT))) continue;
+    const slot = outer.getAttribute("slot");
+    let after = outer;
+    let run = null;
+    for (const node of [...outer.childNodes]) {
+      if (node.nodeType === 1 && node.matches(BLOCKS_IN_TEXT)) {
+        if (slot) node.setAttribute("slot", slot);
+        after.after(node);
+        after = node;
+        run = null;
+      } else if (after !== outer) {
+        if (!run) {
+          if (node.nodeType === 3 && !node.data.trim()) {
+            node.remove();
+            continue;
+          }
+          run = outer.cloneNode(false);
+          for (const a of [...run.attributes]) if (a.name === "id" || a.name.startsWith("data-hax")) run.removeAttribute(a.name);
+          after.after(run);
+          after = run;
+        }
+        run.append(node);
+      }
+    }
+  }
 }
 
 /**
@@ -498,47 +825,51 @@ function takePastes(store) {
 function cleanPaste(html) {
   const t = globalThis.document.createElement("template");
   t.innerHTML = sanitizeHTMLString(html);
-  for (const el of t.content.querySelectorAll("meta, style, script, link, title")) el.remove();
+  for (const el of t.content.querySelectorAll("meta, base, style, script, link, title")) el.remove();
   for (const div of t.content.querySelectorAll("div")) div.replaceWith(...div.childNodes);
   for (const el of t.content.querySelectorAll("[id]")) el.removeAttribute("id");
   return t.innerHTML;
 }
 
 /**
- * hax-body's haxReplaceNode as HAX's paste calls it right after splitting
- * a paragraph (takePastes): the first pasted block takes the place of the
- * empty half the split left before the caret, or goes in just before the
- * half the caret went into. And during a paste, a block HAX would put in
- * place of nothing (no block, one already removed, one outside the
- * content) or of the page-break goes after the caret's block: it stayed
- * in HAX's holder, and HAX's loop over the pasted blocks never ended.
- * Otherwise it's HAX's own.
+ * hax-body's haxReplaceNode as HAX's paste calls it to put its blocks in
+ * (takePastes): a pasted block only ever takes the place of an empty
+ * paragraph, the half before the caret a split left empty or the empty
+ * paragraph pasted into (an empty heading only for a heading: pasted
+ * paragraphs took the place of a Questions box's question), and only as
+ * the first block in. Every other
+ * block goes after the last one pasted, or else between the split's
+ * halves, after the caret's block or at the end: HAX put the next block
+ * in place of the block before the first (a picture, a list, a column's
+ * paragraph), or of nothing (one already removed, one outside the
+ * content), where it stayed in HAX's holder and HAX's loop over the
+ * pasted blocks never ended. Otherwise it's HAX's own.
  */
 function splitPaste(original) {
   return function (node, replacement) {
-    const at = this.__oerPasting ? getEditRange(this) : null;
-    const start = at && (at.startContainer.nodeType === 1 ? at.startContainer : at.startContainer.parentElement);
-    const block = start?.closest(TEXT_BLOCKS);
-    const caretBlock = block && block !== this && this.contains(block) ? block : null;
-    if (this.__oerPasteSplit) {
-      this.__oerPasteSplit = false;
-      if (caretBlock) {
-        const first = caretBlock.previousElementSibling;
-        const empty = first?.matches(TEXT_BLOCKS) && !first.textContent.trim() && !first.querySelector("img, video, iframe");
-        if (empty) node = first;
-        else {
-          node = globalThis.document.createElement(replacement.localName || "p");
-          caretBlock.before(node);
-        }
-      }
+    if (!this.__oerPasting) return original.call(this, node, replacement);
+    const split = this.__oerPasteSplit;
+    const last = this.__oerPasteLast?.isConnected ? this.__oerPasteLast : null;
+    const inBody = (el) => !!el?.isConnected && el !== this && this.contains(el) && el.localName !== "page-break";
+    const blank = (el) => inBody(el) && el.matches(TEXT_BLOCKS) && !el.textContent.trim() && !el.querySelector("img, video, iframe");
+    // (an empty heading stays one, as a question's in a course site's Questions box)
+    const takes = (el) => blank(el) && (el.localName === "p" || el.localName === replacement.localName);
+    let target = null;
+    if (!last && split) target = takes(split.first) ? split.first : null;
+    else if (!last && takes(node)) target = node;
+    if (!target) {
+      target = globalThis.document.createElement(replacement.localName || "p");
+      const caretBlock = textBlock(getEditRange(this)?.startContainer);
+      if (last) last.after(target);
+      else if (split?.second?.isConnected) split.second.before(target);
+      else if (inBody(node)) node.after(target);
+      else if (inBody(caretBlock)) caretBlock.after(target);
+      else if (inBody(haxStore()?.activeNode)) haxStore().activeNode.after(target);
+      else this.append(target);
     }
-    if (this.__oerPasting && !(node?.isConnected && node !== this && this.contains(node) && node.localName !== "page-break")) {
-      const after = caretBlock || (haxStore()?.activeNode?.isConnected && this.contains(haxStore().activeNode) ? haxStore().activeNode : null);
-      node = globalThis.document.createElement(replacement.localName || "p");
-      if (after) after.after(node);
-      else this.append(node);
-    }
-    return original.call(this, node, replacement);
+    const result = original.call(this, target, replacement);
+    this.__oerPasteLast = replacement;
+    return result;
   };
 }
 
@@ -598,6 +929,10 @@ export function installHaxFixes() {
         this.addEventListener("click", holdLinks, true);
         this.addEventListener("beforeinput", historyInput);
         this.addEventListener("beforeinput", guardInput);
+        this.addEventListener("compositionstart", guardComposition);
+        // changed since HAX's undo last recorded a step (see recordTyping)
+        this.addEventListener("input", () => (this.__oerEdited = true));
+        this.addEventListener("stack-changed", (e) => e.target === this && (this.__oerEdited = false));
       }
       if (newValue && haxStore()) takePastes(haxStore());
       return editModeChanged.call(this, newValue, oldValue);
