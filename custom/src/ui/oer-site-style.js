@@ -3,12 +3,20 @@
  * a colour scheme or a custom accent, and a typeface pairing. A side sheet,
  * not a modal, so the course site stays visible and scrollable beside it:
  * every choice previews on the page at once (the theme listens for
- * `oer-site-style-preview`); Save keeps it, Cancel or Esc puts it back.
+ * `oer-site-style-preview` { siteId, style }, and shows it on that site
+ * only); Save keeps it, Cancel or Esc puts it back. The swatches and the
+ * typefaces are radio groups (arrow keys). Closing gives focus back to the
+ * control that opened it (opener: Safari doesn't focus a clicked button).
+ * Saved while the page is being edited, the edits stay (editor/
+ * import-hold.js holds HAX's reload of the page out of the editor). Save
+ * sends the site's page as it is saved now, with the style: Page details
+ * may have renamed it since the sheet opened.
  *
- *   siteStyle().show(siteItem)
+ *   siteStyle().show(siteItem, { opener })
  * @element oer-site-style
  */
 import { html, css, LitElement } from "../lit.js";
+import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { SCHEMES, FONT_PAIRS, accentPair, loadAllSiteFonts } from "../types/course-site-style.js";
@@ -18,7 +26,8 @@ const lucide = (name, cls = "") =>
   html`<span class="lucide ${cls}" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
 const oklchCss = ([L, C, h]) => `oklch(${L} ${C} ${h})`;
 
-const preview = (style) => globalThis.dispatchEvent(new CustomEvent("oer-site-style-preview", { detail: style }));
+// a choice shown on the site it's for (null: the site's own style again)
+const preview = (site, style) => globalThis.dispatchEvent(new CustomEvent("oer-site-style-preview", { detail: style ? { siteId: site?.id, style } : null }));
 
 class OerSiteStyle extends LitElement {
   static get tag() {
@@ -48,8 +57,11 @@ class OerSiteStyle extends LitElement {
     };
   }
 
-  show(site) {
+  show(site, { opener = null } = {}) {
     if (!site) return;
+    // (another site's choice, still showing, goes first)
+    if (this.open && this._site?.id !== site.id) preview(this._site, null);
+    if (!this.open) this.__opener = opener;
     this._site = site;
     this._before = { scheme: "studio", fonts: "inter", accent: "", ...(site.metadata?.oerSiteStyle || {}) };
     this._style = { ...this._before };
@@ -63,17 +75,20 @@ class OerSiteStyle extends LitElement {
 
   _set(patch) {
     this._style = { ...this._style, ...patch };
-    preview(this._style);
+    preview(this._site, this._style);
   }
 
   _cancel() {
-    preview(null);
+    preview(this._site, null);
     this._close();
   }
 
   _close() {
     this.open = false;
     globalThis.removeEventListener("keydown", this.__keys);
+    const opener = this.__opener;
+    this.__opener = null;
+    if (opener?.isConnected) opener.focus({ preventScroll: true });
   }
 
   async _save() {
@@ -82,8 +97,10 @@ class OerSiteStyle extends LitElement {
     this._saving = true;
     this._error = "";
     try {
-      await saveOutline([{ ...this._site, metadata: { ...(this._site.metadata || {}), oerSiteStyle: style }, modified: true }]);
-      preview(null);
+      // (HAXcms writes the title and merges the metadata it's sent)
+      const site = (toJS(store.manifest?.items) || []).find((i) => i.id === this._site.id) || this._site;
+      await saveOutline([{ ...site, metadata: { ...(site.metadata || {}), oerSiteStyle: style }, modified: true }]);
+      preview(this._site, null);
       this._close();
     } catch (err) {
       this._error = `Saving stopped: ${err.message || err}`;

@@ -7,9 +7,16 @@
  *   haxcms-toast (the walking character with fire/hat effects). A capturing
  *   listener on the same target runs first, so we stop the event and render a
  *   plain shadcn-style toast instead (see oer-toast.js).
+ * - HAX's word about recovered edits ("Recovered unsaved edits to …",
+ *   "Restored unsaved edits to …") isn't shown: unsaved edits come back
+ *   through the editor's own question (recovery.js), and the reading view
+ *   says when there are some.
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { toaster } from "./oer-toast.js";
+
+// HAX's toasts about its own copy of unsaved edits (haxcms-site-editor.js 1633, 1665)
+const HAX_RECOVERY = /^(Recovered|Restored) unsaved edits\b/;
 
 export function installQuietMode() {
   try {
@@ -23,6 +30,7 @@ export function installQuietMode() {
     (e) => {
       e.stopImmediatePropagation();
       const d = e.detail || {};
+      if (HAX_RECOVERY.test(d.text || "")) return;
       toaster().show({
         text: d.text,
         duration: d.duration,
