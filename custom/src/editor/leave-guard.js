@@ -16,7 +16,9 @@
  *   order they were added), doesn't change page (its _resolve, pinned);
  *   the page being edited gets its address back (a new entry, after the
  *   one stepped to), and on leaving the editor steps back to it.
- * - Closing or reloading the tab gets the browser's own question.
+ * - Closing or reloading the tab gets the browser's own question, also
+ *   for HTML typed in Edit HTML and an image's address typed and not yet
+ *   on the page (stock.js typedNotOnPage).
  *
  * "Something to lose" is the editor's own (stock.js unsaved: the
  * editor-state.js baseline, and HTML typed in Edit HTML), never HAX's copy
@@ -28,7 +30,7 @@
  */
 import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js";
 import { editorState } from "./editor-state.js";
-import { savePage, discardEdits, pageName, unsaved } from "./stock.js";
+import { savePage, discardEdits, pageName, unsaved, typedNotOnPage, followFields } from "./stock.js";
 import { confirmDialog } from "../ui/oer-confirm.js";
 import { pinned } from "./hax-fixes.js";
 
@@ -151,7 +153,7 @@ function onPopState(e) {
 function onBeforeUnload(e) {
   if (!store.editMode || !editorState.editing) return;
   editorState._measure();
-  if (!editorState.dirty && !editorState.saving) return;
+  if (!editorState.dirty && !editorState.saving && !typedNotOnPage()) return;
   e.preventDefault();
   e.returnValue = "";
 }
@@ -177,5 +179,6 @@ export function installLeaveGuard() {
   if (store.editMode) editingAt = globalThis.location.href;
   pinRouter();
   globalThis.addEventListener("beforeunload", onBeforeUnload);
+  followFields();
   editorState.addEventListener("change", (e) => (e.detail.changed.has("dirty") || e.detail.changed.has("saving") || e.detail.changed.has("editing")) && followDirty());
 }

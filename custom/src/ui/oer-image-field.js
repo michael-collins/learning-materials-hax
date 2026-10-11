@@ -88,9 +88,11 @@ class OerImageField extends LitElement {
   // an address typed in: the image, and (the address field giving way to
   // the image's description) focus on to that
   _byAddressChange(e) {
-    const had = this.shadowRoot.activeElement === e.target;
-    this._emit(e.target.value.trim());
-    if (had) this.updateComplete.then(() => !e.target.isConnected && this.shadowRoot.querySelector(".alt input")?.focus());
+    // (the event's target reads null once it has been dispatched)
+    const input = e.target;
+    const had = this.shadowRoot.activeElement === input;
+    this._emit(input.value.trim());
+    if (had) this.updateComplete.then(() => !input.isConnected && this.shadowRoot.querySelector(".alt input")?.focus());
   }
 
   _emit(value, alt = this.alt) {

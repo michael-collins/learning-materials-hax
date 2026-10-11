@@ -49,7 +49,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "./lucide-icons.generated.js";
 import { editorState, contentView } from "./editor-state.js";
-import { savePage, cancelEdit, pageName, openCommandPalette, closeSource, saveAnswers, isMac, MOD, DAEMON } from "./stock.js";
+import { savePage, cancelEdit, pageName, openCommandPalette, closeSource, saveAnswers, caretBefore, followPresses, isMac, MOD, DAEMON } from "./stock.js";
 import { undo, redo } from "./undo.js";
 import { announce } from "./announce.js";
 import { select, caretInto } from "./ops.js";
@@ -60,7 +60,7 @@ import { settingsDialog } from "./oer-settings-dialog.js";
 import { siteStyle } from "../ui/oer-site-style.js";
 import { pageDetails } from "../types/oer-page-details.js";
 import { siteData, hubPage, COURSE_SITE_TYPE } from "../types/course-site.js";
-import { getEditRange, setEditRange } from "../ui/edit-selection.js";
+import { setEditRange } from "../ui/edit-selection.js";
 import { onDefined, pinned } from "./hax-fixes.js";
 
 const lucide = (name) => html`<span class="lucide" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[name] || ""}&quot;)"></span>`;
@@ -113,6 +113,8 @@ const sentence = (words) => (/[.?!…][”’")]*$/.test(words) ? words : `${wor
 
 // why the bar's changes are off while the page saves
 const SAVING = "Wait until the page is saved";
+// what of the editor's state the bar shows (editor-state.js)
+const BAR_STATE = ["dirty", "saving", "preview", "saveError", "savedAt", "tracking"];
 
 /* ---------- Preview ---------- */
 
@@ -131,7 +133,7 @@ export function setPreview(on) {
   if (!body?.editMode || editorState.preview === on || (on && editorState.saving)) return false;
   const doc = globalThis.document.documentElement;
   if (on) {
-    previewPlace = { unit: editorState.unit, mode: editorState.mode, range: editorState.mode === "typing" ? getEditRange(body) : null };
+    previewPlace = { unit: editorState.unit, range: caretBefore(body) };
     body.inert = true;
     body.setAttribute("data-oer-preview", "");
     doc.setAttribute("data-oer-preview", "");
@@ -259,6 +261,7 @@ class OerEditBar extends LitElement {
     for (const type of ["cs-items-change", "cs-section-change", "oer-pending-edit"]) globalThis.removeEventListener(type, this.__onContent);
     for (const type of ["pointerdown", "keydown", "wheel"]) globalThis.removeEventListener(type, this.__onInput, true);
     this.__ro?.disconnect();
+    globalThis.document.documentElement.style.removeProperty("--editor-bar-height");
     clearTimeout(this.__checking);
     // leaving Preview with the editor
     if (editorState.preview) setPreview(false);
@@ -266,8 +269,18 @@ class OerEditBar extends LitElement {
   }
 
   firstUpdated() {
-    this.__ro = new ResizeObserver(() => this._fit());
+    this.__ro = new ResizeObserver(() => {
+      this._fit();
+      this._shareHeight();
+    });
     this.__ro.observe(this.renderRoot.querySelector("header"));
+  }
+
+  // the sheets beside the page (Style: oer-site-style.js, under <body>)
+  // start below the bar, through the variable the theme sets on itself
+  _shareHeight() {
+    const bottom = this.renderRoot.querySelector("header")?.getBoundingClientRect().bottom || 0;
+    globalThis.document.documentElement.style.setProperty("--editor-bar-height", `${Math.max(0, Math.round(bottom))}px`);
   }
 
   updated() {
@@ -281,17 +294,31 @@ class OerEditBar extends LitElement {
     return !!this.site;
   }
 
-  // what the bar calls the page: a course site's code, else its title
-  get _shortName() {
+  // what the bar calls the page: a course site's code, else its title;
+  // and the course sites' hub. Worked out again only when the site's
+  // pages (site.json) or the page change: the site has hundreds of pages
+  get _names() {
+    const manifest = store.manifest;
     const site = this.site;
-    if (site?.metadata?.pageType === COURSE_SITE_TYPE) return siteData(site, toJS(store.manifest?.items) || []).code || site.title;
-    return site?.title || this.pageTitle || "";
+    const known = this.__names;
+    if (known?.manifest === manifest && known.site === site && known.title === this.pageTitle) return known;
+    const items = site ? toJS(manifest?.items) || [] : [];
+    const short = site?.metadata?.pageType === COURSE_SITE_TYPE ? siteData(site, items).code || site.title : site?.title || this.pageTitle || "";
+    this.__names = { manifest, site, title: this.pageTitle, short, hub: site ? hubPage(items) : null };
+    return this.__names;
   }
 
-  // the editor's state, as far as the bar shows it
+  get _shortName() {
+    return this._names.short;
+  }
+
+  // the editor's state, as far as the bar shows it (only these: the
+  // selection's place changes every frame while it moves)
   _follow(changed) {
     const s = editorState;
-    this._s = { dirty: !!s.dirty, saving: !!s.saving, preview: !!s.preview, saveError: s.saveError || "", savedAt: s.savedAt || 0, tracking: !!s.tracking };
+    if (!changed || BAR_STATE.some((key) => changed.has(key))) {
+      this._s = { dirty: !!s.dirty, saving: !!s.saving, preview: !!s.preview, saveError: s.saveError || "", savedAt: s.savedAt || 0, tracking: !!s.tracking };
+    }
     if (!changed || changed.has("dirty") || changed.has("unit") || changed.has("saving")) this._checkSoon();
   }
 
@@ -404,7 +431,7 @@ class OerEditBar extends LitElement {
     </span>`;
     const label = microsite && this.site?.metadata?.pageType === COURSE_SITE_TYPE ? `Editing ${name} course site` : `Editing ${name}`;
     return html`<header aria-label="${label}" class="${this._phone ? "phone" : ""}">
-      <a class="skip" href="#" @click="${this._skip}">Skip to selected section</a>
+      <a class="skip" href="#" @click="${this._skip}">${microsite ? "Skip to selected section" : "Skip to the content"}</a>
       <div class="row" role="toolbar" aria-label="Editing" @keydown="${this._rowKeys}" @focusin="${this._focused}">
         ${this._phone ? exit : ""}
         <div class="who">
@@ -447,8 +474,7 @@ class OerEditBar extends LitElement {
 
   // the course sites' brand: OER Courses, through the leave guard
   _brand() {
-    const items = toJS(store.manifest?.items) || [];
-    const hub = hubPage(items);
+    const hub = this._names.hub;
     if (!hub) return "";
     return html`<a class="brand" data-id="brand" href="${hub.slug}" aria-label="${hub.title || "OER Courses"}: all the course sites" title="${hub.title || "OER Courses"}: all the course sites"
       >${lucide("lrn:book")}</a
@@ -579,8 +605,9 @@ class OerEditBar extends LitElement {
     next.focus();
   }
 
-  // Skip to selected section: focus on what's selected (its name tag),
-  // or the caret in its first field; with nothing selected, the first section
+  // Skip to selected section (on an ordinary page, Skip to the content):
+  // focus on what's selected (its name tag), or the caret in its first
+  // field; with nothing selected, the first section (or block)
   _skip(e) {
     e.preventDefault();
     const body = activeBody();
@@ -1235,14 +1262,17 @@ const bar = () => globalThis.document.querySelector("custom-oer-docs-theme")?.sh
 
 // what's open over the page where a key was pressed: a question
 // (oer-confirm), Edit HTML (oer-settings-dialog showing HAX's view-source
-// in its tray), another dialog or a popover; or nothing
+// in its tray), another dialog or a popover, a sheet beside the page (a
+// non-modal dialog: Style, Sections); or nothing
 function openOver(e) {
   if (globalThis.document.querySelector("oer-confirm")?.shadowRoot?.querySelector("dialog[open]")) return "question";
   const path = e.composedPath();
   const settings = globalThis.document.querySelector("oer-settings-dialog");
   if (settings?.mode && path.some((n) => n === settings || n.localName === "hax-tray")) return settings.mode === "source" ? "source" : "dialog";
-  const open = (n) => n.nodeType === 1 && ((n.localName === "dialog" && n.open) || n.matches(":popover-open") || /^(alert)?dialog$/.test(n.getAttribute("role") || ""));
-  return path.some(open) ? "dialog" : "";
+  const role = (n) => (n.nodeType === 1 && n.getAttribute("role")) || "";
+  const open = (n) => n.nodeType === 1 && ((n.localName === "dialog" && n.open) || n.matches(":popover-open") || role(n) === "alertdialog" || (role(n) === "dialog" && n.getAttribute("aria-modal") === "true"));
+  if (path.some(open)) return "dialog";
+  return path.some((n) => role(n) === "dialog") ? "sheet" : "";
 }
 
 function editingKeys(e) {
@@ -1267,9 +1297,10 @@ function editingKeys(e) {
   // (before HAX's own shortcuts, which save by leaving edit mode first)
   e.preventDefault();
   e.stopImmediatePropagation();
-  // under a question or a dialog, nothing (Save takes Edit HTML's along)
+  // under a question or a dialog, nothing (Save takes Edit HTML's along;
+  // a sheet beside the page stays as it is)
   const over = openOver(e);
-  if (over && over !== "source") return;
+  if (over && over !== "source" && over !== "sheet") return;
   run();
 }
 
@@ -1285,6 +1316,7 @@ export function installEditBar() {
   if (installed) return;
   installed = true;
   globalThis.addEventListener("keydown", editingKeys, true);
+  followPresses();
   onDefined("haxcms-site-editor-ui", (EditorUI) => {
     pinned(
       { fix: "HAX's save holds the edited page", owner: "haxcms-site-editor-ui", target: EditorUI.prototype, method: "_editButtonTap", marker: "_toggleEditMode", file: "editor/oer-edit-bar.js" },

@@ -1,34 +1,39 @@
 /**
- * Unsaved edits come back after a reload, on HAX's own copy of them (nu-hax
+ * Unsaved edits come back after a reload (nu-hax
  * docs/editor-redesign/spec.md §3.3; docs/editor-spikes/lifecycle.md S6 and
  * change 19):
  *
- * - While the page has unsaved changes, 2 s after the last one, and as
- *   the page goes (a reload the author has agreed to), the site editor's
- *   _snapshotPendingEditForLogout() keeps a copy in sessionStorage
- *   "haxcms-pending-edit" ({ itemId, title, content, savedAt }, kept 30
- *   minutes). HAX itself writes it only when a session ends. Beside it
- *   goes which saved page the edits were made to ("oer-pending-edit-base"):
- *   a copy made to a page that has been saved differently since isn't
- *   offered (it would put back the page from before). Back to no changes
- *   (Undo), the copy goes.
- * - HAX would put that copy back by itself on entering edit mode, without
- *   asking (and in Safari lost it: its restore ran into its own import,
- *   which skipped it, and the copy was cleared). Its __pendingRestore reads
- *   null to HAX, so there's one way back, this one.
+ * - While a page has unsaved changes, 2 s after the last one, and as the
+ *   page goes (a reload the author has agreed to, while it saves too), a
+ *   copy of hax-body is kept in sessionStorage "oer-pending-edits", one
+ *   per page ({ [itemId]: { itemId, title, content, savedAt, base } }, each
+ *   kept 30 minutes, the ten newest). base is which saved page the edits
+ *   were made to: a copy made to a page that has been saved differently
+ *   since (a save that got no answer may still have been written) is
+ *   offered saying so, as restoring it puts back the page from before. Back to
+ *   no changes (Undo), the page's copy goes. What's done on one page never
+ *   touches another's copy.
+ * - HAX keeps one copy of its own ("haxcms-pending-edit", written as a
+ *   session ends, e.g. a sign-in that has run out): it joins ours. HAX
+ *   would put it back by itself on entering edit mode, without asking (and
+ *   in Safari lost it: its restore ran into its own import, which skipped
+ *   it, and the copy was cleared). Its __pendingRestore reads null to HAX,
+ *   so there's one way back, this one.
  * - offerRestore(), once editing has begun and its "no changes" baseline
  *   is taken (the editing bar calls it), asks "Restore unsaved edits from
  *   2:41 pm?": Not now, Discard them, or Restore, which puts the copy in
- *   the editor as one undo step, so the page reads "Unsaved changes".
+ *   the editor as one undo step, so the page reads "Unsaved changes". The
+ *   page's details are kept as they're saved now (its page-break, which
+ *   Page details or Publish may have changed since the copy was made).
  * - Not now keeps the copy for later: it's asked again next time, and
  *   until then nothing replaces it or drops it but saving the page (whose
  *   saved form it was made to) or Discard them. Meanwhile this session's
  *   own changes aren't copied.
- * - Saving the page (stock.js savePage) drops it, and so does discarding
- *   the changes it's a copy of (forgetCopy).
+ * - Saving the page (stock.js savePage) drops its copy, and so does
+ *   discarding the changes it's a copy of (forgetCopy).
  * - pendingEdit(id): a page's copy, for the reading view to say there is
  *   one ("Unsaved edits from 2:41 pm · Edit content to restore"); it
- *   sends `oer-pending-edit` on the window when the copy comes or goes.
+ *   sends `oer-pending-edit` on the window when a copy comes or goes.
  *
  *   installRecovery()   // from installEditorChrome (editor/index.js)
  */
@@ -37,32 +42,68 @@ import { toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.
 import { editorState, contentKey } from "./editor-state.js";
 import { confirmDialog } from "../ui/oer-confirm.js";
 
-const KEY = "haxcms-pending-edit";
-const BASE_KEY = "oer-pending-edit-base";
+const KEY = "oer-pending-edits";
+// HAX's own copy (haxcms-site-editor.js _snapshotPendingEditForLogout), and
+// where the editor kept a copy's base before
+const HAX_KEY = "haxcms-pending-edit";
+const OLD_BASE_KEY = "oer-pending-edit-base";
 // as long as HAX keeps it (haxcms-site-editor.js _offerPendingEditRestore)
 const KEEP = 30 * 60 * 1000;
+// how many pages' copies are kept (sessionStorage holds a few megabytes)
+const MOST = 10;
 // how long after the last change the copy is taken
 const QUIET = 2000;
 
-const activeBody = () => globalThis.HaxStore?.requestAvailability?.()?.activeHaxBody ?? null;
+const haxStore = () => globalThis.HaxStore?.requestAvailability?.() ?? null;
+const activeBody = () => haxStore()?.activeHaxBody ?? null;
 const siteEditor = () => store.cmsSiteEditor?.instance ?? null;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-function readCopy() {
-  try {
-    return JSON.parse(globalThis.sessionStorage.getItem(KEY) || "null");
-  } catch {
-    return null;
-  }
-}
+const pageId = () => String(toJS(store.activeItem)?.id ?? "");
+const fresh = (copy) => !!copy?.content && typeof copy.savedAt === "number" && Date.now() - copy.savedAt <= KEEP;
 
 const changed = () => globalThis.dispatchEvent(new CustomEvent("oer-pending-edit"));
 
+function writeCopies(copies) {
+  const newest = Object.values(copies)
+    .filter(fresh)
+    .sort((a, b) => b.savedAt - a.savedAt)
+    .slice(0, MOST);
+  try {
+    if (newest.length) globalThis.sessionStorage.setItem(KEY, JSON.stringify(Object.fromEntries(newest.map((c) => [c.itemId, c]))));
+    else globalThis.sessionStorage.removeItem(KEY);
+  } catch {
+    // (nothing kept without storage)
+  }
+}
+
+// every page's copy, HAX's own among them
+function readCopies() {
+  let copies = {};
+  let hax = null;
+  try {
+    copies = JSON.parse(globalThis.sessionStorage.getItem(KEY) || "{}") || {};
+    hax = JSON.parse(globalThis.sessionStorage.getItem(HAX_KEY) || "null");
+  } catch {
+    return copies;
+  }
+  if (hax) {
+    const id = String(hax.itemId || "");
+    if (id && fresh(hax) && !(copies[id]?.savedAt >= hax.savedAt)) copies[id] = { itemId: id, title: hax.title || "", content: hax.content, savedAt: hax.savedAt };
+    try {
+      globalThis.sessionStorage.removeItem(HAX_KEY);
+      globalThis.sessionStorage.removeItem(OLD_BASE_KEY);
+    } catch {
+      // (read again next time)
+    }
+    writeCopies(copies);
+  }
+  return copies;
+}
+
 /** The page's copy of unsaved edits ({ content, savedAt, … }), or null. */
 export function pendingEdit(id) {
-  const copy = readCopy();
-  if (!id || !copy?.content || String(copy.itemId) !== String(id)) return null;
-  return typeof copy.savedAt === "number" && Date.now() - copy.savedAt <= KEEP ? copy : null;
+  const copy = id ? readCopies()[String(id)] : null;
+  return fresh(copy) ? copy : null;
 }
 
 /** The time a copy was taken, as people say it: "2:41 pm". */
@@ -71,19 +112,17 @@ export function copyTime(copy) {
   return time.replace(/\s?([AaPp])\.?\s?[Mm]\.?$/, (m, a) => ` ${a.toLowerCase()}m`);
 }
 
-// the copy was kept for later (Not now): this session leaves it alone
-let kept = false;
+// the page whose copy was kept for later (Not now): this session leaves it alone
+let kept = "";
 
-/** Forget the copy of unsaved edits (they're saved, or discarded). */
-export function dropCopy() {
-  kept = false;
-  if (!readCopy()) return;
-  try {
-    globalThis.sessionStorage.removeItem(KEY);
-    globalThis.sessionStorage.removeItem(BASE_KEY);
-  } catch {
-    // (nothing kept without storage)
-  }
+/** Forget a page's copy of unsaved edits (they're saved, or discarded). */
+export function dropCopy(id = pageId()) {
+  id = String(id);
+  if (kept === id) kept = "";
+  const copies = readCopies();
+  if (!copies[id]) return;
+  delete copies[id];
+  writeCopies(copies);
   changed();
 }
 
@@ -96,9 +135,9 @@ function baseOf() {
   return `${text.length}:${h}`;
 }
 
-/** Forget this session's copy of unsaved edits (they're discarded); a copy kept for later stays. */
-export function forgetCopy() {
-  if (!kept) dropCopy();
+/** Forget the copy of a page's unsaved edits (they're discarded); a copy kept for later stays. */
+export function forgetCopy(id = pageId()) {
+  if (kept !== String(id)) dropCopy(id);
 }
 
 /* ---------- keeping the copy ---------- */
@@ -108,21 +147,18 @@ let timer = 0;
 // the page being edited (a copy is only ever of it)
 let followed = "";
 
-// the page's unsaved edits, copied now (or the copy dropped, back to none)
+// the page's unsaved edits, copied now (or the copy dropped, back to none);
+// while it saves too: a reload then cancels the save
 function takeCopy() {
   clearTimeout(timer);
   const body = activeBody();
-  if (kept || !body?.editMode || editorState.saving || !editorState.tracking) return;
-  const id = String(toJS(store.activeItem)?.id);
-  if (id !== followed) return;
+  const id = pageId();
+  if (!body?.editMode || !editorState.tracking || id !== followed || kept === id) return;
   editorState._measure();
-  if (!editorState.dirty) return dropCopy();
-  siteEditor()?._snapshotPendingEditForLogout?.();
-  try {
-    globalThis.sessionStorage.setItem(BASE_KEY, JSON.stringify({ itemId: id, base: baseOf() }));
-  } catch {
-    // (offered whatever page it was made to)
-  }
+  if (!editorState.dirty) return dropCopy(id);
+  const copies = readCopies();
+  copies[id] = { itemId: id, title: toJS(store.activeItem)?.title || "", content: body.innerHTML, savedAt: Date.now(), base: baseOf() };
+  writeCopies(copies);
   changed();
 }
 
@@ -136,7 +172,7 @@ function follow(on) {
   observer?.disconnect();
   clearTimeout(timer);
   const body = activeBody();
-  followed = on ? String(toJS(store.activeItem)?.id) : "";
+  followed = on ? pageId() : "";
   if (!on || !body) return;
   observer = new MutationObserver(keepCopySoon);
   observer.observe(body, { subtree: true, childList: true, characterData: true, attributes: true });
@@ -165,29 +201,26 @@ function takeOver(EditorClass) {
 export async function offerRestore({ opener = null, name = "" } = {}) {
   const body = activeBody();
   if (!body?.editMode) return null;
-  kept = false;
+  kept = "";
   for (let waited = 0; !editorState.tracking && waited < 5000; waited += 50) await sleep(50);
-  const id = toJS(store.activeItem)?.id;
+  const id = pageId();
   const copy = pendingEdit(id);
-  if (!copy || !body.editMode) return null;
-  // (a copy of the page as it's saved: nothing to bring back; or edits to
-  // the page as it was saved before, which would put that back)
-  let made = null;
-  try {
-    made = JSON.parse(globalThis.sessionStorage.getItem(BASE_KEY) || "null");
-  } catch {
-    made = null;
-  }
-  const stale = made && String(made.itemId) === String(id) && made.base !== baseOf();
-  if (stale || contentKey(copy.content) === contentKey(body.innerHTML)) {
-    dropCopy();
+  if (!copy || !body.editMode || pageId() !== id) return null;
+  // (a copy of the page as it's saved: nothing to bring back)
+  if (contentKey(copy.content) === contentKey(body.innerHTML)) {
+    dropCopy(id);
     return null;
   }
+  // edits to the page as it was saved before (a save that got no answer
+  // may still have been written): restoring puts that page back with them
+  const since = copy.base && copy.base !== baseOf();
   // (while it's asked, and after Not now, nothing replaces it or drops it)
-  kept = true;
+  kept = id;
   const choice = await confirmDialog().ask({
     title: `Restore unsaved edits from ${copyTime(copy)}?`,
-    text: `Changes to ${name || "this page"} weren't saved when it was last open. Restore puts them back on the page, and Undo takes them out again. Not now keeps them for next time.`,
+    text: since
+      ? `Changes to ${name || "this page"} weren't saved when it was last open, and the page has been saved since. Restore puts back the page as it was then, with those changes, in place of what's saved now. Undo takes them out again. Not now keeps them for next time.`
+      : `Changes to ${name || "this page"} weren't saved when it was last open. Restore puts them back on the page, and Undo takes them out again. Not now keeps them for next time.`,
     actions: [
       { id: "later", label: "Not now" },
       { id: "discard", label: "Discard them", kind: "destructive" },
@@ -195,14 +228,24 @@ export async function offerRestore({ opener = null, name = "" } = {}) {
     ],
     opener,
   });
-  if (choice !== "later") kept = false;
-  if (!body.editMode) return null;
-  if (choice === "discard") dropCopy();
+  if (choice !== "later") kept = "";
+  if (!body.editMode || pageId() !== id) return null;
+  if (choice === "discard") dropCopy(id);
   if (choice !== "restore") return choice;
   // past any hold on HAX's own imports (import-hold.js)
-  globalThis.customElements.get("hax-body").prototype.importContent.call(body, copy.content);
+  globalThis.customElements.get("hax-body").prototype.importContent.call(body, await withDetailsNow(body, copy.content));
   for (let i = 0; i < 100 && body._contentState?.getState("importing"); i++) await sleep(25);
   return "restore";
+}
+
+// the copy, with the page's details as they are now: the copy's
+// page-break has them as editing began then, and HAXcms writes them back
+// with the page (a title changed, or the page unpublished, since)
+async function withDetailsNow(body, content) {
+  const now = body.firstElementChild?.localName === "page-break" ? body.firstElementChild : null;
+  if (!now) return content;
+  const rest = String(content).replace(/^\s*<page-break\b[^>]*>[\s\S]*?<\/page-break>/i, "");
+  return `${await haxStore().nodeToContent(now)}\n${rest.trim()}`;
 }
 
 let installed = false;
@@ -212,7 +255,7 @@ export function installRecovery() {
   globalThis.customElements.whenDefined("haxcms-site-editor").then(() => takeOver(globalThis.customElements.get("haxcms-site-editor")));
   globalThis.addEventListener("haxcms-edit-mode-changed", (e) => follow(!!e.detail));
   // discarding the changes drops their copy too
-  globalThis.addEventListener("hax-cancel", forgetCopy);
+  globalThis.addEventListener("hax-cancel", () => forgetCopy());
   // the page going (a reload or a close the author agreed to): what's
   // changed in the last 2 s too
   globalThis.addEventListener("pagehide", takeCopy);

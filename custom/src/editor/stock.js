@@ -70,13 +70,71 @@ const controlOf = (e) => (e?.currentTarget instanceof HTMLElement ? e.currentTar
  * Whether the page has changes to lose: the editor's own baseline
  * (editor-state.js), not HAX's copy, which in Firefox and Safari is taken
  * before the page has arrived (docs/editor-spikes/lifecycle.md change 17),
- * or HTML typed in Edit HTML and not applied yet. Right after editing
+ * or HTML typed in Edit HTML and not applied yet. What's typed in a field
+ * that commits as focus leaves it is committed first. Right after editing
  * begins it waits for the baseline.
  */
 export async function unsaved() {
   for (let waited = 0; store.editMode && !editorState.tracking && waited < 3000; waited += 50) await sleep(50);
+  await commitField();
   editorState._measure();
   return editorState.dirty || !!(await unappliedSource());
+}
+
+/**
+ * Whether something is typed and not on the page yet, as far as can be
+ * told at once (beforeunload can't wait): in Edit HTML, or in a field that
+ * commits as focus leaves it.
+ */
+export function typedNotOnPage() {
+  return !!typedField() || sourceTyped();
+}
+
+/* ---------- fields that commit as focus leaves them ---------- */
+
+// a text field in the content typed in since it last committed: an
+// image's address (oer-image-field) puts what's typed on the page on
+// `change`, as focus leaves it or Enter is pressed. (Typing is followed,
+// not focus: a focus move inside the editor's shadow roots is never heard
+// outside them.)
+let typedIn = null;
+
+function inContent(el) {
+  const body = activeBody();
+  for (let n = el; n; n = n.parentElement || n.getRootNode().host) if (n === body) return true;
+  return false;
+}
+
+/** Follow typing in the content's text fields (from installLeaveGuard). */
+export function followFields() {
+  globalThis.addEventListener(
+    "input",
+    (e) => {
+      const el = e.composedPath()[0];
+      if (!store.editMode || el === typedIn || el?.localName !== "input" || el.type !== "text" || !inContent(el)) return;
+      typedIn = el;
+      el.addEventListener("change", () => typedIn === el && (typedIn = null), { once: true });
+    },
+    true,
+  );
+}
+
+// the field focus is in, when it holds what's typed and not committed
+function typedField() {
+  if (!typedIn?.isConnected) return null;
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el === typedIn ? el : null;
+}
+
+// what's typed there, committed as Enter would (and the field's own
+// element has drawn the change)
+async function commitField() {
+  const el = typedField();
+  if (!el) return;
+  el.dispatchEvent(new Event("change", { bubbles: true }));
+  await frame();
+  await frame();
 }
 
 /**
@@ -87,7 +145,7 @@ export async function unsaved() {
 export function discardEdits() {
   const ui = stockUI();
   if (!ui || !store.editMode) return;
-  forgetCopy();
+  forgetCopy(pageId());
   ui._cancelEditing(fakeEvent(ui.shadowRoot?.querySelector("#cancelbutton")));
 }
 
@@ -138,6 +196,15 @@ async function unappliedSource() {
   return typed === tidy(formatHTML(await body.haxToContent())) ? null : view;
 }
 
+// the same, at once: the code as typed against the code as it was loaded
+// (code-editor keeps that as editorValue)
+function sourceTyped() {
+  const tray = haxStore()?.haxTray;
+  if (tray?.getAttribute("data-oer-dialog") !== "source" || !activeBody()?.editMode) return false;
+  const code = tray.shadowRoot?.querySelector("#view-source")?.shadowRoot?.querySelector("#textarea");
+  return !!code?.editorValue && tidy(code.value) !== tidy(code.editorValue);
+}
+
 // what's typed in Edit HTML goes on the page before it's saved, as its
 // Update HTML puts it there (hax-view-source.js updateBodyFromHTML), past
 // any hold on HAX's imports (import-hold.js); and the dialog closes
@@ -167,16 +234,20 @@ export function closeSource() {
 
 // no answer from the server by then: editing goes on, with every edit
 const ANSWER_WITHIN = 20000;
-// how long the edited page is held while HAX reloads the saved one, and
-// the most, while HAX is still loading it then (lifecycle.md change 18)
+// the most the edited page is held while HAX reloads the saved one
+// (lifecycle.md change 18; HAX's loading flag can stay up after a failed
+// load, haxcms-site-builder.js loadJOSData)
 const RELOAD_WITHIN = 20000;
-const RELOAD_MOST = 60000;
 // HAX's reload has settled when nothing has moved for this long
 const RELOAD_QUIET = 300;
 
 const activeBody = () => haxStore()?.activeHaxBody ?? null;
 const siteEditor = () => store.cmsSiteEditor?.instance ?? null;
 const siteBuilder = () => globalThis.document.querySelector("haxcms-site-builder");
+// the page on screen, by its id
+const pageId = () => String(toJS(store.activeItem)?.id ?? "");
+// the page hax-body holds, by its page-break (which HAXcms saves it to)
+const heldPage = (body) => (body.firstElementChild?.localName === "page-break" ? body.firstElementChild.getAttribute("item-id") || "" : "");
 
 let saving = null;
 
@@ -192,7 +263,9 @@ let saving = null;
  * the page first. On an error, or no answer in 20 s, editing goes on with
  * every edit and the caret, and the status says why (saveError); an
  * answer after that still counts (answerLate). Resolves to { ok, reason }.
- * One save at a time.
+ * One save at a time. A page that isn't the one on screen is never sent:
+ * HAXcms saves hax-body to the page its page-break names, with the details
+ * of the page on screen (custom-oer-docs-theme.js __beforeSave).
  */
 export function savePage() {
   saving ??= save().finally(() => (saving = null));
@@ -208,13 +281,20 @@ async function save() {
   await applySource();
   const body = activeBody();
   if (!store.editMode || !body?.editMode || editorState.preview) return NOT_EDITING;
+  const page = pageId();
+  const held = heldPage(body);
+  if (held && held !== page) {
+    const reason = "The page shown isn't the one being edited";
+    editorState.set({ saveError: reason });
+    return { ok: false, reason };
+  }
   const sent = body.innerHTML;
   const refocus = keepFocus(body);
   editorState.set({ saving: true, saveError: "", savedAt: 0 });
   body.inert = true;
   body.setAttribute("aria-busy", "true");
   const release = holdImports();
-  const asked = request();
+  const asked = request(page);
   // HAX's reload of the saved page, followed from its answer on
   let waiting = true;
   let reload = null;
@@ -237,7 +317,7 @@ async function save() {
   }
   await reload.settled();
   reload.stop();
-  dropCopy();
+  dropCopy(page);
   store.editMode = false;
   await frame();
   release();
@@ -250,14 +330,48 @@ async function save() {
 // the caret, to put back when the page stops being inert after a failed
 // save (inert takes focus to <body>)
 function keepFocus(body) {
-  let el = globalThis.document.activeElement;
-  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
-  const range = el === body ? getEditRange(body) : null;
+  const range = caretBefore(body);
   return () => {
     if (!range || !body.isConnected || !range.startContainer.isConnected) return;
     body.focus({ preventScroll: true });
     setEditRange(range);
   };
+}
+
+/* ---------- the caret as a control was pressed ---------- */
+
+// where the caret was as the last press began, before the press took focus
+// out of the content: to the control in Chrome, to <body> in Safari and
+// Firefox on macOS, which don't focus a clicked button. A key pressed
+// since forgets it (the author has moved on by keyboard).
+let pressedCaret = null;
+
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
+
+/** Follow presses for caretBefore (from installEditBar). */
+export function followPresses() {
+  globalThis.addEventListener(
+    "pointerdown",
+    () => {
+      const body = activeBody();
+      pressedCaret = body?.editMode && deepActive() === body ? getEditRange(body) : null;
+    },
+    true,
+  );
+  globalThis.addEventListener("keydown", () => (pressedCaret = null), true);
+}
+
+/**
+ * The caret in the content (a Range), as it is, or as it was when the
+ * control being used now was pressed; null when it wasn't in the content.
+ */
+export function caretBefore(body) {
+  const range = deepActive() === body ? getEditRange(body) : pressedCaret;
+  return range?.startContainer.isConnected && body.contains(range.startContainer) ? range : null;
 }
 
 /*
@@ -268,20 +382,24 @@ function keepFocus(body) {
  * sent), except that 401, 403 and 405 first try a fresh sign-in and send
  * it again. save() marks the request it's about to send (next), and
  * installEditBar pins saveAnswers on the site editor: a request's answer
- * is its own, however late, never a later save's. And an older page the
- * server writes after a newer one (a try that timed out, answered after
- * Try again had saved) is written over with the newer one again, which
- * HAX isn't told about: it has the newer page already, and shows it.
+ * is its own, however late, never a later save's. An older version of a
+ * page the server writes after a newer one (a try that timed out, answered
+ * after Try again had saved) is written over with the newer one again,
+ * which HAX isn't told about: it has the newer page already, and shows it.
+ * And an answer about a page that isn't on screen any more (the author has
+ * gone on to another) isn't HAX's to handle: it takes every answer for the
+ * page on screen, and would move to the saved page's address mid-edit
+ * (_handleNodeResponse). HAX's copy of the site is reloaded instead.
  */
 let seq = 0;
-// the save about to send its request, and the last one the server saved
+// the save about to send its request, and the last one the server saved of each page
 let next = null;
-let newest = null;
+const newest = new Map();
 const requests = new WeakMap();
 
-function request() {
+function request(page) {
   let resolve;
-  const asked = { seq: ++seq, sent: false, resent: false, answer: null, send: null, hooks: [] };
+  const asked = { seq: ++seq, page, session: editorState.__entry, sent: false, resent: false, answer: null, send: null, hooks: [] };
   asked.answered = new Promise((r) => (resolve = r));
   // (hooks run as the answer comes, before HAX handles it)
   asked.settle = (answer) => {
@@ -306,14 +424,16 @@ export const saveAnswers = {
         onSuccess: (response, target) => {
           // (the newer page sent again: HAX has it, and shows it, already)
           if (asked.resent) return void (asked.resent = false);
-          if (newest && newest.seq > asked.seq) {
+          const last = newest.get(asked.page);
+          if (last && last.seq > asked.seq) {
             asked.settle({ ok: false, stale: true, reason: "Saved again since" });
-            newest.resent = true;
-            newest.send();
+            last.resent = true;
+            last.send();
             return;
           }
-          newest = asked;
+          newest.set(asked.page, asked);
           asked.settle({ ok: true });
+          if (asked.page !== pageId()) return reloadSite();
           return onSuccess?.(response, target);
         },
       };
@@ -341,32 +461,41 @@ export const saveAnswers = {
     },
 };
 
-// an answer after the time ran out: the page was saved as sent, which in
-// the session it was sent from is what "no changes" means now; and HAX's
-// reload of it mustn't reach the editor, where the author has gone on
+// an answer after the time ran out, about the page still being edited: it
+// was saved as sent, which in the session it was sent from is what "no
+// changes" means now; and HAX's reload of it mustn't reach the editor,
+// where the author has gone on. (About another page: saveAnswers.)
 function answerLate(asked, body, sent) {
-  const session = editorState.__entry;
   asked.hooks.push((answer) => {
-    if (!answer.ok || !body.editMode) return;
+    if (!answer.ok || !body.editMode || asked.page !== pageId()) return;
     keepThroughReload();
-    if (editorState.__entry !== session) return;
-    editorState._baseline(body, sent);
-    editorState.set({ saveError: "", savedAt: Date.now() });
-    // (HAX drops the copy of unsaved edits as it saves: a copy of what's
-    // changed since)
+    if (editorState.__entry === asked.session) {
+      editorState._baseline(body, sent);
+      editorState.set({ saveError: "", savedAt: Date.now() });
+    }
+    // (the copy of unsaved edits, made again from what's changed since)
     keepCopySoon();
   });
 }
 
 // while HAX reloads the page after a save it has heard back about, its
-// imports into the editor are held
-function keepThroughReload() {
+// imports into the editor are held; begun: the reload is under way
+// already (no haxcms-trigger-update-node to wait for)
+function keepThroughReload({ begun = false } = {}) {
   const release = holdImports();
-  const reload = watchReload(siteBuilder());
+  const reload = watchReload(siteBuilder(), { begun });
   reload.settled().then(() => {
     reload.stop();
     release();
   });
+}
+
+// a page saved that isn't on screen: HAX's copy of the site (its details,
+// and the time that keeps pages from coming from the browser's cache)
+// catches up, past the page being edited, if one is
+function reloadSite() {
+  keepThroughReload({ begun: true });
+  globalThis.dispatchEvent(new CustomEvent("haxcms-trigger-update", { bubbles: true, composed: true, cancelable: false, detail: true }));
 }
 
 /*
@@ -410,12 +539,10 @@ function unfollowLoads() {
 
 /**
  * Follow HAX's reload after a save heard back about. settled() resolves
- * once the reload has begun (haxcms-trigger-update-node) and ended and
- * nothing has moved for 300 ms; or after 20 s, or a minute while HAX is
- * still loading.
+ * once the reload has begun (haxcms-trigger-update-node, unless begun) and
+ * ended and nothing has moved for 300 ms; or after 20 s.
  */
-function watchReload(builder) {
-  let begun = false;
+function watchReload(builder, { begun = false } = {}) {
   let stopped = false;
   const onNode = () => {
     begun = true;
@@ -430,7 +557,7 @@ function watchReload(builder) {
         const now = performance.now();
         const idle = !loads.busy && !builder?.loading && !builder?.__pendingPageLoad;
         if (begun && idle && now - loads.last >= RELOAD_QUIET) return true;
-        if (now - start >= (idle ? RELOAD_WITHIN : RELOAD_MOST)) return false;
+        if (now - start >= RELOAD_WITHIN) return false;
         await sleep(25);
       }
     },
