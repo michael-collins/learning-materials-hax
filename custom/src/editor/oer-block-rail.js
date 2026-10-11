@@ -125,6 +125,21 @@ function deepActive() {
   return el;
 }
 
+// where focus is now, for a dialog to give it back to as it closes: the
+// caret where it is, or the control that has it
+function focusHere() {
+  const at = deepActive();
+  const body = haxStore()?.activeHaxBody;
+  const range = body && at === body ? getEditRange(body) : null;
+  const kept = range && body.contains(range.startContainer) ? new StaticRange(range) : null;
+  return () => {
+    if (kept?.startContainer.isConnected) {
+      body.focus({ preventScroll: true });
+      setEditRange(kept);
+    } else if (at?.isConnected && at !== globalThis.document.body) at.focus({ preventScroll: true });
+  };
+}
+
 // why HAX has switched a block command off, from its toolbar's state
 function offReason(plate, el) {
   if (plate?.viewSource) return "Close Edit HTML first";
@@ -400,8 +415,15 @@ class OerBlockRail extends LitElement {
       this._hide();
       return;
     }
-    // what's selected, and its categories
-    const cats = categoriesFor(s);
+    // what's selected, and its categories: while the keyboard is in the
+    // tools (Alt+F10) or a menu is open, focus has left the field typed in,
+    // but the text commands are still for it (not on the dock's name tag:
+    // that's the unit selected as a whole)
+    const held = !!this._open || this.matches(":focus-within");
+    const inTools = !!this._open || !!this.shadowRoot?.querySelector(".rail")?.matches(":focus-within");
+    if (s.mode === "typing") this.__typedIn = s.field;
+    else if (!(inTools && this.__typedIn?.isConnected && unit.contains(this.__typedIn))) this.__typedIn = null;
+    const cats = categoriesFor(this.__typedIn ? { unit, mode: "typing", field: this.__typedIn } : s);
     const key = cats.map((c) => c.id + (c.unit ? `:${c.unit.localName}` : "")).join("|");
     if (unit !== this.__unit || key !== this.__key) {
       if (unit !== this.__unit && !this.__opening) this._close();
@@ -430,7 +452,6 @@ class OerBlockRail extends LitElement {
     const ring = ringOf(unit, g);
     const rail = this.shadowRoot?.querySelector(".rail");
     const height = rail?.offsetHeight || 0;
-    const held = !!this._open || this.matches(":focus-within");
     const offscreen = !g.visible;
     if (offscreen && !held) {
       this.hidden = true;
@@ -476,6 +497,7 @@ class OerBlockRail extends LitElement {
     this.hidden = true;
     this.__unit = null;
     this.__key = "";
+    this.__typedIn = null;
     if (this._dock) {
       this._dock = false;
       this.removeAttribute("dock");
@@ -512,7 +534,7 @@ class OerBlockRail extends LitElement {
       const own = (await ceButtonsOf(unit)).map((b) => ({ label: b.label, icon: b.icon, run: b.run }));
       // the frame label's buttons, for the keyboard here too (focus goes
       // back to where it was as the menu ran it: the name tag, or the caret)
-      if (unit && hasSettings(unit)) own.unshift({ label: "Block settings…", icon: "sliders-horizontal", opens: true, run: () => settingsDialog().open("settings", deepActive()) });
+      if (unit && hasSettings(unit)) own.unshift({ label: "Block settings…", icon: "sliders-horizontal", opens: true, run: (back) => settingsDialog().open("settings", back) });
       const action = unit?.constructor?.frameAction;
       if (action) own.push({ label: action.label, icon: action.icon, opens: true, run: () => action.run(unit) });
       if (own.length) items.push(SEP, ...own);
@@ -768,9 +790,10 @@ class OerBlockRail extends LitElement {
    * Run a menu item. From the keyboard (the click has no pointer: detail
    * 0), focus then goes back where it came from, unless the command put it
    * somewhere (a dialog, the block list, a name tag); something that opens
-   * a dialog finds focus back there first, to give it back to as it
-   * closes, and Escape out of the block list comes back there too. (A
-   * click leaves focus where it was: the rail never takes it.)
+   * a dialog finds focus back there first, and is given the way back
+   * (run(back)) for the dialog to take as it closes; Escape out of the
+   * block list comes back there too. (A click leaves focus where it was:
+   * the rail never takes it.)
    */
   _run(item, e) {
     if (item.disabled || item.sep) return;
@@ -781,7 +804,7 @@ class OerBlockRail extends LitElement {
     const keys = e?.detail === 0;
     this._close();
     if (item.opens && keys) this._back({ quiet: true });
-    item.run();
+    item.run(item.opens ? (keys ? () => this._back() : focusHere()) : undefined);
     if (item.list && keys) watchBlockList(() => this._back());
     if (!keys || item.opens) return;
     requestAnimationFrame(() => {
@@ -1217,6 +1240,7 @@ class OerBlockRail extends LitElement {
         color: var(--accent-foreground);
       }
       .dock-label .sep {
+        padding: 0 0.125rem;
         color: var(--muted-foreground);
       }
       .chip {
@@ -1267,7 +1291,7 @@ class OerBlockRail extends LitElement {
         font-weight: 600;
         color: var(--muted-foreground);
       }
-      .sep {
+      .menu .sep {
         height: 1px;
         margin: 0.25rem -0.25rem;
         background: var(--border);

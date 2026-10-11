@@ -25,6 +25,13 @@ import { showPanel } from "./stock.js";
 const icon = (name) =>
   html`<span class="icon" aria-hidden="true" style="--src:url(&quot;${LUCIDE_ICONS[`oer:${name}`] || ""}&quot;)"></span>`;
 
+// focus as the person sees it, inside shadow roots
+function deepActive() {
+  let el = globalThis.document.activeElement;
+  while (el?.shadowRoot?.activeElement) el = el.shadowRoot.activeElement;
+  return el;
+}
+
 // editor-only attributes stripped from the preview copy
 const EDITOR_ATTRS = ["contenteditable", "data-hax-active", "data-hax-ray", "draggable", "id"];
 
@@ -62,12 +69,17 @@ class OerSettingsDialog extends LitElement {
     return globalThis.HaxStore?.requestAvailability?.();
   }
 
-  /** Open the active block's settings, or (mode "source") the page HTML. */
-  open(mode = "settings") {
+  /**
+   * Open the active block's settings, or (mode "source") the page HTML.
+   * opener is what focus goes back to as it closes (spec §7.2): the control
+   * that opened it (Safari doesn't focus a clicked button), or a function
+   * that puts focus back; without one, what had focus.
+   */
+  open(mode = "settings", opener = null) {
     const hax = this._hax;
     const node = hax?.activeNode;
     if (mode === "settings" && !node) return;
-    this.__returnFocus = globalThis.document.activeElement;
+    this.__returnFocus = opener || deepActive();
     this.__node = mode === "settings" ? node : null;
     if (mode === "settings") {
       const schema = hax.haxSchemaFromTag?.(node.localName);
@@ -98,8 +110,12 @@ class OerSettingsDialog extends LitElement {
     tray?.removeAttribute("data-oer-dialog");
     const node = this.__node;
     this.__node = null;
-    // back to the block (or whatever had focus) so editing continues
-    (node?.isConnected ? node : this.__returnFocus)?.focus?.();
+    const back = this.__returnFocus;
+    this.__returnFocus = null;
+    // back to what opened it, so editing continues there (or to the block)
+    if (typeof back === "function") back();
+    else if (back?.isConnected && back !== globalThis.document.body) back.focus({ preventScroll: true });
+    else if (node?.isConnected) node.focus?.();
   }
 
   // keep HAX's panel exactly over the dialog's form area

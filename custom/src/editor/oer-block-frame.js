@@ -580,7 +580,8 @@ class OerBlockFrame extends LitElement {
   }
 
   _pointerMove(e) {
-    if (!this.__press) return;
+    // (a drag Escape cancelled stays cancelled until the button is released)
+    if (!this.__press || this.__press.cancelled) return;
     const moved = Math.hypot(e.clientX - this.__press.x, e.clientY - this.__press.y);
     if (!this._drag && moved < DRAG_THRESHOLD) return;
     if (!this._drag) editorState.set({ dragging: true });
@@ -597,6 +598,12 @@ class OerBlockFrame extends LitElement {
       // already released
     }
     if (this._drag) this._endDrag(true);
+  }
+
+  // the browser took the pointer away (a touch turned into a scroll)
+  _pointerCancel() {
+    this.__press = null;
+    this._endDrag(false);
   }
 
   // the slots a unit may be dropped in: not inside itself, nor the two
@@ -638,6 +645,9 @@ class OerBlockFrame extends LitElement {
   async _endDrag(drop) {
     const d = this._drag;
     this._drag = null;
+    // cancelled with the button still down: the grip keeps the pointer
+    // until it's released, and moving on doesn't start another drag
+    if (!drop && this.__press) this.__press.cancelled = true;
     editorState.set({ dragging: false });
     const node = this.__unit;
     const body = editorState.body;
@@ -1129,7 +1139,7 @@ class OerBlockFrame extends LitElement {
             @pointerdown="${this._pointerDown}"
             @pointermove="${this._pointerMove}"
             @pointerup="${this._pointerUp}"
-            @pointercancel="${() => this._endDrag(false)}"
+            @pointercancel="${this._pointerCancel}"
           >
             ${icon("grip-vertical")}
           </button>`

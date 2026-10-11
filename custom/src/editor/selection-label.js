@@ -285,13 +285,15 @@ const INSET = 3;
 const HANDLE = 24;
 
 /**
- * The ring around a unit, from the editor's geometry for it ({ view, unit },
- * editor-state.js): just outside it, or inside the edges of a unit as wide
- * as the page (a course site's section, which abuts the next), whose
- * margin has no room for it. { top, right, bottom, left, inset }
+ * The ring around a unit, from the editor's geometry for it ({ view, unit,
+ * dock }, editor-state.js): just outside it, or inside the edges of a unit
+ * as wide as the page (a course site's section, which abuts the next),
+ * whose margin has no room for it and the handle beside it (docked, there's
+ * no handle: a block on a phone keeps its ring outside, off its text).
+ * { top, right, bottom, left, inset }
  */
-export function ringOf(unit, { view, unit: r }) {
-  const inset = !!policyOf(unit).fullBleed || r.left - RING - HANDLE < view.left;
+export function ringOf(unit, { view, unit: r, dock = false }) {
+  const inset = !!policyOf(unit).fullBleed || r.left - RING - (dock ? 0 : HANDLE) < view.left;
   const o = inset ? -INSET : RING;
   return { top: r.top - o, bottom: r.bottom + o, left: r.left - o, right: r.right + o, inset };
 }
