@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847514,
+      "updated": 1791847516,
       "version": "26.8.0"
     },
     "theme": {
@@ -19431,7 +19431,7 @@
       "order": 3,
       "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
       "title": "Making and applying an image texture",
-      "description": "",
+      "description": "Export the side's UV layout, paint a texture over it in Photoshop, apply it to the chair with an Image Texture node, and check the UVs for stretching.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
