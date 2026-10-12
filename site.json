@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847499,
+      "updated": 1791847502,
       "version": "26.8.0"
     },
     "theme": {
@@ -11681,6 +11681,40 @@
         "images": [],
         "videos": [],
         "updated": 1791837162
+      }
+    },
+    {
+      "id": "item-b21826bd-ed90-4430-9f3b-d2244fe970a4",
+      "indent": 2,
+      "location": "pages/item-b21826bd-ed90-4430-9f3b-d2244fe970a4/index.html",
+      "slug": "tutorials/texturing-the-airline-chair/applying-scale",
+      "order": 1,
+      "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
+      "title": "Applying scale",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=egWgHYmKwww",
+          "batch": "video-mv5vqlfz",
+          "captions": "speech",
+          "duration": 169,
+          "written": true
+        },
+        "created": 1791847502,
+        "images": [],
+        "videos": [],
+        "updated": 1791847502
       }
     },
     {
