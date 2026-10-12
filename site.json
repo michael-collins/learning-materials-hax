@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837187,
+      "updated": 1791837189,
       "version": "26.8.0"
     },
     "theme": {
@@ -24939,7 +24939,7 @@
       "order": 5,
       "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
       "title": "Adding the details",
-      "description": "",
+      "description": "Finish the chair's frame with its smaller parts: the rods between the sides, an arched front rail made symmetrical with a Mirror modifier, and the small wooden hooks under the seat, built by extruding single faces.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
