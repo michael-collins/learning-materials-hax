@@ -1,0 +1,34 @@
+{
+  "id": "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a",
+  "indent": 1,
+  "location": "pages/item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a/index.json",
+  "slug": "tutorials/bouncing-a-ball",
+  "order": 10,
+  "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+  "title": "Bouncing a ball",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "published": false,
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "difficulty": "Beginner"
+    },
+    "oerVideoSource": {
+      "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M",
+      "batch": "video-mv5jgxwv",
+      "captions": "none",
+      "kind": "playlist"
+    },
+    "created": 1791826896,
+    "images": [],
+    "videos": [],
+    "updated": 1791826896
+  },
+  "content": "\n<p>A two-part series on animating a bouncing ball in Blender, following a reference image of a ball bouncing across 31 frames.</p>\n<oer-tutorial-series></oer-tutorial-series>"
+}

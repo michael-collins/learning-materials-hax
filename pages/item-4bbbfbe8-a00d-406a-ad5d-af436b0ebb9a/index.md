@@ -1,0 +1,1 @@
+A two-part series on animating a bouncing ball in Blender, following a reference image of a ball bouncing across 31 frames.
