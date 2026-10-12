@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847491,
+      "updated": 1791847494,
       "version": "26.8.0"
     },
     "theme": {
@@ -25010,7 +25010,7 @@
       "order": 13,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Texturing the Airline Chair",
-      "description": "",
+      "description": "Prepare Kem Weber's Airline Chair for texturing in Blender, unwrap its UVs, and paint textures for it in Photoshop: choosing a mesh resolution, applying scale, marking seams, exporting the UV layout, and applying image textures.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
