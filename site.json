@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847508,
+      "updated": 1791847510,
       "version": "26.8.0"
     },
     "theme": {
@@ -17479,7 +17479,7 @@
       "order": 2,
       "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
       "title": "Marking seams and unwrapping",
-      "description": "",
+      "description": "Mark seams on the chair's side, unwrap it, project its two flat faces on top of each other, and arrange the UV islands so one texture maps to both sides.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
