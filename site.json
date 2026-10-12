@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837180,
+      "updated": 1791837182,
       "version": "26.8.0"
     },
     "theme": {
@@ -24607,7 +24607,7 @@
       "order": 4,
       "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
       "title": "Modeling the seat cushions",
-      "description": "",
+      "description": "Model the chair's leather seat and back cushions from a cube, anticipating how a Subdivision Surface modifier will smooth them, then shape a worn, pinched look by moving a few vertices of the low-poly mesh.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
