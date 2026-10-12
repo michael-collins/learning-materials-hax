@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171</id>
-<indent>0</indent>
+<indent>1</indent>
 <location>pages/item-41a9fcbf-ed3d-4bfe-aeab-a75c4c267171/index.xml</location>
-<slug>animated-textures</slug>
-<order>0</order>
-<parent></parent>
+<slug>exercises/animated-textures</slug>
+<order>1</order>
+<parent>item-91e1ea23-4437-4dac-90cd-c8de6495e5a6</parent>
 <title>Animated textures</title>
 <description>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</description>
 <metadata>
 <created>1790802192</created>
-<updated>1790802192</updated>
+<updated>1791835503</updated>
 <images>
 </images>
 <videos>
 </videos>
 <overridePathauto>false</overridePathauto>
 <published>true</published>
-<pageType>exercise</pageType>
+<pageType>oer:exercise</pageType>
 <hideInMenu>false</hideInMenu>
 <tags>Blender,AfterEffects,Adobe Media Encoder</tags>
 <locked>false</locked>
 <readtime>1</readtime>
+<status></status>
+<icon></icon>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes>Initial release with version control</notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes>Initial release with version control</notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-d4806777-430a-42fb-967f-66d8d2b69d4f</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed video in a web streaming format called H.264.</p>
-<video-player source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH" title="Animated textures Tutorial"></video-player>
+<oer-tutorial-series series="item-d4806777-430a-42fb-967f-66d8d2b69d4f" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH" playlist-title="Animated textures Tutorial"></oer-tutorial-series>
 <h2>Learning Objectives</h2>
 <ol>
 <li>Become familiarized with adding animation sequences as moving textures on 3D geometry.</li>
