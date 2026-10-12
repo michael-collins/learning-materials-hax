@@ -8,7 +8,14 @@
  *
  * `series` is a Tutorial whose sub-pages are its parts
  * (tutorials/series-model.js); nu-hax scripts/video-page.mjs makes them from
- * a YouTube playlist. On a series' own page it can be left out. Open or closed is remembered for the reader, and so is
+ * a YouTube playlist. On a series' own page it can be left out.
+ *
+ *   <oer-tutorial-series series="item-…" playlist="https://youtube.com/…" playlist-title="…">
+ *
+ * `playlist` is what the block replaced (nu-hax scripts/link-series.mjs
+ * keeps it): anyone who can't see the series yet (readers, while it or its
+ * parts are drafts; the published copy leaves drafts out) gets that
+ * playlist instead, so a series can go into exercises before it's published. Open or closed is remembered for the reader, and so is
  * the part they were on. Open, the block widens to 72rem where the page has
  * room (centred on the page's main area, never wider than it), and the
  * written tutorial goes under the video where it doesn't.
@@ -119,7 +126,11 @@ export class OerTutorialSeries extends LitElement {
   // only `series` is saved into the page: HAX writes every declared
   // property, so the rest is undeclared and re-renders with requestUpdate
   static get properties() {
-    return { series: { type: String, reflect: true } };
+    return {
+      series: { type: String, reflect: true },
+      playlist: { type: String, reflect: true },
+      playlistTitle: { type: String, attribute: "playlist-title", reflect: true },
+    };
   }
 
   constructor() {
@@ -400,6 +411,10 @@ export class OerTutorialSeries extends LitElement {
   /* ---------- view ---------- */
 
   _renderEmpty() {
+    // the playlist this replaced, until the reader can see the series
+    if (this.playlist && !(this.__editing && !this.series)) {
+      return html`<div class="fallback"><oer-video .src="${this.playlist}" title="${this.playlistTitle || "Video playlist"}"></oer-video></div>`;
+    }
     if (!this.__editing) {
       return this.__signedIn
         ? html`<p class="empty">No tutorial series chosen. Edit content to choose one.</p>`
@@ -508,7 +523,8 @@ export class OerTutorialSeries extends LitElement {
           mask: var(--src) center / contain no-repeat;
         }
         .frame,
-        .empty {
+        .empty,
+        .fallback {
           margin: 2rem 0;
         }
         .frame {
