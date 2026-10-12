@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791848741,
+      "updated": 1791848744,
       "version": "26.8.0"
     },
     "theme": {
@@ -11759,7 +11759,7 @@
       "order": 1,
       "parent": "item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c",
       "title": "Refining the lighting and the leather",
-      "description": "",
+      "description": "Soften the shadows, brighten the scene with a sun light, make the floor matte and track down a stray light, then add roughness and normal maps so the chair's leather looks like leather in the render.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
