@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849448,
+      "updated": 1791849453,
       "version": "26.8.0"
     },
     "theme": {
@@ -8425,6 +8425,40 @@
         "images": [],
         "videos": [],
         "updated": 1791848735
+      }
+    },
+    {
+      "id": "item-d119c9b7-49e8-4f7d-9fcf-69d76b41cc70",
+      "indent": 2,
+      "location": "pages/item-d119c9b7-49e8-4f7d-9fcf-69d76b41cc70/index.html",
+      "slug": "tutorials/introduction-to-animation/keyframes-parenting-and-the-graph-editor",
+      "order": 0,
+      "parent": "item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a",
+      "title": "Keyframes, parenting and the Graph Editor",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=6MeFx1WL03Q",
+          "batch": "video-mv5wwefk",
+          "captions": "speech",
+          "duration": 1123,
+          "written": true
+        },
+        "created": 1791849452,
+        "images": [],
+        "videos": [],
+        "updated": 1791849452
       }
     },
     {
