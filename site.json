@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791835499,
+      "updated": 1791835501,
       "version": "26.8.0"
     },
     "theme": {
@@ -11552,7 +11552,7 @@
       "order": 1,
       "parent": "item-d4806777-430a-42fb-967f-66d8d2b69d4f",
       "title": "Applying the animated texture and rendering the video",
-      "description": "",
+      "description": "Play a 72-frame image sequence on the TV's screen in Blender as a glowing animated texture, and light the room with it. Render the scene in EEVEE as an image sequence, then make it into a video in After Effects and export an H.264 MP4 with Media Encoder.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
