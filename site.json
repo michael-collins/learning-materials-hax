@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791826925,
+      "updated": 1791833435,
       "version": "26.8.0"
     },
     "theme": {
@@ -24599,7 +24599,7 @@
       "description": "Animate a bouncing ball in Blender three ways: keyframing every frame, following a motion path, and Bounce interpolation.",
       "metadata": {
         "pageType": "oer:tutorial",
-        "published": false,
+        "published": true,
         "oerFields": {
           "authors": [
             {
