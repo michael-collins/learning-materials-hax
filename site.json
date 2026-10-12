@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847510,
+      "updated": 1791847514,
       "version": "26.8.0"
     },
     "theme": {
@@ -19421,6 +19421,40 @@
         "images": [],
         "videos": [],
         "updated": 1791837174
+      }
+    },
+    {
+      "id": "item-149cbe38-71d6-482e-b6aa-9077d9ffaf6b",
+      "indent": 2,
+      "location": "pages/item-149cbe38-71d6-482e-b6aa-9077d9ffaf6b/index.html",
+      "slug": "tutorials/texturing-the-airline-chair/making-and-applying-an-image-texture",
+      "order": 3,
+      "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
+      "title": "Making and applying an image texture",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=_PflHOC85HE",
+          "batch": "video-mv5vquq0",
+          "captions": "speech",
+          "duration": 472,
+          "written": true
+        },
+        "created": 1791847514,
+        "images": [],
+        "videos": [],
+        "updated": 1791847514
       }
     },
     {
