@@ -1,0 +1,39 @@
+id: item-d4806777-430a-42fb-967f-66d8d2b69d4f
+indent: 1
+location: pages/item-d4806777-430a-42fb-967f-66d8d2b69d4f/index.yaml
+slug: tutorials/animated-textures
+order: 11
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: Animated textures
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Intermediate
+  oerVideoSource:
+    source: https://www.youtube.com/playlist?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH
+    batch: video-mv5ol2ym
+    captions: none
+    kind: playlist
+  created: 1791835487
+  images: []
+  videos: []
+  updated: 1791835487
+content: >-
+
+  <p>An animated texture is an image sequence that plays on the surface of a
+  model. In these two parts you'll model an old TV set on a table in Blender,
+  then put a three-second, 72-frame animation on its screen and make the screen
+  glow and light the room. You'll render the scene from Blender's EEVEE as an
+  image sequence, set it to 24 frames per second in After Effects with Interpret
+  Footage, and export an H.264 MP4 with Media Encoder's Vimeo preset.</p>
+
+  <p>You'll need Blender, After Effects and Media Encoder. The image sequence
+  for the screen is available to download, so you don't have to make your own in
+  After Effects.</p>
+
+  <oer-tutorial-series></oer-tutorial-series>

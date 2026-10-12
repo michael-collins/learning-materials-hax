@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d4806777-430a-42fb-967f-66d8d2b69d4f</id>
+<indent>1</indent>
+<location>pages/item-d4806777-430a-42fb-967f-66d8d2b69d4f/index.xml</location>
+<slug>tutorials/animated-textures</slug>
+<order>11</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Animated textures</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Intermediate</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/playlist?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH</source>
+<batch>video-mv5ol2ym</batch>
+<captions>none</captions>
+<kind>playlist</kind>
+</oerVideoSource>
+<created>1791835487</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791835487</updated>
+</metadata>
+<content><![CDATA[
+<p>An animated texture is an image sequence that plays on the surface of a model. In these two parts you'll model an old TV set on a table in Blender, then put a three-second, 72-frame animation on its screen and make the screen glow and light the room. You'll render the scene from Blender's EEVEE as an image sequence, set it to 24 frames per second in After Effects with Interpret Footage, and export an H.264 MP4 with Media Encoder's Vimeo preset.</p>
+<p>You'll need Blender, After Effects and Media Encoder. The image sequence for the screen is available to download, so you don't have to make your own in After Effects.</p>
+<oer-tutorial-series></oer-tutorial-series>]]></content>
+</item>

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791833719,
+      "updated": 1791835487,
       "version": "26.8.0"
     },
     "theme": {
@@ -24622,6 +24622,39 @@
         "images": [],
         "videos": [],
         "updated": 1791826896
+      }
+    },
+    {
+      "id": "item-d4806777-430a-42fb-967f-66d8d2b69d4f",
+      "indent": 1,
+      "location": "pages/item-d4806777-430a-42fb-967f-66d8d2b69d4f/index.html",
+      "slug": "tutorials/animated-textures",
+      "order": 11,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Animated textures",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH",
+          "batch": "video-mv5ol2ym",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791835487,
+        "images": [],
+        "videos": [],
+        "updated": 1791835487
       }
     },
     {
