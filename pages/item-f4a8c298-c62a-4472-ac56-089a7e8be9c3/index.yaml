@@ -26,7 +26,7 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791849463
+  updated: 1791849468
   version: 1.0.0
   oerVersions:
     - version: 1.0.0
@@ -74,7 +74,8 @@ content: >
   <li>Create a project folder on your computer and save a new
   <code>.blend</code> file called <code>LASTNAME-animation.blend</code>.</li>
 
-  <li>Follow the video demonstrations to animate a camera, cube, and sphere.
+  <li>Follow the Introduction to animation tutorials above to animate a camera,
+  cube, and sphere.
 
   <ul>
 

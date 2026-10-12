@@ -13,7 +13,7 @@ Instructions
 
 1.  Watch linked tutorials in Learning Resources from Blender Foundation and others to get acquainted with animation tools.
 2.  Create a project folder on your computer and save a new `.blend` file called `LASTNAME-animation.blend`.
-3.  Follow the video demonstrations to animate a camera, cube, and sphere.
+3.  Follow the Introduction to animation tutorials above to animate a camera, cube, and sphere.
     *   The duration of the animation should be 120 frames.
     *   Create a centered cube.
     *   Create a sphere [parented](https://www.youtube.com/watch?v=kd1O0oqQ3Uw) to the cube. The sphere should be 5 units away from the cube in the X or Y axis, and revolve concentrically around the cube. (HINT: Their [pivot points](https://www.versluis.com/2016/05/how-to-set-the-origin-pivot-point-in-blender/) should be the same location: 0,0,0)
