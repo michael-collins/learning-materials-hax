@@ -10,7 +10,7 @@
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>exercise</pageType>
+<pageType>oer:exercise</pageType>
 <oerSource>exercises/texturing-the-airline-chair</oerSource>
 <tags>Blender,Texturing</tags>
 <oerFields>
@@ -18,9 +18,12 @@
 <image>files/recF0xzVxfkZoJ63J_image_airline-chair-texturing-header.jpg</image>
 <imageAlt>airline-chair-texturing-header.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <attachments>
 <item>
@@ -36,16 +39,44 @@
 <alt>Airline Chair</alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
 <created>1790829909</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1790829909</updated>
+<updated>1791847524</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice unwrapping UVs, exporting a UV map, and creating textures in 2D image editing software like Photoshop. You will then apply your textures to a polygonal model of the KEM Weber Airline Chair.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq" title="Texturing the Airline Chair Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-56b58fef-c883-47a3-a0e6-0a9e6e372477" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq" playlist-title="Texturing the Airline Chair Tutorial"></oer-tutorial-series>
 <h2>Learning Objectives</h2>
 <ol>
 <li>Become familiarized with 3D software interface and terminology.</li>
