@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847504,
+      "updated": 1791847508,
       "version": "26.8.0"
     },
     "theme": {
@@ -17469,6 +17469,40 @@
         "images": [],
         "videos": [],
         "updated": 1791837168
+      }
+    },
+    {
+      "id": "item-a86d0672-902f-4f3a-a573-651f7fd30719",
+      "indent": 2,
+      "location": "pages/item-a86d0672-902f-4f3a-a573-651f7fd30719/index.html",
+      "slug": "tutorials/texturing-the-airline-chair/marking-seams-and-unwrapping",
+      "order": 2,
+      "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
+      "title": "Marking seams and unwrapping",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=3_2ciHv-zAQ",
+          "batch": "video-mv5vqpux",
+          "captions": "speech",
+          "duration": 375,
+          "written": true
+        },
+        "created": 1791847508,
+        "images": [],
+        "videos": [],
+        "updated": 1791847508
       }
     },
     {
