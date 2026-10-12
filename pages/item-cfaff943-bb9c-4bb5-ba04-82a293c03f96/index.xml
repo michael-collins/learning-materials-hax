@@ -10,7 +10,7 @@
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>exercise</pageType>
+<pageType>oer:exercise</pageType>
 <oerSource>exercises/lighting-and-rendering-the-airline-chair</oerSource>
 <tags>Blender,Lighting</tags>
 <oerFields>
@@ -18,9 +18,12 @@
 <image>files/recbAgArvnM20cFKL_image_rendering-banner.jpg</image>
 <imageAlt>rendering-banner.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <attachments>
 <item>
@@ -42,16 +45,44 @@
 <alt>An example rendering of the KEM Weber Airline Chair</alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
 <created>1790829909</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1790829909</updated>
+<updated>1791848753</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will create a final render of the KEM Weber Airline Chair. You will practice setting up 3-point lighting, adding cameras, creating a backdrop, optionally adding additional textures to the materials, configuring render settings, and doing some post-production cleanup in Photoshop.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q" title="Lighting and Rendering the Airline Chair Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q" playlist-title="Lighting and Rendering the Airline Chair Tutorial"></oer-tutorial-series>
 <h2>Learning Objectives</h2>
 <ol>
 <li>Become familiarized with the rendering process.</li>

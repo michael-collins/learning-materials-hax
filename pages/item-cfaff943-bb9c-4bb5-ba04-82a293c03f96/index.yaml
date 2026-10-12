@@ -8,7 +8,7 @@ title: Lighting and Rendering the Airline Chair
 description: ''
 metadata:
   published: true
-  pageType: exercise
+  pageType: oer:exercise
   oerSource: exercises/lighting-and-rendering-the-airline-chair
   tags: Blender,Lighting
   oerFields:
@@ -16,9 +16,11 @@ metadata:
     image: files/recbAgArvnM20cFKL_image_rendering-banner.jpg
     imageAlt: rendering-banner.jpg
     license: CC BY 4.0
-    aiLicense: AIUL-WA, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     attachments:
       - title: Airline Chair 3/4 view
@@ -33,10 +35,28 @@ metadata:
         url: files/recjNVy0NcTvHBB5t_attachment_chair-render-compressed.jpg
         description: Airline Chair example render
         alt: An example rendering of the KEM Weber Airline Chair
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
   created: 1790829909
   images: []
   videos: []
-  updated: 1790829909
+  updated: 1791848753
+  locked: false
+  status: ''
+  icon: ''
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - exercise
+  oerTutorialSeries:
+    - item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c
 content: >
   <p>In this exercise, you will create a final render of the KEM Weber Airline
   Chair. You will practice setting up 3-point lighting, adding cameras, creating
@@ -44,9 +64,10 @@ content: >
   configuring render settings, and doing some post-production cleanup in
   Photoshop.</p>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q"
-  title="Lighting and Rendering the Airline Chair Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q"
+  playlist-title="Lighting and Rendering the Airline Chair
+  Tutorial"></oer-tutorial-series>
 
   <h2>Learning Objectives</h2>
 
