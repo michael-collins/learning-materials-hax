@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-c5eaf6f6-4f0b-4e93-873a-0554a21f922b</id>
+<indent>2</indent>
+<location>pages/item-c5eaf6f6-4f0b-4e93-873a-0554a21f922b/index.xml</location>
+<slug>tutorials/modeling-the-airline-chair/modeling-the-side-brace</slug>
+<order>2</order>
+<parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
+<title>Modeling the side brace</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Beginner</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/watch?v=8hBu3lXKm7g</source>
+<batch>video-mv5pl3rb</batch>
+<captions>speech</captions>
+<duration>561</duration>
+<written>true</written>
+</oerVideoSource>
+<created>1791837168</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791837168</updated>
+</metadata>
+<content><![CDATA[<p>Below the arm of the Airline Chair, a straight wooden brace runs from the front leg to the back end of the arm, where it fits into the notch you left in Part 2 and is held by a small metal bracket. In this part you'll model the brace and the brackets as separate objects, each a stretched cube with supporting edges and a <em>Subdivision Surface</em> modifier, then line the brace up with the side. You'll need the side from Part 2 and the reference image. The video uses Blender 2.83.</p>
+
+<oer-video id="video-8hBu3lXKm7g" src="https://www.youtube.com/watch?v=8hBu3lXKm7g" title="Modeling the Airline Chair – Part 3: Side Brace" credit="Michael Collins" credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+<h2>Model the brace</h2>
+<ol>
+  <li>
+    <p><strong>Study the reference.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="0">0:00</page-anchor> The photos don't show this piece clearly: it may get a little thicker or wider, and the lighting doesn't help. It's basically a rectangle that's been extruded, so it goes quickly <page-anchor target="#video-8hBu3lXKm7g" value="21">0:21</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Add a cube and stretch it.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="28">0:28</page-anchor> In Object Mode, press <kbd>Shift</kbd>+<kbd>A</kbd> and choose <em>Mesh → Cube</em>. Press <kbd>S</kbd> to scale it down, then <kbd>S</kbd>, <kbd>Y</kbd> to stretch it along Y <page-anchor target="#video-8hBu3lXKm7g" value="38">0:38</page-anchor>. Don't add the cube while you're in Edit Mode on the side, or it becomes part of the side's mesh <page-anchor target="#video-8hBu3lXKm7g" value="50">0:50</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Shape it flat, over the reference.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="43">0:43</page-anchor> Go back to the <em>Right Orthographic</em> view and turn on X-ray. If it helps, hide the side by clicking its eye icon in the Outliner <page-anchor target="#video-8hBu3lXKm7g" value="55">0:55</page-anchor>. Press <kbd>Tab</kbd> and move the brace's ends and edges into place over the photo. The brace is flat, so model it level, in its ideal form, rather than at the angle it sits at: you can rotate it into position later <page-anchor target="#video-8hBu3lXKm7g" value="73">1:13</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0072.4.jpg" alt="Right Orthographic view, zoomed in on the reference photo: a long, thin grey bar lies over the chair's wooden brace, running from the front leg to the small metal bracket at the back end of the arm."><figcaption><p>The brace blocked out over the photo.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Level the reference to suit.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="87">1:27</page-anchor> Add a couple of edge loops with <kbd>Ctrl</kbd>+<kbd>R</kbd> where the thickness changes, and bring the thickness down if it's too high. To keep the brace level, the video rotates the reference back slightly (its rotation is unlocked, changed and locked again), then moves the brace up into place <page-anchor target="#video-8hBu3lXKm7g" value="113">1:53</page-anchor>. Moving the reference isn't usually a good idea; later you'll rotate the brace to fit the side instead <page-anchor target="#video-8hBu3lXKm7g" value="451">7:31</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Set its width.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="136">2:16</page-anchor> Show the side again. You can eyeball the width, or look from the front (<em>Front Orthographic</em>) and scale the brace along X (<kbd>S</kbd>, <kbd>X</kbd>) so it sticks out a little on each side of the side piece <page-anchor target="#video-8hBu3lXKm7g" value="148">2:28</page-anchor>. It doesn't have to be exact.</p>
+    <figure><img src="files/modeling-the-side-brace-t0148.8.jpg" alt="Front Orthographic view: the side piece is a tall grey bar, and the brace, seen end-on as a small rectangle, crosses it, slightly wider. The header reads Scale: 0.5829 along global X, and an X key press shows at the bottom."><figcaption><p>From the front: the brace scaled along X to stand slightly proud of the side.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Add control edges.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="160">2:40</page-anchor> Hide the side again. To make the shape you want, add two edges to each face. Press <kbd>Ctrl</kbd>+<kbd>R</kbd> and scroll for two loops, then scale them apart with <kbd>S</kbd>, <kbd>X</kbd> towards the edges <page-anchor target="#video-8hBu3lXKm7g" value="170">2:50</page-anchor>. Do the same the other way with <kbd>Ctrl</kbd>+<kbd>R</kbd> and <kbd>S</kbd>, <kbd>Z</kbd> <page-anchor target="#video-8hBu3lXKm7g" value="178">2:58</page-anchor>. For the last direction, place the loops by hand <page-anchor target="#video-8hBu3lXKm7g" value="184">3:04</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0180.4.jpg" alt="User Perspective, Edit Mode: the brace is a long box, and two new orange edge loops run along its end face, close to its top and bottom edges. The header reads Edge Slide."><figcaption><p>Two control edges on each face hold the corners.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Adjust it with X-ray on.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="190">3:10</page-anchor> Back in the side view, press <kbd>1</kbd> and pull down the vertices that need it. Without X-ray, you only select the vertices in front, so turn it back on and select them again <page-anchor target="#video-8hBu3lXKm7g" value="205">3:25</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Smooth it.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="213">3:33</page-anchor> Add an edge loop to hold the corner that needs to be tighter. Choose <em>Shade Smooth</em>: even without a modifier it looks good. Then add a <em>Subdivision Surface</em> modifier and set it to 3 <page-anchor target="#video-8hBu3lXKm7g" value="227">3:47</page-anchor>. The shape stays square, but the bevel catches a highlight, which makes all the difference when you texture and render it later. Pull the shape a little further if it needs it, and add a supporting edge to hold it <page-anchor target="#video-8hBu3lXKm7g" value="254">4:14</page-anchor>. Then save.</p>
+    <figure><img src="files/modeling-the-side-brace-t0245.0.jpg" alt="The brace in Object Mode, User Perspective: a long, square-ended bar with softly rounded edges. Its Subdivision Surface modifier shows Render 2 and Viewport 3."><figcaption><p>A square shape with soft, highlight-catching edges.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Model the brackets</h2>
+<ol>
+  <li>
+    <p><strong>Add a thin cube.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="285">4:45</page-anchor> Add another cube, scale it down, then scale it along X until it's quite thin, and move it back along Y (<kbd>G</kbd>, <kbd>Y</kbd>) to the bracket in the photo <page-anchor target="#video-8hBu3lXKm7g" value="296">4:56</page-anchor>. Press <kbd>Tab</kbd> and move its vertices to match the bracket's outline.</p>
+  </li>
+  <li>
+    <p><strong>Choose which corners stay round.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="310">5:10</page-anchor> Use the same principle as on the other pieces: add edges to tighten the curves you want to stay square when it's subdivided. In one direction, leave them off completely: with a <em>Subdivision Surface</em> modifier at 3, that direction rounds off because nothing is holding it <page-anchor target="#video-8hBu3lXKm7g" value="329">5:29</page-anchor>. Add supporting edges in the other direction, using the scroll wheel for two loops and scaling them along X <page-anchor target="#video-8hBu3lXKm7g" value="353">5:53</page-anchor>. If it's too thick, press <kbd>A</kbd> and scale it <page-anchor target="#video-8hBu3lXKm7g" value="370">6:10</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0335.4.jpg" alt="Right Orthographic view, zoomed in on the back end of the arm: the bracket, a small grey plate rounded at the back, sits over the metal bracket in the photo, where the brace meets the arm. Its Subdivision Surface modifier is set to Viewport 1."><figcaption><p>The bracket over the metal bracket in the photo.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Place it against the brace.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="393">6:33</page-anchor> The bracket sits on the outside of the brace. Look at the brace end-on (the video shows it in <em>Back Orthographic</em>) and move the bracket in until it's just touching, the way it would be built in real life <page-anchor target="#video-8hBu3lXKm7g" value="405">6:45</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0410.0.jpg" alt="Back Orthographic view: the brace seen end-on as a wide, rounded rectangle, with the thin bracket, outlined in white because it's selected, standing upright just touching its left side."><figcaption><p>The bracket just touching the side of the brace.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Make a linked copy for the other side.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="415">6:55</page-anchor> Press <kbd>Alt</kbd>+<kbd>D</kbd>: it duplicates like <kbd>Shift</kbd>+<kbd>D</kbd>, but makes an instance, so a change to one bracket changes them all. Press <kbd>X</kbd> to constrain the move to the X axis and put the copy on the other side of the brace <page-anchor target="#video-8hBu3lXKm7g" value="425">7:05</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0425.8.jpg" alt="Back Orthographic view: the first bracket on the left of the brace, and a second, selected bracket being moved along X to the right side. The Outliner now lists Cube.002 below Cube and Cube.001."><figcaption><p>A linked duplicate (<kbd>Alt</kbd>+<kbd>D</kbd>) moved along X.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Fit the brace to the side</h2>
+<ol>
+  <li>
+    <p><strong>Check how the pieces line up.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="438">7:18</page-anchor> Show the side again. Because the reference was rotated to model the brace flat, the brace doesn't quite line up with the side: it needs to be rotated back a little <page-anchor target="#video-8hBu3lXKm7g" value="465">7:45</page-anchor>. Select the brace and both brackets and move them into place with <kbd>G</kbd> <page-anchor target="#video-8hBu3lXKm7g" value="480">8:00</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Move the origin to the pivot point.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="490">8:10</page-anchor> The brace needs to be rotated up slightly, from its back end, but objects rotate around their origin, the little dot in the center. In the header, open <em>Options</em> and, under <em>Transform → Affect Only</em>, tick <em>Origins</em> <page-anchor target="#video-8hBu3lXKm7g" value="500">8:20</page-anchor>. Now moving changes only the origin: move it to where you want to rotate from. Then untick <em>Origins</em> again <page-anchor target="#video-8hBu3lXKm7g" value="510">8:30</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0504.0.jpg" alt="Right Orthographic view with the brace selected and its origin in the middle. The header's Options menu is open at the top right, showing Transform, Affect Only, with checkboxes for Origins, Locations and Parents; the pointer is on Origins."><figcaption><p>Options → Affect Only → Origins lets you move just the origin.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Rotate the brace into place.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="512">8:32</page-anchor> Press <kbd>R</kbd> and rotate the brace up a little so it lines up with the side.</p>
+  </li>
+  <li>
+    <p><strong>Edit it in its local orientation.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="521">8:41</page-anchor> If the brace isn't quite far enough forward, change the <em>Transform Orientation</em> to <em>Local</em>: in Edit Mode, moving then follows the object's own orientation, not the global one, so you can edit it as if it weren't rotated. That keeps it intact: if you set its rotation back to 0 later, it's still perfectly straight, as if you'd modeled it in the side view <page-anchor target="#video-8hBu3lXKm7g" value="535">8:55</page-anchor>.</p>
+    <figure><img src="files/modeling-the-side-brace-t0530.8.jpg" alt="Edit Mode in the Right Orthographic view with the Transform Orientation set to Local in the header. The brace's front-end vertices are selected, and the move gizmo is tilted to match the brace's slight rotation."><figcaption><p>With Local orientation, the gizmo follows the rotated brace.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Check the result.</strong> <page-anchor target="#video-8hBu3lXKm7g" value="554">9:14</page-anchor> Orbit around and make sure the brace is in position against the side.</p>
+    <figure><img src="files/modeling-the-side-brace-t0555.4.jpg" alt="User Perspective, Object Mode: the smooth side piece with the brace running alongside it from the front leg to the back end of the arm, where the small brackets hold it."><figcaption><p>The brace in place along the side.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Wrap-up</h2>
+<p>You've modeled the brace and its brackets from cubes, using supporting edges to choose which corners stay square and which round off, and you've made the second bracket a linked duplicate. You moved an object's origin to rotate it from the right place, and edited it in its local orientation so its shape stays true. Next, you'll mirror the side to make the other side of the chair.</p>
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-8hBu3lXKm7g" value="0">0:00</page-anchor> Okay, now let's take a look at how to model the other piece to the sidearm and we'll move on to the cushions. So let's look at our references. You can see that I'm not really totally clear what this shape looks like. It looks like maybe it gets a little bit thicker or wider potentially. The lighting doesn't really help us too much in this photo. It's basically a rectangle that's been extruded so this one should go fairly quickly. The first thing we want to do is to add a cube. Back in Blender, let's just do Shift-A to bring up the add panel. Mesh and then cube. All right, press S to scale this down. S, constrain it to Y to scale it up.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="43">0:43</page-anchor> And we'll jump back into our orthogonal view and turn on x-ray. Be careful not to create this cube while in edit mode or you will be adding the cube to this other mesh. if it helps you can actually disable the visibility of that mesh altogether by clicking on the eye button there let's tab into here and just like we did on the other one we're just going to get this shape in place this is supposed to be an object that's flattened so we want to model it flat we don't want to sort of model it at an angle like that so keep that in mind, you want to model it in an ideal form. And then you can rotate it into position later. I think we have some thickness here and here. So let's press Ctrl R, I'm going to add a couple edge loops. Looks like we're a little bit high. So let's bring the thickness down. You know, if we want, we can we can rotate this object back. I think we don't really need to do that. But I think I've locked rotation.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="113">1:53</page-anchor> Let's turn that off. And we're going to disable that. And let's just move this up. So tab back in. It's really not much to this shape. We're just making sort of a smoothed cube that's been stretched and has some nicer corners on it. So let's turn visibility of our other piece on here. we can just eyeball the position here or we can kind of jump into this view scale that in the x direction so i think it just pops out a little bit on each side this doesn't have to be exact this looks pretty close to me so let's turn off this one and the easiest thing we can do to get that shape the way we want it is to add some control edges here. Let's actually add two to each face. So I'm going to press S and then X to scale this up. Okay. Control R. And we're going to do S and Z to scale those up.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="184">3:04</page-anchor> And for this one, we will just have to kind of do it manually here. So move that into place there and add one more here. If we jump back into this view, it looks like we just need to bring this down slightly. Press one and grab our vertices here. Just pull that down. Okay, so we're not in x-ray view, so we're not getting all the vertices. So make sure you jump back in x-ray. Grab these, pull them down. This will totally smooth this object out. We actually need it little bit tighter. So to hold this corner here, we're just going to add an edge loop. So let's just do shade smooth here. And you can see even without adding a modifier, this looks pretty good.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="232">3:52</page-anchor> But we are going to go ahead and add our subdivision modifier to this object. And we're going to jump that to three. And that looks really good. So it's a very squared shape, but we're still getting the highlight happening on this bevel, which is going to make all the difference when we go to texture and render this in the future. I think we need to maybe exaggerate this a bit more. Maybe pull this up a bit. Okay. And maybe we'll add a supporting edge. There we go. And it just kind of holds that shape a little bit better for us. That looks pretty close to me. Maybe we can just bring it up a bit. Okay, this piece is done. Remember to save.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="285">4:45</page-anchor> Now we are going to add these brackets. We can just add a another cube. Scale that down. scale on the x pretty thin okay g y to move that back let's just take a look at our reference okay tab into there to edit and we'll just move these vertices around so we're going to use the same principle that we used on the other objects where we're going to add some edges here to tighten up these curves to hold them more square when we add our subdivision. This one we can leave totally off because as you'll see when we add a subdivision modifier to this, let's just make that three. You can see it's adding that curvature for us because we don't have a supporting edge holding that in place. We do need some on this dimension however so let's go ahead and add those.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="347">5:47</page-anchor> Oops, I need to undo that. And use the scroll wheel to get an additional scale, x dimension. Okay, that looks pretty good. It may actually be a little bit thick, so I can just scale it. Oops, press A, I can scale it up. That looks pretty good. Let's see. It's pretty close. Okay, that looks like a pretty good reproduction of that object.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="399">6:39</page-anchor> So it's going to be on the outside here. So let's just... If we jump into Z, we can actually see it from the top. Might be a little bit easier. We don't want to go too far in. Just touching like that. Just how it would be built in real life. We want to do Alt-D because Alt-D will do the same thing as duplicate, but it will make an instance. So whenever we change one, it will change all of these brackets. So if I press S on the keyboard, excuse me, X on the keyboard, it will constrain to the X axis. And there we go. That's pretty good. All right, so those brackets are done.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="441">7:21</page-anchor> Okay, so I'm going to turn on the other piece to see how these are fitting together. It doesn't look like they're quite lining up because I moved the reference again. you're not usually supposed to move the reference i'm just kind of going in between positions because i need the bottom to be flat and i know the top is supposed to be relatively flat so what we can do is let's jump into this perspective here and if this object is supposed to be rotated back a little bit that's actually pretty easy to fix so all we have to do is move that into place here. Oops, let's grab both brackets, jump back into view, and press G. We can sort of move that into place. And you can see that it needs to be rotated up slightly. So to do that, I have to move my pivot point over here. To do that, if we go up to options, you can click on origin. The origin is this little dot in the center. Now we can move our origin to be closer to where we want to rotate from. I have to jump out of origin mode here. Now if we press R on the keyboard, we can rotate that up a little bit. And it looks like I'm not quite forward enough.</p><p><page-anchor target="#video-8hBu3lXKm7g" value="521">8:41</page-anchor> If we go to local view, it will move according to the object's local orientation and not global. And so that means I can actually move this as if I was modeling it while it was not rotated. And that just helps us keep the integrity of this object. So if we ever want to un-rotate it later on, for instance, if we came back here and pressed zero to reduce the rotation, it's still perfectly straight as if we had modeled it in this view. Okay, so we're just going to undo that. And that's pretty good. So let me just take a look, make sure that this is in position. Yeah, that looks great.</p></div></a11y-collapse>]]></content>
+</item>

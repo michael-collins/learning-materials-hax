@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837164,
+      "updated": 1791837168,
       "version": "26.8.0"
     },
     "theme": {
@@ -17364,6 +17364,40 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-c5eaf6f6-4f0b-4e93-873a-0554a21f922b",
+      "indent": 2,
+      "location": "pages/item-c5eaf6f6-4f0b-4e93-873a-0554a21f922b/index.html",
+      "slug": "tutorials/modeling-the-airline-chair/modeling-the-side-brace",
+      "order": 2,
+      "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "title": "Modeling the side brace",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=8hBu3lXKm7g",
+          "batch": "video-mv5pl3rb",
+          "captions": "speech",
+          "duration": 561,
+          "written": true
+        },
+        "created": 1791837168,
+        "images": [],
+        "videos": [],
+        "updated": 1791837168
       }
     },
     {
