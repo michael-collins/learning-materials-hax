@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847497,
+      "updated": 1791847499,
       "version": "26.8.0"
     },
     "theme": {
@@ -8367,7 +8367,7 @@
       "order": 0,
       "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
       "title": "Choosing a mesh resolution",
-      "description": "",
+      "description": "Decide how many polygons your Airline Chair will have before you texture it, and apply the Subdivision Surface modifier at the level you want to work with.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
