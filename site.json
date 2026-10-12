@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791835493,
+      "updated": 1791835495,
       "version": "26.8.0"
     },
     "theme": {
@@ -8299,7 +8299,7 @@
       "order": 0,
       "parent": "item-d4806777-430a-42fb-967f-66d8d2b69d4f",
       "title": "Modeling a TV and its table",
-      "description": "",
+      "description": "Model an old TV set on a small table in Blender, starting from the default cube: a sloped bezel, a control panel and knob, a separate curved screen ready for an animated texture, bevels that catch highlights, and a table with mirrored legs.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
