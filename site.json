@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837168,
+      "updated": 1791837170,
       "version": "26.8.0"
     },
     "theme": {
@@ -17374,7 +17374,7 @@
       "order": 2,
       "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
       "title": "Modeling the side brace",
-      "description": "",
+      "description": "Model the straight brace that runs along the chair's side and the small brackets that hold it, as separate objects made from cubes with supporting edges, then rotate the brace into place around a moved origin.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
