@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847516,
+      "updated": 1791847520,
       "version": "26.8.0"
     },
     "theme": {
@@ -24770,6 +24770,40 @@
         "images": [],
         "videos": [],
         "updated": 1791837180
+      }
+    },
+    {
+      "id": "item-a223ec77-eb92-4457-9763-5c138b1247f4",
+      "indent": 2,
+      "location": "pages/item-a223ec77-eb92-4457-9763-5c138b1247f4/index.html",
+      "slug": "tutorials/texturing-the-airline-chair/texturing-the-side-from-a-photo",
+      "order": 4,
+      "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
+      "title": "Texturing the side from a photo",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=gFglq5aaW1w",
+          "batch": "video-mv5vqz85",
+          "captions": "speech",
+          "duration": 582,
+          "written": true
+        },
+        "created": 1791847520,
+        "images": [],
+        "videos": [],
+        "updated": 1791847520
       }
     },
     {
