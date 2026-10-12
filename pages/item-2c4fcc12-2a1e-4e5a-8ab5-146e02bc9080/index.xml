@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2c4fcc12-2a1e-4e5a-8ab5-146e02bc9080</id>
+<indent>2</indent>
+<location>pages/item-2c4fcc12-2a1e-4e5a-8ab5-146e02bc9080/index.xml</location>
+<slug>tutorials/modeling-the-airline-chair/modeling-the-seat-cushions</slug>
+<order>4</order>
+<parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
+<title>Modeling the seat cushions</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Intermediate</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/watch?v=wgrA5IVz3Do</source>
+<batch>video-mv5plcz7</batch>
+<captions>speech</captions>
+<duration>665</duration>
+<written>true</written>
+</oerVideoSource>
+<created>1791837180</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791837180</updated>
+</metadata>
+<content><![CDATA[<p>The Airline Chair's cushions are two curved leather pads, one for the seat and one for the back. They're roughly rectangular, but with shape and curvature to them. In this part you'll model both from a cube over the reference image, working out where to put edges so that a <em>Subdivision Surface</em> modifier smooths them into the right shape, then give them the soft, pinched look of an old, worn leather cushion. You'll need the chair's frame from Parts 2 to 4, with a cube added between the sides (the end of Part 4). The video uses Blender 2.83.</p>
+
+<oer-video id="video-wgrA5IVz3Do" src="https://www.youtube.com/watch?v=wgrA5IVz3Do" title="Modeling the Airline Chair – Part 5: Seat" credit="Michael Collins" credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+<h2>Block out the seat</h2>
+<ol>
+  <li>
+    <p><strong>Move the cube's vertices onto the seat.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="0">0:00</page-anchor> Go into the side view and turn on X-ray. Instead of scaling the cube into place, press <kbd>Tab</kbd> and move its vertices to where you need them over the seat cushion in the photo.</p>
+  </li>
+  <li>
+    <p><strong>Add loops for the curve, and anticipate the smoothing.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="15">0:15</page-anchor> The seat is fairly curved, so add some edge loops (a few are enough to start) and follow it. Where it curves back into the distance, think of each edge as a point in space just outside the curve: when the shape is smoothed, the surface pulls in from the edges <page-anchor target="#video-wgrA5IVz3Do" value="41">0:41</page-anchor>. So don't copy the outline exactly yet. At the front of the seat, put the edge in the middle of the curve, even though the front-most part of the cushion is further out <page-anchor target="#video-wgrA5IVz3Do" value="60">1:00</page-anchor>. Then check its size and scale it down to fit <page-anchor target="#video-wgrA5IVz3Do" value="71">1:11</page-anchor>.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0045.0.jpg" alt="Right Orthographic view in Edit Mode, with X-ray on: the seat cushion is a flat grey shape of a few faces laid over the leather seat in the photo, from the front of the arm down to the back of the seat, with one vertex at the bottom selected."><figcaption><p>The seat's outline, a little outside the curves it will smooth into.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Block out the back cushion</h2>
+<ol>
+  <li>
+    <p><strong>Duplicate the seat for the back.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="99">1:39</page-anchor> Press <kbd>Shift</kbd>+<kbd>D</kbd> to duplicate the seat, <kbd>R</kbd> to rotate it upright and <kbd>G</kbd> to move it to the back cushion. In Edit Mode, with X-ray on, move its vertices onto the back cushion in the photo <page-anchor target="#video-wgrA5IVz3Do" value="120">2:00</page-anchor>.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0130.0.jpg" alt="Right Orthographic view in Edit Mode: the back cushion, Cube.004, a few faces rotated upright, lies over the leather back in the photo, its top vertices being moved (a G key press shows at the bottom). The seat cushion and the side piece are in front of the photo."><figcaption><p>The back cushion, duplicated from the seat and moved into place.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Check the proportions from the front.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="158">2:38</page-anchor> Compare the model with the photo: here the chair needed to be a little wider and the cushions a little taller. Select everything except the cushions and press <kbd>Tab</kbd>: Blender edits all the selected objects at once, so you can move their geometry together <page-anchor target="#video-wgrA5IVz3Do" value="183">3:03</page-anchor>. If an object you didn't mean to select is included, leave Edit Mode and fix the selection. Move the sides apart only slightly: the mirror doubles the distance <page-anchor target="#video-wgrA5IVz3Do" value="222">3:42</page-anchor>. Then scale the cushions to match <page-anchor target="#video-wgrA5IVz3Do" value="226">3:46</page-anchor>. A photo from the front would make this much easier; working from a three-quarter view takes some judgement <page-anchor target="#video-wgrA5IVz3Do" value="235">3:55</page-anchor>.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0215.4.jpg" alt="The chair seen from the front in the 3D view. The frame's objects, Cube, Cube.001, Cube.002 and Plane.001, are selected together in the Outliner and in Edit Mode, and one side is being moved along X, shown by an X key press at the bottom. The cushions, Cube.003 and Cube.004, aren't selected."><figcaption><p>Editing all the frame pieces at once to widen the chair.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Smooth the cushions</h2>
+<ol>
+  <li>
+    <p><strong>Add supporting edges at the back only.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="250">4:10</page-anchor> Add a <em>Subdivision Surface</em> modifier and you can see the problem straight away: the cushions need supporting edges. Add a supporting loop at the back of the seat, which is quite sharp, but not at the front, which in the photo is fairly curved <page-anchor target="#video-wgrA5IVz3Do" value="262">4:22</page-anchor>. Do the same for the other cushion; it helps to do them both at once so you don't have to work out the process again <page-anchor target="#video-wgrA5IVz3Do" value="296">4:56</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Smooth them and turn it up.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="313">5:13</page-anchor> Add the <em>Subdivision Surface</em> modifier to both, right-click and choose <em>Shade Smooth</em>, and set it to 3 <page-anchor target="#video-wgrA5IVz3Do" value="325">5:25</page-anchor>. It's already close: you could stop here and have a fairly good model.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0330.8.jpg" alt="The chair in Object Mode, User Perspective, with smooth seat and back cushions between the two sides. The back cushion, Cube.004, is selected, with a Subdivision Surface modifier at Viewport 3."><figcaption><p>Smoothed at 3 subdivisions: already a fair model.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Add loops to sculpt with.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="338">5:38</page-anchor> To add some variation to the surface, add two edge loops down the middle of each cushion's base mesh. That's enough to move faces around slightly.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0350.8.jpg" alt="Edit Mode on the seat cushion, seen from the front: two new orange edge loops run front to back across the middle of the seat. The status bar reads Number of Cuts: 2."><figcaption><p>Two loops down the middle of the seat.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Shape the back cushion</h2>
+<ol>
+  <li>
+    <p><strong>Move in a plane.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="372">6:12</page-anchor> Switch to edge select. On the move tool's gizmo, the small flat squares between two arrows move in a plane: the red one keeps the selection from moving left or right (along X) while you move it in the 3D view <page-anchor target="#video-wgrA5IVz3Do" value="376">6:16</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Curve it and give it thickness.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="390">6:30</page-anchor> The back cushion should be more curved across: select the vertices along its edges and scale them in <page-anchor target="#video-wgrA5IVz3Do" value="415">6:55</page-anchor>. Then go to the side view with X-ray on and shape it against the photo; here it needed to be a bit thicker <page-anchor target="#video-wgrA5IVz3Do" value="440">7:20</page-anchor>.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0460.0.jpg" alt="Right Orthographic view with X-ray, zoomed in on the back cushion over the photo: its edges follow the leather back's thick, curved profile down to the seat, with a vertex at the bottom being moved."><figcaption><p>The back cushion's profile, shaped against the photo.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Pinch the corners.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="480">8:00</page-anchor> To exaggerate the pinch where the leather is sewn together, pull the corner vertices up slightly: the smoothed surface makes a tighter pinch there <page-anchor target="#video-wgrA5IVz3Do" value="500">8:20</page-anchor>. The polygons aren't the best shape, but it's fine for this model. Pull the middle vertices back a little to exaggerate the flatness <page-anchor target="#video-wgrA5IVz3Do" value="541">9:01</page-anchor>.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0510.8.jpg" alt="A close-up of the back cushion in Edit Mode: its cage of edges sits outside the smooth surface, and the top corner vertices are pulled up above the rest of the top edge, giving the smoothed cushion pinched corners."><figcaption><p>Corner vertices pulled up for a sewn, pinched look.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Shape the seat</h2>
+<ol>
+  <li>
+    <p><strong>Round it and let the corners sag.</strong> <page-anchor target="#video-wgrA5IVz3Do" value="545">9:05</page-anchor> Do the same for the seat. It's quite round, so scale the side vertices together along X (<kbd>S</kbd>, <kbd>X</kbd>) and move them down a little <page-anchor target="#video-wgrA5IVz3Do" value="552">9:12</page-anchor>. Pull the corners down so they hang, like an old, worn-out leather cushion <page-anchor target="#video-wgrA5IVz3Do" value="580">9:40</page-anchor>, and pull the middle up a little, where it's fluffier <page-anchor target="#video-wgrA5IVz3Do" value="599">9:59</page-anchor>. Turn off X-ray and check the shape; a little more curvature can be pulled into the edge <page-anchor target="#video-wgrA5IVz3Do" value="620">10:20</page-anchor>.</p>
+    <figure><img src="files/modeling-the-seat-cushions-t0580.4.jpg" alt="The seat cushion selected in Object Mode, seen through X-ray: its orange outline is wavy, with corners hanging down and a raised middle, between the chair's sides."><figcaption><p>The seat with sagging corners and a fuller middle.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Wrap-up</h2>
+<p><page-anchor target="#video-wgrA5IVz3Do" value="637">10:37</page-anchor> With the modifier turned off, each cushion is a simple, low-poly base mesh; the <em>Subdivision Surface</em> modifier adds all the curvature. That's what lets you go back and change the shape later without painstaking work on vertices.</p>
+<figure><img src="files/modeling-the-seat-cushions-t0648.4.jpg" alt="The chair in Object Mode with the seat cushion's Subdivision Surface turned off in the viewport: the seat shows as a faceted, low-poly shape outlined in orange, while the back cushion and frame stay smooth. The Viewport Overlays menu is open on the right."><figcaption><p>The seat's base mesh, with its modifier turned off.</p></figcaption></figure>
+<figure><img src="files/modeling-the-seat-cushions-t0640.8.jpg" alt="The chair so far in Object Mode, User Perspective: the two smooth bent sides with their braces, and the curved back cushion and seat between them."><figcaption><p>The chair with both cushions.</p></figcaption></figure>
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-wgrA5IVz3Do" value="0">0:00</page-anchor> Let's go into side view here, turn on x-ray, and I'm going to, instead of scaling this into place, let's just grab these vertices and kind of just move them where we need them. Okay, so this is fairly curved, so let's add some edge loops. I think that will be enough to start, and we'll just kind of try to recreate this. Now, because this is curved back into a distance, imagine that this edge is kind of approximating a point in space that's kind of above this curve because when we smooth it, it will automatically add that surface. So we're not going to totally try to replicate the shape just yet. We have to anticipate how our modifier is going to smooth our object. So contours can be a little bit tricky to guess or you know sort of to know how they're going to work. So we're going to just put an edge kind of right in the middle of that curvature there even though I you know it's actually the front most part of this cushion is right here.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="71">1:11</page-anchor> We're going to put this right around here. Okay, so that's a good start. And let's make sure that our scale is correct here. So let's just scale that down. Okay. We can put in the other object now, the other cushion. Maybe just duplicate this. So shift D to duplicate this object.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="112">1:52</page-anchor> We can press R to rotate that. G to move it. And then we can go in and put these... Oops. So remember, x-ray. Okay.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="158">2:38</page-anchor> So let's see how close this is to the original. I suspect this may need to be a little bit wider. Yeah, this doesn't look quite as tall as it looks here. So what we can do is grab everything, deselect the cushions. When you have everything selected like this, if you press tab it will actually edit everything at once. I don't actually know why this one is getting edited because I didn't select it. So let's Okay, tab, there we go. So if I grab all of these at once, because they are all selected when I went into edit mode, I can manipulate them all at the same time. So let's just move those a little bit apart. I think, you know, it doesn't need to be much.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="222">3:42</page-anchor> because it's doubling the distance in the mirror. So I think, yeah, that's going to be a little bit better. Let's scale these together. Yeah, those proportions are looking much better. Okay, and if we had a front view of this object, a photograph from the front, obviously this would be much easier, but we're trying to do this from a three-quarter view, so it's a little bit harder. If we add a subdivision surface to this, you can see the problem immediately where we're going to need to add some supporting edges. So let's go ahead and add those.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="277">4:37</page-anchor> I'm going to add one in the back and in the front I'm actually not going to add a supporting edge loop around and that's because if we look here we can see that it's actually fairly curved so we don't need a supporting edge but the back is pretty sharp so let's do the same thing here and it helps to do them both at the same time so you can understand the process you don't have to sort of figure out how you did the other one again okay and let's actually add our sub div surface so we can see what's happening I'm going to pop this up in resolution.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="325">5:25</page-anchor> And if you right click and do shade smooth, make this three, we can see we're getting pretty close. You could actually stop here and have a fairly good model. you know I think I want to try to sculpt this a little bit so we're going to add just to our base mesh two edge loops in the middle and that will be enough to allow me to go in and just kind of move faces around slightly just to get some of this variation in the surface Okay, let's jump into Edge Select.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="376">6:16</page-anchor> So these handles here that are in between the two axes, the red sort of flat handle, is going to be helpful in 3D view to not sort of move it left or right in space, but sort of just constrained to the y-axis. These are actually supposed to be more curved here, so let's grab these vertices. scale those in. So that's a little bit better.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="428">7:08</page-anchor> And so these we actually let's go to the side view let's turn on x-ray so we know that we want this to be a little more curved okay so I think this needs to be a little bit thicker There we go.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="480">8:00</page-anchor> Looks pretty good. So one of the things you can do if you really want to exaggerate the pinching that can happen where this is sort of sewed together. So you can sort of pull these vertices up slightly like that at the corners and that will create this tighter pinch. It's not the best in terms of shape of polygons, but should be should be okay for this model.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="541">9:01</page-anchor> Okay, and we'll pull these back just a little bit to exaggerate that flatness. Okay, let's do the same thing for here. Okay, so this is pretty round, so we're going to actually scale these together. SX. And these, we'll just move them down a little bit. Okay, so now we're really starting to get that shape. So we're an old worn out leather cushion.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="582">9:42</page-anchor> Okay. And so we could just pull these corners down. Okay, see those corners kind of hanging down and it looks like this is a little bit fluffier in the middle so we'll pull these up and maybe just pull these down slightly. Okay, let's turn off x-ray. And so that's pretty good. So we're starting to get really good shape here. We can grab these and back create a little bit of a curvature there.</p><p><page-anchor target="#video-wgrA5IVz3Do" value="637">10:37</page-anchor> Okay, so that's, you know, we could probably stop here for the cushions. That looks pretty good. Again, if we disable this, this is essentially your base mesh, which is low poly. And then when you add your subdivision surface, it automatically adds this additional curvature. And so that enables you to go back and make changes later without having to really do a lot of painstaking work with vertices.</p></div></a11y-collapse>]]></content>
+</item>

@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837176,
+      "updated": 1791837180,
       "version": "26.8.0"
     },
     "theme": {
@@ -24597,6 +24597,40 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-2c4fcc12-2a1e-4e5a-8ab5-146e02bc9080",
+      "indent": 2,
+      "location": "pages/item-2c4fcc12-2a1e-4e5a-8ab5-146e02bc9080/index.html",
+      "slug": "tutorials/modeling-the-airline-chair/modeling-the-seat-cushions",
+      "order": 4,
+      "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "title": "Modeling the seat cushions",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=wgrA5IVz3Do",
+          "batch": "video-mv5plcz7",
+          "captions": "speech",
+          "duration": 665,
+          "written": true
+        },
+        "created": 1791837180,
+        "images": [],
+        "videos": [],
+        "updated": 1791837180
       }
     },
     {
