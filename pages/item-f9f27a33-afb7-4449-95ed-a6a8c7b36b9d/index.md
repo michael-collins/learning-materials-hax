@@ -1,0 +1,98 @@
+Models often end up with problems you can't see at first: faces turned inside out, faces that overlap or are missing, and vertices that have drifted out of line. This troubleshooting part goes through fixing them on an Airline Chair model: flipping normals, cleaning up and rebuilding the end of the arm, and lining up its vertices with scaling and snapping. Use it when your own chair from Parts 1 to 6 shades strangely or smooths badly. The video uses Blender 2.90.
+
+Fix faces that point the wrong way
+----------------------------------
+
+1.  **Turn on Face Orientation.** <page-anchor target="#video-ulPG79oUwrs" value="0">0:00</page-anchor> Open the _Viewport Overlays_ menu and tick _Face Orientation_. It colors each face by which way its normal points: blue is good, red is the wrong way (inside out).
+    
+    ![An Airline Chair model with the Face Orientation overlay on: the two side pieces are red, while the cushions and the rod across the chair are blue. The side object, sideChair, has a Subdivision Surface and a Mirror modifier.](files/fixing-geometry-problems-t0008.0.jpg)
+    
+    Red faces have their normals pointing the wrong way.
+    
+2.  **Flip the normals.** <page-anchor target="#video-ulPG79oUwrs" value="21">0:21</page-anchor> Select the red object, press Tab and select all its faces (A). Choose _Mesh → Normals → Flip_: the faces turn blue. Do the same for any other red pieces <page-anchor target="#video-ulPG79oUwrs" value="35">0:35</page-anchor>.
+    
+    ![Edit Mode on the red side piece with all its faces selected. The Mesh menu is open with Normals highlighted, and its submenu shows Flip at the top, then Recalculate Outside and Recalculate Inside.](files/fixing-geometry-problems-t0028.8.jpg)
+    
+    Mesh → Normals → Flip.
+    
+
+Find the problem
+----------------
+
+1.  **Look at it on its own, in wireframe.** <page-anchor target="#video-ulPG79oUwrs" value="45">0:45</page-anchor> Whenever you see geometry out of alignment, take the time to fix it. Turn on the wireframe overlay to see what's going on, and press Shift+H to hide everything except the selected piece <page-anchor target="#video-ulPG79oUwrs" value="58">0:58</page-anchor>. Turn off its _Mirror_ modifier for now. Here, the end of the arm has edges far out of line <page-anchor target="#video-ulPG79oUwrs" value="65">1:05</page-anchor>.
+    
+    ![The side piece on its own after Shift+H, selected and outlined in orange, without its mirrored copy. The arm runs across the top to a bulky end on the left.](files/fixing-geometry-problems-t0065.8.jpg)
+    
+    Only the side piece, unmirrored.
+    
+2.  **Frame what you're fixing.** <page-anchor target="#video-ulPG79oUwrs" value="90">1:30</page-anchor> To focus on one part, select its vertices and choose _View → Frame Selected_. If you'll do it often, right-click it and add it to your _Quick Favorites_: then press Q and choose _Frame Selected_ <page-anchor target="#video-ulPG79oUwrs" value="105">1:45</page-anchor>.
+    
+    ![Edit Mode, close on the end of the arm. The View menu is open, with Frame Selected (Numpad .) listed below Toolbar, Sidebar and Tool Settings.](files/fixing-geometry-problems-t0110.4.jpg)
+    
+    View → Frame Selected.
+    
+3.  **Spot non-manifold geometry.** <page-anchor target="#video-ulPG79oUwrs" value="115">1:55</page-anchor> Here an edge is missing, so this piece is non-manifold: its surface isn't closed, and couldn't exist as a real object. There's more odd geometry further back <page-anchor target="#video-ulPG79oUwrs" value="131">2:11</page-anchor>. The simplest fix is to remove it and rebuild.
+    
+
+Remove the bad faces
+--------------------
+
+1.  **Delete the faces.** <page-anchor target="#video-ulPG79oUwrs" value="135">2:15</page-anchor> In Edit Mode, press 3 for face select and select the faces that are wrong. Press X for the _Delete_ menu and choose _Faces_. Repeat until only good geometry is left <page-anchor target="#video-ulPG79oUwrs" value="150">2:30</page-anchor>.
+    
+    ![Faces on the underside of the arm's end selected in orange, with the Delete menu open: Vertices, Edges, Faces, Only Edges & Faces, Only Faces, then the Dissolve options.](files/fixing-geometry-problems-t0150.4.jpg)
+    
+    X → Faces removes the bad faces.
+    
+
+Rebuild the surface
+-------------------
+
+1.  **Fill a face between edges.** <page-anchor target="#video-ulPG79oUwrs" value="180">3:00</page-anchor> That leaves a hole to fill. Select a couple of edges on either side of a gap and press F to make a face between them.
+    
+    ![The end of the arm in Edit Mode with a new face filling one side of the gap, and a caption overlay: 'F' Key creates new faces.](files/fixing-geometry-problems-t0200.0.jpg)
+    
+    F makes a new face from the selected edges.
+    
+2.  **Add the missing edges with the Knife.** <page-anchor target="#video-ulPG79oUwrs" value="200">3:20</page-anchor> To add edges where they're missing, use the _Knife_ tool (K) in vertex mode: click one vertex, then the next, and press Enter <page-anchor target="#video-ulPG79oUwrs" value="215">3:35</page-anchor>. It doesn't always show a preview, so trust that it snaps to the vertex you click. If an edge doesn't come out, check in face mode that there's no stray face in the gap, and delete it if there is <page-anchor target="#video-ulPG79oUwrs" value="240">4:00</page-anchor>.
+    
+    ![The Knife tool cutting across a new face on the arm's end, from a vertex at the bottom. The status bar lists the Knife tool's keys.](files/fixing-geometry-problems-t0245.4.jpg)
+    
+    Cutting from vertex to vertex with the Knife.
+    
+3.  **Fill the rest.** <page-anchor target="#video-ulPG79oUwrs" value="260">4:20</page-anchor> Select the edges around the remaining hole and press F again. Alt+click selects a whole edge loop, and Shift+Alt+click adds one to the selection <page-anchor target="#video-ulPG79oUwrs" value="269">4:29</page-anchor>.
+    
+
+Line up the vertices
+--------------------
+
+1.  **Flatten a row of vertices.** <page-anchor target="#video-ulPG79oUwrs" value="275">4:35</page-anchor> Go to vertex select, turn on X-ray and go to the side view. Select the row of vertices along the bottom and scale them along Z (S, Z) until they're in a straight line <page-anchor target="#video-ulPG79oUwrs" value="292">4:52</page-anchor>. Don't cross the origin as you scale: a negative scale turns the row over.
+    
+2.  **Snap vertices onto others.** <page-anchor target="#video-ulPG79oUwrs" value="297">4:57</page-anchor> To slide vertices across to match the others, turn on snapping and choose _Vertex_ as what it snaps to <page-anchor target="#video-ulPG79oUwrs" value="310">5:10</page-anchor>. With the _Transform_ tool, drag along one axis and hover over the vertex you want to match: the movement stays on that axis and lines up with it <page-anchor target="#video-ulPG79oUwrs" value="318">5:18</page-anchor>.
+    
+    ![Edit Mode, close on the arm's end with one vertex selected, and the snapping menu open: under Snap to, the pointer is on Vertex, below Increment.](files/fixing-geometry-problems-t0312.0.jpg)
+    
+    Snapping to vertices, to line one up with another.
+    
+
+Rebuild the drop at the end
+---------------------------
+
+1.  **Extrude the faces down.** <page-anchor target="#video-ulPG79oUwrs" value="325">5:25</page-anchor> In face mode, select the faces along the bottom of the arm's end and press E to extrude them straight down. The reference image isn't linked in this file (it shows as solid pink), so the depth is a guess <page-anchor target="#video-ulPG79oUwrs" value="340">5:40</page-anchor>. Press Alt+H to show everything again and compare: here it needed to go a bit lower, so extrude again along Z <page-anchor target="#video-ulPG79oUwrs" value="365">6:05</page-anchor>. Snapping is still on, so turn it off first <page-anchor target="#video-ulPG79oUwrs" value="380">6:20</page-anchor>.
+    
+    ![X-ray view of the arm's end in Edit Mode: a strip of faces along its bottom is selected in orange, ready to extrude, with the move gizmo on it. Snapping is on in the header.](files/fixing-geometry-problems-t0340.0.jpg)
+    
+    The bottom faces, ready to extrude down.
+    
+2.  **Tidy the corner.** <page-anchor target="#video-ulPG79oUwrs" value="395">6:35</page-anchor> Finally, select the vertices at the corner that have moved and put them back in place.
+    
+    ![X-ray view of the arm's end from the side in Edit Mode: one vertex at the bottom corner is selected, with the move gizmo, and the extruded drop runs along the bottom.](files/fixing-geometry-problems-t0410.8.jpg)
+    
+    Putting the corner back in place.
+    
+
+Wrap-up
+-------
+
+Face Orientation shows inside-out faces, which _Mesh → Normals → Flip_ fixes. For stray, overlapping or missing faces, isolate the piece, delete what's wrong, and rebuild it with F and the Knife tool. Line up vertices by scaling along one axis or snapping to other vertices, then turn snapping off again.
+
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-ulPG79oUwrs" value="0">0:00</page-anchor> Okay, I do want to show some techniques for fixing issues that you may run into when working on a model. So, I've enabled face orientation mode here in the viewport overlays. And so this helps us see when face normals are facing the wrong direction. Blue is good, red is wrong. So, I'm going to go in here and just select all of the faces. and then we can come up here to mesh, go down to normals, and we can just flip these. Okay, so these are now fixed. I'm going to go down to this one and just modify these as well. I'm going to go to mesh, normals, and flip. Okay, so one thing to note, whenever you see geometry that's out of alignment, you should spend some time to fix it.</p><p><page-anchor target="#video-ulPG79oUwrs" value="52">0:52</page-anchor> So let's just turn on wireframe view here, take a look at what's going on. All right, I'm going to do Shift-H to isolate just this piece, and we're going to disable mirroring for now. Okay, so you can see these are pretty far out of alignment, so we're going to see what we can do to quickly go in and clean these up. So I'm going to basically just use the snapping tools to be able to do this and just analyze what edges we have to work with. So it looks like I've got a couple weird pieces. Okay, so I'm having trouble focusing on just one object.</p><p><page-anchor target="#video-ulPG79oUwrs" value="98">1:38</page-anchor> So what I like to do is to go in and select the object I want to focus on. So I'm just going to select these vertices. and select view frame selected, or I can add this to my quick favorites. So now it's under Q, and I can just hit Q and click on frame selected. Okay. So it looks like we're actually missing an edge there. So this is a non-manifold piece of geometry. So probably going to just remove that. And it looks like we have some other weird geometry issues back here as well. So let's go ahead and start cleaning this up.</p><p><page-anchor target="#video-ulPG79oUwrs" value="139">2:19</page-anchor> Go into edit mode and tab into face mode. And we're just going to start removing these. Oops, X to bring up the menu for delete. And then choose face. okay and just a few more here okay so that just leaves us with this hole to fill so that's pretty easy to fix so all we have to do is grab a couple edges so i'm going to select let's select this here and so we're going to have to add these edges in a bit later so we'll do that in a minute I'm just going to go ahead and add this one and we're going to build a face there okay so all we're missing is some edges here so to get those we can simply go to the knife tool and if you go</p><p><page-anchor target="#video-ulPG79oUwrs" value="218">3:38</page-anchor> into vertex mode here we can just click on that one it doesn't always show you a preview so you just have to believe it's going to be snapped onto that when you click on it and we're going to go to this one here and press return and we're going to just click on that one and then go here to this one and press return okay so what do we have so it looks like it didn't quite make the edge here so that's okay we can uh just make sure that there's nothing in there by going to face mode and we're just going to delete that okay looks like it is in good shape so now we can actually go ahead and select these three, press F, and now it will just fill those.</p><p><page-anchor target="#video-ulPG79oUwrs" value="269">4:29</page-anchor> And if I do Alt-Shift and click, it will do the edge loop. And I'm pressing F on the keyboard to fill. Okay, now I want to align all these, so to do that, I'm going to go to vertex mode here. I'm going to turn on X-Ray. We're going to go into the side view, and we're just going to select all of these, and we're going to do S, Z, We're just going to shift, or not shift, but S to scale in the Z dimension, but don't cross the origin when you do your scale. Okay, now they're all aligned. And now I can just align them in this direction. So the easiest thing to do is actually just to slide them to where they match these other vertices. So to do that, I'm going to turn on snapping here.</p><p><page-anchor target="#video-ulPG79oUwrs" value="310">5:10</page-anchor> Go to the top and go to vertex snapping. And so we're going to turn on this tool, transform tool. slide this I can hover over this one because it's constrained as the axis it will just move it this direction okay so it looks much cleaner and now all we have to do is extrude these down so I'm gonna go to face mode here we're gonna select these faces there we go and we can just press e to extrude straight down. And let's just take a look. So if we have our reference image, which I don't think it's hooked up in this scene here because I'd have to sort of reattach the image to the blender file.</p><p><page-anchor target="#video-ulPG79oUwrs" value="365">6:05</page-anchor> But since we don't have that image, we're just going to assume it's going to be right around here so if I do alt H to bring all those pieces back we see it probably needs to be a little bit lower so go ahead and edit back in here extrude that press Z and our snapping mode is still turned on so just be cognizant of that we're going to go ahead and turn off snap mode there that looks pretty good and we can go ahead and call this one fix so well we could actually just fix this corner really quickly so we're going to go ahead and select these vertices move them back into place just these vertices and there you go</p></div></a11y-collapse>
