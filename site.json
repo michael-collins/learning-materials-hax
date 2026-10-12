@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791826912,
+      "updated": 1791826915,
       "version": "26.8.0"
     },
     "theme": {
@@ -11471,6 +11471,40 @@
         "status": "",
         "icon": "",
         "tags": ""
+      }
+    },
+    {
+      "id": "item-c4651529-48bb-465b-ab9e-45afcd6680ef",
+      "indent": 2,
+      "location": "pages/item-c4651529-48bb-465b-ab9e-45afcd6680ef/index.html",
+      "slug": "tutorials/bouncing-a-ball/motion-paths-and-bounce-interpolation",
+      "order": 1,
+      "parent": "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a",
+      "title": "Motion paths and bounce interpolation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=1L4894ipwoQ",
+          "batch": "video-mv5jhcdz",
+          "captions": "speech",
+          "duration": 800,
+          "written": true
+        },
+        "created": 1791826915,
+        "images": [],
+        "videos": [],
+        "updated": 1791826915
       }
     },
     {
