@@ -10,7 +10,7 @@
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>exercise</pageType>
+<pageType>oer:exercise</pageType>
 <oerSource>exercises/modeling-the-airline-chair</oerSource>
 <tags>Blender,Modeling</tags>
 <oerFields>
@@ -18,9 +18,12 @@
 <image>files/recksNEMV7vl5SFG4_image_airline-chair-header-compressed.jpg</image>
 <imageAlt>airline-chair-header-compressed.jpg</imageAlt>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <attachments>
 <item>
@@ -36,16 +39,44 @@
 <alt>Airline Chair</alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
 <created>1790829909</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1790829909</updated>
+<updated>1791837197</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-64bb61f6-e057-4e01-ac26-828c59ae032c</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this exercise, you will practice polygonal modeling fundamentals and will use 3D software to build a polygonal model of the 1930s Kem Weber Airline Chair.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f" title="Modeling the Airline Chair Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-64bb61f6-e057-4e01-ac26-828c59ae032c" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f" playlist-title="Modeling the Airline Chair Tutorial"></oer-tutorial-series>
 <h2>Learning Objectives</h2>
 <ol>
 <li>Practice using 3D software interface and terminology.</li>

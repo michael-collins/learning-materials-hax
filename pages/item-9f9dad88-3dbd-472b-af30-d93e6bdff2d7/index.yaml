@@ -8,7 +8,7 @@ title: Modeling the Airline Chair
 description: ''
 metadata:
   published: true
-  pageType: exercise
+  pageType: oer:exercise
   oerSource: exercises/modeling-the-airline-chair
   tags: Blender,Modeling
   oerFields:
@@ -16,9 +16,11 @@ metadata:
     image: files/recksNEMV7vl5SFG4_image_airline-chair-header-compressed.jpg
     imageAlt: airline-chair-header-compressed.jpg
     license: CC BY 4.0
-    aiLicense: AIUL-WA, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-WA
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     attachments:
       - title: Airline Chair 3/4 view
@@ -29,18 +31,36 @@ metadata:
         url: files/rec7Nk9n27iVbDndb_attachment_244191_5cd7e8666b5a9bfe_b.jpg
         description: Airline Chair designed by KEM Weber.
         alt: Airline Chair
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
   created: 1790829909
   images: []
   videos: []
-  updated: 1790829909
+  updated: 1791837197
+  locked: false
+  status: ''
+  icon: ''
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - exercise
+  oerTutorialSeries:
+    - item-64bb61f6-e057-4e01-ac26-828c59ae032c
 content: >
   <p>In this exercise, you will practice polygonal modeling fundamentals and
   will use 3D software to build a polygonal model of the 1930s Kem Weber Airline
   Chair.</p>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f"
-  title="Modeling the Airline Chair Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-64bb61f6-e057-4e01-ac26-828c59ae032c"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f"
+  playlist-title="Modeling the Airline Chair Tutorial"></oer-tutorial-series>
 
   <h2>Learning Objectives</h2>
 
