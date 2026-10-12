@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791835490,
+      "updated": 1791835493,
       "version": "26.8.0"
     },
     "theme": {
@@ -8289,6 +8289,40 @@
         "images": [],
         "videos": [],
         "updated": 1791826910
+      }
+    },
+    {
+      "id": "item-1ffc4997-8f58-4430-9f52-01919a8ddd2f",
+      "indent": 2,
+      "location": "pages/item-1ffc4997-8f58-4430-9f52-01919a8ddd2f/index.html",
+      "slug": "tutorials/animated-textures/modeling-a-tv-and-its-table",
+      "order": 0,
+      "parent": "item-d4806777-430a-42fb-967f-66d8d2b69d4f",
+      "title": "Modeling a TV and its table",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=BYVjyBiVZG8",
+          "batch": "video-mv5ol7ex",
+          "captions": "speech",
+          "duration": 935,
+          "written": true
+        },
+        "created": 1791835493,
+        "images": [],
+        "videos": [],
+        "updated": 1791835493
       }
     },
     {
