@@ -9,7 +9,7 @@ Learning Objectives
 Instructions
 ------------
 
-1.  Watch the tutorials.
+1.  Work through the Animated textures tutorials above.
 2.  Create and set a project folder called `LASTNAME-animated-textures` save your .blend file in the project folder.
 3.  Download the image sequence ZIP file.
 4.  Create an animation with the following:

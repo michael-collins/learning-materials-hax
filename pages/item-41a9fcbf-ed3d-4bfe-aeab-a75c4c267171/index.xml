@@ -10,7 +10,7 @@
 <description>In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v</description>
 <metadata>
 <created>1790802192</created>
-<updated>1791835503</updated>
+<updated>1791835512</updated>
 <images>
 </images>
 <videos>
@@ -53,7 +53,7 @@
 </ol>
 <h2>Instructions</h2>
 <ol>
-<li>Watch the tutorials.</li>
+<li>Work through the Animated textures tutorials above.</li>
 <li>Create and set a project folder called <code>LASTNAME-animated-textures</code> save your .blend file in the project folder.</li>
 <li>Download the image sequence ZIP file.</li>
 <li>Create an animation with the following:

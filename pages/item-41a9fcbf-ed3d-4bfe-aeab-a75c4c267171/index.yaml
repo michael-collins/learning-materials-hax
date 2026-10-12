@@ -11,7 +11,7 @@ description: >-
   into after effects. You will create a compressed v
 metadata:
   created: 1790802192
-  updated: 1791835503
+  updated: 1791835512
   images: []
   videos: []
   overridePathauto: false
@@ -61,7 +61,7 @@ content: >
 
   <ol>
 
-  <li>Watch the tutorials.</li>
+  <li>Work through the Animated textures tutorials above.</li>
 
   <li>Create and set a project folder called
   <code>LASTNAME-animated-textures</code> save your .blend file in the project
