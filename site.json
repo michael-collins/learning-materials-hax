@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791835495,
+      "updated": 1791835499,
       "version": "26.8.0"
     },
     "theme": {
@@ -11542,6 +11542,40 @@
         "images": [],
         "videos": [],
         "updated": 1791826915
+      }
+    },
+    {
+      "id": "item-fc29ca87-9505-454a-9af1-6e9368919f53",
+      "indent": 2,
+      "location": "pages/item-fc29ca87-9505-454a-9af1-6e9368919f53/index.html",
+      "slug": "tutorials/animated-textures/applying-the-animated-texture-and-rendering-the-video",
+      "order": 1,
+      "parent": "item-d4806777-430a-42fb-967f-66d8d2b69d4f",
+      "title": "Applying the animated texture and rendering the video",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=9gecnwpRE0g",
+          "batch": "video-mv5olbwg",
+          "captions": "speech",
+          "duration": 1910,
+          "written": true
+        },
+        "created": 1791835499,
+        "images": [],
+        "videos": [],
+        "updated": 1791835499
       }
     },
     {
