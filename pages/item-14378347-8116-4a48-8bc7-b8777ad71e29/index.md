@@ -1,0 +1,62 @@
+When a scene has a lot going on, pressing play in Blender doesn't always show your animation at its real speed. A playblast saves it as a video straight from the viewport, without a full render, so you can watch it at the speed you intended. You'll need an animation, such as the cube, sphere and camera from the previous part; the video uses Blender 2.90.
+
+Set up the output
+-----------------
+
+1.  **Open the Output Properties.** <page-anchor target="#video-xALz1ZEUqOQ" value="27">0:27</page-anchor> In the Properties editor, open the _Output Properties_ tab, where the _Output_ panel sets where the video goes and in what format.
+    
+2.  **Choose an output folder.** <page-anchor target="#video-xALz1ZEUqOQ" value="33">0:33</page-anchor> Click the folder button beside the output path and choose a folder. Your project folder, where you save your `.blend` file, is the best place <page-anchor target="#video-xALz1ZEUqOQ" value="44">0:44</page-anchor>. (The video saves to the desktop.)
+    
+3.  **Save a movie.** <page-anchor target="#video-xALz1ZEUqOQ" value="49">0:49</page-anchor> Set _File Format_ to _FFmpeg Video_, under _Movie_ <page-anchor target="#video-xALz1ZEUqOQ" value="60">1:00</page-anchor>.
+    
+    ![Output Properties with the File Format menu open: image formats such as PNG and JPEG on the left, and FFmpeg video highlighted under Movie, its tooltip calling it the most versatile way to output video files.](files/saving-a-playblast-t0060.0.jpg)
+    
+    _File Format → FFmpeg Video_.
+    
+4.  **Choose MPEG-4.** <page-anchor target="#video-xALz1ZEUqOQ" value="65">1:05</page-anchor> Under _Encoding_, _Video Codec_ is already H.264. Change _Container_ from Matroska to _MPEG-4_ <page-anchor target="#video-xALz1ZEUqOQ" value="76">1:16</page-anchor>: few programs play Matroska, while MPEG-4 plays almost anywhere. Leave everything else as it is <page-anchor target="#video-xALz1ZEUqOQ" value="98">1:38</page-anchor>.
+    
+    ![Output Properties set for a playblast: Frame Rate 24 fps, an output folder on the desktop, File Format FFmpeg video, Container MPEG-4 and Video Codec H.264, with Output Quality at Medium quality and Encoding Speed at Good.](files/saving-a-playblast-t0096.0.jpg)
+    
+    FFmpeg Video in an MPEG-4 container, with the H.264 codec.
+    
+
+Make the playblast
+------------------
+
+1.  **Look through the camera.** <page-anchor target="#video-xALz1ZEUqOQ" value="101">1:41</page-anchor> Switch to the camera view and play the animation to check it's what you want.
+    
+2.  **Render the viewport.** <page-anchor target="#video-xALz1ZEUqOQ" value="107">1:47</page-anchor> In the 3D Viewport, choose _View → Viewport Render Animation_ <page-anchor target="#video-xALz1ZEUqOQ" value="116">1:56</page-anchor>. It renders the animation from the viewport, as you see it there.
+    
+    ![Looking through the camera, with the 3D Viewport's View menu open and Viewport Render Animation highlighted, between Viewport Render Image and Viewport Render Keyframes.](files/saving-a-playblast-t0115.4.jpg)
+    
+    _View → Viewport Render Animation_.
+    
+3.  **Let it play through.** <page-anchor target="#video-xALz1ZEUqOQ" value="122">2:02</page-anchor> A _Blender Render_ window opens and the frame counter counts up as Blender writes each frame to the video file. It stops at frame 120 <page-anchor target="#video-xALz1ZEUqOQ" value="132">2:12</page-anchor>.
+    
+    ![A Blender Render window in front of the viewport, showing the frame being rendered: the cube from the camera's view, with the sphere behind it, drawn as the viewport shows it.](files/saving-a-playblast-t0126.4.jpg)
+    
+    Each frame is drawn in the _Blender Render_ window as it's saved.
+    
+4.  **Watch the result.** <page-anchor target="#video-xALz1ZEUqOQ" value="137">2:17</page-anchor> Choose _Render → View Animation_ to play the video back <page-anchor target="#video-xALz1ZEUqOQ" value="148">2:28</page-anchor>. In the video, the player window shows the picture in one corner <page-anchor target="#video-xALz1ZEUqOQ" value="156">2:36</page-anchor>, but the video file itself, in your output folder, plays at the frame rate you intended <page-anchor target="#video-xALz1ZEUqOQ" value="163">2:43</page-anchor>.
+    
+    ![The Render menu open in Blender's top bar, listing Render Image, Render Animation, Render Audio, View Render and View Animation.](files/saving-a-playblast-t0150.0.jpg)
+    
+    _Render → View Animation_ plays back what you've saved.
+    
+
+Check the frame rate
+--------------------
+
+1.  **Use 24 frames per second.** <page-anchor target="#video-xALz1ZEUqOQ" value="181">3:01</page-anchor> In the Output Properties, _Frame Rate_ is 24 fps. That's usually what you want: it's best for anything cinematic and for most 3D animation <page-anchor target="#video-xALz1ZEUqOQ" value="201">3:21</page-anchor>. 30 or 60 frames per second are much higher frame rates.
+    
+    ![Output Properties with the pointer on Frame Rate, set to 24 fps, below Frame Start 1 and End 120, with the resolution at 1920 by 1080 pixels.](files/saving-a-playblast-t0195.8.jpg)
+    
+    _Frame Rate_: 24 fps.
+    
+
+Wrap-up
+-------
+
+That's a playblast: a quick video of your animation from the viewport, at its real speed, without having to render it <page-anchor target="#video-xALz1ZEUqOQ" value="210">3:30</page-anchor>.
+
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-xALz1ZEUqOQ" value="1">0:01</page-anchor> Ok, so it's going to be really important that you be able to preview your animations at the actual speed that they're moving. Sometimes when you have a lot going on in a scene and you press play, what you're seeing is not always representative of how fast or slow things are going. And so the only way to really ensure that is if you do what's called a play blast. And so let's first go over to our render settings here. So the first thing we want to do is set up output. So you want to choose a folder that is going to, and I'm just going to choose that here. You want to choose an output folder. And so a project folder is going to be the best place for that. Somewhere where you're already saving your blender file.</p><p><page-anchor target="#video-xALz1ZEUqOQ" value="49">0:49</page-anchor> and we don't have to change file format but we do have some movie formats here FFmpeg is typically going to be a good option so if we choose that under encoding you can see that there's a format called h.264 automatically chosen and then under container you want to choose MPEG-4. Okay, and the reason is not a lot of software can use this Matroska container format. There are a few softwares out there that you can get that can read and play that back, but it's just, you know, a lot more ubiquitous to find MPEG-4 players. So we're going to choose MPEG-4 here in the container everything else is fine but now what we can do is choose our camera view let's just preview this make sure that's what we want and then we can do view viewport render animation and it's going to render an animation from our viewport so i'm going to click on viewport render and now we can see it's going to go through and our cursor is actually counting up in keyframes</p><p><page-anchor target="#video-xALz1ZEUqOQ" value="128">2:08</page-anchor> now so it's actually creating the video file here as it plays okay now it's finished at frame 120 and so we can go ahead and view our animation actually let's go ahead and do i think it's render view animation okay there we go and so that's uh viewing it it's a bit of a bug here in this particular window but if we go to our file here um you'll see that here it is on the i saved it to my desktop but you can see the animation is here in a video file that you can play back at the actual frame that you're intending it to be. Okay, so if we go over to frame rate, typically we want ours to be 24 frames per second, and that's what it is here. If you did something like 30 frames per second or 60 frames per second, you're getting into really high frame rates. 24 is going to be the best for anything that's cinematic, and for typically what we do in 3D animation, 24 is</p><p><page-anchor target="#video-xALz1ZEUqOQ" value="211">3:31</page-anchor> option. So that is how you quickly create a play blast of your animation without having to actually do a render.</p></div></a11y-collapse>

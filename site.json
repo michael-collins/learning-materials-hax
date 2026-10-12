@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849455,
+      "updated": 1791849458,
       "version": "26.8.0"
     },
     "theme": {
@@ -11817,6 +11817,40 @@
         "images": [],
         "videos": [],
         "updated": 1791848741
+      }
+    },
+    {
+      "id": "item-14378347-8116-4a48-8bc7-b8777ad71e29",
+      "indent": 2,
+      "location": "pages/item-14378347-8116-4a48-8bc7-b8777ad71e29/index.html",
+      "slug": "tutorials/introduction-to-animation/saving-a-playblast",
+      "order": 1,
+      "parent": "item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a",
+      "title": "Saving a playblast",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=xALz1ZEUqOQ",
+          "batch": "video-mv5wwizg",
+          "captions": "speech",
+          "duration": 220,
+          "written": true
+        },
+        "created": 1791849458,
+        "images": [],
+        "videos": [],
+        "updated": 1791849458
       }
     },
     {
