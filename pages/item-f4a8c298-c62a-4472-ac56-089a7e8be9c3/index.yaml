@@ -26,15 +26,27 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791849463
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - exercise
+  oerTutorialSeries:
+    - item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a
 content: >
   <p>In this exercise, level 1 students will practice keyframe animation,
   parenting, animating the camera with a target, and manipulating curves in the
   graph editor.</p>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ"
-  title="Introduction to animation Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ"
+  playlist-title="Introduction to animation Tutorial"></oer-tutorial-series>
 
   <h2>Learning Objectives</h2>
 

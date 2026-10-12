@@ -35,10 +35,29 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791849463</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this exercise, level 1 students will practice keyframe animation, parenting, animating the camera with a target, and manipulating curves in the graph editor.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ" title="Introduction to animation Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ" playlist-title="Introduction to animation Tutorial"></oer-tutorial-series>
 <h2>Learning Objectives</h2>
 <ol>
 <li>Practice keyframe animation of translation, rotation, and scale properties.</li>

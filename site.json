@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849461,
+      "updated": 1791849465,
       "version": "26.8.0"
     },
     "theme": {
@@ -34975,7 +34975,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472164,
+        "updated": 1791849463,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -34991,6 +34991,9 @@
         ],
         "oerRubrics": [
           "exercise"
+        ],
+        "oerTutorialSeries": [
+          "item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a"
         ]
       }
     },
