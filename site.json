@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791848728,
+      "updated": 1791848731,
       "version": "26.8.0"
     },
     "theme": {
@@ -25216,7 +25216,7 @@
       "order": 14,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Lighting and rendering the Airline Chair",
-      "description": "",
+      "description": "Light and render Kem Weber's Airline Chair in Blender's Cycles: a studio backdrop, three-point lighting, sampling, roughness and normal maps for the leather, the camera's focal length and composition, a shadow catcher, and a final colour adjustment in Photoshop.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
