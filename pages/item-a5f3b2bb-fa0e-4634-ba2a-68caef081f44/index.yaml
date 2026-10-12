@@ -1,0 +1,359 @@
+id: item-a5f3b2bb-fa0e-4634-ba2a-68caef081f44
+indent: 2
+location: pages/item-a5f3b2bb-fa0e-4634-ba2a-68caef081f44/index.yaml
+slug: tutorials/modeling-the-airline-chair/modeling-the-side
+order: 1
+parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
+title: Modeling the side
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Beginner
+  oerVideoSource:
+    source: https://www.youtube.com/watch?v=vAu-gv560vI
+    batch: video-mv5pkz3r
+    captions: speech
+    duration: 1244
+    written: true
+  created: 1791837162
+  images: []
+  videos: []
+  updated: 1791837162
+content: >-
+  <p>The side of the Airline Chair is one continuous bent piece: the arm along
+  the top, the front leg, and the runner along the floor. In this part you'll
+  model it from a single plane over the reference image: first the overall
+  proportions, then edge loops to follow its curves, then thickness and a
+  <em>Subdivision Surface</em> modifier to smooth it, with supporting edges to
+  keep its corners crisp. You'll need the reference image set up in Part 1, in
+  the <em>Right Orthographic</em> view. The video uses Blender 2.83.</p>
+
+
+  <oer-video id="video-vAu-gv560vI"
+  src="https://www.youtube.com/watch?v=vAu-gv560vI" title="Modeling the Airline
+  Chair – Part 2: Side" credit="Michael Collins"
+  credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+
+  <h2>Block out the proportions</h2>
+
+  <ol>
+    <li>
+      <p><strong>Add a plane and stand it up.</strong> <page-anchor target="#video-vAu-gv560vI" value="0">0:00</page-anchor> In Object Mode, add a plane. It comes in lying flat, which is the wrong way round for the side view, so rotate it 90 degrees on Y: press <kbd>R</kbd>, <kbd>Y</kbd>, type 90 and press <kbd>Enter</kbd>. Get the overall proportions down before adding any detail: in Edit Mode, stretch the plane to cover the full length of the arm, from the front of the chair to the back <page-anchor target="#video-vAu-gv560vI" value="22">0:22</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Extrude the leg and the runner.</strong> <page-anchor target="#video-vAu-gv560vI" value="31">0:31</page-anchor> The front leg comes straight down from the arm, so you need geometry there: add an edge loop with <kbd>Ctrl</kbd>+<kbd>R</kbd>, or use the <em>Loop Cut</em> tool in the toolbar on the left <page-anchor target="#video-vAu-gv560vI" value="44">0:44</page-anchor>. Press <kbd>2</kbd> for edge select mode, select the edge at the front, then press <kbd>E</kbd> to extrude it rather than move it. Pressing the middle mouse button while you drag constrains the movement to one axis <page-anchor target="#video-vAu-gv560vI" value="52">0:52</page-anchor>. Do the same for the back of the arm, which drops down at the end, and then add another loop at the foot of the leg and extrude its bottom edge back along the floor to make the runner <page-anchor target="#video-vAu-gv560vI" value="62">1:02</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t0082.0.jpg" alt="Edit Mode in the Right Orthographic view over the reference photo: a flat grey shape of a few large faces follows the arm along the top, the front leg down the left and the runner along the bottom, with a short drop at the back end of the arm. The extruded runner edge is still selected, with the move gizmo on it."><figcaption><p>The basic shape: a few big faces for the arm, leg, runner and the arm's back end.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Leave a notch for the brace.</strong> <page-anchor target="#video-vAu-gv560vI" value="91">1:31</page-anchor> At the back end of the arm, the wood has a notch cut out of it so that the next piece (the side brace, a separate object) fits into place. Add a loop where the notch starts, behind the metal bracket (its exact place doesn't matter, because you won't see it), then extrude the edge beyond it further down <page-anchor target="#video-vAu-gv560vI" value="112">1:52</page-anchor>. That step in the shape is the notch.</p>
+    </li>
+    <li>
+      <p><strong>Straighten the reference if it's tilted.</strong> <page-anchor target="#video-vAu-gv560vI" value="130">2:10</page-anchor> The image came in straight, but the photo itself is slightly rotated. Press <kbd>Tab</kbd> to leave Edit Mode <page-anchor target="#video-vAu-gv560vI" value="159">2:39</page-anchor>, make the reference selectable again in the Outliner and select it. If you've locked its rotation, unlock it in the sidebar (<kbd>N</kbd>), rotate the image very slightly with <kbd>R</kbd> so the chair sits level, then lock it and make it unselectable again <page-anchor target="#video-vAu-gv560vI" value="173">2:53</page-anchor>. Press <kbd>Tab</kbd> to go back into Edit Mode on the side.</p>
+    </li>
+  </ol>
+
+
+  <h2>Follow the outline with edge loops</h2>
+
+  <ol>
+    <li>
+      <p><strong>Add several loops at once.</strong> <page-anchor target="#video-vAu-gv560vI" value="196">3:16</page-anchor> Press <kbd>Ctrl</kbd>+<kbd>R</kbd>, hover over the leg, and scroll the mouse wheel up to add more loops at once. Click, then press <kbd>Esc</kbd> to leave them evenly spaced where they are.</p>
+      <figure><img src="files/modeling-the-side-t0199.8.jpg" alt="Loop Cut and Slide previewing yellow loops across the front leg of the blocked-out side, over the reference photo. The status bar reads Number of Cuts: 4. The sidebar is open on the right of the viewport."><figcaption><p>Scroll while loop cutting for more loops: here 4.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Make room to work.</strong> <page-anchor target="#video-vAu-gv560vI" value="207">3:27</page-anchor> Press <kbd>N</kbd> to hide or show the sidebar, and <kbd>T</kbd> for the toolbar. <kbd>Ctrl</kbd>+<kbd>Space</kbd> fills the window with the area under the mouse, and does the same again to go back <page-anchor target="#video-vAu-gv560vI" value="217">3:37</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Move the vertices onto the outline.</strong> <page-anchor target="#video-vAu-gv560vI" value="224">3:44</page-anchor> Press <kbd>1</kbd> for vertex select mode. Select vertices and press <kbd>G</kbd> to move them (the grab tool), and <kbd>Z</kbd> to constrain the move straight up and down, or use the move tool on the left <page-anchor target="#video-vAu-gv560vI" value="232">3:52</page-anchor>. With the move tool, drag the small square between the Y and Z arrows to move in both directions at once <page-anchor target="#video-vAu-gv560vI" value="339">5:39</page-anchor>. It doesn't have to be exact: get it close <page-anchor target="#video-vAu-gv560vI" value="246">4:06</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t0280.8.jpg" alt="The viewport filled to the whole window (Back to Previous at the top). The side's front leg now has several loops, and its vertices have been moved to follow the curved front edge of the leg in the photo; the bottom front corner is being shaped, with one vertex selected."><figcaption><p>Vertices moved onto the curve of the front leg.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Add supporting edges at corners.</strong> <page-anchor target="#video-vAu-gv560vI" value="267">4:27</page-anchor> Where the shape turns a tight corner, add a loop close to it: a supporting edge. Later, when a modifier smooths the shape by subdividing it, supporting edges hold the corners. Don't follow the photo's every curve: the bottom of the runner should be flat, and the photo probably has some lens distortion, so use your judgement, with just a slight curve up at the front <page-anchor target="#video-vAu-gv560vI" value="309">5:09</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Keep it low resolution.</strong> <page-anchor target="#video-vAu-gv560vI" value="414">6:54</page-anchor> Add a few more loops where the shape needs them to turn, but not too many: fewer vertices, edges and faces are easier to work with.</p>
+    </li>
+  </ol>
+
+
+  <h2>Give it thickness and smooth it</h2>
+
+  <ol>
+    <li>
+      <p><strong>Extrude the thickness.</strong> <page-anchor target="#video-vAu-gv560vI" value="428">7:08</page-anchor> Orbit out into the 3D view. On the reference, the wood looks about an inch thick, maybe a bit more <page-anchor target="#video-vAu-gv560vI" value="440">7:20</page-anchor>. Press <kbd>3</kbd> for face select mode, <kbd>A</kbd> to select everything, and <kbd>E</kbd> to extrude it <page-anchor target="#video-vAu-gv560vI" value="453">7:33</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t0465.8.jpg" alt="Object Mode, User Perspective: the side piece with thickness, an orange-outlined C shape of the arm, front leg, runner and the arm's dropped back end, still blocky with flat faces."><figcaption><p>The side with thickness, before smoothing.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Add a Subdivision Surface modifier.</strong> <page-anchor target="#video-vAu-gv560vI" value="459">7:39</page-anchor> Go to the <em>Modifier Properties</em> (the wrench icon) and add a <em>Subdivision Surface</em> modifier. It subdivides the geometry with the Catmull-Clark algorithm <page-anchor target="#video-vAu-gv560vI" value="477">7:57</page-anchor>. <em>Viewport</em> is the number of subdivisions you see while you work, and <em>Render</em> (2 here) is for rendering; as you raise Viewport, each quad is split into more faces <page-anchor target="#video-vAu-gv560vI" value="498">8:18</page-anchor>. Applying it would make those faces real geometry, so undo if you try it <page-anchor target="#video-vAu-gv560vI" value="510">8:30</page-anchor>: keep it as a modifier you can turn off and on.</p>
+      <figure><img src="files/modeling-the-side-t0485.8.jpg" alt="The side piece now smooth and rounded, with the Subdivision Surface modifier in the Modifier Properties: Catmull-Clark selected, Render 2, Viewport 1, Quality 3, with Optimal Display and Use Creases ticked."><figcaption><p>The Subdivision Surface modifier at Viewport 1, Render 2.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Hold the bevelled edges with supporting loops.</strong> <page-anchor target="#video-vAu-gv560vI" value="515">8:35</page-anchor> The smoothing helps the curves, but it rounds off the crisp bevel along the wood's edges, especially on the outside. Press <kbd>Ctrl</kbd>+<kbd>R</kbd> on the piece and scroll up once for two loops running all the way round it. Instead of sliding them, scale them apart along X: press <kbd>S</kbd>, then <kbd>X</kbd>, and bring them close to the existing outside edges <page-anchor target="#video-vAu-gv560vI" value="550">9:10</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t0560.0.jpg" alt="A close-up of the side piece seen edge-on in Edit Mode. Two new orange edge loops run its length, and the header reads Scale: 0.6229 along global X; an X key press shows at the bottom."><figcaption><p>Two loops scaled apart along X, close to the outside edges.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Check the result smoothly shaded.</strong> <page-anchor target="#video-vAu-gv560vI" value="562">9:22</page-anchor> Turn off the wireframe overlay and choose <em>Shade Smooth</em>: the curve is smooth and the bevel stays crisp. Turn the viewport subdivisions up to 3 to see a production level of smoothness, the kind you'd render an animation or product model with <page-anchor target="#video-vAu-gv560vI" value="587">9:47</page-anchor>. Don't apply it: that's a tremendous amount of geometry. Leave it as a modifier you can turn off and on.</p>
+      <figure><img src="files/modeling-the-side-t0600.8.jpg" alt="Object Mode, close on the smooth side piece at Viewport 3: the arm curves into the front leg with an even, rounded bend and crisp edges along its sides."><figcaption><p>At 3 subdivisions: smooth curves with crisp edges.</p></figcaption></figure>
+    </li>
+  </ol>
+
+
+  <h2>Refine the curves</h2>
+
+  <ol>
+    <li>
+      <p><strong>Tighten the sharp corner, round the soft one.</strong> <page-anchor target="#video-vAu-gv560vI" value="616">10:16</page-anchor> The inside corner where the leg meets the runner should be fairly sharp: <kbd>Ctrl</kbd>+<kbd>R</kbd>, hover over an edge there and slide the new loop in close to the corner, which tightens the curve <page-anchor target="#video-vAu-gv560vI" value="624">10:24</page-anchor>. The outside corner should be fully curved, so it doesn't need a supporting edge <page-anchor target="#video-vAu-gv560vI" value="641">10:41</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Use X-ray to select through the model.</strong> <page-anchor target="#video-vAu-gv560vI" value="645">10:45</page-anchor> Now the piece has thickness, there are vertices behind the ones you see. Turn on X-ray, then press <kbd>1</kbd> and select the vertices, so you get the ones at the back too and not just the front <page-anchor target="#video-vAu-gv560vI" value="653">10:53</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Correct the reference's angle.</strong> <page-anchor target="#video-vAu-gv560vI" value="660">11:00</page-anchor> In the video, the first rotation of the reference was a little too much, so it's set to about 0.4 degrees in the sidebar (<kbd>N</kbd>).</p>
+      <figure><img src="files/modeling-the-side-t0676.8.jpg" alt="The reference image selected, with the sidebar's Transform open: Rotation X 90 degrees, Y 0.407 degrees, Z 90 degrees, all with their padlocks. The smoothed side piece sits over the chair's photo, nearly matching the arm, leg and runner."><figcaption><p>The reference's rotation corrected to about 0.4°.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Move along the normal.</strong> <page-anchor target="#video-vAu-gv560vI" value="690">11:30</page-anchor> The tip of the runner loses its shape when it's smoothed, so add another supporting loop there. Its top should be a little more rounded, so change the <em>Transform Orientation</em> in the header from <em>Global</em> to <em>Normal</em>: the move arrow now points along the surface's normal, and moving the vertex along it opens up the distance between the two edges for a smoother result <page-anchor target="#video-vAu-gv560vI" value="705">11:45</page-anchor>. Switch back to <em>Global</em> afterwards <page-anchor target="#video-vAu-gv560vI" value="721">12:01</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t0710.0.jpg" alt="The runner's back tip in the Right Orthographic view, Edit Mode, with the header's Transform Orientation set to Normal. One vertex on the top of the tip is selected, and the move gizmo's arrows are tilted to match the surface."><figcaption><p>Transform Orientation set to Normal for the runner's tip.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Watch the edge flow.</strong> <page-anchor target="#video-vAu-gv560vI" value="727">12:07</page-anchor> Keep the curvature of the edges consistent. If you can't match a curve, that's usually a sign you need another edge <page-anchor target="#video-vAu-gv560vI" value="743">12:23</page-anchor>. It doesn't have to be pixel perfect. Add loops where the curves of the arm's end and the leg need them <page-anchor target="#video-vAu-gv560vI" value="770">12:50</page-anchor>, and space them as evenly as you can: even spacing gives the best edge flow <page-anchor target="#video-vAu-gv560vI" value="827">13:47</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t0840.8.jpg" alt="The rounded back end of the arm over the photo, in Edit Mode, with a grid of loops following its curve and a new loop being slid into place (Edge Slide in the header). The notch for the brace shows at the bottom beside the metal bracket."><figcaption><p>Evenly spaced loops around the end of the arm.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Use the Transform tool and avoid thin faces.</strong> <page-anchor target="#video-vAu-gv560vI" value="921">15:21</page-anchor> The <em>Transform</em> tool gives you move, rotate and scale at once, which helps for scaling loops apart. Try not to make really thin polygons: keep the faces roughly the same size <page-anchor target="#video-vAu-gv560vI" value="1011">16:51</page-anchor>.</p>
+    </li>
+  </ol>
+
+
+  <h2>Round over the inner edges</h2>
+
+  <ol>
+    <li>
+      <p><strong>Soften the inside edges.</strong> <page-anchor target="#video-vAu-gv560vI" value="1045">17:25</page-anchor> The inside edges of the piece should be rounded, not crisp. Select the supporting edges there and move them apart so they no longer hold a tight corner <page-anchor target="#video-vAu-gv560vI" value="1062">17:42</page-anchor>. Press <kbd>3</kbd> for faces, select the inner faces and scale them in along X (<kbd>S</kbd>, <kbd>X</kbd>) a little at a time, checking against the reference, until the inside curves over <page-anchor target="#video-vAu-gv560vI" value="1085">18:05</page-anchor>. Don't go too far. Because the model doesn't have much geometry, changes like this are easy.</p>
+      <figure><img src="files/modeling-the-side-t1070.0.jpg" alt="A close-up in the 3D view of the inside of the front leg in Edit Mode, with the Transform tool active: its gizmo combines move arrows, rotation rings and scale handles. The edge of the leg is softly rounded."><figcaption><p>Rounding the inside of the leg with the Transform tool.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Orbit around what you're working on.</strong> <page-anchor target="#video-vAu-gv560vI" value="1132">18:52</page-anchor> If the view doesn't orbit around the part you have selected, choose <em>View → Frame Selected</em> with something selected, and the view resets around it.</p>
+    </li>
+    <li>
+      <p><strong>Finish the back end.</strong> <page-anchor target="#video-vAu-gv560vI" value="1150">19:10</page-anchor> Round the inside of the arm's back end the same way, scaling its faces in along X, and check it against the reference <page-anchor target="#video-vAu-gv560vI" value="1180">19:40</page-anchor>.</p>
+      <figure><img src="files/modeling-the-side-t1240.8.jpg" alt="The finished side piece in Object Mode, User Perspective: a smooth, continuous C shape with the arm across the top, rounded at the back end with the small notch at its bottom, the front leg, and the runner tapering to a point."><figcaption><p>The finished side, ready for the other pieces.</p></figcaption></figure>
+    </li>
+  </ol>
+
+
+  <h2>Wrap-up</h2>
+
+  <p>You've modeled the chair's side from a single plane: blocked out with
+  extruded edges, shaped with a small number of evenly spaced edge loops, given
+  thickness, and smoothed with a Subdivision Surface modifier that supporting
+  edges keep crisp where the wood is crisp. Next you'll model the side brace
+  that fits into the notch.</p>
+
+  <a11y-collapse heading-button=""><p slot="heading">Transcript</p><div
+  slot="content"><p><em>From speech to text.</em></p><p><page-anchor
+  target="#video-vAu-gv560vI" value="0">0:00</page-anchor> The easiest way to
+  get started I've found is to add a plane. So when you add a plane to the scene
+  it's actually not in the right orientation. So we're going to rotate this 90
+  degrees. So I'm just pressing R Y 90 on the keyboard. the easiest way to start
+  modeling is to get the overall proportions down before you add any detail just
+  make this the full length of the distance between the front and the back here
+  so we have a polygon that's covering that whole length we also notice that
+  we're going to need some geometry coming straight down here and here I'm going
+  to accomplish that by adding an edge loop so that's you prefer you can use the
+  loop cut tool down here on the left. I'm going to press 2 on the keyboard to
+  jump into edge selection mode. Extrude rather than move, so press E on the
+  keyboard and if we press down the middle mouse button that will constrain our
+  movement to one of the axes.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="61">1:01</page-anchor> Now we can do the same thing for this side and
+  the bottom. Control R will get us another loop there. And so let's just select
+  this edge, press E, middle click. Okay. And we're going to press E, middle
+  click. And there we go. We've got the basic shape down. So now we can start
+  adding detail and we can create some thickness after we're done. The tricky
+  part of this object is that you can actually see here this object sort of has
+  a notch cut out of it so that this second piece can fit into place. So we're
+  going to make this a separate object, but we need to kind of allow for that to
+  snap in. The easiest way to do that would be to add another loop
+  here.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="112">1:52</page-anchor> You know, I don't know exactly where it is. I'm
+  going to guess it's probably somewhere around here. it's behind this metal
+  bracket. It doesn't really matter because you're not going to see it. Now that
+  we have that, we've got an edge here that we can extrude down. You can see
+  that we've created this notch, which is going to be useful later. For now,
+  let's look at getting the shape more closely aligned with our reference image.
+  One of the things I noticed is that our reference image is actually, I mean,
+  it came in straight, but the photograph is slightly rotated. So what we can do
+  is select our reference here and let's just zoom in and I'm going to just
+  rotate that ever so slightly. Oh, okay. I'm in edit mode. Press tab to get out
+  of that and we can select our reference. You can see I've locked it here, but
+  it still allows you to scale in this mode. So let's just undo our rotation
+  lock and I can just rotate that slightly, lock that back, and I'm going to
+  disable the ability to grab and select that object. Okay. Let's tab back in
+  and</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="193">3:13</page-anchor> And let's just quickly get this into shape. So
+  I'm going to add some more edge loops, and I can scroll up on the scroll
+  wheel, and that will give me some more detail to work with. And I'm going to
+  press Escape just to leave that in their default positions. So if I press N on
+  the keyboard, it will get rid of that menu quickly. The same with the toolbar.
+  I can press T, and it will pop those tools out. Again, I want to go into full
+  screen when I'm working on this. So if I do Control Spacebar, it'll pop me
+  into full view of wherever my mouse is hovered over. Okay, so let's press 1 on
+  the keyboard, go to vertices. Now I can press G on the keyboard, that's the
+  grab tool or the move tool. And I can press Z on the keyboard to constrain
+  that straight down.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="237">3:57</page-anchor> Or I can use these various tools on the left to
+  accomplish the same thing. So let's select these and I'll just use this tool
+  to move these vertices into position. This doesn't have to be exact. get it
+  close. We're not able to really make this term down here. So I'm going to add
+  another edge loop in a minute. You don't have to worry about that. Just yet.
+  Let's add one here. And let's get these in first. And then I'll add that other
+  edge loop at the bottom. Okay, so the reason we need one here, this is called
+  a supporting edge, and when we go to add a modifier later, a modifier will
+  help us smooth the shape using subdivisions.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="299">4:59</page-anchor> We're going to need
+  something called a supporting edge to really hold that corner. I'm just going
+  to add that in now, and then I'll add another one in later to show you how it
+  works. so for now and I want this to be flat so I'm not going to totally
+  follow this curve I think we're getting some lens distortion from the camera
+  that actually took this photograph don't worry about that too much just you
+  know use your best judgment to get the shape okay and I don't think that's
+  perfectly straight so we're going to just bow this up slightly to get a little
+  bit of curvature. That's pretty good for the front bottom. Let's move some of
+  these. If you use the square in between the z-axis and the y-axis, we can
+  actually move this in two dimensions at once.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="358">5:58</page-anchor> okay and we'll come
+  and take a look at how to make this a little more precise later I think I am
+  going to add an edge loop here just to help it make this turn. Okay, and we're
+  going to add two more here.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="418">6:58</page-anchor> Don't add too many edge loops. We want to keep
+  this fairly low resolution. it's just easier to work with fewer vertices edges
+  and faces i want to preview what this looks like so we're going to just rotate
+  back out into 3d view here i kind of want to see this thickness here so let's
+  just jump to our reference image and you can see the distance here is probably
+  about an inch or so maybe a little bit more maybe an inch And let's just press
+  3 on the keyboard and A to select everything. Press E to extrude. That looks
+  pretty good.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="460">7:40</page-anchor> Okay. Now I'm going to add a modifier. So if I
+  press Ctrl-Spacebar, it's going to give me my panels back here. Go to the
+  wrench icon, which is the modifier properties. And so now I can add a
+  modifier. I'm going to add something called subdivision surfaces. and what
+  that does is it uses the Catmull-Clark algorithm to generate subdivisions in
+  the geometry. Just to show you what that looks like. So if I was to apply this
+  and it's on a viewport subdivision of one, it will do two subdivisions for the
+  render. We're not rendering, so this one is a little bit
+  irrelevant.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="501">8:21</page-anchor> But viewport set to one, as I move this number
+  up, you can actually see it's adding additional faces here by subdividing
+  these quads. And so if I was to apply this at a subdivision level of one, now
+  you can see the wireframe is denser than it was before. So I'm going to undo
+  that. One of the things that is working is it's starting to smooth out this
+  curve a little bit for us, but it's not holding this beveled edge that we're
+  getting right here. So we can see that this is very squared off as it goes
+  around, especially on the outside. On the inside, it's a little bit curved. We
+  want to keep a nice crisp bevel here.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="546">9:06</page-anchor> So to do that, we
+  need to add some supporting edges. So I will press Ctrl-R and up on the scroll
+  wheel and that will give us two edge loops and i can move them left to right
+  but i actually want to scale these with the x-axis so i'm going to press s and
+  then x and then just get these pretty close to those existing edges and then
+  tab back out of that and you can see let's turn off wireframe here so you can
+  see that's working pretty well let's do a shade smooth here you can see it's
+  giving us a nice smooth curvature there okay we don't want that necessarily in
+  the inside right here let's actually turn up the subdivisions to three and so
+  this is sort of a production level of smoothness so you could use this to
+  render out an animation or product model things like that we're not actually
+  going to apply this because this is a tremendous amount So this is always
+  going to be a dynamic modifier that we can just disable and re-enable when we
+  need it.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="616">10:16</page-anchor> Okay, so we're losing a little bit of our
+  detail here, and there's some other parts that we need to clean up. So let's
+  go ahead and do that now. This corner is actually supposed to be fairly sharp,
+  so I'm going to add another supporting edge. You can see I have one here
+  already. So if I do Ctrl-R and then hover over an edge here, we can move that
+  in. And you can see as I move that in, that really tightens up that curve.
+  It's pretty square now. So that's good. We don't need a supporting edge out
+  here. This is actually supposed to be fairly curved or totally curved. Let's
+  press one, grab these vertices. Let's turn on x-ray view so we can actually
+  select through our geometry. Be careful not to just select the vertice in
+  front, accidentally not selecting the one behind it.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="659">10:59</page-anchor> You have to be in
+  x-ray mode for that to work right. All right. I think I did rotate this image
+  just a little bit too much. So I'm going to press N on my keyboard, get these
+  properties back. We're going to leave it maybe closer to 0.4 degrees. Okay.
+  Let's turn that back off. We'll just kind of move these into position here.
+  Okay, you can see we're really losing a lot of detail here at the end. So
+  let's add another supporting loop. And you can see that that makes a huge
+  amount of difference. It's actually supposed to be a little bit more rounded
+  on the top. So I'm going to move this in its normal direction by choosing
+  normal from the transform orientation. And you can see the arrow is now
+  pointing along the normal. So now I'm going to move that along its normal and
+  now it's creating a distance here between these two edges and it's giving us a
+  smoother result.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="721">12:01</page-anchor> Okay let's go back to global for transforms
+  here to move these into position. Okay, and we want to watch our edge flow and
+  make sure it's pretty consistent in terms of curvature and things like that.
+  If you're unable to match curvature, that's typically when you know that you
+  need to consider adding another edge. but I think we can get everything we
+  need from what we've got here. It doesn't have to be exact. This is just
+  supposed to be a very close model here. So don't get too concerned about pixel
+  perfect exactness, but you know, get it close. All right.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="770">12:50</page-anchor> So you can see
+  here, we're losing some of our curvature. Let's add another edge loop. We
+  don't have to go too close. We probably need one here. Let's add one. and this
+  is a little high. Okay, that looks pretty good.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="829">13:49</page-anchor> And now we need a
+  couple down here to tighten this up. So that looks pretty good. And this
+  bottom one is going to need an edge loop. So just get that bottom one pretty
+  close and then these other ones will have to actually move these spaced back
+  out a little bit better okay so really keeping even spacing as much as
+  possible it's going to give you the best edge flow result Okay, and actually
+  we want this to be pretty close there.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="882">14:42</page-anchor> And it looks like
+  we need one more edge loop here. There we go. That's good. Okay, and then
+  before I clean that up, we're going to need one here. And that will give us
+  that perfect corner. And it looks like we may need one down here. You're not
+  really going to see that, so I don't have to do that. I probably will just to
+  be consistent. And then I'll go ahead and smooth all this out. Whoops. All
+  right. We're almost done. There's a transform tool that gives you all three
+  rotation, scale, and transformation at once.</p><p><page-anchor
+  target="#video-vAu-gv560vI" value="937">15:37</page-anchor> Or translation,
+  rather. Okay. So I can scale these apart like that. Okay, we want this to flow
+  a little bit more smoothly. Okay, it's getting pretty
+  close.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="1009">16:49</page-anchor> So I sort of forgot about those. Let's try to
+  move these up here. And you want to be careful not to make any really thin
+  polygons if you can avoid it. So try to keep everything roughly the same
+  amount of area. okay let's take a look at what we have okay that's pretty good
+  that'll work for us now I'm just gonna go in and round over these inner pieces
+  here it's gonna try to use the symmetry tool there but it doesn't look like we
+  are around one of the axes.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="1068">17:48</page-anchor> I'm just going to grab these here, and then
+  I'm basically just separating the supporting edges so that they don't hold a
+  tight corner. Okay, and I think I will scale these in a little bit. So let's
+  press 3 on the keyboard. Scale those in a little bit. Now you can see we're
+  getting some curvature here, but then it's sort of terminating into a sharp
+  corner. Maybe we'll just do this a little bit more. Scale those
+  in.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="1113">18:33</page-anchor> X axis. Okay, we don't want to go too crazy.
+  Scale that in. Looks pretty good. back piece now. Because we didn't add too
+  much geometry, it's relatively easy to make changes. If we had added a ton of
+  resolution to our geometry, it would be really hard to go around this out. So
+  you're seeing that my viewport's actually not rotating around my object that I
+  have selected. To change that, if you're struggling with actually getting this
+  to rotate properly, just go to view and with something selected just do frame
+  selected and now it will reset your view okay let's move this back a little
+  bit and let's grab these okay that selection looks good and we'll scale these
+  the x-axis And turn this back on. Let's just check our
+  reference.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="1185">19:45</page-anchor> It might need to be a little bit slightly
+  more rounded. So let's scale that in just a bit more. Looks like we're getting
+  a flat section here. Let's jump back into our reference. Okay. should be That
+  looks pretty good.</p><p><page-anchor target="#video-vAu-gv560vI"
+  value="1237">20:37</page-anchor> That's good enough to move forward with. Now
+  I can start working on the other pieces.</p></div></a11y-collapse>

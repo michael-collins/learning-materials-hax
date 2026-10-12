@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837158,
+      "updated": 1791837162,
       "version": "26.8.0"
     },
     "theme": {
@@ -11613,6 +11613,40 @@
         "images": [],
         "videos": [],
         "updated": 1791835499
+      }
+    },
+    {
+      "id": "item-a5f3b2bb-fa0e-4634-ba2a-68caef081f44",
+      "indent": 2,
+      "location": "pages/item-a5f3b2bb-fa0e-4634-ba2a-68caef081f44/index.html",
+      "slug": "tutorials/modeling-the-airline-chair/modeling-the-side",
+      "order": 1,
+      "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "title": "Modeling the side",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=vAu-gv560vI",
+          "batch": "video-mv5pkz3r",
+          "captions": "speech",
+          "duration": 1244,
+          "written": true
+        },
+        "created": 1791837162,
+        "images": [],
+        "videos": [],
+        "updated": 1791837162
       }
     },
     {
