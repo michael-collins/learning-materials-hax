@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849446,
+      "updated": 1791849448,
       "version": "26.8.0"
     },
     "theme": {
@@ -25351,7 +25351,7 @@
       "order": 15,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Introduction to animation",
-      "description": "",
+      "description": "Learn keyframe animation in Blender by animating a cube, a sphere that circles it and a camera that follows it: keyframes, parenting, curves in the Graph Editor, linear interpolation and a Track To constraint, then save the animation as a video.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
