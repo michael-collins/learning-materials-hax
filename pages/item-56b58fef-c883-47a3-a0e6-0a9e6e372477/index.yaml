@@ -1,0 +1,41 @@
+id: item-56b58fef-c883-47a3-a0e6-0a9e6e372477
+indent: 1
+location: pages/item-56b58fef-c883-47a3-a0e6-0a9e6e372477/index.yaml
+slug: tutorials/texturing-the-airline-chair
+order: 13
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: Texturing the Airline Chair
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Intermediate
+  oerVideoSource:
+    source: https://www.youtube.com/playlist?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq
+    batch: video-mv5vqd8z
+    captions: none
+    kind: playlist
+  created: 1791847491
+  images: []
+  videos: []
+  updated: 1791847491
+content: >-
+
+  <p>This series follows the Modeling the Airline Chair series: with Kem Weber's
+  chair modeled, you'll get it ready for texturing and give it textures. You'll
+  choose how many polygons to work with and apply each object's scale, mark
+  seams and unwrap the side's UVs, export the UV layout and paint a texture over
+  it in Photoshop, connect that texture to a material with an <em>Image
+  Texture</em> node, and check the UVs for stretching. The last part builds the
+  side's texture from a photo of the real chair, a process you can repeat for
+  the chair's other parts.</p>
+
+  <p>You'll need your modeled Airline Chair, Blender, and Photoshop or another
+  2D image editor. The videos use Blender 2.83 and Photoshop 2020, so some menus
+  look slightly different in newer versions.</p>
+
+  <oer-tutorial-series></oer-tutorial-series>

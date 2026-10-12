@@ -1,0 +1,3 @@
+This series follows the Modeling the Airline Chair series: with Kem Weber's chair modeled, you'll get it ready for texturing and give it textures. You'll choose how many polygons to work with and apply each object's scale, mark seams and unwrap the side's UVs, export the UV layout and paint a texture over it in Photoshop, connect that texture to a material with an _Image Texture_ node, and check the UVs for stretching. The last part builds the side's texture from a photo of the real chair, a process you can repeat for the chair's other parts.
+
+You'll need your modeled Airline Chair, Blender, and Photoshop or another 2D image editor. The videos use Blender 2.83 and Photoshop 2020, so some menus look slightly different in newer versions.

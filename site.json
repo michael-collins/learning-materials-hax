@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837214,
+      "updated": 1791847491,
       "version": "26.8.0"
     },
     "theme": {
@@ -25000,6 +25000,39 @@
         "images": [],
         "videos": [],
         "updated": 1791837193
+      }
+    },
+    {
+      "id": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
+      "indent": 1,
+      "location": "pages/item-56b58fef-c883-47a3-a0e6-0a9e6e372477/index.html",
+      "slug": "tutorials/texturing-the-airline-chair",
+      "order": 13,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Texturing the Airline Chair",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq",
+          "batch": "video-mv5vqd8z",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791847491,
+        "images": [],
+        "videos": [],
+        "updated": 1791847491
       }
     },
     {
