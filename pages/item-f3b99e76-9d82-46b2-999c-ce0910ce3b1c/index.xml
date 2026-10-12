@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c</id>
+<indent>1</indent>
+<location>pages/item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c/index.xml</location>
+<slug>tutorials/lighting-and-rendering-the-airline-chair</slug>
+<order>14</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Lighting and rendering the Airline Chair</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Intermediate</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/playlist?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q</source>
+<batch>video-mv5wgvpk</batch>
+<captions>none</captions>
+<kind>playlist</kind>
+</oerVideoSource>
+<created>1791848728</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791848728</updated>
+</metadata>
+<content><![CDATA[
+<p>This series follows the Modeling and Texturing the Airline Chair series: with Kem Weber's chair modeled and textured, you'll light it and make a finished render. You'll build a curved studio backdrop, light the chair with a key light, a fill light and a rim light, and render it in Cycles, balancing the sampling level against noise and render time. Then you'll soften the shadows, add a sun, and give the leather roughness and normal maps so it catches the light like real leather. The last part sets the camera's focal length and composition, renders the chair on a transparent background with a shadow catcher, and finishes the image in Photoshop with a background and a boost in saturation.</p>
+<p>You'll need your textured Airline Chair, the reference photos of the chair, Blender, and Photoshop or another image editor with layers. The videos use Blender 2.83 and Photoshop 2020, so some menus and settings look different in newer versions.</p>
+<oer-tutorial-series></oer-tutorial-series>]]></content>
+</item>
