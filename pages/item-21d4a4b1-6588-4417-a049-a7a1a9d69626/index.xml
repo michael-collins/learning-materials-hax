@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-21d4a4b1-6588-4417-a049-a7a1a9d69626</id>
-<indent>0</indent>
+<indent>1</indent>
 <location>pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.xml</location>
 <slug>exercises/animating-a-bouncing-ball</slug>
 <order>0</order>
@@ -14,28 +14,42 @@ Practice keyframe animation of translation, rotation, and scale properties.
 Become </description>
 <metadata>
 <created>1790802192</created>
-<updated>1790828359</updated>
+<updated>1791833597</updated>
 <images>
 </images>
 <videos>
 </videos>
 <overridePathauto>false</overridePathauto>
 <published>true</published>
-<pageType>exercise</pageType>
+<pageType>oer:exercise</pageType>
 <hideInMenu>false</hideInMenu>
 <tags>Blender,Animation</tags>
 <locked>false</locked>
 <readtime>1</readtime>
 <status></status>
-<icon>courseicons:learning-objectives</icon>
-<version></version>
+<icon></icon>
+<version>1.0.0</version>
 <oerVersions>
+<item>
+<version>1.0.0</version>
+<date></date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
 </oerVersions>
 <oerFields>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-WA</aiLicense>
+<aiLicense>
+<item>AIUL-WA</item>
+</aiLicense>
 <placeholder>false</placeholder>
 <allowEmbed>false</allowEmbed>
+<prerequisites>
+</prerequisites>
 <attachments>
 <item>
 <title>Bouncing Ball Reference</title>
@@ -46,10 +60,16 @@ Become </description>
 </attachments>
 </oerFields>
 <linkTarget>_self</linkTarget>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[
 <p>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball</p>
-<video-player source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M" title="Animating a bouncing ball Tutorial" accent-color="grey" crossorigin="anonymous" sticky-corner="none" audio-description-source="" typeof="oer:MediaObject" resource="#f94100cf-958a-b270-d6b3-606d01caa121" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org" element-visible="" source-type="youtube" lang="en" source-data="[{&quot;src&quot;:&quot;https://youtube.com/embed/videoseries&quot;,&quot;type&quot;:&quot;&quot;}]" start-time="PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"></video-player>
+<oer-tutorial-series series="item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M" playlist-title="Animating a bouncing ball Tutorial"></oer-tutorial-series>
 <h2 id="h2--947685220">Learning Objectives</h2>
 <ol>
 <li>Practice keyframe animation of translation, rotation, and scale properties.</li>

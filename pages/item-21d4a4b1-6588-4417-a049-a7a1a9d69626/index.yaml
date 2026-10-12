@@ -1,5 +1,5 @@
 id: item-21d4a4b1-6588-4417-a049-a7a1a9d69626
-indent: 0
+indent: 1
 location: pages/item-21d4a4b1-6588-4417-a049-a7a1a9d69626/index.yaml
 slug: exercises/animating-a-bouncing-ball
 order: 0
@@ -17,25 +17,33 @@ description: >-
   Become 
 metadata:
   created: 1790802192
-  updated: 1790828359
+  updated: 1791833597
   images: []
   videos: []
   overridePathauto: false
   published: true
-  pageType: exercise
+  pageType: oer:exercise
   hideInMenu: false
   tags: Blender,Animation
   locked: false
   readtime: 1
   status: ''
-  icon: courseicons:learning-objectives
-  version: ''
-  oerVersions: []
+  icon: ''
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: null
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
   oerFields:
     license: CC BY 4.0
-    aiLicense: AIUL-WA
+    aiLicense:
+      - AIUL-WA
     placeholder: false
     allowEmbed: false
+    prerequisites: []
     attachments:
       - title: Bouncing Ball Reference
         url: files/ball-bounce-reference.png
@@ -45,22 +53,18 @@ metadata:
           with descending energy. A red motion path runs through the center of
           each ball position.
   linkTarget: _self
+  oerRubrics:
+    - exercise
+  oerTutorialSeries:
+    - item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a
 content: >
 
   <p>In this exercise, level 1 students will practice keyframe animation to
   animate a bouncing ball</p>
 
-  <video-player
-  source="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"
-  title="Animating a bouncing ball Tutorial" accent-color="grey"
-  crossorigin="anonymous" sticky-corner="none" audio-description-source=""
-  typeof="oer:MediaObject" resource="#f94100cf-958a-b270-d6b3-606d01caa121"
-  prefix="oer:http://oerschema.org/ schema:http://schema.org/
-  dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
-  cc:http://creativecommons.org/ns# bib:http://bib.schema.org"
-  element-visible="" source-type="youtube" lang="en"
-  source-data="[{&quot;src&quot;:&quot;https://youtube.com/embed/videoseries&quot;,&quot;type&quot;:&quot;&quot;}]"
-  start-time="PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"></video-player>
+  <oer-tutorial-series series="item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M"
+  playlist-title="Animating a bouncing ball Tutorial"></oer-tutorial-series>
 
   <h2 id="h2--947685220">Learning Objectives</h2>
 
