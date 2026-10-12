@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837170,
+      "updated": 1791837174,
       "version": "26.8.0"
     },
     "theme": {
@@ -19282,6 +19282,40 @@
         "hideInMenu": false,
         "locked": false,
         "readtime": 1
+      }
+    },
+    {
+      "id": "item-9e211070-5a3c-45db-b0f9-099316df3b44",
+      "indent": 2,
+      "location": "pages/item-9e211070-5a3c-45db-b0f9-099316df3b44/index.html",
+      "slug": "tutorials/modeling-the-airline-chair/mirroring-the-side",
+      "order": 3,
+      "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "title": "Mirroring the side",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=r5iSQNviDJg",
+          "batch": "video-mv5pl89x",
+          "captions": "speech",
+          "duration": 416,
+          "written": true
+        },
+        "created": 1791837174,
+        "images": [],
+        "videos": [],
+        "updated": 1791837174
       }
     },
     {
