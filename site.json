@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791833598,
+      "updated": 1791833719,
       "version": "26.8.0"
     },
     "theme": {
@@ -236,7 +236,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791833597,
+        "updated": 1791833717,
         "images": [],
         "videos": [],
         "overridePathauto": false,

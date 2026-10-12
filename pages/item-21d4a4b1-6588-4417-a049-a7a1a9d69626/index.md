@@ -10,7 +10,7 @@ Learning Objectives
 Instructions
 ------------
 
-1.  Watch linked tutorials in Learning Resources to get acquainted with animation tools.
+1.  Work through the Bouncing a ball tutorials above to get to know the animation tools.
 2.  Create a project folder on your computer and save a new `.blend` file called `LASTNAME-ball-bounce.blend`.
 3.  Follow the video demonstrations to animate a bouncing ball.
     *   The duration of the animation should be at least 31 frames.

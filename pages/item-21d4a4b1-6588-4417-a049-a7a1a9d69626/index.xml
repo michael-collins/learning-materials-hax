@@ -14,7 +14,7 @@ Practice keyframe animation of translation, rotation, and scale properties.
 Become </description>
 <metadata>
 <created>1790802192</created>
-<updated>1791833597</updated>
+<updated>1791833717</updated>
 <images>
 </images>
 <videos>
@@ -78,7 +78,7 @@ Become </description>
 </ol>
 <h2 id="h2-921696709">Instructions</h2>
 <ol>
-<li>Watch linked tutorials in Learning Resources to get acquainted with animation tools.</li>
+<li>Work through the Bouncing a ball tutorials above to get to know the animation tools.</li>
 <li>Create a project folder on your computer and save a new <code>.blend</code> file called <code>LASTNAME-ball-bounce.blend</code>.</li>
 
 <li>Follow the video demonstrations to animate a bouncing ball.
