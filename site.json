@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847502,
+      "updated": 1791847504,
       "version": "26.8.0"
     },
     "theme": {
@@ -11691,7 +11691,7 @@
       "order": 1,
       "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
       "title": "Applying scale",
-      "description": "",
+      "description": "Open the UV Editing workspace, see why a checker texture stretches across the chair, and apply each object's scale so it's back to 1 before you lay out the UVs.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
