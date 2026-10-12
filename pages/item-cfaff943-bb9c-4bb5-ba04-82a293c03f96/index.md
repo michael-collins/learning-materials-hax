@@ -13,7 +13,7 @@ Instructions
 **Note:** You should have a basic understanding of Blender's interface before completing this exercise. You should also complete the exercise called **Modeling the Airline Chair** prior to completing this exercise.
 
 1.  Duplicate the texturing folder on your computer. **This will be your project folder.** Save all files to this folder.
-2.  Follow the video demonstrations to light and render the [KEM Weber Airline Chair](https://collection.cooperhewitt.org/objects/404536651/images/).
+2.  Follow the Lighting and rendering the Airline Chair tutorials above to light and render the [KEM Weber Airline Chair](https://collection.cooperhewitt.org/objects/404536651/images/).
 3.  Enable **Cycles** rendering mode.
 4.  Add a backdrop and three point lighting setup.
 5.  Configure your render camera with a pleasing focal length and compose your layout.

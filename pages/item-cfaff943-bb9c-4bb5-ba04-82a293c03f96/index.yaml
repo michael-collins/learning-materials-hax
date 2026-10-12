@@ -41,7 +41,7 @@ metadata:
   created: 1790829909
   images: []
   videos: []
-  updated: 1791848753
+  updated: 1791848757
   locked: false
   status: ''
   icon: ''
@@ -94,7 +94,8 @@ content: >
   <li>Duplicate the texturing folder on your computer. <strong>This will be your
   project folder.</strong> Save all files to this folder.</li>
 
-  <li>Follow the video demonstrations to light and render the <a
+  <li>Follow the Lighting and rendering the Airline Chair tutorials above to
+  light and render the <a
   href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber
   Airline Chair</a>.</li>
 
