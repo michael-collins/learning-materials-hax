@@ -1,0 +1,3 @@
+This series introduces keyframe animation in Blender. You'll animate a cube that rises and falls over 120 frames, a sphere that circles it twice and loops seamlessly, and a camera that keeps the cube in view. Along the way you'll set keyframes, parent objects to an empty, shape motion with curves in the Graph Editor, switch to linear interpolation, and add a Track To constraint to the camera. The last part saves the animation as a video, a playblast, so you can watch it at its real speed.
+
+You'll need Blender. The videos use Blender 2.90, so some menus look slightly different in newer versions.

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a</id>
+<indent>1</indent>
+<location>pages/item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a/index.xml</location>
+<slug>tutorials/introduction-to-animation</slug>
+<order>15</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Introduction to animation</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Beginner</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/playlist?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ</source>
+<batch>video-mv5ww95t</batch>
+<captions>none</captions>
+<kind>playlist</kind>
+</oerVideoSource>
+<created>1791849446</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791849446</updated>
+</metadata>
+<content><![CDATA[
+<p>This series introduces keyframe animation in Blender. You'll animate a cube that rises and falls over 120 frames, a sphere that circles it twice and loops seamlessly, and a camera that keeps the cube in view. Along the way you'll set keyframes, parent objects to an empty, shape motion with curves in the Graph Editor, switch to linear interpolation, and add a Track To constraint to the camera. The last part saves the animation as a video, a playblast, so you can watch it at its real speed.</p>
+<p>You'll need Blender. The videos use Blender 2.90, so some menus look slightly different in newer versions.</p>
+<oer-tutorial-series></oer-tutorial-series>]]></content>
+</item>

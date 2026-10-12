@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791848759,
+      "updated": 1791849446,
       "version": "26.8.0"
     },
     "theme": {
@@ -25341,6 +25341,39 @@
         "images": [],
         "videos": [],
         "updated": 1791848728
+      }
+    },
+    {
+      "id": "item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a",
+      "indent": 1,
+      "location": "pages/item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a/index.html",
+      "slug": "tutorials/introduction-to-animation",
+      "order": 15,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Introduction to animation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ",
+          "batch": "video-mv5ww95t",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791849446,
+        "images": [],
+        "videos": [],
+        "updated": 1791849446
       }
     },
     {
