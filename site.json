@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847520,
+      "updated": 1791847522,
       "version": "26.8.0"
     },
     "theme": {
@@ -24780,7 +24780,7 @@
       "order": 4,
       "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
       "title": "Texturing the side from a photo",
-      "description": "",
+      "description": "Cut the side of the chair out of a reference photo, warp and patch it to fit the side's UV layout in Photoshop, and apply it in Blender, with a separate wood texture for the edge banding.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
