@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837182,
+      "updated": 1791837187,
       "version": "26.8.0"
     },
     "theme": {
@@ -24929,6 +24929,40 @@
         "images": [],
         "videos": [],
         "updated": 1791837150
+      }
+    },
+    {
+      "id": "item-78e961c5-f98c-471b-a153-40fea771c290",
+      "indent": 2,
+      "location": "pages/item-78e961c5-f98c-471b-a153-40fea771c290/index.html",
+      "slug": "tutorials/modeling-the-airline-chair/adding-the-details",
+      "order": 5,
+      "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "title": "Adding the details",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=OMIJZKwDJkY",
+          "batch": "video-mv5plhy7",
+          "captions": "speech",
+          "duration": 681,
+          "written": true
+        },
+        "created": 1791837186,
+        "images": [],
+        "videos": [],
+        "updated": 1791837186
       }
     },
     {
