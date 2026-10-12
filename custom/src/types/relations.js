@@ -12,6 +12,7 @@ import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElemen
 import { versionsOf } from "../versions/versioning.js";
 import { SYSTEM_TYPE } from "./content-types.js";
 import { isRubric, rubricUsage } from "../rubrics/rubric-model.js";
+import { seriesShownBy } from "../tutorials/series-model.js";
 
 const items = () => toJS(store.manifest?.items) || [];
 
@@ -58,6 +59,8 @@ export function usedIn(pageId, types, list = items()) {
       continue;
     }
     for (const f of linkingFields(item, pageId, types)) out.push({ item, via: f.label });
+    // a tutorial series block on the page shows it
+    if (seriesShownBy(item).includes(pageId)) out.push({ item, via: "Shown in" });
   }
   // one entry per page
   const seen = new Set();

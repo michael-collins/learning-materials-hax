@@ -18,6 +18,7 @@ import { store } from "@haxtheweb/haxcms-elements/lib/core/haxcms-site-store.js"
 import { autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { parseReference } from "./parse-reference.js";
+import { seriesInHtml } from "../tutorials/series-model.js";
 import { setEditRange } from "../ui/edit-selection.js";
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -168,7 +169,9 @@ export function citedResources(root) {
 /**
  * After an editing session ends, read the page as it was saved and record
  * the Resources it cites in its metadata (oerCites), so a Resource page can
- * list the pages citing it from the outline alone (no site-wide index).
+ * list the pages citing it from the outline alone (no site-wide index),
+ * and the tutorial series its blocks show (oerTutorialSeries), for the
+ * series' "Used in".
  * Cancelled edits read back unchanged, so they record nothing.
  */
 let recording = false;
@@ -191,9 +194,11 @@ export async function recordCitations(id) {
   if (!res?.ok) return;
   const doc = new DOMParser().parseFromString(await res.text(), "text/html");
   const cites = citedResources(doc);
-  const before = item.metadata?.oerCites || [];
-  if (JSON.stringify(cites) === JSON.stringify(before)) return;
-  await saveOutline([{ ...item, metadata: { ...item.metadata, oerCites: cites }, modified: true }]);
+  // and the tutorial series its blocks show (a series' "Used in")
+  const series = seriesInHtml(doc);
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  if (same(cites, item.metadata?.oerCites || []) && same(series, item.metadata?.oerTutorialSeries || [])) return;
+  await saveOutline([{ ...item, metadata: { ...item.metadata, oerCites: cites, oerTutorialSeries: series }, modified: true }]);
 }
 
 // tidy citations whenever HAX serializes the page (its save path)

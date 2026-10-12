@@ -17,6 +17,7 @@ import { resolveLinks, isImage, fileLabel } from "./relations.js";
 import { filePreview, previewKind } from "../ui/oer-file-preview.js";
 import { inDevelopmentBadge, pathwayChipStyles } from "../pathways/pathway-model.js";
 import { projectParts, activityContext, PROJECT_TYPE } from "../projects/project-model.js";
+import { seriesParts, partContext, partVideo, duration, TUTORIAL_TYPE } from "../tutorials/series-model.js";
 import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 import { SEQUENCE_TYPE, sequenceOf, indentOf, moduleWeekLabel } from "../lms/sequence-model.js";
 import { cleanRichText } from "../ui/oer-text-editor.js";
@@ -707,6 +708,25 @@ class OerPageHeader extends LitElement {
     </section>`;
   }
 
+  // a tutorial series: its parts, numbered, with each video's length
+  _renderParts(seriesId) {
+    const parts = seriesParts(seriesId, this._allItems || []).filter((p) => store.isLoggedIn || p.item.metadata?.published !== false);
+    if (!parts.length) return "";
+    return html`<section class="block steps" aria-labelledby="parts-h">
+      <h2 id="parts-h">Parts</h2>
+      <ul role="list">
+        ${parts.map((p) => {
+          const v = partVideo(p.item);
+          return html`<li>
+            <span class="num" aria-hidden="true">${p.part}</span><span class="sr">Part ${p.part}: </span>
+            <a href="${p.item.slug}">${p.item.title}</a>
+            ${v?.duration ? html`<small>${duration(v.duration)}</small>` : ""}
+          </li>`;
+        })}
+      </ul>
+    </section>`;
+  }
+
   // a course sequence: its grade groups, then each module and what's in it
   _renderSchedule(page) {
     const seq = sequenceOf(page);
@@ -946,11 +966,15 @@ class OerPageHeader extends LitElement {
     // an activity: its place in its project; a project: its steps
     const subject = source || own;
     const step = activityContext(subject, this._allItems);
+    // a tutorial series' part: its place in the series
+    const part = partContext(subject, this._allItems);
     // a rubric page: its rubric (the same block pages show it with)
     const siteCard = snapshot ? "" : typeId === "oer:course" ? this._renderCourseSite(subject) : typeId === "oer:book" ? this._renderBookSite(subject) : "";
     const steps =
       typeId === PROJECT_TYPE
         ? this._renderSteps(subject.id)
+        : typeId === TUTORIAL_TYPE
+          ? this._renderParts(subject.id)
         : typeId === SEQUENCE_TYPE
           ? this._renderSchedule(subject)
           : typeId === RUBRIC_TYPE
@@ -971,6 +995,10 @@ class OerPageHeader extends LitElement {
           ? html`<span class="pill">Step <b>${step.step} of ${step.total}</b></span>
               ${step.stage ? html`<span class="pill">Stage <b>${step.stage}</b></span>` : ""}
               <span class="pill">Part of <a href="${step.project.slug}">${step.project.title}</a></span>`
+          : ""}
+        ${part
+          ? html`<span class="pill">Part <b>${part.part} of ${part.total}</b></span>
+              <span class="pill">Part of <a href="${part.series.slug}">${part.series.title}</a></span>`
           : ""}
         ${pills.map((f) => html`<span class="pill">${f.kind === "people" && f.name === "authors" ? "By" : f.label} <b>${this._short(f, values[f.name])}</b></span>`)}
         <span class="actions">

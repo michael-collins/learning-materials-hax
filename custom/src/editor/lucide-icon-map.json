@@ -288,5 +288,10 @@
   "oer:sparkles": "sparkles",
   "oer:upload": "upload",
   "oer:file-text": "file-text",
-  "oer:play": "play"
+  "oer:play": "play",
+  "oer:book-open": "book-open",
+  "oer:maximize": "maximize",
+  "oer:minimize": "minimize",
+  "oer:list-video": "list-video",
+  "oer:arrow-up-right": "arrow-up-right"
 }

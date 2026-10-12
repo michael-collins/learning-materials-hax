@@ -126,6 +126,12 @@ export class OerVideo extends OerMediaFigure {
     super.disconnectedCallback();
   }
 
+  updated(changed) {
+    super.updated?.(changed);
+    // a new video: the old player's "listening" no longer counts
+    if (changed.has("src")) this.__playerReady = false;
+  }
+
   _frameLoaded(e) {
     this.__playerReady = false;
     // YouTube's player only talks to a page that says it's listening
