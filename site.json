@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837153,
+      "updated": 1791837156,
       "version": "26.8.0"
     },
     "theme": {
@@ -8323,6 +8323,40 @@
         "images": [],
         "videos": [],
         "updated": 1791835493
+      }
+    },
+    {
+      "id": "item-ad7f0442-fc2d-4808-98b0-f3c60ebc2fef",
+      "indent": 2,
+      "location": "pages/item-ad7f0442-fc2d-4808-98b0-f3c60ebc2fef/index.html",
+      "slug": "tutorials/modeling-the-airline-chair/setting-up-the-reference-image",
+      "order": 0,
+      "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "title": "Setting up the reference image",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=qlVWEhwTxU0",
+          "batch": "video-mv5pkubl",
+          "captions": "speech",
+          "duration": 102,
+          "written": true
+        },
+        "created": 1791837156,
+        "images": [],
+        "videos": [],
+        "updated": 1791837156
       }
     },
     {
