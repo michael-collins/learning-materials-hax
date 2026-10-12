@@ -353,7 +353,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [DMD 400: 15-week (Collins)](https://michaelcollins.xyz/learning-materials-hax/pages/item-01092e07-8b26-4ed7-87d1-8d0ab0662c6d/index.md): 15 weeks, imported from Canvas: the schedule, assignments and grading for DMD 400.
 - [Design as Tragedy: The Rise and Fall of the Twin Towers](https://michaelcollins.xyz/learning-materials-hax/pages/item-456e9ddb-5b15-4e62-88e0-c51ffa2e8b24/index.md): Design as Tragedy: The Rise and Fall of the Twin Towers (p. 34-45) in Design and Truth by Robert GrudinPrompt In this chapter, Grudin talks about how economic tradeoffs and cultural appropriation may
 - [Digital Arts and Media Design (B.Des.)](https://michaelcollins.xyz/learning-materials-hax/pages/item-0b67e000-9bd9-4c0d-8e04-b9a7b2235e26/index.md)
-- [Motion paths and bounce interpolation](https://michaelcollins.xyz/learning-materials-hax/pages/item-c4651529-48bb-465b-ab9e-45afcd6680ef/index.md)
+- [Motion paths and bounce interpolation](https://michaelcollins.xyz/learning-materials-hax/pages/item-c4651529-48bb-465b-ab9e-45afcd6680ef/index.md): Two faster ways to animate the bouncing ball in Blender: make the ball follow a motion path, or let Bounce interpolation draw the bounces from two keyframes.
 - [Career Development in 3D](https://michaelcollins.xyz/learning-materials-hax/pages/item-c7bd4400-0902-4eed-8604-1a67d3984726/index.md)
 - [Introduction to Texturing](https://michaelcollins.xyz/learning-materials-hax/pages/item-92e2d52c-628a-4ce7-9683-9b60ae66eae6/index.md)
 - [Introduction to Texturing](https://michaelcollins.xyz/learning-materials-hax/pages/item-e312e0ac-3a4f-4b21-9249-5750fb35ce10/index.md)

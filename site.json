@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791826915,
+      "updated": 1791826917,
       "version": "26.8.0"
     },
     "theme": {
@@ -11481,7 +11481,7 @@
       "order": 1,
       "parent": "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a",
       "title": "Motion paths and bounce interpolation",
-      "description": "",
+      "description": "Two faster ways to animate the bouncing ball in Blender: make the ball follow a motion path, or let Bounce interpolation draw the bounces from two keyframes.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
