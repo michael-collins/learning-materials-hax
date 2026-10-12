@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791826910,
+      "updated": 1791826912,
       "version": "26.8.0"
     },
     "theme": {
@@ -8262,7 +8262,7 @@
       "order": 0,
       "parent": "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a",
       "title": "Keyframing and rendering a bouncing ball",
-      "description": "",
+      "description": "Animate a ball bouncing across the screen in Blender by placing it on every frame against a reference, then add squash and stretch. Give it a drawn outline and render it as a video file or as an image sequence you put together in After Effects.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
