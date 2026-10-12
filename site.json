@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849453,
+      "updated": 1791849455,
       "version": "26.8.0"
     },
     "theme": {
@@ -8435,7 +8435,7 @@
       "order": 0,
       "parent": "item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a",
       "title": "Keyframes, parenting and the Graph Editor",
-      "description": "",
+      "description": "Keyframe a cube moving up and down, parent a sphere to an empty so it circles the cube twice at a constant speed, shape the motion in the Graph Editor, and make the camera follow the cube with a Track To constraint.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
