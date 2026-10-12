@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d5310050-6caf-481d-ad67-d9e0568d1909</id>
+<indent>2</indent>
+<location>pages/item-d5310050-6caf-481d-ad67-d9e0568d1909/index.xml</location>
+<slug>tutorials/texturing-the-airline-chair/choosing-a-mesh-resolution</slug>
+<order>0</order>
+<parent>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</parent>
+<title>Choosing a mesh resolution</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Beginner</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/watch?v=7HYPpARldG4</source>
+<batch>video-mv5vqhl9</batch>
+<captions>speech</captions>
+<duration>204</duration>
+<written>true</written>
+</oerVideoSource>
+<created>1791847497</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791847497</updated>
+</metadata>
+<content><![CDATA[<p>Before you texture the Airline Chair, you need to decide how many polygons it will have, because the texture is laid out on the polygons themselves. In this short part you'll see why that decision comes first, and how to apply the <em>Subdivision Surface</em> modifier at the level you want to work with. You'll need the chair you modeled in the Modeling the Airline Chair series. The video uses Blender 2.83.</p>
+
+<oer-video id="video-7HYPpARldG4" src="https://www.youtube.com/watch?v=7HYPpARldG4" title="Texturing the Airline Chair — Part 1: Mesh Resolution" credit="Michael Collins" credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+<h2>Decide what the model is for</h2>
+<ol>
+  <li>
+    <p><strong>Think about where it will be used.</strong> <page-anchor target="#video-7HYPpARldG4" value="0">0:00</page-anchor> A low-polygon mesh, with only a few polygons, suits a game engine or real-time rendering such as VR or AR. A really polished, high-quality render, like one in an advertisement or a film, can use far more. Which one you're making changes your texturing workflow.</p>
+  </li>
+  <li>
+    <p><strong>Compare the two versions.</strong> <page-anchor target="#video-7HYPpARldG4" value="36">0:36</page-anchor> The video keeps the original model in one collection (<em>original base meshes</em>) and a high-resolution version of the same model in another. Each piece of the original still has its <em>Subdivision Surface</em> modifier, set to 3 in the viewport.</p>
+    <figure><img src="files/choosing-a-mesh-resolution-t0042.4.jpg" alt="The original Airline Chair in the 3D Viewport with a wireframe over its few, large polygons. The Outliner shows the collection original base meshes, with Cube.018 active, and its Subdivision Surface modifier is set to Render 2, Viewport 3."><figcaption><p>The original model, with its <em>Subdivision Surface</em> modifiers still live.</p></figcaption></figure>
+    <figure><img src="files/choosing-a-mesh-resolution-t0057.0.jpg" alt="The high-resolution chair: every piece is covered in a dense wireframe of small polygons. The Outliner shows Collection 3 switched on and original base meshes switched off, and the status bar reads Verts 81,822."><figcaption><p>The high-resolution version: the same model with the modifiers applied at 3.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Why the resolution comes first</h2>
+<ol>
+  <li>
+    <p><strong>Apply the modifier to make it real geometry.</strong> <page-anchor target="#video-7HYPpARldG4" value="46">0:46</page-anchor> To make the high-resolution version, select a piece of the original, and in its <em>Subdivision Surface</em> modifier click <em>Apply</em>. The video applied it with <em>Viewport</em> set to 3; lower it to 1 before you click <em>Apply</em> and you get a much more reasonable polygonal mesh <page-anchor target="#video-7HYPpARldG4" value="74">1:14</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Don't smooth after texturing.</strong> <page-anchor target="#video-7HYPpARldG4" value="88">1:28</page-anchor> The video undoes the change to explain. The texture is assigned to the shape of the polygons. If you texture the low-polygon shape and then smooth it, there are suddenly more edges, so Blender doesn't know which edge a seam belongs to: a seam you set on one edge may end up somewhere else. To avoid that, decide which resolution you're working with from the start <page-anchor target="#video-7HYPpARldG4" value="128">2:08</page-anchor>.</p>
+  </li>
+</ol>
+
+<h2>Choose a level</h2>
+<ol>
+  <li>
+    <p><strong>New to this? Use the base mesh or one level.</strong> <page-anchor target="#video-7HYPpARldG4" value="133">2:13</page-anchor> If you're not yet confident working with a lot of polygons, work with the base mesh, or apply just one level of subdivision: set <em>Viewport</em> to 1 and click <em>Apply</em>.</p>
+    <figure><img src="files/choosing-a-mesh-resolution-t0152.4.jpg" alt="Close-up of the chair's back cushion, Cube.018, with its large polygons outlined. In the Properties editor, the Subdivision Surface modifier's Viewport is set to 1 and the pointer is on the Apply button."><figcaption><p>One level of subdivision, about to be applied.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Shade it smooth and check it.</strong> <page-anchor target="#video-7HYPpARldG4" value="150">2:30</page-anchor> Select the piece, right-click and choose <em>Shade Smooth</em>, then turn off the wireframe. That's halfway decent: it will give you a pretty good render with really minimal geometry.</p>
+    <figure><img src="files/choosing-a-mesh-resolution-t0167.8.jpg" alt="The back cushion, selected and outlined in orange, now shaded smooth with the wireframe off: a soft, curved surface. Its modifier list is empty, and the status bar reads Verts 1,536."><figcaption><p>One level applied and shaded smooth: a good render from little geometry.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>For a polished render, apply level 3.</strong> <page-anchor target="#video-7HYPpARldG4" value="175">2:55</page-anchor> If you want a really polished render and smooth geometry, apply the modifier with <em>Viewport</em> set to 3. From then on you're working with all of those polygons, so you need more advanced skills in selecting polygons, edge loops and so on <page-anchor target="#video-7HYPpARldG4" value="185">3:05</page-anchor>. It's not that hard, but if you're just getting into this it may hold you up.</p>
+    <figure><img src="files/choosing-a-mesh-resolution-t0198.4.jpg" alt="The back cushion seen from the side, selected, with a dense orange wireframe of many small polygons across its curved surface. The status bar reads Verts 6,096."><figcaption><p>Three levels applied: many more polygons to select and unwrap.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Wrap-up</h2>
+<p>A texture follows the polygons it's laid out on, so choose the chair's resolution before you texture it: the base mesh or one level of subdivision if you're new to this, three levels for a polished render. Apply the <em>Subdivision Surface</em> modifier at that level, and keep working with that mesh from then on.</p>
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-7HYPpARldG4" value="0">0:00</page-anchor> Okay, so to texture this object, there's a couple things to note. Number one, you have to understand whether this is going to be a high polygon or low polygon mesh, meaning, you know, is it going to be something that has only a few polygons, something that might be in a game engine, or some sort of real-time rendering scenario like VR or AR, or is it going to be a really polished, high-quality render see in an advertisement or something in a movie because that's going to impact what you decide to do for your texturing workflow. So I have two collections here set up. So I have my original model in this collection and then I have a high poly or high resolution version of the same model.</p><p><page-anchor target="#video-7HYPpARldG4" value="56">0:56</page-anchor> so if you're wondering how I got this all I did was go to the original base mesh and we had been kind of doing this workflow all along but essentially with our subdivision modifier I just clicked apply and I clicked apply while the viewport was set to three so you could actually lower that to maybe one and click apply and then you would get a really reasonable polygonal mesh result. And so the reason that you would want to apply this before you start actually texturing, I'm just going to undo that really quickly here. And that's because the texture gets assigned to essentially the shape of the polygons. And so we, if we do texturing according to the shape of these polygons here, but then we change the shape by smoothing it, all of the sudden, you know, texture that was maybe maybe a seam that was applied to this edge here all of the sudden there's more edges so it doesn't really know which edge it's supposed to get applied to and so your seam that you painted on may be over here or it may be down here so to avoid that you actually need to decide what resolution mesh you're working with out of the gate if you were maybe just</p><p><page-anchor target="#video-7HYPpARldG4" value="135">2:15</page-anchor> getting into this and you're not feeling super confident with working with this many polygons, I would recommend that you work with maybe the base mesh or you could think about just applying one subdivision level of geometry. And so if we shade this smooth, I have to select it first here, shade smooth. Let's turn off our wireframe. So you can see that that's actually halfway decent that'll give you a pretty good render with really minimal geometry but if you are someone who maybe wants to get a really polished render and you want to work with really smooth geometry you could apply this at the subdivision level of three so if we apply that you're going to be working essentially with these polygons from here on out so you need to have a little bit more advanced knowledge of selecting polygons, edge loops, things like that.</p><p><page-anchor target="#video-7HYPpARldG4" value="196">3:16</page-anchor> It's not that hard to do, but if you're just getting into this, it might be a blocker for you to make progress.</p></div></a11y-collapse>]]></content>
+</item>

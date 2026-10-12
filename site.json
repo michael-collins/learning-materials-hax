@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791847494,
+      "updated": 1791847497,
       "version": "26.8.0"
     },
     "theme": {
@@ -8357,6 +8357,40 @@
         "images": [],
         "videos": [],
         "updated": 1791837156
+      }
+    },
+    {
+      "id": "item-d5310050-6caf-481d-ad67-d9e0568d1909",
+      "indent": 2,
+      "location": "pages/item-d5310050-6caf-481d-ad67-d9e0568d1909/index.html",
+      "slug": "tutorials/texturing-the-airline-chair/choosing-a-mesh-resolution",
+      "order": 0,
+      "parent": "item-56b58fef-c883-47a3-a0e6-0a9e6e372477",
+      "title": "Choosing a mesh resolution",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=7HYPpARldG4",
+          "batch": "video-mv5vqhl9",
+          "captions": "speech",
+          "duration": 204,
+          "written": true
+        },
+        "created": 1791847497,
+        "images": [],
+        "videos": [],
+        "updated": 1791847497
       }
     },
     {
