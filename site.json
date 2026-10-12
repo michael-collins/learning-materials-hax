@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837151,
+      "updated": 1791837153,
       "version": "26.8.0"
     },
     "theme": {
@@ -24736,7 +24736,7 @@
       "order": 12,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Modeling the Airline Chair",
-      "description": "",
+      "description": "Model Kem Weber's 1930s Airline Chair in Blender from a side photo, using polygonal modeling fundamentals: extruding, edge loops, supporting edges, Subdivision Surface and Mirror modifiers, and clean edge flow.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
