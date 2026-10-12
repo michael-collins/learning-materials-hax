@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791848737,
+      "updated": 1791848741,
       "version": "26.8.0"
     },
     "theme": {
@@ -11749,6 +11749,40 @@
         "images": [],
         "videos": [],
         "updated": 1791847502
+      }
+    },
+    {
+      "id": "item-d283fa74-8bda-45d3-8f2c-67bff3d1138f",
+      "indent": 2,
+      "location": "pages/item-d283fa74-8bda-45d3-8f2c-67bff3d1138f/index.html",
+      "slug": "tutorials/lighting-and-rendering-the-airline-chair/refining-the-lighting-and-the-leather",
+      "order": 1,
+      "parent": "item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c",
+      "title": "Refining the lighting and the leather",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=o0A0uxj-Oqo",
+          "batch": "video-mv5wh5st",
+          "captions": "speech",
+          "duration": 1316,
+          "written": true
+        },
+        "created": 1791848741,
+        "images": [],
+        "videos": [],
+        "updated": 1791848741
       }
     },
     {
