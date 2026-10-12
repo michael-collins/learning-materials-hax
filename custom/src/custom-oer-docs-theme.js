@@ -64,6 +64,7 @@ import { isSnapshot, versionsOf } from "./versions/versioning.js";
 import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
 import { learningSkin, installLearningBlocks } from "./learning-skin.js";
+import { timestampSkin, installTimestamps } from "./blocks/oer-timestamps.js";
 import { installEditorChrome } from "./editor/index.js";
 import { announce } from "./editor/announce.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
@@ -491,7 +492,9 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       themeSkinRegistered = true;
       registerShadowStyles(themeSkin);
       registerShadowStyles(learningSkin);
+      registerShadowStyles(timestampSkin);
       installLearningBlocks();
+      installTimestamps();
     }
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);

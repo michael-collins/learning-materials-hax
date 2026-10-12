@@ -287,5 +287,6 @@
   "oer:pencil": "pencil",
   "oer:sparkles": "sparkles",
   "oer:upload": "upload",
-  "oer:file-text": "file-text"
+  "oer:file-text": "file-text",
+  "oer:play": "play"
 }

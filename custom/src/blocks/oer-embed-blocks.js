@@ -103,9 +103,60 @@ export class OerVideo extends OerMediaFigure {
     return "16 / 9";
   }
 
+  // YouTube embeds take commands by postMessage (enablejsapi), for seek()
+  get _embed() {
+    const yt = youtubeEmbed(this.src);
+    if (!yt) return videoEmbed(this.src);
+    return `${yt}${yt.includes("?") ? "&" : "?"}enablejsapi=1`;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    // the player answers once it's listening; until then seek() reloads it
+    // at the time instead. Undeclared fields: HAX saves declared properties.
+    this.__onMessage = (e) => {
+      const frame = this.shadowRoot?.querySelector("iframe");
+      if (frame && e.source === frame.contentWindow) this.__playerReady = true;
+    };
+    globalThis.addEventListener("message", this.__onMessage);
+  }
+
+  disconnectedCallback() {
+    globalThis.removeEventListener("message", this.__onMessage);
+    super.disconnectedCallback();
+  }
+
+  _frameLoaded(e) {
+    this.__playerReady = false;
+    // YouTube's player only talks to a page that says it's listening
+    if (youtubeEmbed(this.src)) e.target.contentWindow?.postMessage(JSON.stringify({ event: "listening", id: this.id || "oer-video", channel: "widget" }), "*");
+  }
+
+  /** Play from a moment (seconds). Timestamps on the page call this (blocks/oer-timestamps.js). */
+  seek(seconds) {
+    const s = Math.max(0, Math.floor(Number(seconds) || 0));
+    const frame = this.shadowRoot?.querySelector("iframe");
+    const youtube = !!youtubeEmbed(this.src);
+    if (!frame || !(youtube || vimeoEmbed(this.src))) return;
+    if (this.__playerReady && frame.contentWindow) {
+      const send = (m) => frame.contentWindow.postMessage(JSON.stringify(m), "*");
+      if (youtube) {
+        send({ event: "command", func: "seekTo", args: [s, true] });
+        send({ event: "command", func: "playVideo", args: [] });
+      } else {
+        send({ method: "setCurrentTime", value: s });
+        send({ method: "play" });
+      }
+      return;
+    }
+    // not loaded yet (it loads lazily) or not listening: start it there
+    const url = this._embed;
+    frame.src = youtube ? `${url}&start=${s}&autoplay=1` : `${url}${url.includes("?") ? "&" : "?"}autoplay=1#t=${s}s`;
+  }
+
   renderMedia() {
     if (!this.src) return this.renderEmpty("video", "Paste a YouTube or Vimeo link in the block settings.");
-    return html`<iframe src="${videoEmbed(this.src)}" title="${this.title || "Video"}" allow="${ALLOW_MEDIA}" allowfullscreen loading="lazy" credentialless referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+    return html`<iframe src="${this._embed}" title="${this.title || "Video"}" allow="${ALLOW_MEDIA}" allowfullscreen loading="lazy" credentialless referrerpolicy="strict-origin-when-cross-origin" @load=${this._frameLoaded}></iframe>`;
   }
 
   static get haxProperties() {
