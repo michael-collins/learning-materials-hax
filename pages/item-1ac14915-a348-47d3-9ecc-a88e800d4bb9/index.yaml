@@ -37,7 +37,7 @@ metadata:
   created: 1790829909
   images: []
   videos: []
-  updated: 1791847524
+  updated: 1791847528
   locked: false
   status: ''
   icon: ''
@@ -96,7 +96,8 @@ content: >
 
   </li>
 
-  <li>Follow the video demonstration to create UV maps to texture the <a
+  <li>Follow the Texturing the Airline Chair tutorials above to create UV maps
+  to texture the <a
   href="https://collection.cooperhewitt.org/objects/404536651/images/">KEM Weber
   Airline Chair</a>.</li>
 

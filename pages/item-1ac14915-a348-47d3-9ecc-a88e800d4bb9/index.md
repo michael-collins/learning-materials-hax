@@ -14,7 +14,7 @@ Instructions
 
 1.  Duplicate the modeling folder on your computer. **This will be your project folder.** Save all files to this folder.
     *   If you were unable to produce a polygonal model, you can download the Airline Chair Model, and use it to complete the assignment.
-2.  Follow the video demonstration to create UV maps to texture the [KEM Weber Airline Chair](https://collection.cooperhewitt.org/objects/404536651/images/).
+2.  Follow the Texturing the Airline Chair tutorials above to create UV maps to texture the [KEM Weber Airline Chair](https://collection.cooperhewitt.org/objects/404536651/images/).
 3.  Apply the scale transform to reset each polygonal object.
 4.  Unwrap the chair’s parts’ UVs using the various methods and tools described in the tutorials.
 5.  Export a UV map for each part and save it in the project folder as **_uv-arm.jpg_**, **_uv-cushion.jpg_**_,_ etc.
