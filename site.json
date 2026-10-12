@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791837162,
+      "updated": 1791837164,
       "version": "26.8.0"
     },
     "theme": {
@@ -11623,7 +11623,7 @@
       "order": 1,
       "parent": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
       "title": "Modeling the side",
-      "description": "",
+      "description": "Model the Airline Chair's bent side piece from a single plane: block out its proportions with extruded edges and edge loops, give it thickness, and smooth it with a Subdivision Surface modifier held in shape by supporting edges.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
