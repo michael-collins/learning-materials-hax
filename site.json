@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791826898,
+      "updated": 1791826910,
       "version": "26.8.0"
     },
     "theme": {
@@ -8252,6 +8252,40 @@
         "images": [],
         "videos": [],
         "updated": 1791578330
+      }
+    },
+    {
+      "id": "item-0a6f849b-a119-4ff5-9b02-661b2642b30e",
+      "indent": 2,
+      "location": "pages/item-0a6f849b-a119-4ff5-9b02-661b2642b30e/index.html",
+      "slug": "tutorials/bouncing-a-ball/keyframing-and-rendering-a-bouncing-ball",
+      "order": 0,
+      "parent": "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a",
+      "title": "Keyframing and rendering a bouncing ball",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=rNkxPfMUuKo",
+          "batch": "video-mv5jh8s4",
+          "captions": "speech",
+          "duration": 2222,
+          "written": true
+        },
+        "created": 1791826910,
+        "images": [],
+        "videos": [],
+        "updated": 1791826910
       }
     },
     {
