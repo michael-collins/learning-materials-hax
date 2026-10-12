@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849458,
+      "updated": 1791849461,
       "version": "26.8.0"
     },
     "theme": {
@@ -11827,7 +11827,7 @@
       "order": 1,
       "parent": "item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a",
       "title": "Saving a playblast",
-      "description": "",
+      "description": "Save your animation as an MPEG-4 video straight from the viewport, a playblast, so you can watch it at its real speed without rendering it.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
