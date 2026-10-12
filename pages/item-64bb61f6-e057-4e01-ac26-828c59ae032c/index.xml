@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-64bb61f6-e057-4e01-ac26-828c59ae032c</id>
+<indent>1</indent>
+<location>pages/item-64bb61f6-e057-4e01-ac26-828c59ae032c/index.xml</location>
+<slug>tutorials/modeling-the-airline-chair</slug>
+<order>12</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Modeling the Airline Chair</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Beginner</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/playlist?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f</source>
+<batch>video-mv5pkq8u</batch>
+<captions>none</captions>
+<kind>playlist</kind>
+</oerVideoSource>
+<created>1791837150</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791837150</updated>
+</metadata>
+<content><![CDATA[
+<p>The Airline Chair, designed by Kem Weber in the 1930s, is made of a few simple pieces: two bent wooden sides, the braces and brackets that hold them, two leather cushions and some small details. In these parts you'll model it in Blender from a side photo, one piece at a time. Along the way you'll practise the fundamentals of polygonal modeling: extruding edges and faces, adding edge loops, moving, rotating and scaling vertices, edges and faces, supporting edges under a <em>Subdivision Surface</em> modifier, mirroring and duplicating, and keeping the edge flow clean. The last part shows how to find and fix problems in a model.</p>
+<p>You'll need Blender and the side reference image of the chair linked in the exercise. The videos use Blender 2.83 (2.90 for the last part), so some menus look slightly different in newer versions.</p>
+<oer-tutorial-series></oer-tutorial-series>]]></content>
+</item>

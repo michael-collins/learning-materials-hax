@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791835514,
+      "updated": 1791837151,
       "version": "26.8.0"
     },
     "theme": {
@@ -24726,6 +24726,39 @@
         "images": [],
         "videos": [],
         "updated": 1791835487
+      }
+    },
+    {
+      "id": "item-64bb61f6-e057-4e01-ac26-828c59ae032c",
+      "indent": 1,
+      "location": "pages/item-64bb61f6-e057-4e01-ac26-828c59ae032c/index.html",
+      "slug": "tutorials/modeling-the-airline-chair",
+      "order": 12,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Modeling the Airline Chair",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f",
+          "batch": "video-mv5pkq8u",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791837150,
+        "images": [],
+        "videos": [],
+        "updated": 1791837150
       }
     },
     {
