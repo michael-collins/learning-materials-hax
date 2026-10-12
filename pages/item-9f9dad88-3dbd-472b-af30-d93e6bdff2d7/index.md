@@ -13,7 +13,7 @@ Instructions
 **Note:** You should have a basic understanding Blender's interface to complete this exercise.
 
 1.  Create a folder on your computer. **This will be your project folder.** Save all files to this folder.
-2.  Follow the six-part video demonstration to model the [KEM Weber Airline Chair](https://collection.cooperhewitt.org/objects/404536651/images/). Skills to practice include:
+2.  Follow the Modeling the Airline Chair tutorials above to model the [KEM Weber Airline Chair](https://collection.cooperhewitt.org/objects/404536651/images/). Skills to practice include:
     *   polygonal edge flow
     *   extruding polygon faces
     *   inserting edge loops
