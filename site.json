@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850862,
+      "updated": 1791850864,
       "version": "26.8.0"
     },
     "theme": {
@@ -8469,7 +8469,7 @@
       "order": 0,
       "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
       "title": "Importing the base mesh",
-      "description": "",
+      "description": "Import the base mesh FBX into Blender, set its scale back to 1, and see why it needs more geometry before it can be rigged.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
