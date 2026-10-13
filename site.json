@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850870,
+      "updated": 1791850874,
       "version": "26.8.0"
     },
     "theme": {
@@ -17741,6 +17741,40 @@
         "images": [],
         "videos": [],
         "updated": 1791848748
+      }
+    },
+    {
+      "id": "item-35f9cddf-e3a2-4889-b4cc-d434787844d2",
+      "indent": 2,
+      "location": "pages/item-35f9cddf-e3a2-4889-b4cc-d434787844d2/index.html",
+      "slug": "tutorials/rigging-a-character/adding-knees-and-elbows",
+      "order": 2,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Adding knees and elbows",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=SAXMOmAArAw",
+          "batch": "video-mv5xqvge",
+          "captions": "speech",
+          "duration": 434,
+          "written": true
+        },
+        "created": 1791850874,
+        "images": [],
+        "videos": [],
+        "updated": 1791850874
       }
     },
     {
