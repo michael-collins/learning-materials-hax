@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902913,
+      "updated": 1791902916,
       "version": "26.8.0"
     },
     "theme": {
@@ -20195,7 +20195,7 @@
       "order": 3,
       "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
       "title": "Blender Hard-Surface Modeling Fundamentals #b3d #tutorial",
-      "description": "",
+      "description": "A video by CG Boost, shown here from YouTube.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
