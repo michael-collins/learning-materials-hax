@@ -1,0 +1,34 @@
+{
+  "id": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
+  "indent": 1,
+  "location": "pages/item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc/index.json",
+  "slug": "tutorials/creating-3d-scene-layouts-in-blender",
+  "order": 19,
+  "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+  "title": "Creating 3D scene layouts in Blender",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "published": false,
+    "oerFields": {
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": ""
+        }
+      ],
+      "difficulty": "Intermediate"
+    },
+    "oerVideoSource": {
+      "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrWRqmkePyLUhIndLHarj7H-",
+      "batch": "video-mv60ijia",
+      "captions": "none",
+      "kind": "playlist"
+    },
+    "created": 1791855524,
+    "images": [],
+    "videos": [],
+    "updated": 1791855524
+  },
+  "content": "\n<p>A layout, or animatic, is a rough version of your animation that you make before modeling details, materials and final renders, so you can judge the shots, the camera work, the pacing and the sound early, while they're still easy to change. This series makes one for a 20-second scene of a dog beamed up by a flying saucer. You'll organize a project folder, block in the animation with a few keyframes, set up named cameras and a scene for each shot, render the shots quickly from Blender's viewport, then cut them together in After Effects with sound effects, music, a title and credits, and export the result. The last part shows how to replace the animatic's frames with final renders without redoing the edit. Part 6 shows a simpler way to cut between cameras inside Blender.</p>\n<p>You'll need a storyboard that sets out your shots, what happens in each and roughly how long they last, and a scene in Blender with its models in place. For editing you'll need Adobe After Effects and Media Encoder, and sounds you're allowed to use, such as Creative Commons or public domain recordings. The videos use Blender 2.91 and After Effects 2020, so some menus look different in newer versions.</p>\n<oer-tutorial-series></oer-tutorial-series>"
+}
