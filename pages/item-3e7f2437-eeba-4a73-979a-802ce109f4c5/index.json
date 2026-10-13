@@ -1,0 +1,29 @@
+{
+  "id": "item-3e7f2437-eeba-4a73-979a-802ce109f4c5",
+  "indent": 2,
+  "location": "pages/item-3e7f2437-eeba-4a73-979a-802ce109f4c5/index.json",
+  "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects/get-good-at-blender-practical-challenges-to-improve-you-skills",
+  "order": 1,
+  "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
+  "title": "Get Good at Blender - Practical challenges to improve you skills!",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "published": false,
+    "oerFields": {},
+    "oerVideoSource": {
+      "source": "https://www.youtube.com/watch?v=V-NF_m1RMaw",
+      "batch": "video-mv6sq19i",
+      "captions": "none",
+      "duration": 712,
+      "written": false,
+      "by": "Grant Abbitt (Gabbitt)",
+      "byUrl": "https://www.youtube.com/@grabbitt"
+    },
+    "created": 1791902903,
+    "images": [],
+    "videos": [],
+    "updated": 1791902903
+  },
+  "content": "<oer-video id=\"video-V-NF_m1RMaw\" src=\"https://www.youtube.com/watch?v=V-NF_m1RMaw\" title=\"Get Good at Blender - Practical challenges to improve you skills!\" credit=\"Grant Abbitt (Gabbitt)\" credit-url=\"https://www.youtube.com/@grabbitt\" license=\"All Rights Reserved\"></oer-video>"
+}
