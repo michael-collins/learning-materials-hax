@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791854004,
+      "updated": 1791854008,
       "version": "26.8.0"
     },
     "theme": {
@@ -12021,6 +12021,40 @@
         "images": [],
         "videos": [],
         "updated": 1791852814
+      }
+    },
+    {
+      "id": "item-5688f898-8b11-4e4d-8452-db454a1d7a10",
+      "indent": 2,
+      "location": "pages/item-5688f898-8b11-4e4d-8452-db454a1d7a10/index.html",
+      "slug": "tutorials/getting-started-with-playcanvas/hosting-your-scene-on-github-pages",
+      "order": 1,
+      "parent": "item-93e4b32e-6810-4277-a3cd-aa94c7519a0b",
+      "title": "Hosting your scene on GitHub Pages",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=3r7Z79HQltw",
+          "batch": "video-mv5zm1em",
+          "captions": "speech",
+          "duration": 373,
+          "written": true
+        },
+        "created": 1791854008,
+        "images": [],
+        "videos": [],
+        "updated": 1791854008
       }
     },
     {
