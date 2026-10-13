@@ -5556,4 +5556,10 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/creating-3d-scene-layouts-in-blender</loc>
+    <lastmod>2026-10-13T01:38:44.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
