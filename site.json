@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791849470,
+      "updated": 1791850856,
       "version": "26.8.0"
     },
     "theme": {
@@ -25442,6 +25442,39 @@
         "images": [],
         "videos": [],
         "updated": 1791849446
+      }
+    },
+    {
+      "id": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "indent": 1,
+      "location": "pages/item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2/index.html",
+      "slug": "tutorials/rigging-a-character",
+      "order": 16,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Rigging a character",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ",
+          "batch": "video-mv5xqhf3",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791850856,
+        "images": [],
+        "videos": [],
+        "updated": 1791850856
       }
     },
     {
