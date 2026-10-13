@@ -10,7 +10,7 @@
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>project</pageType>
+<pageType>oer:project</pageType>
 <oerSource>projects/you-dont-see-that-everyday-object-posters</oerSource>
 <tags>Blender</tags>
 <oerFields>
@@ -18,12 +18,18 @@
 <image>files/object-poster-banner-mmabf552.png</image>
 <imageAlt>Banner image of posters depicting rendered objects.</imageAlt>
 <courses>
-<item>Dart 303</item>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-CD, AIUL-DP-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-CD</item>
+<item>AIUL-DP-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <publishEmbed>true</publishEmbed>
 <attachments>
@@ -34,13 +40,36 @@
 <alt>A diagram of the project production process including pre-viz, intention statement, craft, work statement, and critique.</alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
 <created>1790829909</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1790829909</updated>
+<updated>1791902925</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>project</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>For this project, you will produce 3D rendered poster series of objects that you encounter every day, but augmented in such a way changing their nature including material qualities, operation or use, or the system or environmental context.</p>
 <p>To explore these concepts, we delve into the philosophical realm of objects and their existence, considering how we interact with them in both a functional and perceptual sense. <a href="https://www.merriam-webster.com/dictionary/ontology"><em><strong>Ontology</strong></em></a>, the study of being, invites us to question not just what objects <em>are</em> but <em>how</em> they are—how they exist independently of human utility and purpose. By distorting or modifying the object, you are encouraged to explore the essence of its being outside of the roles assigned to it by human need or desire.</p>
@@ -132,7 +161,7 @@
 <li>Participate in work critique with peers.</li>
 </ol>
 <h2>Tutorial</h2>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" title="Project Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" playlist-title="Project Tutorial"></oer-tutorial-series>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
 ]]></content>

@@ -8,7 +8,7 @@ title: You don't see that everyday objects
 description: ''
 metadata:
   published: true
-  pageType: project
+  pageType: oer:project
   oerSource: projects/you-dont-see-that-everyday-objects
   tags: Blender
   oerFields:
@@ -16,11 +16,15 @@ metadata:
     image: files/rec67LSQtsxBgHxxE_image_youdontseethateveryday-banner-comp2.jpg
     imageAlt: youdontseethateveryday-banner-comp2.jpg
     courses:
-      - Dart 303
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
     license: CC BY 4.0
-    aiLicense: AIUL-WA, AIUL-CD, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-WA
+      - AIUL-CD
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     publishEmbed: true
     attachments:
@@ -35,19 +39,35 @@ metadata:
           files/recAhknW8gYC34qZr_attachment_dart303-project-statement-worksheet-1.docx
         description: Work statement worksheet
         alt: Work statement worksheet
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
   created: 1790829909
   images: []
   videos: []
-  updated: 1790829909
+  updated: 1791902923
+  locked: false
+  status: ''
+  icon: ''
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: null
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - project
+  oerTutorialSeries:
+    - item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf
 content: >
   <p>For this project, you will produce 3D rendered images of products and other
   objects you experience every day, but with one slight difference. You will
   augment the object in such a way to inhibit its utility, material qualities,
-  or its system or environmental context.
+  or its system or environmental context.</p>
 
-  &lt;br&gt;&lt;br&gt;
-
-  To explore these concepts, we delve into the philosophical realm of objects
+  <p>To explore these concepts, we delve into the philosophical realm of objects
   and their existence, considering how we interact with them in both a
   functional and perceptual sense. <strong><em><a
   href="https://www.merriam-webster.com/dictionary/ontology">Ontology</a></em></strong>,
@@ -55,23 +75,17 @@ content: >
   but <em>how</em> they are—how they exist independently of human utility and
   purpose. By distorting or modifying the object, you are encouraged to explore
   the essence of its being outside of the roles assigned to it by human need or
-  desire.
+  desire.</p>
 
-  &lt;br&gt;&lt;br&gt;
-
-  We will also touch on the concept of hyper-objects—entities that transcend our
-  immediate comprehension and experience, such as climate change or the
+  <p>We will also touch on the concept of hyper-objects—entities that transcend
+  our immediate comprehension and experience, such as climate change or the
   internet. These phenomena challenge our usual boundaries of time, space, and
   perception. As you alter your chosen object, consider whether it can become
   something more than a mere item of daily use. Can its altered form push it
   into a new realm of being, perhaps even taking on characteristics of a
-  hyper-object that defies easy understanding?
+  hyper-object that defies easy understanding?</p>
 
-  &lt;br&gt;&lt;br&gt;
-
-  <strong>Further reading:</strong>
-
-  &lt;br&gt;&lt;br&gt;</p>
+  <p><strong>Further reading:</strong></p>
 
   <ol>
 
@@ -185,9 +199,7 @@ content: >
 
   <li>Short one sentence description of what you intend to make.</li>
 
-  <li>Upload this in an MS Word&nbsp;<code>doc</code>&nbsp;format.
-
-  &lt;br&gt;&lt;br&gt;</li>
+  <li>Upload this in an MS Word&nbsp;<code>doc</code>&nbsp;format.</li>
 
   </ul>
 
@@ -204,9 +216,7 @@ content: >
   <li>Post your screenshots to the&nbsp;<strong>Project
   updates</strong>&nbsp;discussion thread.</li>
 
-  <li>Meet with instructor if needed.
-
-  &lt;br&gt;&lt;br&gt;</li>
+  <li>Meet with instructor if needed.</li>
 
   </ol>
 
@@ -216,9 +226,7 @@ content: >
   not a journal entry, where you might feel compelled to complain about problems
   you’ve had with software, or that it didn’t turn out how you wanted. Instead,
   imagine this is being printed in a magazine, or put on the side of a gallery.
-  What do you want your viewers to come away with?
-
-  &lt;br&gt;&lt;br&gt;</p>
+  What do you want your viewers to come away with?</p>
 
   <p><strong>Include the following to create a clear work
   statement:</strong></p>
@@ -302,9 +310,7 @@ content: >
 
   </ol>
 
-  <p>&lt;br&gt;&lt;br&gt;
-
-  <strong>Upload work (.zip):</strong></p>
+  <p><strong>Upload work (.zip):</strong></p>
 
   <ol>
 
@@ -379,9 +385,9 @@ content: >
 
   <h2>Tutorial</h2>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk"
-  title="Project Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk"
+  playlist-title="Project Tutorial"></oer-tutorial-series>
 
   <h2>Grading Rubric</h2>
 

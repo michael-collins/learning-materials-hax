@@ -8,7 +8,7 @@ title: You don't see that everyday object posters
 description: ''
 metadata:
   published: true
-  pageType: project
+  pageType: oer:project
   oerSource: projects/you-dont-see-that-everyday-object-posters
   tags: Blender
   oerFields:
@@ -16,11 +16,14 @@ metadata:
     image: files/object-poster-banner-mmabf552.png
     imageAlt: Banner image of posters depicting rendered objects.
     courses:
-      - Dart 303
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
     license: CC BY 4.0
-    aiLicense: AIUL-CD, AIUL-DP-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-CD
+      - AIUL-DP-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     publishEmbed: true
     attachments:
@@ -30,10 +33,25 @@ metadata:
         alt: >-
           A diagram of the project production process including pre-viz,
           intention statement, craft, work statement, and critique.
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
   created: 1790829909
   images: []
   videos: []
-  updated: 1790829909
+  updated: 1791902925
+  locked: false
+  status: ''
+  icon: ''
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - project
+  oerTutorialSeries:
+    - item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf
 content: >
   <p>For this project, you will produce 3D rendered poster series of objects
   that you encounter every day, but augmented in such a way changing their
@@ -294,9 +312,9 @@ content: >
 
   <h2>Tutorial</h2>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk"
-  title="Project Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk"
+  playlist-title="Project Tutorial"></oer-tutorial-series>
 
   <h2>Grading Rubric</h2>
 
