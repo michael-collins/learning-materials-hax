@@ -720,6 +720,7 @@ class OerPageHeader extends LitElement {
           return html`<li>
             <span class="num" aria-hidden="true">${p.part}</span><span class="sr">Part ${p.part}: </span>
             <a href="${p.item.slug}">${p.item.title}</a>
+            ${p.item.metadata?.oerVideoSource?.by ? html`<small>by ${p.item.metadata.oerVideoSource.by}</small>` : ""}
             ${v?.duration ? html`<small>${duration(v.duration)}</small>` : ""}
           </li>`;
         })}

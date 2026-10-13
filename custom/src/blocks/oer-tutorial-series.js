@@ -24,7 +24,9 @@
  * DOM, which HAX would save into the page. Its own copy of the video is left
  * out, its timestamps play the block's video, and its headings move down
  * two levels (the series' name is this block's h2, the part's title h3).
- * A part with nothing written yet still plays ("Video only").
+ * A part with nothing written yet still plays ("Video only"); someone
+ * else's video in the series plays credited to them ("by Zha Art"), with
+ * no write-up (metadata.oerVideoSource.by, from nu-hax video-series-save).
  * @element oer-tutorial-series
  */
 import { html, css, unsafeCSS, LitElement } from "../lit.js";
@@ -442,6 +444,8 @@ export class OerTutorialSeries extends LitElement {
     const reading = this.__full || this.__open;
     const layout = this.__full ? "two" : this.__open ? (this.__stack ? "stack" : "two") : "one";
     const n = this.__current;
+    const by = part.item.metadata?.oerVideoSource?.by;
+    const byUrl = part.item.metadata?.oerVideoSource?.byUrl;
     return html`<section class="frame ${this.__full ? "full" : ""}" style="${this.__wide && !this.__full ? this.__wide : ""}" aria-labelledby="series-h">
       <div class="bar">
         <div class="name">
@@ -470,12 +474,13 @@ export class OerTutorialSeries extends LitElement {
           <ol class="playlist" aria-label="Parts of ${series.title}">
             ${list.map((p, i) => {
               const v = partVideo(p.item);
+              const by = p.item.metadata?.oerVideoSource?.by;
               return html`<li>
                 <button ${editorControl()} aria-current="${i === n ? "true" : "false"}" @click="${() => this._choose(i, true)}">
                   <span class="num">${i === n ? lucide("oer:play") : p.part}</span>
-                  <span class="t">${p.item.title}</span>
+                  <span class="t">${p.item.title}${by ? html`<small>by ${by}</small>` : ""}</span>
                   ${p.item.metadata?.published === false ? html`<span class="chip">Draft</span>` : ""}
-                  ${p.item.metadata?.oerVideoSource?.written === false ? html`<span class="chip">Video only</span>` : ""}
+                  ${!by && p.item.metadata?.oerVideoSource?.written === false ? html`<span class="chip">Video only</span>` : ""}
                   <span class="dur">${v?.duration ? duration(v.duration) : ""}</span>
                 </button>
               </li>`;
@@ -487,11 +492,17 @@ export class OerTutorialSeries extends LitElement {
               <h3 id="part-h">Part ${part.part}: ${part.item.title}</h3>
               ${record === "loading" || record === undefined ? html`<p class="muted">Loading the written tutorial…</p>` : ""}
               ${record === "failed" ? html`<p class="muted">The written tutorial couldn't be loaded. <a href="${part.item.slug}">Open its page</a> instead.</p>` : ""}
-              ${typeof record === "object" && !record.written
-                ? html`<p class="muted">Part ${part.part} doesn't have a written tutorial yet: watch the video.</p>`
-                : ""}
+              ${by
+                ? html`<p class="muted">A video by ${byUrl ? html`<a href="${byUrl}" target="_blank" rel="noopener">${by}</a>` : by}, shown here from YouTube. It doesn't have a written tutorial.</p>`
+                : typeof record === "object" && !record.written
+                  ? html`<p class="muted">Part ${part.part} doesn't have a written tutorial yet: watch the video.</p>`
+                  : ""}
               <div class="content" @click="${this._onContentClick}"></div>
-              <p class="open"><a href="${part.item.slug}">Open the tutorial page${lucide("oer:arrow-up-right")}</a></p>
+              ${by
+                ? video
+                  ? html`<p class="open"><a href="${video}" target="_blank" rel="noopener">Watch it on YouTube${lucide("oer:arrow-up-right")}</a></p>`
+                  : ""
+                : html`<p class="open"><a href="${part.item.slug}">Open the tutorial page${lucide("oer:arrow-up-right")}</a></p>`}
             </section>`
           : ""}
       </div>
@@ -710,6 +721,12 @@ export class OerTutorialSeries extends LitElement {
         .t {
           flex: 1;
           min-width: 0;
+        }
+        .t small {
+          display: block;
+          font-size: 0.75rem;
+          font-weight: 400;
+          color: var(--muted-foreground);
         }
         .dur {
           flex: none;
