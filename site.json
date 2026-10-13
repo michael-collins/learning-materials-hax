@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855553,
+      "updated": 1791855555,
       "version": "26.8.0"
     },
     "theme": {
@@ -25432,7 +25432,7 @@
       "order": 4,
       "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
       "title": "Rendering the viewport to image sequences",
-      "description": "",
+      "description": "Give each scene an output folder named like the scene, burn the frame number and camera into the images, and render every shot as a quick viewport animation.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
