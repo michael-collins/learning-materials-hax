@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791852805,
+      "updated": 1791852808,
       "version": "26.8.0"
     },
     "theme": {
@@ -8503,7 +8503,7 @@
       "order": 0,
       "parent": "item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c",
       "title": "Introduction to PBR materials",
-      "description": "",
+      "description": "See how Blender's Principled BSDF makes physically based materials (rough, metallic, coated, glass, subsurface and glowing), apply a downloaded PBR texture pack with Node Wrangler, and light a scene with a sky texture or an HDRI.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
