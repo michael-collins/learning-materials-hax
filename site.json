@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850897,
+      "updated": 1791850901,
       "version": "26.8.0"
     },
     "theme": {
@@ -25679,6 +25679,40 @@
         "images": [],
         "videos": [],
         "updated": 1791850894
+      }
+    },
+    {
+      "id": "item-a2e3ad34-add0-42bf-a18d-ca1218582c51",
+      "indent": 2,
+      "location": "pages/item-a2e3ad34-add0-42bf-a18d-ca1218582c51/index.html",
+      "slug": "tutorials/rigging-a-character/posing-with-ik-constraints",
+      "order": 6,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Posing with IK constraints",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=flBsgjlDYfk",
+          "batch": "video-mv5xrg5o",
+          "captions": "speech",
+          "duration": 1549,
+          "written": true
+        },
+        "created": 1791850901,
+        "images": [],
+        "videos": [],
+        "updated": 1791850901
       }
     },
     {
