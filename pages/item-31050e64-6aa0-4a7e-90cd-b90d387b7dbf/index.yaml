@@ -1,0 +1,39 @@
+id: item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf
+indent: 1
+location: pages/item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf/index.yaml
+slug: tutorials/reference-modeling-and-lighting-for-everyday-objects
+order: 21
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: Reference, modeling and lighting for everyday objects
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Intermediate
+  oerVideoSource:
+    source: https://www.youtube.com/playlist?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk
+    batch: video-mv6spt6n
+    captions: none
+    kind: playlist
+  created: 1791902893
+  images: []
+  videos: []
+  updated: 1791902893
+content: >-
+
+  <p>This series helps you make 3D rendered images of everyday objects:
+  gathering reference, then modeling and lighting in Blender. Part 1 shows how
+  to collect your reference images on one board in PureRef, which you can keep
+  in view while you work and export as a single image to hand in. The other four
+  parts are videos by other creators, shown here from YouTube: Grant Abbitt's
+  practical challenges to improve your Blender skills (part 2), hard-surface
+  modeling tricks and fundamentals in Blender by CG Boost (parts 3 and 4), and
+  modern lighting techniques in Blender by Ducky 3D (part 5).</p>
+
+  <p>You'll need PureRef, which is free for personal use, and Blender.</p>
+
+  <oer-tutorial-series></oer-tutorial-series>

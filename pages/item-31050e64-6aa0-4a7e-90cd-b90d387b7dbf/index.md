@@ -1,0 +1,3 @@
+This series helps you make 3D rendered images of everyday objects: gathering reference, then modeling and lighting in Blender. Part 1 shows how to collect your reference images on one board in PureRef, which you can keep in view while you work and export as a single image to hand in. The other four parts are videos by other creators, shown here from YouTube: Grant Abbitt's practical challenges to improve your Blender skills (part 2), hard-surface modeling tricks and fundamentals in Blender by CG Boost (parts 3 and 4), and modern lighting techniques in Blender by Ducky 3D (part 5).
+
+You'll need PureRef, which is free for personal use, and Blender.

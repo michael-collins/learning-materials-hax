@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902302,
+      "updated": 1791902893,
       "version": "26.8.0"
     },
     "theme": {
@@ -26318,6 +26318,39 @@
         "images": [],
         "videos": [],
         "updated": 1791902267
+      }
+    },
+    {
+      "id": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
+      "indent": 1,
+      "location": "pages/item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf/index.html",
+      "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects",
+      "order": 21,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Reference, modeling and lighting for everyday objects",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk",
+          "batch": "video-mv6spt6n",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791902893,
+        "images": [],
+        "videos": [],
+        "updated": 1791902893
       }
     },
     {
