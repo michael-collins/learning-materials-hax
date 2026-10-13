@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791854008,
+      "updated": 1791854010,
       "version": "26.8.0"
     },
     "theme": {
@@ -12031,7 +12031,7 @@
       "order": 1,
       "parent": "item-93e4b32e-6810-4277-a3cd-aa94c7519a0b",
       "title": "Hosting your scene on GitHub Pages",
-      "description": "",
+      "description": "Download a build of your PlayCanvas scene and host it on GitHub Pages, so anyone can play it from a link.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
