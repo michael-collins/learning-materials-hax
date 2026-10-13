@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855541,
+      "updated": 1791855544,
       "version": "26.8.0"
     },
     "theme": {
@@ -17989,7 +17989,7 @@
       "order": 2,
       "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
       "title": "A tour of the layout scene",
-      "description": "",
+      "description": "Look around the animatic's Blender scene to see how it's built for a layout: real-world scale, lightweight trees and background cards, blocked-in animation, keyframed visibility, named cameras, and scenes named after the renders they make.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
