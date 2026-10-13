@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-14701933-314a-4536-b112-f0068c9a3a69</id>
+<indent>2</indent>
+<location>pages/item-14701933-314a-4536-b112-f0068c9a3a69/index.xml</location>
+<slug>tutorials/procedural-texture-animations/master-stylized-animated-water-in-3d-tutorial</slug>
+<order>0</order>
+<parent>item-fc1426b4-1e8b-4bad-966f-a76de4f561e2</parent>
+<title>Master Stylized Animated Water in 3D (tutorial)</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/watch?v=25kwDu3OPmM</source>
+<batch>video-mv6scie6</batch>
+<captions>none</captions>
+<duration>2046</duration>
+<written>false</written>
+<by>Zha Art</by>
+<byUrl>https://www.youtube.com/@crzyzhaa</byUrl>
+</oerVideoSource>
+<created>1791902272</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791902272</updated>
+</metadata>
+<content><![CDATA[<oer-video id="video-25kwDu3OPmM" src="https://www.youtube.com/watch?v=25kwDu3OPmM" title="Master Stylized Animated Water in 3D (tutorial)" credit="Zha Art" credit-url="https://www.youtube.com/@crzyzhaa" license="All Rights Reserved"></oer-video>]]></content>
+</item>

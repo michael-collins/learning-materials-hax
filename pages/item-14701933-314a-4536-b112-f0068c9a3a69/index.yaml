@@ -1,0 +1,31 @@
+id: item-14701933-314a-4536-b112-f0068c9a3a69
+indent: 2
+location: pages/item-14701933-314a-4536-b112-f0068c9a3a69/index.yaml
+slug: >-
+  tutorials/procedural-texture-animations/master-stylized-animated-water-in-3d-tutorial
+order: 0
+parent: item-fc1426b4-1e8b-4bad-966f-a76de4f561e2
+title: Master Stylized Animated Water in 3D (tutorial)
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields: {}
+  oerVideoSource:
+    source: https://www.youtube.com/watch?v=25kwDu3OPmM
+    batch: video-mv6scie6
+    captions: none
+    duration: 2046
+    written: false
+    by: Zha Art
+    byUrl: https://www.youtube.com/@crzyzhaa
+  created: 1791902272
+  images: []
+  videos: []
+  updated: 1791902272
+content: >-
+  <oer-video id="video-25kwDu3OPmM"
+  src="https://www.youtube.com/watch?v=25kwDu3OPmM" title="Master Stylized
+  Animated Water in 3D (tutorial)" credit="Zha Art"
+  credit-url="https://www.youtube.com/@crzyzhaa" license="All Rights
+  Reserved"></oer-video>
