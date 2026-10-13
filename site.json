@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902893,
+      "updated": 1791902895,
       "version": "26.8.0"
     },
     "theme": {
@@ -26328,7 +26328,7 @@
       "order": 21,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Reference, modeling and lighting for everyday objects",
-      "description": "",
+      "description": "Tutorials for making 3D rendered images of everyday objects: collecting reference images in PureRef, then videos by Grant Abbitt, CG Boost and Ducky 3D on practising Blender, hard-surface modeling and lighting.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
