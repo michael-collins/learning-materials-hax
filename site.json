@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850901,
+      "updated": 1791850904,
       "version": "26.8.0"
     },
     "theme": {
@@ -25689,7 +25689,7 @@
       "order": 6,
       "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
       "title": "Posing with IK constraints",
-      "description": "",
+      "description": "Add Inverse Kinematics constraints with targets and pole targets to the legs and arms, make the feet and hands follow their targets with Copy Rotation, then pose the character sitting.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
