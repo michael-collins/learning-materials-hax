@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791853995,
+      "updated": 1791853998,
       "version": "26.8.0"
     },
     "theme": {
@@ -25824,7 +25824,7 @@
       "order": 18,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Getting started with PlayCanvas",
-      "description": "",
+      "description": "Bring models from Blender into PlayCanvas, make a scene you can walk around in first person, and put it online with GitHub Pages so anyone can play it from a link.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
