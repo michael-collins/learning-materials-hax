@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791852808,
+      "updated": 1791852814,
       "version": "26.8.0"
     },
     "theme": {
@@ -11953,6 +11953,40 @@
         "images": [],
         "videos": [],
         "updated": 1791850868
+      }
+    },
+    {
+      "id": "item-d878e35a-8587-4267-82a0-1160b700f981",
+      "indent": 2,
+      "location": "pages/item-d878e35a-8587-4267-82a0-1160b700f981/index.html",
+      "slug": "tutorials/sculpture-garden-with-pbr-materials/making-the-sculpture-garden",
+      "order": 1,
+      "parent": "item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c",
+      "title": "Making the sculpture garden",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=X9226_ttvwo",
+          "batch": "video-mv5ywg9v",
+          "captions": "speech",
+          "duration": 7088,
+          "written": true
+        },
+        "created": 1791852814,
+        "images": [],
+        "videos": [],
+        "updated": 1791852814
       }
     },
     {
