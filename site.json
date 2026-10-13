@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902918,
+      "updated": 1791902921,
       "version": "26.8.0"
     },
     "theme": {
@@ -25646,7 +25646,7 @@
       "order": 4,
       "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
       "title": "Modern Lighting Techniques in Blender",
-      "description": "",
+      "description": "A video by Ducky 3D, shown here from YouTube.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
