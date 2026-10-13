@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/animated-textures</loc>
-    <lastmod>2026-10-13T16:54:14.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:26.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-modeling</loc>
-    <lastmod>2026-10-07T20:19:31.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-texturing</loc>
-    <lastmod>2026-10-07T20:20:19.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -92,13 +92,13 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-the-airline-chair</loc>
-    <lastmod>2026-10-12T20:33:32.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:30.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-cameras-lighting-and-rendering</loc>
-    <lastmod>2026-10-07T20:20:33.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:33.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-room</loc>
-    <lastmod>2026-10-08T15:09:10.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:35.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/texturing-the-airline-chair</loc>
-    <lastmod>2026-10-12T23:25:28.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/texturing-a-room</loc>
-    <lastmod>2026-10-08T15:09:12.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/lighting-and-rendering-the-airline-chair</loc>
-    <lastmod>2026-10-12T23:45:57.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/rendering-a-room</loc>
-    <lastmod>2026-10-08T15:09:13.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:46.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-low-poly-animal-and-introduction-to-particles</loc>
-    <lastmod>2026-10-08T15:09:14.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:49.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/low-poly-non-photorealistic-rendering</loc>
-    <lastmod>2026-10-08T15:09:15.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -236,7 +236,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-random-objects</loc>
-    <lastmod>2026-10-08T15:09:15.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -248,7 +248,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-and-sculpting-a-sea-creature</loc>
-    <lastmod>2026-10-08T15:09:17.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -260,13 +260,13 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/texturing-random-objects</loc>
-    <lastmod>2026-10-08T15:09:18.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:58.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/sculpting-retopo-and-texturing</loc>
-    <lastmod>2026-10-08T15:09:19.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:00.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1370,7 +1370,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/lectures/introduction-to-animation</loc>
-    <lastmod>2026-10-05T20:24:09.000Z</lastmod>
+    <lastmod>2026-10-13T17:01:37.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2510,7 +2510,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/animated-procedural-textures</loc>
-    <lastmod>2026-10-13T14:38:19.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2540,7 +2540,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/animating-tetris</loc>
-    <lastmod>2026-10-08T15:09:21.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:04.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2570,7 +2570,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/animating-virtual-creatures</loc>
-    <lastmod>2026-10-08T15:09:22.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:07.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2678,7 +2678,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/introduction-to-animation</loc>
-    <lastmod>2026-10-12T23:57:48.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:09.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2702,7 +2702,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/introduction-to-rigging</loc>
-    <lastmod>2026-10-13T00:21:56.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:11.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2750,7 +2750,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-basic-knight</loc>
-    <lastmod>2026-10-08T15:09:27.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:14.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2804,7 +2804,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-figurative-knight</loc>
-    <lastmod>2026-10-08T15:09:28.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:16.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2816,7 +2816,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-king</loc>
-    <lastmod>2026-10-08T15:09:29.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:18.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2828,7 +2828,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/modeling-a-metal-horse-head</loc>
-    <lastmod>2026-10-08T15:09:31.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:20.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2858,25 +2858,25 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/rendering-random-objects</loc>
-    <lastmod>2026-10-08T15:09:32.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/rigging-a-human</loc>
-    <lastmod>2026-10-08T15:09:34.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:25.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/rigging-a-quadruped</loc>
-    <lastmod>2026-10-08T15:09:35.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:27.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/rigging-a-robot-arm</loc>
-    <lastmod>2026-10-08T15:09:37.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:29.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2900,7 +2900,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/sea-creature-lighting-and-rendering</loc>
-    <lastmod>2026-10-08T15:09:39.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:32.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2912,7 +2912,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/sea-creature-non-photorealistic-rendering</loc>
-    <lastmod>2026-10-08T15:09:41.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2924,7 +2924,7 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/exercises/sea-creature-texturing</loc>
-    <lastmod>2026-10-08T15:09:42.000Z</lastmod>
+    <lastmod>2026-10-13T17:02:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

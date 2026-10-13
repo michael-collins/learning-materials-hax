@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791910456,
+      "updated": 1791910959,
       "version": "26.8.0"
     },
     "theme": {
@@ -379,12 +379,18 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791404371,
+        "updated": 1791910883,
         "locked": false,
         "status": "",
         "icon": "",
@@ -8764,7 +8770,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791910454,
+        "updated": 1791910886,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -8819,7 +8825,13 @@
               "description": "This is a link to a Google Drive folder where you can download the image sequence mentioned in the instructions."
             }
           ],
-          "image": "files/animated-textures-intro-banner.jpg"
+          "image": "files/animated-textures-intro-banner.jpg",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         }
       }
     },
@@ -8971,12 +8983,18 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791404419,
+        "updated": 1791910888,
         "locked": false,
         "status": "",
         "icon": "",
@@ -12540,12 +12558,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791837212,
+        "updated": 1791910890,
         "locked": false,
         "status": "",
         "icon": "",
@@ -12593,12 +12617,18 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791404433,
+        "updated": 1791910893,
         "locked": false,
         "status": "",
         "icon": "",
@@ -18352,12 +18382,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472150,
+        "updated": 1791910895,
         "locked": false,
         "status": "",
         "icon": "",
@@ -18712,12 +18748,18 @@
           "aiLicense": [
             "AIUL-WA"
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791231849,
+        "updated": 1791910897,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -24427,12 +24469,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791847528,
+        "updated": 1791910900,
         "locked": false,
         "status": "",
         "icon": "",
@@ -26609,12 +26657,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472152,
+        "updated": 1791910902,
         "locked": false,
         "status": "",
         "icon": "",
@@ -27603,12 +27657,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791848757,
+        "updated": 1791910904,
         "locked": false,
         "status": "",
         "icon": "",
@@ -30949,12 +31009,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472153,
+        "updated": 1791910906,
         "locked": false,
         "status": "",
         "icon": "",
@@ -33239,12 +33305,18 @@
               "name": "Kenneth Ian Brill",
               "url": "https://www.ianbrill.com/"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472154,
+        "updated": 1791910909,
         "locked": false,
         "status": "",
         "icon": "",
@@ -33543,12 +33615,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472155,
+        "updated": 1791910911,
         "locked": false,
         "status": "",
         "icon": "",
@@ -33881,12 +33959,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472155,
+        "updated": 1791910913,
         "locked": false,
         "status": "",
         "icon": "",
@@ -34247,12 +34331,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472157,
+        "updated": 1791910915,
         "locked": false,
         "status": "",
         "icon": "",
@@ -34715,12 +34805,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472158,
+        "updated": 1791910918,
         "locked": false,
         "status": "",
         "icon": "",
@@ -34887,12 +34983,18 @@
               "name": "Michael Collins",
               "url": "https://michaelcollins.xyz"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791472159,
+        "updated": 1791910920,
         "locked": false,
         "status": "",
         "icon": "",
@@ -35350,12 +35452,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791902299,
+        "updated": 1791910922,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35561,12 +35669,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472161,
+        "updated": 1791910924,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -35762,12 +35876,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472162,
+        "updated": 1791910927,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36074,12 +36194,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791849468,
+        "updated": 1791910929,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36182,12 +36308,18 @@
               "description": "Starter character mesh",
               "alt": ""
             }
+          ],
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791850916,
+        "updated": 1791910931,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36315,12 +36447,18 @@
               "description": "Knight Back Reference",
               "alt": "Knight Back Reference"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472167,
+        "updated": 1791910934,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36474,12 +36612,18 @@
               "description": "Figurative Knight Front Side Reference Image",
               "alt": "Figurative Knight Front Side Reference Image"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472168,
+        "updated": 1791910936,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36627,12 +36771,18 @@
               "description": "Reference Image for the Front and Back of a King",
               "alt": "Reference Image for the Front and Back of a King"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472169,
+        "updated": 1791910938,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36768,12 +36918,18 @@
               "description": "Metal Horse Left Reference Image",
               "alt": "Metal Horse Left Reference Image"
             }
+          ],
+          "courses": [
+            {
+              "page": "item-d5f3b90b-f60c-4168-8e81-5dd4b7e7ed87",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472171,
+        "updated": 1791910940,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36890,12 +37046,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472172,
+        "updated": 1791910943,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -36987,12 +37149,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472174,
+        "updated": 1791910945,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -37084,12 +37252,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472175,
+        "updated": 1791910947,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -37181,12 +37355,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472177,
+        "updated": 1791910949,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -37378,12 +37558,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472179,
+        "updated": 1791910952,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -37475,12 +37661,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472181,
+        "updated": 1791910954,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -37572,12 +37764,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791472182,
+        "updated": 1791910956,
         "version": "1.0.0",
         "oerVersions": [
           {
