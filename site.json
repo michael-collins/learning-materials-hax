@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850890,
+      "updated": 1791850894,
       "version": "26.8.0"
     },
     "theme": {
@@ -25645,6 +25645,40 @@
         "images": [],
         "videos": [],
         "updated": 1791850856
+      }
+    },
+    {
+      "id": "item-f3bc641b-c98f-4eba-a9f0-8a20c064b299",
+      "indent": 2,
+      "location": "pages/item-f3bc641b-c98f-4eba-a9f0-8a20c064b299/index.html",
+      "slug": "tutorials/rigging-a-character/parenting-the-mesh-to-the-armature",
+      "order": 5,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Parenting the mesh to the armature",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=UiBN8K89W64",
+          "batch": "video-mv5xrane",
+          "captions": "speech",
+          "duration": 259,
+          "written": true
+        },
+        "created": 1791850894,
+        "images": [],
+        "videos": [],
+        "updated": 1791850894
       }
     },
     {
