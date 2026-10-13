@@ -65,6 +65,7 @@ import { versionsDialog } from "./versions/oer-versions-dialog.js";
 import { themeSkin } from "./theme-skin.js";
 import { learningSkin, installLearningBlocks } from "./learning-skin.js";
 import { timestampSkin, installTimestamps } from "./blocks/oer-timestamps.js";
+import { welcome, installWelcome } from "./ui/oer-welcome.js";
 import { installEditorChrome } from "./editor/index.js";
 import { announce } from "./editor/announce.js";
 import { installLayoutBreakpoints } from "./layout-breakpoints.js";
@@ -124,6 +125,7 @@ const DESIGN_SYSTEM_URL = "https://github.com/michael-collins/nu-hax/blob/main/d
 const icon = {
   plus: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>`,
   share: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
+  mapIcon: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></svg>`,
   palette: html`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>`,
   panelLeft: html`<svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>`,
   search: html`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
@@ -495,6 +497,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
       registerShadowStyles(timestampSkin);
       installLearningBlocks();
       installTimestamps();
+      installWelcome();
     }
     globalThis.addEventListener("keydown", this.__keyHandler);
     globalThis.addEventListener("pointerdown", this.__outsideMenu);
@@ -2322,6 +2325,7 @@ class CustomOerDocsTheme extends HAXCMSLitElementTheme {
                 ? html`<a role="menuitem" href="${this._publishedHref()}" target="_blank" rel="noopener">${icon.share}View published site</a>`
                 : ""}
               <a role="menuitem" href="${stockUI()?.backLink ?? "/"}">${icon.layoutDashboard}Site dashboard</a>
+              <button role="menuitem" @click="${() => ((this._userMenuOpen = false), welcome().show())}">${icon.mapIcon}Welcome and tour</button>
               <a role="menuitem" href="${DESIGN_SYSTEM_URL}" target="_blank" rel="noopener">${icon.palette}Design system</a>
               <div class="menu-sep" role="separator"></div>
               <button role="menuitem" class="danger" @click="${() => ((this._userMenuOpen = false), logout())}">${icon.logOut}Log out</button>

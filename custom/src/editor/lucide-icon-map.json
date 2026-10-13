@@ -293,5 +293,8 @@
   "oer:maximize": "maximize",
   "oer:minimize": "minimize",
   "oer:list-video": "list-video",
-  "oer:arrow-up-right": "arrow-up-right"
+  "oer:arrow-up-right": "arrow-up-right",
+  "oer:file-plus": "file-plus",
+  "oer:map": "map",
+  "oer:hand": "hand"
 }
