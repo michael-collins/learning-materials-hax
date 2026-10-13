@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902895,
+      "updated": 1791902898,
       "version": "26.8.0"
     },
     "theme": {
@@ -8623,6 +8623,40 @@
         "images": [],
         "videos": [],
         "updated": 1791902272
+      }
+    },
+    {
+      "id": "item-f0602ed8-7b33-408f-86e1-d032f4c1754f",
+      "indent": 2,
+      "location": "pages/item-f0602ed8-7b33-408f-86e1-d032f4c1754f/index.html",
+      "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects/collecting-reference-images-with-pureref",
+      "order": 0,
+      "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
+      "title": "Collecting reference images with PureRef",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=NSyd_D9lhmc",
+          "batch": "video-mv6spxfu",
+          "captions": "speech",
+          "duration": 304,
+          "written": true
+        },
+        "created": 1791902898,
+        "images": [],
+        "videos": [],
+        "updated": 1791902898
       }
     },
     {
