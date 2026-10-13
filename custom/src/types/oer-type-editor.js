@@ -951,6 +951,15 @@ class OerTypeEditor extends LitElement {
                   <p class="hint">A dropdown of the values already given, with a choice to add a new one (e.g. a resource's Kind).</p>
                 </div>`
               : ""}
+            ${["select", "list", "relation", "text"].includes(f.kind)
+              ? html`<div class="wide">
+                  <label class="check">
+                    <input type="checkbox" .checked="${!!f.filter}" @change="${(e) => this._setField(i, { filter: e.target.checked || undefined })}" />
+                    Readers can filter by this
+                  </label>
+                  <p class="hint">Lists of this type (Exercises, a course's pages) get a filter for it, like Courses and Difficulty. Keep to what readers look for: each is another button above the list.</p>
+                </div>`
+              : ""}
           </div>`
         : ""}`;
   }

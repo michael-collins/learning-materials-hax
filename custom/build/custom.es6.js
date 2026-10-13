@@ -15113,6 +15113,13 @@ ${g.map((Z,Ee)=>`<itemref idref="c${Ee+1}"/>`).join(`
                   </label>
                   <p class="hint">A dropdown of the values already given, with a choice to add a new one (e.g. a resource's Kind).</p>
                 </div>`:""}
+            ${["select","list","relation","text"].includes(t.kind)?l`<div class="wide">
+                  <label class="check">
+                    <input type="checkbox" .checked="${!!t.filter}" @change="${d=>this._setField(r,{filter:d.target.checked||void 0})}" />
+                    Readers can filter by this
+                  </label>
+                  <p class="hint">Lists of this type (Exercises, a course's pages) get a filter for it, like Courses and Difficulty. Keep to what readers look for: each is another button above the list.</p>
+                </div>`:""}
           </div>`:""}`}_renderEditor(){const e=this._types[this._selected];if(!e)return l`<div class="empty-editor"><div><p>No content types yet.</p><button class="btn outline" @click="${this._addType}">${ot("oer:plus","sm")}New type</button></div></div>`;const t=this._idLocked(e),r=this._usage.get(e.id)||0,o=e.children===null||e.children===void 0?"any":e.children.length||e.__only?"only":"none";return l`<div class="editor">
       <section>
         <div class="row">

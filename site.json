@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791911694,
+      "updated": 1791911901,
       "version": "26.8.0"
     },
     "theme": {
@@ -6520,7 +6520,7 @@
         "oerSource": "projects/dmd300-project-1-weekly-activity-reports",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -6538,7 +6538,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386161
+        "updated": 1791911777
       }
     },
     {
@@ -6556,7 +6556,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-concept-pitch",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -6574,7 +6574,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386162
+        "updated": 1791911779
       }
     },
     {
@@ -6592,7 +6592,7 @@
         "oerSource": "projects/dmd400-capstone-project-proposal",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -6610,7 +6610,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491589,
+        "updated": 1791911781,
         "locked": false,
         "status": "",
         "icon": ""
@@ -10421,7 +10421,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-discover-toy-design-research",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -10439,7 +10439,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386174
+        "updated": 1791911783
       }
     },
     {
@@ -10457,7 +10457,7 @@
         "oerSource": "projects/dmd300-project-1-phase-1-gather-and-organize",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -10475,7 +10475,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386175
+        "updated": 1791911785
       }
     },
     {
@@ -10493,7 +10493,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-work-statement",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -10511,7 +10511,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491581,
+        "updated": 1791911787,
         "locked": false,
         "status": "",
         "icon": ""
@@ -10532,7 +10532,7 @@
         "oerSource": "projects/dmd400-capstone-project-advisor",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -10550,7 +10550,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386176
+        "updated": 1791911789
       }
     },
     {
@@ -17281,7 +17281,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-ritual-interview",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -17299,7 +17299,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386228
+        "updated": 1791911791
       }
     },
     {
@@ -17317,7 +17317,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-discover-focus-words",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -17335,7 +17335,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386229
+        "updated": 1791911793
       }
     },
     {
@@ -17353,7 +17353,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-discover-resources",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -17371,7 +17371,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386230
+        "updated": 1791911795
       }
     },
     {
@@ -17389,7 +17389,7 @@
         "oerSource": "projects/dmd300-project-1-phase-2-develop-a-design-sprint",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -17407,7 +17407,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386230
+        "updated": 1791911797
       }
     },
     {
@@ -17425,7 +17425,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-production-reports",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -17443,7 +17443,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491582,
+        "updated": 1791911799,
         "locked": false,
         "status": "",
         "icon": ""
@@ -17464,7 +17464,7 @@
         "oerSource": "projects/dmd400-capstone-project-agreement-form",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -17482,7 +17482,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386232
+        "updated": 1791911801
       }
     },
     {
@@ -19626,7 +19626,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-discover-modular-design-research",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -19644,7 +19644,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386239
+        "updated": 1791911803
       }
     },
     {
@@ -19662,7 +19662,7 @@
         "oerSource": "projects/dmd300-project-1-phase-3-pitch",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -19680,7 +19680,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491586,
+        "updated": 1791911805,
         "locked": false,
         "status": "",
         "icon": ""
@@ -19701,7 +19701,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-interview",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -19719,7 +19719,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386240
+        "updated": 1791911807
       }
     },
     {
@@ -19737,7 +19737,7 @@
         "oerSource": "projects/dmd400-capstone-project-evidence-of-ability",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -19755,7 +19755,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386241
+        "updated": 1791911810
       }
     },
     {
@@ -24717,7 +24717,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-define-insights",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -24735,7 +24735,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386243
+        "updated": 1791911812
       }
     },
     {
@@ -24753,7 +24753,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-define-the-way-it-was",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -24771,7 +24771,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386244
+        "updated": 1791911814
       }
     },
     {
@@ -24807,7 +24807,7 @@
         "oerSource": "projects/dmd300-project-1-phase-4-design-sprint",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -24825,7 +24825,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491587,
+        "updated": 1791911816,
         "locked": false,
         "status": "",
         "icon": ""
@@ -24846,7 +24846,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-documentation",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -24864,7 +24864,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491582,
+        "updated": 1791911818,
         "locked": false,
         "status": "",
         "icon": ""
@@ -24885,7 +24885,7 @@
         "oerSource": "projects/dmd400-capstone-project-research",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -24903,7 +24903,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491590,
+        "updated": 1791911820,
         "locked": false,
         "status": "",
         "icon": ""
@@ -26802,7 +26802,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-define-hmw",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -26820,7 +26820,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386251
+        "updated": 1791911822
       }
     },
     {
@@ -26879,7 +26879,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-define-product-pitch",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -26897,7 +26897,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386252
+        "updated": 1791911824
       }
     },
     {
@@ -26915,7 +26915,7 @@
         "oerSource": "projects/dmd300-project-1-phase-5",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -26933,7 +26933,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491588,
+        "updated": 1791911826,
         "locked": false,
         "status": "",
         "icon": ""
@@ -26954,7 +26954,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-project-files",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -26972,7 +26972,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386253
+        "updated": 1791911828
       }
     },
     {
@@ -26990,7 +26990,7 @@
         "oerSource": "projects/dmd400-capstone-project-production-report",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -27008,7 +27008,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491591,
+        "updated": 1791911830,
         "locked": false,
         "status": "",
         "icon": ""
@@ -27028,7 +27028,7 @@
         "pageType": "oer:project",
         "oerSource": "projects/dmd100-lesson-2-ritual-ritual-project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27046,7 +27046,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386255
+        "updated": 1791911832
       }
     },
     {
@@ -27081,7 +27081,7 @@
         "pageType": "oer:activity",
         "oerSource": "projects/dmd100-lesson-2-ritual-develop-brainstorm",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27099,7 +27099,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386256
+        "updated": 1791911834
       }
     },
     {
@@ -27117,7 +27117,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-develop-storyboard",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27135,7 +27135,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386256
+        "updated": 1791911836
       }
     },
     {
@@ -27153,7 +27153,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-develop-prototype",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27171,7 +27171,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386257
+        "updated": 1791911839
       }
     },
     {
@@ -27188,7 +27188,7 @@
         "pageType": "oer:tutorial",
         "oerSource": "projects/dmd100-lesson-2-ritual-prototype-tutorial",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27206,7 +27206,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386258
+        "updated": 1791911841
       }
     },
     {
@@ -27224,7 +27224,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-develop-test-and-review",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27242,7 +27242,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386258
+        "updated": 1791911843
       }
     },
     {
@@ -27260,7 +27260,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-develop-iterate-prototype",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27278,7 +27278,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386259
+        "updated": 1791911845
       }
     },
     {
@@ -27314,7 +27314,7 @@
         "oerSource": "projects/dmd100-lesson-2-ritual-deliver-final-prototype",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -27332,7 +27332,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386260
+        "updated": 1791911847
       }
     },
     {
@@ -30501,7 +30501,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-develop-story-and-plot",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -30519,7 +30519,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491574,
+        "updated": 1791911849,
         "locked": false,
         "status": "",
         "icon": ""
@@ -30558,7 +30558,7 @@
         "oerSource": "projects/dmd400-capstone-project-production-report-discussions",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -30576,7 +30576,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386323
+        "updated": 1791911851
       }
     },
     {
@@ -30593,7 +30593,7 @@
         "pageType": "oer:project",
         "oerSource": "projects/dmd100-lesson-3-narrative-hypertext-narrative-civic-imagination-project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -30611,7 +30611,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491574,
+        "updated": 1791911853,
         "locked": false,
         "status": "",
         "icon": ""
@@ -30632,7 +30632,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-develop-characters",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -30650,7 +30650,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491575,
+        "updated": 1791911855,
         "locked": false,
         "status": "",
         "icon": ""
@@ -30671,7 +30671,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-develop-hypertext-narrative-draft-1",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -30689,7 +30689,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491578,
+        "updated": 1791911857,
         "locked": false,
         "status": "",
         "icon": ""
@@ -30732,7 +30732,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-develop-feedback",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -30750,7 +30750,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386326
+        "updated": 1791911859
       }
     },
     {
@@ -30786,7 +30786,7 @@
         "oerSource": "projects/dmd100-lesson-3-narrative-deliver-hypertext-narrative-draft-2",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -30804,7 +30804,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491579,
+        "updated": 1791911861,
         "locked": false,
         "status": "",
         "icon": ""
@@ -31086,7 +31086,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-develop-mvp-prototype",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31104,7 +31104,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491580,
+        "updated": 1791911863,
         "locked": false,
         "status": "",
         "icon": ""
@@ -31125,7 +31125,7 @@
         "oerSource": "projects/dmd400-project-midterm-video",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -31143,7 +31143,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386343
+        "updated": 1791911865
       }
     },
     {
@@ -31160,7 +31160,7 @@
         "pageType": "oer:project",
         "oerSource": "projects/dmd100-lesson-4-open-design-open-design-project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31178,7 +31178,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386343
+        "updated": 1791911868
       }
     },
     {
@@ -31196,7 +31196,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-develop-instructions",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31214,7 +31214,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386344
+        "updated": 1791911870
       }
     },
     {
@@ -31232,7 +31232,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-develop-user-testing",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31250,7 +31250,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386345
+        "updated": 1791911872
       }
     },
     {
@@ -31268,7 +31268,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-develop-iterate",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31286,7 +31286,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386345
+        "updated": 1791911874
       }
     },
     {
@@ -31304,7 +31304,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-develop-feedback",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31322,7 +31322,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386346
+        "updated": 1791911876
       }
     },
     {
@@ -31358,7 +31358,7 @@
         "oerSource": "projects/dmd100-lesson-4-open-design-deliver-open-design",
         "tags": "Double diamond,Design thinking",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -31376,7 +31376,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386347
+        "updated": 1791911878
       }
     },
     {
@@ -33123,7 +33123,7 @@
         "oerSource": "projects/dmd400-capstone-project-statement",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -33141,7 +33141,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386348
+        "updated": 1791911880
       }
     },
     {
@@ -33159,7 +33159,7 @@
         "oerSource": "projects/dmd300-design-project-2-project-2-project-description",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -33177,7 +33177,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491580,
+        "updated": 1791911882,
         "locked": false,
         "status": "",
         "icon": ""
@@ -33395,7 +33395,7 @@
         "oerSource": "projects/dmd400-capstone-project-document",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -33413,7 +33413,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386350
+        "updated": 1791911884
       }
     },
     {
@@ -33431,7 +33431,7 @@
         "oerSource": "projects/dmd300-project-1",
         "tags": "project-deliverable,Group Project",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -33449,7 +33449,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791491583,
+        "updated": 1791911886,
         "locked": false,
         "status": "",
         "icon": ""
@@ -33705,7 +33705,7 @@
         "oerSource": "projects/dmd400-project-explainer-video",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -33723,7 +33723,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386352
+        "updated": 1791911888
       }
     },
     {
@@ -33741,7 +33741,7 @@
         "oerSource": "projects/dmd300-writing-project",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-a2afe0fe-6c78-41f5-bae3-015ecc8b1985",
@@ -33759,7 +33759,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386353
+        "updated": 1791911891
       }
     },
     {
@@ -34049,7 +34049,7 @@
         "oerSource": "projects/dmd400-capstone-project-exhibition",
         "tags": "project-deliverable",
         "oerFields": {
-          "difficulty": "intermediate",
+          "difficulty": "Intermediate",
           "courses": [
             {
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
@@ -34067,7 +34067,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386353
+        "updated": 1791911893
       }
     },
     {
@@ -36078,7 +36078,7 @@
         "oerSource": "exercises/dmd100-lesson-1-daily-design-journal",
         "tags": "activity",
         "oerFields": {
-          "difficulty": "beginner",
+          "difficulty": "Beginner",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -36096,7 +36096,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386358
+        "updated": 1791911895
       }
     },
     {
@@ -36114,7 +36114,7 @@
         "oerSource": "exercises/dmd100-lesson-1-daily-design-journal-report-in",
         "tags": "activity",
         "oerFields": {
-          "difficulty": "beginner",
+          "difficulty": "Beginner",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -36132,7 +36132,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386359
+        "updated": 1791911897
       }
     },
     {
@@ -36150,7 +36150,7 @@
         "oerSource": "exercises/dmd100-lesson-5-pathway",
         "tags": "activity",
         "oerFields": {
-          "difficulty": "beginner",
+          "difficulty": "Beginner",
           "courses": [
             {
               "page": "item-2191170b-b92b-406b-bf5a-84d7524a7de8",
@@ -36168,7 +36168,7 @@
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791386360
+        "updated": 1791911899
       }
     },
     {
