@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855547,
+      "updated": 1791855550,
       "version": "26.8.0"
     },
     "theme": {
@@ -20009,7 +20009,7 @@
       "order": 3,
       "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
       "title": "Blocking the animation and setting up scenes",
-      "description": "",
+      "description": "Block in the animatic's action with a few keyframes, keyframed visibility and one Graph Editor tweak, then make a scene for each camera and frame range, named the way the renders will be.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
