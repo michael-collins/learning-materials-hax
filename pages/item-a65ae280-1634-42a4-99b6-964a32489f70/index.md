@@ -9,7 +9,7 @@ Learning Objectives
 Instructions
 ------------
 
-1.  Watch linked tutorials in learning resources.
+1.  Work through the Sculpture garden with PBR materials tutorials above.
     *   **NOTE:** There is no one way to complete this exercise, however I provide a 2 hour video where I go through the entire process. This is not an animation exercise, so please do not submit an animation.
 2.  Create a new project folder.
 3.  **Design an outdoor sculpture garden** using a PBR workflow for the objects in the scene.
