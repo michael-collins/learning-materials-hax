@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902903,
+      "updated": 1791902906,
       "version": "26.8.0"
     },
     "theme": {
@@ -12229,7 +12229,7 @@
       "order": 1,
       "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
       "title": "Get Good at Blender - Practical challenges to improve you skills!",
-      "description": "",
+      "description": "A video by Grant Abbitt (Gabbitt), shown here from YouTube.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
