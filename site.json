@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855524,
+      "updated": 1791855527,
       "version": "26.8.0"
     },
     "theme": {
@@ -25928,7 +25928,7 @@
       "order": 19,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Creating 3D scene layouts in Blender",
-      "description": "",
+      "description": "Make an animatic of a 3D scene: block in the animation in Blender, set up cameras and a scene for each shot, render them from the viewport, and edit them with sound, titles and credits in After Effects, ready to swap in final renders later.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
