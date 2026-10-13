@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855527,
+      "updated": 1791855530,
       "version": "26.8.0"
     },
     "theme": {
@@ -8561,6 +8561,40 @@
         "images": [],
         "videos": [],
         "updated": 1791854002
+      }
+    },
+    {
+      "id": "item-541ae2fb-1e3c-4faa-9a51-e70977fd304e",
+      "indent": 2,
+      "location": "pages/item-541ae2fb-1e3c-4faa-9a51-e70977fd304e/index.html",
+      "slug": "tutorials/creating-3d-scene-layouts-in-blender/the-finished-animatic",
+      "order": 0,
+      "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
+      "title": "The finished animatic",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=yr4h9_ww9D4",
+          "batch": "video-mv60inqj",
+          "captions": "speech",
+          "duration": 187,
+          "written": true
+        },
+        "created": 1791855530,
+        "images": [],
+        "videos": [],
+        "updated": 1791855530
       }
     },
     {
