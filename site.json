@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902275,
+      "updated": 1791902278,
       "version": "26.8.0"
     },
     "theme": {
@@ -12151,6 +12151,40 @@
         "images": [],
         "videos": [],
         "updated": 1791855535
+      }
+    },
+    {
+      "id": "item-aa7fc0b4-9c33-4a3f-ab2c-cb31dfe3886a",
+      "indent": 2,
+      "location": "pages/item-aa7fc0b4-9c33-4a3f-ab2c-cb31dfe3886a/index.html",
+      "slug": "tutorials/procedural-texture-animations/turning-an-image-sequence-into-a-video",
+      "order": 1,
+      "parent": "item-fc1426b4-1e8b-4bad-966f-a76de4f561e2",
+      "title": "Turning an image sequence into a video",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=Tv7RAvdBQNw",
+          "batch": "video-mv6scmrh",
+          "captions": "speech",
+          "duration": 192,
+          "written": true
+        },
+        "created": 1791902278,
+        "images": [],
+        "videos": [],
+        "updated": 1791902278
       }
     },
     {
