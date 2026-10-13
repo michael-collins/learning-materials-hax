@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791852830,
+      "updated": 1791853995,
       "version": "26.8.0"
     },
     "theme": {
@@ -25814,6 +25814,39 @@
         "images": [],
         "videos": [],
         "updated": 1791852797
+      }
+    },
+    {
+      "id": "item-93e4b32e-6810-4277-a3cd-aa94c7519a0b",
+      "indent": 1,
+      "location": "pages/item-93e4b32e-6810-4277-a3cd-aa94c7519a0b/index.html",
+      "slug": "tutorials/getting-started-with-playcanvas",
+      "order": 18,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Getting started with PlayCanvas",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj",
+          "batch": "video-mv5zlrun",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791853995,
+        "images": [],
+        "videos": [],
+        "updated": 1791853995
       }
     },
     {

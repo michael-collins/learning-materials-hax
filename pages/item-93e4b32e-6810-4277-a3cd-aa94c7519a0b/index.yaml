@@ -1,0 +1,41 @@
+id: item-93e4b32e-6810-4277-a3cd-aa94c7519a0b
+indent: 1
+location: pages/item-93e4b32e-6810-4277-a3cd-aa94c7519a0b/index.yaml
+slug: tutorials/getting-started-with-playcanvas
+order: 18
+parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
+title: Getting started with PlayCanvas
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Beginner
+  oerVideoSource:
+    source: https://www.youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj
+    batch: video-mv5zlrun
+    captions: none
+    kind: playlist
+  created: 1791853995
+  images: []
+  videos: []
+  updated: 1791853995
+content: >-
+
+  <p>PlayCanvas is a game engine that runs in the web browser. In these two
+  parts you'll go from models made in Blender to a real-time 3D scene that
+  anyone can walk around in from a link. Part 1 sets up a PlayCanvas project,
+  exports reusable pieces from Blender as GLB files and brings them in, and
+  builds a first-person player with collision, rigid bodies and a movement
+  script. Part 2 downloads a build of the scene and hosts it on GitHub
+  Pages.</p>
+
+  <p>You'll need Blender, a PlayCanvas account and a GitHub account (you can
+  sign in to PlayCanvas with GitHub). The videos were made in early 2024 with
+  Blender 4.0, so PlayCanvas's and GitHub's pages may look a little different
+  now.</p>
+
+  <oer-tutorial-series></oer-tutorial-series>

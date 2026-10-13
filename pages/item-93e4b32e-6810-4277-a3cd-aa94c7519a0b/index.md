@@ -1,0 +1,3 @@
+PlayCanvas is a game engine that runs in the web browser. In these two parts you'll go from models made in Blender to a real-time 3D scene that anyone can walk around in from a link. Part 1 sets up a PlayCanvas project, exports reusable pieces from Blender as GLB files and brings them in, and builds a first-person player with collision, rigid bodies and a movement script. Part 2 downloads a build of the scene and hosts it on GitHub Pages.
+
+You'll need Blender, a PlayCanvas account and a GitHub account (you can sign in to PlayCanvas with GitHub). The videos were made in early 2024 with Blender 4.0, so PlayCanvas's and GitHub's pages may look a little different now.
