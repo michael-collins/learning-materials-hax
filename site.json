@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850856,
+      "updated": 1791850859,
       "version": "26.8.0"
     },
     "theme": {
@@ -25452,7 +25452,7 @@
       "order": 16,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Rigging a character",
-      "description": "",
+      "description": "Prepare a simple character mesh for rigging in Blender, build and bind an armature with named, mirrored bones, and add IK constraints to pose it sitting.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
