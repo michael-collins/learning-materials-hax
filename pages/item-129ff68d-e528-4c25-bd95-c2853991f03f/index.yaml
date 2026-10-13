@@ -1,0 +1,198 @@
+id: item-129ff68d-e528-4c25-bd95-c2853991f03f
+indent: 2
+location: pages/item-129ff68d-e528-4c25-bd95-c2853991f03f/index.yaml
+slug: tutorials/creating-3d-scene-layouts-in-blender/organizing-your-project-folder
+order: 1
+parent: item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc
+title: Organizing your project folder
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Beginner
+  oerVideoSource:
+    source: https://www.youtube.com/watch?v=rNglhHBGw48
+    batch: video-mv60iryj
+    captions: speech
+    duration: 443
+    written: true
+  created: 1791855535
+  images: []
+  videos: []
+  updated: 1791855535
+content: >-
+  <p>An animatic quickly turns into a lot of files: image sequences from several
+  cameras, Blender files, audio and After Effects projects. In this part you'll
+  set up a project folder with a place for each, and see a naming convention for
+  rendered image sequences that tells you which camera and which frames each one
+  holds. It pays off when you start moving image sequences into After Effects,
+  and again when you swap the animatic's renders for final ones.</p>
+
+
+  <oer-video id="video-rNglhHBGw48"
+  src="https://www.youtube.com/watch?v=rNglhHBGw48" title="Creating 3D scene
+  layouts in Blender – Part 2 of 8" credit="Michael Collins"
+  credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+
+  <h2>Check your Blender version</h2>
+
+  <ol>
+    <li>
+      <p><strong>Find the version number.</strong> <page-anchor target="#video-rNglhHBGw48" value="0">0:00</page-anchor> The video uses Blender 2.91. Anything from 2.8 on is easy to follow; older versions have most of the same features but a very different interface. Blender shows its version at the bottom right of the window <page-anchor target="#video-rNglhHBGw48" value="23">0:23</page-anchor>: if a button isn't where the video has it, check which version you're comparing against.</p>
+      <figure><img src="files/organizing-your-project-folder-t0030.8.jpg" alt="Blender's splash screen over the default scene, with 2.91.0 at its top right and again at the bottom right of the window, where the mouse pointer is."><figcaption><p>Blender 2.91.0, shown on the splash screen and at the bottom right of the window.</p></figcaption></figure>
+    </li>
+  </ol>
+
+
+  <h2>Give every kind of file a folder</h2>
+
+  <ol>
+    <li>
+      <p><strong>Make a project folder with a folder for each kind of file.</strong> <page-anchor target="#video-rNglhHBGw48" value="41">0:41</page-anchor> Because you'll make so many files, be strict about naming and about where everything goes. The project folder in the video, <em>animatic</em>, holds <em>aftereffects</em>, <em>animatic-renders</em>, <em>audio</em>, <em>blender</em>, <em>final-renders</em> and <em>videos</em>.</p>
+    </li>
+    <li>
+      <p><strong>Keep the After Effects projects together.</strong> <page-anchor target="#video-rNglhHBGw48" value="58">0:58</page-anchor> The <em>aftereffects</em> folder is where the audio is edited and the shots are cut together, so it holds the After Effects project files. A folder that After Effects made on its own, left at the top of the project, goes in here too <page-anchor target="#video-rNglhHBGw48" value="82">1:22</page-anchor>.</p>
+      <figure><img src="files/organizing-your-project-folder-t0065.4.jpg" alt="A Finder window in column view. The animatic folder holds aftereffects, animatic-renders, audio, blender, final-renders and videos, plus a stray Blender backup file and a folder ending in _AME. The aftereffects folder is open, showing Adobe After Effects Auto-Save, animatic-fa2020_AME, animatic-fa2020.aep and animatic-finalrenders-fa2020.aep."><figcaption><p>The project folder, with the After Effects projects in <em>aftereffects</em>.</p></figcaption></figure>
+    </li>
+  </ol>
+
+
+  <h2>Name image sequences by camera and frames</h2>
+
+  <ol>
+    <li>
+      <p><strong>Put each render in a folder named for its camera and frame range.</strong> <page-anchor target="#video-rNglhHBGw48" value="72">1:12</page-anchor> <em>animatic-renders</em> holds the image sequences from Blender's viewport render (coming in a later part), one folder each. Each name starts with the camera it was rendered from: <em>cam-1_1-144</em> is camera 1, frames 1 to 144 <page-anchor target="#video-rNglhHBGw48" value="128">2:08</page-anchor>.</p>
+      <figure><img src="files/organizing-your-project-folder-t0110.0.jpg" alt="The animatic-renders folder in Finder, holding cam-1_1-144, cam-1_144-192, cam-2_1-144, cam-3_1-144 and cam-3_250-350_x400. The first is open: 144 images, 0001.png, 0002.png and so on."><figcaption><p>One folder per image sequence, named by camera and frames.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Render more than one range from a camera when you need to.</strong> <page-anchor target="#video-rNglhHBGw48" value="105">1:45</page-anchor> You might want different parts of the timeline as separate image sequences, or come up with more animation after the main shot is done and add it at the end of the timeline. Here, <em>cam-1_144-192</em> is extra animation added after the fact, while <em>cam-2_1-144</em> and <em>cam-3_1-144</em> cover the same frames as camera 1: the whole main animation <page-anchor target="#video-rNglhHBGw48" value="149">2:29</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Mark shots you've slowed down.</strong> <page-anchor target="#video-rNglhHBGw48" value="191">3:11</page-anchor> <em>cam-3_250-350_x400</em> is frames 250 to 350, which don't match the others, and <em>x400</em> means it was time remapped. Time remapping speeds up or slows down a finished animation by changing the frames it happens on.</p>
+      <figure><img src="files/organizing-your-project-folder-t0272.4.jpg" alt="The cam-3_250-350_x400 folder open in Finder: 101 images starting at 0250.png. Behind it, Blender's Output Properties show Time Remapping with Old 100 and New 400."><figcaption><p>A slowed-down shot: its images are numbered from 250.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Find Time Remapping.</strong> <page-anchor target="#video-rNglhHBGw48" value="217">3:37</page-anchor> It's in <em>Output Properties</em>, under the frame start, end, step and frame rate. With <em>Old</em> at 100 and <em>New</em> at 400, every 100 frames become 400: the animation plays four times slower <page-anchor target="#video-rNglhHBGw48" value="240">4:00</page-anchor>. Taking a part of camera 3's animation and slowing it down moved it from somewhere in frames 1 to 144 to frames 250 to 350 <page-anchor target="#video-rNglhHBGw48" value="281">4:41</page-anchor>. <em>x400</em> is just a convention for remembering that; you'll see how it works when the animation is looked at later in the series.</p>
+      <figure><img src="files/organizing-your-project-folder-t0245.0.jpg" alt="Output Properties in Blender 2.91: resolution 1920 by 1080 at 100%, Frame Start 1, End 250, Step 1, Frame Rate 24 fps, and the Time Remapping panel open with Old 100 and New 400."><figcaption><p><em>Time Remapping</em>: 100 frames become 400.</p></figcaption></figure>
+      <oer-callout type="info" title="In Blender 3.0 and later"><p>Time Remapping is called <em>Time Stretching</em>. It's in <em>Output Properties → Frame Range</em>, with the same <em>Old</em> and <em>New</em> values.</p></oer-callout>
+    </li>
+    <li>
+      <p><strong>Burn the details into the images.</strong> <page-anchor target="#video-rNglhHBGw48" value="329">5:29</page-anchor> Each image in the sequence has its details burned in: a timestamp, the frame number and the camera. Step through the images (the video previews them in Finder and presses <kbd>↓</kbd>) and the frame number printed on the image matches the file's number <page-anchor target="#video-rNglhHBGw48" value="352">5:52</page-anchor>. Setting this up comes later in the series.</p>
+      <figure><img src="files/organizing-your-project-folder-t0335.8.jpg" alt="0001.png from the animatic renders, open in a preview window: the dog on the dock by the red canoe, in flat viewport colors. Burned into the top are the Blender file's path, the date and the render time; along the bottom, Timecode 00:00:00:01, Frame 001, Camera cam-1-medium and Scene Scene."><figcaption><p>The frame number and camera, burned into the first image.</p></figcaption></figure>
+    </li>
+  </ol>
+
+
+  <h2>Keep everything else in its place</h2>
+
+  <ol>
+    <li>
+      <p><strong>Put audio and Blender files in their folders.</strong> <page-anchor target="#video-rNglhHBGw48" value="370">6:10</page-anchor> All the audio you use goes in <em>audio</em>, and every .blend file goes in <em>blender</em>, including any autosave files lying around <page-anchor target="#video-rNglhHBGw48" value="374">6:14</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Give final renders the same names as the animatic renders.</strong> <page-anchor target="#video-rNglhHBGw48" value="377">6:17</page-anchor> Keep a separate folder for each kind of render. The folders and files in <em>final-renders</em> are named the same as in <em>animatic-renders</em>: they're the same shots, just rendered at higher quality. That lets you drop them in and replace the animatic's images in your After Effects edit as you fine-tune your animation <page-anchor target="#video-rNglhHBGw48" value="409">6:49</page-anchor>.</p>
+      <figure><img src="files/organizing-your-project-folder-t0402.4.jpg" alt="The final-renders folder in Finder, holding the same five folders as animatic-renders: cam-1_1-144, cam-1_144-192, cam-2_1-144, cam-3_1-144 and cam-3_250-350_x400."><figcaption><p><em>final-renders</em> mirrors <em>animatic-renders</em>.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Keep exported videos in videos.</strong> <page-anchor target="#video-rNglhHBGw48" value="421">7:01</page-anchor> Anything you export from After Effects, or any other software, goes in <em>videos</em>: here, the animatic and the final rendered version from Part 1.</p>
+    </li>
+  </ol>
+
+
+  <p><page-anchor target="#video-rNglhHBGw48" value="436">7:16</page-anchor>
+  Next, you'll open the scene file and start animating.</p>
+
+  <a11y-collapse heading-button=""><p slot="heading">Transcript</p><div
+  slot="content"><p><em>From speech to text.</em></p><p><page-anchor
+  target="#video-rNglhHBGw48" value="0">0:00</page-anchor> Okay, here we are in
+  Blender, and I'm going to be using the new Blender 2.91. If you're using
+  Blender 2.8 or above, it should be very easy to follow along. All of the
+  features, for the most part, exist within earlier versions of Blender, but the
+  interface looks a lot different, so you'll kind of have to work through the
+  interface differences if you're using an older version of the software. Just a
+  quick note about the version number, it's always written down here in the
+  bottom right, so if you're ever unsure about what version I'm using, let's say
+  your version of Blender has a button in a different place, you could just
+  check that down here to see what I'm currently using. So what I want to talk
+  about right now is folder organization. Because we're going to be creating so
+  many files and folders, we have to be really good about our naming conventions
+  and about where everything in our project folder. So just to quickly give you
+  a tour of my project folder.</p><p><page-anchor target="#video-rNglhHBGw48"
+  value="58">0:58</page-anchor> So I have a folder here I called Animatic, and
+  inside I have a folder for my After Effects. So that's where I'm going to be
+  doing my audio editing and editing clips of different shots together. We have
+  a folder called Animatic Renders. It looks like this one is actually an auto
+  created folder so we're going to drop that in there so we have animatic
+  renders and inside of animatic renders this is created from blender's viewport
+  render which i'll show in a bit but essentially each camera is named here at
+  the beginning so i have cam 1 cam 2 and cam 3 and i have different versions.
+  Sometimes I like to have different parts of the timeline in different image
+  sequences depending on what I'm trying to accomplish or I'll come up with a
+  new sequence of animation that I want to render and I can do this after the
+  fact by having some additional animation done at the end of the timeline.
+  You'll see here I have cam-1_1-144.</p><p><page-anchor
+  target="#video-rNglhHBGw48" value="135">2:15</page-anchor> That means that
+  camera 1 is the camera that I rendered from and that this is frame 1 to 144.
+  And this comes in really handy when you have a bunch of different cameras with
+  different frames rendered as different shots. So if we go down here, you can
+  see I have cam 1 144 to 192. So it looks like I have for whatever reason two
+  different image sequences with different frame ranges here okay and so two and
+  three basically are the same frames as camera one basically the entire main
+  animation timeline from frame 1 to 144 and then I did some additional
+  animation when I was done that I kind of decided to do after the fact. And
+  then down here, cam 3, it looks a little bit different. You see here that
+  frame 250 to 350 is the frame range, which doesn't really match up with these.
+  And that I have this thing called x400. So just to talk about that really
+  briefly, in Blender, you can time remap, which means after you're done your
+  animation, if it's going too fast</p><p><page-anchor
+  target="#video-rNglhHBGw48" value="210">3:30</page-anchor> or too slow you can
+  actually speed it up or slow it down that changes the frames that your
+  animation happens on so if we go here to our scene settings or output
+  properties underneath frame start end step and frame rate we have this thing
+  called time remapping and so basically um you could the way that the easiest
+  way to think of this is that for every 100 frames we have 100 frames like for
+  every 100 frames we have 400 frames, you could think of this as being slowed
+  down four times or 400% slower. And so when I have that X400 in my folder
+  name, really what I'm doing is just referring to this property here. And this
+  is just a convention that I came up with so that I knew what that shot was. I
+  know that this shot is actually a slowed down 400% slower shot. That just
+  means that from these 100 frames that I have here are the same animation that
+  exists within camera three here, but I've chosen to take a selection of it and
+  slow it down. And that moves the frames</p><p><page-anchor
+  target="#video-rNglhHBGw48" value="288">4:48</page-anchor> that it's
+  represented on from being somewhere within 1 to 144 to now being within the
+  range of 250 to 350. So I will get into kind of what that means exactly when
+  we take a look at our animation later on, but just be aware that naming your
+  folders with your rendered images is going to be really beneficial when you
+  start moving image sequences around, for instance, to After Effects. If you
+  don't do this, you will very quickly get confused and you won't be really sure
+  what it is that you've rendered out. And just to show you what an image
+  sequence looks like, you can see here that I've got some metadata burned into
+  the image and that's really easy to set up in Blender, but you can see here it
+  actually burns in some timestamp information and also the frame number and the
+  camera that's being used. So if I just press the down arrow, You can see here
+  we're advancing frame.</p><p><page-anchor target="#video-rNglhHBGw48"
+  value="352">5:52</page-anchor> Okay, so now we're on frame nine, which
+  corresponds to the number here. Okay, so I'll get into how to actually
+  generate these a bit later. But for now, just make sure that you are having a
+  really well-planned project folder. For instance, all of your audio that
+  you're using should go in an audio folder. Any blend files that you're making
+  should go in this blender folder. I'm actually going to drop this autosave
+  file here and there. And then, you know, keep a separate folder for each
+  category of renders that you do. So my animatic renders here are actually
+  going to have the same file names as my final renders.</p><p><page-anchor
+  target="#video-rNglhHBGw48" value="395">6:35</page-anchor> And these final
+  renders are just higher quality renders that aren't necessarily animated any
+  differently. but this is the same process you're going to go through when you
+  fine-tune and perfect your animations. This will allow you to essentially drop
+  in and replace your final rendered images inside of your After Effects edits.
+  Then I have a final folder here called videos, and this just has any exports I
+  create from After Effects or any other video that is getting exported from the
+  software and you can see here i have those two videos i mentioned earlier
+  which is the animatic and then the final rendered version okay so now let's
+  take a look at our scene file and start animating</p></div></a11y-collapse>
