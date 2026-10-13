@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850877,
+      "updated": 1791850881,
       "version": "26.8.0"
     },
     "theme": {
@@ -19727,6 +19727,40 @@
         "images": [],
         "videos": [],
         "updated": 1791847514
+      }
+    },
+    {
+      "id": "item-5d1af595-3cc9-4ae7-90bf-7404dff6869b",
+      "indent": 2,
+      "location": "pages/item-5d1af595-3cc9-4ae7-90bf-7404dff6869b/index.html",
+      "slug": "tutorials/rigging-a-character/creating-edge-flow-for-deformation",
+      "order": 3,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Creating edge flow for deformation",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=HtbduCFqVrs",
+          "batch": "video-mv5xr0rt",
+          "captions": "speech",
+          "duration": 1941,
+          "written": true
+        },
+        "created": 1791850881,
+        "images": [],
+        "videos": [],
+        "updated": 1791850881
       }
     },
     {
