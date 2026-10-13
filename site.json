@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850874,
+      "updated": 1791850877,
       "version": "26.8.0"
     },
     "theme": {
@@ -17751,7 +17751,7 @@
       "order": 2,
       "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
       "title": "Adding knees and elbows",
-      "description": "",
+      "description": "Add edge loops where the character needs to bend (elbows, knees, waist, neck and shoulders) and shape its T-pose so it deforms well once it's rigged.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
