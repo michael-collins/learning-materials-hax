@@ -296,5 +296,8 @@
   "oer:arrow-up-right": "arrow-up-right",
   "oer:file-plus": "file-plus",
   "oer:map": "map",
-  "oer:hand": "hand"
+  "oer:hand": "hand",
+  "oer:circle-plus": "circle-plus",
+  "oer:list-filter": "list-filter",
+  "oer:settings-2": "settings-2"
 }

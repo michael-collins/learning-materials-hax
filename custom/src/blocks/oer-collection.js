@@ -33,6 +33,7 @@ import { outlineViewer, canView } from "../ui/oer-outline-viewer.js";
 import { saveOutline } from "../outline/outline-model.js";
 import { unwrapDrafts } from "./oer-draft.js";
 import { formControls } from "../ui/form-controls.js";
+import { HOME_TITLES } from "../types/type-homes.js";
 
 const COURSE_TYPE = "oer:course";
 // grouping by type follows how a course runs
@@ -104,7 +105,6 @@ class OerCollection extends LitElement {
     this._items = [];
     this._defs = [];
     this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, activeGroup: "", view: null, hidden: [], shown: [], perPage: 0 };
-    this._columnsOpen = false;
     // bulk publishing (signed-in authors, table view): selected page ids, and
     // the Publish / Unpublish step in progress
     this._selected = new Set();
@@ -113,6 +113,20 @@ class OerCollection extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    // a click outside an open menu closes it
+    this.__outside = (e) => {
+      if (this.__pop && !e.composedPath().some((n) => n.dataset?.popWrap === this.__pop)) this._closePop(false);
+    };
+    globalThis.document?.addEventListener("pointerdown", this.__outside, true);
+    // narrow (a phone, a narrow column): the filters move into a sheet
+    this.__resize = new ResizeObserver(([entry]) => {
+      const narrow = entry.contentRect.width > 0 && entry.contentRect.width < 576;
+      if (narrow === !!this.__narrow) return;
+      this.__narrow = narrow;
+      this.__pop = null;
+      this.requestUpdate();
+    });
+    this.__resize.observe(this);
     this.__dispose = autorun(() => {
       const items = toJS(store.manifest?.items) || [];
       const active = toJS(store.activeId);
@@ -146,6 +160,8 @@ class OerCollection extends LitElement {
 
   disconnectedCallback() {
     this.__dispose?.();
+    globalThis.document?.removeEventListener("pointerdown", this.__outside, true);
+    this.__resize?.disconnect();
     super.disconnectedCallback();
   }
 
@@ -415,10 +431,41 @@ class OerCollection extends LitElement {
     return [...out.values()];
   }
 
-  // choice fields, and fields marked as categories (filter: Courses,
-  // University), with 2+ values among the items: offered as filters
+  // fields the type marks "Readers can filter by this" (Courses,
+  // Difficulty, University…), with 2+ values among the items
   get _filterFields() {
-    return this._fields.filter((f) => (f.kind === "select" || f.kind === "list" || f.filter) && this._distinct(f.name).length > 1 && f.name !== "learningObjectives");
+    return this._fields.filter((f) => f.filter && this._distinct(f.name).length > 1);
+  }
+
+  // the filters readers get: those fields, then tags
+  get _facets() {
+    const out = this._filterFields.map((f) => ({ key: f.name, label: f.label, field: f, values: this._distinct(f.name) }));
+    const tags = this._distinct("tags");
+    if (tags.length > 1) out.push({ key: "tags", label: "Tags", field: null, values: tags });
+    return out;
+  }
+
+  // what's ticked in a filter (a single value from before filters took
+  // several reads as one)
+  _picked(key) {
+    const v = key === "tags" ? this._state.tags : this._state.filters?.[key];
+    return Array.isArray(v) ? v : v ? [v] : [];
+  }
+
+  // a value as a filter shows it: a course as its code
+  _shortLabel(facet, value) {
+    const page = facet.field?.kind === "relation" ? (this._all || []).find((i) => i.id === value) : null;
+    if (page?.metadata?.pageType === COURSE_TYPE) return page.metadata.oerFields?.code || page.title;
+    return facet.field ? String(this._label(facet.field, value)) : value;
+  }
+
+  // what the list holds, in words: "exercises", "1 exercise", "pages"
+  _noun(n) {
+    const ids = this._typeIds.length ? this._typeIds : [...new Set(this._items.map((i) => i.metadata?.pageType).filter(Boolean))];
+    const t = ids.length === 1 ? this._defs.find((d) => d.id === ids[0]) : null;
+    if (!t) return n === 1 ? "page" : "pages";
+    if (n === 1) return t.label.toLowerCase();
+    return HOME_TITLES[t.id] && t.id !== "oer:activity" ? HOME_TITLES[t.id].toLowerCase() : `${t.label.toLowerCase()}s`;
   }
 
   _distinct(name) {
@@ -481,20 +528,41 @@ class OerCollection extends LitElement {
     return cols;
   }
 
+  // a page passes the search and every filter (several ticked in one
+  // filter: any of them), leaving out one filter for that filter's counts.
+  // Only the filters on show apply: one remembered from before that isn't
+  // offered any more would hide pages with nothing saying so
+  _passes(i, facets, except = null) {
+    const needle = this._state.q.trim().toLowerCase();
+    if (needle) {
+      let hay = this.__hay?.get(i);
+      if (hay === undefined) {
+        hay = [i.title, i.description, ...toList(i.metadata?.tags), ...Object.values(i.metadata?.oerFields || {}).map((v) => this._plain(v))].join(" ").toLowerCase();
+        (this.__hay ||= new WeakMap()).set(i, hay);
+      }
+      if (!hay.includes(needle)) return false;
+    }
+    for (const f of facets) {
+      if (f.key === except) continue;
+      const picked = this._picked(f.key);
+      if (picked.length && !toList(this._value(i, f.key)).some((v) => picked.includes(v))) return false;
+    }
+    return true;
+  }
+
   get _filtered() {
-    const { q, filters, tags } = this._state;
-    const needle = q.trim().toLowerCase();
-    return this._items.filter((i) => {
-      if (needle) {
-        const hay = [i.title, i.description, ...toList(i.metadata?.tags), ...Object.values(i.metadata?.oerFields || {}).map((v) => this._plain(v))].join(" ").toLowerCase();
-        if (!hay.includes(needle)) return false;
-      }
-      for (const [name, value] of Object.entries(filters)) {
-        if (value && !toList(this._value(i, name)).includes(value)) return false;
-      }
-      if (tags.length && !toList(i.metadata?.tags).some((t) => tags.includes(t))) return false;
-      return true;
-    });
+    const facets = this._facets;
+    return this._items.filter((i) => this._passes(i, facets));
+  }
+
+  // how many pages each value would show, with the other filters as they are
+  _counts(facet, facets) {
+    const counts = new Map();
+    for (const i of this._items) {
+      if (!this._passes(i, facets, facet.key)) continue;
+      for (const v of new Set(toList(this._value(i, facet.key)))) counts.set(v, (counts.get(v) || 0) + 1);
+    }
+    return counts;
   }
 
   _sorted(list) {
@@ -531,7 +599,7 @@ class OerCollection extends LitElement {
   }
 
   _groups(list) {
-    const by = this._state.groupBy;
+    const by = this._groupBy;
     if (!by) return [{ key: "", items: list }];
     const map = new Map();
     for (const i of list) {
@@ -563,16 +631,19 @@ class OerCollection extends LitElement {
     this._setState({ sortKey: key, sortDir: current === key ? -sortDir : 1, page: 1 });
   }
 
-  _setFilter(name, value) {
+  // tick or untick a value in a filter; no value clears the filter
+  _setFilter(key, value) {
+    const picked = this._picked(key);
+    const next = value == null ? [] : picked.includes(value) ? picked.filter((v) => v !== value) : [...picked, value];
+    if (key === "tags") return this._setState({ tags: next, page: 1 });
     const filters = { ...this._state.filters };
-    if (filters[name] === value || !value) delete filters[name];
-    else filters[name] = value;
+    if (next.length) filters[key] = next;
+    else delete filters[key];
     this._setState({ filters, page: 1 });
   }
 
   _toggleTag(tag) {
-    const tags = this._state.tags.includes(tag) ? this._state.tags.filter((t) => t !== tag) : [...this._state.tags, tag];
-    this._setState({ tags, page: 1 });
+    this._setFilter("tags", tag);
   }
 
   _clear() {
@@ -798,8 +869,8 @@ class OerCollection extends LitElement {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 0.375rem;
-        margin-bottom: 0.75rem;
+        gap: 0.375rem 0.75rem;
+        margin: 0 0 0.75rem;
         font-size: 0.8125rem;
         color: var(--muted-foreground, #555);
       }
@@ -810,33 +881,342 @@ class OerCollection extends LitElement {
         text-decoration: underline;
         text-underline-offset: 2px;
       }
-      .cols-wrap {
+      .vh,
+      .toolbar.narrow .lbl {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .toolbar.narrow .search {
+        flex: 1 1 100%;
+      }
+      .toolbar.narrow .filters-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+      }
+      .btn.ghost {
+        border-color: transparent;
+        background: transparent;
+        box-shadow: none;
+      }
+      .btn.ghost:hover {
+        background: var(--accent, #f4f4f5);
+      }
+      .filters-btn.on {
+        border-color: var(--foreground, #111);
+      }
+      .count-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-width: 1.25rem;
+        height: 1.25rem;
+        padding: 0 0.3125rem;
+        border-radius: 999px;
+        background: var(--primary, #2563eb);
+        color: var(--primary-foreground, #fff);
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      /* a filter (shadcn's faceted filter): dashed while nothing is ticked;
+         with something ticked, solid with the ticked values on it */
+      .pop-wrap {
         position: relative;
       }
-      .cols-pop {
+      .facet {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        box-sizing: border-box;
+        height: 2rem;
+        padding: 0 0.625rem;
+        border: 1px dashed var(--input-border, var(--border, #ddd));
+        border-radius: var(--radius-md, 0.5rem);
+        background: var(--background, #fff);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+        font-size: 0.875rem;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+      .facet:hover {
+        background: var(--accent, #f4f4f5);
+      }
+      .facet:focus-visible {
+        outline: 2px solid var(--ring, #2563eb);
+        outline-offset: 1px;
+      }
+      .facet.on {
+        border-style: solid;
+        border-color: var(--foreground, #111);
+      }
+      .facet .sep {
+        width: 1px;
+        height: 1rem;
+        margin: 0 0.125rem;
+        background: var(--input-border, var(--border, #ddd));
+      }
+      .badge {
+        display: inline-block;
+        max-width: 9rem;
+        height: 1.25rem;
+        padding: 0 0.375rem;
+        overflow: hidden;
+        border-radius: var(--radius-sm, 0.25rem);
+        background: color-mix(in oklab, var(--primary, #2563eb) 10%, var(--background, #fff));
+        color: var(--primary, #2563eb);
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        text-overflow: ellipsis;
+      }
+      /* menus under the toolbar's buttons (shadcn Popover) */
+      .pop {
         position: absolute;
-        right: 0;
+        left: 0;
         top: calc(100% + 0.25rem);
-        z-index: 5;
-        min-width: 12rem;
-        padding: 0.375rem;
+        z-index: 20;
+        box-sizing: border-box;
+        min-width: 13rem;
+        max-width: min(20rem, calc(100vw - 2rem));
+        padding: 0.25rem;
         border: 1px solid var(--border, #e5e5e5);
         border-radius: var(--radius-md, 0.5rem);
         background: var(--popover, var(--background, #fff));
+        color: var(--foreground, #111);
         box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+        font-size: 0.875rem;
       }
-      .cols-pop label {
+      .view-pop {
+        left: auto;
+        right: 0;
+      }
+      .find {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        height: 1.75rem;
-        padding: 0 0.375rem;
+        height: 2.25rem;
+        margin: -0.25rem -0.25rem 0.25rem;
+        padding: 0 0.75rem;
+        border-bottom: 1px solid var(--border, #e5e5e5);
+        border-radius: var(--radius-md, 0.5rem) var(--radius-md, 0.5rem) 0 0;
+        color: var(--muted-foreground, #555);
+      }
+      .find:focus-within {
+        outline: 2px solid var(--ring, #2563eb);
+        outline-offset: -2px;
+      }
+      .find input {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: var(--foreground, #111);
+        font-size: 0.875rem;
+      }
+      .opts {
+        max-height: 16rem;
+        overflow-y: auto;
+      }
+      .opt {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 2rem;
+        padding: 0.25rem 0.5rem;
+        box-sizing: border-box;
         border-radius: var(--radius-sm, 0.25rem);
-        font-size: 0.8125rem;
         cursor: pointer;
       }
-      .cols-pop label:hover {
+      .opt:hover {
         background: var(--accent, #f4f4f5);
+      }
+      .opt input {
+        flex: none;
+        margin: 0;
+      }
+      .opt-label {
+        flex: 1;
+        min-width: 0;
+      }
+      .opt-count {
+        margin-left: auto;
+        padding-left: 1rem;
+        font-family: var(--font-mono, ui-monospace, monospace);
+        font-size: 0.75rem;
+        color: var(--muted-foreground, #555);
+      }
+      .none {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.8125rem;
+        color: var(--muted-foreground, #555);
+      }
+      .pop-foot {
+        margin: 0.25rem -0.25rem -0.25rem;
+        padding: 0.25rem;
+        border-top: 1px solid var(--border, #e5e5e5);
+      }
+      .pop-clear {
+        all: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 2rem;
+        border-radius: var(--radius-sm, 0.25rem);
+        cursor: pointer;
+      }
+      .pop-clear:hover {
+        background: var(--accent, #f4f4f5);
+      }
+      .pop-clear:focus-visible {
+        outline: 2px solid var(--ring, #2563eb);
+        outline-offset: -2px;
+      }
+      .pop fieldset,
+      .sheet fieldset {
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      .pop legend {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--muted-foreground, #555);
+      }
+      .pop fieldset + fieldset,
+      .pop fieldset + .pop-field,
+      .pop .pop-field + fieldset {
+        margin-top: 0.25rem;
+        padding-top: 0.25rem;
+        border-top: 1px solid var(--border, #e5e5e5);
+      }
+      .pop-field {
+        padding: 0.375rem 0.5rem;
+      }
+      /* the filters on a phone: a sheet from the bottom (shadcn Drawer) */
+      dialog.sheet {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        max-height: 85dvh;
+        margin: auto 0 0;
+        padding: 0;
+        border: 0;
+        border-top: 1px solid var(--border, #e5e5e5);
+        border-radius: var(--radius-lg, 0.75rem) var(--radius-lg, 0.75rem) 0 0;
+        background: var(--popover, var(--background, #fff));
+        color: var(--foreground, #111);
+        font-size: 0.875rem;
+      }
+      dialog.sheet::backdrop {
+        background: rgb(0 0 0 / 0.5);
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        dialog.sheet[open] {
+          animation: sheet-in 160ms ease-out;
+        }
+        @keyframes sheet-in {
+          from {
+            transform: translateY(1.5rem);
+            opacity: 0;
+          }
+        }
+      }
+      .sheet-inner {
+        display: flex;
+        flex-direction: column;
+        max-height: 85dvh;
+      }
+      .sheet header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 0.75rem 0.25rem 1rem;
+      }
+      .sheet h2 {
+        margin: 0;
+        font-size: 1.0625rem;
+        font-weight: 600;
+      }
+      .icon-btn {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: var(--radius-md, 0.5rem);
+        cursor: pointer;
+      }
+      .icon-btn:hover {
+        background: var(--accent, #f4f4f5);
+      }
+      .icon-btn:focus-visible {
+        outline: 2px solid var(--ring, #2563eb);
+      }
+      .sheet-body {
+        overflow-y: auto;
+        padding: 0 1rem 0.5rem;
+      }
+      .sheet fieldset {
+        padding: 0.5rem 0;
+      }
+      .sheet fieldset + fieldset {
+        border-top: 1px solid var(--border, #e5e5e5);
+      }
+      .sheet legend {
+        padding: 0.25rem 0;
+        font-weight: 600;
+      }
+      .legend-note {
+        font-weight: 400;
+        color: var(--muted-foreground, #555);
+      }
+      .sheet .opts {
+        max-height: none;
+      }
+      .sheet .opt {
+        min-height: 2.75rem;
+        padding: 0 0.25rem;
+      }
+      .sheet .find {
+        margin: 0.25rem 0;
+        border: 1px solid var(--input-border, var(--border, #ddd));
+        border-radius: var(--radius-md, 0.5rem);
+      }
+      .sheet footer {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+        border-top: 1px solid var(--border, #e5e5e5);
+      }
+      .sheet footer .btn {
+        flex: 1;
+        justify-content: center;
+        height: 2.5rem;
+      }
+      /* controls reset with all: unset lose the ring above */
+      .btn:focus-visible,
+      .seg button:focus-visible,
+      .chip:focus-visible,
+      .link:focus-visible,
+      .pages button:focus-visible,
+      th button:focus-visible {
+        outline: 2px solid var(--ring, #2563eb);
+        outline-offset: 1px;
       }
       input[type="checkbox"] {
         accent-color: var(--primary, #2563eb);
@@ -1716,81 +2096,251 @@ class OerCollection extends LitElement {
     </div>`;
   }
 
+  /* ---------- search, filters and view: shadcn's data table toolbar ---------- */
+
+  // what readers can group by: type (when the list mixes them), the filters
+  get _groupable() {
+    return [...(new Set(this._items.map((i) => i.metadata?.pageType)).size > 1 ? [{ key: "type", label: "Type" }] : []), ...this._facets.map((f) => ({ key: f.key, label: f.label }))];
+  }
+
+  // the grouping in use: one remembered from before that isn't offered any
+  // more is dropped
+  get _groupBy() {
+    const by = this._state.groupBy;
+    return by && (by === this.group || this._groupable.some((g) => g.key === by)) ? by : "";
+  }
+
+  // one menu open at a time (a filter's key, or "view"); Esc and a click
+  // outside close it, Esc giving focus back to its button
+  _openPop(key) {
+    this.__pop = this.__pop === key ? null : key;
+    this.__finds = {};
+    this.requestUpdate();
+    if (!this.__pop) return;
+    this.updateComplete.then(() => {
+      const pop = this.shadowRoot.querySelector(`.pop[data-key="${CSS.escape(key)}"]`);
+      if (!pop) return;
+      // keep it inside the window
+      const r = pop.getBoundingClientRect();
+      const over = r.right - (globalThis.innerWidth - 8);
+      if (over > 0) pop.style.left = `${-over}px`;
+      pop.querySelector('input[type="search"], input:checked, input')?.focus();
+    });
+  }
+
+  _closePop(focusButton = true) {
+    const key = this.__pop;
+    if (!key) return;
+    this.__pop = null;
+    this.requestUpdate();
+    if (focusButton) this.updateComplete.then(() => this.shadowRoot.querySelector(`.pop-btn[data-key="${CSS.escape(key)}"]`)?.focus());
+  }
+
+  // in a menu: Esc closes it; ↑ and ↓ go through its search box and boxes
+  _popKeys(e) {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      e.stopPropagation();
+      this._closePop();
+      return;
+    }
+    if ((e.key !== "ArrowDown" && e.key !== "ArrowUp") || e.target.type === "radio") return;
+    const stops = [...e.currentTarget.querySelectorAll('input[type="search"], input[type="checkbox"]')];
+    const at = stops.indexOf(e.target);
+    if (at < 0) return;
+    e.preventDefault();
+    stops[Math.max(0, Math.min(stops.length - 1, at + (e.key === "ArrowDown" ? 1 : -1)))].focus();
+  }
+
+  // a filter's values as checkboxes, each with how many pages it would
+  // show, and a box to find one when there are many
+  _renderOptions(f, counts, { group = true } = {}) {
+    const picked = this._picked(f.key);
+    const typed = this.__finds?.[f.key] || "";
+    const q = typed.trim().toLowerCase();
+    const label = (v) => (f.field ? String(this._label(f.field, v)) : v);
+    const shown = q ? f.values.filter((v) => label(v).toLowerCase().includes(q)) : f.values;
+    const name = f.label.toLowerCase();
+    return html`
+      ${f.values.length > 7
+        ? html`<label class="find">
+            ${lucide("icons:search", "sm")}
+            <input
+              type="search"
+              placeholder="Find ${name}…"
+              aria-label="Find ${name}"
+              .value="${typed}"
+              @input="${(e) => {
+                this.__finds = { ...(this.__finds || {}), [f.key]: e.target.value };
+                this.requestUpdate();
+              }}"
+            />
+          </label>`
+        : ""}
+      <div class="opts" role="${group ? "group" : "presentation"}" aria-label="${group ? f.label : ""}">
+        ${shown.map(
+          (v) => html`<label class="opt">
+            <input type="checkbox" .checked="${picked.includes(v)}" @change="${() => this._setFilter(f.key, v)}" />
+            <span class="opt-label">${label(v)}</span>
+            <span class="opt-count">${counts.get(v) || 0}</span>
+          </label>`,
+        )}
+        ${shown.length ? "" : html`<p class="none">No ${name} match “${typed.trim()}”.</p>`}
+      </div>
+    `;
+  }
+
+  // a filter's button: dashed until something is ticked, then the ticked
+  // values on it ("Difficulty | Beginner", "Tags | 3 selected")
+  _renderFacet(f, counts) {
+    const picked = this._picked(f.key);
+    const open = this.__pop === f.key;
+    return html`<div class="pop-wrap" data-pop-wrap="${f.key}">
+      <button class="facet pop-btn ${picked.length ? "on" : ""}" data-key="${f.key}" aria-haspopup="dialog" aria-expanded="${open}" @click="${() => this._openPop(f.key)}">
+        ${lucide("oer:circle-plus", "sm")}<span>${f.label}</span>
+        ${picked.length
+          ? html`<span class="sep" aria-hidden="true"></span><span class="vh">: </span>${picked.length > 2
+                ? html`<span class="badge">${picked.length} selected</span>`
+                : picked.map((v, n) => html`${n ? html`<span class="vh">, </span>` : ""}<span class="badge">${this._shortLabel(f, v)}</span>`)}`
+          : ""}
+      </button>
+      ${open
+        ? html`<div class="pop" data-key="${f.key}" role="dialog" aria-label="Filter by ${f.label.toLowerCase()}" @keydown="${this._popKeys}">
+            ${this._renderOptions(f, counts)}
+            ${picked.length
+              ? html`<div class="pop-foot">
+                  <button
+                    class="pop-clear"
+                    @click="${() => {
+                      this._setFilter(f.key, null);
+                      this._closePop();
+                    }}"
+                  >
+                    Clear ${f.label.toLowerCase()}
+                  </button>
+                </div>`
+              : ""}
+          </div>`
+        : ""}
+    </div>`;
+  }
+
+  // View: group by, the page size while grouped, and (in a table) columns
+  _renderViewMenu(view, grouped) {
+    const groupable = this._groupable;
+    const cols = view === "table" ? this._columns.filter((c) => !c.fixed) : [];
+    if (!groupable.length && !cols.length) return "";
+    const open = this.__pop === "view";
+    const by = this._groupBy;
+    return html`<div class="pop-wrap" data-pop-wrap="view">
+      <button class="btn pop-btn" data-key="view" aria-haspopup="dialog" aria-expanded="${open}" @click="${() => this._openPop("view")}">
+        ${lucide("oer:settings-2", "sm")}<span class="lbl">View</span>
+      </button>
+      ${open
+        ? html`<div class="pop view-pop" data-key="view" role="dialog" aria-label="View" @keydown="${this._popKeys}">
+            ${groupable.length
+              ? html`<fieldset>
+                  <legend>Group by</legend>
+                  ${[{ key: "", label: "None" }, ...groupable].map(
+                    (g) => html`<label class="opt">
+                      <input type="radio" name="group-by" .checked="${by === g.key}" @change="${() => this._setState({ groupBy: g.key, page: 1 })}" />
+                      <span class="opt-label">${g.label}</span>
+                    </label>`,
+                  )}
+                </fieldset>`
+              : ""}
+            ${grouped ? html`<div class="pop-field">${this._renderPerPage()}</div>` : ""}
+            ${cols.length
+              ? html`<fieldset>
+                  <legend>Columns</legend>
+                  ${cols.map(
+                    (c) => html`<label class="opt">
+                      <input type="checkbox" .checked="${this._columnOn(c)}" @change="${(e) => this._toggleColumn(c, e.target.checked)}" />
+                      <span class="opt-label">${c.label}</span>
+                    </label>`,
+                  )}
+                </fieldset>`
+              : ""}
+          </div>`
+        : ""}
+    </div>`;
+  }
+
+  _openSheet() {
+    this.__finds = {};
+    this.requestUpdate();
+    this.updateComplete.then(() => this.shadowRoot.querySelector("dialog.sheet")?.showModal());
+  }
+
+  // on a phone: every filter in a sheet from the bottom, applied as they're
+  // ticked
+  _renderSheet(facets, counts, shown) {
+    const any = facets.some((f) => this._picked(f.key).length);
+    const close = (e) => e.target.closest("dialog")?.close();
+    return html`<dialog class="sheet" aria-labelledby="sheet-title" @click="${(e) => e.target === e.currentTarget && e.currentTarget.close()}">
+      <div class="sheet-inner">
+        <header>
+          <h2 id="sheet-title">Filters</h2>
+          <button class="icon-btn" aria-label="Close" @click="${close}">${lucide("oer:x")}</button>
+        </header>
+        <div class="sheet-body">
+          ${facets.map((f) => {
+            const n = this._picked(f.key).length;
+            return html`<fieldset>
+              <legend>${f.label}${n ? html`<span class="legend-note"> · ${n} on</span>` : ""}</legend>
+              ${this._renderOptions(f, counts.get(f.key), { group: false })}
+            </fieldset>`;
+          })}
+        </div>
+        <footer>
+          ${any ? html`<button class="btn" @click="${() => this._setState({ filters: {}, tags: [], page: 1 })}">Clear filters</button>` : ""}
+          <button class="btn primary" @click="${close}">Show ${shown} ${this._noun(shown)}</button>
+        </footer>
+      </div>
+    </dialog>`;
+  }
+
   _renderControls(total, shown) {
     const s = this._state;
     const view = s.view || this.view;
-    const filterFields = this._filterFields;
-    const tags = this._distinct("tags");
-    const groupable = [
-      ...(new Set(this._items.map((i) => i.metadata?.pageType)).size > 1 ? [{ key: "type", label: "Type" }] : []),
-      ...filterFields.filter((f) => f.kind === "select" || f.filter).map((f) => ({ key: f.name, label: f.label })),
-      ...(tags.length ? [{ key: "tags", label: "Tag" }] : []),
-    ];
-    const active = [
-      ...Object.entries(s.filters).map(([name, v]) => ({ label: `${filterFields.find((f) => f.name === name)?.label || name}: ${this._label(filterFields.find((f) => f.name === name), v)}`, clear: () => this._setFilter(name, null) })),
-      ...s.tags.map((t) => ({ label: `Tag: ${t}`, clear: () => this._toggleTag(t) })),
-    ];
+    const facets = this._facets;
+    const narrow = !!this.__narrow;
+    const counts = new Map(facets.map((f) => [f.key, this._counts(f, facets)]));
+    const active = facets.flatMap((f) => this._picked(f.key).map((v) => ({ f, v })));
+    const filtering = active.length > 0 || !!s.q.trim();
+    const noun = this._noun(total);
     return html`
-      <div class="bar">
+      <div class="bar toolbar ${narrow ? "narrow" : ""}">
         <label class="search">
           ${lucide("icons:search", "sm")}
-          <input type="search" placeholder="Search…" aria-label="Search" .value="${s.q}" @input="${(e) => this._setState({ q: e.target.value, page: 1 })}" />
+          <input type="search" placeholder="Search ${noun}…" aria-label="Search ${noun}" .value="${s.q}" @input="${(e) => this._setState({ q: e.target.value, page: 1 })}" />
         </label>
-        ${filterFields.map((f) =>
-          this._dropdown({
-            label: f.label,
-            value: s.filters[f.name] || "",
-            options: [{ value: "", label: "All" }, ...this._distinct(f.name).map((v) => ({ value: v, label: this._label(f, v) }))],
-            onChange: (v) => this._setFilter(f.name, v),
-          }),
-        )}
+        ${narrow
+          ? facets.length
+            ? html`<button class="btn filters-btn ${active.length ? "on" : ""}" aria-haspopup="dialog" @click="${this._openSheet}">
+                ${lucide("oer:list-filter", "sm")}Filters${active.length ? html`<span class="vh">,</span> <span class="count-badge">${active.length}</span><span class="vh"> on</span>` : ""}
+              </button>`
+            : ""
+          : html`${facets.map((f) => this._renderFacet(f, counts.get(f.key)))}
+            ${filtering ? html`<button class="btn ghost" @click="${this._clear}">Clear filters${lucide("oer:x", "sm")}</button>` : ""}`}
         <span class="bar-end">
-        ${view === "table"
-          ? html`<div class="cols-wrap">
-              <button class="btn" aria-expanded="${this._columnsOpen}" @click="${() => (this._columnsOpen = !this._columnsOpen)}">${lucide("oer:columns-2", "sm")}Columns</button>
-              ${this._columnsOpen
-                ? html`<div class="cols-pop" role="group" aria-label="Columns">
-                    ${this._columns
-                      .filter((c) => !c.fixed)
-                      .map(
-                        (c) => html`<label
-                          ><input
-                            type="checkbox"
-                            .checked="${this._columnOn(c)}"
-                            @change="${(e) => this._toggleColumn(c, e.target.checked)}"
-                          />${c.label}</label
-                        >`,
-                      )}
-                  </div>`
-                : ""}
-            </div>`
-          : ""}
-        <div class="seg" role="group" aria-label="View">
-          <button aria-pressed="${view === "table"}" @click="${() => this._setState({ view: "table" })}">${lucide("editor:border-all", "sm")}Table</button>
-          <button aria-pressed="${view === "cards"}" @click="${() => this._setState({ view: "cards" })}">${lucide("icons:view-module", "sm")}Cards</button>
-        </div>
+          <div class="seg" role="group" aria-label="Show as">
+            <button aria-pressed="${view === "table"}" @click="${() => this._setState({ view: "table" })}">${lucide("editor:border-all", "sm")}<span class="lbl">Table</span></button>
+            <button aria-pressed="${view === "cards"}" @click="${() => this._setState({ view: "cards" })}">${lucide("icons:view-module", "sm")}<span class="lbl">Cards</span></button>
+          </div>
+          ${this._renderViewMenu(view, !!this._groupBy)}
         </span>
       </div>
-      ${tags.length > 1
-        ? html`<div class="chips" role="group" aria-label="Tags">
-            ${tags.map((t) => html`<button class="chip" aria-pressed="${s.tags.includes(t)}" @click="${() => this._toggleTag(t)}">${t}</button>`)}
+      ${narrow && active.length
+        ? html`<div class="chips" role="group" aria-label="Filters on">
+            ${active.map(({ f, v }) => html`<button class="chip active" aria-label="Remove ${f.label.toLowerCase()} filter: ${this._shortLabel(f, v)}" @click="${() => this._setFilter(f.key, v)}">${this._shortLabel(f, v)}${lucide("oer:x", "xs")}</button>`)}
           </div>`
         : ""}
-      ${groupable.length
-        ? html`<div class="bar">
-            <span class="field-label" id="group-by-label">Group by</span>
-            <div class="seg" role="group" aria-labelledby="group-by-label">
-              <button aria-pressed="${!s.groupBy}" @click="${() => this._setState({ groupBy: "", page: 1 })}">None</button>
-              ${groupable.map((g) => html`<button aria-pressed="${s.groupBy === g.key}" @click="${() => this._setState({ groupBy: g.key, page: 1 })}">${g.label}</button>`)}
-            </div>
-            ${s.groupBy ? html`<span class="bar-end">${this._renderPerPage()}</span>` : ""}
-          </div>`
-        : ""}
-      <div class="status" aria-live="polite">
-        ${active.map((a) => html`<button class="chip active" @click="${a.clear}" aria-label="Remove filter ${a.label}">${lucide("image:tune", "xs")}${a.label}${lucide("oer:x", "xs")}</button>`)}
-        <span>${shown === total ? `${total} item${total === 1 ? "" : "s"}` : `${shown} of ${total}`}</span>
-        ${active.length || s.q ? html`<button class="link" @click="${this._clear}">Clear all</button>` : ""}
-      </div>
+      <p class="status">
+        <span role="status">${shown === total ? `${total} ${noun}` : `${shown} of ${total} ${noun}`}</span>
+        ${narrow && filtering ? html`<button class="link" @click="${this._clear}">Clear all</button>` : ""}
+      </p>
+      ${narrow && facets.length ? this._renderSheet(facets, counts, shown) : ""}
     `;
   }
 
@@ -1878,7 +2428,7 @@ class OerCollection extends LitElement {
     const sorted = this._sorted(filtered);
     const per = this._per;
     const groups = this._groups(sorted);
-    const grouped = groups.length > 1 || !!this._state.groupBy;
+    const grouped = groups.length > 1 || !!this._groupBy;
     // a list's page: the whole list, or (grouped) each group on its own
     const pageOf = (total, wanted) => Math.min(Math.max(1, wanted || 1), Math.max(1, Math.ceil(total / per)));
     const page = pageOf(sorted.length, this._state.page);
@@ -1956,7 +2506,7 @@ class OerCollection extends LitElement {
 
 // Internal state is kept out of `properties`: HAX writes every declared
 // property into the saved page, so these re-render via requestUpdate instead
-for (const name of ["_items", "_defs", "_state", "_columnsOpen", "_selected", "_bulk"]) {
+for (const name of ["_items", "_defs", "_state", "_selected", "_bulk"]) {
   Object.defineProperty(OerCollection.prototype, name, {
     get() {
       return this[`__${name}`];

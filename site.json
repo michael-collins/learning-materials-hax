@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791910959,
+      "updated": 1791911694,
       "version": "26.8.0"
     },
     "theme": {
@@ -20513,7 +20513,8 @@
                       "label": "Advanced"
                     }
                   ],
-                  "header": true
+                  "header": true,
+                  "filter": true
                 },
                 {
                   "name": "courses",
@@ -20629,7 +20630,8 @@
                       "label": "Advanced"
                     }
                   ],
-                  "header": true
+                  "header": true,
+                  "filter": true
                 },
                 {
                   "name": "image",
@@ -21359,7 +21361,8 @@
                       "label": "Advanced"
                     }
                   ],
-                  "header": true
+                  "header": true,
+                  "filter": true
                 },
                 {
                   "name": "image",
@@ -21741,7 +21744,8 @@
                       "label": "Advanced"
                     }
                   ],
-                  "header": true
+                  "header": true,
+                  "filter": true
                 },
                 {
                   "name": "image",
@@ -22115,7 +22119,8 @@
                       "label": "Advanced"
                     }
                   ],
-                  "header": true
+                  "header": true,
+                  "filter": true
                 },
                 {
                   "name": "estimatedDuration",
@@ -22917,7 +22922,8 @@
                       "label": "Advanced"
                     }
                   ],
-                  "header": false
+                  "header": false,
+                  "filter": true
                 },
                 {
                   "name": "estimatedDuration",
@@ -24417,7 +24423,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791826893,
+        "updated": 1791911691,
         "locked": false,
         "status": "",
         "icon": "",
