@@ -26,15 +26,27 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791852821
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: null
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - exercise
+  oerTutorialSeries:
+    - item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c
 content: >
   <p>In this exercise, you will practice using PBR materials, modeling,
   lighting, and rendering. You will also use compositional theory from art and
   design to organize elements in a 3D scene to create an image.</p>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXmwBV0kO-ErBLFnyWukKsD"
-  title="Sculpture Garden Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrXmwBV0kO-ErBLFnyWukKsD"
+  playlist-title="Sculpture Garden Tutorial"></oer-tutorial-series>
 
   <h2>Learning Objectives</h2>
 
