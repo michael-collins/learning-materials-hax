@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902267,
+      "updated": 1791902270,
       "version": "26.8.0"
     },
     "theme": {
@@ -26233,7 +26233,7 @@
       "order": 20,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Procedural texture animations",
-      "description": "",
+      "description": "Make stylized, animated water with Zha Art's tutorial, then render the animation from Blender as an image sequence and turn it into an H.264 video with After Effects and Media Encoder.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
