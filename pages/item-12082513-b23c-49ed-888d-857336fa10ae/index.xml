@@ -43,7 +43,7 @@
 </images>
 <videos>
 </videos>
-<updated>1791850906</updated>
+<updated>1791850911</updated>
 <version>1.0.0</version>
 <oerVersions>
 <item>
@@ -74,7 +74,7 @@
 </ol>
 <h2>Instructions</h2>
 <ol>
-<li>Watch the rigging character rigging tutorials.</li>
+<li>Work through the Rigging a character tutorials above.</li>
 <li>Download the base mesh model FBX file.</li>
 <li><strong>File</strong> → <strong>Import</strong> the FBX file into a new Blender scene.</li>
 <li>Scale up the model.</li>

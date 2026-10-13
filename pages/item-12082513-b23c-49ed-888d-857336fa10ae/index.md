@@ -10,7 +10,7 @@ Learning Objectives
 Instructions
 ------------
 
-1.  Watch the rigging character rigging tutorials.
+1.  Work through the Rigging a character tutorials above.
 2.  Download the base mesh model FBX file.
 3.  **File** → **Import** the FBX file into a new Blender scene.
 4.  Scale up the model.
