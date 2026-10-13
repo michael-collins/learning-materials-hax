@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850881,
+      "updated": 1791850884,
       "version": "26.8.0"
     },
     "theme": {
@@ -19737,7 +19737,7 @@
       "order": 3,
       "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
       "title": "Creating edge flow for deformation",
-      "description": "",
+      "description": "Shape the base mesh's head, neck, torso, legs and arms with more edge loops and careful vertex work, so its edges flow the way a body bends, then apply the Mirror modifier.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
