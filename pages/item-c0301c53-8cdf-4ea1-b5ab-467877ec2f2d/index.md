@@ -9,7 +9,7 @@ Learning Objectives
 Instructions
 ------------
 
-1.  Watch the tutorials.
+1.  Work through the Procedural texture animations tutorials above.
     
 2.  Create and set a project folder called `LASTNAME-animated-procedural-textures` save your .blend file in the project folder.
     
