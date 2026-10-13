@@ -65,7 +65,11 @@ function writeStore(key, value) {
   }
 }
 
-export class OerCollection extends LitElement {
+export // a Course page lists every type taught in the course; its tables start
+// with these columns, the same in every group
+const COURSE_COLUMNS = ["image", "title", "tags", "difficulty"];
+
+class OerCollection extends LitElement {
   static get tag() {
     return "oer-collection";
   }
@@ -83,6 +87,10 @@ export class OerCollection extends LitElement {
       // Course page means that page's course
       course: { type: String, reflect: true },
       group: { type: String, reflect: true }, // grouping to start with: "" | "type"
+      // the table's columns at first, comma-separated keys (image, title,
+      // type, tags or a field's name); the rest are under Columns. Empty:
+      // every column with something to show, except on a Course page
+      columns: { type: String, reflect: true },
     };
   }
 
@@ -95,7 +103,7 @@ export class OerCollection extends LitElement {
     this.controls = "full";
     this._items = [];
     this._defs = [];
-    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, activeGroup: "", view: null, hidden: [], perPage: 0 };
+    this._state = { q: "", filters: {}, tags: [], sortKey: null, sortDir: 1, groupBy: "", page: 1, groupPages: {}, activeGroup: "", view: null, hidden: [], shown: [], perPage: 0 };
     this._columnsOpen = false;
     // bulk publishing (signed-in authors, table view): selected page ids, and
     // the Publish / Unpublish step in progress
@@ -323,8 +331,8 @@ export class OerCollection extends LitElement {
     // no group is the one being paged
     if (patch.page === 1 && !("groupPages" in patch)) patch = { ...patch, groupPages: {}, activeGroup: "" };
     this._state = { ...this._state, ...patch };
-    const { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage } = this._state;
-    writeStore(this._storageKey, { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, perPage });
+    const { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, shown, perPage } = this._state;
+    writeStore(this._storageKey, { q, filters, tags, sortKey, sortDir, groupBy, view, hidden, shown, perPage });
   }
 
   /* ---------- data ---------- */
@@ -431,6 +439,31 @@ export class OerCollection extends LitElement {
       return page?.title || value;
     }
     return (field?.options || []).find((o) => o.value === value)?.label || value;
+  }
+
+  // the columns a table starts with: its own setting, or on a Course page
+  // (where every type's header fields would pile up) image, title, tags
+  // and difficulty; null shows every column with something to show
+  get _defaultColumns() {
+    if (this.columns) return new Set(toList(this.columns).map((c) => String(c).trim()).filter(Boolean));
+    const course = this._course(this._all || []);
+    return course?.id && !this.course ? new Set(COURSE_COLUMNS) : null;
+  }
+
+  // a column the reader has on: a default they haven't turned off, or one
+  // they turned on
+  _columnOn(c) {
+    if (c.fixed) return true;
+    const defaults = this._defaultColumns;
+    if (!defaults || defaults.has(c.key)) return !(this._state.hidden || []).includes(c.key);
+    return (this._state.shown || []).includes(c.key);
+  }
+
+  _toggleColumn(c, on) {
+    const { hidden = [], shown = [] } = this._state;
+    const defaults = this._defaultColumns;
+    if (!defaults || defaults.has(c.key)) this._setState({ hidden: on ? hidden.filter((h) => h !== c.key) : [...hidden, c.key] });
+    else this._setState({ shown: on ? [...shown, c.key] : shown.filter((h) => h !== c.key) });
   }
 
   // columns: image, title, type (when mixed), tags, header fields
@@ -1503,7 +1536,7 @@ export class OerCollection extends LitElement {
         return v !== undefined && v !== null && v !== "" && !(Array.isArray(v) && !v.length);
       });
     };
-    const cols = this._columns.filter((c) => c.fixed || (!this._state.hidden.includes(c.key) && has(c)));
+    const cols = this._columns.filter((c) => c.fixed || (this._columnOn(c) && has(c)));
     const key = this._state.sortKey || this.sort;
     const pick = this._canSelect;
     const ids = items.map((i) => i.id);
@@ -1723,8 +1756,8 @@ export class OerCollection extends LitElement {
                         (c) => html`<label
                           ><input
                             type="checkbox"
-                            .checked="${!s.hidden.includes(c.key)}"
-                            @change="${(e) => this._setState({ hidden: e.target.checked ? s.hidden.filter((h) => h !== c.key) : [...s.hidden, c.key] })}"
+                            .checked="${this._columnOn(c)}"
+                            @change="${(e) => this._toggleColumn(c, e.target.checked)}"
                           />${c.label}</label
                         >`,
                       )}
@@ -1908,6 +1941,7 @@ export class OerCollection extends LitElement {
           { property: "scope", title: "From", inputMethod: "select", options: SCOPES },
           { property: "course", title: "Course", description: "Only pages for this course code (e.g. DART 413). On a Course page, leave empty for that course.", inputMethod: "textfield" },
           { property: "group", title: "Group by", inputMethod: "select", options: { "": "None", type: "Content type" } },
+          { property: "columns", title: "Table columns", description: "Shown at first, separated by commas: image, title, type, tags or a field's name (difficulty, courses…). Readers can show the rest from Columns. Empty: every column with something in it (on a Course page: image, title, tags, difficulty).", inputMethod: "textfield" },
           { property: "view", title: "View", inputMethod: "select", options: VIEWS },
           { property: "sort", title: "Sort by", inputMethod: "select", options: SORTS },
           { property: "perPage", title: "Items per page", inputMethod: "number" },
