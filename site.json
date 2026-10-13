@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850888,
+      "updated": 1791850890,
       "version": "26.8.0"
     },
     "theme": {
@@ -25123,7 +25123,7 @@
       "order": 4,
       "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
       "title": "Setting up an armature",
-      "description": "",
+      "description": "Build a skeleton of bones inside the character, parent and name them, then mirror them to the other side with Symmetrize.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
