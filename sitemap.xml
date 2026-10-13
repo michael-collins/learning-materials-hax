@@ -5628,4 +5628,10 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/reference-modeling-and-lighting-for-everyday-objects</loc>
+    <lastmod>2026-10-13T14:48:13.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
