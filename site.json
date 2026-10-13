@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850859,
+      "updated": 1791850862,
       "version": "26.8.0"
     },
     "theme": {
@@ -8459,6 +8459,40 @@
         "images": [],
         "videos": [],
         "updated": 1791849452
+      }
+    },
+    {
+      "id": "item-520c3ac1-a77c-4439-b97f-4fe22bb8028e",
+      "indent": 2,
+      "location": "pages/item-520c3ac1-a77c-4439-b97f-4fe22bb8028e/index.html",
+      "slug": "tutorials/rigging-a-character/importing-the-base-mesh",
+      "order": 0,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Importing the base mesh",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=c-xiLuBBsik",
+          "batch": "video-mv5xqlyn",
+          "captions": "speech",
+          "duration": 136,
+          "written": true
+        },
+        "created": 1791850862,
+        "images": [],
+        "videos": [],
+        "updated": 1791850862
       }
     },
     {
