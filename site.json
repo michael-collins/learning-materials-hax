@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850884,
+      "updated": 1791850888,
       "version": "26.8.0"
     },
     "theme": {
@@ -25113,6 +25113,40 @@
         "images": [],
         "videos": [],
         "updated": 1791847520
+      }
+    },
+    {
+      "id": "item-800dbad8-6120-49c4-8fbe-2fb4b4849804",
+      "indent": 2,
+      "location": "pages/item-800dbad8-6120-49c4-8fbe-2fb4b4849804/index.html",
+      "slug": "tutorials/rigging-a-character/setting-up-an-armature",
+      "order": 4,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Setting up an armature",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=y8pRYx-2_vo",
+          "batch": "video-mv5xr5wu",
+          "captions": "speech",
+          "duration": 428,
+          "written": true
+        },
+        "created": 1791850888,
+        "images": [],
+        "videos": [],
+        "updated": 1791850888
       }
     },
     {
