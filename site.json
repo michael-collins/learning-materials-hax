@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855555,
+      "updated": 1791855558,
       "version": "26.8.0"
     },
     "theme": {
@@ -26121,6 +26121,40 @@
         "images": [],
         "videos": [],
         "updated": 1791855524
+      }
+    },
+    {
+      "id": "item-262e90f0-bc6e-42a3-964f-bfcf038c2cc3",
+      "indent": 2,
+      "location": "pages/item-262e90f0-bc6e-42a3-964f-bfcf038c2cc3/index.html",
+      "slug": "tutorials/creating-3d-scene-layouts-in-blender/switching-cameras-with-markers",
+      "order": 5,
+      "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
+      "title": "Switching cameras with markers",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=KHaYqnlE5dk",
+          "batch": "video-mv60j9ww",
+          "captions": "speech",
+          "duration": 220,
+          "written": true
+        },
+        "created": 1791855558,
+        "images": [],
+        "videos": [],
+        "updated": 1791855558
       }
     },
     {
