@@ -5610,4 +5610,10 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/procedural-texture-animations</loc>
+    <lastmod>2026-10-13T14:37:47.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
