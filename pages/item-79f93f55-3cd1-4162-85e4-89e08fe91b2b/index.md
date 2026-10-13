@@ -1,0 +1,62 @@
+A character's left and right sides are the same, so you only need to model one of them. In this part you'll cut the base mesh in half and add a _Mirror_ modifier, which shows the other half as a live copy. Everything you add to one side from now on, edge loops included, appears on the other side too. You'll need the base mesh from the last part, at a scale of 1. The video uses Blender 2.90.
+
+Why not the mesh's own mirror option?
+-------------------------------------
+
+1.  **Try the mirror option in Edit Mode.** <page-anchor target="#video-vX7hPXzRSAw" value="0">0:00</page-anchor> Select the mesh and press Tab to go into _Edit Mode_. At the top right of the viewport there are mirror buttons for each axis (X, Y and Z, beside a butterfly icon). Turn on _X_ and whatever you select or move on one side is done on the other side too.
+    
+2.  **See where it falls short.** <page-anchor target="#video-vX7hPXzRSAw" value="21">0:21</page-anchor> It doesn't work for every operation. Press Ctrl R to add an edge loop and it's only added on one side. A _Mirror_ modifier works better. Turn the X mirror option off again <page-anchor target="#video-vX7hPXzRSAw" value="42">0:42</page-anchor>.
+    
+    ![The base mesh in Edit Mode in the Front Orthographic view, with the X mirror button highlighted at the top right of the viewport. A new edge loop crosses the arm on the right of the picture, but there's no matching loop on the other arm. The Loop Cut and Slide panel is open at the bottom left.](files/setting-up-a-mirror-modifier-t0032.0.jpg)
+    
+    With the X mirror option on, a loop cut still goes on one side only.
+    
+
+Cut the mesh in half
+--------------------
+
+1.  **Select one half's faces.** <page-anchor target="#video-vX7hPXzRSAw" value="42">0:42</page-anchor> Press 3 for face select mode and drag a box across the left half of the mesh.
+    
+2.  **Delete them.** <page-anchor target="#video-vX7hPXzRSAw" value="50">0:50</page-anchor> Press X and choose _Faces_. Orbit around and the character is cut down the middle, leaving one arm and one leg.
+    
+    ![In the Front Orthographic view, the left half of the character's faces are selected in orange, up to the middle line. The Delete menu is open, listing Vertices, Edges, Faces, Only Edges and Faces, Only Faces, the Dissolve options, Limited Dissolve, Collapse Edges and Faces, and Edge Loops.](files/setting-up-a-mirror-modifier-t0052.4.jpg)
+    
+    The left half selected, with the Delete menu open.
+    
+3.  **Clear the blue edges, if you like.** <page-anchor target="#video-vX7hPXzRSAw" value="66">1:06</page-anchor> Some edges show in blue. That's information about those edges (they're marked as sharp) that came in with the FBX. It doesn't matter, but if it's distracting, select everything and choose _Edge → Clear Sharp_.
+    
+    ![The half mesh in Edit Mode, all of it selected in orange. The Edge menu is open, with Clear Sharp highlighted between Mark Sharp and Mark Sharp from Vertices.](files/setting-up-a-mirror-modifier-t0084.8.jpg)
+    
+    Edge → Clear Sharp removes the blue sharp-edge marks.
+    
+
+Add the Mirror modifier
+-----------------------
+
+1.  **Check the origin.** <page-anchor target="#video-vX7hPXzRSAw" value="94">1:34</page-anchor> The object's origin needs to be right in the middle of the character, where the two halves meet. Here it already is. Press Tab to go back to _Object Mode_.
+    
+2.  **Add a Mirror modifier.** <page-anchor target="#video-vX7hPXzRSAw" value="105">1:45</page-anchor> In the _Modifier Properties_ (the wrench tab), choose _Add Modifier → Mirror_, in the _Generate_ column. Because the origin is in the middle, the other half appears in exactly the right place. If yours shows up on the wrong side, try another _Axis_ until the mirrored half is where it should be. Here the default, X, is right.
+    
+    ![The whole character in wireframe again, both arms and both legs, in Object Mode. The Mirror modifier's panel is open at the right, with Axis X turned on, Bisect and Flip off, Clipping off and Merge on at 0.001 m.](files/setting-up-a-mirror-modifier-t0122.8.jpg)
+    
+    The Mirror modifier fills in the missing half, mirrored across X.
+    
+3.  **Keep Merge turned on.** <page-anchor target="#video-vX7hPXzRSAw" value="139">2:19</page-anchor> Shade the mesh smooth and check the middle of the character: there should be no gaps. That's what the modifier's _Merge_ option does: it joins the vertices where the two halves meet, so the mesh behaves as one solid piece. Turn Merge off and the shading breaks along the middle, because each side is treated as a separate piece <page-anchor target="#video-vX7hPXzRSAw" value="156">2:36</page-anchor>. It doesn't matter much yet, but you'll need Merge on if you apply the modifier later.
+    
+    ![A close view of the smooth-shaded chest and arms with the Mirror modifier's Merge checkbox turned off. A dark line runs down the middle of the body where the two halves meet.](files/setting-up-a-mirror-modifier-t0148.4.jpg)
+    
+    With Merge off, a seam shows where the two halves meet.
+    
+4.  **Know where Apply is.** <page-anchor target="#video-vX7hPXzRSAw" value="186">3:06</page-anchor> Don't apply the modifier yet. When you do, in Blender 2.90 and later, _Apply_ is in the dropdown menu at the top of the modifier's panel (in 2.8 versions it was a button).
+    
+    ![The smooth-shaded character in Object Mode. The dropdown arrow on the Mirror modifier's header is open, showing Apply at the top, with the tooltip Apply modifier and remove from the stack.](files/setting-up-a-mirror-modifier-t0190.8.jpg)
+    
+    Apply is in the modifier's dropdown menu. Leave it for now.
+    
+
+Wrap-up
+-------
+
+The base mesh is now half a character with a Mirror modifier showing the other half, merged down the middle. From here on you only work on one side, and the modifier keeps the other side matching as you add the geometry the character needs to bend.
+
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-vX7hPXzRSAw" value="0">0:00</page-anchor> So let's go into edit mode by pressing tab and you can see that there is a mirror button at the top on different axes and so what we want to do is actually mirror it across the x-axis and so if we click that whenever we select something over here it's actually going to duplicate that operation on the other side. This doesn't always work with every operation. For instance, if I wanted to do Ctrl-R to add an edge loop, you'll notice that it does not add an edge loop on the left. So what might be better than using the mirror tool to actually change the mesh itself is to use a modifier called mirror.</p><p><page-anchor target="#video-vX7hPXzRSAw" value="42">0:42</page-anchor> So I'm going to disable that, and we're going to go into face select mode by pressing 3. and let's just drag select across the left half and press X to delete our faces. Okay, and just to tumble around to see what we have, you'll notice that our object is now chopped in half. And you may notice that there are some blue seams, and that's actually just some information that came in with the geometry that is describing properties of these edges. If I was just to select all of these edges and go up to Edge, you can see here that there's a button called Clear Sharp.</p><p><page-anchor target="#video-vX7hPXzRSAw" value="86">1:26</page-anchor> If you click on that, it will actually clear that information out. It doesn't really matter. You can leave it or you can clear that out if it's distracting to you. Okay, so now what we want to do is ensure that our origin is right in the middle, and it is, and we're going to press Tab to go out of object mode rather back to object mode and now what we're going to do is go to add modifier panel here on the right and we're going to add a mirror modifier let's go down and select that one and because our origin was set up properly to begin with we have a perfect mirror if you're getting a different result you can try changing the axis to get a result that puts this mesh mirror on the correct side.</p><p><page-anchor target="#video-vX7hPXzRSAw" value="136">2:16</page-anchor> The default one did work for us. We're going to leave that. The other thing that you want to pay attention to is whether these seams seem to be merging properly. So if I click on Smooth Shade, what you notice is that there are no gaps. And that's what we want when we're working in mirror mode. And so this Merge button actually ensures that no gaps are formed. So if I was to click on this button to disable it, what you'll notice is that it's actually not merging these vertices. So we're not getting some smooth shading happening. It's actually smooth shading up into this boundary. And then it's basically treating each side like a separate piece of geometry because it technically is. And if you turn this on, you'll notice that it now treats it as one solid piece.</p><p><page-anchor target="#video-vX7hPXzRSAw" value="178">2:58</page-anchor> So this doesn't totally matter for us right now. But if you do click apply in a later step, you will need to have merge enabled. and the apply here is under the drop-down. We're not going to do this yet, but if you're using 2.9 or higher, you're going to notice that the apply button is different than in 2.8 versions of Blender. Okay, so now that we have our mirror modifier set up, we can go ahead and start working on modifying this mesh.</p></div></a11y-collapse>

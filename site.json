@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850864,
+      "updated": 1791850868,
       "version": "26.8.0"
     },
     "theme": {
@@ -11885,6 +11885,40 @@
         "images": [],
         "videos": [],
         "updated": 1791849458
+      }
+    },
+    {
+      "id": "item-79f93f55-3cd1-4162-85e4-89e08fe91b2b",
+      "indent": 2,
+      "location": "pages/item-79f93f55-3cd1-4162-85e4-89e08fe91b2b/index.html",
+      "slug": "tutorials/rigging-a-character/setting-up-a-mirror-modifier",
+      "order": 1,
+      "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
+      "title": "Setting up a Mirror modifier",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=vX7hPXzRSAw",
+          "batch": "video-mv5xqqix",
+          "captions": "speech",
+          "duration": 210,
+          "written": true
+        },
+        "created": 1791850868,
+        "images": [],
+        "videos": [],
+        "updated": 1791850868
       }
     },
     {
