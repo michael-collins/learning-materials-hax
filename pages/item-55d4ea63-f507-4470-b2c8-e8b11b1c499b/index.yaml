@@ -8,7 +8,7 @@ title: Realtime Game Environment
 description: ''
 metadata:
   published: true
-  pageType: project
+  pageType: oer:project
   oerSource: projects/realtime-game-environment
   tags: Blender,PlayCanvas,Github
   oerFields:
@@ -16,11 +16,14 @@ metadata:
     image: files/game-environment-banner-mmaenefy.jpg
     imageAlt: Banner image of a game environment.
     courses:
-      - Dart 303
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
     license: CC BY 4.0
-    aiLicense: AIUL-CD, AIUL-NA-3D
-    author: Michael Collins
-    authorUrl: https://michaelcollins.xyz
+    aiLicense:
+      - AIUL-CD
+      - AIUL-NA-3D
+    author: ''
+    authorUrl: ''
     allowEmbed: true
     publishEmbed: true
     attachments:
@@ -34,10 +37,25 @@ metadata:
           https://docs.google.com/document/d/1o2QzpJocAsGN0vMm7glIa31BEBgKIPR6mYQ0tRfMA5o/edit?usp=sharing
         description: ''
         alt: ''
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
   created: 1790829909
   images: []
   videos: []
-  updated: 1790829909
+  updated: 1791854013
+  locked: false
+  status: ''
+  icon: ''
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - project
+  oerTutorialSeries:
+    - item-93e4b32e-6810-4277-a3cd-aa94c7519a0b
 content: >
   <p>For this project, you will design and build a simple first person real-time
   3D game environment that functions not only as a playable space, but as a
@@ -442,9 +460,9 @@ content: >
 
   <h2>Tutorial</h2>
 
-  <oer-video
-  src="https://youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj"
-  title="PlayCanvas Tutorials"></oer-video>
+  <oer-tutorial-series series="item-93e4b32e-6810-4277-a3cd-aa94c7519a0b"
+  playlist="https://youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj"
+  playlist-title="PlayCanvas Tutorials"></oer-tutorial-series>
 
   <oer-video
   src="https://youtube.com/playlist?list=PLn3ukorJv4vul0BmORcWYNOVi3nnna-M4"

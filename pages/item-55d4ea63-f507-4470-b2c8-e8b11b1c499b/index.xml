@@ -10,7 +10,7 @@
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>project</pageType>
+<pageType>oer:project</pageType>
 <oerSource>projects/realtime-game-environment</oerSource>
 <tags>Blender,PlayCanvas,Github</tags>
 <oerFields>
@@ -18,12 +18,18 @@
 <image>files/game-environment-banner-mmaenefy.jpg</image>
 <imageAlt>Banner image of a game environment.</imageAlt>
 <courses>
-<item>Dart 303</item>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
-<aiLicense>AIUL-CD, AIUL-NA-3D</aiLicense>
-<author>Michael Collins</author>
-<authorUrl>https://michaelcollins.xyz</authorUrl>
+<aiLicense>
+<item>AIUL-CD</item>
+<item>AIUL-NA-3D</item>
+</aiLicense>
+<author></author>
+<authorUrl></authorUrl>
 <allowEmbed>true</allowEmbed>
 <publishEmbed>true</publishEmbed>
 <attachments>
@@ -40,13 +46,36 @@
 <alt></alt>
 </item>
 </attachments>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
 </oerFields>
 <created>1790829909</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1790829909</updated>
+<updated>1791854013</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>project</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-93e4b32e-6810-4277-a3cd-aa94c7519a0b</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>For this project, you will design and build a simple first person real-time 3D game environment that functions not only as a playable space, but as a meaningful spatial experience. In games, environments guide a players movement, establish atmosphere, suggest histories, and communicate how a world is used without relying entirely on dialogue or text. As you design the environment, think about how space itself can tell a story, and what kinds of stories are important to tell. How does a player understand where they are, what happened there, who belongs there, and what kinds of actions are possible?</p>
 <p>This project asks you to consider game design, architecture, and spatial theory. In game studies, environment design is often understood as a form of environmental storytelling, where space communicates narrative, mood, and player possibility through layout, objects, lighting, and atmosphere. In architecture and urban design, theorists such as Kevin Lynch, Juhani Pallasmaa, and Gaston Bachelard help us think about how spaces become legible, memorable, sensory, and emotionally meaningful. As you research and design your environment, consider not just what your space looks like, but how it guides, affects, and communicates with a player.</p>
@@ -215,7 +244,7 @@
 <li>Participate in work critique with peers.</li>
 </ol>
 <h2>Tutorial</h2>
-<oer-video src="https://youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj" title="PlayCanvas Tutorials"></oer-video>
+<oer-tutorial-series series="item-93e4b32e-6810-4277-a3cd-aa94c7519a0b" playlist="https://youtube.com/playlist?list=PL-V2nChTadrVuW5-ZxIkQZSKewzQMrDJj" playlist-title="PlayCanvas Tutorials"></oer-tutorial-series>
 <oer-video src="https://youtube.com/playlist?list=PLn3ukorJv4vul0BmORcWYNOVi3nnna-M4" title="Grant Abbitt – Low Poly Game Modeling"></oer-video>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
