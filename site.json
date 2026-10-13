@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791852814,
+      "updated": 1791852818,
       "version": "26.8.0"
     },
     "theme": {
@@ -11963,7 +11963,7 @@
       "order": 1,
       "parent": "item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c",
       "title": "Making the sculpture garden",
-      "description": "",
+      "description": "Model a brutalist sculpture garden in Blender, give it PBR materials, add a sculpture built from curves and a lettered sign, then light and render it in Cycles as an afternoon and an evening image finished in Photoshop.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
