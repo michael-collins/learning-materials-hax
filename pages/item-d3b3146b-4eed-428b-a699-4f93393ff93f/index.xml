@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-d3b3146b-4eed-428b-a699-4f93393ff93f</id>
+<indent>2</indent>
+<location>pages/item-d3b3146b-4eed-428b-a699-4f93393ff93f/index.xml</location>
+<slug>tutorials/reference-modeling-and-lighting-for-everyday-objects/6-blender-hard-surface-modeling-tricks-i-wish-i-knew-earlier</slug>
+<order>2</order>
+<parent>item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf</parent>
+<title>6 Blender Hard-Surface Modeling Tricks I Wish I Knew Earlier</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/watch?v=Ml2t8uxPAQU</source>
+<batch>video-mv6sq52w</batch>
+<captions>none</captions>
+<duration>572</duration>
+<written>false</written>
+<by>CG Boost</by>
+<byUrl>https://www.youtube.com/@cgboost</byUrl>
+</oerVideoSource>
+<created>1791902908</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791902908</updated>
+</metadata>
+<content><![CDATA[<oer-video id="video-Ml2t8uxPAQU" src="https://www.youtube.com/watch?v=Ml2t8uxPAQU" title="6 Blender Hard-Surface Modeling Tricks I Wish I Knew Earlier" credit="CG Boost" credit-url="https://www.youtube.com/@cgboost" license="All Rights Reserved"></oer-video>]]></content>
+</item>

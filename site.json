@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902906,
+      "updated": 1791902908,
       "version": "26.8.0"
     },
     "theme": {
@@ -18137,6 +18137,34 @@
         "images": [],
         "videos": [],
         "updated": 1791855541
+      }
+    },
+    {
+      "id": "item-d3b3146b-4eed-428b-a699-4f93393ff93f",
+      "indent": 2,
+      "location": "pages/item-d3b3146b-4eed-428b-a699-4f93393ff93f/index.html",
+      "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects/6-blender-hard-surface-modeling-tricks-i-wish-i-knew-earlier",
+      "order": 2,
+      "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
+      "title": "6 Blender Hard-Surface Modeling Tricks I Wish I Knew Earlier",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {},
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=Ml2t8uxPAQU",
+          "batch": "video-mv6sq52w",
+          "captions": "none",
+          "duration": 572,
+          "written": false,
+          "by": "CG Boost",
+          "byUrl": "https://www.youtube.com/@cgboost"
+        },
+        "created": 1791902908,
+        "images": [],
+        "videos": [],
+        "updated": 1791902908
       }
     },
     {

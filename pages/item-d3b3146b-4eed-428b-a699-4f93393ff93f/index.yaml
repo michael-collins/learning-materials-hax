@@ -1,0 +1,31 @@
+id: item-d3b3146b-4eed-428b-a699-4f93393ff93f
+indent: 2
+location: pages/item-d3b3146b-4eed-428b-a699-4f93393ff93f/index.yaml
+slug: >-
+  tutorials/reference-modeling-and-lighting-for-everyday-objects/6-blender-hard-surface-modeling-tricks-i-wish-i-knew-earlier
+order: 2
+parent: item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf
+title: 6 Blender Hard-Surface Modeling Tricks I Wish I Knew Earlier
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields: {}
+  oerVideoSource:
+    source: https://www.youtube.com/watch?v=Ml2t8uxPAQU
+    batch: video-mv6sq52w
+    captions: none
+    duration: 572
+    written: false
+    by: CG Boost
+    byUrl: https://www.youtube.com/@cgboost
+  created: 1791902908
+  images: []
+  videos: []
+  updated: 1791902908
+content: >-
+  <oer-video id="video-Ml2t8uxPAQU"
+  src="https://www.youtube.com/watch?v=Ml2t8uxPAQU" title="6 Blender
+  Hard-Surface Modeling Tricks I Wish I Knew Earlier" credit="CG Boost"
+  credit-url="https://www.youtube.com/@cgboost" license="All Rights
+  Reserved"></oer-video>
