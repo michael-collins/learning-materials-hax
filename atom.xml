@@ -3,7 +3,7 @@
   <title>Digital Arts OER</title>
   <link href="https://michaelcollins.xyz/learning-materials-hax/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-10-13T14:48:41.000Z</updated>
+  <updated>2026-10-13T14:48:47.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -531,7 +531,7 @@ Become </summary>
 <li>You will engage in an online critique discussion of your work and that of your peers.</li>
 </ol>
 <h2>Tutorial</h2>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" title="Project Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" playlist-title="Project Tutorial"></oer-tutorial-series>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
  ]]>
@@ -722,7 +722,7 @@ Become </summary>
 <li>Participate in work critique with peers.</li>
 </ol>
 <h2>Tutorial</h2>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" title="Project Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrV1iw9_XUwArDOs5mwu6fAk" playlist-title="Project Tutorial"></oer-tutorial-series>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
  ]]>
