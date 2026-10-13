@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-3dc0218f-765b-4457-98e1-9597f3c10f21</id>
+<indent>2</indent>
+<location>pages/item-3dc0218f-765b-4457-98e1-9597f3c10f21/index.xml</location>
+<slug>tutorials/creating-3d-scene-layouts-in-blender/exporting-the-animatic-and-swapping-in-final-renders</slug>
+<order>7</order>
+<parent>item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc</parent>
+<title>Exporting the animatic and swapping in final renders</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Intermediate</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/watch?v=eO3GWEhEzl0</source>
+<batch>video-mv60jjba</batch>
+<captions>speech</captions>
+<duration>714</duration>
+<written>true</written>
+</oerVideoSource>
+<created>1791855571</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791855571</updated>
+</metadata>
+<content><![CDATA[<p>The last step for the animatic is to export it as a video you can watch, share and get feedback on. Then, because you named and organized everything carefully, the same After Effects edit can become your final animation: render final frames from Blender and swap them in for the animatic's, and your cuts, sound and titles stay as they are. You'll need the edit from the last part.</p>
+
+<oer-video id="video-eO3GWEhEzl0" src="https://www.youtube.com/watch?v=eO3GWEhEzl0" title="Creating 3D scene layouts in Blender – Part 8 of 8" credit="Michael Collins" credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+<h2>Export the animatic</h2>
+<ol>
+  <li>
+    <p><strong>Send it to Adobe Media Encoder.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="2">0:02</page-anchor> To make a video for Vimeo or YouTube, or for someone to review, add the composition to Adobe Media Encoder's queue (<em>File → Export → Add to Adobe Media Encoder Queue</em>). Media Encoder opens, and the composition shows up in its queue after a moment <page-anchor target="#video-eO3GWEhEzl0" value="8">0:08</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Choose a preset and where to save it.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="27">0:27</page-anchor> The video uses the <em>Vimeo 1080p Full HD</em> preset (H.264); you can choose another. Click the output file to choose where it goes: the project's <em>videos</em> folder keeps everything straight <page-anchor target="#video-eO3GWEhEzl0" value="39">0:39</page-anchor>. Name it (here, <em>animatic-2</em>) and click <em>Save</em> <page-anchor target="#video-eO3GWEhEzl0" value="51">0:51</page-anchor>.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0035.4.jpg" alt="Adobe Media Encoder's Queue with the composition Comp, format H.264, preset Vimeo 1080p Full HD, an output file ending in Comp.mp4, and status Ready. A green start button is at the top right of the queue."><figcaption><p>The composition in Media Encoder's queue, with the <em>Vimeo 1080p Full HD</em> preset.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Start the queue.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="56">0:56</page-anchor> Click the green start button to render a video file you can stream.</p>
+  </li>
+  <li>
+    <p><strong>Watch it.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="90">1:30</page-anchor> Open the new file, for example in QuickTime, and play it through.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0100.0.jpg" alt="QuickTime Player playing animatic-2.mp4, 20 seconds long, at its title, Alien's Best Friend, in pink on black."><figcaption><p>The exported animatic, 20 seconds long.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Use it to make decisions.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="119">1:59</page-anchor> The point isn't that you've made the world's best animation, but that you've blocked it out so you can decide things. How fast should the character come out? Is the sound working? What else needs animating to make it come alive? You'll spot other problems too, like a loop that doesn't loop as well as you hoped <page-anchor target="#video-eO3GWEhEzl0" value="144">2:24</page-anchor>.</p>
+  </li>
+</ol>
+
+<h2>Render the final frames</h2>
+<ol>
+  <li>
+    <p><strong>Plan to reuse the edit.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="161">2:41</page-anchor> With this much work in the animatic, the final edit is nearly done: you can replace the animatic's renders with final renders, as long as the frame ranges and timing don't change <page-anchor target="#video-eO3GWEhEzl0" value="172">2:52</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Point the scene at a new folder.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="225">3:45</page-anchor> In Blender, set up the scene for its final render quality (here, EEVEE with lighting and materials), then change its output folder so you don't overwrite the animatic renders <page-anchor target="#video-eO3GWEhEzl0" value="235">3:55</page-anchor>. Make a new folder, either a <em>final-renders</em> folder or one named for the scene with something like <em>FINALRENDER</em> added <page-anchor target="#video-eO3GWEhEzl0" value="248">4:08</page-anchor>. It's the same scene, with its animation finished and final render settings <page-anchor target="#video-eO3GWEhEzl0" value="265">4:25</page-anchor>.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0270.8.jpg" alt="Blender's file browser open in the animatic-2 folder, listing cam-1_1-144, cam-1_144-192, cam-2_1-144, cam-3_1-144 and cam-3_250-350_x400, with a new folder being named cam-1_1-144--FINAL."><figcaption><p>A new folder for the final render, so the animatic's images aren't overwritten.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Render the animation.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="286">4:46</page-anchor> This time, instead of a viewport render, choose <em>Render → Render Animation</em>. It uses the scene's full render settings and writes the image sequence into the new folder <page-anchor target="#video-eO3GWEhEzl0" value="295">4:55</page-anchor>. Here the animation isn't finished, so the result is somewhere between an animatic and a final render <page-anchor target="#video-eO3GWEhEzl0" value="309">5:09</page-anchor>.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0315.0.jpg" alt="The Blender Render window rendering frame 5 of the camera 1 shot in EEVEE: the dark lake, dock and red canoe under a glowing cyan moon. The output path in Output Properties ends in FINALRENDER, and the progress bar at the bottom shows Render 93%."><figcaption><p><em>Render → Render Animation</em> into the final-render folder.</p></figcaption></figure>
+  </li>
+</ol>
+
+<h2>Swap the footage in After Effects</h2>
+<ol>
+  <li>
+    <p><strong>Open the After Effects project.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="331">5:31</page-anchor> The video switches to the project the Part 1 animatic was made from, so its edit is different from the last part's <page-anchor target="#video-eO3GWEhEzl0" value="539">8:59</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Reconnect missing footage.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="380">6:20</page-anchor> If files have moved, footage shows as missing (color bars). Right-click it in the <em>Project</em> panel and choose <em>Replace Footage → File</em> <page-anchor target="#video-eO3GWEhEzl0" value="393">6:33</page-anchor>. Go to the right folder, select the first image, check <em>PNG Sequence</em> is ticked and click <em>Open</em> <page-anchor target="#video-eO3GWEhEzl0" value="408">6:48</page-anchor>. <em>Reload Footage</em> may find it on its own; here it didn't.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0390.8.jpg" alt="After Effects with footage in a shots-viewport folder shown as missing, color bars in its thumbnail. The right-click menu is open at Replace Footage, with File, Command H, highlighted in its submenu. The composition shows the credits over black."><figcaption><p><em>Replace Footage → File</em>.</p></figcaption></figure>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0465.4.jpg" alt="The Replace Footage dialog open in the cam-1_1-144 folder, with 0144.png selected, Format PNG and PNG Sequence ticked, and the pointer on Open."><figcaption><p>Pick an image in the folder with <em>PNG Sequence</em> ticked.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Replace each sequence with its final render.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="441">7:21</page-anchor> If you can point missing footage at a folder, you can point any footage at a different one. Replace each animatic sequence with the same shot from your final renders, selecting the first image as before <page-anchor target="#video-eO3GWEhEzl0" value="455">7:35</page-anchor>. All your edits stay as they were, now with the final frames <page-anchor target="#video-eO3GWEhEzl0" value="462">7:42</page-anchor>. Go down the list and replace them all <page-anchor target="#video-eO3GWEhEzl0" value="471">7:51</page-anchor>.</p>
+  </li>
+  <li>
+    <p><strong>Reconnect the audio and preview.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="539">8:59</page-anchor> Missing audio is reconnected the same way; once one is found, After Effects may find the others in the same folder <page-anchor target="#video-eO3GWEhEzl0" value="547">9:07</page-anchor>. Then preview it <page-anchor target="#video-eO3GWEhEzl0" value="580">9:40</page-anchor>.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0612.0.jpg" alt="The After Effects composition at about 16 seconds: the final, darker EEVEE render of the lake and canoe by moonlight, with CREDITS, IE - Animation by Michael Collins, over it. The timeline lists the audio layers."><figcaption><p>The same edit with final renders in place.</p></figcaption></figure>
+  </li>
+  <li>
+    <p><strong>Export it the same way.</strong> <page-anchor target="#video-eO3GWEhEzl0" value="646">10:46</page-anchor> Choose <em>File → Export → Add to Adobe Media Encoder Queue</em>, pick the folder and start the queue, and you have your final animation file.</p>
+    <figure><img src="files/exporting-the-animatic-and-swapping-in-final-rende-t0650.0.jpg" alt="The After Effects File menu open at Export, with Add to Adobe Media Encoder Queue highlighted above Add to Render Queue. Behind, the composition shows the final render of the saucer's magenta beam over the forest and cabin at night."><figcaption><p><em>File → Export → Add to Adobe Media Encoder Queue</em>.</p></figcaption></figure>
+  </li>
+</ol>
+
+<p><page-anchor target="#video-eO3GWEhEzl0" value="625">10:25</page-anchor> As long as you don't change too much, swapping in final frames saves a lot of time. That's the whole process <page-anchor target="#video-eO3GWEhEzl0" value="663">11:03</page-anchor>: blocking the animation, setting up cameras and scenes, slowing shots down with time remapping to give yourself choices in the edit, and editing in After Effects with opacity and sound levels, titles and credits.</p>
+<a11y-collapse heading-button=""><p slot="heading">Transcript</p><div slot="content"><p><em>From speech to text.</em></p><p><page-anchor target="#video-eO3GWEhEzl0" value="2">0:02</page-anchor> and I want to put this on something like Vimeo or YouTube or upload it for someone to look at. I can go ahead and add this to the render queue and that's going to open up Adobe Media Encoder. So you can see that loading down here. I'm going to wait for this to load. Okay, it will pop up in the queue, just give it a minute. Okay, so I have the Vimeo 1080p Full HD preset selected. You can choose another one if you really want to, but this is the one I prefer. And now we're going to choose a folder. And remember, I like to use that, the videos folder to keep everything straight.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="51">0:51</page-anchor> so I'm just gonna call this animatic 2. Let's go ahead and click Save and click Play and then we'll go through and render that out as a video file that you can stream. Okay, we're finished. Let's take a look at our new file. Alright, here it is.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="94">1:34</page-anchor> Let's double click and open it here in QuickTime and just play it back. okay so the key takeaway here is not that you've made the world's best animation it's that you've blocked out your animation so you can make decisions. You know, for instance, how fast do you want this character to come out? Is the sound working?</p><p><page-anchor target="#video-eO3GWEhEzl0" value="136">2:16</page-anchor> What other elements need to be animated to make it feel like it's kind of coming alive here? And then you can identify other issues like maybe your animation isn't looping quite as well as you would have hoped it was. Okay, so that does it for producing the animatic. One of the nice things is if you put this much work in producing your animatic, you're basically almost done editing your final animation as well, because what you can do is essentially replace your renders with your final renders. As long as your frame ranges don't and any of the timing doesn't really change you're able to basically go ahead and instead of rendering out go ahead and open up blender here Okay, so if we wanted to swap those viewport renders in After Effects with something that</p><p><page-anchor target="#video-eO3GWEhEzl0" value="225">3:45</page-anchor> looks more like this, which is, in my case, this is what the final render quality is, all you have to do is change that folder. overwriting your files. But what you could do is make a new folder and call it Final Renders, or you could make a new folder called cam1 underscore, spell it right, and And then we could have something like final render.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="273">4:33</page-anchor> And so this could be the same exact scene with some additional animation completed to make it final and with the final render quality configured. And then you could save it into this folder. So if I click accept, now when I render this scene out, instead of doing render viewport we're actually going to go up to render, and we're going to do render animation. And now it's going to use the full settings configured here to render out into these image sequences. Again, you're not seeing this in my case because I have not actually completed the animation. So you're seeing basically a much nicer rendered animatic, somewhere between a final render and an animatic.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="323">5:23</page-anchor> Okay, and then you can see here that it's putting those in place here. So just to show you what this all looks like, or what the process is, I'm going to go ahead and stop this, and we're going to open up another After Effects composition. So I'm going to save this. I'm not sure why that keeps happening. Let's try that again. I'm going to save that here.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="367">6:07</page-anchor> And we're going to just open... I'm going to open this one here. All right, so I've actually moved things around. If you see these broken footage links, you can go ahead and reconnect these. So if I did replace or reload, let's see if I can reload. No, it doesn't automatically find it. Replace, and we need to navigate to our folder. So in my case, the original one was the Animatic Renders, and then because I've named it it here. So it's going to be this one. And we want to have the first one selected. PNG, checked, click open. And let's, it looks like it may have found these. I'm not sure.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="429">7:09</page-anchor> Yeah. Okay. So we should be good there. And so what you'll notice is that it now kind of appears here. If it wasn't before, if it was broken, you can go ahead and reload that. But that kind of points to an interesting idea that if you can reload missing footage in general, why couldn't you do that with the final renders? So if I was to just go and replace this with, instead of my animatic renders, down to my final renders, we can choose the same composition here. Select the first one. And now what you see is all of my edits are kept intact, but now I can drop in my final renders. So I can go down through the line and just go ahead and replace all of these.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="482">8:02</page-anchor> 144 Okay, let's go ahead and see what this looks like.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="543">9:03</page-anchor> This is the preview scene that I made, so a lot of my edits are going to be different. It looks like it can't find some of my audio, so I'm going to go ahead and see if I can reconnect these. Okay, and so it found the other ones as well, which is nice when that happens automatically. Let's go ahead and do a preview.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="584">9:44</page-anchor> Click play. Wait for it to load. You can see I did a bit of additional animation there with the intro graphics. Okay, so that's the process of taking an animatic that was fully edited with audio and different shots and being able to drop in final animation frames.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="631">10:31</page-anchor> And you probably would save yourself tons of time just to be able to do that process. As long as you don't change too many things, then you should be in a good position to do that. But you would export in the exact same way you did before. You do export Adobe Media and then it adds it here. Select your folder and then export. And then you've got your final animation file. Okay, so that concludes the demonstration for creating an animatic of a scene, blocking animation, setting up your cameras, configuring scene configurations, slowing and remapping time within Blender to give yourself some variation when you're in the editing process And then as well as using some of After Effects built in tools to change opacity and change the loudness of sound.</p><p><page-anchor target="#video-eO3GWEhEzl0" value="702">11:42</page-anchor> And then to add some credits and anything else that you might need to create your animations.</p></div></a11y-collapse>]]></content>
+</item>
