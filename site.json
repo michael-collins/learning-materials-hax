@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855544,
+      "updated": 1791855547,
       "version": "26.8.0"
     },
     "theme": {
@@ -19999,6 +19999,40 @@
         "images": [],
         "videos": [],
         "updated": 1791850881
+      }
+    },
+    {
+      "id": "item-7157b525-fc0a-4853-a77a-6b6c571e9489",
+      "indent": 2,
+      "location": "pages/item-7157b525-fc0a-4853-a77a-6b6c571e9489/index.html",
+      "slug": "tutorials/creating-3d-scene-layouts-in-blender/blocking-the-animation-and-setting-up-scenes",
+      "order": 3,
+      "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
+      "title": "Blocking the animation and setting up scenes",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=jknNtHwaQJc",
+          "batch": "video-mv60j1c1",
+          "captions": "speech",
+          "duration": 1561,
+          "written": true
+        },
+        "created": 1791855547,
+        "images": [],
+        "videos": [],
+        "updated": 1791855547
       }
     },
     {
