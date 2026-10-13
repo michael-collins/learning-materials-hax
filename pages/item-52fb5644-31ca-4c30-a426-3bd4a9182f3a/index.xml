@@ -4,7 +4,7 @@
 <indent>1</indent>
 <location>pages/item-52fb5644-31ca-4c30-a426-3bd4a9182f3a/index.xml</location>
 <slug>projects/ideas-in-motion</slug>
-<order>65</order>
+<order>11</order>
 <parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
 <title>Ideas In Motion</title>
 <description></description>
@@ -18,7 +18,10 @@
 <image>files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg</image>
 <imageAlt>cycles-banner-compressed2.jpg</imageAlt>
 <courses>
-<item>Dart 303</item>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <aiLicense>
@@ -48,7 +51,26 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791855576</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date></date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>project</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this project, you will apply creative 3D production workflows to develop a 30 second animation. You will pursue your own interests while solving for the project's theme.</p>
 <h2>Learning Objectives</h2>
@@ -201,7 +223,7 @@ A successful project will demonstrate understanding and mastery of 3D tools and 
 </li>
 </ol>
 <h2>Tutorial</h2>
-<oer-iframe src="https://youtube.com/playlist?list=PL-V2nChTadrWRqmkePyLUhIndLHarj7H-&amp;si=egqRZI3xCkeigzQx" title="Project Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc" playlist="https://youtube.com/playlist?list=PL-V2nChTadrWRqmkePyLUhIndLHarj7H-&amp;si=egqRZI3xCkeigzQx" playlist-title="Project Tutorial"></oer-tutorial-series>
 <h2>Grading Rubric</h2>
 <oer-rubric rubric-id="project"></oer-rubric>
 ]]></content>

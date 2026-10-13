@@ -2,7 +2,7 @@ id: item-52fb5644-31ca-4c30-a426-3bd4a9182f3a
 indent: 1
 location: pages/item-52fb5644-31ca-4c30-a426-3bd4a9182f3a/index.yaml
 slug: projects/ideas-in-motion
-order: 65
+order: 11
 parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
 title: Ideas In Motion
 description: ''
@@ -16,7 +16,8 @@ metadata:
     image: files/recKy155GBMBZKNjJ_image_cycles-banner-compressed2.jpg
     imageAlt: cycles-banner-compressed2.jpg
     courses:
-      - Dart 303
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
     license: CC BY 4.0
     aiLicense:
       - AIUL-WA
@@ -35,7 +36,19 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791855576
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: null
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - project
+  oerTutorialSeries:
+    - item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc
 content: >
   <p>In this project, you will apply creative 3D production workflows to develop
   a 30 second animation. You will pursue your own interests while solving for
@@ -411,9 +424,9 @@ content: >
 
   <h2>Tutorial</h2>
 
-  <oer-iframe
-  src="https://youtube.com/playlist?list=PL-V2nChTadrWRqmkePyLUhIndLHarj7H-&amp;si=egqRZI3xCkeigzQx"
-  title="Project Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc"
+  playlist="https://youtube.com/playlist?list=PL-V2nChTadrWRqmkePyLUhIndLHarj7H-&amp;si=egqRZI3xCkeigzQx"
+  playlist-title="Project Tutorial"></oer-tutorial-series>
 
   <h2>Grading Rubric</h2>
 
