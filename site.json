@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791852801,
+      "updated": 1791852805,
       "version": "26.8.0"
     },
     "theme": {
@@ -8493,6 +8493,40 @@
         "images": [],
         "videos": [],
         "updated": 1791850862
+      }
+    },
+    {
+      "id": "item-08e99e5f-59ca-4ac4-8ebc-6ca8bc8b3416",
+      "indent": 2,
+      "location": "pages/item-08e99e5f-59ca-4ac4-8ebc-6ca8bc8b3416/index.html",
+      "slug": "tutorials/sculpture-garden-with-pbr-materials/introduction-to-pbr-materials",
+      "order": 0,
+      "parent": "item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c",
+      "title": "Introduction to PBR materials",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=UhCIEowWnKM",
+          "batch": "video-mv5yw9cj",
+          "captions": "speech",
+          "duration": 2269,
+          "written": true
+        },
+        "created": 1791852805,
+        "images": [],
+        "videos": [],
+        "updated": 1791852805
       }
     },
     {
