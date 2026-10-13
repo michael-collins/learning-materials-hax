@@ -400,8 +400,14 @@ class OerCollection extends LitElement {
   _value(item, name) {
     if (name === "tags") return toList(item.metadata?.tags);
     const v = item.metadata?.oerFields?.[name];
+    const field = this._fields.find((f) => f.name === name);
     // links: the linked pages' ids (filters and groups compare those)
-    if (this._fields.find((f) => f.name === name)?.kind === "relation") return toList(v).map((x) => (x && typeof x === "object" ? x.page : x)).filter(Boolean);
+    if (field?.kind === "relation") return toList(v).map((x) => (x && typeof x === "object" ? x.page : x)).filter(Boolean);
+    // a choice as its exact value: "intermediate" is "Intermediate"
+    if (field?.kind === "select" && field.options?.length && v != null && v !== "") {
+      const exact = (x) => field.options.find((o) => o.value === x || String(o.value).toLowerCase() === String(x).toLowerCase())?.value ?? x;
+      return Array.isArray(v) ? v.map(exact) : exact(v);
+    }
     return v;
   }
 
@@ -764,8 +770,10 @@ class OerCollection extends LitElement {
         opacity: 0.5;
       }
       .search {
-        /* a set width, as shadcn's: filters and the view controls share the row */
-        flex: 0 1 16rem;
+        /* as shadcn's, 10–16rem: it gives way first, so the filters and the
+           view controls share the row */
+        flex: 1 1 10rem;
+        max-width: 16rem;
         min-width: 10rem;
         display: flex;
         align-items: center;
@@ -895,6 +903,7 @@ class OerCollection extends LitElement {
       }
       .toolbar.narrow .search {
         flex: 1 1 100%;
+        max-width: none;
       }
       .toolbar.narrow .filters-btn {
         flex: 1 1 auto;
@@ -1047,6 +1056,14 @@ class OerCollection extends LitElement {
         flex: 1;
         min-width: 0;
       }
+      .opt-sub {
+        font-size: 0.8125rem;
+        color: var(--muted-foreground, #555);
+      }
+      /* ticking it would show nothing, with the other filters as they are */
+      .opt-label.none-left {
+        color: var(--muted-foreground, #555);
+      }
       .opt-count {
         margin-left: auto;
         padding-left: 1rem;
@@ -1089,6 +1106,16 @@ class OerCollection extends LitElement {
         margin: 0;
         padding: 0;
         border: 0;
+      }
+      .pop legend,
+      .sheet legend {
+        float: left;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .pop legend + *,
+      .sheet legend + * {
+        clear: both;
       }
       .pop legend {
         padding: 0.375rem 0.5rem;
@@ -2160,6 +2187,17 @@ class OerCollection extends LitElement {
     const q = typed.trim().toLowerCase();
     const label = (v) => (f.field ? String(this._label(f.field, v)) : v);
     const shown = q ? f.values.filter((v) => label(v).toLowerCase().includes(q)) : f.values;
+    // a course: its code, then where it's taught (the university only when
+    // the courses aren't all at one)
+    const pages = f.field?.kind === "relation" ? new Map(f.values.map((v) => [v, (this._all || []).find((i) => i.id === v)])) : null;
+    const courses = pages && [...pages.values()].every((p) => p?.metadata?.pageType === COURSE_TYPE);
+    const oneUniversity = courses && new Set([...pages.values()].map((p) => p.metadata.oerFields?.institution)).size === 1;
+    const optionLabel = (v) => {
+      if (!courses) return label(v);
+      const cf = pages.get(v).metadata.oerFields || {};
+      const where = [oneUniversity ? "" : cf.institution, cf.campus].filter(Boolean).join(" · ");
+      return html`${cf.code || pages.get(v).title}${where ? html` <span class="opt-sub">${where}</span>` : ""}`;
+    };
     const name = f.label.toLowerCase();
     return html`
       ${f.values.length > 7
@@ -2181,7 +2219,7 @@ class OerCollection extends LitElement {
         ${shown.map(
           (v) => html`<label class="opt">
             <input type="checkbox" .checked="${picked.includes(v)}" @change="${() => this._setFilter(f.key, v)}" />
-            <span class="opt-label">${label(v)}</span>
+            <span class="opt-label ${counts.get(v) || picked.includes(v) ? "" : "none-left"}">${optionLabel(v)}</span>
             <span class="opt-count">${counts.get(v) || 0}</span>
           </label>`,
         )}
@@ -2277,7 +2315,14 @@ class OerCollection extends LitElement {
   _renderSheet(facets, counts, shown) {
     const any = facets.some((f) => this._picked(f.key).length);
     const close = (e) => e.target.closest("dialog")?.close();
-    return html`<dialog class="sheet" aria-labelledby="sheet-title" @click="${(e) => e.target === e.currentTarget && e.currentTarget.close()}">
+    // closing gives focus back to Filters (Safari doesn't focus a button
+    // that's clicked, so it has nothing to go back to)
+    return html`<dialog
+      class="sheet"
+      aria-labelledby="sheet-title"
+      @click="${(e) => e.target === e.currentTarget && e.currentTarget.close()}"
+      @close="${() => this.shadowRoot.querySelector(".filters-btn")?.focus()}"
+    >
       <div class="sheet-inner">
         <header>
           <h2 id="sheet-title">Filters</h2>
