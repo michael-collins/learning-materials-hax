@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-fc1426b4-1e8b-4bad-966f-a76de4f561e2</id>
+<indent>1</indent>
+<location>pages/item-fc1426b4-1e8b-4bad-966f-a76de4f561e2/index.xml</location>
+<slug>tutorials/procedural-texture-animations</slug>
+<order>20</order>
+<parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
+<title>Procedural texture animations</title>
+<description></description>
+<metadata>
+<pageType>oer:tutorial</pageType>
+<published>false</published>
+<oerFields>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url></url>
+</item>
+</authors>
+<difficulty>Intermediate</difficulty>
+</oerFields>
+<oerVideoSource>
+<source>https://www.youtube.com/playlist?list=PL-V2nChTadrXtsipLP7DiUgZxSrwUp8uh</source>
+<batch>video-mv6scegj</batch>
+<captions>none</captions>
+<kind>playlist</kind>
+</oerVideoSource>
+<created>1791902267</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1791902267</updated>
+</metadata>
+<content><![CDATA[
+<p>Procedural textures are built from shader nodes rather than painted images, and they can be animated. This series pairs two videos for making a stylized, animated waterfall and turning it into a video. Part 1 is a tutorial by <a href="https://www.youtube.com/@crzyzhaa">Zha Art</a> on making stylized animated water. Part 2 renders the finished animation from Blender as a sequence of PNG images, sets it to 24 frames per second in After Effects with Interpret Footage, and exports an H.264 MP4 with Media Encoder.</p>
+<p>You'll need Blender, After Effects and Media Encoder. Part 2 uses Blender 4.2 and After Effects 2025, so some menus may look a little different in newer versions.</p>
+<oer-tutorial-series></oer-tutorial-series>]]></content>
+</item>

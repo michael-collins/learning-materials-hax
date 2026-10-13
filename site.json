@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855578,
+      "updated": 1791902267,
       "version": "26.8.0"
     },
     "theme": {
@@ -26223,6 +26223,39 @@
         "images": [],
         "videos": [],
         "updated": 1791855571
+      }
+    },
+    {
+      "id": "item-fc1426b4-1e8b-4bad-966f-a76de4f561e2",
+      "indent": 1,
+      "location": "pages/item-fc1426b4-1e8b-4bad-966f-a76de4f561e2/index.html",
+      "slug": "tutorials/procedural-texture-animations",
+      "order": 20,
+      "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
+      "title": "Procedural texture animations",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrXtsipLP7DiUgZxSrwUp8uh",
+          "batch": "video-mv6scegj",
+          "captions": "none",
+          "kind": "playlist"
+        },
+        "created": 1791902267,
+        "images": [],
+        "videos": [],
+        "updated": 1791902267
       }
     },
     {
