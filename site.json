@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902927,
+      "updated": 1791902939,
       "version": "26.8.0"
     },
     "theme": {
@@ -20197,10 +20197,10 @@
       "id": "item-91cb9804-bd30-40eb-a78a-8a230ba510e3",
       "indent": 2,
       "location": "pages/item-91cb9804-bd30-40eb-a78a-8a230ba510e3/index.html",
-      "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects/blender-hard-surface-modeling-fundamentals-b3d-tutorial",
+      "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects/blender-hard-surface-modeling-fundamentals",
       "order": 3,
       "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
-      "title": "Blender Hard-Surface Modeling Fundamentals #b3d #tutorial",
+      "title": "Blender Hard-Surface Modeling Fundamentals",
       "description": "A video by CG Boost, shown here from YouTube.",
       "metadata": {
         "pageType": "oer:tutorial",
