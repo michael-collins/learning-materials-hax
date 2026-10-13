@@ -31,7 +31,7 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791850911
+  updated: 1791850916
   version: 1.0.0
   oerVersions:
     - version: 1.0.0
@@ -82,9 +82,9 @@ content: >
   a sitting pose, it must be modeled in a T pose, and posed in a seated position
   via the armature rig.</li>
 
-  <li>Watch the demo video series to learn how to add and create good edge flow
-  for deformation. Add geometry to articulate the head, torso, legs, and
-  arms.</li>
+  <li>Follow the edge flow part of the tutorials (Creating edge flow for
+  deformation) to learn how to add and create good edge flow for deformation.
+  Add geometry to articulate the head, torso, legs, and arms.</li>
 
   <li><strong>Object</strong> → <strong>Apply</strong> all transforms including
   scale, rotation, and location.</li>

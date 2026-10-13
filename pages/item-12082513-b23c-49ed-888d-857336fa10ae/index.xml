@@ -43,7 +43,7 @@
 </images>
 <videos>
 </videos>
-<updated>1791850911</updated>
+<updated>1791850916</updated>
 <version>1.0.0</version>
 <oerVersions>
 <item>
@@ -79,7 +79,7 @@
 <li><strong>File</strong> → <strong>Import</strong> the FBX file into a new Blender scene.</li>
 <li>Scale up the model.</li>
 <li>Model the T-pose for armature deformation. Do not model the character into a sitting pose, it must be modeled in a T pose, and posed in a seated position via the armature rig.</li>
-<li>Watch the demo video series to learn how to add and create good edge flow for deformation. Add geometry to articulate the head, torso, legs, and arms.</li>
+<li>Follow the edge flow part of the tutorials (Creating edge flow for deformation) to learn how to add and create good edge flow for deformation. Add geometry to articulate the head, torso, legs, and arms.</li>
 <li><strong>Object</strong> → <strong>Apply</strong> all transforms including scale, rotation, and location.</li>
 <li>Create an armature with bones for the pelvis, lower back, upper back, lower legs, upper legs, feet, shoulders, arms, hands, neck, and head. Name and number them for your reference. You must put a “.L” or “.R” at the end of your bones for them to symmetrize properly.</li>
 <li>Parent (bind) the mesh to the armature. Do this by selecting the mesh first, select the armature, and then press ‘CTRL-P,’ and choose “with automatic weights.” If you do not see this option, you have selected in the reverse order.</li>
