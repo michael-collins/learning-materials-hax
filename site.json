@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791853998,
+      "updated": 1791854002,
       "version": "26.8.0"
     },
     "theme": {
@@ -8527,6 +8527,40 @@
         "images": [],
         "videos": [],
         "updated": 1791852805
+      }
+    },
+    {
+      "id": "item-48c54c53-c328-48bb-8a9c-db53a7e5909f",
+      "indent": 2,
+      "location": "pages/item-48c54c53-c328-48bb-8a9c-db53a7e5909f/index.html",
+      "slug": "tutorials/getting-started-with-playcanvas/bringing-a-blender-scene-into-playcanvas",
+      "order": 0,
+      "parent": "item-93e4b32e-6810-4277-a3cd-aa94c7519a0b",
+      "title": "Bringing a Blender scene into PlayCanvas",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=nomFPf07Fmc",
+          "batch": "video-mv5zlwv5",
+          "captions": "speech",
+          "duration": 2050,
+          "written": true
+        },
+        "created": 1791854002,
+        "images": [],
+        "videos": [],
+        "updated": 1791854002
       }
     },
     {
