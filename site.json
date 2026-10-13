@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855561,
+      "updated": 1791855565,
       "version": "26.8.0"
     },
     "theme": {
@@ -26155,6 +26155,40 @@
         "images": [],
         "videos": [],
         "updated": 1791855558
+      }
+    },
+    {
+      "id": "item-c4a97ffc-418d-4de0-86f5-42bde80cee76",
+      "indent": 2,
+      "location": "pages/item-c4a97ffc-418d-4de0-86f5-42bde80cee76/index.html",
+      "slug": "tutorials/creating-3d-scene-layouts-in-blender/editing-the-animatic-with-sound-in-after-effects",
+      "order": 6,
+      "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
+      "title": "Editing the animatic with sound in After Effects",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Intermediate"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=-19xIqwoUJs",
+          "batch": "video-mv60jer5",
+          "captions": "speech",
+          "duration": 1593,
+          "written": true
+        },
+        "created": 1791855565,
+        "images": [],
+        "videos": [],
+        "updated": 1791855565
       }
     },
     {

@@ -1,0 +1,411 @@
+id: item-c4a97ffc-418d-4de0-86f5-42bde80cee76
+indent: 2
+location: pages/item-c4a97ffc-418d-4de0-86f5-42bde80cee76/index.yaml
+slug: >-
+  tutorials/creating-3d-scene-layouts-in-blender/editing-the-animatic-with-sound-in-after-effects
+order: 6
+parent: item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc
+title: Editing the animatic with sound in After Effects
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields:
+    authors:
+      - name: Michael Collins
+        url: ''
+    difficulty: Intermediate
+  oerVideoSource:
+    source: https://www.youtube.com/watch?v=-19xIqwoUJs
+    batch: video-mv60jer5
+    captions: speech
+    duration: 1593
+    written: true
+  created: 1791855565
+  images: []
+  videos: []
+  updated: 1791855565
+content: >-
+  <p>This is where the animatic comes together. In this part you'll bring the
+  image sequences you rendered from Blender into After Effects, cut the shots
+  together, then add sound: ambience, music and sound effects timed to the
+  action, with their volume keyframed. A title and credits finish it. You'll
+  need your rendered image sequences and some sounds you're allowed to use; the
+  video uses After Effects 2020 on a Mac.</p>
+
+
+  <oer-video id="video--19xIqwoUJs"
+  src="https://www.youtube.com/watch?v=-19xIqwoUJs" title="Creating 3D scene
+  layouts in Blender – Part 7 of 8" credit="Michael Collins"
+  credit-url="https://www.youtube.com/channel/UCp1cLW7rry_NKRhcH8bPfGg"></oer-video>
+
+
+  <h2>Bring in the image sequences</h2>
+
+  <ol>
+    <li>
+      <p><strong>Drag in each folder.</strong> <page-anchor target="#video--19xIqwoUJs" value="0">0:00</page-anchor> Start a blank After Effects project and drag the image sequence folders from Finder (or File Explorer) into the <em>Project</em> panel, one at a time: each comes in as a single piece of footage, not separate images.</p>
+    </li>
+    <li>
+      <p><strong>Rename each one after its folder.</strong> <page-anchor target="#video--19xIqwoUJs" value="30">0:30</page-anchor> The footage comes in named after its first and last images. Copy the folder's name, select the footage, press <kbd>Return</kbd> to rename it and paste.</p>
+    </li>
+    <li>
+      <p><strong>Set its frame rate to 24.</strong> <page-anchor target="#video--19xIqwoUJs" value="44">0:44</page-anchor> After Effects assumes image sequences are 30 frames per second, but Blender rendered them at 24. Right-click the footage and choose <em>Interpret Footage → Main</em>, then set <em>Assume this frame rate</em> to 24. The shortcut is <kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>G</kbd> on a Mac (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>G</kbd> on Windows) <page-anchor target="#video--19xIqwoUJs" value="158">2:38</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0052.4.jpg" alt="The Interpret Footage dialog for 0001-0144.png, with Assume this frame rate set to 30 frames per second and about to be changed. The Project panel behind lists cam-1_1-144 as a PNG sequence at 30 fps."><figcaption><p><em>Interpret Footage</em>: change 30 to 24 frames per second.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Make the main composition.</strong> <page-anchor target="#video--19xIqwoUJs" value="74">1:14</page-anchor> Drag the footage down into the empty area at the bottom of the window, where the timeline will be: After Effects makes a new composition from it, at its size and frame rate. This is where you'll do all your editing.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0085.4.jpg" alt="After Effects with a new composition, Comp, at 1920 by 1080 and 24 fps. The viewer shows the first frame of cam-1_1-144 with its burned-in details, and the timeline holds the single footage layer."><figcaption><p>The main composition, made from the first image sequence.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Or import them.</strong> <page-anchor target="#video--19xIqwoUJs" value="92">1:32</page-anchor> If you can't drag folders in, right-click in the <em>Project</em> panel and choose <em>Import → File</em>. Select the first image in a folder: <em>PNG Sequence</em> is ticked, so <em>Open</em> brings them all in as one sequence <page-anchor target="#video--19xIqwoUJs" value="116">1:56</page-anchor>. Rename it and set it to 24 fps as before <page-anchor target="#video--19xIqwoUJs" value="141">2:21</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Do the same for every sequence.</strong> <page-anchor target="#video--19xIqwoUJs" value="166">2:46</page-anchor> Drag in each folder, rename it and set it to 24 fps, until all the sequences are in <page-anchor target="#video--19xIqwoUJs" value="225">3:45</page-anchor>.</p>
+    </li>
+  </ol>
+
+
+  <h2>Cut the shots together</h2>
+
+  <ol>
+    <li>
+      <p><strong>Make the composition long enough.</strong> <page-anchor target="#video--19xIqwoUJs" value="231">3:51</page-anchor> Choose <em>Composition → Composition Settings</em> and set <em>Duration</em> to about 20 seconds; six isn't enough <page-anchor target="#video--19xIqwoUJs" value="251">4:11</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0260.0.jpg" alt="The Composition Settings dialog for Comp: preset HDTV 1080 24, 1920 by 1080, 24 frames per second, with the Duration field being edited."><figcaption><p><em>Composition Settings</em>, where the duration is set.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Trim a layer by dragging its ends.</strong> <page-anchor target="#video--19xIqwoUJs" value="258">4:18</page-anchor> Drag the start or end of a layer in the timeline to trim it. The footage you're not using still shows, ghosted, beyond the trimmed bar <page-anchor target="#video--19xIqwoUJs" value="272">4:32</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0280.4.jpg" alt="The After Effects timeline with one layer, cam-1_1-144, trimmed: a solid green bar from about 4 to 6 seconds, with the unused footage shown as a paler bar either side."><figcaption><p>A trimmed layer. The paler bar is the footage you're not using.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Add the other shots and decide the cuts.</strong> <page-anchor target="#video--19xIqwoUJs" value="292">4:52</page-anchor> Drag in the other camera sequences. Turn on snapping, or press <kbd>=</kbd> over the timeline to zoom in, to place the playhead accurately <page-anchor target="#video--19xIqwoUJs" value="311">5:11</page-anchor>. The layer on top shows, so trimming it switches the shot. Spread the layers out and reorder them <page-anchor target="#video--19xIqwoUJs" value="339">5:39</page-anchor>: you're making editing decisions like any filmmaker given footage. Rough is fine for now <page-anchor target="#video--19xIqwoUJs" value="360">6:00</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Split a shot by duplicating its layer.</strong> <page-anchor target="#video--19xIqwoUJs" value="430">7:10</page-anchor> To hold on a shot, cut away and come back, duplicate the layer (<kbd>Cmd</kbd>+<kbd>D</kbd>, or <kbd>Ctrl</kbd>+<kbd>D</kbd> on Windows), trim one copy before the cut and one after <page-anchor target="#video--19xIqwoUJs" value="437">7:17</page-anchor>. Stacking them in time order shows the cascade of shots <page-anchor target="#video--19xIqwoUJs" value="444">7:24</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0450.4.jpg" alt="The composition at 3 seconds, showing the wide shot with the saucer and beam. The timeline has six layers, including two copies of cam-2_1-144 and cam-3_250-350_x400, trimmed and staggered so they play one after another."><figcaption><p>Layers trimmed and staggered into a sequence of shots.</p></figcaption></figure>
+      <oer-callout type="tip" title="Split Layer"><p>After Effects can also split a layer at the playhead: <em>Edit → Split Layer</em> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>, or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> on Windows).</p></oer-callout>
+    </li>
+    <li>
+      <p><strong>Leave out what doesn't work.</strong> <page-anchor target="#video--19xIqwoUJs" value="495">8:15</page-anchor> One shot isn't used at all. The extra sequence rendered after the main animation, frames 144 to 192, goes at the end <page-anchor target="#video--19xIqwoUJs" value="518">8:38</page-anchor>: a moment to take in that the dog has been taken. Its water bobs in a loop, so duplicating the layer a couple of times makes it last longer <page-anchor target="#video--19xIqwoUJs" value="547">9:07</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Preview at full speed.</strong> <page-anchor target="#video--19xIqwoUJs" value="567">9:27</page-anchor> In the <em>Preview</em> panel, tick <em>Cache Before Playback</em>. Pressing play caches the whole timeline first, then plays it at the proper speed.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0572.0.jpg" alt="The Preview panel with Cache Before Playback ticked and its tooltip, Playback will start after entire range is cached. The timeline holds eight layers, including three copies of cam-1_144-192 at the end."><figcaption><p><em>Cache Before Playback</em> in the <em>Preview</em> panel.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Give it more time where it's rushed.</strong> <page-anchor target="#video--19xIqwoUJs" value="580">9:40</page-anchor> The middle went too fast. Drag-select the later layers (or <kbd>Shift</kbd>+click them in the layer list) and move them later <page-anchor target="#video--19xIqwoUJs" value="595">9:55</page-anchor>. Line them up so there are no missing frames between them <page-anchor target="#video--19xIqwoUJs" value="646">10:46</page-anchor>. The beam's cone makes the dog hard to see here: hiding it when rendering that scene would have helped <page-anchor target="#video--19xIqwoUJs" value="636">10:36</page-anchor>.</p>
+    </li>
+  </ol>
+
+
+  <h2>Add sound</h2>
+
+  <ol>
+    <li>
+      <p><strong>Organize the project.</strong> <page-anchor target="#video--19xIqwoUJs" value="675">11:15</page-anchor> Right-click in the <em>Project</em> panel and make a <em>New Folder</em> called <em>audio</em>, and another, <em>viewport-renders</em>, for the image sequences.</p>
+    </li>
+    <li>
+      <p><strong>Find sounds you may use.</strong> <page-anchor target="#video--19xIqwoUJs" value="704">11:44</page-anchor> The music, "Space Residue" by Igor Amokian, comes from the Free Music Archive, browsed by genre. The sound effects come from freesound.org, where sounds are Creative Commons or public domain <page-anchor target="#video--19xIqwoUJs" value="730">12:10</page-anchor>: an ambience of crickets and frogs by a river, a dog barking, a spaceship fly-by and a whoosh. Check each one's license, and note who to credit.</p>
+    </li>
+    <li>
+      <p><strong>Bring the audio in.</strong> <page-anchor target="#video--19xIqwoUJs" value="768">12:48</page-anchor> Drop the audio files into the <em>Project</em> panel and drag them into the <em>audio</em> folder. Add the ambience to the composition first; keep audio layers at the bottom of the timeline <page-anchor target="#video--19xIqwoUJs" value="796">13:16</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0850.0.jpg" alt="The Project panel with an audio folder holding four WAV files and an MP3, Igor_Amokian - 04 - Space_Residue.mp3, and a viewport-renders folder with the five image sequences. In the timeline, the ambience and the music sit below the footage layers, with the music's Audio properties open."><figcaption><p>Audio and image sequences in their own folders; audio at the bottom of the timeline.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Time a sound to the action with its waveform.</strong> <page-anchor target="#video--19xIqwoUJs" value="840">14:00</page-anchor> Twirl open an audio layer's <em>Waveform</em> to see where it gets loud. Trim the music and move it so its loud part lands right when the tractor beam comes down <page-anchor target="#video--19xIqwoUJs" value="867">14:27</page-anchor>. If the shot is too short to see, move the footage layers to make room, then line the sound up with the cut <page-anchor target="#video--19xIqwoUJs" value="890">14:50</page-anchor>; the blue line is the playhead <page-anchor target="#video--19xIqwoUJs" value="913">15:13</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0868.0.jpg" alt="The music layer, Space_Residue.mp3, twirled open in the timeline to show its waveform, with a loud passage starting just after the playhead at 1 second 12 frames, while the viewer shows the beam coming down from the saucer."><figcaption><p>The music's waveform, lined up with the beam.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Keyframe the volume.</strong> <page-anchor target="#video--19xIqwoUJs" value="938">15:38</page-anchor> To make a sound fade out as the beam goes away, click the stopwatch beside <em>Audio Levels</em> to add a keyframe, move a frame or two on, and add another with the level dragged right down <page-anchor target="#video--19xIqwoUJs" value="943">15:43</page-anchor>; here it's −54 dB. The arrows beside the property jump to the next or previous keyframe, so you don't have to line up the playhead yourself <page-anchor target="#video--19xIqwoUJs" value="1024">17:04</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t0955.0.jpg" alt="The music layer's Audio Levels property with its stopwatch on and a keyframe at the playhead, and the waveform below. The viewer shows the saucer after the beam has gone."><figcaption><p><em>Audio Levels</em> keyframed so the sound fades as the beam goes.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Layer more sounds.</strong> <page-anchor target="#video--19xIqwoUJs" value="1041">17:21</page-anchor> Sound effects make things feel as though they're making noise. The dog barking shouldn't go on after the dog is gone, so its level is keyframed down to nothing too <page-anchor target="#video--19xIqwoUJs" value="1068">17:48</page-anchor>.</p>
+    </li>
+  </ol>
+
+
+  <h2>Add a title</h2>
+
+  <ol>
+    <li>
+      <p><strong>Make room at the start.</strong> <page-anchor target="#video--19xIqwoUJs" value="1109">18:29</page-anchor> Select all the layers and move them a few seconds later, leaving a gap at the beginning.</p>
+    </li>
+    <li>
+      <p><strong>Type the title.</strong> <page-anchor target="#video--19xIqwoUJs" value="1119">18:39</page-anchor> Use the <em>Type</em> tool to write the title in the gap. Center it in the <em>Paragraph</em> panel <page-anchor target="#video--19xIqwoUJs" value="1150">19:10</page-anchor>, then select the layer and center it in the frame with the <em>Align</em> panel <page-anchor target="#video--19xIqwoUJs" value="1159">19:19</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t1160.8.jpg" alt="The title Alien's Best Friend in large pink letters on black, selected in the viewer. The timeline shows the text layer above the footage, and the audio layers at the bottom."><figcaption><p>The title, centered in the frame.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Trim it and fade it in and out.</strong> <page-anchor target="#video--19xIqwoUJs" value="1182">19:42</page-anchor> A new text layer runs the length of the timeline, so trim it to the gap. Twirl open its <em>Transform</em> properties <page-anchor target="#video--19xIqwoUJs" value="1197">19:57</page-anchor> and keyframe <em>Opacity</em>: 0% at the start, 100% a moment later, then back to 0% at its end <page-anchor target="#video--19xIqwoUJs" value="1203">20:03</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t1215.4.jpg" alt="The title layer's Transform properties open in the timeline, with Opacity keyframed: two keyframes at the start and one at about 2 seconds, and the trimmed title bar ending soon after."><figcaption><p><em>Opacity</em> keyframes fade the title in and out.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Overlap the sound.</strong> <page-anchor target="#video--19xIqwoUJs" value="1226">20:26</page-anchor> Starting a sound before its shot helps introduce what's coming. Here the ambience moves to the very beginning, under the title <page-anchor target="#video--19xIqwoUJs" value="1247">20:47</page-anchor>.</p>
+    </li>
+    <li>
+      <p><strong>Time the big moments.</strong> <page-anchor target="#video--19xIqwoUJs" value="1265">21:05</page-anchor> Add a whoosh as the saucer flies away, lined up with the loud part of its waveform, and a bigger sound that's keyed down once the saucer has gone <page-anchor target="#video--19xIqwoUJs" value="1329">22:09</page-anchor>. Move it so it's loudest at the right moment, with keyframes so it doesn't start or stop abruptly, then fade it out <page-anchor target="#video--19xIqwoUJs" value="1358">22:38</page-anchor>. With the sounds layered and their levels tuned, it starts to feel like an animation <page-anchor target="#video--19xIqwoUJs" value="1386">23:06</page-anchor>.</p>
+    </li>
+  </ol>
+
+
+  <h2>Add credits</h2>
+
+  <ol>
+    <li>
+      <p><strong>Write the credits.</strong> <page-anchor target="#video--19xIqwoUJs" value="1411">23:31</page-anchor> Use the <em>Type</em> tool again: something like "Animation by" and your name. Make it look less like a title, for example a lighter weight <page-anchor target="#video--19xIqwoUJs" value="1446">24:06</page-anchor>. As long as it's readable, it's up to you. Fade it in and out like the title.</p>
+    </li>
+    <li>
+      <p><strong>Overlap the credits with the last shot.</strong> <page-anchor target="#video--19xIqwoUJs" value="1474">24:34</page-anchor> Have the credits fade in over the end of the last shot: overlapping helps tie shots together <page-anchor target="#video--19xIqwoUJs" value="1487">24:47</page-anchor>. Then fade the last footage layer out with <em>Opacity</em> keyframes so it doesn't stop abruptly <page-anchor target="#video--19xIqwoUJs" value="1520">25:20</page-anchor>.</p>
+      <figure><img src="files/editing-the-animatic-with-sound-in-after-effects-t1540.8.jpg" alt="The credits, Animation by Michael Collins, fading in over black. In the timeline, the last cam-1_144-192 layer has Opacity keyframes near its end, and the five audio layers sit below."><figcaption><p>The credits fading in as the last shot fades out.</p></figcaption></figure>
+    </li>
+    <li>
+      <p><strong>Check that every sound ends.</strong> <page-anchor target="#video--19xIqwoUJs" value="1552">25:52</page-anchor> If a sound is still playing at the end, make sure its last <em>Audio Levels</em> keyframe is all the way down <page-anchor target="#video--19xIqwoUJs" value="1561">26:01</page-anchor>. If a fade ends too abruptly, add a keyframe in between <page-anchor target="#video--19xIqwoUJs" value="1569">26:09</page-anchor>.</p>
+    </li>
+  </ol>
+
+
+  <p><page-anchor target="#video--19xIqwoUJs" value="1582">26:22</page-anchor>
+  The looping and timing could use more work, but it's good enough for an
+  animatic. Next, you'll export it.</p>
+
+  <a11y-collapse heading-button=""><p slot="heading">Transcript</p><div
+  slot="content"><p><em>From speech to text.</em></p><p><page-anchor
+  target="#video--19xIqwoUJs" value="0">0:00</page-anchor> Okay, here we are in
+  a blank After Effects project. So let's go ahead and bring in our image
+  sequences and our other assets that we already have created. So I'm going to
+  go and grab those folders from before and it's easiest just to drag them in
+  one at a time. And the reason for that is because you'll see here that they're
+  not really named properly and the frame rate is wrong. just copy the file name
+  and then we're just gonna press return with this selected and then I'm gonna
+  paste that in and then so it's gonna name that for us and then we can
+  right-click go to interpret footage hit main and then change 30 to 24 so this
+  is the frames per second that we rendered from blender which is 24. It
+  defaults in After Effects at 30. So we're going to redo that. Okay, so now
+  this is ready to use in After Effects. And again, this is not an image. This
+  is treating all of the images together as if they were footage. So that's
+  going to be really useful for us. And just to prove that I can drop that down
+  here in the project comp. So if you drop it in this blank area, it creates
+  a</p><p><page-anchor target="#video--19xIqwoUJs" value="82">1:22</page-anchor>
+  new composition and this is going to be our main composition where we do all
+  of our editing. If you don't see this project area and you can't drag the
+  folder in, you could right-click and import a file and if you do it this way
+  so let's for instance maybe we'll grab this one here when you select the first
+  one it's going to have PNG sequence checked so if you click open it's going to
+  bring all of them in as a PNG sequence which is nice so let's just go back
+  there and we want to just copy that folder We're going to press return on the
+  keyboard to go into edit mode for that and then paste that
+  in.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="141">2:21</page-anchor> And now we have that name appropriately and so
+  we can right click, interpret the footage and type 24 here. I'm going to be
+  using a shortcut from now on and that's going to be, I believe that's
+  Option-Command-G on a Mac, and it should tell you what it is on Windows so
+  that you can use it yourself. Okay, so let's go ahead and just drop in some
+  folders. I find this is easier than going through the import dialog box. So
+  I'm going to copy that, press return, paste, and here it is, 30 frames per
+  second.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="185">3:05</page-anchor> We're going to do option command G, 24, okay.
+  Okay, I'm going to copy that. Okay, option command G. All right, that's 24
+  frames per second as well. just do the last one here. Press return to copy
+  that. Press return to edit this. Option command G. All right. So we brought
+  them all in. We've changed the frame rate to 24 frames per second. Now we can
+  start adding them to the timeline so we can edit these things
+  together.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="239">3:59</page-anchor> I am going to just add a few here. So let's
+  also change the length of the composition. So let's go up to composition
+  settings, composition settings. Right now, six seconds is not going to be
+  enough. I think I need something like 20. There we go. All right, so you can
+  see the whole area is visible, and you can actually drag on this clip. The way
+  this works is you can trim footage by clicking and dragging on the beginning
+  or the end. It still kind of shows you all of the available footage that
+  you're not using as sort of a ghosted area.</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="285">4:45</page-anchor> So just kind of be
+  aware it's a little bit different than other software you may have used. Okay,
+  and let's just drag in the other camera sequences. Okay, and so I think I want
+  this to maybe go to there. If we turn on snapping, it might be a bit easier
+  for you to snap, or if you press the plus key on your keyboard while hovering
+  over the timeline, you can get in much closer and get more accurate playhead
+  placement.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="329">5:29</page-anchor> Okay, so now that this is cropped in, you can
+  see once we go here, it switches because now this layer is visible. So I'm
+  going to actually spread these out. And then we'll reorder them. So now I'm
+  just making editing decisions like any filmmaker might make when they're given
+  footage to work with. So you may have already have these edits done depending
+  on your workflow coming out of Blender. a lot more editing so what I'm gonna
+  do is spend some time positioning these later to kind of get it perfect for
+  now I'm just gonna roughly do it so I think I want the dog to come out the
+  ship to come down like this and then I want that slow motion to come into play
+  so let's find out where that is there we go so I'm gonna drag this one up here
+  to be in that order I'm just gonna try to collapse that a bit so we get some
+  more space</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="412">6:52</page-anchor> okay so we're gonna bring this over to here
+  actually we can put that above go. So I need to actually kind of stop time
+  here. There's no easy way to split these. You're going to have to duplicate
+  the layer. So I'm going to do command D with the layer selected and now it
+  duplicates that layer and I can move this around. So I'm going to crop this
+  in. And I'm gonna crop that one back to here.</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="456">7:36</page-anchor> And so now I can
+  maybe drag that below so I can kind of see the cascade of frames that I have.
+  Okay. All right. So I actually don't think I'm going to use this shot at
+  all.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="500">8:20</page-anchor> and then bring this one back here okay so this
+  is kind of how it began right so this is at the beginning and then this is at
+  the end that's that that sequence that extra sequence that I did outside of
+  the main animation timeline So frame 144 to 192. And so that's kind of, I
+  wanted sort of this moment where you can kind of see or kind of reflect on the
+  fact that the, that our dog character is taken up in the
+  spaceship.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="546">9:06</page-anchor> So let's duplicate this. And we can, we've done
+  a pretty good job looping that animation where we can duplicate it here and
+  just kind of make it go a couple times. There's different ways to do this in
+  After Effects. The easiest and most direct way is just to duplicate the layers
+  and move them into place. Okay, so that's the whole animation. Let's go ahead
+  and play it back. If you go up to preview here in the top right, if you click
+  cache before playback, when you press play it will go ahead and cache the
+  whole timeline here, and then it will play it back at the proper speed. So
+  let's wait for that to happen. Okay, here we go. all right so I think it went
+  a little bit too fast there at the in the middle I think we need more time so
+  what we'll do is just drag select okay drag select if that does not work for
+  you you can actually just shift select here in the main layer area and we can
+  just move these back all right so I think it has to happen maybe somewhere
+  around here so we want</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="636">10:36</page-anchor> up with here because I think it's hard to see
+  through this cone. I probably should have disabled the visibility when
+  rendering this particular scene so that I can see inside of it. But I think
+  that our dog is right around here. So with that I'm just going to kind of line
+  these up so there's no missing frames in between. Okay and so let's just play
+  that back. I think it's going that be a better beginning maybe goes a little
+  bit too fast as well so I'm gonna go ahead and clean this up later but I do
+  want to show how to add audio okay so if I right-click if we do new folder
+  we're gonna call this audio and we're actually gonna put all of our shots in a
+  new folder called viewport renders Okay, there we go.</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="696">11:36</page-anchor> Let's go here to
+  the folder. I've actually gone ahead and grabbed some online. So some good
+  resources, Free Music Archive. The website's a little bit hard to navigate
+  right now. They're going through some changes, but if you actually click
+  through these categories and genres, you'll be able to get to some music they
+  have. I found some space themed audio that sounds kind of weird, so I'm going
+  to play that. Okay, it's just kind of this weird UFO sound. And then I've got
+  some different sound effects from freesound.org.</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="736">12:16</page-anchor> This is a great
+  website, and a lot of their, basically everything on here is Creative Commons
+  or Public Domain. So I'm going to click through some of these sound effects.
+  Okay. And... All right, so that's sort of an ambience sound. I've also got a
+  dog barking. but these are all of the audio tracks here they're going to bring
+  in and I'm going to just drop them here and the project folder and just drag
+  those down into audio so that they're nice and organized. Okay so I've got our
+  viewport renders here and our audio here. Let's go ahead and bring in the
+  ambience first.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="802">13:22</page-anchor> Okay, I want to just drag that down here. I
+  like to keep the audio at the bottom. And so let's just take a listen. Okay, I
+  think in general my animation is pretty fast. But what I'll do is I'll go
+  through and kind of clean this up after we add some of these tracks here. one
+  sounds like so I think this is going to be the tractor beam sound if you want
+  to you can actually unfurl these to see the waveform so you can actually see
+  how loud it's going to get so you can time that so I think when the tractor
+  beam comes down I want this to be kind of loud okay so what I'm going to do is
+  just crop that in and move that to there so you see this loud sound happens
+  right when the tractor beam comes down so let's just play that all right so
+  this happens so fast that we don't really see anything</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="890">14:50</page-anchor> okay I'm gonna
+  shift select these I'm gonna move these over and let's see if we can't get A
+  little bit better timing there. Okay. So that means we're going to have to
+  move our sound over to line up with that cut. Or actually, we'll line that up
+  with this. So let's move that back. So you see this blue line is where the
+  playhead is, and that's when this comes down here. Okay, so let's go ahead and
+  just play. Okay, and then it goes away. So now we need to actually make this
+  quieter. So I could crop it, or I could change the audio level. So I'm going
+  to click on this stopwatch, and that's going to bring up keyframing. And so it
+  adds a keyframe. I'm going to go another frame or two over, we're going to add
+  a keyframe, and then I'm going to go, um, and just, it looks like I've turned
+  off some options here. So this icon here is going to bring back my decibel
+  levels. So I'm going to</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="968">16:08</page-anchor> drag this down to be very quiet and I'm going
+  to go to this one here I'm going to make sure that this one's set at zero and
+  trying to take a look at why that's happening I'm going to go ahead and turn
+  that back off and try this again okay There we go. I think that might have
+  been a weird glitch because I had that toggled off, but I'm not really sure.
+  So let's just see what happens. So the sound is going to fade out as the
+  tractor beam goes away.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1015">16:55</page-anchor> And we're actually going to have the sound
+  maybe be keyframed here as well. So we're going to keyframe this to be on. So
+  if you use these little arrow buttons, it pops you over to the next keyframe.
+  So you don't have to try to keep lining it up. So let's try that. Right. So
+  now it kind of totally, the sound kind of aligns with that. And it makes it
+  feel like it's making noise. Right? So that's what adding these sound effects
+  is all about. Okay. I've got a few more here. There's a dog barking. Okay,
+  and...</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1060">17:40</page-anchor> So let's just play this back. So it doesn't
+  make sense that the dog's still barking now, and keyframe these audio levels
+  so let's just keyframe this here and then I'm going to drop that down and
+  probably need to turn that totally off there okay Alright, so I could do some
+  more work here, but what I want to do is go ahead and actually add some intro
+  titles.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1113">18:33</page-anchor> So let's go ahead and move this back a few
+  seconds. and I am going to use the the text tool so you see everything's kind
+  of moved back and there's a void now so what I can do is just go here and make
+  a title I'm not going to do the the same amount of work I did for the the
+  other one I showed I'm just gonna call this Oops, not fiend, friend. There we
+  go. And let's center align this particular title under
+  paragraph.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1157">19:17</page-anchor> We can go ahead and center that. And if we
+  just use the cursor tool here with this selected, we can go to align and then
+  that here to the middle. We could use that for the vertical line as well. And
+  so that's going to work. I think, you know, I had made it an extra thing, but
+  I'm going to leave that off for now. And then we want to essentially crop this
+  back here because it adds it to the entire timeline. And so now I need to
+  animate its opacity so it fades in and out. So I'm going to go down to
+  transform and untwirl these.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1200">20:00</page-anchor> Opacity is what's going to enable us to fade
+  to black. So let's go here to the beginning, add a keyframe, fade to zero
+  here. Now you can see the opacity fades in. And then we can click a keyframe,
+  move to the end here, and then fade this out. So let's just play that back. It
+  had to do a cache preview here. One of the nice things to do is overlap sound.
+  That helps introduce what's coming next. So if we actually take this sound
+  clip and move this to the beginning, I think you'll find that it helps tie
+  things together better.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1240">20:40</page-anchor> So let's just . That was the dog barking,
+  although that could be funny too. Maybe we'll actually just do the ambience
+  here. Okay and then the only other thing we really have is that big, or when
+  it, actually we have two more things. When it flies away it makes a whoosh
+  noise. So let's bring that down. And let's just take a look at the waveform to
+  see when the big sound happens. There we go.</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="1286">21:26</page-anchor> Ah, that works
+  pretty well. We can adjust it. Ah, I think that's even better. And then I
+  think... I think I've got another one here. That is going to be kind of a
+  bigger sound. Okay, sometimes the audio waveform takes a lot of
+  load.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1338">22:18</page-anchor> Okay, so now we want to just key this down
+  because it should kind of get quiet once it leaves. There we go. Let's try
+  this. And actually I want that to maybe happen sooner. It should be really
+  loud right about now. So we're gonna maybe key this so there's no abrupt
+  sound. And then we can fade the audio out around here.</p><p><page-anchor
+  target="#video--19xIqwoUJs" value="1386">23:06</page-anchor> Alright, let's
+  try that. Alright, it's really coming together now with all of these sounds
+  layered together and kind of the audio levels tuned. It's kind of feeling like
+  an animation. I think the only thing we have now is to add some credits. So
+  let's go ahead and collapse these and use the text tool. Just like did it. All
+  right.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1429">23:49</page-anchor> Those are my credits. I'm just kidding. You
+  want to do something like animation by your darn name. Okay. Probably choose
+  something that doesn't look like a title, although we can keep the same kind
+  of text here. Maybe I'll do something less bold. And this is totally up to
+  your preference. As long as it's readable, you want to do the same sort of
+  fade in, fade out.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1474">24:34</page-anchor> And, you know, we could actually loop this
+  until we run out of timeline. So we can... Actually, let's remove that layer,
+  and we'll have the credits fade in here over top. Overlapping things, I think,
+  really helps tie things together shot to shot. Okay, and I'm just going to
+  change the opacity here. Okay, so there's kind of an abrupt off,
+  right?</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1523">25:23</page-anchor> That's what we want to do is fade this last
+  one out. So we're going to go and select this last set of footage and just
+  turn on keyframing and just drop the opacity here at the end and now we can
+  get a nice fade out into credits. Alright so let's play this. Alright and
+  we're still getting some sound from one of the other I think it's this one. We
+  want to make sure that our last keyframe here is actually turned
+  off.</p><p><page-anchor target="#video--19xIqwoUJs"
+  value="1567">26:07</page-anchor> So let's just eliminate that. And if it ends
+  too abruptly, you can actually add an intermediate keyframe so that it doesn't
+  fade out too quickly here. All right. So, you know, I think there's probably
+  some issues with my looping animation, but it's good enough for now. And that
+  is it. So what I want to do is export this.</p></div></a11y-collapse>
