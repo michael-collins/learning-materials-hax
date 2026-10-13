@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902278,
+      "updated": 1791902280,
       "version": "26.8.0"
     },
     "theme": {
@@ -12161,7 +12161,7 @@
       "order": 1,
       "parent": "item-fc1426b4-1e8b-4bad-966f-a76de4f561e2",
       "title": "Turning an image sequence into a video",
-      "description": "",
+      "description": "Render a Blender animation as a sequence of PNG images, then make it into a video: set the footage to 24 fps in After Effects with Interpret Footage, and export an H.264 MP4 with Media Encoder.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
