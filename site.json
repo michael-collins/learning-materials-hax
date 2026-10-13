@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791852798,
+      "updated": 1791852801,
       "version": "26.8.0"
     },
     "theme": {
@@ -25723,7 +25723,7 @@
       "order": 17,
       "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
       "title": "Sculpture garden with PBR materials",
-      "description": "",
+      "description": "Learn Blender's physically based (PBR) materials and outdoor lighting, then use them to model, texture, light and render a brutalist sculpture garden as an afternoon and an evening image.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
