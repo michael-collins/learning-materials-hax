@@ -1,0 +1,31 @@
+id: item-91cb9804-bd30-40eb-a78a-8a230ba510e3
+indent: 2
+location: pages/item-91cb9804-bd30-40eb-a78a-8a230ba510e3/index.yaml
+slug: >-
+  tutorials/reference-modeling-and-lighting-for-everyday-objects/blender-hard-surface-modeling-fundamentals-b3d-tutorial
+order: 3
+parent: item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf
+title: 'Blender Hard-Surface Modeling Fundamentals #b3d #tutorial'
+description: ''
+metadata:
+  pageType: oer:tutorial
+  published: false
+  oerFields: {}
+  oerVideoSource:
+    source: https://www.youtube.com/watch?v=nsTjnQ067sw
+    batch: video-mv6sq8wv
+    captions: none
+    duration: 1866
+    written: false
+    by: CG Boost
+    byUrl: https://www.youtube.com/@cgboost
+  created: 1791902913
+  images: []
+  videos: []
+  updated: 1791902913
+content: >-
+  <oer-video id="video-nsTjnQ067sw"
+  src="https://www.youtube.com/watch?v=nsTjnQ067sw" title="Blender Hard-Surface
+  Modeling Fundamentals #b3d #tutorial" credit="CG Boost"
+  credit-url="https://www.youtube.com/@cgboost" license="All Rights
+  Reserved"></oer-video>
