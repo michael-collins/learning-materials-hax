@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791850894,
+      "updated": 1791850897,
       "version": "26.8.0"
     },
     "theme": {
@@ -25655,7 +25655,7 @@
       "order": 5,
       "parent": "item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2",
       "title": "Parenting the mesh to the armature",
-      "description": "",
+      "description": "Bind the character mesh to its armature with automatic weights, then pose bones in Pose Mode to test how the mesh deforms and clear the pose again.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
