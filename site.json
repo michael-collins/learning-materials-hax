@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902898,
+      "updated": 1791902901,
       "version": "26.8.0"
     },
     "theme": {
@@ -8633,7 +8633,7 @@
       "order": 0,
       "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
       "title": "Collecting reference images with PureRef",
-      "description": "",
+      "description": "Gather your reference images on one PureRef board that stays on top of the software you're working in, then save it to come back to and export it as a single image you can submit.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
