@@ -1,0 +1,29 @@
+{
+  "id": "item-eefde989-34d8-46ec-a590-a9db97c1755c",
+  "indent": 2,
+  "location": "pages/item-eefde989-34d8-46ec-a590-a9db97c1755c/index.json",
+  "slug": "tutorials/reference-modeling-and-lighting-for-everyday-objects/modern-lighting-techniques-in-blender",
+  "order": 4,
+  "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
+  "title": "Modern Lighting Techniques in Blender",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:tutorial",
+    "published": false,
+    "oerFields": {},
+    "oerVideoSource": {
+      "source": "https://www.youtube.com/watch?v=y6WKm62mhIo",
+      "batch": "video-mv6sqcqt",
+      "captions": "none",
+      "duration": 1086,
+      "written": false,
+      "by": "Ducky 3D",
+      "byUrl": "https://www.youtube.com/@TheDucky3D"
+    },
+    "created": 1791902918,
+    "images": [],
+    "videos": [],
+    "updated": 1791902918
+  },
+  "content": "<oer-video id=\"video-y6WKm62mhIo\" src=\"https://www.youtube.com/watch?v=y6WKm62mhIo\" title=\"Modern Lighting Techniques in Blender\" credit=\"Ducky 3D\" credit-url=\"https://www.youtube.com/@TheDucky3D\" license=\"All Rights Reserved\"></oer-video>"
+}
