@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855535,
+      "updated": 1791855538,
       "version": "26.8.0"
     },
     "theme": {
@@ -12099,7 +12099,7 @@
       "order": 1,
       "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
       "title": "Organizing your project folder",
-      "description": "",
+      "description": "Set up a project folder with a place for every kind of file, and name your rendered image sequences by camera and frame range so you can find, swap and edit them later.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
