@@ -43,7 +43,7 @@ metadata:
   created: 1790829909
   images: []
   videos: []
-  updated: 1791854013
+  updated: 1791854017
   locked: false
   status: ''
   icon: ''
@@ -420,8 +420,8 @@ content: >
 
   <ol>
 
-  <li>Please follow the tutorials to host your game on <a
-  href="http://Github.com">Github.com</a></li>
+  <li>Please follow the Getting started with PlayCanvas tutorials above to host
+  your game on <a href="http://Github.com">Github.com</a></li>
 
   </ol>
 

@@ -103,7 +103,7 @@ A work statement is a clear articulation about what you’ve made. This is not a
 2.  One or more renders of your game assets
     1.  The renders should be 1920px x 1080px landscape orientation (wide).
 3.  A link to the live PlayCanvas scene.
-    1.  Please follow the tutorials to host your game on [Github.com](http://Github.com)
+    1.  Please follow the Getting started with PlayCanvas tutorials above to host your game on [Github.com](http://Github.com)
 4.  Upload game .zip as a `LASTNAME-game-files.zip` file
     1.  Include final work statement
         *   MS Word .doc format
