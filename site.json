@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902908,
+      "updated": 1791902911,
       "version": "26.8.0"
     },
     "theme": {
@@ -18147,7 +18147,7 @@
       "order": 2,
       "parent": "item-31050e64-6aa0-4a7e-90cd-b90d387b7dbf",
       "title": "6 Blender Hard-Surface Modeling Tricks I Wish I Knew Earlier",
-      "description": "",
+      "description": "A video by CG Boost, shown here from YouTube.",
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
