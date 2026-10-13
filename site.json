@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791855550,
+      "updated": 1791855553,
       "version": "26.8.0"
     },
     "theme": {
@@ -25422,6 +25422,40 @@
         "images": [],
         "videos": [],
         "updated": 1791850888
+      }
+    },
+    {
+      "id": "item-1ffb049d-ec59-4467-82fc-9ca5b096288e",
+      "indent": 2,
+      "location": "pages/item-1ffb049d-ec59-4467-82fc-9ca5b096288e/index.html",
+      "slug": "tutorials/creating-3d-scene-layouts-in-blender/rendering-the-viewport-to-image-sequences",
+      "order": 4,
+      "parent": "item-1a4161b3-f4ea-4cf7-940e-7bb418957cbc",
+      "title": "Rendering the viewport to image sequences",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:tutorial",
+        "published": false,
+        "oerFields": {
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": ""
+            }
+          ],
+          "difficulty": "Beginner"
+        },
+        "oerVideoSource": {
+          "source": "https://www.youtube.com/watch?v=AHLXV1owoaQ",
+          "batch": "video-mv60j5mb",
+          "captions": "speech",
+          "duration": 386,
+          "written": true
+        },
+        "created": 1791855553,
+        "images": [],
+        "videos": [],
+        "updated": 1791855553
       }
     },
     {
