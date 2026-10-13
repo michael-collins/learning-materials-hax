@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791902939,
+      "updated": 1791910456,
       "version": "26.8.0"
     },
     "theme": {
@@ -236,7 +236,7 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791833717,
+        "updated": 1791910451,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -264,10 +264,11 @@
         "oerFields": {
           "license": "CC BY 4.0",
           "aiLicense": [
-            "AIUL-WA"
+            "AIUL-WA",
+            "AIUL-NA-3D"
           ],
           "placeholder": false,
-          "allowEmbed": false,
+          "allowEmbed": true,
           "prerequisites": [],
           "attachments": [
             {
@@ -276,7 +277,16 @@
               "description": "Bouncing ball animation reference",
               "alt": "An image depicting 31 frames of a bouncing ball, from left to right with descending energy. A red motion path runs through the center of each ball position."
             }
-          ]
+          ],
+          "imageAlt": "The bouncing ball's motion path in Blender: the ball at the start of its arc, top left, and a blue line through orange keyframe dots that bounces four times, each bounce lower and shorter than the last.",
+          "difficulty": "Beginner",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "image": "files/animating-a-bouncing-ball-viewport-render.png"
         },
         "linkTarget": "_self",
         "oerRubrics": [
@@ -284,7 +294,8 @@
         ],
         "oerTutorialSeries": [
           "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a"
-        ]
+        ],
+        "oerSource": "exercises/animating-a-bouncing-ball"
       }
     },
     {
@@ -8753,7 +8764,7 @@
       "description": "In this exercise, you will apply an image sequence as texture object in Blender, render a final Blender animation as an image sequence, and import it into after effects. You will create a compressed v",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791835512,
+        "updated": 1791910454,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -8783,7 +8794,33 @@
         ],
         "oerTutorialSeries": [
           "item-d4806777-430a-42fb-967f-66d8d2b69d4f"
-        ]
+        ],
+        "oerSource": "exercises/animated-textures",
+        "oerFields": {
+          "imageAlt": "A render of an old television on a low wooden table in a dark room; its screen glows white with a small squiggle on it.",
+          "difficulty": "Beginner",
+          "authors": [
+            {
+              "name": "Michael Collins",
+              "url": "https://michaelcollins.xyz"
+            }
+          ],
+          "license": "CC BY 4.0",
+          "aiLicense": [
+            "AIUL-WA",
+            "AIUL-NA-3D"
+          ],
+          "allowEmbed": true,
+          "placeholder": false,
+          "attachments": [
+            {
+              "title": "Image Sequence Download",
+              "url": "https://drive.google.com/file/d/1b76RfhJXkYOcGn4wCPtNed6XFYwjR6nG/view?usp=sharing",
+              "description": "This is a link to a Google Drive folder where you can download the image sequence mentioned in the instructions."
+            }
+          ],
+          "image": "files/animated-textures-intro-banner.jpg"
+        }
       }
     },
     {
