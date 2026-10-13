@@ -31,15 +31,27 @@ metadata:
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1791850906
+  version: 1.0.0
+  oerVersions:
+    - version: 1.0.0
+      date: 1768219200
+      notes: ''
+    - version: 0.9.0
+      date: null
+      notes: ''
+  oerRubrics:
+    - exercise
+  oerTutorialSeries:
+    - item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 content: >
   <p>In this exercise, students will practice correcting a character model's
   edge-flow and set up an armature rig to pose the character in a sitting
   position.</p>
 
-  <oer-iframe
-  src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ"
-  title="Introduction to rigging Tutorial"></oer-iframe>
+  <oer-tutorial-series series="item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2"
+  playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ"
+  playlist-title="Introduction to rigging Tutorial"></oer-tutorial-series>
 
   <h2>Learning Objectives</h2>
 

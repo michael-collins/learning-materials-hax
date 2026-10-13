@@ -43,10 +43,29 @@
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1791850906</updated>
+<version>1.0.0</version>
+<oerVersions>
+<item>
+<version>1.0.0</version>
+<date>1768219200</date>
+<notes></notes>
+</item>
+<item>
+<version>0.9.0</version>
+<date></date>
+<notes></notes>
+</item>
+</oerVersions>
+<oerRubrics>
+<item>exercise</item>
+</oerRubrics>
+<oerTutorialSeries>
+<item>item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2</item>
+</oerTutorialSeries>
 </metadata>
 <content><![CDATA[<p>In this exercise, students will practice correcting a character model's edge-flow and set up an armature rig to pose the character in a sitting position.</p>
-<oer-iframe src="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ" title="Introduction to rigging Tutorial"></oer-iframe>
+<oer-tutorial-series series="item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2" playlist="https://youtube.com/embed/videoseries?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ" playlist-title="Introduction to rigging Tutorial"></oer-tutorial-series>
 <h2>Learning Objectives</h2>
 <ol>
 <li>Practice setting up Inverse Kinematics (IK) bone constraints.</li>
