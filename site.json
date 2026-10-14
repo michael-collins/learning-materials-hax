@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1791911901,
+      "updated": 1792018762,
       "version": "26.8.0"
     },
     "theme": {
@@ -8274,7 +8274,7 @@
         "created": 1791578330,
         "images": [],
         "videos": [],
-        "updated": 1791578330
+        "updated": 1792018758
       }
     },
     {
@@ -11901,7 +11901,7 @@
         "created": 1791578330,
         "images": [],
         "videos": [],
-        "updated": 1791578716,
+        "updated": 1792018760,
         "locked": false,
         "status": "",
         "icon": "",
@@ -20654,6 +20654,16 @@
                   "help": "The courses this page is taught in, at any university. A page can be in several courses."
                 },
                 {
+                  "name": "outcomes",
+                  "label": "Learning outcomes",
+                  "kind": "relation",
+                  "types": [
+                    "oer:outcome"
+                  ],
+                  "header": true,
+                  "help": "The outcomes this work shows a student has met."
+                },
+                {
                   "name": "license",
                   "label": "License",
                   "kind": "select",
@@ -21005,6 +21015,16 @@
                   ],
                   "filter": true,
                   "help": "The courses this page is taught in, at any university. A page can be in several courses."
+                },
+                {
+                  "name": "outcomes",
+                  "label": "Learning outcomes",
+                  "kind": "relation",
+                  "types": [
+                    "oer:outcome"
+                  ],
+                  "header": true,
+                  "help": "The outcomes this work shows a student has met."
                 },
                 {
                   "name": "license",
@@ -21383,6 +21403,16 @@
                   ],
                   "filter": true,
                   "help": "The courses this page is taught in, at any university. A page can be in several courses."
+                },
+                {
+                  "name": "outcomes",
+                  "label": "Learning outcomes",
+                  "kind": "relation",
+                  "types": [
+                    "oer:outcome"
+                  ],
+                  "header": true,
+                  "help": "The outcomes this work shows a student has met."
                 },
                 {
                   "name": "license",
@@ -22490,7 +22520,7 @@
               "schemaType": "EducationalOccupationalProgram",
               "children": [],
               "nav": false,
-              "template": "<p></p>\n<h2>Courses</h2>\n<oer-collection types=\"oer:course\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>",
+              "template": "<p></p>\n<h2>Courses</h2>\n<oer-collection types=\"oer:course\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>\n<h2>Learning outcomes</h2>\n<oer-collection types=\"oer:outcome\" scope=\"linked\" view=\"table\" sort=\"code\" controls=\"none\"></oer-collection>",
               "fields": [
                 {
                   "name": "shortName",
@@ -22542,6 +22572,102 @@
                   "label": "Bulletin entry",
                   "kind": "url",
                   "header": true
+                }
+              ]
+            },
+            {
+              "id": "oer:outcome",
+              "label": "Learning outcome",
+              "icon": "oer:target",
+              "description": "What students can do after a course, pathway or program. One shared list: link each outcome to everywhere it applies.",
+              "schemaType": "DefinedTerm",
+              "children": [],
+              "nav": false,
+              "template": "<p></p>\n<h2>Assessed by</h2>\n<oer-collection types=\"oer:exercise,oer:reflection,oer:project,oer:quiz\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>",
+              "fields": [
+                {
+                  "name": "code",
+                  "label": "Code",
+                  "kind": "text",
+                  "header": true,
+                  "help": "A short label, if the program numbers its outcomes, e.g. PLO 2."
+                },
+                {
+                  "name": "level",
+                  "label": "Level",
+                  "kind": "select",
+                  "header": true,
+                  "filter": true,
+                  "options": [
+                    {
+                      "value": "Remember",
+                      "label": "Remember"
+                    },
+                    {
+                      "value": "Understand",
+                      "label": "Understand"
+                    },
+                    {
+                      "value": "Apply",
+                      "label": "Apply"
+                    },
+                    {
+                      "value": "Analyze",
+                      "label": "Analyze"
+                    },
+                    {
+                      "value": "Evaluate",
+                      "label": "Evaluate"
+                    },
+                    {
+                      "value": "Create",
+                      "label": "Create"
+                    }
+                  ],
+                  "help": "How demanding it is, on Bloom's scale: Remember is the lowest, Create the highest."
+                },
+                {
+                  "name": "courses",
+                  "label": "Courses",
+                  "kind": "relation",
+                  "types": [
+                    "oer:course"
+                  ],
+                  "header": true,
+                  "filter": true,
+                  "help": "Courses that teach toward it."
+                },
+                {
+                  "name": "pathways",
+                  "label": "Pathways",
+                  "kind": "relation",
+                  "types": [
+                    "oer:pathway"
+                  ],
+                  "header": true,
+                  "filter": true,
+                  "help": "Pathways that lead to it."
+                },
+                {
+                  "name": "programs",
+                  "label": "Programs",
+                  "kind": "relation",
+                  "types": [
+                    "oer:program"
+                  ],
+                  "header": true,
+                  "filter": true,
+                  "help": "Programs that promise it."
+                },
+                {
+                  "name": "partOf",
+                  "label": "Part of",
+                  "kind": "relation",
+                  "types": [
+                    "oer:outcome"
+                  ],
+                  "header": true,
+                  "help": "A broader outcome this one contributes to, e.g. a program outcome."
                 }
               ]
             },
@@ -24415,6 +24541,16 @@
                   ],
                   "filter": true,
                   "help": "The courses this page is taught in, at any university. A page can be in several courses."
+                },
+                {
+                  "name": "outcomes",
+                  "label": "Learning outcomes",
+                  "kind": "relation",
+                  "types": [
+                    "oer:outcome"
+                  ],
+                  "header": true,
+                  "help": "The outcomes this work shows a student has met."
                 }
               ]
             }
@@ -24423,7 +24559,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1791911691,
+        "updated": 1792018732,
         "locked": false,
         "status": "",
         "icon": "",
@@ -34736,6 +34872,25 @@
       }
     },
     {
+      "id": "item-baeee894-4a30-4be0-af40-3e7b0761d298",
+      "indent": 0,
+      "location": "pages/item-baeee894-4a30-4be0-af40-3e7b0761d298/index.html",
+      "slug": "learning-outcomes",
+      "order": 13,
+      "parent": null,
+      "title": "Learning outcomes",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:section",
+        "published": true,
+        "overridePathauto": true,
+        "created": 1792018758,
+        "images": [],
+        "videos": [],
+        "updated": 1792018758
+      }
+    },
+    {
       "id": "item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a",
       "indent": 1,
       "location": "pages/item-2a560ac4-00b7-4ad6-ac83-ef2007afef0a/index.html",
@@ -34927,7 +35082,7 @@
       "indent": 0,
       "location": "pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.html",
       "slug": "up/dart-413",
-      "order": 14,
+      "order": 15,
       "parent": null,
       "title": "DART 413: Digital Fabrication Studio",
       "description": "Digital Fabrication Studio, 4 credits.",
@@ -34945,7 +35100,7 @@
         },
         "pageType": "oer:course-site",
         "created": 1791560758,
-        "updated": 1791735515,
+        "updated": 1792018734,
         "images": [],
         "videos": [],
         "locked": false,
@@ -35094,7 +35249,7 @@
       "indent": 0,
       "location": "pages/item-417a2d47-2196-42b8-acae-bb0202f18fae/index.html",
       "slug": "oer-courses",
-      "order": 15,
+      "order": 16,
       "parent": null,
       "title": "OER Courses",
       "description": "",
@@ -35106,7 +35261,7 @@
         "created": 1791568330,
         "images": [],
         "videos": [],
-        "updated": 1791578535,
+        "updated": 1792018736,
         "locked": false,
         "status": "",
         "icon": ""
@@ -35227,7 +35382,7 @@
       "indent": 0,
       "location": "pages/item-f3a1ceba-3fe5-4b5f-b1ca-602c512377a2/index.html",
       "slug": "book/dmd-100",
-      "order": 16,
+      "order": 17,
       "parent": null,
       "title": "DMD 100: Digital Multimedia Design Foundations",
       "description": "",
@@ -35247,31 +35402,10 @@
         "created": 1791571089,
         "images": [],
         "videos": [],
-        "updated": 1791578536,
+        "updated": 1792018738,
         "locked": false,
         "status": "",
         "icon": ""
-      }
-    },
-    {
-      "id": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
-      "indent": 0,
-      "location": "pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.html",
-      "slug": "courses",
-      "order": 17,
-      "parent": null,
-      "title": "Courses",
-      "description": "Each course, its bulletin entry and what's taught in it.",
-      "metadata": {
-        "pageType": "oer:section",
-        "icon": "",
-        "published": true,
-        "created": 1791385274,
-        "images": [],
-        "videos": [],
-        "updated": 1791578525,
-        "locked": false,
-        "status": ""
       }
     },
     {
@@ -35409,24 +35543,24 @@
       }
     },
     {
-      "id": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
+      "id": "item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5",
       "indent": 0,
-      "location": "pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.html",
-      "slug": "sequences",
+      "location": "pages/item-ff0b32bb-92be-404b-ab5c-82b9c590c6a5/index.html",
+      "slug": "courses",
       "order": 18,
       "parent": null,
-      "title": "Sequences",
-      "description": "Week-by-week plans for running a course, ready to export to Canvas.",
+      "title": "Courses",
+      "description": "Each course, its bulletin entry and what's taught in it.",
       "metadata": {
         "pageType": "oer:section",
+        "icon": "",
         "published": true,
-        "created": 1791465730,
+        "created": 1791385274,
         "images": [],
         "videos": [],
-        "updated": 1791578526,
+        "updated": 1792018740,
         "locked": false,
-        "status": "",
-        "icon": ""
+        "status": ""
       }
     },
     {
@@ -35623,27 +35757,24 @@
       }
     },
     {
-      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
+      "id": "item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639",
       "indent": 0,
-      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
-      "slug": "pathways",
+      "location": "pages/item-fb7938cc-19c8-4f37-8a00-35ee8dc4f639/index.html",
+      "slug": "sequences",
       "order": 19,
       "parent": null,
-      "title": "Pathways",
-      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
+      "title": "Sequences",
+      "description": "Week-by-week plans for running a course, ready to export to Canvas.",
       "metadata": {
-        "created": 1790827963,
-        "updated": 1791578527,
+        "pageType": "oer:section",
+        "published": true,
+        "created": 1791465730,
         "images": [],
         "videos": [],
-        "published": true,
+        "updated": 1792018742,
         "locked": false,
         "status": "",
-        "overridePathauto": false,
-        "hideInMenu": false,
-        "readtime": 1,
-        "icon": "",
-        "pageType": ""
+        "icon": ""
       }
     },
     {
@@ -35833,24 +35964,27 @@
       }
     },
     {
-      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
+      "id": "item-eedb63ad-5692-4b6b-842e-a09ce82b07ee",
       "indent": 0,
-      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
-      "slug": "books",
+      "location": "pages/item-eedb63ad-5692-4b6b-842e-a09ce82b07ee/index.html",
+      "slug": "pathways",
       "order": 20,
       "parent": null,
-      "title": "Books",
-      "description": "",
+      "title": "Pathways",
+      "description": "A pathway is one run of a course, 6 or 15 weeks, shaped around what you want to do in 3D. Everyone starts with CGI Foundations; after that, choose a pathway, and take it again at a higher level on a r",
       "metadata": {
-        "published": true,
-        "pageType": "oer:section",
-        "created": 1791231123,
+        "created": 1790827963,
+        "updated": 1792018744,
         "images": [],
         "videos": [],
-        "updated": 1791578528,
+        "published": true,
         "locked": false,
         "status": "",
-        "icon": ""
+        "overridePathauto": false,
+        "hideInMenu": false,
+        "readtime": 1,
+        "icon": "",
+        "pageType": ""
       }
     },
     {
@@ -35987,25 +36121,24 @@
       }
     },
     {
-      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
+      "id": "item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d",
       "indent": 0,
-      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
-      "slug": "activity",
+      "location": "pages/item-c6e5f625-c3c1-4d38-a9b7-07171b054d1d/index.html",
+      "slug": "books",
       "order": 21,
       "parent": null,
-      "title": "Activity",
+      "title": "Books",
       "description": "",
       "metadata": {
-        "pageType": "oer:heading",
-        "hideInMenu": true,
-        "created": 1790878969,
+        "published": true,
+        "pageType": "oer:section",
+        "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791578528,
-        "published": true,
+        "updated": 1792018746,
         "locked": false,
         "status": "",
-        "icon": "icons:description"
+        "icon": ""
       }
     },
     {
@@ -36039,28 +36172,25 @@
       }
     },
     {
-      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "id": "item-e02a1351-13e7-47ed-b151-eb0348322386",
       "indent": 0,
-      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
-      "slug": "exercises",
+      "location": "pages/item-e02a1351-13e7-47ed-b151-eb0348322386/index.html",
+      "slug": "activity",
       "order": 22,
       "parent": null,
-      "title": "Exercises",
-      "description": "Formative practice focused on a narrow set of competencies.",
+      "title": "Activity",
+      "description": "",
       "metadata": {
-        "created": 1790802192,
-        "updated": 1791578529,
+        "pageType": "oer:heading",
+        "hideInMenu": true,
+        "created": 1790878969,
         "images": [],
         "videos": [],
-        "overridePathauto": false,
+        "updated": 1792018748,
         "published": true,
-        "pageType": "oer:section",
-        "hideInMenu": false,
         "locked": false,
-        "readtime": 1,
         "status": "",
-        "icon": "",
-        "linkTarget": "_self"
+        "icon": "icons:description"
       }
     },
     {
@@ -36097,6 +36227,61 @@
         "images": [],
         "videos": [],
         "updated": 1791911895
+      }
+    },
+    {
+      "id": "item-2cd6e694-d66b-4ab1-b61d-06f525c6e423",
+      "indent": 1,
+      "location": "pages/item-2cd6e694-d66b-4ab1-b61d-06f525c6e423/index.html",
+      "slug": "projects/notes-from-midterm-feedback",
+      "order": 22,
+      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
+      "title": "Notes from midterm feedback",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:activity",
+        "published": false,
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+              "version": ""
+            }
+          ]
+        },
+        "oerCanvasImport": {
+          "batch": "canvas-muzzavh1",
+          "id": "g748b1ed7ff0f760a9fb0115c2f43bd55"
+        },
+        "created": 1791490691,
+        "images": [],
+        "videos": [],
+        "updated": 1791490691
+      }
+    },
+    {
+      "id": "item-91e1ea23-4437-4dac-90cd-c8de6495e5a6",
+      "indent": 0,
+      "location": "pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.html",
+      "slug": "exercises",
+      "order": 23,
+      "parent": null,
+      "title": "Exercises",
+      "description": "Formative practice focused on a narrow set of competencies.",
+      "metadata": {
+        "created": 1790802192,
+        "updated": 1792018750,
+        "images": [],
+        "videos": [],
+        "overridePathauto": false,
+        "published": true,
+        "pageType": "oer:section",
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "status": "",
+        "icon": "",
+        "linkTarget": "_self"
       }
     },
     {
@@ -39560,47 +39745,17 @@
       }
     },
     {
-      "id": "item-2cd6e694-d66b-4ab1-b61d-06f525c6e423",
-      "indent": 1,
-      "location": "pages/item-2cd6e694-d66b-4ab1-b61d-06f525c6e423/index.html",
-      "slug": "projects/notes-from-midterm-feedback",
-      "order": 22,
-      "parent": "item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4",
-      "title": "Notes from midterm feedback",
-      "description": "",
-      "metadata": {
-        "pageType": "oer:activity",
-        "published": false,
-        "oerFields": {
-          "courses": [
-            {
-              "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
-              "version": ""
-            }
-          ]
-        },
-        "oerCanvasImport": {
-          "batch": "canvas-muzzavh1",
-          "id": "g748b1ed7ff0f760a9fb0115c2f43bd55"
-        },
-        "created": 1791490691,
-        "images": [],
-        "videos": [],
-        "updated": 1791490691
-      }
-    },
-    {
       "id": "item-51cc91b4-48cc-4ce0-b50e-47c1887aed29",
       "indent": 0,
       "location": "pages/item-51cc91b4-48cc-4ce0-b50e-47c1887aed29/index.html",
       "slug": "reflections",
-      "order": 23,
+      "order": 24,
       "parent": null,
       "title": "Reflections",
       "description": "Reading responses and reflection prompts, assessed like exercises.",
       "metadata": {
         "created": 1791551508,
-        "updated": 1791578530,
+        "updated": 1792018752,
         "images": [],
         "videos": [],
         "overridePathauto": false,
@@ -39619,7 +39774,7 @@
       "indent": 0,
       "location": "pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.html",
       "slug": "projects",
-      "order": 24,
+      "order": 25,
       "parent": null,
       "title": "Projects",
       "description": "",
@@ -39629,7 +39784,7 @@
         "created": 1790829909,
         "images": [],
         "videos": [],
-        "updated": 1791578531,
+        "updated": 1792018754,
         "locked": false,
         "status": "",
         "icon": ""
@@ -39640,7 +39795,7 @@
       "indent": 0,
       "location": "pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.html",
       "slug": "quizzes",
-      "order": 25,
+      "order": 26,
       "parent": null,
       "title": "Quizzes",
       "description": "",
@@ -39651,7 +39806,7 @@
         "created": 1791228261,
         "images": [],
         "videos": [],
-        "updated": 1791578531,
+        "updated": 1792018756,
         "published": true,
         "locked": false,
         "status": ""

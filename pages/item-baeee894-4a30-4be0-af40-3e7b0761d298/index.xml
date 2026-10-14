@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-baeee894-4a30-4be0-af40-3e7b0761d298</id>
+<indent>0</indent>
+<location>pages/item-baeee894-4a30-4be0-af40-3e7b0761d298/index.xml</location>
+<slug>learning-outcomes</slug>
+<order>13</order>
+<parent></parent>
+<title>Learning outcomes</title>
+<description></description>
+<metadata>
+<pageType>oer:section</pageType>
+<published>true</published>
+<overridePathauto>true</overridePathauto>
+<created>1792018758</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1792018758</updated>
+</metadata>
+<content><![CDATA[<p>What students can do after a course, pathway or program. Each outcome links to the courses, pathways and programs it applies to, and lists the work that assesses it.</p>
+<oer-collection types="oer:outcome" scope="site" view="table" sort="code" per-page="50" controls="full"></oer-collection>]]></content>
+</item>

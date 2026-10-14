@@ -45,6 +45,7 @@ import { embedUrl } from "../embed/embed-mode.js";
 import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
 import { findRubric, rubricPages, rubricOf, rubricAt, itemRubric, rubricDiffers, isGradedItem, criterionPoints } from "../rubrics/rubric-model.js";
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
+import { outcomesOf, ASSESSED_TYPES } from "../types/outcome.js";
 import { moduleWeekLabel } from "./sequence-model.js";
 import "../ui/oer-text-editor.js";
 import { formControls } from "../ui/form-controls.js";
@@ -1106,6 +1107,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         </select>
         <span class="hint">${note ? `${note[0].toUpperCase()}${note.slice(1)}.` : ""}</span>
       </label>
+      ${this._outcomes(page)}
       ${item.as === "assignment" ? this._renderAssignment(item, graded) : ""}
       ${item.as === "discussion" ? this._renderDiscussion(item, graded) : ""}
       ${item.as === "quiz"
@@ -1130,6 +1132,25 @@ class OerSequenceBuilder extends OerOutlineBuilder {
             </label>`
           : html`<p class="hint">This page has no attachments. Add files to its Attachments field in Page details, then choose one here.</p>`
         : ""}`;
+  }
+
+  // the outcomes the page assesses: set on the page, so they're the same in
+  // every sequence that uses it (types/outcome.js)
+  _outcomes(page) {
+    const list = outcomesOf(page, this._items || []);
+    if (!list.length && !ASSESSED_TYPES.includes(page?.metadata?.pageType)) return "";
+    return html`<div class="field-block" role="group" aria-labelledby="outcomes-l">
+      <p class="field-label" id="outcomes-l">Learning outcomes</p>
+      ${list.length
+        ? html`<ul class="outcome-list">
+            ${list.map((o) => {
+              const code = o.metadata?.oerFields?.code;
+              return html`<li>${code ? html`<span class="chip quiet">${code}</span>` : ""}<a href="${o.slug}" target="_blank" rel="noopener">${o.title}</a></li>`;
+            })}
+          </ul>`
+        : ""}
+      <p class="hint">${list.length ? "From the page, so they're the same in every sequence that uses it." : "This page doesn't name any yet."} To change them, open the page, then Page details → Details.</p>
+    </div>`;
   }
 
   _renderAssignment(item, graded) {
@@ -1557,6 +1578,23 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         .stat {
           margin: 0;
           font-size: 0.875rem;
+        }
+        .outcome-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          font-size: 0.875rem;
+        }
+        .outcome-list li {
+          display: flex;
+          align-items: baseline;
+          gap: 0.375rem;
+        }
+        .outcome-list a {
+          color: var(--link);
         }
         .due-list {
           margin: 0;

@@ -1,0 +1,1 @@
+What students can do after a course, pathway or program. Each outcome links to the courses, pathways and programs it applies to, and lists the work that assesses it.

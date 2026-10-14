@@ -19,7 +19,8 @@ export const PROGRAM_DEF = {
   schemaType: "EducationalOccupationalProgram",
   children: [],
   nav: false,
-  template: '<p></p>\n<h2>Courses</h2>\n<oer-collection types="oer:course" scope="linked" view="table" sort="title" controls="none"></oer-collection>',
+  template:
+    '<p></p>\n<h2>Courses</h2>\n<oer-collection types="oer:course" scope="linked" view="table" sort="title" controls="none"></oer-collection>\n<h2>Learning outcomes</h2>\n<oer-collection types="oer:outcome" scope="linked" view="table" sort="code" controls="none"></oer-collection>',
   fields: [
     { name: "shortName", label: "Short name", kind: "text", header: true, help: "What people call it, e.g. DMD." },
     { name: "degree", label: "Degree", kind: "text", header: true, help: "The credential, e.g. Bachelor of Design (B.Des.)." },

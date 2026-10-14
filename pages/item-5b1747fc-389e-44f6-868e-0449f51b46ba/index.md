@@ -1,2 +1,5 @@
 Courses
 -------
+
+Learning outcomes
+-----------------
