@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792018762,
+      "updated": 1792018765,
       "version": "26.8.0"
     },
     "theme": {
@@ -34879,7 +34879,7 @@
       "order": 13,
       "parent": null,
       "title": "Learning outcomes",
-      "description": "",
+      "description": "The outcomes courses, pathways and programs promise, and the work that assesses them.",
       "metadata": {
         "pageType": "oer:section",
         "published": true,
