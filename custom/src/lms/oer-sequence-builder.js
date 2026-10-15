@@ -45,7 +45,7 @@ import { embedUrl } from "../embed/embed-mode.js";
 import { SEQUENCE_TYPE, ROLES, SUBMISSION_TYPES, sequenceOf, newItem, readiness, indentOf, attachmentsOf } from "./sequence-model.js";
 import { findRubric, rubricPages, rubricOf, rubricAt, itemRubric, rubricDiffers, isGradedItem, criterionPoints } from "../rubrics/rubric-model.js";
 import { rubricEditor } from "../rubrics/oer-rubric-editor.js";
-import { outcomesOf, ASSESSED_TYPES } from "../types/outcome.js";
+import { outcomesOf, outcomesFor, isOutcome, ASSESSED_TYPES } from "../types/outcome.js";
 import { moduleWeekLabel } from "./sequence-model.js";
 import "../ui/oer-text-editor.js";
 import { formControls } from "../ui/form-controls.js";
@@ -90,6 +90,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
       _tab: { state: true }, // "settings" | "preview"
       _showChecks: { state: true },
       _saving: { state: true },
+      _outcomeEdits: { state: true }, // Map pageId → its Learning outcomes, set in the Outcomes grid
     };
   }
 
@@ -172,6 +173,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this._sheet = false;
     this._showChecks = false;
     this._saving = false;
+    this._outcomeEdits = new Map();
     this._selId = this._previewId = this._rows[0]?.id || null;
     this._snapshot = this._signature();
     this.open = true;
@@ -232,7 +234,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   }
 
   _signature() {
-    return JSON.stringify([this._sequence(), this._fields]);
+    return JSON.stringify([this._sequence(), this._fields, [...(this._outcomeEdits || [])]]);
   }
 
   get _page() {
@@ -254,6 +256,14 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     const page = (toJS(store.manifest?.items) || []).find((i) => i.id === this._pageId);
     if (!page) return;
     this._saving = true;
+    // the pages whose Learning outcomes were set in the Outcomes grid
+    const all = toJS(store.manifest?.items) || [];
+    const aligned = [...(this._outcomeEdits || [])]
+      .map(([id, outcomes]) => {
+        const p = all.find((i) => i.id === id);
+        return p && { ...p, metadata: { ...p.metadata, oerFields: { ...(p.metadata?.oerFields || {}), outcomes } }, modified: true };
+      })
+      .filter(Boolean);
     await saveOutline([
       {
         ...page,
@@ -264,6 +274,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         },
         modified: true,
       },
+      ...aligned,
     ]);
     this._saving = false;
     this._close();
@@ -984,6 +995,196 @@ class OerSequenceBuilder extends OerOutlineBuilder {
     this._focusRow(id);
   }
 
+  /* ---------- learning outcomes: the alignment grid ---------- */
+
+  // a page's Learning outcomes as the grid has them: set here, else the page's
+  _pageOutcomes(pageId) {
+    if (this._outcomeEdits?.has(pageId)) return this._outcomeEdits.get(pageId);
+    const v = this._byId?.get(pageId)?.metadata?.oerFields?.outcomes;
+    return Array.isArray(v) ? v : [];
+  }
+
+  /**
+   * The grid: columns are the outcomes of the sequence's courses (and of
+   * their programs and pathways), then any other outcome the work names;
+   * rows are the pages graded items use (each page once, in order) and any
+   * other page that names outcomes. A row pinned to a release of its page
+   * shows that release's outcomes, which can't change here.
+   */
+  _alignment() {
+    // the header's badge asks on every render: once per change is enough
+    const key = this.__alignKey;
+    if (key && key[0] === this._rows && key[1] === this._outcomeEdits && key[2] === this._items) return this.__align;
+    this.__alignKey = [this._rows, this._outcomeEdits, this._items];
+    return (this.__align = this._alignmentNow());
+  }
+
+  _alignmentNow() {
+    const items = this._items || [];
+    const courses = (this._page?.metadata?.oerFields?.courses || []).map((v) => this._byId?.get(v?.page)).filter(Boolean);
+    const cols = [];
+    const seen = new Set();
+    for (const c of courses) {
+      for (const { outcome } of outcomesFor(c, items)) {
+        if (!seen.has(outcome.id)) seen.add(outcome.id) && cols.push({ outcome, other: false });
+      }
+    }
+    const rows = [];
+    const pages = new Set();
+    let module = null;
+    for (const r of this._rows) {
+      if (r.kind === "module") module = r;
+      if (r.kind !== "item" || !r.item.page) continue;
+      // a page used again (weekly discussions on one prompt) is one row
+      const again = rows.find((x) => x.page.id === r.item.page);
+      if (again) {
+        again.uses++;
+        continue;
+      }
+      if (pages.has(r.item.page)) continue;
+      const page = this._byId?.get(r.item.page);
+      if (!page) continue;
+      const pinned = r.item.version || "";
+      const snap = pinned ? versionsOf(page.id, items).find((v) => v.version === pinned)?.snapshot : null;
+      const linked = pinned ? (snap?.metadata?.oerFields?.outcomes || []) : this._pageOutcomes(page.id);
+      const graded = isGradedItem(r.item) || (r.item.as === "quiz" && r.item.quizType === "graded");
+      if (!graded && !linked.length) continue;
+      pages.add(page.id);
+      rows.push({ row: r, page, module, graded, pinned, linked, uses: 1, canHold: ASSESSED_TYPES.includes(page.metadata?.pageType) });
+    }
+    for (const x of rows) {
+      for (const v of x.linked) {
+        const o = this._byId?.get(v?.page);
+        if (isOutcome(o) && !seen.has(o.id)) seen.add(o.id) && cols.push({ outcome: o, other: true });
+      }
+    }
+    return { courses, rows, cols };
+  }
+
+  _toggleOutcome(pageId, outcomeId, on) {
+    const cur = this._pageOutcomes(pageId);
+    const next = on ? [...cur.filter((v) => v.page !== outcomeId), { page: outcomeId, version: "" }] : cur.filter((v) => v.page !== outcomeId);
+    const orig = this._byId?.get(pageId)?.metadata?.oerFields?.outcomes || [];
+    const edits = new Map(this._outcomeEdits);
+    if (JSON.stringify(next) === JSON.stringify(orig)) edits.delete(pageId);
+    else edits.set(pageId, next);
+    this._outcomeEdits = edits;
+  }
+
+  // arrow keys move between the grid's checkboxes
+  _gridKeys(e) {
+    const moves = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] };
+    const m = moves[e.key];
+    const t = e.target;
+    if (!m || t.type !== "checkbox" || t.dataset.r === undefined) return;
+    e.preventDefault();
+    let r = Number(t.dataset.r);
+    let c = Number(t.dataset.c);
+    const table = e.currentTarget;
+    for (let n = 0; n < 200; n++) {
+      r += m[0];
+      c += m[1];
+      const next = table.querySelector(`input[data-r="${r}"][data-c="${c}"]`);
+      if (next && !next.disabled) return next.focus();
+      if (!table.querySelector(`input[data-r="${r}"], input[data-c="${c}"]`)) return;
+    }
+  }
+
+  _renderOutcomesSheet() {
+    const { courses, rows, cols } = this._alignment();
+    const codes = courses.map((k) => k.metadata?.oerFields?.code).filter(Boolean);
+    // "DMD 400 CLO.2" in a DMD 400 sequence is "CLO.2"
+    const short = (o) => {
+      const code = String(o.metadata?.oerFields?.code || "");
+      const pre = codes.find((k) => code.startsWith(`${k} `));
+      return pre ? code.slice(pre.length + 1) : code;
+    };
+    const has = (x, o) => x.linked.some((v) => v?.page === o.id);
+    const courseNames = codes.length ? codes.join(" and ") : "this sequence's courses";
+    const unassessed = cols.filter((c) => !c.other && !rows.some((x) => has(x, c.outcome)));
+    const without = rows.filter((x) => x.graded && !cols.some((c) => has(x, c.outcome)));
+    const changed = this._outcomeEdits?.size || 0;
+    const home = this._items?.find((i) => !i.parent && i.title === "Learning outcomes" && !i.metadata?.oerSnapshotOf);
+    let body;
+    if (!courses.length) {
+      body = html`<p class="hint">This sequence isn't linked to a course yet, so it has no outcomes to align with. Add its course in the sequence page's Page details.</p>`;
+    } else if (!cols.length) {
+      body = html`<p class="hint">${courseNames} ${codes.length === 1 ? "has" : "have"} no learning outcomes yet.${home ? html` <a href="${home.slug}" target="_blank" rel="noopener">Add them under Learning outcomes</a>, then come back.` : ""}</p>`;
+    } else if (!rows.length) {
+      body = html`<p class="hint">No graded items yet. Assignments, discussions and graded quizzes appear here.</p>`;
+    } else {
+      body = html`<p class="rb-summary">
+          ${rows.length} page${rows.length === 1 ? "" : "s"}, ${cols.length} outcome${cols.length === 1 ? "" : "s"}${unassessed.length ? html`, <b>${unassessed.length} assessed by nothing</b>` : ""}${without.length ? html`, <b>${without.length} graded page${without.length === 1 ? "" : "s"} assessing none</b>` : ""}.
+        </p>
+        <div class="grid-wrap">
+          <table class="align" @keydown="${this._gridKeys}">
+            <thead>
+              <tr>
+                <th scope="col" class="work">Graded work</th>
+                ${cols.map(
+                  (c) => html`<th scope="col" class="oc" title="${[c.outcome.metadata?.oerFields?.code, c.outcome.title].filter(Boolean).join(" ")}">
+                    <a href="${c.outcome.slug}" target="_blank" rel="noopener"><span class="code">${short(c.outcome) || "—"}</span><span class="st">${c.outcome.title}</span></a>
+                    ${c.other ? html`<span class="other">Not ${courseNames}'s</span>` : ""}
+                  </th>`,
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map((x, r) => {
+                const note = x.pinned ? `Pinned to v${x.pinned}: its outcomes are that release's` : !x.canHold ? "This kind of page can't name outcomes" : "";
+                const none = x.graded && !cols.some((c) => has(x, c.outcome));
+                return html`<tr class="${this._outcomeEdits?.has(x.page.id) ? "changed" : ""}">
+                  <th scope="row" class="work">
+                    <button type="button" class="rb-title" title="Show it in the outline" @click="${() => this._showRow(x.row.id)}">${x.page.title}</button>
+                    <span class="rb-meta">${x.uses > 1 ? `Used ${x.uses} times, first in ${x.module?.title || "the outline"}` : [x.module?.title, this._summary(x.row.item)].filter(Boolean).join(" · ")}</span>
+                    ${note ? html`<span class="rb-meta">${note}</span>` : none ? html`<span class="rb-warn">${lucide("oer:circle-alert", "sm")}Assesses no outcome</span>` : ""}
+                  </th>
+                  ${cols.map(
+                    (c, ci) => html`<td>
+                      <input
+                        type="checkbox"
+                        data-r="${r}"
+                        data-c="${ci}"
+                        aria-label="${x.page.title} assesses ${short(c.outcome)} ${c.outcome.title}"
+                        .checked="${has(x, c.outcome)}"
+                        ?disabled="${!!x.pinned || !x.canHold}"
+                        @change="${(e) => this._toggleOutcome(x.page.id, c.outcome.id, e.target.checked)}"
+                      />
+                    </td>`,
+                  )}
+                </tr>`;
+              })}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" class="work">Assessed by</th>
+                ${cols.map((c) => {
+                  const n = rows.filter((x) => has(x, c.outcome)).length;
+                  return html`<td class="${n ? "" : "warn"}">${n ? n : html`${lucide("oer:circle-alert", "sm")}<span>None</span>`}</td>`;
+                })}
+              </tr>
+            </tfoot>
+          </table>
+        </div>`;
+    }
+    return html`<div class="sheet-layer" @click="${this._closeSheet}">
+      <aside class="sheet grid" role="dialog" aria-modal="true" aria-labelledby="sheet-t" @click="${(e) => e.stopPropagation()}" @keydown="${this._sheetKeys}">
+        <header class="sheet-head">
+          <div>
+            <h3 id="sheet-t">Outcomes</h3>
+            <p class="sub">Which outcomes of ${courseNames} each graded page assesses. A tick changes the page's Learning outcomes, so it holds in every sequence that uses the page; it's saved with the sequence.</p>
+          </div>
+          <button class="x" aria-label="Close outcomes" title="Close (Esc)" @click="${this._closeSheet}">${lucide("oer:x")}</button>
+        </header>
+        <div class="sheet-body rubrics">${body}</div>
+        <footer class="sheet-foot">
+          <span class="foot-note">${changed ? `${changed} page${changed === 1 ? "" : "s"} changed. Saved with the sequence.` : ""}</span>
+          <button class="btn primary" @click="${this._closeSheet}">Done</button>
+        </footer>
+      </aside>
+    </div>`;
+  }
+
   _editRubric(rubric) {
     // over the builder: the editor is moved to the end of the page
     const editor = rubricEditor();
@@ -1232,7 +1433,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
 
   /* ---------- course settings: a sheet from the right ---------- */
 
-  // kind: "settings" (Course settings) or "rubrics"
+  // kind: "settings" (Course settings), "rubrics" or "outcomes"
   _openSheet(kind = "settings") {
     this._typeMenu = null;
     this._sheet = typeof kind === "string" ? kind : "settings";
@@ -1242,7 +1443,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
   _closeSheet() {
     const kind = this._sheet;
     this._sheet = false;
-    this.updateComplete.then(() => this.shadowRoot.querySelector(kind === "rubrics" ? ".rubrics-btn" : ".settings-btn")?.focus());
+    this.updateComplete.then(() => this.shadowRoot.querySelector({ rubrics: ".rubrics-btn", outcomes: ".outcomes-btn" }[kind] || ".settings-btn")?.focus());
   }
 
   // Tab stays inside the sheet while it's open
@@ -1722,6 +1923,121 @@ class OerSequenceBuilder extends OerOutlineBuilder {
         .sheet.wide {
           width: min(44rem, 100%);
         }
+        /* the Outcomes grid */
+        .sheet.grid {
+          width: min(68rem, 100%);
+        }
+        .grid-wrap {
+          overflow: auto;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+        }
+        table.align {
+          border-collapse: separate;
+          border-spacing: 0;
+          width: 100%;
+          font-size: 0.8125rem;
+        }
+        .align th,
+        .align td {
+          padding: 0.5rem;
+          border-bottom: 1px solid var(--border);
+          background: var(--background);
+          vertical-align: top;
+        }
+        .align thead th {
+          position: sticky;
+          top: 0;
+          z-index: 2;
+          text-align: left;
+          font-weight: 500;
+        }
+        .align th.work {
+          position: sticky;
+          left: 0;
+          z-index: 1;
+          min-width: 14rem;
+          max-width: 18rem;
+          text-align: left;
+          font-weight: 400;
+          border-right: 1px solid var(--border);
+        }
+        .align thead th.work {
+          z-index: 3;
+          font-weight: 600;
+          vertical-align: bottom;
+        }
+        .align th.work .rb-title,
+        .align th.work .rb-meta,
+        .align th.work .rb-warn {
+          display: block;
+        }
+        .align .rb-warn .lucide {
+          margin-right: 0.25rem;
+          vertical-align: -0.125rem;
+        }
+        .align th.oc {
+          min-width: 6.5rem;
+          max-width: 9rem;
+        }
+        .align th.oc a {
+          display: flex;
+          flex-direction: column;
+          gap: 0.125rem;
+          color: inherit;
+          text-decoration: none;
+        }
+        .align th.oc a:hover .code {
+          text-decoration: underline;
+        }
+        .align .code {
+          font-weight: 600;
+          color: var(--link, var(--primary));
+        }
+        .align .st {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          font-size: 0.75rem;
+          line-height: 1.35;
+          color: var(--muted-foreground);
+        }
+        .align .other {
+          display: block;
+          margin-top: 0.25rem;
+          font-size: 0.6875rem;
+          color: var(--muted-foreground);
+        }
+        .align td {
+          text-align: center;
+          vertical-align: middle;
+        }
+        .align tbody tr:hover td,
+        .align tbody tr:hover th {
+          background: var(--accent);
+        }
+        /* changed here, not saved yet (the footer says so in words) */
+        .align tr.changed th.work {
+          box-shadow: inset 3px 0 0 var(--primary);
+        }
+        .align tfoot th,
+        .align tfoot td {
+          border-bottom: 0;
+          font-weight: 600;
+        }
+        .align tfoot td.warn {
+          color: var(--destructive);
+        }
+        .align tfoot td.warn .lucide {
+          vertical-align: -0.125rem;
+          margin-right: 0.125rem;
+        }
+        .foot-note {
+          flex: 1;
+          font-size: 0.8125rem;
+          color: var(--muted-foreground);
+        }
         /* the Rubrics panel */
         .sheet-body.rubrics {
           display: flex;
@@ -2031,6 +2347,13 @@ class OerSequenceBuilder extends OerOutlineBuilder {
                 return missing ? html`<span class="badge" title="${missing} graded item${missing === 1 ? "" : "s"} with no rubric">${missing}</span>` : "";
               })()}
             </button>
+            <button class="btn outline outcomes-btn" aria-haspopup="dialog" aria-expanded="${this._sheet === "outcomes" ? "true" : "false"}" @click="${() => this._openSheet("outcomes")}">
+              ${lucide("oer:target", "sm")}Outcomes${(() => {
+                const { rows, cols } = this._alignment();
+                const none = cols.length ? rows.filter((x) => x.graded && !x.linked.length).length : 0;
+                return none ? html`<span class="badge" title="${none} graded page${none === 1 ? "" : "s"} assessing no outcome">${none}</span>` : "";
+              })()}
+            </button>
             <button class="btn outline settings-btn" aria-haspopup="dialog" aria-expanded="${this._sheet === "settings" ? "true" : "false"}" @click="${() => this._openSheet("settings")}">
               ${lucide("oer:sliders-horizontal", "sm")}Course settings
             </button>
@@ -2077,7 +2400,7 @@ class OerSequenceBuilder extends OerOutlineBuilder {
                 </button>`}
         </footer>
         ${this._typeMenu ? this._renderTypeMenu() : ""}
-        ${this._sheet === "rubrics" ? this._renderRubricsSheet() : this._sheet ? this._renderSheet() : ""}
+        ${this._sheet === "rubrics" ? this._renderRubricsSheet() : this._sheet === "outcomes" ? this._renderOutcomesSheet() : this._sheet ? this._renderSheet() : ""}
       </div>
     `;
   }
