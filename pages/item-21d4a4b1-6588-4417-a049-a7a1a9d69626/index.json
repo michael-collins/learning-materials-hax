@@ -9,10 +9,10 @@
   "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
   "metadata": {
     "created": 1790802192,
-    "updated": 1791833717,
+    "updated": 1792107543,
     "images": [],
     "videos": [],
-    "overridePathauto": false,
+    "overridePathauto": true,
     "published": true,
     "pageType": "oer:exercise",
     "hideInMenu": false,
@@ -37,10 +37,11 @@
     "oerFields": {
       "license": "CC BY 4.0",
       "aiLicense": [
-        "AIUL-WA"
+        "AIUL-WA",
+        "AIUL-NA-3D"
       ],
       "placeholder": false,
-      "allowEmbed": false,
+      "allowEmbed": true,
       "prerequisites": [],
       "attachments": [
         {
@@ -48,6 +49,21 @@
           "url": "files/ball-bounce-reference.png",
           "description": "Bouncing ball animation reference",
           "alt": "An image depicting 31 frames of a bouncing ball, from left to right with descending energy. A red motion path runs through the center of each ball position."
+        }
+      ],
+      "imageAlt": "The bouncing ball's motion path in Blender: the ball at the start of its arc, top left, and a blue line through orange keyframe dots that bounces four times, each bounce lower and shorter than the last.",
+      "difficulty": "Beginner",
+      "authors": [
+        {
+          "name": "Michael Collins",
+          "url": "https://michaelcollins.xyz"
+        }
+      ],
+      "image": "files/animating-a-bouncing-ball-viewport-render.png",
+      "courses": [
+        {
+          "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+          "version": ""
         }
       ]
     },
@@ -57,7 +73,8 @@
     ],
     "oerTutorialSeries": [
       "item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a"
-    ]
+    ],
+    "oerSource": "exercises/animating-a-bouncing-ball"
   },
   "content": "\n<p>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball</p>\n<oer-tutorial-series series=\"item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a\" playlist=\"https://youtube.com/embed/videoseries?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M\" playlist-title=\"Animating a bouncing ball Tutorial\"></oer-tutorial-series>\n<h2 id=\"h2--947685220\">Learning Objectives</h2>\n<ol>\n<li>Practice keyframe animation of translation, rotation, and scale properties.</li>\n<li>Become familiarized with keyframe animation.</li>\n<li>Apply principles of animation</li>\n</ol>\n<h2 id=\"h2-921696709\">Instructions</h2>\n<ol>\n<li>Work through the Bouncing a ball tutorials above to get to know the animation tools.</li>\n<li>Create a project folder on your computer and save a new <code>.blend</code> file called <code>LASTNAME-ball-bounce.blend</code>.</li>\n\n<li>Follow the video demonstrations to animate a bouncing ball.\n<ul>\n<li>The duration of the animation should be at least 31 frames.</li>\n<li>Download and use the provided ball bounce reference image.</li>\n<li>Create a 9\" sphere and apply the scale (<strong>CTRL</strong>+<strong>A ⟶ Apply Scale</strong>).</li>\n\n<li>Following the reference, create an animation either by keyframing each frame or by using a motion path. Either technique will be accepted.</li>\n<li>Add squash and stretch to the sphere.</li>\n</ul>\n\n</li>\n\n<li>Export a rendered video.\n<ul>\n<li>To create a video file, save the file and set the render settings output folder to the project folder.</li>\n<li>Under <strong>File Format</strong>, choose <strong>FFMpeg Video</strong>, change the encoding format to <strong>MPEG-4</strong></li>\n\n<li>Under <strong>Codec,</strong> choose <strong>H.264</strong>.</li>\n\n<li>Choose <strong>Render</strong> ⟶ <strong>Render Animation</strong> to create the animation file.</li>\n\n</ul>\n\n</li>\n\n<li>Compress the project folder once you’ve completed the tutorial and rename it <code>LASTNAME-</code>ball-bounce<code>.zip</code>.</li>\n\n<li>Upload the .zip file to the assignment dropbox.</li>\n<li>Double check that you’ve included all files and that your .zip file can be downloaded and opened.</li>\n</ol>\n<h2 id=\"h2--789233351\">Grading Rubric</h2>\n<oer-rubric rubric-id=\"exercise\" accent-color=\"grey\"></oer-rubric>\n"
 }

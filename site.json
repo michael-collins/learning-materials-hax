@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792026121,
+      "updated": 1792107547,
       "version": "26.8.0"
     },
     "theme": {
@@ -236,10 +236,10 @@
       "description": "In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball\nLearning Objectives\n\nPractice keyframe animation of translation, rotation, and scale properties.\nBecome ",
       "metadata": {
         "created": 1790802192,
-        "updated": 1791910451,
+        "updated": 1792107543,
         "images": [],
         "videos": [],
-        "overridePathauto": false,
+        "overridePathauto": true,
         "published": true,
         "pageType": "oer:exercise",
         "hideInMenu": false,
@@ -286,7 +286,13 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "image": "files/animating-a-bouncing-ball-viewport-render.png"
+          "image": "files/animating-a-bouncing-ball-viewport-render.png",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "linkTarget": "_self",
         "oerRubrics": [
@@ -38160,12 +38166,18 @@
               "url": "https://michaelcollins.xyz"
             }
           ],
-          "allowEmbed": true
+          "allowEmbed": true,
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791852827,
+        "updated": 1792107545,
         "version": "1.0.0",
         "oerVersions": [
           {
@@ -38184,7 +38196,8 @@
         ],
         "oerTutorialSeries": [
           "item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c"
-        ]
+        ],
+        "overridePathauto": true
       }
     },
     {

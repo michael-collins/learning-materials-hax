@@ -14,12 +14,12 @@ Practice keyframe animation of translation, rotation, and scale properties.
 Become </description>
 <metadata>
 <created>1790802192</created>
-<updated>1791833717</updated>
+<updated>1792107543</updated>
 <images>
 </images>
 <videos>
 </videos>
-<overridePathauto>false</overridePathauto>
+<overridePathauto>true</overridePathauto>
 <published>true</published>
 <pageType>oer:exercise</pageType>
 <hideInMenu>false</hideInMenu>
@@ -45,9 +45,10 @@ Become </description>
 <license>CC BY 4.0</license>
 <aiLicense>
 <item>AIUL-WA</item>
+<item>AIUL-NA-3D</item>
 </aiLicense>
 <placeholder>false</placeholder>
-<allowEmbed>false</allowEmbed>
+<allowEmbed>true</allowEmbed>
 <prerequisites>
 </prerequisites>
 <attachments>
@@ -58,6 +59,21 @@ Become </description>
 <alt>An image depicting 31 frames of a bouncing ball, from left to right with descending energy. A red motion path runs through the center of each ball position.</alt>
 </item>
 </attachments>
+<imageAlt>The bouncing ball&apos;s motion path in Blender: the ball at the start of its arc, top left, and a blue line through orange keyframe dots that bounces four times, each bounce lower and shorter than the last.</imageAlt>
+<difficulty>Beginner</difficulty>
+<authors>
+<item>
+<name>Michael Collins</name>
+<url>https://michaelcollins.xyz</url>
+</item>
+</authors>
+<image>files/animating-a-bouncing-ball-viewport-render.png</image>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <linkTarget>_self</linkTarget>
 <oerRubrics>
@@ -66,6 +82,7 @@ Become </description>
 <oerTutorialSeries>
 <item>item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a</item>
 </oerTutorialSeries>
+<oerSource>exercises/animating-a-bouncing-ball</oerSource>
 </metadata>
 <content><![CDATA[
 <p>In this exercise, level 1 students will practice keyframe animation to animate a bouncing ball</p>

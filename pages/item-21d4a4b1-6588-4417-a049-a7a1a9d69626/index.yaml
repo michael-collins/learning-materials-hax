@@ -17,10 +17,10 @@ description: >-
   Become 
 metadata:
   created: 1790802192
-  updated: 1791833717
+  updated: 1792107543
   images: []
   videos: []
-  overridePathauto: false
+  overridePathauto: true
   published: true
   pageType: oer:exercise
   hideInMenu: false
@@ -41,8 +41,9 @@ metadata:
     license: CC BY 4.0
     aiLicense:
       - AIUL-WA
+      - AIUL-NA-3D
     placeholder: false
-    allowEmbed: false
+    allowEmbed: true
     prerequisites: []
     attachments:
       - title: Bouncing Ball Reference
@@ -52,11 +53,24 @@ metadata:
           An image depicting 31 frames of a bouncing ball, from left to right
           with descending energy. A red motion path runs through the center of
           each ball position.
+    imageAlt: >-
+      The bouncing ball's motion path in Blender: the ball at the start of its
+      arc, top left, and a blue line through orange keyframe dots that bounces
+      four times, each bounce lower and shorter than the last.
+    difficulty: Beginner
+    authors:
+      - name: Michael Collins
+        url: https://michaelcollins.xyz
+    image: files/animating-a-bouncing-ball-viewport-render.png
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   linkTarget: _self
   oerRubrics:
     - exercise
   oerTutorialSeries:
     - item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a
+  oerSource: exercises/animating-a-bouncing-ball
 content: >
 
   <p>In this exercise, level 1 students will practice keyframe animation to
