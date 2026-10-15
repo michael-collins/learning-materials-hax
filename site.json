@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792018765,
+      "updated": 1792022588,
       "version": "26.8.0"
     },
     "theme": {
@@ -21798,6 +21798,16 @@
                   "help": "The courses this page is taught in, at any university. A page can be in several courses."
                 },
                 {
+                  "name": "outcomes",
+                  "label": "Learning outcomes",
+                  "kind": "relation",
+                  "types": [
+                    "oer:outcome"
+                  ],
+                  "header": true,
+                  "help": "The outcomes this work shows a student has met."
+                },
+                {
                   "name": "license",
                   "label": "License",
                   "kind": "select",
@@ -22583,7 +22593,7 @@
               "schemaType": "DefinedTerm",
               "children": [],
               "nav": false,
-              "template": "<p></p>\n<h2>Assessed by</h2>\n<oer-collection types=\"oer:exercise,oer:reflection,oer:project,oer:quiz\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>",
+              "template": "<p></p>\n<h2>Assessed by</h2>\n<oer-collection types=\"oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>",
               "fields": [
                 {
                   "name": "code",
@@ -24559,7 +24569,7 @@
         "created": 1790822587,
         "images": [],
         "videos": [],
-        "updated": 1792018732,
+        "updated": 1792022586,
         "locked": false,
         "status": "",
         "icon": "",

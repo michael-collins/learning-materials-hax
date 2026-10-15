@@ -16,7 +16,7 @@ const OUTCOME_TYPE = "oer:outcome";
 export { OUTCOME_TYPE };
 
 /** The types whose pages assess outcomes (they carry the `outcomes` field). */
-export const ASSESSED_TYPES = ["oer:exercise", "oer:reflection", "oer:project", "oer:quiz"];
+export const ASSESSED_TYPES = ["oer:exercise", "oer:reflection", "oer:project", "oer:activity", "oer:quiz"];
 
 /** Bloom's revised levels, lowest first. */
 export const LEVELS = ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"];
@@ -35,7 +35,7 @@ export const OUTCOME_DEF = {
   children: [],
   nav: false,
   template:
-    '<p></p>\n<h2>Assessed by</h2>\n<oer-collection types="oer:exercise,oer:reflection,oer:project,oer:quiz" scope="linked" view="table" sort="title" controls="none"></oer-collection>',
+    '<p></p>\n<h2>Assessed by</h2>\n<oer-collection types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz" scope="linked" view="table" sort="title" controls="none"></oer-collection>',
   fields: [
     { name: "code", label: "Code", kind: "text", header: true, help: "A short label, if the program numbers its outcomes, e.g. PLO 2." },
     {
