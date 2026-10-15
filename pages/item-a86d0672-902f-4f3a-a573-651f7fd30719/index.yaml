@@ -5,7 +5,9 @@ slug: tutorials/texturing-the-airline-chair/marking-seams-and-unwrapping
 order: 2
 parent: item-56b58fef-c883-47a3-a0e6-0a9e6e372477
 title: Marking seams and unwrapping
-description: ''
+description: >-
+  Mark seams on the chair's side, unwrap it, project its two flat faces on top
+  of each other, and arrange the UV islands so one texture maps to both sides.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=3_2ciHv-zAQ
     batch: video-mv5vqpux
@@ -23,7 +28,8 @@ metadata:
   created: 1791847508
   images: []
   videos: []
-  updated: 1791847508
+  updated: 1792107587
+  overridePathauto: true
 content: >-
   <p>Seams tell Blender where to cut a model's surface so it can lie flat as a
   UV layout. In this part you'll mark seams on one side of the Airline Chair,

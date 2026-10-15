@@ -5,7 +5,9 @@ slug: tutorials/texturing-the-airline-chair/choosing-a-mesh-resolution
 order: 0
 parent: item-56b58fef-c883-47a3-a0e6-0a9e6e372477
 title: Choosing a mesh resolution
-description: ''
+description: >-
+  Decide how many polygons your Airline Chair will have before you texture it,
+  and apply the Subdivision Surface modifier at the level you want to work with.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=7HYPpARldG4
     batch: video-mv5vqhl9
@@ -23,7 +28,8 @@ metadata:
   created: 1791847497
   images: []
   videos: []
-  updated: 1791847497
+  updated: 1792107582
+  overridePathauto: true
 content: >-
   <p>Before you texture the Airline Chair, you need to decide how many polygons
   it will have, because the texture is laid out on the polygons themselves. In

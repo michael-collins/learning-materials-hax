@@ -7,7 +7,7 @@
 <order>4</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Modeling the seat cushions</title>
-<description></description>
+<description>Model the chair&apos;s leather seat and back cushions from a cube, anticipating how a Subdivision Surface modifier will smooth them, then shape a worn, pinched look by moving a few vertices of the low-poly mesh.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=wgrA5IVz3Do</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837180</updated>
+<updated>1792107574</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>The Airline Chair's cushions are two curved leather pads, one for the seat and one for the back. They're roughly rectangular, but with shape and curvature to them. In this part you'll model both from a cube over the reference image, working out where to put edges so that a <em>Subdivision Surface</em> modifier smooths them into the right shape, then give them the soft, pinched look of an old, worn leather cushion. You'll need the chair's frame from Parts 2 to 4, with a cube added between the sides (the end of Part 4). The video uses Blender 2.83.</p>
 

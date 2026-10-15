@@ -5,7 +5,10 @@ slug: tutorials/introduction-to-animation/keyframes-parenting-and-the-graph-edit
 order: 0
 parent: item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a
 title: Keyframes, parenting and the Graph Editor
-description: ''
+description: >-
+  Keyframe a cube moving up and down, parent a sphere to an empty so it circles
+  the cube twice at a constant speed, shape the motion in the Graph Editor, and
+  make the camera follow the cube with a Track To constraint.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=6MeFx1WL03Q
     batch: video-mv5wwefk
@@ -23,7 +29,8 @@ metadata:
   created: 1791849452
   images: []
   videos: []
-  updated: 1791849452
+  updated: 1792107604
+  overridePathauto: true
 content: >-
   <p>In this part you'll animate a cube that rises and falls, a sphere that
   circles it twice, and a camera that follows it. Along the way you'll set

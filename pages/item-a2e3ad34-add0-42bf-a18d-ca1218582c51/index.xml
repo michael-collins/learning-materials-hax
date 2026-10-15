@@ -7,7 +7,7 @@
 <order>6</order>
 <parent>item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2</parent>
 <title>Posing with IK constraints</title>
-<description></description>
+<description>Add Inverse Kinematics constraints with targets and pole targets to the legs and arms, make the feet and hands follow their targets with Copy Rotation, then pose the character sitting.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=flBsgjlDYfk</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791850901</updated>
+<updated>1792107623</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Posing a leg by rotating the thigh, then the shin, then the foot is slow. Inverse kinematics (IK) works the other way: you move a target bone where you want the foot to be, and Blender bends the leg to reach it. In this part you'll add IK constraints to both legs and both arms, each with a target and a pole target that points the knee or elbow, make the feet and hands turn with their targets, and use them to pose the character sitting on a simple block. You'll need the character bound to its armature from the last part. The video uses Blender 2.90.</p>
 

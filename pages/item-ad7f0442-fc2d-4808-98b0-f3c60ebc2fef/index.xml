@@ -7,7 +7,7 @@
 <order>0</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Setting up the reference image</title>
-<description></description>
+<description>Bring a side photo of Kem Weber&apos;s Airline Chair into Blender as a background image, and lock it so you can model over it without selecting it by mistake.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=qlVWEhwTxU0</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837156</updated>
+<updated>1792107565</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Before you model the Airline Chair, designed by Kem Weber in the 1930s, you need a picture of it to model from. In this short part you'll bring a side photo of the chair into Blender as a background image, lined up with the side view, and stop it being selectable so you can't move it by accident while you work. You'll need Blender (the video uses Blender 2.83) and the side reference image linked in the exercise.</p>
 

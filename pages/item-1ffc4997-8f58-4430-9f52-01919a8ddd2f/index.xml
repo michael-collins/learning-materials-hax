@@ -7,7 +7,7 @@
 <order>0</order>
 <parent>item-d4806777-430a-42fb-967f-66d8d2b69d4f</parent>
 <title>Modeling a TV and its table</title>
-<description></description>
+<description>Model an old TV set on a small table in Blender, starting from the default cube: a sloped bezel, a control panel and knob, a separate curved screen ready for an animated texture, bevels that catch highlights, and a table with mirrored legs.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=BYVjyBiVZG8</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791835493</updated>
+<updated>1792107559</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>You'll model an old TV set sitting on a small table in Blender, starting from the default cube. The screen is a separate, slightly curved object, so in Part 2 it can take an animated texture: an image sequence that plays on the screen. You'll need Blender (the video uses Blender 2.90) and a reference picture of a TV to guide the shape. You can model any TV you like; what matters is a screen to put the image sequence on.</p>
 

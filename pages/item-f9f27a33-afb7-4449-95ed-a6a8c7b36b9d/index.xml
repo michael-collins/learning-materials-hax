@@ -7,7 +7,7 @@
 <order>6</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Fixing geometry problems</title>
-<description></description>
+<description>Find and fix common problems in a chair model: faces whose normals point the wrong way, stray and non-manifold faces, holes, and vertices that are out of line, using Face Orientation, Delete, Fill, the Knife tool and vertex snapping.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=ulPG79oUwrs</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837193</updated>
+<updated>1792107578</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Models often end up with problems you can't see at first: faces turned inside out, faces that overlap or are missing, and vertices that have drifted out of line. This troubleshooting part goes through fixing them on an Airline Chair model: flipping normals, cleaning up and rebuilding the end of the arm, and lining up its vertices with scaling and snapping. Use it when your own chair from Parts 1 to 6 shades strangely or smooths badly. The video uses Blender 2.90.</p>
 

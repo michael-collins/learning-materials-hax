@@ -6,7 +6,10 @@ slug: >-
 order: 2
 parent: item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c
 title: Framing the shot and finishing in Photoshop
-description: ''
+description: >-
+  Choose a focal length and composition for the render camera, render the chair
+  on a transparent background with a shadow catcher, then add a background and
+  boost the colour in Photoshop.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -15,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=BKoH1v42WHo
     batch: video-mv5whauy
@@ -24,7 +30,8 @@ metadata:
   created: 1791848748
   images: []
   videos: []
-  updated: 1791848748
+  updated: 1792107600
+  overridePathauto: true
 content: >-
   <p>With the lights and materials working, the last steps are the camera and
   the finish. In this part you'll choose a focal length and a composition for

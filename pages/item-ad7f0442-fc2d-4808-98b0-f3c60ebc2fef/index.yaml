@@ -5,7 +5,9 @@ slug: tutorials/modeling-the-airline-chair/setting-up-the-reference-image
 order: 0
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Setting up the reference image
-description: ''
+description: >-
+  Bring a side photo of Kem Weber's Airline Chair into Blender as a background
+  image, and lock it so you can model over it without selecting it by mistake.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=qlVWEhwTxU0
     batch: video-mv5pkubl
@@ -23,7 +28,8 @@ metadata:
   created: 1791837156
   images: []
   videos: []
-  updated: 1791837156
+  updated: 1792107565
+  overridePathauto: true
 content: >-
   <p>Before you model the Airline Chair, designed by Kem Weber in the 1930s, you
   need a picture of it to model from. In this short part you'll bring a side

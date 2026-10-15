@@ -7,7 +7,7 @@
 <order>3</order>
 <parent>item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2</parent>
 <title>Creating edge flow for deformation</title>
-<description></description>
+<description>Shape the base mesh&apos;s head, neck, torso, legs and arms with more edge loops and careful vertex work, so its edges flow the way a body bends, then apply the Mirror modifier.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=HtbduCFqVrs</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791850881</updated>
+<updated>1792107617</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Edge flow is the way a mesh's edge loops run over its surface. When they follow the shape of the body, the mesh bends cleanly once it's rigged. In this long part you'll keep working on the mirrored base mesh: adding edge loops and moving vertices to round off the head and give it a nose, shape the neck, shoulders and chest, slim the ankles, rough in the feet, and shape the arms and wrists. At the end you'll apply the Mirror modifier. This isn't a character modeling exercise, so the aim is a reasonable shape, not a perfect one. Watch how the mesh is structured, and use anatomy references if you want to go further. The video uses Blender 2.90.</p>
 

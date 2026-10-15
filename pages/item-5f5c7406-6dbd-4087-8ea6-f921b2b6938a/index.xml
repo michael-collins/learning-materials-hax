@@ -7,7 +7,7 @@
 <order>15</order>
 <parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
 <title>Introduction to animation</title>
-<description></description>
+<description>Learn keyframe animation in Blender by animating a cube, a sphere that circles it and a camera that follows it: keyframes, parenting, curves in the Graph Editor, linear interpolation and a Track To constraint, then save the animation as a video.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/playlist?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ</source>
@@ -31,7 +37,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791849446</updated>
+<updated>1792107602</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[
 <p>This series introduces keyframe animation in Blender. You'll animate a cube that rises and falls over 120 frames, a sphere that circles it twice and loops seamlessly, and a camera that keeps the cube in view. Along the way you'll set keyframes, parent objects to an empty, shape motion with curves in the Graph Editor, switch to linear interpolation, and add a Track To constraint to the camera. The last part saves the animation as a video, a playblast, so you can watch it at its real speed.</p>

@@ -7,7 +7,7 @@
 <order>2</order>
 <parent>item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c</parent>
 <title>Framing the shot and finishing in Photoshop</title>
-<description></description>
+<description>Choose a focal length and composition for the render camera, render the chair on a transparent background with a shadow catcher, then add a background and boost the colour in Photoshop.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=BKoH1v42WHo</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791848748</updated>
+<updated>1792107600</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>With the lights and materials working, the last steps are the camera and the finish. In this part you'll choose a focal length and a composition for the render camera, match the lens to the reference photo, make the backdrop a shadow catcher so the chair renders on a transparent background with its shadow, and then put a background behind it and boost the colour in Photoshop. You'll need the scene from the previous parts, the reference photos of the chair, and Photoshop or another image editor with layers. The video uses Blender 2.83 and Photoshop 2020.</p>
 

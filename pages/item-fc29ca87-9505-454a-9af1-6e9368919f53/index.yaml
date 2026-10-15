@@ -6,7 +6,11 @@ slug: >-
 order: 1
 parent: item-d4806777-430a-42fb-967f-66d8d2b69d4f
 title: Applying the animated texture and rendering the video
-description: ''
+description: >-
+  Play a 72-frame image sequence on the TV's screen in Blender as a glowing
+  animated texture, and light the room with it. Render the scene in EEVEE as an
+  image sequence, then make it into a video in After Effects and export an H.264
+  MP4 with Media Encoder.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -15,6 +19,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=9gecnwpRE0g
     batch: video-mv5olbwg
@@ -24,7 +31,8 @@ metadata:
   created: 1791835499
   images: []
   videos: []
-  updated: 1791835499
+  updated: 1792107561
+  overridePathauto: true
 content: >-
   <p>You'll put a three-second animation on the screen of the TV from Part 1 as
   an animated texture. First you'll render the animation from After Effects as a

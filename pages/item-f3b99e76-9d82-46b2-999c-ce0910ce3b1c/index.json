@@ -6,7 +6,7 @@
   "order": 14,
   "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
   "title": "Lighting and rendering the Airline Chair",
-  "description": "",
+  "description": "Light and render Kem Weber's Airline Chair in Blender's Cycles: a studio backdrop, three-point lighting, sampling, roughness and normal maps for the leather, the camera's focal length and composition, a shadow catcher, and a final colour adjustment in Photoshop.",
   "metadata": {
     "pageType": "oer:tutorial",
     "published": false,
@@ -17,7 +17,13 @@
           "url": ""
         }
       ],
-      "difficulty": "Intermediate"
+      "difficulty": "Intermediate",
+      "courses": [
+        {
+          "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+          "version": ""
+        }
+      ]
     },
     "oerVideoSource": {
       "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q",
@@ -28,7 +34,8 @@
     "created": 1791848728,
     "images": [],
     "videos": [],
-    "updated": 1791848728
+    "updated": 1792107593,
+    "overridePathauto": true
   },
   "content": "\n<p>This series follows the Modeling and Texturing the Airline Chair series: with Kem Weber's chair modeled and textured, you'll light it and make a finished render. You'll build a curved studio backdrop, light the chair with a key light, a fill light and a rim light, and render it in Cycles, balancing the sampling level against noise and render time. Then you'll soften the shadows, add a sun, and give the leather roughness and normal maps so it catches the light like real leather. The last part sets the camera's focal length and composition, renders the chair on a transparent background with a shadow catcher, and finishes the image in Photoshop with a background and a boost in saturation.</p>\n<p>You'll need your textured Airline Chair, the reference photos of the chair, Blender, and Photoshop or another image editor with layers. The videos use Blender 2.83 and Photoshop 2020, so some menus and settings look different in newer versions.</p>\n<oer-tutorial-series></oer-tutorial-series>"
 }

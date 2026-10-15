@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Modeling the side</title>
-<description></description>
+<description>Model the Airline Chair&apos;s bent side piece from a single plane: block out its proportions with extruded edges and edge loops, give it thickness, and smooth it with a Subdivision Surface modifier held in shape by supporting edges.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=vAu-gv560vI</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837162</updated>
+<updated>1792107567</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>The side of the Airline Chair is one continuous bent piece: the arm along the top, the front leg, and the runner along the floor. In this part you'll model it from a single plane over the reference image: first the overall proportions, then edge loops to follow its curves, then thickness and a <em>Subdivision Surface</em> modifier to smooth it, with supporting edges to keep its corners crisp. You'll need the reference image set up in Part 1, in the <em>Right Orthographic</em> view. The video uses Blender 2.83.</p>
 

@@ -7,7 +7,7 @@
 <order>5</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Adding the details</title>
-<description></description>
+<description>Finish the chair&apos;s frame with its smaller parts: the rods between the sides, an arched front rail made symmetrical with a Mirror modifier, and the small wooden hooks under the seat, built by extruding single faces.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=OMIJZKwDJkY</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837186</updated>
+<updated>1792107576</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>With the sides, braces and cushions in place, the Airline Chair needs a few smaller parts to hold it together: a thin rod where the seat meets the back, an arched rail across the front of the seat, a second rod at the front, and small wooden hooks underneath that hold that rod. In this part you'll model each as its own object, use a <em>Mirror</em> modifier to keep the rail and hooks symmetrical, and see why the order of modifiers matters. You'll need the chair from Parts 2 to 5 and the reference image. The video uses Blender 2.83.</p>
 

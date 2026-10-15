@@ -6,7 +6,10 @@ slug: >-
 order: 1
 parent: item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c
 title: Refining the lighting and the leather
-description: ''
+description: >-
+  Soften the shadows, brighten the scene with a sun light, make the floor matte
+  and track down a stray light, then add roughness and normal maps so the
+  chair's leather looks like leather in the render.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -15,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=o0A0uxj-Oqo
     batch: video-mv5wh5st
@@ -24,7 +30,8 @@ metadata:
   created: 1791848741
   images: []
   videos: []
-  updated: 1791848741
+  updated: 1792107598
+  overridePathauto: true
 content: >-
   <p>The first test renders work, but the shadows have hard, ugly edges and the
   scene is greyer than the photos of the real chair. In this part you'll soften

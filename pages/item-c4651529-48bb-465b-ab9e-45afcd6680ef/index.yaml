@@ -5,15 +5,21 @@ slug: tutorials/bouncing-a-ball/motion-paths-and-bounce-interpolation
 order: 1
 parent: item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a
 title: Motion paths and bounce interpolation
-description: ''
+description: >-
+  Two faster ways to animate the bouncing ball in Blender: make the ball follow
+  a motion path, or let Bounce interpolation draw the bounces from two
+  keyframes.
 metadata:
   pageType: oer:tutorial
-  published: false
+  published: true
   oerFields:
     authors:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=1L4894ipwoQ
     batch: video-mv5jhcdz
@@ -23,7 +29,8 @@ metadata:
   created: 1791826915
   images: []
   videos: []
-  updated: 1791826915
+  updated: 1792107555
+  overridePathauto: true
 content: >-
   <p>Part 1 keyframed the ball on every frame of the bounce. This part shows two
   quicker ways to get the same motion in Blender, using the same reference

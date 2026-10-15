@@ -5,7 +5,10 @@ slug: tutorials/texturing-the-airline-chair/applying-scale
 order: 1
 parent: item-56b58fef-c883-47a3-a0e6-0a9e6e372477
 title: Applying scale
-description: ''
+description: >-
+  Open the UV Editing workspace, see why a checker texture stretches across the
+  chair, and apply each object's scale so it's back to 1 before you lay out the
+  UVs.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=egWgHYmKwww
     batch: video-mv5vqlfz
@@ -23,7 +29,8 @@ metadata:
   created: 1791847502
   images: []
   videos: []
-  updated: 1791847502
+  updated: 1792107584
+  overridePathauto: true
 content: >-
   <p>To give the Airline Chair textures and materials that match the photo, you
   first lay out its UVs. Before that, every object's scale should be reset to 1,

@@ -7,7 +7,7 @@
 <order>16</order>
 <parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
 <title>Rigging a character</title>
-<description></description>
+<description>Prepare a simple character mesh for rigging in Blender, build and bind an armature with named, mirrored bones, and add IK constraints to pose it sitting.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/playlist?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ</source>
@@ -31,7 +37,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791850856</updated>
+<updated>1792107608</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[
 <p>Rigging gives a character a skeleton you can pose. In these seven parts you'll rig a simple character in Blender from start to finish. First you'll prepare the mesh: import a base mesh, fix its scale, mirror it, and add edge loops with good edge flow so it bends cleanly at the elbows, knees, waist, shoulders and neck. Then you'll build an armature, with bones named .L and .R so Symmetrize can mirror them, and bind the mesh to it with automatic weights. Last, you'll add Inverse Kinematics (IK) constraints with pole targets to the legs and arms, and use them to pose the character sitting.</p>

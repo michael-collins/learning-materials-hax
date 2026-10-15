@@ -7,7 +7,7 @@
 <order>0</order>
 <parent>item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c</parent>
 <title>Introduction to PBR materials</title>
-<description></description>
+<description>See how Blender&apos;s Principled BSDF makes physically based materials (rough, metallic, coated, glass, subsurface and glowing), apply a downloaded PBR texture pack with Node Wrangler, and light a scene with a sky texture or an HDRI.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=UhCIEowWnKM</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791852805</updated>
+<updated>1792107628</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Physically based rendering (PBR) means describing a surface by how it treats light: how rough it is, whether it's metal, whether light passes through it or glows from it. In this part you'll see how Blender's <em>Principled BSDF</em> shader does that, using a Suzanne head, a glass and a sphere as examples. Then you'll apply a downloaded PBR texture pack to a floor with Node Wrangler, see what each of its maps does, and light the floor like an outdoor scene with a sky texture and with an HDRI. It helps to know your way around Blender's interface. The video uses Blender 4.2 and renders with Cycles.</p>
 

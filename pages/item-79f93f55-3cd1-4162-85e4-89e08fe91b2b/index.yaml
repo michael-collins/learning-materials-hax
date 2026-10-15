@@ -5,7 +5,9 @@ slug: tutorials/rigging-a-character/setting-up-a-mirror-modifier
 order: 1
 parent: item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 title: Setting up a Mirror modifier
-description: ''
+description: >-
+  Delete half of the base mesh and add a Mirror modifier, so every change you
+  make to one side of the character is copied to the other.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=vX7hPXzRSAw
     batch: video-mv5xqqix
@@ -23,7 +28,8 @@ metadata:
   created: 1791850868
   images: []
   videos: []
-  updated: 1791850868
+  updated: 1792107613
+  overridePathauto: true
 content: >-
   <p>A character's left and right sides are the same, so you only need to model
   one of them. In this part you'll cut the base mesh in half and add a

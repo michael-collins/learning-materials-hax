@@ -7,7 +7,7 @@
 <order>0</order>
 <parent>item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2</parent>
 <title>Importing the base mesh</title>
-<description></description>
+<description>Import the base mesh FBX into Blender, set its scale back to 1, and see why it needs more geometry before it can be rigged.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=c-xiLuBBsik</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791850862</updated>
+<updated>1792107611</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Rigging starts with a mesh to rig. In this short part you'll bring a simple character base mesh into Blender from an FBX file, fix the tiny scale it comes in at, and look at its wireframe to see what it's missing before it can bend. You'll need Blender (the video uses Blender 2.90) and the base mesh FBX file from the exercise.</p>
 

@@ -5,7 +5,10 @@ slug: tutorials/modeling-the-airline-chair/adding-the-details
 order: 5
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Adding the details
-description: ''
+description: >-
+  Finish the chair's frame with its smaller parts: the rods between the sides,
+  an arched front rail made symmetrical with a Mirror modifier, and the small
+  wooden hooks under the seat, built by extruding single faces.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=OMIJZKwDJkY
     batch: video-mv5plhy7
@@ -23,7 +29,8 @@ metadata:
   created: 1791837186
   images: []
   videos: []
-  updated: 1791837186
+  updated: 1792107576
+  overridePathauto: true
 content: >-
   <p>With the sides, braces and cushions in place, the Airline Chair needs a few
   smaller parts to hold it together: a thin rod where the seat meets the back,

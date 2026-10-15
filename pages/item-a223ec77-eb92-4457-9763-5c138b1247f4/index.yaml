@@ -5,7 +5,10 @@ slug: tutorials/texturing-the-airline-chair/texturing-the-side-from-a-photo
 order: 4
 parent: item-56b58fef-c883-47a3-a0e6-0a9e6e372477
 title: Texturing the side from a photo
-description: ''
+description: >-
+  Cut the side of the chair out of a reference photo, warp and patch it to fit
+  the side's UV layout in Photoshop, and apply it in Blender, with a separate
+  wood texture for the edge banding.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=gFglq5aaW1w
     batch: video-mv5vqz85
@@ -23,7 +29,8 @@ metadata:
   created: 1791847520
   images: []
   videos: []
-  updated: 1791847520
+  updated: 1792107591
+  overridePathauto: true
 content: >-
   <p>In this part you'll give the side of the Airline Chair a real wood texture,
   taken from a photo of the chair itself. You'll cut the side out of the photo,

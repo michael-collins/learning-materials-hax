@@ -6,11 +6,14 @@ slug: >-
 order: 0
 parent: item-fc1426b4-1e8b-4bad-966f-a76de4f561e2
 title: Master Stylized Animated Water in 3D (tutorial)
-description: ''
+description: A video by Zha Art, shown here from YouTube.
 metadata:
   pageType: oer:tutorial
   published: false
-  oerFields: {}
+  oerFields:
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=25kwDu3OPmM
     batch: video-mv6scie6
@@ -22,7 +25,8 @@ metadata:
   created: 1791902272
   images: []
   videos: []
-  updated: 1791902272
+  updated: 1792107634
+  overridePathauto: true
 content: >-
   <oer-video id="video-25kwDu3OPmM"
   src="https://www.youtube.com/watch?v=25kwDu3OPmM" title="Master Stylized

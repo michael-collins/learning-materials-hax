@@ -7,7 +7,7 @@
 <order>3</order>
 <parent>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</parent>
 <title>Making and applying an image texture</title>
-<description></description>
+<description>Export the side&apos;s UV layout, paint a texture over it in Photoshop, apply it to the chair with an Image Texture node, and check the UVs for stretching.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=_PflHOC85HE</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791847514</updated>
+<updated>1792107589</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>With the side of the Airline Chair unwrapped, you can paint a texture for it in a 2D image editor and put it on the model. In this part you'll export the UV layout as an image, use it as a guide to paint a quick test texture in Photoshop, connect that texture to a new material in Blender, and check how well the texture follows the UVs. You'll need the side you unwrapped in Part 3 and Photoshop or another 2D image editor. The video uses Blender 2.83 and Photoshop 2020.</p>
 

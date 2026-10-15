@@ -5,7 +5,9 @@ slug: tutorials/texturing-the-airline-chair/making-and-applying-an-image-texture
 order: 3
 parent: item-56b58fef-c883-47a3-a0e6-0a9e6e372477
 title: Making and applying an image texture
-description: ''
+description: >-
+  Export the side's UV layout, paint a texture over it in Photoshop, apply it to
+  the chair with an Image Texture node, and check the UVs for stretching.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=_PflHOC85HE
     batch: video-mv5vquq0
@@ -23,7 +28,8 @@ metadata:
   created: 1791847514
   images: []
   videos: []
-  updated: 1791847514
+  updated: 1792107589
+  overridePathauto: true
 content: >-
   <p>With the side of the Airline Chair unwrapped, you can paint a texture for
   it in a 2D image editor and put it on the model. In this part you'll export

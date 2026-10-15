@@ -5,7 +5,10 @@ slug: tutorials/procedural-texture-animations
 order: 20
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Procedural texture animations
-description: ''
+description: >-
+  Make stylized, animated water with Zha Art's tutorial, then render the
+  animation from Blender as an image sequence and turn it into an H.264 video
+  with After Effects and Media Encoder.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrXtsipLP7DiUgZxSrwUp8uh
     batch: video-mv6scegj
@@ -22,7 +28,8 @@ metadata:
   created: 1791902267
   images: []
   videos: []
-  updated: 1791902267
+  updated: 1792107632
+  overridePathauto: true
 content: >-
 
   <p>Procedural textures are built from shader nodes rather than painted images,

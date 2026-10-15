@@ -5,7 +5,10 @@ slug: tutorials/procedural-texture-animations/turning-an-image-sequence-into-a-v
 order: 1
 parent: item-fc1426b4-1e8b-4bad-966f-a76de4f561e2
 title: Turning an image sequence into a video
-description: ''
+description: >-
+  Render a Blender animation as a sequence of PNG images, then make it into a
+  video: set the footage to 24 fps in After Effects with Interpret Footage, and
+  export an H.264 MP4 with Media Encoder.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=Tv7RAvdBQNw
     batch: video-mv6scmrh
@@ -23,7 +29,8 @@ metadata:
   created: 1791902278
   images: []
   videos: []
-  updated: 1791902278
+  updated: 1792107636
+  overridePathauto: true
 content: >-
   <p>You'll render an animation from Blender as a folder of numbered PNG images,
   one per frame, and then turn them into a video: set the footage to the

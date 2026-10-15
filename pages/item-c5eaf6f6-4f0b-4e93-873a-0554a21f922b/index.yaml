@@ -5,7 +5,10 @@ slug: tutorials/modeling-the-airline-chair/modeling-the-side-brace
 order: 2
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Modeling the side brace
-description: ''
+description: >-
+  Model the straight brace that runs along the chair's side and the small
+  brackets that hold it, as separate objects made from cubes with supporting
+  edges, then rotate the brace into place around a moved origin.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=8hBu3lXKm7g
     batch: video-mv5pl3rb
@@ -23,7 +29,8 @@ metadata:
   created: 1791837168
   images: []
   videos: []
-  updated: 1791837168
+  updated: 1792107570
+  overridePathauto: true
 content: >-
   <p>Below the arm of the Airline Chair, a straight wooden brace runs from the
   front leg to the back end of the arm, where it fits into the notch you left in

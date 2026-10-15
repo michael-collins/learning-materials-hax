@@ -5,7 +5,10 @@ slug: tutorials/rigging-a-character/posing-with-ik-constraints
 order: 6
 parent: item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 title: Posing with IK constraints
-description: ''
+description: >-
+  Add Inverse Kinematics constraints with targets and pole targets to the legs
+  and arms, make the feet and hands follow their targets with Copy Rotation,
+  then pose the character sitting.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=flBsgjlDYfk
     batch: video-mv5xrg5o
@@ -23,7 +29,8 @@ metadata:
   created: 1791850901
   images: []
   videos: []
-  updated: 1791850901
+  updated: 1792107623
+  overridePathauto: true
 content: >-
   <p>Posing a leg by rotating the thigh, then the shin, then the foot is slow.
   Inverse kinematics (IK) works the other way: you move a target bone where you

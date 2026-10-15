@@ -7,7 +7,7 @@
 <order>14</order>
 <parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
 <title>Lighting and rendering the Airline Chair</title>
-<description></description>
+<description>Light and render Kem Weber&apos;s Airline Chair in Blender&apos;s Cycles: a studio backdrop, three-point lighting, sampling, roughness and normal maps for the leather, the camera&apos;s focal length and composition, a shadow catcher, and a final colour adjustment in Photoshop.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/playlist?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q</source>
@@ -31,7 +37,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791848728</updated>
+<updated>1792107593</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[
 <p>This series follows the Modeling and Texturing the Airline Chair series: with Kem Weber's chair modeled and textured, you'll light it and make a finished render. You'll build a curved studio backdrop, light the chair with a key light, a fill light and a rim light, and render it in Cycles, balancing the sampling level against noise and render time. Then you'll soften the shadows, add a sun, and give the leather roughness and normal maps so it catches the light like real leather. The last part sets the camera's focal length and composition, renders the chair on a transparent background with a shadow catcher, and finishes the image in Photoshop with a background and a boost in saturation.</p>

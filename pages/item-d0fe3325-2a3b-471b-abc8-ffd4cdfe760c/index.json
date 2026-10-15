@@ -6,7 +6,7 @@
   "order": 17,
   "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
   "title": "Sculpture garden with PBR materials",
-  "description": "",
+  "description": "Learn Blender's physically based (PBR) materials and outdoor lighting, then use them to model, texture, light and render a brutalist sculpture garden as an afternoon and an evening image.",
   "metadata": {
     "pageType": "oer:tutorial",
     "published": false,
@@ -17,7 +17,13 @@
           "url": ""
         }
       ],
-      "difficulty": "Intermediate"
+      "difficulty": "Intermediate",
+      "courses": [
+        {
+          "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+          "version": ""
+        }
+      ]
     },
     "oerVideoSource": {
       "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrXmwBV0kO-ErBLFnyWukKsD",
@@ -28,7 +34,8 @@
     "created": 1791852797,
     "images": [],
     "videos": [],
-    "updated": 1791852797
+    "updated": 1792107626,
+    "overridePathauto": true
   },
   "content": "\n<p>Physically based rendering (PBR) describes surfaces by how they treat light, so they look real under any lighting. In these two parts you'll learn the PBR workflow in Blender and then use it on a whole scene. Part 1 introduces the Principled BSDF (roughness, metallic, coat, glass, subsurface and emission), applies a downloaded PBR texture pack with Node Wrangler and explains what each of its maps does, and lights a scene with a Sky Texture or an HDRI. Part 2 makes a brutalist sculpture garden from start to finish: blocking out the space with skylights cut by Booleans, a camera at eye height, concrete, ground and metal materials from texture packs, a sculpture built from icospheres and curves, 3D lettering, and an afternoon and an evening render finished in Photoshop.</p>\n<p>You'll need Blender, a few free PBR texture packs and HDRIs (the videos use ambientCG; 2K is enough), and an image editor that opens 32-bit EXR files for finishing (the videos use Photoshop). The videos use Blender 4.2 on a Mac and render with Cycles, which is much faster with a good graphics card; where the videos use <kbd>Cmd</kbd> or <kbd>Option</kbd>, use <kbd>Ctrl</kbd> or <kbd>Alt</kbd> on Windows and Linux.</p>\n<oer-tutorial-series></oer-tutorial-series>"
 }

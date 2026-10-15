@@ -5,7 +5,9 @@ slug: tutorials/rigging-a-character/adding-knees-and-elbows
 order: 2
 parent: item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 title: Adding knees and elbows
-description: ''
+description: >-
+  Add edge loops where the character needs to bend (elbows, knees, waist, neck
+  and shoulders) and shape its T-pose so it deforms well once it's rigged.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=SAXMOmAArAw
     batch: video-mv5xqvge
@@ -23,7 +28,8 @@ metadata:
   created: 1791850874
   images: []
   videos: []
-  updated: 1791850874
+  updated: 1792107615
+  overridePathauto: true
 content: >-
   <p>A mesh can only bend where it has edges. In this part you'll add edge loops
   to the mirrored base mesh at the elbows, knees, waist, hips and shoulders,

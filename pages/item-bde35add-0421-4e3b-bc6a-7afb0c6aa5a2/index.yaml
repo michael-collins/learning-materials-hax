@@ -5,7 +5,10 @@ slug: tutorials/rigging-a-character
 order: 16
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Rigging a character
-description: ''
+description: >-
+  Prepare a simple character mesh for rigging in Blender, build and bind an
+  armature with named, mirrored bones, and add IK constraints to pose it
+  sitting.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ
     batch: video-mv5xqhf3
@@ -22,7 +28,8 @@ metadata:
   created: 1791850856
   images: []
   videos: []
-  updated: 1791850856
+  updated: 1792107608
+  overridePathauto: true
 content: >-
 
   <p>Rigging gives a character a skeleton you can pose. In these seven parts

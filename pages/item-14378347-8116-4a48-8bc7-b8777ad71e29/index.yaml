@@ -5,7 +5,9 @@ slug: tutorials/introduction-to-animation/saving-a-playblast
 order: 1
 parent: item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a
 title: Saving a playblast
-description: ''
+description: >-
+  Save your animation as an MPEG-4 video straight from the viewport, a
+  playblast, so you can watch it at its real speed without rendering it.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=xALz1ZEUqOQ
     batch: video-mv5wwizg
@@ -23,7 +28,8 @@ metadata:
   created: 1791849458
   images: []
   videos: []
-  updated: 1791849458
+  updated: 1792107606
+  overridePathauto: true
 content: >-
   <p>When a scene has a lot going on, pressing play in Blender doesn't always
   show your animation at its real speed. A playblast saves it as a video

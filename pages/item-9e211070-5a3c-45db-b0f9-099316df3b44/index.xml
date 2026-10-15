@@ -7,7 +7,7 @@
 <order>3</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Mirroring the side</title>
-<description></description>
+<description>Make the other side of the chair with Mirror modifiers: snap each object&apos;s origin to the chair&apos;s center line, apply rotation and scale so the mirror works on the right axis, and handle instanced objects.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=r5iSQNviDJg</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837174</updated>
+<updated>1792107572</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>The Airline Chair has two identical sides, with the seat cushions between them. Instead of modeling the second side, you'll mirror the side, the brace and the brackets across the chair's center line with <em>Mirror</em> modifiers. For a mirror to land in the right place, each object's origin has to be on the center line, and its rotation and scale have to be applied. You'll need the side, brace and brackets from Parts 2 and 3. The video uses Blender 2.83.</p>
 

@@ -5,7 +5,10 @@ slug: tutorials/modeling-the-airline-chair/modeling-the-side
 order: 1
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Modeling the side
-description: ''
+description: >-
+  Model the Airline Chair's bent side piece from a single plane: block out its
+  proportions with extruded edges and edge loops, give it thickness, and smooth
+  it with a Subdivision Surface modifier held in shape by supporting edges.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=vAu-gv560vI
     batch: video-mv5pkz3r
@@ -23,7 +29,8 @@ metadata:
   created: 1791837162
   images: []
   videos: []
-  updated: 1791837162
+  updated: 1792107567
+  overridePathauto: true
 content: >-
   <p>The side of the Airline Chair is one continuous bent piece: the arm along
   the top, the front leg, and the runner along the floor. In this part you'll

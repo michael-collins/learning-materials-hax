@@ -5,7 +5,11 @@ slug: tutorials/animated-textures/modeling-a-tv-and-its-table
 order: 0
 parent: item-d4806777-430a-42fb-967f-66d8d2b69d4f
 title: Modeling a TV and its table
-description: ''
+description: >-
+  Model an old TV set on a small table in Blender, starting from the default
+  cube: a sloped bezel, a control panel and knob, a separate curved screen ready
+  for an animated texture, bevels that catch highlights, and a table with
+  mirrored legs.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=BYVjyBiVZG8
     batch: video-mv5ol7ex
@@ -23,7 +30,8 @@ metadata:
   created: 1791835493
   images: []
   videos: []
-  updated: 1791835493
+  updated: 1792107559
+  overridePathauto: true
 content: >-
   <p>You'll model an old TV set sitting on a small table in Blender, starting
   from the default cube. The screen is a separate, slightly curved object, so in

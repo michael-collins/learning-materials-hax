@@ -5,7 +5,10 @@ slug: tutorials/modeling-the-airline-chair
 order: 12
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Modeling the Airline Chair
-description: ''
+description: >-
+  Model Kem Weber's 1930s Airline Chair in Blender from a side photo, using
+  polygonal modeling fundamentals: extruding, edge loops, supporting edges,
+  Subdivision Surface and Mirror modifiers, and clean edge flow.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f
     batch: video-mv5pkq8u
@@ -22,7 +28,8 @@ metadata:
   created: 1791837150
   images: []
   videos: []
-  updated: 1791837150
+  updated: 1792107563
+  overridePathauto: true
 content: >-
 
   <p>The Airline Chair, designed by Kem Weber in the 1930s, is made of a few

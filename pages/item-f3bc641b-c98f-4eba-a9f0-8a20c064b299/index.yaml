@@ -5,7 +5,9 @@ slug: tutorials/rigging-a-character/parenting-the-mesh-to-the-armature
 order: 5
 parent: item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 title: Parenting the mesh to the armature
-description: ''
+description: >-
+  Bind the character mesh to its armature with automatic weights, then pose
+  bones in Pose Mode to test how the mesh deforms and clear the pose again.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=UiBN8K89W64
     batch: video-mv5xrane
@@ -23,7 +28,8 @@ metadata:
   created: 1791850894
   images: []
   videos: []
-  updated: 1791850894
+  updated: 1792107621
+  overridePathauto: true
 content: >-
   <p>With the skeleton built, the mesh needs to follow it. In this short part
   you'll parent (bind) the character mesh to the armature with automatic

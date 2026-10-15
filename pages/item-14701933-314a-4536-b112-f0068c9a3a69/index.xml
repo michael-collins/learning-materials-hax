@@ -7,11 +7,17 @@
 <order>0</order>
 <parent>item-fc1426b4-1e8b-4bad-966f-a76de4f561e2</parent>
 <title>Master Stylized Animated Water in 3D (tutorial)</title>
-<description></description>
+<description>A video by Zha Art, shown here from YouTube.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
 <oerFields>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=25kwDu3OPmM</source>
@@ -27,7 +33,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791902272</updated>
+<updated>1792107634</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<oer-video id="video-25kwDu3OPmM" src="https://www.youtube.com/watch?v=25kwDu3OPmM" title="Master Stylized Animated Water in 3D (tutorial)" credit="Zha Art" credit-url="https://www.youtube.com/@crzyzhaa" license="All Rights Reserved"></oer-video>]]></content>
 </item>

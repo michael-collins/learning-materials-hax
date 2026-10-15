@@ -7,7 +7,7 @@
 <order>2</order>
 <parent>item-64bb61f6-e057-4e01-ac26-828c59ae032c</parent>
 <title>Modeling the side brace</title>
-<description></description>
+<description>Model the straight brace that runs along the chair&apos;s side and the small brackets that hold it, as separate objects made from cubes with supporting edges, then rotate the brace into place around a moved origin.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=8hBu3lXKm7g</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837168</updated>
+<updated>1792107570</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Below the arm of the Airline Chair, a straight wooden brace runs from the front leg to the back end of the arm, where it fits into the notch you left in Part 2 and is held by a small metal bracket. In this part you'll model the brace and the brackets as separate objects, each a stretched cube with supporting edges and a <em>Subdivision Surface</em> modifier, then line the brace up with the side. You'll need the side from Part 2 and the reference image. The video uses Blender 2.83.</p>
 

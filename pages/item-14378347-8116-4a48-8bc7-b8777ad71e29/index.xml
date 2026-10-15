@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-5f5c7406-6dbd-4087-8ea6-f921b2b6938a</parent>
 <title>Saving a playblast</title>
-<description></description>
+<description>Save your animation as an MPEG-4 video straight from the viewport, a playblast, so you can watch it at its real speed without rendering it.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=xALz1ZEUqOQ</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791849458</updated>
+<updated>1792107606</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>When a scene has a lot going on, pressing play in Blender doesn't always show your animation at its real speed. A playblast saves it as a video straight from the viewport, without a full render, so you can watch it at the speed you intended. You'll need an animation, such as the cube, sphere and camera from the previous part; the video uses Blender 2.90.</p>
 

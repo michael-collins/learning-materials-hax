@@ -5,7 +5,9 @@ slug: tutorials/rigging-a-character/setting-up-an-armature
 order: 4
 parent: item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 title: Setting up an armature
-description: ''
+description: >-
+  Build a skeleton of bones inside the character, parent and name them, then
+  mirror them to the other side with Symmetrize.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +16,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=y8pRYx-2_vo
     batch: video-mv5xr5wu
@@ -23,7 +28,8 @@ metadata:
   created: 1791850888
   images: []
   videos: []
-  updated: 1791850888
+  updated: 1792107619
+  overridePathauto: true
 content: >-
   <p>An armature is the skeleton that will bend the character. In this part
   you'll add one, extrude its bones up the spine and out along one arm and one

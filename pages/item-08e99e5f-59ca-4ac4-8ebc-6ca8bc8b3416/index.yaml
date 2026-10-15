@@ -5,7 +5,11 @@ slug: tutorials/sculpture-garden-with-pbr-materials/introduction-to-pbr-material
 order: 0
 parent: item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c
 title: Introduction to PBR materials
-description: ''
+description: >-
+  See how Blender's Principled BSDF makes physically based materials (rough,
+  metallic, coated, glass, subsurface and glowing), apply a downloaded PBR
+  texture pack with Node Wrangler, and light a scene with a sky texture or an
+  HDRI.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=UhCIEowWnKM
     batch: video-mv5yw9cj
@@ -23,7 +30,8 @@ metadata:
   created: 1791852805
   images: []
   videos: []
-  updated: 1791852805
+  updated: 1792107628
+  overridePathauto: true
 content: >-
   <p>Physically based rendering (PBR) means describing a surface by how it
   treats light: how rough it is, whether it's metal, whether light passes

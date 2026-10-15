@@ -5,15 +5,20 @@ slug: tutorials/bouncing-a-ball
 order: 10
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Bouncing a ball
-description: ''
+description: >-
+  Animate a bouncing ball in Blender three ways: keyframing every frame,
+  following a motion path, and Bounce interpolation.
 metadata:
   pageType: oer:tutorial
-  published: false
+  published: true
   oerFields:
     authors:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M
     batch: video-mv5jgxwv
@@ -22,7 +27,8 @@ metadata:
   created: 1791826896
   images: []
   videos: []
-  updated: 1791826896
+  updated: 1792107550
+  overridePathauto: true
 content: >-
 
   <p>A two-part series on animating a bouncing ball in Blender, following a

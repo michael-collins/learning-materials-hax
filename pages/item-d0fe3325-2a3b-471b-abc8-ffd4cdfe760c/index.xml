@@ -7,7 +7,7 @@
 <order>17</order>
 <parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
 <title>Sculpture garden with PBR materials</title>
-<description></description>
+<description>Learn Blender&apos;s physically based (PBR) materials and outdoor lighting, then use them to model, texture, light and render a brutalist sculpture garden as an afternoon and an evening image.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/playlist?list=PL-V2nChTadrXmwBV0kO-ErBLFnyWukKsD</source>
@@ -31,7 +37,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791852797</updated>
+<updated>1792107626</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[
 <p>Physically based rendering (PBR) describes surfaces by how they treat light, so they look real under any lighting. In these two parts you'll learn the PBR workflow in Blender and then use it on a whole scene. Part 1 introduces the Principled BSDF (roughness, metallic, coat, glass, subsurface and emission), applies a downloaded PBR texture pack with Node Wrangler and explains what each of its maps does, and lights a scene with a Sky Texture or an HDRI. Part 2 makes a brutalist sculpture garden from start to finish: blocking out the space with skylights cut by Booleans, a camera at eye height, concrete, ground and metal materials from texture packs, a sculpture built from icospheres and curves, 3D lettering, and an afternoon and an evening render finished in Photoshop.</p>

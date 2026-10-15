@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-d4806777-430a-42fb-967f-66d8d2b69d4f</parent>
 <title>Applying the animated texture and rendering the video</title>
-<description></description>
+<description>Play a 72-frame image sequence on the TV&apos;s screen in Blender as a glowing animated texture, and light the room with it. Render the scene in EEVEE as an image sequence, then make it into a video in After Effects and export an H.264 MP4 with Media Encoder.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=9gecnwpRE0g</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791835499</updated>
+<updated>1792107561</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>You'll put a three-second animation on the screen of the TV from Part 1 as an animated texture. First you'll render the animation from After Effects as a numbered sequence of PNG images. Then you'll play it on the screen in Blender, make the screen glow, and animate the room's light with it. Finally you'll render the scene from Blender as an image sequence and turn it into a video in After Effects: a lossless copy to keep and an H.264 MP4 to put online. You'll need the TV model from Part 1 (or a model of your own with a screen), Blender (the video uses Blender 2.90) with EEVEE, After Effects and Media Encoder. The image sequence for the screen is available to download, so you don't have to make your own <page-anchor target="#video-9gecnwpRE0g" value="1886">31:26</page-anchor>.</p>
 

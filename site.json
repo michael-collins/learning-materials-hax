@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792107547,
+      "updated": 1792107639,
       "version": "26.8.0"
     },
     "theme": {
@@ -8313,7 +8313,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=rNkxPfMUuKo",
@@ -8325,7 +8331,8 @@
         "created": 1791826910,
         "images": [],
         "videos": [],
-        "updated": 1791826910
+        "updated": 1792107552,
+        "overridePathauto": true
       }
     },
     {
@@ -8347,7 +8354,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=BYVjyBiVZG8",
@@ -8359,7 +8372,8 @@
         "created": 1791835493,
         "images": [],
         "videos": [],
-        "updated": 1791835493
+        "updated": 1792107559,
+        "overridePathauto": true
       }
     },
     {
@@ -8381,7 +8395,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=qlVWEhwTxU0",
@@ -8393,7 +8413,8 @@
         "created": 1791837156,
         "images": [],
         "videos": [],
-        "updated": 1791837156
+        "updated": 1792107565,
+        "overridePathauto": true
       }
     },
     {
@@ -8415,7 +8436,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=7HYPpARldG4",
@@ -8427,7 +8454,8 @@
         "created": 1791847497,
         "images": [],
         "videos": [],
-        "updated": 1791847497
+        "updated": 1792107582,
+        "overridePathauto": true
       }
     },
     {
@@ -8449,7 +8477,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=h2jxV2_Lu8w",
@@ -8461,7 +8495,8 @@
         "created": 1791848735,
         "images": [],
         "videos": [],
-        "updated": 1791848735
+        "updated": 1792107595,
+        "overridePathauto": true
       }
     },
     {
@@ -8483,7 +8518,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=6MeFx1WL03Q",
@@ -8495,7 +8536,8 @@
         "created": 1791849452,
         "images": [],
         "videos": [],
-        "updated": 1791849452
+        "updated": 1792107604,
+        "overridePathauto": true
       }
     },
     {
@@ -8517,7 +8559,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=c-xiLuBBsik",
@@ -8529,7 +8577,8 @@
         "created": 1791850862,
         "images": [],
         "videos": [],
-        "updated": 1791850862
+        "updated": 1792107611,
+        "overridePathauto": true
       }
     },
     {
@@ -8551,7 +8600,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=UhCIEowWnKM",
@@ -8563,7 +8618,8 @@
         "created": 1791852805,
         "images": [],
         "videos": [],
-        "updated": 1791852805
+        "updated": 1792107628,
+        "overridePathauto": true
       }
     },
     {
@@ -8646,7 +8702,14 @@
       "metadata": {
         "pageType": "oer:tutorial",
         "published": false,
-        "oerFields": {},
+        "oerFields": {
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
+        },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=25kwDu3OPmM",
           "batch": "video-mv6scie6",
@@ -8659,7 +8722,8 @@
         "created": 1791902272,
         "images": [],
         "videos": [],
-        "updated": 1791902272
+        "updated": 1792107634,
+        "overridePathauto": true
       }
     },
     {
@@ -12021,7 +12085,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=1L4894ipwoQ",
@@ -12033,7 +12103,8 @@
         "created": 1791826915,
         "images": [],
         "videos": [],
-        "updated": 1791826915
+        "updated": 1792107555,
+        "overridePathauto": true
       }
     },
     {
@@ -12055,7 +12126,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=9gecnwpRE0g",
@@ -12067,7 +12144,8 @@
         "created": 1791835499,
         "images": [],
         "videos": [],
-        "updated": 1791835499
+        "updated": 1792107561,
+        "overridePathauto": true
       }
     },
     {
@@ -12089,7 +12167,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=vAu-gv560vI",
@@ -12101,7 +12185,8 @@
         "created": 1791837162,
         "images": [],
         "videos": [],
-        "updated": 1791837162
+        "updated": 1792107567,
+        "overridePathauto": true
       }
     },
     {
@@ -12123,7 +12208,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=egWgHYmKwww",
@@ -12135,7 +12226,8 @@
         "created": 1791847502,
         "images": [],
         "videos": [],
-        "updated": 1791847502
+        "updated": 1792107584,
+        "overridePathauto": true
       }
     },
     {
@@ -12157,7 +12249,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=o0A0uxj-Oqo",
@@ -12169,7 +12267,8 @@
         "created": 1791848741,
         "images": [],
         "videos": [],
-        "updated": 1791848741
+        "updated": 1792107598,
+        "overridePathauto": true
       }
     },
     {
@@ -12191,7 +12290,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=xALz1ZEUqOQ",
@@ -12203,7 +12308,8 @@
         "created": 1791849458,
         "images": [],
         "videos": [],
-        "updated": 1791849458
+        "updated": 1792107606,
+        "overridePathauto": true
       }
     },
     {
@@ -12225,7 +12331,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=vX7hPXzRSAw",
@@ -12237,7 +12349,8 @@
         "created": 1791850868,
         "images": [],
         "videos": [],
-        "updated": 1791850868
+        "updated": 1792107613,
+        "overridePathauto": true
       }
     },
     {
@@ -12259,7 +12372,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=X9226_ttvwo",
@@ -12271,7 +12390,8 @@
         "created": 1791852814,
         "images": [],
         "videos": [],
-        "updated": 1791852814
+        "updated": 1792107630,
+        "overridePathauto": true
       }
     },
     {
@@ -12361,7 +12481,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=Tv7RAvdBQNw",
@@ -12373,7 +12499,8 @@
         "created": 1791902278,
         "images": [],
         "videos": [],
-        "updated": 1791902278
+        "updated": 1792107636,
+        "overridePathauto": true
       }
     },
     {
@@ -18232,7 +18359,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=8hBu3lXKm7g",
@@ -18244,7 +18377,8 @@
         "created": 1791837168,
         "images": [],
         "videos": [],
-        "updated": 1791837168
+        "updated": 1792107570,
+        "overridePathauto": true
       }
     },
     {
@@ -18266,7 +18400,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=3_2ciHv-zAQ",
@@ -18278,7 +18418,8 @@
         "created": 1791847508,
         "images": [],
         "videos": [],
-        "updated": 1791847508
+        "updated": 1792107587,
+        "overridePathauto": true
       }
     },
     {
@@ -18300,7 +18441,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=BKoH1v42WHo",
@@ -18312,7 +18459,8 @@
         "created": 1791848748,
         "images": [],
         "videos": [],
-        "updated": 1791848748
+        "updated": 1792107600,
+        "overridePathauto": true
       }
     },
     {
@@ -18334,7 +18482,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=SAXMOmAArAw",
@@ -18346,7 +18500,8 @@
         "created": 1791850874,
         "images": [],
         "videos": [],
-        "updated": 1791850874
+        "updated": 1792107615,
+        "overridePathauto": true
       }
     },
     {
@@ -20403,7 +20558,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=r5iSQNviDJg",
@@ -20415,7 +20576,8 @@
         "created": 1791837174,
         "images": [],
         "videos": [],
-        "updated": 1791837174
+        "updated": 1792107572,
+        "overridePathauto": true
       }
     },
     {
@@ -20437,7 +20599,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=_PflHOC85HE",
@@ -20449,7 +20617,8 @@
         "created": 1791847514,
         "images": [],
         "videos": [],
-        "updated": 1791847514
+        "updated": 1792107589,
+        "overridePathauto": true
       }
     },
     {
@@ -20471,7 +20640,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=HtbduCFqVrs",
@@ -20483,7 +20658,8 @@
         "created": 1791850881,
         "images": [],
         "videos": [],
-        "updated": 1791850881
+        "updated": 1792107617,
+        "overridePathauto": true
       }
     },
     {
@@ -26089,7 +26265,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=wgrA5IVz3Do",
@@ -26101,7 +26283,8 @@
         "created": 1791837180,
         "images": [],
         "videos": [],
-        "updated": 1791837180
+        "updated": 1792107574,
+        "overridePathauto": true
       }
     },
     {
@@ -26123,7 +26306,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=gFglq5aaW1w",
@@ -26135,7 +26324,8 @@
         "created": 1791847520,
         "images": [],
         "videos": [],
-        "updated": 1791847520
+        "updated": 1792107591,
+        "overridePathauto": true
       }
     },
     {
@@ -26157,7 +26347,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=y8pRYx-2_vo",
@@ -26169,7 +26365,8 @@
         "created": 1791850888,
         "images": [],
         "videos": [],
-        "updated": 1791850888
+        "updated": 1792107619,
+        "overridePathauto": true
       }
     },
     {
@@ -26529,7 +26726,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrVJwkuJN1Ht3GcuzXpue29M",
@@ -26540,7 +26743,8 @@
         "created": 1791826896,
         "images": [],
         "videos": [],
-        "updated": 1791826896
+        "updated": 1792107550,
+        "overridePathauto": true
       }
     },
     {
@@ -26562,7 +26766,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH",
@@ -26573,7 +26783,8 @@
         "created": 1791835487,
         "images": [],
         "videos": [],
-        "updated": 1791835487
+        "updated": 1792107557,
+        "overridePathauto": true
       }
     },
     {
@@ -26595,7 +26806,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f",
@@ -26606,7 +26823,8 @@
         "created": 1791837150,
         "images": [],
         "videos": [],
-        "updated": 1791837150
+        "updated": 1792107563,
+        "overridePathauto": true
       }
     },
     {
@@ -26628,7 +26846,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=OMIJZKwDJkY",
@@ -26640,7 +26864,8 @@
         "created": 1791837186,
         "images": [],
         "videos": [],
-        "updated": 1791837186
+        "updated": 1792107576,
+        "overridePathauto": true
       }
     },
     {
@@ -26662,7 +26887,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=ulPG79oUwrs",
@@ -26674,7 +26905,8 @@
         "created": 1791837193,
         "images": [],
         "videos": [],
-        "updated": 1791837193
+        "updated": 1792107578,
+        "overridePathauto": true
       }
     },
     {
@@ -26696,7 +26928,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq",
@@ -26707,7 +26945,8 @@
         "created": 1791847491,
         "images": [],
         "videos": [],
-        "updated": 1791847491
+        "updated": 1792107580,
+        "overridePathauto": true
       }
     },
     {
@@ -26729,7 +26968,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q",
@@ -26740,7 +26985,8 @@
         "created": 1791848728,
         "images": [],
         "videos": [],
-        "updated": 1791848728
+        "updated": 1792107593,
+        "overridePathauto": true
       }
     },
     {
@@ -26762,7 +27008,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ",
@@ -26773,7 +27025,8 @@
         "created": 1791849446,
         "images": [],
         "videos": [],
-        "updated": 1791849446
+        "updated": 1792107602,
+        "overridePathauto": true
       }
     },
     {
@@ -26795,7 +27048,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrX4lOk4gv0XjdSVpB31qOtJ",
@@ -26806,7 +27065,8 @@
         "created": 1791850856,
         "images": [],
         "videos": [],
-        "updated": 1791850856
+        "updated": 1792107608,
+        "overridePathauto": true
       }
     },
     {
@@ -26828,7 +27088,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Beginner"
+          "difficulty": "Beginner",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=UiBN8K89W64",
@@ -26840,7 +27106,8 @@
         "created": 1791850894,
         "images": [],
         "videos": [],
-        "updated": 1791850894
+        "updated": 1792107621,
+        "overridePathauto": true
       }
     },
     {
@@ -26862,7 +27129,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/watch?v=flBsgjlDYfk",
@@ -26874,7 +27147,8 @@
         "created": 1791850901,
         "images": [],
         "videos": [],
-        "updated": 1791850901
+        "updated": 1792107623,
+        "overridePathauto": true
       }
     },
     {
@@ -26896,7 +27170,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrXmwBV0kO-ErBLFnyWukKsD",
@@ -26907,7 +27187,8 @@
         "created": 1791852797,
         "images": [],
         "videos": [],
-        "updated": 1791852797
+        "updated": 1792107626,
+        "overridePathauto": true
       }
     },
     {
@@ -27097,7 +27378,13 @@
               "url": ""
             }
           ],
-          "difficulty": "Intermediate"
+          "difficulty": "Intermediate",
+          "courses": [
+            {
+              "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+              "version": ""
+            }
+          ]
         },
         "oerVideoSource": {
           "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrXtsipLP7DiUgZxSrwUp8uh",
@@ -27108,7 +27395,8 @@
         "created": 1791902267,
         "images": [],
         "videos": [],
-        "updated": 1791902267
+        "updated": 1792107632,
+        "overridePathauto": true
       }
     },
     {

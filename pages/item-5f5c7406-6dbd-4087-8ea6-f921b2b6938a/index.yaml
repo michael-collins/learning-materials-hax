@@ -5,7 +5,11 @@ slug: tutorials/introduction-to-animation
 order: 15
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Introduction to animation
-description: ''
+description: >-
+  Learn keyframe animation in Blender by animating a cube, a sphere that circles
+  it and a camera that follows it: keyframes, parenting, curves in the Graph
+  Editor, linear interpolation and a Track To constraint, then save the
+  animation as a video.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrUCq3o-AvWZ3A6mQTd8O9uJ
     batch: video-mv5ww95t
@@ -22,7 +29,8 @@ metadata:
   created: 1791849446
   images: []
   videos: []
-  updated: 1791849446
+  updated: 1792107602
+  overridePathauto: true
 content: >-
 
   <p>This series introduces keyframe animation in Blender. You'll animate a cube

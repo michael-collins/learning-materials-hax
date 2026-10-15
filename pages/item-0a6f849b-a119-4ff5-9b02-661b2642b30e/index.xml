@@ -7,10 +7,10 @@
 <order>0</order>
 <parent>item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a</parent>
 <title>Keyframing and rendering a bouncing ball</title>
-<description></description>
+<description>Animate a ball bouncing across the screen in Blender by placing it on every frame against a reference, then add squash and stretch. Give it a drawn outline and render it as a video file or as an image sequence you put together in After Effects.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
-<published>false</published>
+<published>true</published>
 <oerFields>
 <authors>
 <item>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=rNkxPfMUuKo</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791826910</updated>
+<updated>1792107552</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>You'll animate a ball bouncing from left to right, losing height and distance with each bounce, by placing it by hand on every frame against a reference drawing, the way a hand-drawn animator would. Then you'll add squash and stretch, give the ball a drawn outline, and render it two ways: straight to a video file, and as an image sequence you put together in After Effects. You'll need Blender (the video uses Blender 4.2 LTS) and a reference drawing of a bouncing ball with its frames numbered; the last part also uses After Effects and Media Encoder.</p>
 

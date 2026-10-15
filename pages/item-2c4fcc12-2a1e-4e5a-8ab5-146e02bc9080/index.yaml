@@ -5,7 +5,10 @@ slug: tutorials/modeling-the-airline-chair/modeling-the-seat-cushions
 order: 4
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Modeling the seat cushions
-description: ''
+description: >-
+  Model the chair's leather seat and back cushions from a cube, anticipating how
+  a Subdivision Surface modifier will smooth them, then shape a worn, pinched
+  look by moving a few vertices of the low-poly mesh.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=wgrA5IVz3Do
     batch: video-mv5plcz7
@@ -23,7 +29,8 @@ metadata:
   created: 1791837180
   images: []
   videos: []
-  updated: 1791837180
+  updated: 1792107574
+  overridePathauto: true
 content: >-
   <p>The Airline Chair's cushions are two curved leather pads, one for the seat
   and one for the back. They're roughly rectangular, but with shape and

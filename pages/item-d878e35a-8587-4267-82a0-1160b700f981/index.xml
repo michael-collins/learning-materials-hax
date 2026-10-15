@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c</parent>
 <title>Making the sculpture garden</title>
-<description></description>
+<description>Model a brutalist sculpture garden in Blender, give it PBR materials, add a sculpture built from curves and a lettered sign, then light and render it in Cycles as an afternoon and an evening image finished in Photoshop.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=X9226_ttvwo</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791852814</updated>
+<updated>1792107630</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>In this part you'll follow the whole process of making a brutalist sculpture garden in Blender: a concrete courtyard with round skylights, a planter with a sculpture in it, and a lettered sign, lit by the sun through the skylights. The video blocks out the space, sets up a camera at eye height, gives everything PBR materials from texture packs, models the sculpture from icospheres and curves, and adds 3D text. Then it renders an afternoon image, finishes it in Photoshop, and lights and renders an evening version. It's a long video, so use the timestamps to jump to the stage you need. Your garden doesn't have to look like this one: take the techniques and design your own. It helps to have watched Part 1 (the Principled BSDF, Node Wrangler, displacement and the Sky Texture). The video uses Blender 4.2 on a Mac, Cycles and Photoshop 2024.</p>
 

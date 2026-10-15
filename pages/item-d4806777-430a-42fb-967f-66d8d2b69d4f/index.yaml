@@ -5,7 +5,10 @@ slug: tutorials/animated-textures
 order: 11
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Animated textures
-description: ''
+description: >-
+  Model a TV set in Blender and play an image sequence on its screen as an
+  animated texture, then render the scene as an image sequence and turn it into
+  a video in After Effects and Media Encoder.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrUWRugAsFhfYkUojjO1iZWH
     batch: video-mv5ol2ym
@@ -22,7 +28,8 @@ metadata:
   created: 1791835487
   images: []
   videos: []
-  updated: 1791835487
+  updated: 1792107557
+  overridePathauto: true
 content: >-
 
   <p>An animated texture is an image sequence that plays on the surface of a

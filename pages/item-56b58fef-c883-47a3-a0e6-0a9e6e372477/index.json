@@ -6,7 +6,7 @@
   "order": 13,
   "parent": "item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea",
   "title": "Texturing the Airline Chair",
-  "description": "",
+  "description": "Prepare Kem Weber's Airline Chair for texturing in Blender, unwrap its UVs, and paint textures for it in Photoshop: choosing a mesh resolution, applying scale, marking seams, exporting the UV layout, and applying image textures.",
   "metadata": {
     "pageType": "oer:tutorial",
     "published": false,
@@ -17,7 +17,13 @@
           "url": ""
         }
       ],
-      "difficulty": "Intermediate"
+      "difficulty": "Intermediate",
+      "courses": [
+        {
+          "page": "item-98dd1287-cf09-4761-a23a-7b76081d0b0e",
+          "version": ""
+        }
+      ]
     },
     "oerVideoSource": {
       "source": "https://www.youtube.com/playlist?list=PL-V2nChTadrUGw6OioaTkVBSCP12C9mjq",
@@ -28,7 +34,8 @@
     "created": 1791847491,
     "images": [],
     "videos": [],
-    "updated": 1791847491
+    "updated": 1792107580,
+    "overridePathauto": true
   },
   "content": "\n<p>This series follows the Modeling the Airline Chair series: with Kem Weber's chair modeled, you'll get it ready for texturing and give it textures. You'll choose how many polygons to work with and apply each object's scale, mark seams and unwrap the side's UVs, export the UV layout and paint a texture over it in Photoshop, connect that texture to a material with an <em>Image Texture</em> node, and check the UVs for stretching. The last part builds the side's texture from a photo of the real chair, a process you can repeat for the chair's other parts.</p>\n<p>You'll need your modeled Airline Chair, Blender, and Photoshop or another 2D image editor. The videos use Blender 2.83 and Photoshop 2020, so some menus look slightly different in newer versions.</p>\n<oer-tutorial-series></oer-tutorial-series>"
 }

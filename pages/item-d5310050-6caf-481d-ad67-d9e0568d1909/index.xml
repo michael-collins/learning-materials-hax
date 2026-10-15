@@ -7,7 +7,7 @@
 <order>0</order>
 <parent>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</parent>
 <title>Choosing a mesh resolution</title>
-<description></description>
+<description>Decide how many polygons your Airline Chair will have before you texture it, and apply the Subdivision Surface modifier at the level you want to work with.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=7HYPpARldG4</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791847497</updated>
+<updated>1792107582</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Before you texture the Airline Chair, you need to decide how many polygons it will have, because the texture is laid out on the polygons themselves. In this short part you'll see why that decision comes first, and how to apply the <em>Subdivision Surface</em> modifier at the level you want to work with. You'll need the chair you modeled in the Modeling the Airline Chair series. The video uses Blender 2.83.</p>
 

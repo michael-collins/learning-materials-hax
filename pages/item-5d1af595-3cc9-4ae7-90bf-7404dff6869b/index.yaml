@@ -5,7 +5,10 @@ slug: tutorials/rigging-a-character/creating-edge-flow-for-deformation
 order: 3
 parent: item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2
 title: Creating edge flow for deformation
-description: ''
+description: >-
+  Shape the base mesh's head, neck, torso, legs and arms with more edge loops
+  and careful vertex work, so its edges flow the way a body bends, then apply
+  the Mirror modifier.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=HtbduCFqVrs
     batch: video-mv5xr0rt
@@ -23,7 +29,8 @@ metadata:
   created: 1791850881
   images: []
   videos: []
-  updated: 1791850881
+  updated: 1792107617
+  overridePathauto: true
 content: >-
   <p>Edge flow is the way a mesh's edge loops run over its surface. When they
   follow the shape of the body, the mesh bends cleanly once it's rigged. In this

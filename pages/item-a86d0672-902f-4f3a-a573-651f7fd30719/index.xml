@@ -7,7 +7,7 @@
 <order>2</order>
 <parent>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</parent>
 <title>Marking seams and unwrapping</title>
-<description></description>
+<description>Mark seams on the chair&apos;s side, unwrap it, project its two flat faces on top of each other, and arrange the UV islands so one texture maps to both sides.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=3_2ciHv-zAQ</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791847508</updated>
+<updated>1792107587</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Seams tell Blender where to cut a model's surface so it can lie flat as a UV layout. In this part you'll mark seams on one side of the Airline Chair, unwrap it, then lay its inner and outer faces on top of each other so a single texture covers both, and arrange the pieces neatly for painting in Photoshop. You'll need the side from your chair with its scale applied (Part 2). The video uses Blender 2.83.</p>
 

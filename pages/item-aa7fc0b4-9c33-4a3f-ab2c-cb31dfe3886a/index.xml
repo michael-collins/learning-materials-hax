@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-fc1426b4-1e8b-4bad-966f-a76de4f561e2</parent>
 <title>Turning an image sequence into a video</title>
-<description></description>
+<description>Render a Blender animation as a sequence of PNG images, then make it into a video: set the footage to 24 fps in After Effects with Interpret Footage, and export an H.264 MP4 with Media Encoder.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=Tv7RAvdBQNw</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791902278</updated>
+<updated>1792107636</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>You'll render an animation from Blender as a folder of numbered PNG images, one per frame, and then turn them into a video: set the footage to the animation's frame rate in After Effects, and export an H.264 MP4 with Media Encoder. You'll need an animation in Blender (the video uses a stylized waterfall, 250 frames at 24 fps), After Effects and Media Encoder. The video uses Blender 4.2 and After Effects 2025, so some menus may look a little different in newer versions.</p>
 

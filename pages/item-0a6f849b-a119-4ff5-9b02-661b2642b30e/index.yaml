@@ -5,15 +5,22 @@ slug: tutorials/bouncing-a-ball/keyframing-and-rendering-a-bouncing-ball
 order: 0
 parent: item-4bbbfbe8-a00d-406a-ad5d-af436b0ebb9a
 title: Keyframing and rendering a bouncing ball
-description: ''
+description: >-
+  Animate a ball bouncing across the screen in Blender by placing it on every
+  frame against a reference, then add squash and stretch. Give it a drawn
+  outline and render it as a video file or as an image sequence you put together
+  in After Effects.
 metadata:
   pageType: oer:tutorial
-  published: false
+  published: true
   oerFields:
     authors:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=rNkxPfMUuKo
     batch: video-mv5jh8s4
@@ -23,7 +30,8 @@ metadata:
   created: 1791826910
   images: []
   videos: []
-  updated: 1791826910
+  updated: 1792107552
+  overridePathauto: true
 content: >-
   <p>You'll animate a ball bouncing from left to right, losing height and
   distance with each bounce, by placing it by hand on every frame against a

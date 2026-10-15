@@ -5,7 +5,11 @@ slug: tutorials/modeling-the-airline-chair/fixing-geometry-problems
 order: 6
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Fixing geometry problems
-description: ''
+description: >-
+  Find and fix common problems in a chair model: faces whose normals point the
+  wrong way, stray and non-manifold faces, holes, and vertices that are out of
+  line, using Face Orientation, Delete, Fill, the Knife tool and vertex
+  snapping.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=ulPG79oUwrs
     batch: video-mv5plmqj
@@ -23,7 +30,8 @@ metadata:
   created: 1791837193
   images: []
   videos: []
-  updated: 1791837193
+  updated: 1792107578
+  overridePathauto: true
 content: >-
   <p>Models often end up with problems you can't see at first: faces turned
   inside out, faces that overlap or are missing, and vertices that have drifted

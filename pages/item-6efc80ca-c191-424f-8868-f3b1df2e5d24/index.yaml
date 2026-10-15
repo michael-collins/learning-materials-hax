@@ -6,7 +6,10 @@ slug: >-
 order: 0
 parent: item-f3b99e76-9d82-46b2-999c-ce0910ce3b1c
 title: Studio backdrop and three-point lighting
-description: ''
+description: >-
+  Build a curved studio backdrop for the Airline Chair, light it with three area
+  lights in a three-point setup, and make test renders in Cycles to see how
+  sampling trades noise for render time.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -15,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=h2jxV2_Lu8w
     batch: video-mv5wh0qx
@@ -24,7 +30,8 @@ metadata:
   created: 1791848735
   images: []
   videos: []
-  updated: 1791848735
+  updated: 1792107595
+  overridePathauto: true
 content: >-
   <p>A product shot needs a studio: a floor that curves up into a back wall so
   there's no horizon line behind the object, and lights you place yourself. In

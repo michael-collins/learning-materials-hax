@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-bde35add-0421-4e3b-bc6a-7afb0c6aa5a2</parent>
 <title>Setting up a Mirror modifier</title>
-<description></description>
+<description>Delete half of the base mesh and add a Mirror modifier, so every change you make to one side of the character is copied to the other.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=vX7hPXzRSAw</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791850868</updated>
+<updated>1792107613</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>A character's left and right sides are the same, so you only need to model one of them. In this part you'll cut the base mesh in half and add a <em>Mirror</em> modifier, which shows the other half as a live copy. Everything you add to one side from now on, edge loops included, appears on the other side too. You'll need the base mesh from the last part, at a scale of 1. The video uses Blender 2.90.</p>
 

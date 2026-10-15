@@ -5312,229 +5312,229 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/bouncing-a-ball</loc>
-    <lastmod>2026-10-12T17:41:36.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:10.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/bouncing-a-ball/keyframing-and-rendering-a-bouncing-ball</loc>
-    <lastmod>2026-10-12T17:41:50.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:12.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/bouncing-a-ball/motion-paths-and-bounce-interpolation</loc>
-    <lastmod>2026-10-12T17:41:55.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:15.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/animated-textures</loc>
-    <lastmod>2026-10-12T20:04:47.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:17.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/animated-textures/modeling-a-tv-and-its-table</loc>
-    <lastmod>2026-10-12T20:04:53.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:19.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/animated-textures/applying-the-animated-texture-and-rendering-the-video</loc>
-    <lastmod>2026-10-12T20:04:59.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:21.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair</loc>
-    <lastmod>2026-10-12T20:32:30.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/setting-up-the-reference-image</loc>
-    <lastmod>2026-10-12T20:32:36.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:25.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/modeling-the-side</loc>
-    <lastmod>2026-10-12T20:32:42.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:27.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/modeling-the-side-brace</loc>
-    <lastmod>2026-10-12T20:32:48.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:30.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/mirroring-the-side</loc>
-    <lastmod>2026-10-12T20:32:54.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:32.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/modeling-the-seat-cushions</loc>
-    <lastmod>2026-10-12T20:33:00.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/adding-the-details</loc>
-    <lastmod>2026-10-12T20:33:06.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/modeling-the-airline-chair/fixing-geometry-problems</loc>
-    <lastmod>2026-10-12T20:33:13.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:38.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/texturing-the-airline-chair</loc>
-    <lastmod>2026-10-12T23:24:51.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/texturing-the-airline-chair/choosing-a-mesh-resolution</loc>
-    <lastmod>2026-10-12T23:24:57.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:42.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/texturing-the-airline-chair/applying-scale</loc>
-    <lastmod>2026-10-12T23:25:02.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:44.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/texturing-the-airline-chair/marking-seams-and-unwrapping</loc>
-    <lastmod>2026-10-12T23:25:08.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:47.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/texturing-the-airline-chair/making-and-applying-an-image-texture</loc>
-    <lastmod>2026-10-12T23:25:14.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:49.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/texturing-the-airline-chair/texturing-the-side-from-a-photo</loc>
-    <lastmod>2026-10-12T23:25:20.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/lighting-and-rendering-the-airline-chair</loc>
-    <lastmod>2026-10-12T23:45:28.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/lighting-and-rendering-the-airline-chair/studio-backdrop-and-three-point-lighting</loc>
-    <lastmod>2026-10-12T23:45:35.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/lighting-and-rendering-the-airline-chair/refining-the-lighting-and-the-leather</loc>
-    <lastmod>2026-10-12T23:45:41.000Z</lastmod>
+    <lastmod>2026-10-15T23:39:58.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/lighting-and-rendering-the-airline-chair/framing-the-shot-and-finishing-in-photoshop</loc>
-    <lastmod>2026-10-12T23:45:48.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:00.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/introduction-to-animation</loc>
-    <lastmod>2026-10-12T23:57:26.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:02.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/introduction-to-animation/keyframes-parenting-and-the-graph-editor</loc>
-    <lastmod>2026-10-12T23:57:32.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:04.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/introduction-to-animation/saving-a-playblast</loc>
-    <lastmod>2026-10-12T23:57:38.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:06.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character</loc>
-    <lastmod>2026-10-13T00:20:56.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:08.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/importing-the-base-mesh</loc>
-    <lastmod>2026-10-13T00:21:02.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:11.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/setting-up-a-mirror-modifier</loc>
-    <lastmod>2026-10-13T00:21:08.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:13.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/adding-knees-and-elbows</loc>
-    <lastmod>2026-10-13T00:21:14.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:15.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/creating-edge-flow-for-deformation</loc>
-    <lastmod>2026-10-13T00:21:21.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:17.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/setting-up-an-armature</loc>
-    <lastmod>2026-10-13T00:21:28.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:19.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/parenting-the-mesh-to-the-armature</loc>
-    <lastmod>2026-10-13T00:21:34.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:21.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/rigging-a-character/posing-with-ik-constraints</loc>
-    <lastmod>2026-10-13T00:21:41.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:23.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/sculpture-garden-with-pbr-materials</loc>
-    <lastmod>2026-10-13T00:53:17.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:26.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/sculpture-garden-with-pbr-materials/introduction-to-pbr-materials</loc>
-    <lastmod>2026-10-13T00:53:25.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/sculpture-garden-with-pbr-materials/making-the-sculpture-garden</loc>
-    <lastmod>2026-10-13T00:53:34.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:30.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5612,19 +5612,19 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/procedural-texture-animations</loc>
-    <lastmod>2026-10-13T14:37:47.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:32.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/procedural-texture-animations/master-stylized-animated-water-in-3d-tutorial</loc>
-    <lastmod>2026-10-13T14:37:52.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:34.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/tutorials/procedural-texture-animations/turning-an-image-sequence-into-a-video</loc>
-    <lastmod>2026-10-13T14:37:58.000Z</lastmod>
+    <lastmod>2026-10-15T23:40:36.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>

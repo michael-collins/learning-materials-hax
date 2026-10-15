@@ -5,7 +5,10 @@ slug: tutorials/sculpture-garden-with-pbr-materials/making-the-sculpture-garden
 order: 1
 parent: item-d0fe3325-2a3b-471b-abc8-ffd4cdfe760c
 title: Making the sculpture garden
-description: ''
+description: >-
+  Model a brutalist sculpture garden in Blender, give it PBR materials, add a
+  sculpture built from curves and a lettered sign, then light and render it in
+  Cycles as an afternoon and an evening image finished in Photoshop.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=X9226_ttvwo
     batch: video-mv5ywg9v
@@ -23,7 +29,8 @@ metadata:
   created: 1791852814
   images: []
   videos: []
-  updated: 1791852814
+  updated: 1792107630
+  overridePathauto: true
 content: >-
   <p>In this part you'll follow the whole process of making a brutalist
   sculpture garden in Blender: a concrete courtyard with round skylights, a

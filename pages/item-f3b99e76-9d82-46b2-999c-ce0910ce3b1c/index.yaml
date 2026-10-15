@@ -5,7 +5,11 @@ slug: tutorials/lighting-and-rendering-the-airline-chair
 order: 14
 parent: item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea
 title: Lighting and rendering the Airline Chair
-description: ''
+description: >-
+  Light and render Kem Weber's Airline Chair in Blender's Cycles: a studio
+  backdrop, three-point lighting, sampling, roughness and normal maps for the
+  leather, the camera's focal length and composition, a shadow catcher, and a
+  final colour adjustment in Photoshop.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +18,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Intermediate
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/playlist?list=PL-V2nChTadrVabQ0miYe-Oy-PZe6Jab7Q
     batch: video-mv5wgvpk
@@ -22,7 +29,8 @@ metadata:
   created: 1791848728
   images: []
   videos: []
-  updated: 1791848728
+  updated: 1792107593
+  overridePathauto: true
 content: >-
 
   <p>This series follows the Modeling and Texturing the Airline Chair series:

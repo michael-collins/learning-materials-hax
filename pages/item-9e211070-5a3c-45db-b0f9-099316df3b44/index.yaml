@@ -5,7 +5,10 @@ slug: tutorials/modeling-the-airline-chair/mirroring-the-side
 order: 3
 parent: item-64bb61f6-e057-4e01-ac26-828c59ae032c
 title: Mirroring the side
-description: ''
+description: >-
+  Make the other side of the chair with Mirror modifiers: snap each object's
+  origin to the chair's center line, apply rotation and scale so the mirror
+  works on the right axis, and handle instanced objects.
 metadata:
   pageType: oer:tutorial
   published: false
@@ -14,6 +17,9 @@ metadata:
       - name: Michael Collins
         url: ''
     difficulty: Beginner
+    courses:
+      - page: item-98dd1287-cf09-4761-a23a-7b76081d0b0e
+        version: ''
   oerVideoSource:
     source: https://www.youtube.com/watch?v=r5iSQNviDJg
     batch: video-mv5pl89x
@@ -23,7 +29,8 @@ metadata:
   created: 1791837174
   images: []
   videos: []
-  updated: 1791837174
+  updated: 1792107572
+  overridePathauto: true
 content: >-
   <p>The Airline Chair has two identical sides, with the seat cushions between
   them. Instead of modeling the second side, you'll mirror the side, the brace

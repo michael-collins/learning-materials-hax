@@ -7,7 +7,7 @@
 <order>12</order>
 <parent>item-751b71a8-2b0f-46b5-b9ef-58c1feec38ea</parent>
 <title>Modeling the Airline Chair</title>
-<description></description>
+<description>Model Kem Weber&apos;s 1930s Airline Chair in Blender from a side photo, using polygonal modeling fundamentals: extruding, edge loops, supporting edges, Subdivision Surface and Mirror modifiers, and clean edge flow.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/playlist?list=PL-V2nChTadrXnIBdsAhYlYODx8f45Jk9f</source>
@@ -31,7 +37,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791837150</updated>
+<updated>1792107563</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[
 <p>The Airline Chair, designed by Kem Weber in the 1930s, is made of a few simple pieces: two bent wooden sides, the braces and brackets that hold them, two leather cushions and some small details. In these parts you'll model it in Blender from a side photo, one piece at a time. Along the way you'll practise the fundamentals of polygonal modeling: extruding edges and faces, adding edge loops, moving, rotating and scaling vertices, edges and faces, supporting edges under a <em>Subdivision Surface</em> modifier, mirroring and duplicating, and keeping the edge flow clean. The last part shows how to find and fix problems in a model.</p>

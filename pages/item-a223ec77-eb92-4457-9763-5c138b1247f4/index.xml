@@ -7,7 +7,7 @@
 <order>4</order>
 <parent>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</parent>
 <title>Texturing the side from a photo</title>
-<description></description>
+<description>Cut the side of the chair out of a reference photo, warp and patch it to fit the side&apos;s UV layout in Photoshop, and apply it in Blender, with a separate wood texture for the edge banding.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Intermediate</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=gFglq5aaW1w</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791847520</updated>
+<updated>1792107591</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>In this part you'll give the side of the Airline Chair a real wood texture, taken from a photo of the chair itself. You'll cut the side out of the photo, paste it into the UV layout in Photoshop, warp and patch it until it fits the UVs, and bring it into Blender, then give the edge banding a wood texture of its own. You'll need the UV layout file and the material from Part 4, and a photo of the chair or any wood texture you like. The video uses Blender 2.83 and Photoshop 2020.</p>
 

@@ -7,7 +7,7 @@
 <order>1</order>
 <parent>item-56b58fef-c883-47a3-a0e6-0a9e6e372477</parent>
 <title>Applying scale</title>
-<description></description>
+<description>Open the UV Editing workspace, see why a checker texture stretches across the chair, and apply each object&apos;s scale so it&apos;s back to 1 before you lay out the UVs.</description>
 <metadata>
 <pageType>oer:tutorial</pageType>
 <published>false</published>
@@ -19,6 +19,12 @@
 </item>
 </authors>
 <difficulty>Beginner</difficulty>
+<courses>
+<item>
+<page>item-98dd1287-cf09-4761-a23a-7b76081d0b0e</page>
+<version></version>
+</item>
+</courses>
 </oerFields>
 <oerVideoSource>
 <source>https://www.youtube.com/watch?v=egWgHYmKwww</source>
@@ -32,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791847502</updated>
+<updated>1792107584</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>To give the Airline Chair textures and materials that match the photo, you first lay out its UVs. Before that, every object's scale should be reset to 1, or textures can come out stretched. In this short part you'll open the UV Editing workspace, see how a checker texture shows the problem, and apply the scale of each piece of the chair. You'll need your modeled chair. The video uses Blender 2.83.</p>
 
