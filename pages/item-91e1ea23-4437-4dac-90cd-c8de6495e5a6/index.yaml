@@ -2,27 +2,28 @@ id: item-91e1ea23-4437-4dac-90cd-c8de6495e5a6
 indent: 0
 location: pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.yaml
 slug: exercises
-order: 2
+order: 23
 parent: null
 title: Exercises
 description: Formative practice focused on a narrow set of competencies.
 metadata:
   created: 1790802192
-  updated: 1790824582
+  updated: 1792107902
   images: []
   videos: []
   overridePathauto: false
   published: true
-  pageType: section
+  pageType: oer:section
   hideInMenu: false
   locked: false
   readtime: 1
   status: ''
-  icon: courseicons:learning-objectives
+  icon: ''
   linkTarget: _self
 content: >
 
   <p>Formative practice focused on a narrow set of competencies.</p>
 
-  <oer-collection types="exercise" scope="descendants" view="table" sort="title"
-  per-page="20" controls="full"></oer-collection>
+  <oer-collection types="oer:exercise" columns="image,title,tags,difficulty"
+  scope="descendants" view="table" sort="title" per-page="20"
+  controls="full"></oer-collection>

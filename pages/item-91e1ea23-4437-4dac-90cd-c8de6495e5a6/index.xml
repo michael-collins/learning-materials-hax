@@ -4,29 +4,29 @@
 <indent>0</indent>
 <location>pages/item-91e1ea23-4437-4dac-90cd-c8de6495e5a6/index.xml</location>
 <slug>exercises</slug>
-<order>2</order>
+<order>23</order>
 <parent></parent>
 <title>Exercises</title>
 <description>Formative practice focused on a narrow set of competencies.</description>
 <metadata>
 <created>1790802192</created>
-<updated>1790824582</updated>
+<updated>1792107902</updated>
 <images>
 </images>
 <videos>
 </videos>
 <overridePathauto>false</overridePathauto>
 <published>true</published>
-<pageType>section</pageType>
+<pageType>oer:section</pageType>
 <hideInMenu>false</hideInMenu>
 <locked>false</locked>
 <readtime>1</readtime>
 <status></status>
-<icon>courseicons:learning-objectives</icon>
+<icon></icon>
 <linkTarget>_self</linkTarget>
 </metadata>
 <content><![CDATA[
 <p>Formative practice focused on a narrow set of competencies.</p>
-<oer-collection types="exercise" scope="descendants" view="table" sort="title" per-page="20" controls="full"></oer-collection>
+<oer-collection types="oer:exercise" columns="image,title,tags,difficulty" scope="descendants" view="table" sort="title" per-page="20" controls="full"></oer-collection>
 ]]></content>
 </item>

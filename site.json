@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792107639,
+      "updated": 1792107904,
       "version": "26.8.0"
     },
     "theme": {
@@ -37075,7 +37075,7 @@
       "description": "Formative practice focused on a narrow set of competencies.",
       "metadata": {
         "created": 1790802192,
-        "updated": 1792018750,
+        "updated": 1792107902,
         "images": [],
         "videos": [],
         "overridePathauto": false,
