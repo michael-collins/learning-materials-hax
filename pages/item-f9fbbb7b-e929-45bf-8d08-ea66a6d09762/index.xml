@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.xml</location>
-<slug>projects/project-midterm-video</slug>
-<order>64</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/capstone-project/project-midterm-video</slug>
+<order>7</order>
+<parent>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</parent>
 <title>Project midterm video</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd400-project-midterm-video</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
-<difficulty>intermediate</difficulty>
+<difficulty>Intermediate</difficulty>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -25,13 +28,24 @@
 <url></url>
 </item>
 </authors>
+<outcomes>
+<item>
+<page>item-8e7b067f-25a8-4d03-9266-f309069fd7a4</page>
+<version></version>
+</item>
+<item>
+<page>item-c6213149-75ce-4c1f-a762-fc34f5f2f381</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1792023246</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>This video will help reviewers get a comprehensive understanding of your project in a short period of time. Produce a <em><strong>short</strong></em> (2 minutes or less) video presentation that explains the project process and outcomes for a general audience unfamiliar with the work.</p>
 <h2>Structuring the presentation</h2>

@@ -18,6 +18,12 @@
 <version></version>
 </item>
 </courses>
+<outcomes>
+<item>
+<page>item-4e77e81f-cdff-4232-9174-b6ad770da897</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <oerCanvasImport>
 <batch>canvas-muzzavh1</batch>
@@ -28,7 +34,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791490691</updated>
+<updated>1792023236</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Your instructor will leave capstone project feedback here based on your external reviews, progress to date, implementation of feedback, and the pdf for the mid-term progress report.</p>
 <ol>

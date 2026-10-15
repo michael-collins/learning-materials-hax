@@ -18,6 +18,16 @@
 <version></version>
 </item>
 </courses>
+<outcomes>
+<item>
+<page>item-8e7b067f-25a8-4d03-9266-f309069fd7a4</page>
+<version></version>
+</item>
+<item>
+<page>item-60132293-3878-4fad-9ae8-8411dd5549d9</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <oerCanvasImport>
 <batch>canvas-muzzavh1</batch>
@@ -28,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791490691</updated>
+<updated>1792023242</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<ol>
 <li>Please find a time on my calendar to meet via zoom: <a href="https://calendly.com/msc227">https://calendly.com/msc227</a>

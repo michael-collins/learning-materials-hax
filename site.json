@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792023230,
+      "updated": 1792023256,
       "version": "26.8.0"
     },
     "theme": {
@@ -6605,15 +6605,26 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-8e7b067f-25a8-4d03-9266-f309069fd7a4",
+              "version": ""
+            },
+            {
+              "page": "item-1443341b-f7ff-4523-933d-4c83b316830c",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911781,
+        "updated": 1792023240,
         "locked": false,
         "status": "",
-        "icon": ""
+        "icon": "",
+        "overridePathauto": true
       }
     },
     {
@@ -27309,15 +27320,30 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-8e7b067f-25a8-4d03-9266-f309069fd7a4",
+              "version": ""
+            },
+            {
+              "page": "item-1443341b-f7ff-4523-933d-4c83b316830c",
+              "version": ""
+            },
+            {
+              "page": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911830,
+        "updated": 1792023244,
         "locked": false,
         "status": "",
-        "icon": ""
+        "icon": "",
+        "overridePathauto": true
       }
     },
     {
@@ -30877,12 +30903,19 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911851
+        "updated": 1792023254,
+        "overridePathauto": true
       }
     },
     {
@@ -31444,12 +31477,23 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-8e7b067f-25a8-4d03-9266-f309069fd7a4",
+              "version": ""
+            },
+            {
+              "page": "item-c6213149-75ce-4c1f-a762-fc34f5f2f381",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911865
+        "updated": 1792023246,
+        "overridePathauto": true
       }
     },
     {
@@ -33442,12 +33486,19 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-c6213149-75ce-4c1f-a762-fc34f5f2f381",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911880
+        "updated": 1792023250,
+        "overridePathauto": true
       }
     },
     {
@@ -33714,12 +33765,27 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-8e7b067f-25a8-4d03-9266-f309069fd7a4",
+              "version": ""
+            },
+            {
+              "page": "item-1443341b-f7ff-4523-933d-4c83b316830c",
+              "version": ""
+            },
+            {
+              "page": "item-c6213149-75ce-4c1f-a762-fc34f5f2f381",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911884
+        "updated": 1792023248,
+        "overridePathauto": true
       }
     },
     {
@@ -34024,12 +34090,19 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-c6213149-75ce-4c1f-a762-fc34f5f2f381",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911888
+        "updated": 1792023252,
+        "overridePathauto": true
       }
     },
     {
@@ -34368,12 +34441,19 @@
               "name": "Michael Collins",
               "url": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-4e77e81f-cdff-4232-9174-b6ad770da897",
+              "version": ""
+            }
           ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791911893
+        "updated": 1792023234,
+        "overridePathauto": true
       }
     },
     {
@@ -34747,15 +34827,22 @@
               "url": ""
             }
           ],
-          "license": "CC BY 4.0"
+          "license": "CC BY 4.0",
+          "outcomes": [
+            {
+              "page": "item-4e77e81f-cdff-4232-9174-b6ad770da897",
+              "version": ""
+            }
+          ]
         },
         "created": 1791231123,
         "images": [],
         "videos": [],
-        "updated": 1791492419,
+        "updated": 1792023232,
         "locked": false,
         "status": "",
-        "icon": ""
+        "icon": "",
+        "overridePathauto": true
       }
     },
     {
@@ -35857,6 +35944,16 @@
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
               "version": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-8e7b067f-25a8-4d03-9266-f309069fd7a4",
+              "version": ""
+            },
+            {
+              "page": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+              "version": ""
+            }
           ]
         },
         "oerCanvasImport": {
@@ -35866,7 +35963,8 @@
         "created": 1791490691,
         "images": [],
         "videos": [],
-        "updated": 1791490691
+        "updated": 1792023242,
+        "overridePathauto": true
       }
     },
     {
@@ -36329,6 +36427,12 @@
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
               "version": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-4e77e81f-cdff-4232-9174-b6ad770da897",
+              "version": ""
+            }
           ]
         },
         "oerCanvasImport": {
@@ -36338,7 +36442,8 @@
         "created": 1791490691,
         "images": [],
         "videos": [],
-        "updated": 1791490691
+        "updated": 1792023236,
+        "overridePathauto": true
       }
     },
     {
@@ -36417,6 +36522,16 @@
               "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
               "version": ""
             }
+          ],
+          "outcomes": [
+            {
+              "page": "item-4e77e81f-cdff-4232-9174-b6ad770da897",
+              "version": ""
+            },
+            {
+              "page": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+              "version": ""
+            }
           ]
         },
         "oerCanvasImport": {
@@ -36426,7 +36541,8 @@
         "created": 1791490691,
         "images": [],
         "videos": [],
-        "updated": 1791490691
+        "updated": 1792023238,
+        "overridePathauto": true
       }
     },
     {

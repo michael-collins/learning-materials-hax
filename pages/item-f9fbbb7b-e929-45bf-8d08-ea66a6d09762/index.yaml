@@ -1,28 +1,35 @@
 id: item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762
-indent: 1
+indent: 2
 location: pages/item-f9fbbb7b-e929-45bf-8d08-ea66a6d09762/index.yaml
-slug: projects/project-midterm-video
-order: 64
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/capstone-project/project-midterm-video
+order: 7
+parent: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 title: Project midterm video
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd400-project-midterm-video
   tags: project-deliverable
   oerFields:
-    difficulty: intermediate
+    difficulty: Intermediate
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
         url: ''
+    outcomes:
+      - page: item-8e7b067f-25a8-4d03-9266-f309069fd7a4
+        version: ''
+      - page: item-c6213149-75ce-4c1f-a762-fc34f5f2f381
+        version: ''
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1792023246
+  overridePathauto: true
 content: >
   <p>This video will help reviewers get a comprehensive understanding of your
   project in a short period of time. Produce a <em><strong>short</strong></em>

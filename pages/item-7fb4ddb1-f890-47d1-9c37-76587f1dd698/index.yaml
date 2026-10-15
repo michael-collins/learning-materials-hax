@@ -13,13 +13,17 @@ metadata:
     courses:
       - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
         version: ''
+    outcomes:
+      - page: item-4e77e81f-cdff-4232-9174-b6ad770da897
+        version: ''
   oerCanvasImport:
     batch: canvas-muzzavh1
     id: g9ad7e640eb0457e51ee1691af62438f8
   created: 1791490691
   images: []
   videos: []
-  updated: 1791490691
+  updated: 1792023236
+  overridePathauto: true
 content: >-
   <p>Your instructor will leave capstone project feedback here based on your
   external reviews, progress to date, implementation of feedback, and the pdf

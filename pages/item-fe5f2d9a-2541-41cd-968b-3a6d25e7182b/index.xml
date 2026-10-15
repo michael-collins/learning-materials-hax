@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b/index.xml</location>
-<slug>projects/capstone-project-exhibition</slug>
-<order>57</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/capstone-project/capstone-project-exhibition</slug>
+<order>11</order>
+<parent>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</parent>
 <title>Capstone project exhibition</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd400-capstone-project-exhibition</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
-<difficulty>intermediate</difficulty>
+<difficulty>Intermediate</difficulty>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -25,13 +28,20 @@
 <url></url>
 </item>
 </authors>
+<outcomes>
+<item>
+<page>item-4e77e81f-cdff-4232-9174-b6ad770da897</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1792023234</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<h2>Capstone project exhibition</h2>
 <p>The course will culminate in a public online exhibition of course work. This exhibition will be open to the public, and it asks you to present your finished visual works, project documentation, and a work statement. This exhibition will remain archived on the DMD website. You can choose to use a pseudonym when presenting your work publicly, either to obscure your name for privacy reasons, or to associate your exhibition work with an existing online presence/branding you have previously built.</p>

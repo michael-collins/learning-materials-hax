@@ -1,28 +1,33 @@
 id: item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222
-indent: 1
+indent: 2
 location: pages/item-5db5ba3a-3de6-4bf1-90c9-f15beaf2c222/index.yaml
-slug: projects/capstone-project-exhibition-statement
-order: 62
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/capstone-project/capstone-project-exhibition-statement
+order: 8
+parent: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 title: Capstone project exhibition statement
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd400-capstone-project-statement
   tags: project-deliverable
   oerFields:
-    difficulty: intermediate
+    difficulty: Intermediate
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
         url: ''
+    outcomes:
+      - page: item-c6213149-75ce-4c1f-a762-fc34f5f2f381
+        version: ''
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1792023250
+  overridePathauto: true
 content: >
   <p>Write a 150-500 word project statement that thoughtfully employs relevant
   and critical art and design language. This statement should be developed with

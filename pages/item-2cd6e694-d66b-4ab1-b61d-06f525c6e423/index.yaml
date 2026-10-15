@@ -13,13 +13,19 @@ metadata:
     courses:
       - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
         version: ''
+    outcomes:
+      - page: item-4e77e81f-cdff-4232-9174-b6ad770da897
+        version: ''
+      - page: item-60132293-3878-4fad-9ae8-8411dd5549d9
+        version: ''
   oerCanvasImport:
     batch: canvas-muzzavh1
     id: g748b1ed7ff0f760a9fb0115c2f43bd55
   created: 1791490691
   images: []
   videos: []
-  updated: 1791490691
+  updated: 1792023238
+  overridePathauto: true
 content: >-
   <p>Include a MS Word Doc that contains the following:</p>
 

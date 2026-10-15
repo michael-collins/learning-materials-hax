@@ -14,7 +14,7 @@
 <oerSource>projects/dmd400-capstone-project-production-report</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
-<difficulty>intermediate</difficulty>
+<difficulty>Intermediate</difficulty>
 <courses>
 <item>
 <page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
@@ -28,16 +28,31 @@
 <url></url>
 </item>
 </authors>
+<outcomes>
+<item>
+<page>item-8e7b067f-25a8-4d03-9266-f309069fd7a4</page>
+<version></version>
+</item>
+<item>
+<page>item-1443341b-f7ff-4523-933d-4c83b316830c</page>
+<version></version>
+</item>
+<item>
+<page>item-60132293-3878-4fad-9ae8-8411dd5549d9</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791491591</updated>
+<updated>1792023244</updated>
 <locked>false</locked>
 <status></status>
 <icon></icon>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>A production report is a comprehensive update about what progress has been made for of planning, research, and production — at times, all three. A report can consist of any visual documentation and text description including screenshot images, photographs of prototypes, video of working functionality, code snippets, production artwork, concept maps, research findings, work inspiration, storyboards and scripts, etc.</p>
 <p><strong>Each blog post should be a minimum of 500 words long, and include images or other media.</strong></p>

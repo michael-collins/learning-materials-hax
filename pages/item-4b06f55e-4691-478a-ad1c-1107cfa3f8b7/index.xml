@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-4b06f55e-4691-478a-ad1c-1107cfa3f8b7/index.xml</location>
-<slug>projects/project-explainer-video</slug>
-<order>63</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/capstone-project/project-explainer-video</slug>
+<order>10</order>
+<parent>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</parent>
 <title>Project explainer video</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd400-project-explainer-video</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
-<difficulty>intermediate</difficulty>
+<difficulty>Intermediate</difficulty>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -25,13 +28,20 @@
 <url></url>
 </item>
 </authors>
+<outcomes>
+<item>
+<page>item-c6213149-75ce-4c1f-a762-fc34f5f2f381</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1792023252</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Produce a <em><strong>short</strong></em> video presentation that documents and explains the project process and outcomes for a general audience unfamiliar with the work (~2-3 minutes).</p>
 <h2>Example of excellent explainer videos</h2>

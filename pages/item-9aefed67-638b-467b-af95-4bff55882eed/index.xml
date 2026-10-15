@@ -14,7 +14,7 @@
 <oerSource>projects/dmd400-capstone-project-proposal</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
-<difficulty>intermediate</difficulty>
+<difficulty>Intermediate</difficulty>
 <courses>
 <item>
 <page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
@@ -28,16 +28,27 @@
 <url></url>
 </item>
 </authors>
+<outcomes>
+<item>
+<page>item-8e7b067f-25a8-4d03-9266-f309069fd7a4</page>
+<version></version>
+</item>
+<item>
+<page>item-1443341b-f7ff-4523-933d-4c83b316830c</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791491589</updated>
+<updated>1792023240</updated>
 <locked>false</locked>
 <status></status>
 <icon></icon>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>The capstone project proposal is the first step in producing a capstone project for the Digital Multimedia Design degree program. It asks you to think through the entire production process of the upcoming project, and helps you identify what research you'll need to conduct.</p>
 <p>The following must be included in the proposal:</p>

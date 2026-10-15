@@ -16,6 +16,12 @@
           "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
           "version": ""
         }
+      ],
+      "outcomes": [
+        {
+          "page": "item-4e77e81f-cdff-4232-9174-b6ad770da897",
+          "version": ""
+        }
       ]
     },
     "oerCanvasImport": {
@@ -25,7 +31,8 @@
     "created": 1791490691,
     "images": [],
     "videos": [],
-    "updated": 1791490691
+    "updated": 1792023236,
+    "overridePathauto": true
   },
   "content": "<p>Your instructor will leave capstone project feedback here based on your external reviews, progress to date, implementation of feedback, and the pdf for the mid-term progress report.</p>\n<ol>\n<li>Export a PDF of the mid-term progress report. (upload formats have been restricted to jpg, png, mp4, mov, pdf)\n<ul>\n<li>Download the <a href=\"files/Midterm_progress_report_v2.docx\">Mid-term Progress Report Word Document template</a></li>\n</ul>\n</li>\n</ol>"
 }

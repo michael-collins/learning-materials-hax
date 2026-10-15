@@ -18,6 +18,16 @@
 <version></version>
 </item>
 </courses>
+<outcomes>
+<item>
+<page>item-4e77e81f-cdff-4232-9174-b6ad770da897</page>
+<version></version>
+</item>
+<item>
+<page>item-60132293-3878-4fad-9ae8-8411dd5549d9</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <oerCanvasImport>
 <batch>canvas-muzzavh1</batch>
@@ -28,7 +38,8 @@
 </images>
 <videos>
 </videos>
-<updated>1791490691</updated>
+<updated>1792023238</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<p>Include a MS Word Doc that contains the following:</p>
 <ol>

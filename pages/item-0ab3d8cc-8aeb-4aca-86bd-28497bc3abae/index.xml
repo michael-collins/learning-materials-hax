@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae</id>
-<indent>1</indent>
+<indent>2</indent>
 <location>pages/item-0ab3d8cc-8aeb-4aca-86bd-28497bc3abae/index.xml</location>
-<slug>projects/capstone-project-production-report-discussions</slug>
-<order>59</order>
-<parent>item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4</parent>
+<slug>projects/capstone-project/capstone-project-production-report-discussions</slug>
+<order>6</order>
+<parent>item-9b164f52-dc53-41a3-871a-fd25c5cc83dd</parent>
 <title>Capstone project production report discussions</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>oer:project</pageType>
+<pageType>oer:activity</pageType>
 <oerSource>projects/dmd400-capstone-project-production-report-discussions</oerSource>
 <tags>project-deliverable</tags>
 <oerFields>
-<difficulty>intermediate</difficulty>
+<difficulty>Intermediate</difficulty>
 <courses>
-<item>DMD 400</item>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
 </courses>
 <license>CC BY 4.0</license>
 <authors>
@@ -25,13 +28,20 @@
 <url></url>
 </item>
 </authors>
+<outcomes>
+<item>
+<page>item-60132293-3878-4fad-9ae8-8411dd5549d9</page>
+<version></version>
+</item>
+</outcomes>
 </oerFields>
 <created>1791231123</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1791231123</updated>
+<updated>1792023254</updated>
+<overridePathauto>true</overridePathauto>
 </metadata>
 <content><![CDATA[<h2>Directions:</h2>
 <p>You will post step 1, and then you may have to return to complete part 2. Try to answer questions from you classmates, as this should be a two-way conversation.</p>

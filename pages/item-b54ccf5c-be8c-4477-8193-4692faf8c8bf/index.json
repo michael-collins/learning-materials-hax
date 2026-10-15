@@ -16,6 +16,16 @@
           "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
           "version": ""
         }
+      ],
+      "outcomes": [
+        {
+          "page": "item-8e7b067f-25a8-4d03-9266-f309069fd7a4",
+          "version": ""
+        },
+        {
+          "page": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+          "version": ""
+        }
       ]
     },
     "oerCanvasImport": {
@@ -25,7 +35,8 @@
     "created": 1791490691,
     "images": [],
     "videos": [],
-    "updated": 1791490691
+    "updated": 1792023242,
+    "overridePathauto": true
   },
   "content": "<ol>\n<li>Please find a time on my calendar to meet via zoom: <a href=\"https://calendly.com/msc227\">https://calendly.com/msc227</a>\n</li>\n<li>You can access the following Zoom room for the meeting: <a href=\"https://psu.zoom.us/my/michaelcollins\">https://psu.zoom.us/my/michaelcollins</a>\n<ul>\n<li>Always take written or typed notes during meetings. You will likely not remember every detail of the discussion, particularly after a week or two.</li>\n<li>If you set a meeting less than 24 hours from when you are setting the meeting, send me an email confirmation. If you have to miss the meeting that you set, please cancel it, and send me an email notification. I may have a conflict not noted on my calendar, and I may choose to reschedule meetings as needed.</li>\n</ul>\n</li>\n<li>Submit a word document of your notes taken during our discussion. If we require a followup discussion, you can wait until after that second discussion to upload your notes.</li>\n</ol>"
 }

@@ -19,13 +19,17 @@ metadata:
       - name: Michael Collins
         url: ''
     license: CC BY 4.0
+    outcomes:
+      - page: item-4e77e81f-cdff-4232-9174-b6ad770da897
+        version: ''
   created: 1791231123
   images: []
   videos: []
-  updated: 1791492419
+  updated: 1792023232
   locked: false
   status: ''
   icon: ''
+  overridePathauto: true
 content: >-
   <p>A capstone project represents the culmination of your interests and skills
   developed throughout your studies. Capstone's are typically individual

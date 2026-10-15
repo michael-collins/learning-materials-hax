@@ -12,7 +12,7 @@ metadata:
   oerSource: projects/dmd400-capstone-project-production-report
   tags: project-deliverable
   oerFields:
-    difficulty: intermediate
+    difficulty: Intermediate
     courses:
       - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
         version: ''
@@ -20,13 +20,21 @@ metadata:
     authors:
       - name: Michael Collins
         url: ''
+    outcomes:
+      - page: item-8e7b067f-25a8-4d03-9266-f309069fd7a4
+        version: ''
+      - page: item-1443341b-f7ff-4523-933d-4c83b316830c
+        version: ''
+      - page: item-60132293-3878-4fad-9ae8-8411dd5549d9
+        version: ''
   created: 1791231123
   images: []
   videos: []
-  updated: 1791491591
+  updated: 1792023244
   locked: false
   status: ''
   icon: ''
+  overridePathauto: true
 content: >-
   <p>A production report is a comprehensive update about what progress has been
   made for of planning, research, and production — at times, all three. A report

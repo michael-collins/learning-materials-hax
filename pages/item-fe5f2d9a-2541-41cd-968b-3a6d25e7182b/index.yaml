@@ -1,28 +1,33 @@
 id: item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b
-indent: 1
+indent: 2
 location: pages/item-fe5f2d9a-2541-41cd-968b-3a6d25e7182b/index.yaml
-slug: projects/capstone-project-exhibition
-order: 57
-parent: item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4
+slug: projects/capstone-project/capstone-project-exhibition
+order: 11
+parent: item-9b164f52-dc53-41a3-871a-fd25c5cc83dd
 title: Capstone project exhibition
 description: ''
 metadata:
   published: true
-  pageType: oer:project
+  pageType: oer:activity
   oerSource: projects/dmd400-capstone-project-exhibition
   tags: project-deliverable
   oerFields:
-    difficulty: intermediate
+    difficulty: Intermediate
     courses:
-      - DMD 400
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
     license: CC BY 4.0
     authors:
       - name: Michael Collins
         url: ''
+    outcomes:
+      - page: item-4e77e81f-cdff-4232-9174-b6ad770da897
+        version: ''
   created: 1791231123
   images: []
   videos: []
-  updated: 1791231123
+  updated: 1792023234
+  overridePathauto: true
 content: >
   <h2>Capstone project exhibition</h2>
 
