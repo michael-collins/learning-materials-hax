@@ -1,0 +1,33 @@
+{
+  "id": "item-1443341b-f7ff-4523-933d-4c83b316830c",
+  "indent": 1,
+  "location": "pages/item-1443341b-f7ff-4523-933d-4c83b316830c/index.json",
+  "slug": "learning-outcomes/dmd-400-clo-3",
+  "order": 2,
+  "parent": "item-baeee894-4a30-4be0-af40-3e7b0761d298",
+  "title": "Use research to drive concept and decisions",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:outcome",
+    "published": true,
+    "overridePathauto": true,
+    "oerFields": {
+      "code": "DMD 400 CLO.3",
+      "level": "Analyze",
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ],
+      "pathways": [],
+      "programs": [],
+      "partOf": []
+    },
+    "created": 1792023230,
+    "images": [],
+    "videos": [],
+    "updated": 1792023230
+  },
+  "content": "<p>Students will conduct and synthesize research to inform the project, including primary and secondary research methods.</p>\n<h2>Measured by</h2>\n<ul>\n<li>A Project Document with a formal Research section and bibliography that situates the work, cites credible sources, and traces design requirements/decisions back to findings.</li>\n<li>Evidence of research activity and insight application in Production Reports.</li>\n<li>Alignment with course guidance on when to use primary vs. secondary research and on using scholarly sources for sensitive topics.</li>\n</ul>\n<h2>Assessed by</h2>\n<oer-collection types=\"oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>"
+}

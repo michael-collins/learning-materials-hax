@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-4e77e81f-cdff-4232-9174-b6ad770da897</id>
+<indent>1</indent>
+<location>pages/item-4e77e81f-cdff-4232-9174-b6ad770da897/index.xml</location>
+<slug>learning-outcomes/dmd-400-clo-1</slug>
+<order>0</order>
+<parent>item-baeee894-4a30-4be0-af40-3e7b0761d298</parent>
+<title>Ship an integrated capstone product</title>
+<description></description>
+<metadata>
+<pageType>oer:outcome</pageType>
+<published>true</published>
+<overridePathauto>true</overridePathauto>
+<oerFields>
+<code>DMD 400 CLO.1</code>
+<level>Create</level>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+<pathways>
+</pathways>
+<programs>
+</programs>
+<partOf>
+</partOf>
+</oerFields>
+<created>1792023230</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1792023230</updated>
+</metadata>
+<content><![CDATA[<p>Students will plan, build, and deliver a media art and design project that integrates a variety of methods relevant to their project in consultation with the instructor or project advisor. This project is included in a final group exhibition of work.</p>
+<h2>Measured by</h2>
+<ul>
+<li>Submission of all capstone deliverables on the schedule in Canvas: Proposal, Agreement Form, Proof of Ability, ongoing Production Reports, Discussion posts, Mid-production Video, Exhibition Statement, Project Document, Explainer Video, and Exhibition participation.</li>
+<li>Project incorporates reviewer feedback at midterm and final checkpoints.</li>
+</ul>
+<h2>Assessed by</h2>
+<oer-collection types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz" scope="linked" view="table" sort="title" controls="none"></oer-collection>]]></content>
+</item>

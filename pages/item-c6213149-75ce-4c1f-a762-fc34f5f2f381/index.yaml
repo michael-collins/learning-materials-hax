@@ -1,0 +1,48 @@
+id: item-c6213149-75ce-4c1f-a762-fc34f5f2f381
+indent: 1
+location: pages/item-c6213149-75ce-4c1f-a762-fc34f5f2f381/index.yaml
+slug: learning-outcomes/dmd-400-clo-4
+order: 3
+parent: item-baeee894-4a30-4be0-af40-3e7b0761d298
+title: Communicate work clearly in written, visual, and/or oral forms
+description: ''
+metadata:
+  pageType: oer:outcome
+  published: true
+  overridePathauto: true
+  oerFields:
+    code: DMD 400 CLO.4
+    level: Evaluate
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+    pathways: []
+    programs: []
+    partOf: []
+  created: 1792023230
+  images: []
+  videos: []
+  updated: 1792023230
+content: >-
+  <p>Students will explain and defend decisions to technical and non-technical
+  audiences.</p>
+
+  <h2>Measured by</h2>
+
+  <ul>
+
+  <li>An Exhibition Statement.</li>
+
+  <li>A Mid-production Video and an Explainer Video that present concept,
+  process, and outcomes for a general audience.</li>
+
+  <li>A well-structured Project Document that follows required sections and
+  formatting.</li>
+
+  </ul>
+
+  <h2>Assessed by</h2>
+
+  <oer-collection
+  types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz"
+  scope="linked" view="table" sort="title" controls="none"></oer-collection>

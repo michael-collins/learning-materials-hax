@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-60132293-3878-4fad-9ae8-8411dd5549d9</id>
+<indent>1</indent>
+<location>pages/item-60132293-3878-4fad-9ae8-8411dd5549d9/index.xml</location>
+<slug>learning-outcomes/dmd-400-clo-5</slug>
+<order>4</order>
+<parent>item-baeee894-4a30-4be0-af40-3e7b0761d298</parent>
+<title>Iterate in response to critique to improve outcomes</title>
+<description></description>
+<metadata>
+<pageType>oer:outcome</pageType>
+<published>true</published>
+<overridePathauto>true</overridePathauto>
+<oerFields>
+<code>DMD 400 CLO.5</code>
+<level>Create</level>
+<courses>
+<item>
+<page>item-07277897-84d2-4708-b7ff-7c5d0505a9b0</page>
+<version></version>
+</item>
+</courses>
+<pathways>
+</pathways>
+<programs>
+</programs>
+<partOf>
+</partOf>
+</oerFields>
+<created>1792023230</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1792023230</updated>
+</metadata>
+<content><![CDATA[<p>Students will produce multiple revisions that respond to feedback and show measurable improvement.</p>
+<h2>Measured by</h2>
+<ul>
+<li>Documentation of changes across Production Reports.</li>
+<li>At least three advisor/mentor meetings across the term.</li>
+<li>Peer feedback given and received in Production Report Discussions.</li>
+<li>Explicit incorporation of faculty/external reviewer feedback noted at midterm and visible in the final document, videos, and exhibition materials.</li>
+</ul>
+<h2>Assessed by</h2>
+<oer-collection types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz" scope="linked" view="table" sort="title" controls="none"></oer-collection>]]></content>
+</item>
