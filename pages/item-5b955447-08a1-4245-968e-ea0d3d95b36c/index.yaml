@@ -1,0 +1,55 @@
+id: item-5b955447-08a1-4245-968e-ea0d3d95b36c
+indent: 2
+location: pages/item-5b955447-08a1-4245-968e-ea0d3d95b36c/index.yaml
+slug: learning-outcomes/dmd-400-clo-1/v1-0-0
+order: 1000
+parent: item-4e77e81f-cdff-4232-9174-b6ad770da897
+title: v1.0.0
+description: ''
+metadata:
+  pageType: oer:outcome
+  oerFields:
+    code: DMD 400 CLO.1
+    level: Create
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+    pathways: []
+    programs: []
+    partOf: []
+  oerSnapshotOf: item-4e77e81f-cdff-4232-9174-b6ad770da897
+  oerSnapshotTitle: Ship an integrated capstone product
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1792026113
+  images: []
+  videos: []
+  updated: 1792026113
+content: >-
+  <p>Students will plan, build, and deliver a media art and design project that
+  integrates a variety of methods relevant to their project in consultation with
+  the instructor or project advisor. This project is included in a final group
+  exhibition of work.</p>
+
+  <h2>Measured by</h2>
+
+  <ul>
+
+  <li>Submission of all capstone deliverables on the schedule in Canvas:
+  Proposal, Agreement Form, Proof of Ability, ongoing Production Reports,
+  Discussion posts, Mid-production Video, Exhibition Statement, Project
+  Document, Explainer Video, and Exhibition participation.</li>
+
+  <li>Project incorporates reviewer feedback at midterm and final
+  checkpoints.</li>
+
+  </ul>
+
+  <h2>Assessed by</h2>
+
+  <oer-collection
+  types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz"
+  scope="linked" view="table" sort="title" controls="none"></oer-collection>

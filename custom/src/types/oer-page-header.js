@@ -669,7 +669,7 @@ class OerPageHeader extends LitElement {
         return html`<li>
           ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : html`<span class="noicon"></span>`}
           <span class="rel-text">
-            ${l.item ? html`<a href="${l.href}">${l.item.title}</a>` : html`<em>Missing page</em>`}
+            ${l.item ? html`<a href="${l.href}">${l.title}</a>` : html`<em>Missing page</em>`}
             <small>${[type?.label, l.version ? `v${l.version}` : ""].filter(Boolean).join(" · ")}</small>
           </span>
         </li>`;

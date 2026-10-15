@@ -110,3 +110,77 @@ export function outcomesFor(scope, items) {
 /** The assessed pages that name an outcome (live pages, no version snapshots). */
 export const assessedBy = (outcomeId, items) =>
   (items || []).filter((i) => ASSESSED_TYPES.includes(i.metadata?.pageType) && !isSnap(i) && linksOf(i, "outcomes").includes(outcomeId));
+
+/**
+ * The live pages that show an outcome's latest wording: they link to it
+ * unpinned, so a change to it reaches them (pinned links keep a release).
+ */
+export const followersOf = (outcomeId, items) =>
+  (items || []).filter(
+    (i) => !isSnap(i) && i.id !== outcomeId && Object.values(i.metadata?.oerFields || {}).some((v) => Array.isArray(v) && v.some((x) => x?.page === outcomeId && !x.version)),
+  );
+
+/* ---------- versions ---------- */
+
+/** An outcome's statement: its title, or for a release, the title it had. */
+export const statementOf = (page) => String(page?.metadata?.oerSnapshotTitle || page?.title || "");
+
+/**
+ * Whether two outcomes (a page and a release of it) say the same: statement,
+ * level and code. Its links and page text don't count, as a rubric's name
+ * doesn't.
+ */
+export function sameOutcome(a, b) {
+  const norm = (p) => JSON.stringify([statementOf(p).trim(), p?.metadata?.oerFields?.level || "", String(p?.metadata?.oerFields?.code || "").trim()]);
+  return !!a && !!b && norm(a) === norm(b);
+}
+
+/* ---------- choosing outcomes ---------- */
+
+/**
+ * The course pages a page belongs with, nearest first: its own Courses
+ * field, then its parents' (an activity in a project), then the courses of
+ * sequences that use it.
+ */
+export function coursesAround(page, items, courses = null) {
+  const list = items || [];
+  const byId = new Map(list.map((i) => [i.id, i]));
+  const ids = [];
+  const add = (id) => byId.get(id)?.metadata?.pageType === "oer:course" && !ids.includes(id) && ids.push(id);
+  (courses ? courses.map((v) => v?.page).filter(Boolean) : linksOf(page, "courses")).forEach(add);
+  for (let p = byId.get(page?.parent), n = 0; p && n < 20; p = byId.get(p.parent), n++) linksOf(p, "courses").forEach(add);
+  for (const s of list) {
+    if (s.metadata?.pageType !== "oer:sequence" || isSnap(s)) continue;
+    const uses = (s.metadata?.oerSequence?.modules || []).some((m) => (m.items || []).some((it) => it.page === page?.id));
+    if (uses) linksOf(s, "courses").forEach(add);
+  }
+  return ids.map((id) => byId.get(id));
+}
+
+/**
+ * The bank in groups for choosing from, nearest first: [{ id, label,
+ * outcomes }] for each course around the page (its own outcomes), then each
+ * of their programs and pathways, then "other" with the rest. Each outcome
+ * appears once, in the nearest group.
+ */
+export function outcomeGroups(page, items, courses = null) {
+  const list = items || [];
+  const byId = new Map(list.map((i) => [i.id, i]));
+  const all = outcomePages(list).filter((o) => o.id !== page?.id);
+  const placed = new Set();
+  const groups = [];
+  const take = (id, label, field, scope) => {
+    if (!scope || groups.some((g) => g.id === id)) return;
+    const outcomes = all.filter((o) => !placed.has(o.id) && linksOf(o, field).includes(scope.id));
+    outcomes.forEach((o) => placed.add(o.id));
+    groups.push({ id, label, outcomes });
+  };
+  const around = coursesAround(page, list, courses);
+  for (const c of around) take(c.id, c.metadata?.oerFields?.code || c.title, "courses", c);
+  for (const c of around) {
+    for (const id of linksOf(c, "programs")) take(id, byId.get(id)?.title, "programs", byId.get(id));
+    for (const id of linksOf(c, "pathways")) take(id, byId.get(id)?.title, "pathways", byId.get(id));
+  }
+  groups.push({ id: "other", label: "Other outcomes", outcomes: all.filter((o) => !placed.has(o.id)) });
+  return { groups, courses: around };
+}

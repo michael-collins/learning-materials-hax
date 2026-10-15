@@ -1,0 +1,38 @@
+{
+  "id": "item-a12a3c43-554e-4844-9e21-f8b535de641f",
+  "indent": 2,
+  "location": "pages/item-a12a3c43-554e-4844-9e21-f8b535de641f/index.json",
+  "slug": "learning-outcomes/dmd-400-clo-5/v1-0-0",
+  "order": 1000,
+  "parent": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+  "title": "v1.0.0",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:outcome",
+    "oerFields": {
+      "code": "DMD 400 CLO.5",
+      "level": "Create",
+      "courses": [
+        {
+          "page": "item-07277897-84d2-4708-b7ff-7c5d0505a9b0",
+          "version": ""
+        }
+      ],
+      "pathways": [],
+      "programs": [],
+      "partOf": []
+    },
+    "oerSnapshotOf": "item-60132293-3878-4fad-9ae8-8411dd5549d9",
+    "oerSnapshotTitle": "Iterate in response to critique to improve outcomes",
+    "version": "1.0.0",
+    "versionStatus": "archived",
+    "hideInMenu": true,
+    "locked": true,
+    "published": true,
+    "created": 1792026121,
+    "images": [],
+    "videos": [],
+    "updated": 1792026121
+  },
+  "content": "<p>Students will produce multiple revisions that respond to feedback and show measurable improvement.</p>\n<h2>Measured by</h2>\n<ul>\n<li>Documentation of changes across Production Reports.</li>\n<li>At least three advisor/mentor meetings across the term.</li>\n<li>Peer feedback given and received in Production Report Discussions.</li>\n<li>Explicit incorporation of faculty/external reviewer feedback noted at midterm and visible in the final document, videos, and exhibition materials.</li>\n</ul>\n<h2>Assessed by</h2>\n<oer-collection types=\"oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz\" scope=\"linked\" view=\"table\" sort=\"title\" controls=\"none\"></oer-collection>"
+}

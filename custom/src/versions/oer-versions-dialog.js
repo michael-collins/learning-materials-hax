@@ -10,7 +10,7 @@
 import { html, css, LitElement } from "../lit.js";
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { LUCIDE_ICONS } from "../editor/lucide-icons.generated.js";
-import { versionsOf, bump, publishVersion, rubricPlan } from "./versioning.js";
+import { versionsOf, bump, publishVersion, rubricPlan, outcomePlan } from "./versioning.js";
 import { formControls } from "../ui/form-controls.js";
 
 const lucide = (name, cls = "") =>
@@ -99,6 +99,25 @@ class OerVersionsDialog extends LitElement {
         ${plan.map(
           (p) => html`<li>
             <a href="${p.rubric.slug}" target="_blank">${p.rubric.title}</a>${p.release
+              ? `: released as v${p.version} too, ${p.since ? `since it changed after v${p.since}` : "its first release"}`
+              : `: v${p.version}, its current release`}
+          </li>`,
+        )}
+      </ul>
+    </div>`;
+  }
+
+  // the learning outcomes it names: pinned as they say now, or released
+  // first because their wording changed
+  _renderOutcomePlan(page) {
+    const plan = outcomePlan(page, toJS(store.manifest?.items) || []);
+    if (!plan.length) return "";
+    return html`<div class="rubric-plan">
+      <p class="hint"><b>Learning outcomes</b> keep their current wording in this version:</p>
+      <ul>
+        ${plan.map(
+          (p) => html`<li>
+            <a href="${p.outcome.slug}" target="_blank">${[p.outcome.metadata?.oerFields?.code, p.outcome.title].filter(Boolean).join(" ")}</a>${p.release
               ? `: released as v${p.version} too, ${p.since ? `since it changed after v${p.since}` : "its first release"}`
               : `: v${p.version}, its current release`}
           </li>`,
@@ -277,6 +296,12 @@ class OerVersionsDialog extends LitElement {
         padding-left: 1.25rem;
         font-size: 0.8125rem;
       }
+      /* a plain list, not the version list's rows */
+      .rubric-plan li {
+        display: list-item;
+        padding: 0.125rem 0;
+        border: 0;
+      }
       .rubric-plan a {
         color: var(--link, var(--primary));
       }
@@ -408,7 +433,7 @@ class OerVersionsDialog extends LitElement {
                 <label for="notes">Release notes</label>
                 <textarea id="notes" .value="${this._notes}" @input="${(e) => (this._notes = e.target.value)}" placeholder="What changed in this version?"></textarea>
                 <p class="hint">Freezes the page as it is now. Readers and books can keep using this version while the page changes.</p>
-                ${this._renderRubricPlan(page)}
+                ${this._renderRubricPlan(page)}${this._renderOutcomePlan(page)}
                 ${this._error ? html`<p class="error">${this._error}</p>` : ""}
                 <div class="row">
                   <button class="btn outline" @click="${() => (this._publishing = false)}">Cancel</button>

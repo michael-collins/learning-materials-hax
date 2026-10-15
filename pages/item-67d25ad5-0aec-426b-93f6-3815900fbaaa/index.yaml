@@ -1,0 +1,53 @@
+id: item-67d25ad5-0aec-426b-93f6-3815900fbaaa
+indent: 2
+location: pages/item-67d25ad5-0aec-426b-93f6-3815900fbaaa/index.yaml
+slug: learning-outcomes/dmd-400-clo-4/v1-0-0
+order: 1000
+parent: item-c6213149-75ce-4c1f-a762-fc34f5f2f381
+title: v1.0.0
+description: ''
+metadata:
+  pageType: oer:outcome
+  oerFields:
+    code: DMD 400 CLO.4
+    level: Evaluate
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+    pathways: []
+    programs: []
+    partOf: []
+  oerSnapshotOf: item-c6213149-75ce-4c1f-a762-fc34f5f2f381
+  oerSnapshotTitle: Communicate work clearly in written, visual, and/or oral forms
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1792026119
+  images: []
+  videos: []
+  updated: 1792026119
+content: >-
+  <p>Students will explain and defend decisions to technical and non-technical
+  audiences.</p>
+
+  <h2>Measured by</h2>
+
+  <ul>
+
+  <li>An Exhibition Statement.</li>
+
+  <li>A Mid-production Video and an Explainer Video that present concept,
+  process, and outcomes for a general audience.</li>
+
+  <li>A well-structured Project Document that follows required sections and
+  formatting.</li>
+
+  </ul>
+
+  <h2>Assessed by</h2>
+
+  <oer-collection
+  types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz"
+  scope="linked" view="table" sort="title" controls="none"></oer-collection>

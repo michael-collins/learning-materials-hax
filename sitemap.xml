@@ -5672,32 +5672,56 @@
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-1</loc>
-    <lastmod>2026-10-15T00:13:50.000Z</lastmod>
+    <lastmod>2026-10-15T01:01:51.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-2</loc>
-    <lastmod>2026-10-15T00:13:50.000Z</lastmod>
+    <lastmod>2026-10-15T01:01:53.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-3</loc>
-    <lastmod>2026-10-15T00:13:50.000Z</lastmod>
+    <lastmod>2026-10-15T01:01:55.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-4</loc>
-    <lastmod>2026-10-15T00:13:50.000Z</lastmod>
+    <lastmod>2026-10-15T01:01:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-5</loc>
-    <lastmod>2026-10-15T00:13:50.000Z</lastmod>
+    <lastmod>2026-10-15T01:01:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-1/v1-0-0</loc>
+    <lastmod>2026-10-15T01:01:53.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-2/v1-0-0</loc>
+    <lastmod>2026-10-15T01:01:55.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-3/v1-0-0</loc>
+    <lastmod>2026-10-15T01:01:57.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://michaelcollins.xyz/learning-materials-hax/learning-outcomes/dmd-400-clo-4/v1-0-0</loc>
+    <lastmod>2026-10-15T01:01:59.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

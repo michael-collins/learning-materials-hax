@@ -38,6 +38,10 @@ import { pageHtml, parsePage, pageReport } from "./page-report.js";
 import { versionsDialog } from "../versions/oer-versions-dialog.js";
 import { outlineBuilder } from "../outline/oer-outline-builder.js";
 import { newPage } from "../ui/oer-new-page.js";
+import { confirmDialog } from "../ui/oer-confirm.js";
+import { saveOutline, newItemId } from "../outline/outline-model.js";
+import { OUTCOME_TYPE, followersOf, sameOutcome } from "./outcome.js";
+import { outcomePicker } from "../ui/oer-outcome-picker.js";
 
 // the dialog's sections, in order ("details" is named after the page's type)
 const SECTIONS = [
@@ -109,8 +113,9 @@ class OerPageDetails extends LitElement {
     this.open = false;
     this._values = {};
     this.__keys = (e) => {
-      // Esc in the icon picker closes the picker, not this
-      if (this.open && e.key === "Escape" && !globalThis.document.querySelector("oer-icon-picker[open]")) {
+      // Esc in a picker over it closes the picker, not this; while saving
+      // (a question about the save may be open) it waits
+      if (this.open && e.key === "Escape" && !this._saving && !globalThis.document.querySelector("oer-icon-picker[open], oer-page-picker[open], oer-outcome-picker[open]")) {
         e.preventDefault();
         e.stopPropagation();
         this._close();
@@ -307,11 +312,80 @@ class OerPageDetails extends LitElement {
     const prefix = String(this._item.slug || "").split("/").slice(0, -1).join("/");
     const tail = slugify(this._slugTail);
     const slug = this._slugEdited && tail && tail !== String(this._item.slug || "").split("/").pop() ? (prefix ? `${prefix}/${tail}` : tail) : "";
+    // an outcome other pages show: say so first, or keep it and save a new one
+    const asked = await this._outcomeChange(fields, tags);
+    if (asked === "cancel") {
+      this._saving = false;
+      return;
+    }
+    if (asked === "new") {
+      this._saving = false;
+      this.__saved = true;
+      this._close();
+      return;
+    }
     await savePageDetails(this._item.id, { pageType: this._type, description: this._desc.trim(), fields, tags, title: this._title.trim(), slug, icon: this._icon });
     this._onSaved?.({ pageType: this._type, description: this._desc.trim(), fields, tags });
     this._saving = false;
     this.__saved = true;
     this._close();
+  }
+
+  /**
+   * Saving a learning outcome whose statement, level or code changed while
+   * pages show its latest wording: ask whether to change it for them, or
+   * save the change as a new outcome (a draft beside it) and leave this one
+   * as it is. Resolves to "save" (go on), "new" (saved as new) or "cancel".
+   */
+  async _outcomeChange(fields, tags) {
+    if (this._type !== OUTCOME_TYPE || this._item.metadata?.pageType !== OUTCOME_TYPE) return "save";
+    const edited = { title: this._title.trim(), metadata: { oerFields: fields } };
+    if (sameOutcome(this._item, edited)) return "save";
+    const all = toJS(store.manifest?.items) || [];
+    const shown = followersOf(this._item.id, all);
+    if (!shown.length) return "save";
+    const names = shown.slice(0, 2).map((i) => `“${i.title}”`);
+    const more = shown.length - names.length;
+    const n = `${shown.length} page${shown.length === 1 ? "" : "s"}`;
+    const choice = await confirmDialog().ask({
+      title: `Change this outcome for ${n}?`,
+      text: `${more ? `${names.join(", ")} and ${more} more` : names.join(" and ")} link to it and will show the new wording; their released versions keep the old one. If what it means has changed, save it as a new outcome instead: this one stays as it is, and the change becomes a new draft outcome you can move work to.`,
+      actions: [
+        { id: "cancel", label: "Keep editing" },
+        { id: "new", label: "Save as new outcome" },
+        { id: "save", label: `Change for ${n}`, kind: "primary" },
+      ],
+    });
+    if (choice !== "new") return choice;
+    const item = this._item;
+    const prefix = String(item.slug || "").split("/").slice(0, -1).join("/");
+    const base = slugify(fields.code || this._title) || "outcome";
+    let tail = base;
+    for (let k = 2; all.some((i) => i.slug === (prefix ? `${prefix}/${tail}` : tail)); k++) tail = `${base}-${k}`;
+    const siblings = all.filter((i) => i.parent === item.parent);
+    const order = Math.max(-1, ...siblings.map((i) => Number(i.order) || 0)) + 1;
+    const contents = await pageHtml(item).catch(() => "<p></p>");
+    const copy = {
+      id: newItemId(),
+      title: this._title.trim(),
+      parent: item.parent || null,
+      indent: Number(item.indent) || 0,
+      order,
+      slug: prefix ? `${prefix}/${tail}` : tail,
+      location: "",
+      description: this._desc.trim(),
+      metadata: { pageType: OUTCOME_TYPE, oerFields: fields, ...(tags?.length ? { tags: tags.join(",") } : {}), published: false, overridePathauto: true },
+      contents,
+      new: true,
+    };
+    await saveOutline([copy]);
+    // go to it (HAX gives it its id as it saves)
+    const saved = (toJS(store.manifest?.items) || []).find((i) => i.slug === copy.slug);
+    if (saved) {
+      globalThis.history.pushState({}, "", saved.slug);
+      globalThis.dispatchEvent(new PopStateEvent("popstate"));
+    }
+    return "new";
   }
 
   static get styles() {
@@ -1289,6 +1363,12 @@ class OerPageDetails extends LitElement {
 
   async _addLinks(f) {
     const current = Array.isArray(this._values[f.name]) ? this._values[f.name] : [];
+    // learning outcomes: grouped by this page's courses, several at once
+    if ((f.types || []).length === 1 && f.types[0] === OUTCOME_TYPE) {
+      const picked = await outcomePicker().pick({ page: this._item, courses: this._values.courses, linked: current.map((c) => c.page) });
+      if (picked?.length) this._set(f.name, [...current, ...picked.map((id) => ({ page: id, version: "" }))]);
+      return;
+    }
     const typeLabels = (f.types || []).map((t) => this._allTypes.find((x) => x.id === t)?.label).filter(Boolean);
     const choice = await pagePicker().pick({
       exclude: [this._item.id, ...current.map((c) => c.page)],
@@ -1314,7 +1394,7 @@ class OerPageDetails extends LitElement {
         const releases = l.item ? versionsOf(l.item.id) : [];
         return html`<div class="link-row" role="listitem">
           ${type?.icon ? html`<simple-icon-lite icon="${type.icon}"></simple-icon-lite>` : lucide("lrn:page", "sm")}
-          <span class="link-title">${l.item ? l.item.title : html`<em>Missing page</em>`}<small>${type?.label || ""}</small></span>
+          <span class="link-title">${l.item ? l.title : html`<em>Missing page</em>`}<small>${type?.label || ""}</small></span>
           ${releases.length
             ? html`<select aria-label="Version of ${l.item.title}" @change="${(e) => update((n) => (n[i] = { ...n[i], version: e.target.value }))}">
                 <option value="" ?selected="${!l.version}">Latest</option>

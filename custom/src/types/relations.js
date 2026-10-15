@@ -16,14 +16,19 @@ import { seriesShownBy } from "../tutorials/series-model.js";
 
 const items = () => toJS(store.manifest?.items) || [];
 
-/** A relation value with its pages resolved: [{ page, version, item, href, missing }]. */
+/**
+ * A relation value with its pages resolved: [{ page, version, item, href,
+ * title, missing }]. A link pinned to a release goes to that release, under
+ * the title the page had then (an outcome's statement as it was).
+ */
 export function resolveLinks(value, list = items()) {
   return (Array.isArray(value) ? value : [])
     .filter((v) => v && v.page)
     .map((v) => {
       const item = list.find((i) => i.id === v.page) || null;
       const snapshot = item && v.version ? versionsOf(item.id, list).find((r) => r.version === v.version)?.snapshot : null;
-      return { page: v.page, version: v.version || "", item, href: (snapshot || item)?.slug || "", missing: !item };
+      const title = snapshot?.metadata?.oerSnapshotTitle || item?.title || "";
+      return { page: v.page, version: v.version || "", item, href: (snapshot || item)?.slug || "", title, missing: !item };
     });
 }
 

@@ -1,0 +1,60 @@
+id: item-615cf92b-956d-430c-8b25-21f831f82aba
+indent: 2
+location: pages/item-615cf92b-956d-430c-8b25-21f831f82aba/index.yaml
+slug: learning-outcomes/dmd-400-clo-2/v1-0-0
+order: 1000
+parent: item-8e7b067f-25a8-4d03-9266-f309069fd7a4
+title: v1.0.0
+description: ''
+metadata:
+  pageType: oer:outcome
+  oerFields:
+    code: DMD 400 CLO.2
+    level: Apply
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+    pathways: []
+    programs: []
+    partOf: []
+  oerSnapshotOf: item-8e7b067f-25a8-4d03-9266-f309069fd7a4
+  oerSnapshotTitle: Apply a repeatable design process with appropriate tools
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1792026115
+  images: []
+  videos: []
+  updated: 1792026115
+content: >-
+  <p>Students will document and execute a process that includes requirements,
+  ideation, prototyping, and evaluation using relevant digital processes, tools,
+  and techniques.</p>
+
+  <h2>Measured by</h2>
+
+  <ul>
+
+  <li>A Proposal that defines scope, production pipeline, capabilities, and a
+  week-by-week timeline.</li>
+
+  <li>Documented advisor/mentor check-ins across the duration of the
+  semester.</li>
+
+  <li>Production Reports showing progress against the timeline.</li>
+
+  <li>A Mid-production Video summarizing progress and remaining production
+  tasks.</li>
+
+  <li>A Project Document whose Production section clearly explains the methods
+  and tools used.</li>
+
+  </ul>
+
+  <h2>Assessed by</h2>
+
+  <oer-collection
+  types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz"
+  scope="linked" view="table" sort="title" controls="none"></oer-collection>

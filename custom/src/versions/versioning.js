@@ -16,11 +16,17 @@
  * latest is pinned in the release to the rubric's current version, and
  * released first when it has changed since its last release (or never was),
  * so an archived version keeps the rubric as it was (rubricPlan).
+ *
+ * Learning outcomes go with them the same way (outcomePlan): a page's
+ * Learning outcomes field, and a sequence's items' pages' outcomes, are
+ * pinned in the release, each outcome released first when its statement,
+ * level or code changed since its last release.
  */
 import { store, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 import { pageIcon } from "../types/page-icon.js";
 import { saveOutline, newItemId } from "../outline/outline-model.js";
 import { findRubric, isRubric, sameRubric, parseRubricRef, rubricRefsIn, itemRubric, isGradedItem } from "../rubrics/rubric-model.js";
+import { isOutcome, sameOutcome } from "../types/outcome.js";
 
 export const isSnapshot = (item) => !!item?.metadata?.oerSnapshotOf;
 
@@ -116,6 +122,54 @@ export function rubricPlan(page, list = items(), contents = null) {
   });
 }
 
+// the outcomes a page names at the latest (not pinned): its Learning
+// outcomes field, and for a sequence its items' pages' (items pinned to a
+// release of their page keep that release's)
+function outcomesUsed(page, list) {
+  const out = new Map();
+  const add = (p) => {
+    for (const v of p?.metadata?.oerFields?.outcomes || []) {
+      const o = v?.page && !v.version ? list.find((i) => i.id === v.page) : null;
+      if (isOutcome(o)) out.set(o.id, o);
+    }
+  };
+  add(page);
+  for (const m of page.metadata?.oerSequence?.modules || []) for (const it of m.items || []) if (it.page && !it.version) add(list.find((i) => i.id === it.page));
+  return [...out.values()];
+}
+
+/**
+ * What releasing `page` does to the learning outcomes it names: [{ outcome,
+ * version, release, since }], as rubricPlan.
+ */
+export function outcomePlan(page, list = items()) {
+  if (!page || isOutcome(page) || isSnapshot(page)) return [];
+  return outcomesUsed(page, list).map((outcome) => {
+    const latest = versionsOf(outcome.id, list)[0];
+    if (latest?.snapshot && sameOutcome(outcome, latest.snapshot)) return { outcome, version: latest.version, release: false, since: latest.version };
+    return { outcome, version: latest ? bump(latest.version, "minor") : "1.0.0", release: true, since: latest?.version || "" };
+  });
+}
+
+// a page's Learning outcomes, pinned to the plan's versions
+const pinOutcomes = (outcomes, plan) =>
+  (outcomes || []).map((v) => (v?.version ? v : { ...v, version: plan.find((p) => p.outcome.id === v?.page)?.version || "" }));
+
+// a sequence's items record the outcomes their pages name, pinned, so the
+// release keeps what each item assessed whatever the page names later
+function pinSequenceOutcomes(sequence, plan, list) {
+  return {
+    ...sequence,
+    modules: (sequence.modules || []).map((m) => ({
+      ...m,
+      items: (m.items || []).map((it) => {
+        const outcomes = it.page && !it.version ? list.find((i) => i.id === it.page)?.metadata?.oerFields?.outcomes : null;
+        return outcomes?.length ? { ...it, outcomes: pinOutcomes(outcomes, plan) } : it;
+      }),
+    })),
+  };
+}
+
 // pin a page's Rubric blocks that show the latest to the plan's versions
 function pinBlocks(html, plan, list) {
   return html.replace(/<oer-rubric\b[^>]*>/gi, (tag) => {
@@ -183,7 +237,8 @@ function releaseItems(page, version, notes, contents, list, extra = {}) {
 
 /**
  * Release the page's current content as `version` with notes, with its
- * rubrics pinned (and released first where they changed; rubricPlan).
+ * rubrics and learning outcomes pinned (and released first where they
+ * changed; rubricPlan, outcomePlan).
  * Resolves when HAXcms has saved it, in one outline save.
  */
 export async function publishVersion(pageId, version, notes = "") {
@@ -198,9 +253,14 @@ export async function publishVersion(pageId, version, notes = "") {
   for (const p of plan.filter((x) => x.release)) {
     out.push(...releaseItems(p.rubric, p.version, `Released with “${page.title}” v${version}.`, await pageHtml(p.rubric), list));
   }
+  const outcomes = outcomePlan(page, list);
+  for (const p of outcomes.filter((x) => x.release)) {
+    out.push(...releaseItems(p.outcome, p.version, `Released with “${page.title}” v${version}.`, await pageHtml(p.outcome), list));
+  }
   contents = pinBlocks(contents, plan, list);
   const extra = { oerRubrics: rubricRefsIn(contents) };
-  if (page.metadata?.oerSequence) extra.oerSequence = pinSequence(page.metadata.oerSequence, plan, list);
+  if (page.metadata?.oerFields?.outcomes) extra.oerFields = { ...page.metadata.oerFields, outcomes: pinOutcomes(page.metadata.oerFields.outcomes, outcomes) };
+  if (page.metadata?.oerSequence) extra.oerSequence = pinSequenceOutcomes(pinSequence(page.metadata.oerSequence, plan, list), outcomes, list);
   out.push(...releaseItems(page, version, notes, contents, list, extra));
   await saveOutline(out);
   // outline saves drop descriptions: give the archived copies theirs
@@ -229,6 +289,12 @@ export function versionUses(pageId, list = items(), ignore = new Set()) {
     if (i.id === pageId || i.metadata?.oerSnapshotOf === pageId || ignore.has(i.id)) continue;
     const ref = i.metadata?.oerRef;
     if (ref?.page === pageId && ref.version) add(ref.version, `linked from ${name(i)}`);
+    // fields pinned to a release (an archived project's learning outcomes),
+    // and what a released sequence's items assessed
+    for (const v of Object.values(i.metadata?.oerFields || {}))
+      if (Array.isArray(v)) for (const x of v) if (x?.page === pageId && x.version) add(x.version, `linked from ${name(i)}`);
+    for (const m of i.metadata?.oerSequence?.modules || [])
+      for (const it of m.items || []) for (const x of it.outcomes || []) if (x?.page === pageId && x.version) add(x.version, `the plan ${name(i)}`);
     if (!rubric) continue;
     for (const e of i.metadata?.oerRubrics || []) {
       const r = parseRubricRef(e);
@@ -265,6 +331,9 @@ export function snapshotUses(snap, list = items(), ignore = new Set()) {
     if (i.id === snap.id || ignore.has(i.id)) continue;
     const name = isSnapshot(i) ? `“${i.metadata?.oerSnapshotTitle || i.title}” (version ${i.metadata.version})` : `“${i.title}”`;
     if (i.metadata?.oerRef?.page === pageId && i.metadata.oerRef.version === version) uses.add(`linked from ${name}`);
+    const pinned = (x) => x?.page === pageId && x.version === version;
+    if (Object.values(i.metadata?.oerFields || {}).some((v) => Array.isArray(v) && v.some(pinned))) uses.add(`linked from ${name}`);
+    if ((i.metadata?.oerSequence?.modules || []).some((m) => (m.items || []).some((it) => (it.outcomes || []).some(pinned)))) uses.add(`the plan ${name}`);
     if (!rubric) continue;
     if ((i.metadata?.oerRubrics || []).some(named)) uses.add(`the rubric on ${name}`);
     if ((i.metadata?.oerSequence?.modules || []).some((m) => (m.items || []).some((it) => it.rubric && named(it.rubric)))) uses.add(`the plan ${name}`);

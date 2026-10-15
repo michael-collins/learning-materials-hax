@@ -1,0 +1,55 @@
+id: item-921d970a-e450-4a86-acc7-3c295e30e773
+indent: 2
+location: pages/item-921d970a-e450-4a86-acc7-3c295e30e773/index.yaml
+slug: learning-outcomes/dmd-400-clo-3/v1-0-0
+order: 1000
+parent: item-1443341b-f7ff-4523-933d-4c83b316830c
+title: v1.0.0
+description: ''
+metadata:
+  pageType: oer:outcome
+  oerFields:
+    code: DMD 400 CLO.3
+    level: Analyze
+    courses:
+      - page: item-07277897-84d2-4708-b7ff-7c5d0505a9b0
+        version: ''
+    pathways: []
+    programs: []
+    partOf: []
+  oerSnapshotOf: item-1443341b-f7ff-4523-933d-4c83b316830c
+  oerSnapshotTitle: Use research to drive concept and decisions
+  version: 1.0.0
+  versionStatus: archived
+  hideInMenu: true
+  locked: true
+  published: true
+  created: 1792026117
+  images: []
+  videos: []
+  updated: 1792026117
+content: >-
+  <p>Students will conduct and synthesize research to inform the project,
+  including primary and secondary research methods.</p>
+
+  <h2>Measured by</h2>
+
+  <ul>
+
+  <li>A Project Document with a formal Research section and bibliography that
+  situates the work, cites credible sources, and traces design
+  requirements/decisions back to findings.</li>
+
+  <li>Evidence of research activity and insight application in Production
+  Reports.</li>
+
+  <li>Alignment with course guidance on when to use primary vs. secondary
+  research and on using scholarly sources for sensitive topics.</li>
+
+  </ul>
+
+  <h2>Assessed by</h2>
+
+  <oer-collection
+  types="oer:exercise,oer:reflection,oer:project,oer:activity,oer:quiz"
+  scope="linked" view="table" sort="title" controls="none"></oer-collection>
