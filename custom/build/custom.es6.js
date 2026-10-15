@@ -20691,6 +20691,14 @@ ${E}
       padding: 0 !important;
       border: 0 !important;
     }
+    /* HAX pulls the Feedback's Legend out over the container's padding
+       (margin-left: -26px, wider than it); with that padding gone it hung
+       past the panel's edge, which clips it, cutting off its icon and "L" */
+    details#legend {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: auto !important;
+    }
     details[open] p {
       padding: 0 !important;
     }
