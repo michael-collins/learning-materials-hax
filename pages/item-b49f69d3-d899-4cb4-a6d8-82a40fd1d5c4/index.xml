@@ -4,20 +4,23 @@
 <indent>0</indent>
 <location>pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.xml</location>
 <slug>projects</slug>
-<order>6</order>
+<order>25</order>
 <parent></parent>
 <title>Projects</title>
 <description></description>
 <metadata>
 <published>true</published>
-<pageType>section</pageType>
+<pageType>oer:section</pageType>
 <created>1790829909</created>
 <images>
 </images>
 <videos>
 </videos>
-<updated>1790829909</updated>
+<updated>1792346662</updated>
+<locked>false</locked>
+<status></status>
+<icon></icon>
 </metadata>
 <content><![CDATA[<p>Larger pieces of work that bring several skills together.</p>
-<oer-collection types="project" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
+<oer-collection types="oer:project" columns="image,title,tags,difficulty" scope="site" view="table" sort="title" per-page="20" controls="full"></oer-collection>]]></content>
 </item>
