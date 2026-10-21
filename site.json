@@ -15,7 +15,7 @@
       "name": "learning-materials",
       "domain": "https://michaelcollins.xyz/learning-materials-hax/",
       "created": 1790801562,
-      "updated": 1792592656,
+      "updated": 1792592725,
       "version": "26.8.0"
     },
     "theme": {
@@ -35652,7 +35652,7 @@
       "indent": 0,
       "location": "pages/item-baeee894-4a30-4be0-af40-3e7b0761d298/index.html",
       "slug": "learning-outcomes",
-      "order": 13,
+      "order": 14,
       "parent": null,
       "title": "Learning outcomes",
       "description": "The outcomes courses, pathways and programs promise, and the work that assesses them.",
@@ -35663,7 +35663,10 @@
         "created": 1792018758,
         "images": [],
         "videos": [],
-        "updated": 1792018758
+        "updated": 1792592722,
+        "locked": false,
+        "status": "",
+        "icon": ""
       }
     },
     {
@@ -40624,6 +40627,34 @@
         "published": true,
         "locked": false,
         "status": ""
+      }
+    },
+    {
+      "id": "item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e",
+      "indent": 0,
+      "location": "pages/item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e/index.html",
+      "slug": "book/dart-413",
+      "order": 27,
+      "parent": null,
+      "title": "DART 413: Digital Fabrication Studio",
+      "description": "",
+      "metadata": {
+        "pageType": "oer:book-site",
+        "published": true,
+        "hideInMenu": true,
+        "overridePathauto": true,
+        "oerFields": {
+          "book": [
+            {
+              "page": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+              "version": ""
+            }
+          ]
+        },
+        "created": 1792592722,
+        "images": [],
+        "videos": [],
+        "updated": 1792592722
       }
     }
   ]

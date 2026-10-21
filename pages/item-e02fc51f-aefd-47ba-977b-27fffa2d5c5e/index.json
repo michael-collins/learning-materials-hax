@@ -1,0 +1,29 @@
+{
+  "id": "item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e",
+  "indent": 0,
+  "location": "pages/item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e/index.json",
+  "slug": "book/dart-413",
+  "order": 27,
+  "parent": null,
+  "title": "DART 413: Digital Fabrication Studio",
+  "description": "",
+  "metadata": {
+    "pageType": "oer:book-site",
+    "published": true,
+    "hideInMenu": true,
+    "overridePathauto": true,
+    "oerFields": {
+      "book": [
+        {
+          "page": "item-69dddfb7-34fb-48ff-b038-f1429191de9b",
+          "version": ""
+        }
+      ]
+    },
+    "created": 1792592722,
+    "images": [],
+    "videos": [],
+    "updated": 1792592722
+  },
+  "content": "<p></p>"
+}

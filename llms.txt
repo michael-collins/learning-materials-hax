@@ -965,6 +965,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Reflections](https://michaelcollins.xyz/learning-materials-hax/pages/item-51cc91b4-48cc-4ce0-b50e-47c1887aed29/index.md): Reading responses and reflection prompts, assessed like exercises.
 - [Projects](https://michaelcollins.xyz/learning-materials-hax/pages/item-b49f69d3-d899-4cb4-a6d8-82a40fd1d5c4/index.md)
 - [Quizzes](https://michaelcollins.xyz/learning-materials-hax/pages/item-1c6926f6-66c0-4907-859d-a8efbc78bb8a/index.md)
+- [DART 413: Digital Fabrication Studio](https://michaelcollins.xyz/learning-materials-hax/pages/item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e/index.md)
 
 ## Optional
 - [Search index](https://michaelcollins.xyz/learning-materials-hax/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

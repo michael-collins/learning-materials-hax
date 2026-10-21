@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e</id>
+<indent>0</indent>
+<location>pages/item-e02fc51f-aefd-47ba-977b-27fffa2d5c5e/index.xml</location>
+<slug>book/dart-413</slug>
+<order>27</order>
+<parent></parent>
+<title>DART 413: Digital Fabrication Studio</title>
+<description></description>
+<metadata>
+<pageType>oer:book-site</pageType>
+<published>true</published>
+<hideInMenu>true</hideInMenu>
+<overridePathauto>true</overridePathauto>
+<oerFields>
+<book>
+<item>
+<page>item-69dddfb7-34fb-48ff-b038-f1429191de9b</page>
+<version></version>
+</item>
+</book>
+</oerFields>
+<created>1792592722</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1792592722</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>
