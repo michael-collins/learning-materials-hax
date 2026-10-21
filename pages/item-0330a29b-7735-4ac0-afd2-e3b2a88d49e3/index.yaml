@@ -2,7 +2,7 @@ id: item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3
 indent: 0
 location: pages/item-0330a29b-7735-4ac0-afd2-e3b2a88d49e3/index.yaml
 slug: up/dart-413
-order: 14
+order: 15
 parent: null
 title: 'DART 413: Digital Fabrication Studio'
 description: Digital Fabrication Studio, 4 credits.
@@ -16,23 +16,27 @@ metadata:
         version: ''
   pageType: oer:course-site
   created: 1791560758
-  updated: 1791735515
+  updated: 1792592652
   images: []
   videos: []
   locked: false
   status: ''
-  icon: ''
+  icon: courseicons:learning-objectives
   oerSiteStyle:
     scheme: graphite
     accent: ''
     fonts: space
-content: |-
+  linkTarget: _self
+  readtime: 1
+content: |
+
   <oer-cs-hero><p></p></oer-cs-hero>
   <oer-cs-facts></oer-cs-facts>
-  <oer-cs-learn><oer-cs-outcome><h3></h3><p></p></oer-cs-outcome></oer-cs-learn>
+  <oer-cs-learn></oer-cs-learn>
   <oer-cs-semester></oer-cs-semester>
   <oer-cs-make></oer-cs-make>
+  <oer-cs-books></oer-cs-books>
   <oer-cs-people><p></p></oer-cs-people>
-  <oer-cs-tools><oer-cs-tool><p></p></oer-cs-tool></oer-cs-tools>
-  <oer-cs-faq><oer-cs-question><h3></h3><p></p></oer-cs-question></oer-cs-faq>
+  <oer-cs-tools></oer-cs-tools>
+  <oer-cs-faq></oer-cs-faq>
   <oer-cs-closing></oer-cs-closing>
